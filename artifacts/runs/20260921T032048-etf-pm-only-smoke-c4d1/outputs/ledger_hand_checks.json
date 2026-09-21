@@ -1,0 +1,29 @@
+{
+ "note": "am decision points: equity_snapshot must equal cash + pending buckets + sum(shares x last TRADED close strictly before the day) -- the frozen mark a pm-only ETF leg carries (no am bar exists by contract)",
+ "samples": [
+  {
+   "date": "2019-02-11",
+   "session": "am",
+   "cash": 160204.8,
+   "pending_am_to_pm": 0.0,
+   "pending_next_day": 0.0,
+   "positions": "sz.159934:14100",
+   "marks_last_traded_close": "sh.511010:116.83|sh.518880:2.852|sz.159934:2.833",
+   "engine_equity_snapshot": 200150.09999999998,
+   "host_recomputed": 200150.09999999998,
+   "abs_diff": 0.0
+  },
+  {
+   "date": "2019-12-31",
+   "session": "am",
+   "cash": 94030.79999999996,
+   "pending_am_to_pm": 0.0,
+   "pending_next_day": 0.0,
+   "positions": "sh.511010:300|sh.518880:12700|sz.159934:12800",
+   "marks_last_traded_close": "sh.511010:119.637|sh.518880:3.361|sz.159934:3.334",
+   "engine_equity_snapshot": 215281.79999999996,
+   "host_recomputed": 215281.79999999996,
+   "abs_diff": 0.0
+  }
+ ]
+}

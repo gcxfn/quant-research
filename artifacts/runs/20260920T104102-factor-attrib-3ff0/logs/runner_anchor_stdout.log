@@ -1,0 +1,80 @@
+[    0.0s] == 0. identity pins (engine v1.4.1 pin, chassis config verbatim) ==
+[    0.0s]   engine: a01cb29ce4cf2148 expect a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3 match=True
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.7s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.7s]   halfday_manifest: 2a414174b5df2eee expect 2a414174b5df2eee match=True
+[    0.7s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.7s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.7s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    0.7s]   f3r1_ew_composite: 9b93696b14fdd31f expect None match=True
+[    0.7s]   f3r1_dedup_clusters: 7b80b95bbbbbc34d expect None match=True
+[    0.7s]   f2r1_all120: df35f17604595b34 expect None match=True
+[    0.7s]   f3r3_config: 88b0e8ca8af5c85d expect None match=True
+[    0.7s]   prereg: fdb59975b933cb6e expect None match=True
+[    0.7s]   industry_l1: 4edffc3994fb527a expect 4edffc3994fb527a match=True
+[    0.7s]   chassis_sleeve_log: c62446715685f851 expect None match=True
+[    0.7s]   chassis_metrics: bc74572dd3e78347 expect None match=True
+[    0.7s]   chassis_ew_intents: afbd41c55f887379 expect None match=True
+[    0.7s]   chassis_ew_fills: 6e1dc925c99f8538 expect None match=True
+[    0.7s]   chassis_ew_events: af0ca5463344b4ca expect None match=True
+[    0.7s]   chassis_ew_daily: b71cf93135fcca2a expect None match=True
+[    0.7s]   chassis_ew_clips: f4695404f1f1a2e7 expect None match=True
+[    0.7s]   etf_manifest: 8b5b3fe56c0e02fd expect None match=True
+[    7.2s]   aggregates OK (etf 75777221a8b33502, fund_adj b06242469db048a0, trade_cal aac75421cd89d9fc)
+[    7.4s]   17 factor frames loaded; signs {"A17": -1.0, "A20": -1.0, "A25": 1.0, "B11": -1.0, "B12": -1.0, "B14": 1.0, "C19": -1.0, "D10": 1.0, "D13": 1.0, "D14": 1.0, "D18": 1.0, "D19": 1.0, "D20": 1.0, "D30": 1.0, "E16": 1.0, "F06": -1.0, "F09": -1.0}
+[    7.4s]   anchor net_cagr = 0.04877310918741218 (chassis metrics verbatim)
+[    7.4s] == 1. calendar & signal days ==
+[    7.5s]   71 signal days (2015-01-30..2020-11-30)
+[    7.5s] == stage done: calendar (7.5s) ==
+[    7.5s] == 2. exposures (T200-40) ==
+[    7.5s]   exposures[2015-01-30]=0.40 [2020-11-30]=0.90
+[    7.5s] == stage done: exposures (7.5s) ==
+[    7.5s] == 3. pools (r16 build_history + signal_pools) ==
+[   12.0s]   pools at 2015-01-30: n=1438; union of ranked symbols: 2937
+[   12.0s] == stage done: pools (12.0s) ==
+[   12.0s] == 4. composite subset rebuild (F3R1 construction verbatim) ==
+[   12.0s] == stage done: composite_setup (12.0s) ==
+[   12.0s] == stage done: composite_setup_done (12.0s) ==
+[   12.0s] == 5. market frames ==
+[   13.0s]   daily panel: 3841824 rows, 2937 symbols
+[   14.0s]   halfday: 7254698 rows kept of 18486939 total
+[   24.2s]   limits: 3829171 rows (dev x panel)
+[   29.7s]   splits 2894 rows, dividends 20138 rows (panel)
+[   29.7s]   rss after frames: 2.33 GB
+[   29.7s] == stage done: market_frames (29.7s) ==
+[   29.7s] == 6. ETF assets ==
+[   29.7s]   etf panel dev rows: 13158 per member {'sh.518880': 1462, 'sh.513100': 1462, 'sh.510050': 1462, 'sz.159934': 1462, 'sh.510880': 1462, 'sh.510300': 1462, 'sh.511010': 1462, 'sh.513500': 1462, 'sz.159915': 1462}
+[   29.8s]   dividend events: 18 {'sh.510050': 5, 'sh.510300': 6, 'sh.510880': 6, 'sh.511010': 1}
+[   29.8s] == stage done: etf_assets (29.8s) ==
+[   29.8s] == 7. shared engine input frames (mixed mode, legs only) ==
+[   29.8s] == stage done: engine_input_frames (29.8s) ==
+[   29.8s] == 8. subset loop: 1 subsets ==
+[   29.8s] == subset leave_zero_out: drop=[], 17 reps ==
+D:\量化\artifacts\runs\20260920T104102-factor-attrib-3ff0\scripts\runner_attrib.py:362: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  .filter(pl.col("signal_date").is_in(pl.Series(sig_days)))
+D:\量化\artifacts\runs\20260920T104102-factor-attrib-3ff0\scripts\runner_attrib.py:366: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  wide = wide.filter(pl.col("signal_date").is_in(pl.Series(sig_days)))
+D:\量化\artifacts\runs\20260920T104102-factor-attrib-3ff0\scripts\runner_attrib.py:373: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  have = (have.filter(pl.col("symbol").is_in(pl.Series(sorted(
+[   32.9s]   subset M'=17 min_cov>=9: eligible min 810 median 1510 max 2258
+[   32.9s]   sleeve leave_zero_out: max members/month 10, panel symbols 381
+[   41.3s]   leave_zero_out: engine 8.2s, intents 1308 orders 3387 filled 1018 | rss 2.73 GB
+[   41.4s]   LEAVE-ZERO-OUT ANCHOR: 5-frame .equals() vs chassis F3R3-EW
+[   41.4s]     intents.equals(chassis) = True (mine 1308 / ref 1308)
+[   41.4s]     fills.equals(chassis) = True (mine 1018 / ref 1018)
+[   41.4s]     events.equals(chassis) = True (mine 4779 / ref 4779)
+[   41.4s]     daily.equals(chassis) = True (mine 1462 / ref 1462)
+[   41.4s]     clips_final.equals(chassis) = True (mine 16 / ref 16)
+[   41.4s]     net_cagr 0.04877310918741218 vs chassis 0.04877310918741218 -> True
+[   41.4s]   LEAVE-ZERO-OUT ANCHOR PASS (5/5 frames + net_cagr)
+[   41.4s]   leave_zero_out: net +4.88% mdd -17.85% adv 4/6 turn 4.45
+[   41.6s] == subset loop complete: 1 subsets, wall 42s, peak rss 2.73 GB ==

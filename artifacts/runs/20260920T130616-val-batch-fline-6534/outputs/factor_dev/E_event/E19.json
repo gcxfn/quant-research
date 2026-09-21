@@ -1,0 +1,59 @@
+{
+ "factor_id": "E19",
+ "name": "hb_ann20",
+ "formula": "20d 增持公告数(IN 方向，无填 0)",
+ "source": "stk_holdertrade",
+ "fill_policy": "无事件填 0",
+ "n_rows": 236437,
+ "t_value": -1.9649347360259972,
+ "coverage_median_symbols": 3108.0,
+ "coverage_median_active_months": 3126.0,
+ "pool_median_symbols": 3126.0,
+ "criteria": {
+  "c1_abs_t>=2": false,
+  "c2_mono_consistent>=0.3": false,
+  "c3_2015_non_disaster": true,
+  "c4_coverage>=50%pool": true
+ },
+ "survived_prelim": false,
+ "eval": {
+  "n_dates": 59,
+  "coverage_mean_symbols": 3134.35593220339,
+  "ic_mean": -0.005511557179294404,
+  "ic_std": 0.021545282505154813,
+  "icir": -0.2558127134316172,
+  "ic_win_rate": 0.3559322033898305,
+  "group_mean_ret": [
+   0.0082229711582759,
+   -0.011540492243846606,
+   0.003779842651193492
+  ],
+  "long_short_mean": -0.004443128507082408,
+  "monotonicity": 0.11726994606982148,
+  "ic_by_year": {
+   "2016": -0.006748452691657821,
+   "2017": -0.008577977197255103,
+   "2018": -7.630435997003308e-05,
+   "2019": -0.007161175753226334,
+   "2020": -0.004946813959368937
+  },
+  "long_short_by_year": {
+   "2016": -0.0030715296920454035,
+   "2017": 0.005370137520903706,
+   "2018": 1.924698039985559e-05,
+   "2019": 0.011036662497621828,
+   "2020": 0.0017952171237216041
+  },
+  "turnover_top_group": 0.8860411878153944,
+  "corr_with_others": {},
+  "config": {
+   "horizon_days": 20,
+   "n_groups": 10,
+   "eval_freq": "M",
+   "exclude_st": true,
+   "require_trading": true,
+   "exclude_boards": true,
+   "min_history_rows": 60
+  }
+ }
+}

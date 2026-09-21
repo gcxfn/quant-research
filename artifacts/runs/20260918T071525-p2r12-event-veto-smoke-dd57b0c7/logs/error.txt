@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "D:\量化\tools\run_p2r12_event_veto.py", line 423, in main
+    identity = ev.validate_identity(root, config)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\p2r12_event_veto.py", line 1299, in validate_identity
+    raise ValueError('data identity validation failed:\n' + '\n'.join(failures))
+ValueError: data identity validation failed:
+features/share_float/batch_manifest: data/raw/tushare/share_float/20260909-r3/manifest.json not in sha256 ledger
+features/disclosure_date/batch_manifest: data/raw/tushare/disclosure_date/20260909-r1/manifest.json not in sha256 ledger
+features/forecast/batch_manifest: data/raw/tushare/forecast/20260909-r1/manifest.json not in sha256 ledger

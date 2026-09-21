@@ -1,0 +1,123 @@
+{
+ "run_id": "20260921T125117-alpha158-90aa2",
+ "experiment_id": "exp-20260921-fixed-scheme-r2",
+ "status": "completed",
+ "mode": "full",
+ "started_at_utc": "2026-09-21T05:15:48.806158+00:00",
+ "ended_at_utc": "2026-09-21T05:16:27.995168+00:00",
+ "wall_seconds": 39.189214099998935,
+ "peak_rss_gb": 2.898690048,
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "artifacts/runs/20260921T125117-alpha158-90aa2/tmp/runner_fixed_scheme.py"
+ ],
+ "engine": {
+  "sha256_at_start": "f3650f8440c713b8545712c64a218cd8713a113751a6f72ef81a78393d869b08",
+  "sha256_at_end": "f3650f8440c713b8545712c64a218cd8713a113751a6f72ef81a78393d869b08",
+  "version": "v1.5+clip-price",
+  "clock": "halfday+pm_only"
+ },
+ "pins": {
+  "engine": {
+   "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+   "sha256": "f3650f8440c713b8545712c64a218cd8713a113751a6f72ef81a78393d869b08",
+   "expected_16": "f3650f8440c713b8",
+   "match": true
+  },
+  "prereg": {
+   "sha256": "e5088ce45e8e369fa0fd1d1cc3a8c71c451d00ad6c9003218627580ed7d88884"
+  },
+  "daily": {
+   "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_1999_2024.parquet",
+   "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6",
+   "rows_total": 16344349
+  },
+  "etf_daily": {
+   "path": "D:\\量化\\data\\processed\\etf-daily-20260919\\daily_2015_2024.parquet",
+   "sha256": "b7225d50523106f53fc87bf21a92f12978ecc31a7b195ed2b4cf4e39f7a0d661"
+  },
+  "index_000300": {
+   "path": "D:\\量化\\data\\raw\\tushare\\index_daily\\20260917-r1\\chunk_000300.SH.csv",
+   "sha256": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878"
+  },
+  "split_factor": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\split_factor.h5",
+   "sha256": "2f436b2f13d09a9bfdcbdb0bf35669c10a377d180ce1ca37bef53d6c96a3365d"
+  },
+  "dividends": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\dividends.h5",
+   "sha256": "46121c09cddde72e725c2d4ae025cc259b049aeaa77c868b492fdbba60214846"
+  },
+  "halfday_manifest": {
+   "sha256": "2a414174b5df2eeed4c6bd6a7cd7f9f09f9b2efc8f05673ccc4b7695812cd679",
+   "match": true
+  },
+  "stk_limit_aggregate": {
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "3c53abf3b0c39b425389137d9f630f0de158990fcdc55b0bd41bf7d9c3bde673",
+   "files": 2432,
+   "total_bytes": 301278245,
+   "match": true
+  },
+  "fund_adj_aggregate": {
+   "sha256": "95147dc9d631db967ce4bb3c877308f1dd6f1ab1d4ae89e7ea2daeec522705e6"
+  },
+  "defensive_months": 119
+ },
+ "curves": [
+  "R2A"
+ ],
+ "trial_accounting": {
+  "strategy_line": {
+   "before": 273,
+   "this_round": 8,
+   "after": 281
+  },
+  "factor_line": "no new trials"
+ },
+ "disclosures": {
+  "R2A": {
+   "provider_calls": 2924,
+   "etf_exits": [
+    {
+     "symbol": "sz.159934",
+     "date": "2015-03-09",
+     "close": 2.375,
+     "high60": 2.639
+    },
+    {
+     "symbol": "sh.518880",
+     "date": "2015-03-13",
+     "close": 2.359,
+     "high60": 2.623
+    }
+   ],
+   "single_name": {
+    "stops": 112,
+    "protections": 0,
+    "takes": 0
+   },
+   "warnings_n": 0,
+   "warnings_sample": []
+  }
+ },
+ "known_simplifications": [
+  "ETF cash dividends are NOT modelled (18 events in dev per the hybrid-v1 audit); defensive benchmark uses adj-factor returns, so the strategy defensive leg is slightly UNDERSTATED vs benchmark"
+ ],
+ "outputs": {
+  "logs/replay_stdout.log": "43b69e988988796b7c0b6a3d0e27f82d8ec889d1b772d724816c756d7b019ffb",
+  "logs/rerun.log": "08375973f01ba5f77e57e94912c1297a80461a8d5205be2f22ffc1c061a712da",
+  "outputs/alpha158_eval.csv": "de80fb924c36362c457e55b5d03c895bd873b4f259be86546312476246ea1918",
+  "outputs/metrics_and_gates.json": "bed38751d6f2df8b8c1e50e7439ec3554d04770d49381b1dba655a9c4851175e",
+  "outputs/ml_feature_importance.csv": "ca01e6426baaba8ef165093b48e20f0255cd891e0ed6f396f9e7147507e9f671",
+  "outputs/ml_rank_ic.csv": "0308c5b60c4cde4b92e72dfb8dd0a48a4dcb3dc816decd77a1fe1993ef66fe78",
+  "outputs/ml_scores.json": "bf29bdcc2e77162c3f024e96f4e5248e9c617cfdc2b81e41ca2ecf8908175db8",
+  "outputs/R2A_clips_final.parquet": "ca6fa1f572446d0cc931e73f8871cc27692cdd65475caffc8f37277c6a0bdd03",
+  "outputs/R2A_daily_equity.parquet": "e82d051c19e4ceaa6d7f94e1f9b7cab5a057851c8644bd9a28d43c938c32b38b",
+  "outputs/R2A_events.parquet": "1d3cd8d4ab2bc49a61acbe2bad2242312f32ca235f3ba9d39424f0986f6cd168",
+  "outputs/R2A_fills.parquet": "2e8919a4e1789b041a0585702b94d9cf24ffd70ffc943398c9eb15e35ff70f57",
+  "report.md": "4dc2d9a82a7dae91898570688ee9bc661b1bb6f13cc6460b11119caf6642cdbd",
+  "tmp/runner_alpha158.py": "76ea404f0d7593c553f25ad23167140121db8ac1585b8562ad935ac5c96b1c2f",
+  "tmp/runner_replay.py": "7cbe1f23250f97032067fca5625a89084b4cd994f48d2f7d68db1a5a38e26c71"
+ }
+}

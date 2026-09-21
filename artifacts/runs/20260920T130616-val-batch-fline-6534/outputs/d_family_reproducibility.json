@@ -1,0 +1,196 @@
+{
+ "stage": "d_family_reproducibility",
+ "claim": "the frozen F2R1 D-family artifacts are not reproducible: four runs of the identical shipped script over byte-identical inputs give four different frames",
+ "input_identity_check": {
+  "rule": "sha256 of every raw tushare financial file under fina_indicator/ income/ balancesheet/ cashflow/ compared with the data/_meta/sha256.tsv baseline written 2026-09-17 (before the F2R1 run)",
+  "files_verified": 23622,
+  "mismatches": 0,
+  "note": "the raw inputs did not change between the F2R1 D run (2026-09-19 18:19) and this run"
+ },
+ "runs": {
+  "frozen_f2r1": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\D_fund",
+  "rerun_1": "D:\\量化\\artifacts\\runs\\20260920T130616-val-batch-fline-6534\\tmp\\d_rerun\\D_fund_first",
+  "rerun_2": "D:\\量化\\artifacts\\runs\\20260920T130616-val-batch-fline-6534\\tmp\\d_rerun\\D_fund_second",
+  "rerun_3_threads1": "D:\\量化\\artifacts\\runs\\20260920T130616-val-batch-fline-6534\\tmp\\d_rerun\\D_fund_threads1"
+ },
+ "per_representative": {
+  "D10": {
+   "frozen_f2r1": {
+    "sha256_12": "e749803de188",
+    "rows": 288699
+   },
+   "rerun_1": {
+    "sha256_12": "f983dad9c50b",
+    "rows": 289101
+   },
+   "rerun_2": {
+    "sha256_12": "dcf4c396b168",
+    "rows": 289025
+   },
+   "rerun_3_threads1": {
+    "sha256_12": "68e998efd226",
+    "rows": 289039
+   }
+  },
+  "D13": {
+   "frozen_f2r1": {
+    "sha256_12": "7e178d768fea",
+    "rows": 224457
+   },
+   "rerun_1": {
+    "sha256_12": "dddb2cb610fe",
+    "rows": 224304
+   },
+   "rerun_2": {
+    "sha256_12": "3a3f174d7a3e",
+    "rows": 224243
+   },
+   "rerun_3_threads1": {
+    "sha256_12": "02fac418cad5",
+    "rows": 224418
+   }
+  },
+  "D14": {
+   "frozen_f2r1": {
+    "sha256_12": "2878d1797a6f",
+    "rows": 221126
+   },
+   "rerun_1": {
+    "sha256_12": "dd595c5d2cc1",
+    "rows": 220886
+   },
+   "rerun_2": {
+    "sha256_12": "e76f1f7c541d",
+    "rows": 220888
+   },
+   "rerun_3_threads1": {
+    "sha256_12": "82c226af2bec",
+    "rows": 221053
+   }
+  },
+  "D18": {
+   "frozen_f2r1": {
+    "sha256_12": "6782b025e132",
+    "rows": 294469
+   },
+   "rerun_1": {
+    "sha256_12": "189523ceba10",
+    "rows": 294866
+   },
+   "rerun_2": {
+    "sha256_12": "754d3a80ba27",
+    "rows": 294919
+   },
+   "rerun_3_threads1": {
+    "sha256_12": "4f411fe2a052",
+    "rows": 294897
+   }
+  },
+  "D19": {
+   "frozen_f2r1": {
+    "sha256_12": "1ecec47e502c",
+    "rows": 278019
+   },
+   "rerun_1": {
+    "sha256_12": "4b560718777b",
+    "rows": 278408
+   },
+   "rerun_2": {
+    "sha256_12": "93d471462d91",
+    "rows": 278044
+   },
+   "rerun_3_threads1": {
+    "sha256_12": "1550f2b34101",
+    "rows": 277980
+   }
+  },
+  "D20": {
+   "frozen_f2r1": {
+    "sha256_12": "a79b5d658c5c",
+    "rows": 237677
+   },
+   "rerun_1": {
+    "sha256_12": "844328b1ad79",
+    "rows": 237630
+   },
+   "rerun_2": {
+    "sha256_12": "9911ce5f799c",
+    "rows": 237933
+   },
+   "rerun_3_threads1": {
+    "sha256_12": "4d56712af6c6",
+    "rows": 237753
+   }
+  },
+  "D30": {
+   "frozen_f2r1": {
+    "sha256_12": "5b8776f1e122",
+    "rows": 288945
+   },
+   "rerun_1": {
+    "sha256_12": "d4375d19275a",
+    "rows": 289289
+   },
+   "rerun_2": {
+    "sha256_12": "c515113293f8",
+    "rows": 289219
+   },
+   "rerun_3_threads1": {
+    "sha256_12": "393a79490042",
+    "rows": 289244
+   }
+  }
+ },
+ "all_four_distinct": true,
+ "screen_pass_by_run": {
+  "frozen_f2r1": [
+   "D10",
+   "D13",
+   "D14",
+   "D18",
+   "D19",
+   "D20",
+   "D30"
+  ],
+  "rerun_1": [
+   "D10",
+   "D13",
+   "D14",
+   "D18",
+   "D19",
+   "D20",
+   "D30"
+  ],
+  "rerun_2": [
+   "D10",
+   "D13",
+   "D14",
+   "D18",
+   "D19",
+   "D20",
+   "D30"
+  ],
+  "rerun_3_threads1": [
+   "D10",
+   "D13",
+   "D14",
+   "D18",
+   "D19",
+   "D20",
+   "D30"
+  ]
+ },
+ "screen_pass_identical_across_runs": true,
+ "localization_probe": {
+  "source": "outputs/d_pipeline_determinism_probe.json",
+  "A_frozen_expression_repeat_stable_in_process": true,
+  "B_rows_differing_vs_explicitly_ordered": 0,
+  "C_fina_rows_ann_date_after_2024": 52086,
+  "C_of_which_end_date_le_2020": 0,
+  "conclusion": "the pit_full() tie-break is NOT the unstable step (it is reproducible in-process and agrees with its explicitly ordered equivalent here); the instability is elsewhere in the join/sort/group_by chain of build_d_fund_main.py and is left as a registered follow-up"
+ },
+ "polars_idiom_synthetic_probe": {
+  "probe": "scripts/polars_order_probe.py",
+  "finding": "for a synthetic 300k-row / 3200-group frame the frozen idiom sort(...).group_by(k).last() differs from the explicitly ordered equivalent for 8.4% of groups; the idiom therefore does not implement its documented  'tie 取 end_date 大' tie-break (the D family report discloses an 8-9% same-day multi-announcement rate, of the same order)"
+ }
+}

@@ -1,0 +1,500 @@
+{
+ "experiment_id": "exp-20260919-factor-round-f3r1",
+ "engine_sha256_16": "84a2443ac28fe1b8",
+ "execution_model": "band engine v1.3 intent layer; one static frame per arm; membership-transition intents only",
+ "dedup": {
+  "rho_threshold": 0.6,
+  "clusters": 17,
+  "representatives": [
+   "A17",
+   "A20",
+   "A25",
+   "B11",
+   "B12",
+   "B14",
+   "C19",
+   "D10",
+   "D13",
+   "D14",
+   "D18",
+   "D19",
+   "D20",
+   "D30",
+   "E16",
+   "F06",
+   "F09"
+  ],
+  "cluster_table": [
+   {
+    "representative": "F09",
+    "members": [
+     "A01",
+     "A02",
+     "A05",
+     "A09",
+     "A10",
+     "A21",
+     "A23",
+     "A24",
+     "B15",
+     "C01",
+     "C11",
+     "C12",
+     "F09"
+    ],
+    "size": 13
+   },
+   {
+    "representative": "A17",
+    "members": [
+     "A17",
+     "A19"
+    ],
+    "size": 2
+   },
+   {
+    "representative": "B12",
+    "members": [
+     "A18",
+     "A22",
+     "B12"
+    ],
+    "size": 3
+   },
+   {
+    "representative": "A20",
+    "members": [
+     "A20"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "A25",
+    "members": [
+     "A25"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "E16",
+    "members": [
+     "B04",
+     "D09",
+     "D16",
+     "E16"
+    ],
+    "size": 4
+   },
+   {
+    "representative": "B11",
+    "members": [
+     "B09",
+     "B10",
+     "B11",
+     "F10"
+    ],
+    "size": 4
+   },
+   {
+    "representative": "B14",
+    "members": [
+     "B14"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "C19",
+    "members": [
+     "C19"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "D30",
+    "members": [
+     "D07",
+     "D08",
+     "D17",
+     "D30"
+    ],
+    "size": 4
+   },
+   {
+    "representative": "D10",
+    "members": [
+     "D10"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "D13",
+    "members": [
+     "D12",
+     "D13"
+    ],
+    "size": 2
+   },
+   {
+    "representative": "D14",
+    "members": [
+     "D14"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "D18",
+    "members": [
+     "D18"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "D19",
+    "members": [
+     "D19"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "D20",
+    "members": [
+     "D20"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "F06",
+    "members": [
+     "F06"
+    ],
+    "size": 1
+   }
+  ],
+  "min_components_required": 9
+ },
+ "benchmarks": {
+  "b1m": {
+   "net_cagr": 0.01666343833424322,
+   "max_drawdown": -0.6436424862164616,
+   "net_return_by_year": {
+    "2015": 0.5158101815526412,
+    "2016": -0.12587591142398813,
+    "2017": -0.10571288081710828,
+    "2018": -0.3603628533945715,
+    "2019": 0.26278944372620927,
+    "2020": 0.1534939050986639
+   }
+  },
+  "b1m_caliber": "executable pool equal-weight monthly fractional, exposure=1, rate-only fees (R16 convention)",
+  "b3prime": {
+   "mean_net_cagr": -0.029315970164831267,
+   "seeds": [
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+   ],
+   "k": 10,
+   "per_seed_net_cagr": [
+    -0.08964532836566286,
+    0.02655252924574447,
+    0.019058091844188052,
+    -0.004152744951867238,
+    -0.030274214374052977,
+    0.053947478635401724,
+    -0.07292031789654241,
+    -0.038069672651324216,
+    -0.0027511678495633074,
+    -0.022890414171618967,
+    -0.024516346351650897,
+    0.007454275730517157,
+    -0.03897969045237448,
+    -0.06615160367851547,
+    -0.09285342098639238,
+    -0.00045546439253574267,
+    -0.038998701062070706,
+    -0.033042266970404466,
+    -0.07469049469196853,
+    -0.06293992990593211
+   ],
+   "caliber": "random K=10 integer lots STOCK_FEE_SCHEDULE exposure=1 (R16 convention; K matches F3 seats, R16 used K=20 for its K family)"
+  }
+ },
+ "metrics": {
+  "F3-EW": {
+   "net_cagr": 0.1260008344246184,
+   "net_total_return": 1.0351541049000006,
+   "max_drawdown": -0.38914775711816707,
+   "b1m_net_cagr": 0.01666343833424322,
+   "b1m_max_drawdown": -0.6436424862164616,
+   "b1m_net_return_by_year": {
+    "2015": 0.5158101815526412,
+    "2016": -0.12587591142398813,
+    "2017": -0.10571288081710828,
+    "2018": -0.3603628533945715,
+    "2019": 0.26278944372620927,
+    "2020": 0.1534939050986639
+   },
+   "excess_vs_b1m": 0.10933739609037518,
+   "net_return_by_year": {
+    "2015": 0.7320394999999997,
+    "2016": -0.012614533329060706,
+    "2017": -0.04019141246259783,
+    "2018": -0.2461779590337796,
+    "2019": 0.3861611824598139,
+    "2020": 0.18654873816056572
+   },
+   "advantage_years_list": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 1745944.0,
+     "mean_equity": 285196.6195491804,
+     "one_side_turnover": 6.121895844206957
+    },
+    "2016": {
+     "buy_notional": 2010913.0,
+     "mean_equity": 335583.86989754095,
+     "one_side_turnover": 5.992281454451203
+    },
+    "2017": {
+     "buy_notional": 2003315.0,
+     "mean_equity": 331840.7947991804,
+     "one_side_turnover": 6.036976259089371
+    },
+    "2018": {
+     "buy_notional": 1416863.0,
+     "mean_equity": 289553.3390855968,
+     "one_side_turnover": 4.893271148156754
+    },
+    "2019": {
+     "buy_notional": 1694899.0,
+     "mean_equity": 300129.7893758196,
+     "one_side_turnover": 5.647220169396993
+    },
+    "2020": {
+     "buy_notional": 1660124.0,
+     "mean_equity": 405310.1038967902,
+     "one_side_turnover": 4.095935393761466
+    }
+   },
+   "max_one_side_turnover": 6.121895844206957,
+   "max_single_name_weight": 0.2374167251899837,
+   "execution_rate": 0.7894248608534323,
+   "execution_rate_mapping": "7.7-m6: (filled + rule-blocked) / (filled + rule-blocked + terminated); re-anchors neutral",
+   "b3prime_mean_net_cagr": -0.029315970164831267
+  },
+  "F3-ICW": {
+   "net_cagr": 0.13230966720832682,
+   "net_total_return": 1.1043909324000007,
+   "max_drawdown": -0.35627373257672,
+   "b1m_net_cagr": 0.01666343833424322,
+   "b1m_max_drawdown": -0.6436424862164616,
+   "b1m_net_return_by_year": {
+    "2015": 0.5158101815526412,
+    "2016": -0.12587591142398813,
+    "2017": -0.10571288081710828,
+    "2018": -0.3603628533945715,
+    "2019": 0.26278944372620927,
+    "2020": 0.1534939050986639
+   },
+   "excess_vs_b1m": 0.1156462288740836,
+   "net_return_by_year": {
+    "2015": 0.795254235,
+    "2016": -0.004047215073134103,
+    "2017": -0.06831345731480121,
+    "2018": -0.1830487769898359,
+    "2019": 0.24793383296777072,
+    "2020": 0.23909385331994737
+   },
+   "advantage_years_list": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2020
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 1926718.0,
+     "mean_equity": 288231.31086885213,
+     "one_side_turnover": 6.684624214461816
+    },
+    "2016": {
+     "buy_notional": 2311347.0,
+     "mean_equity": 342264.84349590185,
+     "one_side_turnover": 6.753094990393529
+    },
+    "2017": {
+     "buy_notional": 2253995.0,
+     "mean_equity": 339496.62435655744,
+     "one_side_turnover": 6.6392265439220814
+    },
+    "2018": {
+     "buy_notional": 1797590.0,
+     "mean_equity": 300801.661889712,
+     "one_side_turnover": 5.97599756832155
+    },
+    "2019": {
+     "buy_notional": 1738566.0,
+     "mean_equity": 307156.63314877043,
+     "one_side_turnover": 5.66019357022295
+    },
+    "2020": {
+     "buy_notional": 1880687.0,
+     "mean_equity": 400979.07057703735,
+     "one_side_turnover": 4.690237316609961
+    }
+   },
+   "max_one_side_turnover": 6.753094990393529,
+   "max_single_name_weight": 0.2475328732141602,
+   "execution_rate": 0.802901023890785,
+   "execution_rate_mapping": "7.7-m6: (filled + rule-blocked) / (filled + rule-blocked + terminated); re-anchors neutral",
+   "b3prime_mean_net_cagr": -0.029315970164831267
+  }
+ },
+ "gates": {
+  "F3-EW": {
+   "dev": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": "True",
+    "3_advantage_years_ge_5_of_6": true,
+    "4_mdd_le_20pct_and_le_B1m": false,
+    "5_one_side_turnover_le_6": false,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8_execution_rate_ge_95pct": false,
+    "advantage_years": 6,
+    "dev_excess_vs_b1m": 0.10933739609037518,
+    "failed_gates": [
+     "4_mdd_le_20pct_and_le_B1m",
+     "5_one_side_turnover_le_6",
+     "8_execution_rate_ge_95pct"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated",
+    "goal_criterion_dev_cagr_ge_10pct": true,
+    "goal_met": false
+   },
+   "verdict": "eliminated"
+  },
+  "F3-ICW": {
+   "dev": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": "True",
+    "3_advantage_years_ge_5_of_6": true,
+    "4_mdd_le_20pct_and_le_B1m": false,
+    "5_one_side_turnover_le_6": false,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8_execution_rate_ge_95pct": false,
+    "advantage_years": 5,
+    "dev_excess_vs_b1m": 0.1156462288740836,
+    "failed_gates": [
+     "4_mdd_le_20pct_and_le_B1m",
+     "5_one_side_turnover_le_6",
+     "8_execution_rate_ge_95pct"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated",
+    "goal_criterion_dev_cagr_ge_10pct": true,
+    "goal_met": false
+   },
+   "verdict": "eliminated"
+  }
+ },
+ "disclosures": {
+  "F3-EW": {
+   "gate8": {
+    "mapped_rate": 0.7894248608534323,
+    "filled": 671,
+    "rule_blocked": {
+     "below_min_lot": 0,
+     "void_no_position": 179,
+     "void_insufficient_cash": 1
+    },
+    "termination": {
+     "expiry": 60,
+     "override_same_name": 151,
+     "cap_void": 0,
+     "suspension_abandon": 16
+    },
+    "zero_emission": 6,
+    "expired_noop": 0,
+    "order_session": {
+     "buy": 0.037866132085978395,
+     "sell_risk": 0.040360931593708085,
+     "sell_profit": null
+    },
+    "decision_point_fill_share": {
+     "am": 0.4903129657228018,
+     "pm": 0.5096870342771982
+    }
+   },
+   "seat_vacancy_note": "buy intents that expire unfilled leave the seat in cash until the name cycles out and re-enters (static frame, no re-emission)",
+   "no_midcycle_rebalance": true,
+   "engine_warnings_n": 1,
+   "engine_warnings_sample": [
+    "commission guard: sell fill sz.000048 2020-09-01 notional 67847.00 > 50000 (commission 6.78; the 5-yuan minimum no longer binds)"
+   ]
+  },
+  "F3-ICW": {
+   "gate8": {
+    "mapped_rate": 0.802901023890785,
+    "filled": 746,
+    "rule_blocked": {
+     "below_min_lot": 0,
+     "void_no_position": 194,
+     "void_insufficient_cash": 1
+    },
+    "termination": {
+     "expiry": 50,
+     "override_same_name": 168,
+     "cap_void": 0,
+     "suspension_abandon": 13
+    },
+    "zero_emission": 5,
+    "expired_noop": 0,
+    "order_session": {
+     "buy": 0.039919738092723624,
+     "sell_risk": 0.042230892816157904,
+     "sell_profit": null
+    },
+    "decision_point_fill_share": {
+     "am": 0.49195710455764075,
+     "pm": 0.5080428954423593
+    }
+   },
+   "seat_vacancy_note": "buy intents that expire unfilled leave the seat in cash until the name cycles out and re-enters (static frame, no re-emission)",
+   "no_midcycle_rebalance": true,
+   "engine_warnings_n": 1,
+   "engine_warnings_sample": [
+    "commission guard: sell fill sz.000048 2020-09-01 notional 67847.00 > 50000 (commission 6.78; the 5-yuan minimum no longer binds)"
+   ]
+  }
+ },
+ "val_consumed": false,
+ "stop_note": "no arm passed all dev gates (0/2); val not consumed"
+}

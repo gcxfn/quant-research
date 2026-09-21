@@ -1,0 +1,59 @@
+{
+ "factor_id": "E09",
+ "name": "repo_ann20",
+ "formula": "20d 内有回购公告(0/1，无填 0)",
+ "source": "repurchase",
+ "fill_policy": "无事件填 0",
+ "n_rows": 236437,
+ "t_value": 1.4768383345295495,
+ "coverage_median_symbols": 3108.0,
+ "coverage_median_active_months": 3126.0,
+ "pool_median_symbols": 3126.0,
+ "criteria": {
+  "c1_abs_t>=2": false,
+  "c2_mono_consistent>=0.3": true,
+  "c3_2015_non_disaster": true,
+  "c4_coverage>=50%pool": true
+ },
+ "survived_prelim": false,
+ "eval": {
+  "n_dates": 59,
+  "coverage_mean_symbols": 3134.35593220339,
+  "ic_mean": 0.006221053327867461,
+  "ic_std": 0.03235615991227298,
+  "icir": 0.1922679744671357,
+  "ic_win_rate": 0.6101694915254238,
+  "group_mean_ret": [
+   0.008021901701452356,
+   -0.011540492243846606,
+   0.010586160049341622
+  ],
+  "long_short_mean": 0.002564258347889266,
+  "monotonicity": 0.42558641778046413,
+  "ic_by_year": {
+   "2016": -0.004687858541490928,
+   "2017": 0.01290628411739121,
+   "2018": 0.0008298440272415898,
+   "2019": 0.018830365260921588,
+   "2020": 0.0029544116341289743
+  },
+  "long_short_by_year": {
+   "2016": -0.014361130133026586,
+   "2017": 0.0021951457290497606,
+   "2018": 0.0026986290767873726,
+   "2019": 0.008125938261730449,
+   "2020": 0.0116995232901539
+  },
+  "turnover_top_group": 0.7646009139862144,
+  "corr_with_others": {},
+  "config": {
+   "horizon_days": 20,
+   "n_groups": 10,
+   "eval_freq": "M",
+   "exclude_st": true,
+   "require_trading": true,
+   "exclude_boards": true,
+   "min_history_rows": 60
+  }
+ }
+}

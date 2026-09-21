@@ -1,0 +1,28 @@
+== hashing inputs (fix-run pins) ==
+  p3r1_config: 9839ff079823bdd5
+  r16_config: 27f846a7330919a4
+  contract_doc: 1d3c5c1f398102ee
+  prereg_doc: ebb73059c4c5e6f9
+  daily_parquet: d9a63f4cc3032926
+  split_factor_h5: 2f436b2f13d09a9b
+  dividends_h5: 46121c09cddde72e
+  ex_cum_factor_h5_audit_only: 70df4aca64351858
+  stk_limit_batch aggregate: 3c53abf3b0c39b42 (2432 files)
+  pin contract_doc_sha256_16: True (computed 1d3c5c1f398102ee vs pinned 1d3c5c1f398102ee)
+  pin split_factor_sha256_16: True (computed 2f436b2f13d09a9b vs pinned 2f436b2f13d09a9b)
+  pin dividends_sha256_16: True (computed 46121c09cddde72e vs pinned 46121c09cddde72e)
+  pin r16_config_sha256_16: True (computed 27f846a7330919a4 vs pinned 27f846a7330919a4)
+  pin daily_parquet_sha256_16: True (computed d9a63f4cc3032926 vs pinned d9a63f4cc3032926)
+  pin ex_cum_factor_audit_sha256_16: True (computed 70df4aca64351858 vs pinned 70df4aca64351858)
+== running contract tests ==
+  pytest exit=0: ============================= 13 passed in 4.71s ============================== (5.4s)
+== hand-calc scenarios ==
+  A buy: verified (touch-no-fill, fill-at-p, lot sizing, commission, lag 2)
+  B sell: verified (re-anchor to prior close, stamp 0.1%, T+1 release)
+  C k3 fallback: verified (re-anchor, K=3 arm, open exit; limit_down 24.66 = F4)
+  D corp actions: verified (split 1.3 -> 1300, dividend 20.0/lot -> 200, F2 exact)
+  hand-calc-samples.md written (C corrected per F4; D documents the new corp-action line)
+== read-layer smoke (real files, read-only) ==
+  daily: 16344349 -> 16344349 rows, max date 2024-12-31
+  stk_limit: 2431 chunks -> 9705448 rows, 5742 symbols, max date 2024-12-31
+  ex_cum_factor (audit-only): 5914 keys -> 33933 rows, max date 2024-12-31

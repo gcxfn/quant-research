@@ -1,0 +1,43 @@
+{
+  "run_id": "20260921T100000-f3-validation-composite",
+  "experiment_id": "exp-20260921-f3-validation-rebuild",
+  "status": "failed_partial",
+  "created_at": "2026-09-21",
+  "window": {
+    "start": "2021-01-01",
+    "end": "2024-12-31",
+    "last_signal_month": "2024-11-30",
+    "future_data_used": false,
+    "reason_last_signal_month": "20-session horizon and frozen factor-evaluation convention"
+  },
+  "frozen_inputs": {
+    "representative_selection": "inherited from F2R1/F3R1; no reselection",
+    "direction_and_weights": "inherited development signs and abs(icir) ICW weights; no re-estimation",
+    "combination_config": "configs/experiments/f3r1-factor-combination.json",
+    "source_survivor_clusters": "artifacts/runs/20260920T190224-f2r1-rebuild-85e7f7e5/f3_inputs/f2r1_survivors_corr.csv",
+    "daily_panel": "data/processed/baostock-daily-20260917/daily_2015_2024.parquet"
+  },
+  "outputs": {
+    "A_price": {"factors_completed": 25, "rows_total": 5529898, "min_date": "2021-01-29", "max_date": "2024-11-29", "unique_key_check": "per-factor (symbol, signal_date) unique", "missing_check": "factor-level JSON written"},
+    "B_value": {"factors_completed": 15, "rows_total": 3301884, "min_date": "2021-01-29", "max_date": "2024-11-29", "unique_key_check": "per-factor (symbol, signal_date) unique", "missing_check": "factor-level JSON written"},
+    "C_micro": {"factors_completed": 0, "status": "not_started_output"},
+    "D_fund": {"factors_completed": 0, "status": "not_started_output"},
+    "E_event": {"factors_completed": 0, "status": "not_started_output"},
+    "F_xsec": {"factors_completed": 0, "status": "not_started_output"},
+    "composite": {"status": "not_generated"}
+  },
+  "blocking_evidence": {
+    "first_failure": "system Python: ModuleNotFoundError: No module named 'polars'",
+    "corrected_entrypoint": "D:/量化/.venv/Scripts/python.exe",
+    "second_failure": "C_micro started with .venv but exited without output or traceback; log file length 0; no C_micro parquet/json",
+    "interpretation": "process-level termination/resource failure is suspected; not treated as a successful factor computation"
+  },
+  "commands": [
+    "PYTHONPATH=src VAL_WINDOW=val .venv/Scripts/python.exe -X utf8 artifacts/runs/20260921T100000-f3-validation-composite/scripts/f2val_C_micro.py",
+    "PYTHONPATH=src VAL_WINDOW=val .venv/Scripts/python.exe -X utf8 artifacts/runs/20260921T100000-f3-validation-composite/scripts/f2val_D_fund.py",
+    "PYTHONPATH=src VAL_WINDOW=val .venv/Scripts/python.exe -X utf8 artifacts/runs/20260921T100000-f3-validation-composite/scripts/f2val_E_event.py",
+    "PYTHONPATH=src VAL_WINDOW=val .venv/Scripts/python.exe -X utf8 artifacts/runs/20260921T100000-f3-validation-composite/scripts/f2val_F_xsec.py"
+  ],
+  "code_and_data_identity": "See scripts/ and frozen input paths above; source data and history were not modified.",
+  "composite_gate": "BLOCKED: representative factor set is incomplete; no validation composite or performance conclusion is issued"
+}

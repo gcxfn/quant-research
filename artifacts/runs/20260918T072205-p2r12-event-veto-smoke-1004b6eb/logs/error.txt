@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "D:\量化\tools\run_p2r12_event_veto.py", line 433, in main
+    metrics = run_smoke(s, frames, calendar)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\tools\run_p2r12_event_veto.py", line 332, in run_smoke
+    metrics, matched = unit_c01(s, sub)
+                       ^^^^^^^^^^^^^^^^
+  File "D:\量化\tools\run_p2r12_event_veto.py", line 147, in unit_c01
+    matched, wcounts = ev.assign_window(matched, exit_col='exit10_date')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\p2r12_event_veto.py", line 840, in assign_window
+    out = out.with_columns(
+          ^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\dataframe\frame.py", line 10751, in with_columns
+    ._collect_eager(optimizations=QueryOptFlags._eager())
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\lazyframe\frame.py", line 2240, in _collect_eager
+    return _eager_engine().collect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\lazyframe\engine.py", line 443, in collect
+    return wrap_df(ldf.collect(self.name, callback))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: unable to find column "exit10_date"; valid columns: ["date", "symbol", "event_id", "pos", "float_pos", "magnitude", "d5", "q5", "ret5_event", "ret_event", "fwd10_event", "exit5_date_event", "exit10_date_event", "ctrl_symbol", "ret5_ctrl", "ret_ctrl", "fwd10_ctrl", "excess", "excess10", "window"]

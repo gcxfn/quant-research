@@ -1,0 +1,109 @@
+[     0.0s] env: {'python': '3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.26200-SP0', 'polars': '1.44.2', 'peak_rss_gb_so_far': 0.039}
+[     0.0s] --- stage read_fund_daily start
+[     0.0s] env: {'python': '3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.26200-SP0', 'polars': '1.44.2', 'peak_rss_gb_so_far': 0.039}
+[     0.0s] --- stage read_fund_daily start
+[     0.0s] chunk files: daily=1169 adj=1169
+[     2.3s] sha256 re-verification: all 2338 chunk files match batch manifests
+[     2.5s] fund_daily rows parsed: 1017121
+[     2.5s] --- stage read_fund_daily done in 2.46s
+[     2.5s] --- stage read_fund_adj start
+[     2.7s] fund_adj rows parsed: 1032863
+[     2.7s] --- stage read_fund_adj done in 0.17s
+[     2.7s] --- stage standardize start
+[     2.7s] out-of-window rows: 0 (of which 2025+: 0)
+[     2.8s] vwap unit check: checked=1017121 outside=9172 tiny_amount_lt_1k=3336 one_price_day=8094 severe=17
+[     0.0s] env: {'python': '3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.26200-SP0', 'polars': '1.44.2', 'peak_rss_gb_so_far': 0.039}
+[     0.0s] --- stage read_fund_daily start
+[     0.0s] chunk files: daily=1169 adj=1169
+[     1.4s] sha256 re-verification: all 2338 chunk files match batch manifests
+[     1.6s] fund_daily rows parsed: 1017121
+[     1.6s] --- stage read_fund_daily done in 1.57s
+[     1.6s] --- stage read_fund_adj start
+[     1.7s] fund_adj rows parsed: 1032863
+[     1.7s] --- stage read_fund_adj done in 0.14s
+[     1.7s] --- stage standardize start
+[     1.8s] out-of-window rows: 0 (of which 2025+: 0)
+[     1.8s] vwap unit check: checked=1017121 outside=9172 tiny_amount_lt_1k=3336 one_price_day=8094 rounding_dust_lt100yuan=0 severe_non_dust=17
+[     0.0s] env: {'python': '3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.26200-SP0', 'polars': '1.44.2', 'peak_rss_gb_so_far': 0.039}
+[     0.0s] --- stage read_fund_daily start
+[     0.0s] chunk files: daily=1169 adj=1169
+[     1.4s] sha256 re-verification: all 2338 chunk files match batch manifests
+[     1.6s] fund_daily rows parsed: 1017121
+[     1.6s] --- stage read_fund_daily done in 1.55s
+[     1.6s] --- stage read_fund_adj start
+[     1.7s] fund_adj rows parsed: 1032863
+[     1.7s] --- stage read_fund_adj done in 0.13s
+[     1.7s] --- stage standardize start
+[     1.7s] out-of-window rows: 0 (of which 2025+: 0)
+[     1.8s] vwap unit check: checked=1017121 outside=9172 tiny_amount_lt_1k=3336 one_price_day=8094 rounding_dust_lt100yuan=326 severe_non_dust=0
+[     1.9s] null cells per column: [0, 0, 0, 0, 0, 0, 0, 0, 0]
+[     1.9s] final rows: 1017121, date range 2015-01-05..2024-12-31
+[     1.9s] --- stage standardize done in 0.2s
+[     1.9s] --- stage preclose_check start
+[     0.0s] env: {'python': '3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.26200-SP0', 'polars': '1.44.2', 'peak_rss_gb_so_far': 0.039}
+[     0.0s] --- stage read_fund_daily start
+[     0.0s] chunk files: daily=1169 adj=1169
+[     1.4s] sha256 re-verification: all 2338 chunk files match batch manifests
+[     1.6s] fund_daily rows parsed: 1017121
+[     1.6s] --- stage read_fund_daily done in 1.61s
+[     1.6s] --- stage read_fund_adj start
+[     1.8s] fund_adj rows parsed: 1032863
+[     1.8s] --- stage read_fund_adj done in 0.14s
+[     1.8s] --- stage standardize start
+[     1.8s] out-of-window rows: 0 (of which 2025+: 0)
+[     1.9s] vwap unit check: checked=1017121 outside=9172 tiny_amount_lt_1k=3336 one_price_day=8094 rounding_dust_lt100yuan=326 severe_non_dust=0
+[     2.0s] null cells per column: [0, 0, 0, 0, 0, 0, 0, 0, 0]
+[     2.0s] final rows: 1017121, date range 2015-01-05..2024-12-31
+[     2.0s] --- stage standardize done in 0.2s
+[     2.0s] --- stage preclose_check start
+[     2.1s] preclose: compared=1015952 equal=1015457 mismatch=495 (0.049%) across 200 symbols; abs_diff p50/p90/p99/max = (0.06700000000000017, 1.5, 6.849, 91.499); max_rel=3.032986111111111; factor-jump-aligned=409
+[     2.1s] --- stage preclose_check done in 0.13s
+[     2.1s] --- stage adj_coverage start
+[     2.2s] adj coverage: symbols_no_factor=1 ['sz.159842']; symbols_partial=1; rows missing factor total=2120
+[     2.2s] --- stage adj_coverage done in 0.13s
+[     2.2s] --- stage pool start
+[     2.3s] asset_class counts: [{'asset_class': 'bond', 'len': 29}, {'asset_class': 'commodity', 'len': 16}, {'asset_class': 'cross_border', 'len': 151}, {'asset_class': 'equity', 'len': 939}, {'asset_class': 'money', 'len': 30}, {'asset_class': 'unknown', 'len': 4}]
+[     2.3s] asset_class x fund_type: {'bond|债券型': 29, 'commodity|其他': 10, 'commodity|股票型': 6, 'cross_border|股票型': 151, 'equity|其他': 5, 'equity|股票型': 934, 'money|货币型': 30, 'unknown|其他': 4}
+[     2.3s] delisted_in_window: 116
+[     2.3s] --- stage pool done in 0.05s
+[     2.3s] --- stage write_daily start
+[     2.3s] written daily_2015_2024.parquet rows=1017121
+[     2.3s] --- stage write_daily done in 0.05s
+[     2.3s] --- stage manifest start
+[     2.4s] SSE calendar days 2015-2024: 2431; symbols covering every calendar day: 29
+[     2.4s] --- stage manifest done in 0.06s
+[     2.4s] ALL DONE
+[     0.0s] env: {'python': '3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]', 'platform': 'Windows-10-10.0.26200-SP0', 'polars': '1.44.2', 'peak_rss_gb_so_far': 0.039}
+[     0.0s] --- stage read_fund_daily start
+[     0.0s] chunk files: daily=1169 adj=1169
+[     1.4s] sha256 re-verification: all 2338 chunk files match batch manifests
+[     1.6s] fund_daily rows parsed: 1017121
+[     1.6s] --- stage read_fund_daily done in 1.58s
+[     1.6s] --- stage read_fund_adj start
+[     1.7s] fund_adj rows parsed: 1032863
+[     1.7s] --- stage read_fund_adj done in 0.12s
+[     1.7s] --- stage standardize start
+[     1.7s] out-of-window rows: 0 (of which 2025+: 0)
+[     1.8s] vwap unit check: checked=1017121 outside=9172 tiny_amount_lt_1k=3336 one_price_day=8094 rounding_dust_lt100yuan=326 severe_non_dust=0
+[     1.9s] null cells per column: [0, 0, 0, 0, 0, 0, 0, 0, 0]
+[     1.9s] final rows: 1017121, date range 2015-01-05..2024-12-31
+[     1.9s] --- stage standardize done in 0.19s
+[     1.9s] --- stage preclose_check start
+[     2.0s] preclose: compared=1015952 equal=1015457 mismatch=495 (0.049%) across 200 symbols; abs_diff p50/p90/p99/max = (0.06700000000000017, 1.5, 6.849, 91.499); max_rel=3.032986111111111; factor-jump-aligned=409
+[     2.1s] --- stage preclose_check done in 0.13s
+[     2.1s] --- stage adj_coverage start
+[     2.1s] adj coverage: symbols_no_factor=1 ['sz.159842']; symbols_partial=1; rows missing factor total=2120
+[     2.2s] --- stage adj_coverage done in 0.11s
+[     2.2s] --- stage pool start
+[     2.2s] asset_class counts: [{'asset_class': 'bond', 'len': 29}, {'asset_class': 'commodity', 'len': 19}, {'asset_class': 'cross_border', 'len': 151}, {'asset_class': 'equity', 'len': 940}, {'asset_class': 'money', 'len': 30}]
+[     2.2s] asset_class x fund_type: {'bond|债券型': 29, 'commodity|其他': 19, 'cross_border|股票型': 151, 'equity|股票型': 940, 'money|货币型': 30}
+[     2.2s] status: {'D': 128, 'L': 1041}; delist breakdown: {'delist_date_present': 127, 'delist_date_in_window': 116, 'delist_date_after_2024_12_31': 11, 'status_D_without_delist_date': 1}
+[     2.2s] delisted_in_window: 116
+[     2.2s] --- stage pool done in 0.05s
+[     2.2s] --- stage write_daily start
+[     2.3s] written daily_2015_2024.parquet rows=1017121
+[     2.3s] --- stage write_daily done in 0.05s
+[     2.3s] --- stage manifest start
+[     2.3s] SSE calendar days 2015-2024: 2431; symbols covering every calendar day: 29
+[     2.3s] --- stage manifest done in 0.07s
+[     2.3s] ALL DONE

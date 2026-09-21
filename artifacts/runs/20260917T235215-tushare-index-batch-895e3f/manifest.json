@@ -1,0 +1,75 @@
+{
+ "run_id": "20260917T235215-tushare-index-batch-895e3f",
+ "task": "tushare index_daily 批次拉取与 raw 登记（5 个宽基指数，20150101-20241231 硬边界，2025+ 未拉取）",
+ "status": "completed",
+ "started_at": "2026-09-17T23:52:15",
+ "finished_at": "2026-09-17T23:58:28",
+ "duration_seconds": 373,
+ "commands": [
+  "D:/量化/.venv/Scripts/python.exe -X utf8 artifacts/runs/20260917T235215-tushare-index-batch-895e3f/fetch_index_daily.py",
+  "D:/量化/.venv/Scripts/python.exe -X utf8 artifacts/runs/20260917T235215-tushare-index-batch-895e3f/verify_and_register.py"
+ ],
+ "token_file": "~/.quant-credentials/tushare-token (name only; content never logged or written; leak check on all new/updated files: 0 matches)",
+ "environment": {
+  "python": "3.11.15",
+  "tushare": "1.4.29",
+  "pandas": "2.3.3",
+  "platform": "win32 / Windows 10.0.26200 x64 / Git Bash"
+ },
+ "inputs": {
+  "api": "tushare pro index_daily（逐年 2015-2024 调用，每指数 10 次调用合并）",
+  "indices": ["000001.SH", "000300.SH", "000905.SH", "000852.SH", "399006.SZ"],
+  "range": ["20150101", "20241231"],
+  "trade_cal_reference": "data/raw/tushare/trade_cal/20260909-r1（SSE，is_open=1）"
+ },
+ "probe": {
+  "ts_code": "000300.SH",
+  "request": "index_daily 20260901-20260917",
+  "result": "OK，返回 5 个交易日（20260911-20260917），指数接口权限正常",
+  "note": "探针数据仅验证权限，未落盘"
+ },
+ "outputs": {
+  "batch_dir": "data/raw/tushare/index_daily/20260917-r1",
+  "files": [
+   "chunk_000001.SH.csv",
+   "chunk_000300.SH.csv",
+   "chunk_000905.SH.csv",
+   "chunk_000852.SH.csv",
+   "chunk_399006.SZ.csv",
+   "manifest.json"
+  ],
+  "bytes_total": 1354204,
+  "integrity": "SHA-256 见 data/_meta/sha256.tsv 追加的 6 行"
+ },
+ "verification_summary": {
+  "rows_per_index": 2431,
+  "date_range": ["20150105", "20241231"],
+  "close_non_null_rate": 1.0,
+  "trade_cal_days_2015_2024": 2431,
+  "missing_vs_trade_cal": 0,
+  "extra_vs_trade_cal": 0,
+  "duplicate_dates": 0,
+  "spot_checks_000300.SH": [
+   {"trade_date": "20240930", "close": "4017.8545"},
+   {"trade_date": "20150612", "close": "5335.1151"},
+   {"trade_date": "20200709", "close": "4840.7712"}
+  ]
+ },
+ "ledger_changes": {
+  "sha256.tsv": "追加 6 行（143659 -> 143665），既有行未改动",
+  "inventory.json": "追加 1 条目（1091 -> 1092 batches），既有内容未改动；变更前快照 inventory.json.pre-append.bak",
+  "既有批次": "未改动"
+ },
+ "scripts": [
+  "fetch_index_daily.py",
+  "verify_and_register.py"
+ ],
+ "logs": [
+  "console_probe_pull.log",
+  "console_verify.log"
+ ],
+ "notes": [
+  "399006.SZ 为 SZSE 指数，交易日覆盖比对使用本地 SSE trade_cal 作参考（现有台账仅有 SSE 日历），比对结果缺口为 0。",
+  "2025-01-01 及以后冻结未拉取；批次仅用于第一阶段研究范围 2015-2024。"
+ ]
+}

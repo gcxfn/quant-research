@@ -1,0 +1,1462 @@
+{
+ "run_id": "20260920T030215-f4r2-notp-f3b1",
+ "experiment_id": "exp-20260920-zone-sheet-f4r2",
+ "scope": "FULL DEV 2015-01-05..2020-12-31, two arms (F4R2-D1 stop-only, F4R2-D2 widened 4/5-sigma TP) + F4R2-A0 anchor; eight frozen gates carried verbatim from F4R1 prereg sec 2 (per F4R2 prereg sec 2)",
+ "started_at_utc": "1970-01-01T15:25:25.553019+00:00",
+ "ended_at_utc": "2026-09-19T19:51:22.731871+00:00",
+ "wall_seconds": 45.1155851999938,
+ "peak_rss_gb": 3.783049216,
+ "engine": {
+  "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+  "sha256_at_start": "a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3",
+  "sha256_at_end": "a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3",
+  "sha256_pin_expected": "a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3",
+  "bytes_modified_by_this_run": false,
+  "version": "v1.4.1 (pin a01cb29c...; zones mode, tp1 optional per contract sec 10.8)"
+ },
+ "dev_window": {
+  "start": "2015-01-05",
+  "end": "2020-12-31",
+  "signal_days": 71,
+  "val_policy": "2021-2024 zero contact (hard filters)"
+ },
+ "anchors": {
+  "b1m_net_cagr": 0.0059905923579064435,
+  "b1m_max_drawdown": -0.3982378364862026,
+  "b3prime_t20040": -0.01991746425477723,
+  "b1m_path": "T200-40",
+  "match_vs_frozen": true,
+  "source": "R16 metrics.json configs.C05 verbatim (F3R3 convention)"
+ },
+ "gate_definitions": {
+  "1": "net CAGR > 0",
+  "2": "excess vs B1(m) >= +2pp",
+  "3": "advantage years >= 5 of 6 (vs B1(m) year returns)",
+  "4": "|maxDD| <= 20% AND <= |B1(m) maxDD|",
+  "5": "max one-side turnover <= 6 (buy notional / mean equity, per year)",
+  "6": "max single-name weight <= 40% (daily, official closes)",
+  "7": "net CAGR >= B3'(T200-40) + 1pp",
+  "8": "v1.4 delivery: (k3 fallback fills + armed-then-self fills) / armed >= 99%; stuck == 0 hard assert; TP/buy expiries excluded"
+ },
+ "parameters": {
+  "K": 10,
+  "top_2k": 20,
+  "ind_cap": 2,
+  "buffer_mult": 2,
+  "stop_mult": 3.0,
+  "invalid_mult": 3.5,
+  "ladder_offsets": "0.5,1.5,2.5",
+  "ladder_fracs": "0.4,0.4,0.2",
+  "tp_D1": "DISABLED (zero-tier: null tp1/tp2, v1.4.1 contract sec 10.8; F4R2-S1 adjudicated form)",
+  "tp_D2": "tp1 4.0/0.5 + tp2 5.0/1.0 (config zones_D2; F4R2-S2 designed 2x widening)",
+  "w_T_both_arms": 0.06,
+  "initial_cash_arms": 500000.0,
+  "initial_cash_anchor": 200000.0,
+  "zone_priority_base": 1000,
+  "sigma_lookback_returns": 20,
+  "sigma_ddof": 1,
+  "sigma_closes": "21 official closes incl. signal day"
+ },
+ "metrics": {
+  "F4R2-D1": {
+   "net_cagr": 0.021390335138548267,
+   "net_total_return": 0.13510809009674984,
+   "max_drawdown": -0.17088666384585538,
+   "b1m_net_cagr": 0.0059905923579064435,
+   "b1m_max_drawdown": -0.3982378364862026,
+   "b1m_net_return_by_year": {
+    "2015": 0.22735356961586017,
+    "2016": -0.036271319473570096,
+    "2017": -0.11258228102926204,
+    "2018": -0.1962740727688722,
+    "2019": 0.12375649932752708,
+    "2020": 0.09319791239431541
+   },
+   "b1m_source": "R16 metrics.json configs.C05 verbatim (T200-40/rate_only; family anchor)",
+   "b3prime_path": "T200-40",
+   "excess_vs_b1m": 0.015399742780641823,
+   "net_return_by_year": {
+    "2015": 0.02927041915900719,
+    "2016": 0.05864259421591478,
+    "2017": -0.013706964484661133,
+    "2018": -0.06473480640397766,
+    "2019": 0.1098666805315518,
+    "2020": 0.017529037292794092
+   },
+   "advantage_years_list": [
+    2016,
+    2017,
+    2018
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 3091658.6679491494,
+     "mean_equity": 519035.4460164968,
+     "one_side_turnover": 5.956546304644646
+    },
+    "2016": {
+     "buy_notional": 3378719.287631137,
+     "mean_equity": 540072.8821019096,
+     "one_side_turnover": 6.256043211207901
+    },
+    "2017": {
+     "buy_notional": 3510731.0449505746,
+     "mean_equity": 545792.2579631342,
+     "one_side_turnover": 6.432357721695108
+    },
+    "2018": {
+     "buy_notional": 3359352.604561283,
+     "mean_equity": 522730.83094452193,
+     "one_side_turnover": 6.4265438456944874
+    },
+    "2019": {
+     "buy_notional": 3599011.2361891735,
+     "mean_equity": 534440.1560005175,
+     "one_side_turnover": 6.734170693913367
+    },
+    "2020": {
+     "buy_notional": 4175188.090302068,
+     "mean_equity": 568801.508249296,
+     "one_side_turnover": 7.340325279995836
+    }
+   },
+   "max_one_side_turnover": 7.340325279995836,
+   "max_single_name_weight": 0.280788704540311,
+   "goal_dev_net_cagr_ge_10pct": false,
+   "gate8_v14_final_delivery": {
+    "armed": 56,
+    "k3_fallback_fills": 56,
+    "armed_then_self_fills": 0,
+    "stuck_final": 0,
+    "final_delivery_rate": 1.0,
+    "delivered": 56,
+    "gate_pass": true,
+    "problems": [],
+    "ledger_walk": {
+     "cases": 56,
+     "fallback": 56,
+     "self": 0,
+     "stuck": 0
+    },
+    "ledger_cases": [
+     {
+      "symbol": "sz.000703",
+      "armed_at": "2015-04-14 pm",
+      "detail": "sz.000703: 1100 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2015-04-14 pm"
+      ],
+      "resolved": "k3_fallback@2015-04-15 am"
+     },
+     {
+      "symbol": "sz.000619",
+      "armed_at": "2015-04-20 pm",
+      "detail": "sz.000619: 500 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2015-04-20 pm"
+      ],
+      "resolved": "k3_fallback@2015-04-21 am"
+     },
+     {
+      "symbol": "sz.002537",
+      "armed_at": "2015-05-15 am",
+      "detail": "sz.002537: 800 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2015-05-15 am",
+       "market_exit_deferred_t1locked@2015-05-15 pm"
+      ],
+      "resolved": "k3_fallback@2015-05-18 am"
+     },
+     {
+      "symbol": "sz.002563",
+      "armed_at": "2015-09-25 am",
+      "detail": "sz.002563: 500 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2015-09-25 am",
+       "market_exit_deferred_t1locked@2015-09-25 pm"
+      ],
+      "resolved": "k3_fallback@2015-09-28 am"
+     },
+     {
+      "symbol": "sh.600062",
+      "armed_at": "2016-04-20 pm",
+      "detail": "sh.600062: 700 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2016-04-20 pm"
+      ],
+      "resolved": "k3_fallback@2016-04-21 am"
+     },
+     {
+      "symbol": "sh.600529",
+      "armed_at": "2016-04-20 pm",
+      "detail": "sh.600529: 800 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2016-04-20 pm"
+      ],
+      "resolved": "k3_fallback@2016-04-21 am"
+     },
+     {
+      "symbol": "sh.601231",
+      "armed_at": "2016-04-20 pm",
+      "detail": "sh.601231: 1200 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2016-04-20 pm"
+      ],
+      "resolved": "k3_fallback@2016-04-21 am"
+     },
+     {
+      "symbol": "sz.000665",
+      "armed_at": "2016-04-20 pm",
+      "detail": "sz.000665: 800 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2016-04-20 pm"
+      ],
+      "resolved": "k3_fallback@2016-04-21 am"
+     },
+     {
+      "symbol": "sz.002062",
+      "armed_at": "2016-04-20 pm",
+      "detail": "sz.002062: 1600 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2016-04-20 pm"
+      ],
+      "resolved": "k3_fallback@2016-04-21 am"
+     },
+     {
+      "symbol": "sh.600827",
+      "armed_at": "2016-05-06 pm",
+      "detail": "sh.600827: 900 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2016-05-06 pm"
+      ],
+      "resolved": "k3_fallback@2016-05-09 am"
+     },
+     {
+      "symbol": "sh.600827",
+      "armed_at": "2016-07-27 pm",
+      "detail": "sh.600827: 1000 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2016-07-27 pm"
+      ],
+      "resolved": "k3_fallback@2016-07-28 am"
+     },
+     {
+      "symbol": "sh.600881",
+      "armed_at": "2016-07-27 pm",
+      "detail": "sh.600881: 2600 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2016-07-27 pm"
+      ],
+      "resolved": "k3_fallback@2016-07-28 am"
+     },
+     {
+      "symbol": "sz.002458",
+      "armed_at": "2016-09-02 pm",
+      "detail": "sz.002458: 200 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2016-09-02 pm"
+      ],
+      "resolved": "k3_fallback@2016-09-05 am"
+     },
+     {
+      "symbol": "sh.603003",
+      "armed_at": "2016-11-23 pm",
+      "detail": "sh.603003: 600 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2016-11-23 pm"
+      ],
+      "resolved": "k3_fallback@2016-11-24 am"
+     },
+     {
+      "symbol": "sz.002626",
+      "armed_at": "2016-12-02 pm",
+      "detail": "sz.002626: 800 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2016-12-02 pm"
+      ],
+      "resolved": "k3_fallback@2016-12-05 am"
+     },
+     {
+      "symbol": "sz.002091",
+      "armed_at": "2017-01-16 pm",
+      "detail": "sz.002091: 900 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2017-01-16 pm"
+      ],
+      "resolved": "k3_fallback@2017-01-17 am"
+     },
+     {
+      "symbol": "sz.002369",
+      "armed_at": "2017-01-16 pm",
+      "detail": "sz.002369: 1200 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2017-01-16 pm"
+      ],
+      "resolved": "k3_fallback@2017-01-17 am"
+     },
+     {
+      "symbol": "sz.002458",
+      "armed_at": "2017-01-16 pm",
+      "detail": "sz.002458: 300 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2017-01-16 pm"
+      ],
+      "resolved": "k3_fallback@2017-01-17 am"
+     },
+     {
+      "symbol": "sh.600846",
+      "armed_at": "2017-04-14 pm",
+      "detail": "sh.600846: 700 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2017-04-14 pm"
+      ],
+      "resolved": "k3_fallback@2017-04-17 am"
+     },
+     {
+      "symbol": "sh.601898",
+      "armed_at": "2017-06-23 pm",
+      "detail": "sh.601898: 2400 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2017-06-23 pm"
+      ],
+      "resolved": "k3_fallback@2017-06-26 am"
+     },
+     {
+      "symbol": "sh.600123",
+      "armed_at": "2017-07-17 pm",
+      "detail": "sh.600123: 4200 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2017-07-17 pm"
+      ],
+      "resolved": "k3_fallback@2017-07-18 am"
+     },
+     {
+      "symbol": "sh.600694",
+      "armed_at": "2017-11-17 pm",
+      "detail": "sh.600694: 300 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2017-11-17 pm"
+      ],
+      "resolved": "k3_fallback@2017-11-20 am"
+     },
+     {
+      "symbol": "sz.000415",
+      "armed_at": "2017-12-04 pm",
+      "detail": "sz.000415: 2200 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2017-12-04 pm"
+      ],
+      "resolved": "k3_fallback@2017-12-05 am"
+     },
+     {
+      "symbol": "sz.000666",
+      "armed_at": "2018-01-29 pm",
+      "detail": "sz.000666: 600 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-01-29 pm"
+      ],
+      "resolved": "k3_fallback@2018-01-30 am"
+     },
+     {
+      "symbol": "sh.600765",
+      "armed_at": "2018-01-31 pm",
+      "detail": "sh.600765: 1000 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-01-31 pm"
+      ],
+      "resolved": "k3_fallback@2018-02-01 am"
+     },
+     {
+      "symbol": "sh.600742",
+      "armed_at": "2018-03-23 pm",
+      "detail": "sh.600742: 700 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-03-23 pm"
+      ],
+      "resolved": "k3_fallback@2018-03-26 am"
+     },
+     {
+      "symbol": "sh.600827",
+      "armed_at": "2018-03-23 pm",
+      "detail": "sh.600827: 1000 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-03-23 pm"
+      ],
+      "resolved": "k3_fallback@2018-03-26 am"
+     },
+     {
+      "symbol": "sz.000685",
+      "armed_at": "2018-03-23 pm",
+      "detail": "sz.000685: 1200 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-03-23 pm"
+      ],
+      "resolved": "k3_fallback@2018-03-26 am"
+     },
+     {
+      "symbol": "sz.002562",
+      "armed_at": "2018-05-29 am",
+      "detail": "sz.002562: 600 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-05-29 am",
+       "market_exit_deferred_t1locked@2018-05-29 pm"
+      ],
+      "resolved": "k3_fallback@2018-05-30 am"
+     },
+     {
+      "symbol": "sh.601901",
+      "armed_at": "2018-05-30 pm",
+      "detail": "sh.601901: 2100 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-05-30 pm"
+      ],
+      "resolved": "k3_fallback@2018-05-31 am"
+     },
+     {
+      "symbol": "sz.000901",
+      "armed_at": "2018-06-05 am",
+      "detail": "sz.000901: 300 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-06-05 am",
+       "market_exit_deferred_t1locked@2018-06-05 pm"
+      ],
+      "resolved": "k3_fallback@2018-06-06 am"
+     },
+     {
+      "symbol": "sz.000156",
+      "armed_at": "2018-08-02 pm",
+      "detail": "sz.000156: 1900 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-08-02 pm"
+      ],
+      "resolved": "k3_fallback@2018-08-03 am"
+     },
+     {
+      "symbol": "sz.000951",
+      "armed_at": "2018-08-02 pm",
+      "detail": "sz.000951: 1500 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-08-02 pm"
+      ],
+      "resolved": "k3_fallback@2018-08-03 am"
+     },
+     {
+      "symbol": "sz.000975",
+      "armed_at": "2018-08-02 pm",
+      "detail": "sz.000975: 1300 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-08-02 pm"
+      ],
+      "resolved": "k3_fallback@2018-08-03 am"
+     },
+     {
+      "symbol": "sh.600093",
+      "armed_at": "2018-08-30 pm",
+      "detail": "sh.600093: 1200 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-08-30 pm"
+      ],
+      "resolved": "k3_fallback@2018-08-31 am"
+     },
+     {
+      "symbol": "sh.600637",
+      "armed_at": "2018-11-23 pm",
+      "detail": "sh.600637: 1300 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-11-23 pm"
+      ],
+      "resolved": "k3_fallback@2018-11-26 am"
+     },
+     {
+      "symbol": "sh.601588",
+      "armed_at": "2018-11-23 pm",
+      "detail": "sh.601588: 4400 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-11-23 pm"
+      ],
+      "resolved": "k3_fallback@2018-11-26 am"
+     },
+     {
+      "symbol": "sz.002020",
+      "armed_at": "2018-12-06 pm",
+      "detail": "sz.002020: 1200 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-12-06 pm"
+      ],
+      "resolved": "k3_fallback@2018-12-07 am"
+     },
+     {
+      "symbol": "sz.002737",
+      "armed_at": "2018-12-06 pm",
+      "detail": "sz.002737: 700 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-12-06 pm"
+      ],
+      "resolved": "k3_fallback@2018-12-07 am"
+     },
+     {
+      "symbol": "sz.002585",
+      "armed_at": "2019-02-15 pm",
+      "detail": "sz.002585: 2300 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2019-02-15 pm"
+      ],
+      "resolved": "k3_fallback@2019-02-18 am"
+     },
+     {
+      "symbol": "sh.600348",
+      "armed_at": "2019-02-26 pm",
+      "detail": "sh.600348: 2300 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2019-02-26 pm"
+      ],
+      "resolved": "k3_fallback@2019-02-27 am"
+     },
+     {
+      "symbol": "sz.002745",
+      "armed_at": "2019-02-27 pm",
+      "detail": "sz.002745: 500 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2019-02-27 pm"
+      ],
+      "resolved": "k3_fallback@2019-02-28 am"
+     },
+     {
+      "symbol": "sz.000778",
+      "armed_at": "2019-02-28 pm",
+      "detail": "sz.000778: 1400 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2019-02-28 pm"
+      ],
+      "resolved": "k3_fallback@2019-03-01 am"
+     },
+     {
+      "symbol": "sz.000703",
+      "armed_at": "2019-03-08 pm",
+      "detail": "sz.000703: 400 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2019-03-08 pm"
+      ],
+      "resolved": "k3_fallback@2019-03-11 am"
+     },
+     {
+      "symbol": "sz.002850",
+      "armed_at": "2019-04-25 pm",
+      "detail": "sz.002850: 500 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2019-04-25 pm"
+      ],
+      "resolved": "k3_fallback@2019-04-26 am"
+     },
+     {
+      "symbol": "sz.002309",
+      "armed_at": "2019-06-17 pm",
+      "detail": "sz.002309: 1600 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2019-06-17 pm"
+      ],
+      "resolved": "k3_fallback@2019-06-18 am"
+     },
+     {
+      "symbol": "sh.600810",
+      "armed_at": "2019-07-18 am",
+      "detail": "sh.600810: 600 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2019-07-18 am",
+       "market_exit_deferred_t1locked@2019-07-18 pm"
+      ],
+      "resolved": "k3_fallback@2019-07-19 am"
+     },
+     {
+      "symbol": "sz.000921",
+      "armed_at": "2019-10-29 pm",
+      "detail": "sz.000921: 1600 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2019-10-29 pm"
+      ],
+      "resolved": "k3_fallback@2019-10-30 am"
+     },
+     {
+      "symbol": "sz.002092",
+      "armed_at": "2019-11-11 pm",
+      "detail": "sz.002092: 2000 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2019-11-11 pm"
+      ],
+      "resolved": "k3_fallback@2019-11-12 am"
+     },
+     {
+      "symbol": "sh.600909",
+      "armed_at": "2019-12-23 pm",
+      "detail": "sh.600909: 4200 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2019-12-23 pm"
+      ],
+      "resolved": "k3_fallback@2019-12-24 am"
+     },
+     {
+      "symbol": "sz.002796",
+      "armed_at": "2019-12-23 pm",
+      "detail": "sz.002796: 400 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2019-12-23 pm"
+      ],
+      "resolved": "k3_fallback@2019-12-24 am"
+     },
+     {
+      "symbol": "sh.600835",
+      "armed_at": "2020-01-06 pm",
+      "detail": "sh.600835: 800 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2020-01-06 pm"
+      ],
+      "resolved": "k3_fallback@2020-01-07 am"
+     },
+     {
+      "symbol": "sz.002312",
+      "armed_at": "2020-07-10 pm",
+      "detail": "sz.002312: 1400 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2020-07-10 pm"
+      ],
+      "resolved": "k3_fallback@2020-07-13 am"
+     },
+     {
+      "symbol": "sh.600928",
+      "armed_at": "2020-07-24 pm",
+      "detail": "sh.600928: 5000 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2020-07-24 pm"
+      ],
+      "resolved": "k3_fallback@2020-07-27 am"
+     },
+     {
+      "symbol": "sh.603258",
+      "armed_at": "2020-12-09 pm",
+      "detail": "sh.603258: 400 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2020-12-09 pm"
+      ],
+      "resolved": "k3_fallback@2020-12-10 am"
+     },
+     {
+      "symbol": "sh.603661",
+      "armed_at": "2020-12-11 pm",
+      "detail": "sh.603661: 200 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2020-12-11 pm"
+      ],
+      "resolved": "k3_fallback@2020-12-14 am"
+     }
+    ],
+    "excluded_from_denominator": {
+     "tp_expired_sessions": 0,
+     "tier_expired": 698,
+     "tier_invalidated": 323
+    },
+    "caliber": "v1.4 (contract sec 10.1-5): armed = stop triggered but unfilled carryovers (T+1/suspension); numerator = k3 fallback fills + armed-then-self fills; >=99%; stuck==0 hard assert; TP/buy expiries excluded"
+   },
+   "k3_fallback_comparison": {
+    "armed_total": 2,
+    "executed_total": 58,
+    "note": "engine-wide K=3 counter incl. ETF-leg risk rows; gate 8 v1.4 uses the ZONE stop counters only"
+   }
+  },
+  "F4R2-D2": {
+   "net_cagr": 0.014398451816687974,
+   "net_total_return": 0.08936890494467042,
+   "max_drawdown": -0.1405678134873123,
+   "b1m_net_cagr": 0.0059905923579064435,
+   "b1m_max_drawdown": -0.3982378364862026,
+   "b1m_net_return_by_year": {
+    "2015": 0.22735356961586017,
+    "2016": -0.036271319473570096,
+    "2017": -0.11258228102926204,
+    "2018": -0.1962740727688722,
+    "2019": 0.12375649932752708,
+    "2020": 0.09319791239431541
+   },
+   "b1m_source": "R16 metrics.json configs.C05 verbatim (T200-40/rate_only; family anchor)",
+   "b3prime_path": "T200-40",
+   "excess_vs_b1m": 0.00840785945878153,
+   "net_return_by_year": {
+    "2015": 0.04634223708133067,
+    "2016": 0.04739971842916235,
+    "2017": -0.02268341802484697,
+    "2018": -0.06261260913569255,
+    "2019": 0.07239772969989278,
+    "2020": 0.011762327136330075
+   },
+   "advantage_years_list": [
+    2016,
+    2017,
+    2018
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 3141784.3432034836,
+     "mean_equity": 520204.27899757895,
+     "one_side_turnover": 6.039520376990413
+    },
+    "2016": {
+     "buy_notional": 3597646.2120058285,
+     "mean_equity": 542821.6102956763,
+     "one_side_turnover": 6.627676834837474
+    },
+    "2017": {
+     "buy_notional": 3489972.6289560124,
+     "mean_equity": 545782.1293697819,
+     "one_side_turnover": 6.394442839280769
+    },
+    "2018": {
+     "buy_notional": 3315481.060703332,
+     "mean_equity": 522364.7803335972,
+     "one_side_turnover": 6.347060876856917
+    },
+    "2019": {
+     "buy_notional": 3458999.7640893385,
+     "mean_equity": 525415.3446327794,
+     "one_side_turnover": 6.5833626661720075
+    },
+    "2020": {
+     "buy_notional": 3886767.9626557315,
+     "mean_equity": 545530.3175736945,
+     "one_side_turnover": 7.124751526079348
+    }
+   },
+   "max_one_side_turnover": 7.124751526079348,
+   "max_single_name_weight": 0.2803537075061627,
+   "goal_dev_net_cagr_ge_10pct": false,
+   "gate8_v14_final_delivery": {
+    "armed": 37,
+    "k3_fallback_fills": 37,
+    "armed_then_self_fills": 0,
+    "stuck_final": 0,
+    "final_delivery_rate": 1.0,
+    "delivered": 37,
+    "gate_pass": true,
+    "problems": [],
+    "ledger_walk": {
+     "cases": 37,
+     "fallback": 37,
+     "self": 0,
+     "stuck": 0
+    },
+    "ledger_cases": [
+     {
+      "symbol": "sz.002563",
+      "armed_at": "2015-09-25 am",
+      "detail": "sz.002563: 500 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2015-09-25 am",
+       "market_exit_deferred_t1locked@2015-09-25 pm"
+      ],
+      "resolved": "k3_fallback@2015-09-28 am"
+     },
+     {
+      "symbol": "sh.600021",
+      "armed_at": "2016-01-04 pm",
+      "detail": "sh.600021: 2000 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2016-01-04 pm"
+      ],
+      "resolved": "k3_fallback@2016-01-05 am"
+     },
+     {
+      "symbol": "sh.600529",
+      "armed_at": "2016-04-20 pm",
+      "detail": "sh.600529: 800 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2016-04-20 pm"
+      ],
+      "resolved": "k3_fallback@2016-04-21 am"
+     },
+     {
+      "symbol": "sh.601231",
+      "armed_at": "2016-04-20 pm",
+      "detail": "sh.601231: 1200 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2016-04-20 pm"
+      ],
+      "resolved": "k3_fallback@2016-04-21 am"
+     },
+     {
+      "symbol": "sz.000665",
+      "armed_at": "2016-04-20 pm",
+      "detail": "sz.000665: 800 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2016-04-20 pm"
+      ],
+      "resolved": "k3_fallback@2016-04-21 am"
+     },
+     {
+      "symbol": "sz.002062",
+      "armed_at": "2016-04-20 pm",
+      "detail": "sz.002062: 1600 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2016-04-20 pm"
+      ],
+      "resolved": "k3_fallback@2016-04-21 am"
+     },
+     {
+      "symbol": "sh.600827",
+      "armed_at": "2016-05-06 pm",
+      "detail": "sh.600827: 900 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2016-05-06 pm"
+      ],
+      "resolved": "k3_fallback@2016-05-09 am"
+     },
+     {
+      "symbol": "sh.600827",
+      "armed_at": "2016-07-27 pm",
+      "detail": "sh.600827: 1000 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2016-07-27 pm"
+      ],
+      "resolved": "k3_fallback@2016-07-28 am"
+     },
+     {
+      "symbol": "sh.600881",
+      "armed_at": "2016-07-27 pm",
+      "detail": "sh.600881: 2600 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2016-07-27 pm"
+      ],
+      "resolved": "k3_fallback@2016-07-28 am"
+     },
+     {
+      "symbol": "sz.002626",
+      "armed_at": "2016-12-02 pm",
+      "detail": "sz.002626: 800 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2016-12-02 pm"
+      ],
+      "resolved": "k3_fallback@2016-12-05 am"
+     },
+     {
+      "symbol": "sz.002091",
+      "armed_at": "2017-01-16 pm",
+      "detail": "sz.002091: 900 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2017-01-16 pm"
+      ],
+      "resolved": "k3_fallback@2017-01-17 am"
+     },
+     {
+      "symbol": "sz.002369",
+      "armed_at": "2017-01-16 pm",
+      "detail": "sz.002369: 1200 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2017-01-16 pm"
+      ],
+      "resolved": "k3_fallback@2017-01-17 am"
+     },
+     {
+      "symbol": "sz.002458",
+      "armed_at": "2017-01-16 pm",
+      "detail": "sz.002458: 300 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2017-01-16 pm"
+      ],
+      "resolved": "k3_fallback@2017-01-17 am"
+     },
+     {
+      "symbol": "sh.600846",
+      "armed_at": "2017-04-14 pm",
+      "detail": "sh.600846: 700 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2017-04-14 pm"
+      ],
+      "resolved": "k3_fallback@2017-04-17 am"
+     },
+     {
+      "symbol": "sh.603703",
+      "armed_at": "2017-06-21 pm",
+      "detail": "sh.603703: 800 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2017-06-21 pm"
+      ],
+      "resolved": "k3_fallback@2017-06-22 am"
+     },
+     {
+      "symbol": "sh.600694",
+      "armed_at": "2017-11-17 pm",
+      "detail": "sh.600694: 300 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2017-11-17 pm"
+      ],
+      "resolved": "k3_fallback@2017-11-20 am"
+     },
+     {
+      "symbol": "sz.000415",
+      "armed_at": "2017-12-04 pm",
+      "detail": "sz.000415: 2200 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2017-12-04 pm"
+      ],
+      "resolved": "k3_fallback@2017-12-05 am"
+     },
+     {
+      "symbol": "sz.000666",
+      "armed_at": "2018-01-29 pm",
+      "detail": "sz.000666: 600 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-01-29 pm"
+      ],
+      "resolved": "k3_fallback@2018-01-30 am"
+     },
+     {
+      "symbol": "sh.600742",
+      "armed_at": "2018-03-23 pm",
+      "detail": "sh.600742: 700 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-03-23 pm"
+      ],
+      "resolved": "k3_fallback@2018-03-26 am"
+     },
+     {
+      "symbol": "sh.600827",
+      "armed_at": "2018-03-23 pm",
+      "detail": "sh.600827: 1000 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-03-23 pm"
+      ],
+      "resolved": "k3_fallback@2018-03-26 am"
+     },
+     {
+      "symbol": "sz.000685",
+      "armed_at": "2018-03-23 pm",
+      "detail": "sz.000685: 1200 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-03-23 pm"
+      ],
+      "resolved": "k3_fallback@2018-03-26 am"
+     },
+     {
+      "symbol": "sz.000901",
+      "armed_at": "2018-06-05 am",
+      "detail": "sz.000901: 300 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-06-05 am",
+       "market_exit_deferred_t1locked@2018-06-05 pm"
+      ],
+      "resolved": "k3_fallback@2018-06-06 am"
+     },
+     {
+      "symbol": "sz.000156",
+      "armed_at": "2018-08-02 pm",
+      "detail": "sz.000156: 1900 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-08-02 pm"
+      ],
+      "resolved": "k3_fallback@2018-08-03 am"
+     },
+     {
+      "symbol": "sz.000975",
+      "armed_at": "2018-08-02 pm",
+      "detail": "sz.000975: 1300 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-08-02 pm"
+      ],
+      "resolved": "k3_fallback@2018-08-03 am"
+     },
+     {
+      "symbol": "sh.601588",
+      "armed_at": "2018-11-23 pm",
+      "detail": "sh.601588: 4400 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-11-23 pm"
+      ],
+      "resolved": "k3_fallback@2018-11-26 am"
+     },
+     {
+      "symbol": "sz.002020",
+      "armed_at": "2018-12-06 pm",
+      "detail": "sz.002020: 1200 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-12-06 pm"
+      ],
+      "resolved": "k3_fallback@2018-12-07 am"
+     },
+     {
+      "symbol": "sz.002737",
+      "armed_at": "2018-12-06 pm",
+      "detail": "sz.002737: 700 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2018-12-06 pm"
+      ],
+      "resolved": "k3_fallback@2018-12-07 am"
+     },
+     {
+      "symbol": "sh.600623",
+      "armed_at": "2019-03-08 pm",
+      "detail": "sh.600623: 1300 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2019-03-08 pm"
+      ],
+      "resolved": "k3_fallback@2019-03-11 am"
+     },
+     {
+      "symbol": "sz.002850",
+      "armed_at": "2019-04-25 pm",
+      "detail": "sz.002850: 400 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2019-04-25 pm"
+      ],
+      "resolved": "k3_fallback@2019-04-26 am"
+     },
+     {
+      "symbol": "sz.002309",
+      "armed_at": "2019-06-17 pm",
+      "detail": "sz.002309: 1600 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2019-06-17 pm"
+      ],
+      "resolved": "k3_fallback@2019-06-18 am"
+     },
+     {
+      "symbol": "sh.600810",
+      "armed_at": "2019-07-18 am",
+      "detail": "sh.600810: 600 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2019-07-18 am",
+       "market_exit_deferred_t1locked@2019-07-18 pm"
+      ],
+      "resolved": "k3_fallback@2019-07-19 am"
+     },
+     {
+      "symbol": "sz.000921",
+      "armed_at": "2019-10-29 pm",
+      "detail": "sz.000921: 1600 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2019-10-29 pm"
+      ],
+      "resolved": "k3_fallback@2019-10-30 am"
+     },
+     {
+      "symbol": "sz.002092",
+      "armed_at": "2019-11-11 pm",
+      "detail": "sz.002092: 1900 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2019-11-11 pm"
+      ],
+      "resolved": "k3_fallback@2019-11-12 am"
+     },
+     {
+      "symbol": "sz.002796",
+      "armed_at": "2019-12-23 pm",
+      "detail": "sz.002796: 300 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2019-12-23 pm"
+      ],
+      "resolved": "k3_fallback@2019-12-24 am"
+     },
+     {
+      "symbol": "sh.600835",
+      "armed_at": "2020-01-06 pm",
+      "detail": "sh.600835: 700 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2020-01-06 pm"
+      ],
+      "resolved": "k3_fallback@2020-01-07 am"
+     },
+     {
+      "symbol": "sh.603258",
+      "armed_at": "2020-12-09 pm",
+      "detail": "sh.603258: 400 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2020-12-09 pm"
+      ],
+      "resolved": "k3_fallback@2020-12-10 am"
+     },
+     {
+      "symbol": "sh.603661",
+      "armed_at": "2020-12-11 pm",
+      "detail": "sh.603661: 200 share(s) not sellable this session (T+1); K=3 open-market fallback armed",
+      "deferred": [
+       "market_exit_deferred_t1locked@2020-12-11 pm"
+      ],
+      "resolved": "k3_fallback@2020-12-14 am"
+     }
+    ],
+    "excluded_from_denominator": {
+     "tp_expired_sessions": 21268,
+     "tier_expired": 593,
+     "tier_invalidated": 296
+    },
+    "caliber": "v1.4 (contract sec 10.1-5): armed = stop triggered but unfilled carryovers (T+1/suspension); numerator = k3 fallback fills + armed-then-self fills; >=99%; stuck==0 hard assert; TP/buy expiries excluded"
+   },
+   "k3_fallback_comparison": {
+    "armed_total": 2,
+    "executed_total": 39,
+    "note": "engine-wide K=3 counter incl. ETF-leg risk rows; gate 8 v1.4 uses the ZONE stop counters only"
+   }
+  }
+ },
+ "gates": {
+  "F4R2-D1": {
+   "dev": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": false,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": true,
+    "5_one_side_turnover_le_6": false,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8_final_delivery_ge_99pct_v14": true,
+    "advantage_years": 3,
+    "dev_excess_vs_b1m": 0.015399742780641823,
+    "failed_gates": [
+     "2_excess_vs_B1m_ge_2pp",
+     "3_advantage_years_ge_5_of_6",
+     "5_one_side_turnover_le_6"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated",
+    "goal_criterion_dev_cagr_ge_10pct": false,
+    "goal_met": false,
+    "checks_pass": true
+   },
+   "verdict": "eliminated"
+  },
+  "F4R2-D2": {
+   "dev": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": false,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": true,
+    "5_one_side_turnover_le_6": false,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8_final_delivery_ge_99pct_v14": true,
+    "advantage_years": 3,
+    "dev_excess_vs_b1m": 0.00840785945878153,
+    "failed_gates": [
+     "2_excess_vs_B1m_ge_2pp",
+     "3_advantage_years_ge_5_of_6",
+     "5_one_side_turnover_le_6"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated",
+    "goal_criterion_dev_cagr_ge_10pct": false,
+    "goal_met": false,
+    "checks_pass": true
+   },
+   "verdict": "eliminated"
+  }
+ },
+ "attribution": {
+  "F4R2-D1": {
+   "failed_gates": [
+    "2_excess_vs_B1m_ge_2pp",
+    "3_advantage_years_ge_5_of_6",
+    "5_one_side_turnover_le_6"
+   ],
+   "gate3_years": {
+    "2015": {
+     "arm": 0.02927041915900719,
+     "b1m": 0.22735356961586017,
+     "advantage": false
+    },
+    "2016": {
+     "arm": 0.05864259421591478,
+     "b1m": -0.036271319473570096,
+     "advantage": true
+    },
+    "2017": {
+     "arm": -0.013706964484661133,
+     "b1m": -0.11258228102926204,
+     "advantage": true
+    },
+    "2018": {
+     "arm": -0.06473480640397766,
+     "b1m": -0.1962740727688722,
+     "advantage": true
+    },
+    "2019": {
+     "arm": 0.1098666805315518,
+     "b1m": 0.12375649932752708,
+     "advantage": false
+    },
+    "2020": {
+     "arm": 0.017529037292794092,
+     "b1m": 0.09319791239431541,
+     "advantage": false
+    }
+   },
+   "gate5_turnover": {
+    "max_one_side_turnover": 7.340325279995836,
+    "by_year": {
+     "2015": 5.957,
+     "2016": 6.256,
+     "2017": 6.432,
+     "2018": 6.427,
+     "2019": 6.734,
+     "2020": 7.34
+    },
+    "whipsaw": {
+     "tp_fills_n": 0,
+     "tp_sell_notional": 0.0,
+     "tp_cleared_zones": 0,
+     "re_admissions_after_tp_same_symbol": 0,
+     "ladder_fills_after_tp_whipsaw": 0,
+     "tier_expired": 698,
+     "tier_invalidated": 323
+    }
+   }
+  },
+  "F4R2-D2": {
+   "failed_gates": [
+    "2_excess_vs_B1m_ge_2pp",
+    "3_advantage_years_ge_5_of_6",
+    "5_one_side_turnover_le_6"
+   ],
+   "gate3_years": {
+    "2015": {
+     "arm": 0.04634223708133067,
+     "b1m": 0.22735356961586017,
+     "advantage": false
+    },
+    "2016": {
+     "arm": 0.04739971842916235,
+     "b1m": -0.036271319473570096,
+     "advantage": true
+    },
+    "2017": {
+     "arm": -0.02268341802484697,
+     "b1m": -0.11258228102926204,
+     "advantage": true
+    },
+    "2018": {
+     "arm": -0.06261260913569255,
+     "b1m": -0.1962740727688722,
+     "advantage": true
+    },
+    "2019": {
+     "arm": 0.07239772969989278,
+     "b1m": 0.12375649932752708,
+     "advantage": false
+    },
+    "2020": {
+     "arm": 0.011762327136330075,
+     "b1m": 0.09319791239431541,
+     "advantage": false
+    }
+   },
+   "gate5_turnover": {
+    "max_one_side_turnover": 7.124751526079348,
+    "by_year": {
+     "2015": 6.04,
+     "2016": 6.628,
+     "2017": 6.394,
+     "2018": 6.347,
+     "2019": 6.583,
+     "2020": 7.125
+    },
+    "whipsaw": {
+     "tp_fills_n": 944,
+     "tp_sell_notional": 5496596.555442822,
+     "tp_cleared_zones": 257,
+     "re_admissions_after_tp_same_symbol": 167,
+     "ladder_fills_after_tp_whipsaw": 40,
+     "tier_expired": 593,
+     "tier_invalidated": 296
+    }
+   }
+  }
+ },
+ "dose_response": {
+  "hypothesis_gradient_weak_to_strong_tp": [
+   "F4R1-C",
+   "F4R1-A",
+   "F4R2-D2",
+   "F4R2-D1"
+  ],
+  "entries": {
+   "F4R1-C": {
+    "tp_form": "2.0sigma one-shot full sell (tp1 2.0/1.0, tp2 null)",
+    "net_cagr": 0.008626657285683681,
+    "net_total_return": 0.052777736429767685,
+    "max_drawdown": -0.11507170011455536,
+    "net_return_by_year": {
+     "2015": 0.021772463141490617,
+     "2016": 0.03397175545451869,
+     "2017": -0.006360086897596262,
+     "2018": -0.04545931965651784,
+     "2019": 0.044288276375635593,
+     "2020": 0.00607405645280279
+    },
+    "advantage_years": 3,
+    "advantage_years_list": [
+     2016,
+     2017,
+     2018
+    ],
+    "max_one_side_turnover": 6.956592462177019,
+    "failed_gates": [
+     "2_excess_vs_B1m_ge_2pp",
+     "3_advantage_years_ge_5_of_6",
+     "5_one_side_turnover_le_6"
+    ],
+    "source_run": "20260920T020201-f4r1-full-a3b7"
+   },
+   "F4R1-A": {
+    "tp_form": "2.0sigma sell 50% + 3.0sigma clear (tp1 2.0/0.5, tp2 3.0/1.0)",
+    "net_cagr": 0.0001574952054179679,
+    "net_total_return": 0.0009434013095479532,
+    "max_drawdown": -0.11683268879266817,
+    "net_return_by_year": {
+     "2015": 0.005818853233657162,
+     "2016": 0.01663807596092859,
+     "2017": -0.006766394179887447,
+     "2018": -0.05127037547515312,
+     "2019": 0.034603103497881094,
+     "2020": 0.004050909136867453
+    },
+    "advantage_years": 3,
+    "advantage_years_list": [
+     2016,
+     2017,
+     2018
+    ],
+    "max_one_side_turnover": 6.893946774921739,
+    "failed_gates": [
+     "2_excess_vs_B1m_ge_2pp",
+     "3_advantage_years_ge_5_of_6",
+     "5_one_side_turnover_le_6"
+    ],
+    "source_run": "20260920T020201-f4r1-full-a3b7"
+   },
+   "F4R2-D2": {
+    "tp_form": "4.0sigma sell 50% + 5.0sigma clear (config zones_D2; F4R2-S2 designed 2x widening, not historical tuning)",
+    "net_cagr": 0.014398451816687974,
+    "net_total_return": 0.08936890494467042,
+    "max_drawdown": -0.1405678134873123,
+    "net_return_by_year": {
+     "2015": 0.04634223708133067,
+     "2016": 0.04739971842916235,
+     "2017": -0.02268341802484697,
+     "2018": -0.06261260913569255,
+     "2019": 0.07239772969989278,
+     "2020": 0.011762327136330075
+    },
+    "advantage_years": 3,
+    "advantage_years_list": [
+     2016,
+     2017,
+     2018
+    ],
+    "max_one_side_turnover": 7.124751526079348,
+    "failed_gates": [
+     "2_excess_vs_B1m_ge_2pp",
+     "3_advantage_years_ge_5_of_6",
+     "5_one_side_turnover_le_6"
+    ],
+    "source_run": "20260920T030215-f4r2-notp-f3b1"
+   },
+   "F4R2-D1": {
+    "tp_form": "DISABLED (v1.4.1 zero-tier: null tp1/tp2; exits = 3-sigma ratchet stop + 3.5-sigma invalidation only)",
+    "net_cagr": 0.021390335138548267,
+    "net_total_return": 0.13510809009674984,
+    "max_drawdown": -0.17088666384585538,
+    "net_return_by_year": {
+     "2015": 0.02927041915900719,
+     "2016": 0.05864259421591478,
+     "2017": -0.013706964484661133,
+     "2018": -0.06473480640397766,
+     "2019": 0.1098666805315518,
+     "2020": 0.017529037292794092
+    },
+    "advantage_years": 3,
+    "advantage_years_list": [
+     2016,
+     2017,
+     2018
+    ],
+    "max_one_side_turnover": 7.340325279995836,
+    "failed_gates": [
+     "2_excess_vs_B1m_ge_2pp",
+     "3_advantage_years_ge_5_of_6",
+     "5_one_side_turnover_le_6"
+    ],
+    "source_run": "20260920T030215-f4r2-notp-f3b1"
+   }
+  },
+  "net_cagr_monotonic_C_lt_A_lt_D2_lt_D1": false
+ },
+ "s1_seam_adjudication": {
+  "seam": "F4R2-S1 (tp-disable expression)",
+  "v14_probe_result": "frame-level infeasible (null -> TypeError, NaN/absent -> BandContractError); aborted pass evidence tmp/s1_tp_disable_probe_result_v14.json",
+  "resolution": "main-conversation dual-sign minimal engine extension v1.4.1 (tp1/tp2 optional; null/absent = zero-tier TP, no profit intent; supplied-value asserts kept; new guardrail tp1-null-with-tp2 rejected) + re-pin",
+  "engine_pin_v141": "a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3",
+  "v141_reverification": "tmp/s1_tp_disable_probe_result_v141.json (adjudicated_form_ok=true; null vs column-absent outputs field-equal on all five frames)",
+  "d1_form_used": "NULL tp1/tp2 (NaN form unusable; oversized-mult hack forbidden by prereg sec 6)"
+ },
+ "trial_accounting": {
+  "strategy_line": "273 -> 275 booked at THIS run (two arm trials; F4R2-A0 anchor consumes no trial)",
+  "registered_in": "main-conversation trial ledger",
+  "factor_line_FT01": 120,
+  "aborted_first_pass": "F4R2-S1 stop happened BEFORE any arm ran; zero trials consumed in the aborted pass"
+ },
+ "disclosures": [
+  "行业成员使用申万 L1 2026 单快照（前视，沿 F3R3 披露；prereg sec 3）。",
+  "σ0 月内冻结不重估（信号日 21 个官方收盘含当日，20 个 close-to-close 对数收益样本标准差 ddof=1，原始未复权收盘；次新不足或停牌缺收盘剔除并计数）。",
+  "止损同 session 先于止盈判定（保守；引擎 BR-5 在 A/B/C 段之前执行 stop 段并取消同 session 阶梯与止盈单；D1 无止盈层，该序仅涉 D2 与失效/阶梯的取消关系）。",
+  "止盈成交不撤在途买入档（TP 不撤 ladder；鞭打风险按门 5 计数裁定；D1 无止盈层，无此来源的鞭打）。",
+  "HWM 用决策价（am.close / 官方收盘）而非日内 high（更晚触发，保守）。",
+  "买入近沿成交（P-0.5/1.5/2.5σ0 限价，不取区内更优价，保守）。",
+  "门 8 分母只含止损触发未成交留滞（TP 到期/买入档到期单独计数，不计入交付率分母）。",
+  "F4R1-S1 接缝（预登记 §11 裁定接受，全期沿冒烟口径）：ETF 腿意图优先级 10^6 → 999（引擎 BR-1 护栏要求意图优先级 < zone_priority_base=1000）；语义影响 = 同决策点现金竞争中 ETF 底盘腿先于个股阶梯拿资金（F3R3 中相反，但 F3R3 无 zones 层，不构成同口径对照差异）。",
+  "F4R1-S2 不适用于 F4R2：本运行无路径缩放臂（两臂 w_T 恒 0.06），月末减仓原语缺失问题不涉及（F4R2 预登记 §6 沿承披露）。",
+  "F3 复合因子身份沿承：F3R1 冻结输出（v1.3 引擎 pin 84a2443a 产出，本运行亲验 provenance）；本运行不重算因子。",
+  "dev 样本内结果（2015-01-05..2020-12-31）；历史样本已被旧项目反复查看，不构成全新样本外；不构成任何盈利承诺。",
+  "F4R2-S1 裁定落地（引擎变更披露）：v1.4 对帧层止盈禁用三种形式全部 fail-closed 拒绝（本 run 目录首轮实施因此停机，证据 tmp/s1_tp_disable_probe_result_v14.json）；主对话双签最小扩展 v1.4.1（tp1/tp2 列可选，null/缺列 = 零档止盈、无止盈意图发射，供值时全部 v1.4 断言原样保留，新护栏 tp1 null + tp2 供值拒绝）并重 pin a01cb29c…；本运行启动/结束均亲验该 pin，v1.4.1 行为先行复验（tmp/s1_tp_disable_probe_result_v141.json）。D1 采用 null 形式；NaN 形式不可用（按供值非法拒绝）；未使用超大 mult hack。",
+  "F4R2-S2：D2 档位 b1=+4σ 卖 50%、b2=+5σ 清仓为设计选择（F4R1 档位 2σ/3σ 的等比放宽），非历史调参；成本锚定 WAC、不重锚、无兜底。",
+  "剂量梯度对照臂 F4R1-C/F4R1-A 数字取自 F4R1 冻结全期运行（20260920T020201-f4r1-full-a3b7 metrics_and_gates.json），未重跑。"
+ ],
+ "stop_rule": {
+  "note": "MIDDLE ZONE: D1 net CAGR +2.14% in [+2%, +3%) or D1 gate 4 broken: attribution report to user; no F4R3, val zero contact.",
+  "zone_verdict_d1": "middle_zone",
+  "d1_net_cagr": 0.021390335138548267,
+  "d1_gate4_pass": true,
+  "any_arm_goal_met": false,
+  "arms_dev_pass": 0,
+  "advanced_to_validation": false,
+  "val_consumed": false,
+  "f4r3_opened": false
+ },
+ "f4r2_a0_anchor": {
+  "intents": {
+   "mine": "outputs\\F4R2-A0_intents.parquet",
+   "ref": "artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e\\outputs\\F3R3-A0_intents.parquet",
+   "byte_equal": true,
+   "rows_equal": true
+  },
+  "fills": {
+   "mine": "outputs\\F4R2-A0_fills.parquet",
+   "ref": "artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e\\outputs\\F3R3-A0_fills.parquet",
+   "byte_equal": true,
+   "rows_equal": true
+  },
+  "events": {
+   "mine": "outputs\\F4R2-A0_events.parquet",
+   "ref": "artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e\\outputs\\F3R3-A0_events.parquet",
+   "byte_equal": true,
+   "rows_equal": true
+  },
+  "daily_equity": {
+   "mine": "outputs\\F4R2-A0_daily_equity.parquet",
+   "ref": "artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e\\outputs\\F3R3-A0_daily_equity.parquet",
+   "byte_equal": true,
+   "rows_equal": true
+  },
+  "clips_final": {
+   "mine": "outputs\\F4R2-A0_clips_final.parquet",
+   "ref": "artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e\\outputs\\F3R3-A0_clips_final.parquet",
+   "byte_equal": true,
+   "rows_equal": true
+  },
+  "rule": "filecmp byte comparison vs F3R3-A0 outputs; mismatch = STOP before arms (F4R2 prereg sec 4)"
+ }
+}

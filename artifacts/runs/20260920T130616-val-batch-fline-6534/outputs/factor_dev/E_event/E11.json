@@ -1,0 +1,66 @@
+{
+ "factor_id": "E11",
+ "name": "hs_net120",
+ "formula": "120d 减持比例合计 = ΣDE (窗内无任何记录->null)",
+ "source": "stk_holdertrade",
+ "fill_policy": "无事件为 null（不入因子帧）",
+ "n_rows": 39062,
+ "t_value": -1.5586126579395936,
+ "coverage_median_symbols": 467.0,
+ "coverage_median_active_months": 570.0,
+ "pool_median_symbols": 3126.0,
+ "criteria": {
+  "c1_abs_t>=2": false,
+  "c2_mono_consistent>=0.3": false,
+  "c3_2015_non_disaster": true,
+  "c4_coverage>=50%pool": false
+ },
+ "survived_prelim": false,
+ "eval": {
+  "n_dates": 59,
+  "coverage_mean_symbols": 635.2881355932203,
+  "ic_mean": -0.01345893830261084,
+  "ic_std": 0.06632826070499669,
+  "icir": -0.20291408457808305,
+  "ic_win_rate": 0.4745762711864407,
+  "group_mean_ret": [
+   0.007598353522054063,
+   0.009601671418590018,
+   0.008288925748724852,
+   0.010053133911304548,
+   0.0044449722927684615,
+   0.008393945144776625,
+   0.012364121215762844,
+   0.008529204819538375,
+   0.003534702379652314,
+   0.006360947136200443
+  ],
+  "long_short_mean": -0.0012374063858536198,
+  "monotonicity": -0.2909888084825996,
+  "ic_by_year": {
+   "2016": -0.03412333665122958,
+   "2017": -0.006159635600185145,
+   "2018": -0.01430510241749666,
+   "2019": 0.014411458861210417,
+   "2020": -0.028359815469238877
+  },
+  "long_short_by_year": {
+   "2016": -0.005692927760685692,
+   "2017": -0.008419705224411883,
+   "2018": -0.003274517310787376,
+   "2019": 0.017062001762488302,
+   "2020": -0.002432296096650504
+  },
+  "turnover_top_group": 0.31352634971555793,
+  "corr_with_others": {},
+  "config": {
+   "horizon_days": 20,
+   "n_groups": 10,
+   "eval_freq": "M",
+   "exclude_st": true,
+   "require_trading": true,
+   "exclude_boards": true,
+   "min_history_rows": 60
+  }
+ }
+}

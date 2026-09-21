@@ -1,0 +1,24 @@
+[    0.1s] invariants 2015: {"n_high_lt_max_oc": 0, "n_low_gt_min_oc": 0, "n_high_lt_low": 0, "n_price_le_0": 0, "n_volume_lt_0": 0, "n_rows_with_null": 0, "n_dup_key": 0, "partial_rows": 489391, "am_rows": 568825, "pm_rows": 568567}
+[    0.2s] invariants 2016: {"n_high_lt_max_oc": 0, "n_low_gt_min_oc": 0, "n_high_lt_low": 0, "n_price_le_0": 0, "n_volume_lt_0": 0, "n_rows_with_null": 0, "n_dup_key": 0, "partial_rows": 651011, "am_rows": 640637, "pm_rows": 637819}
+[    0.3s] invariants 2017: {"n_high_lt_max_oc": 0, "n_low_gt_min_oc": 0, "n_high_lt_low": 0, "n_price_le_0": 0, "n_volume_lt_0": 0, "n_rows_with_null": 0, "n_dup_key": 0, "partial_rows": 896843, "am_rows": 742397, "pm_rows": 742157}
+[    0.4s] invariants 2018: {"n_high_lt_max_oc": 0, "n_low_gt_min_oc": 0, "n_high_lt_low": 0, "n_price_le_0": 0, "n_volume_lt_0": 0, "n_rows_with_null": 0, "n_dup_key": 0, "partial_rows": 1167400, "am_rows": 816352, "pm_rows": 816326}
+[    0.5s] invariants 2019: {"n_high_lt_max_oc": 0, "n_low_gt_min_oc": 0, "n_high_lt_low": 0, "n_price_le_0": 0, "n_volume_lt_0": 0, "n_rows_with_null": 0, "n_dup_key": 0, "partial_rows": 1301593, "am_rows": 884400, "pm_rows": 884389}
+[    0.6s] invariants 2020: {"n_high_lt_max_oc": 0, "n_low_gt_min_oc": 0, "n_high_lt_low": 0, "n_price_le_0": 0, "n_volume_lt_0": 0, "n_rows_with_null": 0, "n_dup_key": 0, "partial_rows": 1335963, "am_rows": 945715, "pm_rows": 945699}
+[    0.7s] invariants 2021: {"n_high_lt_max_oc": 0, "n_low_gt_min_oc": 0, "n_high_lt_low": 0, "n_price_le_0": 0, "n_volume_lt_0": 0, "n_rows_with_null": 0, "n_dup_key": 0, "partial_rows": 1507917, "am_rows": 1058620, "pm_rows": 1058608}
+[    0.8s] invariants 2022: {"n_high_lt_max_oc": 0, "n_low_gt_min_oc": 0, "n_high_lt_low": 0, "n_price_le_0": 0, "n_volume_lt_0": 0, "n_rows_with_null": 0, "n_dup_key": 0, "partial_rows": 1592499, "am_rows": 1146020, "pm_rows": 1146019}
+[    0.9s] invariants 2023: {"n_high_lt_max_oc": 0, "n_low_gt_min_oc": 0, "n_high_lt_low": 0, "n_price_le_0": 0, "n_volume_lt_0": 0, "n_rows_with_null": 0, "n_dup_key": 0, "partial_rows": 1696109, "am_rows": 1209236, "pm_rows": 1209235}
+[    1.1s] invariants 2024: {"n_high_lt_max_oc": 0, "n_low_gt_min_oc": 0, "n_high_lt_low": 0, "n_price_le_0": 0, "n_volume_lt_0": 0, "n_rows_with_null": 0, "n_dup_key": 0, "partial_rows": 1677840, "am_rows": 1232960, "pm_rows": 1232958}
+[    5.3s] spot check: 30 checks, mismatches=0
+[    5.7s] crosscheck 2015: high_exact=0.980992 low_exact=0.980783 close_exact=0.774372 cov_gaps=1763
+[    6.1s] crosscheck 2016: high_exact=0.979894 low_exact=0.981642 close_exact=0.775691 cov_gaps=4393
+[    6.7s] crosscheck 2017: high_exact=0.997693 low_exact=0.998031 close_exact=0.771341 cov_gaps=1788
+[    7.3s] crosscheck 2018: high_exact=0.999419 low_exact=0.999325 close_exact=0.856655 cov_gaps=1266
+[    7.9s] crosscheck 2019: high_exact=0.797633 low_exact=0.816974 close_exact=0.999349 cov_gaps=945
+[    8.5s] crosscheck 2020: high_exact=0.746170 low_exact=0.774625 close_exact=0.999758 cov_gaps=510
+[    9.2s] crosscheck 2021: high_exact=0.938864 low_exact=0.940033 close_exact=0.999449 cov_gaps=498
+[    9.9s] crosscheck 2022: high_exact=1.000000 low_exact=0.998565 close_exact=0.999188 cov_gaps=487
+[   10.6s] crosscheck 2023: high_exact=1.000000 low_exact=1.000000 close_exact=0.999796 cov_gaps=464
+[   11.4s] crosscheck 2024: high_exact=1.000000 low_exact=1.000000 close_exact=0.999710 cov_gaps=486
+[   12.6s] yearly sanity: {"2015": {"halfday_symbol_days": 568845, "r14_feats_symbol_days": 568845, "ratio": 1.0}, "2016": {"halfday_symbol_days": 640639, "r14_feats_symbol_days": 640639, "ratio": 1.0}, "2017": {"halfday_symbol_days": 742401, "r14_feats_symbol_days": 742401, "ratio": 1.0}, "2018": {"halfday_symbol_days": 816361, "r14_feats_symbol_days": 816361, "ratio": 1.0}, "2019": {"halfday_symbol_days": 884402, "r14_feats_symbol_days": 884402, "ratio": 1.0}, "2020": {"halfday_symbol_days": 945719, "r14_feats_symbol_days": 945719, "ratio": 1.0}, "2021": {"halfday_symbol_days": 1058620, "r14_feats_symbol_days": 1058620, "ratio": 1.0}, "2022": {"halfday_symbol_days": 1146021, "r14_feats_symbol_days": 1146021, "ratio": 1.0}, "2023": {"halfday_symbol_days": 1209236, "r14_feats_symbol_days": 1209236, "ratio": 1.0}, "2024": {"halfday_symbol_days": 1232960, "r14_feats_symbol_days": 1232960, "ratio": 1.0}}
+[   13.2s] QC + manifest done: 18486939 rows; qc_s=12.6
+OK

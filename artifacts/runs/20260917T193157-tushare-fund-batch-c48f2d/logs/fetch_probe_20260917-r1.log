@@ -1,0 +1,7 @@
+2026-09-17 19:34:37,982 INFO INFO mode=probe batch=20260917-r1 window=20150101..20241231 sleep=0.70s budget=150min run_dir=artifacts\runs\20260917T193157-tushare-fund-batch-c48f2d
+2026-09-17 19:34:37,982 INFO INFO token source: tushare-token (content never logged)
+2026-09-17 19:34:40,163 INFO INFO PROBE fund_daily 510300.SH 20260911-20260917: rows=5 span=20260911..20260917 cols=['ts_code', 'trade_date', 'pre_close', 'open', 'high', 'low', 'close', 'change', 'pct_chg', 'vol', 'amount'] attempts=1 -> PERMISSION OK
+2026-09-17 19:34:40,163 INFO INFO PROBE fund_daily data discarded (2026 probe rows NOT saved to raw)
+2026-09-17 19:34:40,447 INFO INFO PROBE fund_adj 510300.SH 20260911-20260917: rows=5 span=20260911..20260917 cols=['ts_code', 'trade_date', 'adj_factor'] attempts=1 -> PERMISSION OK
+2026-09-17 19:34:40,448 INFO INFO PROBE fund_adj data discarded (2026 probe rows NOT saved to raw)
+2026-09-17 19:34:40,448 INFO INFO probe verdict: permission confirmed for fund_daily+fund_adj

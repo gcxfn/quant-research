@@ -1,0 +1,31 @@
+{
+  "status": "invalid_intermediate",
+  "experiment_id": "exp-20260920-f3r1-rebuild",
+  "source_run": "artifacts\\runs\\20260920T161436-f2r1-rebuild-d46c81e1",
+  "factor_count": 42,
+  "inner_join_rows": 105236,
+  "threshold": 0.6,
+  "representatives": [
+    "A17",
+    "A20",
+    "A25",
+    "B11",
+    "B12",
+    "B14",
+    "C19",
+    "D10",
+    "D13",
+    "D14",
+    "D16",
+    "D18",
+    "D19",
+    "D20",
+    "D30",
+    "E16",
+    "F02",
+    "F06",
+    "F09"
+  ],
+  "created_at": "2026-09-20T17:33:01.300245+08:00",
+  "invalid_reason": "Used historical factor parquet frames; not a post-repair factor-frame rebuild."
+}

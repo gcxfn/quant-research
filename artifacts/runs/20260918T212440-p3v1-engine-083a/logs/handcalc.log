@@ -1,0 +1,9 @@
+== contract tests ==
+  pytest exit=0: 19 passed in 5.03s (5.7s)
+== hand-calc samples ==
+  1 T+0 round trip verified (am buy -> pm sell, proceeds next am)
+  2 session settlement verified (am fill -> pend -> released same pm)
+  3 K=3 fallback verified (3 unfilled sessions -> next-session open)
+  4 close bridge verified (mark = official daily close 16.0)
+== hand-calc samples all verified ==
+  bridge: rows=18486939, range_violations=3, pm_close_mismatches_pre_cutoff=2870381

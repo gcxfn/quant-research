@@ -1,0 +1,34 @@
+{
+ "run_id": "20260920T030215-f4r2-notp-f3b1",
+ "experiment_id": "exp-20260920-zone-sheet-f4r2",
+ "status": "aborted",
+ "abort_stage": "F4R2-S1 frame-level tp-disable feasibility check (runner step 1 of 6)",
+ "abort_reason": "Prereg sec 6 / config seam_adjudication F4R2-S1: priority-(1) frame-level expression of take-profit disablement is NOT tolerated by the pinned v1.4 engine.  All three frame forms fail-closed BEFORE any simulated trading: tp1_mult/tp1_frac = null -> TypeError (float(None)); = NaN -> BandContractError 'tp1_mult must be finite > 0'; columns absent -> BandContractError 'missing required column tp1_mult' (both listed in _ZONES_REQUIRED).  Per prereg sec 6 the priority-(2) remedy is a MINIMAL ENGINE EXTENSION (tp1 columns optional, semantics = no TP intent emission, fail-closed asserts retained), which requires the main-conversation dual-sign re-pin; the implementation agent MUST NOT modify the engine and therefore stopped before building the runner, before the A0 anchor gate and before any arm ran.  ZERO trials consumed (strategy line stays 273; A0 anchor not reached).",
+ "engine": {
+  "path": "src/quant/backtest/band_engine.py",
+  "sha256_verified": "7ad35014d72711cb43ab6aedc232d70adf7eece60604b2a057ee039c9bd11e78",
+  "sha256_pin_expected": "7ad35014d72711cb43ab6aedc232d70adf7eece60604b2a057ee039c9bd11e78",
+  "pin_match": true,
+  "bytes_modified_by_this_run": false
+ },
+ "probe_evidence": {
+  "script": "tmp/s1_tp_disable_probe.py",
+  "result": "tmp/s1_tp_disable_probe_result.json",
+  "cases": [
+   {"case": "null_tp1 (tp1_mult/tp1_frac None)", "outcome": "REJECTED_TypeError"},
+   {"case": "nan_tp1 (tp1_mult/tp1_frac NaN)", "outcome": "REJECTED_BandContractError: tp1_mult must be finite > 0"},
+   {"case": "drop_tp1cols (columns removed)", "outcome": "REJECTED_BandContractError: missing required column 'tp1_mult'"},
+   {"case": "control (tp1 2.0/0.5, tp2 null)", "outcome": "RAN (probe construction sane; tp2-null alone is tolerated, tp1 is not)"}
+  ],
+  "frame_level_feasible": false
+ },
+ "val_contact": {"consumed": false, "policy": "2021-2024 zero contact; nothing beyond the probe's synthetic 2024 mini world was read; no real data touched"},
+ "trial_accounting": {
+  "strategy_line": "273 -> 273 (NOT advanced: both arms never ran; A0 anchor gate not reached)",
+  "registered_in": "main-conversation trial ledger",
+  "factor_line_FT01": 120
+ },
+ "started_at_utc": "2026-09-19T19:02:15+00:00",
+ "ended_at_utc": "2026-09-19T19:20:00+00:00",
+ "next_action_for_main_conversation": "Adjudicate F4R2-S1 priority-(2): either dual-sign a minimal engine extension (tp1_mult/tp1_frac optional; null/absent => no TP intent emission; all fail-closed asserts retained for supplied values) + engine re-pin, or redefine D1 at the frame layer another way, or abandon F4R2.  The F4R2 prereg/config stay frozen; nothing else in this run directory was produced."
+}

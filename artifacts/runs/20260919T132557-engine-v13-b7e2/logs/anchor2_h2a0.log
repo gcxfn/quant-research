@@ -1,0 +1,93 @@
+[    0.0s] == 0. identity pins (engine v1.2 frozen, prereg frozen) ==
+[    0.0s]   engine: 84a2443ac28fe1b8 expect 84a2443ac28fe1b87e4a18f988fd38cc67cf706d5778e262f11465147234082c match=True
+[    0.0s]   p3r2_config: b49025b44c719685 expect b49025b44c719685 match=True
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.6s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.6s]   halfday_manifest: 2a414174b5df2eee expect 2a414174b5df2eee match=True
+[    0.6s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.6s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.6s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    0.6s]   p3r2_c05_fills: 11f8af46686df411 expect None match=True
+[    0.6s]   p3r2_c05_events: 2dde945782accd70 expect None match=True
+[    0.6s]   p3r2_c05_daily: c3945567de4250ef expect None match=True
+[    0.6s]   p3r2_c05_clips: b44dbea22a529529 expect None match=True
+[    0.6s]   p3r2_c05_intents: 36dedda1cf8d7661 expect None match=True
+[    0.6s]   prereg: 4ced8ce1db44cef3 expect None match=True
+[    0.6s]   v1_prereg_inherited: 266a1b850373a6f7 expect None match=True
+[    0.6s]   hyb_config: 5d29cce6fa51be94 expect None match=True
+[    0.7s]   v1_config_reference: 6388465cc31a6957 expect None match=True
+[    0.7s]   v1_metrics_rot01_source: 54a528a996a9caaa expect None match=True
+[    0.7s]   r16_metrics: 8d0b6ebbdea6ebb9 expect None match=True
+[    0.7s]   p3r2_runner: 7477c2a8fcc2d291 expect None match=True
+[    0.7s]   etf_manifest: 8b5b3fe56c0e02fd expect None match=True
+[    7.3s]   etf processed dir aggregate: 75777221a8b33502 (7 files); fund_adj batch re-verified (1169 chunks, 0 mismatches) aggregate matches manifest: True
+[    7.3s]   python 3.11.15 | polars 1.44.2 | numpy 1.26.4 | rss 0.28 GB
+[    7.3s] == 1. calendar & signal days ==
+[    7.4s]   71 signal days (2015-01-30..2020-11-30; 2020-12-31 dropped as signal, kept as expiry anchor)
+[    7.4s] == 2. exposures (T200-40) ==
+[    7.4s]   t200 behavioral anchor check: {"anchor_years": ["2016", "2017", "2018", "2019", "2020"], "reproduced_stats": {"2016": {"n_sessions": 244, "n_switches"
+[    7.4s]   exposures[2015-01-30]=0.40 [2020-11-30]=0.90
+[    7.4s] == 3. pools (r16 build_history + signal_pools) ==
+[   11.4s]   pools at 2015-01-30: n=1438; union of ranked symbols: 2937
+[   11.4s] == 4. C05 leg_log + membership consistency ==
+[   11.4s]   C05: membership mismatches=0, events mismatches=0 / 71
+[   11.4s] == 5. market frames ==
+[   12.4s]   daily panel: 3841824 rows, 2937 symbols
+[   13.4s]   halfday: 7254698 rows kept of 18486939 total (panel x dev), 2935 symbols
+[   25.2s]   limits: 3829171 rows (dev x panel)
+[   30.3s]   splits 2894 rows, dividends 20138 rows (panel)
+[   30.3s]   rss after frames: 3.04 GB
+[   30.3s] == 6. ETF assets ==
+[   30.3s]   etf panel dev rows: 13158 per member {'sh.513500': 1462, 'sh.518880': 1462, 'sh.510880': 1462, 'sh.513100': 1462, 'sz.159915': 1462, 'sh.510300': 1462, 'sh.510050': 1462, 'sz.159934': 1462, 'sh.511010': 1462}
+[   30.3s]   assertion (ii) preclose nulls: 0
+[   30.3s]   disclosure: member-dev rows with volume<=0: 0
+[   30.3s]   assertion (iii): sse 1462 days, panel union 1462 days, missing [], extra []
+[   30.3s]   factor coverage gaps per member: {'sh.511010': 0, 'sh.518880': 0, 'sh.510050': 0, 'sh.510300': 0, 'sz.159915': 0, 'sh.510880': 0, 'sh.513100': 0, 'sh.513500': 0, 'sz.159934': 0}
+[   30.4s]   dividend events built: 18 {'sh.510050': 5, 'sh.510300': 6, 'sh.510880': 6, 'sh.511010': 1}
+[   30.4s]     sh.510050 2016-11-29 div/share=0.053
+[   30.4s]     sh.510050 2017-11-28 div/share=0.054
+[   30.4s]     sh.510050 2018-12-03 div/share=0.049
+[   30.4s]     sh.510050 2019-12-02 div/share=0.047
+[   30.4s]     sh.510050 2020-11-30 div/share=0.051
+[   30.4s]     sh.510300 2015-01-20 div/share=0.035
+[   30.4s]     sh.510300 2016-01-20 div/share=0.051
+[   30.4s]     sh.510300 2017-01-23 div/share=0.055
+[   30.4s]     sh.510300 2018-01-23 div/share=0.046
+[   30.4s]     sh.510300 2019-01-16 div/share=0.059
+[   30.4s]     sh.510300 2019-12-11 div/share=0.062
+[   30.4s]     sh.510880 2015-01-20 div/share=0.080
+[   30.4s]     sh.510880 2016-01-20 div/share=0.050
+[   30.4s]     sh.510880 2017-01-23 div/share=0.091
+[   30.4s]     sh.510880 2018-01-23 div/share=0.109
+[   30.4s]     sh.510880 2019-01-16 div/share=0.098
+[   30.4s]     sh.510880 2020-01-17 div/share=0.144
+[   30.4s]     sh.511010 2015-10-09 div/share=1.000
+[   30.4s]   159934 dev mismatch rows: 1 [{"symbol": "sz.159934", "date": "2020-02-26", "preclose": 3.614, "prev_close": 3.622, "rel_diff": -0.002208724461623457, "factor_ratio": 1.0}]; dividend-rule events: 0 (frozen)
+[   30.4s]   symbol_meta: 9 symbols (8 members + sz.159934), explicit band 0.10, t_plus 0 (assertion (i) basis)
+[   30.4s] == 7. momentum ranking (adj close, month-end) ==
+[   30.4s]   lookback 6m universe[sh.510050+sh.510300+sz.159915+sh.510880+sh.513100+sh.513500]: 65 ranking months (2015-07-31..2020-11-30)
+[   30.4s]   lookback 6m universe[sh.518880+sh.510050+sh.510300+sz.159915+sh.510880+sh.513100+sh.513500]: 65 ranking months (2015-07-31..2020-11-30)
+[   30.4s] == 8. static intent frames ==
+[   30.4s]   C05 (stock leg): intents 1395; R16 skips {'r16_at_target': 501, 'r16_feemin_skipped': 320}
+[   30.4s]   C05 frame == P3R2 C05_intents.parquet (.equals) PASS
+[   30.5s]   H2-A0: intents 1395 (etf 0, stock 1395); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   30.5s] == 9. per-config engine input frames ==
+[   30.5s]   stock frames (C05 universe): daily 270206, half 518093, limits 269531
+[   30.5s] == 10. H2-A0 regression anchor vs P3R2 C05 ==
+[   36.2s]   H2-A0: engine 5.7s, intents 1395 orders 18827 filled 737 cap 0 | rss 3.26 GB
+[   36.2s]   H2-A0 fills.equals(P3R2 C05 fills) = True (mine 737 rows / ref 737 rows)
+[   36.2s]   H2-A0 events.equals(P3R2 C05 events) = True (mine 20365 rows / ref 20365 rows)
+[   36.2s]   H2-A0 daily.equals(P3R2 C05 daily) = True (mine 1462 rows / ref 1462 rows)
+[   36.2s]   H2-A0 clips_final.equals(P3R2 C05 clips_final) = True (mine 31 rows / ref 31 rows)
+[   36.2s]   H2-A0 net_cagr 0.0388322807 vs P3R2 C05 0.0388322807 -> True
+[   36.2s]   H2-A0 regression anchor PASS
+[   36.2s] == 11. remaining configs ==
+[   36.2s] == 12. per-intent attribution ==
+[   36.5s]   H2-A0: R16-mapped exec 53.3% (filled 737, rule-blocked 6, terminated 652); term {'expiry': 136, 'override_same_name': 515, 'cap_void': 0, 'suspension_abandon': 1}
+[   36.5s] == 13. metrics & gates ==
+[   36.7s]   H2-A0: net +3.88% excess +3.28pp adv 4/6 mdd -21.20% turn 1.59 w 11.1% g8v3 6+1/7=100.0% (8v2对照 6/7=85.7%) goal10 False -> eliminated ['3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m']
+[   36.7s] == gates: 0/1 dev_pass ==
+[   36.7s] == 14. disclosures ==
+[   36.8s] == 15. outputs ==
+[   36.9s] == manifest + report written; wall 37s, peak rss 3.26 GB ==
+[   36.9s] == VERDICT: 0/1 dev_pass; blocked=[]; no config passed all dev gates (0/1); hybrid line PAUSED per the v2 stop clause (direction re-evaluation is a separate user decision); val not consumed

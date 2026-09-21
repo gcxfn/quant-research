@@ -1,0 +1,34 @@
+D:\量化\artifacts\runs\20260920T130616-val-batch-fline-6534\scripts\generated\f2val_B_value.py:100: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  me_db = dbd.filter(pl.col("date").is_in(pl.Series(ME)))
+D:\量化\artifacts\runs\20260920T130616-val-batch-fline-6534\scripts\generated\f2val_B_value.py:104: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  snap = db.filter(pl.col("date").is_in(pl.Series(ME)))
+D:\量化\artifacts\runs\20260920T130616-val-batch-fline-6534\scripts\generated\f2val_B_value.py:141: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  .filter(pl.col("date").is_in(pl.Series(ME)))
+[  60.5s] daily_basic 4605868 行 4298 符号 2015-01-05..2020-12-31
+[  72.7s] 窗口类完成
+[  82.0s] B01 ln_tmv       ic=-0.0356 t=-1.60 mono=-0.84 ic15=-0.1753 cov=95% n=223743  (7.9s)
+[  88.8s] B02 ln_cmv       ic=-0.0207 t=-0.88 mono=-0.89 ic15=-0.1721 cov=95% n=223743  (6.8s)
+[  96.4s] B03 circ_ratio   ic=+0.0108 t=+0.71 mono=-0.74 ic15=-0.0479 cov=95% n=223743  (7.5s)
+[ 103.5s] B04 ep_ttm       ic=+0.0458 t=+2.60 mono=+0.31 ic15=+0.0273 cov=84% n=195266 存活 (7.1s)
+[ 110.2s] B05 bp           ic=+0.0407 t=+1.95 mono=+0.48 ic15=+0.0225 cov=95% n=222624  (6.7s)
+[ 116.9s] B06 sp_ttm       ic=+0.0329 t=+1.81 mono=+0.44 ic15=-0.0048 cov=95% n=223562  (6.8s)
+[ 123.2s] B07 dv_yield     ic=+0.0460 t=+3.85 mono=-0.40 ic15=+0.0108 cov=88% n=203377  (6.2s)
+[ 129.8s] B08 ep_static    ic=+0.0402 t=+2.69 mono=+0.16 ic15=+0.0235 cov=88% n=204155  (6.7s)
+[ 136.5s] B09 turn_20      ic=-0.0794 t=-3.78 mono=-0.62 ic15=-0.0106 cov=95% n=221891 存活 (6.7s)
+[ 143.3s] B10 turn_60      ic=-0.0677 t=-3.14 mono=-0.58 ic15=+0.0132 cov=95% n=211714 存活 (6.8s)
+[ 149.5s] B11 turn_vol20   ic=-0.0921 t=-4.91 mono=-0.74 ic15=-0.0339 cov=95% n=221891 存活 (6.2s)
+[ 156.5s] B12 turn_abn     ic=-0.0498 t=-3.72 mono=-0.37 ic15=-0.0207 cov=94% n=200129 存活 (7.0s)
+[ 162.3s] B13 ep_bp        ic=+0.0488 t=+2.24 mono=+0.27 ic15=+0.0306 cov=84% n=195202  (5.8s)
+[ 167.9s] B14 small_value  ic=+0.0616 t=+3.33 mono=+0.94 ic15=+0.1412 cov=95% n=222624 存活 (5.6s)
+[ 174.5s] B15 mv_ret20     ic=-0.0712 t=-4.06 mono=-0.89 ic15=-0.1280 cov=95% n=219655 存活 (6.6s)
+
+== B 族完成：15/15，终裁存活 7：['B04', 'B09', 'B10', 'B11', 'B12', 'B14', 'B15']；池中位 3186.0；总耗时 175s ==

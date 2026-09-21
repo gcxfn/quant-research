@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2_factor_survey.py", line 73, in main
+    daily = load_daily(root, config, symbol_limit=args.symbols)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\p2_first_screen.py", line 54, in load_daily
+    if symbol_limit is None and n_symbols != int(data_cfg['symbols_expected']):
+                                                 ~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+KeyError: 'symbols_expected'

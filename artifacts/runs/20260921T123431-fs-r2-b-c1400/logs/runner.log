@@ -1,0 +1,20 @@
+[    0.0s] fixed-scheme; window=2015-01-05..2020-12-31; curves=['R2B']
+[   16.1s]   engine f3650f8440c713b8 OK; pins OK; rss 0.27 GB
+[   16.1s] == 1. calendar & signal days ==
+[   16.5s]   23 signal days (2015-03-31..2020-09-30)
+[   16.5s] == 2. R16 pools ==
+[   28.3s]   pool n min 810 max 2260
+[   28.3s] == 3. stock legs ==
+[   32.5s]   M-F: 20 reps; eligible median 1554
+[   32.6s]   MF: members/month min 4 max 4
+[   32.6s]   MC: members/month min 1 max 4
+[   32.6s] == 4. market frames ==
+[   80.1s]   frames: 104 stocks + 3 ETFs; daily 151699; half 282907; limits 147008; rss 2.61 GB
+[   80.6s] == 5. benchmarks B1(m)_mix / B3'_mix ==
+[  138.6s]   B1(m)_mix net +4.19% mdd -21.16%; B3'_mix mean +4.32%
+[  139.8s] == 7. engine runs ==
+[  157.8s]   R2B: 17.9s; calls 2924 injected 2293 orders 2261 filled 342 k3 None | etf exits 2 sn {'stops': 283, 'protections': 0, 'takes': 0} | rss 2.35 GB
+[  157.8s] == 8. metrics & eight gates ==
+[  158.7s]   R2B: net +1.52% exc -2.67pp adv 3/6 mdd -13.43% turn 3.16 w 20.4% exec 18.4% -> fail ['2_excess_vs_B1mix_ge_2pp', '3_advantage_years_ge_5_of_6', '7_vs_B3mix_plus_1pp', '8_execution_rate_ge_95pct']; 10% no
+[  158.7s] == 9. outputs ==
+[  159.2s] == done; wall 159s; peak rss 2.61 GB

@@ -1,0 +1,70 @@
+{
+ "run_id": "20260921T161500-meanrev-anchor-8e21",
+ "experiment_id": "exp-20260921-mean-reversion",
+ "status": "completed",
+ "mode": "full",
+ "started_at_utc": "2026-09-21T08:22:12.527395+00:00",
+ "wall_seconds": 64.4629605999944,
+ "pins": {
+  "prereg": {
+   "sha256": "d24298a59b480b16b89b54c883b4c7b3585ade53cb37aaef6e8f55841d78f772"
+  },
+  "daily": {
+   "files_hashed": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "daily_basic_r2": {
+   "files_hashed": 975,
+   "sha256": "0a4e7b86460134e529c1daf7583a320e02426fab42d1f8974492a73fe3dac890"
+  },
+  "daily_basic_r1": {
+   "files_hashed": 1866,
+   "sha256": "d88ef132bfd9316db036e957fec58c2d73586b4ac8bb6320a6ace61fb22f341c"
+  },
+  "fina": {
+   "files_hashed": 5000,
+   "sha256": "1b8ab185c5f91896e7370f17b7331ed52e3e10572272b1e22dcf98e98bb8c4a5"
+  },
+  "fcst": {
+   "files_hashed": 97,
+   "sha256": "9b6cf661641f508a0eadb41dd5d8eed0929b2585a85d3e913585a7d1d2f56014"
+  }
+ },
+ "params": {
+  "band_months": 24,
+  "z_trig": -1.5,
+  "topn": 5,
+  "max_hold": 10,
+  "min_hold_m": 3,
+  "max_hold_m": 6,
+  "hard_stop": -0.2,
+  "sell_s1": [
+   -0.5,
+   0.0,
+   0.5
+  ],
+  "sell_s2": [
+   -0.5,
+   0.0,
+   0.5,
+   1.0,
+   1.5
+  ]
+ },
+ "trial_accounting": {
+  "strategy_line": {
+   "before": 292,
+   "this_round": 6,
+   "after": 298
+  }
+ },
+ "known_simplifications": [
+  "monthly composition caliber: month-end close fills, no intraday path, no limit boards; engine-grade replay required before any live claim (see ETF-momentum friction lesson)",
+  "cash-flow/NI quality check replaced by dividend>0 (prereg layer 4)"
+ ],
+ "outputs": {
+  "outputs/metrics.json": "aee9dae3e26e20a499721ff7959c6156f38dbf8fdb002b14696a1c0bca5afdd1",
+  "report.md": "6c2e62583d7b52ad7ff6756c7ee71c7b6c95e1c3eccbe17f70219a0a5a74c560",
+  "tmp/runner_meanrev.py": "f5dd268929deb88a8c5c9e9d0ea9b4d1720df881add2aa29925f2fa87cd2f801"
+ }
+}

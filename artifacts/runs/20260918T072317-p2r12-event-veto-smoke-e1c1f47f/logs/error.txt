@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "D:\量化\tools\run_p2r12_event_veto.py", line 435, in main
+    metrics = run_smoke(s, frames, calendar)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\tools\run_p2r12_event_veto.py", line 342, in run_smoke
+    (joined['ts_knowledge'] <= joined['date']).all())
+                               ~~~~~~^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\dataframe\frame.py", line 1445, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\_utils\getitem.py", line 163, in get_df_item_by_key
+    return df.get_column(key)
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\dataframe\frame.py", line 9400, in get_column
+    return wrap_s(self._df.get_column(name))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "date" not found

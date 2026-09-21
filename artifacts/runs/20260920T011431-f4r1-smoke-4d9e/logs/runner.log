@@ -1,0 +1,313 @@
+[    0.0s] == 0. identity pins (engine v1.4 frozen, prereg frozen) ==
+[    0.0s]   engine: 7ad35014d72711cb expect 7ad35014d72711cb43ab6aedc232d70adf7eece60604b2a057ee039c9bd11e78 match=True
+[    0.4s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.4s]   halfday_manifest: 2a414174b5df2eee expect 2a414174b5df2eee match=True
+[    0.4s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.4s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.4s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    0.4s]   f3r1_icw_composite: b09242ee542cf675 expect b09242ee542cf675 match=True
+[    0.4s]   f3r1_manifest: 9feb6080e985971a expect None match=True
+[    0.4s]   f3r1_metrics: 714fd8acb7174c2b expect None match=True
+[    0.4s]   industry_l1: 4edffc3994fb527a expect 4edffc3994fb527a match=True
+[    0.4s]   prereg: e9538bedfc33fabb expect None match=True
+[    0.4s]   f4r1_config: aa5699aec021aa46 expect None match=True
+[    0.4s]   f3r3_runner_source: e404845b442a2bda expect None match=True
+[    0.4s]   f3r3_manifest: 2b5a680575d40161 expect None match=True
+[    0.4s]   v3_metrics_r306_anchor_source: 9e2cd4aafec15c08 expect None match=True
+[    0.4s]   etf_manifest: 8b5b3fe56c0e02fd expect None match=True
+[    0.4s]   halfday rows total: 18486939 (pin 18,486,939)
+[    3.6s]   etf processed dir aggregate: 75777221a8b33502 (7 files); fund_adj batch re-verified (1169 chunks, 0 mismatches)
+[    3.6s]   python 3.11.15 | polars 1.44.2 | numpy 1.26.4 | rss 0.28 GB
+[    3.7s] == 1. calendar & signal days ==
+[    3.7s]   71 full-dev signal days (2015-01-30..2020-11-30)
+[    3.7s]   window W1 [2015-01-05..2015-02-28]: signals [datetime.date(2015, 1, 30), datetime.date(2015, 2, 27)]
+[    3.7s]   window W2 [2016-01-01..2016-02-29]: signals [datetime.date(2016, 1, 29), datetime.date(2016, 2, 29)]
+[    3.7s] == 2. exposures (T200-40 month-end) ==
+[    3.7s]   exposures[2015-01-30]=0.40 [2020-11-30]=0.90
+[    3.7s]   W1 e_T: 2015-01-30=0.40, 2015-02-27=0.40
+[    3.7s]   W2 e_T: 2016-01-29=0.40, 2016-02-29=0.40
+[    3.7s] == 3. F3R1 ICW composite + candidate tables ==
+[    3.9s]   candidates: top-20 per signal month; window union 75 symbols over 4 signal days
+[    3.9s] == 4. candidate closes (sigma0 / p0 lookups) ==
+[    3.9s]   close lookups: 28588 traded (symbol, session) points for 75 candidates
+[    3.9s] == 5. industry map (shenwan L1, 2026 single snapshot) ==
+[    3.9s]   industry L1 map: 5902 stocks, 31 industries; window candidates unmapped 0 -> UNMAPPED bucket (same cap); 2026 single-snapshot lookahead disclosed in prereg sec 3
+[    3.9s]   zones frame F4R1-A/W1: 40 rows (of 40 candidates; sigma excluded {}), months ['2015-01-30', '2015-02-27']
+[    3.9s]   zones frame F4R1-A/W2: 38 rows (of 40 candidates; sigma excluded {'lookback_gap': 2}), months ['2016-01-29', '2016-02-29']
+[    3.9s]   zones frame F4R1-B/W1: 40 rows (of 40 candidates; sigma excluded {}), months ['2015-01-30', '2015-02-27']
+[    3.9s]   zones frame F4R1-B/W2: 38 rows (of 40 candidates; sigma excluded {'lookback_gap': 2}), months ['2016-01-29', '2016-02-29']
+[    3.9s]   zones frame F4R1-C/W1: 40 rows (of 40 candidates; sigma excluded {}), months ['2015-01-30', '2015-02-27']
+[    3.9s]   zones frame F4R1-C/W2: 38 rows (of 40 candidates; sigma excluded {'lookback_gap': 2}), months ['2016-01-29', '2016-02-29']
+[    3.9s] == 6. ETF assets ==
+[    4.0s]   etf panel dev rows: 13158 per member {'sh.513500': 1462, 'sz.159915': 1462, 'sh.518880': 1462, 'sh.511010': 1462, 'sh.513100': 1462, 'sh.510300': 1462, 'sh.510050': 1462, 'sh.510880': 1462, 'sz.159934': 1462}
+[    4.0s]   assertion (ii) preclose nulls: 0
+[    4.0s]   assertion (iii): sse 1462 days, panel union 1462 days, missing [], extra []
+[    4.0s]   factor coverage gaps per member: {'sh.511010': 0, 'sh.518880': 0, 'sh.510050': 0, 'sh.510300': 0, 'sz.159915': 0, 'sh.510880': 0, 'sh.513100': 0, 'sh.513500': 0, 'sz.159934': 0}
+[    4.0s]   dividend events built: 18 {'sh.510050': 5, 'sh.510300': 6, 'sh.510880': 6, 'sh.511010': 1}
+[    4.0s]   159934 dev mismatch rows: 1; dividend-rule events: 0 (frozen)
+[    4.0s] == 7. market frames (shared loaders) ==
+[   12.3s]   limits 9705448 rows, splits 4930, dividends 28450 (full files; window-filtered per run)
+[   12.3s] == 8. F4R1-A0 anchor (R3-06 verbatim, byte reproduction) ==
+[   12.5s]   A0 engine run 0.2s, intents 206 | rss 0.91 GB
+[   12.5s]   A0 intents: byte_equal=True rows_equal=True
+[   12.5s]   A0 fills: byte_equal=True rows_equal=True
+[   12.5s]   A0 events: byte_equal=True rows_equal=True
+[   12.5s]   A0 daily_equity: byte_equal=True rows_equal=True
+[   12.5s]   A0 clips_final: byte_equal=True rows_equal=True
+[   12.5s]   F4R1-A0 anchor PASS (5/5 frames byte-equal to F3R3-A0)
+[   12.5s] == 9. arm runs: 3 arms x 2 windows ==
+[   13.0s]   [W1] panel: daily 1330 rows, half 2582, limits 1260, stocks 36 | rss 1.45 GB
+[   13.0s]   [F4R1-A/W1] engine 0.1s, fills 56, zones 18, admitted 18 | rss 1.31 GB
+[   13.1s]     !! [F4R1-A/W1] CHECK FAIL: month 2015-01-30: 18 zones admitted > K=10
+[   13.1s]     !! [F4R1-A/W1] CHECK FAIL: month 2015-01-30 first-scan admissions mismatch: expected ['sh.600307', 'sh.601677', 'sh.601877', 'sz.000513', 'sz.000708', 'sz.000759', 'sz.000900', 'sz.002226', 'sz.002419', 'sz.002424'] engine ['sh.600307', 'sh.601677', 'sh.601877', 'sz.000513', 'sz.000708', 'sz.000759', 'sz.000900', 'sz.002419', 'sz.002424']
+[   13.1s]     [F4R1-A/W1] month 2015-01-30: mid-month admissions ['sh.600122', 'sh.600810', 'sh.601233', 'sh.601777', 'sz.002060', 'sz.002226', 'sz.002233', 'sz.002461', 'sz.002672'] (seats freed intra-month)
+[   13.1s]   [F4R1-B/W1] engine 0.0s, fills 42, zones 19, admitted 18 | rss 1.31 GB
+[   13.1s]     !! [F4R1-B/W1] CHECK FAIL: month 2015-01-30: 18 zones admitted > K=10
+[   13.1s]     !! [F4R1-B/W1] CHECK FAIL: month 2015-01-30 first-scan admissions mismatch: expected ['sh.600307', 'sh.601677', 'sh.601877', 'sz.000513', 'sz.000708', 'sz.000759', 'sz.000900', 'sz.002226', 'sz.002419', 'sz.002424'] engine ['sh.600307', 'sh.601233', 'sh.601677', 'sh.601877', 'sz.000708', 'sz.000759', 'sz.000900', 'sz.002419', 'sz.002424']
+[   13.1s]     [F4R1-B/W1] month 2015-01-30: mid-month admissions ['sh.600122', 'sh.600810', 'sh.601777', 'sz.000597', 'sz.002060', 'sz.002226', 'sz.002233', 'sz.002461', 'sz.002672'] (seats freed intra-month)
+[   13.2s]   [F4R1-C/W1] engine 0.0s, fills 37, zones 20, admitted 20 | rss 1.31 GB
+[   13.2s]     !! [F4R1-C/W1] CHECK FAIL: month 2015-01-30: 20 zones admitted > K=10
+[   13.2s]     [F4R1-C/W1] month 2015-01-30: mid-month admissions ['sh.600122', 'sh.600810', 'sh.601233', 'sh.601777', 'sz.000597', 'sz.002060', 'sz.002233', 'sz.002461', 'sz.002643', 'sz.002672'] (seats freed intra-month)
+[   13.6s]   [W2] panel: daily 1404 rows, half 2697, limits 1332, stocks 37 | rss 1.48 GB
+[   13.6s]   [F4R1-A/W2] engine 0.0s, fills 72, zones 18, admitted 18 | rss 1.48 GB
+[   13.6s]     !! [F4R1-A/W2] CHECK FAIL: month 2016-01-29: 17 zones admitted > K=10
+[   13.6s]     [F4R1-A/W2] month 2016-01-29: mid-month admissions ['sh.600326', 'sh.600335', 'sh.600827', 'sz.000539', 'sz.000719', 'sz.000830', 'sz.002692'] (seats freed intra-month)
+[   13.7s]   [F4R1-B/W2] engine 0.0s, fills 59, zones 18, admitted 18 | rss 1.48 GB
+[   13.7s]     !! [F4R1-B/W2] CHECK FAIL: month 2016-01-29: 17 zones admitted > K=10
+[   13.7s]     [F4R1-B/W2] month 2016-01-29: mid-month admissions ['sh.600326', 'sh.600335', 'sh.600827', 'sz.000539', 'sz.000719', 'sz.000830', 'sz.002692'] (seats freed intra-month)
+[   13.7s]   [F4R1-C/W2] engine 0.0s, fills 40, zones 18, admitted 18 | rss 1.48 GB
+[   13.7s]     !! [F4R1-C/W2] CHECK FAIL: month 2016-01-29: 18 zones admitted > K=10
+[   13.7s]     [F4R1-C/W2] month 2016-01-29: mid-month admissions ['sh.600027', 'sh.600326', 'sh.600335', 'sh.600827', 'sz.000539', 'sz.000719', 'sz.000830', 'sz.002692'] (seats freed intra-month)
+[   13.7s] == 10. smoke report ==
+[   13.7s]   smoke_report.md written (all_ok=False)
+[   13.8s] == manifest + smoke_report written; wall 14s, peak rss 1.48 GB ==
+[   13.8s] == VERDICT: smoke FAILURES (see report); no performance conclusions; full period not run
+[    0.0s] == 0. identity pins (engine v1.4 frozen, prereg frozen) ==
+[    0.0s]   engine: 7ad35014d72711cb expect 7ad35014d72711cb43ab6aedc232d70adf7eece60604b2a057ee039c9bd11e78 match=True
+[    1.2s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    1.2s]   halfday_manifest: 2a414174b5df2eee expect 2a414174b5df2eee match=True
+[    1.2s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    1.2s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    1.2s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    1.2s]   f3r1_icw_composite: b09242ee542cf675 expect b09242ee542cf675 match=True
+[    1.2s]   f3r1_manifest: 9feb6080e985971a expect None match=True
+[    1.2s]   f3r1_metrics: 714fd8acb7174c2b expect None match=True
+[    1.2s]   industry_l1: 4edffc3994fb527a expect 4edffc3994fb527a match=True
+[    1.2s]   prereg: e9538bedfc33fabb expect None match=True
+[    1.2s]   f4r1_config: aa5699aec021aa46 expect None match=True
+[    1.2s]   f3r3_runner_source: e404845b442a2bda expect None match=True
+[    1.2s]   f3r3_manifest: 2b5a680575d40161 expect None match=True
+[    1.2s]   v3_metrics_r306_anchor_source: 9e2cd4aafec15c08 expect None match=True
+[    1.2s]   etf_manifest: 8b5b3fe56c0e02fd expect None match=True
+[    1.3s]   halfday rows total: 18486939 (pin 18,486,939)
+[   12.4s]   etf processed dir aggregate: 75777221a8b33502 (7 files); fund_adj batch re-verified (1169 chunks, 0 mismatches)
+[   12.4s]   python 3.11.15 | polars 1.44.2 | numpy 1.26.4 | rss 0.28 GB
+[   12.4s] == 1. calendar & signal days ==
+[   12.8s]   71 full-dev signal days (2015-01-30..2020-11-30)
+[   12.8s]   window W1 [2015-01-05..2015-02-28]: signals [datetime.date(2015, 1, 30), datetime.date(2015, 2, 27)]
+[   12.8s]   window W2 [2016-01-01..2016-02-29]: signals [datetime.date(2016, 1, 29), datetime.date(2016, 2, 29)]
+[   12.8s] == 2. exposures (T200-40 month-end) ==
+[   12.8s]   exposures[2015-01-30]=0.40 [2020-11-30]=0.90
+[   12.8s]   W1 e_T: 2015-01-30=0.40, 2015-02-27=0.40
+[   12.8s]   W2 e_T: 2016-01-29=0.40, 2016-02-29=0.40
+[   12.8s] == 3. F3R1 ICW composite + candidate tables ==
+[   13.4s]   candidates: top-20 per signal month; window union 75 symbols over 4 signal days
+[   13.4s] == 4. candidate closes (sigma0 / p0 lookups) ==
+[   13.7s]   close lookups: 28588 traded (symbol, session) points for 75 candidates
+[   13.7s] == 5. industry map (shenwan L1, 2026 single snapshot) ==
+[   13.7s]   industry L1 map: 5902 stocks, 31 industries; window candidates unmapped 0 -> UNMAPPED bucket (same cap); 2026 single-snapshot lookahead disclosed in prereg sec 3
+[   13.7s]   zones frame F4R1-A/W1: 40 rows (of 40 candidates; sigma excluded {}), months ['2015-01-30', '2015-02-27']
+[   13.8s]   zones frame F4R1-A/W2: 38 rows (of 40 candidates; sigma excluded {'lookback_gap': 2}), months ['2016-01-29', '2016-02-29']
+[   13.8s]   zones frame F4R1-B/W1: 40 rows (of 40 candidates; sigma excluded {}), months ['2015-01-30', '2015-02-27']
+[   13.8s]   zones frame F4R1-B/W2: 38 rows (of 40 candidates; sigma excluded {'lookback_gap': 2}), months ['2016-01-29', '2016-02-29']
+[   13.8s]   zones frame F4R1-C/W1: 40 rows (of 40 candidates; sigma excluded {}), months ['2015-01-30', '2015-02-27']
+[   13.8s]   zones frame F4R1-C/W2: 38 rows (of 40 candidates; sigma excluded {'lookback_gap': 2}), months ['2016-01-29', '2016-02-29']
+[   13.8s] == 6. ETF assets ==
+[   13.9s]   etf panel dev rows: 13158 per member {'sh.513500': 1462, 'sz.159915': 1462, 'sh.510880': 1462, 'sh.511010': 1462, 'sh.513100': 1462, 'sz.159934': 1462, 'sh.510050': 1462, 'sh.518880': 1462, 'sh.510300': 1462}
+[   13.9s]   assertion (ii) preclose nulls: 0
+[   13.9s]   assertion (iii): sse 1462 days, panel union 1462 days, missing [], extra []
+[   14.0s]   factor coverage gaps per member: {'sh.511010': 0, 'sh.518880': 0, 'sh.510050': 0, 'sh.510300': 0, 'sz.159915': 0, 'sh.510880': 0, 'sh.513100': 0, 'sh.513500': 0, 'sz.159934': 0}
+[   14.1s]   dividend events built: 18 {'sh.510050': 5, 'sh.510300': 6, 'sh.510880': 6, 'sh.511010': 1}
+[   14.1s]   159934 dev mismatch rows: 1; dividend-rule events: 0 (frozen)
+[   14.1s] == 7. market frames (shared loaders) ==
+[   55.4s]   limits 9705448 rows, splits 4930, dividends 28450 (full files; window-filtered per run)
+[   55.4s] == 8. F4R1-A0 anchor (R3-06 verbatim, byte reproduction) ==
+[   57.2s]   A0 engine run 1.7s, intents 206 | rss 0.90 GB
+[   57.2s]   A0 intents: byte_equal=True rows_equal=True
+[   57.2s]   A0 fills: byte_equal=True rows_equal=True
+[   57.2s]   A0 events: byte_equal=True rows_equal=True
+[   57.2s]   A0 daily_equity: byte_equal=True rows_equal=True
+[   57.2s]   A0 clips_final: byte_equal=True rows_equal=True
+[   57.2s]   F4R1-A0 anchor PASS (5/5 frames byte-equal to F3R3-A0)
+[   57.2s] == 9. arm runs: 3 arms x 2 windows ==
+[   58.3s]   [W1] panel: daily 1330 rows, half 2582, limits 1260, stocks 36 | rss 1.30 GB
+[   58.4s]   [F4R1-A/W1] engine 0.0s, fills 56, zones 18, admitted 18 | rss 1.30 GB
+[   58.4s]     [F4R1-A/W1] month 2015-01-30: mid-month admissions 8 (seats recycled intra-month: ['sh.600122', 'sh.600810', 'sh.601233', 'sh.601777', 'sz.002060', 'sz.002233', 'sz.002461', 'sz.002672'])
+[   58.5s]   [F4R1-B/W1] engine 0.0s, fills 42, zones 19, admitted 18 | rss 1.30 GB
+[   58.5s]     !! [F4R1-B/W1] CHECK FAIL: month 2015-01-30 first-scan admissions mismatch: expected ['sh.600307', 'sh.601677', 'sh.601877', 'sz.000513', 'sz.000708', 'sz.000759', 'sz.000900', 'sz.002226', 'sz.002419', 'sz.002424'] engine ['sh.600307', 'sh.601233', 'sh.601677', 'sh.601877', 'sz.000708', 'sz.000759', 'sz.000900', 'sz.002226', 'sz.002419', 'sz.002424']
+[   58.5s]     [F4R1-B/W1] month 2015-01-30: mid-month admissions 8 (seats recycled intra-month: ['sh.600122', 'sh.600810', 'sh.601777', 'sz.000597', 'sz.002060', 'sz.002233', 'sz.002461', 'sz.002672'])
+[   58.5s]   [F4R1-C/W1] engine 0.0s, fills 37, zones 20, admitted 20 | rss 1.30 GB
+[   58.5s]     [F4R1-C/W1] month 2015-01-30: mid-month admissions 10 (seats recycled intra-month: ['sh.600122', 'sh.600810', 'sh.601233', 'sh.601777', 'sz.000597', 'sz.002060', 'sz.002233', 'sz.002461', 'sz.002643', 'sz.002672'])
+[   58.9s]   [W2] panel: daily 1404 rows, half 2697, limits 1332, stocks 37 | rss 1.39 GB
+[   59.0s]   [F4R1-A/W2] engine 0.1s, fills 72, zones 18, admitted 18 | rss 1.39 GB
+[   59.0s]     [F4R1-A/W2] month 2016-01-29: mid-month admissions 8 (seats recycled intra-month: ['sh.600027', 'sh.600326', 'sh.600335', 'sh.600827', 'sz.000539', 'sz.000719', 'sz.000830', 'sz.002692'])
+[   59.0s]   [F4R1-B/W2] engine 0.0s, fills 59, zones 18, admitted 18 | rss 1.39 GB
+[   59.1s]     [F4R1-B/W2] month 2016-01-29: mid-month admissions 8 (seats recycled intra-month: ['sh.600027', 'sh.600326', 'sh.600335', 'sh.600827', 'sz.000539', 'sz.000719', 'sz.000830', 'sz.002692'])
+[   59.1s]   [F4R1-C/W2] engine 0.0s, fills 40, zones 18, admitted 18 | rss 1.39 GB
+[   59.1s]     [F4R1-C/W2] month 2016-01-29: mid-month admissions 8 (seats recycled intra-month: ['sh.600027', 'sh.600326', 'sh.600335', 'sh.600827', 'sz.000539', 'sz.000719', 'sz.000830', 'sz.002692'])
+[   59.1s] == 10. smoke report ==
+[   59.1s]   smoke_report.md written (all_ok=False)
+[   59.2s] == manifest + smoke_report written; wall 59s, peak rss 1.39 GB ==
+[   59.2s] == VERDICT: smoke FAILURES (see report); no performance conclusions; full period not run
+[    0.0s] == 0. identity pins (engine v1.4 frozen, prereg frozen) ==
+[    0.0s]   engine: 7ad35014d72711cb expect 7ad35014d72711cb43ab6aedc232d70adf7eece60604b2a057ee039c9bd11e78 match=True
+[    1.4s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    1.4s]   halfday_manifest: 2a414174b5df2eee expect 2a414174b5df2eee match=True
+[    1.4s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    1.4s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    1.4s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    1.4s]   f3r1_icw_composite: b09242ee542cf675 expect b09242ee542cf675 match=True
+[    1.4s]   f3r1_manifest: 9feb6080e985971a expect None match=True
+[    1.4s]   f3r1_metrics: 714fd8acb7174c2b expect None match=True
+[    1.4s]   industry_l1: 4edffc3994fb527a expect 4edffc3994fb527a match=True
+[    1.4s]   prereg: e9538bedfc33fabb expect None match=True
+[    1.4s]   f4r1_config: aa5699aec021aa46 expect None match=True
+[    1.4s]   f3r3_runner_source: e404845b442a2bda expect None match=True
+[    1.4s]   f3r3_manifest: 2b5a680575d40161 expect None match=True
+[    1.4s]   v3_metrics_r306_anchor_source: 9e2cd4aafec15c08 expect None match=True
+[    1.4s]   etf_manifest: 8b5b3fe56c0e02fd expect None match=True
+[    1.5s]   halfday rows total: 18486939 (pin 18,486,939)
+[   12.2s]   etf processed dir aggregate: 75777221a8b33502 (7 files); fund_adj batch re-verified (1169 chunks, 0 mismatches)
+[   12.2s]   python 3.11.15 | polars 1.44.2 | numpy 1.26.4 | rss 0.28 GB
+[   12.2s] == 1. calendar & signal days ==
+[   12.6s]   71 full-dev signal days (2015-01-30..2020-11-30)
+[   12.6s]   window W1 [2015-01-05..2015-02-28]: signals [datetime.date(2015, 1, 30), datetime.date(2015, 2, 27)]
+[   12.6s]   window W2 [2016-01-01..2016-02-29]: signals [datetime.date(2016, 1, 29), datetime.date(2016, 2, 29)]
+[   12.6s] == 2. exposures (T200-40 month-end) ==
+[   12.6s]   exposures[2015-01-30]=0.40 [2020-11-30]=0.90
+[   12.6s]   W1 e_T: 2015-01-30=0.40, 2015-02-27=0.40
+[   12.6s]   W2 e_T: 2016-01-29=0.40, 2016-02-29=0.40
+[   12.6s] == 3. F3R1 ICW composite + candidate tables ==
+[   13.3s]   candidates: top-20 per signal month; window union 75 symbols over 4 signal days
+[   13.3s] == 4. candidate closes (sigma0 / p0 lookups) ==
+[   13.6s]   close lookups: 28588 traded (symbol, session) points for 75 candidates
+[   13.6s] == 5. industry map (shenwan L1, 2026 single snapshot) ==
+[   13.6s]   industry L1 map: 5902 stocks, 31 industries; window candidates unmapped 0 -> UNMAPPED bucket (same cap); 2026 single-snapshot lookahead disclosed in prereg sec 3
+[   13.6s]   zones frame F4R1-A/W1: 40 rows (of 40 candidates; sigma excluded {}), months ['2015-01-30', '2015-02-27']
+[   13.6s]   zones frame F4R1-A/W2: 38 rows (of 40 candidates; sigma excluded {'lookback_gap': 2}), months ['2016-01-29', '2016-02-29']
+[   13.6s]   zones frame F4R1-B/W1: 40 rows (of 40 candidates; sigma excluded {}), months ['2015-01-30', '2015-02-27']
+[   13.7s]   zones frame F4R1-B/W2: 38 rows (of 40 candidates; sigma excluded {'lookback_gap': 2}), months ['2016-01-29', '2016-02-29']
+[   13.7s]   zones frame F4R1-C/W1: 40 rows (of 40 candidates; sigma excluded {}), months ['2015-01-30', '2015-02-27']
+[   13.7s]   zones frame F4R1-C/W2: 38 rows (of 40 candidates; sigma excluded {'lookback_gap': 2}), months ['2016-01-29', '2016-02-29']
+[   13.7s] == 6. ETF assets ==
+[   13.8s]   etf panel dev rows: 13158 per member {'sh.513500': 1462, 'sz.159934': 1462, 'sh.518880': 1462, 'sh.513100': 1462, 'sh.510880': 1462, 'sh.510300': 1462, 'sz.159915': 1462, 'sh.511010': 1462, 'sh.510050': 1462}
+[   13.8s]   assertion (ii) preclose nulls: 0
+[   13.8s]   assertion (iii): sse 1462 days, panel union 1462 days, missing [], extra []
+[   13.9s]   factor coverage gaps per member: {'sh.511010': 0, 'sh.518880': 0, 'sh.510050': 0, 'sh.510300': 0, 'sz.159915': 0, 'sh.510880': 0, 'sh.513100': 0, 'sh.513500': 0, 'sz.159934': 0}
+[   13.9s]   dividend events built: 18 {'sh.510050': 5, 'sh.510300': 6, 'sh.510880': 6, 'sh.511010': 1}
+[   13.9s]   159934 dev mismatch rows: 1; dividend-rule events: 0 (frozen)
+[   13.9s] == 7. market frames (shared loaders) ==
+[   52.7s]   limits 9705448 rows, splits 4930, dividends 28450 (full files; window-filtered per run)
+[   52.7s] == 8. F4R1-A0 anchor (R3-06 verbatim, byte reproduction) ==
+[   54.4s]   A0 engine run 1.6s, intents 206 | rss 0.90 GB
+[   54.4s]   A0 intents: byte_equal=True rows_equal=True
+[   54.4s]   A0 fills: byte_equal=True rows_equal=True
+[   54.4s]   A0 events: byte_equal=True rows_equal=True
+[   54.4s]   A0 daily_equity: byte_equal=True rows_equal=True
+[   54.4s]   A0 clips_final: byte_equal=True rows_equal=True
+[   54.4s]   F4R1-A0 anchor PASS (5/5 frames byte-equal to F3R3-A0)
+[   54.4s] == 9. arm runs: 3 arms x 2 windows ==
+[   56.1s]   [W1] panel: daily 1330 rows, half 2582, limits 1260, stocks 36 | rss 1.36 GB
+[   56.3s]   [F4R1-A/W1] engine 0.2s, fills 56, zones 18, admitted 18 | rss 1.36 GB
+[   56.4s]     [F4R1-A/W1] month 2015-01-30: mid-month admissions 8 (seats recycled intra-month: ['sh.600122', 'sh.600810', 'sh.601233', 'sh.601777', 'sz.002060', 'sz.002233', 'sz.002461', 'sz.002672'])
+[   56.7s]   [F4R1-B/W1] engine 0.2s, fills 42, zones 19, admitted 18 | rss 1.07 GB
+[   56.7s]     [F4R1-B/W1] month 2015-01-30: mid-month admissions 8 (seats recycled intra-month: ['sh.600122', 'sh.600810', 'sh.601777', 'sz.000597', 'sz.002060', 'sz.002233', 'sz.002461', 'sz.002672'])
+[   57.0s]   [F4R1-C/W1] engine 0.2s, fills 37, zones 20, admitted 20 | rss 1.07 GB
+[   57.0s]     [F4R1-C/W1] month 2015-01-30: mid-month admissions 10 (seats recycled intra-month: ['sh.600122', 'sh.600810', 'sh.601233', 'sh.601777', 'sz.000597', 'sz.002060', 'sz.002233', 'sz.002461', 'sz.002643', 'sz.002672'])
+[   58.8s]   [W2] panel: daily 1404 rows, half 2697, limits 1332, stocks 37 | rss 1.40 GB
+[   59.0s]   [F4R1-A/W2] engine 0.2s, fills 72, zones 18, admitted 18 | rss 1.39 GB
+[   59.1s]     [F4R1-A/W2] month 2016-01-29: mid-month admissions 8 (seats recycled intra-month: ['sh.600027', 'sh.600326', 'sh.600335', 'sh.600827', 'sz.000539', 'sz.000719', 'sz.000830', 'sz.002692'])
+[   59.3s]   [F4R1-B/W2] engine 0.2s, fills 59, zones 18, admitted 18 | rss 1.39 GB
+[   59.4s]     [F4R1-B/W2] month 2016-01-29: mid-month admissions 8 (seats recycled intra-month: ['sh.600027', 'sh.600326', 'sh.600335', 'sh.600827', 'sz.000539', 'sz.000719', 'sz.000830', 'sz.002692'])
+[   59.7s]   [F4R1-C/W2] engine 0.2s, fills 40, zones 18, admitted 18 | rss 1.18 GB
+[   59.7s]     [F4R1-C/W2] month 2016-01-29: mid-month admissions 8 (seats recycled intra-month: ['sh.600027', 'sh.600326', 'sh.600335', 'sh.600827', 'sz.000539', 'sz.000719', 'sz.000830', 'sz.002692'])
+[   59.8s] == 10. smoke report ==
+[   59.8s]   smoke_report.md written (all_ok=True)
+[   60.0s] == manifest + smoke_report written; wall 60s, peak rss 1.40 GB ==
+[   60.0s] == VERDICT: smoke ALL PASS; no performance conclusions; full period not run
+[    0.0s] == 0. identity pins (engine v1.4 frozen, prereg frozen) ==
+[    0.0s]   engine: 7ad35014d72711cb expect 7ad35014d72711cb43ab6aedc232d70adf7eece60604b2a057ee039c9bd11e78 match=True
+[    1.4s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    1.4s]   halfday_manifest: 2a414174b5df2eee expect 2a414174b5df2eee match=True
+[    1.4s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    1.4s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    1.4s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    1.4s]   f3r1_icw_composite: b09242ee542cf675 expect b09242ee542cf675 match=True
+[    1.4s]   f3r1_manifest: 9feb6080e985971a expect None match=True
+[    1.4s]   f3r1_metrics: 714fd8acb7174c2b expect None match=True
+[    1.4s]   industry_l1: 4edffc3994fb527a expect 4edffc3994fb527a match=True
+[    1.4s]   prereg: e9538bedfc33fabb expect None match=True
+[    1.4s]   f4r1_config: aa5699aec021aa46 expect None match=True
+[    1.4s]   f3r3_runner_source: e404845b442a2bda expect None match=True
+[    1.4s]   f3r3_manifest: 2b5a680575d40161 expect None match=True
+[    1.4s]   v3_metrics_r306_anchor_source: 9e2cd4aafec15c08 expect None match=True
+[    1.4s]   etf_manifest: 8b5b3fe56c0e02fd expect None match=True
+[    1.5s]   halfday rows total: 18486939 (pin 18,486,939)
+[   12.8s]   etf processed dir aggregate: 75777221a8b33502 (7 files); fund_adj batch re-verified (1169 chunks, 0 mismatches)
+[   12.8s]   python 3.11.15 | polars 1.44.2 | numpy 1.26.4 | rss 0.28 GB
+[   12.8s] == 1. calendar & signal days ==
+[   13.2s]   71 full-dev signal days (2015-01-30..2020-11-30)
+[   13.2s]   window W1 [2015-01-05..2015-02-28]: signals [datetime.date(2015, 1, 30), datetime.date(2015, 2, 27)]
+[   13.2s]   window W2 [2016-01-01..2016-02-29]: signals [datetime.date(2016, 1, 29), datetime.date(2016, 2, 29)]
+[   13.2s] == 2. exposures (T200-40 month-end) ==
+[   13.2s]   exposures[2015-01-30]=0.40 [2020-11-30]=0.90
+[   13.2s]   W1 e_T: 2015-01-30=0.40, 2015-02-27=0.40
+[   13.2s]   W2 e_T: 2016-01-29=0.40, 2016-02-29=0.40
+[   13.2s] == 3. F3R1 ICW composite + candidate tables ==
+[   13.7s]   candidates: top-20 per signal month; window union 75 symbols over 4 signal days
+[   13.7s] == 4. candidate closes (sigma0 / p0 lookups) ==
+[   14.1s]   close lookups: 28588 traded (symbol, session) points for 75 candidates
+[   14.1s] == 5. industry map (shenwan L1, 2026 single snapshot) ==
+[   14.1s]   industry L1 map: 5902 stocks, 31 industries; window candidates unmapped 0 -> UNMAPPED bucket (same cap); 2026 single-snapshot lookahead disclosed in prereg sec 3
+[   14.1s]   zones frame F4R1-A/W1: 40 rows (of 40 candidates; sigma excluded {}), months ['2015-01-30', '2015-02-27']
+[   14.1s]   zones frame F4R1-A/W2: 38 rows (of 40 candidates; sigma excluded {'lookback_gap': 2}), months ['2016-01-29', '2016-02-29']
+[   14.1s]   zones frame F4R1-B/W1: 40 rows (of 40 candidates; sigma excluded {}), months ['2015-01-30', '2015-02-27']
+[   14.1s]   zones frame F4R1-B/W2: 38 rows (of 40 candidates; sigma excluded {'lookback_gap': 2}), months ['2016-01-29', '2016-02-29']
+[   14.1s]   zones frame F4R1-C/W1: 40 rows (of 40 candidates; sigma excluded {}), months ['2015-01-30', '2015-02-27']
+[   14.1s]   zones frame F4R1-C/W2: 38 rows (of 40 candidates; sigma excluded {'lookback_gap': 2}), months ['2016-01-29', '2016-02-29']
+[   14.1s] == 6. ETF assets ==
+[   14.2s]   etf panel dev rows: 13158 per member {'sz.159915': 1462, 'sh.513500': 1462, 'sh.510880': 1462, 'sh.513100': 1462, 'sh.518880': 1462, 'sh.510300': 1462, 'sh.510050': 1462, 'sh.511010': 1462, 'sz.159934': 1462}
+[   14.2s]   assertion (ii) preclose nulls: 0
+[   14.2s]   assertion (iii): sse 1462 days, panel union 1462 days, missing [], extra []
+[   14.3s]   factor coverage gaps per member: {'sh.511010': 0, 'sh.518880': 0, 'sh.510050': 0, 'sh.510300': 0, 'sz.159915': 0, 'sh.510880': 0, 'sh.513100': 0, 'sh.513500': 0, 'sz.159934': 0}
+[   14.4s]   dividend events built: 18 {'sh.510050': 5, 'sh.510300': 6, 'sh.510880': 6, 'sh.511010': 1}
+[   14.4s]   159934 dev mismatch rows: 1; dividend-rule events: 0 (frozen)
+[   14.4s] == 7. market frames (shared loaders) ==
+[   53.1s]   limits 9705448 rows, splits 4930, dividends 28450 (full files; window-filtered per run)
+[   53.1s] == 8. F4R1-A0 anchor (R3-06 verbatim, byte reproduction) ==
+[   54.6s]   A0 engine run 1.4s, intents 206 | rss 0.93 GB
+[   54.6s]   A0 intents: byte_equal=True rows_equal=True
+[   54.6s]   A0 fills: byte_equal=True rows_equal=True
+[   54.6s]   A0 events: byte_equal=True rows_equal=True
+[   54.6s]   A0 daily_equity: byte_equal=True rows_equal=True
+[   54.6s]   A0 clips_final: byte_equal=True rows_equal=True
+[   54.6s]   F4R1-A0 anchor PASS (5/5 frames byte-equal to F3R3-A0)
+[   54.6s] == 9. arm runs: 3 arms x 2 windows ==
+[   55.0s]   [W1] panel: daily 1330 rows, half 2582, limits 1260, stocks 36 | rss 1.41 GB
+[   55.0s]   [F4R1-A/W1] engine 0.0s, fills 56, zones 18, admitted 18 | rss 1.41 GB
+[   55.0s]     [F4R1-A/W1] month 2015-01-30: mid-month admissions 8 (seats recycled intra-month: ['sh.600122', 'sh.600810', 'sh.601233', 'sh.601777', 'sz.002060', 'sz.002233', 'sz.002461', 'sz.002672'])
+[   55.1s]   [F4R1-B/W1] engine 0.0s, fills 42, zones 19, admitted 18 | rss 1.41 GB
+[   55.1s]     [F4R1-B/W1] month 2015-01-30: mid-month admissions 8 (seats recycled intra-month: ['sh.600122', 'sh.600810', 'sh.601777', 'sz.000597', 'sz.002060', 'sz.002233', 'sz.002461', 'sz.002672'])
+[   55.1s]   [F4R1-C/W1] engine 0.0s, fills 37, zones 20, admitted 20 | rss 1.41 GB
+[   55.1s]     [F4R1-C/W1] month 2015-01-30: mid-month admissions 10 (seats recycled intra-month: ['sh.600122', 'sh.600810', 'sh.601233', 'sh.601777', 'sz.000597', 'sz.002060', 'sz.002233', 'sz.002461', 'sz.002643', 'sz.002672'])
+[   55.6s]   [W2] panel: daily 1404 rows, half 2697, limits 1332, stocks 37 | rss 1.50 GB
+[   55.6s]   [F4R1-A/W2] engine 0.1s, fills 72, zones 18, admitted 18 | rss 1.19 GB
+[   55.6s]     [F4R1-A/W2] month 2016-01-29: mid-month admissions 8 (seats recycled intra-month: ['sh.600027', 'sh.600326', 'sh.600335', 'sh.600827', 'sz.000539', 'sz.000719', 'sz.000830', 'sz.002692'])
+[   55.7s]   [F4R1-B/W2] engine 0.0s, fills 59, zones 18, admitted 18 | rss 1.19 GB
+[   55.7s]     [F4R1-B/W2] month 2016-01-29: mid-month admissions 8 (seats recycled intra-month: ['sh.600027', 'sh.600326', 'sh.600335', 'sh.600827', 'sz.000539', 'sz.000719', 'sz.000830', 'sz.002692'])
+[   55.8s]   [F4R1-C/W2] engine 0.0s, fills 40, zones 18, admitted 18 | rss 1.19 GB
+[   55.8s]     [F4R1-C/W2] month 2016-01-29: mid-month admissions 8 (seats recycled intra-month: ['sh.600027', 'sh.600326', 'sh.600335', 'sh.600827', 'sz.000539', 'sz.000719', 'sz.000830', 'sz.002692'])
+[   55.8s] == 10. smoke report ==
+[   55.8s]   smoke_report.md written (all_ok=True)
+[   55.8s] == manifest + smoke_report written; wall 56s, peak rss 1.50 GB ==
+[   55.8s] == VERDICT: smoke ALL PASS; no performance conclusions; full period not run

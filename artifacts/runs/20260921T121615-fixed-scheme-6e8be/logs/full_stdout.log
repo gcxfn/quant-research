@@ -1,0 +1,49 @@
+[    0.0s] fixed-scheme; window=2015-01-05..2020-12-31; curves=['MF-G0', 'MF-G1', 'MF-G2', 'MF-G3', 'MC-G0', 'MC-G1', 'MC-G2', 'MC-G3']
+[    3.3s]   engine f3650f8440c713b8 OK; pins OK; rss 0.27 GB
+[    3.3s] == 1. calendar & signal days ==
+[    3.4s]   71 signal days (2015-01-30..2020-11-30)
+[    3.4s] == 2. R16 pools ==
+[    5.9s]   pool n min 810 max 2260
+[    5.9s] == 3. stock legs ==
+D:\量化\artifacts\runs\20260921T121615-fixed-scheme-6e8be\tmp\runner_fixed_scheme.py:242: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  f = f.filter(pl.col("signal_date").is_in(pl.Series(sig_days))
+D:\量化\artifacts\runs\20260921T121615-fixed-scheme-6e8be\tmp\runner_fixed_scheme.py:246: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  wide = wide.filter(pl.col("signal_date").is_in(pl.Series(sig_days)))
+D:\量化\artifacts\runs\20260921T121615-fixed-scheme-6e8be\tmp\runner_fixed_scheme.py:253: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  .filter(pl.col("symbol").is_in(pl.Series(sorted(pool_set[t]))))
+[    8.1s]   M-F: 20 reps; eligible median 1510
+[    8.2s]   MF: members/month min 4 max 4
+[    8.2s]   MC: members/month min 0 max 4
+[    8.2s] == 4. market frames ==
+[   17.5s]   frames: 237 stocks + 3 ETFs; daily 334116; half 632204; limits 329056; rss 3.04 GB
+[   17.7s] == 5. benchmarks B1(m)_mix / B3'_mix ==
+[   26.3s]   B1(m)_mix net +5.65% mdd -19.54%; B3'_mix mean +5.64%
+[   26.8s] == 7. engine runs ==
+[   31.5s]   MF-G0: 4.8s; calls 2924 injected 3461 orders 3496 filled 535 k3 None | etf exits 2 sn {'stops': 365, 'protections': 0, 'takes': 0} | rss 3.36 GB
+[   36.1s]   MF-G1: 4.6s; calls 2924 injected 3344 orders 3374 filled 548 k3 None | etf exits 2 sn {'stops': 363, 'protections': 0, 'takes': 0} | rss 3.37 GB
+[   40.5s]   MF-G2: 4.4s; calls 2924 injected 2798 orders 2810 filled 527 k3 None | etf exits 2 sn {'stops': 335, 'protections': 0, 'takes': 0} | rss 3.43 GB
+[   44.8s]   MF-G3: 4.3s; calls 2924 injected 2642 orders 2668 filled 520 k3 None | etf exits 2 sn {'stops': 332, 'protections': 0, 'takes': 0} | rss 3.44 GB
+[   48.4s]   MC-G0: 3.6s; calls 2924 injected 3868 orders 3883 filled 293 k3 None | etf exits 2 sn {'stops': 275, 'protections': 0, 'takes': 0} | rss 3.46 GB
+[   52.0s]   MC-G1: 3.6s; calls 2924 injected 4023 orders 4038 filled 303 k3 None | etf exits 2 sn {'stops': 261, 'protections': 0, 'takes': 0} | rss 3.49 GB
+[   55.4s]   MC-G2: 3.4s; calls 2924 injected 3533 orders 3550 filled 263 k3 None | etf exits 2 sn {'stops': 231, 'protections': 0, 'takes': 0} | rss 3.51 GB
+[   59.2s]   MC-G3: 3.8s; calls 2924 injected 3994 orders 4007 filled 253 k3 None | etf exits 2 sn {'stops': 224, 'protections': 0, 'takes': 0} | rss 3.49 GB
+[   59.2s] == 8. metrics & eight gates ==
+[   59.6s]   MF-G0: net -0.01% exc -5.66pp adv 2/6 mdd -42.72% turn 14.88 w 23.3% exec 29.1% -> fail ['1_net_cagr_gt_0', '2_excess_vs_B1mix_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1mix', '5_one_side_turnover_le_6', '7_vs_B3mix_plus_1pp', '8_execution_rate_ge_95pct']; 10% no
+[   59.9s]   MF-G1: net +0.72% exc -4.93pp adv 2/6 mdd -39.10% turn 13.43 w 23.3% exec 29.6% -> fail ['2_excess_vs_B1mix_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1mix', '5_one_side_turnover_le_6', '7_vs_B3mix_plus_1pp', '8_execution_rate_ge_95pct']; 10% no
+[   60.1s]   MF-G2: net +2.59% exc -3.07pp adv 2/6 mdd -19.88% turn 7.00 w 20.4% exec 29.2% -> fail ['2_excess_vs_B1mix_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1mix', '5_one_side_turnover_le_6', '7_vs_B3mix_plus_1pp', '8_execution_rate_ge_95pct']; 10% no
+[   60.3s]   MF-G3: net +2.74% exc -2.91pp adv 2/6 mdd -17.37% turn 4.69 w 20.4% exec 29.0% -> fail ['2_excess_vs_B1mix_ge_2pp', '3_advantage_years_ge_5_of_6', '7_vs_B3mix_plus_1pp', '8_execution_rate_ge_95pct']; 10% no
+[   60.5s]   MC-G0: net -8.30% exc -13.95pp adv 1/6 mdd -50.44% turn 9.62 w 25.2% exec 19.5% -> fail ['1_net_cagr_gt_0', '2_excess_vs_B1mix_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1mix', '5_one_side_turnover_le_6', '7_vs_B3mix_plus_1pp', '8_execution_rate_ge_95pct']; 10% no
+[   60.6s]   MC-G1: net -5.12% exc -10.77pp adv 2/6 mdd -41.02% turn 8.85 w 25.2% exec 19.2% -> fail ['1_net_cagr_gt_0', '2_excess_vs_B1mix_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1mix', '5_one_side_turnover_le_6', '7_vs_B3mix_plus_1pp', '8_execution_rate_ge_95pct']; 10% no
+[   60.7s]   MC-G2: net -2.48% exc -8.13pp adv 2/6 mdd -24.53% turn 4.41 w 22.1% exec 17.4% -> fail ['1_net_cagr_gt_0', '2_excess_vs_B1mix_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1mix', '7_vs_B3mix_plus_1pp', '8_execution_rate_ge_95pct']; 10% no
+[   60.8s]   MC-G3: net -1.84% exc -7.49pp adv 2/6 mdd -19.11% turn 3.71 w 21.2% exec 16.7% -> fail ['1_net_cagr_gt_0', '2_excess_vs_B1mix_ge_2pp', '3_advantage_years_ge_5_of_6', '7_vs_B3mix_plus_1pp', '8_execution_rate_ge_95pct']; 10% no
+[   60.8s] == 9. outputs ==
+[   61.5s] == done; wall 62s; peak rss 3.51 GB

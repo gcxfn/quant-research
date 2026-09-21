@@ -1,0 +1,499 @@
+{
+ "run_id": "20260920T191000-f3r1-rebuild",
+ "experiment_id": "exp-20260919-factor-round-f3r1",
+ "status": "completed",
+ "started_at_utc": "2026-09-20T11:29:46.076392+00:00",
+ "ended_at_utc": "2026-09-20T11:30:29.066182+00:00",
+ "wall_seconds": 42.98919469999964,
+ "peak_rss_gb": 1.776218112,
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "artifacts/runs/20260920T191000-f3r1-rebuild/tmp/runner_f3r1.py"
+ ],
+ "random_seed": "B3' seeds 17..36 (r16.B3_SEEDS); no other RNG",
+ "engine": {
+  "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+  "sha256_at_start": "31022babbc2858ea27a9142141fba9c14f7361294ea84e4257025ce820aa6076",
+  "sha256_at_end": "31022babbc2858ea27a9142141fba9c14f7361294ea84e4257025ce820aa6076",
+  "version": "v1.3",
+  "corporate_actions": null
+ },
+ "pins": {
+  "engine": {
+   "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+   "sha256": "31022babbc2858ea27a9142141fba9c14f7361294ea84e4257025ce820aa6076",
+   "expected": "31022babbc2858ea27a9142141fba9c14f7361294ea84e4257025ce820aa6076",
+   "match": true
+  },
+  "config": {
+   "path": "D:\\量化\\configs\\experiments\\f3r1-factor-combination.json",
+   "sha256": "86f70d1e4b2e04fdc8b8595a7745cefcfa6d6f833a401379780083bdba445831"
+  },
+  "daily": {
+   "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_1999_2024.parquet",
+   "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6",
+   "rows_total": 16344349,
+   "rows_after_freeze_filter": 16344349
+  },
+  "halfday_manifest": {
+   "path": "D:\\量化\\data\\processed\\halfday-bars-20260918\\manifest.json",
+   "sha256": "2a414174b5df2eeed4c6bd6a7cd7f9f09f9b2efc8f05673ccc4b7695812cd679",
+   "match": true
+  },
+  "stk_limit_aggregate": {
+   "path": "D:\\量化\\data\\raw\\tushare\\stk_limit\\20260917-r1",
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "3c53abf3b0c39b425389137d9f630f0de158990fcdc55b0bd41bf7d9c3bde673",
+   "files": 2432,
+   "total_bytes": 301278245,
+   "match": true
+  },
+  "split_factor": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\split_factor.h5",
+   "sha256": "2f436b2f13d09a9bfdcbdb0bf35669c10a377d180ce1ca37bef53d6c96a3365d"
+  },
+  "dividends": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\dividends.h5",
+   "sha256": "46121c09cddde72e725c2d4ae025cc259b049aeaa77c868b492fdbba60214846"
+  },
+  "rep_A17": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\A_price\\A17.parquet",
+   "sha256": "a5f60efbcfd80330570dc7454140deeb679f44cd1f2d4eadf6c3122658873ff6"
+  },
+  "rep_A20": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\A_price\\A20.parquet",
+   "sha256": "00b69fbbf22f6725fd83cc6b9811f297874ec98cd7ce070e39156d229d37bda9"
+  },
+  "rep_A25": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\A_price\\A25.parquet",
+   "sha256": "807022e1cbaf69fb0e9aa3625cfd19f0f1631775ce0fb51e23f90c4dc1abccb4"
+  },
+  "rep_B11": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\B_value\\B11.parquet",
+   "sha256": "8170f6e2ca69ab9218051dc01bbd5e7182622d5ceca91f6f0554a9dbf15fa19b"
+  },
+  "rep_B12": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\B_value\\B12.parquet",
+   "sha256": "a3a0c9e24947644473a28b6f07efc71fd833c3fe9de8988560df145d7b118ab5"
+  },
+  "rep_B14": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\B_value\\B14.parquet",
+   "sha256": "f89b27e8220d1c7a3083f2c8834709c84125c6cc1d9bec9a6af8d5792da1f25a"
+  },
+  "rep_C19": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\C_micro\\C19.parquet",
+   "sha256": "4243fa0519032777e8db9f5b7c1dc1517fe05b6a0ea5d20e8dc08b8328d899c8"
+  },
+  "rep_D08": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\D_fund\\D08.parquet",
+   "sha256": "5a93e09e9cfa3b6c04441dfb817ff4ffbcb3e2dbb4509e7b2d333914c62a37aa"
+  },
+  "rep_D09": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\D_fund\\D09.parquet",
+   "sha256": "aa1b9cbb41636c031c8486c9ab1d57604dfcf4684f02b2f0fc68aaff8fbbe331"
+  },
+  "rep_D10": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\D_fund\\D10.parquet",
+   "sha256": "92cedf313fa4bc37fe4187096d7108d7b3f674b7585b802e05b6ea9842e7643f"
+  },
+  "rep_D14": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\D_fund\\D14.parquet",
+   "sha256": "1bebe3ad08e173d744dc6eed6272e853e63e5c062fc4b85c5f9102d84be5c541"
+  },
+  "rep_D18": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\D_fund\\D18.parquet",
+   "sha256": "18a1535503d4980af21ad92eb58f380021a22fb6d588a214cf3c79f9dc4e4053"
+  },
+  "rep_D19": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\D_fund\\D19.parquet",
+   "sha256": "2f625f56a3433dfa5275c4474f82b65560c735424513f5abe10d88bcd78f7937"
+  },
+  "rep_D20": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\D_fund\\D20.parquet",
+   "sha256": "b31523979ab19f1ccc00b14978a5781f730e126ab0d419341232559549e100db"
+  },
+  "rep_D21": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\D_fund\\D21.parquet",
+   "sha256": "e6aed47f9168b4afa6c55f7d627b843b1ac4f05d28ed5deb435c8d3b8e2c02b0"
+  },
+  "rep_D25": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\D_fund\\D25.parquet",
+   "sha256": "4979832dafde1717fceaf5f985a1eb7f194c21bda501f823ad8ba3de58de888d"
+  },
+  "rep_E16": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\E_event\\E16.parquet",
+   "sha256": "90767c8edb00eebd70e0ea5de88cb52fb0274e3e0517bc1a77a69743faf57d8d"
+  },
+  "rep_F02": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\F_xsec\\F02.parquet",
+   "sha256": "f92de59c760563350a88501f986f4f58266519dd4e771f0520524faf0570bfbf"
+  },
+  "rep_F06": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\F_xsec\\F06.parquet",
+   "sha256": "e04e1344f841fc0eaa1c2ffe3a69df05ad06ce9b10042d8cfd9000f33ce29fba"
+  },
+  "rep_F09": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\F_xsec\\F09.parquet",
+   "sha256": "80f122f563a26cca5b9abc22c1626660a66cd29fca5ca669c5847ad469fa2247"
+  },
+  "corr_matrix": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\f2r1_survivors_corr.csv",
+   "sha256": "0461c1a8ac3f520ddb4f9874bfb65e68a3d53f71051df7c6cbbd2f874d51caf1"
+  },
+  "all120": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190224-f2r1-rebuild-85e7f7e5\\f3_inputs\\f2r1_all120.csv",
+   "sha256": "7f9d44b6b432da1da8677ac72182815319ea7bdd71aba858240eaf337f6ff57f"
+  }
+ },
+ "config": {
+  "experiment_id": "exp-20260919-factor-round-f3r1",
+  "frozen_at": "2026-09-19T00:00:00+08:00 (pre-run; timestamp recorded at run launch in manifest)",
+  "prereg": "docs/research/exp-20260919-factor-round-f3r1-prereg.md",
+  "window": {
+   "dev_start": "2015-01-05",
+   "dev_end": "2020-12-31",
+   "signal_grid": "month-end trading days; 2020-12-31 dropped as signal (P3R2 precedent), kept as expiry anchor",
+   "val": "2021-2024 zero contact"
+  },
+  "dedup": {
+   "matrix": "artifacts/runs/20260919T180000-f2r1-factor-batch/outputs/f2r1_survivors_corr.csv",
+   "edge_abs_rho": 0.6,
+   "cluster": "connected components",
+   "representative": "max |t_ic| (ties: higher coverage, then factor_id lexicographic)"
+  },
+  "composite": {
+   "pool": "r16.signal_pools verbatim (mainboard, isST=0, listing>120 sessions, amt_med20>=50M, close>=2)",
+   "coverage_rule": "symbol eligible iff >= ceil(M/2) representative factors non-null at t (arm-independent)",
+   "component": "x_i = (rank_pct - 0.5) * sign(ic_mean_i), ranked within executable cross-section",
+   "arms": {
+    "F3-EW": "equal-weight mean of available components",
+    "F3-ICW": "sum(abs(icir_i) * x_i) / sum(abs(icir_i)) over available components (pre-run clarification: components are sign-oriented, weights are |icir|)"
+   },
+   "tie_break": "composite desc, symbol asc"
+  },
+  "portfolio": {
+   "K": 10,
+   "target_weight_per_seat": 0.1,
+   "entry_rank": 10,
+   "exit_rank": 20,
+   "buffer_rule": "r16.buffer_membership (H-47), q5 filter OFF",
+   "intra_month_rebalance": false
+  },
+  "intent_mapping": {
+   "buy": "target_weight=0.10, priority=composite rank, decision=(T,'pm'), expiry=T'+1 calendar day",
+   "sell": "full exit, intent=risk (K=3 session fallback)",
+   "rescale": "none (registered note: no mid-cycle weight correction)"
+  },
+  "benchmarks": {
+   "B1m": "executable pool equal-weight monthly, fractional, exposure=1, rate-only fee schedule",
+   "B3prime": "random K=10, seeds 17-36 (20 runs), STOCK_FEE_SCHEDULE integer lots, exposure=1, mean net CAGR"
+  },
+  "gates": "R16 prereg section 2 eight gates verbatim (P3R1/P3R2 precedent) + goal-alignment criterion dev net CAGR >= 10%",
+  "engine": {
+   "path": "src/quant/backtest/band_engine.py",
+   "version": "v1.3",
+   "sha256_16": "84a2443ac28fe1b8",
+   "corporate_actions": null
+  },
+  "budget": {
+   "wall_minutes": 60,
+   "peak_rss_gb": 8.0
+  },
+  "trial_accounting": {
+   "strategy_line": "262 -> 264 (2 arms)",
+   "factor_line": "no new trials"
+  }
+ },
+ "signal_days": [
+  "2015-01-30",
+  "2015-02-27",
+  "2015-03-31",
+  "2015-04-30",
+  "2015-05-29",
+  "2015-06-30",
+  "2015-07-31",
+  "2015-08-31",
+  "2015-09-30",
+  "2015-10-30",
+  "2015-11-30",
+  "2015-12-31",
+  "2016-01-29",
+  "2016-02-29",
+  "2016-03-31",
+  "2016-04-29",
+  "2016-05-31",
+  "2016-06-30",
+  "2016-07-29",
+  "2016-08-31",
+  "2016-09-30",
+  "2016-10-31",
+  "2016-11-30",
+  "2016-12-30",
+  "2017-01-26",
+  "2017-02-28",
+  "2017-03-31",
+  "2017-04-28",
+  "2017-05-31",
+  "2017-06-30",
+  "2017-07-31",
+  "2017-08-31",
+  "2017-09-29",
+  "2017-10-31",
+  "2017-11-30",
+  "2017-12-29",
+  "2018-01-31",
+  "2018-02-28",
+  "2018-03-30",
+  "2018-04-27",
+  "2018-05-31",
+  "2018-06-29",
+  "2018-07-31",
+  "2018-08-31",
+  "2018-09-28",
+  "2018-10-31",
+  "2018-11-30",
+  "2018-12-28",
+  "2019-01-31",
+  "2019-02-28",
+  "2019-03-29",
+  "2019-04-30",
+  "2019-05-31",
+  "2019-06-28",
+  "2019-07-31",
+  "2019-08-30",
+  "2019-09-30",
+  "2019-10-31",
+  "2019-11-29",
+  "2019-12-31",
+  "2020-01-23",
+  "2020-02-28",
+  "2020-03-31",
+  "2020-04-30",
+  "2020-05-29",
+  "2020-06-30",
+  "2020-07-31",
+  "2020-08-31",
+  "2020-09-30",
+  "2020-10-30",
+  "2020-11-30"
+ ],
+ "cluster_table": [
+  {
+   "representative": "F09",
+   "members": [
+    "A01",
+    "A02",
+    "A05",
+    "A09",
+    "A10",
+    "A21",
+    "A23",
+    "A24",
+    "B15",
+    "C01",
+    "C11",
+    "C12",
+    "F09"
+   ],
+   "size": 13
+  },
+  {
+   "representative": "A17",
+   "members": [
+    "A17",
+    "A19"
+   ],
+   "size": 2
+  },
+  {
+   "representative": "B12",
+   "members": [
+    "A18",
+    "A22",
+    "B12"
+   ],
+   "size": 3
+  },
+  {
+   "representative": "A20",
+   "members": [
+    "A20"
+   ],
+   "size": 1
+  },
+  {
+   "representative": "A25",
+   "members": [
+    "A25"
+   ],
+   "size": 1
+  },
+  {
+   "representative": "B11",
+   "members": [
+    "B09",
+    "B10",
+    "B11",
+    "F10"
+   ],
+   "size": 4
+  },
+  {
+   "representative": "B14",
+   "members": [
+    "B14"
+   ],
+   "size": 1
+  },
+  {
+   "representative": "C19",
+   "members": [
+    "C19"
+   ],
+   "size": 1
+  },
+  {
+   "representative": "D08",
+   "members": [
+    "D07",
+    "D08",
+    "D17",
+    "D30"
+   ],
+   "size": 4
+  },
+  {
+   "representative": "D09",
+   "members": [
+    "D09"
+   ],
+   "size": 1
+  },
+  {
+   "representative": "D10",
+   "members": [
+    "D10"
+   ],
+   "size": 1
+  },
+  {
+   "representative": "D21",
+   "members": [
+    "D12",
+    "D13",
+    "D21"
+   ],
+   "size": 3
+  },
+  {
+   "representative": "D14",
+   "members": [
+    "D14"
+   ],
+   "size": 1
+  },
+  {
+   "representative": "D18",
+   "members": [
+    "D18"
+   ],
+   "size": 1
+  },
+  {
+   "representative": "D19",
+   "members": [
+    "D19"
+   ],
+   "size": 1
+  },
+  {
+   "representative": "D20",
+   "members": [
+    "D20"
+   ],
+   "size": 1
+  },
+  {
+   "representative": "D25",
+   "members": [
+    "D25"
+   ],
+   "size": 1
+  },
+  {
+   "representative": "E16",
+   "members": [
+    "E16"
+   ],
+   "size": 1
+  },
+  {
+   "representative": "F02",
+   "members": [
+    "F02"
+   ],
+   "size": 1
+  },
+  {
+   "representative": "F06",
+   "members": [
+    "F06"
+   ],
+   "size": 1
+  }
+ ],
+ "representatives": [
+  "A17",
+  "A20",
+  "A25",
+  "B11",
+  "B12",
+  "B14",
+  "C19",
+  "D08",
+  "D09",
+  "D10",
+  "D14",
+  "D18",
+  "D19",
+  "D20",
+  "D21",
+  "D25",
+  "E16",
+  "F02",
+  "F06",
+  "F09"
+ ],
+ "trial_accounting": {
+  "strategy_line": {
+   "before": 262,
+   "this_round": 2,
+   "after": 264
+  },
+  "factor_line": "no new trials (FT-01 unchanged)"
+ },
+ "gates_dev_pass": [],
+ "goal_met_arms": [],
+ "advanced_to_validation": false,
+ "val_consumed": false,
+ "stop_note": "no arm passed all dev gates (0/2); val not consumed",
+ "outputs": {
+  "outputs/dedup_clusters.csv": "b8113749759cecd5270a4c2fea322e0b391c4921c4421983e7d10e0abf041dd3",
+  "outputs/F3-EW_clips_final.parquet": "edf7d9d1130fb581d9331fdaa7a320825d9c6df73cb4d35a282d7fd1f94903da",
+  "outputs/F3-EW_composite.parquet": "413297e8a97d5a7575405ce425f3d5e52bdb1b9467dd2f872cba68e94e9662fa",
+  "outputs/F3-EW_daily_equity.parquet": "468f6930999230b7eb3d90ddf975019e11e97a4d0e0b92009c440b5562a47326",
+  "outputs/F3-EW_events.parquet": "6defdb51723e95dd8390d381e9bda97a60c9bb4a20030fcb239d42876dad24d0",
+  "outputs/F3-EW_fills.parquet": "6c7c239df02f224125d3ae4d12af95bbdc9f18249d63ace06237e77bc7facaec",
+  "outputs/F3-EW_intents.parquet": "07e078e5a9c588b09d551aef6ff31b20667572b2bd467ea290a49a413716c6d0",
+  "outputs/F3-ICW_clips_final.parquet": "f67e5a0a9e6c3d934544d706e2c69536efd0c24637bf7c9439c9b244c8c40055",
+  "outputs/F3-ICW_composite.parquet": "0c80db3dd8f241b30a60d58bcd01659cc7778664cf15e6611233aac2860bdff7",
+  "outputs/F3-ICW_daily_equity.parquet": "f3618364e3bdde809bfbe73d4986dcfb516bcefb04c166f9f9ab0d49ef73901d",
+  "outputs/F3-ICW_events.parquet": "eb012c6b66476583b5f8ace24f2ba8cd44cd8bc8879e5651005c4a948d9e9b0c",
+  "outputs/F3-ICW_fills.parquet": "a242fcda148c4823dfcaa856dc438a2e3e7f42b810c56f805aef2c33a0444b1f",
+  "outputs/F3-ICW_intents.parquet": "0089dd94995204dce9e4e77c57f9ca20a2dec251f4dd9178f866339987d6569e",
+  "outputs/metrics_and_gates.json": "0e8fc4bcfc8ae13e6ef77e4835e7fe833d67304ca6dbaf2718df2ea0fdba0b3c",
+  "outputs/pool_sizes.csv": "7100040c895701b69c4bc06170d1880a08bf27ca2628cbdf76f43ab083e1085b",
+  "report.md": "839df3cfe77707d8cf627e8fe90c42778e8c9e8dc9c729a6c675afd6926f608d",
+  "tmp/runner_f3r1.py": "b86e70c17133c1e31378c8d15eb7df68df1074b01c82885414f56a0adb7e8132"
+ }
+}

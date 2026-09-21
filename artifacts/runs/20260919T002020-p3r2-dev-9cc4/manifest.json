@@ -1,0 +1,70 @@
+{
+ "run_id": "20260919T002020-p3r2-dev-9cc4",
+ "experiment_id": "exp-20260918-p3r2-band-v1-readjudication",
+ "status": "aborted",
+ "abort_reason": "mapping underdetermination: v1 host-side order lifecycle (7.7-M3 re-issue-until-fill) is self-referential with no stable fixed point; gate-level results are convention-sensitive. Plus ENGINE-3 (risk-sell void path crashes on missing stk_limit rows). No gate table produced; see findings.md.",
+ "started_at": "2026-09-18T16:20:20+00:00",
+ "ended_at": "2026-09-18T17:40:41.771101+00:00",
+ "engine": {
+  "path": "src/quant/backtest/band_engine.py",
+  "sha256": "494310195438cbfb9bd9730611591326179d5bb275f5c518a52b1cbe36f11e8e",
+  "expected16": "494310195438cbfb",
+  "modified_by_this_run": false,
+  "approval": "artifacts/runs/20260918T212440-p3v1-engine-083a (21/21 tests, dual-sign APPROVE)"
+ },
+ "identity_pins_verified": {
+  "r16_config": "27f846a7330919a4",
+  "p3r2_config": "sha recorded at runtime (frozen mirror)",
+  "daily": "d9a63f4cc3032926",
+  "halfday_manifest": "2a414174b5df2eee",
+  "stk_limit_aggregate": "3c53abf3b0c39b42 (2432 files)",
+  "split_factor": "2f436b2f13d09a9b",
+  "dividends": "46121c09cddde72e",
+  "index_000300": "05aaa8183a11c674"
+ },
+ "consistency_8_of_8": "PASS (leg_log <-> buffer_membership + membership_events, 71 signal days x 8 configs, 0 mismatches)",
+ "attempts": [
+  {
+   "convention": "A full-window re-issue (no fill awareness)",
+   "full_8_config_run": "completed compute; INVALID as adjudication (duplicate seat fills); crashed in disclosures; log logs/runner.log; no outputs written",
+   "headline_suspect_numbers_invalid": "net CAGR -4.2%..-24.7%, mdd -65%..-87.6%, mapped exec 46.8-69.7%"
+  },
+  {
+   "convention": "B/C fill-stop fixed point (undamped then damped)",
+   "smoke_2015_c01": "non-convergent, +/-1-6pp CAGR wander; logs/smoke.log"
+  },
+  {
+   "convention": "D lifecycle-in-sizes (fixed row set)",
+   "smoke_2015_c01": "period-2 limit cycle; logs/smoke.log"
+  }
+ ],
+ "engine_defect_filed": {
+  "id": "ENGINE-3",
+  "location": "src/quant/backtest/band_engine.py:1553-1554",
+  "trigger": "live risk-sell order + traded session + missing stk_limit row (tushare batch gap 2017-03-07..09; 466 symbol-days in dev panel) -> TypeError formatting None in void detail",
+  "host_guard_applied": "sell emissions skipped on such sessions, counted and disclosed per iteration in logs; deviation from v0 ruling #3 disclosed",
+  "engine_bytes_modified": false
+ },
+ "trial_accounting": {
+  "cumulative_before": 197,
+  "this_round_nominally": 8,
+  "cumulative_after": 205,
+  "disposition_note": "no defensible gate table exists; consume-vs-annul left to the orchestrator's ledger review"
+ },
+ "advanced_to_validation": false,
+ "val_consumed": false,
+ "artifacts": {
+  "findings.md": "3b99ad076959d2d6ed4440d8b09057bc5bb6cb7322723e91b8bb3f43c7f70ada",
+  "logs/runner.log": "e028b8b93fa884bf037102ec50158f70cdb38d3bb7b344d03e2b6201b6deca10",
+  "logs/smoke.log": "fcb651e60cd4e21a3e0d2c70b78baa5c4b232065bab11b39ecc9793c985d6326",
+  "tmp/__pycache__/runner_p3r2.cpython-311.pyc": "f03b8105b8f5e609112a187ba30413a3bf730c8eaa3d83fb7e88b99b275149a8",
+  "tmp/runner_p3r2.py": "3fbcf4919065653dcfd4241969bf051539c53358899ba5ca314cfd77f9817056",
+  "tmp/runner_p3r2_part2.py": "df1c51e190f5a104f60a183777f29608cb7171f995a5696e07dce60d7d587186",
+  "tmp/smoke/C01_daily.parquet": "aa7e775ba5f0ac566d9c222e8413d3cb751211d9226f28970a90f7169520d0a4",
+  "tmp/smoke/C01_events.parquet": "fc0db9305fbe54389588e7981945afe02e755fcf7d59841723c196431eb24991",
+  "tmp/smoke/C01_fills.parquet": "9191ad1dd7d8408c790fdbe43d0c2605cb6119d72f41348a2bf079b92eb53f7b",
+  "tmp/smoke/C01_sig.parquet": "2f174fe8018f9a1614113770d53dcf746fc94c0bbe0a739b25dc703613158f03",
+  "tmp/smoke/C01_sig_prev.parquet": "8c10aa419ea684a4192f79544366d881bc547950b2018b6c201b6a704d98a42b",
+  "tmp/smoke/smoke_results.json": "591e3bcbd6b0c351dfbecb867c5e5ffed454398b50d1820347802d014e7f2303"
+ }
+}

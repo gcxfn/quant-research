@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2r11_halfday_combo.py", line 350, in main
+    assert_run_invariants(res, static['dates'], cname)
+  File "D:\量化\src\quant\cli\p2r11_halfday_combo.py", line 232, in assert_run_invariants
+    raise AssertionError(f'{label}: lot violation in {t}')
+AssertionError: C12: lot violation in {'buy_day': 48, 'sell_day': 49, 'sym': 1678, 'shares': 2429.2710706150347, 'buy_shares': 1100.0, 'buy_price': 19.150000000000002, 'buy_fee': 5.0, 'sell_price': 9.09, 'sell_fee': 27.082074031890667}

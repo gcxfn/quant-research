@@ -1,0 +1,249 @@
+{
+  "purpose": "schema consistency + symbol intersection vs baostock pool (pure data engineering)",
+  "run_id": "20260918T032049-halfday-prep-f3mbfd",
+  "checked_at": "2026-09-18T03:29:00",
+  "pool_symbols": 5328,
+  "schema_by_sample": {
+    "2015": {
+      "code": "String",
+      "trade_time": "String",
+      "close": "Float32",
+      "open": "Float32",
+      "high": "Float32",
+      "low": "Float32",
+      "vol": "Float32",
+      "amount": "Float32",
+      "date": "String",
+      "pre_close": "Float32",
+      "change": "Float32",
+      "pct_chg": "Float32",
+      "__index_level_0__": "Int64"
+    },
+    "2017": {
+      "code": "String",
+      "trade_time": "String",
+      "close": "Float32",
+      "open": "Float32",
+      "high": "Float32",
+      "low": "Float32",
+      "vol": "Float32",
+      "amount": "Float32",
+      "date": "String",
+      "pre_close": "Float32",
+      "change": "Float32",
+      "pct_chg": "Float32",
+      "__index_level_0__": "Int64"
+    },
+    "2019": {
+      "code": "String",
+      "trade_time": "String",
+      "close": "Float32",
+      "open": "Float32",
+      "high": "Float32",
+      "low": "Float32",
+      "vol": "Float32",
+      "amount": "Float32",
+      "date": "String",
+      "pre_close": "Float32",
+      "change": "Float32",
+      "pct_chg": "Float32",
+      "__index_level_0__": "Int64"
+    },
+    "2021": {
+      "code": "String",
+      "trade_time": "String",
+      "close": "Float32",
+      "open": "Float32",
+      "high": "Float32",
+      "low": "Float32",
+      "vol": "Float32",
+      "amount": "Float32",
+      "date": "String",
+      "pre_close": "Float32",
+      "change": "Float32",
+      "pct_chg": "Float32",
+      "__index_level_0__": "Int64"
+    },
+    "2024": {
+      "code": "String",
+      "trade_time": "String",
+      "close": "Float32",
+      "open": "Float32",
+      "high": "Float32",
+      "low": "Float32",
+      "vol": "Float32",
+      "amount": "Float32",
+      "date": "String",
+      "pre_close": "Float32",
+      "change": "Float32",
+      "pct_chg": "Float32",
+      "__index_level_0__": "Int64"
+    },
+    "20241231": {
+      "code": "String",
+      "trade_time": "String",
+      "close": "Float32",
+      "open": "Float32",
+      "high": "Float32",
+      "low": "Float32",
+      "vol": "Float32",
+      "amount": "Float32",
+      "date": "String",
+      "pre_close": "Float32",
+      "change": "Float32",
+      "pct_chg": "Float32",
+      "__index_level_0__": "Int64"
+    }
+  },
+  "schema_identical_across_5_samples": true,
+  "schema_diffs": {
+    "2017": {},
+    "2019": {},
+    "2021": {},
+    "2024": {},
+    "20241231": {}
+  },
+  "day_reports": {
+    "2015": {
+      "file": "data\\raw\\user_minute_1m\\20260913-143215\\2015\\20150601.parquet",
+      "rows": 559361,
+      "symbols": 2321,
+      "suffixes": [
+        "SH",
+        "SZ"
+      ],
+      "bars_per_symbol_min_max": [
+        241,
+        241
+      ],
+      "symbols_not_241_bars": 0,
+      "bars_1130_total": 2321,
+      "bars_1130_not_exactly_1": 0
+    },
+    "2017": {
+      "file": "data\\raw\\user_minute_1m\\20260913-143215\\2017\\20170601.parquet",
+      "rows": 781081,
+      "symbols": 3241,
+      "suffixes": [
+        "SH",
+        "SZ"
+      ],
+      "bars_per_symbol_min_max": [
+        241,
+        241
+      ],
+      "symbols_not_241_bars": 0,
+      "bars_1130_total": 3241,
+      "bars_1130_not_exactly_1": 0
+    },
+    "2019": {
+      "file": "data\\raw\\user_minute_1m\\20260913-143215\\2019\\20190603.parquet",
+      "rows": 870251,
+      "symbols": 3611,
+      "suffixes": [
+        "SH",
+        "SZ"
+      ],
+      "bars_per_symbol_min_max": [
+        241,
+        241
+      ],
+      "symbols_not_241_bars": 0,
+      "bars_1130_total": 3611,
+      "bars_1130_not_exactly_1": 0
+    },
+    "2021": {
+      "file": "data\\raw\\user_minute_1m\\20260913-2020-2024\\2021\\20210601.parquet",
+      "rows": 1040156,
+      "symbols": 4316,
+      "suffixes": [
+        "SH",
+        "SZ"
+      ],
+      "bars_per_symbol_min_max": [
+        241,
+        241
+      ],
+      "symbols_not_241_bars": 0,
+      "bars_1130_total": 4316,
+      "bars_1130_not_exactly_1": 0
+    },
+    "2024": {
+      "file": "data\\raw\\user_minute_1m\\20260913-2020-2024\\2024\\20240603.parquet",
+      "rows": 1232474,
+      "symbols": 5114,
+      "suffixes": [
+        "SH",
+        "SZ"
+      ],
+      "bars_per_symbol_min_max": [
+        241,
+        241
+      ],
+      "symbols_not_241_bars": 0,
+      "bars_1130_total": 5114,
+      "bars_1130_not_exactly_1": 0
+    },
+    "20241231": {
+      "file": "data\\raw\\user_minute_1m\\20260913-2020-2024\\2024\\20241231.parquet",
+      "rows": 1304922,
+      "symbols": 5382,
+      "suffixes": [
+        "BJ",
+        "SH",
+        "SZ"
+      ],
+      "bars_per_symbol_min_max": [
+        241,
+        271
+      ],
+      "symbols_not_241_bars": 262,
+      "bars_1130_total": 5382,
+      "bars_1130_not_exactly_1": 0
+    }
+  },
+  "intersection_union_of_5_days": {
+    "minute_union_sh_sz": 5318,
+    "in_pool": 5318,
+    "minute_only_total": 0
+  },
+  "day_level_intersection": {
+    "2015": {
+      "minute_sh_sz": 2321,
+      "in_pool": 2321,
+      "minute_only": 0,
+      "minute_only_examples": [],
+      "pool_size": 5328
+    },
+    "2017": {
+      "minute_sh_sz": 3241,
+      "in_pool": 3241,
+      "minute_only": 0,
+      "minute_only_examples": [],
+      "pool_size": 5328
+    },
+    "2019": {
+      "minute_sh_sz": 3611,
+      "in_pool": 3611,
+      "minute_only": 0,
+      "minute_only_examples": [],
+      "pool_size": 5328
+    },
+    "2021": {
+      "minute_sh_sz": 4316,
+      "in_pool": 4316,
+      "minute_only": 0,
+      "minute_only_examples": [],
+      "pool_size": 5328
+    },
+    "2024": {
+      "minute_sh_sz": 5114,
+      "in_pool": 5114,
+      "minute_only": 0,
+      "minute_only_examples": [],
+      "pool_size": 5328
+    }
+  },
+  "non_sh_sz_codes_in_5_samples": [],
+  "elapsed_seconds": 0.69
+}

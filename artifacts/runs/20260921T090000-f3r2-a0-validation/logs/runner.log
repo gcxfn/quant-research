@@ -1,0 +1,72 @@
+[    0.0s] == 0. identity pins (engine v1.3 frozen, prereg frozen) ==
+[    0.0s]   engine: 31022babbc2858ea expect 84a2443ac28fe1b87e4a18f988fd38cc67cf706d5778e262f11465147234082c match=False
+[    0.0s] !! FAIL: identity pin mismatch: engine
+[    0.0s] == 0. identity pins (engine v1.3 frozen, prereg frozen) ==
+[    0.0s]   engine: 31022babbc2858ea expect 84a2443ac28fe1b87e4a18f988fd38cc67cf706d5778e262f11465147234082c match=False
+[    0.0s] !! FAIL: identity pin mismatch: engine
+[    0.0s] == 0. identity pins (engine v1.3 frozen, prereg frozen) ==
+[    0.0s]   engine: 31022babbc2858ea expect 31022babbc2858ea27a9142141fba9c14f7361294ea84e4257025ce820aa6076 match=True
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    1.4s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    1.4s]   halfday_manifest: 2a414174b5df2eee expect 2a414174b5df2eee match=True
+[    1.4s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    1.4s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    1.4s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    1.4s]   f3r1_ew_composite: ff3c21d1aceefa0b expect None match=True
+[    1.4s]   f3r1_icw_composite: e125acb1cbb627ee expect None match=True
+[    1.4s]   f3r1_dedup_clusters: b8113749759cecd5 expect None match=True
+[    1.4s]   f3r1_all120: df35f17604595b34 expect None match=True
+[    1.4s]   f3r1_manifest: 07e4812758c80eb4 expect None match=True
+[    1.4s]   f3r1_prereg_inherited: 858beb421421ccb4 expect None match=True
+[    1.4s]   f3r1_metrics: fc8ee1612c6c9237 expect None match=True
+[    1.4s]   prereg: bd56fb5cfb5da4df expect None match=True
+[    1.4s]   v3_prereg_inherited: 8e3c534fad39e3e7 expect None match=True
+[    1.4s]   f3r2_config: d2a2136ebf1bd3d7 expect None match=True
+[    1.4s]   v3_metrics_r306_anchor_source: 9e2cd4aafec15c08 expect None match=True
+[    1.4s]   v3_r306_intents: c1e874bddb88d238 expect None match=True
+[    1.4s]   v3_r306_fills: 2f509f6894d54787 expect None match=True
+[    1.4s]   v3_r306_events: 6be782d8ac781c6a expect None match=True
+[    1.4s]   v3_r306_daily: 123e4cb385368abc expect None match=True
+[    1.4s]   v3_r306_clips: af1fb490c49790d8 expect None match=True
+[    1.4s]   r16_metrics: 8d0b6ebbdea6ebb9 expect None match=True
+[    1.4s]   etf_manifest: 8b5b3fe56c0e02fd expect None match=True
+[   10.2s]   etf processed dir aggregate: 75777221a8b33502 (7 files); fund_adj batch re-verified (1169 chunks, 0 mismatches) aggregate matches manifest: True
+[   10.2s]   python 3.11.15 | polars 1.44.2 | numpy 1.26.4 | rss 0.27 GB
+[   10.3s] == 1. calendar & signal days ==
+[    0.0s] == 0. identity pins (engine v1.3 frozen, prereg frozen) ==
+[    0.0s]   engine: 31022babbc2858ea expect 31022babbc2858ea27a9142141fba9c14f7361294ea84e4257025ce820aa6076 match=True
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.5s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.5s]   halfday_manifest: 2a414174b5df2eee expect 2a414174b5df2eee match=True
+[    0.5s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.5s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.5s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    0.5s]   f3r1_ew_composite: ff3c21d1aceefa0b expect None match=True
+[    0.5s]   f3r1_icw_composite: e125acb1cbb627ee expect None match=True
+[    0.5s]   f3r1_dedup_clusters: b8113749759cecd5 expect None match=True
+[    0.5s]   f3r1_all120: df35f17604595b34 expect None match=True
+[    0.5s]   f3r1_manifest: 07e4812758c80eb4 expect None match=True
+[    0.5s]   f3r1_prereg_inherited: 858beb421421ccb4 expect None match=True
+[    0.5s]   f3r1_metrics: fc8ee1612c6c9237 expect None match=True
+[    0.5s]   prereg: bd56fb5cfb5da4df expect None match=True
+[    0.5s]   v3_prereg_inherited: 8e3c534fad39e3e7 expect None match=True
+[    0.5s]   f3r2_config: d2a2136ebf1bd3d7 expect None match=True
+[    0.5s]   v3_metrics_r306_anchor_source: 9e2cd4aafec15c08 expect None match=True
+[    0.5s]   v3_r306_intents: c1e874bddb88d238 expect None match=True
+[    0.5s]   v3_r306_fills: 2f509f6894d54787 expect None match=True
+[    0.5s]   v3_r306_events: 6be782d8ac781c6a expect None match=True
+[    0.5s]   v3_r306_daily: 123e4cb385368abc expect None match=True
+[    0.5s]   v3_r306_clips: af1fb490c49790d8 expect None match=True
+[    0.5s]   r16_metrics: 8d0b6ebbdea6ebb9 expect None match=True
+[    0.5s]   etf_manifest: 8b5b3fe56c0e02fd expect None match=True
+[   10.5s]   etf processed dir aggregate: 75777221a8b33502 (7 files); fund_adj batch re-verified (1169 chunks, 0 mismatches) aggregate matches manifest: True
+[   10.5s]   python 3.11.15 | polars 1.44.2 | numpy 1.26.4 | rss 0.28 GB
+[   10.6s] == 1. calendar & signal days ==
+[   10.9s]   47 signal days (2021-01-29..2024-11-29; 2020-12-31 dropped as signal, kept as expiry anchor)
+[   10.9s] == 2. exposures (T200-40) ==
+[   11.0s]   t200 behavioral anchor check: {"anchor_years": ["2016", "2017", "2018", "2019", "2020"], "reproduced_stats": {"2016": {"n_sessions": 244, "n_switches"
+[   11.0s]   exposures[2021-01-29]=0.90 [2024-11-29]=0.90
+[   11.0s] == 3. pools (r16 build_history + signal_pools) ==
+[   23.9s]   pools at 2021-01-29: n=1524; union of ranked symbols: 3184
+[   23.9s] == 4. F3 composite sleeve: load composites + buffer membership ==
+[   24.7s] !! FAIL: composite EW: signal days != runner sig_days ([datetime.date(2015, 1, 30), datetime.date(2015, 2, 27)]..[datetime.date(2020, 10, 30), datetime.date(2020, 11, 30)] vs 2021-01-29..2024-11-29)

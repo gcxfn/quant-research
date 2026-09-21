@@ -1,0 +1,38 @@
+[    0.0s] etf-momentum; window=2015-08-01..2015-11-30 (SMOKE)
+[    1.5s] pins done
+[    1.5s] == stage A: monthly composition ==
+[    1.8s]   momentum available from 2015-07; median eligible 0
+[    1.8s]   A: cagr -22.98% mdd -20.49% (2015-02..2015-11, 10m) | poolEW +24.08% mdd -33.62% | 300 +6.63% -> fail ['A1_cagr_ge_8pct', 'A2_mdd_le_20pct', 'A3_beat_pool_ew_2pp']
+[    1.8s]   note: stage-A caliber recorded, NOT gating this experiment
+[    1.8s] == stage B: engine replay ==
+[    1.9s]   engine: 0.1s; overlay observed 79 closes, reduced pts 28; defensive exits 2; warnings 9
+[    1.9s] smoke: stage B path OK; done
+[    0.0s] etf-momentum; window=2015-01-05..2020-12-31
+[    1.2s] pins done
+[    1.2s] == stage A: monthly composition ==
+[    1.4s]   momentum available from 2015-07; median eligible 15
+[    1.5s]   A: cagr +13.31% mdd -29.70% (2015-02..2020-12, 71m) | poolEW +8.21% mdd -37.96% | 300 +9.05% -> fail ['A2_mdd_le_20pct']
+[    1.5s]   note: stage-A caliber recorded, NOT gating this experiment
+[    1.5s] == stage B: engine replay ==
+[    6.8s]   engine: 5.3s; overlay observed 1443 closes, reduced pts 1046; defensive exits 2; warnings 8
+[    6.9s]   B: net +5.85% vs B1mix +0.20% vs EQmix -0.77% (+6.62%) adv 3/6 mdd -32.45% turn 1.36 w 30.1% exec 0.6% -> fail ['2_excess_vs_B1mix_ge_2pp', '3_excess_vs_EQmix_ge_1pp', '4_advantage_years_ge_5_of_6', '5_mdd_le_20pct_and_le_B1mix', '7_single_name_weight_le_25pct', '8_execution_rate_ge_95pct']
+[    6.9s] == done; wall 7s
+[    0.0s] etf-momentum; window=2015-08-01..2015-11-30 (SMOKE)
+[    1.0s] pins done
+[    1.0s] == stage A: monthly composition ==
+[    1.2s]   momentum available from 2015-07; median eligible 0
+[    1.2s]   A: cagr -22.98% mdd -20.49% (2015-02..2015-11, 10m) | poolEW +24.08% mdd -33.62% | 300 +6.63% -> fail ['A1_cagr_ge_8pct', 'A2_mdd_le_20pct', 'A3_beat_pool_ew_2pp']
+[    1.2s]   note: stage-A caliber recorded, NOT gating this experiment
+[    1.2s] == stage B: engine replay ==
+[    1.3s]   engine: 0.1s; overlay observed 79 closes, reduced pts 63; defensive exits 2; warnings 8
+[    1.3s] smoke: stage B path OK; done
+[    0.0s] etf-momentum; window=2015-01-05..2020-12-31
+[    1.3s] pins done
+[    1.3s] == stage A: monthly composition ==
+[    1.5s]   momentum available from 2015-07; median eligible 15
+[    1.5s]   A: cagr +13.31% mdd -29.70% (2015-02..2020-12, 71m) | poolEW +8.21% mdd -37.96% | 300 +9.05% -> fail ['A2_mdd_le_20pct']
+[    1.5s]   note: stage-A caliber recorded, NOT gating this experiment
+[    1.5s] == stage B: engine replay ==
+[    3.0s]   engine: 1.5s; overlay observed 1443 closes, reduced pts 1181; defensive exits 2; warnings 31
+[    3.2s]   B: net -1.18% vs B1mix -6.83% vs EQmix -7.80% (+6.62%) adv 2/6 mdd -16.35% turn 2.14 w 24.5% exec 11.5% -> fail ['1_net_cagr_gt_0', '2_excess_vs_B1mix_ge_2pp', '3_excess_vs_EQmix_ge_1pp', '4_advantage_years_ge_5_of_6', '8_execution_rate_ge_95pct']
+[    3.2s] == done; wall 3s

@@ -1,0 +1,202 @@
+[    0.0s] == 0. identity pins (engine v1.4.1 pin, chassis config verbatim) ==
+[    0.0s]   engine: a01cb29ce4cf2148 expect a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3 match=True
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.7s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.7s]   halfday_manifest: 2a414174b5df2eee expect 2a414174b5df2eee match=True
+[    0.7s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.7s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.7s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    0.7s]   f3r1_ew_composite: 9b93696b14fdd31f expect None match=True
+[    0.7s]   f3r1_dedup_clusters: 7b80b95bbbbbc34d expect None match=True
+[    0.7s]   f2r1_all120: df35f17604595b34 expect None match=True
+[    0.7s]   f3r3_config: 88b0e8ca8af5c85d expect None match=True
+[    0.7s]   prereg: fdb59975b933cb6e expect None match=True
+[    0.7s]   industry_l1: 4edffc3994fb527a expect 4edffc3994fb527a match=True
+[    0.7s]   chassis_sleeve_log: c62446715685f851 expect None match=True
+[    0.7s]   chassis_metrics: bc74572dd3e78347 expect None match=True
+[    0.7s]   chassis_ew_intents: afbd41c55f887379 expect None match=True
+[    0.7s]   chassis_ew_fills: 6e1dc925c99f8538 expect None match=True
+[    0.7s]   chassis_ew_events: af0ca5463344b4ca expect None match=True
+[    0.7s]   chassis_ew_daily: b71cf93135fcca2a expect None match=True
+[    0.7s]   chassis_ew_clips: f4695404f1f1a2e7 expect None match=True
+[    0.7s]   etf_manifest: 8b5b3fe56c0e02fd expect None match=True
+[    7.2s]   aggregates OK (etf 75777221a8b33502, fund_adj b06242469db048a0, trade_cal aac75421cd89d9fc)
+[    7.4s]   17 factor frames loaded; signs {"A17": -1.0, "A20": -1.0, "A25": 1.0, "B11": -1.0, "B12": -1.0, "B14": 1.0, "C19": -1.0, "D10": 1.0, "D13": 1.0, "D14": 1.0, "D18": 1.0, "D19": 1.0, "D20": 1.0, "D30": 1.0, "E16": 1.0, "F06": -1.0, "F09": -1.0}
+[    7.4s]   anchor net_cagr = 0.04877310918741218 (chassis metrics verbatim)
+[    7.4s] == 1. calendar & signal days ==
+[    7.5s]   71 signal days (2015-01-30..2020-11-30)
+[    7.5s] == stage done: calendar (7.5s) ==
+[    7.5s] == 2. exposures (T200-40) ==
+[    7.5s]   exposures[2015-01-30]=0.40 [2020-11-30]=0.90
+[    7.5s] == stage done: exposures (7.5s) ==
+[    7.5s] == 3. pools (r16 build_history + signal_pools) ==
+[   12.0s]   pools at 2015-01-30: n=1438; union of ranked symbols: 2937
+[   12.0s] == stage done: pools (12.0s) ==
+[   12.0s] == 4. composite subset rebuild (F3R1 construction verbatim) ==
+[   12.0s] == stage done: composite_setup (12.0s) ==
+[   12.0s] == stage done: composite_setup_done (12.0s) ==
+[   12.0s] == 5. market frames ==
+[   13.0s]   daily panel: 3841824 rows, 2937 symbols
+[   14.0s]   halfday: 7254698 rows kept of 18486939 total
+[   24.2s]   limits: 3829171 rows (dev x panel)
+[   29.7s]   splits 2894 rows, dividends 20138 rows (panel)
+[   29.7s]   rss after frames: 2.33 GB
+[   29.7s] == stage done: market_frames (29.7s) ==
+[   29.7s] == 6. ETF assets ==
+[   29.7s]   etf panel dev rows: 13158 per member {'sh.518880': 1462, 'sh.513100': 1462, 'sh.510050': 1462, 'sz.159934': 1462, 'sh.510880': 1462, 'sh.510300': 1462, 'sh.511010': 1462, 'sh.513500': 1462, 'sz.159915': 1462}
+[   29.8s]   dividend events: 18 {'sh.510050': 5, 'sh.510300': 6, 'sh.510880': 6, 'sh.511010': 1}
+[   29.8s] == stage done: etf_assets (29.8s) ==
+[   29.8s] == 7. shared engine input frames (mixed mode, legs only) ==
+[   29.8s] == stage done: engine_input_frames (29.8s) ==
+[   29.8s] == 8. subset loop: 1 subsets ==
+[   29.8s] == subset leave_zero_out: drop=[], 17 reps ==
+[   32.9s]   subset M'=17 min_cov>=9: eligible min 810 median 1510 max 2258
+[   32.9s]   sleeve leave_zero_out: max members/month 10, panel symbols 381
+[   41.3s]   leave_zero_out: engine 8.2s, intents 1308 orders 3387 filled 1018 | rss 2.73 GB
+[   41.4s]   LEAVE-ZERO-OUT ANCHOR: 5-frame .equals() vs chassis F3R3-EW
+[   41.4s]     intents.equals(chassis) = True (mine 1308 / ref 1308)
+[   41.4s]     fills.equals(chassis) = True (mine 1018 / ref 1018)
+[   41.4s]     events.equals(chassis) = True (mine 4779 / ref 4779)
+[   41.4s]     daily.equals(chassis) = True (mine 1462 / ref 1462)
+[   41.4s]     clips_final.equals(chassis) = True (mine 16 / ref 16)
+[   41.4s]     net_cagr 0.04877310918741218 vs chassis 0.04877310918741218 -> True
+[   41.4s]   LEAVE-ZERO-OUT ANCHOR PASS (5/5 frames + net_cagr)
+[   41.4s]   leave_zero_out: net +4.88% mdd -17.85% adv 4/6 turn 4.45
+[   41.6s] == subset loop complete: 1 subsets, wall 42s, peak rss 2.73 GB ==
+[    0.0s] == 0. identity pins (engine v1.4.1 pin, chassis config verbatim) ==
+[    0.0s]   engine: a01cb29ce4cf2148 expect a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3 match=True
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.6s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.6s]   halfday_manifest: 2a414174b5df2eee expect 2a414174b5df2eee match=True
+[    0.6s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.6s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.6s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    0.6s]   f3r1_ew_composite: 9b93696b14fdd31f expect None match=True
+[    0.6s]   f3r1_dedup_clusters: 7b80b95bbbbbc34d expect None match=True
+[    0.6s]   f2r1_all120: df35f17604595b34 expect None match=True
+[    0.6s]   f3r3_config: 88b0e8ca8af5c85d expect None match=True
+[    0.6s]   prereg: fdb59975b933cb6e expect None match=True
+[    0.6s]   industry_l1: 4edffc3994fb527a expect 4edffc3994fb527a match=True
+[    0.7s]   chassis_sleeve_log: c62446715685f851 expect None match=True
+[    0.7s]   chassis_metrics: bc74572dd3e78347 expect None match=True
+[    0.7s]   chassis_ew_intents: afbd41c55f887379 expect None match=True
+[    0.7s]   chassis_ew_fills: 6e1dc925c99f8538 expect None match=True
+[    0.7s]   chassis_ew_events: af0ca5463344b4ca expect None match=True
+[    0.7s]   chassis_ew_daily: b71cf93135fcca2a expect None match=True
+[    0.7s]   chassis_ew_clips: f4695404f1f1a2e7 expect None match=True
+[    0.7s]   etf_manifest: 8b5b3fe56c0e02fd expect None match=True
+[    5.7s]   aggregates OK (etf 75777221a8b33502, fund_adj b06242469db048a0, trade_cal aac75421cd89d9fc)
+[    5.8s]   17 factor frames loaded; signs {"A17": -1.0, "A20": -1.0, "A25": 1.0, "B11": -1.0, "B12": -1.0, "B14": 1.0, "C19": -1.0, "D10": 1.0, "D13": 1.0, "D14": 1.0, "D18": 1.0, "D19": 1.0, "D20": 1.0, "D30": 1.0, "E16": 1.0, "F06": -1.0, "F09": -1.0}
+[    5.9s]   anchor net_cagr = 0.04877310918741218 (chassis metrics verbatim)
+[    5.9s] == 1. calendar & signal days ==
+[    6.0s]   71 signal days (2015-01-30..2020-11-30)
+[    6.0s] == stage done: calendar (6.0s) ==
+[    6.0s] == 2. exposures (T200-40) ==
+[    6.0s]   exposures[2015-01-30]=0.40 [2020-11-30]=0.90
+[    6.0s] == stage done: exposures (6.0s) ==
+[    6.0s] == 3. pools (r16 build_history + signal_pools) ==
+[   10.1s]   pools at 2015-01-30: n=1438; union of ranked symbols: 2937
+[   10.1s] == stage done: pools (10.1s) ==
+[   10.1s] == 4. composite subset rebuild (F3R1 construction verbatim) ==
+[   10.2s] == stage done: composite_setup (10.2s) ==
+[   10.2s] == stage done: composite_setup_done (10.2s) ==
+[   10.2s] == 5. market frames ==
+[   11.0s]   daily panel: 3841824 rows, 2937 symbols
+[   11.7s]   halfday: 7254698 rows kept of 18486939 total
+[   20.2s]   limits: 3829171 rows (dev x panel)
+[   24.4s]   splits 2894 rows, dividends 20138 rows (panel)
+[   24.4s]   rss after frames: 2.43 GB
+[   24.4s] == stage done: market_frames (24.4s) ==
+[   24.4s] == 6. ETF assets ==
+[   24.4s]   etf panel dev rows: 13158 per member {'sh.510300': 1462, 'sz.159934': 1462, 'sz.159915': 1462, 'sh.518880': 1462, 'sh.513500': 1462, 'sh.511010': 1462, 'sh.510880': 1462, 'sh.510050': 1462, 'sh.513100': 1462}
+[   24.5s]   dividend events: 18 {'sh.510050': 5, 'sh.510300': 6, 'sh.510880': 6, 'sh.511010': 1}
+[   24.5s] == stage done: etf_assets (24.5s) ==
+[   24.5s] == 7. shared engine input frames (mixed mode, legs only) ==
+[   24.5s] == stage done: engine_input_frames (24.5s) ==
+[   24.5s] == 8. subset loop: 17 subsets ==
+[   24.5s] == subset loo_F09: drop=['F09'], 16 reps ==
+[   27.0s]   subset M'=16 min_cov>=8: eligible min 810 median 1510 max 2258
+[   27.0s]   sleeve loo_F09: max members/month 10, panel symbols 365
+[   34.5s]   loo_F09: engine 7.3s, intents 1289 orders 2430 filled 1008 | rss 2.87 GB
+[   34.6s]   loo_F09: net +4.11% mdd -15.78% adv 4/6 turn 4.63
+[   34.7s] == subset loo_A17: drop=['A17'], 16 reps ==
+[   37.2s]   subset M'=16 min_cov>=8: eligible min 810 median 1510 max 2258
+[   37.2s]   sleeve loo_A17: max members/month 10, panel symbols 340
+[   44.5s]   loo_A17: engine 7.1s, intents 1248 orders 2614 filled 949 | rss 2.83 GB
+[   44.5s]   loo_A17: net +4.96% mdd -14.42% adv 4/6 turn 4.16
+[   44.6s] == subset loo_B12: drop=['B12'], 16 reps ==
+[   47.1s]   subset M'=16 min_cov>=8: eligible min 810 median 1510 max 2258
+[   47.2s]   sleeve loo_B12: max members/month 10, panel symbols 375
+[   55.5s]   loo_B12: engine 8.1s, intents 1321 orders 2497 filled 1052 | rss 2.80 GB
+[   55.5s]   loo_B12: net +6.76% mdd -14.42% adv 4/6 turn 4.98
+[   55.6s] == subset loo_A20: drop=['A20'], 16 reps ==
+[   58.1s]   subset M'=16 min_cov>=8: eligible min 810 median 1510 max 2258
+[   58.2s]   sleeve loo_A20: max members/month 10, panel symbols 391
+[   66.3s]   loo_A20: engine 7.9s, intents 1318 orders 5194 filled 986 | rss 2.83 GB
+[   66.3s]   loo_A20: net +4.13% mdd -16.65% adv 3/6 turn 4.34
+[   66.4s] == subset loo_A25: drop=['A25'], 16 reps ==
+[   69.0s]   subset M'=16 min_cov>=8: eligible min 810 median 1510 max 2260
+[   69.1s]   sleeve loo_A25: max members/month 10, panel symbols 392
+[   77.1s]   loo_A25: engine 7.8s, intents 1328 orders 4162 filled 1025 | rss 2.84 GB
+[   77.1s]   loo_A25: net +4.24% mdd -16.72% adv 4/6 turn 4.62
+[   77.2s] == subset loo_E16: drop=['E16'], 16 reps ==
+[   79.9s]   subset M'=16 min_cov>=8: eligible min 810 median 1510 max 2260
+[   80.0s]   sleeve loo_E16: max members/month 10, panel symbols 406
+[   88.6s]   loo_E16: engine 8.4s, intents 1340 orders 3865 filled 1049 | rss 2.84 GB
+[   88.6s]   loo_E16: net +4.33% mdd -15.75% adv 4/6 turn 5.09
+[   88.8s] == subset loo_B11: drop=['B11'], 16 reps ==
+[   91.2s]   subset M'=16 min_cov>=8: eligible min 810 median 1510 max 2258
+[   91.3s]   sleeve loo_B11: max members/month 10, panel symbols 407
+[   99.6s]   loo_B11: engine 8.0s, intents 1333 orders 3649 filled 1049 | rss 2.88 GB
+[   99.6s]   loo_B11: net +4.56% mdd -15.91% adv 4/6 turn 5.24
+[   99.7s] == subset loo_B14: drop=['B14'], 16 reps ==
+[  102.2s]   subset M'=16 min_cov>=8: eligible min 810 median 1510 max 2258
+[  102.3s]   sleeve loo_B14: max members/month 10, panel symbols 402
+[  110.2s]   loo_B14: engine 7.7s, intents 1330 orders 4887 filled 980 | rss 2.91 GB
+[  110.2s]   loo_B14: net +6.44% mdd -16.48% adv 5/6 turn 4.28
+[  110.3s] == subset loo_C19: drop=['C19'], 16 reps ==
+[  113.0s]   subset M'=16 min_cov>=8: eligible min 810 median 1510 max 2258
+[  113.1s]   sleeve loo_C19: max members/month 10, panel symbols 357
+[  120.7s]   loo_C19: engine 7.4s, intents 1281 orders 4272 filled 935 | rss 2.93 GB
+[  120.7s]   loo_C19: net +3.91% mdd -17.19% adv 4/6 turn 4.10
+[  120.8s] == subset loo_D30: drop=['D30'], 16 reps ==
+[  122.8s]   subset M'=16 min_cov>=8: eligible min 810 median 1510 max 2260
+[  122.8s]   sleeve loo_D30: max members/month 10, panel symbols 414
+[  129.0s]   loo_D30: engine 6.0s, intents 1344 orders 3818 filled 1052 | rss 3.01 GB
+[  129.0s]   loo_D30: net +6.50% mdd -15.85% adv 4/6 turn 5.14
+[  129.1s] == subset loo_D10: drop=['D10'], 16 reps ==
+[  131.0s]   subset M'=16 min_cov>=8: eligible min 810 median 1510 max 2260
+[  131.0s]   sleeve loo_D10: max members/month 10, panel symbols 418
+[  138.5s]   loo_D10: engine 7.3s, intents 1324 orders 5703 filled 977 | rss 2.97 GB
+[  138.5s]   loo_D10: net +4.12% mdd -20.53% adv 4/6 turn 4.62
+[  138.6s] == subset loo_D13: drop=['D13'], 16 reps ==
+[  141.1s]   subset M'=16 min_cov>=8: eligible min 810 median 1510 max 2260
+[  141.2s]   sleeve loo_D13: max members/month 10, panel symbols 402
+[  150.1s]   loo_D13: engine 8.7s, intents 1344 orders 4381 filled 1043 | rss 2.97 GB
+[  150.1s]   loo_D13: net +2.01% mdd -24.57% adv 4/6 turn 4.69
+[  150.2s] == subset loo_D14: drop=['D14'], 16 reps ==
+[  152.6s]   subset M'=16 min_cov>=8: eligible min 810 median 1510 max 2260
+[  152.7s]   sleeve loo_D14: max members/month 10, panel symbols 391
+[  160.8s]   loo_D14: engine 7.9s, intents 1337 orders 4177 filled 1032 | rss 2.94 GB
+[  160.8s]   loo_D14: net +4.65% mdd -15.83% adv 4/6 turn 4.62
+[  160.9s] == subset loo_D18: drop=['D18'], 16 reps ==
+[  163.4s]   subset M'=16 min_cov>=8: eligible min 810 median 1510 max 2260
+[  163.5s]   sleeve loo_D18: max members/month 10, panel symbols 394
+[  172.3s]   loo_D18: engine 8.6s, intents 1300 orders 2703 filled 1035 | rss 2.98 GB
+[  172.4s]   loo_D18: net +4.27% mdd -13.81% adv 3/6 turn 5.23
+[  172.5s] == subset loo_D19: drop=['D19'], 16 reps ==
+[  174.9s]   subset M'=16 min_cov>=8: eligible min 810 median 1510 max 2260
+[  175.0s]   sleeve loo_D19: max members/month 10, panel symbols 402
+[  183.5s]   loo_D19: engine 8.2s, intents 1328 orders 2555 filled 1063 | rss 2.92 GB
+[  183.5s]   loo_D19: net +4.55% mdd -17.35% adv 4/6 turn 5.11
+[  183.6s] == subset loo_D20: drop=['D20'], 16 reps ==
+[  186.2s]   subset M'=16 min_cov>=8: eligible min 810 median 1510 max 2260
+[  186.3s]   sleeve loo_D20: max members/month 10, panel symbols 369
+[  193.3s]   loo_D20: engine 6.8s, intents 1315 orders 3733 filled 1001 | rss 2.98 GB
+[  193.3s]   loo_D20: net +2.85% mdd -16.51% adv 3/6 turn 5.09
+[  193.4s] == subset loo_F06: drop=['F06'], 16 reps ==
+[  196.0s]   subset M'=16 min_cov>=8: eligible min 810 median 1510 max 2258
+[  196.1s]   sleeve loo_F06: max members/month 10, panel symbols 392
+[  204.9s]   loo_F06: engine 8.6s, intents 1324 orders 3085 filled 1064 | rss 3.02 GB
+[  204.9s]   loo_F06: net +1.56% mdd -19.37% adv 3/6 turn 5.10
+[  205.0s] == subset loop complete: 17 subsets, wall 205s, peak rss 3.02 GB ==

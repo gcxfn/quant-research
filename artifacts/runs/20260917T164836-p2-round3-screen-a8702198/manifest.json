@@ -1,0 +1,88 @@
+{
+  "run_id": "20260917T164836-p2-round3-screen-a8702198",
+  "experiment_id": "exp-20260917-p2-round3-screen",
+  "status": "completed",
+  "started_at": "2026-09-17T08:48:36.388869+00:00",
+  "command": [
+    "D:\\量化\\.venv\\Scripts\\python.exe",
+    "src/quant/cli/p2_first_screen.py",
+    "--config",
+    "configs/experiments/p2-round3-screen.json"
+  ],
+  "config_sha256": "0f9ecd01038e097c7609c5e0191fe0707040f960efff1c1cd43f7cb008aca91e",
+  "source_sha256": {
+    "src\\quant\\__init__.py": "8c87349ce293131565a8ace05f9e339c81fa76951bde07525c354c74c4cf3307",
+    "src\\quant\\backtest\\__init__.py": "dde15cd80a7f5bb490b6b3f7ed7a68f3fca1a18121e9000939c417e0ed3b8999",
+    "src\\quant\\backtest\\backtrader_adapter.py": "fc2813a4f5cdd735a26051b800e02e9106403440c08d84a139eda05269093966",
+    "src\\quant\\backtest\\orders.py": "aec9750d59f4b7316ab89a0b175b0a7839998f68ed7debf2b0bd18dde405318e",
+    "src\\quant\\backtest\\results.py": "c43324de29ce0c2f17d521497879bfca6cfaa5be7618a89453226f2ca72bf830",
+    "src\\quant\\backtest\\vectorbt_adapter.py": "73847bb6997dc26697657871199b8bd7392acc70cf329cc2e18dd27062c494a9",
+    "src\\quant\\cli\\__init__.py": "b0536f9542c22462c17ef58d483a1adf6bf0c25369954507844e0421e5c0723a",
+    "src\\quant\\cli\\main.py": "ddde31f438600e5447517ce7a9db8b2a5c1ba14f61351fa39272255b6ccbb471",
+    "src\\quant\\cli\\p0_benchmark.py": "fb7d38b8f1abba17d25dfab844b9771f8de53eafd39d4d654cc42eb2d64357e6",
+    "src\\quant\\cli\\p2_first_screen.py": "9d7b6288191ef30ade1fca27e9a94d84bb65197960614e0100c3dbba560d5fd0",
+    "src\\quant\\data\\adjustment.py": "6cf5f7e7cc0d9e15b4030196f56c77009495279a206804361a7c86891d89a0ac",
+    "src\\quant\\data\\baostock_daily.py": "c83603ef05c805e7f81b60ff87a40088b23177b690f2a9bf421be390b6477e78",
+    "src\\quant\\factors\\__init__.py": "5b555032251c683b0c9b6cdb5857ff356c81e02dd4c14e6cff1055c309acade4",
+    "src\\quant\\factors\\cache.py": "949736dd8a9482bd64d939e13940a323d8341cf0518bddffa7db8a97315e8f9a",
+    "src\\quant\\factors\\core.py": "5c6ddcf87505fdb82fb63cbc9658964b7372da326879f89bcd4aac50d33f7a77",
+    "src\\quant\\factors\\signals.py": "9ef501a069ffaaef731d8f6f04682674b818c82e1f2a627af1023565e9e8692c",
+    "src\\quant\\research\\__init__.py": "ae42337e69dedb044718bfe63a1832ef0c85cf1886c9b45e0403d63208869a51",
+    "src\\quant\\research\\p2_first_screen.py": "198c24539c2519e874309eff9c6af2f1324911461b1d73087bf59e55696bdbc0",
+    "src\\quant\\research\\runs.py": "979f0ab108b8bd0fb97bd8a67435ebe46537d9cb06ef83a5ac1485c77593acbc",
+    "src\\quant\\research\\screen.py": "100cfef7927a7727089eeb3634eb810571a9313dfe09600964866a6c208249df",
+    "src\\quant\\research\\synthetic.py": "968818be521defdc028435123806f7de0e97858b06d8d0c67c87319cf3aa8795"
+  },
+  "lock_sha256": "779b2373c8cd06edca2eed15dcbbf5b47d3a8093b4586b2c32326439fb58640f",
+  "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "polars": "1.44.2",
+    "pyarrow": "25.0.1",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "vectorbt": "0.28.5",
+    "backtrader": "1.9.78.123",
+    "psutil": "7.2.2"
+  },
+  "machine": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 20,
+    "ram_bytes": 16780566528,
+    "disk_free_bytes": 243107344384
+  },
+  "seed": 17,
+  "date_range": [
+    "2015-01-05",
+    "2024-12-31"
+  ],
+  "inputs": [
+    {
+      "path": "data/processed/baostock-daily-20260917/daily_2015_2024.parquet",
+      "sha256": "1cbb09a11f7c10136981749c13467f12a1757b59e7e95fb6f86666f96edfc1de",
+      "rows": 9532019,
+      "symbols": 5328,
+      "dataset_id": "baostock-daily-20260917"
+    },
+    {
+      "path": "data/raw/xiaodefa/adj_factor/20260913-bulk1",
+      "rows": null,
+      "note": "xiaodefa adj_factor chunks, read window-filtered"
+    }
+  ],
+  "limits": {
+    "max_runtime_s": 1800,
+    "max_ram_gb": 10
+  },
+  "ended_at": "2026-09-17T08:49:23.368871+00:00",
+  "elapsed_seconds": 46.97908879999886,
+  "peak_rss_bytes": 6266740736,
+  "memory_method": "20ms process RSS sampling; includes imported libraries, excludes children",
+  "outputs": {
+    "config.json": "e687f3ffe024146e4648e5d0214b89489bc8b042c95a54968865935eeaa54a9a",
+    "events.parquet": "5ec96fc439958c99eaf0f7303e2c057f3354bd9ee578574312e655a09b2fc7b0",
+    "metrics.json": "496c7020210caf9fc7808368073af0955238a7df5bcbaa3f15db741a0ecf5cde",
+    "pool_hold3.parquet": "828c4334bd736a24661d567e1b2097d662a51684409f0aa2c2b1aaea6f709206",
+    "pool_hold5.parquet": "86abbcdaba36276d7e1a372a4bc62fa98562bcc6f7d48056b1d4b02f2d435625",
+    "report.md": "62830fd71931bc7cf71eba92dadc1ba1481f213819b53513ffd644f59e2d074c"
+  }
+}

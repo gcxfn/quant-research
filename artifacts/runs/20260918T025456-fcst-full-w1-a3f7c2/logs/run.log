@@ -1,0 +1,67 @@
+=== 02:56:19 row_index build start ===
+exit=0
+{
+ "n_files": 97,
+ "total_rows": 50406,
+ "pool_rows": 38567,
+ "excluded_2025plus": 10015,
+ "excluded_empty_reason": 1512,
+ "n_strata": 63,
+ "n_batches": 65,
+ "last_batch_rows": 167,
+ "pool_reason_len_mean": 210.0,
+ "pool_reason_len_max": 1097,
+ "row_index_parquet": "data/features/fcst-reason-struct-full-20260918/row_index.parquet",
+ "row_index_rows": 38567
+}
+=== 02:56:20 row_index build done ===
+=== 02:57:24 batch_001 render start ===
+{
+ "batch": 1,
+ "rows_rendered": 600,
+ "n_missing_in_raw": 0,
+ "output": "artifacts/runs/20260918T025456-fcst-full-w1-a3f7c2/work/batch_001_input.txt",
+ "chars": 152213
+}
+=== 02:57:25 batch_001 render done ===
+=== 03:45:12 batch_001 structuring done; check start ===
+FAIL: ordinal 00003: key ('002506.SZ', '20181231', '20181031', '1') != row_index ('002506.SZ', '20181231', '20181031', '0')
+FAIL: ordinal 00283: key ('600861.SH', '20200930', '20200829', '0') != row_index ('600861.SH', '20200930', '20200829', '1')
+batch 001: 600 rows checked -> 2 FAILURES
+batch 001: 600 rows checked -> OK
+=== 03:47:25 batch_001 check OK (600 rows); fix_loop: 2 update_flag transcription fixes (ordinal 00003: 1->0, 00283: 0->1) caught by checker ===
+Traceback (most recent call last):
+  File "D:\量化\artifacts\runs\20260918T025456-fcst-full-w1-a3f7c2\scripts\quality_stats.py", line 153, in <module>
+    main()
+  File "D:\量化\artifacts\runs\20260918T025456-fcst-full-w1-a3f7c2\scripts\quality_stats.py", line 44, in main
+    .sort("batch_idx").rows(named=True))
+     ^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\dataframe\frame.py", line 6187, in sort
+    ._collect_eager(optimizations=optimizations)
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\lazyframe\frame.py", line 2240, in _collect_eager
+    return _eager_engine().collect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\lazyframe\engine.py", line 443, in collect
+    return wrap_df(ldf.collect(self.name, callback))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: unable to find column "batch_idx"; valid columns: ["ordinal", "ts_code", "end_date", "ann_date", "update_flag", "type"]
+{
+ "batch": 1,
+ "n_rows": 600,
+ "other_rate_primary": 0.1283,
+ "secondary_null_rate": 0.6833,
+ "supports_direction_distribution": {
+  "-1": 2,
+  "0": 539,
+  "1": 59
+ },
+ "confidence_distribution": {
+  "high": 577,
+  "low": 23
+ },
+ "rows_completed": 600,
+ "progress_json": "data/features/fcst-reason-struct-full-20260918/progress.json"
+}
+=== 03:47:45 quality_stats done, progress.json updated ===
+=== 03:49:20 run manifest written; wave-1 completed ===

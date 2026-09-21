@@ -1,0 +1,132 @@
+{
+ "run_id": "20260919T132557-engine-v13-b7e2",
+ "experiment_id": "exp-20260918-p3r2-band-v1-readjudication",
+ "status": "completed",
+ "started_at_utc": "1970-01-01T01:33:08.778845+00:00",
+ "ended_at_utc": "2026-09-19T05:59:45.084319+00:00",
+ "wall_seconds": 84.44941029999973,
+ "peak_rss_gb": 4.846084096,
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "artifacts/runs/20260919T030640-p3r2-dev-ad9e/tmp/runner_p3r2_intents.py"
+ ],
+ "random_seed": null,
+ "determinism": "no RNG in runner or engine; single static intent frame per config; engine-owned deterministic lifecycle",
+ "engine": {
+  "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+  "sha256_at_start": "84a2443ac28fe1b87e4a18f988fd38cc67cf706d5778e262f11465147234082c",
+  "sha256_at_end": "84a2443ac28fe1b87e4a18f988fd38cc67cf706d5778e262f11465147234082c",
+  "bytes_modified_by_this_run": false,
+  "version": "v1.1 intent layer",
+  "approval": "artifacts/runs/20260919T023558-p3v1-intent-review-c4d1/review.md (APPROVE 0C/0M/4m); delivery 20260919T021744-p3v1-intent-ce78; 29/29 engine tests + 390/390 repo"
+ },
+ "pins": {
+  "engine": {
+   "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+   "sha256": "84a2443ac28fe1b87e4a18f988fd38cc67cf706d5778e262f11465147234082c",
+   "expected": "84a2443ac28fe1b87e4a18f988fd38cc67cf706d5778e262f11465147234082c",
+   "match": true
+  },
+  "r16_config": {
+   "path": "D:\\量化\\configs\\experiments\\p2r16-trend-dispersion.json",
+   "sha256": "27f846a7330919a4965d83ec07cf2a0be3e29b2476cc37c14c84558957a93df4",
+   "expected": "27f846a7330919a4",
+   "match": true
+  },
+  "p3r2_config": {
+   "path": "D:\\量化\\configs\\experiments\\p3r2-band-v1-readjudication.json",
+   "sha256": "b49025b44c719685ee9276622a5708881e578c859cf3612b2188d7732dab40f1",
+   "expected": "b49025b44c719685",
+   "match": true
+  },
+  "daily": {
+   "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_1999_2024.parquet",
+   "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6",
+   "expected": "d9a63f4cc3032926",
+   "match": true,
+   "rows_total": 16344349,
+   "rows_after_freeze_filter": 16344349
+  },
+  "split_factor": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\split_factor.h5",
+   "sha256": "2f436b2f13d09a9bfdcbdb0bf35669c10a377d180ce1ca37bef53d6c96a3365d",
+   "expected": "2f436b2f13d09a9b",
+   "match": true
+  },
+  "dividends": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\dividends.h5",
+   "sha256": "46121c09cddde72e725c2d4ae025cc259b049aeaa77c868b492fdbba60214846",
+   "expected": "46121c09cddde72e",
+   "match": true
+  },
+  "index_000300": {
+   "path": "D:\\量化\\data\\raw\\tushare\\index_daily\\20260917-r1\\chunk_000300.SH.csv",
+   "sha256": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878",
+   "expected": "05aaa8183a11c674",
+   "match": true
+  },
+  "halfday_manifest": {
+   "path": "D:\\量化\\data\\processed\\halfday-bars-20260918\\manifest.json",
+   "sha256": "2a414174b5df2eeed4c6bd6a7cd7f9f09f9b2efc8f05673ccc4b7695812cd679",
+   "expected": "2a414174b5df2eee",
+   "match": true
+  },
+  "stk_limit_aggregate": {
+   "path": "D:\\量化\\data\\raw\\tushare\\stk_limit\\20260917-r1",
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "3c53abf3b0c39b425389137d9f630f0de158990fcdc55b0bd41bf7d9c3bde673",
+   "files": 2432,
+   "total_bytes": 301278245,
+   "expected": "3c53abf3b0c39b42",
+   "match": true
+  },
+  "halfday_rows_total": 18486939
+ },
+ "configs": [
+  {
+   "id": "C05",
+   "K": 30,
+   "path": "T200-40",
+   "filter": "on"
+  }
+ ],
+ "mapping": {
+  "frame": "one static intent frame per config; first decision (T,'pm'); expiry = T'+1 cal day (last emission (T','am) -> live (T','pm')); buy_open = target_weight exposure/K; sell_full = risk full; rescale = risk target_weight exposure/K (reduce-to-target; TOP-UP SIDE = registered mapping hole); R16 at_target/feemin legs excluded",
+  "m5b": "(symbol, side, source) uniqueness hard-asserted before any engine run",
+  "gate8": "7.7-m6 mapped rate; termination itemized; rule-blocked counts executed (P3R1 precedent)"
+ },
+ "consistency_8_of_8": {
+  "C05": {
+   "membership_mismatches": 0,
+   "membership_events_mismatches": 0,
+   "n_signal_days": 71
+  }
+ },
+ "trial_accounting": {
+  "cumulative_before": 197,
+  "this_round": 8,
+  "cumulative_after": 205,
+  "note": "judgment table produced (9cc4 consumed zero; prereg rev 1)"
+ },
+ "aborted_predecessor": {
+  "run_id": "20260919T002020-p3r2-dev-9cc4",
+  "status": "ABORTED",
+  "convention_a_numbers": "INVALID execution diagnostics only (prereg rev 1) -- not used here for any judgment or expectation"
+ },
+ "gates_dev_pass": [],
+ "advanced_to_validation": false,
+ "val_consumed": false,
+ "stop_note": "no config passed all dev gates (0/8); val not consumed",
+ "outputs": {
+  "logs/anchor1_p3r2_c05.log": "5196d0073f4264af5584ba15c6a7b298776e702183f010856c5e370fdbc5fe10",
+  "outputs/C05_clips_final.parquet": "b44dbea22a529529f254e978c7a6926125727e076b9bde81165d6bc1c2d3cb7d",
+  "outputs/C05_daily_equity.parquet": "c3945567de4250ef2679b27210392a177b5c384a5cbea4ec6cac7417470ffe0c",
+  "outputs/C05_events.parquet": "2dde945782accd70ac90dd2ba22bf50ccf05d24c971c88433c3894f970030177",
+  "outputs/C05_fills.parquet": "11f8af46686df411266526d33993722ed443d37fca8ab3dbae03b98a96420cef",
+  "outputs/C05_intents.parquet": "36dedda1cf8d76615daba2877f5a312014f9e6a195baba1c93d23e690febed4a",
+  "outputs/metrics_and_gates.json": "d111f0ecf62f0a08b0f547c376340c484ed003c5cd6a82c7d3b678f48be0c9b4",
+  "tmp/anchor1_report.md": "13237fa14f44eef227ebb50503cb08969a92192b28b6d73b660b09b391fa7911",
+  "tmp/runner_hybrid_v2.py": "58317ae87b3584427101938f39f63d4dce54d86cd7949033dea785d633268eb9",
+  "tmp/runner_p3r2_intents.py": "b2c93807bc4baf483d93a58542815c8bc887e5b68d938764a40bd27b0dfe07ac"
+ }
+}

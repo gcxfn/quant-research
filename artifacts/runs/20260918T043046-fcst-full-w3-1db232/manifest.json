@@ -1,0 +1,95 @@
+{
+ "run_id": "20260918T043046-fcst-full-w3-1db232",
+ "experiment_id": "exp-20260918-fcst-reason-llm-full",
+ "task": "forecast.change_reason 全量 LLM 结构化 wave-3（全序第 1,200-1,799 行，batch_003，600 行，type 全部为扭亏）",
+ "status": "completed",
+ "time_start": "2026-09-18T04:30:46+08:00",
+ "time_end": "2026-09-18T05:21:02+08:00",
+ "timezone": "Asia/Shanghai",
+ "started_by": "ZCode 数据工程代理（会话内 LLM 结构化，无外部 API 调用、无网络、无 token）",
+ "checkpoint_resume": "开始时 batch_003.jsonl 不存在（仅 batch_001/002.jsonl），未触发恢复路径，全量新跑",
+ "inputs": {
+  "row_index": "data/features/fcst-reason-struct-full-20260918/row_index.parquet（38,567 行全序，batch_id=3 过滤 600 行，ordinal 1200-1799）",
+  "raw_dir": "data/raw/tushare/forecast/20260909-r1（只读，97 个 chunk_*.csv）",
+  "input_identity_file": "artifacts/runs/20260918T025456-fcst-full-w1-a3f7c2/work/input_identity.json（97 个 chunk 逐文件 sha256，与 wave-1/2 完全一致，raw 未变动、本轮未重读全部原始文件之外的身份核对）",
+  "freeze_note": "入池已由 row_index 固定 ann_date<=20241231 且 change_reason 非空；2025+ 行一行未读取，data/raw 全程只读"
+ },
+ "config_summary": {
+  "schema": "schema v1（llm-v1），与 pilot/wave-1/wave-2 完全一致：data/features/fcst-reason-struct-pilot-20260918/schema.md（15 词封闭词表 + 补充判定细则），未改动",
+  "ordering": "batch_id=3 → ordinal 1200-1799，按 batch_idx 升序渲染；本批 600 行 type 全部为 扭亏（改善组）",
+  "supports_direction_口径": "type=扭亏：利好向 primary→+1；利空向 primary→-1（数据质量信号）；无因果/平稳/条件不确定类→0。沿用 wave-1 manifest 固化口径：上年损失/减值/费用基数类原因按经济方向记 +1（如坏账转回、上年商誉减值基数、上年和解费/预计负债/坏账计提基数）",
+  "batch_size": 600,
+  "wave_3_rows": "ordinal 1200-1799"
+ },
+ "actual_commands": [
+  "PYTHONPATH=D:/量化/src .venv/Scripts/python.exe -X utf8 artifacts/runs/20260918T043046-fcst-full-w3-1db232/scripts/render_batch.py --repo-root D:/量化 --batch 3 --work-dir artifacts/runs/20260918T043046-fcst-full-w3-1db232/work",
+  "（逐行结构化：代理会话内按渲染文件 6 段处理，写 work/batch_003_part1..6.jsonl 后按序合并为 features batch_003.jsonl）",
+  ".venv/Scripts/python.exe -X utf8 .../scripts/check_batch_full.py --repo-root D:/量化 --batch 3（首轮 9 失败→定点修复→复检 600/600 OK）",
+  ".venv/Scripts/python.exe -X utf8 .../scripts/quality_stats.py --repo-root D:/量化 --batch 3 --fix-note \"...\"（更新 progress.json）"
+ ],
+ "code_summary": {
+  "scripts_copied_from": "artifacts/runs/20260918T025456-fcst-full-w1-a3f7c2/scripts/（4 个脚本逐字节复制，sha256 相同）",
+  "build_row_index.py": "f436b0d8a1a0db4e2762bd23210bbf4be5bba0cdc3ac1a256db002315a6c8c14",
+  "render_batch.py": "41ba7b0ae569cb23bd440b6f5e27e8427b6bc33ffa5db4285fde95e13795a2ef",
+  "check_batch_full.py": "67470de19a734ccb5da7dad1a486850a79c32993eb82e138026e4c1de3ce7001",
+  "quality_stats.py": "80301483af6d99b912ccfcd13977de33a8e5f4c6fe2855652ae585ab0b55d997"
+ },
+ "outputs": {
+  "features_dir": "data/features/fcst-reason-struct-full-20260918",
+  "files": {
+   "batch_003.jsonl": "96aa54cbd62cd9d31a53ca473a00393b16b9211b5cc03e8edaf71f63c03d6fd2",
+   "progress.json": "36eae3ab89050c2600cf29ad53082144ab3f90ee200af7199e5dec45c202bd7a",
+   "batch_003_input.txt（run work/）": "render_batch.py canonical 渲染输入，187,557 字符",
+   "batch_003_part1..6.jsonl（run work/）": "6 段结构化产出留痕（part1/part4/part5/part6 含 9 处修复后版本）"
+  }
+ },
+ "environment": {
+  "os": "Windows 10.0.26200 x64, Git Bash",
+  "python": "3.11.15（D:/量化/.venv/Scripts/python.exe，-X utf8，PYTHONPATH=D:/量化/src）",
+  "polars": "1.44.2（row_index.parquet 读取）",
+  "git": "仓库未初始化 Git，按 AGENTS §5.3 以文件 sha256 记录源码身份"
+ },
+ "random_seed": "无随机成分（渲染与合并均为确定性顺序读写）",
+ "time_split": "不适用（结构化数据工程，非收益验证）；入池已冻结 ann_date>=20250101",
+ "durations": {
+  "render_sec": 2,
+  "llm_structuring_wall_sec": 3020,
+  "note": "结构化挂钟时间含 6 段逐行阅读/生成/写盘与校验修复回路，不代表 API 吞吐；与 wave-1（3,178s）、wave-2（3,300s）量级一致"
+ },
+ "peak_memory": "未测量（raw CSV 35MB 量级 + parquet 索引，内存不构成约束）",
+ "checkpoint_resume_design": "每 wave 落盘 batch_NNN.jsonl 并跑 check_batch_full 校验；后续会话若 batch_004.jsonl 存在、行数与 row_index 一致且校验通过则跳过。本 wave 开始时 batch_003.jsonl 不存在，未触发恢复路径。",
+ "verification": {
+  "rows_checked": 600,
+  "all_checks_passed": true,
+  "quote_verbatim_pass_rate": 1.0,
+  "fix_loop": "check_batch_full 首轮捕获 9 处失败：01570/01578/01631/01690/01744/01762/01787 key_quote 因原文为半角逗号而输出全角逗号（非连续子串）、01500 key_quote 误增'公司'前缀、01231 误引同批 01240 的钢铁焦炭文本（600744.SH 实为火电回暖驱动）；定点修复 part1/part4/part5/part6 后重新合并，复检 600/600 OK"
+ },
+ "outputs_quality_summary": {
+  "other_rate_primary": 0.0183,
+  "secondary_null_rate": 0.275,
+  "supports_direction_distribution": {
+   "-1": 22,
+   "0": 7,
+   "1": 571
+  },
+  "confidence_distribution": {
+   "high": 582,
+   "low": 18
+  },
+  "primary_code_distribution_top": {
+   "non_recurring": 156,
+   "demand_up": 149,
+   "impairment": 77,
+   "ma_restructuring": 48,
+   "cost_down": 47
+  },
+  "note": "本批 600 行 type 全为扭亏（改善组），故 +1 占比高（571/600）；-1 的 22 行为原文给出恶化驱动或下修（如 600652.SH/601258.SH/603758.SH 营收利润下滑、000558.SZ 房地产大幅下降、01348/01710 业绩预告修正减少利润、01481/01638/01646 疫情致净利仍负或偏低、01435/01449 减值下修、01498 修正加大研发投入等），按 schema 留作数据质量信号；0 的 7 行为条件式/无因果/占位类（01215/01227/01354 等）"
+ },
+ "notes": [
+  "仅数据工程产出，无策略结论；confidence=low 行（18 行）不得直接进入研究判据。",
+  "上年损失/减值/费用/和解费基数类原因按经济方向记 +1 的口径沿用 wave-1/2 manifest 固化约定；type=扭亏 下利空向 primary 记 -1 留数据质量信号。",
+  "progress.json 更新为脚本先读后写、仅追加 batch=3 字段并重算跨批累计（rows_completed=1800，batches_completed=[1,2,3]），与并发 wave 冲突窗口极小；本批写入时 progress.json 中已有 batch=1、2。",
+  "pilot 重叠行标注口径与 pilot/wave-1/wave-2 一致；本批 01231 与 01240 的文本区分经 check_batch_full 逐字校验确认。",
+  "本批 epidemic_shock 阳性 14 行均为 2020 年报/季报中明确点名疫情的因果（口罩/测温/防护物资需求、停工冲击等），按 schema 补充细则第 4 条归类。"
+ ]
+}

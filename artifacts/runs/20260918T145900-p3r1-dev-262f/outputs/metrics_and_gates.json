@@ -1,0 +1,1379 @@
+{
+  "metrics": {
+    "C01": {
+      "net_cagr": 0.051675020794945015,
+      "net_total_return": 0.35213409674999974,
+      "max_drawdown": -0.3060639176675909,
+      "max_single_name_weight": 0.21808914305708862,
+      "turnover_by_year": {
+        "2015": {
+          "buy_notional": 142805.0,
+          "mean_equity": 204748.62797541008,
+          "one_side_turnover": 0.6974649911556458
+        },
+        "2016": {
+          "buy_notional": 240153.0,
+          "mean_equity": 184372.2332090165,
+          "one_side_turnover": 1.3025442921643562
+        },
+        "2017": {
+          "buy_notional": 265145.0,
+          "mean_equity": 193518.81215573783,
+          "one_side_turnover": 1.3701251937543915
+        },
+        "2018": {
+          "buy_notional": 80760.0,
+          "mean_equity": 183873.48789917628,
+          "one_side_turnover": 0.4392150326983697
+        },
+        "2019": {
+          "buy_notional": 217892.0,
+          "mean_equity": 195969.66543360628,
+          "one_side_turnover": 1.1118659590395683
+        },
+        "2020": {
+          "buy_notional": 207334.0,
+          "mean_equity": 230841.12298271607,
+          "one_side_turnover": 0.8981675245771693
+        }
+      },
+      "max_one_side_turnover": 1.3701251937543915,
+      "execution_rate": 0.9136,
+      "execution_rate_mapping": "band: filled + below_min_lot + void_no_position + cash-blocked-expired over all orders (R16 at_target/no_lots/cash_capped/feemin_skipped analog)",
+      "net_return_by_year": {
+        "2015": -0.03593245999999983,
+        "2016": -0.05286512654497222,
+        "2017": 0.1404226929250878,
+        "2018": -0.22949252756635308,
+        "2019": 0.344361017589335,
+        "2020": 0.25355057426996264
+      },
+      "b1m_net_cagr": 0.0059905923579064435,
+      "b1m_max_drawdown": -0.3982378364862026,
+      "b1m_net_return_by_year": {
+        "2015": 0.22735356961586017,
+        "2016": -0.036271319473570096,
+        "2017": -0.11258228102926204,
+        "2018": -0.1962740727688722,
+        "2019": 0.12375649932752708,
+        "2020": 0.09319791239431541
+      },
+      "excess_vs_b1m": 0.04568442843703857,
+      "excess_by_year": {
+        "2015": -0.26328602961586,
+        "2016": -0.016593807071402122,
+        "2017": 0.25300497395434984,
+        "2018": -0.03321845479748087,
+        "2019": 0.22060451826180794,
+        "2020": 0.16035266187564723
+      },
+      "membership_stats": null,
+      "config": {
+        "K": 20,
+        "path": "T200-40",
+        "filter": "on"
+      }
+    },
+    "C02": {
+      "net_cagr": -0.023311344785038268,
+      "net_total_return": -0.13171346399999995,
+      "max_drawdown": -0.4832703107085691,
+      "max_single_name_weight": 0.2019237891063736,
+      "turnover_by_year": {
+        "2015": {
+          "buy_notional": 157605.0,
+          "mean_equity": 202355.35317622914,
+          "one_side_turnover": 0.7788526348633015
+        },
+        "2016": {
+          "buy_notional": 339502.0,
+          "mean_equity": 171571.98636475427,
+          "one_side_turnover": 1.9787729173819444
+        },
+        "2017": {
+          "buy_notional": 344231.0,
+          "mean_equity": 156503.4812049184,
+          "one_side_turnover": 2.199510179260996
+        },
+        "2018": {
+          "buy_notional": 56575.0,
+          "mean_equity": 136806.76736419796,
+          "one_side_turnover": 0.4135394841206193
+        },
+        "2019": {
+          "buy_notional": 148697.0,
+          "mean_equity": 139202.5196631146,
+          "one_side_turnover": 1.06820623908147
+        },
+        "2020": {
+          "buy_notional": 153983.0,
+          "mean_equity": 156686.55011975323,
+          "one_side_turnover": 0.9827454869758321
+        }
+      },
+      "max_one_side_turnover": 2.199510179260996,
+      "execution_rate": 0.9329192546583851,
+      "execution_rate_mapping": "band: filled + below_min_lot + void_no_position + cash-blocked-expired over all orders (R16 at_target/no_lots/cash_capped/feemin_skipped analog)",
+      "net_return_by_year": {
+        "2015": -0.06133952499999995,
+        "2016": -0.15122493838893147,
+        "2017": 0.0061184059384904455,
+        "2018": -0.2605738011029838,
+        "2019": 0.24599845919745,
+        "2020": 0.1757107560832487
+      },
+      "b1m_net_cagr": 0.0059905923579064435,
+      "b1m_max_drawdown": -0.3982378364862026,
+      "b1m_net_return_by_year": {
+        "2015": 0.22735356961586017,
+        "2016": -0.036271319473570096,
+        "2017": -0.11258228102926204,
+        "2018": -0.1962740727688722,
+        "2019": 0.12375649932752708,
+        "2020": 0.09319791239431541
+      },
+      "excess_vs_b1m": -0.029301937142944712,
+      "excess_by_year": {
+        "2015": -0.2886930946158601,
+        "2016": -0.11495361891536138,
+        "2017": 0.11870068696775249,
+        "2018": -0.06429972833411157,
+        "2019": 0.12224195986992292,
+        "2020": 0.0825128436889333
+      },
+      "membership_stats": null,
+      "config": {
+        "K": 20,
+        "path": "T200-40",
+        "filter": "off"
+      }
+    },
+    "C03": {
+      "net_cagr": 0.00600515149378511,
+      "net_total_return": 0.036499727949999894,
+      "max_drawdown": -0.4990624035997686,
+      "max_single_name_weight": 0.14137832516752497,
+      "turnover_by_year": {
+        "2015": {
+          "buy_notional": 303499.0,
+          "mean_equity": 209644.18895901655,
+          "one_side_turnover": 1.4476862035004041
+        },
+        "2016": {
+          "buy_notional": 280367.0,
+          "mean_equity": 159188.3886721312,
+          "one_side_turnover": 1.7612277022129523
+        },
+        "2017": {
+          "buy_notional": 186907.0,
+          "mean_equity": 164150.9066311471,
+          "one_side_turnover": 1.1386291055948088
+        },
+        "2018": {
+          "buy_notional": 88885.0,
+          "mean_equity": 155708.82471193446,
+          "one_side_turnover": 0.5708411206907487
+        },
+        "2019": {
+          "buy_notional": 113102.0,
+          "mean_equity": 157146.9133081968,
+          "one_side_turnover": 0.719721422578528
+        },
+        "2020": {
+          "buy_notional": 114458.0,
+          "mean_equity": 181859.24995086397,
+          "one_side_turnover": 0.629376839676426
+        }
+      },
+      "max_one_side_turnover": 1.7612277022129523,
+      "execution_rate": 0.9114139693356048,
+      "execution_rate_mapping": "band: filled + below_min_lot + void_no_position + cash-blocked-expired over all orders (R16 at_target/no_lots/cash_capped/feemin_skipped analog)",
+      "net_return_by_year": {
+        "2015": -0.0786906300000001,
+        "2016": -0.1467017859592593,
+        "2017": 0.10630057325836018,
+        "2018": -0.2338004388331827,
+        "2019": 0.2701079020951873,
+        "2020": 0.22463653941759043
+      },
+      "b1m_net_cagr": 0.018551675073019247,
+      "b1m_max_drawdown": -0.5559615161856944,
+      "b1m_net_return_by_year": {
+        "2015": 0.4194621340812228,
+        "2016": -0.08789440159052753,
+        "2017": -0.09363961023236667,
+        "2018": -0.2990832010981138,
+        "2019": 0.19693355456514583,
+        "2020": 0.13394943384963365
+      },
+      "excess_vs_b1m": -0.012546523579234137,
+      "excess_by_year": {
+        "2015": -0.4981527640812229,
+        "2016": -0.058807384368731785,
+        "2017": 0.19994018349072684,
+        "2018": 0.06528276226493113,
+        "2019": 0.07317434753004148,
+        "2020": 0.09068710556795678
+      },
+      "membership_stats": null,
+      "config": {
+        "K": 20,
+        "path": "FIX75",
+        "filter": "on"
+      }
+    },
+    "C04": {
+      "net_cagr": -0.05678773956951555,
+      "net_total_return": -0.29535650974999994,
+      "max_drawdown": -0.6151674673120612,
+      "max_single_name_weight": 0.1383713463899091,
+      "turnover_by_year": {
+        "2015": {
+          "buy_notional": 331863.0,
+          "mean_equity": 205352.70372541022,
+          "one_side_turnover": 1.6160634556034603
+        },
+        "2016": {
+          "buy_notional": 351835.0,
+          "mean_equity": 146794.1900225408,
+          "one_side_turnover": 2.3967910442911564
+        },
+        "2017": {
+          "buy_notional": 230897.0,
+          "mean_equity": 132945.03388524585,
+          "one_side_turnover": 1.7367854462266212
+        },
+        "2018": {
+          "buy_notional": 62492.0,
+          "mean_equity": 115966.62633539093,
+          "one_side_turnover": 0.5388791756282089
+        },
+        "2019": {
+          "buy_notional": 96378.0,
+          "mean_equity": 115889.34889262295,
+          "one_side_turnover": 0.8316381179196964
+        },
+        "2020": {
+          "buy_notional": 75648.0,
+          "mean_equity": 128800.70187818921,
+          "one_side_turnover": 0.5873259919929834
+        }
+      },
+      "max_one_side_turnover": 2.3967910442911564,
+      "execution_rate": 0.9281045751633987,
+      "execution_rate_mapping": "band: filled + below_min_lot + void_no_position + cash-blocked-expired over all orders (R16 at_target/no_lots/cash_capped/feemin_skipped analog)",
+      "net_return_by_year": {
+        "2015": -0.11709248499999991,
+        "2016": -0.23359345570866508,
+        "2017": -0.014177346900404064,
+        "2018": -0.2497106659357069,
+        "2019": 0.21206555378316927,
+        "2020": 0.16155920554976033
+      },
+      "b1m_net_cagr": 0.018551675073019247,
+      "b1m_max_drawdown": -0.5559615161856944,
+      "b1m_net_return_by_year": {
+        "2015": 0.4194621340812228,
+        "2016": -0.08789440159052753,
+        "2017": -0.09363961023236667,
+        "2018": -0.2990832010981138,
+        "2019": 0.19693355456514583,
+        "2020": 0.13394943384963365
+      },
+      "excess_vs_b1m": -0.0753394146425348,
+      "excess_by_year": {
+        "2015": -0.5365546190812227,
+        "2016": -0.14569905411813755,
+        "2017": 0.0794622633319626,
+        "2018": 0.049372535162406916,
+        "2019": 0.01513199921802344,
+        "2020": 0.027609771700126684
+      },
+      "membership_stats": null,
+      "config": {
+        "K": 20,
+        "path": "FIX75",
+        "filter": "off"
+      }
+    },
+    "C05": {
+      "net_cagr": 0.050771113596816075,
+      "net_total_return": 0.3451904152499996,
+      "max_drawdown": -0.33572210202453734,
+      "max_single_name_weight": 0.13532159155757367,
+      "turnover_by_year": {
+        "2015": {
+          "buy_notional": 121591.0,
+          "mean_equity": 203501.40662295112,
+          "one_side_turnover": 0.5974946415249339
+        },
+        "2016": {
+          "buy_notional": 224839.0,
+          "mean_equity": 183099.65660655702,
+          "one_side_turnover": 1.2279597032949774
+        },
+        "2017": {
+          "buy_notional": 270434.0,
+          "mean_equity": 190357.27923360592,
+          "one_side_turnover": 1.4206653987112525
+        },
+        "2018": {
+          "buy_notional": 63710.0,
+          "mean_equity": 181435.12662962993,
+          "one_side_turnover": 0.351144793092098
+        },
+        "2019": {
+          "buy_notional": 126267.0,
+          "mean_equity": 184120.4121499999,
+          "one_side_turnover": 0.685784908503965
+        },
+        "2020": {
+          "buy_notional": 157427.0,
+          "mean_equity": 224766.3381181069,
+          "one_side_turnover": 0.700402922066015
+        }
+      },
+      "max_one_side_turnover": 1.4206653987112525,
+      "execution_rate": 0.9165067178502879,
+      "execution_rate_mapping": "band: filled + below_min_lot + void_no_position + cash-blocked-expired over all orders (R16 at_target/no_lots/cash_capped/feemin_skipped analog)",
+      "net_return_by_year": {
+        "2015": -0.0441525650000002,
+        "2016": -0.05283621439021813,
+        "2017": 0.1288733678408398,
+        "2018": -0.246807594241795,
+        "2019": 0.32049031199056266,
+        "2020": 0.3233774233882283
+      },
+      "b1m_net_cagr": 0.0059905923579064435,
+      "b1m_max_drawdown": -0.3982378364862026,
+      "b1m_net_return_by_year": {
+        "2015": 0.22735356961586017,
+        "2016": -0.036271319473570096,
+        "2017": -0.11258228102926204,
+        "2018": -0.1962740727688722,
+        "2019": 0.12375649932752708,
+        "2020": 0.09319791239431541
+      },
+      "excess_vs_b1m": 0.04478052123890963,
+      "excess_by_year": {
+        "2015": -0.2715061346158604,
+        "2016": -0.016564894916648032,
+        "2017": 0.24145564887010185,
+        "2018": -0.05053352147292278,
+        "2019": 0.19673381266303558,
+        "2020": 0.23017951099391287
+      },
+      "membership_stats": null,
+      "config": {
+        "K": 30,
+        "path": "T200-40",
+        "filter": "on"
+      }
+    },
+    "C06": {
+      "net_cagr": 0.0025229743690182715,
+      "net_total_return": 0.015202131849999967,
+      "max_drawdown": -0.4847137065995075,
+      "max_single_name_weight": 0.14523962981138716,
+      "turnover_by_year": {
+        "2015": {
+          "buy_notional": 110985.0,
+          "mean_equity": 202723.79460655732,
+          "one_side_turnover": 0.5474690339898071
+        },
+        "2016": {
+          "buy_notional": 305850.0,
+          "mean_equity": 178237.71682786918,
+          "one_side_turnover": 1.7159667742791542
+        },
+        "2017": {
+          "buy_notional": 326952.0,
+          "mean_equity": 156525.9925163928,
+          "one_side_turnover": 2.0888032380038006
+        },
+        "2018": {
+          "buy_notional": 41460.0,
+          "mean_equity": 137965.13189300406,
+          "one_side_turnover": 0.30051071188156026
+        },
+        "2019": {
+          "buy_notional": 127487.0,
+          "mean_equity": 143793.16618278687,
+          "one_side_turnover": 0.886599852999559
+        },
+        "2020": {
+          "buy_notional": 110057.0,
+          "mean_equity": 174901.62347234576,
+          "one_side_turnover": 0.6292508772361479
+        }
+      },
+      "max_one_side_turnover": 2.0888032380038006,
+      "execution_rate": 0.9114778694673669,
+      "execution_rate_mapping": "band: filled + below_min_lot + void_no_position + cash-blocked-expired over all orders (R16 at_target/no_lots/cash_capped/feemin_skipped analog)",
+      "net_return_by_year": {
+        "2015": -0.047068710000000125,
+        "2016": -0.132788435355082,
+        "2017": -0.05766718496120915,
+        "2018": -0.2340500074302979,
+        "2019": 0.34137302356997035,
+        "2020": 0.2688537679949603
+      },
+      "b1m_net_cagr": 0.0059905923579064435,
+      "b1m_max_drawdown": -0.3982378364862026,
+      "b1m_net_return_by_year": {
+        "2015": 0.22735356961586017,
+        "2016": -0.036271319473570096,
+        "2017": -0.11258228102926204,
+        "2018": -0.1962740727688722,
+        "2019": 0.12375649932752708,
+        "2020": 0.09319791239431541
+      },
+      "excess_vs_b1m": -0.003467617988888172,
+      "excess_by_year": {
+        "2015": -0.2744222796158603,
+        "2016": -0.0965171158815119,
+        "2017": 0.05491509606805289,
+        "2018": -0.0377759346614257,
+        "2019": 0.21761652424244327,
+        "2020": 0.1756558556006449
+      },
+      "membership_stats": null,
+      "config": {
+        "K": 30,
+        "path": "T200-40",
+        "filter": "off"
+      }
+    },
+    "C07": {
+      "net_cagr": 0.002170155291341569,
+      "net_total_return": 0.013064722749999813,
+      "max_drawdown": -0.4664295915624421,
+      "max_single_name_weight": 0.14338699057797372,
+      "turnover_by_year": {
+        "2015": {
+          "buy_notional": 263540.0,
+          "mean_equity": 207835.24736475426,
+          "one_side_turnover": 1.268023606878784
+        },
+        "2016": {
+          "buy_notional": 258682.0,
+          "mean_equity": 160930.75325409873,
+          "one_side_turnover": 1.607411851180232
+        },
+        "2017": {
+          "buy_notional": 174405.0,
+          "mean_equity": 163937.41231967192,
+          "one_side_turnover": 1.0638511217922404
+        },
+        "2018": {
+          "buy_notional": 67169.0,
+          "mean_equity": 158973.06617201667,
+          "one_side_turnover": 0.42251811339739676
+        },
+        "2019": {
+          "buy_notional": 73245.0,
+          "mean_equity": 159606.0662008195,
+          "one_side_turnover": 0.4589111287777853
+        },
+        "2020": {
+          "buy_notional": 79135.0,
+          "mean_equity": 181141.03311399164,
+          "one_side_turnover": 0.43686954103988423
+        }
+      },
+      "max_one_side_turnover": 1.607411851180232,
+      "execution_rate": 0.917766497461929,
+      "execution_rate_mapping": "band: filled + below_min_lot + void_no_position + cash-blocked-expired over all orders (R16 at_target/no_lots/cash_capped/feemin_skipped analog)",
+      "net_return_by_year": {
+        "2015": -0.07729077999999989,
+        "2016": -0.1446106390916958,
+        "2017": 0.10196938800785249,
+        "2018": -0.19336562972622695,
+        "2019": 0.20350564881761146,
+        "2020": 0.1998144870733367
+      },
+      "b1m_net_cagr": 0.018551675073019247,
+      "b1m_max_drawdown": -0.5559615161856944,
+      "b1m_net_return_by_year": {
+        "2015": 0.4194621340812228,
+        "2016": -0.08789440159052753,
+        "2017": -0.09363961023236667,
+        "2018": -0.2990832010981138,
+        "2019": 0.19693355456514583,
+        "2020": 0.13394943384963365
+      },
+      "excess_vs_b1m": -0.016381519781677678,
+      "excess_by_year": {
+        "2015": -0.4967529140812227,
+        "2016": -0.056716237501168276,
+        "2017": 0.19560899824021916,
+        "2018": 0.10571757137188686,
+        "2019": 0.006572094252465632,
+        "2020": 0.06586505322370306
+      },
+      "membership_stats": null,
+      "config": {
+        "K": 30,
+        "path": "FIX75",
+        "filter": "on"
+      }
+    },
+    "C08": {
+      "net_cagr": -0.03862278320797241,
+      "net_total_return": -0.21009709980000002,
+      "max_drawdown": -0.5736751352092149,
+      "max_single_name_weight": 0.08543352026590499,
+      "turnover_by_year": {
+        "2015": {
+          "buy_notional": 253404.0,
+          "mean_equity": 205427.9643237706,
+          "one_side_turnover": 1.233541893062891
+        },
+        "2016": {
+          "buy_notional": 323088.0,
+          "mean_equity": 155953.53895491778,
+          "one_side_turnover": 2.0716939299043196
+        },
+        "2017": {
+          "buy_notional": 209400.0,
+          "mean_equity": 136454.83181967185,
+          "one_side_turnover": 1.5345737282262517
+        },
+        "2018": {
+          "buy_notional": 47688.0,
+          "mean_equity": 125160.96541152234,
+          "one_side_turnover": 0.38101336022141163
+        },
+        "2019": {
+          "buy_notional": 73625.0,
+          "mean_equity": 128368.93686229546,
+          "one_side_turnover": 0.5735421808391181
+        },
+        "2020": {
+          "buy_notional": 81509.0,
+          "mean_equity": 144516.8968977777,
+          "one_side_turnover": 0.5640101728564959
+        }
+      },
+      "max_one_side_turnover": 2.0716939299043196,
+      "execution_rate": 0.9143556280587276,
+      "execution_rate_mapping": "band: filled + below_min_lot + void_no_position + cash-blocked-expired over all orders (R16 at_target/no_lots/cash_capped/feemin_skipped analog)",
+      "net_return_by_year": {
+        "2015": -0.08911388000000009,
+        "2016": -0.20969644372229523,
+        "2017": -0.059705946244616004,
+        "2018": -0.1791513117022191,
+        "2019": 0.23342414034662617,
+        "2020": 0.15259424139299416
+      },
+      "b1m_net_cagr": 0.018551675073019247,
+      "b1m_max_drawdown": -0.5559615161856944,
+      "b1m_net_return_by_year": {
+        "2015": 0.4194621340812228,
+        "2016": -0.08789440159052753,
+        "2017": -0.09363961023236667,
+        "2018": -0.2990832010981138,
+        "2019": 0.19693355456514583,
+        "2020": 0.13394943384963365
+      },
+      "excess_vs_b1m": -0.05717445828099166,
+      "excess_by_year": {
+        "2015": -0.5085760140812229,
+        "2016": -0.12180204213176771,
+        "2017": 0.03393366398775066,
+        "2018": 0.11993188939589472,
+        "2019": 0.036490585781480345,
+        "2020": 0.01864480754336051
+      },
+      "membership_stats": null,
+      "config": {
+        "K": 30,
+        "path": "FIX75",
+        "filter": "off"
+      }
+    }
+  },
+  "gates": {
+    "C01": {
+      "dev": {
+        "1_net_cagr_gt_0": true,
+        "2_excess_vs_B1m_ge_2pp": true,
+        "3_advantage_years_ge_5_of_6": false,
+        "4_mdd_le_20pct_and_le_B1m": false,
+        "5_one_side_turnover_le_6": true,
+        "6_single_name_weight_le_40pct": true,
+        "7_vs_B3prime_plus_1pp": true,
+        "8_execution_rate_ge_95pct": false,
+        "advantage_years": 3,
+        "dev_excess_vs_b1m": 0.04568442843703857,
+        "failed_gates": [
+          "3_advantage_years_ge_5_of_6",
+          "4_mdd_le_20pct_and_le_B1m",
+          "8_execution_rate_ge_95pct"
+        ],
+        "dev_pass": false,
+        "mechanism_only_gate2_fail": false
+      },
+      "verdict": "eliminated"
+    },
+    "C02": {
+      "dev": {
+        "1_net_cagr_gt_0": false,
+        "2_excess_vs_B1m_ge_2pp": false,
+        "3_advantage_years_ge_5_of_6": false,
+        "4_mdd_le_20pct_and_le_B1m": false,
+        "5_one_side_turnover_le_6": true,
+        "6_single_name_weight_le_40pct": true,
+        "7_vs_B3prime_plus_1pp": false,
+        "8_execution_rate_ge_95pct": false,
+        "advantage_years": 3,
+        "dev_excess_vs_b1m": -0.029301937142944712,
+        "failed_gates": [
+          "1_net_cagr_gt_0",
+          "2_excess_vs_B1m_ge_2pp",
+          "3_advantage_years_ge_5_of_6",
+          "4_mdd_le_20pct_and_le_B1m",
+          "7_vs_B3prime_plus_1pp",
+          "8_execution_rate_ge_95pct"
+        ],
+        "dev_pass": false,
+        "mechanism_only_gate2_fail": false
+      },
+      "verdict": "eliminated"
+    },
+    "C03": {
+      "dev": {
+        "1_net_cagr_gt_0": true,
+        "2_excess_vs_B1m_ge_2pp": false,
+        "3_advantage_years_ge_5_of_6": false,
+        "4_mdd_le_20pct_and_le_B1m": false,
+        "5_one_side_turnover_le_6": true,
+        "6_single_name_weight_le_40pct": true,
+        "7_vs_B3prime_plus_1pp": false,
+        "8_execution_rate_ge_95pct": false,
+        "advantage_years": 4,
+        "dev_excess_vs_b1m": -0.012546523579234137,
+        "failed_gates": [
+          "2_excess_vs_B1m_ge_2pp",
+          "3_advantage_years_ge_5_of_6",
+          "4_mdd_le_20pct_and_le_B1m",
+          "7_vs_B3prime_plus_1pp",
+          "8_execution_rate_ge_95pct"
+        ],
+        "dev_pass": false,
+        "mechanism_only_gate2_fail": false
+      },
+      "verdict": "eliminated"
+    },
+    "C04": {
+      "dev": {
+        "1_net_cagr_gt_0": false,
+        "2_excess_vs_B1m_ge_2pp": false,
+        "3_advantage_years_ge_5_of_6": false,
+        "4_mdd_le_20pct_and_le_B1m": false,
+        "5_one_side_turnover_le_6": true,
+        "6_single_name_weight_le_40pct": true,
+        "7_vs_B3prime_plus_1pp": false,
+        "8_execution_rate_ge_95pct": false,
+        "advantage_years": 4,
+        "dev_excess_vs_b1m": -0.0753394146425348,
+        "failed_gates": [
+          "1_net_cagr_gt_0",
+          "2_excess_vs_B1m_ge_2pp",
+          "3_advantage_years_ge_5_of_6",
+          "4_mdd_le_20pct_and_le_B1m",
+          "7_vs_B3prime_plus_1pp",
+          "8_execution_rate_ge_95pct"
+        ],
+        "dev_pass": false,
+        "mechanism_only_gate2_fail": false
+      },
+      "verdict": "eliminated"
+    },
+    "C05": {
+      "dev": {
+        "1_net_cagr_gt_0": true,
+        "2_excess_vs_B1m_ge_2pp": true,
+        "3_advantage_years_ge_5_of_6": false,
+        "4_mdd_le_20pct_and_le_B1m": false,
+        "5_one_side_turnover_le_6": true,
+        "6_single_name_weight_le_40pct": true,
+        "7_vs_B3prime_plus_1pp": true,
+        "8_execution_rate_ge_95pct": false,
+        "advantage_years": 3,
+        "dev_excess_vs_b1m": 0.04478052123890963,
+        "failed_gates": [
+          "3_advantage_years_ge_5_of_6",
+          "4_mdd_le_20pct_and_le_B1m",
+          "8_execution_rate_ge_95pct"
+        ],
+        "dev_pass": false,
+        "mechanism_only_gate2_fail": false
+      },
+      "verdict": "eliminated"
+    },
+    "C06": {
+      "dev": {
+        "1_net_cagr_gt_0": true,
+        "2_excess_vs_B1m_ge_2pp": false,
+        "3_advantage_years_ge_5_of_6": false,
+        "4_mdd_le_20pct_and_le_B1m": false,
+        "5_one_side_turnover_le_6": true,
+        "6_single_name_weight_le_40pct": true,
+        "7_vs_B3prime_plus_1pp": true,
+        "8_execution_rate_ge_95pct": false,
+        "advantage_years": 3,
+        "dev_excess_vs_b1m": -0.003467617988888172,
+        "failed_gates": [
+          "2_excess_vs_B1m_ge_2pp",
+          "3_advantage_years_ge_5_of_6",
+          "4_mdd_le_20pct_and_le_B1m",
+          "8_execution_rate_ge_95pct"
+        ],
+        "dev_pass": false,
+        "mechanism_only_gate2_fail": false
+      },
+      "verdict": "eliminated"
+    },
+    "C07": {
+      "dev": {
+        "1_net_cagr_gt_0": true,
+        "2_excess_vs_B1m_ge_2pp": false,
+        "3_advantage_years_ge_5_of_6": false,
+        "4_mdd_le_20pct_and_le_B1m": false,
+        "5_one_side_turnover_le_6": true,
+        "6_single_name_weight_le_40pct": true,
+        "7_vs_B3prime_plus_1pp": false,
+        "8_execution_rate_ge_95pct": false,
+        "advantage_years": 4,
+        "dev_excess_vs_b1m": -0.016381519781677678,
+        "failed_gates": [
+          "2_excess_vs_B1m_ge_2pp",
+          "3_advantage_years_ge_5_of_6",
+          "4_mdd_le_20pct_and_le_B1m",
+          "7_vs_B3prime_plus_1pp",
+          "8_execution_rate_ge_95pct"
+        ],
+        "dev_pass": false,
+        "mechanism_only_gate2_fail": false
+      },
+      "verdict": "eliminated"
+    },
+    "C08": {
+      "dev": {
+        "1_net_cagr_gt_0": false,
+        "2_excess_vs_B1m_ge_2pp": false,
+        "3_advantage_years_ge_5_of_6": false,
+        "4_mdd_le_20pct_and_le_B1m": false,
+        "5_one_side_turnover_le_6": true,
+        "6_single_name_weight_le_40pct": true,
+        "7_vs_B3prime_plus_1pp": false,
+        "8_execution_rate_ge_95pct": false,
+        "advantage_years": 4,
+        "dev_excess_vs_b1m": -0.05717445828099166,
+        "failed_gates": [
+          "1_net_cagr_gt_0",
+          "2_excess_vs_B1m_ge_2pp",
+          "3_advantage_years_ge_5_of_6",
+          "4_mdd_le_20pct_and_le_B1m",
+          "7_vs_B3prime_plus_1pp",
+          "8_execution_rate_ge_95pct"
+        ],
+        "dev_pass": false,
+        "mechanism_only_gate2_fail": false
+      },
+      "verdict": "eliminated"
+    }
+  },
+  "disclosures": {
+    "C01": {
+      "verdict": "eliminated",
+      "fill_rate_order_day": {
+        "buy": 0.1273644388398487,
+        "sell": 0.7468354430379747
+      },
+      "order_fill_rate": {
+        "buy": 0.49148418491484186,
+        "sell": 0.8271028037383178
+      },
+      "gate8_mapped_execution_rate": 0.9136,
+      "fill_lag_buy": {
+        "n": 202,
+        "min": 1,
+        "p50": 1,
+        "max": 19,
+        "mean": 1.995049504950495
+      },
+      "k3_fallback": {
+        "scheduled": 2,
+        "executed": 2,
+        "deferred_limitdown_days": 5,
+        "deferred_limitdown_definition": "count of deferral EVENTS (armed days opening at/below limit_down*(1+1e-4)); on such days the re-anchored limit keeps working and may fill, so one fallback can both defer and fill -- not a count of final no-fallback days (F6)",
+        "pnl_contribution_total": -327.77999999999975,
+        "pnl_definition": "net market-exit proceeds minus shares * previous close"
+      },
+      "k3_fallback_executed_missing_limit_info": 0,
+      "unfilled_exit_reasons": {
+        "buy": {
+          "below_min_lot": 164,
+          "expired_unfilled": 40,
+          "end_of_data_unfilled": 5
+        },
+        "sell": {
+          "void_no_position": 16,
+          "expired_unfilled": 21
+        }
+      },
+      "unfilled_exit_share_buys": 0.5085158150851582,
+      "odd_lot_exits": 6,
+      "commission_warnings": 0,
+      "void_days": {
+        "not_penetrated": 809,
+        "suspended": 536,
+        "limit_out_of_range": 309,
+        "insufficient_cash": 102
+      },
+      "same_bar_deferred_sells": 0,
+      "vs_r16_delta": {
+        "net_cagr": {
+          "band": 0.051675020794945015,
+          "r16": 0.02815916978468591
+        },
+        "max_drawdown": {
+          "band": -0.3060639176675909,
+          "r16": -0.19512689729286836
+        },
+        "max_one_side_turnover": {
+          "band": 1.3701251937543915,
+          "r16": 1.6242523826188946
+        },
+        "execution_rate": {
+          "band": 0.9136,
+          "r16": 0.9853723404255319,
+          "note": "different outcome mappings; see execution_rate_mapping"
+        },
+        "b3_noise_band_same_path": [
+          -0.07896074660166086,
+          0.011084884194893174
+        ]
+      }
+    },
+    "C02": {
+      "verdict": "eliminated",
+      "fill_rate_order_day": {
+        "buy": 0.16502301117685733,
+        "sell": 0.7533333333333333
+      },
+      "order_fill_rate": {
+        "buy": 0.4648148148148148,
+        "sell": 0.8528301886792453
+      },
+      "gate8_mapped_execution_rate": 0.9329192546583851,
+      "fill_lag_buy": {
+        "n": 251,
+        "min": 1,
+        "p50": 1,
+        "max": 17,
+        "mean": 1.653386454183267
+      },
+      "k3_fallback": {
+        "scheduled": 3,
+        "executed": 1,
+        "deferred_limitdown_days": 7,
+        "deferred_limitdown_definition": "count of deferral EVENTS (armed days opening at/below limit_down*(1+1e-4)); on such days the re-anchored limit keeps working and may fill, so one fallback can both defer and fill -- not a count of final no-fallback days (F6)",
+        "pnl_contribution_total": -123.57999999999993,
+        "pnl_definition": "net market-exit proceeds minus shares * previous close"
+      },
+      "k3_fallback_executed_missing_limit_info": 0,
+      "unfilled_exit_reasons": {
+        "buy": {
+          "below_min_lot": 255,
+          "expired_unfilled": 31,
+          "end_of_data_unfilled": 3
+        },
+        "sell": {
+          "void_no_position": 18,
+          "expired_unfilled": 21
+        }
+      },
+      "unfilled_exit_share_buys": 0.5351851851851852,
+      "odd_lot_exits": 5,
+      "commission_warnings": 0,
+      "void_days": {
+        "not_penetrated": 755,
+        "suspended": 573,
+        "limit_out_of_range": 236,
+        "insufficient_cash": 24
+      },
+      "same_bar_deferred_sells": 0,
+      "vs_r16_delta": {
+        "net_cagr": {
+          "band": -0.023311344785038268,
+          "r16": -0.0280580131595215
+        },
+        "max_drawdown": {
+          "band": -0.4832703107085691,
+          "r16": -0.35282534403342747
+        },
+        "max_one_side_turnover": {
+          "band": 2.199510179260996,
+          "r16": 2.5476199518589997
+        },
+        "execution_rate": {
+          "band": 0.9329192546583851,
+          "r16": 0.9865181711606096,
+          "note": "different outcome mappings; see execution_rate_mapping"
+        },
+        "b3_noise_band_same_path": [
+          -0.07896074660166086,
+          0.011084884194893174
+        ]
+      }
+    },
+    "C03": {
+      "verdict": "eliminated",
+      "fill_rate_order_day": {
+        "buy": 0.16433853738701726,
+        "sell": 0.757201646090535
+      },
+      "order_fill_rate": {
+        "buy": 0.5449591280653951,
+        "sell": 0.8363636363636363
+      },
+      "gate8_mapped_execution_rate": 0.9114139693356048,
+      "fill_lag_buy": {
+        "n": 200,
+        "min": 1,
+        "p50": 1,
+        "max": 19,
+        "mean": 1.745
+      },
+      "k3_fallback": {
+        "scheduled": 2,
+        "executed": 2,
+        "deferred_limitdown_days": 5,
+        "deferred_limitdown_definition": "count of deferral EVENTS (armed days opening at/below limit_down*(1+1e-4)); on such days the re-anchored limit keeps working and may fill, so one fallback can both defer and fill -- not a count of final no-fallback days (F6)",
+        "pnl_contribution_total": -228.64999999999964,
+        "pnl_definition": "net market-exit proceeds minus shares * previous close"
+      },
+      "k3_fallback_executed_missing_limit_info": 0,
+      "unfilled_exit_reasons": {
+        "buy": {
+          "expired_unfilled": 28,
+          "below_min_lot": 136,
+          "end_of_data_unfilled": 3
+        },
+        "sell": {
+          "void_no_position": 15,
+          "expired_unfilled": 21
+        }
+      },
+      "unfilled_exit_share_buys": 0.4550408719346049,
+      "odd_lot_exits": 3,
+      "commission_warnings": 0,
+      "void_days": {
+        "not_penetrated": 666,
+        "suspended": 551,
+        "limit_out_of_range": 215
+      },
+      "same_bar_deferred_sells": 0,
+      "vs_r16_delta": {
+        "net_cagr": {
+          "band": 0.00600515149378511,
+          "r16": 0.020746146243098895
+        },
+        "max_drawdown": {
+          "band": -0.4990624035997686,
+          "r16": -0.396278132459023
+        },
+        "max_one_side_turnover": {
+          "band": 1.7612277022129523,
+          "r16": 1.9077717874504478
+        },
+        "execution_rate": {
+          "band": 0.9114139693356048,
+          "r16": 0.9854304635761589,
+          "note": "different outcome mappings; see execution_rate_mapping"
+        },
+        "b3_noise_band_same_path": [
+          -0.05639980519837651,
+          0.036513074392817924
+        ]
+      }
+    },
+    "C04": {
+      "verdict": "eliminated",
+      "fill_rate_order_day": {
+        "buy": 0.17049408489909534,
+        "sell": 0.755700325732899
+      },
+      "order_fill_rate": {
+        "buy": 0.4959514170040486,
+        "sell": 0.8560885608856088
+      },
+      "gate8_mapped_execution_rate": 0.9281045751633987,
+      "fill_lag_buy": {
+        "n": 245,
+        "min": 1,
+        "p50": 1,
+        "max": 17,
+        "mean": 1.5755102040816327
+      },
+      "k3_fallback": {
+        "scheduled": 3,
+        "executed": 1,
+        "deferred_limitdown_days": 7,
+        "deferred_limitdown_definition": "count of deferral EVENTS (armed days opening at/below limit_down*(1+1e-4)); on such days the re-anchored limit keeps working and may fill, so one fallback can both defer and fill -- not a count of final no-fallback days (F6)",
+        "pnl_contribution_total": -64.28999999999996,
+        "pnl_definition": "net market-exit proceeds minus shares * previous close"
+      },
+      "k3_fallback_executed_missing_limit_info": 0,
+      "unfilled_exit_reasons": {
+        "buy": {
+          "expired_unfilled": 31,
+          "below_min_lot": 215,
+          "end_of_data_unfilled": 3
+        },
+        "sell": {
+          "void_no_position": 18,
+          "expired_unfilled": 21
+        }
+      },
+      "unfilled_exit_share_buys": 0.5040485829959515,
+      "odd_lot_exits": 6,
+      "commission_warnings": 0,
+      "void_days": {
+        "suspended": 574,
+        "not_penetrated": 759,
+        "limit_out_of_range": 218
+      },
+      "same_bar_deferred_sells": 0,
+      "vs_r16_delta": {
+        "net_cagr": {
+          "band": -0.05678773956951555,
+          "r16": -0.037398182552630166
+        },
+        "max_drawdown": {
+          "band": -0.6151674673120612,
+          "r16": -0.5157920405679387
+        },
+        "max_one_side_turnover": {
+          "band": 2.3967910442911564,
+          "r16": 2.716890723777412
+        },
+        "execution_rate": {
+          "band": 0.9281045751633987,
+          "r16": 0.9865654205607477,
+          "note": "different outcome mappings; see execution_rate_mapping"
+        },
+        "b3_noise_band_same_path": [
+          -0.05639980519837651,
+          0.036513074392817924
+        ]
+      }
+    },
+    "C05": {
+      "verdict": "eliminated",
+      "fill_rate_order_day": {
+        "buy": 0.09436008676789588,
+        "sell": 0.7551724137931034
+      },
+      "order_fill_rate": {
+        "buy": 0.3372093023255814,
+        "sell": 0.8171641791044776
+      },
+      "gate8_mapped_execution_rate": 0.9165067178502879,
+      "fill_lag_buy": {
+        "n": 261,
+        "min": 1,
+        "p50": 1,
+        "max": 17,
+        "mean": 1.6130268199233717
+      },
+      "k3_fallback": {
+        "scheduled": 3,
+        "executed": 2,
+        "deferred_limitdown_days": 4,
+        "deferred_limitdown_definition": "count of deferral EVENTS (armed days opening at/below limit_down*(1+1e-4)); on such days the re-anchored limit keeps working and may fill, so one fallback can both defer and fill -- not a count of final no-fallback days (F6)",
+        "pnl_contribution_total": -185.17999999999938,
+        "pnl_definition": "net market-exit proceeds minus shares * previous close"
+      },
+      "k3_fallback_executed_missing_limit_info": 0,
+      "unfilled_exit_reasons": {
+        "buy": {
+          "below_min_lot": 435,
+          "expired_unfilled": 74,
+          "end_of_data_unfilled": 4
+        },
+        "sell": {
+          "void_no_position": 25,
+          "expired_unfilled": 24
+        }
+      },
+      "unfilled_exit_share_buys": 0.6627906976744186,
+      "odd_lot_exits": 3,
+      "commission_warnings": 0,
+      "void_days": {
+        "suspended": 622,
+        "not_penetrated": 1374,
+        "limit_out_of_range": 579,
+        "insufficient_cash": 117
+      },
+      "same_bar_deferred_sells": 0,
+      "vs_r16_delta": {
+        "net_cagr": {
+          "band": 0.050771113596816075,
+          "r16": 0.03406309102222016
+        },
+        "max_drawdown": {
+          "band": -0.33572210202453734,
+          "r16": -0.17480729428326758
+        },
+        "max_one_side_turnover": {
+          "band": 1.4206653987112525,
+          "r16": 1.5897592374172718
+        },
+        "execution_rate": {
+          "band": 0.9165067178502879,
+          "r16": 0.9888740542946151,
+          "note": "different outcome mappings; see execution_rate_mapping"
+        },
+        "b3_noise_band_same_path": [
+          -0.07896074660166086,
+          0.011084884194893174
+        ]
+      }
+    },
+    "C06": {
+      "verdict": "eliminated",
+      "fill_rate_order_day": {
+        "buy": 0.08704115684093437,
+        "sell": 0.7806267806267806
+      },
+      "order_fill_rate": {
+        "buy": 0.31841302136317395,
+        "sell": 0.7828571428571428
+      },
+      "gate8_mapped_execution_rate": 0.9114778694673669,
+      "fill_lag_buy": {
+        "n": 313,
+        "min": 1,
+        "p50": 1,
+        "max": 20,
+        "mean": 1.8306709265175718
+      },
+      "k3_fallback": {
+        "scheduled": 3,
+        "executed": 1,
+        "deferred_limitdown_days": 4,
+        "deferred_limitdown_definition": "count of deferral EVENTS (armed days opening at/below limit_down*(1+1e-4)); on such days the re-anchored limit keeps working and may fill, so one fallback can both defer and fill -- not a count of final no-fallback days (F6)",
+        "pnl_contribution_total": -54.68900000000008,
+        "pnl_definition": "net market-exit proceeds minus shares * previous close"
+      },
+      "k3_fallback_executed_missing_limit_info": 0,
+      "unfilled_exit_reasons": {
+        "buy": {
+          "below_min_lot": 573,
+          "expired_unfilled": 89,
+          "end_of_data_unfilled": 8
+        },
+        "sell": {
+          "void_no_position": 32,
+          "expired_unfilled": 44
+        }
+      },
+      "unfilled_exit_share_buys": 0.681586978636826,
+      "odd_lot_exits": 1,
+      "commission_warnings": 0,
+      "void_days": {
+        "suspended": 1113,
+        "not_penetrated": 1679,
+        "limit_out_of_range": 771,
+        "insufficient_cash": 260
+      },
+      "same_bar_deferred_sells": 0,
+      "vs_r16_delta": {
+        "net_cagr": {
+          "band": 0.0025229743690182715,
+          "r16": -0.03502504176023735
+        },
+        "max_drawdown": {
+          "band": -0.4847137065995075,
+          "r16": -0.3596678025305886
+        },
+        "max_one_side_turnover": {
+          "band": 2.0888032380038006,
+          "r16": 2.4410401621897435
+        },
+        "execution_rate": {
+          "band": 0.9114778694673669,
+          "r16": 0.9816806053365194,
+          "note": "different outcome mappings; see execution_rate_mapping"
+        },
+        "b3_noise_band_same_path": [
+          -0.07896074660166086,
+          0.011084884194893174
+        ]
+      }
+    },
+    "C07": {
+      "verdict": "eliminated",
+      "fill_rate_order_day": {
+        "buy": 0.11227610310179117,
+        "sell": 0.72782874617737
+      },
+      "order_fill_rate": {
+        "buy": 0.36872309899569583,
+        "sell": 0.8263888888888888
+      },
+      "gate8_mapped_execution_rate": 0.917766497461929,
+      "fill_lag_buy": {
+        "n": 257,
+        "min": 1,
+        "p50": 1,
+        "max": 19,
+        "mean": 1.6303501945525292
+      },
+      "k3_fallback": {
+        "scheduled": 4,
+        "executed": 3,
+        "deferred_limitdown_days": 9,
+        "deferred_limitdown_definition": "count of deferral EVENTS (armed days opening at/below limit_down*(1+1e-4)); on such days the re-anchored limit keeps working and may fill, so one fallback can both defer and fill -- not a count of final no-fallback days (F6)",
+        "pnl_contribution_total": -192.9319999999998,
+        "pnl_definition": "net market-exit proceeds minus shares * previous close"
+      },
+      "k3_fallback_executed_missing_limit_info": 0,
+      "unfilled_exit_reasons": {
+        "buy": {
+          "below_min_lot": 385,
+          "expired_unfilled": 52,
+          "end_of_data_unfilled": 3
+        },
+        "sell": {
+          "void_no_position": 24,
+          "expired_unfilled": 26
+        }
+      },
+      "unfilled_exit_share_buys": 0.6312769010043041,
+      "odd_lot_exits": 2,
+      "commission_warnings": 0,
+      "void_days": {
+        "suspended": 674,
+        "not_penetrated": 1246,
+        "limit_out_of_range": 401
+      },
+      "same_bar_deferred_sells": 0,
+      "vs_r16_delta": {
+        "net_cagr": {
+          "band": 0.002170155291341569,
+          "r16": 0.00844309587404557
+        },
+        "max_drawdown": {
+          "band": -0.4664295915624421,
+          "r16": -0.37395206390585045
+        },
+        "max_one_side_turnover": {
+          "band": 1.607411851180232,
+          "r16": 1.8009435388050137
+        },
+        "execution_rate": {
+          "band": 0.917766497461929,
+          "r16": 0.9880899867666519,
+          "note": "different outcome mappings; see execution_rate_mapping"
+        },
+        "b3_noise_band_same_path": [
+          -0.05639980519837651,
+          0.036513074392817924
+        ]
+      }
+    },
+    "C08": {
+      "verdict": "eliminated",
+      "fill_rate_order_day": {
+        "buy": 0.11431701972242513,
+        "sell": 0.733502538071066
+      },
+      "order_fill_rate": {
+        "buy": 0.36310904872389793,
+        "sell": 0.7939560439560439
+      },
+      "gate8_mapped_execution_rate": 0.9143556280587276,
+      "fill_lag_buy": {
+        "n": 313,
+        "min": 1,
+        "p50": 1,
+        "max": 18,
+        "mean": 1.6421725239616614
+      },
+      "k3_fallback": {
+        "scheduled": 4,
+        "executed": 2,
+        "deferred_limitdown_days": 9,
+        "deferred_limitdown_definition": "count of deferral EVENTS (armed days opening at/below limit_down*(1+1e-4)); on such days the re-anchored limit keeps working and may fill, so one fallback can both defer and fill -- not a count of final no-fallback days (F6)",
+        "pnl_contribution_total": -118.97900000000004,
+        "pnl_definition": "net market-exit proceeds minus shares * previous close"
+      },
+      "k3_fallback_executed_missing_limit_info": 0,
+      "unfilled_exit_reasons": {
+        "buy": {
+          "below_min_lot": 484,
+          "expired_unfilled": 62,
+          "end_of_data_unfilled": 3
+        },
+        "sell": {
+          "void_no_position": 35,
+          "expired_unfilled": 40
+        }
+      },
+      "unfilled_exit_share_buys": 0.6368909512761021,
+      "odd_lot_exits": 2,
+      "commission_warnings": 0,
+      "void_days": {
+        "suspended": 1049,
+        "not_penetrated": 1399,
+        "limit_out_of_range": 542
+      },
+      "same_bar_deferred_sells": 0,
+      "vs_r16_delta": {
+        "net_cagr": {
+          "band": -0.03862278320797241,
+          "r16": -0.03516943725564459
+        },
+        "max_drawdown": {
+          "band": -0.5736751352092149,
+          "r16": -0.5110078576144524
+        },
+        "max_one_side_turnover": {
+          "band": 2.0716939299043196,
+          "r16": 2.2994912143932704
+        },
+        "execution_rate": {
+          "band": 0.9143556280587276,
+          "r16": 0.9833663366336634,
+          "note": "different outcome mappings; see execution_rate_mapping"
+        },
+        "b3_noise_band_same_path": [
+          -0.05639980519837651,
+          0.036513074392817924
+        ]
+      }
+    }
+  },
+  "b3prime_dev_mean_net_cagr": {
+    "T200-40": -0.01991746425477723,
+    "FIX75": -0.0035871088487231862
+  },
+  "b3prime_noise_band_same_path": {
+    "T200-40": [
+      -0.07896074660166086,
+      0.011084884194893174
+    ],
+    "FIX75": [
+      -0.05639980519837651,
+      0.036513074392817924
+    ]
+  },
+  "advanced_to_validation": false,
+  "val_consumed": false,
+  "stop_note": "no config passed all dev gates; val not consumed (one-shot discipline)"
+}

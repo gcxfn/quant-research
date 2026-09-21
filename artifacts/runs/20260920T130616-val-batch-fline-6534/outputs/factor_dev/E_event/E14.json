@@ -1,0 +1,66 @@
+{
+ "factor_id": "E14",
+ "name": "float_past20",
+ "formula": "float_date 在 (t-20d, t] 且 ann<=t 的解禁比例合计",
+ "source": "share_float",
+ "fill_policy": "无事件为 null（不入因子帧）",
+ "n_rows": 4144,
+ "t_value": -0.33134777641965235,
+ "coverage_median_symbols": 57.0,
+ "coverage_median_active_months": 73.0,
+ "pool_median_symbols": 3126.0,
+ "criteria": {
+  "c1_abs_t>=2": false,
+  "c2_mono_consistent>=0.3": true,
+  "c3_2015_non_disaster": true,
+  "c4_coverage>=50%pool": false
+ },
+ "survived_prelim": false,
+ "eval": {
+  "n_dates": 52,
+  "coverage_mean_symbols": 72.75,
+  "ic_mean": -0.014703272723817922,
+  "ic_std": 0.31998647641875255,
+  "icir": -0.04594966914969363,
+  "ic_win_rate": 0.4423076923076923,
+  "group_mean_ret": [
+   0.01275527439008263,
+   0.010769782455420544,
+   0.014985844991229394,
+   0.011233319444368154,
+   0.00659067171869628,
+   0.0054312200174076964,
+   0.00567472471184662,
+   0.002135087224231281,
+   0.00042984161974503744,
+   0.0021564625236210203
+  ],
+  "long_short_mean": -0.01059881186646161,
+  "monotonicity": -0.9205541502219946,
+  "ic_by_year": {
+   "2016": 0.1,
+   "2017": -0.02933845450168894,
+   "2018": -0.06009054668956809,
+   "2019": -0.005296795518148746,
+   "2020": -0.011623692829605693
+  },
+  "long_short_by_year": {
+   "2016": 0.08654268932768226,
+   "2017": -0.011611506395290188,
+   "2018": -0.02341654972031251,
+   "2019": 0.011094998985703385,
+   "2020": -0.007431559050013518
+  },
+  "turnover_top_group": 1.0,
+  "corr_with_others": {},
+  "config": {
+   "horizon_days": 20,
+   "n_groups": 10,
+   "eval_freq": "M",
+   "exclude_st": true,
+   "require_trading": true,
+   "exclude_boards": true,
+   "min_history_rows": 60
+  }
+ }
+}

@@ -1,0 +1,42 @@
+D:\量化\artifacts\runs\20260920T130616-val-batch-fline-6534\scripts\generated\f2val_A_price.py:163: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  month_end = g.filter(pl.col("date").is_in(pl.Series(ME)))
+D:\量化\artifacts\runs\20260920T130616-val-batch-fline-6534\scripts\generated\f2val_A_price.py:193: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  .filter(pl.col("date").is_in(pl.Series(ME)))
+[   0.7s] 面板 4605581 行，月末网格 72 期 2015-01-30..2020-12-31
+[   1.7s] 中间列完成
+[   2.1s] 因子列（日频）计算完成
+[  11.9s] A01 mom_20       ic=-0.0681 t=-3.88 mono=-0.88 ic15=n/a cov=3030 n=223722 存活 (9.7s)
+[  18.1s] A02 mom_60       ic=-0.0582 t=-3.31 mono=-0.92 ic15=n/a cov=3021 n=215642 存活 (6.2s)
+[  25.0s] A03 mom_120      ic=-0.0226 t=-1.27 mono=-0.50 ic15=n/a cov=2990 n=203848  (6.8s)
+[  31.2s] A04 mom_240      ic=-0.0109 t=-0.53 mono=-0.36 ic15=n/a cov=2889 n=181865  (6.2s)
+[  37.8s] A05 mom_20sk5    ic=-0.0511 t=-3.35 mono=-0.85 ic15=n/a cov=3030 n=223722 存活 (6.6s)
+[  44.3s] A06 mom_60sk20   ic=-0.0146 t=-1.16 mono=-0.57 ic15=n/a cov=3021 n=215642  (6.5s)
+[  50.5s] A07 mom_12_1     ic=+0.0093 t=+0.49 mono=+0.74 ic15=n/a cov=2889 n=181865  (6.2s)
+[  57.2s] A08 rev_1        ic=-0.0151 t=-1.22 mono=-0.24 ic15=n/a cov=3031 n=227749  (6.7s)
+[  63.6s] A09 rev_5        ic=-0.0321 t=-2.18 mono=-0.65 ic15=n/a cov=3031 n=227338 存活 (6.4s)
+[  69.7s] A10 rev_10       ic=-0.0384 t=-2.32 mono=-0.64 ic15=n/a cov=3030 n=226827 存活 (6.0s)
+[  76.0s] A11 vol_20       ic=-0.0740 t=-3.63 mono=-0.20 ic15=n/a cov=3030 n=225960  (6.3s)
+[  82.4s] A12 vol_60       ic=-0.0726 t=-3.37 mono=-0.25 ic15=n/a cov=3022 n=215729  (6.1s)
+[  89.3s] A13 vol_ratio    ic=-0.0312 t=-2.61 mono=-0.03 ic15=n/a cov=2991 n=203981  (6.9s)
+[  95.1s] A14 amp_20       ic=-0.0790 t=-3.86 mono=-0.31 ic15=n/a cov=3030 n=225960 存活 (5.7s)
+[ 101.4s] A15 range_pos_60 ic=-0.0337 t=-2.12 mono=+0.01 ic15=n/a cov=3022 n=215729  (6.2s)
+[ 107.9s] A16 dist_52wH    ic=+0.0194 t=+1.08 mono=+0.72 ic15=n/a cov=2901 n=179632  (6.5s)
+[ 114.0s] A17 liq_amt20    ic=-0.0895 t=-5.11 mono=-0.99 ic15=n/a cov=3030 n=225960 存活 (6.1s)
+[ 120.8s] A18 liq_ratio    ic=-0.0509 t=-3.65 mono=-0.56 ic15=n/a cov=3022 n=215729 存活 (6.8s)
+[ 127.5s] A19 amihud_20    ic=+0.0506 t=+2.82 mono=+0.97 ic15=n/a cov=3030 n=225960 存活 (6.2s)
+[ 134.6s] A20 pv_corr_20   ic=-0.0666 t=-6.15 mono=-0.90 ic15=n/a cov=3030 n=225960 存活 (7.1s)
+[ 143.0s] A21 vol_updown   ic=-0.0484 t=-4.03 mono=-0.84 ic15=n/a cov=3030 n=225960 存活 (8.3s)
+[ 152.0s] A22 vol_trend    ic=-0.0416 t=-3.25 mono=-0.41 ic15=n/a cov=3022 n=215729 存活 (8.9s)
+[ 160.7s] A23 sma20_gap    ic=-0.0480 t=-2.91 mono=-0.68 ic15=n/a cov=3030 n=225960 存活 (8.7s)
+[ 167.9s] A24 sma60_gap    ic=-0.0563 t=-3.06 mono=-0.82 ic15=n/a cov=3022 n=215729 存活 (7.1s)
+[ 174.7s] A25 days_hi60    ic=+0.0289 t=+2.37 mono=+0.44 ic15=n/a cov=2913 n=207757 存活 (6.7s)
+池月度中位符号数 = 3186.0
+
+== A 族完成：25/25 计算，终裁存活 15 个；总耗时 176s ==
+存活: ['A01(mom_20)', 'A02(mom_60)', 'A05(mom_20sk5)', 'A09(rev_5)', 'A10(rev_10)', 'A14(amp_20)', 'A17(liq_amt20)', 'A18(liq_ratio)', 'A19(amihud_20)', 'A20(pv_corr_20)', 'A21(vol_updown)', 'A22(vol_trend)', 'A23(sma20_gap)', 'A24(sma60_gap)', 'A25(days_hi60)']

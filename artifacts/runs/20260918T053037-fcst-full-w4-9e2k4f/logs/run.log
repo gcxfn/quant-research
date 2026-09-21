@@ -1,0 +1,18 @@
+2026-09-18T05:30:37+08:00 run start (fcst-reason-struct-full wave-4, batch 4, ordinal 1800-2399)
+2026-09-18T05:30:37+08:00 scripts copied byte-identical from 20260918T043046-fcst-full-w3-1db232 (sha256 verified x4)
+2026-09-18T05:30:39+08:00 render_batch.py --batch 4 -> work/batch_004_input.txt (600 rows, 177,101 chars, 0 missing in raw)
+2026-09-18T05:30:41+08:00 llm structuring part1 (ordinal 01800-01899) written
+2026-09-18T05:40:12+08:00 llm structuring part2 (ordinal 01900-01999) written
+2026-09-18T05:49:38+08:00 llm structuring part3 (ordinal 02000-02099) written
+2026-09-18T05:59:04+08:00 llm structuring part4 (ordinal 02100-02199) written
+2026-09-18T06:08:31+08:00 llm structuring part5 (ordinal 02200-02299) written
+2026-09-18T06:17:55+08:00 llm structuring part6 (ordinal 02300-02399) written
+2026-09-18T06:18:20+08:00 merged parts -> features/batch_004.jsonl (600 lines)
+2026-09-18T06:18:27+08:00 check_batch_full --batch 4: 3 FAILURES
+  FAIL 01859 key_quote non-contiguous (原文插入“（以下简称：赤峰瑞阳）”括号) -> part1 修复为“公司收购赤峰瑞阳化工有限公司”
+  FAIL 01934 ann_date 转录错误 20200116 != 20200122 -> part2 修正
+  FAIL 02175 key_quote 误沿用 02174 措辞“受行业景气度回暖影响”(实文为“行业景气度回升”) -> part4 修复
+2026-09-18T06:20:40+08:00 re-merge fixed parts
+2026-09-18T06:20:46+08:00 check_batch_full --batch 4: 600 rows checked -> OK
+2026-09-18T06:21:02+08:00 quality_stats.py --batch 4 -> progress.json updated (batches_completed=[1,2,3,4], rows_completed=2400)
+2026-09-18T06:26:12+08:00 manifest status running -> completed; run end

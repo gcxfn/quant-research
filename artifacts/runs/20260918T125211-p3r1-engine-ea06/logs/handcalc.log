@@ -1,0 +1,22 @@
+== hashing inputs ==
+  p3r1_config: 231bb064b6472521
+  r16_config: 27f846a7330919a4
+  contract_doc: dd51c520376c829b
+  prereg_doc: 25351beca60338d7
+  daily_parquet: d9a63f4cc3032926
+  ex_cum_factor_h5: 70df4aca64351858
+  stk_limit_batch aggregate: 3c53abf3b0c39b42 (2432 files, 301,278,245 bytes)
+  prereg match r16_config_sha256_16: True (computed 27f846a7330919a4 vs prereg 27f846a7330919a4)
+  prereg match daily_parquet_sha256_16: True (computed d9a63f4cc3032926 vs prereg d9a63f4cc3032926)
+  prereg match ex_cum_factor_sha256_16: True (computed 70df4aca64351858 vs prereg 70df4aca64351858)
+== running contract tests ==
+  pytest exit=0: ============================= 11 passed in 5.12s ============================== (6.8s)
+== hand-calc scenarios ==
+  A buy: verified (touch-no-fill, fill-at-p, lot sizing, commission)
+  B sell: verified (re-anchor to prior close, stamp 0.1%, T+1 release)
+  C k3 fallback: verified (daily re-anchor, K=3 arm, open exit, pnl disclosure)
+  hand-calc-samples.md written
+== read-layer smoke (real files, read-only) ==
+  daily: 16344349 -> 16344349 rows, max date 2024-12-31
+  stk_limit: 2431 chunks -> 9705448 rows, 5742 symbols, max date 2024-12-31
+  ex_cum_factor: 5914 keys -> 33933 rows, max date 2024-12-31, sample symbol sh.501011

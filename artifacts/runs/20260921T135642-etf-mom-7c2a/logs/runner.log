@@ -1,0 +1,54 @@
+[    0.0s] etf-momentum; window=2015-08-01..2015-11-30 (SMOKE)
+[    1.2s] pins done
+[    1.2s] == stage A: monthly composition ==
+[    0.0s] etf-momentum; window=2015-08-01..2015-11-30 (SMOKE)
+[    1.0s] pins done
+[    1.0s] == stage A: monthly composition ==
+[    0.0s] etf-momentum; window=2015-08-01..2015-11-30 (SMOKE)
+[    1.3s] pins done
+[    1.3s] == stage A: monthly composition ==
+[    1.4s]   momentum available from 2015-07; median eligible 0
+[    1.5s]   A: cagr -22.98% mdd -20.49% (2015-02..2015-11, 10m) | poolEW +24.08% mdd -33.62% | 300 +6.63% -> fail ['A1_cagr_ge_8pct', 'A2_mdd_le_20pct', 'A3_beat_pool_ew_2pp']
+[    1.5s] stage A failed gates; stage B not executed (prereg order)
+[    0.0s] etf-momentum; window=2015-08-01..2015-11-30 (SMOKE)
+[    1.2s] pins done
+[    1.2s] == stage A: monthly composition ==
+[    1.3s]   momentum available from 2015-07; median eligible 0
+[    1.3s]   A: cagr -22.98% mdd -20.49% (2015-02..2015-11, 10m) | poolEW +24.08% mdd -33.62% | 300 +6.63% -> fail ['A1_cagr_ge_8pct', 'A2_mdd_le_20pct', 'A3_beat_pool_ew_2pp']
+[    1.3s] == stage B: engine replay ==
+[    0.0s] etf-momentum; window=2015-08-01..2015-11-30 (SMOKE)
+[    0.8s] pins done
+[    0.8s] == stage A: monthly composition ==
+[    1.0s]   momentum available from 2015-07; median eligible 0
+[    1.0s]   A: cagr -22.98% mdd -20.49% (2015-02..2015-11, 10m) | poolEW +24.08% mdd -33.62% | 300 +6.63% -> fail ['A1_cagr_ge_8pct', 'A2_mdd_le_20pct', 'A3_beat_pool_ew_2pp']
+[    1.0s] == stage B: engine replay ==
+[    0.0s] etf-momentum; window=2015-08-01..2015-11-30 (SMOKE)
+[    0.8s] pins done
+[    0.8s] == stage A: monthly composition ==
+[    0.9s]   momentum available from 2015-07; median eligible 0
+[    0.9s]   A: cagr -22.98% mdd -20.49% (2015-02..2015-11, 10m) | poolEW +24.08% mdd -33.62% | 300 +6.63% -> fail ['A1_cagr_ge_8pct', 'A2_mdd_le_20pct', 'A3_beat_pool_ew_2pp']
+[    0.9s] == stage B: engine replay ==
+[    1.0s]   engine: 0.1s; overlay observed 79 closes, reduced pts 0; defensive exits 2; warnings 5
+[    1.0s] smoke: stage B path OK; done
+[    0.0s] etf-momentum; window=2015-08-01..2015-11-30 (SMOKE)
+[    0.7s] pins done
+[    0.7s] == stage A: monthly composition ==
+[    0.8s]   momentum available from 2015-07; median eligible 0
+[    0.9s]   A: cagr -22.98% mdd -20.49% (2015-02..2015-11, 10m) | poolEW +24.08% mdd -33.62% | 300 +6.63% -> fail ['A1_cagr_ge_8pct', 'A2_mdd_le_20pct', 'A3_beat_pool_ew_2pp']
+[    0.9s] == stage B: engine replay ==
+[    0.9s]   engine: 0.0s; overlay observed 79 closes, reduced pts 28; defensive exits 2; warnings 9
+[    0.9s] smoke: stage B path OK; done
+[    0.0s] etf-momentum; window=2015-08-01..2015-11-30 (SMOKE)
+[    1.2s] pins done
+[    1.2s] == stage A: monthly composition ==
+[    1.4s]   momentum available from 2015-07; median eligible 0
+[    1.4s]   A: cagr -22.98% mdd -20.49% (2015-02..2015-11, 10m) | poolEW +24.08% mdd -33.62% | 300 +6.63% -> fail ['A1_cagr_ge_8pct', 'A2_mdd_le_20pct', 'A3_beat_pool_ew_2pp']
+[    1.4s] == stage B: engine replay ==
+[    1.5s]   engine: 0.1s; overlay observed 79 closes, reduced pts 28; defensive exits 2; warnings 9
+[    1.5s] smoke: stage B path OK; done
+[    0.0s] etf-momentum; window=2015-01-05..2020-12-31
+[    1.0s] pins done
+[    1.0s] == stage A: monthly composition ==
+[    1.2s]   momentum available from 2015-07; median eligible 15
+[    1.3s]   A: cagr +13.31% mdd -29.70% (2015-02..2020-12, 71m) | poolEW +8.21% mdd -37.96% | 300 +9.05% -> fail ['A2_mdd_le_20pct']
+[    1.3s] stage A failed gates; stage B not executed (prereg order)

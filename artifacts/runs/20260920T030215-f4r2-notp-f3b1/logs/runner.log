@@ -1,0 +1,74 @@
+[    0.0s] == 0. identity pins (engine v1.4 frozen, prereg frozen; full-dev run) ==
+[    0.0s]   engine: a01cb29ce4cf2148 expect a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3 match=True
+[    0.5s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.5s]   halfday_manifest: 2a414174b5df2eee expect 2a414174b5df2eee match=True
+[    0.5s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.5s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.5s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    0.5s]   f3r1_icw_composite: b09242ee542cf675 expect b09242ee542cf675 match=True
+[    0.5s]   f3r1_manifest: 9feb6080e985971a expect None match=True
+[    0.5s]   f3r1_metrics: 714fd8acb7174c2b expect None match=True
+[    0.5s]   industry_l1: 4edffc3994fb527a expect 4edffc3994fb527a match=True
+[    0.5s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.5s]   r16_metrics: 8d0b6ebbdea6ebb9 expect None match=True
+[    0.5s]   prereg: 212870f6765ba14e expect None match=True
+[    0.5s]   f4r2_config: cc70c4480da68301 expect None match=True
+[    0.5s]   f4r1_full_manifest: a1bc86b4d9d593d6 expect None match=True
+[    0.5s]   f4r1_full_metrics: 4bf66fac0c26fd73 expect None match=True
+[    0.5s]   f4r1_full_runner_source: 988fb4e7e835beb8 expect None match=True
+[    0.5s]   f4r2_aborted_manifest_v1: d1e340ed5426eedb expect None match=True
+[    0.5s]   f3r3_runner_source: e404845b442a2bda expect None match=True
+[    0.5s]   f3r3_manifest: 2b5a680575d40161 expect None match=True
+[    0.5s]   v3_metrics_r306_anchor_source: 9e2cd4aafec15c08 expect None match=True
+[    0.5s]   etf_manifest: 8b5b3fe56c0e02fd expect None match=True
+[    0.5s]   gate anchors: B1(m) net +0.60% mdd -39.82%; B3' -0.0199 (== prereg sec 2 frozen values)
+[    0.5s]   halfday rows total: 18486939 (pin 18,486,939)
+[    3.3s]   etf processed dir aggregate: 75777221a8b33502 (7 files); fund_adj batch re-verified (1169 chunks, 0 mismatches)
+[    3.3s]   python 3.11.15 | polars 1.44.2 | numpy 1.26.4 | rss 0.29 GB
+[    3.3s] == 1. calendar & signal days (full dev) ==
+[    3.4s]   71 full-dev signal days (2015-01-30..2020-11-30; 2020-12-31 dropped as signal, kept as expiry anchor)
+[    3.4s] == 3. F3R1 ICW composite + candidate tables ==
+[    3.6s]   candidates: top-20 per signal month; full-dev union 778 symbols over 71 signal days
+[    3.6s] == 4. candidate closes (sigma0 / p0 lookups) ==
+[    4.8s]   close lookups: 1114468 traded (symbol, session) points for 778 candidates
+[    4.8s] == 5. industry map (shenwan L1, 2026 single snapshot) ==
+[    4.9s]   industry L1 map: 5902 stocks, 31 industries; full-dev candidates unmapped 1 -> UNMAPPED bucket (same cap); 2026 single-snapshot lookahead disclosed in prereg sec 3
+[    4.9s]   zones frame F4R2-D1: 1398 rows (of 1420 candidates; sigma excluded {'lookback_gap': 22})
+[    4.9s]   zones frame F4R2-D2: 1398 rows (of 1420 candidates; sigma excluded {'lookback_gap': 22})
+[    4.9s] == 6. ETF assets ==
+[    4.9s]   etf panel dev rows: 13158 per member {'sh.513500': 1462, 'sh.518880': 1462, 'sh.510050': 1462, 'sz.159915': 1462, 'sz.159934': 1462, 'sh.510880': 1462, 'sh.511010': 1462, 'sh.513100': 1462, 'sh.510300': 1462}
+[    4.9s]   assertion (ii) preclose nulls: 0
+[    5.0s]   assertion (iii): sse 1462 days, panel union 1462 days, missing [], extra []
+[    5.0s]   factor coverage gaps per member: {'sh.511010': 0, 'sh.518880': 0, 'sh.510050': 0, 'sh.510300': 0, 'sz.159915': 0, 'sh.510880': 0, 'sh.513100': 0, 'sh.513500': 0, 'sz.159934': 0}
+[    5.0s]   dividend events built: 18 {'sh.510050': 5, 'sh.510300': 6, 'sh.510880': 6, 'sh.511010': 1}
+[    5.0s]   159934 dev mismatch rows: 1; dividend-rule events: 0 (frozen)
+[    5.0s] == 7. market frames (shared loaders) ==
+[   13.5s]   limits 9705448 rows, splits 4930, dividends 28450 (full files; dev-filtered per run)
+[   13.5s] == 8. F4R2-A0 anchor (R3-06 verbatim, byte reproduction) ==
+[   13.8s]   A0 engine run 0.2s, intents 206 | rss 1.26 GB
+[   13.8s]   A0 intents: byte_equal=True rows_equal=True
+[   13.8s]   A0 fills: byte_equal=True rows_equal=True
+[   13.8s]   A0 events: byte_equal=True rows_equal=True
+[   13.8s]   A0 daily_equity: byte_equal=True rows_equal=True
+[   13.8s]   A0 clips_final: byte_equal=True rows_equal=True
+[   13.8s]   F4R2-A0 anchor PASS (5/5 frames byte-equal to F3R3-A0)
+[   13.8s] == 9. dev frames (full-period mixed panel) ==
+[   14.5s]   dev panel: daily 1066550 rows, half 2041654, limits 1061229, stocks 770 | rss 2.10 GB
+[   14.5s] == 10. arm runs: 2 arms x full dev ==
+[   32.0s]   [F4R2-D1] engine 9.8s, fills 2943, zones 1233, admitted 1233 | rss 3.66 GB
+[   32.1s]     [F4R2-D1] month 2015-01-30: mid-month admissions 5 (seats recycled intra-month)
+[   43.4s]   [F4R2-D2] engine 10.4s, fills 3688, zones 1288, admitted 1288 | rss 3.78 GB
+[   43.5s]     [F4R2-D2] month 2015-01-30: mid-month admissions 6 (seats recycled intra-month)
+[   44.4s] == 11. metrics & gates (gates 1-7 R16 verbatim; gate 8 v1.4 caliber) ==
+[   44.6s]   F4R2-D1: net +2.14% excess +1.54pp adv 3/6 mdd -17.09% turn 7.34 w 28.1% g8 56+0/56=100.0% stuck 0 goal10 False -> eliminated ['2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '5_one_side_turnover_le_6']
+[   44.9s]   F4R2-D2: net +1.44% excess +0.84pp adv 3/6 mdd -14.06% turn 7.12 w 28.0% g8 37+0/37=100.0% stuck 0 goal10 False -> eliminated ['2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '5_one_side_turnover_le_6']
+[   44.9s] == 12. death attribution ==
+[   45.0s]   F4R2-D1: attribution ['failed_gates', 'gate3_years', 'gate5_turnover']
+[   45.1s]   F4R2-D2: attribution ['failed_gates', 'gate3_years', 'gate5_turnover']
+[   45.1s] == 13. stop-rule verdict (F4R2 prereg sec 7) + dose-response ==
+[   45.1s]   dose-response net CAGR: F4R1-C +0.86% | F4R1-A +0.02% | F4R2-D2 +1.44% | F4R2-D1 +2.14% -> monotonic=False
+[   45.1s]   MIDDLE ZONE: D1 net CAGR +2.14% in [+2%, +3%) or D1 gate 4 broken: attribution report to user; no F4R3, val zero contact.
+[   45.1s] == 14. report + metrics_and_gates.json + manifest ==
+[   45.3s]   report.md + metrics_and_gates.json written
+[   45.4s] == manifest written; wall 45s, peak rss 3.78 GB ==
+[   45.4s] == VERDICT: 0/2 arms dev_pass, 0 goal_met; MIDDLE ZONE: D1 net CAGR +2.14% in [+2%, +3%) or D1 gate 4 broken: attribution report to user; no F4R3, val zero contact.

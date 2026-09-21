@@ -1,0 +1,30 @@
+{
+  "experiment_id": "exp-20260917-p0-benchmark",
+  "name": "p0-benchmark",
+  "seed": 17,
+  "start": "2022-01-01",
+  "end": "2024-12-31",
+  "universe": {
+    "synthetic_symbols": 200
+  },
+  "factors": {
+    "set": "default7",
+    "sma_window": 20,
+    "ret_window": 5
+  },
+  "orders": {
+    "mode": "fixed_daily_top1",
+    "daily_target_orders": 1,
+    "hold_days": 5,
+    "order_quantity": 100,
+    "commission_pct": 0.0003
+  },
+  "account": {
+    "initial_cash": 1000000,
+    "synthetic_only": true
+  },
+  "limits": {
+    "max_runtime_warning_seconds": 300,
+    "max_ram_gb": 4
+  }
+}

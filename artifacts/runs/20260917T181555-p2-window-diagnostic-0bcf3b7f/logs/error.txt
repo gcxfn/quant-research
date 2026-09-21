@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2_window_diagnostic.py", line 109, in main
+    sub = dev.filter(pl.col(name).is_not_null()
+                     ^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\functions\col.py", line 363, in __call__
+    return _create_col(name, *more_names)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\functions\col.py", line 116, in _create_col
+    raise TypeError(msg)
+TypeError: invalid input for `col`
+
+Expected `str` or `DataType`, got 'method'.

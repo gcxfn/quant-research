@@ -1,0 +1,169 @@
+{
+ "run_id": "20260917T224411-rqalpha-bundle-v2-pilot-3ff288e2",
+ "status": "completed",
+ "started_at": "2026-09-17T22:44:11",
+ "task": "RQAlpha self-built bundle v2 ETL: full stock pool (60/00/30) + 1169-ETF tushare fund_daily primary source + real stk_limit prices + stock dividends/splits + ETF fund_adj factors",
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "-X",
+  "utf8",
+  "tools/rqalpha_bundle_build.py",
+  "--pool-limit",
+  "50"
+ ],
+ "env": {
+  "python": "3.11.15",
+  "cwd": "D:\\量化",
+  "PYTHONPATH": "D:/量化/src",
+  "pythonpath_note": "PYTHONPATH=src makes quant.* resolve to src/, not the copied site-packages install"
+ },
+ "inputs": {
+  "generator": "src/quant/data/rqalpha_bundle.py",
+  "generator_sha256": "2458b4e986420f8c621b581e406df4f2f2f5494ad3605c89ffa78e97074aa3ef",
+  "output_dir": "D:\\量化\\data\\cache\\rqalpha-pilot-50",
+  "pool_limit": 50
+ },
+ "outputs": [
+  "D:\\量化\\artifacts\\runs\\20260917T224411-rqalpha-bundle-v2-pilot-3ff288e2",
+  "D:\\量化\\data\\cache\\rqalpha-pilot-50"
+ ],
+ "notes": [
+  "freeze line: no 2025+ data enters the bundle (asserted by build_bundle)",
+  "engine built-in A-share semantics are exempted from independent re-verification by user decision (docs/decisions/2026-09-17-rqalpha-account-engine.md)"
+ ],
+ "bundle_manifest_summary": {
+  "dataset_id": "rqalpha-bundle-v2-20260917",
+  "created_at": "2026-09-17T14:44:18+00:00",
+  "params": {
+   "bar_window": [
+    "2015-01-01",
+    "2024-12-31"
+   ],
+   "calendar_range": [
+    "2015-01-01",
+    "2024-12-31"
+   ],
+   "calendar_days": 2431,
+   "stock_pool_size": 50,
+   "etf_pool_size": 50,
+   "pool_limit": 50,
+   "scenario_stocks": {
+    "600036.XSHG": "sh.600036",
+    "601318.XSHG": "sh.601318",
+    "600000.XSHG": "sh.600000",
+    "000001.XSHE": "sz.000001",
+    "000651.XSHE": "sz.000651"
+   },
+   "scenario_etfs": {
+    "510050.XSHG": "510050.SH",
+    "510300.XSHG": "510300.SH"
+   },
+   "benchmark_oid": "000300.XSHG",
+   "range_probe_oid": "000001.XSHG",
+   "pools_source": {
+    "stocks": "data/processed/baostock-daily-20260917/daily_2015_2024.parquet (60/00/30 boards; 688/689/bj excluded)",
+    "etfs": "data/raw/tushare/fund_basic/20260909-r1/chunk_market_E.csv (market==E, ETF in name)"
+   }
+  },
+  "data_quality": {
+   "stk_limit": {
+    "chunks_used": 2431,
+    "rows_after_pool_filter": 112144,
+    "rows_in_chunks": 9705448,
+    "zero_row_days": [
+     20170307,
+     20170308,
+     20170309,
+     20220726,
+     20230421
+    ],
+    "expected_zero_row_days": [
+     20170307,
+     20170308,
+     20170309,
+     20220726,
+     20230421
+    ],
+    "bar_rows_with_nan_limit": 692,
+    "nan_limit_rows_on_suspended_bars": 471
+   },
+   "fund_daily_units": {
+    "rows": 12373,
+    "vwap_checked": 12373,
+    "vwap_rounding_violations": 19,
+    "vwap_severe_violations": 0,
+    "unit_note": "volume = fund_daily vol[手]*100 shares; total_turnover = amount[千元]*1000 yuan"
+   },
+   "dividends_splits": {
+    "dividend_rows": 316,
+    "split_rows": 34,
+    "duplicate_rows_dropped": 4,
+    "book_closure_fallback_to_ex": 0,
+    "payable_fallback_to_ex": 12,
+    "payable_equals_ex_from_source": 308,
+    "codes_with_dividends": 45,
+    "codes_with_splits": 24
+   },
+   "ex_cum_factor": {
+    "adj_factor_chunks_used": 2431,
+    "stock_codes_with_changes": 50,
+    "micro_revision_steps_filtered": 112465,
+    "micro_step_filter": "adj_factor steps with relative change < 1e-3 are source revisions, not corporate actions (not emitted as ex_cum_factor rows)",
+    "etf_codes_with_adj_data": 50,
+    "etf_identity_only": []
+   },
+   "suspended_st": {
+    "codes_with_suspension": 46,
+    "codes_with_st_days": 14,
+    "suspended_rows": 7213,
+    "st_rows": 4581
+   },
+   "adj_change_without_dividend_row": {
+    "count": 7,
+    "samples": [
+     "000011.XSHE 20180816",
+     "000011.XSHE 20180828",
+     "000011.XSHE 20200102",
+     "000011.XSHE 20210107",
+     "000011.XSHE 20230601",
+     "000033.XSHE 20170524",
+     "000049.XSHE 20231208"
+    ]
+   },
+   "dividend_row_without_adj_change": {
+    "count": 10,
+    "samples": [
+     "000014.XSHE 20150617",
+     "000014.XSHE 20170619",
+     "000014.XSHE 20180622",
+     "000016.XSHE 20150720",
+     "000023.XSHE 20200724",
+     "000025.XSHE 20220621",
+     "000033.XSHE 20160415",
+     "000040.XSHE 20160427",
+     "000040.XSHE 20170511",
+     "000060.XSHE 20160616"
+    ]
+   }
+  },
+  "freeze": {
+   "research_end": "2024-12-31",
+   "max_bar_datetime": 20241231
+  }
+ },
+ "bundle_placeholders": [
+  "futures.h5 empty: no futures instruments in this bundle",
+  "yield_curve.h5 all-zero placeholder rows on calendar days: no bond-yield source in data/raw; analyser queries a risk-free rate at tear-down and an empty table hard-crashes (YieldCurveStore.get_yield_curve IndexError), so risk-free rate is the disclosed neutral 0.0",
+  "share_transformation.json empty: no share-transformation source (share mergers/successor conversions are NOT modeled; delisted-in-window stocks keep their own instruments with real de_listed_date)",
+  "future_info.json single structural placeholder (rqalpha FutureInfoStore requires margin_rate on first item at load); no futures in bundle",
+  "stock limit prices: tushare stk_limit verbatim; (stock, day) pairs with no source row (the 5 header-only chunk days [20170307, 20170308, 20170309, 20220726, 20230421] plus mostly suspended-day omissions) carry limit_up/limit_down = NaN, which rqalpha treats as NO price limit that day (optimistic fallback; 692 of 112836 bar rows affected, of which 471 are suspended-day rows that cannot trade anyway)",
+  "ETF limit_up/limit_down all NaN: tushare stk_limit contains no ETF rows (verified); no ETF limit source on disk",
+  "ETF dividends absent from dividends.h5: no ETF cash-dividend event source on disk (fund_adj only carries factor steps); the engine will NOT pay ETF cash dividends, while ETF price factors ARE adjusted -- ETF total-return accounting under-counts dividends until an event source is registered",
+  "ETF suspension unknown -> no suspended_days/st keys for ETF oids (rqalpha DateSet then reports never-suspended)",
+  "split_factor rows = 1 + stk_div (tushare 每股送转合计) on the ex-date; engine consumption (position quantity x ratio, price / ratio) verified by source reading only -- not exercised by the fixed smoke scene",
+  "PILOT: pools trimmed to 50 sorted oids each; input hashing skipped; not a complete bundle"
+ ],
+ "finished_at": "2026-09-17T22:44:18",
+ "elapsed_seconds": 7.3,
+ "error": null
+}

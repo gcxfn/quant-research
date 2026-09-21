@@ -1,0 +1,772 @@
+{
+ "months": 71,
+ "months_with_different_member_set": 12,
+ "months_with_different_member_set_list": [
+  "2019-02-28",
+  "2019-03-29",
+  "2019-05-31",
+  "2019-06-28",
+  "2019-11-29",
+  "2019-12-31",
+  "2020-01-23",
+  "2020-02-28",
+  "2020-08-31",
+  "2020-09-30",
+  "2020-10-30",
+  "2020-11-30"
+ ],
+ "member_set_symmetric_difference_sum": 24,
+ "entries_not_in_baseline_entry_set": 10,
+ "exits_not_in_baseline_exit_set": 9,
+ "flagged_seat_months": {
+  "impairment": 5,
+  "price_up": 7
+ },
+ "baseline_flagged_seat_months": {
+  "impairment": 3,
+  "price_up": 13
+ },
+ "flagged_seat_months_delta": {
+  "impairment": 2,
+  "price_up": -6
+ },
+ "flagged_months_present": {
+  "impairment": 4,
+  "price_up": 5
+ },
+ "flagged_entries": {
+  "impairment": 4,
+  "price_up": 4
+ },
+ "flagged_exits": {
+  "impairment": 0,
+  "price_up": 5
+ },
+ "flagged_in_top10_of_arm_ranking": {
+  "impairment": 7,
+  "price_up": 9
+ },
+ "flagged_in_top10_of_baseline_ranking": {
+  "impairment": 3,
+  "price_up": 19
+ },
+ "monthly": [
+  {
+   "month": "2015-01-30",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2015-02-27",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2015-03-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2015-04-30",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2015-05-29",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2015-06-30",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2015-07-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2015-08-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2015-09-30",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2015-10-30",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2015-11-30",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2015-12-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2016-01-29",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2016-02-29",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2016-03-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2016-04-29",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2016-05-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2016-06-30",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2016-07-29",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2016-08-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2016-09-30",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2016-10-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2016-11-30",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2016-12-30",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2017-01-26",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2017-02-28",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2017-03-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2017-04-28",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2017-05-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2017-06-30",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2017-07-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2017-08-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2017-09-29",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2017-10-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2017-11-30",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2017-12-29",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2018-01-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2018-02-28",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2018-03-30",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2018-04-27",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2018-05-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2018-06-29",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2018-07-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2018-08-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2018-09-28",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2018-10-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2018-11-30",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2018-12-28",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2019-01-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {
+    "price_up": 2
+   },
+   "baseline_flagged_seats": {
+    "price_up": 2
+   },
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2019-02-28",
+   "members_equal_baseline": false,
+   "n_members_symmetric_diff": 1,
+   "flagged_seats": {
+    "price_up": 2
+   },
+   "baseline_flagged_seats": {
+    "price_up": 2
+   },
+   "entries_not_in_baseline_entries": [
+    "sz.002576"
+   ],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2019-03-29",
+   "members_equal_baseline": false,
+   "n_members_symmetric_diff": 2,
+   "flagged_seats": {
+    "impairment": 2
+   },
+   "baseline_flagged_seats": {
+    "impairment": 1
+   },
+   "entries_not_in_baseline_entries": [
+    "sz.002416"
+   ],
+   "exits_not_in_baseline_exits": [
+    "sz.002576"
+   ]
+  },
+  {
+   "month": "2019-04-30",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {
+    "impairment": 1
+   },
+   "baseline_flagged_seats": {
+    "impairment": 1
+   },
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2019-05-31",
+   "members_equal_baseline": false,
+   "n_members_symmetric_diff": 3,
+   "flagged_seats": {
+    "impairment": 1
+   },
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [
+    "sh.601788"
+   ],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2019-06-28",
+   "members_equal_baseline": false,
+   "n_members_symmetric_diff": 2,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {
+    "price_up": 1
+   },
+   "entries_not_in_baseline_entries": [
+    "sh.600128"
+   ],
+   "exits_not_in_baseline_exits": [
+    "sh.601788"
+   ]
+  },
+  {
+   "month": "2019-07-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": [
+    "sh.600128"
+   ]
+  },
+  {
+   "month": "2019-08-30",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2019-09-30",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2019-10-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2019-11-29",
+   "members_equal_baseline": false,
+   "n_members_symmetric_diff": 2,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {
+    "price_up": 1
+   },
+   "entries_not_in_baseline_entries": [
+    "sz.002367"
+   ],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2019-12-31",
+   "members_equal_baseline": false,
+   "n_members_symmetric_diff": 3,
+   "flagged_seats": {
+    "price_up": 1
+   },
+   "baseline_flagged_seats": {
+    "price_up": 2
+   },
+   "entries_not_in_baseline_entries": [
+    "sh.603118",
+    "sh.603609"
+   ],
+   "exits_not_in_baseline_exits": [
+    "sz.002367"
+   ]
+  },
+  {
+   "month": "2020-01-23",
+   "members_equal_baseline": false,
+   "n_members_symmetric_diff": 2,
+   "flagged_seats": {
+    "price_up": 1
+   },
+   "baseline_flagged_seats": {
+    "price_up": 1
+   },
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": [
+    "sh.603118"
+   ]
+  },
+  {
+   "month": "2020-02-28",
+   "members_equal_baseline": false,
+   "n_members_symmetric_diff": 1,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": [
+    "sh.603609"
+   ]
+  },
+  {
+   "month": "2020-03-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {
+    "impairment": 1
+   },
+   "baseline_flagged_seats": {
+    "impairment": 1
+   },
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2020-04-30",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2020-05-29",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2020-06-30",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2020-07-31",
+   "members_equal_baseline": true,
+   "n_members_symmetric_diff": 0,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2020-08-31",
+   "members_equal_baseline": false,
+   "n_members_symmetric_diff": 2,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {
+    "price_up": 1
+   },
+   "entries_not_in_baseline_entries": [
+    "sh.600210"
+   ],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2020-09-30",
+   "members_equal_baseline": false,
+   "n_members_symmetric_diff": 2,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {},
+   "entries_not_in_baseline_entries": [
+    "sz.002966"
+   ],
+   "exits_not_in_baseline_exits": [
+    "sh.600210"
+   ]
+  },
+  {
+   "month": "2020-10-30",
+   "members_equal_baseline": false,
+   "n_members_symmetric_diff": 3,
+   "flagged_seats": {},
+   "baseline_flagged_seats": {
+    "price_up": 1
+   },
+   "entries_not_in_baseline_entries": [
+    "sh.600720"
+   ],
+   "exits_not_in_baseline_exits": []
+  },
+  {
+   "month": "2020-11-30",
+   "members_equal_baseline": false,
+   "n_members_symmetric_diff": 1,
+   "flagged_seats": {
+    "price_up": 1
+   },
+   "baseline_flagged_seats": {
+    "price_up": 2
+   },
+   "entries_not_in_baseline_entries": [],
+   "exits_not_in_baseline_exits": [
+    "sh.600720",
+    "sz.002966"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "smoke": true,
+ "window": "2015-01-05..2015-12-31",
+ "signal_days": 12,
+ "per_config": {
+  "C01": {
+   "n_intents": 151,
+   "activated": 151,
+   "orders_generated": 559,
+   "stopped_filled": 97,
+   "terminated_override": 22,
+   "terminated_expired": 11,
+   "terminated_cap": 0,
+   "still_active_at_engine_end": 21,
+   "at_target_skips": 1155,
+   "emissions_skipped_no_anchor": 27,
+   "emissions_skipped_no_live_session": 21,
+   "checks": {
+    "activated_equals_intents": true,
+    "orders_ge_filled": true,
+    "done_le_activated": true
+   },
+   "order_events": 559
+  }
+ },
+ "peak_rss_gb": 4.541026304,
+ "wall_s": 17.334534000023268
+}

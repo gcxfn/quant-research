@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "purpose": "minute data availability + cost probe",
+  "deep_samples": [
+    {
+      "year": 2010,
+      "file": "data\\raw\\bigquant\\minute-bulk-20260915-1\\years\\2010\\20100601.parquet",
+      "file_bytes": 7632947,
+      "columns": [
+        "code",
+        "trade_time",
+        "close",
+        "open",
+        "high",
+        "low",
+        "vol",
+        "amount",
+        "date",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "__index_level_0__"
+      ],
+      "rows": 444163,
+      "unique_codes": 1843,
+      "etf_codes": 0,
+      "trade_time_min": "2010-06-01 09:30:00",
+      "trade_time_max": "2010-06-01 15:00:00",
+      "bars_at_1130": 0,
+      "etf_bars_at_1130": 0,
+      "full_read_seconds": 0.449,
+      "sample_etf_rows_1130": [],
+      "prefix_top20": {
+        "000": 113029,
+        "001": 482,
+        "002": 100497,
+        "300": 20726,
+        "600": 194005,
+        "601": 15424
+      }
+    },
+    {
+      "year": 2015,
+      "file": "data\\raw\\user_minute_1m\\20260913-143215\\2015\\20150601.parquet",
+      "file_bytes": 10571110,
+      "columns": [
+        "code",
+        "trade_time",
+        "close",
+        "open",
+        "high",
+        "low",
+        "vol",
+        "amount",
+        "date",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "__index_level_0__"
+      ],
+      "rows": 559361,
+      "unique_codes": 2321,
+      "etf_codes": 0,
+      "trade_time_min": "2015-06-01 09:30:00",
+      "trade_time_max": "2015-06-01 15:00:00",
+      "bars_at_1130": 0,
+      "etf_bars_at_1130": 0,
+      "full_read_seconds": 0.036,
+      "sample_etf_rows_1130": [],
+      "prefix_top20": {
+        "000": 93508,
+        "001": 482,
+        "002": 146287,
+        "300": 93026,
+        "600": 171592,
+        "601": 31089,
+        "603": 23377
+      }
+    },
+    {
+      "year": 2024,
+      "file": null,
+      "error": "no file"
+    }
+  ],
+  "year_etf_presence": [
+    {
+      "year": 2010,
+      "file": "data\\raw\\bigquant\\minute-bulk-20260915-1\\years\\2010\\20100601.parquet",
+      "unique_codes": 1843,
+      "etf_codes": 0,
+      "etf_examples": []
+    },
+    {
+      "year": 2011,
+      "file": "data\\raw\\bigquant\\minute-bulk-20260915-1\\years\\2011\\20110601.parquet",
+      "unique_codes": 2176,
+      "etf_codes": 0,
+      "etf_examples": []
+    },
+    {
+      "year": 2012,
+      "file": "data\\raw\\bigquant\\minute-bulk-20260915-1\\years\\2012\\20120601.parquet",
+      "unique_codes": 2399,
+      "etf_codes": 0,
+      "etf_examples": []
+    },
+    {
+      "year": 2013,
+      "file": "data\\raw\\bigquant\\minute-bulk-20260915-1\\years\\2013\\20130603.parquet",
+      "unique_codes": 2465,
+      "etf_codes": 0,
+      "etf_examples": []
+    },
+    {
+      "year": 2014,
+      "file": "data\\raw\\bigquant\\minute-bulk-20260915-1\\years\\2014\\20140603.parquet",
+      "unique_codes": 2512,
+      "etf_codes": 0,
+      "etf_examples": []
+    },
+    {
+      "year": 2015,
+      "file": "data\\raw\\user_minute_1m\\20260913-143215\\2015\\20150601.parquet",
+      "unique_codes": 2321,
+      "etf_codes": 0,
+      "etf_examples": []
+    },
+    {
+      "year": 2016,
+      "file": "data\\raw\\user_minute_1m\\20260913-143215\\2016\\20160601.parquet",
+      "unique_codes": 2851,
+      "etf_codes": 0,
+      "etf_examples": []
+    },
+    {
+      "year": 2017,
+      "file": "data\\raw\\user_minute_1m\\20260913-143215\\2017\\20170601.parquet",
+      "unique_codes": 3241,
+      "etf_codes": 0,
+      "etf_examples": []
+    },
+    {
+      "year": 2018,
+      "file": "data\\raw\\user_minute_1m\\20260913-143215\\2018\\20180601.parquet",
+      "unique_codes": 3518,
+      "etf_codes": 0,
+      "etf_examples": []
+    },
+    {
+      "year": 2019,
+      "file": "data\\raw\\user_minute_1m\\20260913-143215\\2019\\20190603.parquet",
+      "unique_codes": 3611,
+      "etf_codes": 0,
+      "etf_examples": []
+    },
+    {
+      "year": 2020,
+      "file": "data\\raw\\user_minute_1m\\20260913-2020-2024\\2020\\20200601.parquet",
+      "unique_codes": 3836,
+      "etf_codes": 0,
+      "etf_examples": []
+    },
+    {
+      "year": 2021,
+      "file": "data\\raw\\user_minute_1m\\20260913-2020-2024\\2021\\20210601.parquet",
+      "unique_codes": 4316,
+      "etf_codes": 0,
+      "etf_examples": []
+    },
+    {
+      "year": 2022,
+      "file": "data\\raw\\user_minute_1m\\20260913-2020-2024\\2022\\20220601.parquet",
+      "unique_codes": 4722,
+      "etf_codes": 0,
+      "etf_examples": []
+    },
+    {
+      "year": 2023,
+      "file": "data\\raw\\user_minute_1m\\20260913-2020-2024\\2023\\20230601.parquet",
+      "unique_codes": 5196,
+      "etf_codes": 0,
+      "etf_examples": []
+    },
+    {
+      "year": 2024,
+      "file": "data\\raw\\user_minute_1m\\20260913-2020-2024\\2024\\20240603.parquet",
+      "unique_codes": 5114,
+      "etf_codes": 0,
+      "etf_examples": []
+    }
+  ],
+  "month_scan_1130": {
+    "scope": "2024-06 (user_minute_1m/2024, 22 trading days expected)",
+    "files_scanned": 19,
+    "rows_at_1130_total": 0,
+    "rows_at_1130_etf": 0,
+    "elapsed_seconds": 0.159,
+    "seconds_per_file": 0.008,
+    "bytes_scanned": 401585242
+  }
+}

@@ -1,0 +1,59 @@
+[    0.0s] meanrev-anchored; window 2021-01-01..2021-06-30 (SMOKE)
+[    9.0s] pins done
+[    9.0s] == 1. daily panel -> monthly series ==
+[    9.7s]   month-symbol rows: 284110
+[    9.7s] == 2. daily_basic month-end ==
+[    9.9s]   reading 78 month-end daily_basic chunks
+[   11.0s]   daily_basic month-end rows: 251961
+[   12.1s] == 3. fina_indicator PIT + forecast ==
+[   56.4s]   fina rows: 437996
+[   57.1s]   bad-forecast symbols: 4152
+[   59.1s] == 4. simulation ==
+[   59.9s]   months 6; pool median 342 max 744; triggers total 225
+[   59.9s]   C1: cagr +21.84% mdd -0.0% adv 0/1 turn 7.2 -> fail ['1_cagr_ge_B0_plus_2pp', '3_advantage_years_ge_3_of_4']
+[   59.9s]   M1: cagr +12.36% mdd -4.1% adv 0/1 turn 2.7 -> fail ['1_cagr_ge_B0_plus_2pp', '3_advantage_years_ge_3_of_4']
+[   59.9s]   M2: cagr +12.36% mdd -4.1% adv 0/1 turn 2.7 -> fail ['1_cagr_ge_B0_plus_2pp', '3_advantage_years_ge_3_of_4']
+[   59.9s]   B0: cagr +34.68% mdd -0.0% adv 0/1
+[   59.9s]   C1: cagr +21.84% mdd -0.0% adv 0/1
+[   59.9s]   C2: cagr -20.32% mdd -16.7% adv 0/1
+[   59.9s]   M0: cagr +6.55% mdd -9.2% adv 0/1
+[   59.9s] done
+[    0.0s] meanrev-anchored; window 2020-12-31..2024-12-31
+[    9.0s] pins done
+[    9.0s] == 1. daily panel -> monthly series ==
+[   10.1s]   month-symbol rows: 489936
+[   10.1s] == 2. daily_basic month-end ==
+[   10.5s]   reading 120 month-end daily_basic chunks
+[   12.7s]   daily_basic month-end rows: 462476
+[   15.3s] == 3. fina_indicator PIT + forecast ==
+[   62.8s]   fina rows: 437996
+[   63.5s]   bad-forecast symbols: 4152
+[   66.1s] == 4. simulation ==
+[   72.9s]   months 49; pool median 375 max 893; triggers total 2447
+[   72.9s]   C1: cagr -5.16% mdd -39.0% adv 0/5 turn 6.2 -> fail ['1_cagr_ge_B0_plus_2pp', '2_mdd_le_30pct', '3_advantage_years_ge_3_of_4']
+[   72.9s]   M1: cagr -6.15% mdd -47.3% adv 2/5 turn 6.0 -> fail ['1_cagr_ge_B0_plus_2pp', '2_mdd_le_30pct', '3_advantage_years_ge_3_of_4']
+[   72.9s]   M2: cagr -5.07% mdd -43.7% adv 2/5 turn 5.9 -> fail ['1_cagr_ge_B0_plus_2pp', '2_mdd_le_30pct', '3_advantage_years_ge_3_of_4']
+[   72.9s]   B0: cagr +5.00% mdd -26.7% adv 0/5
+[   72.9s]   C1: cagr -5.16% mdd -39.0% adv 0/5
+[   72.9s]   C2: cagr -16.18% mdd -64.6% adv 0/5
+[   72.9s]   M0: cagr -10.52% mdd -50.0% adv 0/5
+[    0.0s] meanrev-anchored; window 2021-01-04..2024-12-31
+[    9.1s] pins done
+[    9.1s] == 1. daily panel -> monthly series ==
+[   10.3s]   month-symbol rows: 489936
+[   10.3s] == 2. daily_basic month-end ==
+[   10.7s]   reading 120 month-end daily_basic chunks
+[   12.8s]   daily_basic month-end rows: 462476
+[   15.4s] == 3. fina_indicator PIT + forecast ==
+[   61.7s]   fina rows: 437996
+[   62.4s]   bad-forecast symbols: 4152
+[   65.0s] == 4. simulation ==
+[   72.0s]   months 48; pool median 373 max 893; triggers total 2403
+[   72.0s]   C1: cagr -4.98% mdd -39.0% adv 0/4 turn 6.2 -> fail ['1_cagr_ge_B0_plus_2pp', '2_mdd_le_30pct', '3_advantage_years_ge_3_of_4']
+[   72.0s]   M1: cagr -6.27% mdd -47.3% adv 1/4 turn 6.1 -> fail ['1_cagr_ge_B0_plus_2pp', '2_mdd_le_30pct', '3_advantage_years_ge_3_of_4', '4_turnover_le_6']
+[   72.0s]   M2: cagr -5.17% mdd -43.7% adv 1/4 turn 6.1 -> fail ['1_cagr_ge_B0_plus_2pp', '2_mdd_le_30pct', '3_advantage_years_ge_3_of_4', '4_turnover_le_6']
+[   72.0s]   B0: cagr +6.91% mdd -26.7% adv 0/4
+[   72.0s]   C1: cagr -4.98% mdd -39.0% adv 0/4
+[   72.0s]   C2: cagr -12.56% mdd -64.6% adv 0/4
+[   72.0s]   M0: cagr -6.28% mdd -48.5% adv 0/4
+[   72.1s] done

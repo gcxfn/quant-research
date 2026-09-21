@@ -1,0 +1,68 @@
+{
+ "factor_id": "E15",
+ "name": "div_ex20",
+ "formula": "20d 内除息(ex_date)每股股利合计/月末收盘",
+ "source": "dividend+panel",
+ "fill_policy": "无事件为 null（不入因子帧）",
+ "n_rows": 10825,
+ "t_value": 0.8940904622977149,
+ "coverage_median_symbols": 40.0,
+ "coverage_median_active_months": 43.0,
+ "pool_median_symbols": 3126.0,
+ "criteria": {
+  "c1_abs_t>=2": false,
+  "c2_mono_consistent>=0.3": true,
+  "c3_2015_non_disaster": false,
+  "c4_coverage>=50%pool": false
+ },
+ "survived_prelim": false,
+ "eval": {
+  "n_dates": 58,
+  "coverage_mean_symbols": 173.9655172413793,
+  "ic_mean": 0.03481033858389583,
+  "ic_std": 0.296510981351879,
+  "icir": 0.1173998292582132,
+  "ic_win_rate": 0.603448275862069,
+  "group_mean_ret": [
+   -0.019788577235891905,
+   -0.02546919214773109,
+   -0.003270082905644034,
+   -0.023198217337249413,
+   -0.011793355210211558,
+   -0.011617551924612071,
+   -0.002837254139766104,
+   0.0014509523804144922,
+   -0.015651296798666336,
+   -0.009856061404395473
+  ],
+  "long_short_mean": 0.009932515831496432,
+  "monotonicity": 0.4963227591115785,
+  "ic_by_year": {
+   "2015": -0.04130039229678103,
+   "2016": 0.07932912852148905,
+   "2017": 0.10944881530559045,
+   "2018": 0.060216131502982884,
+   "2019": -0.07536046980178795,
+   "2020": 0.0727074570282493
+  },
+  "long_short_by_year": {
+   "2015": 0.038917485249166106,
+   "2016": 0.04075377222397382,
+   "2017": 0.0144011560892769,
+   "2018": 0.02616945191063745,
+   "2019": 0.004325938583378409,
+   "2020": 0.009917406083095007
+  },
+  "turnover_top_group": 1.0,
+  "corr_with_others": {},
+  "config": {
+   "horizon_days": 20,
+   "n_groups": 10,
+   "eval_freq": "M",
+   "exclude_st": true,
+   "require_trading": true,
+   "exclude_boards": true,
+   "min_history_rows": 60
+  }
+ }
+}

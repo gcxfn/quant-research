@@ -1,0 +1,21 @@
+# run log — 20260918T043046-fcst-full-w3-1db232
+
+2026-09-18T04:30:46+08:00  run start; breakpoint check: data/features/fcst-reason-struct-full-20260918/batch_003.jsonl 不存在（仅 batch_001/002.jsonl）→ 未触发恢复路径，全量新跑
+2026-09-18T04:30:46+08:00  scripts 4 个自 wave-1 run 20260918T025456-fcst-full-w1-a3f7c2 逐字节复制，sha256 与 manifest 记录一致（build_row_index f436b0d8…/render 41ba7b0a…/check 67470de1…/stats 80301483…）
+2026-09-18T04:31:00+08:00  render_batch.py --batch 3 → work/batch_003_input.txt，600 行，187,557 字符，n_missing_in_raw=0（ordinal 1200-1799，type 全部=扭亏）
+2026-09-18T04:31:10+08:00  llm structuring start（会话内逐行结构化，6 段 ×100 行：ordinal 01200-01799；schema v1 封闭词表，key_quote ≤40 逐字子串，找不到支撑→other+low，type=扭亏 方向口径同 wave-1/2 固化规则）
+2026-09-18T05:05:00+08:00  part1..6.jsonl 落盘（各 100 行）；01567 元数据以 row_index 查询纠正（002496.SZ 20201231/20201020/1，避免与 01566 重复键）；合并 → data/features/fcst-reason-struct-full-20260918/batch_003.jsonl（600 行）
+2026-09-18T05:06:00+08:00  check_batch_full.py --batch 3 → 首轮 9 FAILURES：
+  - ordinal 01231 key_quote 非逐字子串（误引 01240 钢铁焦炭文本；600744.SH 实为火电回暖）→ quote 改"受区域火力发电市场回暖影响"
+  - ordinal 01500 quote 误增"公司"前缀 → 改"2019年关闭处置了长期亏损的门店及部分子公司的股权"
+  - ordinal 01570/01578/01631/01690/01744/01762/01787 quote 全角逗号 vs 原文半角逗号 → 改为原文标点或取不含逗号的连续子串
+2026-09-18T05:12:00+08:00  定点修复 work/batch_003_part1/part4/part5/part6.jsonl 共 9 行，重新合并
+2026-09-18T05:12:30+08:00  check_batch_full.py --batch 3 复检 → batch 003: 600 rows checked -> OK（quote_verbatim_pass_rate=1.0）
+2026-09-18T05:20:35+08:00  quality_stats.py --batch 3 --fix-note "…" → progress.json 更新：batches_completed=[1,2,3]，rows_completed=1800；batch3 other_rate_primary=0.0183，secondary_null_rate=0.275，direction {-1:22,0:7,1:571}，confidence {high:582,low:18}
+2026-09-18T05:21:02+08:00  manifest.json 写入，run completed
+
+outputs sha256:
+  batch_003.jsonl 96aa54cbd62cd9d31a53ca473a00393b16b9211b5cc03e8edaf71f63c03d6fd2
+  progress.json   36eae3ab89050c2600cf29ad53082144ab3f90ee200af7199e5dec45c202bd7a
+
+data/raw 全程只读；2025+（ann_date>=20250101）行一行未读取（row_index 已冻结行集）。

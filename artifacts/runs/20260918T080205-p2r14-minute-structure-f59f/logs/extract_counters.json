@@ -1,0 +1,51 @@
+{
+  "counters": {},
+  "assertions": {
+    "A5_freeze_max_date": {
+      "max_date": "2024-12-31",
+      "pass": true
+    },
+    "A7_symbol_date_unique": {
+      "duplicates": 0,
+      "pass": true
+    },
+    "A8_med20_null_share": {
+      "null_rows": 106372,
+      "expected_null_rows": 106372,
+      "pass": true
+    },
+    "A1_rows_vs_halfday_traded": {
+      "feats_rows": 9245204,
+      "halfday_traded_rows": 9245198,
+      "diff": 6,
+      "diff_pct": 6.489855598549647e-07,
+      "pass": true,
+      "note": "feats < traded rows by no-bar traded stock-days (~9k registered) and all-zero-volume traded days"
+    },
+    "A9_state_distribution": {
+      "state_seal_rows": 175259,
+      "state_broke_rows": 78565,
+      "state_untouched_rows": 8972978,
+      "state_null_rows_limit_missing": 18402,
+      "pm_touch_true_rows": 160537,
+      "pm_touch_null_rows": 18402,
+      "touch_state_contradictions": 1,
+      "day_high_lt_halfday_high_am": 23116,
+      "day_low_gt_halfday_low_am": 21575,
+      "day_high_eq_halfday_high_am": 6786415
+    },
+    "A10_table_sha256": "9404bd0cc9fcb785bc8c7be286e58149fc3d75773ac22e0094cc80f1e07a2906"
+  },
+  "per_year_rows": {
+    "2015": 568845,
+    "2016": 640639,
+    "2017": 742401,
+    "2018": 816361,
+    "2019": 884402,
+    "2020": 945719,
+    "2021": 1058620,
+    "2022": 1146021,
+    "2023": 1209236,
+    "2024": 1232960
+  }
+}

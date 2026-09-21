@@ -1,0 +1,57 @@
+adjudicated rows: 68
+{
+ "rows_total": 2945,
+ "rows_adjudicated_by_llm": 68,
+ "instrument_dist": {
+  "ETF": 1849,
+  "LOF": 573,
+  "其他": 467,
+  "封闭式": 56
+ },
+ "asset_dist": {
+  "股票A股": 2012,
+  "股票跨境(QDII)": 304,
+  "混合": 240,
+  "债券": 210,
+  "其他": 104,
+  "商品": 45,
+  "货币": 30
+ },
+ "wl_instrument_dist": {
+  "ETF": 1148,
+  "其他": 20
+ },
+ "wl_asset_dist": {
+  "股票A股": 944,
+  "股票跨境(QDII)": 146,
+  "货币": 30,
+  "债券": 29,
+  "商品": 19
+ },
+ "disc_a_total": 180,
+ "disc_a_matched_known_lof20": 20,
+ "disc_a_matched_known_qdii3": 3,
+ "disc_a_new_extra": 157,
+ "disc_a_new_extra_codes": [
+  "159302.SZ",
+  "159303.SZ",
+  "159312.SZ",
+  "159318.SZ",
+  "159329.SZ",
+  "159331.SZ",
+  "159333.SZ",
+  "159501.SZ",
+  "159502.SZ",
+  "159506.SZ",
+  "159509.SZ",
+  "159513.SZ",
+  "159518.SZ",
+  "159519.SZ",
+  "159529.SZ",
+  "159545.SZ",
+  "159557.SZ",
+  "159561.SZ",
+  "159567.SZ",
+  "159568.SZ",
+  "159569.SZ",
+  "1595

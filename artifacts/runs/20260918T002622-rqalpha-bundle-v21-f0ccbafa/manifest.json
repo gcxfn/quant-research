@@ -1,0 +1,100 @@
+{
+ "run_id": "20260918T002622-rqalpha-bundle-v21-f0ccbafa",
+ "status": "completed",
+ "started_at": "2026-09-18T00:26:22",
+ "task": "RQAlpha self-built bundle v2.1 fixed-scene wiring smoke: 5 stocks + 2 ETFs, 2024-10-08..2024-12-31, on the FULL v2.1 bundle (4745 stocks + 1169 ETFs, 2015-2024, ETF share-conversion splits + five real index series); a second scene holds 510230.XSHG across its 2020-08-17 share conversion (R3-1). The smoke consumes the prebuilt bundle and does not rebuild it",
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "-X",
+  "utf8",
+  "tools/rqalpha_bundle_smoke.py"
+ ],
+ "env": {
+  "python": "3.11.15",
+  "cwd": "D:\\量化",
+  "PYTHONPATH": "D:/量化/src",
+  "pythonpath_note": "PYTHONPATH=src makes quant.* resolve to src/, not the copied site-packages install"
+ },
+ "inputs": {
+  "bundle_dataset_id": "rqalpha-bundle-v2-1-20260918",
+  "bundle_dir": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918",
+  "bundle_manifest_summary": {
+   "dataset_id": "rqalpha-bundle-v2-1-20260918",
+   "created_at": "2026-09-17T16:25:26+00:00",
+   "params": {
+    "bar_window": [
+     "2015-01-01",
+     "2024-12-31"
+    ],
+    "calendar_range": [
+     "2015-01-01",
+     "2024-12-31"
+    ],
+    "calendar_days": 2431,
+    "stock_pool_size": 4745,
+    "etf_pool_size": 1169,
+    "pool_limit": null,
+    "scenario_stocks": {
+     "600036.XSHG": "sh.600036",
+     "601318.XSHG": "sh.601318",
+     "600000.XSHG": "sh.600000",
+     "000001.XSHE": "sz.000001",
+     "000651.XSHE": "sz.000651"
+    },
+    "scenario_etfs": {
+     "510050.XSHG": "510050.SH",
+     "510300.XSHG": "510300.SH"
+    },
+    "benchmark_oid": "000300.XSHG",
+    "range_probe_oid": "000001.XSHG",
+    "range_probe_note": "v2.1: 000001.XSHG carries the REAL SSE Composite; the v2 NaN-placeholder warning is void",
+    "index_bars": {
+     "000300.XSHG": "000300.SH",
+     "000001.XSHG": "000001.SH",
+     "000905.XSHG": "000905.SH",
+     "000852.XSHG": "000852.SH",
+     "399006.XSHE": "399006.SZ"
+    },
+    "etf_split_rule": "fund_adj one-day factor ratio >= 1.1 or <= 0.9 -> split row with ratio = factor ratio; jumps inside (0.9, 1.1) are dividend-class, no split row (ETF cash stays unpaid per the dividends gap disclosure)",
+    "pools_source": {
+     "stocks": "data/processed/baostock-daily-20260917/daily_2015_2024.parquet (60/00/30 boards; 688/689/bj excluded)",
+     "etfs": "data/raw/tushare/fund_basic/20260909-r1/chunk_market_E.csv (market==E, ETF in name)"
+    }
+   },
+   "freeze": {
+    "research_end": "2024-12-31",
+    "max_bar_datetime": 20241231
+   }
+  }
+ },
+ "outputs": [
+  "D:\\量化\\artifacts\\runs\\20260918T002622-rqalpha-bundle-v21-f0ccbafa"
+ ],
+ "notes": [
+  "wiring smoke only: engine built-in A-share semantics are exempted from independent re-verification by user decision (docs/decisions/2026-09-17-rqalpha-account-engine.md)",
+  "fee config: 万1全包 -> stock_commission_multiplier=0.125 (0.0008*0.125=0.0001), tax_multiplier=0, stock_min_commission=5",
+  "scenario 1: day1 buy all 7 (101/201 shares), same-day sell attempt (T+1 reject), 55-share odd order (round-lot reject); day60 liquidate all; window contains two real stock dividends (000001.XSHE ex 2024-10-10, 601318.XSHG ex 2024-10-18) exercising the dividends.h5 path; v2 adds A13 (ETF fund_adj->ex_cum_factor mapping incl. announced 510050 2016 case) and A14 (stk_limit raw value sampling + NaN rule on 5 header-only days)",
+  "v2.1 adds A15 (R3-1: second engine scene holding 510230.XSHG across its 2020-08-17 share conversion -- quantity x4.916019 ROUND_HALF_UP, MV continuous, no evaporation, conservation holds) and A16 (five real index series in indexes.h5, 000300 2015-06-12 close == 5335.1151 registered value, units vol*100/amount*1000, bigquant-overlap close identity); A4 now expects REAL 000001.XSHG probe data (v2 NaN placeholder retired)"
+ ],
+ "finished_at": "2026-09-18T00:26:26",
+ "elapsed_seconds": 3.47,
+ "assertions": {
+  "A3_calendar": "PASS",
+  "A1_stock_bar_fidelity": "PASS",
+  "A2_etf_bar_fidelity": "PASS",
+  "A4_freeze_and_indexes": "PASS",
+  "A5_instruments_and_files": "PASS",
+  "A13_etf_ex_cum_factor_mapping": "PASS",
+  "A14_stock_limit_prices": "PASS",
+  "A16_index_bars": "PASS",
+  "A6_engine_fills": "PASS",
+  "A7_t_plus_1": "PASS",
+  "A8_round_lot": "PASS",
+  "A9_conservation": "PASS",
+  "A12_dividend_cash": "PASS",
+  "A10_fee_config": "PASS",
+  "A11_benchmark_path": "PASS",
+  "A15_etf_share_conversion": "FAIL"
+ },
+ "error": null
+}

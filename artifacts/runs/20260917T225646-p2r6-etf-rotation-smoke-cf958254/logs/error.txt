@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2r6_etf_rotation.py", line 367, in main
+    g = evaluate_dev_gate(
+        ^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\etf_rotation.py", line 893, in evaluate_dev_gate
+    rate = m['dev']['execution_rate']
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyError: 'execution_rate'

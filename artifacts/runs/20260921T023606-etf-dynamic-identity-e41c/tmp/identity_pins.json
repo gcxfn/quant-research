@@ -1,0 +1,64 @@
+{
+ "engine": {
+  "file": "band_engine.py",
+  "bytes": 218654,
+  "sha256": "bcbdd44bb855b803ed8fa2dfc4915319af4c0b79e78e7b789c0b1bfb2d75ee4a",
+  "pinned_prefix": "bcbdd44bb855b803",
+  "prefix_match": true
+ },
+ "halfday_batch": {
+  "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+  "aggregate_sha256": "c52f3cdc3d184f484ff13cece7a6ca7a7ed589d66c4e4727bb3bc7056f6ecd93",
+  "files": 12,
+  "total_bytes": 372833812
+ },
+ "etf_processed_dir": {
+  "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+  "aggregate_sha256": "75777221a8b335028bf8da60f14c59c6a3659f9d91578204308488d0f0fb7c2e",
+  "files": 7,
+  "total_bytes": 18153828
+ },
+ "raw_fund_daily_batch": {
+  "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+  "aggregate_sha256": "21b8bb5f0f05a8494641910ffc01f7b80bd9752f22b37e0eaa2cf3d440abe8f1",
+  "files": 1170,
+  "total_bytes": 82656057
+ },
+ "raw_leg_chunks": {
+  "sh.511010": {
+   "chunk": "chunk_511010.SH.csv",
+   "rows_declared": 2431,
+   "sha256_declared": "cb1ad029c786698f32f7d64d0c248421d90d0ea947257da09e7c1c8198b0c3f5",
+   "sha256_actual": "cb1ad029c786698f32f7d64d0c248421d90d0ea947257da09e7c1c8198b0c3f5",
+   "match": true,
+   "first_trade_date": "20150105",
+   "last_trade_date": "20241231"
+  },
+  "sh.518880": {
+   "chunk": "chunk_518880.SH.csv",
+   "rows_declared": 2431,
+   "sha256_declared": "3f5e4d13e9c0643ca363d7f13d10a07e16a410eabbd4cc09f992f4718233544e",
+   "sha256_actual": "3f5e4d13e9c0643ca363d7f13d10a07e16a410eabbd4cc09f992f4718233544e",
+   "match": true,
+   "first_trade_date": "20150105",
+   "last_trade_date": "20241231"
+  },
+  "sz.159934": {
+   "chunk": "chunk_159934.SZ.csv",
+   "rows_declared": 2431,
+   "sha256_declared": "7255026e589d25e6e9597b32d3089c381e1485821163c00eda4bbb4558d63ebc",
+   "sha256_actual": "7255026e589d25e6e9597b32d3089c381e1485821163c00eda4bbb4558d63ebc",
+   "match": true,
+   "first_trade_date": "20150105",
+   "last_trade_date": "20241231"
+  }
+ },
+ "raw_batch_status": {
+  "status": "completed",
+  "range": {
+   "start": "20150101",
+   "end": "20241231"
+  },
+  "universe_count": 1169
+ }
+}

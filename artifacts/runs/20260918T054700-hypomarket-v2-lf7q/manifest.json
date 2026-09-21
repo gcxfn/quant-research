@@ -1,0 +1,53 @@
+{
+  "run_id": "20260918T054700-hypomarket-v2-lf7q",
+  "experiment_id": "exp-20260918-hypomarket-v2",
+  "vendor": 2,
+  "perspective": "低频横截面与持有型结构（G4：>10 交易日持有、周/月频再平衡）",
+  "task": "假设市场摊位：提出至多 10 个带完整理由的交易假设候选",
+  "nature": "纯提案轮：零回测、零信号生成、零试验消费（trial_count_delta=0）；未修改任何既有文件；docs/legacy 只读",
+  "status": "completed",
+  "time_start": "2026-09-18T05:42:21+08:00",
+  "time_end": "2026-09-18T05:55:00+08:00",
+  "timezone": "Asia/Shanghai",
+  "command": [
+    "只读阅读（AGENTS.md + 6 份必读文档 + 登记簿/台账）",
+    "只读数据探针（head -2 / 行数级，无任何信号或收益计算）",
+    "写入 artifacts/runs/20260918T054700-hypomarket-v2-lf7q/{manifest.json,vendor-2-lowfreq.md}"
+  ],
+  "inputs_read": [
+    "AGENTS.md（工作区上下文）",
+    "docs/research/exp-20260917-negative-synthesis.md",
+    "docs/evidence/trial-ledger.md",
+    "docs/plans/hypothesis-registry.md",
+    "docs/DATA_SOURCES.md",
+    "docs/DATA_COVERAGE.md",
+    "docs/research/exp-20260918-p2r10-halfday-survey.md",
+    "docs/research/exp-20260918-p2r8-daily-risk.md（全文，含 §11）"
+  ],
+  "data_probes": [
+    "data/raw/xiaodefa/hk_hold/20260913-bulk1/：表头 code,trade_date,ts_code,name,vol,ratio,exchange；批次 20170103..20260911 共 2285 chunk；实测个股北向（SH/SZ 行）披露止于 2024-08-16，2024-08-19 起 SH/SZ 行数=0",
+    "data/raw/xiaodefa/block_trade/20260913-bulk1/：表头 ts_code,trade_date,price,vol,amount,buyer,seller；起点 20140102",
+    "data/raw/tushare/dividend/20260909-r3/：表头 ts_code,end_date,ann_date,div_proc,stk_div,cash_div,cash_div_tax,record_date,ex_date,pay_date,div_listdate,imp_ann_date；2841 chunk 中 661 个 <1KB（预登记前须完整性 probe）",
+    "data/raw/tushare/disclosure_date/：表头 ts_code,ann_date,end_date,pre_date,actual_date；ann 自 2018-12-28（2018 年报预约）",
+    "data/raw/tushare/share_float/：表头 ts_code,ann_date,float_date,float_share,float_ratio,holder_name,share_type；注意个别行 ts_code 无后缀（质量 probe 项）",
+    "data/raw/tushare/{express,forecast,repurchase,stk_holdertrade} 表头核验（用于重叠/去重规则引用）",
+    "引而不探（以既有文档为准）：data/processed/baostock-daily-20260917/daily_1999_2024.parquet、data/processed/halfday-1130-20260918/halfday_1130.parquet、tushare income/cashflow/balancesheet、daily_basic 两批次、trade_cal"
+  ],
+  "outputs": [
+    "vendor-2-lowfreq.md（10 个提案：H-V2-01..H-V2-10，固定格式含机制/数据/可证伪预测/反换皮/用法/换手容量/最可能死法）"
+  ],
+  "proposals_count": 10,
+  "trial_count_delta": 0,
+  "key_facts_discovered": [
+    "北向个股日度披露 2024-08-16 止（探针实测），H-V2-03 可用窗锁定 2017-01-05..2024-08-16",
+    "月频全换 12× 单边/年 = 1200% 仍越 R6 月频 600% 子限 → 全部入场型提案强制缓冲带 4-8×",
+    "5 座位 × 4 万为满足 R6/R8 集中度门（top1≤40%、top3≤70%）且不触最低佣金侵蚀区",
+    "R6-R9 换手/费用死因的正面回应=费用墙从 ~7.5pp/年（5 日持有）降至 0.5-0.8pp/年（21 日持有+缓冲带）"
+  ],
+  "discipline_notes": [
+    "登记 ≠ 批准执行：采纳须各自新预登记（≤12 配置、冻结判据、val/test 一次性），登记簿建议编号 H-22 起",
+    "dev 2015-2020 已重度消费，本线 dev 仅作淘汰；新信息层（北向/财报/分红/大宗/披露日历/日历）的 2021-2024 为首次消费",
+    "每笔均值须按红队 R2-1 披露反事实退出区间口径",
+    "事件类提案（H-V2-05/06/08）遵守用户'事件仅作补充、不独立主线'定调，并逐条声明与 H-09..H-13 的变量级差异"
+  ]
+}

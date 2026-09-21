@@ -1,0 +1,61 @@
+== case a: 同日多买单现金只够高优先级；低优先级作废后次日（T+1 解冻资金）成交 ==
+  [OK ] P2 在 D2 因现金不足作废: ['void_insufficient_cash']
+  [OK ] P2 次日重挂并成交 D3 400@100: (datetime.date(2024, 1, 4), 400, 100.0)
+  [OK ] A0 卖出 D2@100: (datetime.date(2024, 1, 3), 100.0)
+  [OK ] A0 净回笼 = 50,000-5-25(印花0.05%) = 49,970: 49970.0
+  [OK ] D2 结算现金 9,980 / pending 49,970: (9980.0, 49970.0)
+  [OK ] D3 = 9,980 + 49,970 - 40,005 = 19,945: 19945.0
+  [OK ] 全程现金非负
+  [OK ] insufficient_cash_days == 1
+  [OK ] P1 名义 15 万触发 guard 恰 1 次: 1
+== case b: 买入成交日即有同名义卖单（T+1 边界），顺延日计入 K -> 第 4 挂单日兜底 ==
+  [OK ] 卖出在买入成交日 B1 整体顺延: 2024-02-05
+  [OK ] 未穿透日 B2,B3: [datetime.date(2024, 2, 6), datetime.date(2024, 2, 7)]
+  [OK ] 第 4 个挂单日市价兜底 B4@8.5 x2000: ('market_fallback', datetime.date(2024, 2, 8), 8.5, 2000)
+  [OK ] K scheduled/executed = 1/1（t1 顺延日计入 K：否则兜底会推到 B5）
+  [OK ] same_bar_deferred == 1
+  [OK ] T+1 零违例扫描：无同日买卖成交对
+== case c1: 纯现金分红除息日 x 卖出重锚 ==
+  [OK ] 除息日现金分红 0.5 x 1000 股 = 500: (datetime.date(2024, 3, 5), 500.0)
+  [OK ] 除息日卖单锚 = 除息前收盘 10.0（当日无除息后收盘可取）: ('not_penetrated', 10.0)
+  [OK ] 次日重锚除息后收盘 9.5 并成交: (datetime.date(2024, 3, 6), 9.5, 1000)
+== case c2: 10 送 5 除权日 x 卖出重锚（真实口径涨跌停） ==
+  [OK ] 除权日 q=除权前收盘 10.0 > limit_up 7.333 -> 越界作废（未按错误价格成交）: ('void_limit_out_of_range', 10.0)
+  [OK ] 次日 q=除权后最新收盘 6.7，按调整后 1500 股成交: (datetime.date(2024, 4, 10), 6.7, 1500)
+== case c3: 反向拆分 1:2 —— 真实 vs naive 涨跌停数据 ==
+  [OK ] 真实口径：q=10 < limit_down 18 -> 作废保护: void_limit_out_of_range
+  [OK ] 次日按除权后收盘 20.0 x 500 股成交: (datetime.date(2024, 5, 8), 20.0, 500)
+  [OK ] naive 数据：除权日按除权前锚 10.0 成交（市价 ~20，损失 ~50%）—— 保护完全依赖 stk_limit 质量: (datetime.date(2024, 5, 7), 10.0)
+== case d: 武装兜底后连续 5 日开盘跌停；限价并行；首个非跌停开盘退出 ==
+  [OK ] KB 跌停开盘顺延 5 日 2024-06-07..2024-06-13: [datetime.date(2024, 6, 7), datetime.date(2024, 6, 10), datetime.date(2024, 6, 11), datetime.date(2024, 6, 12), datetime.date(2024, 6, 13)]
+  [OK ] KB 首个非跌停开盘市价退出 2024-06-14@16.5: ('market_fallback', datetime.date(2024, 6, 14), 16.5)
+  [OK ] KC 顺延日限价并行成交 2024-06-11@q=22.8（不取更优 open 20.52）: ('limit', datetime.date(2024, 6, 11), 22.8)
+  [OK ] KC 顺延 3 日事件（E6 当日先顺延后由限价成交，顺延事件照记）
+  [OK ] K3 统计 scheduled=2 executed=1 deferred=8（KB5+KC3，E6 双记）: (2, 1, 8)
+  [OK ] 卖侧挂单日(有交易 bar) = 15: 15
+  [OK ] fill_rate_order_day.sell = 2/15: 0.13333333333333333
+  [OK ] order_fill_rate.sell = 2/2 = 1.0
+== case e1: 佣金 guard 的 5 万名义边界 ==
+  [OK ] 名义恰 50,000 -> 不报警: 0
+  [OK ] 50,000 x 万1 = 5.0 = min -> 5.0
+  [OK ] 名义 50,020 -> 报警 1 次: 1
+== case e2: 份额调整 half-up 取整（精确边界 187.5）+ 整手-letter 冲突 ==
+    150 x 1.25 = 187.5; half-up -> 188, 截断 -> 187
+  [OK ] 两级拆分 100 -> 150 -> 188（187.5 half-up；截断应得 187）: [150, 188]
+  [OK ] 验收项 3 字面（所有成交为 100 倍数）在公司行动后可被打破: 卖出 188 股
+== case e3: 武装市价单遇长期停牌（死锁探测） ==
+  [OK ] 武装后停牌 5 日（S4..S8）单据冻结未死锁: [datetime.date(2024, 9, 6), datetime.date(2024, 9, 9), datetime.date(2024, 9, 10), datetime.date(2024, 9, 11), datetime.date(2024, 9, 12)]
+  [OK ] 复牌日 streak 从 4 继续（停牌日未计入 K）: strict penetration required: high > q; K streak 4; market exit armed for next tradable day
+  [OK ] 复牌日跌停开盘顺延: [datetime.date(2024, 9, 13)]
+  [OK ] 下一可交易日开盘退出 2024-09-16@8.05: ('market_fallback', datetime.date(2024, 9, 16), 8.05)
+== case e5: 已有持仓 + 当日同名义新买单成交 -> 卖单整体顺延，次日全额退出 ==
+  [OK ] 已有 1000 股旧仓，卖单仍在补仓成交日整体顺延: 2024-10-16
+  [OK ] 次日退出全部 1500 股（含前一日新买 500，T+1 合法）: (datetime.date(2024, 10, 17), 1500)
+  [OK ] T+1 零违例复扫
+== case e7: 武装执行日涨跌停数据缺失 -> 市价兜底照常执行（裁定 #2） ==
+  [OK ] 缺涨跌停数据 3 日作废（计入 K）: [datetime.date(2024, 11, 5), datetime.date(2024, 11, 6), datetime.date(2024, 11, 7)]
+  [OK ] 第 4 挂单日无涨跌停数据仍市价兜底退出: ('market_fallback', datetime.date(2024, 11, 8), 8.5)
+  [OK ] k3 executed == 1
+
+对抗用例断言: 46 passed, 0 failed
+ALL ADVERSARIAL CASES BEHAVED AS DOCUMENTED ABOVE

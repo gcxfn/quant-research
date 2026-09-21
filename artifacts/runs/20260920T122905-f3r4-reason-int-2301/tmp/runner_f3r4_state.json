@@ -1,0 +1,250 @@
+{
+ "status": "completed",
+ "arms": [
+  {
+   "tag": "F3R4-A-w20",
+   "composite": "D:/量化/artifacts/runs/20260920T122905-f3r4-reason-int-2301/outputs/composite_A_w20.parquet"
+  },
+  {
+   "tag": "F3R4-A-w40",
+   "composite": "D:/量化/artifacts/runs/20260920T122905-f3r4-reason-int-2301/outputs/composite_A_w40.parquet"
+  },
+  {
+   "tag": "F3R4-A-b68",
+   "composite": "D:/量化/artifacts/runs/20260920T122905-f3r4-reason-int-2301/outputs/composite_A_b68.parquet"
+  }
+ ],
+ "arms_done": [
+  {
+   "tag": "F3R4-A-w20",
+   "net_cagr": 0.046791160646654895,
+   "max_drawdown": -0.17848532843799414,
+   "failed_gates": [
+    "3_advantage_years_ge_5_of_6",
+    "8v3_final_delivery_ge_99pct"
+   ],
+   "anchor_compare": null
+  },
+  {
+   "tag": "F3R4-A-w40",
+   "net_cagr": 0.047337109911717246,
+   "max_drawdown": -0.17848532843799414,
+   "failed_gates": [
+    "3_advantage_years_ge_5_of_6",
+    "8v3_final_delivery_ge_99pct"
+   ],
+   "anchor_compare": null
+  },
+  {
+   "tag": "F3R4-A-b68",
+   "net_cagr": 0.05335632262215695,
+   "max_drawdown": -0.17848532843799414,
+   "failed_gates": [
+    "3_advantage_years_ge_5_of_6",
+    "8v3_final_delivery_ge_99pct"
+   ],
+   "anchor_compare": null
+  }
+ ],
+ "stages_s": {
+  "calendar": 2.7586847999918973,
+  "exposures": 2.764051699996344,
+  "pools": 5.132663099997444,
+  "market_frames": 14.790626799993333,
+  "etf_assets": 14.847847199998796,
+  "engine_input_frames": 14.848274100004346,
+  "F3R4-A-w20_sleeve": 15.008133299998008,
+  "F3R4-A-w40_sleeve": 19.895062199997483,
+  "F3R4-A-b68_sleeve": 24.84067099999811
+ },
+ "engine_sha_at_start": "a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3",
+ "engine_sha_at_end": "a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3",
+ "bytes_modified_by_this_run": false,
+ "peak_rss_gb": 4.757520384,
+ "wall_seconds": 29.610879400002887,
+ "env_versions": {
+  "python": "3.11.15",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "polars": "1.44.2",
+  "numpy": "1.26.4"
+ },
+ "pins": {
+  "engine": {
+   "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+   "sha256": "a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3",
+   "expected": "a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3",
+   "match": true
+  },
+  "r16_config": {
+   "path": "D:\\量化\\configs\\experiments\\p2r16-trend-dispersion.json",
+   "sha256": "27f846a7330919a4965d83ec07cf2a0be3e29b2476cc37c14c84558957a93df4",
+   "expected": "27f846a7330919a4",
+   "match": true
+  },
+  "daily": {
+   "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_1999_2024.parquet",
+   "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6",
+   "expected": "d9a63f4cc3032926",
+   "match": true,
+   "rows_total": 16344349,
+   "rows_after_freeze_filter": 16344349
+  },
+  "halfday_manifest": {
+   "path": "D:\\量化\\data\\processed\\halfday-bars-20260918\\manifest.json",
+   "sha256": "2a414174b5df2eeed4c6bd6a7cd7f9f09f9b2efc8f05673ccc4b7695812cd679",
+   "expected": "2a414174b5df2eee",
+   "match": true
+  },
+  "split_factor": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\split_factor.h5",
+   "sha256": "2f436b2f13d09a9bfdcbdb0bf35669c10a377d180ce1ca37bef53d6c96a3365d",
+   "expected": "2f436b2f13d09a9b",
+   "match": true
+  },
+  "dividends": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\dividends.h5",
+   "sha256": "46121c09cddde72e725c2d4ae025cc259b049aeaa77c868b492fdbba60214846",
+   "expected": "46121c09cddde72e",
+   "match": true
+  },
+  "index_000300": {
+   "path": "D:\\量化\\data\\raw\\tushare\\index_daily\\20260917-r1\\chunk_000300.SH.csv",
+   "sha256": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878",
+   "expected": "05aaa8183a11c674",
+   "match": true
+  },
+  "f3r1_ew_composite": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T191524-f3r1-factor-combo-c212\\outputs\\F3-EW_composite.parquet",
+   "sha256": "9b93696b14fdd31f0047e715f6172005f87d7f06ba292607b3c442a3cb41a741",
+   "expected": null,
+   "match": true
+  },
+  "f3r1_dedup_clusters": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T191524-f3r1-factor-combo-c212\\outputs\\dedup_clusters.csv",
+   "sha256": "7b80b95bbbbbc34db44236c329b69094040faafa3a57c17f3c41ebab760e67b4",
+   "expected": null,
+   "match": true
+  },
+  "f2r1_all120": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\f2r1_all120.csv",
+   "sha256": "df35f17604595b345b4f6757ece0b22c68c36795c6e0ef11ec240c690bd1420a",
+   "expected": null,
+   "match": true
+  },
+  "prereg": {
+   "path": "D:\\量化\\docs\\research\\exp-20260920-factor-round-f3r4-prereg.md",
+   "sha256": "19ac8e9a658d27f7b1cb2fa764a82d79f3d993f58f8efeccf90fc2162ea75797",
+   "expected": null,
+   "match": true
+  },
+  "f3r4_config": {
+   "path": "D:\\量化\\configs\\experiments\\f3r4-reason-integration.json",
+   "sha256": "8c4c51b0b3ab1c14a62cbdbab9f48b0cabdc1a9b1e3541c701451fac36b0277c",
+   "expected": null,
+   "match": true
+  },
+  "industry_l1": {
+   "path": "D:\\量化\\data\\raw\\tushare\\index_member_all\\20260909-r1\\chunk_all.csv",
+   "sha256": "4edffc3994fb527aa4a8d77ea9b654792e31902b6c1e6e80501483a57816b129",
+   "expected": "4edffc3994fb527a",
+   "match": true
+  },
+  "chassis_sleeve_log": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e\\outputs\\sleeve_monthly_log.json",
+   "sha256": "c62446715685f851683a5c97df151ead7524360f523b5283c6284993bec8164d",
+   "expected": null,
+   "match": true
+  },
+  "chassis_metrics": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e\\outputs\\metrics_and_gates.json",
+   "sha256": "bc74572dd3e783477646f84da5daad9c389bcfbb0022da084ef0eb2d7ce08ea0",
+   "expected": null,
+   "match": true
+  },
+  "chassis_ew_intents": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e\\outputs\\F3R3-EW_intents.parquet",
+   "sha256": "afbd41c55f88737991f43c11b7673c89777b79e13d8592a3e25d1c68e2e554a8",
+   "expected": null,
+   "match": true
+  },
+  "chassis_ew_fills": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e\\outputs\\F3R3-EW_fills.parquet",
+   "sha256": "6e1dc925c99f8538de467765cad1c243616cf0a6658566269941554873192ff3",
+   "expected": null,
+   "match": true
+  },
+  "chassis_ew_events": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e\\outputs\\F3R3-EW_events.parquet",
+   "sha256": "af0ca5463344b4caa848f5a81db6946a5ed1a32a51cd4fcc01aa621d7526b70f",
+   "expected": null,
+   "match": true
+  },
+  "chassis_ew_daily": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e\\outputs\\F3R3-EW_daily_equity.parquet",
+   "sha256": "b71cf93135fcca2a417e2737dba160077d8aed97a84e402cbb79479dbdb1fb92",
+   "expected": null,
+   "match": true
+  },
+  "chassis_ew_clips": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e\\outputs\\F3R3-EW_clips_final.parquet",
+   "sha256": "f4695404f1f1a2e772426f76d1af87fdc89e113b36cd91b97f7303a2395b5e20",
+   "expected": null,
+   "match": true
+  },
+  "etf_manifest": {
+   "path": "D:\\量化\\data\\processed\\etf-daily-20260919\\manifest.json",
+   "sha256": "8b5b3fe56c0e02fd6af634bb3740c4f40c3b5f1dfabc984764433c0134eb1c8a",
+   "expected": null,
+   "match": true
+  },
+  "composite_F3R4-A-w20": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T122905-f3r4-reason-int-2301\\outputs\\composite_A_w20.parquet",
+   "sha256": "b3c65a80e0c7e96b01dd1bcf54eba5b0557dbacd4a2a396da2b7422b643b8d0d"
+  },
+  "composite_F3R4-A-w40": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T122905-f3r4-reason-int-2301\\outputs\\composite_A_w40.parquet",
+   "sha256": "0590832fae21628a2beab3204c219bc57df1277794a7c8e7163b2a6c5c4a3a3e"
+  },
+  "composite_F3R4-A-b68": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T122905-f3r4-reason-int-2301\\outputs\\composite_A_b68.parquet",
+   "sha256": "c5a859111f80ad7a780d868e1924ab49d52c33f43422deb9201bd89b8d89dae1"
+  },
+  "stk_limit_aggregate": {
+   "path": "D:\\量化\\data\\raw\\tushare\\stk_limit\\20260917-r1",
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "3c53abf3b0c39b425389137d9f630f0de158990fcdc55b0bd41bf7d9c3bde673",
+   "files": 2432,
+   "total_bytes": 301278245,
+   "expected": "3c53abf3b0c39b42",
+   "match": true
+  },
+  "fund_adj_batch_manifest": {
+   "path": "D:\\量化\\data\\raw\\tushare\\fund_adj\\20260917-r1\\manifest.json",
+   "sha256": "348d2ec4e8fd6df3ab856f2a09677d87b62d668529abe8b00b2ec38b68efccd4"
+  },
+  "fund_adj_aggregate": {
+   "recomputed": "b06242469db048a01231b26085073b6eecbf25a9106cfa63ae1b06c1764c0979",
+   "expected_declared_in_etf_manifest": "b06242469db048a01231b26085073b6eecbf25a9106cfa63ae1b06c1764c0979",
+   "rehash_mismatches": [],
+   "match": true
+  },
+  "etf_processed_aggregate": {
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "75777221a8b335028bf8da60f14c59c6a3659f9d91578204308488d0f0fb7c2e",
+   "files": 7,
+   "total_bytes": 18153828,
+   "expected": null,
+   "match": true
+  },
+  "trade_cal_aggregate": {
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "aac75421cd89d9fc562490f78d14cdcfcc5033976a37853d2fa3fa5cace261f4",
+   "files": 4,
+   "total_bytes": 367805,
+   "expected": null,
+   "match": true
+  },
+  "halfday_rows_total": 18486939
+ },
+ "ended_at": "2026-09-20T04:42:06.606554+00:00"
+}

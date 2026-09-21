@@ -1,0 +1,60 @@
+[    0.0s] account-risk dynamic replay; curves=D0,D1,D2,D3; window=2015-01-05..2020-12-31
+[    0.0s] == 0. identity pins ==
+[    3.1s]   engine d4b6c3764780e6de OK (frozen dynamic engine); pins OK; python 3.11.15 | rss 0.27 GB
+[    3.1s] == 1. calendar & signal days ==
+[    3.2s]   71 signal days (2015-01-30..2020-11-30)
+[    3.2s] == 2. R16 pool (build_history + signal_pools, verbatim) ==
+[    6.7s]   pool n: min 810 max 2260
+[    6.7s] == 3. dedup: |rho|>=0.6 connected components, rep = max |t| ==
+[    6.7s]   20 clusters, 20 representatives == F3R1 list OK
+[    6.8s] == 4. composite: EW + ICW arms on executable cross-sections ==
+D:\量化\artifacts\runs\20260921T114603-trim-risk-a-230cd\tmp\runner_account_risk.py:271: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  f = f.filter(pl.col("signal_date").is_in(pl.Series(sig_days)))
+D:\量化\artifacts\runs\20260921T114603-trim-risk-a-230cd\tmp\runner_account_risk.py:294: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  wide = wide.filter(pl.col("signal_date").is_in(pl.Series(sig_days)))
+[    7.6s]   wide frame 319147 rows, 5162 symbols
+D:\量化\artifacts\runs\20260921T114603-trim-risk-a-230cd\tmp\runner_account_risk.py:304: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  have = (have.filter(pl.col("symbol").is_in(pl.Series(sorted(pool_set[t]))))
+[    7.7s]   2015-01-30: pool 1438 -> eligible 1433
+[   11.4s]   2017-12-29: pool 982 -> eligible 982
+[   14.4s]   2020-11-30: pool 1542 -> eligible 1542
+[   14.4s] == 5. seat membership + overlay hosts (one per curve) ==
+[   14.4s]   F3-EW: members/month min 10 max 10
+[   14.4s]   F3-ICW: members/month min 10 max 10
+[   14.4s] == 6. benchmarks: B1(m)_F3 fractional + B3'_F3 random K=10 ==
+[   23.1s]   B1(m)_F3: net +1.66% mdd -64.42% (2937 union symbols)
+[   24.6s]   B3'_F3: mean net -1.89% (seeds 17..36, range -10.14..+5.43%)
+[   24.7s] == 7. band engine market frames ==
+[   36.0s]   frames: panel 505 symbols; daily 700292; half 1340367; limits 698338; rss 3.10 GB
+[   36.1s] == 8. band engine dynamic runs, one pass per curve ==
+[   43.5s]   D0: engine 6.9s; provider calls 2924 injected 2855 (entry 2298 exit 557 overlay 2298); steps 2885 reduced 0; orders 2799 filled 542 expired_halfday 2150 no_anchor 148 override 15 | rss 3.87 GB
+[   51.3s]   D1: engine 7.7s; provider calls 2924 injected 4083 (entry 1839 exit 565 overlay 3518); steps 2885 reduced 246; orders 3972 filled 550 expired_halfday 3313 no_anchor 205 override 15 | rss 3.91 GB
+[   57.7s]   D2: engine 6.4s; provider calls 2924 injected 2547 (entry 1422 exit 568 overlay 1979); steps 2885 reduced 1601; orders 2451 filled 553 expired_halfday 1789 no_anchor 190 override 15 | rss 3.94 GB
+[   63.8s]   D3: engine 6.1s; provider calls 2924 injected 1767 (entry 1040 exit 570 overlay 1197); steps 2885 reduced 2711; orders 1716 filled 555 expired_halfday 1052 no_anchor 145 override 15 | rss 3.95 GB
+[   63.8s] == 8b. D0 carrier parity gate (five-frame comparison) ==
+[   63.8s]   fills: 1093 rows, reference 1093 rows, equal=True
+[   63.8s]   events: 6428 rows, reference 6428 rows, equal=True
+[   63.8s]   daily_equity: 1462 rows, reference 1462 rows, equal=True
+[   63.8s]   clips_final: 10 rows, reference 10 rows, equal=True
+[   63.8s] == 9. account-level state trace ==
+[   63.8s]   D0: reduce 0 restore 0 reduced-sessions 0 mean E-ratio 1.000 trims 0 topups 0 fail-closed 0
+[   63.8s]   D1: reduce 41 restore 41 reduced-sessions 123 mean E-ratio 0.953 trims 391 topups 1288 fail-closed 0
+[   63.8s]   D2: reduce 13 restore 12 reduced-sessions 801 mean E-ratio 0.692 trims 152 topups 405 fail-closed 0
+[   63.8s]   D3: reduce 2 restore 1 reduced-sessions 1356 mean E-ratio 0.478 trims 79 topups 78 fail-closed 0
+[   63.8s] == 10. comparison: D0 control vs the three pre-registered schemes ==
+[   64.0s]   D0: net +8.52% mdd -39.50% gross 94.4% cash 5.1% turn 9.93 fills 1093
+[   64.1s]   D1: net +2.68% mdd -45.18% gross 90.5% cash 8.8% turn 14.57 fills 1863
+[   64.2s]   D2: net +4.66% mdd -38.14% gross 65.4% cash 34.2% turn 8.67 fills 1378
+[   64.3s]   D3: net +6.49% mdd -29.86% gross 44.7% cash 55.1% turn 5.35 fills 1192
+[   64.3s]   comparison vs D0: D1 dd -5.68pp / cagr +5.84pp; D2 dd +1.36pp / cagr +3.86pp; D3 dd +9.64pp / cagr +2.04pp
+[   64.3s] == 11. outputs ==
+[   64.6s] == manifest + report written; wall 65s, peak rss 3.95 GB ==

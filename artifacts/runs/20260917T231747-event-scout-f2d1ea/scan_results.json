@@ -1,0 +1,1523 @@
+{
+  "run_id": "20260917T231747-event-scout-f2d1ea",
+  "purpose": "事件类批次只读清点（无因子计算、无回测）",
+  "freeze_rule": "knowledge_date > 20241231 仅统计（研究窗口 2015-2024，2025+ 冻结）",
+  "baostock_pool_codes": 5552,
+  "env": {
+    "python": "3.11.15",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "pandas": "2.3.3"
+  },
+  "batches": {
+    "forecast": {
+      "batch": "forecast",
+      "dir": "forecast/20260909-r1",
+      "files": 97,
+      "empty_files": 0,
+      "rows_total": 50406,
+      "schema": {
+        "ann_date": 50406,
+        "change_reason": 48582,
+        "end_date": 50406,
+        "first_ann_date": 50375,
+        "last_parent_net": 49815,
+        "net_profit_max": 47896,
+        "net_profit_min": 47904,
+        "p_change_max": 47985,
+        "p_change_min": 48008,
+        "summary": 50391,
+        "ts_code": 50406,
+        "type": 50406,
+        "update_flag": 50406
+      },
+      "know_date_col": "ann_date",
+      "know_missing": 0,
+      "know_missing_rate": 0.0,
+      "know_range": [
+        "20180903",
+        "20260904"
+      ],
+      "know_frozen_gt20241231": 10327,
+      "know_window_2015_2024": 40079,
+      "event_date_col": "end_date",
+      "event_range": [
+        "20180930",
+        "20271231"
+      ],
+      "event_frozen_gt20241231": 7366,
+      "lag_know_minus_event": {
+        "n": 50406,
+        "median": 15.0,
+        "p10": -38.0,
+        "p90": 31.0,
+        "share_lag_le_0": 0.173035,
+        "share_lag_lt_0": 0.168274
+      },
+      "extra_lags": {
+        "first_ann_date": {
+          "n": 50375,
+          "median": 0.0,
+          "p10": 0.0,
+          "p90": 0.0,
+          "share_lag_le_0": 0.937965,
+          "share_lag_lt_0": 9.9e-05
+        }
+      },
+      "text_fields": {
+        "type": {
+          "nonnull": 50406,
+          "avg_len": 2.0,
+          "max_len": 3
+        },
+        "summary": {
+          "nonnull": 50391,
+          "avg_len": 17.1,
+          "max_len": 106
+        },
+        "change_reason": {
+          "nonnull": 48582,
+          "avg_len": 217.2,
+          "max_len": 1870
+        }
+      },
+      "categorical_top": {
+        "type": {
+          "预增": 14244,
+          "略增": 5478,
+          "略减": 2577,
+          "预减": 6445,
+          "首亏": 6987,
+          "续盈": 986,
+          "扭亏": 5195,
+          "续亏": 7413,
+          "不确定": 654,
+          "其他": 10,
+          "增亏": 218,
+          "减亏": 199
+        },
+        "update_flag": {
+          "0": 34444,
+          "1": 15962
+        }
+      },
+      "unique_codes": 5754,
+      "codes_in_baostock_pool": 5341,
+      "codes_bj_not_in_pool": 394,
+      "sample_file": "chunk_202001.csv",
+      "samples": [
+        {
+          "ts_code": "300146.SZ",
+          "ann_date": "20200101",
+          "end_date": "20191231",
+          "type": "首亏",
+          "p_change_min": "-136.9193",
+          "p_change_max": "-136.4204",
+          "net_profit_min": "-37000.0",
+          "net_profit_max": "-36500.0",
+          "last_parent_net": "100218.5",
+          "first_ann_date": "20200101",
+          "summary": "预计净利润-37000~-36500万",
+          "change_reason": "报告期内，公司对2019年度相关经营情况进行了全面评估，并基于审慎原则，进行了相关的会计处理。1",
+          "update_flag": "0"
+        },
+        {
+          "ts_code": "830974.BJ",
+          "ann_date": "20200101",
+          "end_date": "20191231",
+          "type": "预增",
+          "p_change_min": "160.13",
+          "p_change_max": "187.8",
+          "net_profit_min": "4700.0",
+          "net_profit_max": "5200.0",
+          "last_parent_net": "1806.8",
+          "first_ann_date": "20200101",
+          "summary": "预计净利润4700-5200万",
+          "change_reason": "公司2019年度预计实现营业收入在206,669.42万元左右，较上年同期的85,382.34万",
+          "update_flag": "0"
+        },
+        {
+          "ts_code": "600519.SH",
+          "ann_date": "20200102",
+          "end_date": "20191231",
+          "type": "略增",
+          "p_change_min": "15.0",
+          "p_change_max": "15.0",
+          "net_profit_min": "4050000.0",
+          "net_profit_max": "4050000.0",
+          "last_parent_net": "3520362.5263",
+          "first_ann_date": "20200102",
+          "summary": "预计净利润4050000万",
+          "change_reason": "贵州茅台酒股份有限公司初步核算，2019年度生产茅台酒基酒约4.99万吨，系列酒基酒约2.51万",
+          "update_flag": "1"
+        },
+        {
+          "ts_code": "000661.SZ",
+          "ann_date": "20200103",
+          "end_date": "20191231",
+          "type": "略增",
+          "p_change_min": "20.1403",
+          "p_change_max": "35.1578",
+          "net_profit_min": "161039.0",
+          "net_profit_max": "181169.0",
+          "last_parent_net": "134042.67",
+          "first_ann_date": "20200103",
+          "summary": "预计净利润161039-181169万",
+          "change_reason": "1、控股骨干制药企业收入增长；2、房地产开发项目结算收入同比上升；3、2019年内实施重大资产重",
+          "update_flag": "0"
+        },
+        {
+          "ts_code": "002861.SZ",
+          "ann_date": "20200103",
+          "end_date": "20191231",
+          "type": "略增",
+          "p_change_min": "7.77",
+          "p_change_max": "13.97",
+          "net_profit_min": "6950.0",
+          "net_profit_max": "7350.0",
+          "last_parent_net": "6449.01",
+          "first_ann_date": "20200103",
+          "summary": "预计净利润6950-7350万",
+          "change_reason": "报告期内，公司业绩相较于上年同期未发生大幅变动、亏损、扭亏为盈的情况。公司2019年下半年业绩相",
+          "update_flag": "0"
+        }
+      ],
+      "elapsed_s": 1.7
+    },
+    "express": {
+      "batch": "express",
+      "dir": "express/20260909-r1",
+      "files": 31,
+      "empty_files": 7,
+      "rows_total": 8488,
+      "schema": {
+        "ann_date": 8488,
+        "bps": 62,
+        "diluted_eps": 8454,
+        "diluted_roe": 8396,
+        "end_date": 8488,
+        "n_income": 8457,
+        "operate_profit": 7838,
+        "perf_summary": 0,
+        "revenue": 8483,
+        "total_assets": 8458,
+        "total_hldr_eqy_exc_min_int": 8447,
+        "total_profit": 7847,
+        "ts_code": 8488,
+        "update_flag": 8488,
+        "yoy_net_profit": 8455
+      },
+      "know_date_col": "ann_date",
+      "know_missing": 0,
+      "know_missing_rate": 0.0,
+      "know_range": [
+        "20190104",
+        "20260825"
+      ],
+      "know_frozen_gt20241231": 174,
+      "know_window_2015_2024": 8314,
+      "event_date_col": "end_date",
+      "event_range": [
+        "20181231",
+        "20260630"
+      ],
+      "event_frozen_gt20241231": 174,
+      "lag_know_minus_event": {
+        "n": 8488,
+        "median": 58.0,
+        "p10": 22.0,
+        "p90": 101.30000000000018,
+        "share_lag_le_0": 0.0,
+        "share_lag_lt_0": 0.0
+      },
+      "extra_lags": {},
+      "text_fields": {
+        "perf_summary": {
+          "nonnull": 0,
+          "avg_len": 0.0,
+          "max_len": 0
+        }
+      },
+      "categorical_top": {
+        "update_flag": {
+          "0": 8487,
+          "1": 1
+        }
+      },
+      "unique_codes": 3741,
+      "codes_in_baostock_pool": 3254,
+      "codes_bj_not_in_pool": 486,
+      "sample_file": "chunk_period_20200630.csv",
+      "samples": [
+        {
+          "ts_code": "000028.SZ",
+          "ann_date": "20200818",
+          "end_date": "20200630",
+          "revenue": "27169940200.0",
+          "operate_profit": "1014108200.0",
+          "total_profit": "1016319300.0",
+          "n_income": "643451600.0",
+          "total_assets": "37669850200.0",
+          "total_hldr_eqy_exc_min_int": "13199983100.0",
+          "diluted_eps": "1.5",
+          "diluted_roe": "4.91",
+          "yoy_net_profit": "649154400.0",
+          "bps": null,
+          "perf_summary": null,
+          "update_flag": "0"
+        },
+        {
+          "ts_code": "000048.SZ",
+          "ann_date": "20200824",
+          "end_date": "20200630",
+          "revenue": "834061185.07",
+          "operate_profit": "193741186.95",
+          "total_profit": "190554215.25",
+          "n_income": "138093760.86",
+          "total_assets": "7399585720.16",
+          "total_hldr_eqy_exc_min_int": "2021013748.5",
+          "diluted_eps": "0.3431",
+          "diluted_roe": "6.65",
+          "yoy_net_profit": "149692595.48",
+          "bps": null,
+          "perf_summary": null,
+          "update_flag": "0"
+        },
+        {
+          "ts_code": "000058.SZ",
+          "ann_date": "20200711",
+          "end_date": "20200630",
+          "revenue": "776893050.45",
+          "operate_profit": "129858510.48",
+          "total_profit": "131904183.97",
+          "n_income": "57290505.98",
+          "total_assets": "5929469481.37",
+          "total_hldr_eqy_exc_min_int": "1955942226.55",
+          "diluted_eps": "0.0464",
+          "diluted_roe": "2.97",
+          "yoy_net_profit": "83287552.02",
+          "bps": null,
+          "perf_summary": null,
+          "update_flag": "0"
+        },
+        {
+          "ts_code": "000411.SZ",
+          "ann_date": "20200805",
+          "end_date": "20200630",
+          "revenue": "11865801499.47",
+          "operate_profit": "236306801.96",
+          "total_profit": "243092197.55",
+          "n_income": "80080367.74",
+          "total_assets": "11347980059.14",
+          "total_hldr_eqy_exc_min_int": "1586643904.19",
+          "diluted_eps": "0.32",
+          "diluted_roe": "5.16",
+          "yoy_net_profit": "97336813.74",
+          "bps": null,
+          "perf_summary": null,
+          "update_flag": "0"
+        },
+        {
+          "ts_code": "000498.SZ",
+          "ann_date": "20200715",
+          "end_date": "20200630",
+          "revenue": "11214802200.0",
+          "operate_profit": "690752300.0",
+          "total_profit": "690385700.0",
+          "n_income": "400255600.0",
+          "total_assets": "32667218600.0",
+          "total_hldr_eqy_exc_min_int": "5690792700.0",
+          "diluted_eps": "0.3573",
+          "diluted_roe": "7.07",
+          "yoy_net_profit": "181336600.0",
+          "bps": null,
+          "perf_summary": null,
+          "update_flag": "0"
+        }
+      ],
+      "elapsed_s": 0.2
+    },
+    "repurchase": {
+      "batch": "repurchase",
+      "dir": "repurchase/20260909-r3",
+      "files": 129,
+      "empty_files": 0,
+      "rows_total": 61718,
+      "schema": {
+        "amount": 58222,
+        "ann_date": 61718,
+        "end_date": 38941,
+        "exp_date": 5384,
+        "high_limit": 54695,
+        "low_limit": 43308,
+        "proc": 61718,
+        "ts_code": 61718,
+        "vol": 38862
+      },
+      "know_date_col": "ann_date",
+      "know_missing": 0,
+      "know_missing_rate": 0.0,
+      "know_range": [
+        "20160104",
+        "20260909"
+      ],
+      "know_frozen_gt20241231": 12625,
+      "know_window_2015_2024": 49093,
+      "event_date_col": "exp_date",
+      "event_range": [
+        "20160618",
+        "20270917"
+      ],
+      "event_frozen_gt20241231": 2209,
+      "lag_know_minus_event": {
+        "n": 5384,
+        "median": -364.0,
+        "p10": -382.0,
+        "p90": -91.0,
+        "share_lag_le_0": 0.999814,
+        "share_lag_lt_0": 0.999814
+      },
+      "extra_lags": {},
+      "text_fields": {
+        "proc": {
+          "nonnull": 61718,
+          "avg_len": 2.5,
+          "max_len": 6
+        }
+      },
+      "categorical_top": {
+        "proc": {
+          "完成": 37106,
+          "预案": 15482,
+          "股东大会通过": 7296,
+          "停止": 31,
+          "实施": 1803
+        }
+      },
+      "unique_codes": 3706,
+      "codes_in_baostock_pool": 3463,
+      "codes_bj_not_in_pool": 142,
+      "sample_file": "chunk_202001.csv",
+      "samples": [
+        {
+          "ts_code": "300199.SZ",
+          "ann_date": "20200101",
+          "end_date": "20191231",
+          "proc": "完成",
+          "exp_date": null,
+          "vol": "33685704.0",
+          "amount": "318638743.58",
+          "high_limit": "16.0",
+          "low_limit": null
+        },
+        {
+          "ts_code": "400145",
+          "ann_date": "20200101",
+          "end_date": null,
+          "proc": "预案",
+          "exp_date": null,
+          "vol": null,
+          "amount": "15614642.53",
+          "high_limit": "8.54",
+          "low_limit": "6.45"
+        },
+        {
+          "ts_code": "000030.SZ",
+          "ann_date": "20200102",
+          "end_date": "20191231",
+          "proc": "完成",
+          "exp_date": null,
+          "vol": "68106326.0",
+          "amount": "341515561.31",
+          "high_limit": "5.2",
+          "low_limit": null
+        },
+        {
+          "ts_code": "000818.SZ",
+          "ann_date": "20200102",
+          "end_date": "20191230",
+          "proc": "完成",
+          "exp_date": null,
+          "vol": "110000.0",
+          "amount": "665500.0",
+          "high_limit": "6.05",
+          "low_limit": "6.05"
+        },
+        {
+          "ts_code": "002285.SZ",
+          "ann_date": "20200102",
+          "end_date": "20191231",
+          "proc": "完成",
+          "exp_date": null,
+          "vol": "5214300.0",
+          "amount": "19579696.5",
+          "high_limit": "3.755",
+          "low_limit": "3.755"
+        }
+      ],
+      "elapsed_s": 1.7
+    },
+    "share_float": {
+      "batch": "share_float",
+      "dir": "share_float/20260909-r3",
+      "files": 129,
+      "empty_files": 0,
+      "rows_total": 5661143,
+      "schema": {
+        "ann_date": 5661143,
+        "float_date": 5661143,
+        "float_ratio": 5510104,
+        "float_share": 5661141,
+        "holder_name": 5661143,
+        "share_type": 5661143,
+        "ts_code": 5661143
+      },
+      "know_date_col": "ann_date",
+      "know_missing": 0,
+      "know_missing_rate": 0.0,
+      "know_range": [
+        "20160101",
+        "20260909"
+      ],
+      "know_frozen_gt20241231": 1453353,
+      "know_window_2015_2024": 4207790,
+      "event_date_col": "float_date",
+      "event_range": [
+        "20151124",
+        "20340120"
+      ],
+      "event_frozen_gt20241231": 1622054,
+      "lag_know_minus_event": {
+        "n": 5661143,
+        "median": -7.0,
+        "p10": -186.0,
+        "p90": -2.0,
+        "share_lag_le_0": 0.999996,
+        "share_lag_lt_0": 0.999993
+      },
+      "extra_lags": {},
+      "text_fields": {
+        "holder_name": {
+          "nonnull": 5661143,
+          "avg_len": 29.6,
+          "max_len": 106
+        },
+        "share_type": {
+          "nonnull": 5661143,
+          "avg_len": 7.9,
+          "max_len": 8
+        }
+      },
+      "categorical_top": {
+        "share_type": {
+          "定增股份": 54710,
+          "股权分置限售股份": 803,
+          "股权激励限售流通": 39414,
+          "公开增发一般股份": 3686,
+          "其他类型": 5382,
+          "首发原始股": 108085,
+          "首发战略配售股份": 5449063
+        }
+      },
+      "unique_codes": 5054,
+      "codes_in_baostock_pool": 4580,
+      "codes_bj_not_in_pool": 343,
+      "sample_file": "chunk_202001.csv",
+      "samples": [
+        {
+          "ts_code": "300684.SZ",
+          "ann_date": "20200101",
+          "float_date": "20200106",
+          "float_share": "1200800.0",
+          "float_ratio": "0.4764",
+          "holder_name": "中层核心骨干(46人)",
+          "share_type": "股权激励限售流通"
+        },
+        {
+          "ts_code": "300684.SZ",
+          "ann_date": "20200101",
+          "float_date": "20200106",
+          "float_share": "160000.0",
+          "float_ratio": "0.0635",
+          "holder_name": "程传龙",
+          "share_type": "股权激励限售流通"
+        },
+        {
+          "ts_code": "300684.SZ",
+          "ann_date": "20200101",
+          "float_date": "20200106",
+          "float_share": "160000.0",
+          "float_ratio": "0.0635",
+          "holder_name": "陈曲",
+          "share_type": "股权激励限售流通"
+        },
+        {
+          "ts_code": "300684.SZ",
+          "ann_date": "20200101",
+          "float_date": "20200106",
+          "float_share": "160000.0",
+          "float_ratio": "0.0635",
+          "holder_name": "朱光福",
+          "share_type": "股权激励限售流通"
+        },
+        {
+          "ts_code": "300684.SZ",
+          "ann_date": "20200101",
+          "float_date": "20200106",
+          "float_share": "160000.0",
+          "float_ratio": "0.0635",
+          "holder_name": "陈钰",
+          "share_type": "股权激励限售流通"
+        }
+      ],
+      "elapsed_s": 30.2
+    },
+    "stk_holdertrade": {
+      "batch": "stk_holdertrade",
+      "dir": "stk_holdertrade/20260909-r3",
+      "files": 129,
+      "empty_files": 0,
+      "rows_total": 149108,
+      "schema": {
+        "after_ratio": 123959,
+        "after_share": 130072,
+        "ann_date": 149108,
+        "avg_price": 107694,
+        "change_ratio": 149066,
+        "change_vol": 149108,
+        "holder_name": 149108,
+        "holder_type": 149108,
+        "in_de": 149108,
+        "total_share": 132597,
+        "ts_code": 149108
+      },
+      "know_date_col": "ann_date",
+      "know_missing": 0,
+      "know_missing_rate": 0.0,
+      "know_range": [
+        "20160101",
+        "20260909"
+      ],
+      "know_frozen_gt20241231": 21356,
+      "know_window_2015_2024": 127752,
+      "event_date_col": null,
+      "event_range": null,
+      "event_frozen_gt20241231": null,
+      "lag_know_minus_event": null,
+      "extra_lags": {},
+      "text_fields": {
+        "holder_name": {
+          "nonnull": 149108,
+          "avg_len": 10.2,
+          "max_len": 170
+        },
+        "holder_type": {
+          "nonnull": 149108,
+          "avg_len": 1.0,
+          "max_len": 1
+        },
+        "in_de": {
+          "nonnull": 149108,
+          "avg_len": 2.0,
+          "max_len": 2
+        }
+      },
+      "categorical_top": {
+        "holder_type": {
+          "C": 77754,
+          "G": 41169,
+          "P": 30185
+        },
+        "in_de": {
+          "IN": 34000,
+          "DE": 115108
+        }
+      },
+      "unique_codes": 5354,
+      "codes_in_baostock_pool": 4932,
+      "codes_bj_not_in_pool": 422,
+      "sample_file": "chunk_202001.csv",
+      "samples": [
+        {
+          "ts_code": "002065.SZ",
+          "ann_date": "20200101",
+          "holder_name": "览海医疗产业投资股份有限公司",
+          "holder_type": "C",
+          "in_de": "DE",
+          "change_vol": "9239510.0",
+          "change_ratio": "0.3291",
+          "after_share": "790000.0",
+          "after_ratio": "0.0281",
+          "avg_price": null,
+          "total_share": null
+        },
+        {
+          "ts_code": "300018.SZ",
+          "ann_date": "20200101",
+          "holder_name": "徐福轩",
+          "holder_type": "P",
+          "in_de": "DE",
+          "change_vol": "1500000.0",
+          "change_ratio": "0.4063",
+          "after_share": "4272464.0",
+          "after_ratio": "1.1573",
+          "avg_price": "4.9",
+          "total_share": null
+        },
+        {
+          "ts_code": "300018.SZ",
+          "ann_date": "20200101",
+          "holder_name": "徐福轩",
+          "holder_type": "P",
+          "in_de": "DE",
+          "change_vol": "1000000.0",
+          "change_ratio": "0.2709",
+          "after_share": "5772464.0",
+          "after_ratio": "1.5635",
+          "avg_price": "4.9",
+          "total_share": null
+        },
+        {
+          "ts_code": "300026.SZ",
+          "ann_date": "20200101",
+          "holder_name": "陈瑞强",
+          "holder_type": "G",
+          "in_de": "DE",
+          "change_vol": "120000.0",
+          "change_ratio": "0.0049",
+          "after_share": "11250.0",
+          "after_ratio": "0.0005",
+          "avg_price": "3.43",
+          "total_share": null
+        },
+        {
+          "ts_code": "300131.SZ",
+          "ann_date": "20200101",
+          "holder_name": "胡庆周",
+          "holder_type": "G",
+          "in_de": "DE",
+          "change_vol": "10000000.0",
+          "change_ratio": "1.2693",
+          "after_share": "831770.0",
+          "after_ratio": "0.1056",
+          "avg_price": "4.7",
+          "total_share": null
+        }
+      ],
+      "elapsed_s": 1.8
+    },
+    "top_list": {
+      "batch": "top_list",
+      "dir": "top_list/20260909-r1",
+      "files": 1866,
+      "empty_files": 1,
+      "rows_total": 141985,
+      "schema": {
+        "amount": 141985,
+        "amount_rate": 141830,
+        "close": 141933,
+        "float_values": 135366,
+        "l_amount": 141830,
+        "l_buy": 141812,
+        "l_sell": 141133,
+        "name": 141985,
+        "net_amount": 141830,
+        "net_rate": 141830,
+        "pct_change": 141927,
+        "reason": 141985,
+        "trade_date": 141985,
+        "ts_code": 141985,
+        "turnover_rate": 140413
+      },
+      "know_date_col": "trade_date",
+      "know_missing": 0,
+      "know_missing_rate": 0.0,
+      "know_range": [
+        "20190102",
+        "20260908"
+      ],
+      "know_frozen_gt20241231": 31823,
+      "know_window_2015_2024": 110162,
+      "event_date_col": "trade_date",
+      "event_range": [
+        "20190102",
+        "20260908"
+      ],
+      "event_frozen_gt20241231": 31823,
+      "lag_know_minus_event": {
+        "n": 141985,
+        "median": 0.0,
+        "p10": 0.0,
+        "p90": 0.0,
+        "share_lag_le_0": 1.0,
+        "share_lag_lt_0": 0.0
+      },
+      "extra_lags": {},
+      "text_fields": {
+        "reason": {
+          "nonnull": 141985,
+          "avg_len": 22.8,
+          "max_len": 63
+        },
+        "name": {
+          "nonnull": 141985,
+          "avg_len": 3.9,
+          "max_len": 6
+        }
+      },
+      "categorical_top": {
+        "reason": {
+          "日涨幅偏离值达到7%的前五只证券": 6178,
+          "日跌幅偏离值达到7%的前五只证券": 3771,
+          "日换手率达到20%的前五只证券": 4102,
+          "连续三个交易日内，涨幅偏离值累计达到20%的证券": 11161,
+          "有价格涨跌幅限制的日收盘价格涨幅偏离值达到7%的前三只证券": 2518,
+          "非ST、*ST和S证券连续三个交易日内收盘价格涨幅偏离值累计达到20%的证券": 8996,
+          "有价格涨跌幅限制的日收盘价格跌幅偏离值达到7%的前三只证券": 1823,
+          "有价格涨跌幅限制的日换手率达到20%的前三只证券": 1646,
+          "连续三个交易日内，跌幅偏离值累计达到12%的ST证券、*ST证券和未完成股改证券": 1483,
+          "日振幅值达到15%的前五只证券": 2059,
+          "连续三个交易日内，跌幅偏离值累计达到20%的证券": 1862,
+          "连续三个交易日内，涨幅偏离值累计达到12%的ST证券、*ST证券": 601,
+          "ST、*ST和S证券连续三个交易日内收盘价格涨幅偏离值累计达到15%的证券": 502,
+          "有价格涨跌幅限制的日价格振幅达到15%的前三只证券": 987,
+          "单只标的证券的当日融资买入数量达到当日该证券总交易量的50％以上": 553,
+          "ST、*ST和S证券连续三个交易日内收盘价格跌幅偏离值累计达到15%的证券": 471,
+          "无价格涨跌幅限制的证券": 461,
+          "非ST、*ST和S证券连续三个交易日内收盘价格跌幅偏离值累计达到20%的证券": 1656,
+          "连续三个交易日内，涨幅偏离值累计达到12%的ST证券、*ST证券和未完成股改证券": 1787,
+          "连续三个交易日内，日均换手率与前五个交易日的日均换手率的比值达到30倍，且换手率累计达20%的证券": 70,
+          "连续三个交易日内，跌幅偏离值累计达到12%的ST证券、*ST证券": 623,
+          "当日无价格涨跌幅限制的A股，出现异常波动停牌的": 79,
+          "退市整理期": 1223,
+          "日价格跌幅偏离值达到-9.97%": 7,
+          "异常期间价格涨幅偏离值累计达到21.37%": 5,
+          "日价格涨幅偏离值达到10.03%": 5,
+          "日价格涨幅偏离值达到10.21%": 4,
+          "异常期间价格涨幅偏离值累计达到21.66%": 3,
+          "退市整理的证券": 551,
+          "日价格涨幅偏离值达到8.46%": 4,
+          "异常期间价格跌幅偏离值累计达到-15.18%": 2,
+          "日价格跌幅偏离值达到-10.00%": 6,
+          "日价格涨幅偏离值达到9.84%": 6,
+          "日价格跌幅偏离值达到-10.16%": 3,
+          "异常期间价格涨幅偏离值累计达到21.01%": 3,
+          "日价格跌幅偏离值达到-8.51%": 4,
+          "日价格涨幅偏离值达到11.49%": 4,
+          "异常期间价格涨幅偏离值累计达到20.41%": 4,
+          "当日无价格涨跌幅限制的A股,出现异常波动停牌的": 1,
+          "新股首日交易信息": 48,
+          "有价格涨跌幅限制的日换手率达到30%的前五只证券": 676,
+          "异常期间价格跌幅偏离值累计达到-15.66%": 2,
+          "有价格涨跌幅限制的日收盘价格涨幅达到15%的前五只证券": 1754,
+          "异常期间价格跌幅偏离值累计达到-16.85%": 2,
+          "异常期间价格跌幅偏离值累计达到-15.44%": 2,
+          "异常期间价格跌幅偏离值累计达到-15.36%": 2,
+          "异常期间价格跌幅偏离值累计达到-15.04%": 2,
+          "异常期间价格跌幅偏离值累计达到-17.44%": 2,
+          "异常期间价格涨幅偏离值累计达到15.00%": 2,
+          "异常期间价格涨幅偏离值累计达到15.72%": 2,
+          "异常期间价格跌幅偏离值累计达到-15.87%": 2,
+          "异常期间价格跌幅偏离值累计达到-15.24%": 2,
+          "异常期间价格跌幅偏离值累计达到-15.41%": 2,
+          "连续三个交易日内,涨幅偏离值累计达到12%的ST证券、*ST证券": 12,
+          "有价格涨跌幅限制的连续3个交易日内收盘价格涨幅偏离值累计达到30%的证券": 285,
+          "连续三个交易日内,涨幅偏离值累计达到12%的ST证券、*ST证券和未完成股改证券": 14,
+          "异常期间价格涨幅偏离值累计达到15.15%": 1,
+          "连续三个交易日内,跌幅偏离值累计达到12%的ST证券、*ST证券": 9,
+          "异常期间价格涨幅偏离值累计达到16.41%": 2,
+          "有价格涨跌幅限制的日收盘价格跌幅达到15%的前五只证券": 180,
+          "连续三个交易日内,跌幅偏离值累计达到12%的ST证券、*ST证券和未完成股改证券": 6,
+          "日价格涨幅偏离值达到11.19%": 9,
+          "日价格涨幅偏离值达到10.62%": 5,
+          "日价格跌幅偏离值达到-9.38%": 4,
+          "日价格跌幅偏离值达到-9.54%": 3,
+          "日价格涨幅偏离值达到10.46%": 3,
+          "日换手率达到25.58%": 2,
+          "无价格涨跌幅限制": 33,
+          "日价格振幅达到16.54%": 2,
+          "日涨幅达到15%的前5只证券": 5485,
+          "日涨幅偏离值达到7%的前5只证券": 7761,
+          "日跌幅偏离值达到7%的前5只证券": 6318,
+          "日换手率达到30%的前5只证券": 5722,
+          "日换手率达到20%的前5只证券": 5598,
+          "日振幅值达到15%的前5只证券": 2905,
+          "异常期间价格涨幅偏离值累计达到36.44%": 4,
+          "连续三个交易日内，涨幅偏离值累计达到30%的证券": 2078,
+          "严重异常期间日收盘价格涨幅偏离值累计达到108.96%": 3,
+          "日跌幅达到15%的前5只证券": 646,
+          "日振幅值达到30%的前5只证券": 67,
+          "严重异常期间3次出现正向异常波动的证券": 3,
+          "连续三个交易日内，跌幅偏离值累计达到30%的证券": 231,
+          "严重异常期间日收盘价格跌幅偏离值累计达到50%的证券": 42,
+          "单只标的证券的当日融券卖出数量达到当日该证券总交易量的50％以上": 13,
+          "严重异常期间日收盘价格跌幅偏离值累计达到70%的证券": 4,
+          "异常期间价格涨幅偏离值累计达到20.18%": 13,
+          "日价格涨幅偏离值达到10.36%": 5,
+          "日价格涨幅达到20.00%": 42,
+          "日价格振幅达到17.95%": 2,
+          "日换手率达到37.24%": 2,
+          "日价格涨幅偏离值达到7.56%": 5,
+          "日价格跌幅偏离值达到-12.44%": 3,
+          "异常期间价格涨幅偏离值累计达到27.48%": 2,
+          "日价格涨幅偏离值达到10.07%": 4,
+          "日价格跌幅偏离值达到-9.93%": 4,
+          "异常期间价格涨幅偏离值累计达到27.02%": 4,
+          "异常期间价格跌幅偏离值累计达到-30.43%": 2,
+          "日价格涨幅偏离值达到9.80%": 11,
+          "日价格跌幅偏离值达到-10.20%": 4,
+          "严重异常期间日收盘价格跌幅偏离值累计达到-50.81%": 3,
+          "严重异常期间日收盘价格跌幅偏离值累计达到-70.49%": 2,
+          "日价格涨幅偏离值达到9.52%": 5,
+          "日价格跌幅达到-20.00%": 17,
+          "异常期间价格涨幅偏离值累计达到14.39%": 2,
+          "异常期间价格跌幅偏离值累计达到-41.19%": 2,
+          "日价格涨幅偏离值达到9.55%": 6,
+          "日价格跌幅偏离值达到-10.45%": 4,
+          "异常期间价格涨幅偏离值累计达到13.86%": 4,
+          "日价格涨幅偏离值达到10.75%": 6,
+          "异常期间价格涨幅偏离值累计达到20.30%": 5,
+          "日价格跌幅偏离值达到-9.25%": 2,
+          "日价格涨幅偏离值达到9.97%": 7,
+          "异常期间价格涨幅偏离值累计达到20.72%": 4,
+          "日价格跌幅偏离值达到-10.03%": 4,
+          "异常期间价格跌幅偏离值累计达到-14.73%": 2,
+          "异常期间价格跌幅偏离值累计达到-12.70%": 2,
+          "日价格涨幅偏离值达到9.17%": 6,
+          "日价格跌幅偏离值达到-10.83%": 5,
+          "异常期间价格跌幅偏离值累计达到-20.86%": 3,
+          "日价格跌幅偏离值达到-10.21%": 6,
+          "异常期间价格涨幅偏离值累计达到13.93%": 4,
+          "日价格跌幅偏离值达到-9.71%": 6,
+          "日价格涨幅偏离值达到10.29%": 4,
+          "异常期间价格跌幅偏离值累计达到-35.82%": 2,
+          "日价格跌幅偏离值达到-9.03%": 5,
+          "日价格涨幅偏离值达到10.97%": 5,
+          "异常期间价格涨幅偏离值累计达到21.26%": 5,
+          "异常期间价格涨幅偏离值累计达到16.06%": 4,
+          "日价格涨幅偏离值达到11.43%": 6,
+          "异常期间价格涨幅偏离值累计达到20.97%": 4,
+          "连续三个交易日内，涨幅偏离值累计达20%的证券": 24,
+          "跌幅偏离值达7%的证券": 9,
+          "换手率达20%的证券": 9,
+          "涨幅偏离值达7%的证券": 9,
+          "振幅值达15%的证券": 6,
+          "当日收盘价涨幅达到20%的前5只股票": 264,
+          "精选层股票最近3个有成交的交易日以内收盘价涨跌幅偏离值累计达到+40%(-40%)": 3,
+          "异常期间价格涨幅偏离值累计达到20.52%": 10,
+          "日价格跌幅偏离值达到-9.52%": 6,
+          "日价格涨幅偏离值达到10.48%": 4,
+          "日价格振幅达到15.51%": 2,
+          "有价格涨跌幅限制的日收盘价格涨幅偏离值达到7%的前五只证券": 6284,
+          "有价格涨跌幅限制的日收盘价格跌幅偏离值达到7%的前五只证券": 4947,
+          "有价格涨跌幅限制的日换手率达到20%的前五只证券": 4778,
+          "有价格涨跌幅限制的日价格振幅达到15%的前五只证券": 2296,
+          "日价格涨幅偏离值达到9.94%": 6,
+          "日价格跌幅偏离值达到-10.06%": 5,
+          "异常期间价格涨幅偏离值累计达到23.55%": 2,
+          "日换手率达到23.94%": 2,
+          "日价格涨幅达到16.00%": 1,
+          "当日换手率达到20%的前5只股票": 2705,
+          "日价格涨幅偏离值达到11.22%": 4,
+          "异常期间价格涨幅偏离值累计达到16.13%": 4,
+          "异常期间价格涨幅偏离值累计达到14.32%": 2,
+          "异常期间价格涨幅偏离值累计达到12.29%": 2,
+          "异常期间价格涨幅偏离值累计达到20.51%": 2,
+          "异常期间价格涨幅偏离值累计达到29.20%": 4,
+          "日价格涨幅偏离值达到10.24%": 4,
+          "日价格跌幅偏离值达到-9.76%": 3,
+          "日换手率达到47.96%": 2,
+          "向不特定对象发行的可转债上市首日交易公开信息": 34,
+          "上市首日的可转债": 13,
+          "当日价格振幅达到30%的前5只股票": 162,
+          "有价格涨跌幅限制的连续3个交易日内收盘价格跌幅偏离值累计达到30%的证券": 95,
+          "连续三个交易日内,涨幅偏离值累计达到20%的证券": 4,
+          "连续三个交易日内,跌幅偏离值累计达到20%的证券": 4,
+          "非上市首日,当日价格振幅达30%的前五只可转债": 1,
+          "ST、*ST证券连续三个交易日内收盘价格跌幅偏离值累计达到12%的证券": 473,
+          "严重异常期间4次出现负向异常波动的证券": 15,
+          "ST、*ST证券连续三个交易日内收盘价格涨幅偏离值累计达到12%的证券": 388,
+          "上市首日可转债": 11,
+          "退市整理期的可转债": 1,
+          "日涨幅达到15%的前5只可转债": 9,
+          "连续三个交易日内，涨幅偏离值累计达到30%的可转债": 1,
+          "日跌幅达到15%的前5只可转债": 10,
+          "有价格涨跌幅限制的连续10个交易日内收盘价格涨幅偏离值累计达到100%的证券": 4,
+          "严重异常期间日收盘价格涨幅偏离值累计达到100%的证券": 36,
+          "北交所股票最近3个有成交的交易日以内收盘价涨跌幅偏离值累计达到+40%(-40%)": 202,
+          "当日收盘价跌幅达到-20%的前5只股票": 15,
+          "有价格涨跌幅限制的连续10个交易日内收盘价格跌幅偏离值累计达到-50%的证券": 7,
+          "有价格涨跌幅限制的日价格振幅达到30%的前五只证券": 15,
+          "连续10个交易日内4次出现同正向异常波动的证券": 4,
+          "连续10个交易日内4次出现同负向异常波动的证券": 7,
+          "非上市首日,当日收盘价涨幅达15%的前五只可转债": 9,
+          "单只标的证券的当日融资买入数量达到当日该证券总交易量的50%以上": 10,
+          "非上市首日,当日收盘价跌幅达15%的前五只可转债": 6,
+          "非S证券连续三个交易日内收盘价格跌幅偏离值累计达到20%的证券": 90,
+          "非S证券连续三个交易日内收盘价格涨幅偏离值累计达到20%的证券": 296,
+          "北交所股票连续3个交易日内日收盘价涨跌幅偏离值累计达到+40%(-40%)": 2
+        }
+      },
+      "unique_codes": 6416,
+      "codes_in_baostock_pool": 5355,
+      "codes_bj_not_in_pool": 469,
+      "sample_file": "chunk_20200102.csv",
+      "samples": [
+        {
+          "trade_date": "20200102",
+          "ts_code": "000018.SZ",
+          "name": "神城A退",
+          "close": "0.27",
+          "pct_change": "0.0",
+          "turnover_rate": "4.54",
+          "amount": "12053932.0",
+          "l_sell": "5396030.93",
+          "l_buy": "8213166.45",
+          "l_amount": "13609197.38",
+          "net_amount": "2817135.52",
+          "net_rate": "23.37",
+          "amount_rate": "112.9",
+          "float_values": "306339813.69",
+          "reason": "退市整理期"
+        },
+        {
+          "trade_date": "20200102",
+          "ts_code": "000716.SZ",
+          "name": "黑芝麻",
+          "close": "4.58",
+          "pct_change": "10.0962",
+          "turnover_rate": "12.55",
+          "amount": "370965919.0",
+          "l_sell": "29720965.98",
+          "l_buy": "41903319.41",
+          "l_amount": "71624285.39",
+          "net_amount": "12182353.43",
+          "net_rate": "3.28",
+          "amount_rate": "19.31",
+          "float_values": "3045613699.06",
+          "reason": "日涨幅偏离值达到7%的前五只证券"
+        },
+        {
+          "trade_date": "20200102",
+          "ts_code": "000810.SZ",
+          "name": "创维数字",
+          "close": "13.19",
+          "pct_change": "10.0083",
+          "turnover_rate": "5.41",
+          "amount": "692476380.0",
+          "l_sell": "59043157.8",
+          "l_buy": "90924090.02",
+          "l_amount": "149967247.82",
+          "net_amount": "31880932.22",
+          "net_rate": "4.6",
+          "amount_rate": "21.66",
+          "float_values": "12950602172.69",
+          "reason": "日涨幅偏离值达到7%的前五只证券"
+        },
+        {
+          "trade_date": "20200102",
+          "ts_code": "000818.SZ",
+          "name": "航锦科技",
+          "close": "21.98",
+          "pct_change": "10.01",
+          "turnover_rate": "10.42",
+          "amount": "1466103857.0",
+          "l_sell": "220183352.1",
+          "l_buy": "163925528.86",
+          "l_amount": "384108880.96",
+          "net_amount": "-56257823.24",
+          "net_rate": "-3.84",
+          "amount_rate": "26.2",
+          "float_values": "14868864494.96",
+          "reason": "日涨幅偏离值达到7%的前五只证券"
+        },
+        {
+          "trade_date": "20200102",
+          "ts_code": "000927.SZ",
+          "name": "一汽夏利",
+          "close": "5.26",
+          "pct_change": "1.7408",
+          "turnover_rate": "5.66",
+          "amount": "2051281678.0",
+          "l_sell": "104584683.49",
+          "l_buy": "149999926.65",
+          "l_amount": "254584610.14",
+          "net_amount": "45415243.16",
+          "net_rate": "2.21",
+          "amount_rate": "12.41",
+          "float_values": null,
+          "reason": "连续三个交易日内，日均换手率与前五个交易日的日均换手率的比值达到30倍，且换手率累计达20%的证"
+        }
+      ],
+      "elapsed_s": 37.7
+    },
+    "top_inst": {
+      "batch": "top_inst",
+      "dir": "top_inst/20260909-r3",
+      "files": 1866,
+      "empty_files": 0,
+      "rows_total": 1785667,
+      "schema": {
+        "buy": 1519699,
+        "buy_rate": 1509536,
+        "exalter": 1785667,
+        "net_buy": 1785667,
+        "reason": 1785667,
+        "sell": 1519512,
+        "sell_rate": 1509295,
+        "side": 1785667,
+        "trade_date": 1785667,
+        "ts_code": 1785667
+      },
+      "know_date_col": "trade_date",
+      "know_missing": 0,
+      "know_missing_rate": 0.0,
+      "know_range": [
+        "20190102",
+        "20260909"
+      ],
+      "know_frozen_gt20241231": 341394,
+      "know_window_2015_2024": 1444273,
+      "event_date_col": "trade_date",
+      "event_range": [
+        "20190102",
+        "20260909"
+      ],
+      "event_frozen_gt20241231": 341394,
+      "lag_know_minus_event": {
+        "n": 1785667,
+        "median": 0.0,
+        "p10": 0.0,
+        "p90": 0.0,
+        "share_lag_le_0": 1.0,
+        "share_lag_lt_0": 0.0
+      },
+      "extra_lags": {},
+      "text_fields": {
+        "exalter": {
+          "nonnull": 1785667,
+          "avg_len": 18.3,
+          "max_len": 36
+        },
+        "reason": {
+          "nonnull": 1785667,
+          "avg_len": 19.6,
+          "max_len": 63
+        },
+        "side": {
+          "nonnull": 1785667,
+          "avg_len": 1.0,
+          "max_len": 1
+        }
+      },
+      "categorical_top": {
+        "side": {
+          "0": 892259,
+          "1": 893408
+        }
+      },
+      "unique_codes": 6184,
+      "codes_in_baostock_pool": 5353,
+      "codes_bj_not_in_pool": 334,
+      "sample_file": "chunk_20200102.csv",
+      "samples": [
+        {
+          "trade_date": "20200102",
+          "ts_code": "000018.SZ",
+          "exalter": "华福证券有限责任公司长沙劳动西路证券营业部",
+          "buy": "5265000.0",
+          "buy_rate": "43.68",
+          "sell": "0.0",
+          "sell_rate": "0.0",
+          "net_buy": "5265000.0",
+          "side": "0",
+          "reason": "退市整理期"
+        },
+        {
+          "trade_date": "20200102",
+          "ts_code": "000018.SZ",
+          "exalter": "华泰证券股份有限公司杭州求是路证券营业部",
+          "buy": "1210942.98",
+          "buy_rate": "10.05",
+          "sell": "2159784.0",
+          "sell_rate": "17.92",
+          "net_buy": "-948841.02",
+          "side": "0",
+          "reason": "退市整理期"
+        },
+        {
+          "trade_date": "20200102",
+          "ts_code": "000018.SZ",
+          "exalter": "中国银河证券股份有限公司郑州南阳路证券营业部",
+          "buy": "1006749.0",
+          "buy_rate": "8.35",
+          "sell": "0.0",
+          "sell_rate": "0.0",
+          "net_buy": "1006749.0",
+          "side": "0",
+          "reason": "退市整理期"
+        },
+        {
+          "trade_date": "20200102",
+          "ts_code": "000018.SZ",
+          "exalter": "浙商证券股份有限公司杭州萧山永久路证券营业部",
+          "buy": "383400.0",
+          "buy_rate": "3.18",
+          "sell": "0.0",
+          "sell_rate": "0.0",
+          "net_buy": "383400.0",
+          "side": "0",
+          "reason": "退市整理期"
+        },
+        {
+          "trade_date": "20200102",
+          "ts_code": "000018.SZ",
+          "exalter": "广发证券股份有限公司泰州凤凰东路证券营业部",
+          "buy": "347074.47",
+          "buy_rate": "2.88",
+          "sell": "0.0",
+          "sell_rate": "0.0",
+          "net_buy": "347074.47",
+          "side": "0",
+          "reason": "退市整理期"
+        }
+      ],
+      "elapsed_s": 29.5
+    },
+    "margin_detail": {
+      "batch": "margin_detail",
+      "dir": "margin_detail/20260909-r1",
+      "files": 1866,
+      "empty_files": 1,
+      "rows_total": 5474653,
+      "schema": {
+        "rqchl": 5474648,
+        "rqmcl": 5474652,
+        "rqye": 5471507,
+        "rqyl": 5474652,
+        "rzche": 5474648,
+        "rzmre": 5474652,
+        "rzrqye": 5471507,
+        "rzye": 5474652,
+        "trade_date": 5474653,
+        "ts_code": 5474653
+      },
+      "know_date_col": "trade_date",
+      "know_missing": 0,
+      "know_missing_rate": 0.0,
+      "know_range": [
+        "20190102",
+        "20260908"
+      ],
+      "know_frozen_gt20241231": 1730402,
+      "know_window_2015_2024": 3744251,
+      "event_date_col": "trade_date",
+      "event_range": [
+        "20190102",
+        "20260908"
+      ],
+      "event_frozen_gt20241231": 1730402,
+      "lag_know_minus_event": {
+        "n": 5474653,
+        "median": 0.0,
+        "p10": 0.0,
+        "p90": 0.0,
+        "share_lag_le_0": 1.0,
+        "share_lag_lt_0": 0.0
+      },
+      "extra_lags": {},
+      "text_fields": {},
+      "categorical_top": {},
+      "unique_codes": 5168,
+      "codes_in_baostock_pool": 3790,
+      "codes_bj_not_in_pool": 591,
+      "sample_file": "chunk_20200102.csv",
+      "samples": [
+        {
+          "trade_date": "20200102",
+          "ts_code": "000001.SZ",
+          "rzye": "3475768854.0",
+          "rqye": "30823785.0",
+          "rzmre": "272825035.0",
+          "rqyl": "1827136.0",
+          "rzche": "285237966.0",
+          "rqchl": "106378.0",
+          "rqmcl": "410240.0",
+          "rzrqye": "3506592639.0"
+        },
+        {
+          "trade_date": "20200102",
+          "ts_code": "000002.SZ",
+          "rzye": "3624289242.0",
+          "rqye": "91109425.0",
+          "rzmre": "315160976.0",
+          "rqyl": "2798201.0",
+          "rzche": "385630974.0",
+          "rqchl": "203300.0",
+          "rqmcl": "648100.0",
+          "rzrqye": "3715398667.0"
+        },
+        {
+          "trade_date": "20200102",
+          "ts_code": "000006.SZ",
+          "rzye": "557285560.0",
+          "rqye": "419596.0",
+          "rzmre": "12135284.0",
+          "rqyl": "77703.0",
+          "rzche": "14408799.0",
+          "rqchl": "0.0",
+          "rqmcl": "300.0",
+          "rzrqye": "557705156.0"
+        },
+        {
+          "trade_date": "20200102",
+          "ts_code": "000008.SZ",
+          "rzye": "389488407.0",
+          "rqye": "716401.0",
+          "rzmre": "19434763.0",
+          "rqyl": "193100.0",
+          "rzche": "16917293.0",
+          "rqchl": "0.0",
+          "rqmcl": "0.0",
+          "rzrqye": "390204808.0"
+        },
+        {
+          "trade_date": "20200102",
+          "ts_code": "000009.SZ",
+          "rzye": "1471840266.0",
+          "rqye": "41707690.0",
+          "rzmre": "350018713.0",
+          "rqyl": "6262416.0",
+          "rzche": "280428954.0",
+          "rqchl": "1246000.0",
+          "rqmcl": "1844558.0",
+          "rzrqye": "1513547956.0"
+        }
+      ],
+      "elapsed_s": 140.0
+    },
+    "disclosure_date": {
+      "batch": "disclosure_date",
+      "dir": "disclosure_date/20260909-r1",
+      "files": 31,
+      "empty_files": 0,
+      "rows_total": 148313,
+      "schema": {
+        "actual_date": 148135,
+        "ann_date": 148313,
+        "end_date": 148313,
+        "pre_date": 148313,
+        "ts_code": 148313
+      },
+      "know_date_col": "ann_date",
+      "know_missing": 0,
+      "know_missing_rate": 0.0,
+      "know_range": [
+        "20181227",
+        "20260827"
+      ],
+      "know_frozen_gt20241231": 33862,
+      "know_window_2015_2024": 114451,
+      "event_date_col": "actual_date",
+      "event_range": [
+        "20190122",
+        "20260831"
+      ],
+      "event_frozen_gt20241231": 38263,
+      "lag_know_minus_event": {
+        "n": 148135,
+        "median": -35.0,
+        "p10": -114.0,
+        "p90": -23.0,
+        "share_lag_le_0": 0.999959,
+        "share_lag_lt_0": 0.999203
+      },
+      "extra_lags": {
+        "pre_date": {
+          "n": 148313,
+          "median": -35.0,
+          "p10": -114.0,
+          "p90": -23.0,
+          "share_lag_le_0": 0.99996,
+          "share_lag_lt_0": 0.999198
+        },
+        "actual_date": {
+          "n": 148135,
+          "median": -35.0,
+          "p10": -114.0,
+          "p90": -23.0,
+          "share_lag_le_0": 0.999959,
+          "share_lag_lt_0": 0.999203
+        }
+      },
+      "text_fields": {},
+      "categorical_top": {},
+      "unique_codes": 5814,
+      "codes_in_baostock_pool": 5443,
+      "codes_bj_not_in_pool": 354,
+      "sample_file": "chunk_period_20200331.csv",
+      "samples": [
+        {
+          "ts_code": "600396.SH",
+          "ann_date": "20200330",
+          "end_date": "20200331",
+          "pre_date": "20200408",
+          "actual_date": "20200408"
+        },
+        {
+          "ts_code": "002913.SZ",
+          "ann_date": "20200331",
+          "end_date": "20200331",
+          "pre_date": "20200408",
+          "actual_date": "20200408"
+        },
+        {
+          "ts_code": "002007.SZ",
+          "ann_date": "20200331",
+          "end_date": "20200331",
+          "pre_date": "20200408",
+          "actual_date": "20200408"
+        },
+        {
+          "ts_code": "603186.SH",
+          "ann_date": "20200330",
+          "end_date": "20200331",
+          "pre_date": "20200409",
+          "actual_date": "20200409"
+        },
+        {
+          "ts_code": "002838.SZ",
+          "ann_date": "20200331",
+          "end_date": "20200331",
+          "pre_date": "20200409",
+          "actual_date": "20200409"
+        }
+      ],
+      "elapsed_s": 3.6
+    },
+    "index_member_all": {
+      "batch": "index_member_all",
+      "dir": "index_member_all/20260909-r1",
+      "files": 4,
+      "empty_files": 0,
+      "rows_total": 6413,
+      "schema": {
+        "in_date": 5902,
+        "index_code": 511,
+        "industry_code": 511,
+        "industry_name": 511,
+        "is_new": 5902,
+        "is_pub": 511,
+        "l1_code": 5902,
+        "l1_name": 5902,
+        "l2_code": 5902,
+        "l2_name": 5902,
+        "l3_code": 5902,
+        "l3_name": 5902,
+        "level": 511,
+        "name": 5902,
+        "out_date": 0,
+        "parent_code": 511,
+        "src": 511,
+        "ts_code": 5902
+      },
+      "know_date_col": "in_date",
+      "know_missing": 511,
+      "know_missing_rate": 0.079682,
+      "know_range": [
+        "19891101",
+        "20260903"
+      ],
+      "know_frozen_gt20241231": 334,
+      "know_window_2015_2024": 5568,
+      "event_date_col": "out_date",
+      "event_range": [
+        null,
+        null
+      ],
+      "event_frozen_gt20241231": 0,
+      "lag_know_minus_event": null,
+      "extra_lags": {},
+      "text_fields": {
+        "l1_name": {
+          "nonnull": 5902,
+          "avg_len": 3.4,
+          "max_len": 4
+        },
+        "l2_name": {
+          "nonnull": 5902,
+          "avg_len": 4.0,
+          "max_len": 7
+        },
+        "l3_name": {
+          "nonnull": 5902,
+          "avg_len": 4.8,
+          "max_len": 13
+        },
+        "name": {
+          "nonnull": 5902,
+          "avg_len": 4.1,
+          "max_len": 10
+        }
+      },
+      "categorical_top": {
+        "is_new": {
+          "Y": 5902
+        }
+      },
+      "unique_codes": 5902,
+      "codes_in_baostock_pool": 5547,
+      "codes_bj_not_in_pool": 349,
+      "sample_file": "classify_L2_SW2021.csv",
+      "samples": [
+        {
+          "index_code": "801016.SI",
+          "industry_name": "种植业",
+          "level": "L2",
+          "industry_code": "110100",
+          "is_pub": "1",
+          "parent_code": "110000",
+          "src": "SW2021"
+        },
+        {
+          "index_code": "801015.SI",
+          "industry_name": "渔业",
+          "level": "L2",
+          "industry_code": "110200",
+          "is_pub": "1",
+          "parent_code": "110000",
+          "src": "SW2021"
+        },
+        {
+          "index_code": "801011.SI",
+          "industry_name": "林业Ⅱ",
+          "level": "L2",
+          "industry_code": "110300",
+          "is_pub": "0",
+          "parent_code": "110000",
+          "src": "SW2021"
+        },
+        {
+          "index_code": "801014.SI",
+          "industry_name": "饲料",
+          "level": "L2",
+          "industry_code": "110400",
+          "is_pub": "1",
+          "parent_code": "110000",
+          "src": "SW2021"
+        },
+        {
+          "index_code": "801012.SI",
+          "industry_name": "农产品加工",
+          "level": "L2",
+          "industry_code": "110500",
+          "is_pub": "1",
+          "parent_code": "110000",
+          "src": "SW2021"
+        }
+      ],
+      "elapsed_s": 0.2
+    }
+  },
+  "elapsed_s_total": 246.9,
+  "status": "completed"
+}

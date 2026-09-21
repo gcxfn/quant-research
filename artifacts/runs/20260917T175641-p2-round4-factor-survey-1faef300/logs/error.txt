@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2_factor_survey.py", line 97, in main
+    panel = build_factor_panel(daily, eligible, root, start, end, extras)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\factor_survey.py", line 180, in build_factor_panel
+    .select(keep))
+     ^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\dataframe\frame.py", line 10585, in select
+    ._collect_eager(optimizations=QueryOptFlags._eager())
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\lazyframe\frame.py", line 2240, in _collect_eager
+    return _eager_engine().collect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\lazyframe\engine.py", line 443, in collect
+    return wrap_df(ldf.collect(self.name, callback))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: unable to find column "ret_5_adj"; valid columns: ["symbol", "date", "amount", "turn_level", "ret_5", "ret_20", "volatility_20", "volume", "vol_mean_20", "z20", "range_mean_20", "adj_close", "max250_adj", "open", "preclose", "close", "high", "low", "vol_ratio_20", "close_vs_vwap", "intraday_pos", "gap_1", "near52w", "_lg_net", "_net_mf", "mf_lg_net_ratio", "mf_net_ratio", "mf_lg_net_ratio_5", "vr_ts", "circ_mv", "pe_ttm", "pb", "winner_rate", "rzmre", "margin_buy_ratio", "fwd_ret"]

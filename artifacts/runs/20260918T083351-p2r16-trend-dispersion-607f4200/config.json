@@ -1,0 +1,159 @@
+{
+  "experiment_id": "exp-20260918-p2r16-trend-dispersion",
+  "name": "P2-R16 trend + extreme dispersion (R8 closure-clause reserved form)",
+  "prereg": "docs/research/exp-20260918-p2r16-trend-dispersion-prereg.md",
+  "preregistered_at": "2026-09-18T07:40:00+08:00",
+  "frozen_at": "2026-09-18T07:40:00+08:00",
+  "status": "frozen",
+  "authority_chain": {
+    "proposals": [
+      "vendor-4 H-53（exp-20260918-hypomarket-v4）",
+      "H-47 缓冲带附带实测（vendor-4 H-V4-02）",
+      "Q5 过滤定义冻结自 vendor-2 H-V2-10"
+    ],
+    "mechanism_source": "T200-40 逐字复用 R8 已发表 TREND 机制（src 模块 import + 哈希断言；e_low=0.40）；FIX75 锚沿用 R7/R8 锚定臂口径",
+    "datasets": [
+      {
+        "path": "data/processed/baostock-daily-20260917/daily_2015_2024.parquet",
+        "manifest_sha256": "2b89bef9ef6f4ae58b69ca43021552db067b185551c92a05ef6ac71d2be59bd3",
+        "role": "行情/池/ST/停牌/vol20/turn20/Q5"
+      },
+      {
+        "path": "data/raw/tushare/index_daily/20260917-r1",
+        "role": "000300 趋势路径源（若 R8 机制以指数为基准；以 R8 代码实际口径为准并披露）"
+      }
+    ],
+    "freeze_boundary": "2025-01-01 及以后数据不得进入任何计算路径",
+    "user_authorization": "2026-09-18 用户批复'都批准，你自己推进'"
+  },
+  "seed": 17,
+  "universe": {
+    "boards": "沪深主板（剔创业板 300/301/302、科创 688/689、北交所、ST、停牌，历史时点）",
+    "liquidity": "20 日中位成交额 >= 50,000,000 CNY；收盘 >= 2 元；上市满 120 交易日"
+  },
+  "structure": {
+    "membership": "按 20 日中位成交额排名的流动性 top 名单，缓冲带进 K 出 2K（无 alpha 选择）",
+    "exposure_paths": {
+      "T200-40": "R8 已发表 TREND(SMA200) 机制逐字复用，e_low=0.40，月末采样决定次月敞口",
+      "FIX75": "固定 0.75 敞口"
+    },
+    "q5_filter": "开臂剔除 vol20×turn20 双高合成秩截面前 10%（V2-10 冻结定义）",
+    "execution": "月末信号 -> 次月首交易日开盘成交；整手；单票 equity/K；佣金万1最低5元+印花分段；停牌/涨跌停开盘阻断顺延",
+    "capital_cny": 200000
+  },
+  "configs": {
+    "C01": {
+      "K": 20,
+      "path": "T200-40",
+      "filter": "on"
+    },
+    "C02": {
+      "K": 20,
+      "path": "T200-40",
+      "filter": "off"
+    },
+    "C03": {
+      "K": 20,
+      "path": "FIX75",
+      "filter": "on"
+    },
+    "C04": {
+      "K": 20,
+      "path": "FIX75",
+      "filter": "off"
+    },
+    "C05": {
+      "K": 30,
+      "path": "T200-40",
+      "filter": "on"
+    },
+    "C06": {
+      "K": 30,
+      "path": "T200-40",
+      "filter": "off"
+    },
+    "C07": {
+      "K": 30,
+      "path": "FIX75",
+      "filter": "on"
+    },
+    "C08": {
+      "K": 30,
+      "path": "FIX75",
+      "filter": "off"
+    }
+  },
+  "benchmarks": {
+    "B1m": "同池等权月频同费用",
+    "B3prime": "随机 K=20 同计划，种子 17-36 共 20 次，报均值"
+  },
+  "gates": {
+    "dev_window": [
+      "2015-01-05",
+      "2020-12-31"
+    ],
+    "dev": [
+      {
+        "id": 1,
+        "rule": "net_cagr > 0"
+      },
+      {
+        "id": 2,
+        "rule": "net_cagr - B1m.net_cagr >= 0.02（预期最可能败点：唯一败于此且其余全过 -> H-06 机制获证、无策略存活的双值结论）"
+      },
+      {
+        "id": 3,
+        "rule": "优势年 >= 5/6"
+      },
+      {
+        "id": 4,
+        "rule": "max_dd <= 0.20 且 <= B1m.max_dd"
+      },
+      {
+        "id": 5,
+        "rule": "年单边换手 <= 6.0（月频子限严格读法）"
+      },
+      {
+        "id": 6,
+        "rule": "任一日单票权重 <= 0.40"
+      },
+      {
+        "id": 7,
+        "rule": "net_cagr >= B3prime_mean + 0.01"
+      },
+      {
+        "id": 8,
+        "rule": "计划成交率 >= 0.95"
+      }
+    ],
+    "val_window": [
+      "2021-01-01",
+      "2024-12-31"
+    ],
+    "val": [
+      "超额 >= +0.010",
+      "优势年 >= 2/4",
+      "max_dd <= 0.20 且 <= B1m(val).max_dd"
+    ],
+    "val_consumption_note": "本窗第 5 次消费（C08、R11（未用）、R12（如到）、R13（未用）、本轮）——以实际消费为准逐条披露",
+    "priority": [
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "C08"
+    ]
+  },
+  "trials_cumulative_before": 175,
+  "trials_counted_this_round": 8,
+  "trials_cumulative_after": 183,
+  "stop_rule": "dev 0 全过 -> '趋势+极度分散'形态关闭（R8 预留形态测尽），H-06 按证据登记；机制获证条款独立记录；无盈利声称",
+  "limits": {
+    "max_runtime_s": 1800,
+    "max_ram_gb": 8,
+    "smoke": "2015 年 6 个月先行"
+  }
+}

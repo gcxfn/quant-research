@@ -1,0 +1,119 @@
+{
+  "purpose": "quantify minute 15:00 close vs baostock daily close mismatch by exchange/year (data engineering QC)",
+  "run_id": "20260918T032049-halfday-prep-f3mbfd",
+  "checked_at": "2026-09-18T03:38:29",
+  "finding": "2015/2017 年沪市分钟 15:00 收盘与 baostock 日线收盘存在约 60% 标的 ±0.01 级差异（中位 0.01、个别达 1 元）；深市与 2019 年及以后全部一致。与沪市 2018-08 才引入收盘集合竞价一致：早沪市分钟收盘口径与官方收盘价存在口径差。对 11:30 快照无直接影响，但禁止用分钟 15:00 bar 充当 2015–2017 沪市官方收盘价，隔夜昨收建议取 baostock preclose。",
+  "rows": [
+    {
+      "date": "2015-05-29",
+      "exchange": "sh",
+      "n": 941,
+      "mismatch_15h_close": 613,
+      "rate": 0.6514,
+      "median_abs_diff": 0.02,
+      "max_abs_diff": 0.92
+    },
+    {
+      "date": "2015-05-29",
+      "exchange": "sz",
+      "n": 1399,
+      "mismatch_15h_close": 0,
+      "rate": 0.0,
+      "median_abs_diff": 0.0,
+      "max_abs_diff": 0.0
+    },
+    {
+      "date": "2017-06-01",
+      "exchange": "sh",
+      "n": 1277,
+      "mismatch_15h_close": 770,
+      "rate": 0.603,
+      "median_abs_diff": 0.01,
+      "max_abs_diff": 1.04
+    },
+    {
+      "date": "2017-06-01",
+      "exchange": "sz",
+      "n": 1964,
+      "mismatch_15h_close": 0,
+      "rate": 0.0,
+      "median_abs_diff": 0.0,
+      "max_abs_diff": 0.0
+    },
+    {
+      "date": "2019-06-03",
+      "exchange": "sh",
+      "n": 1464,
+      "mismatch_15h_close": 0,
+      "rate": 0.0,
+      "median_abs_diff": 0.0,
+      "max_abs_diff": 0.0
+    },
+    {
+      "date": "2019-06-03",
+      "exchange": "sz",
+      "n": 2147,
+      "mismatch_15h_close": 0,
+      "rate": 0.0,
+      "median_abs_diff": 0.0,
+      "max_abs_diff": 0.0
+    },
+    {
+      "date": "2021-06-01",
+      "exchange": "sh",
+      "n": 1896,
+      "mismatch_15h_close": 0,
+      "rate": 0.0,
+      "median_abs_diff": 0.0,
+      "max_abs_diff": 0.0
+    },
+    {
+      "date": "2021-06-01",
+      "exchange": "sz",
+      "n": 2420,
+      "mismatch_15h_close": 0,
+      "rate": 0.0,
+      "median_abs_diff": 0.0,
+      "max_abs_diff": 0.0
+    },
+    {
+      "date": "2024-06-03",
+      "exchange": "sh",
+      "n": 2268,
+      "mismatch_15h_close": 0,
+      "rate": 0.0,
+      "median_abs_diff": 0.0,
+      "max_abs_diff": 0.0
+    },
+    {
+      "date": "2024-06-03",
+      "exchange": "sz",
+      "n": 2846,
+      "mismatch_15h_close": 0,
+      "rate": 0.0,
+      "median_abs_diff": 0.0,
+      "max_abs_diff": 0.0
+    }
+  ],
+  "snapshot_1130_range_check": [
+    {
+      "date": "2015-06-01",
+      "in_daily_range": 2321,
+      "of": 2321,
+      "rate": 1.0
+    },
+    {
+      "date": "2020-06-01",
+      "in_daily_range": 3836,
+      "of": 3836,
+      "rate": 1.0
+    },
+    {
+      "date": "2024-06-03",
+      "in_daily_range": 5114,
+      "of": 5114,
+      "rate": 1.0
+    }
+  ],
+  "elapsed_seconds": 0.4
+}

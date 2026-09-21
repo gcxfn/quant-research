@@ -1,0 +1,53 @@
+[    0.0s] ETF pm-only smoke; window 2019-01-01..2019-04-30; legs ['sh.511010', 'sh.518880', 'sz.159934']
+[    1.3s]   engine d4b6c3764780e6de OK; etf manifest 8b5b3fe56c0e02fd; etf parquet b7225d50523106f5; fund_daily agg 21b8bb5f0f05a849
+[    1.3s] == 1. data: etf-daily-20260919 (three legs, 2019) ==
+[    1.3s] !! FAIL: null values in the 2019 leg panel
+[    0.0s] ETF pm-only smoke; window 2019-01-01..2019-04-30; legs ['sh.511010', 'sh.518880', 'sz.159934']
+[    0.8s]   engine d4b6c3764780e6de OK; etf manifest 8b5b3fe56c0e02fd; etf parquet b7225d50523106f5; fund_daily agg 21b8bb5f0f05a849
+[    0.8s] == 1. data: etf-daily-20260919 (three legs, 2019) ==
+[    0.8s]   79 days x 3 legs, no nulls, no zero-volume rows; preclose deviations in window: 0
+[    0.9s] == 2. engine frames (EMPTY half-day table: no ETF half-day bar) ==
+[    0.9s]   daily 237 rows / 79 days / 3 legs; halfday 0 rows (empty by contract); limits 0; instruments 3
+[    0.9s] == 3. provider: monthly 20%%-per-leg rebalance (pm decision points) ==
+[    0.9s]   4 monthly rebalance decision points (2019-01-31 .. 2019-04-30)
+[    0.9s] == 4. band engine run: execution_clock='halfday', etf_routing='pm_only' ==
+[    0.0s] ETF pm-only smoke; window 2019-01-01..2019-04-30; legs ['sh.511010', 'sh.518880', 'sz.159934']
+[    0.8s]   engine d4b6c3764780e6de OK; etf manifest 8b5b3fe56c0e02fd; etf parquet b7225d50523106f5; fund_daily agg 21b8bb5f0f05a849
+[    0.8s] == 1. data: etf-daily-20260919 (three legs, 2019) ==
+[    0.9s]   79 days x 3 legs, no nulls, no zero-volume rows; preclose deviations in window: 0
+[    0.9s] == 2. engine frames (EMPTY half-day table: no ETF half-day bar) ==
+[    0.9s]   daily 237 rows / 79 days / 3 legs; halfday 0 rows (empty by contract); limits 0; instruments 3
+[    0.9s] == 3. provider: monthly 20%%-per-leg rebalance (pm decision points) ==
+[    0.9s]   4 monthly rebalance decision points (2019-01-31 .. 2019-04-30)
+[    0.9s] == 4. band engine run: execution_clock='halfday', etf_routing='pm_only' ==
+[    0.9s]   engine 0.0s; fills 6; provider calls 158; injected 8; orders 8; expired_halfday 8; no_anchor None; terminated_cap 0; k3 armed 0
+[    0.9s]   routing: halfday pm-only ETF (etf_routing='pm_only'): ETF pm decisions live the next day's pm session on the REAL daily bar; ETF am decisions are rejected; ETF fallbacks execute at pm opens
+[    0.9s] == 5. link checks (routing / matching / fees / T+0 / ledger) ==
+[    0.9s] == 6. outputs ==
+[    0.0s] ETF pm-only smoke; window 2019-01-01..2019-04-30; legs ['sh.511010', 'sh.518880', 'sz.159934']
+[    0.9s]   engine d4b6c3764780e6de OK; etf manifest 8b5b3fe56c0e02fd; etf parquet b7225d50523106f5; fund_daily agg 21b8bb5f0f05a849
+[    0.9s] == 1. data: etf-daily-20260919 (three legs, 2019) ==
+[    0.9s]   79 days x 3 legs, no nulls, no zero-volume rows; preclose deviations in window: 0
+[    0.9s] == 2. engine frames (EMPTY half-day table: no ETF half-day bar) ==
+[    0.9s]   daily 237 rows / 79 days / 3 legs; halfday 0 rows (empty by contract); limits 0; instruments 3
+[    0.9s] == 3. provider: monthly 20%%-per-leg rebalance (pm decision points) ==
+[    0.9s]   4 monthly rebalance decision points (2019-01-31 .. 2019-04-30)
+[    0.9s] == 4. band engine run: execution_clock='halfday', etf_routing='pm_only' ==
+[    0.9s]   engine 0.0s; fills 6; provider calls 158; injected 8; orders 8; expired_halfday 8; no_anchor None; terminated_cap 0; k3 armed 0
+[    0.9s]   routing: halfday pm-only ETF (etf_routing='pm_only'): ETF pm decisions live the next day's pm session on the REAL daily bar; ETF am decisions are rejected; ETF fallbacks execute at pm opens
+[    0.9s] == 5. link checks (routing / matching / fees / T+0 / ledger) ==
+[    0.9s] == 6. outputs ==
+[    0.0s] ETF pm-only smoke; window 2019-01-01..2019-04-30; legs ['sh.511010', 'sh.518880', 'sz.159934']
+[    0.8s]   engine d4b6c3764780e6de OK; etf manifest 8b5b3fe56c0e02fd; etf parquet b7225d50523106f5; fund_daily agg 21b8bb5f0f05a849
+[    0.8s] == 1. data: etf-daily-20260919 (three legs, 2019) ==
+[    0.9s]   79 days x 3 legs, no nulls, no zero-volume rows; preclose deviations in window: 0
+[    0.9s] == 2. engine frames (EMPTY half-day table: no ETF half-day bar) ==
+[    0.9s]   daily 237 rows / 79 days / 3 legs; halfday 0 rows (empty by contract); limits 0; instruments 3
+[    0.9s] == 3. provider: monthly 20%%-per-leg rebalance (pm decision points) ==
+[    0.9s]   4 monthly rebalance decision points (2019-01-31 .. 2019-04-30)
+[    0.9s] == 4. band engine run: execution_clock='halfday', etf_routing='pm_only' ==
+[    0.9s]   engine 0.0s; fills 6; provider calls 158; injected 8; orders 8; expired_halfday 8; no_anchor None; terminated_cap 0; k3 armed 0
+[    0.9s]   routing: halfday pm-only ETF (etf_routing='pm_only'): ETF pm decisions live the next day's pm session on the REAL daily bar; ETF am decisions are rejected; ETF fallbacks execute at pm opens
+[    0.9s] == 5. link checks (routing / matching / fees / T+0 / ledger) ==
+[    0.9s] == 6. outputs ==
+[    1.0s] == done: 6 fills; failures=0; wall 1s; peak rss 0.38 GB ==

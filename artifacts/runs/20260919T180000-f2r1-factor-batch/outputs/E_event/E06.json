@@ -1,0 +1,58 @@
+{
+ "factor_id": "E06",
+ "name": "expr_rev_yoy",
+ "formula": "最新快报营收/上年同期快报营收-1（同期= end_date-1y，ann<=t）",
+ "source": "express",
+ "fill_policy": "无事件为 null（不入因子帧）",
+ "n_rows": 16269,
+ "t_value": 0.5369516273710057,
+ "coverage_median_symbols": 0.0,
+ "coverage_median_active_months": 1611.0,
+ "pool_median_symbols": 3126.0,
+ "criteria": {
+  "c1_abs_t>=2": false,
+  "c2_mono_consistent>=0.3": true,
+  "c3_2015_non_disaster": true,
+  "c4_coverage>=50%pool": false
+ },
+ "survived_prelim": false,
+ "eval": {
+  "n_dates": 11,
+  "coverage_mean_symbols": 1401.5454545454545,
+  "ic_mean": 0.013765543184019059,
+  "ic_std": 0.08502654512913896,
+  "icir": 0.1618970071418502,
+  "ic_win_rate": 0.36363636363636365,
+  "group_mean_ret": [
+   0.012544842716570786,
+   0.01789631674964006,
+   0.01419111125716519,
+   0.01796270220741234,
+   0.01714584704500021,
+   0.012968873424559763,
+   0.02006650959928742,
+   0.01594803585545695,
+   0.01782129621206796,
+   0.022039059898502265
+  ],
+  "long_short_mean": 0.00949421718193148,
+  "monotonicity": 0.5822159570274699,
+  "ic_by_year": {
+   "2020": 0.013765543184019057
+  },
+  "long_short_by_year": {
+   "2020": 0.002364105272348826
+  },
+  "turnover_top_group": 0.03743035048461753,
+  "corr_with_others": {},
+  "config": {
+   "horizon_days": 20,
+   "n_groups": 10,
+   "eval_freq": "M",
+   "exclude_st": true,
+   "require_trading": true,
+   "exclude_boards": true,
+   "min_history_rows": 60
+  }
+ }
+}

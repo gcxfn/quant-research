@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2r6_etf_rotation.py", line 305, in main
+    metrics[cid] = build_metrics(cid)
+                   ^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\cli\p2r6_etf_rotation.py", line 290, in build_metrics
+    seg_m['concentration'] = concentration(
+                             ^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\etf_rotation.py", line 802, in concentration
+    s1 = first_session_index(calendar, seg_end)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\etf_rotation.py", line 206, in first_session_index
+    raise ValueError(f'no session on/after {start}')
+ValueError: no session on/after 2016-12-31

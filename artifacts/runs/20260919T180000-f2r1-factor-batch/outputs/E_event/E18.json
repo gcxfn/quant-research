@@ -1,0 +1,57 @@
+{
+ "factor_id": "E18",
+ "name": "expr_cnt120",
+ "formula": "120d 快报次数（无填 0）",
+ "source": "express",
+ "fill_policy": "无事件填 0",
+ "n_rows": 236437,
+ "t_value": 0.006207128237440018,
+ "coverage_median_symbols": 3108.0,
+ "coverage_median_active_months": 3126.0,
+ "pool_median_symbols": 3126.0,
+ "criteria": {
+  "c1_abs_t>=2": false,
+  "c2_mono_consistent>=0.3": false,
+  "c3_2015_non_disaster": true,
+  "c4_coverage>=50%pool": true
+ },
+ "survived_prelim": false,
+ "eval": {
+  "n_dates": 23,
+  "coverage_mean_symbols": 3490.086956521739,
+  "ic_mean": 5.053860840947923e-05,
+  "ic_std": 0.03904779184238337,
+  "icir": 0.0012942757074069287,
+  "ic_win_rate": 0.5652173913043478,
+  "group_mean_ret": [
+   0.019969502364266905,
+   -0.01662244005813417,
+   0.03071997281973796,
+   -0.004805395163690125,
+   0.023433336712596096,
+   -0.023248394568782246,
+   0.01938242825302278
+  ],
+  "long_short_mean": -0.000587074111244125,
+  "monotonicity": -0.06964422067846539,
+  "ic_by_year": {
+   "2019": -0.010720425682884087,
+   "2020": 0.011800681471638824
+  },
+  "long_short_by_year": {
+   "2019": 0.025109149394131683,
+   "2020": -0.00547176081856509
+  },
+  "turnover_top_group": 0.420806195516698,
+  "corr_with_others": {},
+  "config": {
+   "horizon_days": 20,
+   "n_groups": 10,
+   "eval_freq": "M",
+   "exclude_st": true,
+   "require_trading": true,
+   "exclude_boards": true,
+   "min_history_rows": 60
+  }
+ }
+}

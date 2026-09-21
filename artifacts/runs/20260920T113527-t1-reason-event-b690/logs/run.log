@@ -1,0 +1,47 @@
+[    0.0s] == 0. identity pins ==
+[    0.0s]   prereg: 5c19dbeabb4c6106
+[    0.0s]   row_index: d9c6060104b5beb7
+[    0.4s]   daily_calendar_pools: d9a63f4cc3032926
+[    0.6s]   daily_eval_panel: 1cbb09a11f7c1013
+[    0.6s]   lib_p2r13_lowfreq: 49034ba833ad8bff
+[    0.6s]   lib_p2r16_trend_dispersion: 04242366f8f5a329
+[    0.6s]   lib_factors_eval: 19b704b21786eadd
+[    0.6s]   script: e5629b2137eda8bc
+[    0.7s] == 1. merge 65 jsonl + row_index; dev filter ==
+[    0.9s]   annotation rows: 38567
+[    0.9s]   dev rows: 17582 (20180904..20201231); non-dev excluded: 20985 (val/frozen never touched)
+[    0.9s] == stage done: merge_dev (0.9s) ==
+[    0.9s] == 2. dedup + drop 不确定 ==
+[    0.9s]   dedup: 17582 -> 16202 (-1380); 不确定 dropped: 399
+[    0.9s] == stage done: dedup (0.9s) ==
+[    0.9s] == 3. R16 pool eligibility (event-day) ==
+[    0.9s]   symbols: 3558 unique; unconvertible ts_code rows: 28
+[    3.7s]   panel identity ok: 2015+ traded rows 9254330
+[    3.8s]   funnel: {"rows_after_dedup_and_type": 15803, "unconvertible_ts_code": 28, "board_excluded": 6426, "no_traded_row_on_ann_date": 2098, "of_which_ann_date_not_market_session": 1843, "of_which_suspended_on_session": 255, "listing_lt60_sessions": 24, "is_st_at_event": 591, "pool_pass": 6664, "type_counts_after_pool": {"预增": 2070, "首亏": 1229, "预减": 1119, "续亏": 513, "略增": 644, "扭亏": 537, "略减": 384, "续盈": 168}}
+[    3.8s] == stage done: pool_filter (3.8s) ==
+[    3.8s] == 4. own forward returns (h=20 main; 5/10 sensitivity) ==
+[    5.8s]   events without h20 forward window: 8
+[    5.8s] == 4b. TE-S2 harness cross-check (3 stocks x 3 events, tol 1e-9) ==
+[    7.6s]   harness-comparable keys: 6655/6656 (missing 1, universe truncation); global max|diff| 0.000e+00; keys>1e-9: 0
+[    7.7s]   TE-S2 sampled 9 pairs on ['sh.600008', 'sz.002104', 'sz.002973']: max|diff| 0.000e+00
+[    7.7s]   TE-S2 PASS
+[    7.7s] == stage done: fwd_returns (7.7s) ==
+[    7.7s] == 5. month FE + type baseline ==
+[    7.7s]   sanity: 预增 -0.00434 vs 预亏组 +0.00375 (adj) -> direction_ok=False
+[    7.7s] == stage done: baseline (7.7s) ==
+[    7.7s] == 6. main ANOVA (within-type demeaned primary_code classes) ==
+[    7.7s]   groups ['core_ops', 'cost_down', 'cost_up', 'demand_down', 'demand_up', 'epidemic_shock', 'impairment', 'ma_restructuring', 'non_recurring', 'orders', 'other', 'price_down', 'price_up']; merged-into-other ['accounting', 'fx']
+[    7.7s]   ANOVA F=3.3426 df=(12,6643) p=0.000071 eta2=0.00600 -> H1
+[    7.7s] == stage done: main_anova (7.7s) ==
+[    7.7s] == 6b. category-level Welch t + BH ==
+[    7.8s]   core_ops: t=+0.31 p=0.7553 p_bh=0.9064; cost_down: t=-0.33 p=0.7432 p_bh=0.9064; cost_up: t=+0.06 p=0.9488 p_bh=0.9488; demand_down: t=-0.94 p=0.3454 p_bh=0.8289; demand_up: t=+1.35 p=0.1779 p_bh=0.5336; epidemic_shock: t=-4.03 p=5.882e-05 p_bh=0.0007059; impairment: t=+3.65 p=0.0002881 p_bh=0.001729; ma_restructuring: t=-0.13 p=0.8998 p_bh=0.9488; non_recurring: t=-0.37 p=0.7151 p_bh=0.9064; orders: t=+0.36 p=0.7177 p_bh=0.9064; price_down: t=+0.74 p=0.4618 p_bh=0.9064; price_up: t=-2.55 p=0.01157 p_bh=0.04627
+[    7.8s] == stage done: category_tests (7.8s) ==
+[    7.8s] == 7. sensitivities (3) + yearly + concentration ==
+[    7.8s]   S1: dropped 296 rows -> p=0.000044 (H1)
+[    7.8s]   S2 h=5: n=6656 -> p=0.007550 (H1)
+[    7.8s]   S2 h=10: n=6656 -> p=0.004826 (H1)
+[    8.2s]   S3: n=7423 (dedup main=6656) -> p=0.000002 (H1)
+[    8.2s]   fragile=False (flips: [])
+[    8.2s] == stage done: sensitivity_diagnostics (8.2s) ==
+[    8.2s] == 8. outputs + manifest ==
+[    8.2s] == complete: main p=0.000071 (H1); n=6656; wall 8s, rss 5.93 GB ==

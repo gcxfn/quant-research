@@ -1,0 +1,244 @@
+{
+ "experiment_id": "exp-20260920-val-batch",
+ "window": "val 2021-01-04..2024-12-31",
+ "rule": "R16 evaluate_val_gates verbatim (prereg sec 2): 1 excess vs B1(m)(val) >= +1pp; 2 advantage years >= 2/4; 3 maxDD <= 20% AND <= |B1(m)(val) maxDD|",
+ "b1m_val": {
+  "net_cagr": -0.00148060230384095,
+  "max_drawdown": -0.23441429674947534,
+  "net_return_by_year": {
+   "2021": 0.14274922609277585,
+   "2022": -0.05202635253338672,
+   "2023": -0.061879245529232296,
+   "2024": -0.021801197364535896
+  }
+ },
+ "configs": [
+  {
+   "config": "R3-01",
+   "verdict": "val_eliminated",
+   "net_cagr": 0.0011630527016281977,
+   "excess_vs_b1m": 0.0026436550054691477,
+   "advantage_years": 2,
+   "n_years": 4,
+   "max_drawdown": -0.18627090672044877,
+   "b1m_max_drawdown": -0.23441429674947534,
+   "gates_passed": 2,
+   "failed_gates": [
+    "1_excess_ge_1pp"
+   ],
+   "goal_net_cagr_ge_10pct": false,
+   "max_one_side_turnover": 2.751194049616941,
+   "max_single_name_weight": 0.290457441115371,
+   "net_return_by_year": {
+    "2021": 0.025449179450000026,
+    "2022": -0.1698359375970342,
+    "2023": 0.07178802070831014,
+    "2024": 0.10109998704272916
+   },
+   "r16_evaluate_val_gates": {
+    "1_excess_ge_1pp": false,
+    "2_advantage_years_ge_2_of_4": true,
+    "3_mdd_le_20pct_and_le_B1m": true,
+    "advantage_years": 2,
+    "failed_gates": [
+     "1_excess_ge_1pp"
+    ],
+    "val_pass": false
+   }
+  },
+  {
+   "config": "R3-02",
+   "verdict": "val_eliminated",
+   "net_cagr": -0.0014165290968769506,
+   "excess_vs_b1m": 6.407320696399932e-05,
+   "advantage_years": 2,
+   "n_years": 4,
+   "max_drawdown": -0.18753771876989933,
+   "b1m_max_drawdown": -0.23441429674947534,
+   "gates_passed": 2,
+   "failed_gates": [
+    "1_excess_ge_1pp"
+   ],
+   "goal_net_cagr_ge_10pct": false,
+   "max_one_side_turnover": 2.754178993130014,
+   "max_single_name_weight": 0.2916468858291696,
+   "net_return_by_year": {
+    "2021": 0.02291467945000014,
+    "2022": -0.16994195365684672,
+    "2023": 0.06908489124064787,
+    "2024": 0.09542883206930908
+   },
+   "r16_evaluate_val_gates": {
+    "1_excess_ge_1pp": false,
+    "2_advantage_years_ge_2_of_4": true,
+    "3_mdd_le_20pct_and_le_B1m": true,
+    "advantage_years": 2,
+    "failed_gates": [
+     "1_excess_ge_1pp"
+    ],
+    "val_pass": false
+   }
+  },
+  {
+   "config": "R3-03",
+   "verdict": "val_eliminated",
+   "net_cagr": -0.002133806720967746,
+   "excess_vs_b1m": -0.0006532044171267959,
+   "advantage_years": 2,
+   "n_years": 4,
+   "max_drawdown": -0.1888476092347413,
+   "b1m_max_drawdown": -0.23441429674947534,
+   "gates_passed": 2,
+   "failed_gates": [
+    "1_excess_ge_1pp"
+   ],
+   "goal_net_cagr_ge_10pct": false,
+   "max_one_side_turnover": 2.7533831428355158,
+   "max_single_name_weight": 0.2913587695299103,
+   "net_return_by_year": {
+    "2021": 0.020216488199999993,
+    "2022": -0.17131718715737576,
+    "2023": 0.06922937875683544,
+    "2024": 0.09685152740761249
+   },
+   "r16_evaluate_val_gates": {
+    "1_excess_ge_1pp": false,
+    "2_advantage_years_ge_2_of_4": true,
+    "3_mdd_le_20pct_and_le_B1m": true,
+    "advantage_years": 2,
+    "failed_gates": [
+     "1_excess_ge_1pp"
+    ],
+    "val_pass": false
+   }
+  },
+  {
+   "config": "R3-04",
+   "verdict": "val_eliminated",
+   "net_cagr": -0.002902586203858304,
+   "excess_vs_b1m": -0.001421983900017354,
+   "advantage_years": 2,
+   "n_years": 4,
+   "max_drawdown": -0.18402287642046478,
+   "b1m_max_drawdown": -0.23441429674947534,
+   "gates_passed": 2,
+   "failed_gates": [
+    "1_excess_ge_1pp"
+   ],
+   "goal_net_cagr_ge_10pct": false,
+   "max_one_side_turnover": 2.7534126969236823,
+   "max_single_name_weight": 0.2960954834388855,
+   "net_return_by_year": {
+    "2021": 0.01770698819999983,
+    "2022": -0.17976637885092972,
+    "2023": 0.08794170886480468,
+    "2024": 0.08842431208274526
+   },
+   "r16_evaluate_val_gates": {
+    "1_excess_ge_1pp": false,
+    "2_advantage_years_ge_2_of_4": true,
+    "3_mdd_le_20pct_and_le_B1m": true,
+    "advantage_years": 2,
+    "failed_gates": [
+     "1_excess_ge_1pp"
+    ],
+    "val_pass": false
+   }
+  },
+  {
+   "config": "H2-01",
+   "verdict": "val_eliminated",
+   "net_cagr": 0.002353728947336542,
+   "excess_vs_b1m": 0.003834331251177492,
+   "advantage_years": 3,
+   "n_years": 4,
+   "max_drawdown": -0.14174341174824612,
+   "b1m_max_drawdown": -0.23441429674947534,
+   "gates_passed": 2,
+   "failed_gates": [
+    "1_excess_ge_1pp"
+   ],
+   "goal_net_cagr_ge_10pct": false,
+   "max_one_side_turnover": 1.3190791729691895,
+   "max_single_name_weight": 0.2661009138153645,
+   "net_return_by_year": {
+    "2021": -0.04411001505000012,
+    "2022": -0.04389441950497541,
+    "2023": -0.015907777048672744,
+    "2024": 0.12233703957055653
+   },
+   "r16_evaluate_val_gates": {
+    "1_excess_ge_1pp": false,
+    "2_advantage_years_ge_2_of_4": true,
+    "3_mdd_le_20pct_and_le_B1m": true,
+    "advantage_years": 3,
+    "failed_gates": [
+     "1_excess_ge_1pp"
+    ],
+    "val_pass": false
+   }
+  },
+  {
+   "config": "H2-03",
+   "verdict": "val_pass",
+   "net_cagr": 0.01813715215307732,
+   "excess_vs_b1m": 0.019617754456918268,
+   "advantage_years": 3,
+   "n_years": 4,
+   "max_drawdown": -0.1210807207767104,
+   "b1m_max_drawdown": -0.23441429674947534,
+   "gates_passed": 3,
+   "failed_gates": [],
+   "goal_net_cagr_ge_10pct": false,
+   "max_one_side_turnover": 1.376787461932799,
+   "max_single_name_weight": 0.21006434593914355,
+   "net_return_by_year": {
+    "2021": -0.045022320050000175,
+    "2022": -0.028736688381488573,
+    "2023": 0.0012353472018811207,
+    "2024": 0.15683993582312672
+   },
+   "r16_evaluate_val_gates": {
+    "1_excess_ge_1pp": true,
+    "2_advantage_years_ge_2_of_4": true,
+    "3_mdd_le_20pct_and_le_B1m": true,
+    "advantage_years": 3,
+    "failed_gates": [],
+    "val_pass": true
+   }
+  },
+  {
+   "config": "H2-04",
+   "verdict": "val_eliminated",
+   "net_cagr": -0.006981382437246664,
+   "excess_vs_b1m": -0.005500780133405714,
+   "advantage_years": 3,
+   "n_years": 4,
+   "max_drawdown": -0.15259796098498257,
+   "b1m_max_drawdown": -0.23441429674947534,
+   "gates_passed": 2,
+   "failed_gates": [
+    "1_excess_ge_1pp"
+   ],
+   "goal_net_cagr_ge_10pct": false,
+   "max_one_side_turnover": 1.265458055672815,
+   "max_single_name_weight": 0.25550252680506486,
+   "net_return_by_year": {
+    "2021": -0.04271101504999997,
+    "2022": -0.04824429897980298,
+    "2023": -0.022924165483702685,
+    "2024": 0.09236069130734403
+   },
+   "r16_evaluate_val_gates": {
+    "1_excess_ge_1pp": false,
+    "2_advantage_years_ge_2_of_4": true,
+    "3_mdd_le_20pct_and_le_B1m": true,
+    "advantage_years": 3,
+    "failed_gates": [
+     "1_excess_ge_1pp"
+    ],
+    "val_pass": false
+   }
+  }
+ ]
+}

@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2r6_etf_rotation.py", line 179, in main
+    b2 = {seg: simulate_b2(b2_code, bank, calendar, s, e,
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\cli\p2r6_etf_rotation.py", line 179, in <dictcomp>
+    b2 = {seg: simulate_b2(b2_code, bank, calendar, s, e,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\etf_rotation.py", line 697, in simulate_b2
+    cd = bank.get(code)
+         ^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\etf_rotation.py", line 325, in get
+    cd = CodeData(code, df, self.cal_index)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\etf_rotation.py", line 271, in __init__
+    self.pos = [cal_index[d] for d in df['trade_date'].to_list()]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\etf_rotation.py", line 271, in <listcomp>
+    self.pos = [cal_index[d] for d in df['trade_date'].to_list()]
+                ~~~~~~~~~^^^
+KeyError: datetime.date(2017, 1, 3)

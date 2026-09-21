@@ -1,0 +1,153 @@
+{
+  "run_id": "20260917T231747-event-scout-f2d1ea",
+  "experiment_id": "exp-20260917-event-data-scout",
+  "purpose": "事件类 tushare 批次可用性与 PIT 属性只读清点；不计算因子、不回测",
+  "status": "completed",
+  "started_at": "2026-09-17T23:17:47+08:00",
+  "elapsed_s": 246.9,
+  "command": "D:/量化/.venv/Scripts/python.exe -X utf8 artifacts/runs/20260917T231747-event-scout-f2d1ea/event_scout_scan.py",
+  "code": {
+    "event_scout_scan.py": "f30faac9efb5e6c1034ace0b781abd310d323eb4a980f281215bccd4b298297f"
+  },
+  "env": {
+    "python": "3.11.15",
+    "pandas": "2.3.3",
+    "platform": "Windows-10-10.0.26200-SP0"
+  },
+  "random_seed": null,
+  "determinism": "确定性计数，无随机过程",
+  "time_rule": "knowledge_date = ann_date（无则 trade_date）；>20241231 仅统计为冻结区行数；研究窗口 2015-2024，2025+ 冻结",
+  "inputs_read_only": {
+    "data_raw_tushare_batches": {
+      "forecast": {
+        "dir": "forecast/20260909-r1",
+        "files": 97,
+        "empty_files": 0,
+        "rows": 50406,
+        "know_range": [
+          "20180903",
+          "20260904"
+        ],
+        "frozen_gt20241231": 10327
+      },
+      "express": {
+        "dir": "express/20260909-r1",
+        "files": 31,
+        "empty_files": 7,
+        "rows": 8488,
+        "know_range": [
+          "20190104",
+          "20260825"
+        ],
+        "frozen_gt20241231": 174
+      },
+      "repurchase": {
+        "dir": "repurchase/20260909-r3",
+        "files": 129,
+        "empty_files": 0,
+        "rows": 61718,
+        "know_range": [
+          "20160104",
+          "20260909"
+        ],
+        "frozen_gt20241231": 12625
+      },
+      "share_float": {
+        "dir": "share_float/20260909-r3",
+        "files": 129,
+        "empty_files": 0,
+        "rows": 5661143,
+        "know_range": [
+          "20160101",
+          "20260909"
+        ],
+        "frozen_gt20241231": 1453353
+      },
+      "stk_holdertrade": {
+        "dir": "stk_holdertrade/20260909-r3",
+        "files": 129,
+        "empty_files": 0,
+        "rows": 149108,
+        "know_range": [
+          "20160101",
+          "20260909"
+        ],
+        "frozen_gt20241231": 21356
+      },
+      "top_list": {
+        "dir": "top_list/20260909-r1",
+        "files": 1866,
+        "empty_files": 1,
+        "rows": 141985,
+        "know_range": [
+          "20190102",
+          "20260908"
+        ],
+        "frozen_gt20241231": 31823
+      },
+      "top_inst": {
+        "dir": "top_inst/20260909-r3",
+        "files": 1866,
+        "empty_files": 0,
+        "rows": 1785667,
+        "know_range": [
+          "20190102",
+          "20260909"
+        ],
+        "frozen_gt20241231": 341394
+      },
+      "margin_detail": {
+        "dir": "margin_detail/20260909-r1",
+        "files": 1866,
+        "empty_files": 1,
+        "rows": 5474653,
+        "know_range": [
+          "20190102",
+          "20260908"
+        ],
+        "frozen_gt20241231": 1730402
+      },
+      "disclosure_date": {
+        "dir": "disclosure_date/20260909-r1",
+        "files": 31,
+        "empty_files": 0,
+        "rows": 148313,
+        "know_range": [
+          "20181227",
+          "20260827"
+        ],
+        "frozen_gt20241231": 33862
+      },
+      "index_member_all": {
+        "dir": "index_member_all/20260909-r1",
+        "files": 4,
+        "empty_files": 0,
+        "rows": 6413,
+        "know_range": [
+          "19891101",
+          "20260903"
+        ],
+        "frozen_gt20241231": 334
+      }
+    },
+    "baostock_pool_dir": "data/raw/baostock/daily（5552 只，sh/sz，用于 ts_code 映射）",
+    "meta": [
+      "data/_meta/inventory.json",
+      "各批次 manifest.json",
+      "docs/DATA_COVERAGE.md",
+      "docs/DATA_SOURCES.md",
+      "docs/legacy/docs/experiments/tushare-third-pull-20260910.md（events 空壳佐证）"
+    ]
+  },
+  "outputs": {
+    "scan_results.json": "282e0dc96f6adaf110193f12f110d97bd158375b81c6eb315738c712e3362962",
+    "scan_console.log": "039ebda244c6a79695c3f3003bf26a5745202d00373d0e30f39e8c183b93b5d9",
+    "manifest.json": null
+  },
+  "writes": "仅写入本 run 目录；data/raw 与 data/_meta 未修改",
+  "notes": [
+    "events/ 目录无数据文件（仅 fetch 日志）；legacy 三拉文档确认其为空壳，事件族数据落在 repurchase/share_float/stk_holdertrade 三个顶层目录",
+    "ann_date/trade_date 缺失率实测 0%（index_member_all 的 in_date 除外，分类快照文件无该列）",
+    "峰值内存未记录（逐文件读取后释放，单文件最大约 12MB CSV）"
+  ]
+}

@@ -1,0 +1,428 @@
+{
+ "event_stats": {
+  "forecast": {
+   "rows": 17936,
+   "symbols": 3714,
+   "first": "2018-09-03",
+   "last": "2020-11-30"
+  },
+  "express": {
+   "rows": 4500,
+   "symbols": 2471,
+   "first": "2019-01-04",
+   "last": "2020-08-24"
+  },
+  "repurchase": {
+   "rows": 17132,
+   "symbols": 1640,
+   "first": "2016-01-04",
+   "last": "2020-11-30"
+  },
+  "stk_holdertrade": {
+   "rows": 68220,
+   "symbols": 3172,
+   "first": "2016-01-01",
+   "last": "2020-11-30"
+  },
+  "share_float": {
+   "rows": 109017,
+   "symbols": 2786,
+   "first": "2016-01-01",
+   "last": "2020-11-30"
+  },
+  "dividend(实施,按ex_date)": {
+   "rows": 16979,
+   "symbols": 3957,
+   "first": "2015-01-06",
+   "last": "2020-11-30"
+  }
+ },
+ "pool_median": 3126.0,
+ "n_signal_dates": 71,
+ "first_last_signal": [
+  "2015-01-30",
+  "2020-11-30"
+ ],
+ "results": [
+  {
+   "factor_id": "E01",
+   "name": "fcst_np",
+   "formula": "120d 内最新预告 (p_change_min+max)/2（p_change 缺失用净利区间/去年同期推算）",
+   "source": "forecast",
+   "fill_policy": "无事件为 null（不入因子帧）",
+   "n_rows": 48631,
+   "t_value": 0.9799417530323663,
+   "coverage_median_symbols": 0.0,
+   "coverage_median_active_months": 1608.0,
+   "pool_median_symbols": 3126.0,
+   "criteria": {
+    "c1_abs_t>=2": false,
+    "c2_mono_consistent>=0.3": true,
+    "c3_2015_non_disaster": true,
+    "c4_coverage>=50%pool": false
+   },
+   "survived_prelim": false
+  },
+  {
+   "factor_id": "E02",
+   "name": "fcst_np_max",
+   "formula": "120d 内最新预告 p_change_max",
+   "source": "forecast",
+   "fill_policy": "无事件为 null（不入因子帧）",
+   "n_rows": 48675,
+   "t_value": 1.0349171708024896,
+   "coverage_median_symbols": 0.0,
+   "coverage_median_active_months": 1610.0,
+   "pool_median_symbols": 3126.0,
+   "criteria": {
+    "c1_abs_t>=2": false,
+    "c2_mono_consistent>=0.3": true,
+    "c3_2015_non_disaster": true,
+    "c4_coverage>=50%pool": false
+   },
+   "survived_prelim": false
+  },
+  {
+   "factor_id": "E03",
+   "name": "fcst_rev",
+   "formula": "同期(end_date)最新预告中值-首个预告中值（首个不限窗龄但 ann<=t）",
+   "source": "forecast",
+   "fill_policy": "无事件为 null（不入因子帧）",
+   "n_rows": 48631,
+   "t_value": 0.738985543582586,
+   "coverage_median_symbols": 0.0,
+   "coverage_median_active_months": 1608.0,
+   "pool_median_symbols": 3126.0,
+   "criteria": {
+    "c1_abs_t>=2": false,
+    "c2_mono_consistent>=0.3": false,
+    "c3_2015_non_disaster": true,
+    "c4_coverage>=50%pool": false
+   },
+   "survived_prelim": false
+  },
+  {
+   "factor_id": "E04",
+   "name": "fcst_cnt120",
+   "formula": "120d 预告次数（无事件填 0）",
+   "source": "forecast",
+   "fill_policy": "无事件填 0",
+   "n_rows": 236437,
+   "t_value": 0.3216055266343234,
+   "coverage_median_symbols": 3108.0,
+   "coverage_median_active_months": 3126.0,
+   "pool_median_symbols": 3126.0,
+   "criteria": {
+    "c1_abs_t>=2": false,
+    "c2_mono_consistent>=0.3": false,
+    "c3_2015_non_disaster": true,
+    "c4_coverage>=50%pool": true
+   },
+   "survived_prelim": false
+  },
+  {
+   "factor_id": "E05",
+   "name": "fcst_fresh20",
+   "formula": "20d 内最新预告方向 sign(中值或类型映射)，无填 0",
+   "source": "forecast",
+   "fill_policy": "无事件填 0",
+   "n_rows": 236437,
+   "t_value": -0.5533571508984706,
+   "coverage_median_symbols": 3108.0,
+   "coverage_median_active_months": 3126.0,
+   "pool_median_symbols": 3126.0,
+   "criteria": {
+    "c1_abs_t>=2": false,
+    "c2_mono_consistent>=0.3": true,
+    "c3_2015_non_disaster": true,
+    "c4_coverage>=50%pool": true
+   },
+   "survived_prelim": false
+  },
+  {
+   "factor_id": "E06",
+   "name": "expr_rev_yoy",
+   "formula": "最新快报营收/上年同期快报营收-1（同期= end_date-1y，ann<=t）",
+   "source": "express",
+   "fill_policy": "无事件为 null（不入因子帧）",
+   "n_rows": 16269,
+   "t_value": 0.5369516273710057,
+   "coverage_median_symbols": 0.0,
+   "coverage_median_active_months": 1611.0,
+   "pool_median_symbols": 3126.0,
+   "criteria": {
+    "c1_abs_t>=2": false,
+    "c2_mono_consistent>=0.3": true,
+    "c3_2015_non_disaster": true,
+    "c4_coverage>=50%pool": false
+   },
+   "survived_prelim": false
+  },
+  {
+   "factor_id": "E07",
+   "name": "expr_surp",
+   "formula": "快报 n_income(元)/(同期最新预告净利中值(万元)*1e4)-1",
+   "source": "express+forecast",
+   "fill_policy": "无事件为 null（不入因子帧）",
+   "n_rows": 20745,
+   "t_value": 0.6595101352742535,
+   "coverage_median_symbols": 0.0,
+   "coverage_median_active_months": 880.0,
+   "pool_median_symbols": 3126.0,
+   "criteria": {
+    "c1_abs_t>=2": false,
+    "c2_mono_consistent>=0.3": false,
+    "c3_2015_non_disaster": true,
+    "c4_coverage>=50%pool": false
+   },
+   "survived_prelim": false
+  },
+  {
+   "factor_id": "E08",
+   "name": "repo_120",
+   "formula": "120d 回购金额(元, 每(ts_code,end_date)取进度最大额)/流通市值(元)",
+   "source": "repurchase+daily_basic",
+   "fill_policy": "无事件为 null（不入因子帧）",
+   "n_rows": 24714,
+   "t_value": 0.19473988148304355,
+   "coverage_median_symbols": 251.0,
+   "coverage_median_active_months": 438.0,
+   "pool_median_symbols": 3126.0,
+   "criteria": {
+    "c1_abs_t>=2": false,
+    "c2_mono_consistent>=0.3": false,
+    "c3_2015_non_disaster": true,
+    "c4_coverage>=50%pool": false
+   },
+   "survived_prelim": false
+  },
+  {
+   "factor_id": "E09",
+   "name": "repo_ann20",
+   "formula": "20d 内有回购公告(0/1，无填 0)",
+   "source": "repurchase",
+   "fill_policy": "无事件填 0",
+   "n_rows": 236437,
+   "t_value": 1.4768383345295495,
+   "coverage_median_symbols": 3108.0,
+   "coverage_median_active_months": 3126.0,
+   "pool_median_symbols": 3126.0,
+   "criteria": {
+    "c1_abs_t>=2": false,
+    "c2_mono_consistent>=0.3": true,
+    "c3_2015_non_disaster": true,
+    "c4_coverage>=50%pool": true
+   },
+   "survived_prelim": false
+  },
+  {
+   "factor_id": "E10",
+   "name": "hb_net120",
+   "formula": "120d 增持净比例 = ΣIN-ΣDE (change_ratio, %总股本)",
+   "source": "stk_holdertrade",
+   "fill_policy": "无事件为 null（不入因子帧）",
+   "n_rows": 53962,
+   "t_value": 0.6241260240273928,
+   "coverage_median_symbols": 773.0,
+   "coverage_median_active_months": 906.0,
+   "pool_median_symbols": 3126.0,
+   "criteria": {
+    "c1_abs_t>=2": false,
+    "c2_mono_consistent>=0.3": false,
+    "c3_2015_non_disaster": true,
+    "c4_coverage>=50%pool": false
+   },
+   "survived_prelim": false
+  },
+  {
+   "factor_id": "E11",
+   "name": "hs_net120",
+   "formula": "120d 减持比例合计 = ΣDE (窗内无任何记录->null)",
+   "source": "stk_holdertrade",
+   "fill_policy": "无事件为 null（不入因子帧）",
+   "n_rows": 39062,
+   "t_value": -1.5586126579395936,
+   "coverage_median_symbols": 467.0,
+   "coverage_median_active_months": 570.0,
+   "pool_median_symbols": 3126.0,
+   "criteria": {
+    "c1_abs_t>=2": false,
+    "c2_mono_consistent>=0.3": false,
+    "c3_2015_non_disaster": true,
+    "c4_coverage>=50%pool": false
+   },
+   "survived_prelim": false
+  },
+  {
+   "factor_id": "E12",
+   "name": "hb_key60",
+   "formula": "60d 关键股东(公司C+高管P)净增持 ΣIN-ΣDE",
+   "source": "stk_holdertrade",
+   "fill_policy": "无事件为 null（不入因子帧）",
+   "n_rows": 26325,
+   "t_value": -0.6937986147837873,
+   "coverage_median_symbols": 372.0,
+   "coverage_median_active_months": 453.0,
+   "pool_median_symbols": 3126.0,
+   "criteria": {
+    "c1_abs_t>=2": false,
+    "c2_mono_consistent>=0.3": true,
+    "c3_2015_non_disaster": true,
+    "c4_coverage>=50%pool": false
+   },
+   "survived_prelim": false
+  },
+  {
+   "factor_id": "E13",
+   "name": "float_fwd60",
+   "formula": "已公告(ann<=t)且 float_date 在 (t, t+60d] 的解禁比例合计(%总股本)",
+   "source": "share_float",
+   "fill_policy": "无事件为 null（不入因子帧）",
+   "n_rows": 8724,
+   "t_value": -4.6236706514138035,
+   "coverage_median_symbols": 135.0,
+   "coverage_median_active_months": 150.0,
+   "pool_median_symbols": 3126.0,
+   "criteria": {
+    "c1_abs_t>=2": true,
+    "c2_mono_consistent>=0.3": true,
+    "c3_2015_non_disaster": true,
+    "c4_coverage>=50%pool": false
+   },
+   "survived_prelim": false
+  },
+  {
+   "factor_id": "E14",
+   "name": "float_past20",
+   "formula": "float_date 在 (t-20d, t] 且 ann<=t 的解禁比例合计",
+   "source": "share_float",
+   "fill_policy": "无事件为 null（不入因子帧）",
+   "n_rows": 4144,
+   "t_value": -0.33134777641965235,
+   "coverage_median_symbols": 57.0,
+   "coverage_median_active_months": 73.0,
+   "pool_median_symbols": 3126.0,
+   "criteria": {
+    "c1_abs_t>=2": false,
+    "c2_mono_consistent>=0.3": true,
+    "c3_2015_non_disaster": true,
+    "c4_coverage>=50%pool": false
+   },
+   "survived_prelim": false
+  },
+  {
+   "factor_id": "E15",
+   "name": "div_ex20",
+   "formula": "20d 内除息(ex_date)每股股利合计/月末收盘",
+   "source": "dividend+panel",
+   "fill_policy": "无事件为 null（不入因子帧）",
+   "n_rows": 10825,
+   "t_value": 0.8940904622977149,
+   "coverage_median_symbols": 40.0,
+   "coverage_median_active_months": 43.0,
+   "pool_median_symbols": 3126.0,
+   "criteria": {
+    "c1_abs_t>=2": false,
+    "c2_mono_consistent>=0.3": true,
+    "c3_2015_non_disaster": false,
+    "c4_coverage>=50%pool": false
+   },
+   "survived_prelim": false
+  },
+  {
+   "factor_id": "E16",
+   "name": "div_yld120",
+   "formula": "12m(365d) 滚动除息股利合计/月末收盘",
+   "source": "dividend+panel",
+   "fill_policy": "无事件为 null（不入因子帧）",
+   "n_rows": 158173,
+   "t_value": 3.0836975480377333,
+   "coverage_median_symbols": 2299.0,
+   "coverage_median_active_months": 2306.0,
+   "pool_median_symbols": 3126.0,
+   "criteria": {
+    "c1_abs_t>=2": true,
+    "c2_mono_consistent>=0.3": true,
+    "c3_2015_non_disaster": true,
+    "c4_coverage>=50%pool": true
+   },
+   "survived_prelim": true
+  },
+  {
+   "factor_id": "E17",
+   "name": "fcst_sign120",
+   "formula": "120d Σsign(预告中值；缺失按类型 预增/扭亏=+1、预亏/首亏=-1)，无填 0",
+   "source": "forecast",
+   "fill_policy": "无事件填 0",
+   "n_rows": 236437,
+   "t_value": 1.5073030517047652,
+   "coverage_median_symbols": 3108.0,
+   "coverage_median_active_months": 3126.0,
+   "pool_median_symbols": 3126.0,
+   "criteria": {
+    "c1_abs_t>=2": false,
+    "c2_mono_consistent>=0.3": false,
+    "c3_2015_non_disaster": true,
+    "c4_coverage>=50%pool": true
+   },
+   "survived_prelim": false
+  },
+  {
+   "factor_id": "E18",
+   "name": "expr_cnt120",
+   "formula": "120d 快报次数（无填 0）",
+   "source": "express",
+   "fill_policy": "无事件填 0",
+   "n_rows": 236437,
+   "t_value": 0.006207128237440018,
+   "coverage_median_symbols": 3108.0,
+   "coverage_median_active_months": 3126.0,
+   "pool_median_symbols": 3126.0,
+   "criteria": {
+    "c1_abs_t>=2": false,
+    "c2_mono_consistent>=0.3": false,
+    "c3_2015_non_disaster": true,
+    "c4_coverage>=50%pool": true
+   },
+   "survived_prelim": false
+  },
+  {
+   "factor_id": "E19",
+   "name": "hb_ann20",
+   "formula": "20d 增持公告数(IN 方向，无填 0)",
+   "source": "stk_holdertrade",
+   "fill_policy": "无事件填 0",
+   "n_rows": 236437,
+   "t_value": -1.9649347360259972,
+   "coverage_median_symbols": 3108.0,
+   "coverage_median_active_months": 3126.0,
+   "pool_median_symbols": 3126.0,
+   "criteria": {
+    "c1_abs_t>=2": false,
+    "c2_mono_consistent>=0.3": false,
+    "c3_2015_non_disaster": true,
+    "c4_coverage>=50%pool": true
+   },
+   "survived_prelim": false
+  },
+  {
+   "factor_id": "E20",
+   "name": "float_press",
+   "formula": "已公告未来 120d 解禁股数(万股)*月末收盘/流通市值(万元->元)",
+   "source": "share_float+daily_basic",
+   "fill_policy": "无事件为 null（不入因子帧）",
+   "n_rows": 16370,
+   "t_value": -0.9815684932966193,
+   "coverage_median_symbols": 292.0,
+   "coverage_median_active_months": 314.0,
+   "pool_median_symbols": 3126.0,
+   "criteria": {
+    "c1_abs_t>=2": false,
+    "c2_mono_consistent>=0.3": true,
+    "c3_2015_non_disaster": true,
+    "c4_coverage>=50%pool": false
+   },
+   "survived_prelim": false
+  }
+ ]
+}

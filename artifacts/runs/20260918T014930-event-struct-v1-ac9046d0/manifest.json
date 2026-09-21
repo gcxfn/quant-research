@@ -1,0 +1,131 @@
+{
+  "run_id": "20260918T014930-event-struct-v1-ac9046d0",
+  "experiment_id": "exp-20260918-event-structuring",
+  "status": "completed",
+  "started_at": "2026-09-17T17:49:30.875461+00:00",
+  "command": [
+    "D:\\量化\\.venv\\Scripts\\python.exe",
+    "tools/build_event_factors_v1.py"
+  ],
+  "config_sha256": "456d57cd18cdeeaca80a9d14c15a94d6669685c8fb38c73a8e1f35db144ab3e1",
+  "source_sha256": {
+    "src\\quant\\__init__.py": "8c87349ce293131565a8ace05f9e339c81fa76951bde07525c354c74c4cf3307",
+    "src\\quant\\backtest\\__init__.py": "dde15cd80a7f5bb490b6b3f7ed7a68f3fca1a18121e9000939c417e0ed3b8999",
+    "src\\quant\\backtest\\backtrader_adapter.py": "fc2813a4f5cdd735a26051b800e02e9106403440c08d84a139eda05269093966",
+    "src\\quant\\backtest\\orders.py": "aec9750d59f4b7316ab89a0b175b0a7839998f68ed7debf2b0bd18dde405318e",
+    "src\\quant\\backtest\\results.py": "c43324de29ce0c2f17d521497879bfca6cfaa5be7618a89453226f2ca72bf830",
+    "src\\quant\\backtest\\vectorbt_adapter.py": "73847bb6997dc26697657871199b8bd7392acc70cf329cc2e18dd27062c494a9",
+    "src\\quant\\cli\\__init__.py": "b0536f9542c22462c17ef58d483a1adf6bf0c25369954507844e0421e5c0723a",
+    "src\\quant\\cli\\main.py": "ddde31f438600e5447517ce7a9db8b2a5c1ba14f61351fa39272255b6ccbb471",
+    "src\\quant\\cli\\p0_benchmark.py": "fb7d38b8f1abba17d25dfab844b9771f8de53eafd39d4d654cc42eb2d64357e6",
+    "src\\quant\\cli\\p2_factor_survey.py": "155eed8d1985e5ebd3aab4c5f7b808e4a5722b67f20bf8ef9fa59568e274a08f",
+    "src\\quant\\cli\\p2_first_screen.py": "9d7b6288191ef30ade1fca27e9a94d84bb65197960614e0100c3dbba560d5fd0",
+    "src\\quant\\cli\\p2_window_diagnostic.py": "dfd6152db397cb2a358db44d374d9c9c0417a69d5810575485b00450cd28687a",
+    "src\\quant\\cli\\p2r6_etf_rotation.py": "fc815d8fe1e782d40d4c3e7d279834fa1af50ab3642153f724bb4a47e483d299",
+    "src\\quant\\cli\\p2r7_etf_exposure.py": "8a31a6950f49ba5e5ce5c487cfb3a2189b0fc6622b6bded5bc6c6368086f32dd",
+    "src\\quant\\cli\\p2r8_daily_risk.py": "0c01134d2b2c263bd810a577ed28bf7d5c6a575e02c74c8f5c0dd7848188e029",
+    "src\\quant\\data\\adjustment.py": "6cf5f7e7cc0d9e15b4030196f56c77009495279a206804361a7c86891d89a0ac",
+    "src\\quant\\data\\baostock_daily.py": "c83603ef05c805e7f81b60ff87a40088b23177b690f2a9bf421be390b6477e78",
+    "src\\quant\\data\\event_batches.py": "b8a0994a2adcec8fbc18a2c024abe088868eef3fcf90e0a2480a7f6087890691",
+    "src\\quant\\data\\rqalpha_bundle.py": "2ae8d0eed45d1216c84827eefb7bee0227fbdc985be0c38fa3f4794d7209d523",
+    "src\\quant\\factors\\__init__.py": "5b555032251c683b0c9b6cdb5857ff356c81e02dd4c14e6cff1055c309acade4",
+    "src\\quant\\factors\\cache.py": "949736dd8a9482bd64d939e13940a323d8341cf0518bddffa7db8a97315e8f9a",
+    "src\\quant\\factors\\core.py": "5c6ddcf87505fdb82fb63cbc9658964b7372da326879f89bcd4aac50d33f7a77",
+    "src\\quant\\factors\\signals.py": "9ef501a069ffaaef731d8f6f04682674b818c82e1f2a627af1023565e9e8692c",
+    "src\\quant\\research\\__init__.py": "ae42337e69dedb044718bfe63a1832ef0c85cf1886c9b45e0403d63208869a51",
+    "src\\quant\\research\\etf_rotation.py": "4b6386885834a6c940f47a1abc46ae346ca6e901b918b372c16c599236d0125a",
+    "src\\quant\\research\\factor_survey.py": "354bd65c557965f54fe7743be01716e37362483768eb5b7c7c420111aa2d041b",
+    "src\\quant\\research\\fee_recost.py": "683ec48aecbc298c1a19ce895a6de6ff28f2bb71e392216cbaf9ff1ca5fb3a6a",
+    "src\\quant\\research\\p2_first_screen.py": "17f119402c02c87a7288fb9cdd93cc6e1b3d3d45e9b6642a317942e100060e80",
+    "src\\quant\\research\\runs.py": "979f0ab108b8bd0fb97bd8a67435ebe46537d9cb06ef83a5ac1485c77593acbc",
+    "src\\quant\\research\\screen.py": "100cfef7927a7727089eeb3634eb810571a9313dfe09600964866a6c208249df",
+    "src\\quant\\research\\synthetic.py": "968818be521defdc028435123806f7de0e97858b06d8d0c67c87319cf3aa8795"
+  },
+  "lock_sha256": "5694af16960733c0e6ce4e3ef84e9d586e9d4452fdbe00b992d321687dc50c25",
+  "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "polars": "1.44.2",
+    "pyarrow": "25.0.1",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "vectorbt": "0.28.5",
+    "backtrader": "1.9.78.123",
+    "psutil": "7.2.2"
+  },
+  "machine": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 20,
+    "ram_bytes": 16780566528,
+    "disk_free_bytes": 238794203136
+  },
+  "seed": null,
+  "date_range": [
+    null,
+    null
+  ],
+  "inputs": {
+    "calendar": {
+      "path": "data\\raw\\tushare\\index_daily\\20260917-r1\\chunk_000300.SH.csv",
+      "sha256": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878",
+      "n_days": 2431,
+      "first": "2015-01-05",
+      "last": "2024-12-31"
+    },
+    "pool": {
+      "dataset_id": "baostock-daily-20260917",
+      "source_parquet": "data\\processed\\baostock-daily-20260917\\daily_1999_2024.parquet",
+      "n_codes_freeze_filtered": 5410,
+      "raw_universe_files": 5552,
+      "note": "池取 processed 数据集 distinct symbol（冻结过滤后）；raw baostock/daily 全宇宙 5552 只，差额为 2025 年后上市、仅存在于冻结线外的代码——这些代码不可能有 ts_available<=2024-12-31 的事件行，对入界行无影响"
+    },
+    "batches": {
+      "forecast": {
+        "path": "data/raw/tushare/forecast/20260909-r1",
+        "manifest_sha256": "e9c9d01c5345a370bba253b3489811cbfe52b46907cffec8bbe79824d2753845",
+        "raw_rows": 50406
+      },
+      "express": {
+        "path": "data/raw/tushare/express/20260909-r1",
+        "manifest_sha256": "b4f49b3591448d014cb15b5e8a6c36928e0a862bd0b5d5c7920fd4d60899dcae",
+        "raw_rows": 8488
+      },
+      "repurchase": {
+        "path": "data/raw/tushare/repurchase/20260909-r3",
+        "manifest_sha256": "b4d03bc8df5344e962bc097e5eaecbed4bce7632389bb3a823580ddbf7a8af6a",
+        "raw_rows": 61718
+      },
+      "share_float": {
+        "path": "data/raw/tushare/share_float/20260909-r3",
+        "manifest_sha256": "e1ca1374a2b2d65c006aefcab5447542ae557b8e90a074f43fb10e8deab3ee0e",
+        "raw_rows": 5661143
+      },
+      "stk_holdertrade": {
+        "path": "data/raw/tushare/stk_holdertrade/20260909-r3",
+        "manifest_sha256": "c53f09fef316677b696c8e63df985ad0dfcc92971197b75d5e4e096ddb6e5a3c",
+        "raw_rows": 149108
+      },
+      "disclosure_date": {
+        "path": "data/raw/tushare/disclosure_date/20260909-r1",
+        "manifest_sha256": "a64be86436e5d6173a3ef314dea7be865e7fe2a16c4622aed647900117a34615",
+        "raw_rows": 148313
+      }
+    },
+    "outputs": {
+      "dir": "data\\features\\event-factors-v1-20260918",
+      "manifest_sha256": "c1d56d8e0fa153589d359f31c7a25793b0decb49469c6ab6f7ba6eca8a88cd52"
+    }
+  },
+  "limits": {},
+  "ended_at": "2026-09-17T17:49:39.593040+00:00",
+  "elapsed_seconds": 8.717929100006586,
+  "peak_rss_bytes": 4853665792,
+  "memory_method": "20ms process RSS sampling; includes imported libraries, excludes children",
+  "outputs": {
+    "build_event_factors_v1.py": "64860f1c298e48cd2b4903982871de3c3a411726544cd1f2e454ff7641dfca47",
+    "config.json": "18164fbbdfc359d33b1a97c1791b1baa77a64168c57fb8215c7448313c923807",
+    "event_batches_module_copy.py": "b8a0994a2adcec8fbc18a2c024abe088868eef3fcf90e0a2480a7f6087890691",
+    "metrics.json": "75a6075fa7e99fd928b0da3d1139a8f0d7579ab34d00fd069d43c89ee672d2f5",
+    "report.md": "c35e5a4f8ec41bab90d835e432157735cea26ddcaee37cc14868ff4a3c2a98a3",
+    "logs\\console.log": "18f0f1f59b09bbf1369722cf26081107691b5b3a2f9d7bdd05d040994dbc5015"
+  }
+}

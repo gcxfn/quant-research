@@ -1,0 +1,151 @@
+{
+ "smoke": true,
+ "signal_days": 12,
+ "per_config": {
+  "C01": {
+   "converged_at": null,
+   "wall_s": 23.15137269999832,
+   "hist": [
+    {
+     "cagr": -0.014646001933002473,
+     "mdd": -0.5813226695430249,
+     "end_eq": 183089.16299999997,
+     "iter": 1
+    },
+    {
+     "cagr": 0.03332679928439575,
+     "mdd": -0.5720536053021843,
+     "end_eq": 243377.6763,
+     "iter": 2
+    },
+    {
+     "cagr": -0.060841801752938074,
+     "mdd": -0.5570740943891844,
+     "end_eq": 137340.42500000002,
+     "iter": 3
+    },
+    {
+     "cagr": 0.023477609094786356,
+     "mdd": -0.624689826706858,
+     "end_eq": 229813.6935,
+     "iter": 4
+    },
+    {
+     "cagr": -0.0302843116845678,
+     "mdd": -0.5363954319627884,
+     "end_eq": 166364.658,
+     "iter": 5
+    },
+    {
+     "cagr": -0.009782695627752358,
+     "mdd": -0.6054086213566223,
+     "end_eq": 188566.9889,
+     "iter": 6
+    },
+    {
+     "cagr": -0.030356895844702025,
+     "mdd": -0.576259425824952,
+     "end_eq": 166290.11,
+     "iter": 7
+    },
+    {
+     "cagr": -0.002245218659581494,
+     "mdd": -0.5821439802278097,
+     "end_eq": 197326.2799,
+     "iter": 8
+    },
+    {
+     "cagr": -0.030168349914720727,
+     "mdd": -0.5725642461579706,
+     "end_eq": 166483.81499999997,
+     "iter": 9
+    },
+    {
+     "cagr": -0.00987172544344228,
+     "mdd": -0.585819609629419,
+     "end_eq": 188465.49689999997,
+     "iter": 10
+    },
+    {
+     "cagr": -0.03157632533705024,
+     "mdd": -0.5729485632615907,
+     "end_eq": 165041.842,
+     "iter": 11
+    },
+    {
+     "cagr": -0.006011603687104072,
+     "mdd": -0.6013511609799311,
+     "end_eq": 192907.95889999997,
+     "iter": 12
+    },
+    {
+     "cagr": -0.027031023985836122,
+     "mdd": -0.5707298822355322,
+     "end_eq": 169734.676,
+     "iter": 13
+    },
+    {
+     "cagr": -0.005408992563877613,
+     "mdd": -0.602780640822706,
+     "end_eq": 193609.28689999998,
+     "iter": 14
+    },
+    {
+     "cagr": -0.026075524121214944,
+     "mdd": -0.5715373657033266,
+     "end_eq": 170735.193,
+     "iter": 15
+    },
+    {
+     "cagr": -0.005284811000081713,
+     "mdd": -0.6041105438043857,
+     "end_eq": 193754.07489999998,
+     "iter": 16
+    }
+   ],
+   "attr": {
+    "termination": {
+     "expiry": 16,
+     "override_same_name": 41,
+     "cap_void": 3,
+     "suspension_abandon": 0
+    },
+    "mapped_rate": 0.5945945945945946,
+    "n_filled": 47,
+    "n_rule_blocked": 41,
+    "rule_blocked": {
+     "below_min_lot": 0,
+     "void_no_position": 41,
+     "void_insufficient_cash": 0
+    },
+    "n_terminated": 60,
+    "n_skip": 116,
+    "order_session": {
+     "buy": 0.05722070844686648,
+     "sell": 0.017358490566037735
+    },
+    "emit_side": {
+     "buy": 3303,
+     "sell": 2650
+    },
+    "fill_side": {
+     "buy": 189,
+     "sell": 46
+    },
+    "sess_fill_share": {
+     "am": 0.039852645679839246,
+     "pm": 0.03909673070441524
+    }
+   },
+   "net_cagr": -0.005284811000081713,
+   "mdd": -0.6041105438043857,
+   "exec": 0.5945945945945946,
+   "warnings_n": 148,
+   "warnings_sample": [
+    "anchor reference missing: sh.601766-buy-2015-03-09-am decision 2015-03-09 am has no am bar / official daily row for the symbol; anchor taken as supplied by the host",
+    "anchor reference missing: sh.601766-buy-2015-03-09-pm decision 2015-03-09 pm has no am bar / official daily row for the symbol; anchor taken as supplied by the host",
+    "anchor reference missing: sh.601766-buy-2015-03-30-am decision 2015-03-30 am has no am bar / official daily row for the symbol; anchor taken as supplied by the host"
+   ]
+  }
+ }
+}

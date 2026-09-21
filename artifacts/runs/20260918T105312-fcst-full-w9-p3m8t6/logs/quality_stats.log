@@ -1,0 +1,17 @@
+{
+ "batch": 9,
+ "n_rows": 600,
+ "other_rate_primary": 0.1717,
+ "secondary_null_rate": 0.4767,
+ "supports_direction_distribution": {
+  "-1": 9,
+  "0": 5,
+  "1": 586
+ },
+ "confidence_distribution": {
+  "high": 585,
+  "low": 15
+ },
+ "rows_completed": 5400,
+ "progress_json": "data/features/fcst-reason-struct-full-20260918/progress.json"
+}

@@ -1,0 +1,77 @@
+{
+ "run_id": "20260921T135642-etf-mom-7c2a",
+ "experiment_id": "exp-20260921-etf-momentum",
+ "status": "completed",
+ "mode": "full",
+ "started_at_utc": "2026-09-21T06:05:42.670758+00:00",
+ "ended_at_utc": "2026-09-21T06:05:43.967760+00:00",
+ "wall_seconds": 1.2967554999995627,
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "artifacts/runs/20260921T135642-etf-mom-7c2a/tmp/runner_etf_mom.py"
+ ],
+ "engine": {
+  "version": "v1.5+clip-price",
+  "clock": "halfday+pm_only"
+ },
+ "pins": {
+  "prereg": {
+   "sha256": "7b8ae37c36b97004cc2907a23737c0f52b5b69a8f724b91ed8ade9f0f8824b2e"
+  },
+  "etf_daily": {
+   "path": "D:\\量化\\data\\processed\\etf-daily-20260919\\daily_2015_2024.parquet",
+   "sha256": "b7225d50523106f53fc87bf21a92f12978ecc31a7b195ed2b4cf4e39f7a0d661"
+  },
+  "pool": {
+   "path": "D:\\量化\\data\\processed\\etf-daily-20260919\\pool.parquet",
+   "sha256": "b48256dbb14a1372fae5f3f334c2c88ceed6d3ff042aa4cc2ebced4a7473f675"
+  },
+  "fs_gates": {
+   "path": "D:\\量化\\artifacts\\runs\\20260921T121615-fixed-scheme-6e8be\\outputs\\metrics_and_gates.json",
+   "sha256": "d801eed1989fb4a6b6d667f5c237b5a1732f0a39c7cc8a80e7f4c23d93d6ec94"
+  },
+  "fund_adj_aggregate": {
+   "sha256": "18650ec95eb0611ab99cb048448d8a5c76446ef22141858ac6c0acfa4d1ec261"
+  }
+ },
+ "pool": [
+  "sh.510050",
+  "sh.510500",
+  "sz.159915",
+  "sh.510880",
+  "sh.510900",
+  "sh.513100",
+  "sh.513500",
+  "sh.512880",
+  "sh.512800",
+  "sz.159938",
+  "sz.159928",
+  "sz.159939",
+  "sh.512980",
+  "sh.512660",
+  "sh.512400",
+  "sh.510610",
+  "sh.510620",
+  "sh.512200",
+  "sh.512580"
+ ],
+ "trial_accounting": {
+  "strategy_line": {
+   "before": 287,
+   "this_round": 1,
+   "after": 288
+  }
+ },
+ "stage": "A_only_eliminated",
+ "outputs": {
+  "outputs/engine_warnings.json": "ce1b3e91abb43ea6e3035d2102ad1488ab02d278b71fd4f690bda67d1f6beda7",
+  "outputs/metrics_and_gates.json": "4b42624bf55c88d851f488053c2eea364e38abe56cc86fda28f2765b115f5805",
+  "outputs/momD3_clips_final.parquet": "da515b994f69745b07323e42044ca839c38fe8cefc19a9f72ad03ca1d50191af",
+  "outputs/momD3_daily_equity.parquet": "ea61210700862dada693d58426743bdfed0a976b447397a1dd3214de9618c5c0",
+  "outputs/momD3_events.parquet": "f0a8e392038213a5f9f09a740c5896907af4921c7037f52aff17391045a788fa",
+  "outputs/momD3_fills.parquet": "fe8761fd293e2c587a956eb5548dd61cea0f2c61f2a9a7294989089ecd8adbdc",
+  "outputs/stageA.json": "ad506a0187422d316d3bb0aa6a7329f609c37abb9364a34c3a46415aaca0658e",
+  "report.md": "a773d367ab704ec09135c057e4c3586ad0b3f7f6888fd0e1dc1b1667497abb30",
+  "tmp/runner_etf_mom.py": "2f417ea419f7cf2f269ed7cf38aba0589245a7ae8d7ba02aaf6993f2c279d31a"
+ }
+}

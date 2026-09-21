@@ -1,0 +1,195 @@
+{
+ "stats": {
+  "initial_cash": 200000.0,
+  "engine_version": "band_engine v1.2",
+  "etf_leg": {
+   "meta_symbols": [
+    "sh.510050",
+    "sh.510300",
+    "sh.510880",
+    "sh.511010",
+    "sh.513100",
+    "sh.513500",
+    "sh.518880",
+    "sz.159915"
+   ],
+   "etf_symbols": [
+    "sh.510050",
+    "sh.510300",
+    "sh.510880",
+    "sh.511010",
+    "sh.513100",
+    "sh.513500",
+    "sh.518880",
+    "sz.159915"
+   ],
+   "etf_bands": {
+    "sh.510050": 0.1,
+    "sh.510300": 0.1,
+    "sh.510880": 0.1,
+    "sh.511010": 0.1,
+    "sh.513100": 0.1,
+    "sh.513500": 0.1,
+    "sh.518880": 0.1,
+    "sz.159915": 0.1
+   },
+   "etf_default_band_symbols": [],
+   "t_plus_zero_symbols": [
+    "sh.510050",
+    "sh.510300",
+    "sh.510880",
+    "sh.511010",
+    "sh.513100",
+    "sh.513500",
+    "sh.518880",
+    "sz.159915"
+   ],
+   "dividend_event_symbols": [
+    "sh.510050",
+    "sh.510300",
+    "sh.510880",
+    "sh.511010"
+   ],
+   "dividend_events_cash": 0.0,
+   "limit_source": "computed per section 8.3 (preclose x (1 +/- band), 0.001 tick)",
+   "routing": "section 8.2: ETF pm decisions live next pm; ETF fallbacks execute at pm opens"
+  },
+  "contract": "v1 (docs/plans/p3-band-contract.md section 7) + v1.1 engine-side intent layer (prereg section 9 revision 2)",
+  "order_generation": "engine_intents",
+  "intent_layer": {
+   "n_intents": 1466,
+   "activated": 1466,
+   "orders_generated": 18828,
+   "stopped_filled": 737,
+   "terminated_override": 587,
+   "terminated_expired": 127,
+   "terminated_cap": 1,
+   "at_target_skips": 10110,
+   "emissions_skipped_no_anchor": 1423,
+   "emissions_skipped_no_live_session": 14
+  },
+  "fees": {
+   "commission_rate": 0.0001,
+   "commission_min": 5.0,
+   "stamp_sell_before": 0.001,
+   "stamp_sell_from": 0.0005,
+   "stamp_boundary": "2023-08-28",
+   "etf_stamp": "exempt (is_etf)",
+   "transfer_fee": "not modelled (~0.1bp/leg SSE only; standing disclosure)"
+  },
+  "contract_constants": {
+   "K_FALLBACK_SESSIONS": 3,
+   "LIMIT_DOWN_TOL": 0.0001,
+   "LOT": 100,
+   "FREEZE_END": "2024-12-31",
+   "commission_warning_notional": 50000.0,
+   "cap_single_name": 0.25,
+   "cap_total": 1.0,
+   "pm_close_official_cutoff": "2018-08-20"
+  },
+  "signals": {
+   "buy": 18191,
+   "sell_risk": 631,
+   "sell_profit": 0
+  },
+  "orders_filled": {
+   "buy": 352,
+   "sell_risk": 385,
+   "sell_profit": 0
+  },
+  "fill_rate_order_session": {
+   "buy": 0.01935022813479193,
+   "sell_risk": 0.6101426307448494,
+   "sell_profit": null
+  },
+  "unfilled_exit_reasons": {
+   "buy": {
+    "below_min_lot": 15695,
+    "void_suspended": 20,
+    "cap_single_name": 1,
+    "not_penetrated": 2107,
+    "void_limit_out_of_range": 10,
+    "void_no_limit_info": 6
+   },
+   "risk": {
+    "session_unfilled": 90,
+    "void_suspended": 2,
+    "void_no_position": 159,
+    "void_limit_out_of_range": 1
+   },
+   "profit": {}
+  },
+  "unfilled_exit_share_buys": 0.9806497718652081,
+  "k3_fallback": {
+   "armed": 7,
+   "executed": 6,
+   "deferred_limitdown_sessions": 10,
+   "deferred_suspended": 0,
+   "deferred_t1locked": 0,
+   "pnl_contribution_total": -879.1389999999999,
+   "pnl_contribution_list": [
+    -22.167999999999893,
+    -71.18899999999985,
+    -63.98000000000002,
+    -312.6039999999998,
+    -140.60600000000068,
+    -268.59199999999964
+   ],
+   "pnl_definition": "net market-exit proceeds minus shares * previous official close",
+   "definition": "risk-intent sells unfilled for 3 consecutive live sessions are market-exited at the next session open (opening limit-down / suspension / T+1-lock defer)"
+  },
+  "corp_actions": {
+   "splits": 6,
+   "dividends": 140,
+   "dividend_cash_total_pre_tax": 8968.330909999999
+  },
+  "turnover": {
+   "buy_notional_total": 1349869.0,
+   "sell_notional_total": 1222754.8
+  },
+  "cash_friction": {
+   "insufficient_cash_orders": 0,
+   "below_min_lot_abandons": 15695,
+   "quantity_capped_fills": 0,
+   "no_position_voids": 159,
+   "t1_locked_voids": 0
+  },
+  "caps": {
+   "single_name_voids": 1,
+   "single_name_drift_breaches": 0,
+   "total_voids": 0,
+   "definition": "section 7.3 (section 7.7 M2): single-name MV <= 25% of the decision-point equity snapshot, validated at order construction (breach -> whole order voids); drift breaches are recorded only (no force trim); the total<=100% cap is implied by full funding and never fires on an affordable order"
+  },
+  "odd_lot_exits": 4,
+  "commission_warnings": 0,
+  "risk_streaks_open_at_end": [
+   {
+    "symbol": "sz.002241",
+    "final_streak": 1,
+    "armed": false
+   }
+  ],
+  "void_days": {
+   "suspended": 22,
+   "cap_single_name": 1,
+   "not_penetrated": 2107,
+   "limit_out_of_range": 11,
+   "no_limit_info": 6
+  },
+  "stale_mark_days": 825,
+  "final": {
+   "settled_cash": 76946.37610999997,
+   "pending_am_to_pm": 0.0,
+   "pending_next_day": 0.0,
+   "n_open_clips": 31
+  },
+  "definitions": {
+   "fill_rate_order_session": "filled orders / orders (every order lives exactly one session)",
+   "unfilled_exit_share_buys": "buy orders never filled / buy orders",
+   "k3_pnl_contribution": "net market-exit proceeds minus shares * previous official close",
+   "caps": "section 7.3 limits enforced at fill evaluation against last completed day's official-close marks (conservative, no intraday look-ahead)"
+  }
+ },
+ "warnings": [],
+ "wall_s": 2.6292473999783397
+}

@@ -1,0 +1,13 @@
+[    0.0s] == 0. identity pins (window dev) ==
+[    0.4s]   engine a01cb29ce4cf2148 == pin; daily d9a63f4cc3032926
+[    0.4s] == 1. calendar + signal days ==
+[    0.5s]   71 signal days (2015-01-30..2020-11-30); last month-end dropped as signal, kept as expiry anchor
+[    0.5s] == 2. exposures (T200-40) + R16 pools ==
+[    0.5s]   t200 behavioral anchor: {"anchor_years": ["2016", "2017", "2018", "2019", "2020"], "reproduced_stats": {"2016": {"n_sessions": 244, "n_switches": 5, "off_share": 0.
+[    0.5s]   exposures[2015-01-30]=0.40 [2020-11-30]=0.90
+[    7.6s]   pool n: min 810 max 2260
+[    7.6s] == 3. B1(m) simulate (K=0, fractional, rate_only, T200-40) ==
+[   61.7s]   B1(m)(dev): net_cagr +0.00599059 mdd -0.39823784 by-year {2015: 0.22735356961585995, 2016: -0.036271319473569985, 2017: -0.11258228102926204, 2018: -0.19627407276887188, 2019: 0.1237564993275273, 2020: 0.09319791239431363}
+[   61.7s] == 4. dev port-check vs R16 metrics.json configs.C05 b1m_* (tol 1e-9) ==
+[   61.7s]   B1m DEV PORT PASS: reproduces R16 metrics.json configs.C05 b1m_* to 1e-9 (net_cagr / max_drawdown / every year)
+[   61.7s] == dev done -> b1m_dev.json; wall 61.7s ==

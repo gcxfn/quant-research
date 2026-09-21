@@ -1,0 +1,129 @@
+[    0.0s] account-risk dynamic replay; curves=D0,D1,D2,D3; window=2015-01-01..2015-03-31 (SMOKE)
+[    0.0s] == 0. identity pins ==
+[   12.2s]   engine bcbdd44bb855b803 OK (frozen dynamic engine); pins OK; python 3.11.15 | rss 0.27 GB
+[   12.2s] == 1. calendar & signal days ==
+[   12.6s]   2 signal days (2015-01-30..2015-02-27)
+[   12.6s] == 2. R16 pool (build_history + signal_pools, verbatim) ==
+[   23.8s]   pool n: min 1412 max 1438
+[   23.8s] == 3. dedup: |rho|>=0.6 connected components, rep = max |t| ==
+[   23.9s]   20 clusters, 20 representatives == F3R1 list OK
+[   24.0s] == 4. composite: EW + ICW arms on executable cross-sections ==
+[   24.5s]   wide frame 6975 rows, 3500 symbols
+[    0.0s] account-risk dynamic replay; curves=D0,D1,D2,D3; window=2015-01-01..2015-03-31 (SMOKE)
+[    0.0s] == 0. identity pins ==
+[    9.7s]   engine bcbdd44bb855b803 OK (frozen dynamic engine); pins OK; python 3.11.15 | rss 0.27 GB
+[    9.7s] == 1. calendar & signal days ==
+[   10.1s]   2 signal days (2015-01-30..2015-02-27)
+[   10.1s] == 2. R16 pool (build_history + signal_pools, verbatim) ==
+[   14.2s]   pool n: min 1412 max 1438
+[   14.2s] == 3. dedup: |rho|>=0.6 connected components, rep = max |t| ==
+[   14.2s]   20 clusters, 20 representatives == F3R1 list OK
+[   14.2s] == 4. composite: EW + ICW arms on executable cross-sections ==
+[   14.3s]   wide frame 6975 rows, 3500 symbols
+[   14.4s]   2015-01-30: pool 1438 -> eligible 1433
+[   14.5s]   2015-02-27: pool 1412 -> eligible 1410
+[   14.5s] == 5. seat membership + overlay hosts (one per curve) ==
+[   14.5s]   F3-ICW: members/month min 10 max 10
+[   14.5s] == 7. band engine market frames ==
+[   46.8s]   frames: panel 18 symbols; daily 1026; half 1984; limits 1026; rss 2.51 GB
+[   46.8s] == 8. band engine dynamic runs, one pass per curve ==
+[   47.1s] !! FAIL: D0: host rows 69 != engine dynamic_injected 77
+[    0.0s] account-risk dynamic replay; curves=D0,D1,D2,D3; window=2015-01-01..2015-03-31 (SMOKE)
+[    0.0s] == 0. identity pins ==
+[    4.3s]   engine bcbdd44bb855b803 OK (frozen dynamic engine); pins OK; python 3.11.15 | rss 0.27 GB
+[    4.3s] == 1. calendar & signal days ==
+[    4.5s]   2 signal days (2015-01-30..2015-02-27)
+[    4.5s] == 2. R16 pool (build_history + signal_pools, verbatim) ==
+[   15.6s]   pool n: min 1412 max 1438
+[   15.6s] == 3. dedup: |rho|>=0.6 connected components, rep = max |t| ==
+[   15.7s]   20 clusters, 20 representatives == F3R1 list OK
+[   15.8s] == 4. composite: EW + ICW arms on executable cross-sections ==
+[   16.6s]   wide frame 6975 rows, 3500 symbols
+[   17.2s]   2015-01-30: pool 1438 -> eligible 1433
+[   17.7s]   2015-02-27: pool 1412 -> eligible 1410
+[   17.7s] == 5. seat membership + overlay hosts (one per curve) ==
+[   17.7s]   F3-ICW: members/month min 10 max 10
+[   17.7s] == 7. band engine market frames ==
+[   60.9s]   frames: panel 18 symbols; daily 1026; half 1984; limits 1026; rss 2.31 GB
+[   60.9s] == 8. band engine dynamic runs, one pass per curve ==
+[   61.1s]   D0: engine 0.2s; provider calls 114 injected 77 (entry 69 exit 8 overlay 69); steps 75 reduced 0; orders 77 filled 8 expired_halfday 68 no_anchor None override 0 | rss 2.31 GB
+[   61.3s]   D1: engine 0.1s; provider calls 114 injected 77 (entry 69 exit 8 overlay 69); steps 75 reduced 0; orders 77 filled 8 expired_halfday 68 no_anchor None override 0 | rss 2.31 GB
+[   61.4s]   D2: engine 0.1s; provider calls 114 injected 77 (entry 69 exit 8 overlay 69); steps 75 reduced 0; orders 77 filled 8 expired_halfday 68 no_anchor None override 0 | rss 2.31 GB
+[   61.6s]   D3: engine 0.2s; provider calls 114 injected 77 (entry 69 exit 8 overlay 69); steps 75 reduced 0; orders 77 filled 8 expired_halfday 68 no_anchor None override 0 | rss 2.30 GB
+[   61.6s] == 8b. D0 carrier parity gate (five-frame comparison) ==
+[   61.6s]   smoke window: parity gate skipped (reference run is the full dev window); D0-vs-carrier equality is re-checked in the full run
+[   61.6s] == 9. account-level state trace ==
+[   61.6s]   D0: reduce 0 restore 0 reduced-sessions 0 mean E-ratio 1.000 trims 0 topups 0 fail-closed 0
+[   61.6s]   D1: reduce 0 restore 0 reduced-sessions 0 mean E-ratio 1.000 trims 0 topups 0 fail-closed 0
+[   61.6s]   D2: reduce 0 restore 0 reduced-sessions 0 mean E-ratio 1.000 trims 0 topups 0 fail-closed 0
+[   61.6s]   D3: reduce 0 restore 0 reduced-sessions 0 mean E-ratio 1.000 trims 0 topups 0 fail-closed 0
+[   61.6s] == 10. comparison: D0 control vs the three pre-registered schemes ==
+[   61.6s] == 11. outputs ==
+[    0.0s] account-risk dynamic replay; curves=D0,D1,D2,D3; window=2015-01-01..2015-03-31 (SMOKE)
+[    0.0s] == 0. identity pins ==
+[    7.2s]   engine bcbdd44bb855b803 OK (frozen dynamic engine); pins OK; python 3.11.15 | rss 0.27 GB
+[    7.2s] == 1. calendar & signal days ==
+[    7.3s]   2 signal days (2015-01-30..2015-02-27)
+[    7.3s] == 2. R16 pool (build_history + signal_pools, verbatim) ==
+[   10.3s]   pool n: min 1412 max 1438
+[   10.3s] == 3. dedup: |rho|>=0.6 connected components, rep = max |t| ==
+[   10.3s]   20 clusters, 20 representatives == F3R1 list OK
+[   10.4s] == 4. composite: EW + ICW arms on executable cross-sections ==
+[   10.5s]   wide frame 6975 rows, 3500 symbols
+[   10.6s]   2015-01-30: pool 1438 -> eligible 1433
+[   10.7s]   2015-02-27: pool 1412 -> eligible 1410
+[   10.7s] == 5. seat membership + overlay hosts (one per curve) ==
+[   10.7s]   F3-ICW: members/month min 10 max 10
+[   10.7s] == 7. band engine market frames ==
+[   20.6s]   frames: panel 18 symbols; daily 1026; half 1984; limits 1026; rss 2.48 GB
+[   20.6s] == 8. band engine dynamic runs, one pass per curve ==
+[   20.7s]   D0: engine 0.1s; provider calls 114 injected 77 (entry 69 exit 8 overlay 69); steps 75 reduced 0; orders 77 filled 8 expired_halfday 68 no_anchor None override 0 | rss 2.48 GB
+[   20.7s]   D1: engine 0.0s; provider calls 114 injected 77 (entry 69 exit 8 overlay 69); steps 75 reduced 0; orders 77 filled 8 expired_halfday 68 no_anchor None override 0 | rss 2.48 GB
+[   20.7s]   D2: engine 0.0s; provider calls 114 injected 77 (entry 69 exit 8 overlay 69); steps 75 reduced 0; orders 77 filled 8 expired_halfday 68 no_anchor None override 0 | rss 2.48 GB
+[   20.8s]   D3: engine 0.0s; provider calls 114 injected 77 (entry 69 exit 8 overlay 69); steps 75 reduced 0; orders 77 filled 8 expired_halfday 68 no_anchor None override 0 | rss 2.48 GB
+[   20.8s] == 8b. D0 carrier parity gate (five-frame comparison) ==
+[   20.8s]   smoke window: parity gate skipped (reference run is the full dev window); D0-vs-carrier equality is re-checked in the full run
+[   20.8s] == 9. account-level state trace ==
+[   20.8s]   D0: reduce 0 restore 0 reduced-sessions 0 mean E-ratio 1.000 trims 0 topups 0 fail-closed 0
+[   20.8s]   D1: reduce 0 restore 0 reduced-sessions 0 mean E-ratio 1.000 trims 0 topups 0 fail-closed 0
+[   20.8s]   D2: reduce 0 restore 0 reduced-sessions 0 mean E-ratio 1.000 trims 0 topups 0 fail-closed 0
+[   20.8s]   D3: reduce 0 restore 0 reduced-sessions 0 mean E-ratio 1.000 trims 0 topups 0 fail-closed 0
+[   20.8s] == 10. comparison: D0 control vs the three pre-registered schemes ==
+[   20.8s] == 11. outputs ==
+[   20.9s] == manifest + report written; wall 21s, peak rss 2.48 GB ==
+[    0.0s] account-risk dynamic replay; curves=D0,D1,D2,D3; window=2015-01-01..2015-03-31 (SMOKE)
+[    0.0s] == 0. identity pins ==
+[    0.0s] !! FAIL: engine pin mismatch: d4b6c3764780e6de
+[    0.0s] account-risk dynamic replay; curves=D0,D1,D2,D3; window=2015-01-01..2015-03-31 (SMOKE)
+[    0.0s] == 0. identity pins ==
+[    9.9s]   engine d4b6c3764780e6de OK (frozen dynamic engine); pins OK; python 3.11.15 | rss 0.27 GB
+[    9.9s] == 1. calendar & signal days ==
+[   10.2s]   2 signal days (2015-01-30..2015-02-27)
+[   10.2s] == 2. R16 pool (build_history + signal_pools, verbatim) ==
+[   20.8s]   pool n: min 1412 max 1438
+[   20.8s] == 3. dedup: |rho|>=0.6 connected components, rep = max |t| ==
+[   20.8s]   20 clusters, 20 representatives == F3R1 list OK
+[   21.0s] == 4. composite: EW + ICW arms on executable cross-sections ==
+[   21.5s]   wide frame 6975 rows, 3500 symbols
+[   22.0s]   2015-01-30: pool 1438 -> eligible 1433
+[   22.7s]   2015-02-27: pool 1412 -> eligible 1410
+[   22.7s] == 5. seat membership + overlay hosts (one per curve) ==
+[   22.7s]   F3-EW: members/month min 10 max 10
+[   22.7s]   F3-ICW: members/month min 10 max 10
+[   22.7s] == 7. band engine market frames ==
+[   71.2s]   frames: panel 24 symbols; daily 1368; half 2652; limits 1368; rss 2.31 GB
+[   71.3s] == 8. band engine dynamic runs, one pass per curve ==
+[   71.6s]   D0: engine 0.2s; provider calls 114 injected 77 (entry 69 exit 8 overlay 69); steps 75 reduced 0; orders 77 filled 8 expired_halfday 68 no_anchor None override 0 | rss 2.32 GB
+[   71.7s]   D1: engine 0.2s; provider calls 114 injected 77 (entry 69 exit 8 overlay 69); steps 75 reduced 0; orders 77 filled 8 expired_halfday 68 no_anchor None override 0 | rss 2.32 GB
+[   71.9s]   D2: engine 0.2s; provider calls 114 injected 77 (entry 69 exit 8 overlay 69); steps 75 reduced 0; orders 77 filled 8 expired_halfday 68 no_anchor None override 0 | rss 2.32 GB
+[   72.1s]   D3: engine 0.2s; provider calls 114 injected 77 (entry 69 exit 8 overlay 69); steps 75 reduced 0; orders 77 filled 8 expired_halfday 68 no_anchor None override 0 | rss 2.32 GB
+[   72.1s] == 8b. D0 carrier parity gate (five-frame comparison) ==
+[   72.1s]   smoke window: parity gate skipped (reference run is the full dev window); D0-vs-carrier equality is re-checked in the full run
+[   72.1s] == 9. account-level state trace ==
+[   72.1s]   D0: reduce 0 restore 0 reduced-sessions 0 mean E-ratio 1.000 trims 0 topups 0 fail-closed 0
+[   72.1s]   D1: reduce 0 restore 0 reduced-sessions 0 mean E-ratio 1.000 trims 0 topups 0 fail-closed 0
+[   72.1s]   D2: reduce 0 restore 0 reduced-sessions 0 mean E-ratio 1.000 trims 0 topups 0 fail-closed 0
+[   72.1s]   D3: reduce 0 restore 0 reduced-sessions 0 mean E-ratio 1.000 trims 0 topups 0 fail-closed 0
+[   72.1s] == 10. comparison: D0 control vs the three pre-registered schemes ==
+[   72.1s] == 11. outputs ==
+[   72.3s] == manifest + report written; wall 72s, peak rss 2.32 GB ==

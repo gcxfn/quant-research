@@ -1,0 +1,61 @@
+[    0.0s] == 0. identity pins ==
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.0s]   engine: 494310195438cbfb expect 494310195438cbfb match=True
+[    0.6s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.6s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.6s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.6s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    3.3s]   stk_limit aggregate: 3c53abf3b0c39b42 (2432 files, 301278245 B) match=True
+[    3.3s]   python 3.11.15 | rss 0.27 GB
+[    3.3s] == 1. calendar & signal days ==
+[    3.4s]   12 signal days (2015-01-30..2015-12-31) [SMOKE: 2015 only]
+[    3.4s] == 2. exposures ==
+[    3.4s]   t200 behavioral anchor check: {"anchor_years": ["2016", "2017", "2018", "2019", "2020"], "reproduced_stats": {"2016": {"n_sessions": 244, "n_switches": 5, "off_share": 0.623, "mean_exposure"
+[    3.4s]   exposures: T200-40[0]=0.40 [T200-40][-1]=0.40; FIX75[0]=0.75 [FIX75][-1]=0.75
+[    3.4s] == 3. pools (r16 build_history + signal_pools) ==
+[    6.9s]   pools at 2015-01-30: n=1438; union of ranked symbols: 2265
+[    6.9s] == 4. leg_log + 8/8 membership consistency ==
+[    7.0s]   C01: membership mismatches=0, events mismatches=0 / 12
+[    7.0s]   C02: membership mismatches=0, events mismatches=0 / 12
+[    7.0s]   C03: membership mismatches=0, events mismatches=0 / 12
+[    7.0s]   C04: membership mismatches=0, events mismatches=0 / 12
+[    7.0s]   C05: membership mismatches=0, events mismatches=0 / 12
+[    7.0s]   C06: membership mismatches=0, events mismatches=0 / 12
+[    7.0s]   C07: membership mismatches=0, events mismatches=0 / 12
+[    7.0s]   C08: membership mismatches=0, events mismatches=0 / 12
+[    7.0s]   8/8 configs PASS (leg_log <-> independent buffer_membership + events)
+[    7.0s] == 5. market frames ==
+[    7.9s]   daily panel: 3289219 rows, 2265 symbols, max 2020-12-31
+[    8.6s]   halfday: 6172507 rows kept of 18486939 total (panel x dev), 2263 symbols
+[   18.8s]   limits: 3277327 rows (dev x panel)
+[   23.8s]   splits 1949 rows, dividends 15797 rows (panel)
+[   23.8s]   instruments: 2265 stocks (is_etf=False, is_t0=False; ETF line not in this round per prereg sec 2)
+[   23.8s]   rss after frames: 2.76 GB
+[   30.7s]   anchor tables: 2265 official series, 2263 am series, 1461 pm-session dates, 1462 am-session dates
+[   30.7s] == 9. per-config fixed-point runs ==
+[   30.7s]   decision points (all windows): 487
+[   30.8s]   C01: per-config frames daily 76358 / half 148688 / limits 76201 rows, 54 symbols
+[   32.6s]   C01 it1: cagr -1.465% mdd -58.13% end 183,089 rss 4.74G
+[   34.2s]   C01 it2: cagr +3.333% mdd -57.21% end 243,378 rss 4.76G
+[   35.6s]   C01 it3: cagr -6.084% mdd -55.71% end 137,340 rss 4.77G
+[   37.0s]   C01 it4: cagr +2.348% mdd -62.47% end 229,814 rss 4.78G
+[   38.6s]   C01 it5: cagr -3.028% mdd -53.64% end 166,365 rss 4.79G
+[   39.8s]   C01 it6: cagr -0.978% mdd -60.54% end 188,567 rss 4.79G
+[   41.4s]   C01 it7: cagr -3.036% mdd -57.63% end 166,290 rss 4.79G
+[   43.5s]   C01 it8: cagr -0.225% mdd -58.21% end 197,326 rss 4.80G
+[   45.1s]   C01 it9: cagr -3.017% mdd -57.26% end 166,484 rss 4.79G
+[   46.3s]   C01 it10: cagr -0.987% mdd -58.58% end 188,465 rss 4.79G
+[   48.0s]   C01 it11: cagr -3.158% mdd -57.29% end 165,042 rss 4.79G
+[   49.1s]   C01 it12: cagr -0.601% mdd -60.14% end 192,908 rss 4.76G
+[   50.5s]   C01 it13: cagr -2.703% mdd -57.07% end 169,735 rss 4.75G
+[   51.5s]   C01 it14: cagr -0.541% mdd -60.28% end 193,609 rss 4.76G
+[   52.9s]   C01 it15: cagr -2.608% mdd -57.15% end 170,735 rss 4.76G
+[   53.9s]   C01 it16: cagr -0.528% mdd -60.41% end 193,754 rss 4.77G
+[   53.9s]   C01: converged_at=None (None) (16 engine runs, 23s wall)
+[   53.9s] == 10. attribution & gate 8 ==
+[   54.0s]   C01: mapped rate 59.5% (filled 47, rule-blocked 41, terminated 60, skip 116), order-session fill b/s 5.7/1.7%, term {'expiry': 16, 'override_same_name': 41, 'cap_void': 3, 'suspension_abandon': 0}
+[   54.0s] == 11. metrics & gates ==
+[   54.0s] == 11. metrics & gates ==
+[   54.0s]   C01: net -0.53% excess -1.13pp adv 3/6 mdd -60.41% turn 2.31 w 46.3% exec 59.5% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '6_single_name_weight_le_40pct', '8_execution_rate_ge_95pct']
+[   54.0s] == gates: 0/8 dev_pass ==
+[   54.0s] SMOKE complete -> D:\量化\artifacts\runs\20260919T002020-p3r2-dev-9cc4\tmp\smoke\smoke_results.json (peak rss 4.75 GB)

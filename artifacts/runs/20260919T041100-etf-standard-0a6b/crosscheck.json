@@ -1,0 +1,259 @@
+{
+  "generated": "2026-09-19",
+  "run_id": "20260919T041100-etf-standard-0a6b",
+  "window": "2015-01-01..2024-12-31 (both sides filtered; 2025+ excluded)",
+  "primary": "data/processed/etf-daily-20260919/daily_2015_2024.parquet (tushare fund_daily 20260917-r1, unadjusted)",
+  "declaration": "同目标跨源一致性复核，非独立验证 (same-target cross-source consistency check, NOT independent verification: sina/tx and tushare may share upstream exchange data)",
+  "pairs": [
+    {
+      "symbol": "sh.510050",
+      "asset_class": "equity",
+      "primary_days_in_window": 2431,
+      "vs_sina": {
+        "source": "sina",
+        "source_semantics": "unadjusted daily close",
+        "snapshot_used": "20260904T185651",
+        "source_days_in_window": 2431,
+        "joined_days": 2431,
+        "join_rate_vs_primary": 1.0,
+        "exact_agree_within_half_tick": 2425,
+        "agree_rate_pct": 99.753,
+        "agree_within_1p5_tick_pct": 99.959,
+        "abs_diff_stats": {
+          "n": 2431,
+          "mean_abs": 3.2908268202385878e-06,
+          "p50_abs": 0.0,
+          "p90_abs": 0.0,
+          "p99_abs": 0.0,
+          "max_abs": 0.0030000000000001137
+        },
+        "mismatch_sample_dates_max10": [
+          [
+            "2015-12-03",
+            0.001
+          ],
+          [
+            "2017-07-04",
+            -0.001
+          ],
+          [
+            "2018-06-22",
+            0.001
+          ],
+          [
+            "2018-08-20",
+            0.001
+          ],
+          [
+            "2018-08-30",
+            0.001
+          ],
+          [
+            "2018-08-31",
+            -0.003
+          ]
+        ]
+      },
+      "vs_tx": {
+        "source": "tx",
+        "source_semantics": "forward-adjusted (qfq, latest anchor); piecewise-constant ratio vs unadjusted prices for dividend payers",
+        "snapshot_used": "20260904T185651",
+        "source_days_in_window": 2431,
+        "joined_days": 2431,
+        "join_rate_vs_primary": 1.0,
+        "raw_exact_agree_within_half_tick": 0,
+        "raw_agree_rate_pct": 0.0,
+        "ratio": {
+          "min": 0.73170732,
+          "max": 0.97115038,
+          "n_distinct_levels": 1906,
+          "dominant_level": 0.882826,
+          "dominant_level_days": 6,
+          "per_level_head": [
+            {
+              "ratio_level": 0.882826,
+              "days": 6,
+              "span": "2019-04-18..2019-10-10"
+            },
+            {
+              "ratio_level": 0.807562,
+              "days": 5,
+              "span": "2017-01-24..2017-03-28"
+            },
+            {
+              "ratio_level": 0.806658,
+              "days": 5,
+              "span": "2017-02-06..2017-03-30"
+            },
+            {
+              "ratio_level": 0.933308,
+              "days": 5,
+              "span": "2023-07-13..2023-09-25"
+            },
+            {
+              "ratio_level": 0.944763,
+              "days": 5,
+              "span": "2024-02-21..2024-08-27"
+            },
+            {
+              "ratio_level": 0.945122,
+              "days": 5,
+              "span": "2024-03-07..2024-04-22"
+            },
+            {
+              "ratio_level": 0.797519,
+              "days": 4,
+              "span": "2015-01-22..2015-12-23"
+            },
+            {
+              "ratio_level": 0.763551,
+              "days": 4,
+              "span": "2015-09-07..2016-06-02"
+            }
+          ],
+          "note": "per-level scaled agreement is trivially true for singleton levels (level derived from the same pair); the meaningful check is dominant-level agreement and level stability"
+        },
+        "dominant_level_agree_pct": 100.0,
+        "drift_vs_fund_adj": {
+          "pearson_corr_ratio_vs_inv_factor": -0.961305,
+          "interpretation": "tx adjusted series tracks the fund_adj cumulative adjustment (|corr|>0.9): same corporate actions embedded, but the adjustment basis differs from a piecewise-constant latest-anchor qfq, so the series is NOT comparable to unadjusted closes point-by-point"
+        },
+        "level_jump_alignment": {
+          "tx_level_jump_days": 2387,
+          "fund_adj_factor_jump_days_in_window": 9,
+          "jump_days_coinciding": 9,
+          "note": "for piecewise-constant qfq (no/daily-stable levels) re-anchors should coincide with fund_adj factor jumps"
+        }
+      }
+    },
+    {
+      "symbol": "sh.518880",
+      "asset_class": "commodity",
+      "primary_days_in_window": 2431,
+      "vs_sina": {
+        "source": "sina",
+        "source_semantics": "unadjusted daily close",
+        "snapshot_used": "20260904T185612",
+        "source_days_in_window": 2431,
+        "joined_days": 2431,
+        "join_rate_vs_primary": 1.0,
+        "exact_agree_within_half_tick": 2431,
+        "agree_rate_pct": 100.0,
+        "agree_within_1p5_tick_pct": 100.0,
+        "abs_diff_stats": {
+          "n": 2431,
+          "mean_abs": 0.0,
+          "p50_abs": 0.0,
+          "p90_abs": 0.0,
+          "p99_abs": 0.0,
+          "max_abs": 0.0
+        },
+        "mismatch_sample_dates_max10": []
+      },
+      "vs_tx": {
+        "source": "tx",
+        "source_semantics": "forward-adjusted (qfq, latest anchor); piecewise-constant ratio vs unadjusted prices for dividend payers",
+        "snapshot_used": "20260904T185611",
+        "source_days_in_window": 2431,
+        "joined_days": 2431,
+        "join_rate_vs_primary": 1.0,
+        "raw_exact_agree_within_half_tick": 2431,
+        "raw_agree_rate_pct": 100.0,
+        "ratio": {
+          "min": 1.0,
+          "max": 1.0,
+          "n_distinct_levels": 1,
+          "dominant_level": 1.0,
+          "dominant_level_days": 2431,
+          "per_level_head": [
+            {
+              "ratio_level": 1.0,
+              "days": 2431,
+              "span": "2015-01-05..2024-12-31"
+            }
+          ],
+          "note": "per-level scaled agreement is trivially true for singleton levels (level derived from the same pair); the meaningful check is dominant-level agreement and level stability"
+        },
+        "dominant_level_agree_pct": 100.0,
+        "level_jump_alignment": {
+          "tx_level_jump_days": 0,
+          "fund_adj_factor_jump_days_in_window": 0,
+          "jump_days_coinciding": 0,
+          "note": "for piecewise-constant qfq (no/daily-stable levels) re-anchors should coincide with fund_adj factor jumps"
+        }
+      }
+    },
+    {
+      "symbol": "sz.159915",
+      "asset_class": "equity",
+      "primary_days_in_window": 2430,
+      "vs_sina": {
+        "source": "sina",
+        "source_semantics": "unadjusted daily close",
+        "snapshot_used": "20260904T185618",
+        "source_days_in_window": 2430,
+        "joined_days": 2430,
+        "join_rate_vs_primary": 1.0,
+        "exact_agree_within_half_tick": 2429,
+        "agree_rate_pct": 99.959,
+        "agree_within_1p5_tick_pct": 100.0,
+        "abs_diff_stats": {
+          "n": 2430,
+          "mean_abs": 4.115226337448106e-07,
+          "p50_abs": 0.0,
+          "p90_abs": 0.0,
+          "p99_abs": 0.0,
+          "max_abs": 0.0009999999999998899
+        },
+        "mismatch_sample_dates_max10": [
+          [
+            "2020-02-25",
+            0.001
+          ]
+        ]
+      },
+      "vs_tx": {
+        "source": "tx",
+        "source_semantics": "forward-adjusted (qfq, latest anchor); piecewise-constant ratio vs unadjusted prices for dividend payers",
+        "snapshot_used": "20260904T185617",
+        "source_days_in_window": 2430,
+        "joined_days": 2430,
+        "join_rate_vs_primary": 1.0,
+        "raw_exact_agree_within_half_tick": 2428,
+        "raw_agree_rate_pct": 99.918,
+        "ratio": {
+          "min": 1.0,
+          "max": 1.00433651,
+          "n_distinct_levels": 3,
+          "dominant_level": 1.0,
+          "dominant_level_days": 2428,
+          "per_level_head": [
+            {
+              "ratio_level": 1.0,
+              "days": 2428,
+              "span": "2015-01-05..2024-12-31"
+            },
+            {
+              "ratio_level": 1.004337,
+              "days": 1,
+              "span": "2016-01-04..2016-01-04"
+            },
+            {
+              "ratio_level": 1.000456,
+              "days": 1,
+              "span": "2020-02-25..2020-02-25"
+            }
+          ],
+          "note": "per-level scaled agreement is trivially true for singleton levels (level derived from the same pair); the meaningful check is dominant-level agreement and level stability"
+        },
+        "dominant_level_agree_pct": 100.0,
+        "level_jump_alignment": {
+          "tx_level_jump_days": 4,
+          "fund_adj_factor_jump_days_in_window": 0,
+          "jump_days_coinciding": 0,
+          "note": "for piecewise-constant qfq (no/daily-stable levels) re-anchors should coincide with fund_adj factor jumps"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+[    0.0s] == 0. identity pins ==
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.0s]   engine: 494310195438cbfb expect 494310195438cbfb match=True
+[    0.5s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.5s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.5s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.5s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    2.7s]   stk_limit aggregate: 3c53abf3b0c39b42 (2432 files, 301278245 B) match=True
+[    2.7s]   python 3.11.15 | rss 0.27 GB
+[    2.7s] == 1. calendar & signal days ==
+[    2.8s]   71 signal days (2015-01-30..2020-11-30) (2020-12-31 dropped as signal, kept as expiry anchor)
+[    2.8s] == 2. exposures ==
+[    2.8s]   t200 behavioral anchor check: {"anchor_years": ["2016", "2017", "2018", "2019", "2020"], "reproduced_stats": {"2016": {"n_sessions": 244, "n_switches": 5, "off_share": 0.623, "mean_exposure"
+[    2.8s]   exposures: T200-40[0]=0.40 [T200-40][-1]=0.90; FIX75[0]=0.75 [FIX75][-1]=0.75
+[    2.8s] == 3. pools (r16 build_history + signal_pools) ==
+[    6.2s]   pools at 2015-01-30: n=1438; union of ranked symbols: 2937
+[    6.2s] == 4. leg_log + 8/8 membership consistency ==
+[    6.4s]   C01: membership mismatches=0, events mismatches=0 / 71
+[    6.4s]   C02: membership mismatches=0, events mismatches=0 / 71
+[    6.4s]   C03: membership mismatches=0, events mismatches=0 / 71
+[    6.4s]   C04: membership mismatches=0, events mismatches=0 / 71
+[    6.5s]   C05: membership mismatches=0, events mismatches=0 / 71
+[    6.5s]   C06: membership mismatches=0, events mismatches=0 / 71
+[    6.5s]   C07: membership mismatches=0, events mismatches=0 / 71
+[    6.5s]   C08: membership mismatches=0, events mismatches=0 / 71
+[    6.5s]   8/8 configs PASS (leg_log <-> independent buffer_membership + events)
+[    6.5s] == 5. market frames ==
+[    7.2s]   daily panel: 3841824 rows, 2937 symbols, max 2020-12-31
+[    8.0s]   halfday: 7254698 rows kept of 18486939 total (panel x dev), 2935 symbols
+[   16.6s]   limits: 3829171 rows (dev x panel)
+[   19.4s]   splits 2894 rows, dividends 20138 rows (panel)
+[   19.4s]   instruments: 2937 stocks (is_etf=False, is_t0=False; ETF line not in this round per prereg sec 2)
+[   19.4s]   rss after frames: 3.06 GB
+[   25.2s]   anchor tables: 2937 official series, 2935 am series, 1461 pm-session dates, 1462 am-session dates
+[   25.2s] == 9. per-config fixed-point runs ==
+[   25.3s]   C01: per-config frames daily 192490 / half 370778 / limits 192093 rows, 134 symbols
+[   25.4s]   [mapping] C01: 6 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   27.9s]   C01 it1: cagr +4.959% mdd -59.63% end 267,234 rss 5.56G
+[   28.0s]   [mapping] C01: 18 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   31.1s]   C01 it2: cagr -2.724% mdd -71.36% end 169,518 rss 5.62G
+[   31.2s]   [mapping] C01: 18 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   33.7s]   C01 it3: cagr -1.032% mdd -66.73% end 187,958 rss 5.65G
+[   33.8s]   [mapping] C01: 12 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   36.7s]   C01 it4: cagr -4.404% mdd -69.38% end 152,729 rss 5.65G
+[   36.8s]   [mapping] C01: 12 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   39.1s]   C01 it5: cagr -5.299% mdd -68.94% end 144,358 rss 5.66G
+[   39.2s]   [mapping] C01: 18 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   42.2s]   C01 it6: cagr -7.189% mdd -65.04% end 127,946 rss 5.66G
+[   42.3s]   [mapping] C01: 18 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   44.6s]   C01 it7: cagr -6.139% mdd -71.75% end 136,858 rss 5.66G
+[   44.8s]   [mapping] C01: 18 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   47.6s]   C01 it8: cagr -10.026% mdd -68.26% end 106,242 rss 5.66G
+[   47.7s]   [mapping] C01: 12 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   50.1s]   C01 it9: cagr -4.758% mdd -68.14% end 149,368 rss 5.67G
+[   50.2s]   [mapping] C01: 18 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   53.3s]   C01 it10: cagr -9.328% mdd -66.86% end 111,274 rss 5.65G
+[   53.3s]   C01: converged_at=None (10 engine runs, 28s wall)
+[   53.3s]   C02: per-config frames daily 280782 / half 534980 / limits 279801 rows, 196 symbols
+[   53.5s]   [mapping] C02: 24 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   56.5s]   C02 it1: cagr -5.543% mdd -74.69% end 142,146 rss 5.77G
+[   56.6s]   [mapping] C02: 36 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   60.7s]   C02 it2: cagr -13.103% mdd -72.27% end 86,259 rss 5.80G
+[   60.9s]   [mapping] C02: 30 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   64.8s]   C02 it3: cagr -15.449% mdd -83.55% end 73,224 rss 5.79G
+[   64.9s]   [mapping] C02: 30 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   68.1s]   C02 it4: cagr -14.076% mdd -74.40% end 80,637 rss 5.81G
+[   68.2s]   [mapping] C02: 30 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   71.9s]   C02 it5: cagr -12.311% mdd -85.98% end 91,077 rss 5.80G
+[   72.0s]   [mapping] C02: 24 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   75.1s]   C02 it6: cagr -18.213% mdd -81.00% end 60,009 rss 5.81G
+[   75.3s]   [mapping] C02: 24 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   78.8s]   C02 it7: cagr -12.661% mdd -79.00% end 88,919 rss 5.78G
+[   78.9s]   [mapping] C02: 24 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   82.0s]   C02 it8: cagr -15.828% mdd -81.27% end 71,280 rss 5.79G
+[   82.2s]   [mapping] C02: 24 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   85.9s]   C02 it9: cagr -15.492% mdd -80.32% end 72,997 rss 5.80G
+[   86.0s]   [mapping] C02: 24 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   89.2s]   C02 it10: cagr -23.106% mdd -86.69% end 41,476 rss 5.79G
+[   89.2s]   C02: converged_at=None (10 engine runs, 36s wall)
+[   89.2s]   C03: per-config frames daily 192490 / half 370778 / limits 192093 rows, 134 symbols
+[   89.3s]   [mapping] C03: 6 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   92.0s]   C03 it1: cagr +4.005% mdd -63.47% end 253,013 rss 5.75G
+[   92.1s]   [mapping] C03: 12 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   94.9s]   C03 it2: cagr +1.435% mdd -58.35% end 217,806 rss 5.76G
+[   95.0s]   [mapping] C03: 6 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[   98.1s]   C03 it3: cagr -5.264% mdd -65.11% end 144,682 rss 5.77G
+[   98.2s]   [mapping] C03: 6 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  102.5s]   C03 it4: cagr -5.765% mdd -69.64% end 140,155 rss 0.22G
+[  102.9s]   [mapping] C03: 12 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  108.4s]   C03 it5: cagr -9.710% mdd -72.17% end 108,499 rss 1.85G
+[  108.6s]   [mapping] C03: 6 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  111.9s]   C03 it6: cagr -8.973% mdd -73.06% end 113,911 rss 1.93G
+[  112.0s]   [mapping] C03: 6 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  115.2s]   C03 it7: cagr -10.430% mdd -75.38% end 103,417 rss 1.97G
+[  115.3s]   [mapping] C03: 6 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  118.2s]   C03 it8: cagr -9.446% mdd -72.43% end 110,411 rss 2.01G
+[  118.3s]   [mapping] C03: 6 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  120.8s]   C03 it9: cagr +0.621% mdd -70.72% end 207,549 rss 2.02G
+[  120.9s]   [mapping] C03: 6 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  123.9s]   C03 it10: cagr -9.195% mdd -72.83% end 112,254 rss 2.05G
+[  123.9s]   C03: converged_at=None (10 engine runs, 35s wall)
+[  126.4s]   C04: per-config frames daily 280782 / half 534980 / limits 279801 rows, 196 symbols
+[  126.7s]   [mapping] C04: 24 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  129.8s]   C04 it1: cagr -1.576% mdd -68.66% end 181,848 rss 3.09G
+[  130.0s]   [mapping] C04: 42 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  134.1s]   C04 it2: cagr -13.840% mdd -77.91% end 81,969 rss 3.13G
+[  134.3s]   [mapping] C04: 36 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  137.5s]   C04 it3: cagr -15.400% mdd -82.52% end 73,474 rss 3.17G
+[  137.7s]   [mapping] C04: 30 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  141.4s]   C04 it4: cagr -14.826% mdd -79.93% end 76,510 rss 3.17G
+[  141.5s]   [mapping] C04: 42 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  145.3s]   C04 it5: cagr -17.355% mdd -86.28% end 63,879 rss 3.18G
+[  145.5s]   [mapping] C04: 36 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  148.6s]   C04 it6: cagr -17.649% mdd -83.40% end 62,528 rss 3.18G
+[  148.8s]   [mapping] C04: 36 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  153.1s]   C04 it7: cagr -17.046% mdd -86.38% end 65,320 rss 3.18G
+[  153.2s]   [mapping] C04: 36 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  156.7s]   C04 it8: cagr -17.776% mdd -82.05% end 61,953 rss 3.19G
+[  156.9s]   [mapping] C04: 36 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  160.9s]   C04 it9: cagr -14.504% mdd -83.42% end 78,260 rss 3.19G
+[  161.0s]   [mapping] C04: 36 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  164.3s]   C04 it10: cagr -18.204% mdd -85.21% end 60,046 rss 3.19G
+[  164.3s]   C04: converged_at=None (10 engine runs, 38s wall)
+[  164.3s]   C05: per-config frames daily 270206 / half 518093 / limits 269531 rows, 188 symbols
+[  164.5s]   [mapping] C05: 6 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  168.2s]   C05 it1: cagr +4.388% mdd -61.31% end 258,643 rss 3.29G
+[  168.3s]   [mapping] C05: 18 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  171.7s]   C05 it2: cagr -3.072% mdd -61.19% end 165,922 rss 3.32G
+[  171.9s]   [mapping] C05: 6 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  175.8s]   C05 it3: cagr -0.036% mdd -62.31% end 199,569 rss 3.33G
+[  175.9s]   [mapping] C05: 12 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  179.9s]   C05 it4: cagr +0.038% mdd -60.66% end 200,457 rss 3.35G
+[  180.1s]   [mapping] C05: 6 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  183.5s]   C05 it5: cagr -0.996% mdd -66.82% end 188,362 rss 3.36G
+[  183.7s]   [mapping] C05: 18 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  187.5s]   C05 it6: cagr -2.122% mdd -61.32% end 175,893 rss 3.36G
+[  187.7s]   [mapping] C05: 12 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  191.5s]   C05 it7: cagr -1.110% mdd -63.18% end 187,065 rss 3.37G
+[  191.7s]   [mapping] C05: 12 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  195.5s]   C05 it8: cagr -1.244% mdd -61.29% end 185,553 rss 3.37G
+[  195.7s]   [mapping] C05: 12 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  199.0s]   C05 it9: cagr -1.825% mdd -66.20% end 179,119 rss 3.37G
+[  199.2s]   [mapping] C05: 12 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  203.2s]   C05 it10: cagr -4.237% mdd -64.96% end 154,327 rss 3.38G
+[  203.2s]   C05: converged_at=None (10 engine runs, 39s wall)
+[  203.2s]   C06: per-config frames daily 375359 / half 713915 / limits 373861 rows, 261 symbols
+[  203.5s]   [mapping] C06: 30 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  208.0s]   C06 it1: cagr -4.067% mdd -73.05% end 155,974 rss 3.52G
+[  208.2s]   [mapping] C06: 36 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  212.5s]   C06 it2: cagr -9.908% mdd -69.67% end 107,079 rss 3.55G
+[  212.7s]   [mapping] C06: 36 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  217.4s]   C06 it3: cagr -8.110% mdd -77.90% end 120,528 rss 3.56G
+[  217.6s]   [mapping] C06: 36 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  222.4s]   C06 it4: cagr -13.047% mdd -74.33% end 86,594 rss 3.55G
+[  222.6s]   [mapping] C06: 36 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  227.2s]   C06 it5: cagr -12.429% mdd -82.34% end 90,343 rss 3.56G
+[  227.3s]   [mapping] C06: 42 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  232.0s]   C06 it6: cagr -13.288% mdd -77.95% end 85,166 rss 3.55G
+[  232.2s]   [mapping] C06: 30 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  236.3s]   C06 it7: cagr -10.993% mdd -78.11% end 99,587 rss 3.55G
+[  236.5s]   [mapping] C06: 30 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  241.0s]   C06 it8: cagr -15.647% mdd -79.10% end 72,203 rss 3.55G
+[  241.2s]   [mapping] C06: 42 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  245.9s]   C06 it9: cagr -12.425% mdd -78.99% end 90,367 rss 3.54G
+[  246.2s]   [mapping] C06: 42 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  250.8s]   C06 it10: cagr -14.326% mdd -80.17% end 79,242 rss 3.55G
+[  250.8s]   C06: converged_at=None (10 engine runs, 48s wall)
+[  250.8s]   C07: per-config frames daily 270206 / half 518093 / limits 269531 rows, 188 symbols
+[  251.0s]   [mapping] C07: 6 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  255.0s]   C07 it1: cagr +5.462% mdd -58.57% end 274,999 rss 3.58G
+[  255.1s]   [mapping] C07: 18 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  258.5s]   C07 it2: cagr -5.424% mdd -69.25% end 143,222 rss 3.60G
+[  258.7s]   [mapping] C07: 6 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  262.6s]   C07 it3: cagr +0.109% mdd -67.21% end 201,308 rss 3.61G
+[  262.7s]   [mapping] C07: 12 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  266.1s]   C07 it4: cagr -1.352% mdd -64.34% end 184,340 rss 3.60G
+[  266.2s]   [mapping] C07: 18 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  270.3s]   C07 it5: cagr +1.958% mdd -66.65% end 224,627 rss 3.61G
+[  270.4s]   [mapping] C07: 18 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  274.5s]   C07 it6: cagr -1.614% mdd -67.97% end 181,429 rss 3.59G
+[  274.6s]   [mapping] C07: 18 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  277.9s]   C07 it7: cagr -1.712% mdd -73.56% end 180,351 rss 3.60G
+[  278.1s]   [mapping] C07: 18 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  282.1s]   C07 it8: cagr -3.915% mdd -70.03% end 157,467 rss 3.60G
+[  282.3s]   [mapping] C07: 18 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  286.4s]   C07 it9: cagr -7.257% mdd -72.40% end 127,382 rss 3.59G
+[  286.5s]   [mapping] C07: 18 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  290.0s]   C07 it10: cagr -7.990% mdd -71.66% end 121,472 rss 3.59G
+[  290.0s]   C07: converged_at=None (10 engine runs, 39s wall)
+[  290.0s]   C08: per-config frames daily 375359 / half 713915 / limits 373861 rows, 261 symbols
+[  290.2s]   [mapping] C08: 30 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  294.8s]   C08 it1: cagr -2.668% mdd -70.55% end 170,102 rss 3.61G
+[  294.9s]   [mapping] C08: 36 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  299.9s]   C08 it2: cagr -8.828% mdd -75.46% end 114,998 rss 3.64G
+[  300.1s]   [mapping] C08: 42 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  305.1s]   C08 it3: cagr -17.061% mdd -85.17% end 65,248 rss 3.65G
+[  305.3s]   [mapping] C08: 42 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  309.7s]   C08 it4: cagr -18.131% mdd -81.28% end 60,367 rss 3.65G
+[  309.9s]   [mapping] C08: 42 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  315.0s]   C08 it5: cagr -16.538% mdd -84.12% end 67,751 rss 3.65G
+[  315.2s]   [mapping] C08: 42 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  320.0s]   C08 it6: cagr -20.164% mdd -81.96% end 51,932 rss 3.65G
+[  320.2s]   [mapping] C08: 42 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  324.5s]   C08 it7: cagr -17.726% mdd -85.78% end 62,182 rss 3.64G
+[  324.7s]   [mapping] C08: 42 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  329.6s]   C08 it8: cagr -23.495% mdd -86.89% end 40,234 rss 3.65G
+[  329.7s]   [mapping] C08: 42 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  334.5s]   C08 it9: cagr -19.973% mdd -86.18% end 52,678 rss 3.65G
+[  334.6s]   [mapping] C08: 42 sell emissions skipped on limit-data-gap live sessions (ENGINE-3 host guard, disclosed)
+[  339.3s]   C08 it10: cagr -24.716% mdd -87.57% end 36,540 rss 3.65G
+[  339.3s]   C08: converged_at=None (10 engine runs, 49s wall)
+[  339.3s] == 10. attribution & gate 8 ==
+[  339.7s]   C01: mapped rate 68.1% (filled 477, rule-blocked 104, terminated 272, skip 629), order-session fill b/s 6.3/2.4%, term {'expiry': 21, 'override_same_name': 226, 'cap_void': 3, 'suspension_abandon': 22}
+[  340.2s]   C02: mapped rate 62.5% (filled 507, rule-blocked 133, terminated 384, skip 661), order-session fill b/s 4.1/2.1%, term {'expiry': 27, 'override_same_name': 333, 'cap_void': 3, 'suspension_abandon': 21}
+[  340.5s]   C03: mapped rate 69.7% (filled 473, rule-blocked 98, terminated 248, skip 669), order-session fill b/s 4.0/2.3%, term {'expiry': 20, 'override_same_name': 201, 'cap_void': 5, 'suspension_abandon': 22}
+[  341.0s]   C04: mapped rate 68.7% (filled 552, rule-blocked 123, terminated 308, skip 708), order-session fill b/s 3.9/2.9%, term {'expiry': 24, 'override_same_name': 261, 'cap_void': 1, 'suspension_abandon': 22}
+[  341.9s]   C05: mapped rate 54.4% (filled 611, rule-blocked 106, terminated 602, skip 897), order-session fill b/s 3.6/2.4%, term {'expiry': 54, 'override_same_name': 523, 'cap_void': 0, 'suspension_abandon': 25}
+[  343.0s]   C06: mapped rate 46.8% (filled 577, rule-blocked 152, terminated 829, skip 922), order-session fill b/s 3.0/2.0%, term {'expiry': 67, 'override_same_name': 717, 'cap_void': 0, 'suspension_abandon': 45}
+[  343.6s]   C07: mapped rate 58.3% (filled 589, rule-blocked 125, terminated 511, skip 1011), order-session fill b/s 4.3/2.5%, term {'expiry': 43, 'override_same_name': 438, 'cap_void': 3, 'suspension_abandon': 27}
+[  344.6s]   C08: mapped rate 53.0% (filled 615, rule-blocked 147, terminated 676, skip 1056), order-session fill b/s 3.3/2.3%, term {'expiry': 52, 'override_same_name': 583, 'cap_void': 0, 'suspension_abandon': 41}
+[  344.6s] == 11. metrics & gates ==
+[  344.6s] == 11. metrics & gates ==
+[  344.7s]   C01: net -9.33% excess -9.93pp adv 3/6 mdd -66.86% turn 7.81 w 31.0% exec 68.1% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '5_one_side_turnover_le_6', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[  344.8s]   C02: net -23.11% excess -23.70pp adv 0/6 mdd -86.69% turn 7.34 w 34.4% exec 62.5% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '5_one_side_turnover_le_6', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[  344.9s]   C03: net -9.20% excess -11.05pp adv 3/6 mdd -72.83% turn 6.79 w 38.1% exec 69.7% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '5_one_side_turnover_le_6', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[  344.9s]   C04: net -18.20% excess -20.06pp adv 0/6 mdd -85.21% turn 6.06 w 34.5% exec 68.7% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '5_one_side_turnover_le_6', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[  345.0s]   C05: net -4.24% excess -4.84pp adv 3/6 mdd -64.96% turn 4.64 w 28.4% exec 54.4% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[  345.1s]   C06: net -14.33% excess -14.92pp adv 1/6 mdd -80.17% turn 5.18 w 34.7% exec 46.8% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[  345.2s]   C07: net -7.99% excess -9.85pp adv 3/6 mdd -71.66% turn 6.50 w 32.1% exec 58.3% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '5_one_side_turnover_le_6', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[  345.3s]   C08: net -24.72% excess -26.57pp adv 0/6 mdd -87.57% turn 5.74 w 28.7% exec 53.0% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[  345.3s] == gates: 0/8 dev_pass ==
+[  345.3s] == 12. disclosures ==
+Traceback (most recent call last):
+  File "D:\量化\artifacts\runs\20260919T002020-p3r2-dev-9cc4\tmp\runner_p3r2_part2.py", line 253, in <module>
+    "buy_notional_total": st["buy_notional_total"],
+                          ~~^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'buy_notional_total'

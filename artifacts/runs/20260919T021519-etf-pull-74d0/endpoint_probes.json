@@ -1,0 +1,20 @@
+{
+ "purpose": "baostock ETF 日线可得性探针记录 (run 20260919T021519-etf-pull-74d0)",
+ "generated_at": "2026-09-19T03:20:00",
+ "conclusion": "baostock 对 2015-01-01..2024-12-31 窗口无任何 ETF 日线数据: query_history_k_data_plus 对基金代码恒返回空集; 专用端点 query_daily_history_k_ETF 仅有约 2026-02 起的近期数据。",
+ "environment": {"python": "3.11.15 (D:/量化/.venv)", "baostock": "0.9.3", "note": "hermes venv 同为 baostock 0.9.3, 关键探针双环境结果一致"},
+ "probes": [
+  {"at": "2026-09-19T02:17", "api": "query_stock_basic", "input": "全量", "result": "err=0, 8967 行; type=5 共 1678 只, 全部 status=1 (名录不含退市 ETF; 全表 1187 条退市记录均为 type=1/2/4)"},
+  {"at": "2026-09-19T02:24", "api": "query_history_k_data_plus", "input": "sz.159503 (退市 ETF, 2023-07~2024-07 有历史), fields=date,code,close, d, adj=3, 2015-01-01..2024-12-31", "result": "err=0, 0 行, 秒回"},
+  {"at": "2026-09-19T02:24", "api": "query_history_k_data_plus", "input": "sh.510050 (上证50ETF, 活跃品种), 同上参数", "result": "err=0, 0 行, 秒回"},
+  {"at": "2026-09-19T02:28", "api": "query_history_k_data_plus", "input": "sh.510050, 同上参数", "env": "hermes venv (baostock 0.9.3)", "result": "err=0/success, 0 行"},
+  {"at": "2026-09-19T02:31", "api": "query_history_k_data_plus", "input": "sh.600000 (浦发银行, 对照股票)", "result": "err=0 返回后行迭代挂起 >4 分钟 (服务端 k 线通道不稳定), 手工终止"},
+  {"at": "2026-09-19T02:43", "api": "query_history_k_data_plus", "input": "sh.600000 / sh.000300 / sh.510300 / sz.159915 / sh.510050", "result": "全部 err=10002007 网络接收错误 (recv 超时 20-38s), k 线通道整体降级"},
+  {"at": "2026-09-19T02:49", "api": "query_daily_history_k_ETF", "input": "date=2024-12-31", "result": "err=0, 0 行 (字段表正常返回: date,code,open,high,low,close,preclose,volume,amount,adjustflag,turn,tradestatus,pctChg,peTTM,pbMRQ,psTTM,pcfNcfTTM,isST)"},
+  {"at": "2026-09-19T02:50", "api": "query_daily_history_k_ETF", "input": "date=2015-01-05", "result": "err=0, 0 行"},
+  {"at": "2026-09-19T02:55", "api": "query_daily_history_k_ETF", "input": "date=2026-02-04 (包内 demo 示例日期)", "result": "err=0, 1419 行 (唯一非空样本; 说明端点功能正常但历史浅)"},
+  {"at": "2026-09-19T03:00", "api": "query_daily_history_k_ETF", "input": "date ∈ {2024-12-31, 2024-01-02, 2023-06-01, 2019-06-03, 2015-01-05, 2015-06-01}", "result": "全部 err=0, 0 行 —— 研究窗口内无数据"},
+  {"at": "2026-09-19T03:07", "api": "query_daily_history_k_ETF", "input": "date ∈ {2025-01-02, 2025-03-03, 2025-06-03, 2025-09-01, 2026-01-02}", "result": "全部 err=0, 0 行; 随后对 2026-02-04 的复查挂起 (服务端再度不稳定), 探针于 03:16 终止。数据起点推断约为 2026-02"}
+ ],
+ "raw_logs": ["tmp/probe_retry.log", "shell 会话输出 (已摘录如上)"]
+}

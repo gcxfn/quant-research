@@ -1,0 +1,22 @@
+2026-09-18T06:22:53+08:00 run start (fcst-reason-struct-full wave-5, batch 5, ordinal 2400-2999)
+2026-09-18T06:22:53+08:00 scripts copied byte-identical from 20260918T053037-fcst-full-w4-9e2k4f (sha256 verified x4)
+2026-09-18T06:22:56+08:00 render_batch.py --batch 5 -> work/batch_005_input.txt (600 rows, 192,505 chars, 0 missing in raw)
+2026-09-18T06:34:52+08:00 llm structuring part1 (ordinal 02400-02499) written
+2026-09-18T06:47:18+08:00 llm structuring part2 (ordinal 02500-02599) written
+2026-09-18T06:59:32+08:00 llm structuring part3 (ordinal 02600-02699) written
+2026-09-18T07:09:47+08:00 llm structuring part4 (ordinal 02700-02799) written
+2026-09-18T07:13:46+08:00 llm structuring part5 (ordinal 02800-02899) written
+2026-09-18T07:15:45+08:00 llm structuring part6 (ordinal 02900-02999) written
+2026-09-18T07:15:58+08:00 merged parts -> features/batch_005.jsonl (600 lines)
+2026-09-18T07:16:02+08:00 check_batch_full --batch 5: 3 FAILURES
+  FAIL 02564 update_flag 转录错误 1 != 0 -> part2 修正
+  FAIL 02695 ann_date 转录错误 20210106 != 20210129 -> part3 修正
+  FAIL 02950 ann_date 转录错误 20210604 != 20210608 -> part6 修正
+2026-09-18T07:16:18+08:00 re-merge fixed parts
+2026-09-18T07:16:22+08:00 check_batch_full --batch 5: 600 rows checked -> OK (exit=0)
+2026-09-18T07:16:30+08:00 quality_stats.py --batch 5 -> progress.json updated (batches_completed=[1,2,3,4,5], rows_completed=3000)
+2026-09-18T07:17:15+08:00 manifest status running -> completed; run end
+
+note: part1-part6 的写入时刻为按机器时钟区间回填的近似值（脚本无逐段打点），
+首个确定性机器时刻为 render 后首条 shell 返回（06:22:56）与 quality_stats 落盘的
+progress.json updated_at=2026-09-18T07:16:30+08:00。

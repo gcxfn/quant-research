@@ -1,0 +1,51 @@
+{
+ "run_id": "20260919T021744-p3v1-intent-ce78",
+ "purpose": "Engine v1.1 intent-layer delivery (direction 4) + ENGINE-3 fix",
+ "experiment_id": "exp-20260918-p3r2-band-v1-readjudication (pre-run engine step)",
+ "status": "completed",
+ "started_at": "2026-09-18T18:17:44+00:00",
+ "ended_at": "2026-09-18T18:21:14.383392+00:00",
+ "authorization": {
+  "prereg_revision_2": "lifecycle ownership = engine intent layer",
+  "prereg_revision_3": "quantity = target notional x decision-point equity snapshot, recomputed per decision point (no host fixed-point iteration; disclose vs P3R1)",
+  "prereg_revision_4": "ENGINE-3 one-line fix authorized (%.4f -> %s); restore v0 ruling #2/#3 semantics on no-limit days",
+  "prereg_revision_5": "new engine sha re-anchored after dual-sign; config, gates, window, eight configs, B1(m)/B3' unchanged",
+  "contract": "docs/plans/p3-band-contract.md section 7.7-M3 supplement (2026-09-19: execution subject = engine intent layer)"
+ },
+ "engine": {
+  "path": "src/quant/backtest/band_engine.py",
+  "sha256_before": "494310195438cbfb (v1 authority, 16-hex; dual-sign APPROVE 20260918T212440-p3v1-engine-083a)",
+  "sha256_after": "d7108c0eccdd77ff3fcbff01e7bd84bfdd2e7cad716b646e357c5644da970a0d",
+  "sha256_after_16": "d7108c0eccdd77ff",
+  "note": "sha256_before recorded as 494310195438cbfb (v1, 16-hex authority); static-frame path behavior unchanged",
+  "static_path_regression": "tests/test_band_contract.py 21/21 unchanged and passing"
+ },
+ "tests": {
+  "static_frame_unchanged": "tests/test_band_contract.py 21/21 passed (file untouched)",
+  "intent_layer_new": "tests/test_band_intents.py 8/8 passed (fill-stop, re-anchor+streak, expiry, override, rescale recompute, ENGINE-3 regression, determinism, input guards)",
+  "engine_total": 29,
+  "repo_total": "390 passed (6 pre-existing warnings from p2r13_lowfreq.py, unrelated)"
+ },
+ "determinism": "test_i7: two identical runs -> fills/events/daily/clips_final .equals() bit-identical + identical stats JSON; engine has no RNG and no clock dependence in results",
+ "engine3": {
+  "file": "src/quant/backtest/band_engine.py",
+  "fix": "risk-sell void_no_limit_info detail %.4f -> %s (None-safe)",
+  "semantics_restored": "v0 ruling #2/#3: void + counted into K + disclosed",
+  "regression_test": "test_i6_engine3_regression"
+ },
+ "trial_accounting": {
+  "consumed_this_run": 0,
+  "note": "engine delivery step; P3R2 rerun will consume 197->205 once, after dual-sign"
+ },
+ "advanced_to_validation": false,
+ "val_consumed": false,
+ "next_step": "STOP: awaiting orchestrator acceptance + dual-sign before the P3R2 rerun (rerun uses sha d7108c0eccdd77ff)",
+ "artifacts": {
+  "hand-calc-samples.md": "e89ba9f62ff1bda4b032e9e447c5e56dc76a2644c5d5a4dcb4339f03dd78cdb6",
+  "logs/pytest_engine.log": "4c2a6f7abc33ab0c45d8b44d372e4fa27f5421e125d6ea476d476e806c1c19f4",
+  "report.md": "90862c57f7dc6898baf5bed8e7e0287041dfc050e887dbe38351913888753439",
+  "src/quant/backtest/band_engine.py": "d7108c0eccdd77ff3fcbff01e7bd84bfdd2e7cad716b646e357c5644da970a0d",
+  "tests/test_band_intents.py": "01393b81a56fa13fff795d2f95a305c44bfa247024e0f425597e9ad388e031d5",
+  "tests/test_band_contract.py": "aaea75007b58852c6b95bcab8d86b8c765971a2dbcde787f3e37abda74f0cdf3"
+ }
+}

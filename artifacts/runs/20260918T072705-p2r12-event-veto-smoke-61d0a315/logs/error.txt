@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "D:\量化\tools\run_p2r12_event_veto.py", line 433, in main
+    s, frames, art = assemble(root, calendar)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\tools\run_p2r12_event_veto.py", line 38, in assemble
+    s = ev.build_session_frame(daily, circ, calendar)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\p2r12_event_veto.py", line 454, in build_session_frame
+    s = (daily.filter(pl.col('tradestatus') == 1.0)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\dataframe\frame.py", line 5563, in filter
+    ._collect_eager(optimizations=QueryOptFlags._eager())
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\lazyframe\frame.py", line 2240, in _collect_eager
+    return _eager_engine().collect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\lazyframe\engine.py", line 443, in collect
+    return wrap_df(ldf.collect(self.name, callback))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: unable to find column "tradestatus"; valid columns: ["symbol", "date", "ret5", "fwd5", "fwd10", "fwd60", "exit5_date", "exit10_date", "exit60_date", "block5_exit", "block5_window"]

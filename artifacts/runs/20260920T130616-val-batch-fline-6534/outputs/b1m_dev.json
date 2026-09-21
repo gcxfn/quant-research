@@ -1,0 +1,73 @@
+{
+ "stage": "val_b1m",
+ "window": "dev",
+ "status": "dev_port_pass",
+ "start": "2015-01-05",
+ "end": "2020-12-31",
+ "n_signal_days": 71,
+ "signal_first": "2015-01-30",
+ "signal_last": "2020-11-30",
+ "net_cagr": 0.0059905923579062215,
+ "max_drawdown": -0.39823783648620237,
+ "net_total_return": 0.03640991324014986,
+ "net_return_by_year": {
+  "2015": 0.22735356961585995,
+  "2016": -0.036271319473569985,
+  "2017": -0.11258228102926204,
+  "2018": -0.19627407276887188,
+  "2019": 0.1237564993275273,
+  "2020": 0.09319791239431363
+ },
+ "mdd_window": {
+  "max_drawdown": -0.39823783648620237,
+  "peak_date": "2015-06-12",
+  "trough_date": "2019-01-31"
+ },
+ "benchmark_caliber": "T200-40 monthly exposures; R16 frozen pool; simulate_r16(K=0, fractional=True, B1_FEE_SCHEDULE_RATE_ONLY); TL-30 assembly verbatim",
+ "reference": {
+  "net_cagr": 0.0059905923579064435,
+  "max_drawdown": -0.3982378364862026,
+  "by_year": {
+   "2015": 0.22735356961586017,
+   "2016": -0.036271319473570096,
+   "2017": -0.11258228102926204,
+   "2018": -0.1962740727688722,
+   "2019": 0.12375649932752708,
+   "2020": 0.09319791239431541
+  }
+ },
+ "reference_tolerance": 1e-09,
+ "reference_source": "R16 metrics.json configs.C05 b1m_* (dev)",
+ "pins": {
+  "engine": {
+   "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+   "sha256": "a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3",
+   "expected": "a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3",
+   "match": true,
+   "version": "v1.4.1 (non-zones path = v1.3 semantics)"
+  },
+  "r16_metrics": {
+   "path": "D:\\量化\\artifacts\\runs\\20260918T083650-p2r16-trend-dispersion-afab466f\\metrics.json",
+   "sha256": "8d0b6ebbdea6ebb9dc8146ead84ca408021e72749e1e7540f3483c6ed2a5fcc9"
+  },
+  "r16_config": {
+   "path": "D:\\量化\\configs\\experiments\\p2r16-trend-dispersion.json",
+   "sha256": "27f846a7330919a4965d83ec07cf2a0be3e29b2476cc37c14c84558957a93df4"
+  },
+  "daily": {
+   "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_1999_2024.parquet",
+   "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6"
+  },
+  "index_000300": {
+   "path": "D:\\量化\\data\\raw\\tushare\\index_daily\\20260917-r1\\chunk_000300.SH.csv",
+   "sha256": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878"
+  }
+ },
+ "env": {
+  "python": "3.11.15",
+  "polars": "1.44.2",
+  "numpy": "1.26.4",
+  "platform": "Windows-10-10.0.26200-SP0"
+ },
+ "wall_seconds": 61.712120099997264
+}

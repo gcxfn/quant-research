@@ -1,0 +1,59 @@
+[    0.0s] == 0. identity pins ==
+[    2.0s]   engine 84a2443ac28fe1b8 OK; data pins OK; python 3.11.15 | rss 0.27 GB
+[    2.0s] == 1. calendar & signal days ==
+[    2.1s]   71 signal days (2015-01-30..2020-11-30); 2020-12-31 dropped as signal (P3R2 precedent)
+[    2.1s] == 2. R16 pool (build_history + signal_pools, verbatim) ==
+[    4.3s]   pool n: min 810 max 2260 first 2015-01-30 n=1438
+[    4.3s] == 3. dedup: |rho|>=0.6 connected components, rep = max |t| ==
+[    4.3s]   17 clusters, 17 representatives: ['A17', 'A20', 'A25', 'B11', 'B12', 'B14', 'C19', 'D10', 'D13', 'D14', 'D18', 'D19', 'D20', 'D30', 'E16', 'F06', 'F09']
+[    4.3s]     cluster rep F09 (size 13): ['A01', 'A02', 'A05', 'A09', 'A10', 'A21', 'A23', 'A24', 'B15', 'C01', 'C11', 'C12', 'F09']
+[    4.3s]     cluster rep E16 (size 4): ['B04', 'D09', 'D16', 'E16']
+[    4.3s]     cluster rep B11 (size 4): ['B09', 'B10', 'B11', 'F10']
+[    4.3s]     cluster rep D30 (size 4): ['D07', 'D08', 'D17', 'D30']
+[    4.3s]     cluster rep B12 (size 3): ['A18', 'A22', 'B12']
+[    4.3s]     cluster rep A17 (size 2): ['A17', 'A19']
+[    4.3s]     cluster rep D13 (size 2): ['D12', 'D13']
+[    4.3s]     cluster rep A20 (size 1): ['A20']
+[    4.3s]   coverage rule: >= 9/17 reps non-null
+[    4.4s] == 4. composite: EW + ICW arms on executable cross-sections ==
+D:\量化\artifacts\runs\20260919T191524-f3r1-factor-combo-c212\tmp\runner_f3r1.py:240: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  f = f.filter(pl.col("signal_date").is_in(pl.Series(sig_days)))
+D:\量化\artifacts\runs\20260919T191524-f3r1-factor-combo-c212\tmp\runner_f3r1.py:270: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  wide = wide.filter(pl.col("signal_date").is_in(pl.Series(sig_days)))
+[    5.0s]   wide frame 297870 rows, 5108 symbols
+D:\量化\artifacts\runs\20260919T191524-f3r1-factor-combo-c212\tmp\runner_f3r1.py:280: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  have = (have.filter(pl.col("symbol").is_in(pl.Series(sorted(pool_set[t]))))
+[    5.1s]   2015-01-30: pool 1438 -> eligible 1338
+[    7.5s]   2017-12-29: pool 982 -> eligible 982
+[    9.5s]   2020-11-30: pool 1542 -> eligible 1539
+[    9.5s]   eligible sizes: min 810 median 1510 max 2258
+[    9.5s] == 5. membership (buffer top10/exit>20) + static intent frames ==
+[    9.6s]   F3-EW: 1078 intents (buy 544, sell 534); members/month min 10 max 10; m5-b PASS
+[    9.6s]   F3-ICW: 1172 intents (buy 591, sell 581); members/month min 10 max 10; m5-b PASS
+[    9.6s] == 6. benchmarks: B1(m)_F3 fractional + B3'_F3 random K=10 ==
+[   16.4s]   B1(m)_F3: net +1.67% mdd -64.36% (2933 union symbols)
+[   17.7s]   B3'_F3: mean net -2.93% (seeds 17..36, range -9.29..+5.39%)
+[   17.7s] == 7. band engine market frames ==
+[   26.3s]   frames: panel 525 symbols; daily 728890; half 1394131; limits 727240; rss 3.35 GB
+[   26.4s] == 8. band engine intent runs ==
+[   30.2s]   F3-EW: engine 3.9s; intents 1078 activated 1078 orders 17182 filled 671 override 166 expired 235 | rss 3.70 GB
+[   34.6s]   F3-ICW: engine 4.3s; intents 1172 activated 1172 orders 18185 filled 746 override 181 expired 238 | rss 3.91 GB
+[   34.6s] == 9. gate-8 attribution ==
+[   34.6s]   F3-EW: gate8 mapped 78.9% (filled 671, rule-blocked 180, terminated 227, zero-emission 6, expired-noop 0); term {'expiry': 60, 'override_same_name': 151, 'cap_void': 0, 'suspension_abandon': 16}
+[   34.7s]   F3-ICW: gate8 mapped 80.3% (filled 746, rule-blocked 195, terminated 231, zero-emission 5, expired-noop 0); term {'expiry': 50, 'override_same_name': 168, 'cap_void': 0, 'suspension_abandon': 13}
+[   34.7s] == 10. metrics & eight gates + goal criterion ==
+[   34.8s]   F3-EW: net +12.60% excess +10.93pp adv 6/6 mdd -38.91% turn 6.12 w 23.7% exec 78.9% -> eliminated ['4_mdd_le_20pct_and_le_B1m', '5_one_side_turnover_le_6', '8_execution_rate_ge_95pct']; goal>=10% MET
+[   34.9s]   F3-ICW: net +13.23% excess +11.56pp adv 5/6 mdd -35.63% turn 6.75 w 24.8% exec 80.3% -> eliminated ['4_mdd_le_20pct_and_le_B1m', '5_one_side_turnover_le_6', '8_execution_rate_ge_95pct']; goal>=10% MET
+[   34.9s] == gates: 0/2 dev_pass ==
+[   34.9s] == 11. outputs ==
+[   35.0s] == manifest + report written; wall 35s, peak rss 3.91 GB ==
+[   35.0s] == VERDICT: 0/2 dev_pass; goal-met arms: []; no arm passed all dev gates (0/2); val not consumed ==

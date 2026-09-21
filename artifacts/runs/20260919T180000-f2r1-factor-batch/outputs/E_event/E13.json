@@ -1,0 +1,66 @@
+{
+ "factor_id": "E13",
+ "name": "float_fwd60",
+ "formula": "已公告(ann<=t)且 float_date 在 (t, t+60d] 的解禁比例合计(%总股本)",
+ "source": "share_float",
+ "fill_policy": "无事件为 null（不入因子帧）",
+ "n_rows": 8724,
+ "t_value": -4.623675101436892,
+ "coverage_median_symbols": 135.0,
+ "coverage_median_active_months": 150.0,
+ "pool_median_symbols": 3126.0,
+ "criteria": {
+  "c1_abs_t>=2": true,
+  "c2_mono_consistent>=0.3": true,
+  "c3_2015_non_disaster": true,
+  "c4_coverage>=50%pool": false
+ },
+ "survived_prelim": false,
+ "eval": {
+  "n_dates": 51,
+  "coverage_mean_symbols": 159.2549019607843,
+  "ic_mean": -0.12202915869600435,
+  "ic_std": 0.1884783173350544,
+  "icir": -0.6474440159558268,
+  "ic_win_rate": 0.19607843137254902,
+  "group_mean_ret": [
+   -4.003301707915294e-05,
+   0.012926360007856939,
+   0.005288192305519445,
+   -0.0029252930135238984,
+   -0.002293876881974798,
+   0.004237629799640419,
+   -0.004845634302515827,
+   -0.01043503305057189,
+   -0.006315252430364851,
+   -0.017598055125793422
+  ],
+  "long_short_mean": -0.01755802210871427,
+  "monotonicity": -0.7937900478193414,
+  "ic_by_year": {
+   "2016": -0.4758729833808626,
+   "2017": -0.1316762965490292,
+   "2018": -0.0947031326235072,
+   "2019": -0.1046153863044254,
+   "2020": -0.03164157947720256
+  },
+  "long_short_by_year": {
+   "2016": 0.014856951478579947,
+   "2017": -0.04687649964891836,
+   "2018": -0.018630924515855234,
+   "2019": -0.030392864835523586,
+   "2020": -0.005690985830284621
+  },
+  "turnover_top_group": 0.6116667982231989,
+  "corr_with_others": {},
+  "config": {
+   "horizon_days": 20,
+   "n_groups": 10,
+   "eval_freq": "M",
+   "exclude_st": true,
+   "require_trading": true,
+   "exclude_boards": true,
+   "min_history_rows": 60
+  }
+ }
+}

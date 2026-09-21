@@ -1,0 +1,104 @@
+{
+  "mode": "full",
+  "days": 2431,
+  "out_dir": "data\\processed\\halfday-bars-20260918",
+  "counters": {
+    "source_rows": 2303083300,
+    "bj_rows_removed": 27944490,
+    "am_grid_minutes_sum": 294151,
+    "pm_grid_minutes_sum": 291720,
+    "zerovol_bars_removed": 146272727,
+    "rows_am": 9245162,
+    "rows_pm": 9241777,
+    "partial_rows": 12316566,
+    "codes_day": 9440410
+  },
+  "per_year": {
+    "2015": {
+      "rows": 1137392,
+      "days": 244,
+      "symbols": 2807,
+      "sha256": "9ed3ac1a74fe2dda3ba658cf774cdf5dd4017b1c4921babf742f8899401d8ad4"
+    },
+    "2016": {
+      "rows": 1278456,
+      "days": 244,
+      "symbols": 3029,
+      "sha256": "ae3a52f40c06b8af1e6033b879d8c9efabed18403ff6c1d5b486e20326ab4030"
+    },
+    "2017": {
+      "rows": 1484554,
+      "days": 244,
+      "symbols": 3461,
+      "sha256": "d5e509d4bb2f1e0e131a231f5c56ad0a50d7de3266b0e49786a8f4fe7c4a2aed"
+    },
+    "2018": {
+      "rows": 1632678,
+      "days": 243,
+      "symbols": 3566,
+      "sha256": "b5cbf3c4dbce098818ca8386c7d590a881bc33de26115b505e30537081d3aab9"
+    },
+    "2019": {
+      "rows": 1768789,
+      "days": 244,
+      "symbols": 3765,
+      "sha256": "a073921bb1dc2de4c95ef4fe5d3393c5b54068a77910699afd21092b67cd0e85"
+    },
+    "2020": {
+      "rows": 1891414,
+      "days": 243,
+      "symbols": 4153,
+      "sha256": "e0b8e6a50d2a4b76c7d8d4846c4e067c2503a37b3809f1113780759a194bba8c"
+    },
+    "2021": {
+      "rows": 2117228,
+      "days": 243,
+      "symbols": 4618,
+      "sha256": "7350798e8ce05fdbe6b90634e59fa4d8c81ae7277a09f3ec1fd31fe7ea25ccde"
+    },
+    "2022": {
+      "rows": 2292039,
+      "days": 242,
+      "symbols": 4946,
+      "sha256": "01916dc50e1e28ecc9c3997fe3156cb70e0a4027912a829541567e421f839714"
+    },
+    "2023": {
+      "rows": 2418471,
+      "days": 242,
+      "symbols": 5140,
+      "sha256": "c5b54fd8c27f651c34fd588284dfc10552d786e99d08d7f1011dcd883948a17d"
+    },
+    "2024": {
+      "rows": 2465918,
+      "days": 242,
+      "symbols": 5169,
+      "sha256": "3135802c39f5ef7108ce47002683ed1c265290ad97793f1fb3e164dcb3fc4546"
+    }
+  },
+  "identity": {
+    "day_list_csv_sha256": "e9cde37f237e387d782f8dbc4452367d3c7e1b2b3c50c424fa5fe67d570f4dfe",
+    "baostock_manifest": {
+      "manifest": "data/processed/baostock-daily-20260917/manifest.json",
+      "sha256": "2b89bef9ef6f4ae58b69ca43021552db067b185551c92a05ef6ac71d2be59bd3"
+    },
+    "sampled_reshash_ok": [
+      "user_minute_1m/20260913-143215/2019/20190527.parquet",
+      "user_minute_1m/20260913-143215/2018/20180627.parquet",
+      "user_minute_1m/20260913-143215/2017/20170721.parquet",
+      "user_minute_1m/20260913-2020-2024/2024/20240604.parquet",
+      "user_minute_1m/20260913-2020-2024/2023/20230705.parquet",
+      "user_minute_1m/20260913-2020-2024/2022/20220727.parquet"
+    ]
+  },
+  "timing": {
+    "total_s": 2364.1,
+    "scan_s": 2363.9,
+    "mean_ms_per_day": 972.3800487042299,
+    "peak_rss_gib": 2.26
+  },
+  "environment": {
+    "python": "3.11.15",
+    "polars": "1.44.2",
+    "platform": "win32"
+  }
+}

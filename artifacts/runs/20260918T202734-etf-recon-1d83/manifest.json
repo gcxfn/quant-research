@@ -1,0 +1,62 @@
+{
+  "run_id": "20260918T202734-etf-recon-1d83",
+  "task": "ETF 数据侦察 + ETF 日线 bundle 构建（数据基础设施，不运行回测、不消耗试验次数、不修改 data/raw、不联网下载）",
+  "status": "completed",
+  "status_detail": "第 1 步侦察完成；第 2 步 bundle 停建（主源零基金代码，按『语义不明/源身份冲突→停下报告、不硬闯』纪律中止）；第 3 步仅产出侦察级分类参考（未写 configs）；run 目录已建。",
+  "started_at": "2026-09-18T20:00+08:00 (approx，第一条侦察命令)",
+  "ended_at": "2026-09-18T20:33+08:00",
+  "wall_clock_minutes_approx": 33,
+  "environment": {
+    "platform": "win32 / Windows 10.0.26200 x64 / Git Bash",
+    "python": "D:\\量化\\.venv\\Scripts\\python.exe (3.11.15)",
+    "polars": "1.44.2",
+    "pyarrow": "25.0.1"
+  },
+  "inputs_identity": [
+    {
+      "path": "data/processed/baostock-daily-20260917/daily_1999_2024.parquet",
+      "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6",
+      "bytes": 488873145,
+      "rows": 16344349,
+      "symbols": 5410,
+      "fund_prefixed_symbols": 0
+    },
+    {
+      "path": "data/processed/baostock-daily-20260917/daily_2015_2024.parquet",
+      "sha256": "1cbb09a11f7c10136981749c13467f12a1757b59e7e95fb6f86666f96edfc1de",
+      "bytes": 280168541
+    },
+    {
+      "path": "data/raw/baostock/daily/ (5552 证券, 11104 文件)",
+      "sha256": "未重算；身份以 data/_meta/sha256.tsv 基线为准（本 run 未修改）"
+    },
+    {
+      "path": "data/_meta/deep-scan-20260917/README.md",
+      "note": "逐批次深扫台账（455 批次报告），ths/tx/etf_basic/fund_basic 覆盖引用自此"
+    }
+  ],
+  "actual_commands_summary": [
+    "读 docs/DATA_SOURCES.md、docs/DATA_COVERAGE.md、data/_meta/deep-scan-20260917/README.md（grep 定位 etf/fund 行）",
+    "polars 扫描 processed 两个日线 parquet 的 symbol 前缀分布与基金区间代码（0 命中）",
+    "ls/grep raw baostock/daily、baostock 各分钟补数批次文件名基金前缀（0 命中）",
+    "pyarrow 线程池全量扫描 user_minute_1m 两个批次 2015-2024 共 2431 个日文件 code 列（17.8s，0 基金代码，总 5589 个唯一代码）",
+    "抽样扫描 bigquant/minute-bulk-20260915-1/years/2010|2012|2014 各 1 个日文件（0 基金）；按文件名检查 2015/2016/2018/2019 按证券 CSV 共 12383 个（0 基金）；2025/2026 目录冻结未读",
+    "zipfile 只读读取 user_dataset 6 个 zip 成员名（0 基金）",
+    "ls 统计 ths/tx/sina ETF 目录数并 comm 对比集合；json 解析 sina 58 只 response.json 首末日",
+    "polars 读 xiaodefa/etf_basic chunk_p0.csv（3414 行快照），按 ts_code 匹配 58 只侦察集生成分类参考",
+    "sha256 重算两个 processed 输入 parquet"
+  ],
+  "outputs": [
+    "report.md",
+    "tmp/sina_etf_firstlast.json（sina 58 只逐符号首末日与行数）",
+    "tmp/sina58_reference_annotation.json（58 只 × etf_basic 快照注释与关键词初分类）",
+    "tmp/recon_summary_stats.json（精炼分类计数、逐年可得标的估算、sina 首日晚于上市日清单）"
+  ],
+  "frozen_window_discipline": "所有源仅统计 2015-2024 窗内结论；bigquant 2025/2026 分钟目录未读取内容；ths/tx/sina 的 2025+ 行只报告未使用；未向任何研究输出交付冻结区数据。",
+  "no_modifications": "data/raw 与 data/_meta 及一切既有文件零修改、零删除；仅新建本 run 目录。未做 git 操作。未联网。",
+  "key_findings": [
+    "data/raw 内不存在任何 ETF 历史分钟数据源：user_minute_1m 全量代码列扫描 0 基金代码；唯一 ETF 分钟痕迹是 etf-minute-probe 的 3 只 5 分钟可行性探针（2026-09 近端，非历史覆盖）",
+    "主日线源 baostock（raw 与 processed 皆然）不含任何基金代码（0/5410 符号），任务第 2 步输入前提不成立，bundle 停建",
+    "窗内 ETF 日线事实覆盖：sina/ 与 ths/ 各 58 只（集合相同），tx/ 55 只（同集合少 sh512480/sh513100/sh516160）；sina 未复权、ths 前复权仅近 5 年、tx 前复权有分页重叠缺陷"
+  ]
+}

@@ -1,0 +1,37 @@
+D:\量化\artifacts\runs\20260920T130616-val-batch-fline-6534\scripts\generated\f2val_C_micro.py:164: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  month_end = g.filter(pl.col("date").is_in(pl.Series(ME)))
+D:\量化\artifacts\runs\20260920T130616-val-batch-fline-6534\scripts\generated\f2val_C_micro.py:170: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  .filter(pl.col("date").is_in(pl.Series(ME)))
+[  22.4s] auction 4860378
+[  86.6s] moneyflow 4599612
+[ 104.2s] limit 5199756
+[ 145.1s] nineturn 4389970
+[ 172.0s] 滚动完成
+[ 181.7s] C01 auct_prem20  ic=-0.0546 t=-3.65 mono=-0.79 ic15=-0.1159 cov=95% 存活 (7.7s)
+[ 189.2s] C02 auct_premstd ic=-0.0700 t=-3.50 mono=-0.18 ic15=-0.0266 cov=95%  (7.5s)
+[ 195.6s] C03 auct_volr20  ic=-0.0113 t=-0.81 mono=-0.90 ic15=-0.0283 cov=95%  (6.3s)
+[ 202.7s] C04 mf_net20     ic=-0.0073 t=-0.74 mono=-0.27 ic15=-0.0618 cov=95%  (7.1s)
+[ 208.8s] C05 mf_net5      ic=-0.0045 t=-0.48 mono=-0.07 ic15=-0.0392 cov=95%  (6.2s)
+[ 214.8s] C06 mf_mom       ic=-0.0043 t=-0.54 mono=-0.22 ic15=-0.0025 cov=95%  (6.0s)
+[ 221.1s] C07 buy_r20      ic=+0.0069 t=+0.69 mono=+0.90 ic15=+0.0817 cov=95%  (6.3s)
+[ 227.8s] C08 sell_r20     ic=+0.0065 t=+0.64 mono=+0.89 ic15=+0.0814 cov=95%  (6.7s)
+[ 233.6s] C09 lgbuy_r20    ic=-0.0301 t=-1.80 mono=-0.95 ic15=-0.0903 cov=95%  (5.8s)
+[ 240.0s] C10 lgsell_r20   ic=-0.0276 t=-1.72 mono=-0.97 ic15=-0.0758 cov=95%  (6.4s)
+[ 246.8s] C11 lim_dist_up  ic=-0.0703 t=-3.86 mono=-0.89 ic15=-0.1265 cov=95% 存活 (6.7s)
+[ 252.6s] C12 lim_dist_dn  ic=-0.0759 t=-4.20 mono=-0.88 ic15=-0.1266 cov=95% 存活 (5.9s)
+[ 258.7s] C13 lim_up20     ic=-0.0812 t=-6.77 mono=+0.36 ic15=-0.0674 cov=95%  (6.1s)
+[ 264.9s] C14 lim_up60     ic=-0.0799 t=-5.86 mono=+0.01 ic15=-0.0564 cov=95%  (6.2s)
+[ 270.6s] C15 td_setup     ic=-0.0049 t=-0.68 mono=+0.43 ic15=-0.0361 cov=90%  (5.7s)
+[ 276.9s] C16 td_sum20     ic=+0.0113 t=+1.25 mono=+0.56 ic15=-0.0091 cov=90%  (6.3s)
+[ 283.6s] C17 mf_skew20    ic=-0.0178 t=-1.96 mono=-0.49 ic15=-0.0559 cov=95%  (6.8s)
+[ 289.8s] C18 auct_premmom ic=-0.0015 t=-0.11 mono=-0.21 ic15=-0.0214 cov=95%  (6.2s)
+[ 296.4s] C19 cls_str20    ic=-0.0385 t=-2.77 mono=-0.90 ic15=-0.0804 cov=95% 存活 (6.6s)
+[ 306.9s] C20 cls_str60    ic=-0.0177 t=-1.54 mono=-0.82 ic15=-0.0022 cov=95%  (10.5s)
+
+== C 族完成：20/20，终裁存活 4：['C01', 'C11', 'C12', 'C19']；总耗时 307s ==

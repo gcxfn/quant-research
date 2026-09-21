@@ -1,0 +1,686 @@
+{
+ "experiment_id": "exp-20260920-factor-round-f3r4",
+ "engine_sha256": "a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3",
+ "engine_sha256_16": "a01cb29ce4cf2148",
+ "prereg_sha256_16": "19ac8e9a658d27f7",
+ "config_sha256_16": "8c4c51b0b3ab1c14",
+ "event_table": {
+  "path": "D:\\量化\\artifacts\\runs\\20260920T113527-t1-reason-event-b690\\outputs\\events_dev.parquet",
+  "sha256": "bada2b342493654d7b397191ba445b171a44b0d89d5d0cad9442dbf7995ab14f"
+ },
+ "base_composite": {
+  "path": "D:\\量化\\artifacts\\runs\\20260919T191524-f3r1-factor-combo-c212\\outputs\\F3-EW_composite.parquet",
+  "sha256": "9b93696b14fdd31f0047e715f6172005f87d7f06ba292607b3c442a3cb41a741"
+ },
+ "baseline": {
+  "arm": "F3R3-EW (chassis verbatim)",
+  "net_cagr": 0.04877310918741218,
+  "max_drawdown": -0.17848532843799414,
+  "source": "F3R3 run outputs/metrics_and_gates.json verbatim"
+ },
+ "b": {
+  "value": 0.10164738676824621,
+  "months": 71,
+  "rule": "b = median over signal months of the F3-EW composite cross-sectional std (ddof=1), mechanical, no fitting",
+  "seam_note": "the prereg writes 'median over 68 signal months'; the parquet holds 71 signal months (2015-01-30..2020-11-30, the F3R3 caliber).  68 is the attribution run's forward-return coverage (2015-04-30..2020-11-30; min_history_rows=60 drops 2015 Q1).  The frozen arm parameter is the 71-month median (every month the runner consumes); the 68-month value drives one disclosed A-arm repeat registered in the manifest as a TF-S3 seam check."
+ },
+ "leave_zero_out_anchor": {
+  "tag": "F3R4-LZO",
+  "composite": "D:\\量化\\artifacts\\runs\\20260919T191524-f3r1-factor-combo-c212\\outputs\\F3-EW_composite.parquet",
+  "compare": {
+   "intents": true,
+   "fills": true,
+   "events": true,
+   "daily": true,
+   "clips_final": true,
+   "net_cagr_matches_chassis": true,
+   "max_drawdown_matches_chassis": true
+  },
+  "net_cagr": 0.04877310918741218,
+  "max_drawdown": -0.17848532843799414,
+  "verdict": "PASS (5/5 frames .equals + net_cagr/maxDD bit-equal)"
+ },
+ "adjudication": {
+  "rule": "net CAGR >= baseline + 0.003 AND max_drawdown >= baseline - 0.01 (prereg sec 5)",
+  "cagr_line": 0.05177310918741218,
+  "mdd_floor": -0.18848532843799415,
+  "edge_band": 0.0001,
+  "edge_cases": [],
+  "arms": [
+   {
+    "arm": "F3R4-A",
+    "net_cagr": 0.05335632262215695,
+    "max_drawdown": -0.17848532843799414,
+    "delta_vs_baseline": 0.004583213434744771,
+    "delta_vs_baseline_pp": 0.45832134347447706,
+    "cagr_line": 0.05177310918741218,
+    "cagr_margin": 0.001583213434744768,
+    "mdd_floor": -0.18848532843799415,
+    "mdd_margin": 0.010000000000000009,
+    "passes_cagr_line": true,
+    "passes_mdd_line": true,
+    "pass": true
+   },
+   {
+    "arm": "F3R4-B",
+    "net_cagr": 0.049439975067596675,
+    "max_drawdown": -0.17848532843799414,
+    "delta_vs_baseline": 0.0006668658801844973,
+    "delta_vs_baseline_pp": 0.06668658801844973,
+    "cagr_line": 0.05177310918741218,
+    "cagr_margin": -0.0023331341198155053,
+    "mdd_floor": -0.18848532843799415,
+    "mdd_margin": 0.010000000000000009,
+    "passes_cagr_line": false,
+    "passes_mdd_line": true,
+    "pass": false
+   },
+   {
+    "arm": "F3R4-C",
+    "net_cagr": 0.04848486197327073,
+    "max_drawdown": -0.17848532843799414,
+    "delta_vs_baseline": -0.00028824721414144605,
+    "delta_vs_baseline_pp": -0.028824721414144605,
+    "cagr_line": 0.05177310918741218,
+    "cagr_margin": -0.0032882472141414487,
+    "mdd_floor": -0.18848532843799415,
+    "mdd_margin": 0.010000000000000009,
+    "passes_cagr_line": false,
+    "passes_mdd_line": true,
+    "pass": false
+   }
+  ],
+  "n_pass": 1,
+  "verdict": "H1",
+  "passing_arms": [
+   "F3R4-A"
+  ],
+  "conclusion": "H1 (exploratory): the event information is extractable at the portfolio level in at least one arm"
+ },
+ "gates": {
+  "F3R4-A": {
+   "dev": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": true,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": true,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8v3_final_delivery_ge_99pct": false,
+    "advantage_years": 4,
+    "dev_excess_vs_b1m": 0.047365730264250505,
+    "failed_gates": [
+     "3_advantage_years_ge_5_of_6",
+     "8v3_final_delivery_ge_99pct"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated",
+    "goal_met": false
+   }
+  },
+  "F3R4-B": {
+   "dev": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": true,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": true,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8v3_final_delivery_ge_99pct": false,
+    "advantage_years": 4,
+    "dev_excess_vs_b1m": 0.04344938270969023,
+    "failed_gates": [
+     "3_advantage_years_ge_5_of_6",
+     "8v3_final_delivery_ge_99pct"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated",
+    "goal_met": false
+   }
+  },
+  "F3R4-C": {
+   "dev": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": true,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": true,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8v3_final_delivery_ge_99pct": false,
+    "advantage_years": 4,
+    "dev_excess_vs_b1m": 0.04249426961536429,
+    "failed_gates": [
+     "3_advantage_years_ge_5_of_6",
+     "8v3_final_delivery_ge_99pct"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated",
+    "goal_met": false
+   }
+  }
+ },
+ "gate_table": {
+  "F3R4-A": {
+   "net_cagr": 0.05335632262215695,
+   "max_drawdown": -0.17848532843799414,
+   "excess_vs_b1m": 0.047365730264250505,
+   "advantage_years": 4,
+   "max_one_side_turnover": 4.48063440761008,
+   "max_single_name_weight": 0.2799262884214426,
+   "gate8v3": {
+    "armed": 6,
+    "market_fallback_fills": 4,
+    "armed_then_limit_self_fills": 1,
+    "limit_self_cases": [
+     {
+      "symbol": "sz.002021",
+      "date": "2019-05-08",
+      "order_id": "sz.002021-sell/risk-2019-05-07-pm"
+     }
+    ],
+    "no_position_cleared": 1,
+    "stuck_final": [],
+    "superseded_residual": 0,
+    "final_delivery_rate": 0.8333333333333334,
+    "gate_pass": false,
+    "caliber": "final delivery = (market-fallback fills + armed-then-limit-self fills) / armed fallbacks, >= 99%; end-of-run armed stuck positions == 0 hard assert (F3R3 caliber verbatim)"
+   },
+   "failed_gates": [
+    "3_advantage_years_ge_5_of_6",
+    "8v3_final_delivery_ge_99pct"
+   ],
+   "dev_pass": false,
+   "by_key": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": true,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": true,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8v3_final_delivery_ge_99pct": false
+   }
+  },
+  "F3R4-B": {
+   "net_cagr": 0.049439975067596675,
+   "max_drawdown": -0.17848532843799414,
+   "excess_vs_b1m": 0.04344938270969023,
+   "advantage_years": 4,
+   "max_one_side_turnover": 4.459677943646238,
+   "max_single_name_weight": 0.28022066102829124,
+   "gate8v3": {
+    "armed": 6,
+    "market_fallback_fills": 5,
+    "armed_then_limit_self_fills": 0,
+    "limit_self_cases": [],
+    "no_position_cleared": 1,
+    "stuck_final": [],
+    "superseded_residual": 0,
+    "final_delivery_rate": 0.8333333333333334,
+    "gate_pass": false,
+    "caliber": "final delivery = (market-fallback fills + armed-then-limit-self fills) / armed fallbacks, >= 99%; end-of-run armed stuck positions == 0 hard assert (F3R3 caliber verbatim)"
+   },
+   "failed_gates": [
+    "3_advantage_years_ge_5_of_6",
+    "8v3_final_delivery_ge_99pct"
+   ],
+   "dev_pass": false,
+   "by_key": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": true,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": true,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8v3_final_delivery_ge_99pct": false
+   }
+  },
+  "F3R4-C": {
+   "net_cagr": 0.04848486197327073,
+   "max_drawdown": -0.17848532843799414,
+   "excess_vs_b1m": 0.04249426961536429,
+   "advantage_years": 4,
+   "max_one_side_turnover": 4.445981178514336,
+   "max_single_name_weight": 0.2802928123799653,
+   "gate8v3": {
+    "armed": 7,
+    "market_fallback_fills": 6,
+    "armed_then_limit_self_fills": 0,
+    "limit_self_cases": [],
+    "no_position_cleared": 1,
+    "stuck_final": [],
+    "superseded_residual": 0,
+    "final_delivery_rate": 0.8571428571428571,
+    "gate_pass": false,
+    "caliber": "final delivery = (market-fallback fills + armed-then-limit-self fills) / armed fallbacks, >= 99%; end-of-run armed stuck positions == 0 hard assert (F3R3 caliber verbatim)"
+   },
+   "failed_gates": [
+    "3_advantage_years_ge_5_of_6",
+    "8v3_final_delivery_ge_99pct"
+   ],
+   "dev_pass": false,
+   "by_key": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": true,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": true,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8v3_final_delivery_ge_99pct": false
+   }
+  },
+  "F3R4-LZO": {
+   "net_cagr": 0.04877310918741218,
+   "max_drawdown": -0.17848532843799414,
+   "excess_vs_b1m": 0.042782516829505735,
+   "advantage_years": 4,
+   "max_one_side_turnover": 4.445981178514337,
+   "max_single_name_weight": 0.28001391643232293,
+   "gate8v3": {
+    "armed": 6,
+    "market_fallback_fills": 5,
+    "armed_then_limit_self_fills": 0,
+    "limit_self_cases": [],
+    "no_position_cleared": 1,
+    "stuck_final": [],
+    "superseded_residual": 0,
+    "final_delivery_rate": 0.8333333333333334,
+    "gate_pass": false,
+    "caliber": "final delivery = (market-fallback fills + armed-then-limit-self fills) / armed fallbacks, >= 99%; end-of-run armed stuck positions == 0 hard assert (F3R3 caliber verbatim)"
+   },
+   "failed_gates": [
+    "3_advantage_years_ge_5_of_6",
+    "8v3_final_delivery_ge_99pct"
+   ],
+   "dev_pass": false,
+   "by_key": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": true,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": true,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8v3_final_delivery_ge_99pct": false
+   }
+  }
+ },
+ "sleeve_diffs_vs_baseline": {
+  "F3R4-A": {
+   "months": 71,
+   "months_with_different_member_set": 19,
+   "months_with_different_member_set_list": [
+    "2018-10-31",
+    "2019-01-31",
+    "2019-02-28",
+    "2019-03-29",
+    "2019-04-30",
+    "2019-05-31",
+    "2019-06-28",
+    "2019-08-30",
+    "2019-09-30",
+    "2019-11-29",
+    "2019-12-31",
+    "2020-01-23",
+    "2020-02-28",
+    "2020-03-31",
+    "2020-04-30",
+    "2020-08-31",
+    "2020-09-30",
+    "2020-10-30",
+    "2020-11-30"
+   ],
+   "member_set_symmetric_difference_sum": 78,
+   "entries_not_in_baseline_entry_set": 38,
+   "exits_not_in_baseline_exit_set": 32,
+   "flagged_seat_months": {
+    "impairment": 33,
+    "price_up": 0
+   },
+   "baseline_flagged_seat_months": {
+    "impairment": 3,
+    "price_up": 13
+   },
+   "flagged_seat_months_delta": {
+    "impairment": 30,
+    "price_up": -13
+   },
+   "flagged_months_present": {
+    "impairment": 14,
+    "price_up": 0
+   },
+   "flagged_entries": {
+    "impairment": 26,
+    "price_up": 0
+   },
+   "flagged_exits": {
+    "impairment": 7,
+    "price_up": 2
+   },
+   "flagged_in_top10_of_arm_ranking": {
+    "impairment": 32,
+    "price_up": 0
+   },
+   "flagged_in_top10_of_baseline_ranking": {
+    "impairment": 3,
+    "price_up": 19
+   }
+  },
+  "F3R4-B": {
+   "months": 71,
+   "months_with_different_member_set": 11,
+   "months_with_different_member_set_list": [
+    "2018-10-31",
+    "2019-01-31",
+    "2019-02-28",
+    "2019-06-28",
+    "2019-11-29",
+    "2019-12-31",
+    "2020-01-23",
+    "2020-08-31",
+    "2020-09-30",
+    "2020-10-30",
+    "2020-11-30"
+   ],
+   "member_set_symmetric_difference_sum": 33,
+   "entries_not_in_baseline_entry_set": 17,
+   "exits_not_in_baseline_exit_set": 14,
+   "flagged_seat_months": {
+    "impairment": 3,
+    "price_up": 0
+   },
+   "baseline_flagged_seat_months": {
+    "impairment": 3,
+    "price_up": 13
+   },
+   "flagged_seat_months_delta": {
+    "impairment": 0,
+    "price_up": -13
+   },
+   "flagged_months_present": {
+    "impairment": 3,
+    "price_up": 0
+   },
+   "flagged_entries": {
+    "impairment": 3,
+    "price_up": 0
+   },
+   "flagged_exits": {
+    "impairment": 0,
+    "price_up": 2
+   },
+   "flagged_in_top10_of_arm_ranking": {
+    "impairment": 3,
+    "price_up": 0
+   },
+   "flagged_in_top10_of_baseline_ranking": {
+    "impairment": 3,
+    "price_up": 19
+   }
+  },
+  "F3R4-C": {
+   "months": 71,
+   "months_with_different_member_set": 12,
+   "months_with_different_member_set_list": [
+    "2019-02-28",
+    "2019-03-29",
+    "2019-05-31",
+    "2019-06-28",
+    "2019-11-29",
+    "2019-12-31",
+    "2020-01-23",
+    "2020-02-28",
+    "2020-08-31",
+    "2020-09-30",
+    "2020-10-30",
+    "2020-11-30"
+   ],
+   "member_set_symmetric_difference_sum": 24,
+   "entries_not_in_baseline_entry_set": 10,
+   "exits_not_in_baseline_exit_set": 9,
+   "flagged_seat_months": {
+    "impairment": 5,
+    "price_up": 7
+   },
+   "baseline_flagged_seat_months": {
+    "impairment": 3,
+    "price_up": 13
+   },
+   "flagged_seat_months_delta": {
+    "impairment": 2,
+    "price_up": -6
+   },
+   "flagged_months_present": {
+    "impairment": 4,
+    "price_up": 5
+   },
+   "flagged_entries": {
+    "impairment": 4,
+    "price_up": 4
+   },
+   "flagged_exits": {
+    "impairment": 0,
+    "price_up": 5
+   },
+   "flagged_in_top10_of_arm_ranking": {
+    "impairment": 7,
+    "price_up": 9
+   },
+   "flagged_in_top10_of_baseline_ranking": {
+    "impairment": 3,
+    "price_up": 19
+   }
+  }
+ },
+ "sensitivity": {
+  "role": "disclosure only; never changes the primary adjudication",
+  "windows": {
+   "w20": {
+    "arm": "F3R4-A-w20",
+    "net_cagr": 0.046791160646654895,
+    "max_drawdown": -0.17848532843799414,
+    "delta_vs_baseline_pp": -0.19819485407572834,
+    "passes_cagr_line": false,
+    "passes_mdd_line": true,
+    "failed_gates": [
+     "3_advantage_years_ge_5_of_6",
+     "8v3_final_delivery_ge_99pct"
+    ]
+   },
+   "w40": {
+    "arm": "F3R4-A-w40",
+    "net_cagr": 0.047337109911717246,
+    "max_drawdown": -0.17848532843799414,
+    "delta_vs_baseline_pp": -0.14359992756949325,
+    "passes_cagr_line": false,
+    "passes_mdd_line": true,
+    "failed_gates": [
+     "3_advantage_years_ge_5_of_6",
+     "8v3_final_delivery_ge_99pct"
+    ]
+   }
+  },
+  "b68": {
+   "arm": "F3R4-A-b68",
+   "b": 0.10152821356398378,
+   "net_cagr": 0.05335632262215695,
+   "max_drawdown": -0.17848532843799414,
+   "delta_vs_baseline_pp": 0.45832134347447706,
+   "passes_cagr_line": true,
+   "delta_vs_frozen_b_arm_pp": 0.0,
+   "same_failed_gates_as_frozen": true,
+   "note": "the prereg writes 'median over 68 signal months' for b; the composite parquet holds 71 signal months.  The frozen arm parameter is the 71-month median; this row is the 68-month variant (2015-04-30..2020-11-30, the attribution run's forward-return coverage) run for disclosure only."
+  }
+ },
+ "runner_derivation": {
+  "file": "tmp/runner_f3r4_vs_f3r3.diff",
+  "sha256": "55b461a09a58dff0399898397fe886324604d4a976211e135685335f24699e10",
+  "lines_added": 639,
+  "lines_removed": 1549,
+  "source": "D:\\量化\\artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e\\scripts\\runner_f3r3.py",
+  "source_sha256": "e404845b442a2bdad232c87580a0ee88514260dc3b7cf1ab8e279f3141181ba3",
+  "derived": "D:\\量化\\artifacts\\runs\\20260920T122905-f3r4-reason-int-2301\\scripts\\runner_f3r4.py",
+  "derived_sha256": "bb1cf9080e0128f9548d7c7bd45b331ab42ad1e1d277ef171f3a073366b8ab6c",
+  "declared_changes": [
+   "composite input path (arm parquet from the command line instead of the F3R1 EW/ICW parquets)",
+   "arm id / output prefix (argv tag -> tmp/subruns/<tag>/)",
+   "engine pin (F3R3's v1.3 84a2443a -> the workspace v1.4.1 a01cb29c; precedent: the attribution run took the same step)",
+   "dropped the F3R3-A0 rotation anchor config, the ICW arm, the momentum/rotation intent builder, the A0-vs-v3 regression block and the F3R3 report/manifest text (no arm number depends on them)"
+  ],
+  "verbatim": [
+   "chassis legs sh.511010 15% + sh.518880 25%",
+   "sleeve K=10 buffer membership (enter top-10, stay rank<=20)",
+   "entry-side shenwan-L1 industry cap <= 2",
+   "w_T = e_T*(0.06/0.90), 500,000 initial cash",
+   "expiry/priority conventions and the engine call signature (no zones argument = v1.3 semantics)",
+   "per-intent attribution, the eight gates (incl. gate 8 v3), the disclosures, the identity pins"
+  ],
+  "why_this_is_not_a_semantic_change": "the leave-zero-out anchor runs the SAME derived runner on the UNCHANGED F3-EW composite and reproduces the F3R3-EW outputs byte-for-byte (5/5 frames) with identical net_cagr/maxDD; every arm differs from the anchor only through its composite parquet"
+ },
+ "independent_verification": {
+  "status": "completed",
+  "V1_flags_forward_recomputation": {
+   "pairs_producer": 1248,
+   "pairs_recomputed_in_composite": 1248,
+   "pairs_missing_in_output": 0,
+   "pairs_with_ann_mismatch": 0,
+   "pairs_extra_in_output_not_reachable": 0,
+   "out_of_composite_occurrences_recomputed": 718,
+   "out_of_composite_occurrences_producer_diagnostic": 718,
+   "out_of_composite_matches": true,
+   "examples": [],
+   "pass": true
+  },
+  "V2_composite_adjustment": {
+   "rows": 106266,
+   "flagged_rows_from_output": 1248,
+   "key_or_schema_problems": 0,
+   "A_rows_violating_value_plus_b": 0,
+   "B_rows_violating_suppression": 0,
+   "examples": [],
+   "pass": true
+  },
+  "V3_sleeve_membership": {
+   "F3R4-A": {
+    "months": 71,
+    "months_mismatching": 0,
+    "examples": [],
+    "pass": true
+   },
+   "F3R4-B": {
+    "months": 71,
+    "months_mismatching": 0,
+    "examples": [],
+    "pass": true
+   },
+   "F3R4-C": {
+    "months": 71,
+    "months_mismatching": 0,
+    "examples": [],
+    "pass": true
+   }
+  },
+  "V4_headline_metrics": {
+   "F3R4-A": {
+    "cagr_recomputed": 0.05335632262215695,
+    "cagr_metric": 0.05335632262215695,
+    "cagr_abs_diff": 0.0,
+    "mdd_recomputed": -0.17848532843799414,
+    "mdd_metric": -0.17848532843799414,
+    "mdd_abs_diff": 0.0,
+    "rows": 1462,
+    "pass": true
+   },
+   "F3R4-B": {
+    "cagr_recomputed": 0.049439975067596675,
+    "cagr_metric": 0.049439975067596675,
+    "cagr_abs_diff": 0.0,
+    "mdd_recomputed": -0.17848532843799414,
+    "mdd_metric": -0.17848532843799414,
+    "mdd_abs_diff": 0.0,
+    "rows": 1462,
+    "pass": true
+   },
+   "F3R4-C": {
+    "cagr_recomputed": 0.04848486197327073,
+    "cagr_metric": 0.04848486197327073,
+    "cagr_abs_diff": 0.0,
+    "mdd_recomputed": -0.17848532843799414,
+    "mdd_metric": -0.17848532843799414,
+    "mdd_abs_diff": 0.0,
+    "rows": 1462,
+    "pass": true
+   },
+   "F3R4-LZO": {
+    "cagr_recomputed": 0.04877310918741218,
+    "cagr_metric": 0.04877310918741218,
+    "cagr_abs_diff": 0.0,
+    "mdd_recomputed": -0.17848532843799414,
+    "mdd_metric": -0.17848532843799414,
+    "mdd_abs_diff": 0.0,
+    "rows": 1462,
+    "pass": true
+   }
+  },
+  "V5_adjudication_arithmetic": {
+   "line": 0.05177310918741218,
+   "floor": -0.18848532843799415,
+   "arms": {
+    "F3R4-A": {
+     "net_cagr": 0.05335632262215695,
+     "max_drawdown": -0.17848532843799414,
+     "cagr_ge_line": true,
+     "mdd_ge_floor": true,
+     "pass": true
+    },
+    "F3R4-B": {
+     "net_cagr": 0.049439975067596675,
+     "max_drawdown": -0.17848532843799414,
+     "cagr_ge_line": false,
+     "mdd_ge_floor": true,
+     "pass": false
+    },
+    "F3R4-C": {
+     "net_cagr": 0.04848486197327073,
+     "max_drawdown": -0.17848532843799414,
+     "cagr_ge_line": false,
+     "mdd_ge_floor": true,
+     "pass": false
+    }
+   },
+   "any_pass": true
+  },
+  "verdict": {
+   "all_checks_pass": true,
+   "V1": true,
+   "V2": true,
+   "V3": true,
+   "V4": true,
+   "V5_any_arm_passes": true
+  }
+ },
+ "spec_seams": {
+  "TF-S1_parquet_equivalent_of_veto": "arm B suppresses price_up names to -10 at the composite layer, which is a parquet-level equivalent of a veto, not the engine's veto primitive: if every candidate of a month were suppressed a suppressed name could still be seated.  price_up pairs range 0..33 per month against an eligible set of >= 810 names, so the condition never fired (disclosed, expected probability ~0).",
+  "TF-S2_runner_derivation": "see runner_derivation: composite input path + output prefix + engine pin only; the leave-zero-out anchor reproduces the F3R3-EW outputs byte-for-byte on this runner.",
+  "TF-S3_b_and_z_event": "b, the monthly std series and the per-month z_event distributions are registered in manifest.json for independent recomputation; the 68-vs-71-month b ambiguity is disclosed and the frozen choice is the 71-month median.",
+  "TF-S4_event_conflicts": "conflict rule executed mechanically: 0 (symbol, month) pairs had both classes within the window and were resolved by the later announcement; equal-ann_date ties: 0."
+ },
+ "val_consumed": false,
+ "advanced_to_validation": false,
+ "trial_accounting": {
+  "this_round": 3,
+  "arms": [
+   "F3R4-A",
+   "F3R4-B",
+   "F3R4-C"
+  ],
+  "anchor_not_counted": true,
+  "strategy_line": "293->296"
+ },
+ "grade": "exploratory only: the event study already consumed the dev sample and this experiment re-uses the same window; no out-of-sample claim; val (frozen) untouched"
+}

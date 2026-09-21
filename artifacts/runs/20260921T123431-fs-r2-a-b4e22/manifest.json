@@ -1,0 +1,117 @@
+{
+ "run_id": "20260921T123431-fs-r2-a-b4e22",
+ "experiment_id": "exp-20260921-fixed-scheme-r2",
+ "status": "completed",
+ "mode": "full",
+ "started_at_utc": "2026-09-21T04:35:04.614779+00:00",
+ "ended_at_utc": "2026-09-21T04:36:01.565902+00:00",
+ "wall_seconds": 56.951327499999024,
+ "peak_rss_gb": 3.010351104,
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "artifacts/runs/20260921T123431-fs-r2-a-b4e22/tmp/runner_fixed_scheme.py"
+ ],
+ "engine": {
+  "sha256_at_start": "f3650f8440c713b8545712c64a218cd8713a113751a6f72ef81a78393d869b08",
+  "sha256_at_end": "f3650f8440c713b8545712c64a218cd8713a113751a6f72ef81a78393d869b08",
+  "version": "v1.5+clip-price",
+  "clock": "halfday+pm_only"
+ },
+ "pins": {
+  "engine": {
+   "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+   "sha256": "f3650f8440c713b8545712c64a218cd8713a113751a6f72ef81a78393d869b08",
+   "expected_16": "f3650f8440c713b8",
+   "match": true
+  },
+  "prereg": {
+   "sha256": "e5088ce45e8e369fa0fd1d1cc3a8c71c451d00ad6c9003218627580ed7d88884"
+  },
+  "daily": {
+   "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_1999_2024.parquet",
+   "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6",
+   "rows_total": 16344349
+  },
+  "etf_daily": {
+   "path": "D:\\量化\\data\\processed\\etf-daily-20260919\\daily_2015_2024.parquet",
+   "sha256": "b7225d50523106f53fc87bf21a92f12978ecc31a7b195ed2b4cf4e39f7a0d661"
+  },
+  "index_000300": {
+   "path": "D:\\量化\\data\\raw\\tushare\\index_daily\\20260917-r1\\chunk_000300.SH.csv",
+   "sha256": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878"
+  },
+  "split_factor": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\split_factor.h5",
+   "sha256": "2f436b2f13d09a9bfdcbdb0bf35669c10a377d180ce1ca37bef53d6c96a3365d"
+  },
+  "dividends": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\dividends.h5",
+   "sha256": "46121c09cddde72e725c2d4ae025cc259b049aeaa77c868b492fdbba60214846"
+  },
+  "halfday_manifest": {
+   "sha256": "2a414174b5df2eeed4c6bd6a7cd7f9f09f9b2efc8f05673ccc4b7695812cd679",
+   "match": true
+  },
+  "stk_limit_aggregate": {
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "3c53abf3b0c39b425389137d9f630f0de158990fcdc55b0bd41bf7d9c3bde673",
+   "files": 2432,
+   "total_bytes": 301278245,
+   "match": true
+  },
+  "fund_adj_aggregate": {
+   "sha256": "95147dc9d631db967ce4bb3c877308f1dd6f1ab1d4ae89e7ea2daeec522705e6"
+  },
+  "defensive_months": 119
+ },
+ "curves": [
+  "R2A"
+ ],
+ "trial_accounting": {
+  "strategy_line": {
+   "before": 273,
+   "this_round": 8,
+   "after": 281
+  },
+  "factor_line": "no new trials"
+ },
+ "disclosures": {
+  "R2A": {
+   "provider_calls": 2924,
+   "etf_exits": [
+    {
+     "symbol": "sz.159934",
+     "date": "2015-03-09",
+     "close": 2.375,
+     "high60": 2.639
+    },
+    {
+     "symbol": "sh.518880",
+     "date": "2015-03-13",
+     "close": 2.359,
+     "high60": 2.623
+    }
+   ],
+   "single_name": {
+    "stops": 127,
+    "protections": 0,
+    "takes": 0
+   },
+   "warnings_n": 0,
+   "warnings_sample": []
+  }
+ },
+ "known_simplifications": [
+  "ETF cash dividends are NOT modelled (18 events in dev per the hybrid-v1 audit); defensive benchmark uses adj-factor returns, so the strategy defensive leg is slightly UNDERSTATED vs benchmark"
+ ],
+ "outputs": {
+  "logs/stdout.log": "0513151e77c9688601880ae3d5ee09e3c6cf81315199139593f271901454649d",
+  "outputs/metrics_and_gates.json": "a4861ef7ecd241bda4409af5117f4502db06be5269605243a65daf119fd8dba3",
+  "outputs/R2A_clips_final.parquet": "4122a0c3f128aed95105511d9b0da148a86f19f1d41e0f3e4c440489e4eabfe4",
+  "outputs/R2A_daily_equity.parquet": "a820f3a8b1800d0bb0cbc073a1d780ff63b6cbf2abe607df6d313af3d3ac73ae",
+  "outputs/R2A_events.parquet": "5761437fadb42eeb8b00e75ec855a2633b95545f9d171196c7cbf13cca241e4a",
+  "outputs/R2A_fills.parquet": "c7956e66766ff13268baf5da26fd6407ad8b2f47f1a088f614fdcc52edbb4a42",
+  "report.md": "f5771639cd992075911e5641b6bfccd231d0f30565a1018c154ee0340b09a349",
+  "tmp/runner_fixed_scheme.py": "6b41ff29aed935ea3f8366a8b9b88e144b965613afdd99acc5d738143ff90c65"
+ }
+}

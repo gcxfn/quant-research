@@ -1,0 +1,64 @@
+{
+ "seed": 20260917,
+ "sampled_stock_max": {
+  "000001.XSHE": {
+   "max_datetime": 20241231000000,
+   "max_day": 20241231,
+   "n_rows": 2431
+  },
+  "002212.XSHE": {
+   "max_datetime": 20241231000000,
+   "max_day": 20241231,
+   "n_rows": 2431
+  },
+  "002626.XSHE": {
+   "max_datetime": 20241231000000,
+   "max_day": 20241231,
+   "n_rows": 2431
+  },
+  "300772.XSHE": {
+   "max_datetime": 20241231000000,
+   "max_day": 20241231,
+   "n_rows": 1380
+  },
+  "600143.XSHG": {
+   "max_datetime": 20241231000000,
+   "max_day": 20241231,
+   "n_rows": 2431
+  }
+ },
+ "sampled_etf_max": {
+  "510300.XSHG": {
+   "max_datetime": 20241231000000,
+   "max_day": 20241231,
+   "n_rows": 2431
+  },
+  "159949.XSHE": {
+   "max_datetime": 20241231000000,
+   "max_day": 20241231,
+   "n_rows": 2052
+  },
+  "512010.XSHG": {
+   "max_datetime": 20241231000000,
+   "max_day": 20241231,
+   "n_rows": 2429
+  },
+  "515500.XSHG": {
+   "max_datetime": 20230131000000,
+   "max_day": 20230131,
+   "n_rows": 562
+  },
+  "560010.XSHG": {
+   "max_datetime": 20241231000000,
+   "max_day": 20241231,
+   "n_rows": 584
+  }
+ },
+ "full_scan": {
+  "securities_scanned": 5914,
+  "global_max_datetime": 20241231000000,
+  "global_max_day": 20241231,
+  "securities_with_bar_after_20241231": 0,
+  "examples": []
+ }
+}

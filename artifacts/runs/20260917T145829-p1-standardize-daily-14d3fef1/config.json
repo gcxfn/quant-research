@@ -1,0 +1,17 @@
+{
+  "experiment_id": "exp-20260917-p1-standardize",
+  "name": "p1-standardize-daily",
+  "seed": null,
+  "start": "2015-01-01",
+  "end": "2024-12-31",
+  "limits": {
+    "max_runtime_s": 900,
+    "max_ram_gb": 8
+  },
+  "budget": {
+    "est_rows_million": 25.3,
+    "est_seconds": 39,
+    "est_parquet_mb": 2839,
+    "probe": "30-code extrapolation"
+  }
+}

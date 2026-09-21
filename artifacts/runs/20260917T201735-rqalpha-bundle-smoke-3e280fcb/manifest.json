@@ -1,0 +1,1229 @@
+{
+ "run_id": "20260917T201735-rqalpha-bundle-smoke-3e280fcb",
+ "status": "failed",
+ "started_at": "2026-09-17T20:17:35",
+ "task": "RQAlpha self-built bundle ETL + fixed-scene wiring smoke: 5 stocks + 2 ETFs, 2024-10-08..2024-12-31",
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "-X",
+  "utf8",
+  "tools/rqalpha_bundle_smoke.py"
+ ],
+ "env": {
+  "python": "3.11.15",
+  "cwd": "D:\\量化",
+  "PYTHONPATH": "D:/量化/src",
+  "pythonpath_note": "PYTHONPATH=src makes quant.* resolve to src/, not the copied site-packages install"
+ },
+ "inputs": {
+  "bundle_dataset_id": "rqalpha-bundle-smoke-20260917",
+  "bundle_dir": "D:\\量化\\data\\processed\\rqalpha-bundle-smoke-20260917",
+  "bundle_manifest": {
+   "dataset_id": "rqalpha-bundle-smoke-20260917",
+   "created_at": "2026-09-17T12:17:37+00:00",
+   "generator": "src/quant/data/rqalpha_bundle.py",
+   "generator_sha256": "d4829cd169fd65e316998d64fd16c34503a29a9a84eb71857e71420d61bb8764",
+   "contract_source": "rqalpha 6.3.0 in .venv: data/base_data_source/{storages,data_source}.py, data/bundle/__init__.py (official generators); datetime int64 == YYYYMMDD",
+   "params": {
+    "bar_window": [
+     "2024-10-08",
+     "2024-12-31"
+    ],
+    "calendar_range": [
+     "2015-01-01",
+     "2024-12-31"
+    ],
+    "calendar_days": 2431,
+    "stocks": {
+     "600036.XSHG": "sh.600036",
+     "601318.XSHG": "sh.601318",
+     "600000.XSHG": "sh.600000",
+     "000001.XSHE": "sz.000001",
+     "000651.XSHE": "sz.000651"
+    },
+    "etfs": {
+     "510050.XSHG": "sh510050",
+     "510300.XSHG": "sh510300"
+    },
+    "benchmark_oid": "000300.XSHG",
+    "range_probe_oid": "000001.XSHG"
+   },
+   "inputs": [
+    {
+     "role": "trade_calendar",
+     "path": "data\\raw\\xiaodefa\\trade_cal\\20260913-bulk1\\chunk_exchange-SSE_start_date-20140101_end_date-20261231.csv",
+     "sha256": "4043fb46598f214bec926d2ca09123066bfece2499df2733e9b89deaedb3c0b1",
+     "note": ""
+    },
+    {
+     "role": "stock_daily_bars",
+     "path": "data\\processed\\baostock-daily-20260917\\daily_2015_2024.parquet",
+     "sha256": "1cbb09a11f7c10136981749c13467f12a1757b59e7e95fb6f86666f96edfc1de",
+     "note": "unadjusted (adjustflag=3), volume shares, amount yuan; window slice"
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241008.csv",
+     "sha256": "5528019e5f277e863630324fae6257dc9035f0c1146fdc87129dd1e5bd1f6753",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241009.csv",
+     "sha256": "8b012bd9834cbab91d75700306a36d163d2dc663a1d7f6aad5631a3d55540ca7",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241010.csv",
+     "sha256": "62c765a830fca260e6cf0c87c1de9424bd6366dd96ca3da5a94fce35eb6dfba0",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241011.csv",
+     "sha256": "0d1360423747c91a6cd73c365b0afc4d4bbc1f903d01d7a28d80e1933b800795",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241014.csv",
+     "sha256": "e8230db21e3743db4834e8d20d523effa1054d7616f7d2b78a256370f0e3a210",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241015.csv",
+     "sha256": "de71e657060b7f837132735afceca9abca10bd824dc2bf5e1baf3c4a68186390",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241016.csv",
+     "sha256": "1565f03ffdf24cb79dc2e634413378d9940b5235cb12a029643d91a42fa7ab34",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241017.csv",
+     "sha256": "d37211ccd5cd14c32f986be8737d972c0b73e60c71107f23d041e1d510cf8738",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241018.csv",
+     "sha256": "65fa0263f2a9822c6fa5c6e8b27697c70ad7e5631f58c3ffe43c9783e650c09a",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241021.csv",
+     "sha256": "832647b83fa62e0374687bb720163c790eab4242f7f41b2b414c92f7594a35e0",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241022.csv",
+     "sha256": "15421145e6cc71df0d4fb0dd500845b7a427c429f26c4dfa5776894e6347eda3",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241023.csv",
+     "sha256": "306249c53dbf665dc492474506cd1c916ef269103e76a6c881a65c4820f5a41e",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241024.csv",
+     "sha256": "f103f2fdeab71f9098682d02970bc885f64693a03be70d9947b6a6ba559b6077",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241025.csv",
+     "sha256": "46c1a62772c8a4c43e509597ac91c4a9312cc8ff5ff62faa7bd44914b0da8ad1",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241028.csv",
+     "sha256": "66bab82647be089d2a477b72111bce7327faf9e8a2a43c5b6c67fa05f653ee6e",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241029.csv",
+     "sha256": "9befe5296435bb08a4a5d967f7fb7338b6a4a59bd40a5a913f48a0f69bd722a2",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241030.csv",
+     "sha256": "0117a91c0390736a2d8c997ab304d2d990b0f53b3000a82ff1f49b5b80d256ca",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241031.csv",
+     "sha256": "d0c4855652e67964797b68c12d667e5890de09e67e93a80d86e77a2dc8147a23",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241101.csv",
+     "sha256": "2090b4314740cd9b2d62fbbc760cc0c62c0ea22ef1c9de3d4706c45e4f2e4308",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241104.csv",
+     "sha256": "ad7a272c3672b083eda21e578a58a1ef71a3fe8bf81811516c6aace4de032816",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241105.csv",
+     "sha256": "e1b3fe0e854c82ac956b5b0fb536e6c895ea04ddec0febd0310c451e30abeb9b",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241106.csv",
+     "sha256": "472443dedb6dccf6111a45e6a2534edd4c599f7eabfb585be91c39ff9efa72a5",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241107.csv",
+     "sha256": "4f5a1bbfb4e8dc76812085cb9d0859f04d2ab40f5e1939e6b2d84945bbe99248",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241108.csv",
+     "sha256": "0ac79a1b0871631111d008e96d869d3c694233f7cdcb544c8d25cd7a080bbf56",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241111.csv",
+     "sha256": "6e225d9bb2696232cac8f858640299f1863167eed4c535e7de6d16a591168a8d",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241112.csv",
+     "sha256": "b50cad19727e974a5d3836d0c2700be4b5247dfa5a1196902ab6458f80f2bb68",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241113.csv",
+     "sha256": "793b9c27ad33d1dfb37dd11cba0bef79c6322e47a57201608090e21025de2f7b",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241114.csv",
+     "sha256": "a1a26dc5353643121b79ebca6757043b1923224ad76c56d94aa1b7cf42d0fc83",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241115.csv",
+     "sha256": "b976cc03c05583cb5671c30806ec8099e5f0faa88b0b0f8572f147029e438bd1",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241118.csv",
+     "sha256": "bc0b849e4f66aaf0aea932d96e472fab9419134ad11d4d4fa6d563539ea44366",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241119.csv",
+     "sha256": "3f96d3a4da6661507b238c3e879231e87f244e4e30b66038a3e5bbf50cdb4610",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241120.csv",
+     "sha256": "ed0c3d1a071018965b5640dfeb7b48027eeccb9b6b9a0274f5b471a13668e561",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241121.csv",
+     "sha256": "cab6835d81b42d44a13865b1922628cce4c53a8b53ab0f600af5f49843d495ba",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241122.csv",
+     "sha256": "b6b40278502de86f33df99e4ac90335cc9a27ad8ed14ccb81166c6d7bfb3e56d",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241125.csv",
+     "sha256": "6e17d78bfc6a91f0f18f65b00419a24992df2ceb6143fbfbe79eacda2497f2b7",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241126.csv",
+     "sha256": "0aae4dfbdbf7b2b5250d948ec1458b23953e34c0088f276e08ef5d5544dab2a9",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241127.csv",
+     "sha256": "8ba9830686dd1953c97e82a27a7d3f3ac4a8f9c40c22ced48d80381f9ef1762a",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241128.csv",
+     "sha256": "e249b616924af28d16ab5de9e950625f34f412f9bc61af711867df04fe69d096",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241129.csv",
+     "sha256": "13abb586dc132ff682eabeba36a624374fc1a4aac89fc4b631ac15d290c6e81d",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241202.csv",
+     "sha256": "550a0fe98bfa2d1ae8c20084d9e003248e8a4d8c3fe02e6ad4739b43ae32bcb5",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241203.csv",
+     "sha256": "493b04144e450512c15dc31dc476d75b83c72832d1bec0c3b8dacb6810763edb",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241204.csv",
+     "sha256": "d6dcc8cb4854d967a0b71614a1a3e6b5fde2337bc36cf75e23bb4dc06b78d68c",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241205.csv",
+     "sha256": "297ec8668fd5bebc2f4e0a128411a0ad20fc3ccb0d6c02e222c354019f41e85a",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241206.csv",
+     "sha256": "b6513ecc8c2a4fa84a326e2f3e29316c22da1d6757011a43a7f3b1504e5fd410",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241209.csv",
+     "sha256": "4b54ee4dbb01d871e99d24eba16d1d83c22de3564cbf32fb8d5066c22336aef1",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241210.csv",
+     "sha256": "ea36d71bdc17e519f937744ade68c50e843926fc128bb9132427fd805ad13e8e",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241211.csv",
+     "sha256": "8f84c9d5610766b545c92c68fc4873f790493c1f00d5781b379f7439a09356d9",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241212.csv",
+     "sha256": "0524eac065751dc8f701bef1e10f7d24cd4acc5bac37f1340059b3d87a0c3862",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241213.csv",
+     "sha256": "f31b061741ae1daf7f9b8dce4a7a6106be081f8ce663d506f1e7377baf02aca9",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241216.csv",
+     "sha256": "733070faab5d887a4654d97549273466bbe77ccfef0fddbf658fd4aa24655bc9",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241217.csv",
+     "sha256": "49583c4456ea4a686bc80e2816484bc9a51ecd21c79f97c57fd0b7a317773f96",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241218.csv",
+     "sha256": "49a51547c1ee194222ddf025bcad535391d21b81890e4381b233f8807da1f446",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241219.csv",
+     "sha256": "56ab5d0e5dd96ce25a3fc7dff28a395a3a969d9fc560577b5dcd713740c7c26f",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241220.csv",
+     "sha256": "1bb93952a4451578a4472bbd061fb627151511265371aa67c970f4dfbb12a495",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241223.csv",
+     "sha256": "773052fd010835eca00aa6ace387f8c94d6d3e064a114c7c3713614c01a33654",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241224.csv",
+     "sha256": "f4c886880c8f8df2cc5e6c719d979822ea045e4c76c64a7a23d01cad9369c34a",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241225.csv",
+     "sha256": "0cf40d378dd7ae62587c975ff52e7d4c493e80ae3cbf6c8c27ff14b543f93fb8",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241226.csv",
+     "sha256": "96f1bb20037825174405d755f4fdd458a829478fc1bb2adf26d9ae9001aa3abb",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241227.csv",
+     "sha256": "1caa8e5fd7ce4759cb6f7477c49f254e85241011ab234c7a4e900a94c87b297d",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241230.csv",
+     "sha256": "4a4dd659314e091da1c5c22a707dde69af57fd3f55875e916171fd0419c0297a",
+     "note": ""
+    },
+    {
+     "role": "stk_limit",
+     "path": "data\\raw\\xiaodefa\\stk_limit\\20260913-bulk1\\chunk_20241231.csv",
+     "sha256": "2d5e406e3848befe13e5f23383ec6e03732fb41aa8676cc63704c4aaa6b05e7c",
+     "note": ""
+    },
+    {
+     "role": "etf_daily_bars",
+     "path": "data\\raw\\tx\\sh510050\\20260904T185651",
+     "sha256": "16fd2cc65337d0d96843db5339a6cd5d4aa701a8b43b7aa1971b896997baa35b",
+     "note": "510050.XSHG: fetched_at=2026-09-04T18:56:51+0800, adjustment=forward_adjusted_anchor_latest, full_rows=5234"
+    },
+    {
+     "role": "etf_daily_bars",
+     "path": "data\\raw\\tx\\sh510300\\20260904T185625",
+     "sha256": "9c5b7e14b7da1631757a7497122b4063f1179f3977e95cb7d4850bffdff7407c",
+     "note": "510300.XSHG: fetched_at=2026-09-04T18:56:25+0800, adjustment=forward_adjusted_anchor_latest, full_rows=3471"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241008.csv",
+     "sha256": "1440997d7e9c1e43c0c7720a8b2c30bd62d0164328e629cc034bbc9dd45abe9d",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241009.csv",
+     "sha256": "f04f09ec4e9b190d7e8586c5c574b4e06b77340cbb130a6b2072016234319a76",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241010.csv",
+     "sha256": "7fda3dbeb98faa5475e145a4b4e065dbd6efd7044943f301ebc41f5fb1a66bd0",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241011.csv",
+     "sha256": "3e678f3c9325249aa8de0ecf443c90f7e388c1da2e5303479fdcb248ff37fbc3",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241014.csv",
+     "sha256": "321ce8fcb2b6347298188521a60e5df0e510c9b8cfd9bbffc35f56f0d8e791d0",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241015.csv",
+     "sha256": "c0a73040133afe038d984c7cb9cce0e9462d0233a92c00352b4167c52af124d9",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241016.csv",
+     "sha256": "f78b1bd6f3e99c4cc070699da34ee318d778de94bbb15ba888450a4779f25743",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241017.csv",
+     "sha256": "8e3c4c818ad7192ef09cca09ef0398d359229492ad29fae8aa1cc3a717498ee2",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241018.csv",
+     "sha256": "66e7785dc7a68fde4b1aaf8d1ced027e4f7c9925d843660c17ed6226fb903a3e",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241021.csv",
+     "sha256": "d52e2e2ef8c101f6d0704841bf3e3c289b7f53636a4a6c58f24b77486fdb599b",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241022.csv",
+     "sha256": "45e0f7e2e45bddea8243245269aacf4e4acb527529fbb4bf2e6061ccb1fb85b9",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241023.csv",
+     "sha256": "cdb88ae781ce250cf416dc3de5346cf0042de4cbfe74116ad70513180bf70405",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241024.csv",
+     "sha256": "af8e33787afcb181af36c843dddb8f565eea1a5deb1917f1b4041730cbeda11c",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241025.csv",
+     "sha256": "6da12560566b7d2be092b0e29489cb4b65836b278fee9bcdd09d0facdde5c9e5",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241028.csv",
+     "sha256": "5007eda350c2b632293dea197444c10646aa52628729a4e808f4fc6f1689c90d",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241029.csv",
+     "sha256": "0ffa310400459b99dd9fc463629b916ec8ebee6fbcec91b5d3aa57811ee01143",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241030.csv",
+     "sha256": "3335c2631c1bc64510cd0aa01fcfafa8d9c39b57190e314461935fd06ec44651",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241031.csv",
+     "sha256": "2f7c56113d770183731a914b55ac1757e188845ec99c754b014d6edbf6d28dfd",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241101.csv",
+     "sha256": "39a5e184787d6072386c7f369831b109e614537d339bed4b706b1b8c4475aa70",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241104.csv",
+     "sha256": "be0371de7b7f1d39ec073a130568850256fb0276902cbfdd2b725774e38f54b0",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241105.csv",
+     "sha256": "477f8079219352ab987ba4091dc716a5f23cc3a417523f012dd1f6ed162b3ab1",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241106.csv",
+     "sha256": "1f1fd5496fd4828edd5fab3ec6658208c1b1654e315b06f8258b6d3266db353b",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241107.csv",
+     "sha256": "8b7df0fe6a88d165c004bcace1cbf71763b87cdba8a8b91d527b3359dd2eee71",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241108.csv",
+     "sha256": "40e5b435d03b519af493864064e1ab1452f5323db3b868f715a8ec823df8497d",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241111.csv",
+     "sha256": "2b5a98f9e000a1183a15a2b2530241f554ad037f6911862aa4c3f5054ae490ce",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241112.csv",
+     "sha256": "7a6472984dd1afe59af96f768306dc2616da7ec7273fbff5d232bc99b1ab491a",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241113.csv",
+     "sha256": "59f79e728112053e133a8aef00d454831162fedadc5fc2a0c3c88e4a4919d9b3",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241114.csv",
+     "sha256": "83e0472fdeb90594e36c95fcc014d391781514f411b0151d775991a0a5a4033c",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241115.csv",
+     "sha256": "683307422d0c2eaccfa6b55e384ede871c52db48c9dea70cd69ef39ca2fa3814",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241118.csv",
+     "sha256": "e8c252fb247f67d40a28e7774d7e458c22f230bbf16d0f578324eca30e1c0fdf",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241119.csv",
+     "sha256": "683da8392b3e202c8dd52fe14ce2ba618a19578b2f65cba5abf9337fb87d8a4e",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241120.csv",
+     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241121.csv",
+     "sha256": "42e8d1974ae2434b6eee6c76d107187c921bf5ecb7b777ff4057b0797fae4e19",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241122.csv",
+     "sha256": "f6e044ecba9bf20046b026889695e9ae43239b7e688e617c1bd925c3e1aedb19",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241125.csv",
+     "sha256": "04923ee225f3aca0b7e2b72c163b4c43f89fae2c292a78027b2ab6b7c670f885",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241126.csv",
+     "sha256": "c896240eb881228ebbfbb32675a18ef22a028c5622d4e361fc013514cbe15bb1",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241127.csv",
+     "sha256": "53a4e4fa4cda4c9d9378bd7e8330ca702ae336978f92df6b74a082f6339b5765",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241128.csv",
+     "sha256": "b15e8a0bea88155e531bd6fc303f702c845d8dcd0e9e7d3ad7c7ca8e7b0f37fc",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241129.csv",
+     "sha256": "27de6b153ad229b7ce43e3dd8d587017dc67f153b7e9514dadbc4b4a2fa24d50",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241202.csv",
+     "sha256": "5954b6c669a14d8b0e04d4d6688e1821a3721b63bf176679361d2800e5c677b2",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241203.csv",
+     "sha256": "e12035ea72f0e1dd4f4a5772fed8cbdf1287dcc58939f93102717fa70d76098d",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241204.csv",
+     "sha256": "83bfe705a33463ce19c827925d7c18336773a0e359706501f59b745f4ba1e5d9",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241205.csv",
+     "sha256": "91ebfca48758baf873afee678effc40fbe853eb97e98394bd316d7de8a4b2e23",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241206.csv",
+     "sha256": "7aaec59b56182bfd69785052f969cf4e5b7213a284af6d19d670d50892f24561",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241209.csv",
+     "sha256": "6eb810c4764c5febcdd49798088bcca1349be3c01e3213241ef28f4b0ebf3159",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241210.csv",
+     "sha256": "2c4fe9118f3b6fa11f342f94b34343a5102d880ffae3f30b20826c560c73780c",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241211.csv",
+     "sha256": "11143e5294cebf1b7bbcc1af6a40c17c3a60a3258c465ae035e3871f0c9b00e8",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241212.csv",
+     "sha256": "edc7028e740881e443b89427b0017c0ae66a19798e679ecd8db05f1cb3782ba4",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241213.csv",
+     "sha256": "be2d91dc0cb037b24a4ff132c1cf7d3afd55398ae3895fc7e0cca44a3ff16bda",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241216.csv",
+     "sha256": "8a2b57001afd1dea9bcd549d9da44ed88b2502edb08ef6d6d3202da78091d178",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241217.csv",
+     "sha256": "2df39ac9116ecf0a26dd73573b16aecc008b79b159bd2d4a772bd7ade652f8fc",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241218.csv",
+     "sha256": "4323b0fbcb491b4429d458f023dd5c12e7d318f7ef9c5ef996b738f054fd6c94",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241219.csv",
+     "sha256": "5126548f2d14bac69cb7a9145747ee1c3ea53c1da6fbe270d992c0a861be0b21",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241220.csv",
+     "sha256": "0170a911ea635edb56526c6b049089856000fa720dab6433e756962dd12ebb6f",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241223.csv",
+     "sha256": "b8c2e726905295e13d8482d809bf0aae4b675860f0d11ef552b753537e6025f9",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241224.csv",
+     "sha256": "e203f63522bd45c3829fef9d5305c23fcefe310c48acb505b20378104293f13e",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241225.csv",
+     "sha256": "88e67cc18c1c6e2f6dee16cc53a4dc64176a57ff8ce4f7aef7b5ef700065ddd6",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241226.csv",
+     "sha256": "77069ae936cf4e155c6f25e98e8a8c90bd4fe7b48fc390db9b6f8a19a037798e",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241227.csv",
+     "sha256": "cc19b478b469ccfbb816de810ce74d1a01d753f9c4f3e171cfe0c2b69f368f3d",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241230.csv",
+     "sha256": "4177ebb2f3f48c21c53d90ef0448ef8e2dbb5a9e8d7210891cd8e45e89075a28",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "dividends",
+     "path": "data\\raw\\tushare\\dividend\\20260909-r3\\chunk_20241231.csv",
+     "sha256": "0ff97ef34376e2338f60fcd520952d81dc3bf15c9d56c08335602fbcefaaf492",
+     "note": "batch 20260909-r3"
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241008.csv",
+     "sha256": "855e8bb1f8baff28216d63e9fb0d8a27d9b34537711dea94c6599ded98f0e69d",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241009.csv",
+     "sha256": "17f0b89544d9299ad925ed1cffd40f7aec5dfd6dfa476effce9d18352c5ec098",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241010.csv",
+     "sha256": "83e883d968720241db247fb07cacb4c431414cfe5b63317a242603d6008d6a8e",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241011.csv",
+     "sha256": "edc85a7485deddc21feaa2103c18d2be43fc0817c7b869b79383e46bc67c3d80",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241014.csv",
+     "sha256": "1cc7ca6c4ad07b0c8be479291b361656d9644547031cdf58f3b8cb0b36b5310e",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241015.csv",
+     "sha256": "c7aac43a68e15a763e447abe89d6d71c866f4c48c9aab0f5d57bfff5494c6198",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241016.csv",
+     "sha256": "c49000307d936028623a615aa8959ff386c9c0c3646c66498e53e8e67b22eb2c",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241017.csv",
+     "sha256": "f184465efb3dc8a4bd17b2d28fef52ae261f29668e8ba6a130e6332ab052e177",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241018.csv",
+     "sha256": "e88a0c202a923c54de46f8344ff6f433020f38b6370ffaee7777823a153325a2",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241021.csv",
+     "sha256": "b5211a8ec71962d7e594b207a781f11b2380a58311e7fc53ed2a5991f000da71",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241022.csv",
+     "sha256": "b05d07258cd16941876f2b28ec257bcd8ba5f849fb6e8ba1063866e5fa6fa1dc",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241023.csv",
+     "sha256": "2d4854217ede495b8be9463fff201a6520bc063ba557f7c30bd81a465d3818a9",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241024.csv",
+     "sha256": "52d0a9240b8928da1230a1892e4598523af3084ec8bf5079e0858d3bec1af778",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241025.csv",
+     "sha256": "54fd852f84284bcbfd13aec3d4bbeeb1758c3edb0e463b77624ebc38cedf58c8",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241028.csv",
+     "sha256": "0b9a2246d8f495eeeb4f1fb08dfc38d6360b4ed753122c3d3bc893340c37b301",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241029.csv",
+     "sha256": "b40e696cf8f4cbfc9b6ee2f1b11db2426e831cec1af02ec7b9c3b7785b1537d4",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241030.csv",
+     "sha256": "2cb285afc4f26c2750ed7c2eb3f34a4040feb2edb8af61fa296c8e0f2055a10a",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241031.csv",
+     "sha256": "2c4a5e9d8787178dea423e04e6cf9e5715e68c63c3586bf45094e593411146a6",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241101.csv",
+     "sha256": "43ec117aa7b1a54e76142cc068dda0649d5133bdde76d62e8df864538d951e13",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241104.csv",
+     "sha256": "4c944e3f151fe9acbbb4431da20a9de6b6a614715a700e84404a588a41a94014",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241105.csv",
+     "sha256": "d64c8efcc43780d602316e9ffa99fcb49f229e396665ec9aa58bf29da1dba76c",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241106.csv",
+     "sha256": "9a72a09eb558242d1e99a41ec69619d31930c0755d1544d732040c56701fb854",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241107.csv",
+     "sha256": "0781c6c71e3de7a2134563ebd9bf8d16d1958cd3e5b725005f895535ee93d240",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241108.csv",
+     "sha256": "66c9496b64b38cf825515f75f18ea571231ad321dd3643aa09f78ba6da1ae352",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241111.csv",
+     "sha256": "8b55cede691d395a63d3d9fee2d5c0ee7e9eb3459de5f772497cf009eb9544d4",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241112.csv",
+     "sha256": "47a906f2d9943a5a2f38ede3806e3dec0770eafa85a3f9b014becda1a6e0dce6",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241113.csv",
+     "sha256": "a8ef6c8f2a35bdd5c1c6ff92863459e5bf06c46290b1d157b45753fd859eec32",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241114.csv",
+     "sha256": "a7bbf9705c9e29c4f1c5932eaddcd9ad481b0e90763694ede107f2fd66bdf3ce",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241115.csv",
+     "sha256": "4470f1e7017be42775cc62fa8939a56e1e3f6795e697f075e66d23cd52e980ef",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241118.csv",
+     "sha256": "a0a15ab385f1b8587e294692fe2a69a729b13ec03c308740be8cfad71d874f22",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241119.csv",
+     "sha256": "a10d6eac29bd07fd54070dbcadd1e98a3b8cdd61283f5ba3d608f1434a671e9b",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241120.csv",
+     "sha256": "237b530f047c32df935df06f2e1ee3548ee9a3bf6c852ead0dcb6773d6f46285",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241121.csv",
+     "sha256": "7b4f4a4089de3659b49d40c854c3396d77c8c86260d7015d6bae16b7c404e188",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241122.csv",
+     "sha256": "4cdd990c01f13b539352b6d0909a8a6d2b8931a71d80a75c823efca36d4bfaab",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241125.csv",
+     "sha256": "b9d5204b1cab00b409ef69a81dbdd8761653bc9325f9da8e8693fd0ae42d1fe5",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241126.csv",
+     "sha256": "0718fed80bc616b00988db8eaf1f91499f27245f3c148c077d0aeee423d85ce2",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241127.csv",
+     "sha256": "e494f96eb20f43df66ef3db0c3188cc755f6029cc7a2e67d7464504918c5cee0",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241128.csv",
+     "sha256": "b998cacf898e489bd6b701460a84261f562d47012efe4237599a6346c0a8b3fb",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241129.csv",
+     "sha256": "d58a256666fa378a1a22c2d51fcda8ff7dd1ce42b9b4dd01dfbc2cf8563510f3",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241202.csv",
+     "sha256": "43a776e5e0bbbd9ba8fe40a2f0198466db42cc0e30f16c9afa70691610a6a6fb",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241203.csv",
+     "sha256": "bf1c11ffa21107d5f42663574eb035f16dbfb74dbea0e8603c73039de6cee3b2",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241204.csv",
+     "sha256": "41f1317914de02b733864a95b01ccf964f31579b7012fc31011318988f858e57",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241205.csv",
+     "sha256": "0cadd1efdf8136561f3fb23ee78cb271e0934b0c3500269bc9befbb6307bc39d",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241206.csv",
+     "sha256": "0ab53d44e1acdc84668d822c04a1db84043d91f6b88bdf0105965c0e4a1f5e46",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241209.csv",
+     "sha256": "3a245b9e8ddaed83c6a8ecd7c410a9292132c53f8f8f670beb8ca0d241e2c8ed",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241210.csv",
+     "sha256": "d1b83a8d3ea42fef2c7ea745d95738084af98e6e19c73715aec022d5e3571589",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241211.csv",
+     "sha256": "2ee56d7b57c42328d6f7cef46d2043ee528ac543082ec44bbd6f202450b35ff3",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241212.csv",
+     "sha256": "5d7644117faa6dd34901ff89184f9f58e005991afc0d30cc9bd8b1ffa31747a1",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241213.csv",
+     "sha256": "c12c23967c0c0dcc649bc3d23e52c5af7a43dfe4f341b7e5c7a4f6feb53b15f6",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241216.csv",
+     "sha256": "db13cd76d7ce680d237de016906032bf737e4ab6baf699d51ef7bad4f2f48a5a",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241217.csv",
+     "sha256": "1dbfe98a595eeed163cdd0a0ca20f86c73b0ec9d0cba7c5557df5370116c9371",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241218.csv",
+     "sha256": "1efa9969a2f3105a4223f1a527b8d7fb10b5369f569a994e957b5e4a355df528",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241219.csv",
+     "sha256": "cd2c385f3350810fe6aefd80ba57ed5c5de44d5d34402d358c128f6b9a5b441d",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241220.csv",
+     "sha256": "f53b3a0c041b03d1fcdaa903913c4b821add62558661a68ae65102d3aa4936cc",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241223.csv",
+     "sha256": "1ddcdab51442f354f88b15ed06512708ed7d9718d1706970dfc32380b4e1c7d8",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241224.csv",
+     "sha256": "b664927481cd7805cfe10cd47a0d5cf05c4c72ae37b87ba1a05dfc8a6dd7417f",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241225.csv",
+     "sha256": "0eea48136f1404f2a32c16e7b4bb50d9bcca287565bec1a5056b295b95d09b9f",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241226.csv",
+     "sha256": "754ac120945a50edd38d62070a0cc40c24b034dd107247e3746475a423df5668",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241227.csv",
+     "sha256": "94168de8f3ab6c512a497c192a56e7e141d9c4a60c18ce7687d4f75860b7dcc8",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241230.csv",
+     "sha256": "b37304460ce72902a9085f2f366d76405819852a17bac9d2a20b6828b9213338",
+     "note": ""
+    },
+    {
+     "role": "adj_factor",
+     "path": "data\\raw\\xiaodefa\\adj_factor\\20260913-bulk1\\chunk_20241231.csv",
+     "sha256": "63d0e5e17ac3dbe0830ff0f3a859ec299c5191ac61cb678db4dba45a31918ebc",
+     "note": ""
+    },
+    {
+     "role": "benchmark_index_bars",
+     "path": "data\\raw\\bigquant\\intraday-t0-20260914\\000300.SH_2021-08-05_2024-12-31_bar1d.csv",
+     "sha256": "05aabfb00992e762df80d09418958dd476fc8a183a31745cb0245869600a85f5",
+     "note": "real CSI300 daily bars, identity 000300.XSHG preserved"
+    },
+    {
+     "role": "stock_basic",
+     "path": "data\\raw\\tushare\\stock_basic\\20260909-r3\\chunk_L.csv",
+     "sha256": "53cf190efef4f27fcb132ee0a07d5db0c520ddf9d6512323f828d117c8f0dc2e",
+     "note": ""
+    },
+    {
+     "role": "fund_basic",
+     "path": "data\\raw\\tushare\\fund_basic\\20260909-r1\\chunk_market_E.csv",
+     "sha256": "b98932a79f838bf4a4995e703b77a267ecc5d9168c7ad2c2d9a022d502af97db",
+     "note": ""
+    }
+   ],
+   "placeholders": [
+    "ETF bars are tx forward-adjusted (anchor=fetch date), volume in tx source unit (手, unverified), total_turnover=NaN; primary source tushare fund_daily pending (batch 20260917-r1 in progress by another run)",
+    "cash_div_tax column ignored: smoke runs rqalpha with dividend_tax_enabled=False; record_date/pay_date fall back to ex_dividend_date when absent (2024 window rows carry both dates, no fallback triggered)",
+    "ETF ex_cum_factor written as identity row (0, 1.0): no ETF adj-factor source wired; harmless while ETF bars are single-batch adjusted",
+    "split_factor.h5 empty by construction: no split source; verified zero split events (stk_div>0 / stk_bo_rate>0) for the 7 securities in window",
+    "futures.h5 empty: no futures instruments in this bundle",
+    "suspended/ST derived from the same standardized parquet as the bars (tradestatus==0 / isST==1); ETF suspension unknown -> absent keys (rqalpha DateSet then reports never-suspended); window verified trading on all 61 days",
+    "indexes.h5['000001.XSHG'] is a NaN-price/zero-volume PLACEHOLDER on real calendar dates: rqalpha 6.3.0 BaseDataSource.available_data_range hardcodes a get_date_range('000001.XSHG') probe and no real SSE Composite daily source exists in data/raw; the smoke benchmark uses real 000300.XSHG bars. This dataset must not be consumed as index evidence.",
+    "yield_curve.h5 empty placeholder: no bond yield source",
+    "share_transformation.json empty: no share-transformation source",
+    "future_info.json single structural placeholder (rqalpha FutureInfoStore requires margin_rate on first item at load); no futures in bundle"
+   ],
+   "freeze": {
+    "research_end": "2024-12-31",
+    "max_bar_datetime": 20241231
+   }
+  }
+ },
+ "outputs": [
+  "D:\\量化\\artifacts\\runs\\20260917T201735-rqalpha-bundle-smoke-3e280fcb"
+ ],
+ "notes": [
+  "wiring smoke only: engine built-in A-share semantics are exempted from independent re-verification by user decision (docs/decisions/2026-09-17-rqalpha-account-engine.md)",
+  "fee config: 万1全包 -> stock_commission_multiplier=0.125 (0.0008*0.125=0.0001), tax_multiplier=0, stock_min_commission=5",
+  "scenario: day1 buy all 7 (101/201 shares), same-day sell attempt (T+1 reject), 55-share odd order (round-lot reject); day60 liquidate all; window contains two real stock dividends (000001.XSHE ex 2024-10-10, 601318.XSHG ex 2024-10-18) exercising the dividends.h5 path"
+ ],
+ "finished_at": "2026-09-17T20:17:47",
+ "elapsed_seconds": 11.43,
+ "assertions": {
+  "A3_calendar": "PASS",
+  "A1_stock_bar_fidelity": "PASS",
+  "A2_etf_bar_fidelity": "PASS",
+  "A4_freeze_and_indexes": "PASS",
+  "A5_instruments_and_files": "PASS"
+ },
+ "error": "Traceback (most recent call last):\n  File \"D:\\量化\\.venv\\Lib\\site-packages\\rqalpha\\main.py\", line 191, in run\n    env.event_bus.publish_event(Event(EVENT.BEFORE_STRATEGY_RUN))\n  File \"D:\\量化\\.venv\\Lib\\site-packages\\rqalpha\\core\\events.py\", line 46, in publish_event\n    if listener(event):\n       ^^^^^^^^^^^^^^^\n  File \"D:\\量化\\.venv\\Lib\\site-packages\\rqalpha\\mod\\rqalpha_mod_sys_analyser\\mod.py\", line 250, in generate_benchmark_daily_returns_and_portfolio\n    ins = self._env.data_proxy.instrument_not_none(order_book_id)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\量化\\.venv\\Lib\\site-packages\\rqalpha\\data\\instruments_mixin.py\", line 137, in instrument_not_none\n    raise InstrumentNotFound(_(\"No instrument found: {}\").format(id_or_sym))\nrqalpha.utils.exception.InstrumentNotFound: 未找到 Instrument: 000300.XSHG\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"D:\\量化\\tools\\rqalpha_bundle_smoke.py\", line 540, in main\n    capture = run_engine(bundle_dir, run_dir, results)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\量化\\tools\\rqalpha_bundle_smoke.py\", line 313, in run_engine\n    result = run_func(config=config, init=init, handle_bar=handle_bar,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\量化\\.venv\\Lib\\site-packages\\rqalpha\\__init__.py\", line 210, in run_func\n    return main.run(config, user_funcs=user_funcs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\量化\\.venv\\Lib\\site-packages\\rqalpha\\main.py\", line 243, in run\n    raise user_exc\nrqalpha.utils.exception.CustomException: 未找到 Instrument: 000300.XSHG\n"
+}

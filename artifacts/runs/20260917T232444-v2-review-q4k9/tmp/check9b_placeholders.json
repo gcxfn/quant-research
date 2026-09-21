@@ -1,0 +1,184 @@
+{
+ "cross_source_000300": [
+  {
+   "day": 20211123,
+   "bundle": {
+    "open": 4905.7587,
+    "high": 4927.5211,
+    "low": 4896.8781,
+    "close": 4913.3457,
+    "volume": 15430441100.0,
+    "total_turnover": 301022146081.0
+   },
+   "raw": {
+    "open": 4905.7587,
+    "high": 4927.5211,
+    "low": 4896.8781,
+    "close": 4913.3457,
+    "volume": 15430441100.0,
+    "amount": 301022146081.0
+   },
+   "exact_ohlc_equal": true,
+   "volume_equal": true,
+   "turnover_equal": true
+  },
+  {
+   "day": 20220228,
+   "bundle": {
+    "open": 4563.7427,
+    "high": 4581.6459,
+    "low": 4530.6764,
+    "close": 4581.6459,
+    "volume": 13540697800.0,
+    "total_turnover": 248363727483.0
+   },
+   "raw": {
+    "open": 4563.7427,
+    "high": 4581.6459,
+    "low": 4530.6764,
+    "close": 4581.6459,
+    "volume": 13540697800.0,
+    "amount": 248363727483.0
+   },
+   "exact_ohlc_equal": true,
+   "volume_equal": true,
+   "turnover_equal": true
+  },
+  {
+   "day": 20220616,
+   "bundle": {
+    "open": 4282.0827,
+    "high": 4302.9212,
+    "low": 4241.075,
+    "close": 4250.0614,
+    "volume": 18407441600.0,
+    "total_turnover": 337235911542.0
+   },
+   "raw": {
+    "open": 4282.0827,
+    "high": 4302.9212,
+    "low": 4241.075,
+    "close": 4250.0614,
+    "volume": 18407441600.0,
+    "amount": 337235911542.0
+   },
+   "exact_ohlc_equal": true,
+   "volume_equal": true,
+   "turnover_equal": true
+  },
+  {
+   "day": 20230410,
+   "bundle": {
+    "open": 4132.0096,
+    "high": 4132.2952,
+    "low": 4099.0519,
+    "close": 4104.8118,
+    "volume": 15245300200.0,
+    "total_turnover": 340822557208.0
+   },
+   "raw": {
+    "open": 4132.0096,
+    "high": 4132.2952,
+    "low": 4099.0519,
+    "close": 4104.8118,
+    "volume": 15245300200.0,
+    "amount": 340822557208.0
+   },
+   "exact_ohlc_equal": true,
+   "volume_equal": true,
+   "turnover_equal": true
+  },
+  {
+   "day": 20231026,
+   "bundle": {
+    "open": 3484.7807,
+    "high": 3515.5716,
+    "low": 3478.0503,
+    "close": 3514.1448,
+    "volume": 10514356600.0,
+    "total_turnover": 176088467226.0
+   },
+   "raw": {
+    "open": 3484.7807,
+    "high": 3515.5716,
+    "low": 3478.0503,
+    "close": 3514.1448,
+    "volume": 10514356600.0,
+    "amount": 176088467226.0
+   },
+   "exact_ohlc_equal": true,
+   "volume_equal": true,
+   "turnover_equal": true
+  }
+ ],
+ "raw_csv_rows": 826,
+ "futures_h5_keys": [],
+ "share_transformation": {},
+ "future_info": [
+  {
+   "underlying_symbol": "PLACEHOLDER",
+   "close_commission_ratio": 0.0,
+   "close_commission_today_ratio": 0.0,
+   "commission_type": "by_volume",
+   "open_commission_ratio": 0.0,
+   "margin_rate": 0.0,
+   "tick_size": 1.0
+  }
+ ],
+ "etf_in_dividends": [],
+ "etf_in_suspended": [],
+ "etf_in_st": [],
+ "159842_ex_cum_rows": [
+  [
+   0,
+   1.0
+  ]
+ ],
+ "exf_missing_from_pool": [],
+ "exf_extra_beyond_pool": [],
+ "000001_split_first3": [
+  [
+   20150413000000,
+   1.2
+  ],
+  [
+   20160616000000,
+   1.2
+  ]
+ ],
+ "000001_raw_20150413": [
+  {
+   "ts_code": "000001.SZ",
+   "end_date": "20141231",
+   "ann_date": "20150403",
+   "div_proc": "实施",
+   "stk_div": "0.2",
+   "stk_bo_rate": null,
+   "stk_co_rate": "0.2",
+   "cash_div": "0.1653",
+   "cash_div_tax": "0.174",
+   "record_date": "20150410",
+   "ex_date": "20150413",
+   "pay_date": "20150413",
+   "div_listdate": "20150413",
+   "imp_ann_date": "20150407"
+  }
+ ],
+ "manifest_mentions_probe_or_benchmark": [
+  [
+   "params.benchmark_oid",
+   "000300.XSHG"
+  ],
+  [
+   "params.range_probe_oid",
+   "000001.XSHG"
+  ]
+ ],
+ "n_placeholders_entries": 10,
+ "index_related_inputs": [
+  {
+   "role": "benchmark_index_bars",
+   "path": "data\\raw\\bigquant\\intraday-t0-20260914\\000300.SH_2021-08-05_2024-12-31_bar1d.csv"
+  }
+ ]
+}

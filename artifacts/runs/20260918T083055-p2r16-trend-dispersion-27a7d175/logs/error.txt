@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2r16_trend_dispersion.py", line 320, in main
+    m = r16.segment_metrics(results[cid], dev_start, dev_end,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\p2r16_trend_dispersion.py", line 1048, in segment_metrics
+    if me and not fractional:
+                  ^^^^^^^^^^
+NameError: name 'fractional' is not defined

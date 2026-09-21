@@ -1,0 +1,56 @@
+{
+  "mode": "smoke",
+  "days": 40,
+  "out_dir": "artifacts\\runs\\20260918T174041-halfday-bars-d48ceb\\tmp\\smoke_out",
+  "counters": {
+    "source_rows": 36938458,
+    "bj_rows_removed": 1122243,
+    "am_grid_minutes_sum": 4840,
+    "pm_grid_minutes_sum": 4800,
+    "zerovol_bars_removed": 2151331,
+    "rows_am": 145525,
+    "rows_pm": 145477,
+    "partial_rows": 177132,
+    "codes_day": 148615
+  },
+  "per_year": {
+    "2015": {
+      "rows": 97454,
+      "days": 21,
+      "symbols": 2540,
+      "sha256": "ba8375aa12c8eb0fcd74a603fac156cc82c274a8de66e6a7fabb205caa456a80"
+    },
+    "2024": {
+      "rows": 193548,
+      "days": 19,
+      "symbols": 5106,
+      "sha256": "8c6cdde8e22139f431a592413cd3d3e399dda8c2389c6727902b6ae127fa155f"
+    }
+  },
+  "identity": {
+    "day_list_csv_sha256": "e9cde37f237e387d782f8dbc4452367d3c7e1b2b3c50c424fa5fe67d570f4dfe",
+    "baostock_manifest": {
+      "manifest": "data/processed/baostock-daily-20260917/manifest.json",
+      "sha256": "2b89bef9ef6f4ae58b69ca43021552db067b185551c92a05ef6ac71d2be59bd3"
+    },
+    "sampled_reshash_ok": [
+      "user_minute_1m/20260913-143215/2019/20190527.parquet",
+      "user_minute_1m/20260913-143215/2018/20180627.parquet",
+      "user_minute_1m/20260913-143215/2017/20170721.parquet",
+      "user_minute_1m/20260913-2020-2024/2024/20240604.parquet",
+      "user_minute_1m/20260913-2020-2024/2023/20230705.parquet",
+      "user_minute_1m/20260913-2020-2024/2022/20220727.parquet"
+    ]
+  },
+  "timing": {
+    "total_s": 32.0,
+    "scan_s": 31.7,
+    "mean_ms_per_day": 792.9258825002762,
+    "peak_rss_gib": 1.66
+  },
+  "environment": {
+    "python": "3.11.15",
+    "polars": "1.44.2",
+    "platform": "win32"
+  }
+}

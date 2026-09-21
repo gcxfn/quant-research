@@ -1,0 +1,31 @@
+[  39.3s] fina 458718
+[  60.8s] income 421912
+[  98.4s] bal 409022
+[ 122.8s] cf 396773
+[ 136.8s] fina pit 键集一致（219794 行；同日多公告 tie-break 差异 18163 行=取最新报告期）
+[ 138.8s] income pit 键集一致（291424 行；同日多公告 tie-break 差异 22465 行=取最新报告期）
+[ 142.6s] bal pit 键集一致（245141 行；同日多公告 tie-break 差异 16693 行=取最新报告期）
+[ 144.7s] cf pit 键集一致（260341 行；同日多公告 tie-break 差异 20457 行=取最新报告期）
+[ 144.7s] PIT 后 fina 97190（90d 兜底 0 行）；inc 94260；bal 94056；cf 94221
+[ 144.8s] 派生完成
+[ 146.9s] 月末 as-of 312309 行
+Traceback (most recent call last):
+  File "D:\量化\artifacts\runs\20260920T130616-val-batch-fline-6534\scripts\generated\f2val_D_fund.py", line 231, in <module>
+    db = pl.read_parquet(
+         ^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\_utils\deprecation.py", line 132, in wrapper
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\_utils\deprecation.py", line 132, in wrapper
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\io\parquet\functions.py", line 303, in read_parquet
+    ret = lf._collect_eager()
+          ^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\lazyframe\frame.py", line 2240, in _collect_eager
+    return _eager_engine().collect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\lazyframe\engine.py", line 443, in collect
+    return wrap_df(ldf.collect(self.name, callback))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: 系统找不到指定的路径。 (os error 3): ...runs/20260920T130616-val-batch-fline-6534/scripts/outputs/factor_dev/B_value/B04.parquet (set POLARS_VERBOSE=1 to see full path)

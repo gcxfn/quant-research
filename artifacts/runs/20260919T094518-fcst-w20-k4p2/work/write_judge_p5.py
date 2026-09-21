@@ -1,0 +1,126 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""wave-20 part5 (ordinal 11800-11899) 逐行判定写入（python 文件写，非 shell heredoc）。"""
+import json
+import os
+
+ROWS = [
+ (11800, "demand_down", "cost_up", 1, "黄金产量、销量及营业收入与上年同期相比均出现较大幅度下降", "high"),
+ (11801, "demand_down", "cost_up", 1, "黄金产量、销量过低，生产成本偏高", "high"),
+ (11802, "other", None, 1, "第二季度居民气价调整政策不确定", "high"),
+ (11803, "other", None, 0, "第三季度属于公司经营淡季", "high"),
+ (11804, "other", "non_recurring", 1, "受国际黄金价格波动较大影响", "high"),
+ (11805, "demand_down", None, 1, "互联网接入服务业务收入较少", "high"),
+ (11806, "demand_down", None, 1, "互联网接入服务业务收入较少", "high"),
+ (11807, "demand_down", None, 1, "外贸燃机市场持续下降对主营业务收入的影响", "high"),
+ (11808, "demand_down", None, 1, "外贸燃机市场对主营收入的影响在短期内无法消除", "high"),
+ (11809, "cost_up", None, 1, "因煤价上涨导致本报告期预计亏损", "high"),
+ (11810, "cost_up", "cost_down", 1, "结算辅助服务费较同期增加", "high"),
+ (11811, "core_ops", None, -1, "公司开展提质增效、加强精益化管理", "high"),
+ (11812, "other", "cost_up", 1, "光伏行业出台531政策后", "high"),
+ (11813, "other", "cost_up", 0, "主要材料和主要零部件价格持续上涨", "high"),
+ (11814, "cost_up", "demand_down", 1, "原材料价格及营运成本过高", "high"),
+ (11815, "cost_up", "demand_down", 1, "原材料价格及营运成本过高", "high"),
+ (11816, "demand_down", "cost_up", 1, "仍处于停产状态，尚未实现新的产业突破，无业务收入", "high"),
+ (11817, "core_ops", None, 1, "经营规模及盈利能力较小", "high"),
+ (11818, "impairment", "accounting", 1, "2018年预计上述应收账款计提坏账准备约20亿元", "high"),
+ (11819, "impairment", None, 1, "公司为海外项目客户担保履约", "high"),
+ (11820, "impairment", "other", 1, "买方信贷海外项目陆续发生担保履约", "high"),
+ (11821, "non_recurring", "cost_up", 1, "公司按权益法确认的投资收益预计同比大幅下降", "high"),
+ (11822, "non_recurring", "cost_up", 1, "公司确认的投资收益同比大幅下降", "high"),
+ (11823, "demand_down", "cost_up", 1, "电除尘器市场需求和订单减少", "high"),
+ (11824, "demand_up", None, -1, "公司相关贸易业务量较上年同期大幅增加", "high"),
+ (11825, "impairment", "non_recurring", 1, "计提预计负债，合计金额27,571.65万元", "high"),
+ (11826, "cost_up", None, 1, "对相关重点业务项目持续投入较大所致", "high"),
+ (11827, "cost_up", None, 1, "对重点业务项目持续投入较大所致", "high"),
+ (11828, "core_ops", "cost_up", 1, "公司原有业务盈利能力弱，加之各项费用上升", "high"),
+ (11829, "impairment", "cost_up", 1, "对投资者诉讼计提预计负债", "high"),
+ (11830, "impairment", "other", 1, "公司对其计提固定资产减值准备约7亿元", "high"),
+ (11831, "other", "demand_down", 1, "银行账户仍被冻结，仍未恢复融资能力", "high"),
+ (11832, "other", None, 1, "存在逾期债务、违规担保、大股东资金占用等原因", "high"),
+ (11833, "impairment", None, 1, "对应收款项计提的减值损失增加所致", "high"),
+ (11834, "cost_up", "impairment", 1, "计提逾期罚息约3亿余元", "high"),
+ (11835, "other", None, 0, "因公司相关事项暂未确定", "low"),
+ (11836, "impairment", "other", 1, "预计对游久时代商誉计提减值准备约77,565万元", "high"),
+ (11837, "other", "cost_up", 1, "公司资金周转较为困难", "high"),
+ (11838, "demand_down", "impairment", 1, "导致营业收入下降，营业利润减少", "high"),
+ (11839, "core_ops", None, 1, "因公司主营盈利能力不足", "high"),
+ (11840, "other", None, 1, "公司大股东负面报道等对公司运营、资金信贷等多方面的影响", "high"),
+ (11841, "demand_down", "cost_up", 1, "产销同比出现较大幅度的下滑，导致营业收入减少", "high"),
+ (11842, "other", "cost_up", 1, "因资金紧张、债务逾期，涉及多笔诉讼和仲裁、多个账户被冻结", "high"),
+ (11843, "cost_up", "core_ops", 1, "逾期利息及罚金增加", "high"),
+ (11844, "cost_up", "core_ops", 1, "多起诉讼、仲裁案件导致财务费用增加", "high"),
+ (11845, "impairment", None, 1, "2018预计计提商誉减值8.5亿元", "high"),
+ (11846, "cost_up", "non_recurring", 1, "燃煤价格大幅上升使燃料成本比年初预算增支约5.6亿元", "high"),
+ (11847, "cost_up", None, 1, "导致燃料成本进一步升高", "high"),
+ (11848, "demand_down", "impairment", 1, "订单减少，收入规模下降", "high"),
+ (11849, "demand_down", None, 1, "因市场竞争加剧，导致产销量下降", "high"),
+ (11850, "core_ops", None, 1, "因产品市场变化", "high"),
+ (11851, "other", "cost_up", 1, "导致公司无法有效将相对充足的订单转化为营业收入", "high"),
+ (11852, "ma_restructuring", None, 1, "法院已经裁定公司进入重整", "high"),
+ (11853, "ma_restructuring", None, 1, "法院已经裁定公司进入重整", "high"),
+ (11854, "demand_down", None, 1, "主营房地产业务可销售房屋减少", "high"),
+ (11855, "demand_down", None, 1, "主营房地产业务可销售房屋减少", "high"),
+ (11856, "other", None, 1, "主要矿山进行了生产设施检修工作", "high"),
+ (11857, "demand_down", None, 1, "整车销售到净利润均有较大幅度的下滑", "high"),
+ (11858, "demand_down", "other", 1, "国内棉机市场需求持续萎缩", "high"),
+ (11859, "other", None, 0, "公司主营业务均有较强的季节性", "high"),
+ (11860, "core_ops", None, 1, "考虑到公司业务转型调整进度", "high"),
+ (11861, "cost_up", "other", 1, "产能利用率不足，产品生产成本提高", "high"),
+ (11862, "demand_down", "cost_down", 1, "直营和经销商渠道销售下降趋势减缓", "high"),
+ (11863, "other", None, 0, "根据公司主要客户发出需求计划预测", "low"),
+ (11864, "other", None, 0, "根据公司主要客户发出的需求计划预测", "low"),
+ (11865, "demand_down", None, 1, "受市场行情以及公司开工率水平较低等因素的影响", "high"),
+ (11866, "cost_up", None, 1, "研发费用同比增长超过95%", "high"),
+ (11867, "cost_up", None, 1, "相应的经营管理支出、研发支出、员工薪酬、利息支出等费用均有所增长", "high"),
+ (11868, "epidemic_shock", None, 1, "因受疫情影响", "high"),
+ (11869, "non_recurring", None, 1, "证券投资亏损约3,224万元", "high"),
+ (11870, "non_recurring", None, 1, "本期证券投资亏损所致", "high"),
+ (11871, "demand_down", "impairment", 1, "本期营业额下降、计提减值准备等原因所致", "high"),
+ (11872, "epidemic_shock", "demand_down", 1, "由于受新冠肺炎疫情影响", "high"),
+ (11873, "other", "demand_down", 1, "导致公司营业收入大幅减少、毛利率下滑", "high"),
+ (11874, "cost_up", "cost_down", 1, "售电收入不能覆盖发电成本", "high"),
+ (11875, "demand_up", None, -1, "主要系营业收入增加", "high"),
+ (11876, "other", None, 0, "主要经营业绩与上年同期相比无较大变化", "low"),
+ (11877, "other", None, 0, "主要经营业绩与上年同期相比无较大变化", "low"),
+ (11878, "epidemic_shock", "cost_up", 1, "受新型冠状病毒感染的肺炎疫情影响", "high"),
+ (11879, "epidemic_shock", "cost_up", 1, "受春节假期和新冠疫情防控影响", "high"),
+ (11880, "demand_down", "ma_restructuring", 1, "公司销售收入下滑明显", "high"),
+ (11881, "epidemic_shock", "demand_down", 1, "受到新型冠状病毒肺炎疫情影响", "high"),
+ (11882, "epidemic_shock", "ma_restructuring", 1, "公司受新冠肺炎疫情影响", "high"),
+ (11883, "epidemic_shock", "ma_restructuring", 1, "由于受疫情及司法重整后续影响", "high"),
+ (11884, "epidemic_shock", "demand_down", 1, "受新型冠状病毒感染的肺炎疫情影响", "high"),
+ (11885, "epidemic_shock", "impairment", 1, "受新型冠状病毒感染的肺炎疫情影响", "high"),
+ (11886, "impairment", None, 1, "确认7,117.88万元的预计负债", "high"),
+ (11887, "epidemic_shock", None, 1, "主要原因是受新型冠状病毒肺炎疫情影响", "high"),
+ (11888, "epidemic_shock", None, 1, "主要原因是受新型冠状病毒肺炎疫情影响", "high"),
+ (11889, "epidemic_shock", "impairment", 1, "主要原因是受疫情影响", "high"),
+ (11890, "epidemic_shock", "demand_down", 1, "受新冠疫情影响", "high"),
+ (11891, "other", None, 1, "本报告期营业收入较少", "low"),
+ (11892, "other", None, 1, "本报告期营业收入较少", "low"),
+ (11893, "other", "non_recurring", 0, "公司业务整体呈现前低后高的季节性特征", "high"),
+ (11894, "other", "non_recurring", 0, "公司业务整体呈现前低后高的季节性特征", "high"),
+ (11895, "other", "cost_up", 0, "公司业务整体呈现前低后高的季节性特征", "high"),
+ (11896, "epidemic_shock", "ma_restructuring", 1, "受疫情影响", "high"),
+ (11897, "ma_restructuring", "cost_down", 1, "受外部环境以及上年转让子公司等因素影响", "high"),
+ (11898, "demand_up", "cost_down", -1, "公司干细胞业务规模持续增长", "high"),
+ (11899, "cost_up", "impairment", 1, "公司的有息负债形成财务费用较大", "high"),
+]
+
+
+def main():
+    out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "batch_020_judge_part5.jsonl")
+    lines = []
+    for oid, pc, sc, sd, q, cf in ROWS:
+        rec = {"ordinal": oid, "primary_code": pc, "secondary_code": sc,
+               "supports_direction": sd, "key_quote": q, "confidence": cf}
+        lines.append(json.dumps(rec, ensure_ascii=False, separators=(",", ":")))
+    with open(out, "w", encoding="utf-8", newline="\n") as f:
+        f.write("\n".join(lines) + "\n")
+    qlen = sorted(len(r[4]) for r in ROWS)
+    print(json.dumps({"part": 5, "rows": len(ROWS), "ordinals": [ROWS[0][0], ROWS[-1][0]],
+                      "quote_len_max": qlen[-1]}, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()

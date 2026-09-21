@@ -1,0 +1,66 @@
+{
+ "factor_id": "E20",
+ "name": "float_press",
+ "formula": "已公告未来 120d 解禁股数(万股)*月末收盘/流通市值(万元->元)",
+ "source": "share_float+daily_basic",
+ "fill_policy": "无事件为 null（不入因子帧）",
+ "n_rows": 16370,
+ "t_value": -0.9815684932966193,
+ "coverage_median_symbols": 292.0,
+ "coverage_median_active_months": 314.0,
+ "pool_median_symbols": 3126.0,
+ "criteria": {
+  "c1_abs_t>=2": false,
+  "c2_mono_consistent>=0.3": true,
+  "c3_2015_non_disaster": true,
+  "c4_coverage>=50%pool": false
+ },
+ "survived_prelim": false,
+ "eval": {
+  "n_dates": 56,
+  "coverage_mean_symbols": 290.375,
+  "ic_mean": -0.03597686096896036,
+  "ic_std": 0.2742815983128159,
+  "icir": -0.13116760727028084,
+  "ic_win_rate": 0.32142857142857145,
+  "group_mean_ret": [
+   0.007117572071406503,
+   0.008175350747364188,
+   0.006511260843495625,
+   0.0017007442618326416,
+   0.00481685162575131,
+   0.0034310973800526943,
+   0.005584757457746197,
+   -9.873849770470157e-06,
+   -0.0038370949810743347,
+   -0.0038439332545693876
+  ],
+  "long_short_mean": -0.01096150532597589,
+  "monotonicity": -0.8644372608302211,
+  "ic_by_year": {
+   "2016": 0.14702308423711394,
+   "2017": -0.09051783173927881,
+   "2018": -0.06580233639650594,
+   "2019": -0.08630805844251381,
+   "2020": -0.038761204859656624
+  },
+  "long_short_by_year": {
+   "2016": -0.004069925938256232,
+   "2017": -0.02888871716185028,
+   "2018": -0.010307214625615197,
+   "2019": -0.02682907116623737,
+   "2020": -0.0022452209282737973
+  },
+  "turnover_top_group": 0.33545610917521573,
+  "corr_with_others": {},
+  "config": {
+   "horizon_days": 20,
+   "n_groups": 10,
+   "eval_freq": "M",
+   "exclude_st": true,
+   "require_trading": true,
+   "exclude_boards": true,
+   "min_history_rows": 60
+  }
+ }
+}

@@ -1,0 +1,18 @@
+你是 F2 首轮因子批量的 D 族（财务 PIT，30 个因子）实施代理。工作目录 D:\量化（Windows，Git Bash，python 用 D:/量化/.venv，polars 1.44）。先读 D:\量化\AGENTS.md。
+
+## 权威文件（先读，逐字遵守）
+- 冻结预登记：`docs/research/exp-20260919-factor-round-f2r1-prereg.md`（§1、§2、§3-D 因子表 30 个、§5-3 风险）。
+- 评估 harness：`src/quant/factors/eval.py`（**`pit_financial` 助手必用**：f_ann_date>ann_date>期末+90 天兜底、修正稿胜出、符号风格转换；API 见 `artifacts/runs/20260919T171500-f1-eval-harness-main/delivery_report.md`）。
+- 数据（`data/raw/tushare/` 下，逐股分块 csv ~5,901 个/数据集，先读 3 个分块摸列名）：
+  - `fina_indicator/`（财务比率直读：roe/roa/grossprofit_margin/netprofit_margin/debt_to_assets/currentratio/eps/bps/netprofit_yoy 等；ann_date 有）
+  - `income/`、`balancesheet/`、`cashflow/`（三表，ann_date+f_ann_date+update_flag 全有——TTM/单季差分/应计项从这算）
+  - v0 面板 `data/processed/baostock-daily-20260917/daily_2015_2024.parquet`（评估与前向收益）。
+- 注意：约 5,900 只×多数据集的合并是大活——建议把每个数据集 concat 成单帧后用 pit_financial 批量对齐，别逐股循环。内存放不下就先过滤 dev 窗需要的报告期（2014-01 之后 ann 的）。
+
+## 任务
+1. 输出 `artifacts/runs/20260919T180000-f2r1-factor-batch/outputs/D_fund/`。dev 2015–2020，月频月末（月末取该股 PIT 可见最新报告期值），`FactorEvalConfig(horizon_days=20, n_groups=10, eval_freq="M", min_history_rows=60)`。
+2. 逐因子 D01..D30：按 §3-D 冻结公式出 `(symbol, signal_date, value)` → `D<NN>.parquet` → evaluate_factor → `D<NN>.json`。同比/单季差分/TTM 的报告期序列构建口径写入 family_report（累计值差分=单季；同比=今年报期 vs 去年同报期；PIT 对齐一律经 pit_financial）。
+3. **披露三件套**：PIT 覆盖率（各月末平均可见报告的股票比例）、90 天兜底使用比例、2015 上半年天然覆盖偏低的量化（预登记 §5-3 已声明）。
+4. `family_report.md`：口径 + 逐因子一行表（IC/t/单调/2015/覆盖/换手）+ §2 初判存活列。30 个全部报告，fail 如实记。
+5. 纪律：data/ 只读；无 git；中文 Write 工具；预算 ≤90 分钟（本族最重）；signal_date ≤2024-12-31 断言。
+6. 最终消息：完成数、初判存活 ID、最显著 3 个、PIT 覆盖/兜底比例、输出路径。

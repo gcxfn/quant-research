@@ -1,0 +1,163 @@
+{
+  "experiment_id": "exp-20260917-p2-round2-screen",
+  "name": "p2-round2-screen",
+  "preregistered_at": "2026-09-17",
+  "round": 2,
+  "budget_note": "round-2 preregistered budget: 6 of the per-round 12 configs (round 1 used 9); directions derived from round-1 negative evidence, user approved round-2 scope 2026-09-17",
+  "seed": 17,
+  "start": "2015-01-05",
+  "end": "2024-12-31",
+  "data": {
+    "dataset_id": "baostock-daily-20260917",
+    "file": "data/processed/baostock-daily-20260917/daily_2015_2024.parquet",
+    "rows_expected": 9532019,
+    "symbols_expected": 5328,
+    "adj_factors": "data/raw/xiaodefa/adj_factor/20260913-bulk1",
+    "price_convention": "signals and event returns on adjusted levels close*adj_factor (suspension rows carry null factor -> null return, conservative); same-day pattern filters (gap, close-vs-open, range) use raw same-day prices which contain no intraday corporate action; pctChg/turn in percent"
+  },
+  "universe_filter": {
+    "exclude_boards": [
+      "688",
+      "689",
+      "300",
+      "301",
+      "302"
+    ],
+    "exclude_bse_prefixes": [
+      "4",
+      "8"
+    ],
+    "exclude_index_symbols": [
+      "sz.000905",
+      "sz.000852"
+    ],
+    "exclude_st": true,
+    "exclude_suspended": true,
+    "amount_median_window": 20,
+    "amount_median_min_history": "full window (min_samples=window); listed < 20 sessions excluded",
+    "amount_median_20d_min": 50000000,
+    "price_min": 2.0
+  },
+  "signal_sets": {
+    "R2-volconfirm-reversal": {
+      "hypothesis": "放量急跌（5日跌幅<-8% 且当日量>1.5×20日均量）释放卖压，次开进场的5日收益费用后优于同池基准",
+      "definition": "ret_5_adj < -0.08 AND volume > 1.5*vol_mean_20",
+      "rank": "deepest ret_5 first",
+      "from_round1": "round 1 dropped the volume dimension; testing the volume-confirmed slice"
+    },
+    "R2-lowvol-dip": {
+      "hypothesis": "低波动股的温和回调（20日波动率≤当日池中位 且 5日跌幅<-5%）会修复，费用后优于同池基准",
+      "definition": "volatility_20 <= daily eligible median AND ret_5_adj < -0.05",
+      "rank": "deepest ret_5 first",
+      "from_round1": "round-1 reversal losers were not volatility-stratified"
+    },
+    "R2-near52w-dip": {
+      "hypothesis": "临近52周高点（≥250日最高调整收盘的90%）的当日回调股，5日收益费用后优于同池基准与追强",
+      "definition": "adj_close >= 0.9*max250_adj AND ret_1_adj < 0",
+      "rank": "closest to the high first",
+      "from_round1": "52w-high proximity is a distinct documented family vs round-1 20-day strength"
+    },
+    "R2-turnover-capitulation": {
+      "hypothesis": "换手≥2×自身20日均值且当日跌>5%的恐慌抛售后有反弹，费用后优于同池基准",
+      "definition": "turn >= 2.0*turn_mean_20 AND pctChg < -5.0",
+      "rank": "highest turnover ratio first",
+      "from_round1": "turnover spike is an orthogonal conditioning variable"
+    },
+    "R2-gapdown-recovery": {
+      "hypothesis": "跳空低开>2%但当日收阳的日内修复有次日延续，费用后优于同池基准",
+      "definition": "open/preclose - 1 < -0.02 AND close > open",
+      "rank": "largest intraday recovery first",
+      "from_round1": "intraday path information unused in round 1"
+    },
+    "R2-squeeze-breakout": {
+      "hypothesis": "20日均振幅处于当日池低半区后出现>3%突破日，突破有延续，费用后优于同池基准",
+      "definition": "range_mean_20 <= daily eligible median AND pctChg > 3.0",
+      "rank": "largest break day first",
+      "from_round1": "compression-conditional breakout differs from unconditional chasing"
+    }
+  },
+  "execution": {
+    "entry": "next session open after signal close",
+    "exit": "open of session entry_index + hold",
+    "holds": [
+      5
+    ],
+    "top_n_per_day": 3,
+    "capital": 200000,
+    "position_budget": 50000,
+    "block_limits": true,
+    "limit_pct": 0.1,
+    "configs_total": 6
+  },
+  "fees": {
+    "mode": "historical_schedule",
+    "schedule": [
+      {
+        "from": "2015-01-01",
+        "commission_pct": 0.0003,
+        "commission_min": 5.0,
+        "stamp_sell_pct": 0.001
+      },
+      {
+        "from": "2018-01-01",
+        "commission_pct": 0.00025,
+        "commission_min": 5.0,
+        "stamp_sell_pct": 0.001
+      },
+      {
+        "from": "2020-01-01",
+        "commission_pct": 0.0002,
+        "commission_min": 5.0,
+        "stamp_sell_pct": 0.001
+      },
+      {
+        "from": "2022-01-01",
+        "commission_pct": 0.00015,
+        "commission_min": 5.0,
+        "stamp_sell_pct": 0.001
+      },
+      {
+        "from": "2023-08-28",
+        "commission_pct": 0.00015,
+        "commission_min": 5.0,
+        "stamp_sell_pct": 0.0005
+      }
+    ],
+    "disclosure": "stamp duty segments are institutional facts; commission segments are conservative assumed retail rates, NOT the user's actual fee (actual 万1 all-in, P3 scope); transfer fee ~0.001% omitted"
+  },
+  "validation": {
+    "dev_window": "2015-01-05..2020-12-31",
+    "validation_window": "2021-01-01..2024-12-31",
+    "isolation": "dev events must exit on or before 2020-12-31; validation events have signal_date >= 2021-01-01",
+    "freeze": "events whose hold crosses 2024-12-31 flagged horizon_out_of_range",
+    "history_note": "2015-2024 inspected by the old project: rolling historical validation, never unseen-sample proof"
+  },
+  "selection_rule": {
+    "dev_pass": [
+      "mean net per completed event beats pool_equal_weight mean on dev",
+      "per-year net edge vs pool positive in >= 4 of 6 dev years",
+      "top-decile symbol share of total net profit <= 40%",
+      "completion rate >= 60%"
+    ],
+    "validation_pass": [
+      "mean net per completed event beats pool_equal_weight mean on validation",
+      "per-year net edge vs pool positive in >= 2 of 4 validation years"
+    ],
+    "multiple_testing": "6 preregistered configs in round 2 (9 in round 1, 15 cumulative); survivors at most 2 proceed to P3; any post-hoc re-picking downgrades to exploratory"
+  },
+  "benchmarks": {
+    "cash": 0.0,
+    "broad_index": {
+      "CSI500": "sz.000905",
+      "CSI1000": "sz.000852"
+    },
+    "pool_equal_weight": "per signal date, mean adjusted open-to-open return over all eligible symbols on identical calendar windows (no fees)",
+    "random_pick": "3 random eligible picks on every trading day through the identical event pipeline, seed 17"
+  },
+  "kill_criteria_note": "mid/high slippage tiers are P3 scope; P2 runs tier-0 (no slippage) only",
+  "limits": {
+    "max_runtime_s": 1800,
+    "max_ram_gb": 10
+  },
+  "smoke_symbols": 200
+}

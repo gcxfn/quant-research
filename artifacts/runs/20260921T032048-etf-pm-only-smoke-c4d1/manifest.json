@@ -1,0 +1,111 @@
+{
+ "run_id": "20260921T032048-etf-pm-only-smoke-c4d1",
+ "experiment_id": "exp-20260921-etf-pm-only-smoke",
+ "task": "任务②（修正版）：ETF pm-only 路由落地与动态冒烟",
+ "status": "completed",
+ "mode": "smoke",
+ "started_at_utc": "2026-09-21T03:33:25.949695+00:00",
+ "ended_at_utc": "2026-09-21T03:33:26.943162+00:00",
+ "wall_seconds": 0.993586000004143,
+ "engine_run_seconds": 0.02862329999334179,
+ "peak_rss_gb": 0.375074816,
+ "command": "PYTHONPATH=src .venv/Scripts/python.exe artifacts/runs/20260921T032048-etf-pm-only-smoke-c4d1/tmp/runner_etf_pm_smoke.py",
+ "trial_accounting": "工程冒烟，试验计数消费 0",
+ "engine": {
+  "path": "src/quant/backtest/band_engine.py",
+  "version": "v1.5",
+  "sha256": "d4b6c3764780e6dec5443174bb8fb0c1ca57ffd737da4e59069cbd3ca6735ed6",
+  "sha256_at_end": "d4b6c3764780e6dec5443174bb8fb0c1ca57ffd737da4e59069cbd3ca6735ed6",
+  "execution_clock": "halfday",
+  "etf_routing": "pm_only",
+  "test_file": "tests/test_band_engine_v15_etf_pm_only.py",
+  "test_file_sha256": "fd29fa215990a7ace5a8e4abdc24b38a7854433be5ffa132c0de29bcbd9a20a7"
+ },
+ "data": {
+  "daily_parquet": {
+   "path": "D:\\量化\\data\\processed\\etf-daily-20260919\\daily_2015_2024.parquet",
+   "sha256": "b7225d50523106f53fc87bf21a92f12978ecc31a7b195ed2b4cf4e39f7a0d661",
+   "rows_expected_full_year": 732
+  },
+  "etf_manifest": {
+   "path": "D:\\量化\\data\\processed\\etf-daily-20260919\\manifest.json",
+   "sha256": "8b5b3fe56c0e02fd6af634bb3740c4f40c3b5f1dfabc984764433c0134eb1c8a"
+  },
+  "fund_daily_batch": {
+   "path": "D:\\量化\\data\\raw\\tushare\\fund_daily\\20260917-r1",
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "21b8bb5f0f05a8494641910ffc01f7b80bd9752f22b37e0eaa2cf3d440abe8f1",
+   "files": 1170,
+   "total_bytes": 82656057
+  },
+  "halfday_manifest_reference_only": {
+   "path": "D:\\量化\\data\\processed\\halfday-bars-20260918\\manifest.json",
+   "sha256": "2a414174b5df2eeed4c6bd6a7cd7f9f09f9b2efc8f05673ccc4b7695812cd679"
+  },
+  "halfday_rows_supplied_to_engine": 0,
+  "window": [
+   "2019-01-01",
+   "2019-12-31"
+  ],
+  "full_year_registered_window": true,
+  "trading_days": 244,
+  "legs": [
+   "sh.511010",
+   "sh.518880",
+   "sz.159934"
+  ],
+  "corporate_action_deviations_in_window": 0
+ },
+ "account": {
+  "initial_cash": 200000.0,
+  "target_weight_per_leg": 0.2,
+  "rebalance": "month-end pm decision point",
+  "fees": "commission max(1e-4 x notional, 5); ETF stamp exempt"
+ },
+ "prereg": {
+  "path": "docs/research/exp-20260921-etf-pm-only-smoke-prereg.md",
+  "sha256": "245d22b9ea7adc16218297fc8f73bca5fde6d2fd0e5494e6eeddce66abc3902b"
+ },
+ "env": {
+  "python": "3.11.15",
+  "polars": "1.44.2",
+  "numpy": "1.26.4",
+  "platform": "Windows-10-10.0.26200-SP0"
+ },
+ "outputs_note": "the hash map covers the run's data products (parquet / csv / json + report.md + the runner script); logs/ (append-mode) and manifest.json itself are excluded",
+ "checks": {
+  "routing_all_fills_pm_decision_next_pm_session": true,
+  "routing_provider_calls_eq_decision_points": true,
+  "routing_all_intents_pm_decisions": true,
+  "routing_injected_eq_submitted": true,
+  "routing_no_etf_order_in_any_am_session": true,
+  "matching_fill_price_eq_decision_day_close_anchor": true,
+  "matching_strict_penetration_on_daily_extremes": true,
+  "matching_price_inside_computed_etf_band": true,
+  "matching_order_accounting_identity": true,
+  "fees_etf_stamp_exempt_both_sides": true,
+  "fees_commission_max_wan1_min5_hand_checked": true,
+  "t0_all_legs_flagged": true,
+  "t0_all_fills_etf_flag": true,
+  "t0_sell_sellable_equals_full_holdings": true,
+  "ledger_provider_calls_eq_decision_points_recorded": true,
+  "ledger_snapshot_independently_reproduced": true,
+  "ledger_cash_conservation": true,
+  "ledger_daily_equity_identity": true,
+  "ledger_am_snapshot_hand_samples": true
+ },
+ "failures": [],
+ "outputs": {
+  "outputs/checks.json": "10e079262673ad058a422ba7ed51b1fe56dd92314eb3d812511eb8c8c0af7e4f",
+  "outputs/clips_final.parquet": "c591e37cd06e56c44f877281ff98a9b98a0811d7f3fc5bff6c5a3ba99f8ee2e8",
+  "outputs/daily_equity.parquet": "3721e1d399655cabf38ec17e34b9cb15d11d180fc32a72e4b30e5997ade9b84d",
+  "outputs/decision_points.csv": "48cea01796ff44e1ef0505e57247bdf7962f5422bdbd2e5c0937c4617d0cecd1",
+  "outputs/events.parquet": "fcd6746cc0132cfe04e0e4f6d977c47e74d8ad69a65d65c5b4b6b60009ed7d41",
+  "outputs/fill_hand_checks.csv": "fe81d72bc2b1c6fba1b460b40254d52bd8487a7a3a2930349854825ce5a385d4",
+  "outputs/fills.parquet": "908892a60845874e57d8e39120f4148e07e4fcd2f18f221b5eafa6f6efb65c38",
+  "outputs/ledger_hand_checks.json": "c8f1e536701a3bee949252b62b8fdc608a8fca6f8582656f8b4f985f9939e273",
+  "outputs/rebalance_orders.csv": "fe131bce1520c16cde45be696ce0d6946d1bf3cbcb26c6f1e1dd25da0a17b47e",
+  "report.md": "7b6cf47a4163476af5e6709dd34b27b4ad84a173f05e9e3f7614899a9d4f4172",
+  "tmp/runner_etf_pm_smoke.py": "f84f41d39c856e745d1a7ca59787b86244b02ec3bf595363c984824a085932f3"
+ }
+}

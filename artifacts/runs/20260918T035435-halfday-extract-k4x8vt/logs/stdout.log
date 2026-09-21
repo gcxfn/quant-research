@@ -1,0 +1,36 @@
+[04:34:13] day list OK: 2,431 files 2015-01-05..2024-12-31, filename-level freeze check passed
+[04:34:13] baostock daily loaded: 9532019 rows, 2431 dates, rss=2.03GiB
+[04:34:33] progress 200/2431 elapsed=20s (101ms/day) rss=2.27GiB
+[04:34:37] year 2015 flushed: 596246 rows, rss=2.27GiB
+[04:34:50] progress 400/2431 elapsed=38s (94ms/day) rss=2.44GiB
+[04:34:59] year 2016 flushed: 696541 rows, rss=2.49GiB
+[04:35:10] progress 600/2431 elapsed=57s (96ms/day) rss=2.50GiB
+[04:35:24] year 2017 flushed: 798083 rows, rss=2.69GiB
+[04:35:31] progress 800/2431 elapsed=78s (98ms/day) rss=2.72GiB
+[04:35:50] year 2018 flushed: 856033 rows, rss=2.83GiB
+[04:35:53] progress 1000/2431 elapsed=101s (101ms/day) rss=2.83GiB
+[04:36:17] progress 1200/2431 elapsed=124s (103ms/day) rss=2.83GiB
+[04:36:20] year 2019 flushed: 887882 rows, rss=2.83GiB
+[04:36:46] progress 1400/2431 elapsed=154s (110ms/day) rss=2.83GiB
+[04:36:54] year 2020 flushed: 948565 rows, rss=2.83GiB
+[04:37:15] progress 1600/2431 elapsed=182s (114ms/day) rss=2.83GiB
+[04:37:32] year 2021 flushed: 1060559 rows, rss=2.83GiB
+[04:37:47] progress 1800/2431 elapsed=214s (119ms/day) rss=2.83GiB
+[04:38:11] year 2022 flushed: 1148747 rows, rss=2.83GiB
+[04:38:19] progress 2000/2431 elapsed=247s (123ms/day) rss=2.83GiB
+[04:38:51] year 2023 flushed: 1211667 rows, rss=2.83GiB
+[04:38:53] progress 2200/2431 elapsed=280s (127ms/day) rss=2.83GiB
+[04:39:27] progress 2400/2431 elapsed=315s (131ms/day) rss=2.83GiB
+[04:39:33] progress 2431/2431 elapsed=320s (132ms/day) rss=2.83GiB
+[04:39:33] year 2024 flushed: 1236038 rows, rss=2.83GiB
+[04:39:35] final written: rows=9440361 cols=21 size=317.8MiB in 2.7s, rss=5.31GiB
+[04:39:37] A1_rows_within_5pct: pass=True ({"rows": 9440361, "expected_prep_extrapolation": 9556362, "lower": 9078543, "upper": 10034180})
+[04:39:37] A2_symbol_year_rows_le_244: pass=True ({"max": 244, "limit": 244})
+[04:39:37] A3_close1130_in_daily_range: pass=False ({"proto_days_full": {"2015-06-01": {"pass": true}, "2020-06-01": {"pass": true}, "2024-06-03": {"pass": true}}, "proto_days_violations": 0, "sampled_days": ["2015-10-20", "2015-11-11", "2016-08-23", "2016-11-08", "2017-02-13", "2017-08-07", "2017-08-21", "2018-01-23", "2018-03-16", "2018-08-28", "20)
+[04:39:37] A4_bj_residual_zero: pass=True ({"rows": 0, "bj_rows_removed_in_extract": 27944490})
+[04:39:37] A5_no_rows_after_2024_12_31: pass=True ({"rows": 0, "max_date": "2024-12-31", "row_level_violations_in_extract": 0})
+[04:39:37] A6_proto_3day_value_identical: pass=True ({"columns_compared": ["pre_close_vendor↔pre_close", "close_1130↔close"], "pre_close_mismatches": 0, "close_1130_mismatches": 0, "keys_missing_vs_proto": 0})
+[04:39:37] A7_symbol_date_unique: pass=True ({"duplicate_keys": 0})
+[04:39:37] A8_key_bars_complete: pass=True ({"nulls": {"open_930": 0, "close_1100": 0, "close_1130": 0, "open_1300": 0, "close_1500": 0, "high_am": 0, "low_am": 0}})
+manifest written: D:\量化\artifacts\runs\20260918T035435-halfday-extract-k4x8vt\manifest.json
+[04:39:38] DONE. failed_assertions=['A3_close1130_in_daily_range']

@@ -1,0 +1,152 @@
+{
+  "experiment_id": "exp-20260917-p2-round3-screen",
+  "name": "p2-round3-screen",
+  "preregistered_at": "2026-09-17",
+  "round": 3,
+  "budget_note": "final budgeted round; direction (price-volume mean reversion) nominated by the user 2026-09-17; 8 of 12 configs; per plan §6 three consecutive rounds without a survivor force a return to the discussion layer",
+  "seed": 17,
+  "start": "2015-01-05",
+  "end": "2024-12-31",
+  "data": {
+    "dataset_id": "baostock-daily-20260917",
+    "file": "data/processed/baostock-daily-20260917/daily_2015_2024.parquet",
+    "rows_expected": 9532019,
+    "symbols_expected": 5328,
+    "adj_factors": "data/raw/xiaodefa/adj_factor/20260913-bulk1",
+    "price_convention": "signals on adjusted levels (close*adj_factor; z-scores on the adjusted series); tradability gates on unadjusted prices; pctChg/turn in percent"
+  },
+  "universe_filter": {
+    "exclude_boards": [
+      "688",
+      "689",
+      "300",
+      "301",
+      "302"
+    ],
+    "exclude_bse_prefixes": [
+      "4",
+      "8"
+    ],
+    "exclude_index_symbols": [
+      "sz.000905",
+      "sz.000852"
+    ],
+    "exclude_st": true,
+    "exclude_suspended": true,
+    "amount_median_window": 20,
+    "amount_median_min_history": "full window (min_samples=window); listed < 20 sessions excluded",
+    "amount_median_20d_min": 50000000,
+    "price_min": 2.0
+  },
+  "signal_sets": {
+    "R3-mr-z-oversold": {
+      "hypothesis": "收盘对自身20日均值的z分数<=-1.5的超卖偏离会向均值回归，次开进场持有3/5日费用后优于同池基准",
+      "definition": "z20 = (adj_close - sma20_adj)/std20_adj <= -1.5",
+      "rank": "deepest deviation first (score = -z20)",
+      "from_prior_rounds": "deviation-from-own-trend is a distinct lens from round-1 raw 5-day return"
+    },
+    "R3-mr-shrink-dip": {
+      "hypothesis": "缩量下跌（5日跌幅<=-5% 且当日量<=0.7×20日均量）表明卖压衰竭，随後修复，费用后优于同池基准",
+      "definition": "ret_5_adj <= -0.05 AND volume <= 0.7*vol_mean_20",
+      "rank": "deepest ret_5 first",
+      "from_prior_rounds": "round 2 showed the high-volume slice keeps falling; this is its untested complement"
+    },
+    "R3-mr-z-shrink-combo": {
+      "hypothesis": "价格偏离与成交萎缩同时出现（z<=-1.0 且 量<=0.8×均量）时均值回归更强，费用后优于同池基准",
+      "definition": "z20 <= -1.0 AND volume <= 0.8*vol_mean_20",
+      "rank": "deepest z first",
+      "from_prior_rounds": "interaction of the two round-3 axes"
+    },
+    "R3-mr-z-confirmed": {
+      "hypothesis": "前一日z<=-1.5且当日收涨（回归确认后入场，不接飞刀）持有3/5日费用后优于同池基准",
+      "definition": "z20_prev <= -1.5 AND ret_1_adj > 0",
+      "rank": "strongest confirmation day first (score = ret_1_adj)",
+      "from_prior_rounds": "round-1 unconditional knife-catching failed; this enters only after a bounce confirms"
+    }
+  },
+  "execution": {
+    "entry": "next session open after signal close",
+    "exit": "open of session entry_index + hold",
+    "holds": [
+      3,
+      5
+    ],
+    "top_n_per_day": 3,
+    "capital": 200000,
+    "position_budget": 50000,
+    "block_limits": true,
+    "limit_pct": 0.1,
+    "configs_total": 8
+  },
+  "fees": {
+    "mode": "historical_schedule",
+    "schedule": [
+      {
+        "from": "2015-01-01",
+        "commission_pct": 0.0003,
+        "commission_min": 5.0,
+        "stamp_sell_pct": 0.001
+      },
+      {
+        "from": "2018-01-01",
+        "commission_pct": 0.00025,
+        "commission_min": 5.0,
+        "stamp_sell_pct": 0.001
+      },
+      {
+        "from": "2020-01-01",
+        "commission_pct": 0.0002,
+        "commission_min": 5.0,
+        "stamp_sell_pct": 0.001
+      },
+      {
+        "from": "2022-01-01",
+        "commission_pct": 0.00015,
+        "commission_min": 5.0,
+        "stamp_sell_pct": 0.001
+      },
+      {
+        "from": "2023-08-28",
+        "commission_pct": 0.00015,
+        "commission_min": 5.0,
+        "stamp_sell_pct": 0.0005
+      }
+    ],
+    "disclosure": "stamp duty segments are institutional facts; commission segments are conservative assumed retail rates, NOT the user's actual fee (actual 万1 all-in, P3 scope); transfer fee ~0.001% omitted"
+  },
+  "validation": {
+    "dev_window": "2015-01-05..2020-12-31",
+    "validation_window": "2021-01-01..2024-12-31",
+    "isolation": "dev events must exit on or before 2020-12-31; validation events have signal_date >= 2021-01-01",
+    "freeze": "events whose hold crosses 2024-12-31 flagged horizon_out_of_range",
+    "history_note": "2015-2024 inspected by the old project: rolling historical validation, never unseen-sample proof"
+  },
+  "selection_rule": {
+    "dev_pass": [
+      "mean net per completed event beats pool_equal_weight mean on dev",
+      "per-year net edge vs pool positive in >= 4 of 6 dev years",
+      "top-decile symbol share of total net profit <= 40%",
+      "completion rate >= 60%"
+    ],
+    "validation_pass": [
+      "mean net per completed event beats pool_equal_weight mean on validation",
+      "per-year net edge vs pool positive in >= 2 of 4 validation years"
+    ],
+    "multiple_testing": "8 preregistered configs in round 3 (9 + 6 + 8 = 23 cumulative); survivors at most 2 proceed to P3; any post-hoc re-picking downgrades to exploratory; this is the final budgeted round before mandatory re-orientation"
+  },
+  "benchmarks": {
+    "cash": 0.0,
+    "broad_index": {
+      "CSI500": "sz.000905",
+      "CSI1000": "sz.000852"
+    },
+    "pool_equal_weight": "per signal date, mean adjusted open-to-open return over all eligible symbols on identical calendar windows (no fees)",
+    "random_pick": "3 random eligible picks on every trading day through the identical event pipeline, seed 17"
+  },
+  "kill_criteria_note": "mid/high slippage tiers are P3 scope; P2 runs tier-0 (no slippage) only",
+  "limits": {
+    "max_runtime_s": 1800,
+    "max_ram_gb": 10
+  },
+  "smoke_symbols": 200
+}

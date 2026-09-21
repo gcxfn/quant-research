@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2r16_trend_dispersion.py", line 205, in main
+    bank = r16.PriceBank(hist, calendar, symbols)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\p2r16_trend_dispersion.py", line 501, in __init__
+    self.kappa[rows, cols] = sub['_kappa'].to_numpy()
+    ~~~~~~~~~~^^^^^^^^^^^^
+IndexError: index 6000 is out of bounds for axis 1 with size 6000

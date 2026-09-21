@@ -1,0 +1,25 @@
+{
+ "run_id": "20260919T170000-f0-factor-inputs-main",
+ "experiment": "F0 factor-inputs audit (Phase A of the approved bounded factor-mining path)",
+ "date": "2026-09-19",
+ "status": "completed",
+ "executor": "main conversation (takeover after 3 captcha-failed agent dispatches, each <4 min zero residue)",
+ "nature": "descriptive data profiling only; zero trials; zero strategy/return/IC computation; data/ read-only; no git",
+ "inputs": {
+  "tushare_raw": "data/raw/tushare/ (22 datasets scanned: fundamentals per-symbol ~5900 chunks each, events, index)",
+  "xiaodefa_raw": "data/raw/xiaodefa/ (17 datasets scanned: adj_factor 3088 days, microstructure, industry dailies)",
+  "panel": "data/processed/baostock-daily-20260917/daily_1999_2024.parquet (16,344,349 rows / 5,410 symbols; preclose/turn/tradestatus/isST present)",
+  "skeleton": "src/quant/factors/{core,cache,signals}.py"
+ },
+ "key_facts": {
+  "dev_full_1462": ["adj_factor", "daily_basic", "suspend_d", "stk_auction_c", "stk_auction_o", "moneyflow", "stk_nineturn", "idx_factor_pro", "ths_daily", "stk_limit", "sw_daily(1461)", "ci_daily"],
+  "dev_partial": {"margin_detail/top_list/top_inst": "2019+ (487/1462)", "cyq_perf": "2018+ (730/1462)", "hk_hold": "2017+ (948/1462)", "ccass_hold": "2020-11+ (36/1462)", "ggt_daily": "1363/1462", "dc_daily/limit_list_d": "2020+ (243/1462)"},
+  "pit": "income/balancesheet/cashflow/forecast/express carry ann_date+f_ann_date+update_flag (true PIT feasible); fina_indicator/repurchase/stk_holdertrade/share_float carry ann_date; disclosure_date dataset only 2018-12+; daily data self-evident",
+  "daily_basic_seam": "r2 2015-01-05..2018-12-28 (975 days) butt-joins r1 2019-01-02..2026-09-09 (1866 days); zero overlap, zero gap, columns equal",
+  "index_member_all": "single snapshot l1/l2/l3 (NOT time-varying) - lookahead risk for industry neutralization, disclosed",
+  "freeze": "2025+ rows exist in most datasets (410-412 days) and MUST be clamped <=2024-12-31 at read; stk_limit naturally ends 2024-12-31",
+  "skeleton_reuse": "cache.py implements AGENTS 5.4 cache-key discipline (canonical_json/key_sha256/source_files); F1 adds eval module only"
+ },
+ "outputs": ["f0_scan.py", "outputs/factor_inputs_scan.csv", "outputs/f0_scan.json", "delivery_report.md"],
+ "trial_consumption": 0
+}

@@ -1,0 +1,71 @@
+[    0.0s] == 0. identity pins ==
+[    0.0s] !! FAIL: engine pin mismatch: 31022babbc2858ea27a9142141fba9c14f7361294ea84e4257025ce820aa6076
+[    0.0s] == 0. identity pins ==
+[    0.0s] !! FAIL: engine pin mismatch: 31022babbc2858ea27a9142141fba9c14f7361294ea84e4257025ce820aa6076
+[    0.0s] == 0. identity pins ==
+[    0.0s] !! FAIL: engine pin mismatch: 31022babbc2858ea27a9142141fba9c14f7361294ea84e4257025ce820aa6076
+[    0.0s] == 0. identity pins ==
+[   10.9s]   engine 31022babbc2858ea OK; data pins OK; python 3.11.15 | rss 0.27 GB
+[   10.9s] == 1. calendar & signal days ==
+[   11.2s]   71 signal days (2015-01-30..2020-11-30); 2020-12-31 dropped as signal (P3R2 precedent)
+[   11.2s] == 2. R16 pool (build_history + signal_pools, verbatim) ==
+[   18.4s]   pool n: min 810 max 2260 first 2015-01-30 n=1438
+[   18.4s] == 3. dedup: |rho|>=0.6 connected components, rep = max |t| ==
+[    0.0s] == 0. identity pins ==
+[    8.8s]   engine 31022babbc2858ea OK; data pins OK; python 3.11.15 | rss 0.27 GB
+[    8.8s] == 1. calendar & signal days ==
+[    9.1s]   71 signal days (2015-01-30..2020-11-30); 2020-12-31 dropped as signal (P3R2 precedent)
+[    9.1s] == 2. R16 pool (build_history + signal_pools, verbatim) ==
+[   20.1s]   pool n: min 810 max 2260 first 2015-01-30 n=1438
+[   20.1s] == 3. dedup: |rho|>=0.6 connected components, rep = max |t| ==
+[    0.0s] == 0. identity pins ==
+[    8.8s]   engine 31022babbc2858ea OK; data pins OK; python 3.11.15 | rss 0.27 GB
+[    8.8s] == 1. calendar & signal days ==
+[    9.2s]   71 signal days (2015-01-30..2020-11-30); 2020-12-31 dropped as signal (P3R2 precedent)
+[    9.2s] == 2. R16 pool (build_history + signal_pools, verbatim) ==
+[   19.9s]   pool n: min 810 max 2260 first 2015-01-30 n=1438
+[   19.9s] == 3. dedup: |rho|>=0.6 connected components, rep = max |t| ==
+[    0.0s] == 0. identity pins ==
+[    8.8s]   engine 31022babbc2858ea OK; data pins OK; python 3.11.15 | rss 0.27 GB
+[    8.8s] == 1. calendar & signal days ==
+[    9.2s]   71 signal days (2015-01-30..2020-11-30); 2020-12-31 dropped as signal (P3R2 precedent)
+[    9.2s] == 2. R16 pool (build_history + signal_pools, verbatim) ==
+[   19.7s]   pool n: min 810 max 2260 first 2015-01-30 n=1438
+[   19.7s] == 3. dedup: |rho|>=0.6 connected components, rep = max |t| ==
+[   19.7s]   20 clusters, 20 representatives: ['A17', 'A20', 'A25', 'B11', 'B12', 'B14', 'C19', 'D08', 'D09', 'D10', 'D14', 'D18', 'D19', 'D20', 'D21', 'D25', 'E16', 'F02', 'F06', 'F09']
+[   19.7s]     cluster rep F09 (size 13): ['A01', 'A02', 'A05', 'A09', 'A10', 'A21', 'A23', 'A24', 'B15', 'C01', 'C11', 'C12', 'F09']
+[   19.7s]     cluster rep B11 (size 4): ['B09', 'B10', 'B11', 'F10']
+[   19.7s]     cluster rep D08 (size 4): ['D07', 'D08', 'D17', 'D30']
+[   19.7s]     cluster rep B12 (size 3): ['A18', 'A22', 'B12']
+[   19.7s]     cluster rep D21 (size 3): ['D12', 'D13', 'D21']
+[   19.7s]     cluster rep A17 (size 2): ['A17', 'A19']
+[   19.7s]     cluster rep A20 (size 1): ['A20']
+[   19.7s]     cluster rep A25 (size 1): ['A25']
+[   19.7s]   coverage rule: >= 10/20 reps non-null
+[   19.9s] == 4. composite: EW + ICW arms on executable cross-sections ==
+[   23.3s]   wide frame 319147 rows, 5162 symbols
+[   23.8s]   2015-01-30: pool 1438 -> eligible 1433
+[   44.1s]   2017-12-29: pool 982 -> eligible 982
+[   61.3s]   2020-11-30: pool 1542 -> eligible 1542
+[   61.3s]   eligible sizes: min 810 median 1510 max 2260
+[   61.3s] == 5. membership (buffer top10/exit>20) + static intent frames ==
+[   61.6s]   F3-EW: 1058 intents (buy 534, sell 524); members/month min 10 max 10; m5-b PASS
+[   61.7s]   F3-ICW: 1128 intents (buy 569, sell 559); members/month min 10 max 10; m5-b PASS
+[   61.7s] == 6. benchmarks: B1(m)_F3 fractional + B3'_F3 random K=10 ==
+[  117.0s]   B1(m)_F3: net +1.66% mdd -64.42% (2937 union symbols)
+[  127.8s]   B3'_F3: mean net -1.89% (seeds 17..36, range -10.14..+5.43%)
+[  128.1s] == 7. band engine market frames ==
+[  174.0s]   frames: panel 505 symbols; daily 700292; half 1340367; limits 698338; rss 2.08 GB
+[  174.6s] == 8. band engine intent runs ==
+[  202.7s]   F3-EW: engine 28.0s; intents 1058 activated 1058 orders 20175 filled 572 override 205 expired 279 | rss 2.62 GB
+[  232.7s]   F3-ICW: engine 29.9s; intents 1128 activated 1128 orders 20056 filled 648 override 201 expired 277 | rss 2.79 GB
+[  232.7s] == 9. gate-8 attribution ==
+[  233.0s]   F3-EW: gate8 mapped 74.9% (filled 572, rule-blocked 220, terminated 266, zero-emission 8, expired-noop 0); term {'expiry': 59, 'override_same_name': 196, 'cap_void': 0, 'suspension_abandon': 11}
+[  233.3s]   F3-ICW: gate8 mapped 76.7% (filled 648, rule-blocked 217, terminated 263, zero-emission 9, expired-noop 0); term {'expiry': 59, 'override_same_name': 189, 'cap_void': 0, 'suspension_abandon': 15}
+[  233.3s] == 10. metrics & eight gates + goal criterion ==
+[  233.9s]   F3-EW: net +9.47% excess +7.81pp adv 3/6 mdd -39.75% turn 5.77 w 24.0% exec 74.9% -> eliminated ['3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '8_execution_rate_ge_95pct']; goal>=10% not met
+[  234.4s]   F3-ICW: net +15.28% excess +13.62pp adv 4/6 mdd -41.19% turn 6.21 w 22.4% exec 76.7% -> eliminated ['3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '5_one_side_turnover_le_6', '8_execution_rate_ge_95pct']; goal>=10% MET
+[  234.4s] == gates: 0/2 dev_pass ==
+[  234.4s] == 11. outputs ==
+[  235.0s] == manifest + report written; wall 235s, peak rss 2.79 GB ==
+[  235.0s] == VERDICT: 0/2 dev_pass; goal-met arms: []; no arm passed all dev gates (0/2); val not consumed ==

@@ -1,0 +1,54 @@
+{
+  "run_id": "20260918T012530-etf-pool-audit-d82e6m",
+  "experiment_id": "exp-20260918-etf-pool-audit",
+  "status": "completed",
+  "started_at": "2026-09-18T01:25:30+08:00",
+  "finished_at": "2026-09-18T02:10:00+08:00",
+  "purpose": "ETF/基金注册表逐代码分类精化审计（纯审计，只读 raw/config；不改现行冻结池；不产生新试验）",
+  "environment": {
+    "python": "D:/量化/.venv/Scripts/python.exe (-X utf8, PYTHONPATH=D:/量化/src)",
+    "platform": "win32 / Git Bash",
+    "pandas": "2.3.3",
+    "pyarrow": "25.0.1"
+  },
+  "inputs": {
+    "registry_csv": "data/raw/tushare/fund_basic/20260909-r1/chunk_market_E.csv (2945 行, 只读)",
+    "config": "configs/experiments/p2r7-etf-exposure.json (u1_whitelist_frozen 1168 只, u2_qdii_keywords_frozen 21 词, 只读)",
+    "known_baseline": "artifacts/runs/20260917232740-redteam-1fcda1fb/findings.md (R1-7 三只 QDII, R1-8 二十只 LOF)"
+  },
+  "commands": [
+    "python etf_pool_audit.py rules",
+    "python etf_pool_audit.py finalize"
+  ],
+  "method": {
+    "rules_version": "rules-v1",
+    "batch_size": 150,
+    "review_batches_whitelist": 8,
+    "review_batches_flagged": 3,
+    "llm_reviewed_rows": "白名单全量 1168 + 待复核旗标行(两批) 逐行阅读名称分类",
+    "llm_adjudicated_rows": 68,
+    "adjudication_files": ["tmp/adjudication_01.json"]
+  },
+  "outputs": {
+    "classification": "data/features/etf-registry-classification-20260918/classification.parquet (2945 行)",
+    "discrepancy": "data/features/etf-registry-classification-20260918/discrepancy.csv",
+    "manifest": "data/features/etf-registry-classification-20260918/manifest.json",
+    "research_doc": "docs/research/exp-20260918-etf-pool-audit.md"
+  },
+  "files": {
+    "etf_pool_audit.py": "sha256 见 data/features/etf-registry-classification-20260918/manifest.json script_sha256",
+    "logs": ["log_rules.txt", "log_finalize.txt"]
+  },
+  "headlines": {
+    "disc_a_白名单内_LOF跨境商品": 180,
+    "known_lof20 对账": "完全一致(501x12, 502x1, 160x3, 161x2, 162x2)",
+    "known_qdii3 对账": "完全一致(513310/513730/513800.SH)",
+    "新发现_QDII漏判": ["159329.SZ", "520830.SH"],
+    "新发现_U2误伤A股ETF": 25,
+    "新发现_商品ETF未覆盖": 19,
+    "disc_b_白名单外A股ETF": "540 只全部为 U1 规则本应命中但缺行情/复权数据覆盖, 真实规则漏扫 0",
+    "disc_c_fund_type矛盾": 10,
+    "disc_c2_代码段与名称矛盾": 0
+  },
+  "discipline_notes": "2025+ 数据未涉及; 注册表为 2026-09-09 快照(U5 非 PIT); list/delist 日期仅统计不外推; data/raw 与 configs 未做任何修改"
+}

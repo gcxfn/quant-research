@@ -1,0 +1,255 @@
+{
+  "sample_20150601": {
+    "file": "data\\raw\\user_minute_1m\\20260913-143215\\2015\\20150601.parquet",
+    "file_bytes": 10571110,
+    "rows": 559361,
+    "unique_codes": 2321,
+    "bars_at_1130": 2321,
+    "etf_prefix_rows_at_1130": 0,
+    "bars_per_code_mean": [
+      {
+        "statistic": "count",
+        "value": 2321.0
+      },
+      {
+        "statistic": "null_count",
+        "value": 0.0
+      },
+      {
+        "statistic": "mean",
+        "value": 241.0
+      },
+      {
+        "statistic": "std",
+        "value": 0.0
+      },
+      {
+        "statistic": "min",
+        "value": 241.0
+      },
+      {
+        "statistic": "25%",
+        "value": 241.0
+      },
+      {
+        "statistic": "50%",
+        "value": 241.0
+      },
+      {
+        "statistic": "75%",
+        "value": 241.0
+      },
+      {
+        "statistic": "max",
+        "value": 241.0
+      }
+    ],
+    "trade_time_sample": [
+      "2015-06-01 09:30:00",
+      "2015-06-01 09:31:00"
+    ],
+    "row_at_1130_sample": [
+      {
+        "code": "000001.SZ",
+        "trade_time": "2015-06-01 11:30:00",
+        "close": 15.520000457763672,
+        "open": 15.550000190734863,
+        "high": 15.550000190734863,
+        "low": 15.520000457763672,
+        "vol": 1235619.0,
+        "amount": 19198490.0,
+        "date": "20150601",
+        "pre_close": 15.550000190734863,
+        "change": -0.029999999329447746,
+        "pct_chg": -0.1899999976158142,
+        "__index_level_0__": 120
+      },
+      {
+        "code": "000002.SZ",
+        "trade_time": "2015-06-01 11:30:00",
+        "close": 14.520000457763672,
+        "open": 14.510000228881836,
+        "high": 14.520000457763672,
+        "low": 14.5,
+        "vol": 1421333.0,
+        "amount": 20631136.0,
+        "date": "20150601",
+        "pre_close": 14.510000228881836,
+        "change": 0.009999999776482582,
+        "pct_chg": 0.07000000029802322,
+        "__index_level_0__": 120
+      }
+    ],
+    "code_prefixes_top25": [
+      {
+        "p3": "600",
+        "count": 171592
+      },
+      {
+        "p3": "002",
+        "count": 146287
+      },
+      {
+        "p3": "000",
+        "count": 93508
+      },
+      {
+        "p3": "300",
+        "count": 93026
+      },
+      {
+        "p3": "601",
+        "count": 31089
+      },
+      {
+        "p3": "603",
+        "count": 23377
+      },
+      {
+        "p3": "001",
+        "count": 482
+      }
+    ],
+    "full_read_seconds": 0.028
+  },
+  "sample_20240603": {
+    "file": "data\\raw\\user_minute_1m\\20260913-2020-2024\\2024\\20240603.parquet",
+    "file_bytes": 20867475,
+    "rows": 1232474,
+    "unique_codes": 5114,
+    "bars_at_1130": 5114,
+    "etf_prefix_rows_at_1130": 0,
+    "bars_per_code_mean": [
+      {
+        "statistic": "count",
+        "value": 5114.0
+      },
+      {
+        "statistic": "null_count",
+        "value": 0.0
+      },
+      {
+        "statistic": "mean",
+        "value": 241.0
+      },
+      {
+        "statistic": "std",
+        "value": 0.0
+      },
+      {
+        "statistic": "min",
+        "value": 241.0
+      },
+      {
+        "statistic": "25%",
+        "value": 241.0
+      },
+      {
+        "statistic": "50%",
+        "value": 241.0
+      },
+      {
+        "statistic": "75%",
+        "value": 241.0
+      },
+      {
+        "statistic": "max",
+        "value": 241.0
+      }
+    ],
+    "trade_time_sample": [
+      "2024-06-03 09:30:00",
+      "2024-06-03 09:31:00"
+    ],
+    "row_at_1130_sample": [
+      {
+        "code": "000001.SZ",
+        "trade_time": "2024-06-03 11:30:00",
+        "close": 10.930000305175781,
+        "open": 10.930000305175781,
+        "high": 10.9399995803833,
+        "low": 10.930000305175781,
+        "vol": 450100.0,
+        "amount": 4921655.0,
+        "date": "20240603",
+        "pre_close": 10.9399995803833,
+        "change": -0.009999999776482582,
+        "pct_chg": -0.09000000357627869,
+        "__index_level_0__": 120
+      },
+      {
+        "code": "000002.SZ",
+        "trade_time": "2024-06-03 11:30:00",
+        "close": 8.09000015258789,
+        "open": 8.100000381469727,
+        "high": 8.109999656677246,
+        "low": 8.09000015258789,
+        "vol": 324500.0,
+        "amount": 2627336.0,
+        "date": "20240603",
+        "pre_close": 8.109999656677246,
+        "change": -0.019999999552965164,
+        "pct_chg": -0.25,
+        "__index_level_0__": 120
+      }
+    ],
+    "code_prefixes_top25": [
+      {
+        "p3": "300",
+        "count": 228950
+      },
+      {
+        "p3": "002",
+        "count": 226058
+      },
+      {
+        "p3": "600",
+        "count": 187257
+      },
+      {
+        "p3": "603",
+        "count": 140021
+      },
+      {
+        "p3": "688",
+        "count": 137611
+      },
+      {
+        "p3": "000",
+        "count": 103389
+      },
+      {
+        "p3": "301",
+        "count": 94713
+      },
+      {
+        "p3": "601",
+        "count": 54225
+      },
+      {
+        "p3": "605",
+        "count": 27233
+      },
+      {
+        "p3": "001",
+        "count": 22654
+      },
+      {
+        "p3": "003",
+        "count": 10122
+      },
+      {
+        "p3": "689",
+        "count": 241
+      }
+    ],
+    "full_read_seconds": 0.052
+  },
+  "month_scan_1130": {
+    "scope": "user_minute_1m/2024/202406* (股票全市场)",
+    "files": 19,
+    "rows_at_1130": 101405,
+    "elapsed_seconds": 0.047,
+    "seconds_per_file": 0.0024
+  }
+}

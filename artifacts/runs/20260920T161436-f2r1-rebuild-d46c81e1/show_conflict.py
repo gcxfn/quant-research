@@ -1,0 +1,1 @@
+exec(open(r'artifacts/runs/20260920T161436-f2r1-rebuild-d46c81e1/count_e16_conflicts.py',encoding='utf-8').read().replace("print('rows',d.height,'conflict_groups',c.height,'conflict_rows',c['rows'].sum() if c.height else 0); print(c.head(20))","print(d.filter((pl.col('symbol')=='sh.600989')&(pl.col('ex_date')==pl.date(2024,7,24)))"))

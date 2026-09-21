@@ -1,0 +1,14 @@
+你是 F2 首轮因子批量的 B 族（估值/规模，15 个因子）实施代理。工作目录 D:\量化（Windows，Git Bash，python 用 D:/量化/.venv，polars 1.44）。先读 D:\量化\AGENTS.md。
+
+## 权威文件（先读，逐字遵守）
+- 冻结预登记：`docs/research/exp-20260919-factor-round-f2r1-prereg.md`（§1 统一口径、§2 淘汰标准、§3-B 因子表 15 个）——你只实施 B01..B15。
+- 评估 harness：`src/quant/factors/eval.py`（先读 `artifacts/runs/20260919T171500-f1-eval-harness-main/delivery_report.md` API 节）。
+- 数据：估值快照 `data/raw/tushare/daily_basic/`（两批次 20260913-r2=2015-2018、20260909-r1=2019 起，接缝已审计干净；日分块 chunk_YYYYMMDD.csv，字段含 ts_code/trade_date/close/turnover_rate/pe/pe_ttm/pb/ps/ps_ttm/dv_ratio/total_mv/circ_mv 等，ts_code 风格 600519.SH 需转面板风格 sh.600519）；v0 面板 `data/processed/baostock-daily-20260917/daily_2015_2024.parquet`（评估池与前向收益由 evaluate_factor 内部处理）。
+
+## 任务
+1. 输出目录 `artifacts/runs/20260919T180000-f2r1-factor-batch/outputs/B_value/`。评估窗 **dev 2015–2020**，月频月末，配置逐字 `FactorEvalConfig(horizon_days=20, n_groups=10, eval_freq="M", min_history_rows=60)`。
+2. 月末快照 = 每月最后交易日该股 daily_basic 行（停牌无行→用该股当月最后可得日并披露）；窗口类因子（B09-B12/B15）在月末向前滚动。逐因子按 §3-B 冻结公式出 `(symbol, signal_date, value)` → `B<NN>.parquet` → evaluate_factor → `B<NN>.json`。
+3. 缺字段处理：若某字段在 2015-2018 批次缺失，如实记录并按"该因子该段覆盖下降"处理（淘汰标准 4 会卡），不得换字段。
+4. `family_report.md`：逐因子一行表（IC/t/单调/2015/覆盖/换手）+ §2 初判存活列 + 口径披露（快照定义、缺失统计）。15 个全部报告。
+5. 纪律：data/ 只读；无 git；中文 Write 工具；预算 ≤60 分钟；因子 signal_date ≤2024-12-31 断言。
+6. 最终消息：完成数、初判存活 ID、最显著 3 个、覆盖问题披露、输出路径。

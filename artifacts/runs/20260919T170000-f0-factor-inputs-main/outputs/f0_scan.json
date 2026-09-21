@@ -1,0 +1,1226 @@
+{
+ "datasets": [
+  {
+   "dataset": "tushare/daily_basic",
+   "dir": "D:\\量化\\data\\raw\\tushare\\daily_basic",
+   "family": "估值/日频指标",
+   "shape": "date_chunks",
+   "n_chunks": 2841,
+   "date_first": 20150105,
+   "date_last": 20260909,
+   "dev_days": 1462,
+   "val_days": 969,
+   "days_2025plus": 410,
+   "sample_cols": [
+    "ts_code",
+    "trade_date",
+    "close",
+    "turnover_rate",
+    "turnover_rate_f",
+    "volume_ratio",
+    "pe",
+    "pe_ttm",
+    "pb",
+    "ps",
+    "ps_ttm",
+    "dv_ratio",
+    "dv_ttm",
+    "total_share"
+   ],
+   "pit_fields": [],
+   "sample_symbols": 5791
+  },
+  {
+   "dataset": "tushare/stk_limit",
+   "dir": "D:\\量化\\data\\raw\\tushare\\stk_limit",
+   "family": "涨跌停",
+   "shape": "date_chunks",
+   "n_chunks": 2431,
+   "date_first": 20150105,
+   "date_last": 20241231,
+   "dev_days": 1462,
+   "val_days": 969,
+   "days_2025plus": 0,
+   "sample_cols": [
+    "trade_date",
+    "ts_code",
+    "up_limit",
+    "down_limit"
+   ],
+   "pit_fields": [],
+   "sample_symbols": 5677
+  },
+  {
+   "dataset": "tushare/margin_detail",
+   "dir": "D:\\量化\\data\\raw\\tushare\\margin_detail",
+   "family": "资金面/两融",
+   "shape": "date_chunks",
+   "n_chunks": 1866,
+   "date_first": 20190102,
+   "date_last": 20260909,
+   "dev_days": 487,
+   "val_days": 969,
+   "days_2025plus": 410,
+   "sample_cols": [],
+   "pit_fields": [],
+   "sample_symbols": 3336
+  },
+  {
+   "dataset": "tushare/top_list",
+   "dir": "D:\\量化\\data\\raw\\tushare\\top_list",
+   "family": "资金面/龙虎榜",
+   "shape": "date_chunks",
+   "n_chunks": 1866,
+   "date_first": 20190102,
+   "date_last": 20260909,
+   "dev_days": 487,
+   "val_days": 969,
+   "days_2025plus": 410,
+   "sample_cols": [],
+   "pit_fields": [],
+   "sample_symbols": 94
+  },
+  {
+   "dataset": "tushare/top_inst",
+   "dir": "D:\\量化\\data\\raw\\tushare\\top_inst",
+   "family": "资金面/龙虎榜",
+   "shape": "date_chunks",
+   "n_chunks": 1866,
+   "date_first": 20190102,
+   "date_last": 20260909,
+   "dev_days": 487,
+   "val_days": 969,
+   "days_2025plus": 410,
+   "sample_cols": [
+    "trade_date",
+    "ts_code",
+    "exalter",
+    "buy",
+    "buy_rate",
+    "sell",
+    "sell_rate",
+    "net_buy",
+    "side",
+    "reason"
+   ],
+   "pit_fields": [],
+   "sample_symbols": 153
+  },
+  {
+   "dataset": "tushare/dividend",
+   "dir": "D:\\量化\\data\\raw\\tushare\\dividend",
+   "family": "公告事件/分红",
+   "shape": "date_chunks",
+   "n_chunks": 2841,
+   "date_first": 20150105,
+   "date_last": 20260909,
+   "dev_days": 1462,
+   "val_days": 969,
+   "days_2025plus": 410,
+   "sample_cols": [
+    "ts_code",
+    "end_date",
+    "ann_date",
+    "div_proc",
+    "stk_div",
+    "stk_bo_rate",
+    "stk_co_rate",
+    "cash_div",
+    "cash_div_tax",
+    "record_date",
+    "ex_date",
+    "pay_date",
+    "div_listdate",
+    "imp_ann_date"
+   ],
+   "pit_fields": [
+    "ann_date"
+   ],
+   "sample_symbols": 18
+  },
+  {
+   "dataset": "tushare/forecast",
+   "dir": "D:\\量化\\data\\raw\\tushare\\forecast",
+   "family": "公告事件/业绩预告",
+   "shape": "per_symbol_chunks",
+   "n_chunks": 97,
+   "sampled": 40,
+   "sample_date_first": 20180930,
+   "sample_date_last": 20271231,
+   "sample_cols": [
+    "ts_code",
+    "ann_date",
+    "end_date",
+    "type",
+    "p_change_min",
+    "p_change_max",
+    "net_profit_min",
+    "net_profit_max",
+    "last_parent_net",
+    "first_ann_date",
+    "summary",
+    "change_reason",
+    "update_flag"
+   ],
+   "pit_fields": [
+    "ann_date",
+    "update_flag"
+   ]
+  },
+  {
+   "dataset": "tushare/express",
+   "dir": "D:\\量化\\data\\raw\\tushare\\express",
+   "family": "公告事件/快报",
+   "shape": "per_symbol_chunks",
+   "n_chunks": 31,
+   "sampled": 31,
+   "sample_date_first": 20181231,
+   "sample_date_last": 20260630,
+   "sample_cols": [
+    "ts_code",
+    "ann_date",
+    "end_date",
+    "revenue",
+    "operate_profit",
+    "total_profit",
+    "n_income",
+    "total_assets",
+    "total_hldr_eqy_exc_min_int",
+    "diluted_eps",
+    "diluted_roe",
+    "yoy_net_profit",
+    "bps",
+    "perf_summary",
+    "update_flag"
+   ],
+   "pit_fields": [
+    "ann_date",
+    "update_flag"
+   ]
+  },
+  {
+   "dataset": "tushare/repurchase",
+   "dir": "D:\\量化\\data\\raw\\tushare\\repurchase",
+   "family": "公告事件/回购",
+   "shape": "per_symbol_chunks",
+   "n_chunks": 129,
+   "sampled": 40,
+   "sample_date_first": 20160527,
+   "sample_date_last": 20260911,
+   "sample_cols": [
+    "ts_code",
+    "ann_date",
+    "end_date",
+    "proc",
+    "exp_date",
+    "vol",
+    "amount",
+    "high_limit",
+    "low_limit"
+   ],
+   "pit_fields": [
+    "ann_date"
+   ]
+  },
+  {
+   "dataset": "tushare/stk_holdertrade",
+   "dir": "D:\\量化\\data\\raw\\tushare\\stk_holdertrade",
+   "family": "公告事件/增减持",
+   "shape": "per_symbol_chunks",
+   "n_chunks": 129,
+   "sampled": 40,
+   "sample_date_first": 20160601,
+   "sample_date_last": 20260909,
+   "sample_cols": [
+    "ts_code",
+    "ann_date",
+    "holder_name",
+    "holder_type",
+    "in_de",
+    "change_vol",
+    "change_ratio",
+    "after_share",
+    "after_ratio",
+    "avg_price",
+    "total_share"
+   ],
+   "pit_fields": [
+    "ann_date"
+   ]
+  },
+  {
+   "dataset": "tushare/share_float",
+   "dir": "D:\\量化\\data\\raw\\tushare\\share_float",
+   "family": "公告事件/解禁",
+   "shape": "per_symbol_chunks",
+   "n_chunks": 129,
+   "sampled": 40,
+   "sample_date_first": 20160601,
+   "sample_date_last": 20260909,
+   "sample_cols": [
+    "ts_code",
+    "ann_date",
+    "float_date",
+    "float_share",
+    "float_ratio",
+    "holder_name",
+    "share_type"
+   ],
+   "pit_fields": [
+    "ann_date"
+   ]
+  },
+  {
+   "dataset": "tushare/income",
+   "dir": "D:\\量化\\data\\raw\\tushare\\income",
+   "family": "财务/利润表",
+   "shape": "per_symbol_chunks",
+   "n_chunks": 5901,
+   "sampled": 40,
+   "sample_date_first": 19911231,
+   "sample_date_last": 20260630,
+   "sample_cols": [
+    "ts_code",
+    "ann_date",
+    "f_ann_date",
+    "end_date",
+    "report_type",
+    "comp_type",
+    "end_type",
+    "basic_eps",
+    "diluted_eps",
+    "total_revenue",
+    "revenue",
+    "int_income",
+    "prem_earned",
+    "comm_income",
+    "n_commis_income",
+    "n_oth_income"
+   ],
+   "pit_fields": [
+    "ann_date",
+    "update_flag"
+   ]
+  },
+  {
+   "dataset": "tushare/balancesheet",
+   "dir": "D:\\量化\\data\\raw\\tushare\\balancesheet",
+   "family": "财务/资产负债表",
+   "shape": "per_symbol_chunks",
+   "n_chunks": 5902,
+   "sampled": 40,
+   "sample_date_first": 19920630,
+   "sample_date_last": 20260630,
+   "sample_cols": [
+    "ts_code",
+    "ann_date",
+    "f_ann_date",
+    "end_date",
+    "report_type",
+    "comp_type",
+    "end_type",
+    "total_share",
+    "cap_rese",
+    "undistr_porfit",
+    "surplus_rese",
+    "special_rese",
+    "money_cap",
+    "trad_asset",
+    "notes_receiv",
+    "accounts_receiv"
+   ],
+   "pit_fields": [
+    "ann_date",
+    "update_flag"
+   ]
+  },
+  {
+   "dataset": "tushare/cashflow",
+   "dir": "D:\\量化\\data\\raw\\tushare\\cashflow",
+   "family": "财务/现金流",
+   "shape": "per_symbol_chunks",
+   "n_chunks": 5906,
+   "sampled": 40,
+   "sample_date_first": 20041231,
+   "sample_date_last": 20260630,
+   "sample_cols": [
+    "ts_code",
+    "ann_date",
+    "f_ann_date",
+    "end_date",
+    "comp_type",
+    "report_type",
+    "end_type",
+    "net_profit",
+    "finan_exp",
+    "c_fr_sale_sg",
+    "recp_tax_rends",
+    "n_depos_incr_fi",
+    "n_incr_loans_cb",
+    "n_inc_borr_oth_fi",
+    "prem_fr_orig_contr",
+    "n_incr_insured_dep"
+   ],
+   "pit_fields": [
+    "ann_date",
+    "update_flag"
+   ]
+  },
+  {
+   "dataset": "tushare/fina_indicator",
+   "dir": "D:\\量化\\data\\raw\\tushare\\fina_indicator",
+   "family": "财务/指标",
+   "shape": "per_symbol_chunks",
+   "n_chunks": 5901,
+   "sampled": 40,
+   "sample_date_first": 19920630,
+   "sample_date_last": 20260630,
+   "sample_cols": [
+    "ts_code",
+    "ann_date",
+    "end_date",
+    "eps",
+    "dt_eps",
+    "total_revenue_ps",
+    "revenue_ps",
+    "capital_rese_ps",
+    "surplus_rese_ps",
+    "undist_profit_ps",
+    "extra_item",
+    "profit_dedt",
+    "gross_margin",
+    "current_ratio",
+    "quick_ratio",
+    "cash_ratio"
+   ],
+   "pit_fields": [
+    "ann_date"
+   ]
+  },
+  {
+   "dataset": "tushare/disclosure_date",
+   "dir": "D:\\量化\\data\\raw\\tushare\\disclosure_date",
+   "family": "PIT/披露日期",
+   "shape": "per_symbol_chunks",
+   "n_chunks": 31,
+   "sampled": 31,
+   "sample_date_first": 20181231,
+   "sample_date_last": 20260630,
+   "sample_cols": [
+    "ts_code",
+    "ann_date",
+    "end_date",
+    "pre_date",
+    "actual_date"
+   ],
+   "pit_fields": [
+    "ann_date"
+   ]
+  },
+  {
+   "dataset": "tushare/index_member_all",
+   "dir": "D:\\量化\\data\\raw\\tushare\\index_member_all",
+   "family": "行业/成分",
+   "shape": "per_symbol_chunks",
+   "n_chunks": 1,
+   "sampled": 1,
+   "sample_date_first": null,
+   "sample_date_last": null,
+   "sample_cols": [
+    "l1_code",
+    "l1_name",
+    "l2_code",
+    "l2_name",
+    "l3_code",
+    "l3_name",
+    "ts_code",
+    "name",
+    "in_date",
+    "out_date",
+    "is_new"
+   ],
+   "pit_fields": []
+  },
+  {
+   "dataset": "tushare/stock_basic",
+   "dir": "D:\\量化\\data\\raw\\tushare\\stock_basic",
+   "family": "参考",
+   "shape": "per_symbol_chunks",
+   "n_chunks": 3,
+   "sampled": 3,
+   "sample_date_first": null,
+   "sample_date_last": null,
+   "sample_cols": [
+    "ts_code",
+    "name",
+    "list_status",
+    "list_date",
+    "delist_date"
+   ],
+   "pit_fields": []
+  },
+  {
+   "dataset": "tushare/trade_cal",
+   "dir": "D:\\量化\\data\\raw\\tushare\\trade_cal",
+   "family": "参考",
+   "shape": "per_symbol_chunks",
+   "n_chunks": 2,
+   "sampled": 2,
+   "sample_date_first": null,
+   "sample_date_last": null,
+   "sample_cols": [
+    "exchange",
+    "cal_date",
+    "is_open",
+    "pretrade_date"
+   ],
+   "pit_fields": []
+  },
+  {
+   "dataset": "tushare/index_daily",
+   "dir": "D:\\量化\\data\\raw\\tushare\\index_daily",
+   "family": "行业/指数",
+   "shape": "per_symbol_chunks",
+   "n_chunks": 5,
+   "sampled": 5,
+   "sample_date_first": 20150105,
+   "sample_date_last": 20241231,
+   "sample_cols": [
+    "ts_code",
+    "trade_date",
+    "close",
+    "open",
+    "high",
+    "low",
+    "pre_close",
+    "change",
+    "pct_chg",
+    "vol",
+    "amount"
+   ],
+   "pit_fields": []
+  },
+  {
+   "dataset": "tushare/sw_index_daily",
+   "dir": "D:\\量化\\data\\raw\\tushare\\sw_index_daily",
+   "family": "行业/指数",
+   "shape": "per_symbol_chunks",
+   "n_chunks": 125,
+   "sampled": 40,
+   "sample_date_first": null,
+   "sample_date_last": null,
+   "sample_cols": [
+    "代码",
+    "日期",
+    "收盘",
+    "开盘",
+    "最高",
+    "最低",
+    "成交量",
+    "成交额"
+   ],
+   "pit_fields": []
+  },
+  {
+   "dataset": "tushare/sw_index_daily_l2",
+   "dir": "D:\\量化\\data\\raw\\tushare\\sw_index_daily_l2",
+   "family": "行业/指数",
+   "shape": "per_symbol_chunks",
+   "n_chunks": 131,
+   "sampled": 40,
+   "sample_date_first": null,
+   "sample_date_last": null,
+   "sample_cols": [
+    "代码",
+    "日期",
+    "收盘",
+    "开盘",
+    "最高",
+    "最低",
+    "成交量",
+    "成交额"
+   ],
+   "pit_fields": []
+  },
+  {
+   "dataset": "xiaodefa/adj_factor",
+   "dir": "D:\\量化\\data\\raw\\xiaodefa\\adj_factor",
+   "family": "量价/复权",
+   "shape": "date_chunks",
+   "n_chunks": 3088,
+   "date_first": 20140102,
+   "date_last": 20260911,
+   "dev_days": 1462,
+   "val_days": 969,
+   "days_2025plus": 412,
+   "sample_cols": [
+    "ts_code",
+    "trade_date",
+    "adj_factor"
+   ],
+   "pit_fields": [],
+   "sample_symbols": 5819
+  },
+  {
+   "dataset": "xiaodefa/suspend_d",
+   "dir": "D:\\量化\\data\\raw\\xiaodefa\\suspend_d",
+   "family": "量价/停复牌",
+   "shape": "date_chunks",
+   "n_chunks": 3088,
+   "date_first": 20140102,
+   "date_last": 20260911,
+   "dev_days": 1462,
+   "val_days": 969,
+   "days_2025plus": 412,
+   "sample_cols": [
+    "ts_code",
+    "trade_date",
+    "suspend_timing",
+    "suspend_type"
+   ],
+   "pit_fields": [],
+   "sample_symbols": 174
+  },
+  {
+   "dataset": "xiaodefa/stk_auction_c",
+   "dir": "D:\\量化\\data\\raw\\xiaodefa\\stk_auction_c",
+   "family": "微观/竞价",
+   "shape": "date_chunks",
+   "n_chunks": 3088,
+   "date_first": 20140102,
+   "date_last": 20260911,
+   "dev_days": 1462,
+   "val_days": 969,
+   "days_2025plus": 412,
+   "sample_cols": [
+    "ts_code",
+    "trade_date",
+    "close",
+    "open",
+    "high",
+    "low",
+    "vol",
+    "amount",
+    "vwap"
+   ],
+   "pit_fields": [],
+   "sample_symbols": 5808
+  },
+  {
+   "dataset": "xiaodefa/stk_auction_o",
+   "dir": "D:\\量化\\data\\raw\\xiaodefa\\stk_auction_o",
+   "family": "微观/竞价",
+   "shape": "date_chunks",
+   "n_chunks": 3088,
+   "date_first": 20140102,
+   "date_last": 20260911,
+   "dev_days": 1462,
+   "val_days": 969,
+   "days_2025plus": 412,
+   "sample_cols": [
+    "ts_code",
+    "trade_date",
+    "close",
+    "open",
+    "high",
+    "low",
+    "vol",
+    "amount",
+    "vwap"
+   ],
+   "pit_fields": [],
+   "sample_symbols": 5808
+  },
+  {
+   "dataset": "xiaodefa/moneyflow",
+   "dir": "D:\\量化\\data\\raw\\xiaodefa\\moneyflow",
+   "family": "微观/资金流",
+   "shape": "date_chunks",
+   "n_chunks": 3088,
+   "date_first": 20140102,
+   "date_last": 20260911,
+   "dev_days": 1462,
+   "val_days": 969,
+   "days_2025plus": 412,
+   "sample_cols": [
+    "trade_date",
+    "ts_code",
+    "buy_elg_amount",
+    "buy_elg_vol",
+    "buy_lg_amount",
+    "buy_lg_vol",
+    "buy_md_amount",
+    "buy_md_vol",
+    "buy_sm_amount",
+    "buy_sm_vol",
+    "net_mf_amount",
+    "net_mf_vol",
+    "sell_elg_amount",
+    "sell_elg_vol"
+   ],
+   "pit_fields": [],
+   "sample_symbols": 5800
+  },
+  {
+   "dataset": "xiaodefa/cyq_perf",
+   "dir": "D:\\量化\\data\\raw\\xiaodefa\\cyq_perf",
+   "family": "微观/筹码",
+   "shape": "date_chunks",
+   "n_chunks": 2111,
+   "date_first": 20180102,
+   "date_last": 20260911,
+   "dev_days": 730,
+   "val_days": 969,
+   "days_2025plus": 412,
+   "sample_cols": [
+    "ts_code",
+    "trade_date",
+    "cost_15pct",
+    "cost_50pct",
+    "cost_5pct",
+    "cost_85pct",
+    "cost_95pct",
+    "his_high",
+    "his_low",
+    "weight_avg",
+    "winner_rate"
+   ],
+   "pit_fields": [],
+   "sample_symbols": 5605
+  },
+  {
+   "dataset": "xiaodefa/stk_nineturn",
+   "dir": "D:\\量化\\data\\raw\\xiaodefa\\stk_nineturn",
+   "family": "微观/九转",
+   "shape": "date_chunks",
+   "n_chunks": 3088,
+   "date_first": 20140102,
+   "date_last": 20260911,
+   "dev_days": 1462,
+   "val_days": 969,
+   "days_2025plus": 412,
+   "sample_cols": [
+    "ts_code",
+    "trade_date",
+    "freq",
+    "open",
+    "high",
+    "low",
+    "close",
+    "vol",
+    "amount",
+    "up_count",
+    "down_count",
+    "nine_up_turn",
+    "nine_down_turn"
+   ],
+   "pit_fields": [],
+   "sample_symbols": 5640
+  },
+  {
+   "dataset": "xiaodefa/idx_factor_pro",
+   "dir": "D:\\量化\\data\\raw\\xiaodefa\\idx_factor_pro",
+   "family": "量价/指数因子",
+   "shape": "date_chunks",
+   "n_chunks": 3088,
+   "date_first": 20140102,
+   "date_last": 20260911,
+   "dev_days": 1462,
+   "val_days": 969,
+   "days_2025plus": 412,
+   "sample_cols": [
+    "ts_code",
+    "trade_date",
+    "open",
+    "high",
+    "low",
+    "close",
+    "pre_close",
+    "change",
+    "pct_change",
+    "vol",
+    "amount",
+    "asi_bfq",
+    "asit_bfq",
+    "atr_bfq"
+   ],
+   "pit_fields": [],
+   "sample_symbols": 3700
+  },
+  {
+   "dataset": "xiaodefa/ths_daily",
+   "dir": "D:\\量化\\data\\raw\\xiaodefa\\ths_daily",
+   "family": "行业/同花顺",
+   "shape": "date_chunks",
+   "n_chunks": 3088,
+   "date_first": 20140102,
+   "date_last": 20260911,
+   "dev_days": 1462,
+   "val_days": 969,
+   "days_2025plus": 412,
+   "sample_cols": [
+    "ts_code",
+    "trade_date",
+    "close",
+    "open",
+    "high",
+    "low",
+    "pre_close",
+    "avg_price",
+    "change",
+    "pct_change",
+    "vol",
+    "turnover_rate"
+   ],
+   "pit_fields": [],
+   "sample_symbols": 2200
+  },
+  {
+   "dataset": "xiaodefa/dc_daily",
+   "dir": "D:\\量化\\data\\raw\\xiaodefa\\dc_daily",
+   "family": "行业/东财",
+   "shape": "date_chunks",
+   "n_chunks": 1624,
+   "date_first": 20200102,
+   "date_last": 20260911,
+   "dev_days": 243,
+   "val_days": 969,
+   "days_2025plus": 412,
+   "sample_cols": [
+    "ts_code",
+    "trade_date",
+    "close",
+    "open",
+    "high",
+    "low",
+    "change",
+    "pct_change",
+    "vol",
+    "amount",
+    "swing",
+    "turnover_rate",
+    "category"
+   ],
+   "pit_fields": [],
+   "sample_symbols": 1050
+  },
+  {
+   "dataset": "xiaodefa/ci_daily",
+   "dir": "D:\\量化\\data\\raw\\xiaodefa\\ci_daily",
+   "family": "行业/中证",
+   "shape": "date_chunks",
+   "n_chunks": 2757,
+   "date_first": 20140102,
+   "date_last": 20250508,
+   "dev_days": 1462,
+   "val_days": 969,
+   "days_2025plus": 81,
+   "sample_cols": [
+    "ts_code",
+    "trade_date",
+    "open",
+    "low",
+    "high",
+    "close",
+    "pre_close",
+    "change",
+    "pct_change",
+    "vol",
+    "amount"
+   ],
+   "pit_fields": [],
+   "sample_symbols": 583
+  },
+  {
+   "dataset": "xiaodefa/sw_daily",
+   "dir": "D:\\量化\\data\\raw\\xiaodefa\\sw_daily",
+   "family": "行业/申万",
+   "shape": "date_chunks",
+   "n_chunks": 3086,
+   "date_first": 20140102,
+   "date_last": 20260911,
+   "dev_days": 1461,
+   "val_days": 969,
+   "days_2025plus": 412,
+   "sample_cols": [
+    "trade_date",
+    "ts_code",
+    "amount",
+    "change",
+    "close",
+    "float_mv",
+    "high",
+    "low",
+    "name",
+    "open",
+    "pb",
+    "pct_change",
+    "pe",
+    "total_mv"
+   ],
+   "pit_fields": [],
+   "sample_symbols": 456
+  },
+  {
+   "dataset": "xiaodefa/hk_hold",
+   "dir": "D:\\量化\\data\\raw\\xiaodefa\\hk_hold",
+   "family": "资金面/港股通",
+   "shape": "date_chunks",
+   "n_chunks": 2284,
+   "date_first": 20170103,
+   "date_last": 20260911,
+   "dev_days": 948,
+   "val_days": 942,
+   "days_2025plus": 394,
+   "sample_cols": [
+    "code",
+    "trade_date",
+    "ts_code",
+    "name",
+    "vol",
+    "ratio",
+    "exchange"
+   ],
+   "pit_fields": [],
+   "sample_symbols": 3428
+  },
+  {
+   "dataset": "xiaodefa/ccass_hold",
+   "dir": "D:\\量化\\data\\raw\\xiaodefa\\ccass_hold",
+   "family": "资金面/港股通",
+   "shape": "date_chunks",
+   "n_chunks": 1384,
+   "date_first": 20201111,
+   "date_last": 20260911,
+   "dev_days": 36,
+   "val_days": 941,
+   "days_2025plus": 407,
+   "sample_cols": [
+    "trade_date",
+    "ts_code",
+    "name",
+    "shareholding",
+    "hold_nums",
+    "hold_ratio"
+   ],
+   "pit_fields": [],
+   "sample_symbols": 8497
+  },
+  {
+   "dataset": "xiaodefa/ggt_daily",
+   "dir": "D:\\量化\\data\\raw\\xiaodefa\\ggt_daily",
+   "family": "资金面/港股通",
+   "shape": "date_chunks",
+   "n_chunks": 2701,
+   "date_first": 20141117,
+   "date_last": 20260911,
+   "dev_days": 1363,
+   "val_days": 908,
+   "days_2025plus": 402,
+   "sample_cols": [
+    "trade_date",
+    "buy_amount",
+    "buy_volume",
+    "sell_amount",
+    "sell_volume"
+   ],
+   "pit_fields": [],
+   "sample_symbols": 0
+  },
+  {
+   "dataset": "xiaodefa/limit_list_d",
+   "dir": "D:\\量化\\data\\raw\\xiaodefa\\limit_list_d",
+   "family": "涨跌停/清单",
+   "shape": "date_chunks",
+   "n_chunks": 1624,
+   "date_first": 20200102,
+   "date_last": 20260911,
+   "dev_days": 243,
+   "val_days": 969,
+   "days_2025plus": 412,
+   "sample_cols": [
+    "trade_date",
+    "ts_code",
+    "industry",
+    "name",
+    "close",
+    "pct_chg",
+    "amount",
+    "limit_amount",
+    "float_mv",
+    "total_mv",
+    "turnover_ratio",
+    "fd_amount",
+    "first_time",
+    "last_time"
+   ],
+   "pit_fields": [],
+   "sample_symbols": 223
+  },
+  {
+   "dataset": "xiaodefa/daily_info",
+   "dir": "D:\\量化\\data\\raw\\xiaodefa\\daily_info",
+   "family": "参考/日信息",
+   "shape": "date_chunks",
+   "n_chunks": 3088,
+   "date_first": 20140102,
+   "date_last": 20260911,
+   "dev_days": 1462,
+   "val_days": 969,
+   "days_2025plus": 412,
+   "sample_cols": [
+    "trade_date",
+    "ts_code",
+    "ts_name",
+    "com_count",
+    "total_share",
+    "float_share",
+    "total_mv",
+    "float_mv",
+    "amount",
+    "vol",
+    "trans_count",
+    "pe",
+    "tr",
+    "exchange"
+   ],
+   "pit_fields": [],
+   "sample_symbols": 32
+  }
+ ],
+ "seams": {
+  "daily_basic_batches": [
+   "20260909-r1",
+   "20260913-r2",
+   "fetch_20260909-r1.log"
+  ],
+  "daily_basic_seam": {
+   "b1_last": "20260909",
+   "b2_first": "20150105",
+   "gap_or_overlap": -110804,
+   "b1_last_rows": 5550,
+   "b2_first_rows": 2342,
+   "b1_last_ts": 20260909,
+   "b2_first_ts": 20150105,
+   "cols_equal": true
+  },
+  "cyq_perf_vs_adj_factor": {
+   "adj_days": 3088,
+   "this_days": 2111,
+   "missing_vs_adj": 977,
+   "missing_sample": [
+    20140102,
+    20140103,
+    20140106,
+    20140107,
+    20140108
+   ]
+  },
+  "ci_daily_vs_adj_factor": {
+   "adj_days": 3088,
+   "this_days": 2757,
+   "missing_vs_adj": 331,
+   "missing_sample": [
+    20250509,
+    20250512,
+    20250513,
+    20250514,
+    20250515
+   ]
+  },
+  "sw_daily_vs_adj_factor": {
+   "adj_days": 3088,
+   "this_days": 3086,
+   "missing_vs_adj": 2,
+   "missing_sample": [
+    20141104,
+    20150120
+   ]
+  },
+  "stk_auction_o_vs_adj_factor": {
+   "adj_days": 3088,
+   "this_days": 3088,
+   "missing_vs_adj": 0,
+   "missing_sample": []
+  },
+  "moneyflow_vs_adj_factor": {
+   "adj_days": 3088,
+   "this_days": 3088,
+   "missing_vs_adj": 0,
+   "missing_sample": []
+  },
+  "margin_detail_first_day": "20190102",
+  "margin_detail_last_day": "20260909"
+ },
+ "cross_check": {
+  "panel_dir": "D:\\量化\\data\\processed\\baostock-daily-20260917",
+  "files": [
+   "daily_1999_2024.parquet",
+   "daily_2015_2024.parquet",
+   "manifest.json",
+   "quality.json"
+  ],
+  "panel_cols": [
+   "date",
+   "symbol",
+   "open",
+   "high",
+   "low",
+   "close",
+   "preclose",
+   "volume",
+   "amount",
+   "adjustflag",
+   "turn",
+   "tradestatus",
+   "pctChg",
+   "isST"
+  ],
+  "panel_rows": 16344349,
+  "panel_symbols": 5410,
+  "adj_factor_vs_panel_samples": [
+   {
+    "symbol": "sh.600519",
+    "date": 20150506,
+    "adj_factor": 6.125,
+    "panel_close": 242.68,
+    "panel_cols_present": [
+     "close"
+    ]
+   },
+   {
+    "symbol": "sh.600519",
+    "date": 20180702,
+    "adj_factor": 7.212,
+    "panel_close": 711.55,
+    "panel_cols_present": [
+     "close"
+    ]
+   },
+   {
+    "symbol": "sh.600519",
+    "date": 20201231,
+    "adj_factor": 7.404,
+    "panel_close": 1998.0,
+    "panel_cols_present": [
+     "close"
+    ]
+   },
+   {
+    "symbol": "sz.000001",
+    "date": 20150506,
+    "adj_factor": 85.994,
+    "panel_close": 15.72,
+    "panel_cols_present": [
+     "close"
+    ]
+   },
+   {
+    "symbol": "sz.000001",
+    "date": 20180702,
+    "adj_factor": 106.309,
+    "panel_close": 8.61,
+    "panel_cols_present": [
+     "close"
+    ]
+   },
+   {
+    "symbol": "sz.000001",
+    "date": 20201231,
+    "adj_factor": 111.0487,
+    "panel_close": 19.34,
+    "panel_cols_present": [
+     "close"
+    ]
+   },
+   {
+    "symbol": "sh.601318",
+    "date": 20150506,
+    "adj_factor": 1.088,
+    "panel_close": 88.57,
+    "panel_cols_present": [
+     "close"
+    ]
+   },
+   {
+    "symbol": "sh.601318",
+    "date": 20180702,
+    "adj_factor": 2.328,
+    "panel_close": 55.22,
+    "panel_cols_present": [
+     "close"
+    ]
+   },
+   {
+    "symbol": "sh.601318",
+    "date": 20201231,
+    "adj_factor": 2.4735,
+    "panel_close": 86.98,
+    "panel_cols_present": [
+     "close"
+    ]
+   }
+  ]
+ },
+ "skeleton": {
+  "core.py": {
+   "lines": 254,
+   "chars": 9196,
+   "defs": [
+    "default_factor_params",
+    "_count_true",
+    "validate_daily_frame",
+    "_assert_no_infinite",
+    "compute_factors"
+   ],
+   "classes": [
+    "FactorError(Exception)",
+    "FactorValidationError(FactorError, ValueError)",
+    "FactorComputationError(FactorError)"
+   ]
+  },
+  "cache.py": {
+   "lines": 587,
+   "chars": 21995,
+   "defs": [
+    "feature_source_files",
+    "sha256_file",
+    "_canonical_json_value",
+    "source_code_sha256",
+    "_require_sha256",
+    "    __post_init__",
+    "    canonical",
+    "    canonical_json",
+    "    key_sha256",
+    "    feature_set_id",
+    "_validate_feature_frame",
+    "_plan",
+    "    __init__",
+    "    source_sha256",
+    "    source_files",
+    "    key_for",
+    "    key_for_frame",
+    "    directory_for",
+    "    _candidate_dirs",
+    "    _verify"
+   ],
+   "classes": [
+    "FeatureCacheError(FactorError)",
+    "FeatureCacheCorruptionError(FeatureCacheError)",
+    "FeatureCacheConflictError(FeatureCacheError)",
+    "FeatureCacheKey",
+    "FeatureCacheResult",
+    "FeatureCache"
+   ]
+  },
+  "signals.py": {
+   "lines": 85,
+   "chars": 3118,
+   "defs": [
+    "build_signals"
+   ],
+   "classes": []
+  }
+ },
+ "elapsed_s": 1.6
+}

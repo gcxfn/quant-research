@@ -1,0 +1,785 @@
+{
+  "run_dir": "artifacts/runs/20260919T153628-etf-universe-screen-2xkj",
+  "t_elapsed_sec": 1.0,
+  "assertions": {
+    "rows_2025_plus": 0,
+    "rows_before_2015": 0,
+    "date_max": "2024-12-31",
+    "date_min": "2015-01-05",
+    "duplicate_keys": 0,
+    "total_rows": 1017121,
+    "symbols": 1169
+  },
+  "calendar": {
+    "union_days_total": 2431,
+    "dev_days_2015_2020": 1462,
+    "val_days_2021_2024": 969
+  },
+  "coverage": {
+    "threshold": 0.95,
+    "pass": 78,
+    "fail": 1091
+  },
+  "liquidity": {
+    "p25_of_median_amounts_yuan": 2225303.0,
+    "median_below_20m_flag_count": 794,
+    "fail_vs_p25": 292
+  },
+  "events_gt6pct": {
+    "total": 9668,
+    "by_category": {
+      "普通大幅波动": 9448,
+      "停牌复牌型": 121,
+      "拆分合并型": 75,
+      "分红型": 20,
+      "无因子缺口缺陷": 4
+    }
+  },
+  "defects": {
+    "symbols_with_unmodeled_defect_days": 3,
+    "total_unmodeled_defect_days": 9,
+    "list": [
+      {
+        "symbol": "sh.502056",
+        "name": "广发中证医疗ETF联接(LOF)-A",
+        "n_unmodeled_defect_days": 7,
+        "n_defect_factor_null": 7,
+        "defect_first_date": "2016-02-02",
+        "defect_last_date": "2020-08-31",
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.159919",
+        "name": "嘉实沪深300ETF",
+        "n_unmodeled_defect_days": 1,
+        "n_defect_factor_null": 0,
+        "defect_first_date": "2019-01-14",
+        "defect_last_date": "2019-01-14",
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.159932",
+        "name": "大成中证500深市ETF",
+        "n_unmodeled_defect_days": 1,
+        "n_defect_factor_null": 0,
+        "defect_first_date": "2015-06-30",
+        "defect_last_date": "2015-06-30",
+        "screen_pass": false
+      }
+    ]
+  },
+  "split_class": {
+    "symbols": 47,
+    "list": [
+      {
+        "symbol": "sh.510580",
+        "name": "易方达中证500ETF",
+        "max_abs_jump": 2.954861,
+        "n_split_merge": 2,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.159300",
+        "name": "富国沪深300ETF",
+        "max_abs_jump": 2.558068,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.510500",
+        "name": "南方中证500ETF",
+        "max_abs_jump": 2.48551,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": true
+      },
+      {
+        "symbol": "sh.516160",
+        "name": "南方中证新能源ETF",
+        "max_abs_jump": 2.21328,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.563330",
+        "name": "华泰柏瑞中证A股ETF",
+        "max_abs_jump": 2.060136,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.560010",
+        "name": "广发中证1000ETF",
+        "max_abs_jump": 1.792221,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.159845",
+        "name": "华夏中证1000ETF",
+        "max_abs_jump": 1.769129,
+        "n_split_merge": 2,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.512100",
+        "name": "南方中证1000ETF",
+        "max_abs_jump": 1.762729,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.512200",
+        "name": "南方中证全指房地产ETF",
+        "max_abs_jump": 1.70068,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.516300",
+        "name": "华泰柏瑞中证1000ETF",
+        "max_abs_jump": 1.406931,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.159633",
+        "name": "易方达中证1000ETF",
+        "max_abs_jump": 1.137033,
+        "n_split_merge": 2,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.159629",
+        "name": "富国中证1000ETF",
+        "max_abs_jump": 1.120043,
+        "n_split_merge": 2,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.159747",
+        "name": "南方中证香港科技ETF(QDII)",
+        "max_abs_jump": 1.032389,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.510310",
+        "name": "易方达沪深300ETF",
+        "max_abs_jump": 1.009381,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": true
+      },
+      {
+        "symbol": "sz.159925",
+        "name": "南方沪深300ETF",
+        "max_abs_jump": 0.966092,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.510150",
+        "name": "招商上证消费80ETF",
+        "max_abs_jump": 0.916459,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": true
+      },
+      {
+        "symbol": "sz.159943",
+        "name": "大成深证成份ETF",
+        "max_abs_jump": 0.914804,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.511220",
+        "name": "海富通上证城投债ETF",
+        "max_abs_jump": 0.900659,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": true
+      },
+      {
+        "symbol": "sz.159975",
+        "name": "招商深证100ETF",
+        "max_abs_jump": 0.900394,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.511030",
+        "name": "平安中债-中高等级公司债利差因子ETF",
+        "max_abs_jump": 0.899677,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.159909",
+        "name": "招商深证电子信息传媒产业(TMT)50ETF",
+        "max_abs_jump": 0.897149,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.510030",
+        "name": "华宝上证180价值ETF",
+        "max_abs_jump": 0.876681,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.513100",
+        "name": "国泰纳斯达克100ETF(QDII)",
+        "max_abs_jump": 0.804507,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": true
+      },
+      {
+        "symbol": "sh.510210",
+        "name": "富国上证综指ETF",
+        "max_abs_jump": 0.799562,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": true
+      },
+      {
+        "symbol": "sh.512600",
+        "name": "嘉实中证主要消费ETF",
+        "max_abs_jump": 0.798532,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.510230",
+        "name": "国泰上证180金融ETF",
+        "max_abs_jump": 0.787964,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": true
+      },
+      {
+        "symbol": "sh.510170",
+        "name": "国联安上证大宗商品股票ETF",
+        "max_abs_jump": 0.758722,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.510630",
+        "name": "华夏上证主要消费ETF",
+        "max_abs_jump": 0.752253,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": true
+      },
+      {
+        "symbol": "sz.159941",
+        "name": "广发纳斯达克100ETF(QDII)",
+        "max_abs_jump": 0.746644,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.159928",
+        "name": "汇添富中证主要消费ETF",
+        "max_abs_jump": 0.744737,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": true
+      },
+      {
+        "symbol": "sh.512010",
+        "name": "易方达沪深300医药卫生ETF",
+        "max_abs_jump": 0.739239,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": true
+      },
+      {
+        "symbol": "sz.159967",
+        "name": "华夏创业板动量成长ETF",
+        "max_abs_jump": 0.730332,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.159966",
+        "name": "华夏创业板低波价值ETF",
+        "max_abs_jump": 0.682638,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.512170",
+        "name": "华宝中证医疗ETF",
+        "max_abs_jump": 0.680967,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.512120",
+        "name": "华安中证细分医药ETF",
+        "max_abs_jump": 0.680173,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": true
+      },
+      {
+        "symbol": "sz.159806",
+        "name": "国泰中证新能源汽车ETF",
+        "max_abs_jump": 0.663624,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.512070",
+        "name": "易方达沪深300非银行金融ETF",
+        "max_abs_jump": 0.662209,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": true
+      },
+      {
+        "symbol": "sz.159991",
+        "name": "招商创业板大盘ETF",
+        "max_abs_jump": 0.644068,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.159922",
+        "name": "嘉实中证500ETF",
+        "max_abs_jump": 0.614548,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": true
+      },
+      {
+        "symbol": "sh.502056",
+        "name": "广发中证医疗ETF联接(LOF)-A",
+        "max_abs_jump": 0.588785,
+        "n_split_merge": 0,
+        "split_class_flag": true,
+        "has_split_merge_event": false,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.512760",
+        "name": "国泰CES半导体芯片行业ETF",
+        "max_abs_jump": 0.531044,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.159939",
+        "name": "广发中证全指信息技术ETF",
+        "max_abs_jump": 0.511804,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": true
+      },
+      {
+        "symbol": "sh.512890",
+        "name": "华泰柏瑞中证红利低波动ETF",
+        "max_abs_jump": 0.511287,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.159901",
+        "name": "易方达深证100ETF",
+        "max_abs_jump": 0.510322,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": true
+      },
+      {
+        "symbol": "sh.515220",
+        "name": "国泰中证煤炭ETF",
+        "max_abs_jump": 0.503446,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.512040",
+        "name": "富国中证价值ETF",
+        "max_abs_jump": 0.501346,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.159807",
+        "name": "易方达中证科技50ETF",
+        "max_abs_jump": 0.500301,
+        "n_split_merge": 1,
+        "split_class_flag": true,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.159814",
+        "name": "西部利得创业板大盘ETF",
+        "max_abs_jump": 0.5,
+        "n_split_merge": 1,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.159938",
+        "name": "广发中证全指医药卫生ETF",
+        "max_abs_jump": 0.498013,
+        "n_split_merge": 1,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": true
+      },
+      {
+        "symbol": "sh.512710",
+        "name": "富国中证军工龙头ETF",
+        "max_abs_jump": 0.496286,
+        "n_split_merge": 1,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.159801",
+        "name": "广发国证半导体芯片ETF",
+        "max_abs_jump": 0.493388,
+        "n_split_merge": 1,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.159907",
+        "name": "广发国证2000ETF",
+        "max_abs_jump": 0.491828,
+        "n_split_merge": 1,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.513500",
+        "name": "博时标普500ETF(QDII)",
+        "max_abs_jump": 0.491773,
+        "n_split_merge": 1,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": true
+      },
+      {
+        "symbol": "sh.512560",
+        "name": "易方达中证军工ETF",
+        "max_abs_jump": 0.489647,
+        "n_split_merge": 1,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.512480",
+        "name": "国联安中证全指半导体产品与设备ETF",
+        "max_abs_jump": 0.489043,
+        "n_split_merge": 1,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.515580",
+        "name": "华泰柏瑞中证科技100ETF",
+        "max_abs_jump": 0.487179,
+        "n_split_merge": 1,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.516090",
+        "name": "易方达中证新能源ETF",
+        "max_abs_jump": 0.485235,
+        "n_split_merge": 1,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.512690",
+        "name": "鹏华中证酒ETF",
+        "max_abs_jump": 0.479955,
+        "n_split_merge": 2,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.516070",
+        "name": "易方达中证内地低碳经济主题ETF",
+        "max_abs_jump": 0.47918,
+        "n_split_merge": 1,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.512670",
+        "name": "鹏华中证国防ETF",
+        "max_abs_jump": 0.478473,
+        "n_split_merge": 1,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.159813",
+        "name": "鹏华国证半导体芯片ETF",
+        "max_abs_jump": 0.358744,
+        "n_split_merge": 1,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.159885",
+        "name": "鹏华中证内地低碳经济主题ETF",
+        "max_abs_jump": 0.336443,
+        "n_split_merge": 1,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.159863",
+        "name": "鹏华中证光伏产业ETF",
+        "max_abs_jump": 0.328446,
+        "n_split_merge": 1,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.515100",
+        "name": "景顺长城中证红利低波动100ETF",
+        "max_abs_jump": 0.256425,
+        "n_split_merge": 1,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.512520",
+        "name": "华泰柏瑞MSCI中国A股国际通ETF",
+        "max_abs_jump": 0.213775,
+        "n_split_merge": 1,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.512160",
+        "name": "南方MSCI中国A股国际通ETF",
+        "max_abs_jump": 0.19411,
+        "n_split_merge": 1,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.510100",
+        "name": "易方达上证50ETF",
+        "max_abs_jump": 0.193604,
+        "n_split_merge": 1,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.160615",
+        "name": "鹏华沪深300ETF联接(LOF)-A",
+        "max_abs_jump": 0.176761,
+        "n_split_merge": 2,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sh.512390",
+        "name": "平安MSCI中国A股低波动ETF",
+        "max_abs_jump": 0.157718,
+        "n_split_merge": 1,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": false
+      },
+      {
+        "symbol": "sz.160706",
+        "name": "嘉实沪深300ETF联接(LOF)-A",
+        "max_abs_jump": 0.134982,
+        "n_split_merge": 1,
+        "split_class_flag": false,
+        "has_split_merge_event": true,
+        "screen_pass": true
+      }
+    ]
+  },
+  "factor_quality": {
+    "fully_missing": [
+      "sz.159842"
+    ],
+    "partial_missing": [
+      {
+        "symbol": "sh.502056",
+        "factor_missing_rows": 1200
+      }
+    ],
+    "total_missing_rows": 2120
+  },
+  "screen": {
+    "pass_count": 51,
+    "pass_rate": 0.0436,
+    "fail_reason_counts": {
+      "has_unmodeled_defect": 3,
+      "pass": 51,
+      "liquidity_fail": 26,
+      "coverage_fail": 1089
+    },
+    "pass_by_asset_class": {
+      "equity": 30,
+      "money": 8,
+      "cross_border": 7,
+      "commodity": 4,
+      "bond": 2
+    }
+  },
+  "known_cases": [
+    {
+      "symbol": "sz.159919",
+      "date": "2019-01-14",
+      "present": true,
+      "close": 3.064,
+      "preclose": 3.068,
+      "prev_close": 3.408,
+      "jump": -0.0013037809647978849,
+      "factor_ratio": 1.0,
+      "gap_cal": 1,
+      "category": "无因子缺口缺陷"
+    },
+    {
+      "symbol": "sh.510500",
+      "date": "2015-04-15",
+      "present": true,
+      "close": 7.818,
+      "preclose": 8.001,
+      "prev_close": 2.243,
+      "jump": -0.02287214098237722,
+      "factor_ratio": 0.2803,
+      "gap_cal": 2,
+      "category": "拆分合并型"
+    },
+    {
+      "symbol": "sh.513100",
+      "date": "2022-01-14",
+      "present": true,
+      "close": 1.015,
+      "preclose": 1.038,
+      "prev_close": 5.192,
+      "jump": -0.022157996146435543,
+      "factor_ratio": 5.0019,
+      "gap_cal": 1,
+      "category": "拆分合并型"
+    },
+    {
+      "symbol": "sh.513500",
+      "date": "2022-03-30",
+      "present": true,
+      "close": 1.39,
+      "preclose": 1.378,
+      "prev_close": 2.735,
+      "jump": 0.00870827285921627,
+      "factor_ratio": 1.9848,
+      "gap_cal": 1,
+      "category": "拆分合并型"
+    }
+  ]
+}

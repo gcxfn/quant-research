@@ -1,0 +1,49 @@
+[    0.0s] F3R3 dynamic-engine rerun; window=2015-01-05..2020-12-31
+[    0.0s] == 0. identity pins ==
+[    2.4s]   engine bcbdd44bb855b803 OK (rebuilt dynamic engine); pins OK; python 3.11.15 | rss 0.27 GB
+[    2.4s] == 1. calendar & signal days ==
+[    2.5s]   71 signal days (2015-01-30..2020-11-30)
+[    2.5s] == 2. R16 pool (build_history + signal_pools, verbatim) ==
+[    5.4s]   pool n: min 810 max 2260
+[    5.4s] == 3. dedup: |rho|>=0.6 connected components, rep = max |t| ==
+[    5.4s]   20 clusters, 20 representatives == F3R1 list OK
+[    5.5s] == 4. composite: EW + ICW arms on executable cross-sections ==
+D:\量化\artifacts\runs\20260921T024449-f3r3-dynamic-45037d\tmp\runner_f3r3.py:245: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  f = f.filter(pl.col("signal_date").is_in(pl.Series(sig_days)))
+D:\量化\artifacts\runs\20260921T024449-f3r3-dynamic-45037d\tmp\runner_f3r3.py:268: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  wide = wide.filter(pl.col("signal_date").is_in(pl.Series(sig_days)))
+[    6.4s]   wide frame 319147 rows, 5162 symbols
+D:\量化\artifacts\runs\20260921T024449-f3r3-dynamic-45037d\tmp\runner_f3r3.py:278: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  have = (have.filter(pl.col("symbol").is_in(pl.Series(sorted(pool_set[t]))))
+[    6.5s]   2015-01-30: pool 1438 -> eligible 1433
+[   10.1s]   2017-12-29: pool 982 -> eligible 982
+[   13.2s]   2020-11-30: pool 1542 -> eligible 1542
+[   13.2s] == 5. intent providers: seat re-issue from live ledger ==
+[   13.2s]   F3-EW: members/month min 10 max 10
+[   13.3s]   F3-ICW: members/month min 10 max 10
+[   13.3s] == 6. benchmarks: B1(m)_F3 fractional + B3'_F3 random K=10 ==
+[   21.8s]   B1(m)_F3: net +1.66% mdd -64.42% (2937 union symbols)
+[   23.3s]   B3'_F3: mean net -1.89% (seeds 17..36, range -10.14..+5.43%)
+[   23.3s] == 7. band engine market frames ==
+[   36.1s]   frames: panel 505 symbols; daily 700292; half 1340367; limits 698338; rss 3.32 GB
+[   36.2s] == 8. band engine dynamic intent runs (halfday clock) ==
+[   42.7s]   F3-EW: engine 6.5s; provider calls 2924 injected 2632 (buy 2104 sell 528); orders 2624 filled 512 expired_halfday 2016 no_anchor 88 override 16 | rss 3.69 GB
+[   49.9s]   F3-ICW: engine 7.2s; provider calls 2924 injected 2855 (buy 2298 sell 557); orders 2799 filled 542 expired_halfday 2150 no_anchor 148 override 15 | rss 3.85 GB
+[   49.9s] == 9. seat-signal attribution ==
+[   50.0s]   F3-EW: seats 1066 (filled 1033, rule-blocked 0 {'void_no_position': 0, 'void_insufficient_cash': 0, 'below_min_lot': 0}, expired-seat 33); mapped 96.9%
+[   50.1s]   F3-ICW: seats 1128 (filled 1093, rule-blocked 0 {'void_no_position': 0, 'void_insufficient_cash': 0, 'below_min_lot': 0}, expired-seat 35); mapped 96.9%
+[   50.1s] == 10. metrics & eight gates + goal criterion ==
+[   50.3s]   F3-EW: net +6.50% excess +4.85pp adv 3/6 mdd -38.84% turn 9.58 w 14.5% exec 96.9% -> eliminated ['3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '5_one_side_turnover_le_6']; goal>=10% not met
+[   50.4s]   F3-ICW: net +8.52% excess +6.86pp adv 4/6 mdd -39.50% turn 9.93 w 16.4% exec 96.9% -> eliminated ['3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '5_one_side_turnover_le_6']; goal>=10% not met
+[   50.4s] == gates: 0/2 dev_pass ==
+[   50.4s] == 11. outputs ==
+[   50.5s] == manifest + report written; wall 51s, peak rss 3.85 GB ==

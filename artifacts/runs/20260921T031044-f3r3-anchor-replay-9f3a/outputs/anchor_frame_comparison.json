@@ -1,0 +1,92 @@
+[
+ {
+  "file": "F3-EW_clips_final.parquet",
+  "verdict": "BYTE-EQUAL",
+  "baseline_sha16": "c5c19268a4b3d436",
+  "replay_sha16": "c5c19268a4b3d436"
+ },
+ {
+  "file": "F3-EW_composite.parquet",
+  "verdict": "DIFF",
+  "baseline_sha16": "ee17bf0afcc67cac",
+  "replay_sha16": "ca565d9dc98a6643"
+ },
+ {
+  "file": "F3-EW_daily_equity.parquet",
+  "verdict": "BYTE-EQUAL",
+  "baseline_sha16": "2cd1f0b7e2ef7b1d",
+  "replay_sha16": "2cd1f0b7e2ef7b1d"
+ },
+ {
+  "file": "F3-EW_events.parquet",
+  "verdict": "BYTE-EQUAL",
+  "baseline_sha16": "b0e7b75f7d2413fc",
+  "replay_sha16": "b0e7b75f7d2413fc"
+ },
+ {
+  "file": "F3-EW_fills.parquet",
+  "verdict": "BYTE-EQUAL",
+  "baseline_sha16": "552214a742b4c958",
+  "replay_sha16": "552214a742b4c958"
+ },
+ {
+  "file": "F3-EW_seat_outcomes.csv",
+  "verdict": "BYTE-EQUAL",
+  "baseline_sha16": "e78070a7018b5744",
+  "replay_sha16": "e78070a7018b5744"
+ },
+ {
+  "file": "F3-ICW_clips_final.parquet",
+  "verdict": "BYTE-EQUAL",
+  "baseline_sha16": "e41b01e8757a7d86",
+  "replay_sha16": "e41b01e8757a7d86"
+ },
+ {
+  "file": "F3-ICW_composite.parquet",
+  "verdict": "DIFF",
+  "baseline_sha16": "51b7faec2c97576c",
+  "replay_sha16": "e42fc00123140fb5"
+ },
+ {
+  "file": "F3-ICW_daily_equity.parquet",
+  "verdict": "BYTE-EQUAL",
+  "baseline_sha16": "dc55af6672ae7b4e",
+  "replay_sha16": "dc55af6672ae7b4e"
+ },
+ {
+  "file": "F3-ICW_events.parquet",
+  "verdict": "BYTE-EQUAL",
+  "baseline_sha16": "138c590aeaececcd",
+  "replay_sha16": "138c590aeaececcd"
+ },
+ {
+  "file": "F3-ICW_fills.parquet",
+  "verdict": "BYTE-EQUAL",
+  "baseline_sha16": "77c4cff7699207f6",
+  "replay_sha16": "77c4cff7699207f6"
+ },
+ {
+  "file": "F3-ICW_seat_outcomes.csv",
+  "verdict": "BYTE-EQUAL",
+  "baseline_sha16": "fc783b34b92c21d9",
+  "replay_sha16": "fc783b34b92c21d9"
+ },
+ {
+  "file": "dedup_clusters.csv",
+  "verdict": "BYTE-EQUAL",
+  "baseline_sha16": "b8113749759cecd5",
+  "replay_sha16": "b8113749759cecd5"
+ },
+ {
+  "file": "metrics_and_gates.json",
+  "verdict": "DIFF",
+  "baseline_sha16": "dc5a461d442e05eb",
+  "replay_sha16": "0481a17c8f374601"
+ },
+ {
+  "file": "pool_sizes.csv",
+  "verdict": "BYTE-EQUAL",
+  "baseline_sha16": "7100040c895701b6",
+  "replay_sha16": "7100040c895701b6"
+ }
+]

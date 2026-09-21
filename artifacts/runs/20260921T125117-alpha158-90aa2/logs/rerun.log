@@ -1,0 +1,18 @@
+[   0.1s] 72 signal days 2015-01-30..2020-12-31
+[   2.9s] pool union 2943 symbols
+[   3.4s] panel rows 4020798; building per-symbol series
+[   4.2s] 2943 symbol series built
+[   8.2s]   features 2015-01-30: 1438 symbols
+[ 280.0s]   features 2016-07-29: 1910 symbols
+[ 525.1s]   features 2018-01-31: 1168 symbols
+[ 599.4s]   features 2019-07-31: 1060 symbols
+[ 675.1s]   features 2020-12-31: 1495 symbols
+[ 675.1s] features done
+[ 696.7s] step1: 158 features evaluated; |t|>=2: 111; top ic_mean 0.0558 (LOW0), bottom -0.0757
+[ 699.7s] step2: 71 monthly sections (2015-01-30..2020-11-30), dim 158
+[ 718.4s]   12 models; last IC 0.0027
+[ 738.5s]   24 models; last IC 0.0069
+[ 758.4s]   36 models; last IC 0.0401
+[ 778.8s]   48 models; last IC 0.0190
+[ 796.1s] step2: 59 models, 59 IC months; rank_ic mean 0.0461 t 4.94; by_year {'2016': 0.060911693222590206, '2017': 0.03419048795927229, '2018': 0.05159852354699431, '2019': 0.04265290579049406, '2020': 0.04083826882941921}
+[ 796.2s] == branch: IC gate PASSED -- proceed to engine replay ==

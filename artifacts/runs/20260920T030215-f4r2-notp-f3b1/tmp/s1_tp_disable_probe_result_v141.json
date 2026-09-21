@@ -1,0 +1,52 @@
+{
+ "probe": "F4R2-S1 v1.4.1 adjudicated tp-disable expression check",
+ "engine_pin_expected": "a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3",
+ "cases": [
+  {
+   "case": "control (tp1 2.0/0.5 + tp2 3.0/1.0; TP fill expected)",
+   "outcome": "RAN",
+   "engine_version": "band_engine v1.4.1",
+   "n_ladder_buy_fills": 3,
+   "ztp_fill_orders": 4,
+   "ztp_sell_intents": 0,
+   "n_fills": 7
+  },
+  {
+   "case": "null_tp1_D1 (tp1/tp2 all None; D1 arm form)",
+   "outcome": "RAN",
+   "engine_version": "band_engine v1.4.1",
+   "n_ladder_buy_fills": 3,
+   "ztp_fill_orders": 0,
+   "ztp_sell_intents": 0,
+   "n_fills": 3
+  },
+  {
+   "case": "drop_tp1cols (columns absent)",
+   "outcome": "RAN",
+   "engine_version": "band_engine v1.4.1",
+   "n_ladder_buy_fills": 3,
+   "ztp_fill_orders": 0,
+   "ztp_sell_intents": 0,
+   "n_fills": 3
+  },
+  {
+   "case": "nan_tp1 (tp1_mult NaN)",
+   "outcome": "REJECTED_BandContractError",
+   "message": "zones: tp1_mult must be finite > 0 for sh.600001 2024-01-02"
+  },
+  {
+   "case": "tp2_without_tp1 (tp1 None, tp2 3.0/1.0)",
+   "outcome": "REJECTED_BandContractError",
+   "message": "zones: tp1 is null (zero-tier take-profit) but tp2 is set for sh.600001 2024-01-02; tp2 cannot exist without tp1 (v1.4.1)"
+  }
+ ],
+ "null_vs_drop_outputs_field_equal": {
+  "fills": true,
+  "events": true,
+  "daily_equity": true,
+  "zones": true,
+  "clips_final": true
+ },
+ "adjudicated_form_ok": true,
+ "verdict": "v1.4.1 (pin a01cb29c..., dual-signed) implements the adjudicated F4R2-S1 priority-(2) seam: tp1_mult/tp1_frac (and tp2) null OR column-absent => zero-tier take-profit, no profit intent emitted, ladder/stop/invalidation/expiry/recycling unaffected; null-form and column-absent forms produce field-equal outputs on all five frames; supplied values keep every v1.4 fail-closed assert (NaN rejected); new guardrail tp1-null-with-tp2-set rejected.  F4R2-D1 uses the NULL form; NaN form forbidden."
+}

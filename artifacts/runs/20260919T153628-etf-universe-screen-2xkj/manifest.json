@@ -1,0 +1,47 @@
+{
+  "run_id": "20260919T153628-etf-universe-screen-2xkj",
+  "purpose": "ETF universe data-quality screen (descriptive profile only; no strategy/performance computation)",
+  "created": "2026-09-19T15:43:55",
+  "script": "screen_etf_universe.py (same directory)",
+  "python": "3.11.15",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "polars": "1.44.2",
+  "inputs": {
+    "data/processed/etf-daily-20260919/daily_2015_2024.parquet": {
+      "sha256": "b7225d50523106f53fc87bf21a92f12978ecc31a7b195ed2b4cf4e39f7a0d661",
+      "rows": 1017121
+    },
+    "data/processed/etf-daily-20260919/pool.parquet": {
+      "sha256": "b48256dbb14a1372fae5f3f334c2c88ceed6d3ff042aa4cc2ebced4a7473f675",
+      "rows": 1169
+    },
+    "data/processed/etf-daily-20260919/adj_factor_coverage.parquet": {
+      "sha256": "bfc5c2158542d404e413e12d2d14c85335a964104a2771c2125043e2f6623d3e"
+    },
+    "data/processed/etf-daily-20260919/manifest.json": {
+      "sha256": "8b5b3fe56c0e02fd6af634bb3740c4f40c3b5f1dfabc984764433c0134eb1c8a"
+    },
+    "data/processed/etf-daily-20260919/quality.json": {
+      "sha256": "d3103b85bb63813b49548642c417dd14af349818ee460ee6425d21007588a6ab"
+    },
+    "data/raw/tushare/fund_adj/20260917-r1/": {
+      "files": 1169,
+      "per_file_sha256_recomputed": true,
+      "aggregate_sha256_of_sorted_per_file_hashes": "1bb137afb52f4ff364308d42bea564a1a0a8158105ae53bf02f76a0f0caa4e87",
+      "matches_dataset_manifest_b06242469db0": true,
+      "aggregate_method": "sha256 of newline-joined sorted <filename>:<sha256> lines"
+    }
+  },
+  "outputs": [
+    "outputs/etf_universe_screen.parquet",
+    "outputs/etf_universe_screen.csv",
+    "outputs/jump_events_gt6pct.csv",
+    "outputs/unmodeled_defect_days_preclose_gt2pct.csv",
+    "outputs/summary.json"
+  ],
+  "time_discipline": {
+    "research_window": "2015-01-01..2024-12-31 (dev 2015-2020, val 2021-2024)",
+    "frozen_2025_plus_asserted": true,
+    "rows_2025_plus_found": 0
+  }
+}

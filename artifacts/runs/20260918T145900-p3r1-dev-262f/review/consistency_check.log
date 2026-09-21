@@ -1,0 +1,57 @@
+== 1) manifest 输出哈希 ==
+  [OK ] 全部 37 个输出哈希匹配 manifest（bad=[]）
+  [OK ] 当前引擎哈希 == manifest engine == ENGINE-1 sha256_after
+== 2) metrics_and_gates vs report.md 表 ==
+  [OK ] C01 JSON 与 report 表一致（CAGR/回撤/优势年/换手/权重/执行率/失败门/判定）
+  [OK ] C02 JSON 与 report 表一致（CAGR/回撤/优势年/换手/权重/执行率/失败门/判定）
+  [OK ] C03 JSON 与 report 表一致（CAGR/回撤/优势年/换手/权重/执行率/失败门/判定）
+  [OK ] C04 JSON 与 report 表一致（CAGR/回撤/优势年/换手/权重/执行率/失败门/判定）
+  [OK ] C05 JSON 与 report 表一致（CAGR/回撤/优势年/换手/权重/执行率/失败门/判定）
+  [OK ] C06 JSON 与 report 表一致（CAGR/回撤/优势年/换手/权重/执行率/失败门/判定）
+  [OK ] C07 JSON 与 report 表一致（CAGR/回撤/优势年/换手/权重/执行率/失败门/判定）
+  [OK ] C08 JSON 与 report 表一致（CAGR/回撤/优势年/换手/权重/执行率/失败门/判定）
+== 3) B1(m)/B3' 与 R16 权威值一致 ==
+  [OK ] 8 配置 B1(m) CAGR/回撤/逐年 与 R16 metrics.json 完全相等
+  [OK ] B3' dev 均值与 R16 完全相等
+  [OK ] B3' 同路径噪声带已披露
+== 4) 门 8 双口径 ==
+  [OK ] C01 gate8_mapped == metrics.execution_rate (91.4%)
+  [OK ] C01 映射执行率在 [90,95) 区间: 91.4%
+  [OK ] C01 原始订单口径 fill 买/卖均 <95%: 49.1/82.7%
+  [OK ] C02 gate8_mapped == metrics.execution_rate (93.3%)
+  [OK ] C02 映射执行率在 [90,95) 区间: 93.3%
+  [OK ] C02 原始订单口径 fill 买/卖均 <95%: 46.5/85.3%
+  [OK ] C03 gate8_mapped == metrics.execution_rate (91.1%)
+  [OK ] C03 映射执行率在 [90,95) 区间: 91.1%
+  [OK ] C03 原始订单口径 fill 买/卖均 <95%: 54.5/83.6%
+  [OK ] C04 gate8_mapped == metrics.execution_rate (92.8%)
+  [OK ] C04 映射执行率在 [90,95) 区间: 92.8%
+  [OK ] C04 原始订单口径 fill 买/卖均 <95%: 49.6/85.6%
+  [OK ] C05 gate8_mapped == metrics.execution_rate (91.7%)
+  [OK ] C05 映射执行率在 [90,95) 区间: 91.7%
+  [OK ] C05 原始订单口径 fill 买/卖均 <95%: 33.7/81.7%
+  [OK ] C06 gate8_mapped == metrics.execution_rate (91.1%)
+  [OK ] C06 映射执行率在 [90,95) 区间: 91.1%
+  [OK ] C06 原始订单口径 fill 买/卖均 <95%: 31.8/78.3%
+  [OK ] C07 gate8_mapped == metrics.execution_rate (91.8%)
+  [OK ] C07 映射执行率在 [90,95) 区间: 91.8%
+  [OK ] C07 原始订单口径 fill 买/卖均 <95%: 36.9/82.6%
+  [OK ] C08 gate8_mapped == metrics.execution_rate (91.4%)
+  [OK ] C08 映射执行率在 [90,95) 区间: 91.4%
+  [OK ] C08 原始订单口径 fill 买/卖均 <95%: 36.3/79.4%
+  [OK ] 映射执行率全部落在披露区间 91–93.3%: [91.1, 91.1, 91.4, 91.4, 91.7, 91.8, 92.8, 93.3]
+  [OK ] 门 8 对 8/8 配置全部失败（<95%）
+== 5) C06/C08 边距 ==
+    C06: net +0.25% (门1 边距 +0.25pp); excess -0.35pp (门2 短差 2.35pp); 门8 距离 3.9pp
+  [OK ] C06 excess = -0.35pp（即门 2 距离 +2pp 需 +2.35pp，非 0.35pp 可翻转）
+    C06 门7: net +0.25% vs B3'+1pp = -0.99% -> 边距 +1.24pp（通过）
+  [OK ] C06 门 7 通过（与 failed_gates 无门 7 一致）
+    C08: net -3.86%; 门2 短差 7.72pp; 门8 距离 3.6pp
+== 6) 判定与 val 纪律 ==
+  [OK ] 8/8 判定 = eliminated
+  [OK ] advanced_to_validation=False, val_consumed=False
+  [OK ] 无 untradeable_under_contract 判定（整体 fill 均 ≥30% 或不在噪声带）
+    订单口径 fill 区间: 买 31.8–54.5% / 卖 78.3–85.6%
+
+校验 1 断言: 44 passed, 0 failed
+ALL CONSISTENCY CHECKS PASSED

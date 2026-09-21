@@ -1,0 +1,62 @@
+{
+ "factor_id": "E01",
+ "name": "fcst_np",
+ "formula": "120d 内最新预告 (p_change_min+max)/2（p_change 缺失用净利区间/去年同期推算）",
+ "source": "forecast",
+ "fill_policy": "无事件为 null（不入因子帧）",
+ "n_rows": 48631,
+ "t_value": 0.9799417530323663,
+ "coverage_median_symbols": 0.0,
+ "coverage_median_active_months": 1608.0,
+ "pool_median_symbols": 3126.0,
+ "criteria": {
+  "c1_abs_t>=2": false,
+  "c2_mono_consistent>=0.3": true,
+  "c3_2015_non_disaster": true,
+  "c4_coverage>=50%pool": false
+ },
+ "survived_prelim": false,
+ "eval": {
+  "n_dates": 27,
+  "coverage_mean_symbols": 1601.851851851852,
+  "ic_mean": 0.023983532941766344,
+  "ic_std": 0.12717295942824,
+  "icir": 0.18858987830113014,
+  "ic_win_rate": 0.6666666666666666,
+  "group_mean_ret": [
+   0.02070441800555898,
+   0.021950628513397692,
+   0.022337366290399625,
+   0.021776545407880675,
+   0.02347436491579662,
+   0.02777417406181924,
+   0.023547158691015275,
+   0.029610439744343773,
+   0.026002248046729078,
+   0.024646495896398165
+  ],
+  "long_short_mean": 0.003942077890839186,
+  "monotonicity": 0.707221095337381,
+  "ic_by_year": {
+   "2018": -0.044764683465984195,
+   "2019": 0.044350810095137715,
+   "2020": 0.026764036559088676
+  },
+  "long_short_by_year": {
+   "2018": 0.008876314521042173,
+   "2019": -0.0029238469889585686,
+   "2020": 0.005364308656861754
+  },
+  "turnover_top_group": 0.19973000757998413,
+  "corr_with_others": {},
+  "config": {
+   "horizon_days": 20,
+   "n_groups": 10,
+   "eval_freq": "M",
+   "exclude_st": true,
+   "require_trading": true,
+   "exclude_boards": true,
+   "min_history_rows": 60
+  }
+ }
+}

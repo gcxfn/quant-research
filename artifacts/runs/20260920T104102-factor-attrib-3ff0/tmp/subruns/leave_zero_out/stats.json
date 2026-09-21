@@ -1,0 +1,52 @@
+{
+ "tag": "leave_zero_out",
+ "drop": [],
+ "reps": [
+  "A17",
+  "A20",
+  "A25",
+  "B11",
+  "B12",
+  "B14",
+  "C19",
+  "D10",
+  "D13",
+  "D14",
+  "D18",
+  "D19",
+  "D20",
+  "D30",
+  "E16",
+  "F06",
+  "F09"
+ ],
+ "net_cagr": 0.04877310918741218,
+ "max_drawdown": -0.17848532843799414,
+ "net_return_by_year": {
+  "2015": 0.1436569354199999,
+  "2016": 0.009290404902846161,
+  "2017": 0.021945356011094486,
+  "2018": -0.1110900090678546,
+  "2019": 0.20376923280770098,
+  "2020": 0.053643866954282915
+ },
+ "advantage_years_list": [
+  2016,
+  2017,
+  2018,
+  2019
+ ],
+ "advantage_years": 4,
+ "max_one_side_turnover": 4.445981178514337,
+ "engine_wall_s": 8.203555400003097,
+ "subset_wall_s": 11.60321830000612,
+ "anchor_compare": {
+  "intents": true,
+  "fills": true,
+  "events": true,
+  "daily": true,
+  "clips_final": true,
+  "net_cagr_matches_chassis": true
+ },
+ "max_members": 10
+}

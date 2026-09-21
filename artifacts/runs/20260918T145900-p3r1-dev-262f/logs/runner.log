@@ -1,0 +1,41 @@
+== P3R1 dev readjudication run 20260918T145900-p3r1-dev-262f ==
+  contract tests: exit=0: 14 passed in 5.11s
+  pin p2r16_config: 27f846a7330919a4 match=True
+  pin daily_parquet: d9a63f4cc3032926 match=True
+  pin split_factor_h5: 2f436b2f13d09a9b match=True
+  pin dividends_h5: 46121c09cddde72e match=True
+  pin index_chunk_000300: 05aaa8183a11c674 match=True
+  R8 mechanism identity: etf_rotation sha256 1c064efce2cf2115 (pinned)
+  dev signals: 71 (2015-01-30..2020-11-30); dropped (execution would land after 2020-12-31): ['2020-12-31']
+  building pools (full cross-section, r16 verbatim infrastructure)...
+  pools: mean 1500.8, min 810, q5 share 0.1002, ever 2937
+  T200 fallback signal dates: n=9 matches R16=True
+  consistency C01: OK (membership 0, counts 0)
+  consistency C02: OK (membership 0, counts 0)
+  consistency C03: OK (membership 0, counts 0)
+  consistency C04: OK (membership 0, counts 0)
+  consistency C05: OK (membership 0, counts 0)
+  consistency C06: OK (membership 0, counts 0)
+  consistency C07: OK (membership 0, counts 0)
+  consistency C08: OK (membership 0, counts 0)
+  panel symbols (leg_log universe): 293
+  engine panel rows: 420911
+  splits rows fed: 242 (pool symbols 142; excluded non-pool rows: 4688); dividend rows fed: 2363 (excluded non-pool: 26087)
+  C01 (20/T200-40/filter-on): iters=5 fills=379 orders={'buy': 411, 'sell': 214} filled={'buy': 202, 'sell': 177} equity_end=270,427 k3_exec=2
+  C02 (20/T200-40/filter-off): iters=5 fills=477 orders={'buy': 540, 'sell': 265} filled={'buy': 251, 'sell': 226} equity_end=173,657 k3_exec=1
+  C03 (20/FIX75/filter-on): iters=5 fills=384 orders={'buy': 367, 'sell': 220} filled={'buy': 200, 'sell': 184} equity_end=207,300 k3_exec=2
+  C04 (20/FIX75/filter-off): iters=5 fills=477 orders={'buy': 494, 'sell': 271} filled={'buy': 245, 'sell': 232} equity_end=140,929 k3_exec=1
+  C05 (30/T200-40/filter-on): iters=5 fills=480 orders={'buy': 774, 'sell': 268} filled={'buy': 261, 'sell': 219} equity_end=269,038 k3_exec=2
+  C06: sizing did NOT fully converge in 6 iterations (last pass used; disclosed)
+  C06 (30/T200-40/filter-off): iters=6 fills=587 orders={'buy': 983, 'sell': 350} filled={'buy': 313, 'sell': 274} equity_end=203,040 k3_exec=1
+  C07 (30/FIX75/filter-on): iters=5 fills=495 orders={'buy': 697, 'sell': 288} filled={'buy': 257, 'sell': 238} equity_end=202,613 k3_exec=3
+  C08: sizing did NOT fully converge in 6 iterations (last pass used; disclosed)
+  C08 (30/FIX75/filter-off): iters=6 fills=602 orders={'buy': 862, 'sell': 364} filled={'buy': 313, 'sell': 289} equity_end=157,981 k3_exec=2
+  C01: netCAGR +5.17% (B1 +0.60%, excess +4.57pp) mdd -30.61% adv 3/6 to 1.37 w 21.8% exec 91.4% fill 60.6% -> eliminated failed=['3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '8_execution_rate_ge_95pct']
+  C02: netCAGR -2.33% (B1 +0.60%, excess -2.93pp) mdd -48.33% adv 3/6 to 2.20 w 20.2% exec 93.3% fill 59.3% -> eliminated failed=['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+  C03: netCAGR +0.60% (B1 +1.86%, excess -1.25pp) mdd -49.91% adv 4/6 to 1.76 w 14.1% exec 91.1% fill 65.4% -> eliminated failed=['2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+  C04: netCAGR -5.68% (B1 +1.86%, excess -7.53pp) mdd -61.52% adv 4/6 to 2.40 w 13.8% exec 92.8% fill 62.4% -> eliminated failed=['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+  C05: netCAGR +5.08% (B1 +0.60%, excess +4.48pp) mdd -33.57% adv 3/6 to 1.42 w 13.5% exec 91.7% fill 46.1% -> eliminated failed=['3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '8_execution_rate_ge_95pct']
+  C06: netCAGR +0.25% (B1 +0.60%, excess -0.35pp) mdd -48.47% adv 3/6 to 2.09 w 14.5% exec 91.1% fill 44.0% -> eliminated failed=['2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '8_execution_rate_ge_95pct']
+  C07: netCAGR +0.22% (B1 +1.86%, excess -1.64pp) mdd -46.64% adv 4/6 to 1.61 w 14.3% exec 91.8% fill 50.3% -> eliminated failed=['2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+  C08: netCAGR -3.86% (B1 +1.86%, excess -5.72pp) mdd -57.37% adv 4/6 to 2.07 w 8.5% exec 91.4% fill 49.1% -> eliminated failed=['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']

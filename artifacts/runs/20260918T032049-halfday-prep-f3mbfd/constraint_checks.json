@@ -1,0 +1,332 @@
+{
+  "purpose": "adjustment/PIT/suspension/limit constraint verification (sample-level, pure data engineering)",
+  "run_id": "20260918T032049-halfday-prep-f3mbfd",
+  "checked_at": "2026-09-18T03:38:25",
+  "A_suspension": {
+    "top_long_runs": [
+      {
+        "symbol": "sh.600145",
+        "run": 6,
+        "days": 1110,
+        "start": "2015-12-07",
+        "end": "2020-06-29"
+      },
+      {
+        "symbol": "sz.000029",
+        "run": 2,
+        "days": 1006,
+        "start": "2016-09-14",
+        "end": "2020-11-06"
+      }
+    ],
+    "checks": [
+      {
+        "symbol": "sh.600145",
+        "date": "2015-12-07",
+        "suspension_day_rows_in_minute": 241,
+        "rows_with_zero_vol": 241,
+        "finding": "占位 bar（241 根、价冻结、全零量）",
+        "ok_placeholder_not_real_trades": true
+      },
+      {
+        "symbol": "sh.600145",
+        "date": "2016-09-05",
+        "suspension_day_rows_in_minute": 241,
+        "rows_with_zero_vol": 241,
+        "finding": "占位 bar（241 根、价冻结、全零量）",
+        "ok_placeholder_not_real_trades": true
+      },
+      {
+        "symbol": "sh.600145",
+        "date": "2017-06-15",
+        "suspension_day_rows_in_minute": 241,
+        "rows_with_zero_vol": 241,
+        "finding": "占位 bar（241 根、价冻结、全零量）",
+        "ok_placeholder_not_real_trades": true
+      },
+      {
+        "symbol": "sh.600145",
+        "date": "2018-03-16",
+        "suspension_day_rows_in_minute": 241,
+        "rows_with_zero_vol": 241,
+        "finding": "占位 bar（241 根、价冻结、全零量）",
+        "ok_placeholder_not_real_trades": true
+      },
+      {
+        "symbol": "sh.600145",
+        "date": "2018-12-17",
+        "suspension_day_rows_in_minute": 241,
+        "rows_with_zero_vol": 241,
+        "finding": "占位 bar（241 根、价冻结、全零量）",
+        "ok_placeholder_not_real_trades": true
+      },
+      {
+        "symbol": "sh.600145",
+        "date": "2019-09-19",
+        "suspension_day_rows_in_minute": 241,
+        "rows_with_zero_vol": 241,
+        "finding": "占位 bar（241 根、价冻结、全零量）",
+        "ok_placeholder_not_real_trades": true
+      },
+      {
+        "symbol": "sh.600145",
+        "date": "2020-06-30",
+        "resumption_day_rows_in_minute": 241,
+        "expect": 241,
+        "ok": true
+      },
+      {
+        "symbol": "sh.600145",
+        "date": "2015-12-04",
+        "last_traded_day_rows_in_minute": 241,
+        "expect": 241,
+        "ok": true
+      },
+      {
+        "symbol": "sz.000029",
+        "date": "2016-09-14",
+        "suspension_day_rows_in_minute": 241,
+        "rows_with_zero_vol": 241,
+        "finding": "占位 bar（241 根、价冻结、全零量）",
+        "ok_placeholder_not_real_trades": true
+      },
+      {
+        "symbol": "sz.000029",
+        "date": "2017-05-31",
+        "suspension_day_rows_in_minute": 241,
+        "rows_with_zero_vol": 241,
+        "finding": "占位 bar（241 根、价冻结、全零量）",
+        "ok_placeholder_not_real_trades": true
+      },
+      {
+        "symbol": "sz.000029",
+        "date": "2018-01-29",
+        "suspension_day_rows_in_minute": 241,
+        "rows_with_zero_vol": 241,
+        "finding": "占位 bar（241 根、价冻结、全零量）",
+        "ok_placeholder_not_real_trades": true
+      },
+      {
+        "symbol": "sz.000029",
+        "date": "2018-10-11",
+        "suspension_day_rows_in_minute": 241,
+        "rows_with_zero_vol": 241,
+        "finding": "占位 bar（241 根、价冻结、全零量）",
+        "ok_placeholder_not_real_trades": true
+      },
+      {
+        "symbol": "sz.000029",
+        "date": "2019-06-19",
+        "suspension_day_rows_in_minute": 241,
+        "rows_with_zero_vol": 241,
+        "finding": "占位 bar（241 根、价冻结、全零量）",
+        "ok_placeholder_not_real_trades": true
+      },
+      {
+        "symbol": "sz.000029",
+        "date": "2020-02-26",
+        "suspension_day_rows_in_minute": 241,
+        "rows_with_zero_vol": 241,
+        "finding": "占位 bar（241 根、价冻结、全零量）",
+        "ok_placeholder_not_real_trades": true
+      },
+      {
+        "symbol": "sz.000029",
+        "date": "2020-11-09",
+        "resumption_day_rows_in_minute": 241,
+        "expect": 241,
+        "ok": true
+      },
+      {
+        "symbol": "sz.000029",
+        "date": "2016-09-13",
+        "last_traded_day_rows_in_minute": 241,
+        "expect": 241,
+        "ok": true
+      }
+    ]
+  },
+  "B_adjustment": {
+    "note": "实测结论：分钟价为原始未复权价（除权日两侧 15:00 close 与 baostock 未复权 close 一致）；分钟 09:30 pre_close 在除权日 = 原始前收，而非交易所除权昨收（baostock preclose）；G2 若需除权日隔夜腿，昨收应取 baostock preclose",
+    "checks": [
+      {
+        "symbol": "sh.601288",
+        "ex_div_date": "2020-07-10",
+        "baostock_prev_day_close_raw": 3.64,
+        "baostock_preclose_exchange_adj": 3.46,
+        "minute_0930_pre_close": 3.64,
+        "minute_preclose_matches": "raw_prev_close",
+        "baostock_close": 3.36,
+        "minute_1500_close": 3.36,
+        "minute_close_matches_daily": true
+      },
+      {
+        "symbol": "sh.601288",
+        "ex_div_date": "2021-06-17",
+        "baostock_prev_day_close_raw": 3.27,
+        "baostock_preclose_exchange_adj": 3.08,
+        "minute_0930_pre_close": 3.27,
+        "minute_preclose_matches": "raw_prev_close",
+        "baostock_close": 3.08,
+        "minute_1500_close": 3.08,
+        "minute_close_matches_daily": true
+      },
+      {
+        "symbol": "sz.000651",
+        "ex_div_date": "2020-11-12",
+        "baostock_prev_day_close_raw": 65.81,
+        "baostock_preclose_exchange_adj": 64.83,
+        "minute_0930_pre_close": 65.81,
+        "minute_preclose_matches": "raw_prev_close",
+        "baostock_close": 66.37,
+        "minute_1500_close": 66.37,
+        "minute_close_matches_daily": true
+      },
+      {
+        "symbol": "sz.000651",
+        "ex_div_date": "2021-08-23",
+        "baostock_prev_day_close_raw": 46.1,
+        "baostock_preclose_exchange_adj": 43.32,
+        "minute_0930_pre_close": 46.1,
+        "minute_preclose_matches": "raw_prev_close",
+        "baostock_close": 44.99,
+        "minute_1500_close": 44.99,
+        "minute_close_matches_daily": true
+      },
+      {
+        "symbol": "sh.600519",
+        "ex_div_date": "2021-06-25",
+        "baostock_prev_day_close_raw": 2068.05,
+        "baostock_preclose_exchange_adj": 2048.76,
+        "minute_0930_pre_close": 2068.05,
+        "minute_preclose_matches": "raw_prev_close",
+        "baostock_close": 2092.0,
+        "minute_1500_close": 2092.0,
+        "minute_close_matches_daily": true
+      },
+      {
+        "symbol": "sh.600519",
+        "ex_div_date": "2022-06-30",
+        "baostock_prev_day_close_raw": 2030.0,
+        "baostock_preclose_exchange_adj": 2008.33,
+        "minute_0930_pre_close": 2030.0,
+        "minute_preclose_matches": "raw_prev_close",
+        "baostock_close": 2045.0,
+        "minute_1500_close": 2045.0,
+        "minute_close_matches_daily": true
+      }
+    ]
+  },
+  "C_st": {
+    "checks": [
+      {
+        "symbol": "sh.600265",
+        "date": "2015-01-05",
+        "rows": 241,
+        "ok_241": true
+      },
+      {
+        "symbol": "sh.600265",
+        "date": "2018-05-22",
+        "rows": 241,
+        "ok_241": true
+      },
+      {
+        "symbol": "sh.600265",
+        "date": "2021-05-26",
+        "rows": 241,
+        "ok_241": true
+      },
+      {
+        "symbol": "sh.600608",
+        "date": "2015-04-29",
+        "rows": 241,
+        "ok_241": true
+      },
+      {
+        "symbol": "sh.600608",
+        "date": "2018-11-27",
+        "rows": 241,
+        "ok_241": true
+      },
+      {
+        "symbol": "sh.600608",
+        "date": "2021-12-13",
+        "rows": 241,
+        "ok_241": true
+      },
+      {
+        "symbol": "sh.600301",
+        "date": "2015-01-05",
+        "rows": 241,
+        "ok_241": true
+      },
+      {
+        "symbol": "sh.600301",
+        "date": "2017-08-24",
+        "rows": 241,
+        "ok_241": true
+      },
+      {
+        "symbol": "sh.600301",
+        "date": "2019-12-26",
+        "rows": 241,
+        "ok_241": true
+      }
+    ]
+  },
+  "D_stk_limit": {
+    "batch": "data/raw/xiaodefa/stk_limit/20260913-bulk1（2014-01-02 起，按日 chunk，元=价格单位）",
+    "caveats": [
+      "按列名归一读取（深扫已登记文件间列序不一致）；chunk_20220705.csv 首行为空表头，载入需显式列名",
+      "stk_limit 是日级全天涨跌停价，11:30 触价语义只能约束“上午是否触板”，不能证明触板即成交"
+    ],
+    "checks": [
+      {
+        "date": "2015-06-01",
+        "joined": 2321,
+        "snapshot_rows": 2321,
+        "outside_limit_bounds": 0,
+        "morning_touched_up_limit": 214,
+        "morning_touched_down_limit": 12
+      },
+      {
+        "date": "2020-06-01",
+        "joined": 3836,
+        "snapshot_rows": 3836,
+        "outside_limit_bounds": 0,
+        "morning_touched_up_limit": 106,
+        "morning_touched_down_limit": 7
+      },
+      {
+        "date": "2024-06-03",
+        "joined": 5114,
+        "snapshot_rows": 5114,
+        "outside_limit_bounds": 0,
+        "morning_touched_up_limit": 17,
+        "morning_touched_down_limit": 99
+      }
+    ]
+  },
+  "E_20150701_tail_zero_vol": {
+    "symbols_1454_1500_all_zero_vol": 1405,
+    "of_which_daily_volume_gap": 1385,
+    "examples": [
+      "002660.SZ",
+      "002213.SZ",
+      "000659.SZ",
+      "000723.SZ",
+      "002737.SZ",
+      "002014.SZ",
+      "300018.SZ",
+      "300058.SZ",
+      "300059.SZ",
+      "300457.SZ",
+      "300423.SZ",
+      "300247.SZ"
+    ],
+    "matches_registered_defect": "登记为 11 只深市股；实测见上（连续零量口径更宽，含涨停锁死等）",
+    "affected_1130_vol_zero": 41
+  },
+  "elapsed_seconds": 2.0
+}

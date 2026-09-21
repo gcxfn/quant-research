@@ -1,0 +1,1152 @@
+{
+  "timings": {
+    "load_parquet_s": 0.821678400010569,
+    "adjustment_join_s": 11.144591799995396,
+    "eligible_gate_s": 3.1303295000107028,
+    "benchmarks_s": 3.538429799984442,
+    "event_study_s": 12.013887799985241
+  },
+  "data_identity": {
+    "path": "data/processed/baostock-daily-20260917/daily_2015_2024.parquet",
+    "sha256": "1cbb09a11f7c10136981749c13467f12a1757b59e7e95fb6f86666f96edfc1de",
+    "rows": 9532019,
+    "symbols": 5328,
+    "dataset_id": "baostock-daily-20260917"
+  },
+  "eligible": {
+    "rows": 4064263,
+    "symbols": 3334,
+    "date_min": "2015-01-30",
+    "date_max": "2024-12-31"
+  },
+  "n_events_total": 39373,
+  "configs": {
+    "R2-volconfirm-reversal-h5": {
+      "signal_set": "R2-volconfirm-reversal",
+      "hold": 5,
+      "dev": {
+        "n_events": 3360,
+        "n_completed": 3248,
+        "completion_rate": 0.9666666666666667,
+        "status_counts": [
+          {
+            "status": "completed_label",
+            "len": 3248
+          },
+          {
+            "status": "exit_unavailable",
+            "len": 57
+          },
+          {
+            "status": "entry_unavailable",
+            "len": 35
+          },
+          {
+            "status": "exit_limit_down",
+            "len": 18
+          },
+          {
+            "status": "entry_limit_up",
+            "len": 1
+          },
+          {
+            "status": "insufficient_budget",
+            "len": 1
+          }
+        ],
+        "mean_net_pct": -0.8102130503558276,
+        "median_net_pct": -0.9915195316535064,
+        "mean_gross_pct": -0.6588776855794531,
+        "total_net_profit_yuan": -1286122.3354613038,
+        "pool_mean_pct": 0.18580635294601802,
+        "per_year": [
+          {
+            "year": 2015,
+            "n_completed": 400,
+            "mean_net_pct": 0.6014866883693126,
+            "pool_mean_pct": 1.2143741618541188,
+            "net_edge_pct": -0.6128874734848062
+          },
+          {
+            "year": 2016,
+            "n_completed": 492,
+            "mean_net_pct": -0.24341353346094166,
+            "pool_mean_pct": 0.13291368820510688,
+            "net_edge_pct": -0.37632722166604854
+          },
+          {
+            "year": 2017,
+            "n_completed": 525,
+            "mean_net_pct": -1.5723789190667095,
+            "pool_mean_pct": -0.23634495004683753,
+            "net_edge_pct": -1.336033969019872
+          },
+          {
+            "year": 2018,
+            "n_completed": 602,
+            "mean_net_pct": -1.4960231749120998,
+            "pool_mean_pct": -0.8751719511628089,
+            "net_edge_pct": -0.6208512237492909
+          },
+          {
+            "year": 2019,
+            "n_completed": 594,
+            "mean_net_pct": -0.6156153907471329,
+            "pool_mean_pct": 0.5789361454046246,
+            "net_edge_pct": -1.1945515361517574
+          },
+          {
+            "year": 2020,
+            "n_completed": 635,
+            "mean_net_pct": -1.0403571315429392,
+            "pool_mean_pct": 0.3766583268606727,
+            "net_edge_pct": -1.4170154584036119
+          }
+        ]
+      },
+      "validation": {
+        "n_events": 2713,
+        "n_completed": 2677,
+        "completion_rate": 0.9867305565794323,
+        "status_counts": [
+          {
+            "status": "completed_label",
+            "len": 2677
+          },
+          {
+            "status": "horizon_out_of_range",
+            "len": 15
+          },
+          {
+            "status": "exit_limit_down",
+            "len": 10
+          },
+          {
+            "status": "exit_unavailable",
+            "len": 5
+          },
+          {
+            "status": "entry_unavailable",
+            "len": 3
+          },
+          {
+            "status": "no_next_session",
+            "len": 3
+          }
+        ],
+        "mean_net_pct": -0.36965233216149546,
+        "median_net_pct": -1.1244188193961668,
+        "mean_gross_pct": -0.2538223528093039,
+        "total_net_profit_yuan": -474877.42927185196,
+        "pool_mean_pct": 0.07542546121222855,
+        "per_year": [
+          {
+            "year": 2021,
+            "n_completed": 687,
+            "mean_net_pct": -0.02826246369546771,
+            "pool_mean_pct": 0.34170908198387717,
+            "net_edge_pct": -0.36997154567934487
+          },
+          {
+            "year": 2022,
+            "n_completed": 694,
+            "mean_net_pct": -0.8326021901355023,
+            "pool_mean_pct": -0.18749161170995213,
+            "net_edge_pct": -0.6451105784255502
+          },
+          {
+            "year": 2023,
+            "n_completed": 665,
+            "mean_net_pct": -0.2969579911948383,
+            "pool_mean_pct": -0.1325545549293925,
+            "net_edge_pct": -0.1644034362654458
+          },
+          {
+            "year": 2024,
+            "n_completed": 631,
+            "mean_net_pct": -0.30877970925345605,
+            "pool_mean_pct": 0.2841126464068445,
+            "net_edge_pct": -0.5928923556603005
+          }
+        ]
+      },
+      "concentration_dev": {
+        "n_symbols": 1340,
+        "total_profit_yuan": -1286122.3354613043,
+        "top_decile_share": null
+      },
+      "verdicts": {
+        "dev": {
+          "beats_pool_dev": false,
+          "positive_edge_years": "0/6",
+          "positive_edge_years_ok": false,
+          "top_decile_share": null,
+          "concentration_ok": false,
+          "completion_ok": true,
+          "dev_pass": false
+        },
+        "validation": {
+          "beats_pool_validation": false,
+          "positive_edge_years": "0/4",
+          "positive_edge_years_ok": false,
+          "validation_pass": false
+        },
+        "benchmarks_dev": {
+          "random_net_mean_pct": 0.13658154454597313,
+          "csi500_mean_pct": 0.010917473475301448,
+          "csi1000_mean_pct": -0.2142012724253329
+        },
+        "benchmarks_validation": {
+          "random_net_mean_pct": 0.09818623237174573,
+          "csi500_mean_pct": 0.03295952257493359,
+          "csi1000_mean_pct": 0.3919315548800705
+        },
+        "n_purged_at_boundary": 18
+      }
+    },
+    "R2-lowvol-dip-h5": {
+      "signal_set": "R2-lowvol-dip",
+      "hold": 5,
+      "dev": {
+        "n_events": 3971,
+        "n_completed": 3870,
+        "completion_rate": 0.9745656006043818,
+        "status_counts": [
+          {
+            "status": "completed_label",
+            "len": 3870
+          },
+          {
+            "status": "exit_unavailable",
+            "len": 54
+          },
+          {
+            "status": "entry_unavailable",
+            "len": 19
+          },
+          {
+            "status": "exit_limit_down",
+            "len": 17
+          },
+          {
+            "status": "entry_limit_up",
+            "len": 8
+          },
+          {
+            "status": "insufficient_budget",
+            "len": 3
+          }
+        ],
+        "mean_net_pct": -0.27237697573174874,
+        "median_net_pct": -0.21324889194529462,
+        "mean_gross_pct": -0.11972079949145005,
+        "total_net_profit_yuan": -523225.53704878147,
+        "pool_mean_pct": 0.18580635294601802,
+        "per_year": [
+          {
+            "year": 2015,
+            "n_completed": 552,
+            "mean_net_pct": 0.11743310227646517,
+            "pool_mean_pct": 1.2143741618541188,
+            "net_edge_pct": -1.0969410595776536
+          },
+          {
+            "year": 2016,
+            "n_completed": 624,
+            "mean_net_pct": 0.014399670424799397,
+            "pool_mean_pct": 0.13291368820510688,
+            "net_edge_pct": -0.11851401778030748
+          },
+          {
+            "year": 2017,
+            "n_completed": 655,
+            "mean_net_pct": -0.5426096979275412,
+            "pool_mean_pct": -0.23634495004683753,
+            "net_edge_pct": -0.3062647478807037
+          },
+          {
+            "year": 2018,
+            "n_completed": 672,
+            "mean_net_pct": -0.956273945837202,
+            "pool_mean_pct": -0.8751719511628089,
+            "net_edge_pct": -0.08110199467439316
+          },
+          {
+            "year": 2019,
+            "n_completed": 669,
+            "mean_net_pct": -0.16160565324251014,
+            "pool_mean_pct": 0.5789361454046246,
+            "net_edge_pct": -0.7405417986471348
+          },
+          {
+            "year": 2020,
+            "n_completed": 698,
+            "mean_net_pct": -0.03118586979824221,
+            "pool_mean_pct": 0.3766583268606727,
+            "net_edge_pct": -0.4078441966589149
+          }
+        ]
+      },
+      "validation": {
+        "n_events": 2873,
+        "n_completed": 2842,
+        "completion_rate": 0.989209885137487,
+        "status_counts": [
+          {
+            "status": "completed_label",
+            "len": 2842
+          },
+          {
+            "status": "horizon_out_of_range",
+            "len": 15
+          },
+          {
+            "status": "exit_unavailable",
+            "len": 5
+          },
+          {
+            "status": "insufficient_budget",
+            "len": 4
+          },
+          {
+            "status": "entry_unavailable",
+            "len": 3
+          },
+          {
+            "status": "no_next_session",
+            "len": 3
+          },
+          {
+            "status": "exit_limit_down",
+            "len": 1
+          }
+        ],
+        "mean_net_pct": -0.05278464369375842,
+        "median_net_pct": -0.5086920807687245,
+        "mean_gross_pct": 0.06311998280496106,
+        "total_net_profit_yuan": -51740.85668983479,
+        "pool_mean_pct": 0.07542546121222855,
+        "per_year": [
+          {
+            "year": 2021,
+            "n_completed": 725,
+            "mean_net_pct": -0.508380161494048,
+            "pool_mean_pct": 0.34170908198387717,
+            "net_edge_pct": -0.8500892434779251
+          },
+          {
+            "year": 2022,
+            "n_completed": 719,
+            "mean_net_pct": 0.0033051594102328622,
+            "pool_mean_pct": -0.18749161170995213,
+            "net_edge_pct": 0.19079677112018498
+          },
+          {
+            "year": 2023,
+            "n_completed": 717,
+            "mean_net_pct": 0.08565754189422825,
+            "pool_mean_pct": -0.1325545549293925,
+            "net_edge_pct": 0.21821209682362075
+          },
+          {
+            "year": 2024,
+            "n_completed": 681,
+            "mean_net_pct": 0.22726694941469017,
+            "pool_mean_pct": 0.2841126464068445,
+            "net_edge_pct": -0.05684569699215436
+          }
+        ]
+      },
+      "concentration_dev": {
+        "n_symbols": 1504,
+        "total_profit_yuan": -523225.5370487815,
+        "top_decile_share": null
+      },
+      "verdicts": {
+        "dev": {
+          "beats_pool_dev": false,
+          "positive_edge_years": "0/6",
+          "positive_edge_years_ok": false,
+          "top_decile_share": null,
+          "concentration_ok": false,
+          "completion_ok": true,
+          "dev_pass": false
+        },
+        "validation": {
+          "beats_pool_validation": false,
+          "positive_edge_years": "2/4",
+          "positive_edge_years_ok": true,
+          "validation_pass": false
+        },
+        "benchmarks_dev": {
+          "random_net_mean_pct": 0.13658154454597313,
+          "csi500_mean_pct": 0.010917473475301448,
+          "csi1000_mean_pct": -0.2142012724253329
+        },
+        "benchmarks_validation": {
+          "random_net_mean_pct": 0.09818623237174573,
+          "csi500_mean_pct": 0.03295952257493359,
+          "csi1000_mean_pct": 0.3919315548800705
+        },
+        "n_purged_at_boundary": 18
+      }
+    },
+    "R2-near52w-dip-h5": {
+      "signal_set": "R2-near52w-dip",
+      "hold": 5,
+      "dev": {
+        "n_events": 3554,
+        "n_completed": 3487,
+        "completion_rate": 0.9811480022509848,
+        "status_counts": [
+          {
+            "status": "completed_label",
+            "len": 3487
+          },
+          {
+            "status": "exit_unavailable",
+            "len": 28
+          },
+          {
+            "status": "insufficient_budget",
+            "len": 21
+          },
+          {
+            "status": "exit_limit_down",
+            "len": 12
+          },
+          {
+            "status": "entry_unavailable",
+            "len": 3
+          },
+          {
+            "status": "entry_limit_up",
+            "len": 3
+          }
+        ],
+        "mean_net_pct": 0.17695945256129933,
+        "median_net_pct": -0.24258777606154247,
+        "mean_gross_pct": 0.32914301203852747,
+        "total_net_profit_yuan": 269042.55455887126,
+        "pool_mean_pct": 0.18580635294601802,
+        "per_year": [
+          {
+            "year": 2015,
+            "n_completed": 0,
+            "pool_mean_pct": 1.2143741618541188
+          },
+          {
+            "year": 2016,
+            "n_completed": 637,
+            "mean_net_pct": -0.4451590813458456,
+            "pool_mean_pct": 0.13291368820510688,
+            "net_edge_pct": -0.5780727695509524
+          },
+          {
+            "year": 2017,
+            "n_completed": 712,
+            "mean_net_pct": 0.14943071826346255,
+            "pool_mean_pct": -0.23634495004683753,
+            "net_edge_pct": 0.3857756683103001
+          },
+          {
+            "year": 2018,
+            "n_completed": 703,
+            "mean_net_pct": -0.8110497790776587,
+            "pool_mean_pct": -0.8751719511628089,
+            "net_edge_pct": 0.06412217208515014
+          },
+          {
+            "year": 2019,
+            "n_completed": 720,
+            "mean_net_pct": 0.6933940714897189,
+            "pool_mean_pct": 0.5789361454046246,
+            "net_edge_pct": 0.11445792608509431
+          },
+          {
+            "year": 2020,
+            "n_completed": 715,
+            "mean_net_pct": 1.2100049478517003,
+            "pool_mean_pct": 0.3766583268606727,
+            "net_edge_pct": 0.8333466209910276
+          }
+        ]
+      },
+      "validation": {
+        "n_events": 2904,
+        "n_completed": 2876,
+        "completion_rate": 0.990358126721763,
+        "status_counts": [
+          {
+            "status": "completed_label",
+            "len": 2876
+          },
+          {
+            "status": "horizon_out_of_range",
+            "len": 15
+          },
+          {
+            "status": "exit_limit_down",
+            "len": 4
+          },
+          {
+            "status": "no_next_session",
+            "len": 3
+          },
+          {
+            "status": "entry_limit_up",
+            "len": 2
+          },
+          {
+            "status": "exit_unavailable",
+            "len": 2
+          },
+          {
+            "status": "entry_unavailable",
+            "len": 1
+          },
+          {
+            "status": "insufficient_budget",
+            "len": 1
+          }
+        ],
+        "mean_net_pct": -0.3412550972321076,
+        "median_net_pct": -0.6457366191419567,
+        "mean_gross_pct": -0.2259518470420376,
+        "total_net_profit_yuan": -456785.0128415489,
+        "pool_mean_pct": 0.07542546121222855,
+        "per_year": [
+          {
+            "year": 2021,
+            "n_completed": 726,
+            "mean_net_pct": -0.16352047201550282,
+            "pool_mean_pct": 0.34170908198387717,
+            "net_edge_pct": -0.50522955399938
+          },
+          {
+            "year": 2022,
+            "n_completed": 724,
+            "mean_net_pct": -0.9407468548122888,
+            "pool_mean_pct": -0.18749161170995213,
+            "net_edge_pct": -0.7532552431023367
+          },
+          {
+            "year": 2023,
+            "n_completed": 725,
+            "mean_net_pct": -0.07713507882141779,
+            "pool_mean_pct": -0.1325545549293925,
+            "net_edge_pct": 0.05541947610797471
+          },
+          {
+            "year": 2024,
+            "n_completed": 701,
+            "mean_net_pct": -0.1793297317070779,
+            "pool_mean_pct": 0.2841126464068445,
+            "net_edge_pct": -0.4634423781139224
+          }
+        ]
+      },
+      "concentration_dev": {
+        "n_symbols": 1116,
+        "total_profit_yuan": 269042.5545588712,
+        "top_decile_share": 6.305602329629691
+      },
+      "verdicts": {
+        "dev": {
+          "beats_pool_dev": false,
+          "positive_edge_years": "4/6",
+          "positive_edge_years_ok": true,
+          "top_decile_share": 6.305602329629691,
+          "concentration_ok": false,
+          "completion_ok": true,
+          "dev_pass": false
+        },
+        "validation": {
+          "beats_pool_validation": false,
+          "positive_edge_years": "1/4",
+          "positive_edge_years_ok": false,
+          "validation_pass": false
+        },
+        "benchmarks_dev": {
+          "random_net_mean_pct": 0.13658154454597313,
+          "csi500_mean_pct": 0.010917473475301448,
+          "csi1000_mean_pct": -0.2142012724253329
+        },
+        "benchmarks_validation": {
+          "random_net_mean_pct": 0.09818623237174573,
+          "csi500_mean_pct": 0.03295952257493359,
+          "csi1000_mean_pct": 0.3919315548800705
+        },
+        "n_purged_at_boundary": 18
+      }
+    },
+    "R2-turnover-capitulation-h5": {
+      "signal_set": "R2-turnover-capitulation",
+      "hold": 5,
+      "dev": {
+        "n_events": 2973,
+        "n_completed": 2882,
+        "completion_rate": 0.9693911873528422,
+        "status_counts": [
+          {
+            "status": "completed_label",
+            "len": 2882
+          },
+          {
+            "status": "exit_unavailable",
+            "len": 47
+          },
+          {
+            "status": "entry_unavailable",
+            "len": 27
+          },
+          {
+            "status": "exit_limit_down",
+            "len": 13
+          },
+          {
+            "status": "insufficient_budget",
+            "len": 3
+          },
+          {
+            "status": "entry_limit_up",
+            "len": 1
+          }
+        ],
+        "mean_net_pct": -1.4657784248310892,
+        "median_net_pct": -1.8878977129122565,
+        "mean_gross_pct": -1.3159471025002185,
+        "total_net_profit_yuan": -2069445.7401189667,
+        "pool_mean_pct": 0.18580635294601802,
+        "per_year": [
+          {
+            "year": 2015,
+            "n_completed": 275,
+            "mean_net_pct": 1.0065822125989623,
+            "pool_mean_pct": 1.2143741618541188,
+            "net_edge_pct": -0.20779194925515654
+          },
+          {
+            "year": 2016,
+            "n_completed": 425,
+            "mean_net_pct": -0.9674670588820576,
+            "pool_mean_pct": 0.13291368820510688,
+            "net_edge_pct": -1.1003807470871645
+          },
+          {
+            "year": 2017,
+            "n_completed": 479,
+            "mean_net_pct": -2.19910676098514,
+            "pool_mean_pct": -0.23634495004683753,
+            "net_edge_pct": -1.9627618109383023
+          },
+          {
+            "year": 2018,
+            "n_completed": 508,
+            "mean_net_pct": -1.936127286715089,
+            "pool_mean_pct": -0.8751719511628089,
+            "net_edge_pct": -1.06095533555228
+          },
+          {
+            "year": 2019,
+            "n_completed": 560,
+            "mean_net_pct": -1.4485213153306538,
+            "pool_mean_pct": 0.5789361454046246,
+            "net_edge_pct": -2.0274574607352784
+          },
+          {
+            "year": 2020,
+            "n_completed": 635,
+            "mean_net_pct": -1.9557689638657114,
+            "pool_mean_pct": 0.3766583268606727,
+            "net_edge_pct": -2.3324272907263843
+          }
+        ]
+      },
+      "validation": {
+        "n_events": 2718,
+        "n_completed": 2678,
+        "completion_rate": 0.9852832965415746,
+        "status_counts": [
+          {
+            "status": "completed_label",
+            "len": 2678
+          },
+          {
+            "status": "horizon_out_of_range",
+            "len": 15
+          },
+          {
+            "status": "exit_limit_down",
+            "len": 10
+          },
+          {
+            "status": "exit_unavailable",
+            "len": 6
+          },
+          {
+            "status": "no_next_session",
+            "len": 3
+          },
+          {
+            "status": "entry_limit_up",
+            "len": 3
+          },
+          {
+            "status": "entry_unavailable",
+            "len": 3
+          }
+        ],
+        "mean_net_pct": -1.1290985739921864,
+        "median_net_pct": -2.108949281197703,
+        "mean_gross_pct": -1.0147259344415989,
+        "total_net_profit_yuan": -1484278.3626173618,
+        "pool_mean_pct": 0.07542546121222855,
+        "per_year": [
+          {
+            "year": 2021,
+            "n_completed": 654,
+            "mean_net_pct": -0.5052466642171468,
+            "pool_mean_pct": 0.34170908198387717,
+            "net_edge_pct": -0.846955746201024
+          },
+          {
+            "year": 2022,
+            "n_completed": 695,
+            "mean_net_pct": -1.6252428117489424,
+            "pool_mean_pct": -0.18749161170995213,
+            "net_edge_pct": -1.4377512000389903
+          },
+          {
+            "year": 2023,
+            "n_completed": 682,
+            "mean_net_pct": -0.9623799263293376,
+            "pool_mean_pct": -0.1325545549293925,
+            "net_edge_pct": -0.829825371399945
+          },
+          {
+            "year": 2024,
+            "n_completed": 647,
+            "mean_net_pct": -1.4024850059210794,
+            "pool_mean_pct": 0.2841126464068445,
+            "net_edge_pct": -1.686597652327924
+          }
+        ]
+      },
+      "concentration_dev": {
+        "n_symbols": 1619,
+        "total_profit_yuan": -2069445.740118967,
+        "top_decile_share": null
+      },
+      "verdicts": {
+        "dev": {
+          "beats_pool_dev": false,
+          "positive_edge_years": "0/6",
+          "positive_edge_years_ok": false,
+          "top_decile_share": null,
+          "concentration_ok": false,
+          "completion_ok": true,
+          "dev_pass": false
+        },
+        "validation": {
+          "beats_pool_validation": false,
+          "positive_edge_years": "0/4",
+          "positive_edge_years_ok": false,
+          "validation_pass": false
+        },
+        "benchmarks_dev": {
+          "random_net_mean_pct": 0.13658154454597313,
+          "csi500_mean_pct": 0.010917473475301448,
+          "csi1000_mean_pct": -0.2142012724253329
+        },
+        "benchmarks_validation": {
+          "random_net_mean_pct": 0.09818623237174573,
+          "csi500_mean_pct": 0.03295952257493359,
+          "csi1000_mean_pct": 0.3919315548800705
+        },
+        "n_purged_at_boundary": 17
+      }
+    },
+    "R2-gapdown-recovery-h5": {
+      "signal_set": "R2-gapdown-recovery",
+      "hold": 5,
+      "dev": {
+        "n_events": 4245,
+        "n_completed": 4099,
+        "completion_rate": 0.9656065959952885,
+        "status_counts": [
+          {
+            "status": "completed_label",
+            "len": 4099
+          },
+          {
+            "status": "exit_unavailable",
+            "len": 55
+          },
+          {
+            "status": "exit_limit_down",
+            "len": 34
+          },
+          {
+            "status": "entry_limit_up",
+            "len": 29
+          },
+          {
+            "status": "entry_unavailable",
+            "len": 28
+          }
+        ],
+        "mean_net_pct": -1.7571442301943572,
+        "median_net_pct": -2.229093930167958,
+        "mean_gross_pct": -1.6065649100713282,
+        "total_net_profit_yuan": -3518486.3619375178,
+        "pool_mean_pct": 0.18580635294601802,
+        "per_year": [
+          {
+            "year": 2015,
+            "n_completed": 605,
+            "mean_net_pct": -0.16890536213466378,
+            "pool_mean_pct": 1.2143741618541188,
+            "net_edge_pct": -1.3832795239887825
+          },
+          {
+            "year": 2016,
+            "n_completed": 676,
+            "mean_net_pct": -1.5699011923776718,
+            "pool_mean_pct": 0.13291368820510688,
+            "net_edge_pct": -1.7028148805827787
+          },
+          {
+            "year": 2017,
+            "n_completed": 695,
+            "mean_net_pct": -2.4420125000289197,
+            "pool_mean_pct": -0.23634495004683753,
+            "net_edge_pct": -2.205667549982082
+          },
+          {
+            "year": 2018,
+            "n_completed": 707,
+            "mean_net_pct": -2.7932587445878028,
+            "pool_mean_pct": -0.8751719511628089,
+            "net_edge_pct": -1.9180867934249939
+          },
+          {
+            "year": 2019,
+            "n_completed": 714,
+            "mean_net_pct": -1.5393996787524094,
+            "pool_mean_pct": 0.5789361454046246,
+            "net_edge_pct": -2.118335824157034
+          },
+          {
+            "year": 2020,
+            "n_completed": 702,
+            "mean_net_pct": -1.8061670354059787,
+            "pool_mean_pct": 0.3766583268606727,
+            "net_edge_pct": -2.1828253622666516
+          }
+        ]
+      },
+      "validation": {
+        "n_events": 2887,
+        "n_completed": 2760,
+        "completion_rate": 0.9560096986491168,
+        "status_counts": [
+          {
+            "status": "completed_label",
+            "len": 2760
+          },
+          {
+            "status": "entry_limit_up",
+            "len": 70
+          },
+          {
+            "status": "exit_limit_down",
+            "len": 27
+          },
+          {
+            "status": "horizon_out_of_range",
+            "len": 15
+          },
+          {
+            "status": "entry_unavailable",
+            "len": 7
+          },
+          {
+            "status": "exit_unavailable",
+            "len": 5
+          },
+          {
+            "status": "no_next_session",
+            "len": 3
+          }
+        ],
+        "mean_net_pct": -2.7579788916510153,
+        "median_net_pct": -4.158036150346684,
+        "mean_gross_pct": -2.645066414048708,
+        "total_net_profit_yuan": -3740929.848175685,
+        "pool_mean_pct": 0.07542546121222855,
+        "per_year": [
+          {
+            "year": 2021,
+            "n_completed": 712,
+            "mean_net_pct": -1.4019917722017536,
+            "pool_mean_pct": 0.34170908198387717,
+            "net_edge_pct": -1.7437008541856307
+          },
+          {
+            "year": 2022,
+            "n_completed": 683,
+            "mean_net_pct": -3.554005276477886,
+            "pool_mean_pct": -0.18749161170995213,
+            "net_edge_pct": -3.366513664767934
+          },
+          {
+            "year": 2023,
+            "n_completed": 702,
+            "mean_net_pct": -2.528560317576194,
+            "pool_mean_pct": -0.1325545549293925,
+            "net_edge_pct": -2.3960057626468014
+          },
+          {
+            "year": 2024,
+            "n_completed": 663,
+            "mean_net_pct": -3.6370567909144342,
+            "pool_mean_pct": 0.2841126464068445,
+            "net_edge_pct": -3.9211694373212787
+          }
+        ]
+      },
+      "concentration_dev": {
+        "n_symbols": 1752,
+        "total_profit_yuan": -3518486.3619375173,
+        "top_decile_share": null
+      },
+      "verdicts": {
+        "dev": {
+          "beats_pool_dev": false,
+          "positive_edge_years": "0/6",
+          "positive_edge_years_ok": false,
+          "top_decile_share": null,
+          "concentration_ok": false,
+          "completion_ok": true,
+          "dev_pass": false
+        },
+        "validation": {
+          "beats_pool_validation": false,
+          "positive_edge_years": "0/4",
+          "positive_edge_years_ok": false,
+          "validation_pass": false
+        },
+        "benchmarks_dev": {
+          "random_net_mean_pct": 0.13658154454597313,
+          "csi500_mean_pct": 0.010917473475301448,
+          "csi1000_mean_pct": -0.2142012724253329
+        },
+        "benchmarks_validation": {
+          "random_net_mean_pct": 0.09818623237174573,
+          "csi500_mean_pct": 0.03295952257493359,
+          "csi1000_mean_pct": 0.3919315548800705
+        },
+        "n_purged_at_boundary": 18
+      }
+    },
+    "R2-squeeze-breakout-h5": {
+      "signal_set": "R2-squeeze-breakout",
+      "hold": 5,
+      "dev": {
+        "n_events": 4287,
+        "n_completed": 3978,
+        "completion_rate": 0.9279216235129462,
+        "status_counts": [
+          {
+            "status": "completed_label",
+            "len": 3978
+          },
+          {
+            "status": "entry_limit_up",
+            "len": 219
+          },
+          {
+            "status": "entry_unavailable",
+            "len": 38
+          },
+          {
+            "status": "exit_unavailable",
+            "len": 35
+          },
+          {
+            "status": "exit_limit_down",
+            "len": 16
+          },
+          {
+            "status": "insufficient_budget",
+            "len": 1
+          }
+        ],
+        "mean_net_pct": -0.6006437006606752,
+        "median_net_pct": -0.9113632008910966,
+        "mean_gross_pct": -0.44812405889393625,
+        "total_net_profit_yuan": -1189041.9126079895,
+        "pool_mean_pct": 0.18580635294601802,
+        "per_year": [
+          {
+            "year": 2015,
+            "n_completed": 585,
+            "mean_net_pct": 0.08468824381046337,
+            "pool_mean_pct": 1.2143741618541188,
+            "net_edge_pct": -1.1296859180436554
+          },
+          {
+            "year": 2016,
+            "n_completed": 682,
+            "mean_net_pct": -0.7604950537037671,
+            "pool_mean_pct": 0.13291368820510688,
+            "net_edge_pct": -0.893408741908874
+          },
+          {
+            "year": 2017,
+            "n_completed": 700,
+            "mean_net_pct": -0.6426964939888495,
+            "pool_mean_pct": -0.23634495004683753,
+            "net_edge_pct": -0.406351543942012
+          },
+          {
+            "year": 2018,
+            "n_completed": 675,
+            "mean_net_pct": -1.3971119192343744,
+            "pool_mean_pct": -0.8751719511628089,
+            "net_edge_pct": -0.5219399680715655
+          },
+          {
+            "year": 2019,
+            "n_completed": 678,
+            "mean_net_pct": -0.22106385421255684,
+            "pool_mean_pct": 0.5789361454046246,
+            "net_edge_pct": -0.7999999996171814
+          },
+          {
+            "year": 2020,
+            "n_completed": 658,
+            "mean_net_pct": -0.5735961288750869,
+            "pool_mean_pct": 0.3766583268606727,
+            "net_edge_pct": -0.9502544557357596
+          }
+        ]
+      },
+      "validation": {
+        "n_events": 2888,
+        "n_completed": 2621,
+        "completion_rate": 0.9075484764542936,
+        "status_counts": [
+          {
+            "status": "completed_label",
+            "len": 2621
+          },
+          {
+            "status": "entry_limit_up",
+            "len": 233
+          },
+          {
+            "status": "horizon_out_of_range",
+            "len": 15
+          },
+          {
+            "status": "exit_limit_down",
+            "len": 8
+          },
+          {
+            "status": "entry_unavailable",
+            "len": 4
+          },
+          {
+            "status": "no_next_session",
+            "len": 3
+          },
+          {
+            "status": "exit_unavailable",
+            "len": 3
+          },
+          {
+            "status": "insufficient_budget",
+            "len": 1
+          }
+        ],
+        "mean_net_pct": -1.0178333757540325,
+        "median_net_pct": -1.8919023212901176,
+        "mean_gross_pct": -0.9027503170805443,
+        "total_net_profit_yuan": -1320405.1161455363,
+        "pool_mean_pct": 0.07542546121222855,
+        "per_year": [
+          {
+            "year": 2021,
+            "n_completed": 673,
+            "mean_net_pct": -0.7354001869546938,
+            "pool_mean_pct": 0.34170908198387717,
+            "net_edge_pct": -1.077109268938571
+          },
+          {
+            "year": 2022,
+            "n_completed": 662,
+            "mean_net_pct": -1.3446326820657204,
+            "pool_mean_pct": -0.18749161170995213,
+            "net_edge_pct": -1.1571410703557683
+          },
+          {
+            "year": 2023,
+            "n_completed": 666,
+            "mean_net_pct": -1.401049724632168,
+            "pool_mean_pct": -0.1325545549293925,
+            "net_edge_pct": -1.2684951697027755
+          },
+          {
+            "year": 2024,
+            "n_completed": 620,
+            "mean_net_pct": -0.5638241933843214,
+            "pool_mean_pct": 0.2841126464068445,
+            "net_edge_pct": -0.847936839791166
+          }
+        ]
+      },
+      "concentration_dev": {
+        "n_symbols": 1748,
+        "total_profit_yuan": -1189041.9126079897,
+        "top_decile_share": null
+      },
+      "verdicts": {
+        "dev": {
+          "beats_pool_dev": false,
+          "positive_edge_years": "0/6",
+          "positive_edge_years_ok": false,
+          "top_decile_share": null,
+          "concentration_ok": false,
+          "completion_ok": true,
+          "dev_pass": false
+        },
+        "validation": {
+          "beats_pool_validation": false,
+          "positive_edge_years": "0/4",
+          "positive_edge_years_ok": false,
+          "validation_pass": false
+        },
+        "benchmarks_dev": {
+          "random_net_mean_pct": 0.13658154454597313,
+          "csi500_mean_pct": 0.010917473475301448,
+          "csi1000_mean_pct": -0.2142012724253329
+        },
+        "benchmarks_validation": {
+          "random_net_mean_pct": 0.09818623237174573,
+          "csi500_mean_pct": 0.03295952257493359,
+          "csi1000_mean_pct": 0.3919315548800705
+        },
+        "n_purged_at_boundary": 18
+      }
+    },
+    "H3_gate_check": {
+      "n_completed": 0,
+      "bottom_tercile_share": null,
+      "falsified": false,
+      "note": "not applicable this round (no H1 configs)"
+    }
+  },
+  "p2_survivors": []
+}

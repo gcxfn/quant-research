@@ -1,0 +1,126 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""wave-20 part6 (ordinal 11900-11999) 逐行判定写入（python 文件写，非 shell heredoc）。"""
+import json
+import os
+
+ROWS = [
+ (11900, "cost_up", "fx", 1, "公司的有息负债形成财务费用较大", "high"),
+ (11901, "non_recurring", "impairment", 1, "计提非经常性损益支出“政府收储土地补偿款和赔偿款”", "high"),
+ (11902, "epidemic_shock", "impairment", 1, "受到新冠疫情影响", "high"),
+ (11903, "epidemic_shock", "impairment", 1, "主营业务受新冠疫情影响", "high"),
+ (11904, "epidemic_shock", "cost_up", 1, "受新冠肺炎疫情影响", "high"),
+ (11905, "demand_down", "impairment", 1, "公司模组业务营业收入较2018年度大幅下降", "high"),
+ (11906, "epidemic_shock", "cost_up", 1, "受新冠肺炎疫情的影响", "high"),
+ (11907, "cost_up", "fx", 1, "但仍较难覆盖固定成本", "high"),
+ (11908, "epidemic_shock", "cost_down", 1, "受新冠疫情影响", "high"),
+ (11909, "cost_down", None, -1, "无需再支付管理费用", "high"),
+ (11910, "cost_down", None, -1, "严控各项费用支出", "high"),
+ (11911, "epidemic_shock", "demand_down", 1, "公司受新冠肺炎疫情影响", "high"),
+ (11912, "epidemic_shock", "demand_down", 1, "受疫情影响超市门店客流明显大幅下降", "high"),
+ (11913, "demand_down", "epidemic_shock", 1, "激烈竞争给公司商业批发零售业务带来较大冲击", "high"),
+ (11914, "impairment", "cost_up", 1, "计提资产减值准备和食品产业经营亏损及控股母公司财务费用增加所致", "high"),
+ (11915, "epidemic_shock", "cost_up", 1, "因受疫情影响", "high"),
+ (11916, "epidemic_shock", None, 1, "受疫情和资金短缺影响", "high"),
+ (11917, "cost_up", "epidemic_shock", 1, "公司债务负担较重，财务费用支出较大", "high"),
+ (11918, "epidemic_shock", "non_recurring", 1, "受新型冠状病毒肺炎疫情影响", "high"),
+ (11919, "epidemic_shock", "non_recurring", 1, "受新型冠状病毒肺炎疫情等影响", "high"),
+ (11920, "epidemic_shock", "non_recurring", 1, "受新型冠状病毒肺炎疫情等因素影响", "high"),
+ (11921, "epidemic_shock", "cost_down", 1, "受新型冠状病毒（COVID-19）疫情影响", "high"),
+ (11922, "epidemic_shock", None, 1, "受新型冠状病毒(COVID-19)疫情影响", "high"),
+ (11923, "epidemic_shock", None, 1, "受新冠肺炎疫情的影响", "high"),
+ (11924, "impairment", "demand_down", 1, "预计计提商誉减值准备265,000万元—315,000万元", "high"),
+ (11925, "demand_down", "other", 1, "原有收入大幅减少", "high"),
+ (11926, "other", "demand_down", 1, "资金不足,无法开展新业务,营业收入萎缩", "high"),
+ (11927, "other", None, 0, "无", "low"),
+ (11928, "other", "demand_down", 1, "资金严重不足，无法正常开展生产经营活动", "high"),
+ (11929, "other", "epidemic_shock", 0, "一季度为传统林木行业淡季", "high"),
+ (11930, "impairment", None, 1, "商誉减值、长期股权投资减值及其他", "high"),
+ (11931, "epidemic_shock", None, 1, "受疫情的影响", "high"),
+ (11932, "epidemic_shock", "non_recurring", 1, "2020年上半年受疫情的影响", "high"),
+ (11933, "epidemic_shock", "non_recurring", 1, "受疫情的影响，公司订单减少", "high"),
+ (11934, "epidemic_shock", "other", 1, "受新冠疫情影响", "high"),
+ (11935, "other", None, 0, "公司本年一季度正常经营", "low"),
+ (11936, "non_recurring", "epidemic_shock", 0, "处置部分项目公司股权产生较大投资收益", "high"),
+ (11937, "non_recurring", "epidemic_shock", 0, "处置部分项目公司股权产生较大投资收益", "high"),
+ (11938, "demand_up", "impairment", -1, "部分房产于本报告期收款并交付确认收入", "high"),
+ (11939, "demand_up", "impairment", -1, "部分房产收款并交付确认收入", "high"),
+ (11940, "epidemic_shock", None, 1, "新型冠状病毒疫情爆发", "high"),
+ (11941, "epidemic_shock", None, 1, "收入仍然受到疫情影响而大幅下降", "high"),
+ (11942, "other", None, 1, "净利润亏损额与上年度同期相比增加了7.63%", "low"),
+ (11943, "core_ops", "other", 1, "原有纺织业生产经营环境未得到改善", "high"),
+ (11944, "epidemic_shock", "other", 1, "受疫情影响", "high"),
+ (11945, "epidemic_shock", "other", 1, "受新型冠状病毒肺炎疫情以及公司酒店装修改造等影响", "high"),
+ (11946, "demand_up", "cost_up", -1, "确认营业收入10.08亿元", "high"),
+ (11947, "non_recurring", None, -1, "长期股权投资权益法核算确认投资收益增加所致", "high"),
+ (11948, "epidemic_shock", "other", 1, "因疫情原因", "high"),
+ (11949, "other", "epidemic_shock", 0, "一季度为公司产品销售淡季", "high"),
+ (11950, "epidemic_shock", "other", 1, "受春节长假叠加新冠肺炎疫情影响", "high"),
+ (11951, "cost_up", "fx", 1, "原材料价格较上年同期上涨", "high"),
+ (11952, "cost_up", None, 1, "管理费用及研发费用增加所致", "high"),
+ (11953, "epidemic_shock", None, 1, "受疫情影响公司子公司信通网易及参股子公司业绩下滑所致", "high"),
+ (11954, "epidemic_shock", "demand_down", 1, "受新型冠状病毒疫情影响", "high"),
+ (11955, "epidemic_shock", None, 1, "一季度受新型冠状病毒疫情影响", "high"),
+ (11956, "epidemic_shock", None, 1, "一季度受新型冠状病毒肺炎疫情影响", "high"),
+ (11957, "epidemic_shock", "impairment", 1, "公司面临坏账损失增加及营业收入下滑的情况", "high"),
+ (11958, "other", "demand_down", 1, "受国内房地产调控政策及中美贸易战摩擦影响", "high"),
+ (11959, "other", "epidemic_shock", 1, "木材因国家相关政策影响仍处于受限伐状态", "high"),
+ (11960, "other", "epidemic_shock", 1, "木材因国家相关政策影响仍处于受限伐状态", "high"),
+ (11961, "other", "epidemic_shock", 1, "木材生产受国家相关政策影响仍处于限伐状态", "high"),
+ (11962, "impairment", "cost_up", 1, "本年拟计提商誉减值约11,249.93万元", "high"),
+ (11963, "epidemic_shock", "cost_up", 1, "受新冠疫情影响,商业用户基本处于停业状态用气量下降", "high"),
+ (11964, "epidemic_shock", None, 1, "受新冠疫情影响,商业用户基本处于停业状态用气量下降", "high"),
+ (11965, "impairment", "demand_down", 1, "对专用机器设备、构筑物等相关资产计提减值约1.1亿元", "high"),
+ (11966, "accounting", "non_recurring", 1, "公司其他权益工具投资科目调整及公允价值变动直接减少归属于母公司所有者权益", "high"),
+ (11967, "cost_down", "impairment", -1, "相关费用较上年同期减少1,700万元", "high"),
+ (11968, "cost_down", "impairment", -1, "相关费用较上年同期减少2,350万元", "high"),
+ (11969, "ma_restructuring", "cost_down", -1, "公司重大资产重组已实施完毕", "high"),
+ (11970, "impairment", None, 1, "计提预计负债、逾期利息,金额约2.74亿元人民币", "high"),
+ (11971, "epidemic_shock", None, 1, "受到疫情的影响", "high"),
+ (11972, "epidemic_shock", "cost_up", 1, "公司影院板块业务全面停摆", "high"),
+ (11973, "cost_up", "impairment", 1, "公司银行贷款所产生的财务费用较高", "high"),
+ (11974, "epidemic_shock", "cost_up", 1, "因受新冠肺炎疫情和汽车行业市场需求下滑因素影响", "high"),
+ (11975, "epidemic_shock", "price_down", 1, "国内行业市场竞争加剧导致产品价格下调", "high"),
+ (11976, "accounting", "demand_down", 1, "按相关规定全面停止利息资本化", "high"),
+ (11977, "accounting", "epidemic_shock", 1, "按相关规定停止利息资本化", "high"),
+ (11978, "impairment", "demand_down", 1, "预计本报告期将会全额计提商誉减值准备", "high"),
+ (11979, "other", "cost_up", 1, "需支付相关逾期利息和罚息,导致公司财务费用增加", "high"),
+ (11980, "other", "cost_up", 1, "需承担相应逾期利息和罚息，财务费用较高", "high"),
+ (11981, "cost_up", None, 1, "供暖成本增加所致", "high"),
+ (11982, "other", None, 0, "经营环境和运行状况无大的变动", "low"),
+ (11983, "other", None, 0, "经营环境和运行状况无大的变动", "low"),
+ (11984, "non_recurring", "accounting", 1, "本期营业外收支净额同比减少617万元", "high"),
+ (11985, "epidemic_shock", None, 1, "跨国公司Gardner受新冠疫情影响", "high"),
+ (11986, "epidemic_shock", None, 1, "对全球航空制造业产生了很大的影响", "high"),
+ (11987, "demand_down", None, 1, "公司饲料业务板块销量下降", "high"),
+ (11988, "epidemic_shock", "price_down", 1, "新冠肺炎疫情影响公司主导产品行情", "high"),
+ (11989, "other", "cost_down", 0, "公司业务整体呈现前低后高的季节性特征", "high"),
+ (11990, "epidemic_shock", None, 1, "受新型冠状病毒肺炎疫情的影响", "high"),
+ (11991, "epidemic_shock", None, 1, "受新型冠状病毒肺炎疫情的影响", "high"),
+ (11992, "impairment", "price_down", 1, "计提减值减少公司2019年度归母净利润326,045.23万元", "high"),
+ (11993, "fx", "epidemic_shock", 1, "主要受汇率波动的影响", "high"),
+ (11994, "epidemic_shock", "non_recurring", 1, "但受新型冠状病毒感染的肺炎疫情影响", "high"),
+ (11995, "epidemic_shock", "non_recurring", 1, "受新型冠状病毒感染的肺炎疫情影响", "high"),
+ (11996, "cost_up", "non_recurring", 1, "对外借款担保形成的利息支出计入当期营业外支出或财务费用", "high"),
+ (11997, "cost_up", "epidemic_shock", 1, "对外担保商业承兑汇票形成的利息支出", "high"),
+ (11998, "cost_up", None, 1, "形成的利息支出计入当期营业外支出和财务费用", "high"),
+ (11999, "cost_up", None, 1, "未实际使用借款计提的利息支出", "high"),
+]
+
+
+def main():
+    out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "batch_020_judge_part6.jsonl")
+    lines = []
+    for oid, pc, sc, sd, q, cf in ROWS:
+        rec = {"ordinal": oid, "primary_code": pc, "secondary_code": sc,
+               "supports_direction": sd, "key_quote": q, "confidence": cf}
+        lines.append(json.dumps(rec, ensure_ascii=False, separators=(",", ":")))
+    with open(out, "w", encoding="utf-8", newline="\n") as f:
+        f.write("\n".join(lines) + "\n")
+    qlen = sorted(len(r[4]) for r in ROWS)
+    print(json.dumps({"part": 6, "rows": len(ROWS), "ordinals": [ROWS[0][0], ROWS[-1][0]],
+                      "quote_len_max": qlen[-1]}, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,418 @@
+{
+  "load_stats": {
+    "rows_whitelisted": 813201,
+    "codes_whitelisted": 943,
+    "rows_missing_factor": 1200,
+    "codes_missing_factor": 1
+  },
+  "timings": {
+    "load_s": 4.43,
+    "pools_s": 0.01,
+    "benchmarks_s": 0.05,
+    "sim_C01_s": 0.0,
+    "sim_C04_s": 0.0,
+    "total_s": 4.57
+  },
+  "pool_sizes": {
+    "monthly": {
+      "2016": {
+        "min": 6,
+        "mean": 7.3,
+        "max": 9,
+        "sizes": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          8,
+          9,
+          9,
+          8,
+          8,
+          8,
+          8
+        ]
+      }
+    },
+    "weekly": {
+      "2016": {
+        "min": 6,
+        "mean": 7.3,
+        "max": 9,
+        "sizes": [
+          6,
+          6,
+          7,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          7,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          9,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8
+        ]
+      }
+    }
+  },
+  "configs": {
+    "C01": {
+      "freq": "monthly",
+      "W": "W3",
+      "gate": true,
+      "max_negative_cash": -842.1972874127969,
+      "n_trades": 13,
+      "exec_stats": {
+        "planned_buy_legs": 18,
+        "buys_filled": 8,
+        "buys_no_candidate": 10,
+        "buys_cancelled_slot_busy": 0,
+        "planned_sell_legs": 5,
+        "sells_filled": 5,
+        "sells_postponed_then_filled": 0,
+        "sells_forced_delist": 0,
+        "sells_pending_at_end": 3,
+        "entry_limit_blocked": 0,
+        "entry_suspended": 0,
+        "exit_limit_blocked": 0,
+        "exit_suspended": 0,
+        "legs_executed": 23,
+        "legs_planned": 23,
+        "execution_rate": 1.0
+      },
+      "dev": {
+        "net_cagr": 0.01771060661745305,
+        "gross_cagr": 0.018153120285963942,
+        "net_total_return": 0.0175027354004762,
+        "gross_total_return": 0.017940009599915596,
+        "b1_net_cagr": 0.09677326867515013,
+        "max_drawdown": -0.06892145829521612,
+        "mdd_window": {
+          "max_drawdown": -0.06892145829521612,
+          "peak_date": "2016-07-06",
+          "trough_date": "2016-09-26"
+        },
+        "b1_max_drawdown": -0.09335279502065608,
+        "excess_vs_b1": -0.07906266205769708,
+        "execution_rate": 1.0,
+        "net_return_by_year": {
+          "2016": 0.0175027354004762
+        },
+        "excess_by_year": {
+          "2016": -0.07809231765733737
+        },
+        "gross_return_by_year": {
+          "2016": 0.017940009599915596
+        },
+        "turnover_by_year": {
+          "2016": {
+            "buy_notional": 533333.3333333334,
+            "sell_notional": 337627.06362527417,
+            "mean_equity": 206004.2187051248,
+            "one_side_turnover": 2.5889437443839376
+          }
+        },
+        "max_one_side_turnover": 2.5889437443839376,
+        "concentration": {
+          "pnl_by_code": {
+            "518880.SH": 5586.213175250901,
+            "510050.SH": 980.305488618149,
+            "159937.SZ": -484.0483022598928,
+            "159934.SZ": -273.4201707461325,
+            "510300.SH": -596.9264069264173,
+            "510500.SH": -1711.5767038413833
+          },
+          "total_pnl": 3500.5470800952244,
+          "top1_share": 1.5958114681602686,
+          "top3_share": 1.7977471375564897,
+          "n_codes_positive": 2
+        },
+        "monthly_top_decile": {
+          "top_decile_share": 4.708110754650829,
+          "n_months": 12,
+          "top_months": [
+            [
+              2016,
+              11
+            ],
+            [
+              2016,
+              2
+            ]
+          ],
+          "total_pnl": 3500.547080095246
+        },
+        "forced_delist": {
+          "count": 0,
+          "pnl_sum": 0
+        }
+      }
+    },
+    "C04": {
+      "freq": "weekly",
+      "W": "W3",
+      "gate": false,
+      "max_negative_cash": -9128.854107912332,
+      "n_trades": 83,
+      "exec_stats": {
+        "planned_buy_legs": 43,
+        "buys_filled": 43,
+        "buys_no_candidate": 0,
+        "buys_cancelled_slot_busy": 0,
+        "planned_sell_legs": 40,
+        "sells_filled": 40,
+        "sells_postponed_then_filled": 0,
+        "sells_forced_delist": 0,
+        "sells_pending_at_end": 3,
+        "entry_limit_blocked": 0,
+        "entry_suspended": 0,
+        "exit_limit_blocked": 0,
+        "exit_suspended": 0,
+        "legs_executed": 83,
+        "legs_planned": 83,
+        "execution_rate": 1.0
+      },
+      "dev": {
+        "net_cagr": -0.09976500006515399,
+        "gross_cagr": -0.09698848115464731,
+        "net_total_return": -0.09866340856260436,
+        "gross_total_return": -0.09591588809178497,
+        "b1_net_cagr": -0.03270908385841642,
+        "max_drawdown": -0.12163776162562978,
+        "mdd_window": {
+          "max_drawdown": -0.12163776162562978,
+          "peak_date": "2016-04-14",
+          "trough_date": "2016-10-17"
+        },
+        "b1_max_drawdown": -0.12310954056262413,
+        "excess_vs_b1": -0.06705591620673756,
+        "execution_rate": 1.0,
+        "net_return_by_year": {
+          "2016": -0.09866340856260436
+        },
+        "excess_by_year": {
+          "2016": -0.06632870213360997
+        },
+        "gross_return_by_year": {
+          "2016": -0.09591588809178497
+        },
+        "turnover_by_year": {
+          "2016": {
+            "buy_notional": 2866666.666666666,
+            "sell_notional": 2647557.4525887333,
+            "mean_equity": 192134.71271384173,
+            "one_side_turnover": 14.920087193906353
+          }
+        },
+        "max_one_side_turnover": 14.920087193906353,
+        "concentration": {
+          "pnl_by_code": {
+            "510300.SH": 675.2267069188529,
+            "159919.SZ": -6821.384432291663,
+            "159915.SZ": -7164.784605057961,
+            "159902.SZ": 3865.626702669586,
+            "510050.SH": -403.94217488703725,
+            "510500.SH": -12129.05158482604,
+            "518880.SH": 11423.935423286763,
+            "159934.SZ": -4788.375978250537,
+            "518800.SH": -406.67417695981567,
+            "159937.SZ": -3983.2575931230094
+          },
+          "total_pnl": -19732.68171252086,
+          "top1_share": null,
+          "top3_share": null,
+          "n_codes_positive": 3
+        },
+        "monthly_top_decile": {
+          "top_decile_share": null,
+          "n_months": 12,
+          "total_pnl": -19732.68171252086
+        },
+        "forced_delist": {
+          "count": 0,
+          "pnl_sum": 0
+        }
+      }
+    }
+  },
+  "B3_dev_monthly": {
+    "n_seeds": 20,
+    "mean_net_cagr": 0.073301813617023,
+    "min": -0.032012443518429134,
+    "max": 0.19777315836396925,
+    "std": 0.061484229098829106,
+    "per_seed": {
+      "17": 0.03261054225840998,
+      "18": 0.0377858645500706,
+      "19": 0.0028611250083570017,
+      "20": 0.03654488384861598,
+      "21": 0.03192233189994509,
+      "22": -0.032012443518429134,
+      "23": 0.14592487342527627,
+      "24": 0.0692458985590001,
+      "25": 0.19777315836396925,
+      "26": 0.026751601062670494,
+      "27": 0.11270262374074047,
+      "28": 0.14026004268350922,
+      "29": 0.012529152976596736,
+      "30": 0.08203722073980879,
+      "31": 0.10732552127189243,
+      "32": 0.19400537231475967,
+      "33": 0.09473486800144482,
+      "34": 0.06388894920818378,
+      "35": 0.049102228197042574,
+      "36": 0.060042457748595846
+    }
+  },
+  "B3_dev_weekly": {
+    "n_seeds": 20,
+    "mean_net_cagr": -0.024930350415691936,
+    "min": -0.1435619525130425,
+    "max": 0.06393546805337591,
+    "std": 0.06251753260077283,
+    "per_seed": {
+      "17": -0.04001786588654277,
+      "18": 0.013306818805075338,
+      "19": 0.032034075172180154,
+      "20": 0.01150764321836606,
+      "21": -0.09341428415085329,
+      "22": -0.13200227164288603,
+      "23": 0.06284933908074919,
+      "24": -0.027534033081844322,
+      "25": 0.01176965740846403,
+      "26": -0.09974699519196839,
+      "27": 0.0233519476033055,
+      "28": -0.0038083060646723066,
+      "29": 0.06393546805337591,
+      "30": -0.11974666137985457,
+      "31": -0.1435619525130425,
+      "32": -0.012789811076930446,
+      "33": 0.015038395414840533,
+      "34": 0.009047160397306797,
+      "35": -0.048011399925897424,
+      "36": -0.020813932553010228
+    }
+  },
+  "benchmarks": {
+    "B1": {
+      "monthly": {
+        "dev": {
+          "net_cagr": 0.09677326867515013,
+          "net_total_return": 0.09559505305781357,
+          "max_drawdown": -0.09335279502065608,
+          "turnover_by_year": {
+            "2016": null
+          }
+        }
+      },
+      "weekly": {
+        "dev": {
+          "net_cagr": -0.03270908385841642,
+          "net_total_return": -0.032334706428994386,
+          "max_drawdown": -0.12310954056262413,
+          "turnover_by_year": {
+            "2016": null
+          }
+        }
+      }
+    },
+    "B2": {
+      "dev": {
+        "net_total_return": -0.09670196416613497,
+        "gross_total_return": -0.09652127745641359,
+        "net_cagr": -0.09778286395112845,
+        "entry": "2016-01-04",
+        "exit": "2016-12-30",
+        "fees": {
+          "buy": 20.0,
+          "sell": 18.067767493426643
+        }
+      }
+    },
+    "B2_dev_plus_val": {
+      "net_total_return": -0.09670196416613497,
+      "entry": "2016-01-04",
+      "exit": "2016-12-30"
+    },
+    "B4_cash": 0.0
+  },
+  "gates": {
+    "C01": {
+      "dev": {
+        "1_net_cagr_gt_0": true,
+        "2_excess_vs_B1_ge_2pp": false,
+        "3_positive_years_ge_4_of_5": false,
+        "4_mdd_le_20_and_le_B1": true,
+        "5_turnover_le_cap": true,
+        "5_turnover_cap": 6.0,
+        "6_top1_le_40_top3_le_70": false,
+        "7_vs_random_plus_1pp": false,
+        "8_execution_ge_95pct": true,
+        "dev_pass": false,
+        "dev_excess_vs_b1": -0.07906266205769708,
+        "positive_years": 0,
+        "smoke_non_binding": true
+      }
+    },
+    "C04": {
+      "dev": {
+        "1_net_cagr_gt_0": false,
+        "2_excess_vs_B1_ge_2pp": false,
+        "3_positive_years_ge_4_of_5": false,
+        "4_mdd_le_20_and_le_B1": true,
+        "5_turnover_le_cap": false,
+        "5_turnover_cap": 12.0,
+        "6_top1_le_40_top3_le_70": false,
+        "7_vs_random_plus_1pp": false,
+        "8_execution_ge_95pct": true,
+        "dev_pass": false,
+        "dev_excess_vs_b1": -0.06705591620673756,
+        "positive_years": 0,
+        "smoke_non_binding": true
+      }
+    }
+  },
+  "dev_pass_configs": [],
+  "advanced_to_validation": null,
+  "p3_candidates": []
+}

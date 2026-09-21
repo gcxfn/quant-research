@@ -1,0 +1,158 @@
+{
+  "run_id": "20260918T125211-p3r1-engine-ea06",
+  "experiment_id": "exp-20260918-p3r1-band-readjudication",
+  "purpose": "engine_acceptance_only (contract doc §4 items 1-10); no strategy judgement",
+  "status": "completed",
+  "started_at": "2026-09-18T05:04:26.167805+00:00",
+  "ended_at": "2026-09-18T05:05:17.997519+00:00",
+  "command": [
+    "D:\\量化\\.venv\\Scripts\\python.exe",
+    "artifacts\\runs\\20260918T125211-p3r1-engine-ea06\\tmp\\build_artifacts.py"
+  ],
+  "trial_accounting": {
+    "trials_consumed_by_this_run": 0,
+    "note": "engine acceptance consumes no trials; the 8 readjudication trials (189->197) belong to the separate adjudication runs after dual sign-off"
+  },
+  "frozen_config": {
+    "path": "configs/experiments/p3r1-band-readjudication.json",
+    "sha256": "231bb064b6472521e89cf525d787067d021e62db247cf86ad71489c794751b2c"
+  },
+  "authority_chain": {
+    "contract_doc": {
+      "path": "docs/plans/p3-band-contract.md",
+      "sha256": "dd51c520376c829bf91dba03a72fe1c4b20873c82ecb2174fc906bee71d7cb8b"
+    },
+    "prereg_doc": {
+      "path": "docs/research/exp-20260918-p3r1-band-readjudication-prereg.md",
+      "sha256": "25351beca60338d7dc16699493439ad7645e71ed1d5750a6ea3fda62a03c7f68"
+    },
+    "prereg_sha256_16_checks": {
+      "r16_config_sha256_16": {
+        "computed": "27f846a7330919a4",
+        "prereg": "27f846a7330919a4",
+        "match": true
+      },
+      "daily_parquet_sha256_16": {
+        "computed": "d9a63f4cc3032926",
+        "prereg": "d9a63f4cc3032926",
+        "match": true
+      },
+      "ex_cum_factor_sha256_16": {
+        "computed": "70df4aca64351858",
+        "prereg": "70df4aca64351858",
+        "match": true
+      }
+    }
+  },
+  "inputs": {
+    "daily_parquet": {
+      "path": "data/processed/baostock-daily-20260917/daily_1999_2024.parquet",
+      "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6",
+      "bytes": 488873145
+    },
+    "stk_limit_batch": {
+      "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by name",
+      "aggregate_sha256": "3c53abf3b0c39b425389137d9f630f0de158990fcdc55b0bd41bf7d9c3bde673",
+      "files": 2432,
+      "total_bytes": 301278245,
+      "path": "data/raw/tushare/stk_limit/20260917-r1"
+    },
+    "ex_cum_factor_h5": {
+      "path": "data/processed/rqalpha-bundle-v2-1-20260918/ex_cum_factor.h5",
+      "sha256": "70df4aca6435185889ae807afe0a44cc4f7243cc9ee63b20dcdb690ee963ffa9",
+      "bytes": 2946384
+    },
+    "note": "hashed for identity only; this acceptance run executed on inline synthetic frames and consumed zero real data rows"
+  },
+  "code_sha256": {
+    "src/quant/backtest/band_engine.py": "bc4cc8394566962c5c811efd55455eb583d7e0a307e93a0b12c287ddbe980541",
+    "tests/test_band_contract.py": "51f2c71bf5ef216ea23dfbe91e54f8253e309e32aac685574dd5e48aec619d7e"
+  },
+  "environment": {
+    "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "polars": "1.44.2",
+      "pyarrow": "25.0.1",
+      "numpy": "1.26.4",
+      "pandas": "2.3.3",
+      "vectorbt": "0.28.5"
+    }
+  },
+  "tests": {
+    "command": "python -m pytest tests/test_band_contract.py -v -ra",
+    "passed": 11,
+    "failed": 0,
+    "exit_code": 0,
+    "elapsed_seconds": 6.81,
+    "item_map": {
+      "1_fee_conservation": "test_01_fee_conservation",
+      "2_t1_zero_violations": "test_02_t1_zero_violations",
+      "3_lot_invariant": "test_03_lot_invariant",
+      "4_cash_nonneg_priority": "test_04_cash_nonneg_priority_order",
+      "5_touch_vs_penetration": "test_05_touch_vs_penetration",
+      "6_corporate_actions": "test_06_corporate_actions",
+      "7_suspension_limit_legality": "test_07_suspension_and_limit_legality",
+      "8_sell_reanchor_k3": "test_08_sell_reanchor_k3_fallback",
+      "9_sale_proceeds_next_day": "test_09_sale_proceeds_next_day",
+      "10_stamp_segmentation": "test_10_stamp_segmentation"
+    },
+    "log": "logs/pytest.log"
+  },
+  "hand_calc": {
+    "file": "hand-calc-samples.md",
+    "samples": [
+      "A_buy",
+      "B_sell",
+      "C_k3_fallback"
+    ],
+    "verification": "all sample numbers hard-asserted against engine output at generation time",
+    "log": "logs/handcalc.log"
+  },
+  "read_layer_smoke": {
+    "daily": {
+      "rows": 16344349,
+      "max_date": "2024-12-31",
+      "rows_dropped_by_freeze": 0
+    },
+    "stk_limit": {
+      "chunks": 2431,
+      "rows": 9705448,
+      "symbols": 5742,
+      "max_date": "2024-12-31"
+    },
+    "ex_cum_factor": {
+      "keys": 5914,
+      "rows": 33933,
+      "max_date": "2024-12-31"
+    },
+    "note": "read-only smoke; CRLF column-name handling and ts_code/order_book_id -> repo symbol mapping verified against the real batches (e.g. sh.600000 2022-07-21 ex-dividend change-point present)"
+  },
+  "disclosures": {
+    "strategy_judgement": "not performed (dual sign-off + separate dispatch required)",
+    "signals_consumed": "none; synthetic engine-acceptance scenarios only",
+    "data_access": "read-only hashing of the prereg input identities; zero row-level access to data/raw or data/processed",
+    "freeze": "read layer enforces trade_date <= 2024-12-31 (assert_frozen + loaders); exercised by tests/test_band_contract.py::test_00_input_guards",
+    "vectorbt": "declared available but NOT used: the contract needs per-day re-anchored limit prices, strict-inequality penetration, a K=3 market fallback, priority cash queues and T+1 settlement lag; vectorbt has no order type for this without a from_order_func callback that would itself be the loop. Pure Polars/numpy daily loop chosen for correctness (documented in the engine docstring)",
+    "engine_interpretation_choices": [
+      "full-funding rule: an unaffordable order is voided that day (void_insufficient_cash) and re-hung; never downsized, never partially filled (A-share limit orders must be fully funded at placement)",
+      "missing stk_limit rows void limit orders that day (no_limit_info); the K=3 market fallback nonetheless EXECUTES without limit info (exit is the risk-reducing direction)",
+      "sell re-anchor uses TRADED closes only (suspended stale closes excluded)",
+      "suspended days neither count toward nor reset the K=3 streak; t1_deferred / out-of-range / no-limit-info days DO count (they accelerate, never delay, the guaranteed exit)",
+      "a new same-name signal replaces the old order AFTER the new signal_date (the old order legitimately trades on that day; the new decision did not exist before that close); replacement restarts the K counter",
+      "on the armed market-exit day the order has converted to market: it fills at the open with no limit check; on limit-down-open deferred days the re-anchored limit order keeps working",
+      "market fallback and whole-position sells use the start-of-day position; explicit-quantity sells cap to held shares (quantity_capped)",
+      "cash dividends credit pre-tax on the ex-date computed on PRE-ex share count and are available to same-day buys (contract sets no settlement lag for dividends)",
+      "k3 pnl disclosure = net market-exit proceeds minus shares * previous close (engine-defined; the contract does not define this metric)",
+      "transfer fee not modelled (~0.1bp/leg SSE only; standing disclosure)"
+    ],
+    "ambiguities_for_referee": "the interpretation choices above are the executor's conservative readings of the frozen contract; none blocks the 10 acceptance items, but they are listed for the dual-sign reviewer and the main dialogue to confirm or overrule"
+  },
+  "peak_rss_bytes": 276045824,
+  "outputs": {
+    "hand-calc-samples.md": "45aff534840aa791e706d46f67c5d083e0b34c41cf184e697e736a510837e99a",
+    "logs/handcalc.log": "84712a2717aa652888dbf032bc0b91be4cfd2722f617810b51d6b6472fc5bcab",
+    "logs/pytest.log": "2f5e6afd3a71c5bd87b032622aa288a1e96aa574787ec40466c748574cf13ec0",
+    "tmp/build_artifacts.py": "16f5adbc5873139de5cedd4e9d8845747efcb642d5da9765b82fc0ed0eac436f"
+  }
+}

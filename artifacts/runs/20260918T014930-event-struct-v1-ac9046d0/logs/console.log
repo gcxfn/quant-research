@@ -1,0 +1,14 @@
+== event-factors-v1-20260918 build, run 20260918T014930-event-struct-v1-ac9046d0 ==
+calendar: 2431 days 2015-01-05..2024-12-31; pool codes: 5410 (raw universe 5552)
+[forecast] raw rows: 50406 from 97 files (0 empty)
+[forecast] kept 37227 (oob 9576, in_pool_false 31) -> forecast.parquet
+[express] raw rows: 8488 from 31 files (7 empty)
+[express] kept 7619 (oob 169, in_pool_false 2) -> express.parquet
+[repurchase] raw rows: 61718 from 129 files (0 empty)
+[repurchase] kept 12204 (oob 2618, in_pool_false 0) -> repurchase.parquet
+[share_float] raw rows: 5661143 from 129 files (0 empty)
+[share_float] kept 19101 (oob 3629, in_pool_false 0) -> share_float.parquet
+[stk_holdertrade] raw rows: 149108 from 129 files (0 empty)
+[stk_holdertrade] kept 126098 (oob 19982, in_pool_false 0) -> stk_holdertrade.parquet
+[disclosure_date] raw rows: 148313 from 31 files (0 empty)
+[disclosure_date] kept 109483 (oob 34282, in_pool_false 323) -> disclosure_date.parquet

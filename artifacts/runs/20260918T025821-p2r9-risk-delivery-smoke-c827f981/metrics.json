@@ -1,0 +1,601 @@
+{
+  "pin_checks": [
+    {
+      "what": "inherits_from (R7 config)",
+      "path": "configs/experiments/p2r7-etf-exposure.json",
+      "expected": "902ac69b8627f3b00db07e94777665b68d40ce15790f60b56d0e1de65ea91f77",
+      "actual": "902ac69b8627f3b00db07e94777665b68d40ce15790f60b56d0e1de65ea91f77",
+      "ok": true,
+      "resolution": "primary"
+    },
+    {
+      "what": "fund_basic",
+      "path": "data\\raw\\tushare\\fund_basic\\20260909-r1\\chunk_market_E.csv",
+      "expected": "b98932a79f838bf4a4995e703b77a267ecc5d9168c7ad2c2d9a022d502af97db",
+      "actual": "b98932a79f838bf4a4995e703b77a267ecc5d9168c7ad2c2d9a022d502af97db",
+      "ok": true,
+      "resolution": "primary"
+    },
+    {
+      "what": "fund_daily_manifest",
+      "path": "data\\raw\\tushare\\fund_daily\\20260917-r1\\manifest.json",
+      "expected": "b355322fae15ff1722c83b0a8c8f44efa03f276b8ff0a36ac30b1bbc59a17dae",
+      "actual": "b355322fae15ff1722c83b0a8c8f44efa03f276b8ff0a36ac30b1bbc59a17dae",
+      "ok": true,
+      "resolution": "primary"
+    },
+    {
+      "what": "fund_adj_manifest",
+      "path": "data\\raw\\tushare\\fund_adj\\20260917-r1\\manifest.json",
+      "expected": "348d2ec4e8fd6df3ab856f2a09677d87b62d668529abe8b00b2ec38b68efccd4",
+      "actual": "348d2ec4e8fd6df3ab856f2a09677d87b62d668529abe8b00b2ec38b68efccd4",
+      "ok": true,
+      "resolution": "primary"
+    },
+    {
+      "what": "index_000300",
+      "path": "data\\raw\\tushare\\index_daily\\20260917-r1\\chunk_000300.SH.csv",
+      "expected": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878",
+      "actual": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878",
+      "ok": true,
+      "resolution": "primary"
+    },
+    {
+      "what": "index_manifest",
+      "path": "data\\raw\\tushare\\index_daily\\20260917-r1\\manifest.json",
+      "expected": "14372f9d2cd9bf19e6bbd21c4ad4c450f83473a315b1711a6717647e88f4d77a",
+      "actual": "14372f9d2cd9bf19e6bbd21c4ad4c450f83473a315b1711a6717647e88f4d77a",
+      "ok": true,
+      "resolution": "primary"
+    }
+  ],
+  "inherited_blocks_injected": [
+    "u1_whitelist_frozen",
+    "universe",
+    "preflight"
+  ],
+  "deviations": [
+    {
+      "id": 1,
+      "item": "R9 hysteresis machine start point (prereg does not spell it out, fixed BEFORE any run): the machine starts at the FIRST SIMULATED session (dev start 2016-01-04) with the registered init state ON; the D-family drawdown series it consumes is computed over the full loaded calendar so the rolling windows reach into the 2015 warmup exactly as in R8 (registered warmup purpose).  PDD instance peaks start at the first simulated session (R8 semantics carried: \"all-time\" = the instance own path, fresh closure per instance incl. B1(m) and every B3prime seed)."
+    },
+    {
+      "id": 2,
+      "item": "D252 warmup: the index batch has 244 rows in 2015, so the 252-session rolling peak is not formed for the first 8 sessions of 2016; the REGISTERED fallback (insufficient history = treated as triggered, risk-off e_low) applies to C06/C07 (and their B1(m)/B3prime instances).  Count recorded in metrics.warmup_fallback_sessions; D60 is fully formed throughout the simulated window."
+    },
+    {
+      "id": 3,
+      "item": "boundary conventions: the hysteresis machine uses the preregistered triggers verbatim on floats (OFF at dd >= T; re-arm at dd <= T/2), while the NO-hysteresis path (C02/A2) reuses the R8 rolling_dd_state verbatim (on iff dd <= T).  The two differ only at exact float equality dd == T; metrics.boundary_exact_dd_sessions records that count (0 expected) on the pinned index data."
+    },
+    {
+      "id": 4,
+      "item": "C11 re-arm values are parsed from the frozen config string field (\"D60 arm <=0.04, PDD arm <=0.05\") by pattern match; a parse failure hard-fails the run (fail-closed, frozen file never edited)."
+    },
+    {
+      "id": 5,
+      "item": "PDD/X1 net-vs-gross parity is structurally not guaranteed (fees feed back into the instance own-equity peak); parity is ASSERTED for every equity-independent config (C01-C07, C12, A1, A2) and reported as-is for C08-C11 (R8 deviation 5 carried)."
+    },
+    {
+      "id": 6,
+      "item": "position bookkeeping on partial re-sizes: a retarget sell reduces the position cumulative net-spend proportionally by units, a retarget buy adds its budget; close-out pnl stays cash-flow consistent (R8 deviation 6 carried; attribution only, no cash effect)."
+    },
+    {
+      "id": 7,
+      "item": "B1(m) rescale postponement details and de-minimis guards (R8 deviations 7/8/9 carried): postponed rescales retry at later opens, latest target wins, buys capped by the idle pool (never negative), a sell whose gross notional is at/below the 5-CNY commission minimum is skipped as a rule-compliant cash slot; the same guards apply to N=4."
+    },
+    {
+      "id": 8,
+      "item": "effective-config materialization (in memory, pre-run; R7/R8 precedent deviation class): u1_whitelist_frozen / universe / preflight are injected VERBATIM from the sha256-verified R7 inheritance source; the frozen R9 file is never modified and defines none of the three blocks (conflict-checked); run-dir config.json records the effective snapshot."
+    },
+    {
+      "id": 9,
+      "item": "gate-6 concentration for N=4 configs stays top-1 <=40% / top-3 <=70% as frozen; the top-4 share is DISCLOSURE only (metrics configs.{cid}.{seg}.concentration.top4_share)."
+    },
+    {
+      "id": 10,
+      "item": "B3prime matching: random Top-N runs the SAME mechanism+hysteresis AND the config own N (benchmark block \"random Top-N same mechanism+hysteresis\"); gate-7 compares each config against the B3prime mean of its own (mechanism, N) cell."
+    }
+  ],
+  "dev_label": "exploratory (third reuse: R6/R7/R8 consumed dev)",
+  "anchors_non_judged": [
+    "A1",
+    "A2"
+  ],
+  "timings": {
+    "load_s": 3.29,
+    "pools_s": 0.01,
+    "b1_b2_s": 0.01,
+    "b3prime_s": 0.01,
+    "sim_C01_s": 0.0,
+    "sim_C03_s": 0.0,
+    "sim_A1_s": 0.0,
+    "sim_A2_s": 0.0,
+    "anchors_s": 0.02,
+    "total_s": 3.41
+  },
+  "load_stats": {
+    "rows_whitelisted": 813201,
+    "codes_whitelisted": 943,
+    "rows_missing_factor": 1200,
+    "codes_missing_factor": 1
+  },
+  "warmup_fallback_sessions": {
+    "D60": 0,
+    "D252": 7
+  },
+  "boundary_exact_dd_sessions": {
+    "D60@0.08": 0,
+    "D252@0.10": 0
+  },
+  "mech_keys": {
+    "C01": "D60-8H4-L0.4",
+    "C03": "D60-8H4-L0.4",
+    "A1": "FIX75",
+    "A2": "D60-8-L0.4"
+  },
+  "b3prime_cells": [
+    "D60-8H4-L0.4|N=3"
+  ],
+  "net_gross_parity": {
+    "C01": true,
+    "C03": true,
+    "A1": true,
+    "A2": true
+  },
+  "anchor_regressions": {
+    "r8_run": "artifacts\\runs\\20260918T021054-p2r8-daily-risk-d19a9c07",
+    "r8_run_trial_count": 127,
+    "scope": "sessions<=2016-12-31",
+    "A1_vs_C01_sessions_equal": true,
+    "A1_vs_C01_net_bit_exact": true,
+    "A1_vs_C01_gross_bit_exact": true,
+    "A2_vs_C09_sessions_equal": true,
+    "A2_vs_C09_net_bit_exact": true,
+    "A2_vs_C09_gross_bit_exact": true,
+    "b1_100_vs_r8_sessions_equal": true,
+    "b1_100_vs_r8_bit_exact": true,
+    "b1_100_dev_metrics": "skipped in smoke (dev window is 2016 only)",
+    "all_pass": true
+  },
+  "configs": {
+    "C01": {
+      "freq": "monthly",
+      "W": [
+        20,
+        60
+      ],
+      "W_name": "W2S",
+      "N": 3,
+      "mech": "D60",
+      "mech_key": "D60-8H4-L0.4",
+      "e_low": 0.4,
+      "rearm": 0.04,
+      "max_negative_cash": 0.0,
+      "n_trades": 38,
+      "exec_stats": {
+        "planned_buy_legs": 19,
+        "buys_filled": 19,
+        "buys_no_candidate": 0,
+        "buys_cancelled_slot_busy": 0,
+        "planned_sell_legs": 16,
+        "sells_filled": 16,
+        "sells_postponed_then_filled": 0,
+        "sells_forced_delist": 0,
+        "sells_pending_at_end": 3,
+        "entry_limit_blocked": 0,
+        "entry_suspended": 0,
+        "exit_limit_blocked": 0,
+        "exit_suspended": 0,
+        "buys_cash_capped": 0,
+        "risk_legs_planned": 3,
+        "risk_buys_filled": 3,
+        "risk_sells_filled": 0,
+        "risk_buys_cash_capped": 0,
+        "risk_sells_feemin_skipped": 0,
+        "risk_suspended": 0,
+        "risk_limit_blocked": 0,
+        "legs_executed": 35,
+        "legs_planned": 35,
+        "execution_rate": 1.0
+      },
+      "hysteresis_switch_stats_by_year": {
+        "2016": {
+          "n_sessions": 244,
+          "n_switches": 1,
+          "n_off_triggers": 0,
+          "n_rearms": 1,
+          "off_share": 0.2623,
+          "mean_exposure": 0.7689
+        }
+      },
+      "turnover_decomposition_by_year": {
+        "2016": {
+          "selection_buy_notional": 880512.2388950451,
+          "risk_buy_notional": 69199.59737610223,
+          "total_buy_notional": 949711.8362711474,
+          "mean_equity": 206958.059524651,
+          "one_side_turnover": 4.588909648904135,
+          "selection_turnover": 4.254544330950138,
+          "risk_increment_turnover": 0.3343653179539973
+        }
+      },
+      "dev": {
+        "net_cagr": 0.047144010832095296,
+        "gross_cagr": 0.04815040157628325,
+        "net_total_return": 0.04658286770407161,
+        "gross_total_return": 0.04757700963457845,
+        "b1m_net_cagr": 0.0271767500363862,
+        "b1m_gross_cagr": 0.031120765861301525,
+        "max_drawdown": -0.06450435464448812,
+        "mdd_window": {
+          "max_drawdown": -0.06450435464448812,
+          "peak_date": "2016-04-14",
+          "trough_date": "2016-06-13"
+        },
+        "b1m_max_drawdown": -0.06291688277311636,
+        "excess_vs_b1m": 0.019967260795709096,
+        "gross_excess_vs_b1m": 0.017029635714981728,
+        "dd_margin_vs_b1m_pp": 0.15874718713717595,
+        "execution_rate": 1.0,
+        "execution_rate_dev_window": {
+          "legs_executed": 38,
+          "legs_planned": 38,
+          "execution_rate": 1.0
+        },
+        "execution_rate_full_window": 1.0,
+        "net_return_by_year": {
+          "2016": 0.04658286770407161
+        },
+        "excess_by_year": {
+          "2016": 0.01972655127286127
+        },
+        "turnover_by_year": {
+          "2016": {
+            "buy_notional": 949711.8362711474,
+            "sell_notional": 801078.0331427323,
+            "mean_equity": 206958.059524651,
+            "one_side_turnover": 4.588909648904135
+          }
+        },
+        "max_one_side_turnover": 4.588909648904135,
+        "risk_trades": {
+          "n_trades": 3,
+          "n_buys": 3,
+          "n_sells": 0,
+          "buy_notional": 69199.59737610223,
+          "sell_notional": 0,
+          "fees": 15.0,
+          "fee_share_of_total": 0.07700625384612725
+        },
+        "concentration": {
+          "pnl_by_code": {
+            "518880.SH": 622.1665765578109,
+            "159915.SZ": -726.7732097364278,
+            "510300.SH": 3316.5524671195017,
+            "510050.SH": 4518.323967990989,
+            "510500.SH": -1367.5668594343588,
+            "159902.SZ": 1998.3634308875262,
+            "159934.SZ": 1848.2466553082413,
+            "159937.SZ": 961.199000372646,
+            "518800.SH": -1853.9384882515442
+          },
+          "total_pnl": 9316.573540814385,
+          "top1_share": 0.48497700878943867,
+          "top3_share": 1.0554566894062718,
+          "top4_share": 1.2538393509299934,
+          "top5_share": 1.357010221224935,
+          "n_codes_positive": 6
+        },
+        "monthly_top_decile": {
+          "top_decile_share": 1.4977029638814638,
+          "n_months": 12,
+          "top_months": [
+            [
+              2016,
+              11
+            ],
+            [
+              2016,
+              3
+            ]
+          ],
+          "total_pnl": 9316.573540814337
+        },
+        "forced_delist": {
+          "count": 0
+        }
+      }
+    },
+    "C03": {
+      "freq": "monthly",
+      "W": [
+        60,
+        120
+      ],
+      "W_name": "W2L",
+      "N": 3,
+      "mech": "D60",
+      "mech_key": "D60-8H4-L0.4",
+      "e_low": 0.4,
+      "rearm": 0.04,
+      "max_negative_cash": 0.0,
+      "n_trades": 38,
+      "exec_stats": {
+        "planned_buy_legs": 19,
+        "buys_filled": 19,
+        "buys_no_candidate": 0,
+        "buys_cancelled_slot_busy": 0,
+        "planned_sell_legs": 16,
+        "sells_filled": 16,
+        "sells_postponed_then_filled": 0,
+        "sells_forced_delist": 0,
+        "sells_pending_at_end": 3,
+        "entry_limit_blocked": 0,
+        "entry_suspended": 0,
+        "exit_limit_blocked": 0,
+        "exit_suspended": 0,
+        "buys_cash_capped": 0,
+        "risk_legs_planned": 3,
+        "risk_buys_filled": 3,
+        "risk_sells_filled": 0,
+        "risk_buys_cash_capped": 0,
+        "risk_sells_feemin_skipped": 0,
+        "risk_suspended": 0,
+        "risk_limit_blocked": 0,
+        "legs_executed": 35,
+        "legs_planned": 35,
+        "execution_rate": 1.0
+      },
+      "hysteresis_switch_stats_by_year": {
+        "2016": {
+          "n_sessions": 244,
+          "n_switches": 1,
+          "n_off_triggers": 0,
+          "n_rearms": 1,
+          "off_share": 0.2623,
+          "mean_exposure": 0.7689
+        }
+      },
+      "turnover_decomposition_by_year": {
+        "2016": {
+          "selection_buy_notional": 854087.7015968874,
+          "risk_buy_notional": 70770.8384675356,
+          "total_buy_notional": 924858.540064423,
+          "mean_equity": 205746.19264541267,
+          "one_side_turnover": 4.495142914543958,
+          "selection_turnover": 4.151171356394625,
+          "risk_increment_turnover": 0.34397155814933383
+        }
+      },
+      "dev": {
+        "net_cagr": 0.025139976609865444,
+        "gross_cagr": 0.02612447525951378,
+        "net_total_return": 0.02484384738511114,
+        "gross_total_return": 0.02581660402704311,
+        "b1m_net_cagr": 0.0271767500363862,
+        "b1m_gross_cagr": 0.031120765861301525,
+        "max_drawdown": -0.05348731579405186,
+        "mdd_window": {
+          "max_drawdown": -0.05348731579405186,
+          "peak_date": "2016-04-14",
+          "trough_date": "2016-06-13"
+        },
+        "b1m_max_drawdown": -0.06291688277311636,
+        "excess_vs_b1m": -0.002036773426520755,
+        "gross_excess_vs_b1m": -0.004996290601787745,
+        "dd_margin_vs_b1m_pp": -0.9429566979064496,
+        "execution_rate": 1.0,
+        "execution_rate_dev_window": {
+          "legs_executed": 38,
+          "legs_planned": 38,
+          "execution_rate": 1.0
+        },
+        "execution_rate_full_window": 1.0,
+        "net_return_by_year": {
+          "2016": 0.02484384738511114
+        },
+        "excess_by_year": {
+          "2016": -0.0020124690460991967
+        },
+        "turnover_by_year": {
+          "2016": {
+            "buy_notional": 924858.540064423,
+            "sell_notional": 775058.9215912333,
+            "mean_equity": 205746.19264541267,
+            "one_side_turnover": 4.495142914543958
+          }
+        },
+        "max_one_side_turnover": 4.495142914543958,
+        "risk_trades": {
+          "n_trades": 3,
+          "n_buys": 3,
+          "n_sells": 0,
+          "buy_notional": 70770.8384675356,
+          "sell_notional": 0,
+          "fees": 15.0,
+          "fee_share_of_total": 0.07743864690648819
+        },
+        "concentration": {
+          "pnl_by_code": {
+            "510050.SH": 4576.603318100726,
+            "510300.SH": 2891.4900227818507,
+            "159915.SZ": -724.3550543991732,
+            "159902.SZ": -666.0339302806751,
+            "518880.SH": 1893.8916937577742,
+            "510500.SH": -1906.5922150118422,
+            "159937.SZ": 928.412633337517,
+            "159934.SZ": -212.02841347504727,
+            "518800.SH": -1812.6185777888895
+          },
+          "total_pnl": 4968.769477022241,
+          "top1_share": 0.9210737868329247,
+          "top3_share": 1.8841657029842613,
+          "top4_share": 2.0710153118523933,
+          "top5_share": 2.0283430940214875,
+          "n_codes_positive": 4
+        },
+        "monthly_top_decile": {
+          "top_decile_share": 2.7592662855293453,
+          "n_months": 12,
+          "top_months": [
+            [
+              2016,
+              11
+            ],
+            [
+              2016,
+              3
+            ]
+          ],
+          "total_pnl": 4968.76947702223
+        },
+        "forced_delist": {
+          "count": 0
+        }
+      }
+    },
+    "A1": {
+      "non_judged_anchor": true,
+      "mech": "FIX75",
+      "mech_key": "FIX75",
+      "W": "W2S",
+      "N": 3,
+      "max_negative_cash": 0.0,
+      "dev": {
+        "net_cagr": 0.08173015803859518,
+        "gross_cagr": 0.08269008006816048,
+        "max_drawdown": -0.06511827325809516
+      }
+    },
+    "A2": {
+      "non_judged_anchor": true,
+      "mech": "D60",
+      "mech_key": "D60-8-L0.4",
+      "W": "W2S",
+      "N": 3,
+      "max_negative_cash": 0.0,
+      "dev": {
+        "net_cagr": 0.045001656776643584,
+        "gross_cagr": 0.04600573893444859,
+        "max_drawdown": -0.06460419543122464
+      }
+    }
+  },
+  "benchmarks": {
+    "B1": {
+      "D60-8H4-L0.4": {
+        "dev": {
+          "net_cagr": 0.0271767500363862,
+          "gross_cagr": 0.031120765861301525,
+          "net_total_return": 0.026856316431210336,
+          "gross_total_return": 0.030753137235086436,
+          "max_drawdown": -0.06291688277311636,
+          "one_side_turnover": 8.934346743825643
+        }
+      },
+      "FIX75": {
+        "dev": {
+          "net_cagr": 0.07221017082275472,
+          "gross_cagr": 0.07603577481667356,
+          "net_total_return": 0.07134066414402129,
+          "gross_total_return": 0.07511860932532999,
+          "max_drawdown": -0.07146231145466242,
+          "one_side_turnover": 8.233394256547223
+        }
+      },
+      "100": {
+        "dev": {
+          "net_cagr": 0.09677326867515168,
+          "gross_cagr": 0.10058706475237145,
+          "net_total_return": 0.09559505305781513,
+          "gross_total_return": 0.09936034690642792,
+          "max_drawdown": -0.09335279502065608,
+          "one_side_turnover": 10.971035441173989
+        }
+      }
+    },
+    "B2": {
+      "dev": {
+        "net_total_return": -0.09670196416613497,
+        "gross_total_return": -0.09652127745641359,
+        "entry": "2016-01-04",
+        "exit": "2016-12-30",
+        "fees": {
+          "buy": 20.0,
+          "sell": 18.067767493426643
+        }
+      }
+    },
+    "B4_cash": 0.0
+  },
+  "B3prime_D60-8H4-L0.4": {
+    "n_slots": 3,
+    "n_seeds": 20,
+    "mean_net_cagr": 0.01223884361137425,
+    "min": -0.050139575386400126,
+    "max": 0.09980764107559392,
+    "per_seed": {
+      "17": -0.009771303367882012,
+      "18": -0.014382667507408908,
+      "19": -0.02882408342384024,
+      "20": 0.0048829765842171025,
+      "21": -0.0324901088155678,
+      "22": -0.050139575386400126,
+      "23": 0.040990102434764975,
+      "24": 0.010247885877576524,
+      "25": 0.0837064820225506,
+      "26": -0.001304344761554277,
+      "27": 0.03997280921584867,
+      "28": 0.039217498103363946,
+      "29": -0.030634326342509177,
+      "30": 0.015728780249280927,
+      "31": 0.04411376284983626,
+      "32": 0.09980764107559392,
+      "33": 0.03264812922434479,
+      "34": -0.0021239673913845403,
+      "35": -0.005156178912292919,
+      "36": 0.008287360498947294
+    }
+  },
+  "gates": {
+    "C01": {
+      "dev": {
+        "1_net_cagr_gt_0": true,
+        "2_excess_vs_B1_ge_2pp": false,
+        "3_positive_years_ge_4_of_5": false,
+        "4_mdd_le_20_and_le_B1": false,
+        "5_turnover_le_cap": true,
+        "5_turnover_cap": 6.0,
+        "6_top1_le_40_top3_le_70": false,
+        "7_vs_random_plus_1pp": true,
+        "8_execution_ge_95pct": true,
+        "dev_pass": false,
+        "dev_excess_vs_b1": 0.019967260795709096,
+        "positive_years": 1,
+        "smoke_non_binding": true
+      }
+    },
+    "C03": {
+      "dev": {
+        "1_net_cagr_gt_0": true,
+        "2_excess_vs_B1_ge_2pp": false,
+        "3_positive_years_ge_4_of_5": false,
+        "4_mdd_le_20_and_le_B1": true,
+        "5_turnover_le_cap": true,
+        "5_turnover_cap": 6.0,
+        "6_top1_le_40_top3_le_70": false,
+        "7_vs_random_plus_1pp": true,
+        "8_execution_ge_95pct": true,
+        "dev_pass": false,
+        "dev_excess_vs_b1": -0.002036773426520755,
+        "positive_years": 0,
+        "smoke_non_binding": true
+      }
+    }
+  },
+  "dev_pass_configs": [],
+  "advanced_to_validation": null,
+  "p3_candidates": [],
+  "trial_count_cumulative": 139,
+  "stop_rule": "this line gets NO further rounds tonight regardless of outcome (prereg section 0)"
+}

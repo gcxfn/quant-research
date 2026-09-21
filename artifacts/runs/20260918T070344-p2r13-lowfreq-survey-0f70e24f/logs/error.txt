@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2r13_lowfreq_survey.py", line 407, in main
+    panel, aux = build_panel(root, cal, signals)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\cli\p2r13_lowfreq_survey.py", line 219, in build_panel
+    block = lf.load_block_trades(root, pclose_tbl)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\p2r13_lowfreq.py", line 605, in load_block_trades
+    .join(hist.select('symbol', 'date', 'mkt_idx', 'pclose'),
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\_utils\deprecation.py", line 132, in wrapper
+    return function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\lazyframe\frame.py", line 6437, in join
+    require_same_type(self, other)
+  File "D:\量化\.venv\Lib\site-packages\polars\_utils\various.py", line 744, in require_same_type
+    raise TypeError(msg)
+TypeError: expected `other` to be a 'LazyFrame', not 'DataFrame'

@@ -1,0 +1,109 @@
+{
+  "run_id": "20260921T023606-etf-dynamic-identity-e41c",
+  "experiment_id": "exp-20260921-etf-dynamic-identity",
+  "nature": "ETF 动态路径数据身份核验（任务②-步骤1）。工程核验，零试验消费，无策略结论；判据仅为身份与覆盖事实，fail-closed。",
+  "status": "aborted_by_design_fail_closed",
+  "status_note": "按任务书『任何身份缺口记录后停止扩大』：确认半日数据批对 ETF 零覆盖后停止，不运行策略回放、不合成 am bar。",
+  "started_at_utc": "2026-09-21T02:36:06Z",
+  "finished_at_utc": "2026-09-21T02:40:32Z",
+  "commands": [
+    ".venv/Scripts/python.exe artifacts/runs/20260921T023606-etf-dynamic-identity-e41c/tmp/identity_pins.py",
+    ".venv/Scripts/python.exe artifacts/runs/20260921T023606-etf-dynamic-identity-e41c/tmp/etf_identity_scan.py",
+    ".venv/Scripts/python.exe artifacts/runs/20260921T023606-etf-dynamic-identity-e41c/tmp/etf_dynamic_identity_probe.py"
+  ],
+  "frozen_engine": {
+    "file": "src/quant/backtest/band_engine.py",
+    "bytes": 218654,
+    "sha256": "bcbdd44bb855b803ed8fa2dfc4915319af4c0b79e78e7b789c0b1bfb2d75ee4a",
+    "pinned_prefix": "bcbdd44bb855b803",
+    "prefix_match": true
+  },
+  "inputs": {
+    "halfday_batch": {
+      "path": "data/processed/halfday-bars-20260918",
+      "manifest_sha256": "2a414174b5df2eeed4c6bd6a7cd7f9f09f9b2efc8f05673ccc4b7695812cd679",
+      "dir_aggregate_sha256": "c52f3cdc3d184f484ff13cece7a6ca7a7ed589d66c4e4727bb3bc7056f6ecd93",
+      "files": 12,
+      "total_bytes": 372833812,
+      "rows": 18486939,
+      "window": "2015-01-05..2024-12-31"
+    },
+    "etf_source_processed": {
+      "path": "data/processed/etf-daily-20260919",
+      "manifest_sha256": "8b5b3fe56c0e02fd6af634bb3740c4f40c3b5f1dfabc984764433c0134eb1c8a",
+      "dir_aggregate_sha256": "75777221a8b335028bf8da60f14c59c6a3659f9d91578204308488d0f0fb7c2e",
+      "rows": 1017121,
+      "symbols": 1169
+    },
+    "etf_source_raw": {
+      "path": "data/raw/tushare/fund_daily/20260917-r1",
+      "dir_aggregate_sha256": "21b8bb5f0f05a8494641910ffc01f7b80bd9752f22b37e0eaa2cf3d440abe8f1",
+      "files": 1170,
+      "batch_status": "completed",
+      "range": "20150101..20241231",
+      "read_only": true
+    },
+    "defensive_legs": [
+      "sh.511010",
+      "sh.518880",
+      "sz.159934"
+    ],
+    "stock_control": "sh.600000 (baostock-daily-20260917 + halfday-bars-20260918)",
+    "window_used": "2015-01-05..2015-01-09（仅查表/探针，非策略窗口）"
+  },
+  "results": {
+    "checklist_1_naming": "PASS: halfday symbol form sh.600000 (5,322 syms, stock code prefixes only); ETF source form sh.511010 (1,169 syms); prefix intersection empty; symbol intersection 0/1169",
+    "checklist_2_date_coverage": "FAIL: ETF rows in halfday batch = 0 (am 0 / pm 0); legs 0 rows each; halfday symbol-day pairing both 9,241,735 / am_only 3,427 / pm_only 42 (matches the batch's own quality.json per-year table)",
+    "checklist_3_daily_cross": "calendar PASS (ETF daily distinct dates 2,431 == halfday trading dates, symmetric difference empty); symbol-level (symbol,date) agreement not computable (no ETF rows to join)",
+    "checklist_4_suspension": "surface exists but not executable: 270 ETF symbols with in-window no-row days, 12,881 symbol-days total; the three defensive legs have 0 no-row days (2,431/2,431)",
+    "determinism": "identity_pins.json and etf_dynamic_identity_probe.json byte-identical across reruns; etf_identity_scan.py made order-stable (sorted value_counts) and now byte-identical across reruns",
+    "engine_guard_evidence": {
+      "P1_real_etf_daily_plus_real_stock_bars_halfday": "BandContractError: halfday clock requires ETF am and pm bars",
+      "P2_section81_pm_only_bars_halfday": "BandContractError: halfday clock requires ETF am and pm bars",
+      "P3_control_stock_only_halfday": "ran (0 intents, equity 200000.0)",
+      "P4_control_section81_pm_only_bars_legacy": "ran; sh.518880 buy filled 2015-01-08 pm 8100 shares @2.445, commission 5.0, settled cash 180190.5, equity 199946.4 (hand-checked)"
+    },
+    "repo_wide_intraday_sweep": {
+      "halfday-bars-20260918": "0 ETF symbols (5,322 syms, stock prefixes only)",
+      "halfday-1130-20260918": "0 ETF symbols (5,324 syms)",
+      "minute-feats-20260918": "0 ETF symbols (5,322 syms)",
+      "data/raw/user_minute_1m (4 day files spot-checked)": "0 fund codes",
+      "prior_evidence": "run 20260918T202734-etf-recon-1d83 (all 2,431 minute day files, 0 fund codes)"
+    }
+  },
+  "outputs": {
+    "identity_checklist.md": "779a2a67a573e7e59ee27ed926757f4a4538d6b9db2929c3021a5cbc9d3e957b",
+    "tmp/identity_pins.py": "4906edc146b4326a96dfbe7725829c2b7d9cc62a4fe75682e50748a414a98447",
+    "tmp/identity_pins.json": "1de3e493628798fcb39575946003082030d4fb0a8604cd6d3f16a64341dbb4f7",
+    "tmp/etf_identity_scan.py": "1ec57cf3e92210f838471c463ebfaf5740bcce45e56177d435259348dc909203",
+    "tmp/etf_identity_scan.json": "0f01e1372afc72e7b3c317cb307ace3139c27d4ab581de901745b52dbaeffeff",
+    "tmp/etf_dynamic_identity_probe.py": "92874a5105492d5de9a66bdb27439157f4f4f9d474acc602e63096fd387b9c02",
+    "tmp/etf_dynamic_identity_probe.json": "b81010ffed2c1dd32747e7d0353a1ea6bcc70707cd34763f312f80cf8fd94ad1"
+  },
+  "budget": {
+    "wall_s_measured": {
+      "identity_pins.py": 5.1,
+      "etf_identity_scan.py": 2.3,
+      "etf_dynamic_identity_probe.py": 5.0,
+      "total": 12.3
+    },
+    "peak_memory_note": "not instrumented; each script reads at most two parquet partitions plus a 5-symbol panel <1GB; no engine backtest run; all three scripts re-run exit 0 and are byte-deterministic"
+  },
+  "trial_ledger": {
+    "strategy_line": "unchanged",
+    "factor_line": "unchanged",
+    "consumed": 0
+  },
+  "freeze_compliance": {
+    "val_2021_2024": "untouched (only 2015-01-05..09 real rows used)",
+    "frozen_2025plus": "untouched",
+    "raw_batches_modified": "none (read-only; per-chunk sha256 re-verified against the batch manifest)"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "polars": "1.44.2",
+    "numpy": "1.26.4",
+    "venv": ".venv (non-editable)"
+  },
+  "git": "none (repository not initialized)"
+}

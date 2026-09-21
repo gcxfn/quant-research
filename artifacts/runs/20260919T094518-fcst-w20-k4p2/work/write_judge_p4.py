@@ -1,0 +1,126 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""wave-20 part4 (ordinal 11700-11799) 逐行判定写入（python 文件写，非 shell heredoc）。"""
+import json
+import os
+
+ROWS = [
+ (11700, "other", "demand_up", 0, "第一季度销售收入在全年中占比较小", "high"),
+ (11701, "impairment", None, -1, "坏账准备计提较上年同期减少", "high"),
+ (11702, "impairment", None, 1, "存在商誉减值的风险", "high"),
+ (11703, "other", "demand_down", 1, "公司出现大量债务逾期，订单大幅下降", "high"),
+ (11704, "other", "demand_down", 1, "公司持续受到债务危机影响", "high"),
+ (11705, "impairment", None, 1, "故在2019年半年度增加计提坏账准备", "high"),
+ (11706, "other", "demand_down", 1, "公司持续受到债务危机影响", "high"),
+ (11707, "other", "demand_down", 1, "公司出现大量债务逾期，订单大幅下降", "high"),
+ (11708, "cost_up", "other", 1, "因新游戏上线致销售费用大幅增加", "high"),
+ (11709, "other", "demand_up", 0, "由于公司经营存在季节性因素", "high"),
+ (11710, "other", None, 0, "销售以及收入确认呈现的季节性特征影响", "high"),
+ (11711, "other", "demand_up", 0, "由于公司经营存在季节性因素", "high"),
+ (11712, "impairment", "demand_up", 1, "对应的计提预计负债为3,996万元", "high"),
+ (11713, "impairment", "demand_up", 1, "对应的计提预计负债为4,315万元", "high"),
+ (11714, "other", "demand_up", 0, "每年第一季度收入规模均相对较小", "high"),
+ (11715, "cost_down", "non_recurring", -1, "大幅缩减运行成本和费用", "high"),
+ (11716, "impairment", "demand_down", 1, "计提相应的资产减值准备约1.63亿元", "high"),
+ (11717, "impairment", "non_recurring", 1, "计提相应的资产减值准备3.45亿", "high"),
+ (11718, "impairment", "demand_down", 1, "计提商誉减值准备、长期股权投资减值准备、坏账准备", "high"),
+ (11719, "other", "cost_up", 0, "公司主要业务季节性特征明显", "high"),
+ (11720, "impairment", "non_recurring", 1, "计提信用减值损失、资产减值损失", "high"),
+ (11721, "other", None, 0, "公司业绩具有明显的季节性特征", "high"),
+ (11722, "other", None, 0, "收入确认主要集中于第四季度", "high"),
+ (11723, "demand_up", "cost_down", -1, "令公司销售收入和毛利额较上年同期有所增长", "high"),
+ (11724, "cost_down", None, -1, "期间费用总额较上年同期明显减少", "high"),
+ (11725, "cost_up", "ma_restructuring", 1, "费用较去年同期有较大增加", "high"),
+ (11726, "cost_up", "other", 1, "使得人工费用增长较大", "high"),
+ (11727, "cost_up", "other", 1, "导致本报告期人工费用及期间费用等比去年同期有较大幅度增长", "high"),
+ (11728, "other", "cost_up", 0, "基于行业特征和经营业绩的季节性因素的影响", "high"),
+ (11729, "other", None, 0, "公司营业收入有较强的季节性波动", "high"),
+ (11730, "other", None, 0, "公司业绩具有明显的季节性特征", "high"),
+ (11731, "other", "orders", -1, "受《人民币现金机具鉴别能力技术规范》", "high"),
+ (11732, "cost_up", "non_recurring", 1, "销售费用预计较去年同期增加", "high"),
+ (11733, "other", "cost_up", 0, "撤销全国高速公路省界收费站的实施方案及具体计划尚未确定", "high"),
+ (11734, "other", None, 1, "电子标签毛利率有所降低，导致整体业务毛利率下降", "high"),
+ (11735, "other", None, 0, "第一季度通常为公司销售淡季", "high"),
+ (11736, "other", "demand_up", 0, "公司业务存在明显季节性波动", "high"),
+ (11737, "other", "cost_up", 0, "公司业务存在明显季节性波动", "high"),
+ (11738, "demand_down", None, 1, "上半年收入较去年同期有所下降", "high"),
+ (11739, "other", None, 0, "公司业务存在明显季节性波动", "high"),
+ (11740, "demand_down", "non_recurring", 1, "导致主营业务收入及主营业务利润同比下滑", "high"),
+ (11741, "other", None, 0, "公司的收入呈现明显的季节性波动的特征", "high"),
+ (11742, "ma_restructuring", "impairment", -1, "导致合并范围发生变化", "high"),
+ (11743, "demand_up", "cost_up", -1, "主营业务收入较去年同期有所上升", "high"),
+ (11744, "cost_up", None, 1, "研发投入较上年同期有所增加", "high"),
+ (11745, "other", "cost_up", 0, "导致2019年第一季度业绩亏损", "high"),
+ (11746, "other", "cost_up", 0, "导致公司2019年半年度业绩亏损", "high"),
+ (11747, "other", "demand_up", 0, "第一季度属于家具销售淡季", "high"),
+ (11748, "other", "demand_up", 0, "确认收入等存在较明显的季节性", "high"),
+ (11749, "other", "cost_up", 0, "由于经营业绩的季节性影响", "high"),
+ (11750, "cost_up", None, 1, "研发费用同比增加约1500万元", "high"),
+ (11751, "other", None, 0, "项目结项验收存在明显的季节性特点", "high"),
+ (11752, "other", "cost_up", 0, "主要系公司从事的银行IT建设等项目结项验收及收入确认集中于下半年", "high"),
+ (11753, "other", None, 0, "公司受业务季节性特点影响", "high"),
+ (11754, "other", None, 0, "主要系公司从事的银行IT建设等项目结项验收及收入确认集中于四季度", "high"),
+ (11755, "non_recurring", "accounting", -1, "获得政府补助较上年同期增加所致", "high"),
+ (11756, "non_recurring", "demand_up", -1, "获得的政府补助较上年同期增加约4,090万元", "high"),
+ (11757, "other", None, 0, "整体经营情况平稳", "low"),
+ (11758, "cost_up", None, 1, "股权激励股份支付费用增加", "high"),
+ (11759, "price_down", "other", 1, "中标价格竞争依然激烈", "high"),
+ (11760, "impairment", "demand_up", -1, "部分应收账款坏账准备冲回", "high"),
+ (11761, "cost_up", None, 1, "人工费用及研发费用较上年同期有所增长", "high"),
+ (11762, "other", "cost_up", 0, "较多项目集中在第四季度确认收入", "high"),
+ (11763, "other", "cost_up", 0, "公司营业收入存在较强的季节性波动", "high"),
+ (11764, "other", "cost_up", 0, "2019年新能源汽车补贴政策延迟发布", "high"),
+ (11765, "other", "demand_down", 1, "2019年新能源汽车补贴政策调整的影响", "high"),
+ (11766, "orders", None, -1, "有一笔较大订单于2019年一季度实施完毕", "high"),
+ (11767, "other", None, 0, "公司营业收入存在较强的季节性", "high"),
+ (11768, "demand_up", "non_recurring", -1, "主要是由于列装收入增加", "high"),
+ (11769, "impairment", "demand_down", 1, "预计计提存货跌价准备9,700.00万元", "high"),
+ (11770, "other", None, 0, "系列重大风险尚未完全解除", "low"),
+ (11771, "other", "cost_up", 1, "逾期债务利息导致财务费用难以在短期内快速下降", "high"),
+ (11772, "other", "cost_up", 1, "逾期债务利息导致财务费用难以在短期内快速下降", "high"),
+ (11773, "demand_down", "cost_up", 1, "进口产品严重冲击国内市场", "high"),
+ (11774, "other", None, 0, "预计年初至下一报告期期末的累计净利润与上年同期相比大幅度减亏", "low"),
+ (11775, "other", None, 1, "银行账户被查封，经营资金无法周转", "high"),
+ (11776, "other", None, 1, "银行账户被查封，经营资金无法周转", "high"),
+ (11777, "impairment", "non_recurring", 1, "计提减值准备48,773万元左右", "high"),
+ (11778, "other", None, 0, "基金公司计提资金减值损失4.42亿元", "high"),
+ (11779, "cost_up", None, 1, "计提违约金及罚息", "high"),
+ (11780, "demand_down", None, 1, "部分高端人才流失及客户流失", "high"),
+ (11781, "demand_down", "non_recurring", 1, "环球星光服装业务业绩持续下滑的影响", "high"),
+ (11782, "impairment", "cost_up", 1, "计提资产减值准备约9,468万元", "high"),
+ (11783, "cost_up", "non_recurring", 1, "财务费用、折摊等固定支出较大", "high"),
+ (11784, "core_ops", None, 1, "装饰工程业务和酒店经营业务亏损", "high"),
+ (11785, "core_ops", None, 1, "装饰工程业务和酒店经营业务亏损", "high"),
+ (11786, "non_recurring", "impairment", 1, "从而导致我公司的投资收益亏损10,751.61万元", "high"),
+ (11787, "non_recurring", None, 1, "历史欠税所产生的滞纳金1,767.52万元", "high"),
+ (11788, "impairment", "other", 1, "存量应收账款面临部分或全部无法收回风险", "high"),
+ (11789, "core_ops", None, 1, "由于林业子公司和九夷锂能公司是否盈利存在不确定性", "high"),
+ (11790, "core_ops", None, 1, "由于林业子公司和九夷锂能预计亏损", "high"),
+ (11791, "core_ops", None, 1, "由于林业子公司和九夷锂能预计不能实现盈利", "high"),
+ (11792, "non_recurring", None, 0, "确认了股权转让收益约1.5亿元", "high"),
+ (11793, "non_recurring", None, 0, "确认了股权转让收益约1.5亿元", "high"),
+ (11794, "other", "non_recurring", 0, "大部分收入的实现集中在三至四季度", "high"),
+ (11795, "cost_up", "other", 1, "地产项目结算成本增加", "high"),
+ (11796, "other", "demand_down", 1, "公司包括基本户在内的多个银行账户被司法冻结", "high"),
+ (11797, "demand_down", "fx", 1, "公司营业收入规模在一季度出现收缩", "high"),
+ (11798, "core_ops", None, 1, "报告期内公司未能完成进度目标", "high"),
+ (11799, "cost_up", "other", 1, "矿石品位有所下降，黄金产量降幅较大，产品单位成本上升", "high"),
+]
+
+
+def main():
+    out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "batch_020_judge_part4.jsonl")
+    lines = []
+    for oid, pc, sc, sd, q, cf in ROWS:
+        rec = {"ordinal": oid, "primary_code": pc, "secondary_code": sc,
+               "supports_direction": sd, "key_quote": q, "confidence": cf}
+        lines.append(json.dumps(rec, ensure_ascii=False, separators=(",", ":")))
+    with open(out, "w", encoding="utf-8", newline="\n") as f:
+        f.write("\n".join(lines) + "\n")
+    qlen = sorted(len(r[4]) for r in ROWS)
+    print(json.dumps({"part": 4, "rows": len(ROWS), "ordinals": [ROWS[0][0], ROWS[-1][0]],
+                      "quote_len_max": qlen[-1]}, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()

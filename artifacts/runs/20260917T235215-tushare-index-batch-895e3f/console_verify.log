@@ -1,0 +1,76 @@
+{
+  "trade_cal_reference": "tushare/trade_cal/20260909-r1 (SSE, is_open=1, 20150101-20241231)",
+  "trade_cal_days": 2431,
+  "per_index": {
+    "000001.SH": {
+      "rows": 2431,
+      "first_date": "20150105",
+      "last_date": "20241231",
+      "close_non_null": 2431,
+      "close_non_null_rate": 1.0,
+      "missing_vs_trade_cal": 0,
+      "extra_vs_trade_cal": 0,
+      "duplicate_dates": 0
+    },
+    "000300.SH": {
+      "rows": 2431,
+      "first_date": "20150105",
+      "last_date": "20241231",
+      "close_non_null": 2431,
+      "close_non_null_rate": 1.0,
+      "missing_vs_trade_cal": 0,
+      "extra_vs_trade_cal": 0,
+      "duplicate_dates": 0
+    },
+    "000905.SH": {
+      "rows": 2431,
+      "first_date": "20150105",
+      "last_date": "20241231",
+      "close_non_null": 2431,
+      "close_non_null_rate": 1.0,
+      "missing_vs_trade_cal": 0,
+      "extra_vs_trade_cal": 0,
+      "duplicate_dates": 0
+    },
+    "000852.SH": {
+      "rows": 2431,
+      "first_date": "20150105",
+      "last_date": "20241231",
+      "close_non_null": 2431,
+      "close_non_null_rate": 1.0,
+      "missing_vs_trade_cal": 0,
+      "extra_vs_trade_cal": 0,
+      "duplicate_dates": 0
+    },
+    "399006.SZ": {
+      "rows": 2431,
+      "first_date": "20150105",
+      "last_date": "20241231",
+      "close_non_null": 2431,
+      "close_non_null_rate": 1.0,
+      "missing_vs_trade_cal": 0,
+      "extra_vs_trade_cal": 0,
+      "duplicate_dates": 0
+    }
+  },
+  "spot_checks": [
+    {
+      "ts_code": "000300.SH",
+      "trade_date": "20240930",
+      "close": "4017.8545"
+    },
+    {
+      "ts_code": "000300.SH",
+      "trade_date": "20150612",
+      "close": "5335.1151"
+    },
+    {
+      "ts_code": "000300.SH",
+      "trade_date": "20200709",
+      "close": "4840.7712"
+    }
+  ]
+}
+PROBLEMS: none
+sha256.tsv appended 6 rows
+inventory.json appended entry: tushare/index_daily/20260917-r1 files=6 bytes=1354204

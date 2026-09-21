@@ -1,0 +1,947 @@
+{
+  "run_id": "20260920T190224-f2r1-rebuild-85e7f7e5",
+  "experiment_id": "exp-20260920-f2r1-rebuild",
+  "status": "completed",
+  "started_at": "2026-09-20T11:02:24.657229+00:00",
+  "command": [
+    "D:\\量化\\.venv\\Scripts\\python.exe",
+    "tools/run_f2r1_combined.py"
+  ],
+  "config_sha256": "1ebb9e1376186522f9d7fbf7bc523e052977d80ce94075c99491399ba54c7765",
+  "source_sha256": {
+    "src\\quant\\__init__.py": "8c87349ce293131565a8ace05f9e339c81fa76951bde07525c354c74c4cf3307",
+    "src\\quant\\backtest\\__init__.py": "dde15cd80a7f5bb490b6b3f7ed7a68f3fca1a18121e9000939c417e0ed3b8999",
+    "src\\quant\\backtest\\backtrader_adapter.py": "fc2813a4f5cdd735a26051b800e02e9106403440c08d84a139eda05269093966",
+    "src\\quant\\backtest\\band_engine.py": "31022babbc2858ea27a9142141fba9c14f7361294ea84e4257025ce820aa6076",
+    "src\\quant\\backtest\\orders.py": "aec9750d59f4b7316ab89a0b175b0a7839998f68ed7debf2b0bd18dde405318e",
+    "src\\quant\\backtest\\results.py": "c43324de29ce0c2f17d521497879bfca6cfaa5be7618a89453226f2ca72bf830",
+    "src\\quant\\backtest\\vectorbt_adapter.py": "73847bb6997dc26697657871199b8bd7392acc70cf329cc2e18dd27062c494a9",
+    "src\\quant\\cli\\__init__.py": "b0536f9542c22462c17ef58d483a1adf6bf0c25369954507844e0421e5c0723a",
+    "src\\quant\\cli\\factor_correlation_dedupe.py": "4db1b1ee6f3b01ef2118acf91ceeae2ab46f990d38d5d7d9692c68e79970f319",
+    "src\\quant\\cli\\factor_eval_run.py": "39d5a2be85f33d2b7b59108b3d900bb339dea9e55596aff82c2dac45de3ba732",
+    "src\\quant\\cli\\main.py": "ddde31f438600e5447517ce7a9db8b2a5c1ba14f61351fa39272255b6ccbb471",
+    "src\\quant\\cli\\p0_benchmark.py": "fb7d38b8f1abba17d25dfab844b9771f8de53eafd39d4d654cc42eb2d64357e6",
+    "src\\quant\\cli\\p2_factor_survey.py": "155eed8d1985e5ebd3aab4c5f7b808e4a5722b67f20bf8ef9fa59568e274a08f",
+    "src\\quant\\cli\\p2_first_screen.py": "9d7b6288191ef30ade1fca27e9a94d84bb65197960614e0100c3dbba560d5fd0",
+    "src\\quant\\cli\\p2_window_diagnostic.py": "dfd6152db397cb2a358db44d374d9c9c0417a69d5810575485b00450cd28687a",
+    "src\\quant\\cli\\p2r10_halfday_survey.py": "be97cc4dfeebc7f8c29ec56ea5334b39787b3583d19e88f57fe01f0b15b652c5",
+    "src\\quant\\cli\\p2r11_halfday_combo.py": "6d0380d87987ac51b0204c2dec8eb6050365a7a8e633d97d5e02c2562e492aea",
+    "src\\quant\\cli\\p2r13_lowfreq_survey.py": "d710f20ac5590011c9a4373bce433ce48c07f9ed99fb8cad38671b016094ed5f",
+    "src\\quant\\cli\\p2r16_trend_dispersion.py": "0fe5002016e625d5fcd09a1477682b96b4e2a0378180a645fb3bfb0ff1c23774",
+    "src\\quant\\cli\\p2r6_etf_rotation.py": "fc815d8fe1e782d40d4c3e7d279834fa1af50ab3642153f724bb4a47e483d299",
+    "src\\quant\\cli\\p2r7_etf_exposure.py": "8a31a6950f49ba5e5ce5c487cfb3a2189b0fc6622b6bded5bc6c6368086f32dd",
+    "src\\quant\\cli\\p2r8_daily_risk.py": "89896f2a24bac5d7ba0cb91d6b17f45d3fe1b309b3b0388df2999ca5653f9aaf",
+    "src\\quant\\cli\\p2r9_risk_delivery.py": "92b53702aa2f0edbcba044532596fa341ade39ea01644edaedf5c0065a383cef",
+    "src\\quant\\data\\adjustment.py": "6cf5f7e7cc0d9e15b4030196f56c77009495279a206804361a7c86891d89a0ac",
+    "src\\quant\\data\\baostock_daily.py": "c83603ef05c805e7f81b60ff87a40088b23177b690f2a9bf421be390b6477e78",
+    "src\\quant\\data\\event_batches.py": "b8a0994a2adcec8fbc18a2c024abe088868eef3fcf90e0a2480a7f6087890691",
+    "src\\quant\\data\\rqalpha_bundle.py": "2ae8d0eed45d1216c84827eefb7bee0227fbdc985be0c38fa3f4794d7209d523",
+    "src\\quant\\factors\\__init__.py": "5b555032251c683b0c9b6cdb5857ff356c81e02dd4c14e6cff1055c309acade4",
+    "src\\quant\\factors\\cache.py": "949736dd8a9482bd64d939e13940a323d8341cf0518bddffa7db8a97315e8f9a",
+    "src\\quant\\factors\\core.py": "5c6ddcf87505fdb82fb63cbc9658964b7372da326879f89bcd4aac50d33f7a77",
+    "src\\quant\\factors\\eval.py": "02664076ce284d768b798fd0f647de72714a3be55b404d37330539b9f1ba65ed",
+    "src\\quant\\factors\\fund_derive.py": "5f836978fc4a4b4425fff7ec4e45c58ea828fa83b60d59ab71f8bc06493966d1",
+    "src\\quant\\factors\\signals.py": "9ef501a069ffaaef731d8f6f04682674b818c82e1f2a627af1023565e9e8692c",
+    "src\\quant\\research\\__init__.py": "ae42337e69dedb044718bfe63a1832ef0c85cf1886c9b45e0403d63208869a51",
+    "src\\quant\\research\\d_fund_rebuild.py": "a3525ec64f8ca819984e00645ef3d7dee63ac8efd953bdfea30a07375e7d4b3c",
+    "src\\quant\\research\\etf_rotation.py": "1c064efce2cf211505f62f46ac61ca39abf63c1f529e008518a8b26d2ca59b70",
+    "src\\quant\\research\\f2r1_rebuild.py": "f6283b7cc77867a4e1e51adc9b9b0c8faf2d57202e95d02242a82171facc63e5",
+    "src\\quant\\research\\factor_correlation_dedupe.py": "1c1cda942b8c286b28d39054f85d29c1ea35f5d72e3091cb2573e9d10db2aadb",
+    "src\\quant\\research\\factor_eval_run.py": "a78e71c27f5885d6018fbec76758468fe4329f9c3a35db29e3ce726c2793190a",
+    "src\\quant\\research\\factor_survey.py": "354bd65c557965f54fe7743be01716e37362483768eb5b7c7c420111aa2d041b",
+    "src\\quant\\research\\fee_recost.py": "683ec48aecbc298c1a19ce895a6de6ff28f2bb71e392216cbaf9ff1ca5fb3a6a",
+    "src\\quant\\research\\financial_snapshot.py": "4cebeca8aef5bd607d2c7e8ffc71180430fc420cc9e94640cdf4285596f61b96",
+    "src\\quant\\research\\p2_first_screen.py": "17f119402c02c87a7288fb9cdd93cc6e1b3d3d45e9b6642a317942e100060e80",
+    "src\\quant\\research\\p2r10_halfday.py": "25eb29ada94e336eeddb2d81e718f0983dfde7434ff87db6a4729b29f5009188",
+    "src\\quant\\research\\p2r11_halfday_combo.py": "41f95396457d6fb4694d2cb894230fc0c9734e26b6f6b3a0567748d9f61f669b",
+    "src\\quant\\research\\p2r12_event_veto.py": "885d0761fe7fea4a156ea762c63ff83006fab50328c0d74398b8f728409034e6",
+    "src\\quant\\research\\p2r13_lowfreq.py": "49034ba833ad8bff95a8dc66cb48e5d3cbc366a12f8ff282b26e48f102b8e349",
+    "src\\quant\\research\\p2r14_minute_structure.py": "979a1845c5bdc42360082ee82e13b6c2a5c54e1879fdaa7b6cf4da66ad00b055",
+    "src\\quant\\research\\p2r16_trend_dispersion.py": "04242366f8f5a3293088dfd5993c5dd08e6be9ea358696c84c0022cc5b8bc2c1",
+    "src\\quant\\research\\runs.py": "979f0ab108b8bd0fb97bd8a67435ebe46537d9cb06ef83a5ac1485c77593acbc",
+    "src\\quant\\research\\screen.py": "100cfef7927a7727089eeb3634eb810571a9313dfe09600964866a6c208249df",
+    "src\\quant\\research\\synthetic.py": "968818be521defdc028435123806f7de0e97858b06d8d0c67c87319cf3aa8795",
+    "src\\quant\\research\\t1_event.py": "c9183e14577036f50094c5782f9570a603bbb46cdeb6ae579ccf006c8cb84101"
+  },
+  "lock_sha256": "5694af16960733c0e6ce4e3ef84e9d586e9d4452fdbe00b992d321687dc50c25",
+  "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "polars": "1.44.2",
+    "pyarrow": "25.0.1",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "vectorbt": "0.28.5",
+    "backtrader": "1.9.78.123",
+    "psutil": "7.2.2"
+  },
+  "machine": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 20,
+    "ram_bytes": 16780566528,
+    "disk_free_bytes": 236258054144
+  },
+  "seed": null,
+  "date_range": [
+    null,
+    null
+  ],
+  "inputs": [
+    {
+      "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_2015_2024.parquet",
+      "sha256": "1cbb09a11f7c10136981749c13467f12a1757b59e7e95fb6f86666f96edfc1de",
+      "rows": 4871112,
+      "role": "panel"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A01.parquet",
+      "sha256": "974e4f7c711024e8c21d2a81dc3ab178ec494f24a758ca3818ba7c17e0890b65",
+      "rows": 223722,
+      "role": "factor",
+      "name": "A01"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A02.parquet",
+      "sha256": "e3380e34a8bf666e5776758ddf49e2c0fa71e7125b4808c2b40cd7a8f41c4e1c",
+      "rows": 215642,
+      "role": "factor",
+      "name": "A02"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A03.parquet",
+      "sha256": "d27a9cb3e4a51c5d37a308ea1dd04770ec86b802a7a8b8bcf4e6b254bf6822cb",
+      "rows": 203848,
+      "role": "factor",
+      "name": "A03"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A04.parquet",
+      "sha256": "cc0712185b05214f360d715eb073e3be265432310da4f07cd0e79d15e0b5af8a",
+      "rows": 181865,
+      "role": "factor",
+      "name": "A04"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A05.parquet",
+      "sha256": "2ebf58beb9871351aaf044d02b14ce9f72b0b328f51cad894459ff562f2618d6",
+      "rows": 223722,
+      "role": "factor",
+      "name": "A05"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A06.parquet",
+      "sha256": "e4b5ae57067ab498e8e693607b728eac93e72183002572ee124f7388c20fe299",
+      "rows": 215642,
+      "role": "factor",
+      "name": "A06"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A07.parquet",
+      "sha256": "95f9e3db51e42cffb31826bc02ffb2029a7f4898fe4152d2f41827f5eb47ba6e",
+      "rows": 181865,
+      "role": "factor",
+      "name": "A07"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A08.parquet",
+      "sha256": "0776e2c6e303f537fdc426762d0c2db7cead2f0c4c1ded9213168f240265aa4c",
+      "rows": 227749,
+      "role": "factor",
+      "name": "A08"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A09.parquet",
+      "sha256": "c917e4be773430b00da498cb185183d2917f5057bf0e69f61d4351d02b54ac9f",
+      "rows": 227338,
+      "role": "factor",
+      "name": "A09"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A10.parquet",
+      "sha256": "7c9ca237a3bdf6b373d800538f9a63a0ec7c3ac2264fc6d17f683acb1cc9a18b",
+      "rows": 226827,
+      "role": "factor",
+      "name": "A10"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A11.parquet",
+      "sha256": "c61f4a78e2de0e80c811cb1ac5676aafa2c2f94eb448d4a5bbe8ba0044776ac7",
+      "rows": 225960,
+      "role": "factor",
+      "name": "A11"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A12.parquet",
+      "sha256": "e8b4e8e3ca1e2653ebed52ab7e9b2d90a27b279528b337b8892ffaf073a9530f",
+      "rows": 215729,
+      "role": "factor",
+      "name": "A12"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A13.parquet",
+      "sha256": "f572612129fc4f0d9666405049c4dfebb71b698c633a2bf6da0a0638e27d0b73",
+      "rows": 203981,
+      "role": "factor",
+      "name": "A13"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A14.parquet",
+      "sha256": "3f5a2b72432cae786d451d57dcdc00e9ce465b905be3ac5585766079591becbb",
+      "rows": 225960,
+      "role": "factor",
+      "name": "A14"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A15.parquet",
+      "sha256": "9d16a4d6f66e84995b1b8cc93867ed7160baebaca00de3fa1e7e3ec90503c351",
+      "rows": 215729,
+      "role": "factor",
+      "name": "A15"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A16.parquet",
+      "sha256": "f9934c0d25df12c740947410375ba093783682dd9244ce420472503ed47ffdf0",
+      "rows": 179632,
+      "role": "factor",
+      "name": "A16"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A17.parquet",
+      "sha256": "a5f60efbcfd80330570dc7454140deeb679f44cd1f2d4eadf6c3122658873ff6",
+      "rows": 225960,
+      "role": "factor",
+      "name": "A17"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A18.parquet",
+      "sha256": "ece631cd6f2a0b045a7309e939d654bbb4d1265345abfe2f12dfc4e288b92199",
+      "rows": 215729,
+      "role": "factor",
+      "name": "A18"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A19.parquet",
+      "sha256": "e03efc90bfc8156e78d6903539bc53d8999aeb27ebb997e76eab8fec592e6dcb",
+      "rows": 225960,
+      "role": "factor",
+      "name": "A19"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A20.parquet",
+      "sha256": "00b69fbbf22f6725fd83cc6b9811f297874ec98cd7ce070e39156d229d37bda9",
+      "rows": 225960,
+      "role": "factor",
+      "name": "A20"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A21.parquet",
+      "sha256": "38fbe4112cd15bc435a01202f54136e84ca636686774e312d9e2fbc32dcd5f9c",
+      "rows": 225960,
+      "role": "factor",
+      "name": "A21"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A22.parquet",
+      "sha256": "4a6bd6e508de4d688bd094d97e73847156e133b403ad986445f05943059dd2de",
+      "rows": 215729,
+      "role": "factor",
+      "name": "A22"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A23.parquet",
+      "sha256": "f3b305ac4538871f31631ee100710a8d2eef51cda8f97c5d1c09b18675b4e947",
+      "rows": 225960,
+      "role": "factor",
+      "name": "A23"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A24.parquet",
+      "sha256": "cdbb94a43a4cd0901064a0abe84ba22c5ee09426dc2407dffb86db9e5fbb5fea",
+      "rows": 215729,
+      "role": "factor",
+      "name": "A24"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\A_price\\A25.parquet",
+      "sha256": "807022e1cbaf69fb0e9aa3625cfd19f0f1631775ce0fb51e23f90c4dc1abccb4",
+      "rows": 207757,
+      "role": "factor",
+      "name": "A25"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\B_value\\B01.parquet",
+      "sha256": "31d1a5a67631f5f870e6e975c1adc6389fb08331a1713f59b6b8864f6bfdc24e",
+      "rows": 223743,
+      "role": "factor",
+      "name": "B01"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\B_value\\B02.parquet",
+      "sha256": "70a3f3b02e10ce4ec479498282f5da4bb1c30db70cb3fcad62737fc244c01791",
+      "rows": 223743,
+      "role": "factor",
+      "name": "B02"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\B_value\\B03.parquet",
+      "sha256": "ace95c0689f02a9b62a8ee18d26f9490ba38b2d9d0b305f049693326cf7dad92",
+      "rows": 223743,
+      "role": "factor",
+      "name": "B03"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\B_value\\B04.parquet",
+      "sha256": "9834c42c86929e30643b494b83e5e53ccb8d766d8bf9dc1b21b9b2ea40f32d5a",
+      "rows": 195266,
+      "role": "factor",
+      "name": "B04"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\B_value\\B05.parquet",
+      "sha256": "7e7526e0d39c3de1c19260f24664e988b777453ff2fa1b998204101edfdb950c",
+      "rows": 222624,
+      "role": "factor",
+      "name": "B05"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\B_value\\B06.parquet",
+      "sha256": "d9b9a53f691eec44f26376d6fcee294426285bff193185c48afa2bb478642eca",
+      "rows": 223562,
+      "role": "factor",
+      "name": "B06"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\B_value\\B07.parquet",
+      "sha256": "913758319d91ebfb4937eca3e8094acfd8fc61880f7e08735687f9948d0a8917",
+      "rows": 203377,
+      "role": "factor",
+      "name": "B07"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\B_value\\B08.parquet",
+      "sha256": "9eb681c4a5875cb99d18dafc78ba2ce36f9d52e0f55393b729a7447a1162ba1c",
+      "rows": 204155,
+      "role": "factor",
+      "name": "B08"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\B_value\\B09.parquet",
+      "sha256": "1f285d2c6d48417f7f31d3d615d0e6c2c9a5896384aa561d0bea6c6e5db2542a",
+      "rows": 221891,
+      "role": "factor",
+      "name": "B09"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\B_value\\B10.parquet",
+      "sha256": "0375b78b700a599efa6efe72e36bde3a0f665515863448656e5a07f598140a2b",
+      "rows": 211714,
+      "role": "factor",
+      "name": "B10"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\B_value\\B11.parquet",
+      "sha256": "8170f6e2ca69ab9218051dc01bbd5e7182622d5ceca91f6f0554a9dbf15fa19b",
+      "rows": 221891,
+      "role": "factor",
+      "name": "B11"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\B_value\\B12.parquet",
+      "sha256": "a3a0c9e24947644473a28b6f07efc71fd833c3fe9de8988560df145d7b118ab5",
+      "rows": 200129,
+      "role": "factor",
+      "name": "B12"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\B_value\\B13.parquet",
+      "sha256": "9fe1a088987aed692571ee295ab5df490fd800945923e7433d8598123a02c154",
+      "rows": 195202,
+      "role": "factor",
+      "name": "B13"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\B_value\\B14.parquet",
+      "sha256": "f89b27e8220d1c7a3083f2c8834709c84125c6cc1d9bec9a6af8d5792da1f25a",
+      "rows": 222624,
+      "role": "factor",
+      "name": "B14"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\B_value\\B15.parquet",
+      "sha256": "21c1627990404ce5ca7d7c68dda5e80311f5ba19a157761c7520aeaf305480bd",
+      "rows": 219655,
+      "role": "factor",
+      "name": "B15"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\C_micro\\C01.parquet",
+      "sha256": "98c70ef3d91c9909c248e0008170d5efb9ae0d3bb73fcc92271407896390383b",
+      "rows": 221679,
+      "role": "factor",
+      "name": "C01"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\C_micro\\C02.parquet",
+      "sha256": "f1155ee0f28757a48f5dfb210711ba46140c732d65a14dc4a63df5b392256d51",
+      "rows": 221679,
+      "role": "factor",
+      "name": "C02"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\C_micro\\C03.parquet",
+      "sha256": "1cfe7255ef3849376a21446a599d4f0f1f42f755ea0b0f58b3cd8b3916ab7892",
+      "rows": 221679,
+      "role": "factor",
+      "name": "C03"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\C_micro\\C04.parquet",
+      "sha256": "f4db87ab6d0fc403df41f05aa98d4f97dbb2fbaf1345852bf0502db20354f66f",
+      "rows": 221887,
+      "role": "factor",
+      "name": "C04"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\C_micro\\C05.parquet",
+      "sha256": "14b59ae1249f16cd67f35b8ff82ad772dfb94685457325765b1cc0124d3a9183",
+      "rows": 223342,
+      "role": "factor",
+      "name": "C05"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\C_micro\\C06.parquet",
+      "sha256": "947d8284db1afa587c600517f681e4ff6272fbd665e1221046cc143c34a49d07",
+      "rows": 221887,
+      "role": "factor",
+      "name": "C06"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\C_micro\\C07.parquet",
+      "sha256": "c8c08dcb46e346827f08fbfb4da4f4f9074d2f9c1cd0bcfb167656e7a6d417c4",
+      "rows": 221887,
+      "role": "factor",
+      "name": "C07"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\C_micro\\C08.parquet",
+      "sha256": "f70f391086e11c3724edaa35aa6d39e0b0cc8472d5197a846a657b9508520bdf",
+      "rows": 221887,
+      "role": "factor",
+      "name": "C08"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\C_micro\\C09.parquet",
+      "sha256": "4d40889b1175729a629afa01fa37ef2381f941f01e93e8d0b755b815ffd6dd9a",
+      "rows": 221887,
+      "role": "factor",
+      "name": "C09"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\C_micro\\C10.parquet",
+      "sha256": "29989ae84590bf34ab321d2ce93fe463ff23db123be4ecf2e7f08b29582cb170",
+      "rows": 221887,
+      "role": "factor",
+      "name": "C10"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\C_micro\\C11.parquet",
+      "sha256": "312c89521771f7c61b675c704b95ab98c5bd5317084bd0df2e685512633d7a7b",
+      "rows": 221830,
+      "role": "factor",
+      "name": "C11"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\C_micro\\C12.parquet",
+      "sha256": "4249741a6066c4efac7e86bacb2b0ca01382c832e3fee11a0d107fbcc72a0a0f",
+      "rows": 221830,
+      "role": "factor",
+      "name": "C12"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\C_micro\\C13.parquet",
+      "sha256": "938632d1fba14f6e049441a6b5c1779dfc922b99633c3252c10b262859a75db6",
+      "rows": 221830,
+      "role": "factor",
+      "name": "C13"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\C_micro\\C14.parquet",
+      "sha256": "c489d9920f5223cdcb2657fbf00f4818f58bc582239c9486fad76a043d2a7b56",
+      "rows": 211656,
+      "role": "factor",
+      "name": "C14"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\C_micro\\C15.parquet",
+      "sha256": "457dbb8044ea80df2a2d96a762552f72dd5ad4b743eac89517baecb96907f21e",
+      "rows": 210465,
+      "role": "factor",
+      "name": "C15"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\C_micro\\C16.parquet",
+      "sha256": "dbb314c709bb438c3dd8597af4dd2b90acde0c8b6fb364b9a417b79e50c34cf8",
+      "rows": 208691,
+      "role": "factor",
+      "name": "C16"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\C_micro\\C17.parquet",
+      "sha256": "7bfb1dfc11a6472fa79a85ef083a8f7c642fa4d91a49be5c6feeeb26fdc26156",
+      "rows": 221887,
+      "role": "factor",
+      "name": "C17"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\C_micro\\C18.parquet",
+      "sha256": "be2cfce5177722111f94e9201a7dca5ee3613c21af7100f4d9693a4b71817cc1",
+      "rows": 221679,
+      "role": "factor",
+      "name": "C18"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\C_micro\\C19.parquet",
+      "sha256": "4243fa0519032777e8db9f5b7c1dc1517fe05b6a0ea5d20e8dc08b8328d899c8",
+      "rows": 221887,
+      "role": "factor",
+      "name": "C19"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\C_micro\\C20.parquet",
+      "sha256": "833e0a47d79cc0261b47b53bcbf52de96c4a09eacfaf36cc82b8bc0503f2b550",
+      "rows": 211712,
+      "role": "factor",
+      "name": "C20"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\F_xsec\\F01.parquet",
+      "sha256": "21a052b468c6502970ffb393cf73ac72140cbac549a875e0b5781a546efcbce1",
+      "rows": 214394,
+      "role": "factor",
+      "name": "F01"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\F_xsec\\F02.parquet",
+      "sha256": "f92de59c760563350a88501f986f4f58266519dd4e771f0520524faf0570bfbf",
+      "rows": 181812,
+      "role": "factor",
+      "name": "F02"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\F_xsec\\F03.parquet",
+      "sha256": "abea4a6248ce1291af88a18d2abf9f1e1b3f1b44a375c22292237a79cf479ceb",
+      "rows": 160172,
+      "role": "factor",
+      "name": "F03"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\F_xsec\\F04.parquet",
+      "sha256": "43a033592a36c2806a4544c46e095977307f56bc53cc63c2b1b6682720c35318",
+      "rows": 222133,
+      "role": "factor",
+      "name": "F04"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\F_xsec\\F05.parquet",
+      "sha256": "4290a5ae6e0064bb62ed0b7d82dfbf9c234adf799a05fa8569bd5480361343c6",
+      "rows": 225929,
+      "role": "factor",
+      "name": "F05"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\F_xsec\\F06.parquet",
+      "sha256": "e04e1344f841fc0eaa1c2ffe3a69df05ad06ce9b10042d8cfd9000f33ce29fba",
+      "rows": 214394,
+      "role": "factor",
+      "name": "F06"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\F_xsec\\F07.parquet",
+      "sha256": "a87fd9f792981d864ec32bf5c9532bee41cfcf69ce38632f115057a17a543711",
+      "rows": 214394,
+      "role": "factor",
+      "name": "F07"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\F_xsec\\F08.parquet",
+      "sha256": "0ff966aab56d19117995472844e6bd0c6300f4fd1bee0ca97e9f310440cd1eef",
+      "rows": 224242,
+      "role": "factor",
+      "name": "F08"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\F_xsec\\F09.parquet",
+      "sha256": "80f122f563a26cca5b9abc22c1626660a66cd29fca5ca669c5847ad469fa2247",
+      "rows": 224242,
+      "role": "factor",
+      "name": "F09"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\F_xsec\\F10.parquet",
+      "sha256": "c62379fd0d0b97b8ff9afa9389563c8fb31956a01a5f754973b4851274579b31",
+      "rows": 204409,
+      "role": "factor",
+      "name": "F10"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\E_event\\E01.parquet",
+      "sha256": "bccf89a39255646e93564d7049705e356a908305250e1de68214b349261f6026",
+      "rows": 48631,
+      "role": "factor",
+      "name": "E01"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\E_event\\E02.parquet",
+      "sha256": "184831b7918e722d10f3664f5c486c5f5fb2715b41c88ece5db91dd05b31a15e",
+      "rows": 48675,
+      "role": "factor",
+      "name": "E02"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\E_event\\E03.parquet",
+      "sha256": "b99c23d2ba4afcad5156f95d768d5dc7105cd47d30dd98df02300b20b6e938cf",
+      "rows": 48631,
+      "role": "factor",
+      "name": "E03"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\E_event\\E04.parquet",
+      "sha256": "726dcf8c04385310fea62f40e0c7e9ea86bd30b2b79708f464a41166d3ae1470",
+      "rows": 236437,
+      "role": "factor",
+      "name": "E04"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\E_event\\E05.parquet",
+      "sha256": "eded0dc88ea5143f83a9c994f75ed9cc8fe4ea67c5c0df7b34e92772dcb749e4",
+      "rows": 236437,
+      "role": "factor",
+      "name": "E05"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\E_event\\E06.parquet",
+      "sha256": "e64f4e77615b888aadef0cb5020b5bc4034c3726399b0eb657caa42ee1008b73",
+      "rows": 16269,
+      "role": "factor",
+      "name": "E06"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\E_event\\E07.parquet",
+      "sha256": "5019e16e62256fc3b77bfa0904531ef470fbef0e9ee28df6d55d2f2f5a174947",
+      "rows": 20745,
+      "role": "factor",
+      "name": "E07"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\E_event\\E08.parquet",
+      "sha256": "88bb932839201ff2845c0e1510b52cbdce06e811b42336340a2cc71211f259dc",
+      "rows": 24714,
+      "role": "factor",
+      "name": "E08"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\E_event\\E09.parquet",
+      "sha256": "cb5f163c140cbabc4c9a44162bd5a14b0d73092dd1b50a76250d28723cc9dc21",
+      "rows": 236437,
+      "role": "factor",
+      "name": "E09"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\E_event\\E10.parquet",
+      "sha256": "f24555d97b0c49b0d26ff3f54a976629836f4aaff1c8fe3c74b111a95f8dd80e",
+      "rows": 53962,
+      "role": "factor",
+      "name": "E10"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\E_event\\E11.parquet",
+      "sha256": "8196e4e2c2aacad56bf31a7c9825d0d47202ac09f2c5668ff2e611f038c7bfd2",
+      "rows": 39062,
+      "role": "factor",
+      "name": "E11"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\E_event\\E12.parquet",
+      "sha256": "cb976a1b3926305bc81f1eae72d49b23c6b53ad95dc044d8ddb032dabe8ac0c8",
+      "rows": 26325,
+      "role": "factor",
+      "name": "E12"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\E_event\\E13.parquet",
+      "sha256": "072e1f0259684384734c636936c51a4505cb544dd8ba9a2664c78b4abeda9020",
+      "rows": 8724,
+      "role": "factor",
+      "name": "E13"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\E_event\\E14.parquet",
+      "sha256": "383676599a2004a028b6a58a4a923b0b420cecde479f8977e215ed4d6efdca35",
+      "rows": 4144,
+      "role": "factor",
+      "name": "E14"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\E_event\\E15.parquet",
+      "sha256": "2da105de3de8828f3e5165a355dd71292885c9007f1c6c1c539265984b95e5ea",
+      "rows": 10825,
+      "role": "factor",
+      "name": "E15"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\E_event\\E17.parquet",
+      "sha256": "bdf39cfc76739c3cffecffc773e292b36b21c6fa4eed90fa4ede57104b05e16f",
+      "rows": 236437,
+      "role": "factor",
+      "name": "E17"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\E_event\\E18.parquet",
+      "sha256": "cb222cc133ea97cd880ac2300b5aa7f2be8ad82bfd8cd845445f02387d1ca611",
+      "rows": 236437,
+      "role": "factor",
+      "name": "E18"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\E_event\\E19.parquet",
+      "sha256": "6584cba9e35f47a2110e6a7468684fdd87af7d3e527eb671e8890dc613a0e3e8",
+      "rows": 236437,
+      "role": "factor",
+      "name": "E19"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\E_event\\E20.parquet",
+      "sha256": "c4b40daf483e653454f81a07323c8928d96eeae9b7d41dac8f66951d12d8f19f",
+      "rows": 16370,
+      "role": "factor",
+      "name": "E20"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T180001-e16-rebuild-real\\E16.parquet",
+      "sha256": "90767c8edb00eebd70e0ea5de88cb52fb0274e3e0517bc1a77a69743faf57d8d",
+      "rows": 160952,
+      "role": "factor",
+      "name": "E16"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D01.parquet",
+      "sha256": "160b0bcf0d530ea234b905ca48947aa6da0278dc1aa9410ee5d36cbeeb370fd2",
+      "rows": 319771,
+      "role": "factor",
+      "name": "D01"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D02.parquet",
+      "sha256": "332b6532b72319a4031bd7ea28ceb39dec45d94a7d16f7a689a8fd6db15d94c5",
+      "rows": 315012,
+      "role": "factor",
+      "name": "D02"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D03.parquet",
+      "sha256": "8692057a800685c61fe78c030e920195a2cbb4778733f3ceea87a8d774ba989b",
+      "rows": 313236,
+      "role": "factor",
+      "name": "D03"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D04.parquet",
+      "sha256": "f691071a948842a3af9f5a54420d74da5c77271bfe093a0a92dc28a511204225",
+      "rows": 320599,
+      "role": "factor",
+      "name": "D04"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D05.parquet",
+      "sha256": "21ef8e819e86eb849ba8df30dcb036f9cf6deb1189ca1a82c02c7be73ebb78f4",
+      "rows": 322731,
+      "role": "factor",
+      "name": "D05"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D06.parquet",
+      "sha256": "ef09d91cc3f4127d992fe6efaadde67214d17f334006163551d4cab20ad01faa",
+      "rows": 315996,
+      "role": "factor",
+      "name": "D06"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D07.parquet",
+      "sha256": "668a31f1211ad70357897747c1dbda9f72b96d072e1eda7f8e6431f926c59495",
+      "rows": 304524,
+      "role": "factor",
+      "name": "D07"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D08.parquet",
+      "sha256": "5a93e09e9cfa3b6c04441dfb817ff4ffbcb3e2dbb4509e7b2d333914c62a37aa",
+      "rows": 305297,
+      "role": "factor",
+      "name": "D08"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D09.parquet",
+      "sha256": "aa1b9cbb41636c031c8486c9ab1d57604dfcf4684f02b2f0fc68aaff8fbbe331",
+      "rows": 313630,
+      "role": "factor",
+      "name": "D09"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D10.parquet",
+      "sha256": "92cedf313fa4bc37fe4187096d7108d7b3f674b7585b802e05b6ea9842e7643f",
+      "rows": 321334,
+      "role": "factor",
+      "name": "D10"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D11.parquet",
+      "sha256": "3b7b8909b31bf48235ffea0df4bbe7394ac8c8e8993ad3c0c04bbd6852ea81f4",
+      "rows": 302778,
+      "role": "factor",
+      "name": "D11"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D12.parquet",
+      "sha256": "097f3214f236c3230a25c5853d8f3f555ca0442cd2bf7f2eddd4d6e688e936c0",
+      "rows": 304518,
+      "role": "factor",
+      "name": "D12"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D13.parquet",
+      "sha256": "b2008a8504492754be7104c150bc24ffefa7e0649a282f236310e6f1d102e4b8",
+      "rows": 291661,
+      "role": "factor",
+      "name": "D13"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D14.parquet",
+      "sha256": "1bebe3ad08e173d744dc6eed6272e853e63e5c062fc4b85c5f9102d84be5c541",
+      "rows": 287164,
+      "role": "factor",
+      "name": "D14"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D15.parquet",
+      "sha256": "420ee9e3361d04fa9ad8cf516e7488bbeda72af92bbf93bd37c54f1e69ac46f9",
+      "rows": 304736,
+      "role": "factor",
+      "name": "D15"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D16.parquet",
+      "sha256": "66feec14f7d33f22bee3b7b8050229d593e6b4fe983028a2b5fa0c692e17ebd4",
+      "rows": 310262,
+      "role": "factor",
+      "name": "D16"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D17.parquet",
+      "sha256": "d6933a6a9c3b4defcc0bdea1ec00c0f1555a471784f15eaa668e39fc5c1e7c70",
+      "rows": 304080,
+      "role": "factor",
+      "name": "D17"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D18.parquet",
+      "sha256": "18a1535503d4980af21ad92eb58f380021a22fb6d588a214cf3c79f9dc4e4053",
+      "rows": 322505,
+      "role": "factor",
+      "name": "D18"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D19.parquet",
+      "sha256": "2f625f56a3433dfa5275c4474f82b65560c735424513f5abe10d88bcd78f7937",
+      "rows": 298197,
+      "role": "factor",
+      "name": "D19"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D20.parquet",
+      "sha256": "b31523979ab19f1ccc00b14978a5781f730e126ab0d419341232559549e100db",
+      "rows": 250475,
+      "role": "factor",
+      "name": "D20"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D21.parquet",
+      "sha256": "e6aed47f9168b4afa6c55f7d627b843b1ac4f05d28ed5deb435c8d3b8e2c02b0",
+      "rows": 244320,
+      "role": "factor",
+      "name": "D21"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D22.parquet",
+      "sha256": "c91c3ebadc3e7bbc042fe8d9aeff606ac0b046c9f975be5fba1aba7267869db1",
+      "rows": 244982,
+      "role": "factor",
+      "name": "D22"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D23.parquet",
+      "sha256": "8692057a800685c61fe78c030e920195a2cbb4778733f3ceea87a8d774ba989b",
+      "rows": 313236,
+      "role": "factor",
+      "name": "D23"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D24.parquet",
+      "sha256": "7a304263916bccfdeb57b39509ce29cf698b981f97763018aa3dfc8190ca60f4",
+      "rows": 300063,
+      "role": "factor",
+      "name": "D24"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D25.parquet",
+      "sha256": "4979832dafde1717fceaf5f985a1eb7f194c21bda501f823ad8ba3de58de888d",
+      "rows": 279355,
+      "role": "factor",
+      "name": "D25"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D26.parquet",
+      "sha256": "8dd6bca77f744fafcae0383fe25b26385f28aff7a8898379b79c5b660057c20d",
+      "rows": 316818,
+      "role": "factor",
+      "name": "D26"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D27.parquet",
+      "sha256": "3faae6ad6c9bb95adea1842501298f0d2434866c8fe854ddf83dd81100874f7a",
+      "rows": 143937,
+      "role": "factor",
+      "name": "D27"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D28.parquet",
+      "sha256": "7d4b15c5a21e5ab51b71bf24ad3addcabb7671dee56e3323492565a568a2850b",
+      "rows": 292230,
+      "role": "factor",
+      "name": "D28"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D29.parquet",
+      "sha256": "3db4f6f69124a3d87b680b8cd2d0d7870bef4253f70b0970f18746acac6ff5bb",
+      "rows": 302934,
+      "role": "factor",
+      "name": "D29"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D30.parquet",
+      "sha256": "62840959571ef126360444c3af25fc0561ed9db884ce5078e3af0dec310c890c",
+      "rows": 321087,
+      "role": "factor",
+      "name": "D30"
+    }
+  ],
+  "limits": {},
+  "ended_at": "2026-09-20T11:07:27.605382+00:00",
+  "elapsed_seconds": 302.94505700000445,
+  "peak_rss_bytes": 4538634240,
+  "memory_method": "20ms process RSS sampling; includes imported libraries, excludes children",
+  "outputs": {
+    "config.json": "7f136a6135dcafac2d907ffc13d8c4247a666a8b2ea0368ba8362f52af809346",
+    "factor_results.json": "b47c760949b75eeb8cc8f685d931ba85a03fbb2232dcd80183e4dd7f434244ad",
+    "metrics.json": "2e045d0c24f95e71808a95b22f5553e75df02edc78f3432e411afb9a1fa37883",
+    "report.md": "6c3deff603a09131cc87253a6fa0dec42debb2a4f22dce0076bb1b1135d3a7ca"
+  }
+}

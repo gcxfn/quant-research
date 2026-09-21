@@ -1,0 +1,85 @@
+{
+  "run_id": "20260918T212440-p3v1-engine-083a",
+  "experiment_id": "exp-p3-band-contract-v1-engine",
+  "status": "completed",
+  "started_at": "2026-09-18T15:46:11.230378+00:00",
+  "ended_at": "2026-09-18T15:46:11.230378+00:00",
+  "command": [
+    "D:\\量化\\.venv\\Scripts\\python.exe",
+    "artifacts\\runs\\20260918T212440-p3v1-engine-083a\\tmp\\build_final.py"
+  ],
+  "engine": {
+    "path": "src/quant/backtest/band_engine.py",
+    "sha256": "494310195438cbfb9bd9730611591326179d5bb275f5c518a52b1cbe36f11e8e",
+    "sha256_16": "494310195438cbfb",
+    "contract": "docs/plans/p3-band-contract.md section 7 (v1, frozen 2026-09-18)",
+    "tests": {
+      "passed": 21,
+      "failed": 0
+    }
+  },
+  "platform": {
+    "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+    "system": "Windows"
+  },
+  "data_inputs": {
+    "halfday_bars": {
+      "path": "data/processed/halfday-bars-20260918/",
+      "note": "2015-2024, am+pm sessions, frozen at 2024-12-31"
+    },
+    "daily_official": {
+      "path": "data/processed/baostock-daily-20260917/daily_1999_2024.parquet",
+      "note": "official close for marks and 15:00 anchors"
+    },
+    "stk_limit": {
+      "path": "data/raw/tushare/stk_limit/20260917-r1",
+      "note": "daily limit prices, shared by both sessions"
+    }
+  },
+  "hand_calc_samples": {
+    "doc": "hand-calc-samples.md",
+    "verified": true,
+    "log": "logs/handcalc.log"
+  },
+  "outputs": {
+    "hand-calc-samples.md": "7c1e86bfdc8c103ee867fb464011276522f68541cc084d3efb6402d5196dffa8",
+    "logs/handcalc.log": "de05f1d4afeb08f45e999356a385e499daf40b9f50610afdc6859d13b076db0c",
+    "logs/pytest.log": "1757f4b18f402673b57ebf7a9fde906aaa1a06740eab47551acb11ab75f6c8c1",
+    "tmp/build_final.py": "6724fc978f82c2da55586678795d68096dc8b0b3060f7daa00203b2b46ff489e",
+    "tmp/build_v1.py": "da273c701f791fb1c543be019401ddbf3760f0966b47354b6a647078493b157a",
+    "tmp/build_v2.py": "86c8d5e57a877f6ae5943c402a6f4f370647f071af9e2b3017cb7515e2a84b3a",
+    "tmp/fix_s1.py": "9fde2a718a2aa6131b6f308a3eccc5e6515061c82641cf1a52eb7c4037873367",
+    "tmp/fix_samples.py": "94de3d64d748ec7f9a4f7be049696af0a76e937e989a343281df2c2e9bdce98c",
+    "tmp/fix_sig.py": "ee946c06adba7a3741884539be2ace2c686898c3d453bdc631b7a4222f3caa7e"
+  },
+  "data_checks": {
+    "bridge": {
+      "rows_checked": 18486939,
+      "range_violations": 3,
+      "range_violation_samples": [
+        {
+          "symbol": "sh.600864",
+          "trade_date": "2015-06-15",
+          "session": "am"
+        },
+        {
+          "symbol": "sh.600568",
+          "trade_date": "2015-11-23",
+          "session": "am"
+        },
+        {
+          "symbol": "sz.000671",
+          "trade_date": "2019-03-27",
+          "session": "pm"
+        }
+      ],
+      "pm_close_mismatches_pre_cutoff": 2870381,
+      "pm_close_mismatches_post_cutoff": 1824,
+      "cutoff": "2018-08-20",
+      "note": "pre-cutoff pm.close != official close is the REGISTERED reason pm.close must never be a mark or a 15:00 anchor"
+    },
+    "halfday_rows": 18486939,
+    "daily_rows": 16344349
+  },
+  "fix_chain": "review/fix-chain.md"
+}

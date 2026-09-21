@@ -1,0 +1,13 @@
+[pool] baostock 日线池 symbols=5328 (格式如 sh.600000)
+[2015] rows=559361, symbols=2321, suffixes=['SH', 'SZ'], bars∈[241,241], !=241: 0, 11:30 bars=2321 (not-1: 0)
+[2017] rows=781081, symbols=3241, suffixes=['SH', 'SZ'], bars∈[241,241], !=241: 0, 11:30 bars=3241 (not-1: 0)
+[2019] rows=870251, symbols=3611, suffixes=['SH', 'SZ'], bars∈[241,241], !=241: 0, 11:30 bars=3611 (not-1: 0)
+[2021] rows=1040156, symbols=4316, suffixes=['SH', 'SZ'], bars∈[241,241], !=241: 0, 11:30 bars=4316 (not-1: 0)
+[2024] rows=1232474, symbols=5114, suffixes=['SH', 'SZ'], bars∈[241,241], !=241: 0, 11:30 bars=5114 (not-1: 0)
+[20241231] rows=1304922, symbols=5382, suffixes=['BJ', 'SH', 'SZ'], bars∈[241,271], !=241: 262, 11:30 bars=5382 (not-1: 0)
+[inter 2015] minute(sh/sz)=2321 in_pool=2321 minute_only=0
+[inter 2017] minute(sh/sz)=3241 in_pool=3241 minute_only=0
+[inter 2019] minute(sh/sz)=3611 in_pool=3611 minute_only=0
+[inter 2021] minute(sh/sz)=4316 in_pool=4316 minute_only=0
+[inter 2024] minute(sh/sz)=5114 in_pool=5114 minute_only=0
+[done] schema_identical=True, report -> schema_check/schema_symbol_report.json

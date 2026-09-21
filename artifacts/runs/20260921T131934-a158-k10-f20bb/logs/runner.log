@@ -1,0 +1,52 @@
+[    0.0s] fixed-scheme; window=2015-01-05..2020-12-31; curves=['R2A']
+[    4.3s]   engine f3650f8440c713b8 OK; pins OK; rss 0.27 GB
+[    4.3s] == 1. calendar & signal days ==
+[    4.4s]   71 signal days (2015-01-30..2020-11-30)
+[    4.4s] == 2. R16 pools ==
+[    8.0s]   pool n min 810 max 2260
+[    8.0s] == 3. stock legs ==
+[   10.4s]   M-F: 20 reps; eligible median 1510
+[   10.4s]   MF: members/month min 0 max 10
+[   10.4s]   MC: members/month min 0 max 0
+[   10.4s] == 4. market frames ==
+[   20.8s]   frames: 509 stocks + 3 ETFs; daily 710199; half 1319334; limits 704072; rss 3.09 GB
+[   21.0s] == 5. benchmarks B1(m)_mix / B3'_mix ==
+[   29.2s]   B1(m)_mix net +6.16% mdd -15.51%; B3'_mix mean +5.49%
+[   30.0s] == 7. engine runs ==
+[    0.0s] fixed-scheme; window=2015-01-05..2020-12-31; curves=['R2A']
+[    4.2s]   engine f3650f8440c713b8 OK; pins OK; rss 0.27 GB
+[    4.2s] == 1. calendar & signal days ==
+[    4.2s]   71 signal days (2015-01-30..2020-11-30)
+[    4.2s] == 2. R16 pools ==
+[    7.3s]   pool n min 810 max 2260
+[    7.3s] == 3. stock legs ==
+[    9.7s]   M-F: 20 reps; eligible median 1510
+[    9.8s]   MF: members/month min 0 max 10
+[    9.8s]   MC: members/month min 0 max 0
+[    9.8s] == 4. market frames ==
+[   20.6s]   frames: 509 stocks + 3 ETFs; daily 710199; half 1319334; limits 704072; rss 3.27 GB
+[   20.9s] == 5. benchmarks B1(m)_mix / B3'_mix ==
+[   28.9s]   B1(m)_mix net +6.16% mdd -15.51%; B3'_mix mean +5.49%
+[   29.7s] == 7. engine runs ==
+[    0.0s] fixed-scheme; window=2015-01-05..2020-12-31; curves=['MLK10G0', 'MLK10G3']
+[    4.3s]   engine f3650f8440c713b8 OK; pins OK; rss 0.27 GB
+[    4.3s] == 1. calendar & signal days ==
+[    4.4s]   71 signal days (2015-01-30..2020-11-30)
+[    4.4s] == 2. R16 pools ==
+[    7.3s]   pool n min 810 max 2260
+[    7.3s] == 3. stock legs ==
+[    9.5s]   M-F: 20 reps; eligible median 1510
+[    9.6s]   MF: members/month min 0 max 10
+[    9.6s]   MC: members/month min 0 max 0
+[    9.6s] == 4. market frames ==
+[   20.8s]   frames: 509 stocks + 3 ETFs; daily 710199; half 1319334; limits 704072; rss 3.26 GB
+[   21.0s] == 5. benchmarks B1(m)_mix / B3'_mix ==
+[   28.8s]   B1(m)_mix net +6.16% mdd -15.51%; B3'_mix mean +5.49%
+[   29.6s] == 7. engine runs ==
+[   39.5s]   MLK10G0: 9.9s; calls 2924 injected 4692 orders 4723 filled 790 k3 None | etf exits 2 sn {'stops': 307, 'protections': 0, 'takes': 0} | rss 3.69 GB
+[   49.4s]   MLK10G3: 9.9s; calls 2924 injected 4546 orders 4551 filled 743 k3 None | etf exits 2 sn {'stops': 271, 'protections': 0, 'takes': 0} | rss 3.71 GB
+[   49.4s] == 8. metrics & eight gates ==
+[   50.0s]   MLK10G0: net -8.14% exc -14.30pp adv 1/6 mdd -52.70% turn 10.50 w 25.4% exec 43.1% -> fail ['1_net_cagr_gt_0', '2_excess_vs_B1mix_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1mix', '5_one_side_turnover_le_6', '7_vs_B3mix_plus_1pp', '8_execution_rate_ge_95pct']; 10% no
+[   50.4s]   MLK10G3: net -1.67% exc -7.83pp adv 2/6 mdd -18.04% turn 4.75 w 20.7% exec 41.8% -> fail ['1_net_cagr_gt_0', '2_excess_vs_B1mix_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1mix', '7_vs_B3mix_plus_1pp', '8_execution_rate_ge_95pct']; 10% no
+[   50.4s] == 9. outputs ==
+[   50.9s] == done; wall 51s; peak rss 3.71 GB

@@ -1,0 +1,43 @@
+{
+ "stage": "events_dev_port_check",
+ "tolerance": "byte-identical",
+ "files": {
+  "events_dev.parquet": {
+   "ref": "bada2b342493654d7b397191ba445b171a44b0d89d5d0cad9442dbf7995ab14f",
+   "new": "602ebd7f7ff711fc4cf13fa33e7619b2eee9761a084acf02eca6ac378dd4a6bd",
+   "identical": false
+  },
+  "type_drift.csv": {
+   "ref": "f42b26a6795403cd303decdd0ba28ef32deeab95b54d1d2f8057fc309f97e1bd",
+   "new": "f42b26a6795403cd303decdd0ba28ef32deeab95b54d1d2f8057fc309f97e1bd",
+   "identical": true
+  },
+  "primary_within_type.csv": {
+   "ref": "93640253069c7b7e23fc68248a1105e53f857d96d57d83fdfaa9404dab20eb0b",
+   "new": "93640253069c7b7e23fc68248a1105e53f857d96d57d83fdfaa9404dab20eb0b",
+   "identical": true
+  },
+  "anova_main.json": {
+   "ref": "9a1bad74ec79881da313f67980b0ad2dae783fb93d6f66e035956d6fb959c206",
+   "new": "9a1bad74ec79881da313f67980b0ad2dae783fb93d6f66e035956d6fb959c206",
+   "identical": true
+  },
+  "sensitivity.csv": {
+   "ref": "af5b613b9c687e1832d9e8db90f4a2b26b5fdd0226f49e099d450fe310171b49",
+   "new": "af5b613b9c687e1832d9e8db90f4a2b26b5fdd0226f49e099d450fe310171b49",
+   "identical": true
+  },
+  "pool_filter_counts.json": {
+   "ref": "3b2b00a180640d32df6bec9bcaebd162c2bae9d7a828746397fbe9af92b7ca9b",
+   "new": "3b2b00a180640d32df6bec9bcaebd162c2bae9d7a828746397fbe9af92b7ca9b",
+   "identical": true
+  },
+  "category_diagnostics.csv": {
+   "ref": "70ee6ab73abf63e64d5d72c0be7fc232667207beb8437db474e10080bb66ef94",
+   "new": "70ee6ab73abf63e64d5d72c0be7fc232667207beb8437db474e10080bb66ef94",
+   "identical": true
+  }
+ },
+ "all_pass": false,
+ "events_dev_parquet_content_note": "events_dev.parquet is byte-different (parquet row order) but content-bit-identical: equal keys, equal values (max |diff| 0.0 on every column after sorting by ordinal), and 6/7 downstream artifacts byte-identical (anova_main.json, type_drift.csv, primary_within_type.csv, sensitivity.csv, pool_filter_counts.json, category_diagnostics.csv) -- so the T1 analysis sample and every derived statistic reproduce exactly"
+}

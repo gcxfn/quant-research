@@ -1,0 +1,345 @@
+{
+ "feature_set": "fcst-reason-struct-full-20260918",
+ "struct_version": "llm-v1",
+ "created_at": "2026-09-18T02:56:20+08:00",
+ "seed_note": "stratification framework inherited from pilot seed=17; full-order expansion itself is deterministic (no rng call)",
+ "batch_size": 600,
+ "pool_rows": 38567,
+ "n_batches": 65,
+ "last_batch_rows": 167,
+ "ordering_rules": "pool = ann_date<=20241231 AND change_reason non-empty; strata=(type x ann_date year) in (type, year) ascending traversal; full allocation (target=N, identity per stratum); within stratum sorted by (ts_code, ann_date, end_date, update_flag) ascending",
+ "filter_counts": {
+  "total_rows_all_chunks": 50406,
+  "pool_rows": 38567,
+  "excluded_ann_date_ge_2025_with_reason": 10015,
+  "excluded_ann_date_le_2024_change_reason_empty": 1512,
+  "excluded_ann_date_missing_or_invalid": 0,
+  "of_which_invalid_anndate_but_reason_nonempty": 0
+ },
+ "n_strata": 63,
+ "strata": [
+  {
+   "type": "不确定",
+   "year": "2018",
+   "pool_n": 21
+  },
+  {
+   "type": "不确定",
+   "year": "2019",
+   "pool_n": 125
+  },
+  {
+   "type": "不确定",
+   "year": "2020",
+   "pool_n": 262
+  },
+  {
+   "type": "不确定",
+   "year": "2021",
+   "pool_n": 69
+  },
+  {
+   "type": "不确定",
+   "year": "2022",
+   "pool_n": 8
+  },
+  {
+   "type": "不确定",
+   "year": "2023",
+   "pool_n": 36
+  },
+  {
+   "type": "不确定",
+   "year": "2024",
+   "pool_n": 14
+  },
+  {
+   "type": "扭亏",
+   "year": "2018",
+   "pool_n": 140
+  },
+  {
+   "type": "扭亏",
+   "year": "2019",
+   "pool_n": 608
+  },
+  {
+   "type": "扭亏",
+   "year": "2020",
+   "pool_n": 668
+  },
+  {
+   "type": "扭亏",
+   "year": "2021",
+   "pool_n": 1028
+  },
+  {
+   "type": "扭亏",
+   "year": "2022",
+   "pool_n": 359
+  },
+  {
+   "type": "扭亏",
+   "year": "2023",
+   "pool_n": 525
+  },
+  {
+   "type": "扭亏",
+   "year": "2024",
+   "pool_n": 657
+  },
+  {
+   "type": "略减",
+   "year": "2018",
+   "pool_n": 253
+  },
+  {
+   "type": "略减",
+   "year": "2019",
+   "pool_n": 681
+  },
+  {
+   "type": "略减",
+   "year": "2020",
+   "pool_n": 689
+  },
+  {
+   "type": "略减",
+   "year": "2021",
+   "pool_n": 215
+  },
+  {
+   "type": "略减",
+   "year": "2022",
+   "pool_n": 168
+  },
+  {
+   "type": "略减",
+   "year": "2023",
+   "pool_n": 178
+  },
+  {
+   "type": "略减",
+   "year": "2024",
+   "pool_n": 86
+  },
+  {
+   "type": "略增",
+   "year": "2018",
+   "pool_n": 529
+  },
+  {
+   "type": "略增",
+   "year": "2019",
+   "pool_n": 1248
+  },
+  {
+   "type": "略增",
+   "year": "2020",
+   "pool_n": 919
+  },
+  {
+   "type": "略增",
+   "year": "2021",
+   "pool_n": 575
+  },
+  {
+   "type": "略增",
+   "year": "2022",
+   "pool_n": 420
+  },
+  {
+   "type": "略增",
+   "year": "2023",
+   "pool_n": 344
+  },
+  {
+   "type": "略增",
+   "year": "2024",
+   "pool_n": 330
+  },
+  {
+   "type": "续亏",
+   "year": "2018",
+   "pool_n": 91
+  },
+  {
+   "type": "续亏",
+   "year": "2019",
+   "pool_n": 622
+  },
+  {
+   "type": "续亏",
+   "year": "2020",
+   "pool_n": 836
+  },
+  {
+   "type": "续亏",
+   "year": "2021",
+   "pool_n": 816
+  },
+  {
+   "type": "续亏",
+   "year": "2022",
+   "pool_n": 447
+  },
+  {
+   "type": "续亏",
+   "year": "2023",
+   "pool_n": 922
+  },
+  {
+   "type": "续亏",
+   "year": "2024",
+   "pool_n": 1092
+  },
+  {
+   "type": "续盈",
+   "year": "2018",
+   "pool_n": 167
+  },
+  {
+   "type": "续盈",
+   "year": "2019",
+   "pool_n": 252
+  },
+  {
+   "type": "续盈",
+   "year": "2020",
+   "pool_n": 185
+  },
+  {
+   "type": "续盈",
+   "year": "2021",
+   "pool_n": 70
+  },
+  {
+   "type": "续盈",
+   "year": "2022",
+   "pool_n": 49
+  },
+  {
+   "type": "续盈",
+   "year": "2023",
+   "pool_n": 41
+  },
+  {
+   "type": "续盈",
+   "year": "2024",
+   "pool_n": 23
+  },
+  {
+   "type": "预减",
+   "year": "2018",
+   "pool_n": 265
+  },
+  {
+   "type": "预减",
+   "year": "2019",
+   "pool_n": 1049
+  },
+  {
+   "type": "预减",
+   "year": "2020",
+   "pool_n": 1101
+  },
+  {
+   "type": "预减",
+   "year": "2021",
+   "pool_n": 582
+  },
+  {
+   "type": "预减",
+   "year": "2022",
+   "pool_n": 380
+  },
+  {
+   "type": "预减",
+   "year": "2023",
+   "pool_n": 907
+  },
+  {
+   "type": "预减",
+   "year": "2024",
+   "pool_n": 772
+  },
+  {
+   "type": "预增",
+   "year": "2018",
+   "pool_n": 582
+  },
+  {
+   "type": "预增",
+   "year": "2019",
+   "pool_n": 1856
+  },
+  {
+   "type": "预增",
+   "year": "2020",
+   "pool_n": 1783
+  },
+  {
+   "type": "预增",
+   "year": "2021",
+   "pool_n": 2821
+  },
+  {
+   "type": "预增",
+   "year": "2022",
+   "pool_n": 1571
+  },
+  {
+   "type": "预增",
+   "year": "2023",
+   "pool_n": 1442
+  },
+  {
+   "type": "预增",
+   "year": "2024",
+   "pool_n": 1330
+  },
+  {
+   "type": "首亏",
+   "year": "2018",
+   "pool_n": 259
+  },
+  {
+   "type": "首亏",
+   "year": "2019",
+   "pool_n": 1017
+  },
+  {
+   "type": "首亏",
+   "year": "2020",
+   "pool_n": 1374
+  },
+  {
+   "type": "首亏",
+   "year": "2021",
+   "pool_n": 687
+  },
+  {
+   "type": "首亏",
+   "year": "2022",
+   "pool_n": 460
+  },
+  {
+   "type": "首亏",
+   "year": "2023",
+   "pool_n": 832
+  },
+  {
+   "type": "首亏",
+   "year": "2024",
+   "pool_n": 729
+  }
+ ],
+ "pool_reason_len_chars": {
+  "mean": 210.0,
+  "p50": 163,
+  "p90": 419,
+  "p99": 820,
+  "max": 1097
+ },
+ "row_index_parquet_sha256": "d9c6060104b5beb78caa9da6db07aae68e19b5de610aec8b527d1b74521632ed"
+}

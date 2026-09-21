@@ -1,0 +1,35 @@
+{
+ "run_id": "20260917T224817-rqalpha-bundle-v2-dbccbdbe",
+ "status": "failed",
+ "started_at": "2026-09-17T22:48:17",
+ "task": "RQAlpha self-built bundle v2 ETL: full stock pool (60/00/30) + 1169-ETF tushare fund_daily primary source + real stk_limit prices + stock dividends/splits + ETF fund_adj factors",
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "-X",
+  "utf8",
+  "tools/rqalpha_bundle_build.py"
+ ],
+ "env": {
+  "python": "3.11.15",
+  "cwd": "D:\\量化",
+  "PYTHONPATH": "D:/量化/src",
+  "pythonpath_note": "PYTHONPATH=src makes quant.* resolve to src/, not the copied site-packages install"
+ },
+ "inputs": {
+  "generator": "src/quant/data/rqalpha_bundle.py",
+  "generator_sha256": "d91612c462abdc4de9ff2c8eac520e8a1f4772bb0175c61d3e82e2b1dd0159f6",
+  "output_dir": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-20260917",
+  "pool_limit": null
+ },
+ "outputs": [
+  "D:\\量化\\artifacts\\runs\\20260917T224817-rqalpha-bundle-v2-dbccbdbe",
+  "D:\\量化\\data\\processed\\rqalpha-bundle-v2-20260917"
+ ],
+ "notes": [
+  "freeze line: no 2025+ data enters the bundle (asserted by build_bundle)",
+  "engine built-in A-share semantics are exempted from independent re-verification by user decision (docs/decisions/2026-09-17-rqalpha-account-engine.md)"
+ ],
+ "finished_at": "2026-09-17T22:48:32",
+ "elapsed_seconds": 14.89,
+ "error": "Traceback (most recent call last):\n  File \"D:\\量化\\tools\\rqalpha_bundle_build.py\", line 84, in main\n    bundle_manifest = etl.build_bundle(\n                      ^^^^^^^^^^^^^^^^^\n  File \"D:\\量化\\src\\quant\\data\\rqalpha_bundle.py\", line 933, in build_bundle\n    etf_bars, etf_meta = load_etf_bars(root, spec, etf_pool)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\量化\\src\\quant\\data\\rqalpha_bundle.py\", line 524, in load_etf_bars\n    raise ValueError(f'fund_daily unit guard failed: {severe} severe vwap '\nValueError: fund_daily unit guard failed: 174 severe vwap violations, samples ['159653.XSHE 20240613', '159653.XSHE 20240913', '159717.XSHE 20231116', '159791.XSHE 20240911', '159906.XSHE 20180420', '159906.XSHE 20180611', '159906.XSHE 20180802', '159906.XSHE 20180808', '159906.XSHE 20180906', '159906.XSHE 20180910']\n"
+}

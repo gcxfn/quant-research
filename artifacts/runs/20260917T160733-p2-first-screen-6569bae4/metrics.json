@@ -1,0 +1,21 @@
+{
+  "timings": {
+    "load_parquet_s": 0.45897430001059547,
+    "adjustment_join_s": 16.721549700014293,
+    "eligible_gate_s": 0.24584439999307506,
+    "benchmarks_s": 1.0267918999888934
+  },
+  "data_identity": {
+    "path": "data/processed/baostock-daily-20260917/daily_2015_2024.parquet",
+    "sha256": "1cbb09a11f7c10136981749c13467f12a1757b59e7e95fb6f86666f96edfc1de",
+    "rows": 430909,
+    "symbols": 202,
+    "dataset_id": "baostock-daily-20260917"
+  },
+  "eligible": {
+    "rows": 235361,
+    "symbols": 199,
+    "date_min": "2015-01-30",
+    "date_max": "2024-12-31"
+  }
+}

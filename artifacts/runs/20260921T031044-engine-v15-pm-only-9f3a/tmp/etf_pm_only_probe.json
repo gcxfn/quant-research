@@ -1,0 +1,353 @@
+{
+ "run": "20260921T031044-engine-v15-pm-only-9f3a",
+ "authority": "docs/decisions/2026-09-21-etf-pm-only-routing.md",
+ "days": [
+  "2015-01-05",
+  "2015-01-06",
+  "2015-01-07",
+  "2015-01-08",
+  "2015-01-09"
+ ],
+ "etf_legs": [
+  "sh.511010",
+  "sh.518880",
+  "sz.159934"
+ ],
+ "stock_control": "sh.600000",
+ "identity_source": "artifacts/runs/20260921T023606-etf-dynamic-identity-e41c/tmp/etf_dynamic_identity_probe.json",
+ "cases": {
+  "P1_paired_halfday_real_daily_real_stock_bars": {
+   "tag": "P1",
+   "outcome": "BandContractError",
+   "message": "halfday clock requires ETF am and pm bars"
+  },
+  "P2_paired_halfday_section81_bars": {
+   "tag": "P2",
+   "outcome": "BandContractError",
+   "message": "halfday clock requires ETF am and pm bars"
+  },
+  "P1p_pm_only_halfday_real_daily_real_stock_bars": {
+   "tag": "P1p",
+   "outcome": "ran",
+   "routing_stats": "halfday pm-only ETF (etf_routing='pm_only'): ETF pm decisions live the next day's pm session on the REAL daily bar; ETF am decisions are rejected; ETF fallbacks execute at pm opens",
+   "rows": {
+    "date": "2015-01-09",
+    "settled_cash": 200000.0,
+    "positions_value": 0.0,
+    "equity": 200000.0,
+    "n_positions": 0
+   },
+   "orders_generated": 0,
+   "orders_filled": {
+    "buy": 0,
+    "sell_risk": 0,
+    "sell_profit": 0
+   },
+   "provider_calls": 10,
+   "dynamic_injected": 0,
+   "terminated_expired_halfday": null,
+   "warnings": [],
+   "fills": [],
+   "events": []
+  },
+  "P2p_pm_only_halfday_section81_bars": {
+   "tag": "P2p",
+   "outcome": "ran",
+   "routing_stats": "halfday pm-only ETF (etf_routing='pm_only'): ETF pm decisions live the next day's pm session on the REAL daily bar; ETF am decisions are rejected; ETF fallbacks execute at pm opens",
+   "rows": {
+    "date": "2015-01-09",
+    "settled_cash": 200000.0,
+    "positions_value": 0.0,
+    "equity": 200000.0,
+    "n_positions": 0
+   },
+   "orders_generated": 0,
+   "orders_filled": {
+    "buy": 0,
+    "sell_risk": 0,
+    "sell_profit": 0
+   },
+   "provider_calls": 10,
+   "dynamic_injected": 0,
+   "terminated_expired_halfday": null,
+   "warnings": [],
+   "fills": [],
+   "events": []
+  },
+  "P3_control_stock_only_halfday": {
+   "tag": "P3",
+   "outcome": "ran",
+   "routing_stats": "halfday: pm decisions live next am; am decisions live same-day pm; fallbacks may execute at either open",
+   "rows": {
+    "date": "2015-01-09",
+    "settled_cash": 200000.0,
+    "positions_value": 0.0,
+    "equity": 200000.0,
+    "n_positions": 0
+   },
+   "orders_generated": 0,
+   "orders_filled": {
+    "buy": 0,
+    "sell_risk": 0,
+    "sell_profit": 0
+   },
+   "provider_calls": 10,
+   "dynamic_injected": 0,
+   "terminated_expired_halfday": null,
+   "warnings": [],
+   "fills": [],
+   "events": []
+  },
+  "P4_legacy_section81_bars_one_buy": {
+   "tag": "P4",
+   "outcome": "ran",
+   "routing_stats": "section 8.2: ETF pm decisions live next pm; ETF fallbacks execute at pm opens",
+   "rows": {
+    "date": "2015-01-09",
+    "settled_cash": 180190.5,
+    "positions_value": 19755.9,
+    "equity": 199946.4,
+    "n_positions": 1
+   },
+   "orders_generated": 3,
+   "orders_filled": {
+    "buy": 1,
+    "sell_risk": 0,
+    "sell_profit": 0
+   },
+   "provider_calls": 10,
+   "dynamic_injected": 1,
+   "terminated_expired_halfday": null,
+   "warnings": [],
+   "fills": [
+    {
+     "date": "2015-01-08",
+     "session": "pm",
+     "symbol": "sh.518880",
+     "side": "buy",
+     "shares": 8100,
+     "price": 2.445,
+     "fees_total": 5.0,
+     "commission": 5.0,
+     "stamp_tax": 0.0,
+     "net_cash_flow": -19809.5,
+     "decision_date": "2015-01-07",
+     "decision_session": "pm",
+     "is_etf": true
+    }
+   ],
+   "events": [
+    {
+     "date": "2015-01-05",
+     "session": "pm",
+     "event": "intent_lifecycle",
+     "symbol": "",
+     "limit_price": null,
+     "ref_price": null,
+     "shares": null
+    },
+    {
+     "date": "2015-01-06",
+     "session": "pm",
+     "event": "not_penetrated",
+     "symbol": "sh.518880",
+     "limit_price": 2.414,
+     "ref_price": 2.416,
+     "shares": null
+    },
+    {
+     "date": "2015-01-07",
+     "session": "pm",
+     "event": "not_penetrated",
+     "symbol": "sh.518880",
+     "limit_price": 2.435,
+     "ref_price": 2.435,
+     "shares": null
+    },
+    {
+     "date": "2015-01-08",
+     "session": "pm",
+     "event": "filled_limit_buy",
+     "symbol": "sh.518880",
+     "limit_price": 2.445,
+     "ref_price": 2.428,
+     "shares": 8100
+    },
+    {
+     "date": "2015-01-08",
+     "session": "pm",
+     "event": "intent_lifecycle",
+     "symbol": "",
+     "limit_price": null,
+     "ref_price": null,
+     "shares": null
+    }
+   ],
+   "hand_checks": {
+    "applicable": true,
+    "shares_hand": 8100,
+    "shares_engine": 8100,
+    "commission_hand": 5.0,
+    "commission_engine": 5.0,
+    "stamp_hand": 0.0,
+    "stamp_engine": 0.0,
+    "cash_hand": 180190.5,
+    "cash_engine": 180190.5,
+    "last_close": 2.439,
+    "positions_value_hand": 19755.9,
+    "positions_value_engine": 19755.9,
+    "equity_hand": 199946.4,
+    "equity_engine": 199946.4,
+    "routing_ok": true,
+    "next_trading_day": true
+   }
+  },
+  "P4p_pm_only_halfday_standing_buy": {
+   "tag": "P4p",
+   "outcome": "ran",
+   "routing_stats": "halfday pm-only ETF (etf_routing='pm_only'): ETF pm decisions live the next day's pm session on the REAL daily bar; ETF am decisions are rejected; ETF fallbacks execute at pm opens",
+   "rows": {
+    "date": "2015-01-09",
+    "settled_cash": 180190.5,
+    "positions_value": 19755.9,
+    "equity": 199946.4,
+    "n_positions": 1
+   },
+   "orders_generated": 4,
+   "orders_filled": {
+    "buy": 1,
+    "sell_risk": 0,
+    "sell_profit": 0
+   },
+   "provider_calls": 10,
+   "dynamic_injected": 5,
+   "terminated_expired_halfday": 4,
+   "warnings": [],
+   "fills": [
+    {
+     "date": "2015-01-08",
+     "session": "pm",
+     "symbol": "sh.518880",
+     "side": "buy",
+     "shares": 8100,
+     "price": 2.445,
+     "fees_total": 5.0,
+     "commission": 5.0,
+     "stamp_tax": 0.0,
+     "net_cash_flow": -19809.5,
+     "decision_date": "2015-01-07",
+     "decision_session": "pm",
+     "is_etf": true
+    }
+   ],
+   "events": [
+    {
+     "date": "2015-01-05",
+     "session": "pm",
+     "event": "intent_lifecycle",
+     "symbol": "",
+     "limit_price": null,
+     "ref_price": null,
+     "shares": null
+    },
+    {
+     "date": "2015-01-06",
+     "session": "pm",
+     "event": "not_penetrated",
+     "symbol": "sh.518880",
+     "limit_price": 2.414,
+     "ref_price": 2.416,
+     "shares": null
+    },
+    {
+     "date": "2015-01-06",
+     "session": "pm",
+     "event": "intent_lifecycle",
+     "symbol": "",
+     "limit_price": null,
+     "ref_price": null,
+     "shares": null
+    },
+    {
+     "date": "2015-01-07",
+     "session": "pm",
+     "event": "not_penetrated",
+     "symbol": "sh.518880",
+     "limit_price": 2.435,
+     "ref_price": 2.435,
+     "shares": null
+    },
+    {
+     "date": "2015-01-07",
+     "session": "pm",
+     "event": "intent_lifecycle",
+     "symbol": "",
+     "limit_price": null,
+     "ref_price": null,
+     "shares": null
+    },
+    {
+     "date": "2015-01-08",
+     "session": "pm",
+     "event": "filled_limit_buy",
+     "symbol": "sh.518880",
+     "limit_price": 2.445,
+     "ref_price": 2.428,
+     "shares": 8100
+    },
+    {
+     "date": "2015-01-08",
+     "session": "pm",
+     "event": "intent_lifecycle",
+     "symbol": "",
+     "limit_price": null,
+     "ref_price": null,
+     "shares": null
+    },
+    {
+     "date": "2015-01-09",
+     "session": "pm",
+     "event": "not_penetrated",
+     "symbol": "sh.518880",
+     "limit_price": 2.431,
+     "ref_price": 2.431,
+     "shares": null
+    },
+    {
+     "date": "2015-01-09",
+     "session": "pm",
+     "event": "intent_lifecycle",
+     "symbol": "",
+     "limit_price": null,
+     "ref_price": null,
+     "shares": null
+    }
+   ],
+   "submitted_at": [
+    "2015-01-05",
+    "2015-01-06",
+    "2015-01-07",
+    "2015-01-08",
+    "2015-01-09"
+   ],
+   "hand_checks": {
+    "applicable": true,
+    "shares_hand": 8100,
+    "shares_engine": 8100,
+    "commission_hand": 5.0,
+    "commission_engine": 5.0,
+    "stamp_hand": 0.0,
+    "stamp_engine": 0.0,
+    "cash_hand": 180190.5,
+    "cash_engine": 180190.5,
+    "last_close": 2.439,
+    "positions_value_hand": 19755.9,
+    "positions_value_engine": 19755.9,
+    "equity_hand": 199946.4,
+    "equity_engine": 199946.4,
+    "routing_ok": true,
+    "next_trading_day": true
+   }
+  }
+ }
+}

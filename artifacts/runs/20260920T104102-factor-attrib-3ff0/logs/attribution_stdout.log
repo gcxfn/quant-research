@@ -1,0 +1,58 @@
+[    0.0s] == 0. identity pins ==
+[    0.0s]   prereg: fdb59975b933cb6e
+[    0.5s]   daily_calendar_pools: d9a63f4cc3032926
+[    0.8s]   daily_eval_panel: 1cbb09a11f7c1013
+[    0.8s]   sleeve_monthly_log: c62446715685f851
+[    0.8s]   chassis_metrics_and_gates: bc74572dd3e78347
+[    0.8s]   f3r1_ew_composite: 9b93696b14fdd31f
+[    0.8s]   dedup_clusters: 7b80b95bbbbbc34d
+[    0.8s]   f2r1_all120: df35f17604595b34
+[    0.8s]   17 representatives: ['A17', 'A20', 'A25', 'B11', 'B12', 'B14', 'C19', 'D10', 'D13', 'D14', 'D18', 'D19', 'D20', 'D30', 'E16', 'F06', 'F09']; coverage rule >= 9/17 non-null
+[    0.8s] == 1. calendar & signal days ==
+[    0.9s]   71 signal days 2015-01-30..2020-11-30
+[    0.9s] == stage done: calendar (0.9s) ==
+[    0.9s] == 2. R16 pool (build_history + signal_pools, verbatim) ==
+[    4.7s]   pool n: min 810 max 2260
+[    4.7s] == stage done: pools (4.7s) ==
+[    4.7s] == 3. FA-S2 rebuild composite (F3R1 sec 4 code verbatim, 17 reps) ==
+D:\量化\artifacts\runs\20260920T104102-factor-attrib-3ff0\scripts\attribution.py:211: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  .filter(pl.col("signal_date").is_in(pl.Series(SIG_DAYS)))
+D:\量化\artifacts\runs\20260920T104102-factor-attrib-3ff0\scripts\attribution.py:215: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  wide = wide.filter(pl.col("signal_date").is_in(pl.Series(SIG_DAYS)))
+[    5.9s]   wide frame 297870 rows, 5108 symbols
+D:\量化\artifacts\runs\20260920T104102-factor-attrib-3ff0\scripts\attribution.py:225: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  have = (have.filter(pl.col("symbol").is_in(pl.Series(sorted(pool_set[t]))))
+[    7.7s]   eligible sizes: min 810 median 1510 max 2258
+[    7.7s] == stage done: composite_rebuild (7.7s) ==
+[    7.7s] == 3b. FA-S2 gate: rebuilt EW composite vs F3-EW_composite.parquet ==
+[    8.1s]   FA-S2: sampled 75 points on [datetime.date(2015, 1, 30), datetime.date(2017, 12, 29), datetime.date(2020, 11, 30)], max|diff| 0.000e+00 (global max 0.000e+00); key sets equal: True -> PASS=True
+[    8.2s] == stage done: fa_s2_gate (8.2s) ==
+[    8.2s] == 4. r: F2R1 eval harness, h=20, panel truncated <= 2020-12-31 ==
+D:\量化\artifacts\runs\20260920T104102-factor-attrib-3ff0\scripts\attribution.py:321: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  fwd_sig = fwd.filter(pl.col("date").is_in(pl.Series(SIG_DAYS)))
+[   10.5s]   fwd grid: 4155844 rows; sleeve-month coverage 68/71 months (2015-04-30..2020-11-30); first r month 2015-04-30 (F2R1 harness truncation: min_history_rows=60 drops 2015 Q1 signals)
+[   10.5s] == stage done: forward_returns (10.5s) ==
+[   10.5s] == 5. monthly contributions c_i,t (sleeve log seats, FA-S4 weights) ==
+[   10.5s]   arm EW: building atoms
+[   10.5s]   arm EW: sanity months 65, corr 0.9979, sign agreement 100.0% (gates: >=0.8 / >=70%)
+[   10.6s]   arm ICW: building atoms
+[   10.6s]   arm ICW: sanity months 65, corr 0.9976, sign agreement 98.5% (gates: >=0.8 / >=70%)
+[   10.7s] == stage done: attribution_tables (10.7s) ==
+[   10.7s] == 6. contribution correlation matrix (EW) ==
+[   10.8s] == stage done: contribution_corr (10.8s) ==
+[   10.8s] == 7. suspect rule: t < 0 AND n_neg_years >= 4 (EW main table) ==
+[   10.8s]   suspect list EMPTY (H1 falsification path, legal outcome)
+[   10.8s] == stage done: suspects (10.8s) ==
+[   10.8s] == stage A complete: suspects=[], wall 11s, rss 3.38 GB ==

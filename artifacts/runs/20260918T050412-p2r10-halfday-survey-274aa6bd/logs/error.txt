@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2r10_halfday_survey.py", line 256, in main
+    entry = evaluate_factor(factor, panel)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\cli\p2r10_halfday_survey.py", line 143, in evaluate_factor
+    spread = decile_spread_series(panel, factor)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\p2r10_halfday.py", line 309, in decile_spread_series
+    return wide.with_columns(
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\dataframe\frame.py", line 10751, in with_columns
+    ._collect_eager(optimizations=QueryOptFlags._eager())
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\lazyframe\frame.py", line 2240, in _collect_eager
+    return _eager_engine().collect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\lazyframe\engine.py", line 443, in collect
+    return wrap_df(ldf.collect(self.name, callback))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: unable to find column "d1"; valid columns: ["date", "d5", "d10"]
+
+Did you mean "d5"?

@@ -1,0 +1,248 @@
+{
+ "run_id": "20260919T030640-p3r2-dev-ad9e",
+ "experiment_id": "exp-20260918-p3r2-band-v1-readjudication",
+ "status": "completed",
+ "started_at_utc": "1970-01-04T05:12:44.330221+00:00",
+ "ended_at_utc": "2026-09-18T19:25:01.266189+00:00",
+ "wall_seconds": 47.65758529998129,
+ "peak_rss_gb": 5.077549056,
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "artifacts/runs/20260919T030640-p3r2-dev-ad9e/tmp/runner_p3r2_intents.py"
+ ],
+ "random_seed": null,
+ "determinism": "no RNG in runner or engine; single static intent frame per config; engine-owned deterministic lifecycle",
+ "engine": {
+  "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+  "sha256_at_start": "d7108c0eccdd77ff3fcbff01e7bd84bfdd2e7cad716b646e357c5644da970a0d",
+  "sha256_at_end": "d7108c0eccdd77ff3fcbff01e7bd84bfdd2e7cad716b646e357c5644da970a0d",
+  "bytes_modified_by_this_run": false,
+  "version": "v1.1 intent layer",
+  "approval": "artifacts/runs/20260919T023558-p3v1-intent-review-c4d1/review.md (APPROVE 0C/0M/4m); delivery 20260919T021744-p3v1-intent-ce78; 29/29 engine tests + 390/390 repo"
+ },
+ "pins": {
+  "engine": {
+   "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+   "sha256": "d7108c0eccdd77ff3fcbff01e7bd84bfdd2e7cad716b646e357c5644da970a0d",
+   "expected": "d7108c0eccdd77ff3fcbff01e7bd84bfdd2e7cad716b646e357c5644da970a0d",
+   "match": true
+  },
+  "r16_config": {
+   "path": "D:\\量化\\configs\\experiments\\p2r16-trend-dispersion.json",
+   "sha256": "27f846a7330919a4965d83ec07cf2a0be3e29b2476cc37c14c84558957a93df4",
+   "expected": "27f846a7330919a4",
+   "match": true
+  },
+  "p3r2_config": {
+   "path": "D:\\量化\\configs\\experiments\\p3r2-band-v1-readjudication.json",
+   "sha256": "b49025b44c719685ee9276622a5708881e578c859cf3612b2188d7732dab40f1",
+   "expected": "b49025b44c719685",
+   "match": true
+  },
+  "daily": {
+   "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_1999_2024.parquet",
+   "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6",
+   "expected": "d9a63f4cc3032926",
+   "match": true,
+   "rows_total": 16344349,
+   "rows_after_freeze_filter": 16344349
+  },
+  "split_factor": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\split_factor.h5",
+   "sha256": "2f436b2f13d09a9bfdcbdb0bf35669c10a377d180ce1ca37bef53d6c96a3365d",
+   "expected": "2f436b2f13d09a9b",
+   "match": true
+  },
+  "dividends": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\dividends.h5",
+   "sha256": "46121c09cddde72e725c2d4ae025cc259b049aeaa77c868b492fdbba60214846",
+   "expected": "46121c09cddde72e",
+   "match": true
+  },
+  "index_000300": {
+   "path": "D:\\量化\\data\\raw\\tushare\\index_daily\\20260917-r1\\chunk_000300.SH.csv",
+   "sha256": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878",
+   "expected": "05aaa8183a11c674",
+   "match": true
+  },
+  "halfday_manifest": {
+   "path": "D:\\量化\\data\\processed\\halfday-bars-20260918\\manifest.json",
+   "sha256": "2a414174b5df2eeed4c6bd6a7cd7f9f09f9b2efc8f05673ccc4b7695812cd679",
+   "expected": "2a414174b5df2eee",
+   "match": true
+  },
+  "stk_limit_aggregate": {
+   "path": "D:\\量化\\data\\raw\\tushare\\stk_limit\\20260917-r1",
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "3c53abf3b0c39b425389137d9f630f0de158990fcdc55b0bd41bf7d9c3bde673",
+   "files": 2432,
+   "total_bytes": 301278245,
+   "expected": "3c53abf3b0c39b42",
+   "match": true
+  },
+  "halfday_rows_total": 18486939
+ },
+ "configs": [
+  {
+   "id": "C01",
+   "K": 20,
+   "path": "T200-40",
+   "filter": "on"
+  },
+  {
+   "id": "C02",
+   "K": 20,
+   "path": "T200-40",
+   "filter": "off"
+  },
+  {
+   "id": "C03",
+   "K": 20,
+   "path": "FIX75",
+   "filter": "on"
+  },
+  {
+   "id": "C04",
+   "K": 20,
+   "path": "FIX75",
+   "filter": "off"
+  },
+  {
+   "id": "C05",
+   "K": 30,
+   "path": "T200-40",
+   "filter": "on"
+  },
+  {
+   "id": "C06",
+   "K": 30,
+   "path": "T200-40",
+   "filter": "off"
+  },
+  {
+   "id": "C07",
+   "K": 30,
+   "path": "FIX75",
+   "filter": "on"
+  },
+  {
+   "id": "C08",
+   "K": 30,
+   "path": "FIX75",
+   "filter": "off"
+  }
+ ],
+ "mapping": {
+  "frame": "one static intent frame per config; first decision (T,'pm'); expiry = T'+1 cal day (last emission (T','am) -> live (T','pm')); buy_open = target_weight exposure/K; sell_full = risk full; rescale = risk target_weight exposure/K (reduce-to-target; TOP-UP SIDE = registered mapping hole); R16 at_target/feemin legs excluded",
+  "m5b": "(symbol, side, source) uniqueness hard-asserted before any engine run",
+  "gate8": "7.7-m6 mapped rate; termination itemized; rule-blocked counts executed (P3R1 precedent)"
+ },
+ "consistency_8_of_8": {
+  "C01": {
+   "membership_mismatches": 0,
+   "membership_events_mismatches": 0,
+   "n_signal_days": 71
+  },
+  "C02": {
+   "membership_mismatches": 0,
+   "membership_events_mismatches": 0,
+   "n_signal_days": 71
+  },
+  "C03": {
+   "membership_mismatches": 0,
+   "membership_events_mismatches": 0,
+   "n_signal_days": 71
+  },
+  "C04": {
+   "membership_mismatches": 0,
+   "membership_events_mismatches": 0,
+   "n_signal_days": 71
+  },
+  "C05": {
+   "membership_mismatches": 0,
+   "membership_events_mismatches": 0,
+   "n_signal_days": 71
+  },
+  "C06": {
+   "membership_mismatches": 0,
+   "membership_events_mismatches": 0,
+   "n_signal_days": 71
+  },
+  "C07": {
+   "membership_mismatches": 0,
+   "membership_events_mismatches": 0,
+   "n_signal_days": 71
+  },
+  "C08": {
+   "membership_mismatches": 0,
+   "membership_events_mismatches": 0,
+   "n_signal_days": 71
+  }
+ },
+ "trial_accounting": {
+  "cumulative_before": 197,
+  "this_round": 8,
+  "cumulative_after": 205,
+  "note": "judgment table produced (9cc4 consumed zero; prereg rev 1)"
+ },
+ "aborted_predecessor": {
+  "run_id": "20260919T002020-p3r2-dev-9cc4",
+  "status": "ABORTED",
+  "convention_a_numbers": "INVALID execution diagnostics only (prereg rev 1) -- not used here for any judgment or expectation"
+ },
+ "gates_dev_pass": [],
+ "advanced_to_validation": false,
+ "val_consumed": false,
+ "stop_note": "no config passed all dev gates (0/8); val not consumed",
+ "outputs": {
+  "outputs/C01_clips_final.parquet": "10fe6bd1ecd9a5f09b350ce586cc31bca592f2b9a1c441ba99d6426e7792ae17",
+  "outputs/C01_daily_equity.parquet": "f8e0b7c2df654bdc9621e3b6566cec91e2676869905ae8397d00d3232d4ab38e",
+  "outputs/C01_events.parquet": "5ed644d95029bf7891b7e62ec6d70868659c099e2b7a141be6f3ab2486d1a5bf",
+  "outputs/C01_fills.parquet": "d69c5a0aae8b7b5dcfa46e1aa20d21e3383c56ce6cac2265dbbd63a08ae7c89a",
+  "outputs/C01_intents.parquet": "392cbe85b434cc2717b0f2a01f4c9f8ae1b1a72a32640dd621d61c12e3b1dc2c",
+  "outputs/C02_clips_final.parquet": "6712591f9ee0001618cb8c252287363c06fab9dc9486434206c11c5569c7d757",
+  "outputs/C02_daily_equity.parquet": "516220256b946a3905ea696e23b7f0047a4ef01ff55cae9663b91307078d4f64",
+  "outputs/C02_events.parquet": "aa862077b0ea0c23a4468433a7f08f9d9836abd36b9ac368c2298898cb623d63",
+  "outputs/C02_fills.parquet": "77684177e6193fd12646c9b02e5c5646757247439a170e28a39bc60201fd2429",
+  "outputs/C02_intents.parquet": "4f02a38b77028dd910e0ab7163ad25aa47fcd7884530e819391f00c7dc5d41c3",
+  "outputs/C03_clips_final.parquet": "02643439594b0d2de5957fc7e8e800aa3623f716a55bac92b4c17bc23d0e16bb",
+  "outputs/C03_daily_equity.parquet": "cff68eca833c0ff10f3f33614264d8a8b86e4be1939f659145ff669d7de1a965",
+  "outputs/C03_events.parquet": "8ae6ff670961e66b47dfa775839d4e63fdb56185696c3078d17388859f8c322e",
+  "outputs/C03_fills.parquet": "37f5cadbaf3fcdd1eb4b8d3a57776217c9acc9fb7ccd71ef453b8f1464bfb716",
+  "outputs/C03_intents.parquet": "62a673eaaa2d175daa93de71d8fa17702681b6fb6e1df43fe8946cda3e71f791",
+  "outputs/C04_clips_final.parquet": "7516919970f521bdbab4f449a7dd55b47695330467582caba51ad0924fb4d50a",
+  "outputs/C04_daily_equity.parquet": "80e7457ecb7d07ef469bbc3836940498f394415785d7a06f86267606c004ee8e",
+  "outputs/C04_events.parquet": "2af2a7608e46da020318c804d12ea2a5eddefcb9b3c9cc7c2b9402334db71745",
+  "outputs/C04_fills.parquet": "bcda6eaa8c2442cdd810b8741f6bf9b8c576524cf10d27d2b20236bbf19e4c4b",
+  "outputs/C04_intents.parquet": "340da5e774c777b1ac06b60255b2fc3702d3019b24fb9ba7ce1be0f45b44b743",
+  "outputs/C05_clips_final.parquet": "b44dbea22a529529f254e978c7a6926125727e076b9bde81165d6bc1c2d3cb7d",
+  "outputs/C05_daily_equity.parquet": "c3945567de4250ef2679b27210392a177b5c384a5cbea4ec6cac7417470ffe0c",
+  "outputs/C05_events.parquet": "2dde945782accd70ac90dd2ba22bf50ccf05d24c971c88433c3894f970030177",
+  "outputs/C05_fills.parquet": "11f8af46686df411266526d33993722ed443d37fca8ab3dbae03b98a96420cef",
+  "outputs/C05_intents.parquet": "36dedda1cf8d76615daba2877f5a312014f9e6a195baba1c93d23e690febed4a",
+  "outputs/C06_clips_final.parquet": "de3edac99da72da7af7aae5cec55a5a9fb26be7595a8cc8c3b6726673d58b1a6",
+  "outputs/C06_daily_equity.parquet": "2b8bf7615ce239797d6e5d8f0cbcb1c726850ec8fb4b0bb76f30a6807d594468",
+  "outputs/C06_events.parquet": "578b5ac32a5f59089fdffb88c7221cc0ff9de097484831f03caec39f4f3abde2",
+  "outputs/C06_fills.parquet": "5a3573bab1ce51b7e9f822d419ff9ff65c351507949bdce5beef5fdbfe57f28e",
+  "outputs/C06_intents.parquet": "4869a89bfe31b572a62fe222e8a2c690aeb04b998166e55c56941dd2fdef3ff8",
+  "outputs/C07_clips_final.parquet": "9405d848176d6cd26595a3e24e76c39575129c7a80548d5c807166873fffa725",
+  "outputs/C07_daily_equity.parquet": "ca7e74995a56ffca36b171e87a9c2601791ef46b151e0faa067b7f0ba1a450fb",
+  "outputs/C07_events.parquet": "132d2d7480c575c22b1f8e9a0575673725ecc3cbb821c68fd1b694c83833bfd0",
+  "outputs/C07_fills.parquet": "7ce6176c46d53e3164f553f485b2c0b38a404279feb01ff40093feff82bc1ce4",
+  "outputs/C07_intents.parquet": "8cf7a4dcd6b73cb6d4b63927fa0c9ce24d97e440979a757a5192bfb2bd436773",
+  "outputs/C08_clips_final.parquet": "ccd7f2bf1a40f428f83aa8be8122975bc5d1249530dbbcea63acdf3f8b8e7604",
+  "outputs/C08_daily_equity.parquet": "fa859d0239fb9f5ffa10fe6adf49fcd0a493442e9f6cb1fedbff16ac6161e292",
+  "outputs/C08_events.parquet": "b86e062e7eec8121acffbc0dab34d8ed675ee06e0880fb34e404998686fc56a5",
+  "outputs/C08_fills.parquet": "ff75ba0429d460f37e78abef7b5c3fdf4343166422be8f1137ae11a8fe2938f7",
+  "outputs/C08_intents.parquet": "72bc46a9b751e8bd88578fe64f5d08fe563901377292c7aae3cb8a5649dd083f",
+  "outputs/metrics_and_gates.json": "f2dfcfc00adf08afa0a767ae5423ce7608d7b7cdfa61c88966ab1c4063728bd5",
+  "report.md": "44031b3e1a52a79f46c9802816a4634169bac390021dbb282fe9e234b9cd7d14",
+  "tmp/__pycache__/runner_p3r2_intents.cpython-311.pyc": "50caf38427c2fc3f1a696ffc63e345735a91b1baf4e44aca3ef20a9c543336a9",
+  "tmp/runner_p3r2_intents.py": "7477c2a8fcc2d291c6c46a52b72b62b09e7e87dfea5689502482454bf3f6df19",
+  "tmp/smoke/C01_daily.parquet": "b384672ad7e3f693be326f36dcc9d4b41a642376b2294ab08a7126db6fa890bf",
+  "tmp/smoke/C01_events.parquet": "7e0df99e0bb23425b1a6671997823321599f172720113e109770d5189763db47",
+  "tmp/smoke/C01_fills.parquet": "dbb7c4cabf781214cbaea5d9694c788c231e91d7289d0d2073ea9db0d9dfe03c",
+  "tmp/smoke/C01_intents.parquet": "e1979d8f5686a07b9f04a32fd5d24441cdeb54e1f4df2f250e29d3582047aac6",
+  "tmp/smoke_reconciliation.json": "9bec364032f4c42e7c9b216c46be9af8d58812af2e69437e1b7cca5e26f2a4b4"
+ }
+}

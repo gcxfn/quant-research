@@ -1,0 +1,519 @@
+{
+ "experiment_id": "exp-20260919-factor-round-f3r1",
+ "engine_sha256_16": "31022babbc2858ea",
+ "execution_model": "band engine v1.3 intent layer; one static frame per arm; membership-transition intents only",
+ "dedup": {
+  "rho_threshold": 0.6,
+  "clusters": 20,
+  "representatives": [
+   "A17",
+   "A20",
+   "A25",
+   "B11",
+   "B12",
+   "B14",
+   "C19",
+   "D08",
+   "D09",
+   "D10",
+   "D14",
+   "D18",
+   "D19",
+   "D20",
+   "D21",
+   "D25",
+   "E16",
+   "F02",
+   "F06",
+   "F09"
+  ],
+  "cluster_table": [
+   {
+    "representative": "F09",
+    "members": [
+     "A01",
+     "A02",
+     "A05",
+     "A09",
+     "A10",
+     "A21",
+     "A23",
+     "A24",
+     "B15",
+     "C01",
+     "C11",
+     "C12",
+     "F09"
+    ],
+    "size": 13
+   },
+   {
+    "representative": "A17",
+    "members": [
+     "A17",
+     "A19"
+    ],
+    "size": 2
+   },
+   {
+    "representative": "B12",
+    "members": [
+     "A18",
+     "A22",
+     "B12"
+    ],
+    "size": 3
+   },
+   {
+    "representative": "A20",
+    "members": [
+     "A20"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "A25",
+    "members": [
+     "A25"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "B11",
+    "members": [
+     "B09",
+     "B10",
+     "B11",
+     "F10"
+    ],
+    "size": 4
+   },
+   {
+    "representative": "B14",
+    "members": [
+     "B14"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "C19",
+    "members": [
+     "C19"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "D08",
+    "members": [
+     "D07",
+     "D08",
+     "D17",
+     "D30"
+    ],
+    "size": 4
+   },
+   {
+    "representative": "D09",
+    "members": [
+     "D09"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "D10",
+    "members": [
+     "D10"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "D21",
+    "members": [
+     "D12",
+     "D13",
+     "D21"
+    ],
+    "size": 3
+   },
+   {
+    "representative": "D14",
+    "members": [
+     "D14"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "D18",
+    "members": [
+     "D18"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "D19",
+    "members": [
+     "D19"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "D20",
+    "members": [
+     "D20"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "D25",
+    "members": [
+     "D25"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "E16",
+    "members": [
+     "E16"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "F02",
+    "members": [
+     "F02"
+    ],
+    "size": 1
+   },
+   {
+    "representative": "F06",
+    "members": [
+     "F06"
+    ],
+    "size": 1
+   }
+  ],
+  "min_components_required": 10
+ },
+ "benchmarks": {
+  "b1m": {
+   "net_cagr": 0.01657649895651314,
+   "max_drawdown": -0.6441908942488618,
+   "net_return_by_year": {
+    "2015": 0.5184399004374298,
+    "2016": -0.12606871128483854,
+    "2017": -0.10584559579345487,
+    "2018": -0.3605129639167133,
+    "2019": 0.26112177070438247,
+    "2020": 0.153124612480376
+   }
+  },
+  "b1m_caliber": "executable pool equal-weight monthly fractional, exposure=1, rate-only fees (R16 convention)",
+  "b3prime": {
+   "mean_net_cagr": -0.018868280291635876,
+   "seeds": [
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+   ],
+   "k": 10,
+   "per_seed_net_cagr": [
+    0.05429161034247465,
+    -0.036125669123241,
+    -0.05223781217788559,
+    -0.021739148815301146,
+    0.02711467379106436,
+    0.04807755735182817,
+    -0.03556762440552774,
+    -0.050003516984468255,
+    -0.023279829482653502,
+    0.012494205875044129,
+    -0.0023433495543626615,
+    -0.022303400489824154,
+    0.00028033551420070246,
+    -0.03915613178759336,
+    0.034523775322216066,
+    -0.0327928483010983,
+    -0.10137824323450673,
+    -0.059443657214366286,
+    0.01214829685185026,
+    -0.08992482931056711
+   ],
+   "caliber": "random K=10 integer lots STOCK_FEE_SCHEDULE exposure=1 (R16 convention; K matches F3 seats, R16 used K=20 for its K family)"
+  }
+ },
+ "metrics": {
+  "F3-EW": {
+   "net_cagr": 0.09469433378178804,
+   "net_total_return": 0.7189890880000003,
+   "max_drawdown": -0.3974993837636588,
+   "b1m_net_cagr": 0.01657649895651314,
+   "b1m_max_drawdown": -0.6441908942488618,
+   "b1m_net_return_by_year": {
+    "2015": 0.5184399004374298,
+    "2016": -0.12606871128483854,
+    "2017": -0.10584559579345487,
+    "2018": -0.3605129639167133,
+    "2019": 0.26112177070438247,
+    "2020": 0.153124612480376
+   },
+   "excess_vs_b1m": 0.0781178348252749,
+   "net_return_by_year": {
+    "2015": 0.4356063050000001,
+    "2016": 0.18763601069584324,
+    "2017": 0.02993791417494429,
+    "2018": -0.17262912915465234,
+    "2019": 0.1262343854981942,
+    "2020": 0.05054425003462937
+   },
+   "advantage_years_list": [
+    2016,
+    2017,
+    2018
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 1345774.0,
+     "mean_equity": 254568.87663934418,
+     "one_side_turnover": 5.286482848045092
+    },
+    "2016": {
+     "buy_notional": 1487441.0,
+     "mean_equity": 295451.6352418032,
+     "one_side_turnover": 5.03446528154312
+    },
+    "2017": {
+     "buy_notional": 1323378.0,
+     "mean_equity": 341947.91212836077,
+     "one_side_turnover": 3.8701157488080495
+    },
+    "2018": {
+     "buy_notional": 1011608.0,
+     "mean_equity": 337246.4721863374,
+     "one_side_turnover": 2.9996103248815023
+    },
+    "2019": {
+     "buy_notional": 1583026.0,
+     "mean_equity": 324675.2031844263,
+     "one_side_turnover": 4.87572190445597
+    },
+    "2020": {
+     "buy_notional": 2192403.0,
+     "mean_equity": 380150.9528255144,
+     "one_side_turnover": 5.767190595485082
+    }
+   },
+   "max_one_side_turnover": 5.767190595485082,
+   "max_single_name_weight": 0.23976377616999484,
+   "execution_rate": 0.7485822306238186,
+   "execution_rate_mapping": "7.7-m6: (filled + rule-blocked) / (filled + rule-blocked + terminated); re-anchors neutral",
+   "b3prime_mean_net_cagr": -0.018868280291635876
+  },
+  "F3-ICW": {
+   "net_cagr": 0.1527925108825754,
+   "net_total_return": 1.3428586322000013,
+   "max_drawdown": -0.411913410492174,
+   "b1m_net_cagr": 0.01657649895651314,
+   "b1m_max_drawdown": -0.6441908942488618,
+   "b1m_net_return_by_year": {
+    "2015": 0.5184399004374298,
+    "2016": -0.12606871128483854,
+    "2017": -0.10584559579345487,
+    "2018": -0.3605129639167133,
+    "2019": 0.26112177070438247,
+    "2020": 0.153124612480376
+   },
+   "excess_vs_b1m": 0.13621601192606225,
+   "net_return_by_year": {
+    "2015": 0.6904447850000002,
+    "2016": 0.14334907129190855,
+    "2017": 0.04268213108142738,
+    "2018": -0.17255557369064511,
+    "2019": 0.22632586765258167,
+    "2020": 0.14569652492748975
+   },
+   "advantage_years_list": [
+    2015,
+    2016,
+    2017,
+    2018
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 1525174.0,
+     "mean_equity": 284651.0776844263,
+     "one_side_turnover": 5.358047517005571
+    },
+    "2016": {
+     "buy_notional": 1921132.0,
+     "mean_equity": 335180.2083934427,
+     "one_side_turnover": 5.7316391358791945
+    },
+    "2017": {
+     "buy_notional": 1759713.0,
+     "mean_equity": 385093.6286242624,
+     "one_side_turnover": 4.569571837079029
+    },
+    "2018": {
+     "buy_notional": 1464909.0,
+     "mean_equity": 389548.7081904527,
+     "one_side_turnover": 3.760528450485317
+    },
+    "2019": {
+     "buy_notional": 2362859.0,
+     "mean_equity": 380710.49284729525,
+     "one_side_turnover": 6.206445696645807
+    },
+    "2020": {
+     "buy_notional": 2969531.0,
+     "mean_equity": 489593.5372177779,
+     "one_side_turnover": 6.06529860846409
+    }
+   },
+   "max_one_side_turnover": 6.206445696645807,
+   "max_single_name_weight": 0.2241338501318978,
+   "execution_rate": 0.7668439716312057,
+   "execution_rate_mapping": "7.7-m6: (filled + rule-blocked) / (filled + rule-blocked + terminated); re-anchors neutral",
+   "b3prime_mean_net_cagr": -0.018868280291635876
+  }
+ },
+ "gates": {
+  "F3-EW": {
+   "dev": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": "True",
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": false,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8_execution_rate_ge_95pct": false,
+    "advantage_years": 3,
+    "dev_excess_vs_b1m": 0.0781178348252749,
+    "failed_gates": [
+     "3_advantage_years_ge_5_of_6",
+     "4_mdd_le_20pct_and_le_B1m",
+     "8_execution_rate_ge_95pct"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated",
+    "goal_criterion_dev_cagr_ge_10pct": false,
+    "goal_met": false
+   },
+   "verdict": "eliminated"
+  },
+  "F3-ICW": {
+   "dev": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": "True",
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": false,
+    "5_one_side_turnover_le_6": false,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8_execution_rate_ge_95pct": false,
+    "advantage_years": 4,
+    "dev_excess_vs_b1m": 0.13621601192606225,
+    "failed_gates": [
+     "3_advantage_years_ge_5_of_6",
+     "4_mdd_le_20pct_and_le_B1m",
+     "5_one_side_turnover_le_6",
+     "8_execution_rate_ge_95pct"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated",
+    "goal_criterion_dev_cagr_ge_10pct": true,
+    "goal_met": false
+   },
+   "verdict": "eliminated"
+  }
+ },
+ "disclosures": {
+  "F3-EW": {
+   "gate8": {
+    "mapped_rate": 0.7485822306238186,
+    "filled": 572,
+    "rule_blocked": {
+     "below_min_lot": 0,
+     "void_no_position": 218,
+     "void_insufficient_cash": 2
+    },
+    "termination": {
+     "expiry": 59,
+     "override_same_name": 196,
+     "cap_void": 0,
+     "suspension_abandon": 11
+    },
+    "zero_emission": 8,
+    "expired_noop": 0,
+    "order_session": {
+     "buy": 0.02803379416282642,
+     "sell_risk": 0.028697345495541662,
+     "sell_profit": null
+    },
+    "decision_point_fill_share": {
+     "am": 0.479020979020979,
+     "pm": 0.5209790209790209
+    }
+   },
+   "seat_vacancy_note": "buy intents that expire unfilled leave the seat in cash until the name cycles out and re-enters (static frame, no re-emission)",
+   "no_midcycle_rebalance": true,
+   "engine_warnings_n": 0,
+   "engine_warnings_sample": []
+  },
+  "F3-ICW": {
+   "gate8": {
+    "mapped_rate": 0.7668439716312057,
+    "filled": 648,
+    "rule_blocked": {
+     "below_min_lot": 0,
+     "void_no_position": 216,
+     "void_insufficient_cash": 1
+    },
+    "termination": {
+     "expiry": 59,
+     "override_same_name": 189,
+     "cap_void": 0,
+     "suspension_abandon": 15
+    },
+    "zero_emission": 9,
+    "expired_noop": 0,
+    "order_session": {
+     "buy": 0.0317735413056037,
+     "sell_risk": 0.03288861309339125,
+     "sell_profit": null
+    },
+    "decision_point_fill_share": {
+     "am": 0.4861111111111111,
+     "pm": 0.5138888888888888
+    }
+   },
+   "seat_vacancy_note": "buy intents that expire unfilled leave the seat in cash until the name cycles out and re-enters (static frame, no re-emission)",
+   "no_midcycle_rebalance": true,
+   "engine_warnings_n": 40,
+   "engine_warnings_sample": [
+    "commission guard: sell fill sz.002602 2019-03-04 notional 51737.60 > 50000 (commission 5.17; the 5-yuan minimum no longer binds)",
+    "commission guard: sell fill sz.002601 2019-09-02 notional 70675.00 > 50000 (commission 7.07; the 5-yuan minimum no longer binds)",
+    "commission guard: sell fill sh.603708 2020-03-02 notional 50179.00 > 50000 (commission 5.02; the 5-yuan minimum no longer binds)"
+   ]
+  }
+ },
+ "val_consumed": false,
+ "stop_note": "no arm passed all dev gates (0/2); val not consumed"
+}

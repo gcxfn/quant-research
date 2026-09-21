@@ -1,0 +1,168 @@
+[    0.0s] == 0. identity pins (engine v1.2 frozen, prereg frozen) ==
+[    0.0s]   engine: 84a2443ac28fe1b8 expect 84a2443ac28fe1b87e4a18f988fd38cc67cf706d5778e262f11465147234082c match=True
+[    0.0s]   p3r2_config: b49025b44c719685 expect b49025b44c719685 match=True
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.6s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.6s]   halfday_manifest: 2a414174b5df2eee expect 2a414174b5df2eee match=True
+[    0.6s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.7s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.7s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    0.7s]   p3r2_c05_fills: 11f8af46686df411 expect None match=True
+[    0.7s]   p3r2_c05_events: 2dde945782accd70 expect None match=True
+[    0.7s]   p3r2_c05_daily: c3945567de4250ef expect None match=True
+[    0.7s]   p3r2_c05_clips: b44dbea22a529529 expect None match=True
+[    0.7s]   p3r2_c05_intents: 36dedda1cf8d7661 expect None match=True
+[    0.7s]   prereg: 9c753e474e66b96b expect None match=True
+[    0.7s]   v2_prereg_inherited: 4ced8ce1db44cef3 expect None match=True
+[    0.7s]   v1_prereg_inherited: 266a1b850373a6f7 expect None match=True
+[    0.7s]   hyb_config: 125d163dd5adac0a expect None match=True
+[    0.7s]   etf_daily_input: b7225d50523106f5 expect b7225d50523106f5 match=True
+[    0.7s]   v3_metrics_r306_anchor_source: 9e2cd4aafec15c08 expect None match=True
+[    0.7s]   v3_r306_intents: c1e874bddb88d238 expect None match=True
+[    0.7s]   v3_r306_fills: 2f509f6894d54787 expect None match=True
+[    0.7s]   v3_r306_events: 6be782d8ac781c6a expect None match=True
+[    0.7s]   v3_r306_daily: 123e4cb385368abc expect None match=True
+[    0.7s]   v3_r306_clips: af1fb490c49790d8 expect None match=True
+[    0.7s]   v1_config_reference: 6388465cc31a6957 expect None match=True
+[    0.7s]   v1_metrics_rot01_source: 54a528a996a9caaa expect None match=True
+[    0.7s]   r16_metrics: 8d0b6ebbdea6ebb9 expect None match=True
+[    0.7s]   p3r2_runner: 7477c2a8fcc2d291 expect None match=True
+[    0.7s]   etf_manifest: 8b5b3fe56c0e02fd expect None match=True
+[    4.1s]   etf processed dir aggregate: 75777221a8b33502 (7 files); fund_adj batch re-verified (1169 chunks, 0 mismatches) aggregate matches manifest: True
+[    4.1s]   python 3.11.15 | polars 1.44.2 | numpy 1.26.4 | rss 0.28 GB
+[    4.1s] == 1. calendar & signal days ==
+[    4.2s]   71 signal days (2015-01-30..2020-11-30; 2020-12-31 dropped as signal, kept as expiry anchor)
+[    4.2s] == 2. exposures (T200-40) ==
+[    4.3s]   t200 behavioral anchor check: {"anchor_years": ["2016", "2017", "2018", "2019", "2020"], "reproduced_stats": {"2016": {"n_sessions": 244, "n_switches"
+[    4.3s]   exposures[2015-01-30]=0.40 [2020-11-30]=0.90
+[    4.3s] == 3. pools (r16 build_history + signal_pools) ==
+[   14.9s]   B1m dev port-check: reproduces r16_metrics to 1e-9 PASS; known values +0.60%/-39.82% PIN PASS (+0.005991, -0.398238)
+[   14.9s]   pools at 2015-01-30: n=1438; union of ranked symbols: 2937
+[   14.9s] == 4. C05 leg_log + membership consistency ==
+[   14.9s]   C05: membership mismatches=0, events mismatches=0 / 71
+[   14.9s] == 5. market frames ==
+[   15.5s]   daily panel: 3841824 rows, 2937 symbols
+[   16.3s]   halfday: 7254698 rows kept of 18486939 total (panel x dev), 2935 symbols
+[   24.9s]   limits: 3829171 rows (dev x panel)
+[   27.3s]   splits 2894 rows, dividends 20138 rows (panel)
+[   27.3s]   rss after frames: 4.53 GB
+[   27.3s] == 6. ETF assets ==
+[   27.4s]   input parquet 2025+ rows: 0 (freeze check PASS)
+[   27.4s]   etf panel dev rows: 13158 per member {'sh.510880': 1462, 'sh.510050': 1462, 'sh.510300': 1462, 'sh.513500': 1462, 'sz.159915': 1462, 'sz.159934': 1462, 'sh.513100': 1462, 'sh.518880': 1462, 'sh.511010': 1462}
+[   27.4s]   assertion (ii) preclose nulls: 0
+[   27.4s]   disclosure: member-dev rows with volume<=0: 0
+[   27.4s]   assertion (iii): sse 1462 days, panel union 1462 days, missing [], extra []
+[   27.4s]   factor coverage gaps per member: {'sh.511010': 0, 'sh.518880': 0, 'sh.510050': 0, 'sh.510300': 0, 'sz.159915': 0, 'sh.510880': 0, 'sh.513100': 0, 'sh.513500': 0, 'sz.159934': 0}
+[   27.4s]   dividend events built: 18 {'sh.510050': 5, 'sh.510300': 6, 'sh.510880': 6, 'sh.511010': 1}
+[   27.4s]     sh.510050 2016-11-29 div/share=0.053
+[   27.4s]     sh.510050 2017-11-28 div/share=0.054
+[   27.4s]     sh.510050 2018-12-03 div/share=0.049
+[   27.4s]     sh.510050 2019-12-02 div/share=0.047
+[   27.4s]     sh.510050 2020-11-30 div/share=0.051
+[   27.4s]     sh.510300 2015-01-20 div/share=0.035
+[   27.4s]     sh.510300 2016-01-20 div/share=0.051
+[   27.4s]     sh.510300 2017-01-23 div/share=0.055
+[   27.4s]     sh.510300 2018-01-23 div/share=0.046
+[   27.4s]     sh.510300 2019-01-16 div/share=0.059
+[   27.4s]     sh.510300 2019-12-11 div/share=0.062
+[   27.4s]     sh.510880 2015-01-20 div/share=0.080
+[   27.4s]     sh.510880 2016-01-20 div/share=0.050
+[   27.4s]     sh.510880 2017-01-23 div/share=0.091
+[   27.4s]     sh.510880 2018-01-23 div/share=0.109
+[   27.4s]     sh.510880 2019-01-16 div/share=0.098
+[   27.4s]     sh.510880 2020-01-17 div/share=0.144
+[   27.4s]     sh.511010 2015-10-09 div/share=1.000
+[   27.4s]   159934 dev mismatch rows: 1 [{"symbol": "sz.159934", "date": "2020-02-26", "preclose": 3.614, "prev_close": 3.622, "rel_diff": -0.002208724461623457, "factor_ratio": 1.0}]; dividend-rule events: 0 (frozen)
+[   27.4s]   EU45 panel: 65596 dev rows, 45 symbols; preclose nulls 0
+[   27.4s]   EU45 calendar union == SSE dev calendar (1462 days) PASS
+[   27.6s]   EU45 factor coverage: zero gaps over 45 symbols PASS
+[   27.6s]   EU45 dividend events: 35 total; new-member counts {'sh.510180': 4, 'sh.510330': 3, 'sh.510900': 1, 'sh.511880': 6, 'sz.159920': 1, 'sz.160706': 2}
+[   27.6s]   symbol_meta: 9 symbols (8 members + sz.159934), explicit band 0.10, t_plus 0 (assertion (i) basis)
+[   27.6s] == 7. momentum ranking (adj close, month-end) ==
+[   27.7s]   adj_close extended to EU45 (45 symbols)
+[   27.7s]   lookback 4m universe[sh.510050+sh.510150+sh.510180+sh.510210+sh.510300+sh.510310+sh.510330+sh.510410+sh.510510+sh.510630+sh.510650+sh.510660+sh.510880+sh.512010+sh.512070+sh.512120+sh.512990+sz.159901+sz.159902+sz.159905+sz.159915+sz.159922+sz.159928+sz.159929+sz.159930+sz.159938+sz.159939+sz.160706+sh.510900+sh.513030+sh.513100+sh.513500+sh.513600+sh.513660+sz.159920]: 57 ranking months (2015-07-31..2020-11-30)
+[   27.7s]   lookback 6m universe[sh.510050+sh.510150+sh.510180+sh.510210+sh.510300+sh.510310+sh.510330+sh.510410+sh.510510+sh.510630+sh.510650+sh.510660+sh.510880+sh.512010+sh.512070+sh.512120+sh.512990+sz.159901+sz.159902+sz.159905+sz.159915+sz.159922+sz.159928+sz.159929+sz.159930+sz.159938+sz.159939+sz.160706+sh.510900+sh.513030+sh.513100+sh.513500+sh.513600+sh.513660+sz.159920+sh.511800+sh.511810+sh.511860+sh.511880+sh.511990+sz.159001+sz.159003+sz.159005]: 55 ranking months (2015-09-30..2020-11-30)
+[   27.7s]   lookback 6m universe[sh.510050+sh.510300+sz.159915+sh.510880+sh.513100+sh.513500]: 65 ranking months (2015-07-31..2020-11-30)
+[   27.7s]   lookback 6m universe[sh.510050+sh.510150+sh.510180+sh.510210+sh.510300+sh.510310+sh.510330+sh.510410+sh.510510+sh.510630+sh.510650+sh.510660+sh.510880+sh.512010+sh.512070+sh.512120+sh.512990+sz.159901+sz.159902+sz.159905+sz.159915+sz.159922+sz.159928+sz.159929+sz.159930+sz.159938+sz.159939+sz.160706+sh.510900+sh.513030+sh.513100+sh.513500+sh.513600+sh.513660+sz.159920]: 55 ranking months (2015-09-30..2020-11-30)
+[   27.7s]   lookback 6m universe[sh.510050+sh.510300+sz.159915+sh.510880+sh.513100+sh.513500+sh.510150+sh.510410+sh.510630+sh.510650+sh.510660+sz.159905+sz.159928+sz.159929+sz.159930+sz.159938+sz.159939+sh.512010+sh.512070+sh.512120]: 58 ranking months (2015-08-31..2020-11-30)
+[   27.7s]   lookback 6m universe[sh.510050+sh.510300+sz.159915+sh.510880+sh.513100+sh.513500+sh.510150+sh.510410+sh.510630+sh.510650+sh.510660+sz.159905+sz.159928+sz.159929+sz.159930+sz.159938+sz.159939+sh.512010+sh.512070+sh.512120+sh.510900+sh.513030+sh.513600+sh.513660+sz.159920]: 56 ranking months (2015-08-31..2020-11-30)
+[   27.7s]   lookback 6m universe[sh.510050+sh.510300+sz.159915+sh.510880+sh.513100+sh.513500+sh.510180+sh.510310+sh.510330+sh.510510+sh.512990+sz.159901+sz.159902+sz.159922+sz.160706]: 63 ranking months (2015-09-30..2020-11-30)
+[   27.7s]   lookback 6m universe[sh.510050+sh.510150+sh.510180+sh.510210+sh.510300+sh.510310+sh.510330+sh.510410+sh.510510+sh.510630+sh.510650+sh.510660+sh.510880+sh.512010+sh.512070+sh.512120+sh.512990+sz.159901+sz.159902+sz.159905+sz.159915+sz.159922+sz.159928+sz.159929+sz.159930+sz.159938+sz.159939+sz.160706]: 57 ranking months (2015-09-30..2020-11-30)
+[   27.7s]   lookback 9m universe[sh.510050+sh.510150+sh.510180+sh.510210+sh.510300+sh.510310+sh.510330+sh.510410+sh.510510+sh.510630+sh.510650+sh.510660+sh.510880+sh.512010+sh.512070+sh.512120+sh.512990+sz.159901+sz.159902+sz.159905+sz.159915+sz.159922+sz.159928+sz.159929+sz.159930+sz.159938+sz.159939+sz.160706+sh.510900+sh.513030+sh.513100+sh.513500+sh.513600+sh.513660+sz.159920]: 52 ranking months (2016-01-29..2020-11-30)
+[   27.7s] == 8. static intent frames ==
+[   27.7s]   C05 (stock leg): intents 1395; R16 skips {'r16_at_target': 501, 'r16_feemin_skipped': 320}
+[   27.7s]   C05 frame == P3R2 C05_intents.parquet (.equals) PASS
+[   27.7s]   EU-A0: intents 206 (etf 206, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   27.7s]   EU-01: intents 284 (etf 154, stock 130); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   27.7s]   EU-02: intents 280 (etf 168, stock 112); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   27.7s]   EU-03: intents 284 (etf 166, stock 118); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   27.7s]   EU-04: intents 322 (etf 176, stock 146); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   27.7s]   EU-05: intents 350 (etf 176, stock 174); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   27.7s]   EU-06: intents 296 (etf 173, stock 123); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   27.7s]   EU-07: intents 232 (etf 164, stock 68); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   27.7s]   EU-08: intents 274 (etf 178, stock 96); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   27.8s]   EU-09: intents 246 (etf 199, stock 47); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   27.8s]   EU-10: intents 282 (etf 170, stock 112); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   27.8s] == 9. per-config engine input frames ==
+[   27.8s]   stock frames (C05 universe): daily 270206, half 518093, limits 269531
+[   27.8s] == 10. EU-A0 regression anchor vs v3 R3-06 ==
+[   28.1s]   EU-A0: engine 0.3s, intents 206 orders 172 filled 65 cap 0 | rss 4.73 GB
+[   28.1s]   EU-A0 intents.equals(v3 R3-06 intents) = True (mine 206 rows / ref 206 rows)
+[   28.1s]   EU-A0 fills.equals(v3 R3-06 fills) = True (mine 65 rows / ref 65 rows)
+[   28.1s]   EU-A0 events.equals(v3 R3-06 events) = True (mine 383 rows / ref 383 rows)
+[   28.1s]   EU-A0 daily.equals(v3 R3-06 daily) = True (mine 1462 rows / ref 1462 rows)
+[   28.1s]   EU-A0 clips_final.equals(v3 R3-06 clips_final) = True (mine 5 rows / ref 5 rows)
+[   28.1s]   EU-A0 net_cagr 0.1106293669 vs v3 R3-06 0.1106293669 -> True
+[   28.1s]   EU-A0 regression anchor PASS (== v3 R3-06, 5/5 frames .equals)
+[   28.1s] == 11. remaining configs ==
+[   28.5s]   EU-01: engine 0.4s, intents 284 orders 322 filled 154 cap 0 | rss 4.66 GB
+[   28.9s]   EU-02: engine 0.4s, intents 280 orders 302 filled 152 cap 0 | rss 4.68 GB
+[   29.3s]   EU-03: engine 0.4s, intents 284 orders 326 filled 158 cap 0 | rss 4.69 GB
+[   29.7s]   EU-04: engine 0.4s, intents 322 orders 401 filled 191 cap 0 | rss 4.69 GB
+[   30.2s]   EU-05: engine 0.5s, intents 350 orders 466 filled 216 cap 0 | rss 4.70 GB
+[   30.6s]   EU-06: engine 0.4s, intents 296 orders 361 filled 170 cap 0 | rss 4.71 GB
+[   31.0s]   EU-07: engine 0.3s, intents 232 orders 232 filled 100 cap 0 | rss 4.69 GB
+[   31.4s]   EU-08: engine 0.4s, intents 274 orders 301 filled 138 cap 0 | rss 4.70 GB
+[   31.7s]   EU-09: engine 0.3s, intents 246 orders 255 filled 115 cap 0 | rss 4.71 GB
+[   32.1s]   EU-10: engine 0.4s, intents 282 orders 312 filled 151 cap 0 | rss 4.69 GB
+[   32.1s]   EU-A0: leg cap-voids 0 (OK); drift breaches 79 (recorded-only)
+[   32.1s]   EU-01: leg cap-voids 0 (OK); drift breaches 171 (recorded-only)
+[   32.1s]   EU-02: leg cap-voids 0 (OK); drift breaches 107 (recorded-only)
+[   32.1s]   EU-03: leg cap-voids 0 (OK); drift breaches 111 (recorded-only)
+[   32.1s]   EU-04: leg cap-voids 0 (OK); drift breaches 81 (recorded-only)
+[   32.1s]   EU-05: leg cap-voids 0 (OK); drift breaches 65 (recorded-only)
+[   32.1s]   EU-06: leg cap-voids 0 (OK); drift breaches 96 (recorded-only)
+[   32.1s]   EU-07: leg cap-voids 0 (OK); drift breaches 55 (recorded-only)
+[   32.1s]   EU-08: leg cap-voids 0 (OK); drift breaches 103 (recorded-only)
+[   32.1s]   EU-09: leg cap-voids 0 (OK); drift breaches 92 (recorded-only)
+[   32.1s]   EU-10: leg cap-voids 0 (OK); drift breaches 94 (recorded-only)
+[   32.1s] == 12. per-intent attribution ==
+[   32.2s]   EU-A0: R16-mapped exec 33.0% (filled 65, rule-blocked 3, terminated 138); term {'expiry': 2, 'override_same_name': 136, 'cap_void': 0, 'suspension_abandon': 0}
+[   32.2s]   EU-01: R16-mapped exec 55.3% (filled 154, rule-blocked 3, terminated 127); term {'expiry': 2, 'override_same_name': 125, 'cap_void': 0, 'suspension_abandon': 0}
+[   32.2s]   EU-02: R16-mapped exec 55.4% (filled 152, rule-blocked 3, terminated 125); term {'expiry': 2, 'override_same_name': 123, 'cap_void': 0, 'suspension_abandon': 0}
+[   32.2s]   EU-03: R16-mapped exec 56.7% (filled 158, rule-blocked 3, terminated 123); term {'expiry': 2, 'override_same_name': 121, 'cap_void': 0, 'suspension_abandon': 0}
+[   32.2s]   EU-04: R16-mapped exec 60.6% (filled 191, rule-blocked 4, terminated 127); term {'expiry': 2, 'override_same_name': 125, 'cap_void': 0, 'suspension_abandon': 0}
+[   32.2s]   EU-05: R16-mapped exec 63.1% (filled 216, rule-blocked 5, terminated 129); term {'expiry': 2, 'override_same_name': 127, 'cap_void': 0, 'suspension_abandon': 0}
+[   32.2s]   EU-06: R16-mapped exec 58.4% (filled 170, rule-blocked 3, terminated 123); term {'expiry': 2, 'override_same_name': 121, 'cap_void': 0, 'suspension_abandon': 0}
+[   32.2s]   EU-07: R16-mapped exec 44.4% (filled 100, rule-blocked 3, terminated 129); term {'expiry': 2, 'override_same_name': 127, 'cap_void': 0, 'suspension_abandon': 0}
+[   32.2s]   EU-08: R16-mapped exec 51.5% (filled 138, rule-blocked 3, terminated 133); term {'expiry': 2, 'override_same_name': 131, 'cap_void': 0, 'suspension_abandon': 0}
+[   32.2s]   EU-09: R16-mapped exec 48.0% (filled 115, rule-blocked 3, terminated 128); term {'expiry': 2, 'override_same_name': 126, 'cap_void': 0, 'suspension_abandon': 0}
+[   32.3s]   EU-10: R16-mapped exec 54.6% (filled 151, rule-blocked 3, terminated 128); term {'expiry': 2, 'override_same_name': 126, 'cap_void': 0, 'suspension_abandon': 0}
+[   32.3s] == 13. metrics & gates ==
+[   32.3s]   EU-A0: net +11.06% excess +10.46pp adv 5/6 mdd -16.22% turn 1.59 w 27.5% g8v3 0+0/0=n/a(0 armed) (8v2对照 0/0=n/a(0 armed)) goal10 True -> PASS
+[   32.3s]   EU-01: net +5.65% excess +5.05pp adv 3/6 mdd -27.29% turn 3.19 w 27.1% g8v3 1+0/1=100.0% (8v2对照 1/1=100.0%) goal10 False -> eliminated ['3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m']
+[   32.3s]   EU-02: net +7.12% excess +6.52pp adv 5/6 mdd -18.50% turn 3.52 w 26.3% g8v3 0+0/0=n/a(0 armed) (8v2对照 0/0=n/a(0 armed)) goal10 False -> PASS
+[   32.4s]   EU-03: net +6.41% excess +5.81pp adv 4/6 mdd -16.41% turn 3.52 w 26.7% g8v3 0+0/0=n/a(0 armed) (8v2对照 0/0=n/a(0 armed)) goal10 False -> eliminated ['3_advantage_years_ge_5_of_6']
+[   32.4s]   EU-04: net +6.42% excess +5.82pp adv 5/6 mdd -21.60% turn 3.38 w 26.9% g8v3 2+0/2=100.0% (8v2对照 2/2=100.0%) goal10 False -> eliminated ['4_mdd_le_20pct_and_le_B1m']
+[   32.4s]   EU-05: net +6.89% excess +6.29pp adv 5/6 mdd -21.14% turn 2.90 w 26.4% g8v3 2+0/2=100.0% (8v2对照 2/2=100.0%) goal10 False -> eliminated ['4_mdd_le_20pct_and_le_B1m']
+[   32.4s]   EU-06: net +4.13% excess +3.54pp adv 4/6 mdd -19.65% turn 3.21 w 26.9% g8v3 2+0/2=100.0% (8v2对照 2/2=100.0%) goal10 False -> eliminated ['3_advantage_years_ge_5_of_6']
+[   32.5s]   EU-07: net +8.07% excess +7.47pp adv 5/6 mdd -18.88% turn 2.18 w 26.1% g8v3 1+0/1=100.0% (8v2对照 1/1=100.0%) goal10 False -> PASS
+[   32.5s]   EU-08: net +8.55% excess +7.95pp adv 5/6 mdd -18.68% turn 3.16 w 26.3% g8v3 1+0/1=100.0% (8v2对照 1/1=100.0%) goal10 False -> PASS
+[   32.5s]   EU-09: net +6.63% excess +6.03pp adv 5/6 mdd -14.61% turn 2.98 w 26.8% g8v3 2+0/2=100.0% (8v2对照 2/2=100.0%) goal10 False -> PASS
+[   32.5s]   EU-10: net +7.88% excess +7.28pp adv 5/6 mdd -18.51% turn 3.33 w 26.3% g8v3 1+0/1=100.0% (8v2对照 1/1=100.0%) goal10 False -> PASS
+[   32.5s] == gates: 6/11 dev_pass ==
+[   32.5s] == 14. disclosures ==
+[   32.8s] == 15. outputs ==
+[   32.9s]   EU-A0 parquet byte-equality vs v3 R3-06 files: True {'intents.parquet': True, 'fills.parquet': True, 'events.parquet': True, 'daily_equity.parquet': True, 'clips_final.parquet': True}
+[   32.9s] == manifest + report written; wall 33s, peak rss 4.73 GB ==
+[   32.9s] == VERDICT: 6/11 dev_pass; blocked=[]; expanded-universe exploration round v1 (EU prereg sec 0/5): all 12 config results reported at once, no mid-run selection, no champion change, R3-05/R3-06 in-library status unchanged; roster eligibility (second-pass protocol = dev 8 gates AND net CAGR >= 10%) -> EU-A0; 6/11 pass all 8 dev gates; ALL results exploration-grade; trials +10 (252->262, anchor not counted); val not consumed

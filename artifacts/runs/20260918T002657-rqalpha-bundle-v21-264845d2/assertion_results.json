@@ -1,0 +1,1400 @@
+{
+ "A3_calendar": {
+  "status": "PASS",
+  "days": 2431,
+  "range": [
+   "20150105",
+   "20241231"
+  ],
+  "detail": "trading_dates.npy == xiaodefa SSE calendar (is_open==1), 2015-01-01..2024-12-31, int64 plain YYYYMMDD",
+  "problems": []
+ },
+ "A1_stock_bar_fidelity": {
+  "status": "PASS",
+  "values_checked": 150,
+  "detail": "stocks.h5 open/high/low/close/volume/total_turnover == baostock parquet (unadjusted), 5 sampled dates across 2015-2024 x 5 scenario stocks, exact float equality",
+  "mismatches": []
+ },
+ "A2_etf_bar_fidelity": {
+  "status": "PASS",
+  "values_checked": 80,
+  "detail": "funds.h5 OHLC == tushare fund_daily raw chunks (unadjusted), volume == vol*100 shares, total_turnover == amount*1000 yuan (units verified preflight by implied-vwap test), limits NaN (no ETF limit source, disclosed), 5 sampled dates x 2 ETFs, exact float equality",
+  "mismatches": []
+ },
+ "A4_freeze_and_indexes": {
+  "status": "PASS",
+  "freeze_check": {
+   "securities_checked": 5914,
+   "max_bar_datetime": 20241231
+  },
+  "detail": "no bar beyond the 2024-12-31 freeze line across all 5914 securities in stocks.h5+funds.h5; indexes.h5 carries REAL bars for five indices -- 000300.XSHG full window (v2.1) and the probe key 000001.XSHG as the real SSE Composite (the v2 NaN-placeholder warning is void)",
+  "problems": []
+ },
+ "A5_instruments_and_files": {
+  "status": "PASS",
+  "counts": {
+   "CS": 4745,
+   "ETF": 1169,
+   "INDX": 5
+  },
+  "detail": "instruments.pk exposes the full pool (4745 CS + 1169 ETF + 1 INDX benchmark) with round_lot=100 / market_tplus=1, and every file BaseDataSource.__init__ reads exists",
+  "problems": []
+ },
+ "A13_etf_ex_cum_factor_mapping": {
+  "status": "PASS",
+  "mapping": {
+   "510050.XSHG": {
+    "change_points": 10,
+    "first": [
+     20150105,
+     1.2093
+    ],
+    "last": [
+     20241202,
+     1.4104
+    ],
+    "implied_dividends_per_unit": {
+     "20161129": 0.0538,
+     "20171128": 0.0537,
+     "20181203": 0.0501,
+     "20191202": 0.0471,
+     "20201130": 0.0506,
+     "20211129": 0.0411,
+     "20221201": 0.0373,
+     "20231127": 0.0386,
+     "20241202": 0.0552
+    }
+   },
+   "510880.XSHG": {
+    "change_points": 11,
+    "first": [
+     20150105,
+     1.1245
+    ],
+    "last": [
+     20240123,
+     1.6557
+    ],
+    "implied_dividends_per_unit": {
+     "20150120": 0.082,
+     "20160120": 0.0493,
+     "20170123": 0.091,
+     "20180123": 0.1105,
+     "20190116": 0.0981,
+     "20200117": 0.143,
+     "20210118": 0.1419,
+     "20220117": 0.0859,
+     "20230116": 0.1391,
+     "20240123": 0.1317
+    }
+   }
+  },
+  "known_case": {
+   "etf": "510050.XSHG",
+   "ex_date": 20161129,
+   "announced_per_unit": 0.053,
+   "implied_per_unit": 0.0538,
+   "source": "华夏基金利润分配公告 2016-11-11: 每10份0.53元, 权益登记 2016-11-28, 除息 2016-11-29, 发放 2016-12-02"
+  },
+  "detail": "ex_cum_factor rows == [(0,1.0)] + fund_adj change-points (relative step >= 1e-3; smaller steps are source revisions); rqalpha adjust_bars consumes factor RATIOS only so the absolute values carry over directly; each step implies a positive per-unit cash dividend; the 510050 2016-11-29 step implies 0.053 yuan/unit matching the public announcement",
+  "mismatches": []
+ },
+ "A14_stock_limit_prices": {
+  "status": "PASS",
+  "values_checked": 10,
+  "sampled_pairs": [
+   {
+    "order_book_id": "301028.XSHE",
+    "date": 20230412
+   },
+   {
+    "order_book_id": "300079.XSHE",
+    "date": 20191226
+   },
+   {
+    "order_book_id": "601086.XSHG",
+    "date": 20210520
+   },
+   {
+    "order_book_id": "002491.XSHE",
+    "date": 20191226
+   },
+   {
+    "order_book_id": "002703.XSHE",
+    "date": 20191226
+   }
+  ],
+  "nan_rule_days_checked": [
+   20170307,
+   20170308,
+   20170309,
+   20220726,
+   20230421
+  ],
+  "detail": "stocks.h5 limit_up/limit_down == tushare stk_limit raw chunk values for 5 randomly sampled (stock, day) pairs across the full pool (seed 20260917); on the 5 header-only chunk days the bundle carries NaN (engine treats NaN as no price limit, disclosed optimistic fallback)",
+  "mismatches": []
+ },
+ "A16_index_bars": {
+  "status": "PASS",
+  "values_checked": 155,
+  "keys": [
+   "000001.XSHG",
+   "000300.XSHG",
+   "000852.XSHG",
+   "000905.XSHG",
+   "399006.XSHE"
+  ],
+  "registered_value_check": {
+   "000300_20150612_close": 5335.1151
+  },
+  "detail": "indexes.h5 carries the five REAL tushare index_daily series (2431 days each, full window): OHLC == raw chunks, volume == vol*100 (手), total_turnover == amount*1000 (千元, unit-proven on the bigquant overlap); 000300.XSHG 2015-06-12 close == 5335.1151 (batch manifest registered value); sampled closes identical to the retired bigquant 000300 copy on 2021-08-05+; the v2 NaN probe placeholder for 000001.XSHG is replaced by the real SSE Composite",
+  "mismatches": []
+ },
+ "engine_elapsed_seconds": 1.177,
+ "A6_engine_fills": {
+  "status": "PASS",
+  "trades": [
+   {
+    "order_book_id": "600036.XSHG",
+    "side": "SIDE.BUY",
+    "date": "20241008",
+    "quantity": 100,
+    "price": 40.0,
+    "commission": 5.0,
+    "tax": 0.0,
+    "cost": 5.0
+   },
+   {
+    "order_book_id": "601318.XSHG",
+    "side": "SIDE.BUY",
+    "date": "20241008",
+    "quantity": 100,
+    "price": 61.73,
+    "commission": 5.0,
+    "tax": 0.0,
+    "cost": 5.0
+   },
+   {
+    "order_book_id": "600000.XSHG",
+    "side": "SIDE.BUY",
+    "date": "20241008",
+    "quantity": 100,
+    "price": 10.5,
+    "commission": 5.0,
+    "tax": 0.0,
+    "cost": 5.0
+   },
+   {
+    "order_book_id": "000001.XSHE",
+    "side": "SIDE.BUY",
+    "date": "20241008",
+    "quantity": 100,
+    "price": 12.88,
+    "commission": 5.0,
+    "tax": 0.0,
+    "cost": 5.0
+   },
+   {
+    "order_book_id": "000651.XSHE",
+    "side": "SIDE.BUY",
+    "date": "20241008",
+    "quantity": 100,
+    "price": 51.5,
+    "commission": 5.0,
+    "tax": 0.0,
+    "cost": 5.0
+   },
+   {
+    "order_book_id": "510050.XSHG",
+    "side": "SIDE.BUY",
+    "date": "20241008",
+    "quantity": 200,
+    "price": 2.978,
+    "commission": 5.0,
+    "tax": 0.0,
+    "cost": 5.0
+   },
+   {
+    "order_book_id": "510300.XSHG",
+    "side": "SIDE.BUY",
+    "date": "20241008",
+    "quantity": 200,
+    "price": 4.412,
+    "commission": 5.0,
+    "tax": 0.0,
+    "cost": 5.0
+   },
+   {
+    "order_book_id": "600036.XSHG",
+    "side": "SIDE.SELL",
+    "date": "20241230",
+    "quantity": 100,
+    "price": 39.62,
+    "commission": 5.0,
+    "tax": 0.0,
+    "cost": 5.0
+   },
+   {
+    "order_book_id": "601318.XSHG",
+    "side": "SIDE.SELL",
+    "date": "20241230",
+    "quantity": 100,
+    "price": 53.9,
+    "commission": 5.0,
+    "tax": 0.0,
+    "cost": 5.0
+   },
+   {
+    "order_book_id": "600000.XSHG",
+    "side": "SIDE.SELL",
+    "date": "20241230",
+    "quantity": 100,
+    "price": 10.47,
+    "commission": 5.0,
+    "tax": 0.0,
+    "cost": 5.0
+   },
+   {
+    "order_book_id": "000001.XSHE",
+    "side": "SIDE.SELL",
+    "date": "20241230",
+    "quantity": 100,
+    "price": 11.95,
+    "commission": 5.0,
+    "tax": 0.0,
+    "cost": 5.0
+   },
+   {
+    "order_book_id": "000651.XSHE",
+    "side": "SIDE.SELL",
+    "date": "20241230",
+    "quantity": 100,
+    "price": 45.57,
+    "commission": 5.0,
+    "tax": 0.0,
+    "cost": 5.0
+   },
+   {
+    "order_book_id": "510050.XSHG",
+    "side": "SIDE.SELL",
+    "date": "20241230",
+    "quantity": 200,
+    "price": 2.773,
+    "commission": 5.0,
+    "tax": 0.0,
+    "cost": 5.0
+   },
+   {
+    "order_book_id": "510300.XSHG",
+    "side": "SIDE.SELL",
+    "date": "20241230",
+    "quantity": 200,
+    "price": 4.086,
+    "commission": 5.0,
+    "tax": 0.0,
+    "cost": 5.0
+   }
+  ],
+  "detail": "7 day-1 fills across the stocks.h5 (CS) and funds.h5 (ETF) store paths; each fill price equals the same-day bar close stored in the bundle (rqalpha 1d current-bar-close matching)",
+  "problems": []
+ },
+ "A7_t_plus_1": {
+  "status": "PASS",
+  "rejections": [
+   {
+    "order_book_id": "600036.XSHG",
+    "reason": "订单创建失败：600036.XSHG 的仓位不足，目标平仓/行权量为 100，可平仓/行权量为 0"
+   }
+  ],
+  "day1_position_first_stock": 100,
+  "detail": "same-day sell (day-1 buy, day-1 sell 100 shares) rejected by the position validator (closable quantity); position remains the bought 100 shares",
+  "problems": []
+ },
+ "A8_round_lot": {
+  "status": "PASS",
+  "odd_rejections": [
+   {
+    "order_book_id": "000651.XSHE",
+    "reason": "000651.XSHE 的订单创建失败：下单数量为 0"
+   }
+  ],
+  "day1_position_last_stock": 100,
+  "detail": "55-share order floored to 0 -> \"0 order quantity\" creation reject; 101/201-share orders fill 100/200; every fill quantity is a round_lot=100 multiple",
+  "problems": []
+ },
+ "A9_conservation": {
+  "status": "PASS",
+  "initial_cash": 200000.0,
+  "total_transaction_cost": 70.0,
+  "expected_dividend_cash": 117.6,
+  "final_cash": 198431.40000000002,
+  "expected_final_cash": 198431.4,
+  "final_positions": {},
+  "final_total_value": 198431.40000000002,
+  "dividend_rows": [
+   {
+    "order_book_id": "000001.XSHE",
+    "ex_dividend_date": 20241010,
+    "payable_date": 20241010,
+    "cash_for_100_shares": 24.6
+   },
+   {
+    "order_book_id": "601318.XSHG",
+    "ex_dividend_date": 20241018,
+    "payable_date": 20241018,
+    "cash_for_100_shares": 93.0
+   }
+  ],
+  "holding_pnl": -1616.2,
+  "detail": "final cash == 200000 - transaction costs + dividend cash + holding P&L (sell notional - buy notional at the verified fill prices); total_value == cash + market_value every day; zero positions at end",
+  "problems": []
+ },
+ "A12_dividend_cash": {
+  "status": "PASS",
+  "dividend_rows": [
+   {
+    "order_book_id": "000001.XSHE",
+    "ex_dividend_date": 20241010,
+    "payable_date": 20241010,
+    "cash_for_100_shares": 24.6
+   },
+   {
+    "order_book_id": "601318.XSHG",
+    "ex_dividend_date": 20241018,
+    "payable_date": 20241018,
+    "cash_for_100_shares": 93.0
+   }
+  ],
+  "detail": "on each ex-date the account cash rises by exactly dividend_cash_before_tax for the held 100-share lot (tushare cash_div per share -> bundle cash per round_lot), with no trades on those days; real cases 000001.XSHE 2024-10-10 and 601318.XSHG 2024-10-18",
+  "problems": []
+ },
+ "A10_fee_config": {
+  "status": "PASS",
+  "bad_trades": [],
+  "detail": "every trade cost == max(5, notional*0.0001) and tax == 0 (万1全包, min 5 元)"
+ },
+ "A11_benchmark_path": {
+  "status": "PASS",
+  "benchmark": "000300.XSHG",
+  "benchmark_total_returns": -0.020643754023447314,
+  "detail": "sys_analyser computed benchmark returns from the real 000300.XSHG bars in indexes.h5 (no missing-data failure)",
+  "problems": []
+ },
+ "engine_daily_snapshots": [
+  {
+   "date": "2024-10-08",
+   "cash": 180826.0,
+   "market_value": 19139.0,
+   "total_value": 199965.0,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-10-09",
+   "cash": 180826.0,
+   "market_value": 17580.0,
+   "total_value": 198406.0,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-10-10",
+   "cash": 180850.6,
+   "market_value": 18304.600000000002,
+   "total_value": 199155.2,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-10-11",
+   "cash": 180850.6,
+   "market_value": 17998.2,
+   "total_value": 198848.80000000002,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-10-14",
+   "cash": 180850.6,
+   "market_value": 18399.4,
+   "total_value": 199250.0,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-10-15",
+   "cash": 180850.6,
+   "market_value": 17978.8,
+   "total_value": 198829.4,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-10-16",
+   "cash": 180850.6,
+   "market_value": 18007.0,
+   "total_value": 198857.6,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-10-17",
+   "cash": 180850.6,
+   "market_value": 17742.0,
+   "total_value": 198592.6,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-10-18",
+   "cash": 180943.6,
+   "market_value": 17934.2,
+   "total_value": 198877.80000000002,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-10-21",
+   "cash": 180943.6,
+   "market_value": 17833.2,
+   "total_value": 198776.80000000002,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-10-22",
+   "cash": 180943.6,
+   "market_value": 17961.2,
+   "total_value": 198904.80000000002,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-10-23",
+   "cash": 180943.6,
+   "market_value": 18168.4,
+   "total_value": 199112.0,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-10-24",
+   "cash": 180943.6,
+   "market_value": 18028.0,
+   "total_value": 198971.6,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-10-25",
+   "cash": 180943.6,
+   "market_value": 17924.6,
+   "total_value": 198868.2,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-10-28",
+   "cash": 180943.6,
+   "market_value": 17816.2,
+   "total_value": 198759.80000000002,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-10-29",
+   "cash": 180943.6,
+   "market_value": 17793.399999999998,
+   "total_value": 198737.0,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-10-30",
+   "cash": 180943.6,
+   "market_value": 17431.8,
+   "total_value": 198375.4,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-10-31",
+   "cash": 180943.6,
+   "market_value": 17142.4,
+   "total_value": 198086.0,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-11-01",
+   "cash": 180943.6,
+   "market_value": 17253.2,
+   "total_value": 198196.80000000002,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-11-04",
+   "cash": 180943.6,
+   "market_value": 17410.4,
+   "total_value": 198354.0,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-11-05",
+   "cash": 180943.6,
+   "market_value": 17739.600000000002,
+   "total_value": 198683.2,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-11-06",
+   "cash": 180943.6,
+   "market_value": 17424.8,
+   "total_value": 198368.4,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-11-07",
+   "cash": 180943.6,
+   "market_value": 18120.6,
+   "total_value": 199064.2,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-11-08",
+   "cash": 180943.6,
+   "market_value": 17810.2,
+   "total_value": 198753.80000000002,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-11-11",
+   "cash": 180943.6,
+   "market_value": 17595.8,
+   "total_value": 198539.4,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-11-12",
+   "cash": 180943.6,
+   "market_value": 17348.2,
+   "total_value": 198291.80000000002,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-11-13",
+   "cash": 180943.6,
+   "market_value": 17423.6,
+   "total_value": 198367.2,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-11-14",
+   "cash": 180943.6,
+   "market_value": 17384.6,
+   "total_value": 198328.2,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-11-15",
+   "cash": 180943.6,
+   "market_value": 17138.6,
+   "total_value": 198082.2,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-11-18",
+   "cash": 180943.6,
+   "market_value": 17176.6,
+   "total_value": 198120.2,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-11-19",
+   "cash": 180943.6,
+   "market_value": 17140.2,
+   "total_value": 198083.80000000002,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-11-20",
+   "cash": 180943.6,
+   "market_value": 17072.399999999998,
+   "total_value": 198016.0,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-11-21",
+   "cash": 180943.6,
+   "market_value": 17026.8,
+   "total_value": 197970.4,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-11-22",
+   "cash": 180943.6,
+   "market_value": 16486.6,
+   "total_value": 197430.2,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-11-25",
+   "cash": 180943.6,
+   "market_value": 16350.6,
+   "total_value": 197294.2,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-11-26",
+   "cash": 180943.6,
+   "market_value": 16444.0,
+   "total_value": 197387.6,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-11-27",
+   "cash": 180943.6,
+   "market_value": 16649.2,
+   "total_value": 197592.80000000002,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-11-28",
+   "cash": 180943.6,
+   "market_value": 16536.8,
+   "total_value": 197480.4,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-11-29",
+   "cash": 180943.6,
+   "market_value": 16597.6,
+   "total_value": 197541.2,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-12-02",
+   "cash": 180943.6,
+   "market_value": 16687.8,
+   "total_value": 197631.4,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-12-03",
+   "cash": 180943.6,
+   "market_value": 16851.4,
+   "total_value": 197795.0,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-12-04",
+   "cash": 180943.6,
+   "market_value": 16800.6,
+   "total_value": 197744.2,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-12-05",
+   "cash": 180943.6,
+   "market_value": 16737.8,
+   "total_value": 197681.4,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-12-06",
+   "cash": 180943.6,
+   "market_value": 16999.600000000002,
+   "total_value": 197943.2,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-12-09",
+   "cash": 180943.6,
+   "market_value": 16975.6,
+   "total_value": 197919.2,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-12-10",
+   "cash": 180943.6,
+   "market_value": 17244.8,
+   "total_value": 198188.4,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-12-11",
+   "cash": 180943.6,
+   "market_value": 17147.2,
+   "total_value": 198090.80000000002,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-12-12",
+   "cash": 180943.6,
+   "market_value": 17325.800000000003,
+   "total_value": 198269.40000000002,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-12-13",
+   "cash": 180943.6,
+   "market_value": 16868.0,
+   "total_value": 197811.6,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-12-16",
+   "cash": 180943.6,
+   "market_value": 16831.4,
+   "total_value": 197775.0,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-12-17",
+   "cash": 180943.6,
+   "market_value": 16833.4,
+   "total_value": 197777.0,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-12-18",
+   "cash": 180943.6,
+   "market_value": 16958.6,
+   "total_value": 197902.2,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-12-19",
+   "cash": 180943.6,
+   "market_value": 16915.8,
+   "total_value": 197859.4,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-12-20",
+   "cash": 180943.6,
+   "market_value": 16842.8,
+   "total_value": 197786.4,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-12-23",
+   "cash": 180943.6,
+   "market_value": 17109.2,
+   "total_value": 198052.80000000002,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-12-24",
+   "cash": 180943.6,
+   "market_value": 17421.399999999998,
+   "total_value": 198365.0,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-12-25",
+   "cash": 180943.6,
+   "market_value": 17468.2,
+   "total_value": 198411.80000000002,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-12-26",
+   "cash": 180943.6,
+   "market_value": 17423.0,
+   "total_value": 198366.6,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-12-27",
+   "cash": 180943.6,
+   "market_value": 17350.2,
+   "total_value": 198293.80000000002,
+   "positions": {
+    "600036.XSHG": 100,
+    "601318.XSHG": 100,
+    "600000.XSHG": 100,
+    "000001.XSHE": 100,
+    "000651.XSHE": 100,
+    "510050.XSHG": 200,
+    "510300.XSHG": 200
+   }
+  },
+  {
+   "date": "2024-12-30",
+   "cash": 198431.40000000002,
+   "market_value": 0.0,
+   "total_value": 198431.40000000002,
+   "positions": {
+    "600036.XSHG": 0,
+    "601318.XSHG": 0,
+    "600000.XSHG": 0,
+    "000001.XSHE": 0,
+    "000651.XSHE": 0,
+    "510050.XSHG": 0,
+    "510300.XSHG": 0
+   }
+  },
+  {
+   "date": "2024-12-31",
+   "cash": 198431.40000000002,
+   "market_value": 0.0,
+   "total_value": 198431.40000000002,
+   "positions": {}
+  }
+ ],
+ "A15_etf_share_conversion": {
+  "status": "PASS",
+  "scene": {
+   "oid": "510230.XSHG",
+   "window": [
+    "2020-08-10",
+    "2020-08-21"
+   ],
+   "buy_qty": 300,
+   "engine_elapsed_seconds": 0.096
+  },
+  "event": {
+   "ex_date": 20200817,
+   "split_factor_in_bundle": 4.9160186625194395,
+   "close_prev": 5.683,
+   "close_ex": 1.205,
+   "raw_close_ratio": 0.21203589653352103,
+   "expected_qty_round_half_up": 1475,
+   "expected_mv_ratio_with_split": 1.0425098246231452,
+   "observed_mv_ratio": 1.0425098246231452
+  },
+  "daily_around_event": [
+   {
+    "date": "2020-08-10",
+    "cash": 198267.6,
+    "market_value": 1727.4,
+    "total_value": 199995.0
+   },
+   {
+    "date": "2020-08-11",
+    "cash": 198267.6,
+    "market_value": 1710.0,
+    "total_value": 199977.6
+   },
+   {
+    "date": "2020-08-12",
+    "cash": 198267.6,
+    "market_value": 1704.0,
+    "total_value": 199971.6
+   },
+   {
+    "date": "2020-08-13",
+    "cash": 198267.6,
+    "market_value": 1704.8999999999999,
+    "total_value": 199972.5
+   },
+   {
+    "date": "2020-08-14",
+    "cash": 198267.6,
+    "market_value": 1704.8999999999999,
+    "total_value": 199972.5
+   },
+   {
+    "date": "2020-08-17",
+    "cash": 198267.6,
+    "market_value": 1777.375,
+    "total_value": 200044.975
+   },
+   {
+    "date": "2020-08-18",
+    "cash": 198267.6,
+    "market_value": 1755.25,
+    "total_value": 200022.85
+   },
+   {
+    "date": "2020-08-19",
+    "cash": 198267.6,
+    "market_value": 1731.6499999999999,
+    "total_value": 199999.25
+   },
+   {
+    "date": "2020-08-20",
+    "cash": 198267.6,
+    "market_value": 1705.1,
+    "total_value": 199972.7
+   },
+   {
+    "date": "2020-08-21",
+    "cash": 199976.55000000002,
+    "market_value": 0.0,
+    "total_value": 199976.55000000002
+   }
+  ],
+  "trades": [
+   {
+    "order_book_id": "510230.XSHG",
+    "side": "SIDE.BUY",
+    "date": "20200810",
+    "quantity": 300,
+    "price": 5.758,
+    "commission": 5.0,
+    "tax": 0.0,
+    "cost": 5.0
+   },
+   {
+    "order_book_id": "510230.XSHG",
+    "side": "SIDE.SELL",
+    "date": "20200821",
+    "quantity": 1475,
+    "price": 1.162,
+    "commission": 5.0,
+    "tax": 0.0,
+    "cost": 5.0
+   }
+  ],
+  "detail": "R3-1 fix: held 510230.XSHG across its 2020-08-17 份额折算 (split_factor row 4.916019 written from the fund_adj jump); quantity 300 -> 1475 (ROUND_HALF_UP x ratio, engine split semantics), event-day marked MV ratio == qty_new*close_ex / (qty_old*close_prev) -- continuous, vs the raw -78.8% collapse the v2 bundle silently produced; no rejections; exact final cash conservation",
+  "problems": []
+ }
+}

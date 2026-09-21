@@ -1,0 +1,186 @@
+{
+  "run_id": "20260918T070427-p2r13-lowfreq-survey-a8b8a4be",
+  "experiment_id": "exp-20260918-p2r13-lowfreq-survey",
+  "status": "failed",
+  "started_at": "2026-09-17T23:04:27.793910+00:00",
+  "command": [
+    "D:\\量化\\.venv\\Scripts\\python.exe",
+    "src/quant/cli/p2r13_lowfreq_survey.py",
+    "--smoke"
+  ],
+  "config_sha256": "88b2ad5b5d687d3d245450c4d0654d0683b6fbf725b284df82a98fb193187bd2",
+  "source_sha256": {
+    "src\\quant\\__init__.py": "8c87349ce293131565a8ace05f9e339c81fa76951bde07525c354c74c4cf3307",
+    "src\\quant\\backtest\\__init__.py": "dde15cd80a7f5bb490b6b3f7ed7a68f3fca1a18121e9000939c417e0ed3b8999",
+    "src\\quant\\backtest\\backtrader_adapter.py": "fc2813a4f5cdd735a26051b800e02e9106403440c08d84a139eda05269093966",
+    "src\\quant\\backtest\\orders.py": "aec9750d59f4b7316ab89a0b175b0a7839998f68ed7debf2b0bd18dde405318e",
+    "src\\quant\\backtest\\results.py": "c43324de29ce0c2f17d521497879bfca6cfaa5be7618a89453226f2ca72bf830",
+    "src\\quant\\backtest\\vectorbt_adapter.py": "73847bb6997dc26697657871199b8bd7392acc70cf329cc2e18dd27062c494a9",
+    "src\\quant\\cli\\__init__.py": "b0536f9542c22462c17ef58d483a1adf6bf0c25369954507844e0421e5c0723a",
+    "src\\quant\\cli\\main.py": "ddde31f438600e5447517ce7a9db8b2a5c1ba14f61351fa39272255b6ccbb471",
+    "src\\quant\\cli\\p0_benchmark.py": "fb7d38b8f1abba17d25dfab844b9771f8de53eafd39d4d654cc42eb2d64357e6",
+    "src\\quant\\cli\\p2_factor_survey.py": "155eed8d1985e5ebd3aab4c5f7b808e4a5722b67f20bf8ef9fa59568e274a08f",
+    "src\\quant\\cli\\p2_first_screen.py": "9d7b6288191ef30ade1fca27e9a94d84bb65197960614e0100c3dbba560d5fd0",
+    "src\\quant\\cli\\p2_window_diagnostic.py": "dfd6152db397cb2a358db44d374d9c9c0417a69d5810575485b00450cd28687a",
+    "src\\quant\\cli\\p2r10_halfday_survey.py": "be97cc4dfeebc7f8c29ec56ea5334b39787b3583d19e88f57fe01f0b15b652c5",
+    "src\\quant\\cli\\p2r11_halfday_combo.py": "6d0380d87987ac51b0204c2dec8eb6050365a7a8e633d97d5e02c2562e492aea",
+    "src\\quant\\cli\\p2r13_lowfreq_survey.py": "e451db10276143af3cfb15570c50b7b2823841e4ef0dd03540575b79bd9aa8db",
+    "src\\quant\\cli\\p2r6_etf_rotation.py": "fc815d8fe1e782d40d4c3e7d279834fa1af50ab3642153f724bb4a47e483d299",
+    "src\\quant\\cli\\p2r7_etf_exposure.py": "8a31a6950f49ba5e5ce5c487cfb3a2189b0fc6622b6bded5bc6c6368086f32dd",
+    "src\\quant\\cli\\p2r8_daily_risk.py": "89896f2a24bac5d7ba0cb91d6b17f45d3fe1b309b3b0388df2999ca5653f9aaf",
+    "src\\quant\\cli\\p2r9_risk_delivery.py": "92b53702aa2f0edbcba044532596fa341ade39ea01644edaedf5c0065a383cef",
+    "src\\quant\\data\\adjustment.py": "6cf5f7e7cc0d9e15b4030196f56c77009495279a206804361a7c86891d89a0ac",
+    "src\\quant\\data\\baostock_daily.py": "c83603ef05c805e7f81b60ff87a40088b23177b690f2a9bf421be390b6477e78",
+    "src\\quant\\data\\event_batches.py": "b8a0994a2adcec8fbc18a2c024abe088868eef3fcf90e0a2480a7f6087890691",
+    "src\\quant\\data\\rqalpha_bundle.py": "2ae8d0eed45d1216c84827eefb7bee0227fbdc985be0c38fa3f4794d7209d523",
+    "src\\quant\\factors\\__init__.py": "5b555032251c683b0c9b6cdb5857ff356c81e02dd4c14e6cff1055c309acade4",
+    "src\\quant\\factors\\cache.py": "949736dd8a9482bd64d939e13940a323d8341cf0518bddffa7db8a97315e8f9a",
+    "src\\quant\\factors\\core.py": "5c6ddcf87505fdb82fb63cbc9658964b7372da326879f89bcd4aac50d33f7a77",
+    "src\\quant\\factors\\signals.py": "9ef501a069ffaaef731d8f6f04682674b818c82e1f2a627af1023565e9e8692c",
+    "src\\quant\\research\\__init__.py": "ae42337e69dedb044718bfe63a1832ef0c85cf1886c9b45e0403d63208869a51",
+    "src\\quant\\research\\etf_rotation.py": "1c064efce2cf211505f62f46ac61ca39abf63c1f529e008518a8b26d2ca59b70",
+    "src\\quant\\research\\factor_survey.py": "354bd65c557965f54fe7743be01716e37362483768eb5b7c7c420111aa2d041b",
+    "src\\quant\\research\\fee_recost.py": "683ec48aecbc298c1a19ce895a6de6ff28f2bb71e392216cbaf9ff1ca5fb3a6a",
+    "src\\quant\\research\\p2_first_screen.py": "17f119402c02c87a7288fb9cdd93cc6e1b3d3d45e9b6642a317942e100060e80",
+    "src\\quant\\research\\p2r10_halfday.py": "25eb29ada94e336eeddb2d81e718f0983dfde7434ff87db6a4729b29f5009188",
+    "src\\quant\\research\\p2r11_halfday_combo.py": "41f95396457d6fb4694d2cb894230fc0c9734e26b6f6b3a0567748d9f61f669b",
+    "src\\quant\\research\\p2r12_event_veto.py": "c1a71498c6d5115f8de96b8152a99dcce82938cf63130abca22b24b868d75563",
+    "src\\quant\\research\\p2r13_lowfreq.py": "aeba10af30098fe69ab18e263f723d26326874ca6952134a75c4465bb01b034c",
+    "src\\quant\\research\\runs.py": "979f0ab108b8bd0fb97bd8a67435ebe46537d9cb06ef83a5ac1485c77593acbc",
+    "src\\quant\\research\\screen.py": "100cfef7927a7727089eeb3634eb810571a9313dfe09600964866a6c208249df",
+    "src\\quant\\research\\synthetic.py": "968818be521defdc028435123806f7de0e97858b06d8d0c67c87319cf3aa8795"
+  },
+  "lock_sha256": "5694af16960733c0e6ce4e3ef84e9d586e9d4452fdbe00b992d321687dc50c25",
+  "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "polars": "1.44.2",
+    "pyarrow": "25.0.1",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "vectorbt": "0.28.5",
+    "backtrader": "1.9.78.123",
+    "psutil": "7.2.2"
+  },
+  "machine": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 20,
+    "ram_bytes": 16780566528,
+    "disk_free_bytes": 237946482688
+  },
+  "seed": 17,
+  "date_range": [
+    null,
+    null
+  ],
+  "inputs": [],
+  "limits": {
+    "max_runtime_s": 1200,
+    "max_ram_gb": 8,
+    "smoke": "2015 年 6 个月先行"
+  },
+  "mode": "smoke",
+  "prereg": "docs/research/exp-20260918-p2r13-lowfreq-survey-prereg.md",
+  "config_frozen_at": "2026-09-18T06:25:00+08:00",
+  "config_file_sha256": "2f4e10f9eb940f32197fcf1a30d14f562c29362545e8132d051162058b451a69",
+  "config_parse_note": "frozen config parsed leniently with yaml.safe_load because it contains \"direction\": +1 literals (invalid strict JSON); the file on disk was never modified (sha256 recorded above)",
+  "deviations_disclosed": {
+    "warmup_file": "history warmup (listing_index since 1999, 250-session rolling high, 60-session overnight sums) reads daily_1999_2024.parquet - same processed dataset and manifest identity as the pinned daily_2015_2024.parquet, which cannot produce C2 for the 2015 signals required by the frozen coverage.  The 2015+ slice of the 1999 file is asserted row-count-identical to the pinned file.  R10 precedent: same superset file for history factors.",
+    "own_session_windows": "history windows (C1 60d, C2 250d, C6 20d, liquidity median 20d, listing age) use the symbol's OWN traded sessions (suspensions do not advance windows), consistent with R10.",
+    "hk_hold_t_plus_1": "northbound holdings of trade date T are treated as usable from T+1 (month-end signal s uses trade dates s-1 and s-21 only); conservative reading of the prereg PIT requirement.",
+    "industry_snapshot": "financial-industry exclusion uses xiaodefa stock_basic (East Money industry, 2026-09-13 snapshot; fixed set {bank, insurance, securities, diversified financials}) - non-PIT approximation, disclosed; applied to C4 cross-sections only.",
+    "forward_execution": "entry requires the symbol to trade on the session right after the signal (mkt_idx == s+1); exit at the first own session with mkt_idx >= s+21 (suspension delays exit).  No limit-up/open-block modeling in this survey (factor-candidate round; any combination round must model execution).",
+    "signal_month_2024_12": "the 2024-12-31 month-end signal is dropped: its T+21 open would land after the 2024-12-31 data end (2025+ zero-touch); last judged month is 2024-11.",
+    "c4_income_measure": "accrual numerator uses n_income (net profit incl. minority) against total_assets (incl. minority interest) - consistent scope; rows filtered to report_type=1 (consolidated), end_date=1231, max update_flag per (ts_code, end_date).",
+    "val_discipline": "val 2021-2024 statistics are computed ONLY when >= 2 true factors pass all dev gates; otherwise the val window is not consumed this round (recorded as \"not_consumed\")."
+  },
+  "trial_count": {
+    "prior_cumulative": 169,
+    "this_round_factors": 6,
+    "cumulative_after": 175
+  },
+  "window_declarations": {
+    "dev": "2015-01-05..2020-12-31, 6th reuse, elimination use only",
+    "val": "2021-01..2024-11 one-shot; 4th consumption of this window (C08, R11 if reached, R12 if reached, this round); consumed ONLY if >= 2 true factors pass all dev gates",
+    "freeze": "no rows on/after 2025-01-01; 2024-12-31 signal dropped (its forward window would cross the boundary)"
+  },
+  "identity_checks": {
+    "processed": {
+      "manifest": "data/processed/baostock-daily-20260917/manifest.json",
+      "sha256": "2b89bef9ef6f4ae58b69ca43021552db067b185551c92a05ef6ac71d2be59bd3"
+    },
+    "raw_dirs": [
+      {
+        "dir": "xiaodefa/hk_hold/20260913-bulk1",
+        "files_verified": 2285
+      },
+      {
+        "dir": "xiaodefa/block_trade/20260913-bulk1",
+        "files_verified": 3089
+      },
+      {
+        "dir": "tushare/income/20260909-r3",
+        "files_verified": 5900
+      },
+      {
+        "dir": "tushare/cashflow/20260909-r3",
+        "files_verified": 5900
+      },
+      {
+        "dir": "tushare/balancesheet/20260909-r3",
+        "files_verified": 5900
+      },
+      {
+        "dir": "tushare/daily_basic/20260909-r1",
+        "files_verified": 1867
+      },
+      {
+        "dir": "tushare/daily_basic/20260913-r2",
+        "files_verified": 977
+      },
+      {
+        "dir": "xiaodefa/stock_basic/20260913-bulk1",
+        "files_verified": 3
+      }
+    ],
+    "headers_uniform": [
+      {
+        "dir": "xiaodefa/hk_hold/20260913-bulk1",
+        "empty_files_skipped": 0
+      },
+      {
+        "dir": "xiaodefa/block_trade/20260913-bulk1",
+        "empty_files_skipped": 0
+      },
+      {
+        "dir": "tushare/income/20260909-r3",
+        "empty_files_skipped": 4
+      },
+      {
+        "dir": "tushare/cashflow/20260909-r3",
+        "empty_files_skipped": 18
+      },
+      {
+        "dir": "tushare/balancesheet/20260909-r3",
+        "empty_files_skipped": 5
+      },
+      {
+        "dir": "xiaodefa/stock_basic/20260913-bulk1",
+        "empty_files_skipped": 0
+      }
+    ],
+    "daily_2015_2024_sha256": "1cbb09a11f7c10136981749c13467f12a1757b59e7e95fb6f86666f96edfc1de",
+    "daily_1999_2024_sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6",
+    "row_count_2015_slice_matches_pinned": true
+  },
+  "ended_at": "2026-09-17T23:05:00.882886+00:00",
+  "elapsed_seconds": 33.08779940000386,
+  "peak_rss_bytes": 4430913536,
+  "memory_method": "20ms process RSS sampling; includes imported libraries, excludes children",
+  "error": "expected `other` to be a 'LazyFrame', not 'DataFrame'",
+  "outputs": {
+    "config.json": "55327c62e78914e82352c2b5b250b5a8aced8080ab3473039f867f231b7deb90",
+    "metrics.json": "927f5a42bc338c9d88069b14f20778c679eb76d25594bf38265408d858d7aeb7",
+    "report.md": "f06697f2665bd9a2640c527065f0eea6681c4ac5358b184d80f8503b3bcbf846",
+    "logs\\error.txt": "87e558c78ddc7564f81138efe547d38fac6de559dff767f5bac822d81b09c31b"
+  }
+}

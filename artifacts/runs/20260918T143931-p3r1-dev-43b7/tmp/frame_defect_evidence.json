@@ -1,0 +1,39 @@
+{
+  "events": {
+    "n_rows": 2541,
+    "first100_inferred_schema": {
+      "date": "Date",
+      "symbol": "String",
+      "side": "String",
+      "order_id": "String",
+      "event": "String",
+      "priority": "Int64",
+      "limit_price": "Float64",
+      "ref_price": "Float64",
+      "shares": "Int64",
+      "ratio": "Null",
+      "cash_amount": "Float64",
+      "detail": "String"
+    },
+    "first_divergence": {
+      "row_index": 406,
+      "row": {
+        "date": "2016-05-27",
+        "symbol": "",
+        "side": "",
+        "order_id": "",
+        "event": "corp_action_split",
+        "priority": null,
+        "limit_price": null,
+        "ref_price": null,
+        "shares": 200,
+        "ratio": 2.0,
+        "cash_amount": null,
+        "detail": "sz.002183: shares 100 -> 200 (split_factor ratio 2.0000000000)"
+      },
+      "error": "could not append value: 2.0 of type: f64 to the builder; make sure that all rows have the same schema or consider increasing `infer_schema_length`\n\nit might als"
+    },
+    "original_error": "could not append value: 2.0 of type: f64 to the builder; make sure that all rows have the same schema or consider increasing `infer_schema_length`\n\nit might also be that a value overflows the data-typ",
+    "proposed_fix_frame_height": 2541
+  }
+}

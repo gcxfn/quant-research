@@ -4,7 +4,9 @@
 /data/features/
 /data/cache/
 /data/local/
-/artifacts/
+
+# 账户交易计划含隐私，绝不入库（AGENTS.md 约定）
+/artifacts/plans/
 
 # 历史输出路径继续忽略，不再新增同类目录
 /data/artifacts/

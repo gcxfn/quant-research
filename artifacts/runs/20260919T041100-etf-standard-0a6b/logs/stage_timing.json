@@ -1,0 +1,19 @@
+{
+  "stages": {
+    "read_fund_daily": 1.58,
+    "read_fund_adj": 0.12,
+    "standardize": 0.19,
+    "preclose_check": 0.13,
+    "adj_coverage": 0.11,
+    "pool": 0.05,
+    "write_daily": 0.05,
+    "manifest": 0.07
+  },
+  "peak_rss_gb_final": 1.065,
+  "env": {
+    "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "polars": "1.44.2",
+    "peak_rss_gb_so_far": 0.039
+  }
+}

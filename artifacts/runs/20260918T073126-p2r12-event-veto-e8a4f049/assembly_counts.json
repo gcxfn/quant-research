@@ -1,0 +1,55 @@
+{
+  "daily": {
+    "daily_rows": 9532019,
+    "factor_rows": 10607881,
+    "noncontiguous_symbols": 0,
+    "banned_adj_rows_dropped": 1378,
+    "stk_limit_rows": 8171212,
+    "listing_rows": 15762653,
+    "eligible_rows": 3962578
+  },
+  "session_rows": 3962578,
+  "session_dates": [
+    "2015-01-30",
+    "2024-12-31"
+  ],
+  "c01": {
+    "groups_passing_thresholds": 9401,
+    "announced_at_or_after_float": 14,
+    "out_of_calendar": 897,
+    "activation_before_window_start": 0,
+    "dedup_activation_duplicates": 583
+  },
+  "c03": {
+    "records": 109483,
+    "records_out_of_calendar_or_empty": 2717
+  },
+  "c02": {
+    "rows_in_freeze": 39745,
+    "chain_groups": 37228,
+    "multi_version_chains": 2452,
+    "downgrade_events": 887,
+    "deep_events": 615,
+    "first_negative_events": 14898,
+    "down_dedup": 0,
+    "firstneg_dedup": 17
+  },
+  "c04": {
+    "rows_in_freeze": 126160,
+    "c_de_events": 14269,
+    "gp_events": 6294
+  },
+  "c05": {
+    "cf_annual_keys": 88146,
+    "bs_annual_keys": 83613,
+    "joined_keys": 81825,
+    "keys_pit_in_window": 51223,
+    "keys_with_valid_accrual": 50642,
+    "financial_excluded": 940,
+    "industry_unavailable_excluded": 2511,
+    "cohort_rows": 45095,
+    "cohorts_with_session": 45095,
+    "forecast_negative_rows": 16247,
+    "forecast_coverage_start": "2018-09-03"
+  }
+}

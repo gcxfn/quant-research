@@ -1,0 +1,325 @@
+[    0.0s] == 0. identity pins (engine v1.2 frozen, prereg frozen) ==
+[    0.0s]   engine: 84a2443ac28fe1b8 expect 84a2443ac28fe1b87e4a18f988fd38cc67cf706d5778e262f11465147234082c match=True
+[    0.0s]   p3r2_config: b49025b44c719685 expect b49025b44c719685 match=True
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.6s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.6s]   halfday_manifest: 2a414174b5df2eee expect 2a414174b5df2eee match=True
+[    0.6s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.6s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.6s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    0.6s]   p3r2_c05_fills: 11f8af46686df411 expect None match=True
+[    0.6s]   p3r2_c05_events: 2dde945782accd70 expect None match=True
+[    0.6s]   p3r2_c05_daily: c3945567de4250ef expect None match=True
+[    0.6s]   p3r2_c05_clips: b44dbea22a529529 expect None match=True
+[    0.6s]   p3r2_c05_intents: 36dedda1cf8d7661 expect None match=True
+[    0.6s]   prereg: 8e3c534fad39e3e7 expect None match=True
+[    0.6s]   v2_prereg_inherited: 4ced8ce1db44cef3 expect None match=True
+[    0.6s]   v1_prereg_inherited: 266a1b850373a6f7 expect None match=True
+[    0.6s]   hyb_config: 3b2a3a2f16967ed4 expect None match=True
+[    0.6s]   v2_metrics_rot05_anchor_source: f9198a46297300d1 expect None match=True
+[    0.6s]   v1_config_reference: 6388465cc31a6957 expect None match=True
+[    0.6s]   v1_metrics_rot01_source: 54a528a996a9caaa expect None match=True
+[    0.6s]   r16_metrics: 8d0b6ebbdea6ebb9 expect None match=True
+[    0.6s]   p3r2_runner: 7477c2a8fcc2d291 expect None match=True
+[    0.6s]   etf_manifest: 8b5b3fe56c0e02fd expect None match=True
+[    4.9s]   etf processed dir aggregate: 75777221a8b33502 (7 files); fund_adj batch re-verified (1169 chunks, 0 mismatches) aggregate matches manifest: True
+[    4.9s]   python 3.11.15 | polars 1.44.2 | numpy 1.26.4 | rss 0.28 GB
+[    5.0s] == 1. calendar & signal days ==
+[    5.1s]   47 signal days (2021-01-29..2024-11-29; 2020-12-31 dropped as signal, kept as expiry anchor)
+[    5.1s] == 2. exposures (T200-40) ==
+[    5.1s]   t200 behavioral anchor check: {"anchor_years": ["2016", "2017", "2018", "2019", "2020"], "reproduced_stats": {"2016": {"n_sessions": 244, "n_switches"
+[    5.1s]   exposures[2021-01-29]=0.90 [2024-11-29]=0.90
+[    5.1s] == 3. pools (r16 build_history + signal_pools) ==
+[   17.2s]   B1(m)(val): net_cagr -0.001481, mdd -0.2344
+[   17.2s]   pools at 2021-01-29: n=1524; union of ranked symbols: 3184
+[   17.2s] == 4. C05 leg_log + membership consistency ==
+[   17.3s]   C05: membership mismatches=47, events mismatches=0 / 47
+[   17.3s] !! FAIL: C05 consistency FAILED: {'membership_mismatches': 47, 'membership_events_mismatches': 0, 'n_signal_days': 47}
+[    0.0s] == 0. identity pins (engine v1.2 frozen, prereg frozen) ==
+[    0.0s]   engine: 84a2443ac28fe1b8 expect 84a2443ac28fe1b87e4a18f988fd38cc67cf706d5778e262f11465147234082c match=True
+[    0.0s]   p3r2_config: b49025b44c719685 expect b49025b44c719685 match=True
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.5s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.5s]   halfday_manifest: 2a414174b5df2eee expect 2a414174b5df2eee match=True
+[    0.5s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.5s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.5s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    0.5s]   p3r2_c05_fills: 11f8af46686df411 expect None match=True
+[    0.5s]   p3r2_c05_events: 2dde945782accd70 expect None match=True
+[    0.5s]   p3r2_c05_daily: c3945567de4250ef expect None match=True
+[    0.5s]   p3r2_c05_clips: b44dbea22a529529 expect None match=True
+[    0.5s]   p3r2_c05_intents: 36dedda1cf8d7661 expect None match=True
+[    0.5s]   prereg: 8e3c534fad39e3e7 expect None match=True
+[    0.5s]   v2_prereg_inherited: 4ced8ce1db44cef3 expect None match=True
+[    0.5s]   v1_prereg_inherited: 266a1b850373a6f7 expect None match=True
+[    0.5s]   hyb_config: 3b2a3a2f16967ed4 expect None match=True
+[    0.5s]   v2_metrics_rot05_anchor_source: f9198a46297300d1 expect None match=True
+[    0.5s]   v1_config_reference: 6388465cc31a6957 expect None match=True
+[    0.5s]   v1_metrics_rot01_source: 54a528a996a9caaa expect None match=True
+[    0.6s]   r16_metrics: 8d0b6ebbdea6ebb9 expect None match=True
+[    0.6s]   p3r2_runner: 7477c2a8fcc2d291 expect None match=True
+[    0.6s]   etf_manifest: 8b5b3fe56c0e02fd expect None match=True
+[    5.9s]   etf processed dir aggregate: 75777221a8b33502 (7 files); fund_adj batch re-verified (1169 chunks, 0 mismatches) aggregate matches manifest: True
+[    5.9s]   python 3.11.15 | polars 1.44.2 | numpy 1.26.4 | rss 0.28 GB
+[    5.9s] == 1. calendar & signal days ==
+[    6.1s]   47 signal days (2021-01-29..2024-11-29; 2020-12-31 dropped as signal, kept as expiry anchor)
+[    6.1s] == 2. exposures (T200-40) ==
+[    6.1s]   t200 behavioral anchor check: {"anchor_years": ["2016", "2017", "2018", "2019", "2020"], "reproduced_stats": {"2016": {"n_sessions": 244, "n_switches"
+[    6.1s]   exposures[2021-01-29]=0.90 [2024-11-29]=0.90
+[    6.1s] == 3. pools (r16 build_history + signal_pools) ==
+[   17.5s]   B1(m)(val): net_cagr -0.001481, mdd -0.2344
+[   17.5s]   pools at 2021-01-29: n=1524; union of ranked symbols: 3184
+[   17.5s] == 4. C05 leg_log + membership consistency ==
+[   17.5s]   C05: membership mismatches=0, events mismatches=0 / 47
+[   17.5s] == 5. market frames ==
+[   18.2s]   daily panel: 2988347 rows, 3184 symbols
+[   19.2s]   halfday: 5962622 rows kept of 18486939 total (panel x dev), 3184 symbols
+[   28.9s]   limits: 2981528 rows (dev x panel)
+[   32.8s]   splits 3020 rows, dividends 21035 rows (panel)
+[   32.8s]   rss after frames: 4.11 GB
+[   32.8s] == 6. ETF assets ==
+[   32.8s]   etf panel dev rows: 8718 per member {'sh.513100': 968, 'sh.510300': 969, 'sz.159915': 968, 'sh.518880': 969, 'sz.159934': 969, 'sh.513500': 968, 'sh.510050': 969, 'sh.511010': 969, 'sh.510880': 969}
+[   32.8s]   assertion (ii) preclose nulls: 0
+[   32.8s]   disclosure: member-dev rows with volume<=0: 0
+[   32.8s]   assertion (iii): sse 969 days, panel union 969 days, missing [], extra []
+[   32.8s]   factor coverage gaps per member: {'sh.511010': 0, 'sh.518880': 0, 'sh.510050': 0, 'sh.510300': 0, 'sz.159915': 0, 'sh.510880': 0, 'sh.513100': 0, 'sh.513500': 0, 'sz.159934': 0}
+[   32.9s]   dividend events built: 12 {'sh.510050': 4, 'sh.510300': 4, 'sh.510880': 4}
+[   32.9s]     sh.510050 2021-11-29 div/share=0.041
+[   32.9s]     sh.510050 2022-12-01 div/share=0.037
+[   32.9s]     sh.510050 2023-11-27 div/share=0.039
+[   32.9s]     sh.510050 2024-12-02 div/share=0.055
+[   32.9s]     sh.510300 2021-01-18 div/share=0.072
+[   32.9s]     sh.510300 2022-01-19 div/share=0.075
+[   32.9s]     sh.510300 2023-01-16 div/share=0.064
+[   32.9s]     sh.510300 2024-01-18 div/share=0.069
+[   32.9s]     sh.510880 2021-01-18 div/share=0.141
+[   32.9s]     sh.510880 2022-01-17 div/share=0.086
+[   32.9s]     sh.510880 2023-01-16 div/share=0.138
+[   32.9s]     sh.510880 2024-01-23 div/share=0.131
+[   32.9s]   corporate actions built: 2 {'sh.513100': 1, 'sh.513500': 1}
+[   32.9s]     sh.513100 2022-01-14 ratio=5 factor_jump=5.0019
+[   32.9s]     sh.513500 2022-03-30 ratio=2 factor_jump=1.9848
+[   32.9s]   159934 dev mismatch rows: 0 []; dividend-rule events: 0 (frozen)
+[   32.9s]   symbol_meta: 9 symbols (8 members + sz.159934), explicit band 0.10, t_plus 0 (assertion (i) basis)
+[   32.9s] == 7. momentum ranking (adj close, month-end) ==
+[   32.9s]   lookback 6m universe[sh.510050+sh.510300+sz.159915+sh.510880+sh.513100+sh.513500]: 41 ranking months (2021-07-30..2024-11-29)
+[   32.9s] == 8. static intent frames ==
+[   32.9s]   C05 (stock leg): intents 0; R16 skips {'r16_at_target': 0, 'r16_feemin_skipped': 0}
+[   32.9s]   C05 frame check skipped (val window; anchor verified in the dev phase of this same adapted runner)
+[   32.9s]   R3-A0: intents 146 (etf 146, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   32.9s]   R3-05: intents 107 (etf 107, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   32.9s]   R3-06: intents 154 (etf 154, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   32.9s] == 9. per-config engine input frames ==
+[   32.9s]   stock frames (C05 universe): daily 0, half 0, limits 0
+[   32.9s] == 10. R3-A0 regression anchor vs v2 ROT-05 ==
+[    0.0s] == 0. identity pins (engine v1.2 frozen, prereg frozen) ==
+[    0.0s]   engine: 84a2443ac28fe1b8 expect 84a2443ac28fe1b87e4a18f988fd38cc67cf706d5778e262f11465147234082c match=True
+[    0.0s]   p3r2_config: b49025b44c719685 expect b49025b44c719685 match=True
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.5s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.5s]   halfday_manifest: 2a414174b5df2eee expect 2a414174b5df2eee match=True
+[    0.5s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.5s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.5s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    0.5s]   p3r2_c05_fills: 11f8af46686df411 expect None match=True
+[    0.5s]   p3r2_c05_events: 2dde945782accd70 expect None match=True
+[    0.5s]   p3r2_c05_daily: c3945567de4250ef expect None match=True
+[    0.5s]   p3r2_c05_clips: b44dbea22a529529 expect None match=True
+[    0.5s]   p3r2_c05_intents: 36dedda1cf8d7661 expect None match=True
+[    0.5s]   prereg: 8e3c534fad39e3e7 expect None match=True
+[    0.5s]   v2_prereg_inherited: 4ced8ce1db44cef3 expect None match=True
+[    0.5s]   v1_prereg_inherited: 266a1b850373a6f7 expect None match=True
+[    0.5s]   hyb_config: 3b2a3a2f16967ed4 expect None match=True
+[    0.5s]   v2_metrics_rot05_anchor_source: f9198a46297300d1 expect None match=True
+[    0.5s]   v1_config_reference: 6388465cc31a6957 expect None match=True
+[    0.5s]   v1_metrics_rot01_source: 54a528a996a9caaa expect None match=True
+[    0.5s]   r16_metrics: 8d0b6ebbdea6ebb9 expect None match=True
+[    0.5s]   p3r2_runner: 7477c2a8fcc2d291 expect None match=True
+[    0.5s]   etf_manifest: 8b5b3fe56c0e02fd expect None match=True
+[    4.5s]   etf processed dir aggregate: 75777221a8b33502 (7 files); fund_adj batch re-verified (1169 chunks, 0 mismatches) aggregate matches manifest: True
+[    4.5s]   python 3.11.15 | polars 1.44.2 | numpy 1.26.4 | rss 0.28 GB
+[    4.5s] == 1. calendar & signal days ==
+[    4.6s]   47 signal days (2021-01-29..2024-11-29; 2020-12-31 dropped as signal, kept as expiry anchor)
+[    4.6s] == 2. exposures (T200-40) ==
+[    4.6s]   t200 behavioral anchor check: {"anchor_years": ["2016", "2017", "2018", "2019", "2020"], "reproduced_stats": {"2016": {"n_sessions": 244, "n_switches"
+[    4.6s]   exposures[2021-01-29]=0.90 [2024-11-29]=0.90
+[    4.6s] == 3. pools (r16 build_history + signal_pools) ==
+[   17.4s]   B1(m)(val): net_cagr -0.001481, mdd -0.2344
+[   17.4s]   pools at 2021-01-29: n=1524; union of ranked symbols: 3184
+[   17.4s] == 4. C05 leg_log + membership consistency ==
+[   17.4s]   C05: membership mismatches=0, events mismatches=0 / 47
+[   17.4s] == 5. market frames ==
+[   18.2s]   daily panel: 2988347 rows, 3184 symbols
+[   19.4s]   halfday: 5962622 rows kept of 18486939 total (panel x dev), 3184 symbols
+[   30.1s]   limits: 2981528 rows (dev x panel)
+[   34.2s]   splits 3020 rows, dividends 21035 rows (panel)
+[   34.2s]   rss after frames: 4.00 GB
+[   34.2s] == 6. ETF assets ==
+[   34.3s]   etf panel dev rows: 8718 per member {'sh.518880': 969, 'sz.159915': 968, 'sh.510050': 969, 'sh.513500': 968, 'sh.511010': 969, 'sh.513100': 968, 'sh.510880': 969, 'sz.159934': 969, 'sh.510300': 969}
+[   34.3s]   assertion (ii) preclose nulls: 0
+[   34.3s]   disclosure: member-dev rows with volume<=0: 0
+[   34.3s]   assertion (iii): sse 969 days, panel union 969 days, missing [], extra []
+[   34.3s]   factor coverage gaps per member: {'sh.511010': 0, 'sh.518880': 0, 'sh.510050': 0, 'sh.510300': 0, 'sz.159915': 0, 'sh.510880': 0, 'sh.513100': 0, 'sh.513500': 0, 'sz.159934': 0}
+[   34.3s]   dividend events built: 12 {'sh.510050': 4, 'sh.510300': 4, 'sh.510880': 4}
+[   34.3s]     sh.510050 2021-11-29 div/share=0.041
+[   34.3s]     sh.510050 2022-12-01 div/share=0.037
+[   34.3s]     sh.510050 2023-11-27 div/share=0.039
+[   34.3s]     sh.510050 2024-12-02 div/share=0.055
+[   34.3s]     sh.510300 2021-01-18 div/share=0.072
+[   34.3s]     sh.510300 2022-01-19 div/share=0.075
+[   34.3s]     sh.510300 2023-01-16 div/share=0.064
+[   34.3s]     sh.510300 2024-01-18 div/share=0.069
+[   34.3s]     sh.510880 2021-01-18 div/share=0.141
+[   34.3s]     sh.510880 2022-01-17 div/share=0.086
+[   34.3s]     sh.510880 2023-01-16 div/share=0.138
+[   34.3s]     sh.510880 2024-01-23 div/share=0.131
+[   34.3s]   corporate actions built: 2 {'sh.513100': 1, 'sh.513500': 1}
+[   34.3s]     sh.513100 2022-01-14 ratio=5 factor_jump=5.0019
+[   34.3s]     sh.513500 2022-03-30 ratio=2 factor_jump=1.9848
+[   34.3s]   159934 dev mismatch rows: 0 []; dividend-rule events: 0 (frozen)
+[   34.3s]   symbol_meta: 9 symbols (8 members + sz.159934), explicit band 0.10, t_plus 0 (assertion (i) basis)
+[   34.3s] == 7. momentum ranking (adj close, month-end) ==
+[   34.4s]   lookback 6m universe[sh.510050+sh.510300+sz.159915+sh.510880+sh.513100+sh.513500]: 41 ranking months (2021-07-30..2024-11-29)
+[   34.4s] == 8. static intent frames ==
+[   34.4s]   C05 (stock leg): intents 0; R16 skips {'r16_at_target': 0, 'r16_feemin_skipped': 0}
+[   34.4s]   C05 frame check skipped (val window; anchor verified in the dev phase of this same adapted runner)
+[   34.4s]   R3-A0: S-val-1 clamp 2 expiry rows -> 2024-12-31 (freeze boundary seam, prereg sec 10)
+[   34.4s]   R3-A0: intents 146 (etf 146, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   34.4s]   R3-05: S-val-1 clamp 1 expiry rows -> 2024-12-31 (freeze boundary seam, prereg sec 10)
+[   34.4s]   R3-05: intents 107 (etf 107, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   34.4s]   R3-06: S-val-1 clamp 2 expiry rows -> 2024-12-31 (freeze boundary seam, prereg sec 10)
+[   34.4s]   R3-06: intents 154 (etf 154, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   34.4s] == 9. per-config engine input frames ==
+[   34.4s]   stock frames (C05 universe): daily 0, half 0, limits 0
+[   34.4s] == 10. R3-A0 regression anchor vs v2 ROT-05 ==
+[   34.6s]   R3-A0: engine 0.2s, intents 146 orders 160 filled 74 cap 0 | rss 4.09 GB
+[   34.6s]   R3-A0 intents.equals(v2 ROT-05 intents) = False (mine 146 rows / ref 204 rows)
+[   34.6s]   R3-A0 fills.equals(v2 ROT-05 fills) = False (mine 74 rows / ref 65 rows)
+[   34.6s]   R3-A0 events.equals(v2 ROT-05 events) = False (mine 306 rows / ref 365 rows)
+[   34.6s]   R3-A0 daily.equals(v2 ROT-05 daily) = False (mine 969 rows / ref 1462 rows)
+[   34.6s]   R3-A0 clips_final.equals(v2 ROT-05 clips_final) = False (mine 4 rows / ref 4 rows)
+[   34.6s]   R3-A0 net_cagr 0.0030092602 vs v2 ROT-05 0.0898677309 -> False
+[   34.6s]   R3-A0 anchor SKIPPED on val window (verified in the dev phase of this same adapted runner; per val prereg sec 6)
+[   34.6s] == 11. remaining configs ==
+[   34.7s]   R3-05: engine 0.1s, intents 107 orders 507 filled 58 cap 0 | rss 4.09 GB
+[   34.9s]   R3-06: engine 0.2s, intents 154 orders 244 filled 78 cap 0 | rss 4.03 GB
+[   34.9s]   R3-A0: leg cap-voids 0 (OK); drift breaches 1098 (recorded-only)
+[   34.9s]   R3-05: leg cap-voids 0 (OK); drift breaches 1291 (recorded-only)
+[   34.9s]   R3-06: leg cap-voids 0 (OK); drift breaches 186 (recorded-only)
+[   34.9s] == 12. per-intent attribution ==
+[   34.9s]   R3-A0: R16-mapped exec 52.1% (filled 74, rule-blocked 2, terminated 70); term {'expiry': 2, 'override_same_name': 68, 'cap_void': 0, 'suspension_abandon': 0}
+[   34.9s]   R3-05: R16-mapped exec 67.3% (filled 58, rule-blocked 14, terminated 35); term {'expiry': 5, 'override_same_name': 30, 'cap_void': 0, 'suspension_abandon': 0}
+[   34.9s]   R3-06: R16-mapped exec 53.2% (filled 78, rule-blocked 4, terminated 72); term {'expiry': 2, 'override_same_name': 70, 'cap_void': 0, 'suspension_abandon': 0}
+[   34.9s] == 13. metrics & gates ==
+[   34.9s]   R3-A0: net +0.30% excess +0.45pp adv 2/4 mdd -18.45% turn 2.75 w 29.0% g8v3 0+0/0=n/a(0 armed) (8v2对照 0/0=n/a(0 armed)) goal10 False -> eliminated ['1_excess_ge_1pp']
+[   35.0s]   R3-05: net +2.33% excess +2.47pp adv 2/4 mdd -14.59% turn 2.02 w 29.0% g8v3 0+1/1=100.0% (8v2对照 0/1=0.0%) goal10 False -> PASS
+[   35.0s]   R3-06: net +1.77% excess +1.92pp adv 2/4 mdd -15.14% turn 2.41 w 27.0% g8v3 1+0/1=100.0% (8v2对照 1/1=100.0%) goal10 False -> PASS
+[   35.0s] == gates: 2/3 dev_pass ==
+[   35.0s] == 14. disclosures ==
+[    0.0s] == 0. identity pins (engine v1.2 frozen, prereg frozen) ==
+[    0.0s]   engine: 84a2443ac28fe1b8 expect 84a2443ac28fe1b87e4a18f988fd38cc67cf706d5778e262f11465147234082c match=True
+[    0.0s]   p3r2_config: b49025b44c719685 expect b49025b44c719685 match=True
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.5s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.5s]   halfday_manifest: 2a414174b5df2eee expect 2a414174b5df2eee match=True
+[    0.6s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.6s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.6s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    0.6s]   p3r2_c05_fills: 11f8af46686df411 expect None match=True
+[    0.6s]   p3r2_c05_events: 2dde945782accd70 expect None match=True
+[    0.6s]   p3r2_c05_daily: c3945567de4250ef expect None match=True
+[    0.6s]   p3r2_c05_clips: b44dbea22a529529 expect None match=True
+[    0.6s]   p3r2_c05_intents: 36dedda1cf8d7661 expect None match=True
+[    0.6s]   prereg: 8e3c534fad39e3e7 expect None match=True
+[    0.6s]   v2_prereg_inherited: 4ced8ce1db44cef3 expect None match=True
+[    0.6s]   v1_prereg_inherited: 266a1b850373a6f7 expect None match=True
+[    0.6s]   hyb_config: 3b2a3a2f16967ed4 expect None match=True
+[    0.6s]   v2_metrics_rot05_anchor_source: f9198a46297300d1 expect None match=True
+[    0.6s]   v1_config_reference: 6388465cc31a6957 expect None match=True
+[    0.6s]   v1_metrics_rot01_source: 54a528a996a9caaa expect None match=True
+[    0.6s]   r16_metrics: 8d0b6ebbdea6ebb9 expect None match=True
+[    0.6s]   p3r2_runner: 7477c2a8fcc2d291 expect None match=True
+[    0.6s]   etf_manifest: 8b5b3fe56c0e02fd expect None match=True
+[    5.3s]   etf processed dir aggregate: 75777221a8b33502 (7 files); fund_adj batch re-verified (1169 chunks, 0 mismatches) aggregate matches manifest: True
+[    5.3s]   python 3.11.15 | polars 1.44.2 | numpy 1.26.4 | rss 0.28 GB
+[    5.3s] == 1. calendar & signal days ==
+[    5.4s]   47 signal days (2021-01-29..2024-11-29; 2020-12-31 dropped as signal, kept as expiry anchor)
+[    5.4s] == 2. exposures (T200-40) ==
+[    5.4s]   t200 behavioral anchor check: {"anchor_years": ["2016", "2017", "2018", "2019", "2020"], "reproduced_stats": {"2016": {"n_sessions": 244, "n_switches"
+[    5.4s]   exposures[2021-01-29]=0.90 [2024-11-29]=0.90
+[    5.4s] == 3. pools (r16 build_history + signal_pools) ==
+[   21.0s]   B1(m)(val): net_cagr -0.001481, mdd -0.2344
+[   21.0s]   pools at 2021-01-29: n=1524; union of ranked symbols: 3184
+[   21.0s] == 4. C05 leg_log + membership consistency ==
+[   21.0s]   C05: membership mismatches=0, events mismatches=0 / 47
+[   21.0s] == 5. market frames ==
+[   21.8s]   daily panel: 2988347 rows, 3184 symbols
+[   23.0s]   halfday: 5962622 rows kept of 18486939 total (panel x dev), 3184 symbols
+[   34.8s]   limits: 2981528 rows (dev x panel)
+[   39.7s]   splits 3020 rows, dividends 21035 rows (panel)
+[   39.7s]   rss after frames: 4.03 GB
+[   39.7s] == 6. ETF assets ==
+[   39.7s]   etf panel dev rows: 8718 per member {'sh.511010': 969, 'sh.513500': 968, 'sh.518880': 969, 'sh.513100': 968, 'sh.510050': 969, 'sz.159915': 968, 'sh.510300': 969, 'sh.510880': 969, 'sz.159934': 969}
+[   39.7s]   assertion (ii) preclose nulls: 0
+[   39.7s]   disclosure: member-dev rows with volume<=0: 0
+[   39.7s]   assertion (iii): sse 969 days, panel union 969 days, missing [], extra []
+[   39.8s]   factor coverage gaps per member: {'sh.511010': 0, 'sh.518880': 0, 'sh.510050': 0, 'sh.510300': 0, 'sz.159915': 0, 'sh.510880': 0, 'sh.513100': 0, 'sh.513500': 0, 'sz.159934': 0}
+[   39.8s]   dividend events built: 12 {'sh.510050': 4, 'sh.510300': 4, 'sh.510880': 4}
+[   39.8s]     sh.510050 2021-11-29 div/share=0.041
+[   39.8s]     sh.510050 2022-12-01 div/share=0.037
+[   39.8s]     sh.510050 2023-11-27 div/share=0.039
+[   39.8s]     sh.510050 2024-12-02 div/share=0.055
+[   39.8s]     sh.510300 2021-01-18 div/share=0.072
+[   39.8s]     sh.510300 2022-01-19 div/share=0.075
+[   39.8s]     sh.510300 2023-01-16 div/share=0.064
+[   39.8s]     sh.510300 2024-01-18 div/share=0.069
+[   39.8s]     sh.510880 2021-01-18 div/share=0.141
+[   39.8s]     sh.510880 2022-01-17 div/share=0.086
+[   39.8s]     sh.510880 2023-01-16 div/share=0.138
+[   39.8s]     sh.510880 2024-01-23 div/share=0.131
+[   39.8s]   corporate actions built: 2 {'sh.513100': 1, 'sh.513500': 1}
+[   39.8s]     sh.513100 2022-01-14 ratio=5 factor_jump=5.0019
+[   39.8s]     sh.513500 2022-03-30 ratio=2 factor_jump=1.9848
+[   39.8s]   159934 dev mismatch rows: 0 []; dividend-rule events: 0 (frozen)
+[   39.8s]   symbol_meta: 9 symbols (8 members + sz.159934), explicit band 0.10, t_plus 0 (assertion (i) basis)
+[   39.8s] == 7. momentum ranking (adj close, month-end) ==
+[   39.8s]   lookback 6m universe[sh.510050+sh.510300+sz.159915+sh.510880+sh.513100+sh.513500]: 41 ranking months (2021-07-30..2024-11-29)
+[   39.8s] == 8. static intent frames ==
+[   39.8s]   C05 (stock leg): intents 0; R16 skips {'r16_at_target': 0, 'r16_feemin_skipped': 0}
+[   39.8s]   C05 frame check skipped (val window; anchor verified in the dev phase of this same adapted runner)
+[   39.8s]   R3-A0: S-val-1 clamp 2 expiry rows -> 2024-12-31 (freeze boundary seam, prereg sec 10)
+[   39.8s]   R3-A0: intents 146 (etf 146, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   39.8s]   R3-05: S-val-1 clamp 1 expiry rows -> 2024-12-31 (freeze boundary seam, prereg sec 10)
+[   39.8s]   R3-05: intents 107 (etf 107, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   39.8s]   R3-06: S-val-1 clamp 2 expiry rows -> 2024-12-31 (freeze boundary seam, prereg sec 10)
+[   39.8s]   R3-06: intents 154 (etf 154, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   39.8s] == 9. per-config engine input frames ==
+[   39.8s]   stock frames (C05 universe): daily 0, half 0, limits 0
+[   39.8s] == 10. R3-A0 regression anchor vs v2 ROT-05 ==
+[   40.1s]   R3-A0: engine 0.3s, intents 146 orders 160 filled 74 cap 0 | rss 4.09 GB
+[   40.1s]   R3-A0 intents.equals(v2 ROT-05 intents) = False (mine 146 rows / ref 204 rows)
+[   40.1s]   R3-A0 fills.equals(v2 ROT-05 fills) = False (mine 74 rows / ref 65 rows)
+[   40.1s]   R3-A0 events.equals(v2 ROT-05 events) = False (mine 306 rows / ref 365 rows)
+[   40.1s]   R3-A0 daily.equals(v2 ROT-05 daily) = False (mine 969 rows / ref 1462 rows)
+[   40.1s]   R3-A0 clips_final.equals(v2 ROT-05 clips_final) = False (mine 4 rows / ref 4 rows)
+[   40.1s]   R3-A0 net_cagr 0.0030092602 vs v2 ROT-05 0.0898677309 -> False
+[   40.1s]   R3-A0 anchor SKIPPED on val window (verified in the dev phase of this same adapted runner; per val prereg sec 6)
+[   40.1s] == 11. remaining configs ==
+[   40.3s]   R3-05: engine 0.2s, intents 107 orders 507 filled 58 cap 0 | rss 4.10 GB
+[   40.5s]   R3-06: engine 0.2s, intents 154 orders 244 filled 78 cap 0 | rss 4.10 GB
+[   40.5s]   R3-A0: leg cap-voids 0 (OK); drift breaches 1098 (recorded-only)
+[   40.5s]   R3-05: leg cap-voids 0 (OK); drift breaches 1291 (recorded-only)
+[   40.5s]   R3-06: leg cap-voids 0 (OK); drift breaches 186 (recorded-only)
+[   40.5s] == 12. per-intent attribution ==
+[   40.6s]   R3-A0: R16-mapped exec 52.1% (filled 74, rule-blocked 2, terminated 70); term {'expiry': 2, 'override_same_name': 68, 'cap_void': 0, 'suspension_abandon': 0}
+[   40.6s]   R3-05: R16-mapped exec 67.3% (filled 58, rule-blocked 14, terminated 35); term {'expiry': 5, 'override_same_name': 30, 'cap_void': 0, 'suspension_abandon': 0}
+[   40.6s]   R3-06: R16-mapped exec 53.2% (filled 78, rule-blocked 4, terminated 72); term {'expiry': 2, 'override_same_name': 70, 'cap_void': 0, 'suspension_abandon': 0}
+[   40.6s] == 13. metrics & gates ==
+[   40.6s]   R3-A0: net +0.30% excess +0.45pp adv 2/4 mdd -18.45% turn 2.75 w 29.0% g8v3 0+0/0=n/a(0 armed) (8v2对照 0/0=n/a(0 armed)) goal10 False -> eliminated ['1_excess_ge_1pp']
+[   40.6s]   R3-05: net +2.33% excess +2.47pp adv 2/4 mdd -14.59% turn 2.02 w 29.0% g8v3 0+1/1=100.0% (8v2对照 0/1=0.0%) goal10 False -> PASS
+[   40.6s]   R3-06: net +1.77% excess +1.92pp adv 2/4 mdd -15.14% turn 2.41 w 27.0% g8v3 1+0/1=100.0% (8v2对照 1/1=100.0%) goal10 False -> PASS
+[   40.6s] == gates: 2/3 dev_pass ==
+[   40.6s] == 14. disclosures ==
+[   40.7s] == 15. outputs ==
+[   40.8s] == manifest + report written; wall 41s, peak rss 4.10 GB ==
+[   40.8s] == VERDICT: 2/3 dev_pass; blocked=[]; 2/3 configs pass all dev gates but none reaches the 10% goal column -> bookkeep and CONTINUE dev exploration per the user's 2026-09-19 ruling (val held); val not consumed

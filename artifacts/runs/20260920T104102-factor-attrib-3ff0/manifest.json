@@ -1,0 +1,413 @@
+{
+ "run_id": "20260920T104102-factor-attrib-3ff0",
+ "experiment_id": "exp-20260920-factor-attribution",
+ "prereg": "docs/research/exp-20260920-factor-attribution-prereg.md",
+ "prereg_sha256_16": "fdb59975b933cb6e",
+ "status": "completed",
+ "started_at_utc": "2026-09-20T02:41:00+00:00 (stage A first launch)",
+ "ended_at_utc": "2026-09-20T03:08:51.807082+00:00",
+ "wall_seconds": 257.8,
+ "wall_seconds_breakdown": {
+  "A_attribution_invocation": 10.8,
+  "B_anchor_invocation": 42.0,
+  "B_loo_batch_invocation": 205.0
+ },
+ "peak_rss_gb": 3.382829056,
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "artifacts/runs/20260920T104102-factor-attrib-3ff0/scripts/attribution.py",
+  "&&",
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "artifacts/runs/20260920T104102-factor-attrib-3ff0/scripts/runner_attrib.py --subsets ..."
+ ],
+ "random_seed": null,
+ "determinism": "no RNG anywhere (attribution arithmetic + engine deterministic lifecycle); LOO composite rebuilds are pure functions of pinned inputs",
+ "engine": {
+  "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+  "sha256_at_start": "a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3",
+  "sha256_at_end": "a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3",
+  "sha256_match": true,
+  "bytes_modified_by_this_run": false,
+  "version": "workspace v1.4.1 pin a01cb29c...75abf3, run in v1.3 semantics (no zones argument); leave-zero-out anchor 5/5 frames .equals() vs chassis v1.3 outputs"
+ },
+ "window": {
+  "dev": "2015-01-05..2020-12-31",
+  "signals": "2015-01-30..2020-11-30 (71 month-ends)",
+  "attribution_r_months": "68 (2015-04-30..2020-11-30; F2R1 harness min_history_rows=60 truncation, documented in eval.py)",
+  "val_consumed": false,
+  "frozen_zone_touched": false
+ },
+ "inputs": {
+  "chassis_run": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e",
+   "status": "completed",
+   "engine_v13_pin_16": "84a2443ac28fe1b8",
+   "baseline_F3R3-EW": {
+    "net_cagr": 0.04877310918741218,
+    "max_drawdown": -0.17848532843799414,
+    "source": "chassis metrics_and_gates.json metrics['F3R3-EW'] verbatim"
+   }
+  },
+  "factor_scores_source": {
+   "method": "FA-S2 branch 1: DIRECT READ of F2R1 family outputs (per-factor monthly score parquets); no factor-value recomputation needed; composite components rebuilt from these parquets with the F3R1 sec 4 construction and verified bit-identical to the F3R1 EW composite",
+   "run": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch",
+   "files": {
+    "A17": "a5f60efbcfd80330570dc7454140deeb679f44cd1f2d4eadf6c3122658873ff6",
+    "A20": "00b69fbbf22f6725fd83cc6b9811f297874ec98cd7ce070e39156d229d37bda9",
+    "A25": "807022e1cbaf69fb0e9aa3625cfd19f0f1631775ce0fb51e23f90c4dc1abccb4",
+    "B11": "8170f6e2ca69ab9218051dc01bbd5e7182622d5ceca91f6f0554a9dbf15fa19b",
+    "B12": "a3a0c9e24947644473a28b6f07efc71fd833c3fe9de8988560df145d7b118ab5",
+    "B14": "f89b27e8220d1c7a3083f2c8834709c84125c6cc1d9bec9a6af8d5792da1f25a",
+    "C19": "4243fa0519032777e8db9f5b7c1dc1517fe05b6a0ea5d20e8dc08b8328d899c8",
+    "D10": "e749803de1886119fd7f5c2b0e8ee2d6b4105d8ed5c3a4aa7876f70bf9218797",
+    "D13": "7e178d768fea3423658f08ed32c97682e83eab5c2b115ad3fc018b2d04947cdc",
+    "D14": "2878d1797a6fa86029c0a581ebd2a1ebd2038865f396e639caa9192906d5c0b4",
+    "D18": "6782b025e13288bd8a4676badab83e6cff09e997d388fea4939cac3263e6f946",
+    "D19": "1ecec47e502c69e1afd86965211a6da082ea61bfe25bb4a2a9d7601c7653e0b2",
+    "D20": "a79b5d658c5c11cdca32759f546934f6c6f8fe131b89c3eeea278b141b151a1c",
+    "D30": "5b8776f1e122a43148e22e4b8264a3a26c57d8747a4f1a47e29a2f540d3fab4a",
+    "E16": "7f2759745c5cf7a721209206d413aa5ce68f2d3c9c40945fe5c48e14075f026c",
+    "F06": "e04e1344f841fc0eaa1c2ffe3a69df05ad06ce9b10042d8cfd9000f33ce29fba",
+    "F09": "80f122f563a26cca5b9abc22c1626660a66cd29fca5ca669c5847ad469fa2247"
+   },
+   "f2r1_all120_sha256": "df35f17604595b345b4f6757ece0b22c68c36795c6e0ef11ec240c690bd1420a"
+  },
+  "composite_alignment": {
+   "pass": true,
+   "n_sampled": 75,
+   "sample_dates": [
+    "2015-01-30",
+    "2017-12-29",
+    "2020-11-30"
+   ],
+   "max_abs_diff_sampled": 0.0,
+   "max_abs_diff_global": 0.0,
+   "key_sets_equal": true,
+   "tolerance": 1e-09
+  },
+  "sleeve_positions": "D:\\量化\\artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e\\outputs\\sleeve_monthly_log.json",
+  "eval_panel": {
+   "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_2015_2024.parquet",
+   "sha256": "1cbb09a11f7c10136981749c13467f12a1757b59e7e95fb6f86666f96edfc1de",
+   "note": "F2R1 frozen eval panel (daily_2015_2024), read-only; truncated <=2020-12-31 in memory before the harness (trailing-row removal, identical values, zero 2021+ contact)"
+  },
+  "daily_calendar_pools": {
+   "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_1999_2024.parquet",
+   "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6"
+  },
+  "dedup_clusters": "7b80b95bbbbbc34db44236c329b69094040faafa3a57c17f3c41ebab760e67b4",
+  "chassis_ew_frames": {
+   "intents": "afbd41c55f88737991f43c11b7673c89777b79e13d8592a3e25d1c68e2e554a8",
+   "fills": "6e1dc925c99f8538de467765cad1c243616cf0a6658566269941554873192ff3",
+   "events": "af0ca5463344b4caa848f5a81db6946a5ed1a32a51cd4fcc01aa621d7526b70f",
+   "daily_equity": "b71cf93135fcca2a417e2737dba160077d8aed97a84e402cbb79479dbdb1fb92",
+   "clips_final": "f4695404f1f1a2e772426f76d1af87fdc89e113b36cd91b97f7303a2395b5e20"
+  }
+ },
+ "stages_s": {
+  "A_attribution": {
+   "calendar": 0.9314136999892071,
+   "pools": 4.7066922999947565,
+   "composite_rebuild": 7.702049399988027,
+   "fa_s2_gate": 8.16177289999905,
+   "forward_returns": 10.531096299993806,
+   "attribution_tables": 10.696725199988578,
+   "contribution_corr": 10.78227669998887,
+   "suspects": 10.783933599988814
+  },
+  "B_loo_runner": {
+   "calendar": 6.00520040000265,
+   "exposures": 6.011702399991918,
+   "pools": 10.14957680000225,
+   "composite_setup": 10.15614690000075,
+   "composite_setup_done": 10.156222799996613,
+   "market_frames": 24.41323019999254,
+   "etf_assets": 24.49430229999416,
+   "engine_input_frames": 24.49546159998863
+  }
+ },
+ "leave_zero_out_anchor": {
+  "pass": true,
+  "frames": {
+   "intents": true,
+   "fills": true,
+   "events": true,
+   "daily": true,
+   "clips_final": true,
+   "net_cagr_matches_chassis": true
+  },
+  "net_cagr": 0.04877310918741218,
+  "baseline_cagr": 0.04877310918741218
+ },
+ "loo_runs": {
+  "leave_zero_out": {
+   "drop": [],
+   "net_cagr": 0.04877310918741218,
+   "max_drawdown": -0.17848532843799414,
+   "advantage_years": 4,
+   "max_one_side_turnover": 4.445981178514337,
+   "engine_wall_s": 8.203555400003097,
+   "anchor_pass": true
+  },
+  "loo_A17": {
+   "drop": [
+    "A17"
+   ],
+   "net_cagr": 0.04955038951768187,
+   "max_drawdown": -0.14417444936923907,
+   "advantage_years": 4,
+   "max_one_side_turnover": 4.1602042584966,
+   "engine_wall_s": 7.0629671000060625,
+   "anchor_pass": null
+  },
+  "loo_A20": {
+   "drop": [
+    "A20"
+   ],
+   "net_cagr": 0.04128179860907166,
+   "max_drawdown": -0.1664737735624292,
+   "advantage_years": 3,
+   "max_one_side_turnover": 4.339463454536868,
+   "engine_wall_s": 7.867118299996946,
+   "anchor_pass": null
+  },
+  "loo_A25": {
+   "drop": [
+    "A25"
+   ],
+   "net_cagr": 0.04241027348128901,
+   "max_drawdown": -0.16717163410274527,
+   "advantage_years": 4,
+   "max_one_side_turnover": 4.623513194074034,
+   "engine_wall_s": 7.815355099999579,
+   "anchor_pass": null
+  },
+  "loo_B11": {
+   "drop": [
+    "B11"
+   ],
+   "net_cagr": 0.045629744390327076,
+   "max_drawdown": -0.15906192516521012,
+   "advantage_years": 4,
+   "max_one_side_turnover": 5.240662900086318,
+   "engine_wall_s": 8.03214840000146,
+   "anchor_pass": null
+  },
+  "loo_B12": {
+   "drop": [
+    "B12"
+   ],
+   "net_cagr": 0.06762260523137598,
+   "max_drawdown": -0.14415787839290528,
+   "advantage_years": 4,
+   "max_one_side_turnover": 4.984972067750166,
+   "engine_wall_s": 8.119113300010213,
+   "anchor_pass": null
+  },
+  "loo_B14": {
+   "drop": [
+    "B14"
+   ],
+   "net_cagr": 0.06437834715229607,
+   "max_drawdown": -0.16475865358062103,
+   "advantage_years": 5,
+   "max_one_side_turnover": 4.2779091602349535,
+   "engine_wall_s": 7.691045800005668,
+   "anchor_pass": null
+  },
+  "loo_C19": {
+   "drop": [
+    "C19"
+   ],
+   "net_cagr": 0.039085500554669084,
+   "max_drawdown": -0.17189510569301392,
+   "advantage_years": 4,
+   "max_one_side_turnover": 4.101784625395003,
+   "engine_wall_s": 7.406252300002961,
+   "anchor_pass": null
+  },
+  "loo_D10": {
+   "drop": [
+    "D10"
+   ],
+   "net_cagr": 0.04118664751670065,
+   "max_drawdown": -0.20533828459320014,
+   "advantage_years": 4,
+   "max_one_side_turnover": 4.6241906736210066,
+   "engine_wall_s": 7.293180900000152,
+   "anchor_pass": null
+  },
+  "loo_D13": {
+   "drop": [
+    "D13"
+   ],
+   "net_cagr": 0.02011154822462391,
+   "max_drawdown": -0.24568987232765482,
+   "advantage_years": 4,
+   "max_one_side_turnover": 4.693463403954156,
+   "engine_wall_s": 8.652419699996244,
+   "anchor_pass": null
+  },
+  "loo_D14": {
+   "drop": [
+    "D14"
+   ],
+   "net_cagr": 0.046540383292941634,
+   "max_drawdown": -0.1582510165876233,
+   "advantage_years": 4,
+   "max_one_side_turnover": 4.619860818493765,
+   "engine_wall_s": 7.896410699991975,
+   "anchor_pass": null
+  },
+  "loo_D18": {
+   "drop": [
+    "D18"
+   ],
+   "net_cagr": 0.04269765188280483,
+   "max_drawdown": -0.1380632683095031,
+   "advantage_years": 3,
+   "max_one_side_turnover": 5.229423715161768,
+   "engine_wall_s": 8.63690339999448,
+   "anchor_pass": null
+  },
+  "loo_D19": {
+   "drop": [
+    "D19"
+   ],
+   "net_cagr": 0.04549551332448987,
+   "max_drawdown": -0.17353656800592765,
+   "advantage_years": 4,
+   "max_one_side_turnover": 5.111566015927605,
+   "engine_wall_s": 8.24022469999909,
+   "anchor_pass": null
+  },
+  "loo_D20": {
+   "drop": [
+    "D20"
+   ],
+   "net_cagr": 0.028493821940162922,
+   "max_drawdown": -0.16507453290198537,
+   "advantage_years": 3,
+   "max_one_side_turnover": 5.08638771947817,
+   "engine_wall_s": 6.807206400000723,
+   "anchor_pass": null
+  },
+  "loo_D30": {
+   "drop": [
+    "D30"
+   ],
+   "net_cagr": 0.06496811883870124,
+   "max_drawdown": -0.15850243443178946,
+   "advantage_years": 4,
+   "max_one_side_turnover": 5.13689705466463,
+   "engine_wall_s": 5.984410100005334,
+   "anchor_pass": null
+  },
+  "loo_E16": {
+   "drop": [
+    "E16"
+   ],
+   "net_cagr": 0.043300432695472235,
+   "max_drawdown": -0.15752776843530492,
+   "advantage_years": 4,
+   "max_one_side_turnover": 5.094055736458753,
+   "engine_wall_s": 8.408169100002851,
+   "anchor_pass": null
+  },
+  "loo_F06": {
+   "drop": [
+    "F06"
+   ],
+   "net_cagr": 0.015551346604024019,
+   "max_drawdown": -0.19372363478740762,
+   "advantage_years": 3,
+   "max_one_side_turnover": 5.100867681023939,
+   "engine_wall_s": 8.56438419999904,
+   "anchor_pass": null
+  },
+  "loo_F09": {
+   "drop": [
+    "F09"
+   ],
+   "net_cagr": 0.04113323224987386,
+   "max_drawdown": -0.15776935924478042,
+   "advantage_years": 4,
+   "max_one_side_turnover": 4.6291263288770725,
+   "engine_wall_s": 7.336804400008987,
+   "anchor_pass": null
+  }
+ },
+ "verdict": {
+  "H1": "falsified",
+  "H0": "confirmed",
+  "reason": "prereg sec 5.4: suspect list EMPTY -> H1 falsified, F3 combo keeps the 17-factor composite unchanged; sec 5.2 condemnation and sec 5.3 clean-combo steps are vacuous (no suspects to judge, nothing to adopt)",
+  "suspects": [],
+  "condemned": [],
+  "retained_observe": [],
+  "clean_combo_run": false,
+  "baseline": {
+   "net_cagr": 0.04877310918741218,
+   "max_drawdown": -0.17848532843799414
+  },
+  "leave_zero_out_anchor": {
+   "pass": true,
+   "frames": {
+    "intents": true,
+    "fills": true,
+    "events": true,
+    "daily": true,
+    "clips_final": true,
+    "net_cagr_matches_chassis": true
+   },
+   "net_cagr": 0.04877310918741218
+  },
+  "loo_max_delta_cagr": 0.018849496043963798
+ },
+ "sanity": {
+  "EW": {
+   "months": 65,
+   "corr": 0.9979077438730621,
+   "sign_agreement": 1.0,
+   "gated": true
+  },
+  "ICW": {
+   "months": 65,
+   "corr": 0.9976198267522404,
+   "sign_agreement": 0.9846153846153847,
+   "gated": false
+  }
+ },
+ "trial_accounting": {
+  "this_round": "18 new configs = attribution 1 + LOO 17 + clean 0 (clean skipped: suspect list empty); leave-zero-out anchor NOT counted (repeat of the already-run F3R3-EW config, per prereg '不重复计已运行配置')",
+  "strategy_line": "275->293"
+ },
+ "env_versions": {
+  "python": "3.11.15",
+  "polars": "1.44.2",
+  "numpy": "1.26.4",
+  "platform": "Windows-10-10.0.26200-SP0"
+ },
+ "scripts_sha256": {
+  "aggregate.py": "1f6b27aea770db21ca09e54996e62f32874de9f24ff390f12e49d5698c8b682e",
+  "attribution.py": "8361d4a4a8ccfd22978932105cc6802c03093f8ccb3d29099eca72f5ba6eb982",
+  "finalize_manifest.py": "1c8e83dd36d6d6b3d4ac38d2caee34eb1fd71f60033b6ad6883dc3550233059f",
+  "gen_report.py": "f44317ccc132285d840799e3e9e8b05ed3a6e4a66f53339b46108641184cfb92",
+  "patch_docs.py": "f33ea66e391099b7f52ea25a60f72690136387be3bb468af43307bfb944529af",
+  "runner_attrib.py": "addfc9ffc9b317b67ee1f67bc0e05f5a119aca882b5b6f62d14bb32e9629c28e"
+ },
+ "outputs_sha256": {
+  "attribution_ew.csv": "936652e34a320b51d30bbf88e956574cb5ea783d3b45315fa9de4d27215deb50",
+  "attribution_icw.csv": "9d0a9a9e65f378463248ebe466501a65d3da4c88c5ddf24c8485371c63fe78ed",
+  "contribution_corr.csv": "1d3b6a5aae2c055f319fb951260c849bee2b65236729eb051761e3514b680936",
+  "loo_matrix.csv": "c329bde3b90e6ed8d39e4e04e1307d66c431be3ccf4fd0df7c3470f404a63de8",
+  "suspects.json": "27417674b242391b7b2131e4478cf45ac40b69756cbf0bc4a56e247088ae3cfb",
+  "verdict.json": "8dc05237682d4619d3566f9a4376710f627adc047b3ba81f5b4fd8f41e835f96"
+ },
+ "notes": [
+  "FA-S3 approximation: attribution table is cross-factor comparison only; sum_i weight_i*c_i,t is NOT a portfolio return.",
+  "The ICW attribution is a same-caliber companion table; all frozen judgment lines act on the EW main table only.",
+  "Sanity series definition (documented): realized_t = seat-weighted next-month return of the seated members with harness r (w_T per seat from the chassis sleeve log); linear_t = sum_i (1/17)*c_i,t. 65 common months (harness r starts 2015-04-30)."
+ ],
+ "advanced_to_validation": false,
+ "val_consumed": false
+}

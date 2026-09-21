@@ -1,0 +1,330 @@
+{
+ "run_id": "20260919T151630-hybrid-val-v1p3",
+ "experiment_id": "exp-20260919-hybrid-family-v3",
+ "status": "completed",
+ "started_at_utc": "1970-01-01T02:28:55.085590+00:00",
+ "ended_at_utc": "2026-09-19T06:54:47.747143+00:00",
+ "wall_seconds": 40.80517599999985,
+ "peak_rss_gb": 4.096090112,
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "artifacts/runs/20260919T151630-hybrid-val-v1p3/scripts/runner_hybrid_v3.py"
+ ],
+ "random_seed": null,
+ "determinism": "no RNG in runner or engine; static intent frames; engine-owned deterministic lifecycle",
+ "engine": {
+  "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+  "sha256_at_start": "84a2443ac28fe1b87e4a18f988fd38cc67cf706d5778e262f11465147234082c",
+  "sha256_at_end": "84a2443ac28fe1b87e4a18f988fd38cc67cf706d5778e262f11465147234082c",
+  "bytes_modified_by_this_run": false,
+  "version": "v1.2 (frozen, unchanged from v1; v2 prereg sec 5)"
+ },
+ "pins": {
+  "engine": {
+   "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+   "sha256": "84a2443ac28fe1b87e4a18f988fd38cc67cf706d5778e262f11465147234082c",
+   "expected": "84a2443ac28fe1b87e4a18f988fd38cc67cf706d5778e262f11465147234082c",
+   "match": true
+  },
+  "p3r2_config": {
+   "path": "D:\\量化\\configs\\experiments\\p3r2-band-v1-readjudication.json",
+   "sha256": "b49025b44c719685ee9276622a5708881e578c859cf3612b2188d7732dab40f1",
+   "expected": "b49025b44c719685",
+   "match": true
+  },
+  "r16_config": {
+   "path": "D:\\量化\\configs\\experiments\\p2r16-trend-dispersion.json",
+   "sha256": "27f846a7330919a4965d83ec07cf2a0be3e29b2476cc37c14c84558957a93df4",
+   "expected": "27f846a7330919a4",
+   "match": true
+  },
+  "daily": {
+   "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_1999_2024.parquet",
+   "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6",
+   "expected": "d9a63f4cc3032926",
+   "match": true,
+   "rows_total": 16344349,
+   "rows_after_freeze_filter": 16344349
+  },
+  "halfday_manifest": {
+   "path": "D:\\量化\\data\\processed\\halfday-bars-20260918\\manifest.json",
+   "sha256": "2a414174b5df2eeed4c6bd6a7cd7f9f09f9b2efc8f05673ccc4b7695812cd679",
+   "expected": "2a414174b5df2eee",
+   "match": true
+  },
+  "split_factor": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\split_factor.h5",
+   "sha256": "2f436b2f13d09a9bfdcbdb0bf35669c10a377d180ce1ca37bef53d6c96a3365d",
+   "expected": "2f436b2f13d09a9b",
+   "match": true
+  },
+  "dividends": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\dividends.h5",
+   "sha256": "46121c09cddde72e725c2d4ae025cc259b049aeaa77c868b492fdbba60214846",
+   "expected": "46121c09cddde72e",
+   "match": true
+  },
+  "index_000300": {
+   "path": "D:\\量化\\data\\raw\\tushare\\index_daily\\20260917-r1\\chunk_000300.SH.csv",
+   "sha256": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878",
+   "expected": "05aaa8183a11c674",
+   "match": true
+  },
+  "p3r2_c05_fills": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T030640-p3r2-dev-ad9e\\outputs\\C05_fills.parquet",
+   "sha256": "11f8af46686df411266526d33993722ed443d37fca8ab3dbae03b98a96420cef",
+   "expected": null,
+   "match": true
+  },
+  "p3r2_c05_events": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T030640-p3r2-dev-ad9e\\outputs\\C05_events.parquet",
+   "sha256": "2dde945782accd70ac90dd2ba22bf50ccf05d24c971c88433c3894f970030177",
+   "expected": null,
+   "match": true
+  },
+  "p3r2_c05_daily": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T030640-p3r2-dev-ad9e\\outputs\\C05_daily_equity.parquet",
+   "sha256": "c3945567de4250ef2679b27210392a177b5c384a5cbea4ec6cac7417470ffe0c",
+   "expected": null,
+   "match": true
+  },
+  "p3r2_c05_clips": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T030640-p3r2-dev-ad9e\\outputs\\C05_clips_final.parquet",
+   "sha256": "b44dbea22a529529f254e978c7a6926125727e076b9bde81165d6bc1c2d3cb7d",
+   "expected": null,
+   "match": true
+  },
+  "p3r2_c05_intents": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T030640-p3r2-dev-ad9e\\outputs\\C05_intents.parquet",
+   "sha256": "36dedda1cf8d76615daba2877f5a312014f9e6a195baba1c93d23e690febed4a",
+   "expected": null,
+   "match": true
+  },
+  "prereg": {
+   "path": "D:\\量化\\docs\\research\\exp-20260919-hybrid-family-v3-prereg.md",
+   "sha256": "8e3c534fad39e3e71961eebf6db0d184ffa9a897f2d023c0b7efc2db1f813415",
+   "expected": null,
+   "match": true
+  },
+  "v2_prereg_inherited": {
+   "path": "D:\\量化\\docs\\research\\exp-20260919-hybrid-family-v2-prereg.md",
+   "sha256": "4ced8ce1db44cef30072d3e9ede29dde9ae703c53fd9915f873604319dd76533",
+   "expected": null,
+   "match": true
+  },
+  "v1_prereg_inherited": {
+   "path": "D:\\量化\\docs\\research\\exp-20260919-hybrid-family-v1-prereg.md",
+   "sha256": "266a1b850373a6f7ea67a1bf76b2117230e98e5981e7aa3f869a0abc11744146",
+   "expected": null,
+   "match": true
+  },
+  "hyb_config": {
+   "path": "D:\\量化\\configs\\experiments\\hybrid-family-v3.json",
+   "sha256": "3b2a3a2f16967ed4ee082403a2089498b78261ae8e253631ec85d6162030018d",
+   "expected": null,
+   "match": true
+  },
+  "v2_metrics_rot05_anchor_source": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T063022-hybrid-v2-2k5b\\outputs\\metrics_and_gates.json",
+   "sha256": "f9198a46297300d15c34ab899ee092d13e7fd24c9656f88f72cfd7f7d0ccc3dc",
+   "expected": null,
+   "match": true
+  },
+  "v1_config_reference": {
+   "path": "D:\\量化\\configs\\experiments\\hybrid-family-v1.json",
+   "sha256": "6388465cc31a695773b33d604bec50d8f3854ca28ac8c4e609042c9c3bfc17b3",
+   "expected": null,
+   "match": true
+  },
+  "v1_metrics_rot01_source": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T054649-hybrid-v1-9k2f\\outputs\\metrics_and_gates.json",
+   "sha256": "54a528a996a9caaae09acbfce183ee0dc071a88c2610a2a82159ddcb0b02eb23",
+   "expected": null,
+   "match": true
+  },
+  "r16_metrics": {
+   "path": "D:\\量化\\artifacts\\runs\\20260918T083650-p2r16-trend-dispersion-afab466f\\metrics.json",
+   "sha256": "8d0b6ebbdea6ebb9dc8146ead84ca408021e72749e1e7540f3483c6ed2a5fcc9",
+   "expected": null,
+   "match": true
+  },
+  "p3r2_runner": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T030640-p3r2-dev-ad9e\\tmp\\runner_p3r2_intents.py",
+   "sha256": "7477c2a8fcc2d291c6c46a52b72b62b09e7e87dfea5689502482454bf3f6df19",
+   "expected": null,
+   "match": true
+  },
+  "etf_manifest": {
+   "path": "D:\\量化\\data\\processed\\etf-daily-20260919\\manifest.json",
+   "sha256": "8b5b3fe56c0e02fd6af634bb3740c4f40c3b5f1dfabc984764433c0134eb1c8a",
+   "expected": null,
+   "match": true
+  },
+  "stk_limit_aggregate": {
+   "path": "D:\\量化\\data\\raw\\tushare\\stk_limit\\20260917-r1",
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "3c53abf3b0c39b425389137d9f630f0de158990fcdc55b0bd41bf7d9c3bde673",
+   "files": 2432,
+   "total_bytes": 301278245,
+   "expected": "3c53abf3b0c39b42",
+   "match": true
+  },
+  "fund_adj_batch_manifest": {
+   "path": "D:\\量化\\data\\raw\\tushare\\fund_adj\\20260917-r1\\manifest.json",
+   "sha256": "348d2ec4e8fd6df3ab856f2a09677d87b62d668529abe8b00b2ec38b68efccd4"
+  },
+  "fund_adj_aggregate": {
+   "rule": "sha256 of sorted '<chunk>:<per_file_sha256>' lines per the etf standardization agg_hash; per-file hashes re-verified against the raw batch manifest",
+   "recomputed": "b06242469db048a01231b26085073b6eecbf25a9106cfa63ae1b06c1764c0979",
+   "expected_declared_in_etf_manifest": "b06242469db048a01231b26085073b6eecbf25a9106cfa63ae1b06c1764c0979",
+   "chunks_in_batch_manifest": 1169,
+   "rehash_mismatches": [],
+   "match": true
+  },
+  "etf_processed_aggregate": {
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "75777221a8b335028bf8da60f14c59c6a3659f9d91578204308488d0f0fb7c2e",
+   "files": 7,
+   "total_bytes": 18153828,
+   "expected": null,
+   "match": true
+  },
+  "trade_cal_aggregate": {
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "aac75421cd89d9fc562490f78d14cdcfcc5033976a37853d2fa3fa5cace261f4",
+   "files": 4,
+   "total_bytes": 367805,
+   "expected": null,
+   "match": true
+  },
+  "etf_manifest_declared_fund_daily_aggregate": "d6d3cd9be853fd1d912e876e83de9522c24398c8a787d82e8798d9ba405a9d29",
+  "halfday_rows_total": 18486939
+ },
+ "env_versions": {
+  "python": "3.11.15",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "polars": "1.44.2",
+  "numpy": "1.26.4"
+ },
+ "window": {
+  "dev": "2021-01-04..2024-12-31",
+  "signals": "2021-01-29..2024-11-29 (47)",
+  "val_consumed": false
+ },
+ "stage_timings_s": {
+  "    0.0": "0. identity pins (engine v1.2 frozen, prereg frozen)",
+  "    5.3": "1. calendar & signal days",
+  "    5.4": "3. pools (r16 build_history + signal_pools)",
+  "   21.0": "5. market frames",
+  "   39.7": "6. ETF assets",
+  "   39.8": "10. R3-A0 regression anchor vs v2 ROT-05",
+  "   40.1": "11. remaining configs",
+  "   40.5": "12. per-intent attribution",
+  "   40.6": "14. disclosures",
+  "   40.7": "15. outputs"
+ },
+ "configs_run": [
+  "R3-A0",
+  "R3-05",
+  "R3-06"
+ ],
+ "configs_blocked": [],
+ "consistency_c05": {
+  "membership_mismatches": 0,
+  "membership_events_mismatches": 0,
+  "n_signal_days": 47
+ },
+ "r3a0_regression": {
+  "intents": false,
+  "fills": false,
+  "events": false,
+  "daily": false,
+  "clips_final": false,
+  "net_cagr_matches_v2_metrics": false
+ },
+ "leg_struct_check": {
+  "R3-A0": {
+   "leg_cap_terminated": [],
+   "total_cap_terminated": 0,
+   "drift_breaches": 1098
+  },
+  "R3-05": {
+   "leg_cap_terminated": [],
+   "total_cap_terminated": 0,
+   "drift_breaches": 1291
+  },
+  "R3-06": {
+   "leg_cap_terminated": [],
+   "total_cap_terminated": 0,
+   "drift_breaches": 186
+  }
+ },
+ "spec_seams": {
+  "S1_park_init_source": "engine requires date-typed source_signal; pinned 'park_init' literal is un-runnable; resolved to the park decision date 2015-01-30 (no K impact: buys have no fallback); carried over from v1 unresolved; pending adjudication",
+  "S2_leg_rotation_collision": "RESOLVED by the frozen v2 spec: leg symbols are removed from the ranking universe (ROT-03R/ROT-04: 7 members, ROT-05: 6 members); runner verifies disjointness at frame construction and that no entry/exit ever names a leg symbol; no duplicate first-decision points occurred",
+  "S4_parkw_vs_cap25": "RESOLVED by the frozen v2 spec: multi-leg structures with every symbol <= 25% (park 40-60%); runner hard-checks that no leg intent is cap-voided (a cap-void would contradict the frozen structure and abort)"
+ },
+ "benchmark_seam_S3": "ROT arms have no stock exposure path; benchmarked against the family anchor B1m/C05 (T200-40, rate_only) + B3prime[T200-40]; carried over from v1 unresolved; pending adjudication",
+ "dividend_events_built": 12,
+ "trial_accounting": {
+  "this_round": "1 family (7 configs, all run)",
+  "cumulative_lineage": "v1 205->214; v2 214->222; v3 verdict -> 222->229 (config json trial_accounting)"
+ },
+ "gates_dev_pass": [
+  "R3-05",
+  "R3-06"
+ ],
+ "advanced_to_validation": false,
+ "val_consumed": false,
+ "stop_note": "2/3 configs pass all dev gates but none reaches the 10% goal column -> bookkeep and CONTINUE dev exploration per the user's 2026-09-19 ruling (val held); val not consumed",
+ "outputs": {
+  "outputs/dividend_events.csv": "e9a11677b92dcb3ff55472687f4bc0366abcc883e9036e2f9a3fb2837fbef26b",
+  "outputs/metrics_and_gates.json": "6f4db475d1c9d6ab4f961080f67627b95f1e927499fc8704facd6af017dd8368",
+  "outputs/R3-05_clips_final.parquet": "bcaf88b162974aca9f08dbaa31f4a12b3fda1e7b507af95598eb58cb721b03b1",
+  "outputs/R3-05_daily_equity.parquet": "0d7e0ba2dc45ea531bac0a093f52603b209c514ece6eeb10ba0fc5922d9b44e6",
+  "outputs/R3-05_events.parquet": "4e4207c7cd02a2bc1a8e657678c34f755486b93dc13bb541866b63f53b9ad4af",
+  "outputs/R3-05_fills.parquet": "f30c2fa0254a84535872846ec2b0b50d62dc4a81c187bcd1625e4a1364274e75",
+  "outputs/R3-05_intents.parquet": "b2acde4e69d02426ee55f8e4188bed4091592606dadc8fa180fb84d0f21c4dbe",
+  "outputs/R3-05_stats.json": "0c9f352aab0276aef7d6d01750aeda44b4e2815e498801656139df1c591ae60e",
+  "outputs/R3-06_clips_final.parquet": "589f9c2cb186263b9ab37023f9b0378090f48c41281e5981bf6fd2b4a8a8125f",
+  "outputs/R3-06_daily_equity.parquet": "7796c1a9c618297417149a23444436eb63a7cb1b3088435f394268215fbd320c",
+  "outputs/R3-06_events.parquet": "96f09c6d427a202e0c3486faf1f7add344cd0da1bdccbb5e9fe07391a3d52431",
+  "outputs/R3-06_fills.parquet": "56948cd41fd096f3de0c5392c465e8e92da4cb0898d7756ecfc81444002bd7d9",
+  "outputs/R3-06_intents.parquet": "c1f563030e23afba78dc8b3fc435b4f72f8084b46693927c27f8d79331b849c7",
+  "outputs/R3-06_stats.json": "a1ec0fa28ba413216ff36e7f95f83170db0275da9117d26385ffd4c3aa1ffe31",
+  "outputs/R3-A0_clips_final.parquet": "7859aa36a0ad3906c048eefea027e5d8b104218c68a482fe59c8c14119389b88",
+  "outputs/R3-A0_daily_equity.parquet": "e0d86f88369924a021b6038b3803f9f4bca984f5a7422df25d336fccdd3dc177",
+  "outputs/R3-A0_events.parquet": "a99ee7a677710cf611e46ab7119b9be1e4baaebda04d3621fb9b8051aca682ff",
+  "outputs/R3-A0_fills.parquet": "59b64ba5e356a5479d00eb724c37f509b1e6a15356a2ba9cd9c1db832ffca969",
+  "outputs/R3-A0_intents.parquet": "cd19c6ddb1221012a52976986af27c8623e9b8f07ae2b49f91a65ec8d3947f70",
+  "outputs/R3-A0_stats.json": "95550d62b55c598cdb888911567a9f3ae383e35e52d991f6219fec4b3cb0cc6c",
+  "outputs/rotation_monthly_log.json": "7ccc9a3e6214828af03b2ebfe97123d894f2e9d7daa7e89ba1525ff4f3bb04db",
+  "outputs_dev/dividend_events.csv": "3fedab0fa065d94781aca3e06849188cd27937c95cf1adebe77d9e90fab9be14",
+  "outputs_dev/metrics_and_gates.json": "3217bdcead6deec8681db423bb74bf8c81b631bd0cc73caaa31b1a17cf4333b3",
+  "outputs_dev/R3-05_clips_final.parquet": "60897b8af4546914a30f2d0f7a74a1671744dee5ae2c0cd8c75011eef88a6e14",
+  "outputs_dev/R3-05_daily_equity.parquet": "02ffef0f21b194277fcdb972a6045db753a309b7d752e1716654c75813527904",
+  "outputs_dev/R3-05_events.parquet": "5743289b4504a445fc3b9c37fd4401f9356ab3b8703f6a7e23ba3b9e68ca884e",
+  "outputs_dev/R3-05_fills.parquet": "83f5d6334e36ed0ba5d9eb505795d8dcbd8e6d48a03cf5b597ad79a1b32a72a4",
+  "outputs_dev/R3-05_intents.parquet": "14580508bab416641743ba093b8f047bc3d193c450b0154af2fab759cdb0e302",
+  "outputs_dev/R3-05_stats.json": "d0d2f773926fafe0ccfa33c73eff01575b1fd192f7732ced3be4b4007a593537",
+  "outputs_dev/R3-06_clips_final.parquet": "af1fb490c49790d898ccc1674aa16d79cc22e6ec9d1f3b7426445098adc919e1",
+  "outputs_dev/R3-06_daily_equity.parquet": "123e4cb385368abc8bc24a9c96b61ea170d12a7010c52955f66a2dcb9f177738",
+  "outputs_dev/R3-06_events.parquet": "6be782d8ac781c6adf78f111779fa70f95052e00157d184d1a14a8421b062255",
+  "outputs_dev/R3-06_fills.parquet": "2f509f6894d54787df4a77b1508bcc9fab9bac1879e2b384140b1701228d4f00",
+  "outputs_dev/R3-06_intents.parquet": "c1e874bddb88d23804fb5af9b847c6daa2e0d440c878ab9cd71d7909ccfe3e4d",
+  "outputs_dev/R3-06_stats.json": "2a254aba8b29df14b2f1aa77ecf7bd0eda7781f295841ce715b6138db8bd5b50",
+  "outputs_dev/R3-A0_clips_final.parquet": "6f72604294cff8580710b99a2c82626897efbcd2f8a97a8984ec070c36a0f130",
+  "outputs_dev/R3-A0_daily_equity.parquet": "a8b27fcfbcc0c6982218371b134f737599ed4935f6d01a75f21822390636c87b",
+  "outputs_dev/R3-A0_events.parquet": "eba3a3c5ffe92c4e6f3827f44bd0dc0fd64331a517c6a1f2a21723859ec47b1d",
+  "outputs_dev/R3-A0_fills.parquet": "c28dbf74c31fdfcf3318b77ecc833ff9e85c53f13e0604f840266d7aadbbc41c",
+  "outputs_dev/R3-A0_intents.parquet": "12c301eb345cab69ef932804ff3814452396a8f4c58ce3cd5f2d67a45687f4f8",
+  "outputs_dev/R3-A0_stats.json": "71957cfd4056be9caed7eb0b4aa342b505017d874f7e56c5ca7fecfb5eb20595",
+  "outputs_dev/report.md": "9919fa4dc054cb15fb78910faf6864ded703748a2cdeaa312cdb5eac9a14ad59",
+  "outputs_dev/rotation_monthly_log.json": "3d130e3ffec29e91e6944455d9ab2f3300d23d56eb293163906f6c49031e4dfc",
+  "outputs_dev/runner_dev.log": "b0387844f89b74dc74b2f67f8c70a2b90260beaf9d2c72286d2393e7def21552",
+  "report.md": "8adc96968fa4d7315d237e42a1f0186c76eb4b0078eff591498ec192d232f562",
+  "scripts/adapt_v3_to_val.py": "f053a5e71c807b522ea0bcc317a1c938da7ae988ef3874051080d6befad702b4",
+  "scripts/runner_hybrid_v3.py": "873251e138bf0725b75f760ea8147fc3cde0248d5d98c4db1ffdb88e1b54148d",
+  "scripts/runner_hybrid_val.py": "26409c6bc18c350bd9547615d3b9bd3ecbdb63d3eda47898cb1458c4d462afaa"
+ }
+}

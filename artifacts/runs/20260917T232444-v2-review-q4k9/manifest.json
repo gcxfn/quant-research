@@ -1,0 +1,40 @@
+{
+ "run_id": "20260917T232444-v2-review-q4k9",
+ "status": "completed",
+ "started_at": "2026-09-17T23:24:44",
+ "finished_at": "2026-09-17T23:59:00",
+ "task": "Independent second-signature numeric review of rqalpha bundle v2 delivery (verify-only; no bundle/source modification, no engine run)",
+ "command": "D:/量化/.venv/Scripts/python.exe -X utf8 <tmp>/check{1..9b}_*.py (one script per check, seed 20260917)",
+ "env": {"python": "3.11.15", "cwd": "D:\\量化"},
+ "inputs": [
+  {"role": "bundle_under_review", "path": "data/processed/rqalpha-bundle-v2-20260917/"},
+  {"role": "delivery_run_under_review", "path": "artifacts/runs/20260917T231506-rqalpha-bundle-v2-3c3ffecd/"},
+  {"role": "stock_bars_source", "path": "data/processed/baostock-daily-20260917/daily_2015_2024.parquet"},
+  {"role": "etf_bars_source", "path": "data/raw/tushare/fund_daily/20260917-r1/"},
+  {"role": "etf_adj_source", "path": "data/raw/tushare/fund_adj/20260917-r1/"},
+  {"role": "limit_source", "path": "data/raw/tushare/stk_limit/20260917-r1/"},
+  {"role": "dividend_sources", "path": "data/raw/tushare/dividend/{20260913-r2,20260909-r3}/"},
+  {"role": "instruments_sources", "path": "data/raw/tushare/{stock_basic/20260909-r3,fund_basic/20260909-r1}/"},
+  {"role": "benchmark_source", "path": "data/raw/bigquant/intraday-t0-20260914/000300.SH_2021-08-05_2024-12-31_bar1d.csv"}
+ ],
+ "outputs": ["findings.md", "tmp/check1_scale.json", "tmp/check2_freeze.json", "tmp/check3_etf_fidelity.json", "tmp/check4_limits.json", "tmp/check5_ex_cum_factor.json", "tmp/check6_dividends.json", "tmp/check7_stock_fidelity.json", "tmp/check8_instruments.json", "tmp/check9_placeholders.json", "tmp/check9b_placeholders.json"],
+ "results": {
+  "1_scale_calendar": "PASS",
+  "2_freeze_boundary": "PASS",
+  "3_etf_fidelity_and_units": "PASS",
+  "4_stock_limit_prices": "PASS",
+  "5_ex_cum_factor_mapping": "PASS",
+  "6_dividends": "PASS (1 minor semantics note)",
+  "7_stock_fidelity": "PASS",
+  "8_instruments": "PASS",
+  "9_placeholders": "PASS (1 minor disclosure gap)",
+  "10_delivery_assertions_vs_review": "PASS"
+ },
+ "inconsistencies": [
+  "minor: bundle manifest placeholders omit indexes.h5 facts (000001.XSHG all-NaN probe rows; 000300.XSHG coverage only 2021-08-05..2024-12-31)",
+  "minor: dividend_cash_before_tax label vs tushare cash_div semantics on 2095 legacy tax-era rows (amounts faithful to chosen source field)",
+  "note: task-text expectation '3300+ stocks' vs actual 4745 (internally consistent with manifest and pool derivation)",
+  "note: A13 implied-dividend base-price choice and VWAP epsilon counting differences - immaterial"
+ ],
+ "error": null
+}

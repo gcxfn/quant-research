@@ -1,0 +1,666 @@
+{
+  "generated": "2026-09-19",
+  "run_id": "20260919T041100-etf-standard-0a6b",
+  "purpose": "mixed-family (stock signal + ETF risk leg) auxiliary-data inventory; inventory only, no new data pulled",
+  "processed_base": "data/processed/etf-daily-20260919",
+  "etf_limit_prices": {
+    "question": "does stk_limit 20260917-r1 contain fund codes (51/56/58 SH, 15/16 SZ)?",
+    "source": "data/raw/tushare/stk_limit/20260917-r1 (2431 daily chunks, 5 header-only)",
+    "total_rows_in_batch": 9705448,
+    "stock_code_prefixes_present": [
+      "000/001/002/003 SZ main",
+      "300/301 SZ ChiNext",
+      "600-605 SH main",
+      "688/689 SH STAR",
+      "43/83/87/92 BSE",
+      "20 (200xxx SZ B-share)"
+    ],
+    "fund_code_rows": 0,
+    "fund_symbols_covered": 0,
+    "fund_symbol_day_pairs": 0,
+    "verdict": "NO - the batch contains zero fund-code rows; ETF limit prices are NOT available from any on-disk source",
+    "consequence": "rqalpha-bundle-v2-1 already carries this gap: generator docstring states 'tushare stk_limit contains no ETF rows at all -> all ETF limits stay NaN' and rqalpha treats NaN limits as 'no price limit that day'. Mixed-family backtests therefore cannot gate ETF fills with true exchange limit prices; the p2r6/p2r7 registered workaround is a 9.5% band proxy on preclose (configs/experiments/p2r6-etf-rotation.json fill semantics) plus NaN-limit disclosure",
+    "gap": "ETF 涨跌停价缺失；如需真实涨跌停需新增独立拉取批次（本轮不拉新数）"
+  },
+  "etf_corporate_actions": {
+    "question": "do rqalpha-bundle-v2-1 split_factor/dividends h5 contain ETFs, and how does fund_adj relate?",
+    "bundle": "data/processed/rqalpha-bundle-v2-1-20260918 (bar window 2015-01-01..2024-12-31)",
+    "split_factor_h5": {
+      "etf_datasets": 76,
+      "etf_rows": 90,
+      "note": "bundle manifest 'etf_conversion_split_rows': 90 - ETF split rows are fund_adj one-day factor ratios >=1.1 or <=0.9 (e.g. 10:1 share consolidations); 0.9-1.1 jumps treated as dividend-class, no split row"
+    },
+    "dividends_h5": {
+      "etf_datasets": 0,
+      "etf_rows": 0,
+      "note": "ETF cash dividends are ABSENT (stock tushare dividend table only); bundle manifest: 'ETF cash stays unpaid per the dividends gap disclosure'"
+    },
+    "ex_cum_factor_h5": {
+      "etf_datasets": 1169,
+      "etf_rows": 2746,
+      "note": "ETF ex-cumulative factors derived from fund_adj ratios, used by rqalpha adjust_bars"
+    },
+    "funds_h5": {
+      "etf_datasets": 1169,
+      "note": "all 1169 pool ETFs have day bars with NaN limits"
+    },
+    "fund_adj_semantics": {
+      "what_factor_can_replace": [
+        "multi-day/holding-period return adjustment across distributions and share consolidations (cumulative factor series)",
+        "split detection for rqalpha (factor-ratio heuristic already encoded in bundle v2-1)"
+      ],
+      "what_factor_cannot_replace": [
+        "dividend cash ledger: fund_adj has no per-event cash amount, no ex/pay/book-close dates -> portfolio cash accounting for ETF distributions is NOT supported by any on-disk source",
+        "preclose/ex-date reference prices: exchange-adjusted preclose exists in fund_daily but 86 of 495 preclose mismatches are not same-day-factor-aligned (see preclose_mismatch_detail.csv)",
+        "per-event before-tax dividend for tax-aware accounting (A-share fund dividends: individual investors currently exempt, but amount still needed for cash conservation)"
+      ],
+      "known_factor_gaps": {
+        "symbols_without_any_factor": [
+          "sz.159842"
+        ],
+        "symbols_with_partial_factor": [
+          {
+            "symbol": "sh.502056",
+            "daily_rows": 2252,
+            "adj_rows_on_daily_dates": 1052,
+            "daily_rows_missing_factor": 1200
+          }
+        ],
+        "daily_rows_missing_factor_total": 2120
+      }
+    },
+    "gap": "ETF 现金分红台账缺失（无金额/除息/派息日）；159842.SZ 无复权因子、sh.502056 前 1200 个交易日无因子"
+  },
+  "etf_fees": {
+    "question": "ETF commission 0.01% min 5 CNY, no stamp duty, tick 0.001 - where is it registered?",
+    "registered": {
+      "configs/experiments/p2r6-etf-rotation.json": {
+        "commission_pct": 0.0001,
+        "commission_min": 5.0,
+        "stamp_sell_pct": 0.0,
+        "tick_registered_only": 0.001,
+        "line_span": [
+          284,
+          291
+        ],
+        "excerpt_commission_pct_line": "\"commission_pct\": 0.0001,"
+      },
+      "configs/experiments/p2r7-etf-exposure.json": {
+        "commission_pct": 0.0001,
+        "commission_min": 5.0,
+        "stamp_sell_pct": 0.0,
+        "tick_registered_only": 0.001,
+        "line_span": [
+          213,
+          220
+        ],
+        "excerpt_commission_pct_line": "\"159338.SZ\","
+      }
+    },
+    "interpretation": {
+      "commission": "万1 (0.0001) per side, minimum 5 CNY per trade = user account actuals (2026-09-17), per config disclosure",
+      "stamp_duty": "stamp_sell_pct=0.0: ETF trades are exempt from stamp duty (institutional fact per config disclosure)",
+      "tick": "tick_registered_only=0.001 CNY price increment, registered for order-price rounding; 'registered only' = research fills assume zero slippage"
+    },
+    "gap": "无缺口：口径已在冻结实验配置中登记并逐字继承（p2r7 继承 p2r6）"
+  },
+  "risk_leg_candidates": {
+    "question": "which bond/commodity ETFs are continuously tradable across 2015-2024 for preregistered risk legs?",
+    "definition": "full-window = first trade day <= 2015-01-06 AND last trade day = 2024-12-31 AND zero missing exchange-open days within [first,last]; missing days counted against SSE (sh.) / SZSE (sz.) calendars",
+    "candidates": [
+      {
+        "asset_class": "bond",
+        "traded_in_window_count": 29,
+        "full_window_continuous_count": 1,
+        "full_window_continuous": [
+          {
+            "symbol": "sh.511010",
+            "first_trade_date": "2015-01-05",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 2431,
+            "calendar_days_in_span": 2431,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": true,
+            "name": "国泰上证5年期国债ETF"
+          }
+        ],
+        "not_full_window": [
+          {
+            "symbol": "sh.511380",
+            "first_trade_date": "2020-04-07",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 1151,
+            "calendar_days_in_span": 1151,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "博时中证可转债及可交换债券ETF"
+          },
+          {
+            "symbol": "sh.511180",
+            "first_trade_date": "2020-08-26",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 1055,
+            "calendar_days_in_span": 1055,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "海富通上证投资级可转债及可交换债券ETF"
+          },
+          {
+            "symbol": "sh.511360",
+            "first_trade_date": "2020-09-25",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 1033,
+            "calendar_days_in_span": 1033,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "海富通中证短融ETF"
+          },
+          {
+            "symbol": "sz.159649",
+            "first_trade_date": "2022-10-24",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 534,
+            "calendar_days_in_span": 534,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "华安中债1-5年国开行债券ETF"
+          },
+          {
+            "symbol": "sh.511520",
+            "first_trade_date": "2022-10-25",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 533,
+            "calendar_days_in_span": 533,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "富国中债7-10年政策性金融债ETF"
+          },
+          {
+            "symbol": "sz.159650",
+            "first_trade_date": "2022-10-28",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 530,
+            "calendar_days_in_span": 530,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "博时中债0-3年国开行债券ETF"
+          },
+          {
+            "symbol": "sz.159651",
+            "first_trade_date": "2022-11-16",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 517,
+            "calendar_days_in_span": 517,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "平安中债-0-3年国开行债券ETF"
+          },
+          {
+            "symbol": "sh.511090",
+            "first_trade_date": "2023-06-13",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 378,
+            "calendar_days_in_span": 378,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "鹏扬中债-30年期国债ETF"
+          },
+          {
+            "symbol": "sh.511100",
+            "first_trade_date": "2023-12-25",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 247,
+            "calendar_days_in_span": 247,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "华夏上证基准做市国债ETF"
+          },
+          {
+            "symbol": "sh.511130",
+            "first_trade_date": "2024-03-28",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 186,
+            "calendar_days_in_span": 186,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "博时上证30年期国债ETF"
+          },
+          {
+            "symbol": "sh.511260",
+            "first_trade_date": "2017-08-24",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 1785,
+            "calendar_days_in_span": 1786,
+            "missing_days": 1,
+            "max_consecutive_missing_days": 1,
+            "full_window_2015_2024": false,
+            "name": "国泰上证10年期国债ETF"
+          },
+          {
+            "symbol": "sh.511270",
+            "first_trade_date": "2018-11-22",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 1479,
+            "calendar_days_in_span": 1483,
+            "missing_days": 4,
+            "max_consecutive_missing_days": 1,
+            "full_window_2015_2024": false,
+            "name": "海富通上证10年期地方政府债ETF"
+          },
+          {
+            "symbol": "sz.159972",
+            "first_trade_date": "2019-11-08",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 1245,
+            "calendar_days_in_span": 1250,
+            "missing_days": 5,
+            "max_consecutive_missing_days": 1,
+            "full_window_2015_2024": false,
+            "name": "鹏华中证5年期地方政府债ETF"
+          },
+          {
+            "symbol": "sh.511220",
+            "first_trade_date": "2015-01-05",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 2425,
+            "calendar_days_in_span": 2431,
+            "missing_days": 6,
+            "max_consecutive_missing_days": 2,
+            "full_window_2015_2024": false,
+            "name": "海富通上证城投债ETF"
+          },
+          {
+            "symbol": "sh.511060",
+            "first_trade_date": "2019-12-12",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 1220,
+            "calendar_days_in_span": 1226,
+            "missing_days": 6,
+            "max_consecutive_missing_days": 1,
+            "full_window_2015_2024": false,
+            "name": "海富通上证5年期地方政府债ETF"
+          },
+          {
+            "symbol": "sz.159816",
+            "first_trade_date": "2020-09-04",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 1042,
+            "calendar_days_in_span": 1048,
+            "missing_days": 6,
+            "max_consecutive_missing_days": 2,
+            "full_window_2015_2024": false,
+            "name": "鹏华中证0-4年期地方政府债ETF"
+          },
+          {
+            "symbol": "sh.511580",
+            "first_trade_date": "2022-12-14",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 491,
+            "calendar_days_in_span": 497,
+            "missing_days": 6,
+            "max_consecutive_missing_days": 6,
+            "full_window_2015_2024": false,
+            "name": "招商中证国债及政策性金融债0-3年ETF"
+          },
+          {
+            "symbol": "sh.511000",
+            "first_trade_date": "2020-10-29",
+            "last_trade_date": "2021-03-12",
+            "trade_days": 83,
+            "calendar_days_in_span": 91,
+            "missing_days": 8,
+            "max_consecutive_missing_days": 2,
+            "full_window_2015_2024": false,
+            "name": "招商中债-0-3年长三角地方政府债ETF"
+          },
+          {
+            "symbol": "sh.511050",
+            "first_trade_date": "2020-07-30",
+            "last_trade_date": "2021-06-08",
+            "trade_days": 194,
+            "calendar_days_in_span": 208,
+            "missing_days": 14,
+            "max_consecutive_missing_days": 2,
+            "full_window_2015_2024": false,
+            "name": "兴业上证1-5年期地方政府债ETF"
+          },
+          {
+            "symbol": "sz.159988",
+            "first_trade_date": "2020-05-29",
+            "last_trade_date": "2022-06-21",
+            "trade_days": 482,
+            "calendar_days_in_span": 500,
+            "missing_days": 18,
+            "max_consecutive_missing_days": 2,
+            "full_window_2015_2024": false,
+            "name": "平安中债-0-5年广东省地方政府债ETF"
+          },
+          {
+            "symbol": "sh.511030",
+            "first_trade_date": "2019-03-22",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 1359,
+            "calendar_days_in_span": 1404,
+            "missing_days": 45,
+            "max_consecutive_missing_days": 3,
+            "full_window_2015_2024": false,
+            "name": "平安中债-中高等级公司债利差因子ETF"
+          },
+          {
+            "symbol": "sh.511020",
+            "first_trade_date": "2019-02-22",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 1328,
+            "calendar_days_in_span": 1424,
+            "missing_days": 96,
+            "max_consecutive_missing_days": 4,
+            "full_window_2015_2024": false,
+            "name": "平安中证5-10年期国债活跃券ETF"
+          },
+          {
+            "symbol": "sh.511210",
+            "first_trade_date": "2015-01-05",
+            "last_trade_date": "2017-10-18",
+            "trade_days": 522,
+            "calendar_days_in_span": 680,
+            "missing_days": 158,
+            "max_consecutive_missing_days": 11,
+            "full_window_2015_2024": false,
+            "name": "博时上证企债30ETF"
+          },
+          {
+            "symbol": "sh.511230",
+            "first_trade_date": "2017-04-21",
+            "last_trade_date": "2019-02-18",
+            "trade_days": 213,
+            "calendar_days_in_span": 445,
+            "missing_days": 232,
+            "max_consecutive_missing_days": 19,
+            "full_window_2015_2024": false,
+            "name": "海富通上证周期产业债ETF"
+          },
+          {
+            "symbol": "sh.511290",
+            "first_trade_date": "2018-04-27",
+            "last_trade_date": "2020-07-13",
+            "trade_days": 276,
+            "calendar_days_in_span": 537,
+            "missing_days": 261,
+            "max_consecutive_missing_days": 20,
+            "full_window_2015_2024": false,
+            "name": "广发上证10年期国债ETF"
+          },
+          {
+            "symbol": "sh.511280",
+            "first_trade_date": "2018-05-31",
+            "last_trade_date": "2021-08-02",
+            "trade_days": 429,
+            "calendar_days_in_span": 773,
+            "missing_days": 344,
+            "max_consecutive_missing_days": 16,
+            "full_window_2015_2024": false,
+            "name": "华夏上证3-5年期中高评级可质押信用债ETF"
+          },
+          {
+            "symbol": "sh.511310",
+            "first_trade_date": "2018-04-26",
+            "last_trade_date": "2022-12-29",
+            "trade_days": 706,
+            "calendar_days_in_span": 1139,
+            "missing_days": 433,
+            "max_consecutive_missing_days": 17,
+            "full_window_2015_2024": false,
+            "name": "富国中证10年期国债ETF"
+          },
+          {
+            "symbol": "sz.159926",
+            "first_trade_date": "2015-01-05",
+            "last_trade_date": "2022-06-13",
+            "trade_days": 1360,
+            "calendar_days_in_span": 1809,
+            "missing_days": 449,
+            "max_consecutive_missing_days": 11,
+            "full_window_2015_2024": false,
+            "name": "嘉实中证金边中期国债ETF"
+          }
+        ]
+      },
+      {
+        "asset_class": "commodity",
+        "traded_in_window_count": 19,
+        "full_window_continuous_count": 4,
+        "full_window_continuous": [
+          {
+            "symbol": "sh.518800",
+            "first_trade_date": "2015-01-05",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 2431,
+            "calendar_days_in_span": 2431,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": true,
+            "name": "国泰黄金ETF"
+          },
+          {
+            "symbol": "sh.518880",
+            "first_trade_date": "2015-01-05",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 2431,
+            "calendar_days_in_span": 2431,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": true,
+            "name": "华安易富黄金ETF"
+          },
+          {
+            "symbol": "sz.159934",
+            "first_trade_date": "2015-01-05",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 2431,
+            "calendar_days_in_span": 2431,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": true,
+            "name": "易方达黄金ETF"
+          },
+          {
+            "symbol": "sz.159937",
+            "first_trade_date": "2015-01-05",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 2431,
+            "calendar_days_in_span": 2431,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": true,
+            "name": "博时黄金ETF"
+          }
+        ],
+        "not_full_window": [
+          {
+            "symbol": "sz.159985",
+            "first_trade_date": "2019-12-05",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 1231,
+            "calendar_days_in_span": 1231,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "华夏饲料豆粕期货ETF"
+          },
+          {
+            "symbol": "sz.159980",
+            "first_trade_date": "2019-12-24",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 1218,
+            "calendar_days_in_span": 1218,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "大成有色金属期货ETF"
+          },
+          {
+            "symbol": "sz.159981",
+            "first_trade_date": "2020-01-17",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 1201,
+            "calendar_days_in_span": 1201,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "建信易盛郑商所能源化工期货ETF"
+          },
+          {
+            "symbol": "sh.518660",
+            "first_trade_date": "2020-05-29",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 1116,
+            "calendar_days_in_span": 1116,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "工银瑞信黄金ETF"
+          },
+          {
+            "symbol": "sz.159812",
+            "first_trade_date": "2020-05-29",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 1116,
+            "calendar_days_in_span": 1116,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "前海开源黄金ETF"
+          },
+          {
+            "symbol": "sh.518850",
+            "first_trade_date": "2020-06-05",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 1111,
+            "calendar_days_in_span": 1111,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "华夏黄金ETF"
+          },
+          {
+            "symbol": "sh.518680",
+            "first_trade_date": "2020-07-28",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 1076,
+            "calendar_days_in_span": 1076,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "富国上海金ETF"
+          },
+          {
+            "symbol": "sh.518600",
+            "first_trade_date": "2020-08-05",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 1070,
+            "calendar_days_in_span": 1070,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "广发上海金ETF"
+          },
+          {
+            "symbol": "sh.518890",
+            "first_trade_date": "2020-09-28",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 1032,
+            "calendar_days_in_span": 1032,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "中银上海金ETF"
+          },
+          {
+            "symbol": "sz.159830",
+            "first_trade_date": "2021-07-19",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 839,
+            "calendar_days_in_span": 839,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "天弘上海金ETF"
+          },
+          {
+            "symbol": "sz.159834",
+            "first_trade_date": "2022-03-16",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 680,
+            "calendar_days_in_span": 680,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "南方上海金ETF"
+          },
+          {
+            "symbol": "sz.159831",
+            "first_trade_date": "2022-04-07",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 666,
+            "calendar_days_in_span": 666,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "嘉实上海金ETF"
+          },
+          {
+            "symbol": "sz.159833",
+            "first_trade_date": "2022-03-29",
+            "last_trade_date": "2023-05-29",
+            "trade_days": 283,
+            "calendar_days_in_span": 283,
+            "missing_days": 0,
+            "max_consecutive_missing_days": 0,
+            "full_window_2015_2024": false,
+            "name": "大成上海金ETF"
+          },
+          {
+            "symbol": "sh.518860",
+            "first_trade_date": "2020-09-07",
+            "last_trade_date": "2024-12-31",
+            "trade_days": 1041,
+            "calendar_days_in_span": 1047,
+            "missing_days": 6,
+            "max_consecutive_missing_days": 1,
+            "full_window_2015_2024": false,
+            "name": "建信上海金ETF"
+          },
+          {
+            "symbol": "sz.159832",
+            "first_trade_date": "2022-03-18",
+            "last_trade_date": "2023-03-22",
+            "trade_days": 234,
+            "calendar_days_in_span": 246,
+            "missing_days": 12,
+            "max_consecutive_missing_days": 2,
+            "full_window_2015_2024": false,
+            "name": "平安上海金ETF"
+          }
+        ]
+      }
+    ],
+    "note": "commodity count includes 4 上海金 spot-gold ETFs and 3 futures ETFs (豆粕/能源化工/有色) which are NOT full-window (listed 2019+); only gold ETFs provide full-window commodity exposure",
+    "gap": "无重大缺口：bond/commodity 全窗连续代表标的充足（详见 candidates），预登记可直接引用"
+  },
+  "open_gaps_summary": [
+    "ETF 真实涨跌停价：盘上无源（stk_limit 无基金行）；仅能代理（9.5% 带宽）或新拉数据",
+    "ETF 现金分红台账：盘上无源（dividends.h5 无 ETF 行；fund_adj 只有价格因子）；现金守恒验证对 ETF 分红不可完整执行",
+    "复权因子缺口：sz.159842 全缺、sh.502056 缺 2015-07-31 起前 1200 个交易日"
+  ]
+}

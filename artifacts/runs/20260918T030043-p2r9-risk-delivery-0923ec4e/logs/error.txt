@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2r9_risk_delivery.py", line 813, in main
+    gates[advanced]['validation'] = evaluate_val_gate(
+                                    ^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\etf_rotation.py", line 1508, in evaluate_val_gate
+    net = m['val']['net_cagr']
+          ~^^^^^^^
+KeyError: 'val'

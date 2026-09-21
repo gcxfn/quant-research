@@ -1,0 +1,40 @@
+{
+ "role": "disclosure only; never changes the primary adjudication",
+ "windows": {
+  "w20": {
+   "arm": "F3R4-A-w20",
+   "net_cagr": 0.046791160646654895,
+   "max_drawdown": -0.17848532843799414,
+   "delta_vs_baseline_pp": -0.19819485407572834,
+   "passes_cagr_line": false,
+   "passes_mdd_line": true,
+   "failed_gates": [
+    "3_advantage_years_ge_5_of_6",
+    "8v3_final_delivery_ge_99pct"
+   ]
+  },
+  "w40": {
+   "arm": "F3R4-A-w40",
+   "net_cagr": 0.047337109911717246,
+   "max_drawdown": -0.17848532843799414,
+   "delta_vs_baseline_pp": -0.14359992756949325,
+   "passes_cagr_line": false,
+   "passes_mdd_line": true,
+   "failed_gates": [
+    "3_advantage_years_ge_5_of_6",
+    "8v3_final_delivery_ge_99pct"
+   ]
+  }
+ },
+ "b68": {
+  "arm": "F3R4-A-b68",
+  "b": 0.10152821356398378,
+  "net_cagr": 0.05335632262215695,
+  "max_drawdown": -0.17848532843799414,
+  "delta_vs_baseline_pp": 0.45832134347447706,
+  "passes_cagr_line": true,
+  "delta_vs_frozen_b_arm_pp": 0.0,
+  "same_failed_gates_as_frozen": true,
+  "note": "the prereg writes 'median over 68 signal months' for b; the composite parquet holds 71 signal months.  The frozen arm parameter is the 71-month median; this row is the 68-month variant (2015-04-30..2020-11-30, the attribution run's forward-return coverage) run for disclosure only."
+ }
+}

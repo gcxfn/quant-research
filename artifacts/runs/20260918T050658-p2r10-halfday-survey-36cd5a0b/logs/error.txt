@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2r10_halfday_survey.py", line 320, in main
+    render_report(run.metrics, config, args.smoke), encoding='utf-8')
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\cli\p2r10_halfday_survey.py", line 360, in render_report
+    f"- trial count: {json.dumps(metrics['trial_count'])}",
+                                 ~~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'trial_count'

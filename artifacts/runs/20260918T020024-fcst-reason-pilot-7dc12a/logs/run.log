@@ -1,0 +1,76 @@
+=== 2026-09-18T02:03:21+08:00 sampling start ===
+{
+ "n_files": 97,
+ "total_rows": 50406,
+ "pool_rows": 38567,
+ "excluded_2025plus": 10015,
+ "excluded_empty_reason": 1512,
+ "n_strata": 63,
+ "sampled": 600,
+ "sample_reason_len_mean": 215.6,
+ "pool_reason_len_mean": 210.0
+}
+exit=0
+=== 2026-09-18T02:03:22+08:00 sampling done ===
+=== 2026-09-18T02:05:57+08:00 schema.md written; determinism check passed (render sha 32e9b34e..., rows_hash 36ae60cea1a4e1b5) ===
+=== 2026-09-18T02:05:57+08:00 batch_01 structuring start ===
+batch 01: 200 rows checked -> 1 FAILURES
+FAIL: ordinal 093: key_quote NOT verbatim substring of change_reason; quote='公司各业务板块订单需求减少，部分订单延后'; original='1,报告期,受新型冠状病毒感染的肺炎疫情影响,全国各地实施严格的疫情防控措施,公司及上下游企业复工时间普遍延迟,物流及人员流动也受限,公司各业务板块订单需求减少'...
+total rows checked: 200; total failures: 1
+exit=1
+batch 01: 200 rows checked -> OK
+total rows checked: 200; total failures: 0
+exit=0
+=== 2026-09-18T02:22:54+08:00 batch_01 done (200 rows, quote check passed) ===
+=== 2026-09-18T02:23:15+08:00 batch_02 structuring start ===
+batch 02: 200 rows checked -> 1 FAILURES
+FAIL: ordinal 334: key ('600516.SZ', '20231231', '20240131', '0') != manifest ('600516.SH', '20231231', '20240131', '0')
+total rows checked: 200; total failures: 1
+exit=1
+batch 02: 200 rows checked -> OK
+total rows checked: 200; total failures: 0
+exit=0
+=== 2026-09-18T02:33:04+08:00 batch_02 done (200 rows, quote check passed) ===
+=== 2026-09-18T02:33:24+08:00 batch_03 structuring start ===
+batch 03: 200 rows checked -> 2 FAILURES
+FAIL: ordinal 567: key ('600090.SZ', '20201231', '20210429', '1') != manifest ('600090.SH', '20201231', '20210429', '1')
+FAIL: ordinal 585: key ('600622.SZ', '20230630', '20230715', '0') != manifest ('600622.SH', '20230630', '20230715', '0')
+total rows checked: 200; total failures: 2
+exit=1
+=== 2026-09-18T02:44:05+08:00 batch_03 done (200 rows, quote check passed after 2 key fixes) ===
+=== 2026-09-18T02:44:05+08:00 full quality check start ===
+{
+ "n_rows_checked": 600,
+ "all_checks_passed": true,
+ "n_failures": 0,
+ "quote_verbatim_pass_rate": 1.0,
+ "other_rate_primary": 0.0333,
+ "supports_direction_distribution": {
+  "-1": 23,
+  "0": 17,
+  "1": 560
+ },
+ "confidence_distribution": {
+  "high": 595,
+  "low": 5
+ },
+ "batch_wall_seconds": {
+  "1": 1017.0,
+  "2": 589.0,
+  "3": 641.0
+ },
+ "token_estimate_per_row": {
+  "input_chars": 319.1,
+  "output_chars": 243.7,
+  "input_tokens_est": [
+   191,
+   351
+  ],
+  "output_tokens_est": [
+   146,
+   268
+  ]
+ }
+}
+exit=0
+=== 2026-09-18T02:48:12+08:00 RUN COMPLETED: 600/600 rows, all checks passed, quality_report.json + schema.md + manifest.json + research doc written ===

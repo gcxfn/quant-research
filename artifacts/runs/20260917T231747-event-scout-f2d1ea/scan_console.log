@@ -1,0 +1,49 @@
+baostock pool codes: 5552
+  [forecast] file 1/97 rows=43 elapsed=0s
+[forecast] done rows=50406 elapsed=1.7s
+  [express] file 1/31 rows=2052 elapsed=0s
+[express] done rows=8488 elapsed=0.2s
+  [repurchase] file 1/129 rows=55 elapsed=0s
+[repurchase] done rows=61718 elapsed=1.7s
+  [share_float] file 1/129 rows=1040 elapsed=0s
+[share_float] done rows=5661143 elapsed=30.2s
+  [stk_holdertrade] file 1/129 rows=1334 elapsed=0s
+[stk_holdertrade] done rows=149108 elapsed=1.8s
+  [top_list] file 1/1866 rows=67 elapsed=0s
+  [top_list] file 201/1866 rows=14903 elapsed=1s
+  [top_list] file 401/1866 rows=31951 elapsed=3s
+  [top_list] file 601/1866 rows=46826 elapsed=5s
+  [top_list] file 801/1866 rows=61650 elapsed=6s
+  [top_list] file 1001/1866 rows=75288 elapsed=9s
+  [top_list] file 1201/1866 rows=88324 elapsed=15s
+  [top_list] file 1401/1866 rows=104541 elapsed=21s
+  [top_list] file 1601/1866 rows=121142 elapsed=28s
+  [top_list] file 1801/1866 rows=136427 elapsed=34s
+[top_list] done rows=141985 elapsed=37.7s
+  [top_inst] file 1/1866 rows=1150 elapsed=0s
+  [top_inst] file 201/1866 rows=254593 elapsed=12s
+  [top_inst] file 401/1866 rows=515118 elapsed=15s
+  [top_inst] file 601/1866 rows=729777 elapsed=17s
+  [top_inst] file 801/1866 rows=940925 elapsed=19s
+  [top_inst] file 1001/1866 rows=1095855 elapsed=21s
+  [top_inst] file 1201/1866 rows=1223468 elapsed=23s
+  [top_inst] file 1401/1866 rows=1384240 elapsed=25s
+  [top_inst] file 1601/1866 rows=1563962 elapsed=26s
+  [top_inst] file 1801/1866 rows=1726398 elapsed=28s
+[top_inst] done rows=1785667 elapsed=29.5s
+  [margin_detail] file 1/1866 rows=994 elapsed=0s
+  [margin_detail] file 201/1866 rows=234936 elapsed=3s
+  [margin_detail] file 401/1866 rows=589760 elapsed=13s
+  [margin_detail] file 601/1866 rows=993077 elapsed=24s
+  [margin_detail] file 801/1866 rows=1463683 elapsed=35s
+  [margin_detail] file 1001/1866 rows=2036101 elapsed=50s
+  [margin_detail] file 1201/1866 rows=2750826 elapsed=69s
+  [margin_detail] file 1401/1866 rows=3526146 elapsed=88s
+  [margin_detail] file 1601/1866 rows=4337109 elapsed=108s
+  [margin_detail] file 1801/1866 rows=5192586 elapsed=128s
+[margin_detail] done rows=5474653 elapsed=140.0s
+  [disclosure_date] file 1/31 rows=3627 elapsed=0s
+[disclosure_date] done rows=148313 elapsed=3.6s
+  [index_member_all] file 1/4 rows=5902 elapsed=0s
+[index_member_all] done rows=6413 elapsed=0.2s
+saved -> D:\量化\artifacts\runs\20260917T231747-event-scout-f2d1ea\scan_results.json total=246.9s

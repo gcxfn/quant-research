@@ -1,0 +1,2409 @@
+{
+ "experiment_id": "exp-20260919-hybrid-family-v1",
+ "engine_sha256_16": "ceb7be6414280e4c",
+ "prereg_sha256_16": "266a1b850373a6f7",
+ "hyb_config_sha256_16": "6388465cc31a6957",
+ "hyb00_regression_anchor": {
+  "fills": true,
+  "events": true,
+  "daily": true,
+  "clips_final": true,
+  "net_cagr_matches_p3r2_metrics": true,
+  "note": "polars .equals() vs P3R2 C05 outputs; mismatch = abort (did not trigger)"
+ },
+ "runner_assertions": {
+  "i_explicit_bands_no_defaults": "PASS (etf_default_band_symbols empty on every meta config)",
+  "ii_preclose_no_nulls": "PASS (0 nulls, member-dev)",
+  "iii_panel_dates_eq_sse_cal": "PASS (1462 == 1462)"
+ },
+ "metrics": {
+  "HYB-00": {
+   "net_cagr": 0.03883228074264511,
+   "net_total_return": 0.2562288805499999,
+   "max_drawdown": -0.21196584331074653,
+   "b1m_net_cagr": 0.0059905923579064435,
+   "b1m_max_drawdown": -0.3982378364862026,
+   "b1m_net_return_by_year": {
+    "2015": 0.22735356961586017,
+    "2016": -0.036271319473570096,
+    "2017": -0.11258228102926204,
+    "2018": -0.1962740727688722,
+    "2019": 0.12375649932752708,
+    "2020": 0.09319791239431541
+   },
+   "b1m_source": "R16 metrics.json configs.C05 verbatim (T200-40/rate_only; family anchor)",
+   "b3prime_path": "T200-40",
+   "excess_vs_b1m": 0.032841688384738665,
+   "net_return_by_year": {
+    "2015": -0.012900510000000032,
+    "2016": -0.04567724475270496,
+    "2017": 0.11388764832548426,
+    "2018": -0.07705806902840606,
+    "2019": 0.1289514979805091,
+    "2020": 0.1490039376480432
+   },
+   "advantage_years_list": [
+    2017,
+    2018,
+    2019,
+    2020
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 166096.0,
+     "mean_equity": 205744.63248360652,
+     "one_side_turnover": 0.8072920201854322
+    },
+    "2016": {
+     "buy_notional": 278593.0,
+     "mean_equity": 189455.9873155737,
+     "one_side_turnover": 1.4704892885541392
+    },
+    "2017": {
+     "buy_notional": 314585.0,
+     "mean_equity": 198226.54185655722,
+     "one_side_turnover": 1.5869973670208266
+    },
+    "2018": {
+     "buy_notional": 128493.0,
+     "mean_equity": 203015.07349382708,
+     "one_side_turnover": 0.6329234464647128
+    },
+    "2019": {
+     "buy_notional": 175549.0,
+     "mean_equity": 206108.90508278683,
+     "one_side_turnover": 0.8517293317796629
+    },
+    "2020": {
+     "buy_notional": 286553.0,
+     "mean_equity": 225202.1616976954,
+     "one_side_turnover": 1.2724256190074237
+    }
+   },
+   "max_one_side_turnover": 1.5869973670208266,
+   "max_single_name_weight": 0.11115622475250649,
+   "goal_dev_net_cagr_ge_10pct": false,
+   "gate8_v2_k3": {
+    "armed": 7,
+    "executed": 6,
+    "delivery_rate": 0.8571428571428571,
+    "deferred_limitdown": 10,
+    "deferred_suspended": 0,
+    "deferred_t1locked": 0,
+    "caliber": "executed/armed from engine stats k3_fallback; suspended sessions freeze the streak (not counted); armed==0 -> vacuous pass"
+   },
+   "r16_execution_rate_comparison": {
+    "value": 0.5326164874551972,
+    "mapping": "filled + rule-blocked / (filled + rule-blocked + terminated); R16 original 95% caliber, NOT a gate here (structural, disclosed)"
+   }
+  },
+  "HYB-01": {
+   "net_cagr": 0.03883228074264511,
+   "net_total_return": 0.2562288805499999,
+   "max_drawdown": -0.21196584331074653,
+   "b1m_net_cagr": 0.0059905923579064435,
+   "b1m_max_drawdown": -0.3982378364862026,
+   "b1m_net_return_by_year": {
+    "2015": 0.22735356961586017,
+    "2016": -0.036271319473570096,
+    "2017": -0.11258228102926204,
+    "2018": -0.1962740727688722,
+    "2019": 0.12375649932752708,
+    "2020": 0.09319791239431541
+   },
+   "b1m_source": "R16 metrics.json configs.C05 verbatim (T200-40/rate_only; family anchor)",
+   "b3prime_path": "T200-40",
+   "excess_vs_b1m": 0.032841688384738665,
+   "net_return_by_year": {
+    "2015": -0.012900510000000032,
+    "2016": -0.04567724475270496,
+    "2017": 0.11388764832548426,
+    "2018": -0.07705806902840606,
+    "2019": 0.1289514979805091,
+    "2020": 0.1490039376480432
+   },
+   "advantage_years_list": [
+    2017,
+    2018,
+    2019,
+    2020
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 166096.0,
+     "mean_equity": 205744.6324836062,
+     "one_side_turnover": 0.8072920201854334
+    },
+    "2016": {
+     "buy_notional": 278593.0,
+     "mean_equity": 189455.9873155737,
+     "one_side_turnover": 1.4704892885541392
+    },
+    "2017": {
+     "buy_notional": 314585.0,
+     "mean_equity": 198226.5418565573,
+     "one_side_turnover": 1.586997367020826
+    },
+    "2018": {
+     "buy_notional": 128493.0,
+     "mean_equity": 203015.07349382696,
+     "one_side_turnover": 0.6329234464647132
+    },
+    "2019": {
+     "buy_notional": 175549.0,
+     "mean_equity": 206108.90508278683,
+     "one_side_turnover": 0.8517293317796629
+    },
+    "2020": {
+     "buy_notional": 286553.0,
+     "mean_equity": 225202.1616976954,
+     "one_side_turnover": 1.2724256190074237
+    }
+   },
+   "max_one_side_turnover": 1.586997367020826,
+   "max_single_name_weight": 0.11115622475250649,
+   "goal_dev_net_cagr_ge_10pct": false,
+   "gate8_v2_k3": {
+    "armed": 7,
+    "executed": 6,
+    "delivery_rate": 0.8571428571428571,
+    "deferred_limitdown": 10,
+    "deferred_suspended": 0,
+    "deferred_t1locked": 0,
+    "caliber": "executed/armed from engine stats k3_fallback; suspended sessions freeze the streak (not counted); armed==0 -> vacuous pass"
+   },
+   "r16_execution_rate_comparison": {
+    "value": 0.5068212824010914,
+    "mapping": "filled + rule-blocked / (filled + rule-blocked + terminated); R16 original 95% caliber, NOT a gate here (structural, disclosed)"
+   }
+  },
+  "HYB-02": {
+   "net_cagr": 0.03883228074264511,
+   "net_total_return": 0.2562288805499999,
+   "max_drawdown": -0.21196584331074653,
+   "b1m_net_cagr": 0.0059905923579064435,
+   "b1m_max_drawdown": -0.3982378364862026,
+   "b1m_net_return_by_year": {
+    "2015": 0.22735356961586017,
+    "2016": -0.036271319473570096,
+    "2017": -0.11258228102926204,
+    "2018": -0.1962740727688722,
+    "2019": 0.12375649932752708,
+    "2020": 0.09319791239431541
+   },
+   "b1m_source": "R16 metrics.json configs.C05 verbatim (T200-40/rate_only; family anchor)",
+   "b3prime_path": "T200-40",
+   "excess_vs_b1m": 0.032841688384738665,
+   "net_return_by_year": {
+    "2015": -0.012900510000000032,
+    "2016": -0.04567724475270496,
+    "2017": 0.11388764832548426,
+    "2018": -0.07705806902840606,
+    "2019": 0.1289514979805091,
+    "2020": 0.1490039376480432
+   },
+   "advantage_years_list": [
+    2017,
+    2018,
+    2019,
+    2020
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 166096.0,
+     "mean_equity": 205744.6324836064,
+     "one_side_turnover": 0.8072920201854327
+    },
+    "2016": {
+     "buy_notional": 278593.0,
+     "mean_equity": 189455.98731557382,
+     "one_side_turnover": 1.4704892885541383
+    },
+    "2017": {
+     "buy_notional": 314585.0,
+     "mean_equity": 198226.54185655736,
+     "one_side_turnover": 1.5869973670208255
+    },
+    "2018": {
+     "buy_notional": 128493.0,
+     "mean_equity": 203015.07349382708,
+     "one_side_turnover": 0.6329234464647128
+    },
+    "2019": {
+     "buy_notional": 175549.0,
+     "mean_equity": 206108.9050827868,
+     "one_side_turnover": 0.851729331779663
+    },
+    "2020": {
+     "buy_notional": 286553.0,
+     "mean_equity": 225202.1616976954,
+     "one_side_turnover": 1.2724256190074237
+    }
+   },
+   "max_one_side_turnover": 1.5869973670208255,
+   "max_single_name_weight": 0.11115622475250649,
+   "goal_dev_net_cagr_ge_10pct": false,
+   "gate8_v2_k3": {
+    "armed": 7,
+    "executed": 6,
+    "delivery_rate": 0.8571428571428571,
+    "deferred_limitdown": 10,
+    "deferred_suspended": 0,
+    "deferred_t1locked": 0,
+    "caliber": "executed/armed from engine stats k3_fallback; suspended sessions freeze the streak (not counted); armed==0 -> vacuous pass"
+   },
+   "r16_execution_rate_comparison": {
+    "value": 0.5068212824010914,
+    "mapping": "filled + rule-blocked / (filled + rule-blocked + terminated); R16 original 95% caliber, NOT a gate here (structural, disclosed)"
+   }
+  },
+  "HYB-03": {
+   "net_cagr": 0.03883228074264511,
+   "net_total_return": 0.2562288805499999,
+   "max_drawdown": -0.21196584331074653,
+   "b1m_net_cagr": 0.0059905923579064435,
+   "b1m_max_drawdown": -0.3982378364862026,
+   "b1m_net_return_by_year": {
+    "2015": 0.22735356961586017,
+    "2016": -0.036271319473570096,
+    "2017": -0.11258228102926204,
+    "2018": -0.1962740727688722,
+    "2019": 0.12375649932752708,
+    "2020": 0.09319791239431541
+   },
+   "b1m_source": "R16 metrics.json configs.C05 verbatim (T200-40/rate_only; family anchor)",
+   "b3prime_path": "T200-40",
+   "excess_vs_b1m": 0.032841688384738665,
+   "net_return_by_year": {
+    "2015": -0.012900510000000032,
+    "2016": -0.04567724475270496,
+    "2017": 0.11388764832548426,
+    "2018": -0.07705806902840606,
+    "2019": 0.1289514979805091,
+    "2020": 0.1490039376480432
+   },
+   "advantage_years_list": [
+    2017,
+    2018,
+    2019,
+    2020
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 166096.0,
+     "mean_equity": 205744.63248360655,
+     "one_side_turnover": 0.8072920201854321
+    },
+    "2016": {
+     "buy_notional": 278593.0,
+     "mean_equity": 189455.98731557385,
+     "one_side_turnover": 1.470489288554138
+    },
+    "2017": {
+     "buy_notional": 314585.0,
+     "mean_equity": 198226.54185655736,
+     "one_side_turnover": 1.5869973670208255
+    },
+    "2018": {
+     "buy_notional": 128493.0,
+     "mean_equity": 203015.07349382702,
+     "one_side_turnover": 0.632923446464713
+    },
+    "2019": {
+     "buy_notional": 175549.0,
+     "mean_equity": 206108.9050827868,
+     "one_side_turnover": 0.851729331779663
+    },
+    "2020": {
+     "buy_notional": 286553.0,
+     "mean_equity": 225202.16169769558,
+     "one_side_turnover": 1.2724256190074228
+    }
+   },
+   "max_one_side_turnover": 1.5869973670208255,
+   "max_single_name_weight": 0.11115622475250649,
+   "goal_dev_net_cagr_ge_10pct": false,
+   "gate8_v2_k3": {
+    "armed": 7,
+    "executed": 6,
+    "delivery_rate": 0.8571428571428571,
+    "deferred_limitdown": 10,
+    "deferred_suspended": 0,
+    "deferred_t1locked": 0,
+    "caliber": "executed/armed from engine stats k3_fallback; suspended sessions freeze the streak (not counted); armed==0 -> vacuous pass"
+   },
+   "r16_execution_rate_comparison": {
+    "value": 0.5068212824010914,
+    "mapping": "filled + rule-blocked / (filled + rule-blocked + terminated); R16 original 95% caliber, NOT a gate here (structural, disclosed)"
+   }
+  },
+  "HYB-04": {
+   "net_cagr": 0.03883228074264511,
+   "net_total_return": 0.2562288805499999,
+   "max_drawdown": -0.21196584331074653,
+   "b1m_net_cagr": 0.0059905923579064435,
+   "b1m_max_drawdown": -0.3982378364862026,
+   "b1m_net_return_by_year": {
+    "2015": 0.22735356961586017,
+    "2016": -0.036271319473570096,
+    "2017": -0.11258228102926204,
+    "2018": -0.1962740727688722,
+    "2019": 0.12375649932752708,
+    "2020": 0.09319791239431541
+   },
+   "b1m_source": "R16 metrics.json configs.C05 verbatim (T200-40/rate_only; family anchor)",
+   "b3prime_path": "T200-40",
+   "excess_vs_b1m": 0.032841688384738665,
+   "net_return_by_year": {
+    "2015": -0.012900510000000032,
+    "2016": -0.04567724475270496,
+    "2017": 0.11388764832548426,
+    "2018": -0.07705806902840606,
+    "2019": 0.1289514979805091,
+    "2020": 0.1490039376480432
+   },
+   "advantage_years_list": [
+    2017,
+    2018,
+    2019,
+    2020
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 166096.0,
+     "mean_equity": 205744.63248360655,
+     "one_side_turnover": 0.8072920201854321
+    },
+    "2016": {
+     "buy_notional": 278593.0,
+     "mean_equity": 189455.98731557385,
+     "one_side_turnover": 1.470489288554138
+    },
+    "2017": {
+     "buy_notional": 314585.0,
+     "mean_equity": 198226.54185655733,
+     "one_side_turnover": 1.5869973670208257
+    },
+    "2018": {
+     "buy_notional": 128493.0,
+     "mean_equity": 203015.0734938269,
+     "one_side_turnover": 0.6329234464647133
+    },
+    "2019": {
+     "buy_notional": 175549.0,
+     "mean_equity": 206108.9050827868,
+     "one_side_turnover": 0.851729331779663
+    },
+    "2020": {
+     "buy_notional": 286553.0,
+     "mean_equity": 225202.16169769558,
+     "one_side_turnover": 1.2724256190074228
+    }
+   },
+   "max_one_side_turnover": 1.5869973670208257,
+   "max_single_name_weight": 0.11115622475250649,
+   "goal_dev_net_cagr_ge_10pct": false,
+   "gate8_v2_k3": {
+    "armed": 7,
+    "executed": 6,
+    "delivery_rate": 0.8571428571428571,
+    "deferred_limitdown": 10,
+    "deferred_suspended": 0,
+    "deferred_t1locked": 0,
+    "caliber": "executed/armed from engine stats k3_fallback; suspended sessions freeze the streak (not counted); armed==0 -> vacuous pass"
+   },
+   "r16_execution_rate_comparison": {
+    "value": 0.5068212824010914,
+    "mapping": "filled + rule-blocked / (filled + rule-blocked + terminated); R16 original 95% caliber, NOT a gate here (structural, disclosed)"
+   }
+  },
+  "HYB-05": {
+   "net_cagr": 0.06431776843155057,
+   "net_total_return": 0.45242711555000015,
+   "max_drawdown": -0.20002679017384895,
+   "b1m_net_cagr": 0.0059905923579064435,
+   "b1m_max_drawdown": -0.3982378364862026,
+   "b1m_net_return_by_year": {
+    "2015": 0.22735356961586017,
+    "2016": -0.036271319473570096,
+    "2017": -0.11258228102926204,
+    "2018": -0.1962740727688722,
+    "2019": 0.12375649932752708,
+    "2020": 0.09319791239431541
+   },
+   "b1m_source": "R16 metrics.json configs.C05 verbatim (T200-40/rate_only; family anchor)",
+   "b3prime_path": "T200-40",
+   "excess_vs_b1m": 0.05832717607364413,
+   "net_return_by_year": {
+    "2015": -0.03604753000000016,
+    "2016": -0.015285561745590814,
+    "2017": 0.10362940210625937,
+    "2018": -0.05025928688541492,
+    "2019": 0.1814375685155416,
+    "2020": 0.23563251330288537
+   },
+   "advantage_years_list": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 228200.7,
+     "mean_equity": 202899.4223770492,
+     "one_side_turnover": 1.1246986182934189
+    },
+    "2016": {
+     "buy_notional": 282196.0,
+     "mean_equity": 192975.15613934415,
+     "one_side_turnover": 1.462343680117201
+    },
+    "2017": {
+     "buy_notional": 303731.0,
+     "mean_equity": 199399.77190163915,
+     "one_side_turnover": 1.523226416476674
+    },
+    "2018": {
+     "buy_notional": 119896.0,
+     "mean_equity": 204414.98697119337,
+     "one_side_turnover": 0.586532336872619
+    },
+    "2019": {
+     "buy_notional": 203649.0,
+     "mean_equity": 215975.29478770494,
+     "one_side_turnover": 0.9429272926802985
+    },
+    "2020": {
+     "buy_notional": 285338.0,
+     "mean_equity": 256352.2909816461,
+     "one_side_turnover": 1.1130698263212682
+    }
+   },
+   "max_one_side_turnover": 1.523226416476674,
+   "max_single_name_weight": 0.21400494714232207,
+   "goal_dev_net_cagr_ge_10pct": false,
+   "gate8_v2_k3": {
+    "armed": 7,
+    "executed": 6,
+    "delivery_rate": 0.8571428571428571,
+    "deferred_limitdown": 10,
+    "deferred_suspended": 0,
+    "deferred_t1locked": 0,
+    "caliber": "executed/armed from engine stats k3_fallback; suspended sessions freeze the streak (not counted); armed==0 -> vacuous pass"
+   },
+   "r16_execution_rate_comparison": {
+    "value": 0.4840598568640208,
+    "mapping": "filled + rule-blocked / (filled + rule-blocked + terminated); R16 original 95% caliber, NOT a gate here (structural, disclosed)"
+   }
+  },
+  "ROT-01": {
+   "net_cagr": 0.07868925111959268,
+   "net_total_return": 0.5738843349999996,
+   "max_drawdown": -0.16596733979568368,
+   "b1m_net_cagr": 0.0059905923579064435,
+   "b1m_max_drawdown": -0.3982378364862026,
+   "b1m_net_return_by_year": {
+    "2015": 0.22735356961586017,
+    "2016": -0.036271319473570096,
+    "2017": -0.11258228102926204,
+    "2018": -0.1962740727688722,
+    "2019": 0.12375649932752708,
+    "2020": 0.09319791239431541
+   },
+   "b1m_source": "R16 metrics.json configs.C05 verbatim (T200-40/rate_only; family anchor)",
+   "b3prime_path": "T200-40",
+   "excess_vs_b1m": 0.07269865876168624,
+   "net_return_by_year": {
+    "2015": 0.007902999999999993,
+    "2016": 0.15203172775554763,
+    "2017": 0.10246453806622657,
+    "2018": -0.06883486915639714,
+    "2019": 0.08159046892045074,
+    "2020": 0.22077450244293217
+   },
+   "advantage_years_list": [
+    2016,
+    2017,
+    2018,
+    2020
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 143369.6,
+     "mean_equity": 200122.45163934445,
+     "one_side_turnover": 0.7164093724894847
+    },
+    "2016": {
+     "buy_notional": 320223.2,
+     "mean_equity": 218267.65844782785,
+     "one_side_turnover": 1.4671124539348206
+    },
+    "2017": {
+     "buy_notional": 232880.1,
+     "mean_equity": 240760.9472465982,
+     "one_side_turnover": 0.9672669204174286
+    },
+    "2018": {
+     "buy_notional": 672938.7,
+     "mean_equity": 246232.81812559662,
+     "one_side_turnover": 2.732936678070071
+    },
+    "2019": {
+     "buy_notional": 372365.0,
+     "mean_equity": 246876.61193819667,
+     "one_side_turnover": 1.5083040757753845
+    },
+    "2020": {
+     "buy_notional": 318755.6,
+     "mean_equity": 276376.8885548147,
+     "one_side_turnover": 1.1533366688755533
+    }
+   },
+   "max_one_side_turnover": 2.732936678070071,
+   "max_single_name_weight": 0.3634671403693811,
+   "goal_dev_net_cagr_ge_10pct": false,
+   "gate8_v2_k3": {
+    "armed": 2,
+    "executed": 2,
+    "delivery_rate": 1.0,
+    "deferred_limitdown": 0,
+    "deferred_suspended": 0,
+    "deferred_t1locked": 0,
+    "caliber": "executed/armed from engine stats k3_fallback; suspended sessions freeze the streak (not counted); armed==0 -> vacuous pass"
+   },
+   "r16_execution_rate_comparison": {
+    "value": 0.9375,
+    "mapping": "filled + rule-blocked / (filled + rule-blocked + terminated); R16 original 95% caliber, NOT a gate here (structural, disclosed)"
+   }
+  },
+  "ROT-02": {
+   "net_cagr": 0.0271331250018787,
+   "net_total_return": 0.1738623334999998,
+   "max_drawdown": -0.1612742455226739,
+   "b1m_net_cagr": 0.0059905923579064435,
+   "b1m_max_drawdown": -0.3982378364862026,
+   "b1m_net_return_by_year": {
+    "2015": 0.22735356961586017,
+    "2016": -0.036271319473570096,
+    "2017": -0.11258228102926204,
+    "2018": -0.1962740727688722,
+    "2019": 0.12375649932752708,
+    "2020": 0.09319791239431541
+   },
+   "b1m_source": "R16 metrics.json configs.C05 verbatim (T200-40/rate_only; family anchor)",
+   "b3prime_path": "T200-40",
+   "excess_vs_b1m": 0.021142532643972256,
+   "net_return_by_year": {
+    "2015": 0.03214705394999995,
+    "2016": -0.038529467431804965,
+    "2017": 0.0953823933011444,
+    "2018": -0.09649624193017625,
+    "2019": 0.1107825807782925,
+    "2020": 0.07600634376718918
+   },
+   "advantage_years_list": [
+    2017,
+    2018
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 243878.30000000002,
+     "mean_equity": 201227.864087623,
+     "one_side_turnover": 1.2119509447946297
+    },
+    "2016": {
+     "buy_notional": 507892.8,
+     "mean_equity": 188617.96148606573,
+     "one_side_turnover": 2.692706442156734
+    },
+    "2017": {
+     "buy_notional": 451603.9,
+     "mean_equity": 207315.9753849182,
+     "one_side_turnover": 2.17833622884835
+    },
+    "2018": {
+     "buy_notional": 709990.3,
+     "mean_equity": 207637.94235732508,
+     "one_side_turnover": 3.4193668649353812
+    },
+    "2019": {
+     "buy_notional": 450375.9,
+     "mean_equity": 206462.33275196722,
+     "one_side_turnover": 2.1813949982879324
+    },
+    "2020": {
+     "buy_notional": 498535.1,
+     "mean_equity": 225090.92033534986,
+     "one_side_turnover": 2.2148165694878386
+    }
+   },
+   "max_one_side_turnover": 3.4193668649353812,
+   "max_single_name_weight": 0.32618447814078294,
+   "goal_dev_net_cagr_ge_10pct": false,
+   "gate8_v2_k3": {
+    "armed": 2,
+    "executed": 2,
+    "delivery_rate": 1.0,
+    "deferred_limitdown": 0,
+    "deferred_suspended": 0,
+    "deferred_t1locked": 0,
+    "caliber": "executed/armed from engine stats k3_fallback; suspended sessions freeze the streak (not counted); armed==0 -> vacuous pass"
+   },
+   "r16_execution_rate_comparison": {
+    "value": 0.9264705882352942,
+    "mapping": "filled + rule-blocked / (filled + rule-blocked + terminated); R16 original 95% caliber, NOT a gate here (structural, disclosed)"
+   }
+  }
+ },
+ "gates": {
+  "HYB-00": {
+   "dev": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": true,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": false,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8v2_k3_fallback_delivery_ge_99pct": false,
+    "advantage_years": 4,
+    "dev_excess_vs_b1m": 0.032841688384738665,
+    "failed_gates": [
+     "3_advantage_years_ge_5_of_6",
+     "4_mdd_le_20pct_and_le_B1m",
+     "8v2_k3_fallback_delivery_ge_99pct"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated"
+   },
+   "verdict": "eliminated"
+  },
+  "HYB-01": {
+   "dev": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": true,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": false,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8v2_k3_fallback_delivery_ge_99pct": false,
+    "advantage_years": 4,
+    "dev_excess_vs_b1m": 0.032841688384738665,
+    "failed_gates": [
+     "3_advantage_years_ge_5_of_6",
+     "4_mdd_le_20pct_and_le_B1m",
+     "8v2_k3_fallback_delivery_ge_99pct"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated"
+   },
+   "verdict": "eliminated"
+  },
+  "HYB-02": {
+   "dev": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": true,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": false,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8v2_k3_fallback_delivery_ge_99pct": false,
+    "advantage_years": 4,
+    "dev_excess_vs_b1m": 0.032841688384738665,
+    "failed_gates": [
+     "3_advantage_years_ge_5_of_6",
+     "4_mdd_le_20pct_and_le_B1m",
+     "8v2_k3_fallback_delivery_ge_99pct"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated"
+   },
+   "verdict": "eliminated"
+  },
+  "HYB-03": {
+   "dev": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": true,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": false,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8v2_k3_fallback_delivery_ge_99pct": false,
+    "advantage_years": 4,
+    "dev_excess_vs_b1m": 0.032841688384738665,
+    "failed_gates": [
+     "3_advantage_years_ge_5_of_6",
+     "4_mdd_le_20pct_and_le_B1m",
+     "8v2_k3_fallback_delivery_ge_99pct"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated"
+   },
+   "verdict": "eliminated"
+  },
+  "HYB-04": {
+   "dev": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": true,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": false,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8v2_k3_fallback_delivery_ge_99pct": false,
+    "advantage_years": 4,
+    "dev_excess_vs_b1m": 0.032841688384738665,
+    "failed_gates": [
+     "3_advantage_years_ge_5_of_6",
+     "4_mdd_le_20pct_and_le_B1m",
+     "8v2_k3_fallback_delivery_ge_99pct"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated"
+   },
+   "verdict": "eliminated"
+  },
+  "HYB-05": {
+   "dev": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": true,
+    "3_advantage_years_ge_5_of_6": true,
+    "4_mdd_le_20pct_and_le_B1m": false,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8v2_k3_fallback_delivery_ge_99pct": false,
+    "advantage_years": 5,
+    "dev_excess_vs_b1m": 0.05832717607364413,
+    "failed_gates": [
+     "4_mdd_le_20pct_and_le_B1m",
+     "8v2_k3_fallback_delivery_ge_99pct"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated"
+   },
+   "verdict": "eliminated"
+  },
+  "ROT-01": {
+   "dev": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": true,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": true,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8v2_k3_fallback_delivery_ge_99pct": true,
+    "advantage_years": 4,
+    "dev_excess_vs_b1m": 0.07269865876168624,
+    "failed_gates": [
+     "3_advantage_years_ge_5_of_6"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated"
+   },
+   "verdict": "eliminated"
+  },
+  "ROT-02": {
+   "dev": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": true,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": true,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8v2_k3_fallback_delivery_ge_99pct": true,
+    "advantage_years": 2,
+    "dev_excess_vs_b1m": 0.021142532643972256,
+    "failed_gates": [
+     "3_advantage_years_ge_5_of_6"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated"
+   },
+   "verdict": "eliminated"
+  }
+ },
+ "disclosures": {
+  "HYB-00": {
+   "verdict": "eliminated",
+   "1_execution": {
+    "gate8_v2_delivery": {
+     "armed": 7,
+     "executed": 6,
+     "delivery_rate": 0.8571428571428571,
+     "deferred_limitdown": 10,
+     "deferred_suspended": 0,
+     "deferred_t1locked": 0,
+     "caliber": "executed/armed from engine stats k3_fallback; suspended sessions freeze the streak (not counted); armed==0 -> vacuous pass"
+    },
+    "k3_trigger_rate_armed_per_risk_intent": 0.011272141706924315,
+    "risk_intents_in_frame": 621,
+    "r16_execution_rate_comparison": {
+     "value": 0.5326164874551972,
+     "mapping": "filled + rule-blocked / (filled + rule-blocked + terminated); R16 original 95% caliber, NOT a gate here (structural, disclosed)"
+    },
+    "limit_direct_fill_rate_orders": {
+     "value": 0.03914590747330961,
+     "caliber": "limit-filled orders / generated orders (order-session level; disclosure, not a gate)"
+    },
+    "termination_reasons": {
+     "expiry": 136,
+     "override_same_name": 515,
+     "cap_void": 0,
+     "suspension_abandon": 1
+    },
+    "expired_at_target_noop": 97,
+    "rule_blocked": 6,
+    "zero_emission_intents": 229,
+    "slippage_vs_source_close": {
+     "caliber": "fill price vs official close of the intent's source_signal day; buys price/src-1, sells src/price-1 (>0 = worse than the decision anchor); limit fills re-anchored at every decision point, so this measures entry/exit LAG cost vs the first decision",
+     "buy_mean": -0.005932061066138108,
+     "sell_mean": 0.003936392639104472,
+     "buy_n": 352,
+     "sell_n": 385,
+     "fallback_buy_mean": null,
+     "fallback_sell_mean": 0.17515093836754025
+    }
+   },
+   "2_turnover_fees": {
+    "buy_notional_total": 1349869.0,
+    "sell_notional_total": 1222754.8,
+    "fees_total": 4907.7548,
+    "max_one_side_turnover": 1.5869973670208266
+   },
+   "3_mdd_attribution": {
+    "mdd_window": {
+     "peak_date": "2015-06-08",
+     "trough_date": "2016-02-29",
+     "max_drawdown": -0.21196584331074653
+    },
+    "mdd_window_attribution": {
+     "equity_change": 48342.23000000004,
+     "stock_leg_share": 0.3934448203982312,
+     "etf_leg_share": 0.0,
+     "cash_share": 0.6065551796017687
+    },
+    "full_period_level_change": {
+     "equity": 51245.77610999998,
+     "stock_leg": 169841.0,
+     "etf_leg": 0.0,
+     "cash": -123053.62389000003
+    },
+    "leg_weights": {}
+   },
+   "5_increments": {
+    "intent_layer": {
+     "n_intents": 1395,
+     "activated": 1395,
+     "orders_generated": 18827,
+     "stopped_filled": 737,
+     "terminated_override": 518,
+     "terminated_expired": 127,
+     "terminated_cap": 0,
+     "at_target_skips": 8683,
+     "emissions_skipped_no_anchor": 1423,
+     "emissions_skipped_no_live_session": 13
+    },
+    "caps": {
+     "single_name_voids": 0,
+     "single_name_drift_breaches": 0,
+     "total_voids": 0,
+     "definition": "section 7.3 (section 7.7 M2): single-name MV <= 25% of the decision-point equity snapshot, validated at order construction (breach -> whole order voids); drift breaches are recorded only (no force trim); the total<=100% cap is implied by full funding and never fires on an affordable order"
+    },
+    "cash_friction": {
+     "insufficient_cash_orders": 0,
+     "below_min_lot_abandons": 15695,
+     "quantity_capped_fills": 0,
+     "no_position_voids": 159,
+     "t1_locked_voids": 0
+    },
+    "void_days": {
+     "suspended": 22,
+     "not_penetrated": 2107,
+     "limit_out_of_range": 11,
+     "no_limit_info": 6
+    },
+    "etf_leg_stats": {
+     "meta_symbols": [],
+     "etf_symbols": [],
+     "etf_bands": {},
+     "etf_default_band_symbols": [],
+     "t_plus_zero_symbols": [],
+     "dividend_event_symbols": [],
+     "dividend_events_cash": 0.0,
+     "limit_source": "stk_limit rows (v1.1 path)",
+     "routing": "section 7.1 (stocks)"
+    },
+    "dividend_events_cash": 0.0,
+    "corp_actions": {
+     "splits": 6,
+     "dividends": 140,
+     "dividend_cash_total_pre_tax": 8968.330909999999
+    },
+    "engine_warnings_n": 0,
+    "engine_warnings_sample": [],
+    "final": {
+     "settled_cash": 76946.37610999997,
+     "pending_am_to_pm": 0.0,
+     "pending_next_day": 0.0,
+     "n_open_clips": 31
+    }
+   },
+   "6_stock_leg_vs_hyb00": null
+  },
+  "HYB-01": {
+   "verdict": "eliminated",
+   "1_execution": {
+    "gate8_v2_delivery": {
+     "armed": 7,
+     "executed": 6,
+     "delivery_rate": 0.8571428571428571,
+     "deferred_limitdown": 10,
+     "deferred_suspended": 0,
+     "deferred_t1locked": 0,
+     "caliber": "executed/armed from engine stats k3_fallback; suspended sessions freeze the streak (not counted); armed==0 -> vacuous pass"
+    },
+    "k3_trigger_rate_armed_per_risk_intent": 0.010130246020260492,
+    "risk_intents_in_frame": 691,
+    "r16_execution_rate_comparison": {
+     "value": 0.5068212824010914,
+     "mapping": "filled + rule-blocked / (filled + rule-blocked + terminated); R16 original 95% caliber, NOT a gate here (structural, disclosed)"
+    },
+    "limit_direct_fill_rate_orders": {
+     "value": 0.039143828340769064,
+     "caliber": "limit-filled orders / generated orders (order-session level; disclosure, not a gate)"
+    },
+    "termination_reasons": {
+     "expiry": 137,
+     "override_same_name": 584,
+     "cap_void": 1,
+     "suspension_abandon": 1
+    },
+    "expired_at_target_noop": 98,
+    "rule_blocked": 6,
+    "zero_emission_intents": 299,
+    "slippage_vs_source_close": {
+     "caliber": "fill price vs official close of the intent's source_signal day; buys price/src-1, sells src/price-1 (>0 = worse than the decision anchor); limit fills re-anchored at every decision point, so this measures entry/exit LAG cost vs the first decision",
+     "buy_mean": -0.005932061066138108,
+     "sell_mean": 0.003936392639104472,
+     "buy_n": 352,
+     "sell_n": 385,
+     "fallback_buy_mean": null,
+     "fallback_sell_mean": 0.17515093836754025
+    }
+   },
+   "2_turnover_fees": {
+    "buy_notional_total": 1349869.0,
+    "sell_notional_total": 1222754.8,
+    "fees_total": 4907.7548,
+    "max_one_side_turnover": 1.586997367020826
+   },
+   "3_mdd_attribution": {
+    "mdd_window": {
+     "peak_date": "2015-06-08",
+     "trough_date": "2016-02-29",
+     "max_drawdown": -0.21196584331074653
+    },
+    "mdd_window_attribution": {
+     "equity_change": 48342.23000000004,
+     "stock_leg_share": 0.3934448203982312,
+     "etf_leg_share": 0.0,
+     "cash_share": 0.6065551796017687
+    },
+    "full_period_level_change": {
+     "equity": 51245.77610999998,
+     "stock_leg": 169841.0,
+     "etf_leg": 0.0,
+     "cash": -123053.62389000003
+    },
+    "leg_weights": {
+     "sh.511010": {
+      "mean_weight": 0.0,
+      "max_weight": 0.0,
+      "park_w": 0.4
+     },
+     "_total_etf": {
+      "mean_weight": 0.0,
+      "max_weight": 0.0,
+      "park_w": 0.4
+     }
+    }
+   },
+   "5_increments": {
+    "intent_layer": {
+     "n_intents": 1466,
+     "activated": 1466,
+     "orders_generated": 18828,
+     "stopped_filled": 737,
+     "terminated_override": 587,
+     "terminated_expired": 127,
+     "terminated_cap": 1,
+     "at_target_skips": 10110,
+     "emissions_skipped_no_anchor": 1423,
+     "emissions_skipped_no_live_session": 14
+    },
+    "caps": {
+     "single_name_voids": 1,
+     "single_name_drift_breaches": 0,
+     "total_voids": 0,
+     "definition": "section 7.3 (section 7.7 M2): single-name MV <= 25% of the decision-point equity snapshot, validated at order construction (breach -> whole order voids); drift breaches are recorded only (no force trim); the total<=100% cap is implied by full funding and never fires on an affordable order"
+    },
+    "cash_friction": {
+     "insufficient_cash_orders": 0,
+     "below_min_lot_abandons": 15695,
+     "quantity_capped_fills": 0,
+     "no_position_voids": 159,
+     "t1_locked_voids": 0
+    },
+    "void_days": {
+     "suspended": 22,
+     "cap_single_name": 1,
+     "not_penetrated": 2107,
+     "limit_out_of_range": 11,
+     "no_limit_info": 6
+    },
+    "etf_leg_stats": {
+     "meta_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010",
+      "sh.513100",
+      "sh.513500",
+      "sh.518880",
+      "sz.159915"
+     ],
+     "etf_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010",
+      "sh.513100",
+      "sh.513500",
+      "sh.518880",
+      "sz.159915"
+     ],
+     "etf_bands": {
+      "sh.510050": 0.1,
+      "sh.510300": 0.1,
+      "sh.510880": 0.1,
+      "sh.511010": 0.1,
+      "sh.513100": 0.1,
+      "sh.513500": 0.1,
+      "sh.518880": 0.1,
+      "sz.159915": 0.1
+     },
+     "etf_default_band_symbols": [],
+     "t_plus_zero_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010",
+      "sh.513100",
+      "sh.513500",
+      "sh.518880",
+      "sz.159915"
+     ],
+     "dividend_event_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010"
+     ],
+     "dividend_events_cash": 0.0,
+     "limit_source": "computed per section 8.3 (preclose x (1 +/- band), 0.001 tick)",
+     "routing": "section 8.2: ETF pm decisions live next pm; ETF fallbacks execute at pm opens"
+    },
+    "dividend_events_cash": 0.0,
+    "corp_actions": {
+     "splits": 6,
+     "dividends": 140,
+     "dividend_cash_total_pre_tax": 8968.330909999999
+    },
+    "engine_warnings_n": 0,
+    "engine_warnings_sample": [],
+    "final": {
+     "settled_cash": 76946.37610999997,
+     "pending_am_to_pm": 0.0,
+     "pending_next_day": 0.0,
+     "n_open_clips": 31
+    }
+   },
+   "6_stock_leg_vs_hyb00": {
+    "hyb00": {
+     "stock_fills": 737,
+     "stock_buy_fills": 352,
+     "first_stock_fill_date": "2015-02-02",
+     "insufficient_cash_orders": 0,
+     "limit_fill_rate_orders": 0.03914590747330961
+    },
+    "this": {
+     "stock_fills": 737,
+     "stock_buy_fills": 352,
+     "first_stock_fill_date": "2015-02-02",
+     "insufficient_cash_orders": 0,
+     "limit_fill_rate_orders": 0.039143828340769064
+    },
+    "delta_stock_fills": 0,
+    "delta_first_fill_days": 0
+   }
+  },
+  "HYB-02": {
+   "verdict": "eliminated",
+   "1_execution": {
+    "gate8_v2_delivery": {
+     "armed": 7,
+     "executed": 6,
+     "delivery_rate": 0.8571428571428571,
+     "deferred_limitdown": 10,
+     "deferred_suspended": 0,
+     "deferred_t1locked": 0,
+     "caliber": "executed/armed from engine stats k3_fallback; suspended sessions freeze the streak (not counted); armed==0 -> vacuous pass"
+    },
+    "k3_trigger_rate_armed_per_risk_intent": 0.010130246020260492,
+    "risk_intents_in_frame": 691,
+    "r16_execution_rate_comparison": {
+     "value": 0.5068212824010914,
+     "mapping": "filled + rule-blocked / (filled + rule-blocked + terminated); R16 original 95% caliber, NOT a gate here (structural, disclosed)"
+    },
+    "limit_direct_fill_rate_orders": {
+     "value": 0.03914174942907218,
+     "caliber": "limit-filled orders / generated orders (order-session level; disclosure, not a gate)"
+    },
+    "termination_reasons": {
+     "expiry": 137,
+     "override_same_name": 584,
+     "cap_void": 1,
+     "suspension_abandon": 1
+    },
+    "expired_at_target_noop": 98,
+    "rule_blocked": 6,
+    "zero_emission_intents": 299,
+    "slippage_vs_source_close": {
+     "caliber": "fill price vs official close of the intent's source_signal day; buys price/src-1, sells src/price-1 (>0 = worse than the decision anchor); limit fills re-anchored at every decision point, so this measures entry/exit LAG cost vs the first decision",
+     "buy_mean": -0.005932061066138108,
+     "sell_mean": 0.003936392639104472,
+     "buy_n": 352,
+     "sell_n": 385,
+     "fallback_buy_mean": null,
+     "fallback_sell_mean": 0.17515093836754025
+    }
+   },
+   "2_turnover_fees": {
+    "buy_notional_total": 1349869.0,
+    "sell_notional_total": 1222754.8,
+    "fees_total": 4907.7548,
+    "max_one_side_turnover": 1.5869973670208255
+   },
+   "3_mdd_attribution": {
+    "mdd_window": {
+     "peak_date": "2015-06-08",
+     "trough_date": "2016-02-29",
+     "max_drawdown": -0.21196584331074653
+    },
+    "mdd_window_attribution": {
+     "equity_change": 48342.23000000004,
+     "stock_leg_share": 0.3934448203982312,
+     "etf_leg_share": 0.0,
+     "cash_share": 0.6065551796017687
+    },
+    "full_period_level_change": {
+     "equity": 51245.77610999998,
+     "stock_leg": 169841.0,
+     "etf_leg": 0.0,
+     "cash": -123053.62389000003
+    },
+    "leg_weights": {
+     "sh.518880": {
+      "mean_weight": 0.0,
+      "max_weight": 0.0,
+      "park_w": 0.4
+     },
+     "_total_etf": {
+      "mean_weight": 0.0,
+      "max_weight": 0.0,
+      "park_w": 0.4
+     }
+    }
+   },
+   "5_increments": {
+    "intent_layer": {
+     "n_intents": 1466,
+     "activated": 1466,
+     "orders_generated": 18829,
+     "stopped_filled": 737,
+     "terminated_override": 587,
+     "terminated_expired": 127,
+     "terminated_cap": 1,
+     "at_target_skips": 10110,
+     "emissions_skipped_no_anchor": 1423,
+     "emissions_skipped_no_live_session": 14
+    },
+    "caps": {
+     "single_name_voids": 1,
+     "single_name_drift_breaches": 0,
+     "total_voids": 0,
+     "definition": "section 7.3 (section 7.7 M2): single-name MV <= 25% of the decision-point equity snapshot, validated at order construction (breach -> whole order voids); drift breaches are recorded only (no force trim); the total<=100% cap is implied by full funding and never fires on an affordable order"
+    },
+    "cash_friction": {
+     "insufficient_cash_orders": 0,
+     "below_min_lot_abandons": 15695,
+     "quantity_capped_fills": 0,
+     "no_position_voids": 159,
+     "t1_locked_voids": 0
+    },
+    "void_days": {
+     "suspended": 22,
+     "not_penetrated": 2108,
+     "cap_single_name": 1,
+     "limit_out_of_range": 11,
+     "no_limit_info": 6
+    },
+    "etf_leg_stats": {
+     "meta_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010",
+      "sh.513100",
+      "sh.513500",
+      "sh.518880",
+      "sz.159915"
+     ],
+     "etf_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010",
+      "sh.513100",
+      "sh.513500",
+      "sh.518880",
+      "sz.159915"
+     ],
+     "etf_bands": {
+      "sh.510050": 0.1,
+      "sh.510300": 0.1,
+      "sh.510880": 0.1,
+      "sh.511010": 0.1,
+      "sh.513100": 0.1,
+      "sh.513500": 0.1,
+      "sh.518880": 0.1,
+      "sz.159915": 0.1
+     },
+     "etf_default_band_symbols": [],
+     "t_plus_zero_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010",
+      "sh.513100",
+      "sh.513500",
+      "sh.518880",
+      "sz.159915"
+     ],
+     "dividend_event_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010"
+     ],
+     "dividend_events_cash": 0.0,
+     "limit_source": "computed per section 8.3 (preclose x (1 +/- band), 0.001 tick)",
+     "routing": "section 8.2: ETF pm decisions live next pm; ETF fallbacks execute at pm opens"
+    },
+    "dividend_events_cash": 0.0,
+    "corp_actions": {
+     "splits": 6,
+     "dividends": 140,
+     "dividend_cash_total_pre_tax": 8968.330909999999
+    },
+    "engine_warnings_n": 0,
+    "engine_warnings_sample": [],
+    "final": {
+     "settled_cash": 76946.37610999997,
+     "pending_am_to_pm": 0.0,
+     "pending_next_day": 0.0,
+     "n_open_clips": 31
+    }
+   },
+   "6_stock_leg_vs_hyb00": {
+    "hyb00": {
+     "stock_fills": 737,
+     "stock_buy_fills": 352,
+     "first_stock_fill_date": "2015-02-02",
+     "insufficient_cash_orders": 0,
+     "limit_fill_rate_orders": 0.03914590747330961
+    },
+    "this": {
+     "stock_fills": 737,
+     "stock_buy_fills": 352,
+     "first_stock_fill_date": "2015-02-02",
+     "insufficient_cash_orders": 0,
+     "limit_fill_rate_orders": 0.03914174942907218
+    },
+    "delta_stock_fills": 0,
+    "delta_first_fill_days": 0
+   }
+  },
+  "HYB-03": {
+   "verdict": "eliminated",
+   "1_execution": {
+    "gate8_v2_delivery": {
+     "armed": 7,
+     "executed": 6,
+     "delivery_rate": 0.8571428571428571,
+     "deferred_limitdown": 10,
+     "deferred_suspended": 0,
+     "deferred_t1locked": 0,
+     "caliber": "executed/armed from engine stats k3_fallback; suspended sessions freeze the streak (not counted); armed==0 -> vacuous pass"
+    },
+    "k3_trigger_rate_armed_per_risk_intent": 0.010130246020260492,
+    "risk_intents_in_frame": 691,
+    "r16_execution_rate_comparison": {
+     "value": 0.5068212824010914,
+     "mapping": "filled + rule-blocked / (filled + rule-blocked + terminated); R16 original 95% caliber, NOT a gate here (structural, disclosed)"
+    },
+    "limit_direct_fill_rate_orders": {
+     "value": 0.03914174942907218,
+     "caliber": "limit-filled orders / generated orders (order-session level; disclosure, not a gate)"
+    },
+    "termination_reasons": {
+     "expiry": 137,
+     "override_same_name": 584,
+     "cap_void": 1,
+     "suspension_abandon": 1
+    },
+    "expired_at_target_noop": 98,
+    "rule_blocked": 6,
+    "zero_emission_intents": 299,
+    "slippage_vs_source_close": {
+     "caliber": "fill price vs official close of the intent's source_signal day; buys price/src-1, sells src/price-1 (>0 = worse than the decision anchor); limit fills re-anchored at every decision point, so this measures entry/exit LAG cost vs the first decision",
+     "buy_mean": -0.005932061066138108,
+     "sell_mean": 0.003936392639104472,
+     "buy_n": 352,
+     "sell_n": 385,
+     "fallback_buy_mean": null,
+     "fallback_sell_mean": 0.17515093836754025
+    }
+   },
+   "2_turnover_fees": {
+    "buy_notional_total": 1349869.0,
+    "sell_notional_total": 1222754.8,
+    "fees_total": 4907.7548,
+    "max_one_side_turnover": 1.5869973670208255
+   },
+   "3_mdd_attribution": {
+    "mdd_window": {
+     "peak_date": "2015-06-08",
+     "trough_date": "2016-02-29",
+     "max_drawdown": -0.21196584331074653
+    },
+    "mdd_window_attribution": {
+     "equity_change": 48342.23000000004,
+     "stock_leg_share": 0.3934448203982312,
+     "etf_leg_share": 0.0,
+     "cash_share": 0.6065551796017687
+    },
+    "full_period_level_change": {
+     "equity": 51245.77610999998,
+     "stock_leg": 169841.0,
+     "etf_leg": 0.0,
+     "cash": -123053.62389000003
+    },
+    "leg_weights": {
+     "sh.518880": {
+      "mean_weight": 0.0,
+      "max_weight": 0.0,
+      "park_w": 0.5
+     },
+     "_total_etf": {
+      "mean_weight": 0.0,
+      "max_weight": 0.0,
+      "park_w": 0.5
+     }
+    }
+   },
+   "5_increments": {
+    "intent_layer": {
+     "n_intents": 1466,
+     "activated": 1466,
+     "orders_generated": 18829,
+     "stopped_filled": 737,
+     "terminated_override": 587,
+     "terminated_expired": 127,
+     "terminated_cap": 1,
+     "at_target_skips": 10110,
+     "emissions_skipped_no_anchor": 1423,
+     "emissions_skipped_no_live_session": 14
+    },
+    "caps": {
+     "single_name_voids": 1,
+     "single_name_drift_breaches": 0,
+     "total_voids": 0,
+     "definition": "section 7.3 (section 7.7 M2): single-name MV <= 25% of the decision-point equity snapshot, validated at order construction (breach -> whole order voids); drift breaches are recorded only (no force trim); the total<=100% cap is implied by full funding and never fires on an affordable order"
+    },
+    "cash_friction": {
+     "insufficient_cash_orders": 0,
+     "below_min_lot_abandons": 15695,
+     "quantity_capped_fills": 0,
+     "no_position_voids": 159,
+     "t1_locked_voids": 0
+    },
+    "void_days": {
+     "suspended": 22,
+     "not_penetrated": 2108,
+     "cap_single_name": 1,
+     "limit_out_of_range": 11,
+     "no_limit_info": 6
+    },
+    "etf_leg_stats": {
+     "meta_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010",
+      "sh.513100",
+      "sh.513500",
+      "sh.518880",
+      "sz.159915"
+     ],
+     "etf_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010",
+      "sh.513100",
+      "sh.513500",
+      "sh.518880",
+      "sz.159915"
+     ],
+     "etf_bands": {
+      "sh.510050": 0.1,
+      "sh.510300": 0.1,
+      "sh.510880": 0.1,
+      "sh.511010": 0.1,
+      "sh.513100": 0.1,
+      "sh.513500": 0.1,
+      "sh.518880": 0.1,
+      "sz.159915": 0.1
+     },
+     "etf_default_band_symbols": [],
+     "t_plus_zero_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010",
+      "sh.513100",
+      "sh.513500",
+      "sh.518880",
+      "sz.159915"
+     ],
+     "dividend_event_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010"
+     ],
+     "dividend_events_cash": 0.0,
+     "limit_source": "computed per section 8.3 (preclose x (1 +/- band), 0.001 tick)",
+     "routing": "section 8.2: ETF pm decisions live next pm; ETF fallbacks execute at pm opens"
+    },
+    "dividend_events_cash": 0.0,
+    "corp_actions": {
+     "splits": 6,
+     "dividends": 140,
+     "dividend_cash_total_pre_tax": 8968.330909999999
+    },
+    "engine_warnings_n": 0,
+    "engine_warnings_sample": [],
+    "final": {
+     "settled_cash": 76946.37610999997,
+     "pending_am_to_pm": 0.0,
+     "pending_next_day": 0.0,
+     "n_open_clips": 31
+    }
+   },
+   "6_stock_leg_vs_hyb00": {
+    "hyb00": {
+     "stock_fills": 737,
+     "stock_buy_fills": 352,
+     "first_stock_fill_date": "2015-02-02",
+     "insufficient_cash_orders": 0,
+     "limit_fill_rate_orders": 0.03914590747330961
+    },
+    "this": {
+     "stock_fills": 737,
+     "stock_buy_fills": 352,
+     "first_stock_fill_date": "2015-02-02",
+     "insufficient_cash_orders": 0,
+     "limit_fill_rate_orders": 0.03914174942907218
+    },
+    "delta_stock_fills": 0,
+    "delta_first_fill_days": 0
+   }
+  },
+  "HYB-04": {
+   "verdict": "eliminated",
+   "1_execution": {
+    "gate8_v2_delivery": {
+     "armed": 7,
+     "executed": 6,
+     "delivery_rate": 0.8571428571428571,
+     "deferred_limitdown": 10,
+     "deferred_suspended": 0,
+     "deferred_t1locked": 0,
+     "caliber": "executed/armed from engine stats k3_fallback; suspended sessions freeze the streak (not counted); armed==0 -> vacuous pass"
+    },
+    "k3_trigger_rate_armed_per_risk_intent": 0.010130246020260492,
+    "risk_intents_in_frame": 691,
+    "r16_execution_rate_comparison": {
+     "value": 0.5068212824010914,
+     "mapping": "filled + rule-blocked / (filled + rule-blocked + terminated); R16 original 95% caliber, NOT a gate here (structural, disclosed)"
+    },
+    "limit_direct_fill_rate_orders": {
+     "value": 0.03914174942907218,
+     "caliber": "limit-filled orders / generated orders (order-session level; disclosure, not a gate)"
+    },
+    "termination_reasons": {
+     "expiry": 137,
+     "override_same_name": 584,
+     "cap_void": 1,
+     "suspension_abandon": 1
+    },
+    "expired_at_target_noop": 98,
+    "rule_blocked": 6,
+    "zero_emission_intents": 299,
+    "slippage_vs_source_close": {
+     "caliber": "fill price vs official close of the intent's source_signal day; buys price/src-1, sells src/price-1 (>0 = worse than the decision anchor); limit fills re-anchored at every decision point, so this measures entry/exit LAG cost vs the first decision",
+     "buy_mean": -0.005932061066138108,
+     "sell_mean": 0.003936392639104472,
+     "buy_n": 352,
+     "sell_n": 385,
+     "fallback_buy_mean": null,
+     "fallback_sell_mean": 0.17515093836754025
+    }
+   },
+   "2_turnover_fees": {
+    "buy_notional_total": 1349869.0,
+    "sell_notional_total": 1222754.8,
+    "fees_total": 4907.7548,
+    "max_one_side_turnover": 1.5869973670208257
+   },
+   "3_mdd_attribution": {
+    "mdd_window": {
+     "peak_date": "2015-06-08",
+     "trough_date": "2016-02-29",
+     "max_drawdown": -0.21196584331074653
+    },
+    "mdd_window_attribution": {
+     "equity_change": 48342.23000000004,
+     "stock_leg_share": 0.3934448203982312,
+     "etf_leg_share": 0.0,
+     "cash_share": 0.6065551796017687
+    },
+    "full_period_level_change": {
+     "equity": 51245.77610999998,
+     "stock_leg": 169841.0,
+     "etf_leg": 0.0,
+     "cash": -123053.62389000003
+    },
+    "leg_weights": {
+     "sh.518880": {
+      "mean_weight": 0.0,
+      "max_weight": 0.0,
+      "park_w": 0.3
+     },
+     "_total_etf": {
+      "mean_weight": 0.0,
+      "max_weight": 0.0,
+      "park_w": 0.3
+     }
+    }
+   },
+   "5_increments": {
+    "intent_layer": {
+     "n_intents": 1466,
+     "activated": 1466,
+     "orders_generated": 18829,
+     "stopped_filled": 737,
+     "terminated_override": 587,
+     "terminated_expired": 127,
+     "terminated_cap": 1,
+     "at_target_skips": 10110,
+     "emissions_skipped_no_anchor": 1423,
+     "emissions_skipped_no_live_session": 14
+    },
+    "caps": {
+     "single_name_voids": 1,
+     "single_name_drift_breaches": 0,
+     "total_voids": 0,
+     "definition": "section 7.3 (section 7.7 M2): single-name MV <= 25% of the decision-point equity snapshot, validated at order construction (breach -> whole order voids); drift breaches are recorded only (no force trim); the total<=100% cap is implied by full funding and never fires on an affordable order"
+    },
+    "cash_friction": {
+     "insufficient_cash_orders": 0,
+     "below_min_lot_abandons": 15695,
+     "quantity_capped_fills": 0,
+     "no_position_voids": 159,
+     "t1_locked_voids": 0
+    },
+    "void_days": {
+     "suspended": 22,
+     "not_penetrated": 2108,
+     "cap_single_name": 1,
+     "limit_out_of_range": 11,
+     "no_limit_info": 6
+    },
+    "etf_leg_stats": {
+     "meta_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010",
+      "sh.513100",
+      "sh.513500",
+      "sh.518880",
+      "sz.159915"
+     ],
+     "etf_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010",
+      "sh.513100",
+      "sh.513500",
+      "sh.518880",
+      "sz.159915"
+     ],
+     "etf_bands": {
+      "sh.510050": 0.1,
+      "sh.510300": 0.1,
+      "sh.510880": 0.1,
+      "sh.511010": 0.1,
+      "sh.513100": 0.1,
+      "sh.513500": 0.1,
+      "sh.518880": 0.1,
+      "sz.159915": 0.1
+     },
+     "etf_default_band_symbols": [],
+     "t_plus_zero_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010",
+      "sh.513100",
+      "sh.513500",
+      "sh.518880",
+      "sz.159915"
+     ],
+     "dividend_event_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010"
+     ],
+     "dividend_events_cash": 0.0,
+     "limit_source": "computed per section 8.3 (preclose x (1 +/- band), 0.001 tick)",
+     "routing": "section 8.2: ETF pm decisions live next pm; ETF fallbacks execute at pm opens"
+    },
+    "dividend_events_cash": 0.0,
+    "corp_actions": {
+     "splits": 6,
+     "dividends": 140,
+     "dividend_cash_total_pre_tax": 8968.330909999999
+    },
+    "engine_warnings_n": 0,
+    "engine_warnings_sample": [],
+    "final": {
+     "settled_cash": 76946.37610999997,
+     "pending_am_to_pm": 0.0,
+     "pending_next_day": 0.0,
+     "n_open_clips": 31
+    }
+   },
+   "6_stock_leg_vs_hyb00": {
+    "hyb00": {
+     "stock_fills": 737,
+     "stock_buy_fills": 352,
+     "first_stock_fill_date": "2015-02-02",
+     "insufficient_cash_orders": 0,
+     "limit_fill_rate_orders": 0.03914590747330961
+    },
+    "this": {
+     "stock_fills": 737,
+     "stock_buy_fills": 352,
+     "first_stock_fill_date": "2015-02-02",
+     "insufficient_cash_orders": 0,
+     "limit_fill_rate_orders": 0.03914174942907218
+    },
+    "delta_stock_fills": 0,
+    "delta_first_fill_days": 0
+   }
+  },
+  "HYB-05": {
+   "verdict": "eliminated",
+   "1_execution": {
+    "gate8_v2_delivery": {
+     "armed": 7,
+     "executed": 6,
+     "delivery_rate": 0.8571428571428571,
+     "deferred_limitdown": 10,
+     "deferred_suspended": 0,
+     "deferred_t1locked": 0,
+     "caliber": "executed/armed from engine stats k3_fallback; suspended sessions freeze the streak (not counted); armed==0 -> vacuous pass"
+    },
+    "k3_trigger_rate_armed_per_risk_intent": 0.009198423127463863,
+    "risk_intents_in_frame": 761,
+    "r16_execution_rate_comparison": {
+     "value": 0.4840598568640208,
+     "mapping": "filled + rule-blocked / (filled + rule-blocked + terminated); R16 original 95% caliber, NOT a gate here (structural, disclosed)"
+    },
+    "limit_direct_fill_rate_orders": {
+     "value": 0.03864734299516908,
+     "caliber": "limit-filled orders / generated orders (order-session level; disclosure, not a gate)"
+    },
+    "termination_reasons": {
+     "expiry": 149,
+     "override_same_name": 643,
+     "cap_void": 0,
+     "suspension_abandon": 1
+    },
+    "expired_at_target_noop": 103,
+    "rule_blocked": 8,
+    "zero_emission_intents": 365,
+    "slippage_vs_source_close": {
+     "caliber": "fill price vs official close of the intent's source_signal day; buys price/src-1, sells src/price-1 (>0 = worse than the decision anchor); limit fills re-anchored at every decision point, so this measures entry/exit LAG cost vs the first decision",
+     "buy_mean": -0.005011068803489452,
+     "sell_mean": 0.002949988865787297,
+     "buy_n": 348,
+     "sell_n": 388,
+     "fallback_buy_mean": null,
+     "fallback_sell_mean": 0.17515093836754025
+    }
+   },
+   "2_turnover_fees": {
+    "buy_notional_total": 1423010.7,
+    "sell_notional_total": 1219651.5000000005,
+    "fees_total": 4890.617800000001,
+    "max_one_side_turnover": 1.523226416476674
+   },
+   "3_mdd_attribution": {
+    "mdd_window": {
+     "peak_date": "2015-06-08",
+     "trough_date": "2016-01-28",
+     "max_drawdown": -0.20002679017384895
+    },
+    "mdd_window_attribution": {
+     "equity_change": 45089.733000000066,
+     "stock_leg_share": 0.8031096569145785,
+     "etf_leg_share": -0.014617518360554605,
+     "cash_share": 0.21150786144597547
+    },
+    "full_period_level_change": {
+     "equity": 90485.42311000003,
+     "stock_leg": 196097.0,
+     "etf_leg": 83748.6,
+     "cash": -199194.77688999998
+    },
+    "leg_weights": {
+     "sh.511010": {
+      "mean_weight": 0.1596103899742454,
+      "max_weight": 0.18259319367384028,
+      "park_w": 0.2
+     },
+     "sh.518880": {
+      "mean_weight": 0.18199761040938314,
+      "max_weight": 0.21400494714232207,
+      "park_w": 0.2
+     },
+     "_total_etf": {
+      "mean_weight": 0.3416080003836286,
+      "max_weight": 0.39449229818059317,
+      "park_w": 0.4
+     }
+    }
+   },
+   "5_increments": {
+    "intent_layer": {
+     "n_intents": 1537,
+     "activated": 1537,
+     "orders_generated": 19044,
+     "stopped_filled": 736,
+     "terminated_override": 646,
+     "terminated_expired": 136,
+     "terminated_cap": 0,
+     "at_target_skips": 11724,
+     "emissions_skipped_no_anchor": 1429,
+     "emissions_skipped_no_live_session": 19
+    },
+    "caps": {
+     "single_name_voids": 0,
+     "single_name_drift_breaches": 0,
+     "total_voids": 0,
+     "definition": "section 7.3 (section 7.7 M2): single-name MV <= 25% of the decision-point equity snapshot, validated at order construction (breach -> whole order voids); drift breaches are recorded only (no force trim); the total<=100% cap is implied by full funding and never fires on an affordable order"
+    },
+    "cash_friction": {
+     "insufficient_cash_orders": 677,
+     "below_min_lot_abandons": 15209,
+     "quantity_capped_fills": 0,
+     "no_position_voids": 166,
+     "t1_locked_voids": 0
+    },
+    "void_days": {
+     "suspended": 24,
+     "not_penetrated": 2122,
+     "limit_out_of_range": 10,
+     "insufficient_cash": 677,
+     "no_limit_info": 6
+    },
+    "etf_leg_stats": {
+     "meta_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010",
+      "sh.513100",
+      "sh.513500",
+      "sh.518880",
+      "sz.159915"
+     ],
+     "etf_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010",
+      "sh.513100",
+      "sh.513500",
+      "sh.518880",
+      "sz.159915"
+     ],
+     "etf_bands": {
+      "sh.510050": 0.1,
+      "sh.510300": 0.1,
+      "sh.510880": 0.1,
+      "sh.511010": 0.1,
+      "sh.513100": 0.1,
+      "sh.513500": 0.1,
+      "sh.518880": 0.1,
+      "sz.159915": 0.1
+     },
+     "etf_default_band_symbols": [],
+     "t_plus_zero_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010",
+      "sh.513100",
+      "sh.513500",
+      "sh.518880",
+      "sz.159915"
+     ],
+     "dividend_event_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010"
+     ],
+     "dividend_events_cash": 300.0,
+     "limit_source": "computed per section 8.3 (preclose x (1 +/- band), 0.001 tick)",
+     "routing": "section 8.2: ETF pm decisions live next pm; ETF fallbacks execute at pm opens"
+    },
+    "dividend_events_cash": 300.0,
+    "corp_actions": {
+     "splits": 7,
+     "dividends": 137,
+     "dividend_cash_total_pre_tax": 9055.04091
+    },
+    "engine_warnings_n": 0,
+    "engine_warnings_sample": [],
+    "final": {
+     "settled_cash": 805.2231100000226,
+     "pending_am_to_pm": 0.0,
+     "pending_next_day": 0.0,
+     "n_open_clips": 34
+    }
+   },
+   "6_stock_leg_vs_hyb00": {
+    "hyb00": {
+     "stock_fills": 737,
+     "stock_buy_fills": 352,
+     "first_stock_fill_date": "2015-02-02",
+     "insufficient_cash_orders": 0,
+     "limit_fill_rate_orders": 0.03914590747330961
+    },
+    "this": {
+     "stock_fills": 721,
+     "stock_buy_fills": 346,
+     "first_stock_fill_date": "2015-02-02",
+     "insufficient_cash_orders": 677,
+     "limit_fill_rate_orders": 0.03864734299516908
+    },
+    "delta_stock_fills": -16,
+    "delta_first_fill_days": 0
+   }
+  },
+  "ROT-01": {
+   "verdict": "eliminated",
+   "1_execution": {
+    "gate8_v2_delivery": {
+     "armed": 2,
+     "executed": 2,
+     "delivery_rate": 1.0,
+     "deferred_limitdown": 0,
+     "deferred_suspended": 0,
+     "deferred_t1locked": 0,
+     "caliber": "executed/armed from engine stats k3_fallback; suspended sessions freeze the streak (not counted); armed==0 -> vacuous pass"
+    },
+    "k3_trigger_rate_armed_per_risk_intent": 0.05,
+    "risk_intents_in_frame": 40,
+    "r16_execution_rate_comparison": {
+     "value": 0.9375,
+     "mapping": "filled + rule-blocked / (filled + rule-blocked + terminated); R16 original 95% caliber, NOT a gate here (structural, disclosed)"
+    },
+    "limit_direct_fill_rate_orders": {
+     "value": 0.16962025316455695,
+     "caliber": "limit-filled orders / generated orders (order-session level; disclosure, not a gate)"
+    },
+    "termination_reasons": {
+     "expiry": 4,
+     "override_same_name": 1,
+     "cap_void": 0,
+     "suspension_abandon": 0
+    },
+    "expired_at_target_noop": 0,
+    "rule_blocked": 8,
+    "zero_emission_intents": 0,
+    "slippage_vs_source_close": {
+     "caliber": "fill price vs official close of the intent's source_signal day; buys price/src-1, sells src/price-1 (>0 = worse than the decision anchor); limit fills re-anchored at every decision point, so this measures entry/exit LAG cost vs the first decision",
+     "buy_mean": 0.006645486777180706,
+     "sell_mean": 0.0030010756472529654,
+     "buy_n": 35,
+     "sell_n": 32,
+     "fallback_buy_mean": null,
+     "fallback_sell_mean": 0.014191921349098191
+    }
+   },
+   "2_turnover_fees": {
+    "buy_notional_total": 2060532.2000000002,
+    "sell_notional_total": 1896985.0999999994,
+    "fees_total": 398.23299999999995,
+    "max_one_side_turnover": 2.732936678070071
+   },
+   "3_mdd_attribution": {
+    "mdd_window": {
+     "peak_date": "2020-02-24",
+     "trough_date": "2020-03-23",
+     "max_drawdown": -0.16596733979568368
+    },
+    "mdd_window_attribution": {
+     "equity_change": 46962.70472000004,
+     "stock_leg_share": 0.0,
+     "etf_leg_share": 0.8746685320810874,
+     "cash_share": 0.1253314679189118
+    },
+    "full_period_level_change": {
+     "equity": 114776.86699999991,
+     "stock_leg": 0.0,
+     "etf_leg": 271841.3,
+     "cash": -157064.43300000008
+    },
+    "leg_weights": {}
+   },
+   "5_increments": {
+    "intent_layer": {
+     "n_intents": 80,
+     "activated": 80,
+     "orders_generated": 395,
+     "stopped_filled": 67,
+     "terminated_override": 2,
+     "terminated_expired": 9,
+     "terminated_cap": 0,
+     "at_target_skips": 0,
+     "emissions_skipped_no_anchor": 0,
+     "emissions_skipped_no_live_session": 2
+    },
+    "caps": {
+     "single_name_voids": 0,
+     "single_name_drift_breaches": 2430,
+     "total_voids": 0,
+     "definition": "section 7.3 (section 7.7 M2): single-name MV <= 25% of the decision-point equity snapshot, validated at order construction (breach -> whole order voids); drift breaches are recorded only (no force trim); the total<=100% cap is implied by full funding and never fires on an affordable order"
+    },
+    "cash_friction": {
+     "insufficient_cash_orders": 107,
+     "below_min_lot_abandons": 0,
+     "quantity_capped_fills": 0,
+     "no_position_voids": 161,
+     "t1_locked_voids": 0
+    },
+    "void_days": {
+     "not_penetrated": 47,
+     "insufficient_cash": 107
+    },
+    "etf_leg_stats": {
+     "meta_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010",
+      "sh.513100",
+      "sh.513500",
+      "sh.518880",
+      "sz.159915"
+     ],
+     "etf_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010",
+      "sh.513100",
+      "sh.513500",
+      "sh.518880",
+      "sz.159915"
+     ],
+     "etf_bands": {
+      "sh.510050": 0.1,
+      "sh.510300": 0.1,
+      "sh.510880": 0.1,
+      "sh.511010": 0.1,
+      "sh.513100": 0.1,
+      "sh.513500": 0.1,
+      "sh.518880": 0.1,
+      "sz.159915": 0.1
+     },
+     "etf_default_band_symbols": [],
+     "t_plus_zero_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010",
+      "sh.513100",
+      "sh.513500",
+      "sh.518880",
+      "sz.159915"
+     ],
+     "dividend_event_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010"
+     ],
+     "dividend_events_cash": 6880.900000000002,
+     "limit_source": "computed per section 8.3 (preclose x (1 +/- band), 0.001 tick)",
+     "routing": "section 8.2: ETF pm decisions live next pm; ETF fallbacks execute at pm opens"
+    },
+    "dividend_events_cash": 6880.900000000002,
+    "corp_actions": {
+     "splits": 0,
+     "dividends": 6,
+     "dividend_cash_total_pre_tax": 6880.900000000002
+    },
+    "engine_warnings_n": 58,
+    "engine_warnings_sample": [
+     "commission guard: buy fill sz.159915 2016-04-01 notional 51915.50 > 50000 (commission 5.19; the 5-yuan minimum no longer binds)",
+     "commission guard: buy fill sh.510880 2016-08-02 notional 55448.90 > 50000 (commission 5.54; the 5-yuan minimum no longer binds)",
+     "commission guard: sell fill sh.518880 2016-09-02 notional 59678.00 > 50000 (commission 5.97; the 5-yuan minimum no longer binds)"
+    ],
+    "final": {
+     "settled_cash": 42935.56699999994,
+     "pending_am_to_pm": 0.0,
+     "pending_next_day": 0.0,
+     "n_open_clips": 3
+    }
+   },
+   "6_stock_leg_vs_hyb00": null
+  },
+  "ROT-02": {
+   "verdict": "eliminated",
+   "1_execution": {
+    "gate8_v2_delivery": {
+     "armed": 2,
+     "executed": 2,
+     "delivery_rate": 1.0,
+     "deferred_limitdown": 0,
+     "deferred_suspended": 0,
+     "deferred_t1locked": 0,
+     "caliber": "executed/armed from engine stats k3_fallback; suspended sessions freeze the streak (not counted); armed==0 -> vacuous pass"
+    },
+    "k3_trigger_rate_armed_per_risk_intent": 0.029411764705882353,
+    "risk_intents_in_frame": 68,
+    "r16_execution_rate_comparison": {
+     "value": 0.9264705882352942,
+     "mapping": "filled + rule-blocked / (filled + rule-blocked + terminated); R16 original 95% caliber, NOT a gate here (structural, disclosed)"
+    },
+    "limit_direct_fill_rate_orders": {
+     "value": 0.1649331352154532,
+     "caliber": "limit-filled orders / generated orders (order-session level; disclosure, not a gate)"
+    },
+    "termination_reasons": {
+     "expiry": 8,
+     "override_same_name": 2,
+     "cap_void": 0,
+     "suspension_abandon": 0
+    },
+    "expired_at_target_noop": 0,
+    "rule_blocked": 15,
+    "zero_emission_intents": 0,
+    "slippage_vs_source_close": {
+     "caliber": "fill price vs official close of the intent's source_signal day; buys price/src-1, sells src/price-1 (>0 = worse than the decision anchor); limit fills re-anchored at every decision point, so this measures entry/exit LAG cost vs the first decision",
+     "buy_mean": 0.006934313207214836,
+     "sell_mean": 0.003209343982796939,
+     "buy_n": 57,
+     "sell_n": 54,
+     "fallback_buy_mean": null,
+     "fallback_sell_mean": 0.0418555653075281
+    }
+   },
+   "2_turnover_fees": {
+    "buy_notional_total": 2862276.299999999,
+    "sell_notional_total": 2706738.9000000004,
+    "fees_total": 574.9333,
+    "max_one_side_turnover": 3.4193668649353812
+   },
+   "3_mdd_attribution": {
+    "mdd_window": {
+     "peak_date": "2020-02-13",
+     "trough_date": "2020-03-23",
+     "max_drawdown": -0.1612742455226739
+    },
+    "mdd_window_attribution": {
+     "equity_change": 38730.72532,
+     "stock_leg_share": 0.0,
+     "etf_leg_share": 0.9672578990059559,
+     "cash_share": 0.032742100994043725
+    },
+    "full_period_level_change": {
+     "equity": 34772.46669999996,
+     "stock_leg": 0.0,
+     "etf_leg": 182271.59999999998,
+     "cash": -147499.13330000002
+    },
+    "leg_weights": {}
+   },
+   "5_increments": {
+    "intent_layer": {
+     "n_intents": 136,
+     "activated": 136,
+     "orders_generated": 673,
+     "stopped_filled": 111,
+     "terminated_override": 7,
+     "terminated_expired": 18,
+     "terminated_cap": 0,
+     "at_target_skips": 0,
+     "emissions_skipped_no_anchor": 0,
+     "emissions_skipped_no_live_session": 0
+    },
+    "caps": {
+     "single_name_voids": 0,
+     "single_name_drift_breaches": 2451,
+     "total_voids": 0,
+     "definition": "section 7.3 (section 7.7 M2): single-name MV <= 25% of the decision-point equity snapshot, validated at order construction (breach -> whole order voids); drift breaches are recorded only (no force trim); the total<=100% cap is implied by full funding and never fires on an affordable order"
+    },
+    "cash_friction": {
+     "insufficient_cash_orders": 195,
+     "below_min_lot_abandons": 0,
+     "quantity_capped_fills": 0,
+     "no_position_voids": 267,
+     "t1_locked_voids": 0
+    },
+    "void_days": {
+     "not_penetrated": 86,
+     "insufficient_cash": 195
+    },
+    "etf_leg_stats": {
+     "meta_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010",
+      "sh.513100",
+      "sh.513500",
+      "sh.518880",
+      "sz.159915"
+     ],
+     "etf_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010",
+      "sh.513100",
+      "sh.513500",
+      "sh.518880",
+      "sz.159915"
+     ],
+     "etf_bands": {
+      "sh.510050": 0.1,
+      "sh.510300": 0.1,
+      "sh.510880": 0.1,
+      "sh.511010": 0.1,
+      "sh.513100": 0.1,
+      "sh.513500": 0.1,
+      "sh.518880": 0.1,
+      "sz.159915": 0.1
+     },
+     "etf_default_band_symbols": [],
+     "t_plus_zero_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010",
+      "sh.513100",
+      "sh.513500",
+      "sh.518880",
+      "sz.159915"
+     ],
+     "dividend_event_symbols": [
+      "sh.510050",
+      "sh.510300",
+      "sh.510880",
+      "sh.511010"
+     ],
+     "dividend_events_cash": 8613.199999999995,
+     "limit_source": "computed per section 8.3 (preclose x (1 +/- band), 0.001 tick)",
+     "routing": "section 8.2: ETF pm decisions live next pm; ETF fallbacks execute at pm opens"
+    },
+    "dividend_events_cash": 8613.199999999995,
+    "corp_actions": {
+     "splits": 0,
+     "dividends": 8,
+     "dividend_cash_total_pre_tax": 8613.199999999995
+    },
+    "engine_warnings_n": 48,
+    "engine_warnings_sample": [
+     "commission guard: buy fill sz.159915 2015-12-02 notional 50892.10 > 50000 (commission 5.09; the 5-yuan minimum no longer binds)",
+     "commission guard: sell fill sh.513500 2016-01-06 notional 51346.40 > 50000 (commission 5.13; the 5-yuan minimum no longer binds)",
+     "commission guard: sell fill sh.513100 2016-11-01 notional 50806.20 > 50000 (commission 5.08; the 5-yuan minimum no longer binds)"
+    ],
+    "final": {
+     "settled_cash": 52500.86669999999,
+     "pending_am_to_pm": 0.0,
+     "pending_next_day": 0.0,
+     "n_open_clips": 3
+    }
+   },
+   "6_stock_leg_vs_hyb00": null
+  }
+ },
+ "b3prime_dev_mean_net_cagr": {
+  "T200-40": -0.01991746425477723,
+  "FIX75": -0.0035871088487231862
+ },
+ "b3prime_source": "R16 metrics.json verbatim",
+ "goal_column": "dev net CAGR >= 10% (user session target, NOT a gate)",
+ "benchmark_seam_S3": "ROT arms have no stock exposure path; benchmarked against the family anchor B1m/C05 (T200-40, rate_only) + B3prime[T200-40]; pending adjudication",
+ "blocked_configs": {
+  "ROT-03": {
+   "reason": "intent-frame construction impossible as pinned (engine _validate_intents rejects duplicate first decision points; m5-b violated)",
+   "m5b_duplicates": [
+    [
+     "sh.511010",
+     "sell",
+     "2015-10-30"
+    ],
+    [
+     "sh.511010",
+     "sell",
+     "2016-02-29"
+    ],
+    [
+     "sh.511010",
+     "sell",
+     "2018-07-31"
+    ],
+    [
+     "sh.511010",
+     "sell",
+     "2019-02-28"
+    ]
+   ],
+   "first_decision_duplicates": [
+    [
+     "sh.511010",
+     "2015-08-31",
+     "pm"
+    ],
+    [
+     "sh.511010",
+     "2015-10-30",
+     "pm"
+    ],
+    [
+     "sh.511010",
+     "2016-01-29",
+     "pm"
+    ],
+    [
+     "sh.511010",
+     "2016-02-29",
+     "pm"
+    ],
+    [
+     "sh.511010",
+     "2018-04-27",
+     "pm"
+    ],
+    [
+     "sh.511010",
+     "2018-07-31",
+     "pm"
+    ],
+    [
+     "sh.511010",
+     "2018-12-28",
+     "pm"
+    ],
+    [
+     "sh.511010",
+     "2019-02-28",
+     "pm"
+    ]
+   ]
+  }
+ },
+ "spec_seams": {
+  "S1_park_init_source": "engine requires date-typed source_signal; pinned 'park_init' literal is un-runnable; resolved to the park decision date 2015-01-30 (no K impact: buys have no fallback); pending adjudication",
+  "S2_rot03_leg_rotation_collision": "ROT-03 pinned ranking universe (8 members) includes the 50% leg sh.511010; in months where 511010 enters/exits top-2 the rotation intent and the leg monthly reduce share the same (symbol, first decision point), which _validate_intents hard-rejects (m5-b violated). Materialized months: entries 2015-08-31/2016-01-29/2018-04-27/2018-12-28; exits 2015-10-30/2016-02-29/2018-07-31/2019-02-28. NOT run; resolution (exclude leg from ranking / skip colliding leg sells / merge) requires user adjudication",
+  "S4_parkw_vs_cap25": "frozen ParkW grid {30,40,50}% exceeds the equally frozen engine single-name 25% construction cap (contract sec 8.5: cap applies to ETF legs identically); HYB-01..04 park buys are voided+terminated at first emission (cap_single_name) -- configs ran as pinned and the engine outcome is reported verbatim; any ParkW > 25% needs a re-spec (multi-tranche / cap-aware) by adjudication"
+ },
+ "consistency_c05": {
+  "membership_mismatches": 0,
+  "membership_events_mismatches": 0,
+  "n_signal_days": 71
+ },
+ "degeneration_check": {
+  "HYB-01": {
+   "fills_eq_hyb00": true,
+   "daily_eq_hyb00": true,
+   "leg_cap_terminated": 1
+  },
+  "HYB-02": {
+   "fills_eq_hyb00": true,
+   "daily_eq_hyb00": true,
+   "leg_cap_terminated": 1
+  },
+  "HYB-03": {
+   "fills_eq_hyb00": true,
+   "daily_eq_hyb00": true,
+   "leg_cap_terminated": 1
+  },
+  "HYB-04": {
+   "fills_eq_hyb00": true,
+   "daily_eq_hyb00": true,
+   "leg_cap_terminated": 1
+  }
+ },
+ "notes": [
+  "gate8v2 caliber: the single armed-not-delivered fallback in every HYB config is sh.600518 (2019-06): armed at streak 3, then 8 consecutive opening limit-down deferrals, and the standing LIMIT sell itself filled on 2019-06-12 -- the risk exit WAS delivered by the limit order, but the frozen caliber counts market-fallback executions only, so delivery = 6/7 = 85.7% < 99%. Gate applied as frozen; re-defining delivery to include limit exits during deferral is a criteria change requiring adjudication.",
+  "HYB-05 gate 4 margin: maxDD -20.0027% vs the <=20% absolute leg -- a 0.3bp breach; the <=B1(m) leg (-39.82%) passes.",
+  "HYB-01..04 are engine-degenerate to HYB-00: the ParkW leg buy breaches the 25% single-name construction cap at first emission and the intent is terminated (seam S4); fills and daily equity are byte-identical to HYB-00 (verified post-run).",
+  "limit_direct_fill_rate is PER-EMISSION (filled orders / generated orders; intents re-emit at every decision point until done), while the R16 comparison column is PER-INTENT -- the two calibers are not comparable to each other; both are disclosed."
+ ],
+ "advanced_to_validation": false,
+ "val_consumed": false,
+ "stop_note": "no config passed all dev gates (0/8); val not consumed"
+}

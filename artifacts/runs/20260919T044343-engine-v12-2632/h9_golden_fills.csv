@@ -1,0 +1,3 @@
+fill_id,order_id,symbol,side,intent,fill_type,date,session,decision_date,decision_session,priority,shares,price,notional,commission,stamp_tax,fees_total,net_cash_flow,is_etf,detail
+F000001,sh.600001-buy-2024-01-02-am,sh.600001,buy,"",limit,2024-01-02,pm,2024-01-02,am,1,1000,10.0,10000.0,5.0,0.0,5.0,-10005.0,false,buy clip
+F000002,sh.600001-sell/risk-2024-01-04-pm,sh.600001,sell,risk,market_fallback,2024-01-05,am,2024-01-04,pm,1,1000,8.5,8500.0,5.0,4.25,9.25,8490.75,false,K=3 market exit at open

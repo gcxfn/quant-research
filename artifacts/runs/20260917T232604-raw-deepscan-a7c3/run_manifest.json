@@ -1,0 +1,22 @@
+{
+ "run_id": "20260917T232604-raw-deepscan-a7c3",
+ "task": "data/raw 深扫(已登记未深扫批次) → data/_meta/deep-scan-20260917",
+ "status": "completed",
+ "started_at": "2026-09-18T00:06:51",
+ "ended_at": "2026-09-18T00:09:56",
+ "duration_budget_min": 82,
+ "command": "\"D:/量化/.venv/Scripts/python.exe\" -X utf8 artifacts/runs/20260917T232604-raw-deepscan-a7c3/deepscan.py artifacts/runs/20260917T232604-raw-deepscan-a7c3 <deadline_epoch>",
+ "engine_script": "artifacts/runs/20260917T232604-raw-deepscan-a7c3/deepscan.py",
+ "engine_sha256": "9b097fbffea7c5e72082673502f6c7ecc134522adc0c4430c3114ba1d801a6f9",
+ "environment": {
+  "python": "3.11.15",
+  "polars": "1.44.2",
+  "platform": "Windows-10-10.0.26200-SP0"
+ },
+ "units_done": 514,
+ "units_failed": 0,
+ "units_remaining": 0,
+ "remaining_units": [],
+ "data_raw_touched": false,
+ "notes": "data/raw 全程只读; 未修改 data/_meta 既有文件; 未初始化 git; 未联网。"
+}

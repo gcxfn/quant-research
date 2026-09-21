@@ -1,0 +1,21 @@
+[  31.0s] auction 5994413
+[ 122.7s] moneyflow 5589063
+[ 143.0s] limit 7166681
+[ 154.4s] nineturn 5637805
+[ 159.8s] �������
+D:\����\artifacts\runs\20260921T100000-f3-validation-composite\scripts\f2val_C_micro.py:169: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  month_end = g.filter(pl.col("date").is_in(pl.Series(ME)))
+D:\����\artifacts\runs\20260921T100000-f3-validation-composite\scripts\f2val_C_micro.py:175: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  .filter(pl.col("date").is_in(pl.Series(ME)))
+[ 164.2s] C01 auct_prem20  ic=-0.0621 t=-2.99 mono=-0.53 ic15=n/a cov=100% ��� (2.6s)
+[ 165.7s] C11 lim_dist_up  ic=-0.0231 t=-0.99 mono=-0.48 ic15=n/a cov=98%  (1.6s)
+[ 167.1s] C12 lim_dist_dn  ic=-0.0399 t=-1.71 mono=-0.24 ic15=n/a cov=98%  (1.4s)
+[ 168.3s] C19 cls_str20    ic=-0.0209 t=-1.18 mono=-0.78 ic15=n/a cov=100%  (1.2s)
+
+== C ����ɣ�20/20���ղô�� 1��['C01']���ܺ�ʱ 168s ==

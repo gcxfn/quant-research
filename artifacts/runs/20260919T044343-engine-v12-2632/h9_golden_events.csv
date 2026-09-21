@@ -1,0 +1,8 @@
+date,session,symbol,side,intent,order_id,event,priority,limit_price,ref_price,shares,ratio,cash_amount,detail
+2024-01-02,pm,sh.600001,buy,"",sh.600001-buy-2024-01-02-am,filled_limit_buy,1,10.0,9.5,1000,,,strict penetration: session low < p; fill at p
+2024-01-02,pm,"","","","",intent_lifecycle,,,,,,,sh.600001/buy/entry source 2024-01-02: filled
+2024-01-03,pm,sh.600001,sell,risk,sh.600001-sell/risk-2024-01-03-am,not_penetrated,1,9.3,9.25,,,,strict penetration required: session high > q; risk K streak 1
+2024-01-04,am,sh.600001,sell,risk,sh.600001-sell/risk-2024-01-03-pm,not_penetrated,1,9.1,9.0,,,,strict penetration required: session high > q; risk K streak 2
+2024-01-04,pm,sh.600001,sell,risk,sh.600001-sell/risk-2024-01-04-am,not_penetrated,1,8.75,8.7,,,,strict penetration required: session high > q; risk K streak 3; market fallback armed for next session
+2024-01-05,am,"","","","",market_exit_filled,,,8.5,1000,,,K=3 market fallback at open
+2024-01-05,am,"","","","",intent_lifecycle,,,,,,,sh.600001/sell/risk source 2024-01-03: filled

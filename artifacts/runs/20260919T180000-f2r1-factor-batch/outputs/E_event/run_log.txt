@@ -1,0 +1,36 @@
+[    0.0s] 加载 v0 面板 ...
+[    0.1s] 月末信号期数 = 71（2015-01-30 .. 2020-11-30）
+[    0.1s] 加载 daily_basic 月末文件 ...
+[    0.5s] daily_basic 月末覆盖 223743 行
+[    0.5s] 加载事件源 ...
+[    0.8s] forecast 行数=17936 符号数=3714
+[    0.8s] express 行数=4500 符号数=2471
+[    0.8s] repurchase 行数=17132 符号数=1640
+[    1.0s] holdertrade 行数=68220 符号数=3172
+[    1.2s] share_float 行数=109017 符号数=2786
+[    1.9s] dividend(实施) 行数=16979 符号数=3957
+[    2.0s] dev 窗事件量: {"forecast": {"rows": 17936, "symbols": 3714, "first": "2018-09-03", "last": "2020-11-30"}, "express": {"rows": 4500, "symbols": 2471, "first": "2019-01-04", "last": "2020-08-24"}, "repurchase": {"rows": 17132, "symbols": 1640, "first": "2016-01-04", "last": "2020-11-30"}, "stk_holdertrade": {"rows": 68220, "symbols": 3172, "first": "2016-01-01", "last": "2020-11-30"}, "share_float": {"rows": 109017, "symbols": 2786, "first": "2016-01-01", "last": "2020-11-30"}, "dividend(实施,按ex_date)": {"rows": 16979, "symbols": 3957, "first": "2015-01-06", "last": "2020-11-30"}}
+[   20.3s] 月末逐期计算完成，组装因子帧 ...
+[   20.3s] 计算全合格池月度规模参考 ...
+[   21.4s] 全合格池月末符号数中位 = 3126
+[   22.8s] E01 fcst_np: ic=+0.0240 t=+0.98 mono=+0.71 cov=0/3126 存活=False (1.4s)
+[   24.1s] E02 fcst_np_max: ic=+0.0248 t=+1.03 mono=+0.69 cov=0/3126 存活=False (1.3s)
+[   25.6s] E03 fcst_rev: ic=+0.0054 t=+0.74 mono=-0.28 cov=0/3126 存活=False (1.5s)
+[   27.0s] E04 fcst_cnt120: ic=+0.0048 t=+0.32 mono=-0.25 cov=3108/3126 存活=False (1.4s)
+[   28.8s] E05 fcst_fresh20: ic=-0.0059 t=-0.55 mono=-0.32 cov=3108/3126 存活=False (1.8s)
+[   30.2s] E06 expr_rev_yoy: ic=+0.0138 t=+0.54 mono=+0.58 cov=0/3126 存活=False (1.3s)
+[   31.2s] E07 expr_surp: ic=+0.0183 t=+0.66 mono=-0.35 cov=0/3126 存活=False (1.1s)
+[   32.5s] E08 repo_120: ic=+0.0028 t=+0.19 mono=-0.32 cov=251/3126 存活=False (1.3s)
+[   34.1s] E09 repo_ann20: ic=+0.0062 t=+1.48 mono=+0.43 cov=3108/3126 存活=False (1.5s)
+[   35.4s] E10 hb_net120: ic=+0.0069 t=+0.62 mono=-0.31 cov=773/3126 存活=False (1.3s)
+[   36.8s] E11 hs_net120: ic=-0.0135 t=-1.56 mono=-0.29 cov=467/3126 存活=False (1.4s)
+[   38.4s] E12 hb_key60: ic=-0.0090 t=-0.69 mono=-0.67 cov=372/3126 存活=False (1.6s)
+[   40.0s] E13 float_fwd60: ic=-0.1220 t=-4.62 mono=-0.79 cov=135/3126 存活=False (1.6s)
+[   41.5s] E14 float_past20: ic=-0.0147 t=-0.33 mono=-0.92 cov=57/3126 存活=False (1.5s)
+[   43.0s] E15 div_ex20: ic=+0.0348 t=+0.89 mono=+0.50 cov=40/3126 存活=False (1.5s)
+[   44.8s] E16 div_yld120: ic=+0.0433 t=+3.06 mono=+0.72 cov=2299/3126 存活=True (1.8s)
+[   46.5s] E17 fcst_sign120: ic=+0.0244 t=+1.51 mono=-0.12 cov=3108/3126 存活=False (1.7s)
+[   48.2s] E18 expr_cnt120: ic=+0.0001 t=+0.01 mono=-0.07 cov=3108/3126 存活=False (1.7s)
+[   49.5s] E19 hb_ann20: ic=-0.0055 t=-1.96 mono=+0.12 cov=3108/3126 存活=False (1.3s)
+[   50.9s] E20 float_press: ic=-0.0360 t=-0.98 mono=-0.86 cov=292/3126 存活=False (1.4s)
+[   50.9s] 全部完成

@@ -1,0 +1,193 @@
+{
+  "run_id": "20260918T140610-p3r1-engine-fix-e850",
+  "experiment_id": "exp-20260918-p3r1-band-readjudication",
+  "purpose": "engine_acceptance_FIX (post dual-sign REJECT; corporate-action line re-adjudicated per review F1-F8, contract §1.3/§4 amended version, prereg §7 判定前工具修正); no strategy judgement",
+  "status": "completed",
+  "started_at": "2026-09-18T06:09:18.544550+00:00",
+  "ended_at": "2026-09-18T06:09:33.358283+00:00",
+  "command": [
+    "D:\\量化\\.venv\\Scripts\\python.exe",
+    "artifacts\\runs\\20260918T140610-p3r1-engine-fix-e850\\tmp\\build_artifacts.py"
+  ],
+  "supersedes": "artifacts/runs/20260918T125211-p3r1-engine-ea06 (kept unmodified as archived evidence of the REJECT)",
+  "trial_accounting": {
+    "trials_consumed_by_this_run": 0,
+    "note": "判定前工具修正 (prereg §7): cumulative trials remain 189; the 8 readjudication trials (189->197) belong to the separate adjudication runs after re-review sign-off"
+  },
+  "frozen_config": {
+    "path": "configs/experiments/p3r1-band-readjudication.json",
+    "sha256": "9839ff079823bdd5de143ee323126cbd209e303c669394306118023ef0822e3c"
+  },
+  "authority_chain": {
+    "contract_doc_amended": {
+      "path": "docs/plans/p3-band-contract.md",
+      "sha256": "1d3c5c1f398102ee11cd2f2fad0aba8e7b22ae495f98a292aa8c6036fe5385a0",
+      "sha256_16": "1d3c5c1f398102ee",
+      "note": "§1.3/§4 修正版 (F1/F2/F5), pinned"
+    },
+    "prereg_doc": {
+      "path": "docs/research/exp-20260918-p3r1-band-readjudication-prereg.md",
+      "sha256": "ebb73059c4c5e6f987d42d8f789497509c9384fdeacda6d2d718981217096b76",
+      "note": "§7 修正记录 + §3 input table updated for split_factor/dividends"
+    },
+    "pin_sha256_16_checks": {
+      "contract_doc_sha256_16": {
+        "computed": "1d3c5c1f398102ee",
+        "pinned": "1d3c5c1f398102ee",
+        "match": true
+      },
+      "split_factor_sha256_16": {
+        "computed": "2f436b2f13d09a9b",
+        "pinned": "2f436b2f13d09a9b",
+        "match": true
+      },
+      "dividends_sha256_16": {
+        "computed": "46121c09cddde72e",
+        "pinned": "46121c09cddde72e",
+        "match": true
+      },
+      "r16_config_sha256_16": {
+        "computed": "27f846a7330919a4",
+        "pinned": "27f846a7330919a4",
+        "match": true
+      },
+      "daily_parquet_sha256_16": {
+        "computed": "d9a63f4cc3032926",
+        "pinned": "d9a63f4cc3032926",
+        "match": true
+      },
+      "ex_cum_factor_audit_sha256_16": {
+        "computed": "70df4aca64351858",
+        "pinned": "70df4aca64351858",
+        "match": true
+      }
+    }
+  },
+  "inputs": {
+    "daily_parquet": {
+      "path": "data/processed/baostock-daily-20260917/daily_1999_2024.parquet",
+      "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6",
+      "bytes": 488873145
+    },
+    "stk_limit_batch": {
+      "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by name",
+      "aggregate_sha256": "3c53abf3b0c39b425389137d9f630f0de158990fcdc55b0bd41bf7d9c3bde673",
+      "files": 2432,
+      "total_bytes": 301278245,
+      "path": "data/raw/tushare/stk_limit/20260917-r1"
+    },
+    "split_factor_h5": {
+      "path": "data/processed/rqalpha-bundle-v2-1-20260918/split_factor.h5",
+      "sha256": "2f436b2f13d09a9bfdcbdb0bf35669c10a377d180ce1ca37bef53d6c96a3365d",
+      "bytes": 1226072
+    },
+    "dividends_h5": {
+      "path": "data/processed/rqalpha-bundle-v2-1-20260918/dividends.h5",
+      "sha256": "46121c09cddde72e725c2d4ae025cc259b049aeaa77c868b492fdbba60214846",
+      "bytes": 3688472
+    },
+    "ex_cum_factor_h5_audit_only": {
+      "path": "data/processed/rqalpha-bundle-v2-1-20260918/ex_cum_factor.h5",
+      "sha256": "70df4aca6435185889ae807afe0a44cc4f7243cc9ee63b20dcdb690ee963ffa9",
+      "bytes": 2946384
+    },
+    "note": "hashed for identity; the acceptance runs executed on inline synthetic frames; real rows consumed only by the read-layer smoke (no signals, no judgement)"
+  },
+  "code_sha256": {
+    "src/quant/backtest/band_engine.py": "0582949193ad229fdc3e24dfccd730ff6a21acb0dd84197867abbfb2a539a68a",
+    "tests/test_band_contract.py": "e1bf25c25ab7c5c4d8aba256a63d06a3e22fd0b2d4be23668a05edbe098f3659"
+  },
+  "environment": {
+    "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "polars": "1.44.2",
+      "pyarrow": "25.0.1",
+      "numpy": "1.26.4",
+      "pandas": "2.3.3",
+      "h5py": "3.16.0"
+    }
+  },
+  "tests": {
+    "command": "python -m pytest tests/test_band_contract.py -v -ra",
+    "passed": 13,
+    "failed": 0,
+    "exit_code": 0,
+    "elapsed_seconds": 5.37,
+    "item_map": {
+      "1_fee_conservation": "test_01_fee_conservation",
+      "2_t1_zero_violations": "test_02_t1_zero_violations",
+      "3_lot_invariant_amended_f5": "test_03_lot_invariant",
+      "4_cash_nonneg_priority": "test_04_cash_nonneg_priority_order",
+      "5_touch_vs_penetration": "test_05_touch_vs_penetration",
+      "6_corporate_actions_readjudicated": "test_06_corporate_actions",
+      "6_real_600000": "test_06b_real_600000_corp_actions",
+      "6_f2_anchor_loader_regression": "test_06c_split_loader_anchor_regression",
+      "7_suspension_limit_legality": "test_07_suspension_and_limit_legality",
+      "8_sell_reanchor_k3": "test_08_sell_reanchor_k3_fallback",
+      "9_sale_proceeds_next_day": "test_09_sale_proceeds_next_day",
+      "10_stamp_segmentation": "test_10_stamp_segmentation",
+      "guards": "test_00_input_guards"
+    },
+    "log": "logs/pytest.log"
+  },
+  "hand_calc": {
+    "file": "hand-calc-samples.md",
+    "samples": [
+      "A_buy",
+      "B_sell",
+      "C_k3_fallback_F4_corrected",
+      "D_corp_actions_readjudicated"
+    ],
+    "verification": "all sample numbers hard-asserted against engine output at generation time",
+    "log": "logs/handcalc.log"
+  },
+  "read_layer_smoke": {
+    "daily": {
+      "rows": 16344349,
+      "max_date": "2024-12-31",
+      "rows_dropped_by_freeze": 0
+    },
+    "stk_limit": {
+      "chunks": 2431,
+      "rows": 9705448,
+      "symbols": 5742,
+      "max_date": "2024-12-31"
+    },
+    "ex_cum_factor_audit_only": {
+      "keys": 5914,
+      "rows": 33933,
+      "max_date": "2024-12-31"
+    },
+    "note": "read-only smoke; freeze filtering verified; ex_cum_factor loader kept for audit only (F1) and never enters the account path"
+  },
+  "f_dispositions": {
+    "F1": "FIXED: account corp-action inputs swapped to split_factor.h5 (per-event 送转 ratios, half-up) + dividends.h5 (per-LOT pre-tax, cash = per_lot/round_lot x pre-ex shares); ex_cum_factor removed from run_band_backtest (audit-only loader kept, never in the account path); acceptance item 6 redone on real sh.600000 2017-05-25 and 2022-07-21 (test_06b)",
+    "F2": "FIXED: split loader drops (0,1.0)-style anchor rows and split values are applied as per-event ratios (no differencing, no cumulative chain); regression tests test_06c (loader anchor drop) and test_06 (position crossing first change-point scales by its own row ratio, 1000->1100, never a cumulative like 7.82)",
+    "F3": "ADDRESSED: this manifest pins the AMENDED contract sha256:16 = 1d3c5c1f398102ee (verified at run start); the rejected run 20260918T125211-p3r1-engine-ea06 and its manifest stay unmodified as archived evidence",
+    "F4": "FIXED: hand-calc sample C limit_down corrected to the actually-fed value (same-day close 27.4 x 0.9 = 24.66); the corrected doc lives in THIS run directory; the old run directory is preserved as-is",
+    "F5": "FIXED: acceptance item 3 re-scoped per amended contract §4.3 -- all buy fills are lot multiples; corp-action odd lots sell in one full-position order; odd-lot sell fills counted in stats.odd_lot_exits and marked in fill detail; 188-share sample in test_03 (100 x1.5 -> 150, x1.25 -> 187.5 -> 188 half-up)",
+    "F6": "FIXED: deferred_limitdown_days documented as a count of deferral EVENTS (armed days opening at/below limit_down*(1+1e-4)); on such days the re-anchored limit keeps working and may fill, so one fallback can both defer and fill -- definition embedded in stats.k3_fallback and the engine docstring",
+    "F7": "FIXED (documentation): ex-date sell anchor = PRE-ex close (only well-defined latest close at that open); stale-anchor protection relies on exchange-caliber stk_limit (void_limit_out_of_range); docstring + module notes require the adjudication report to disclose this path trigger count",
+    "F8": "ADDRESSED where actionable: test_00 temp parquet moved to system TEMP (repo-root tmp/ no longer used by tests); void_days naming and the unreachable void_no_prior_close branch left as documented INFO items (no behavior change requested)"
+  },
+  "disclosures": {
+    "strategy_judgement": "not performed (re-review sign-off required before the P3R1 eight-config readjudication runs)",
+    "signals_consumed": "none; synthetic engine-acceptance scenarios only",
+    "data_access": "read-only hashing + read-layer smoke; zero row-level strategy consumption",
+    "freeze": "read layer enforces trade_date <= 2024-12-31 (assert_frozen + loaders); exercised by tests/test_band_contract.py::test_00_input_guards and the read-layer smoke",
+    "remaining_engine_notes": [
+      "k3 pnl disclosure = net market-exit proceeds minus shares * previous close (engine-defined; ruling #7 accepted)",
+      "transfer fee not modelled (~0.1bp/leg SSE only; standing disclosure)",
+      "dividend cash available to same-day buys (ruling #6 accepted, disclosed)",
+      "penetration comparisons are strict float comparisons without tolerance (contract \"严格\" semantics; F8 INFO)"
+    ]
+  },
+  "peak_rss_bytes": 279040000,
+  "outputs": {
+    "hand-calc-samples.md": "3d5d8c41e671af3b0a45544587e0b3c0e6830abf5f1c35b1d6f0f711958928b8",
+    "logs/handcalc.log": "9b5963c723d6590414dc1023c45da924e83264348d204441edb8631c63046e72",
+    "logs/pytest.log": "890c648b687765bc3de9878385bfc37ff334afd1a79ae8b764dbd8de887aecc8",
+    "tmp/build_artifacts.py": "ef7c1b0a4b5f6962f930de670ab42a59528434b42e975a0458249d03de140c64"
+  }
+}

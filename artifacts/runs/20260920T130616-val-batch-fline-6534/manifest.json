@@ -1,0 +1,122 @@
+{
+ "run_id": "20260920T130616-val-batch-fline-6534",
+ "experiment_id": "exp-20260920-val-batch (V2 / F line)",
+ "status": "aborted",
+ "stop_reason": "prereg sec 6 trigger: F-line factor dev port FAILED -- 8 of the 17 representative factors cannot be reproduced from the frozen F2R1 artifacts: the 7 D-family (financial PIT) factors because four runs of the identical shipped script over byte-identical inputs give four different frames, and E16 because the out-of-band correction script's unique(keep='first') tie-break is itself order-dependent (two runs of the same corrected build differ in 24-27 rows). All 5 F-line configs consume the affected factors -> line stopped, val NOT consumed.",
+ "stop_report": "tmp/stop_report.md",
+ "started_at_utc": "2026-09-20T13:06:16+08:00",
+ "ended_at_utc": "2026-09-20T06:14:02.509851+00:00",
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "scripts/val_b1m.py | generated/f2val_*.py | generated/val_events.py"
+ ],
+ "engine": {
+  "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+  "sha256_at_start": "a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3",
+  "sha256_at_end": "a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3",
+  "version": "v1.4.1",
+  "bytes_modified_by_this_run": false,
+  "pin": "a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3"
+ },
+ "pins": {
+  "prereg": {
+   "path": "D:\\量化\\docs\\research\\exp-20260920-val-batch-prereg.md",
+   "sha256": "9547bde71952e5143b5bf2385e81567769e22485267cf322e5e39018ae475235"
+  },
+  "daily_1999_2024": {
+   "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_1999_2024.parquet",
+   "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6"
+  },
+  "r16_metrics": {
+   "path": "D:\\量化\\artifacts\\runs\\20260918T083650-p2r16-trend-dispersion-afab466f\\metrics.json",
+   "sha256": "8d0b6ebbdea6ebb9dc8146ead84ca408021e72749e1e7540f3483c6ed2a5fcc9"
+  },
+  "f3r1_dedup_clusters": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T191524-f3r1-factor-combo-c212\\outputs\\dedup_clusters.csv",
+   "sha256": "7b80b95bbbbbc34db44236c329b69094040faafa3a57c17f3c41ebab760e67b4"
+  },
+  "t1_events_dev": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T113527-t1-reason-event-b690\\outputs\\events_dev.parquet",
+   "sha256": "bada2b342493654d7b397191ba445b171a44b0d89d5d0cad9442dbf7995ab14f"
+  },
+  "tl30_metrics": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T151630-hybrid-val-v1p3\\outputs\\metrics_and_gates.json",
+   "sha256": "6f4db475d1c9d6ab4f961080f67627b95f1e927499fc8704facd6af017dd8368"
+  },
+  "raw_financial_files_verified": {
+   "rule": "sha256 per file vs data/_meta/sha256.tsv (2026-09-17)",
+   "files": 23622,
+   "mismatches": 0
+  }
+ },
+ "env": {
+  "python": "3.11.15",
+  "polars": "1.44.2",
+  "numpy": "1.26.4",
+  "platform": "Windows-10-10.0.26200-SP0"
+ },
+ "window": {
+  "dev": "2015-01-05..2020-12-31 (signals 2015-01-30..2020-11-30, 71)",
+  "val": "2021-01-04..2024-12-31 (signals 2021-01-29..2024-11-29, 47)",
+  "val_consumed": false,
+  "val_contact": "only the prereg-mandated benchmark B1(m)(val) recompute (identical to TL-30's published value); no factor score, composite, arm run or gate judgement was produced on val"
+ },
+ "stage_timings_s": {
+  "val_b1m_dev_s": 61.7,
+  "val_b1m_val_s": 39.7,
+  "factor_dev_A_price_s": 176.0,
+  "factor_dev_B_value_s": 175.0,
+  "factor_dev_C_micro_s": 307.0,
+  "factor_dev_D_fund_s": 515.0,
+  "factor_dev_D_fund_rerun_s": 198.0,
+  "factor_dev_D_fund_rerun_threads1_s": 319.0,
+  "factor_dev_E_event_s": 174.8,
+  "factor_dev_E_event_after_E16_fix_s": 74.6,
+  "factor_dev_F_xsec_s": 85.0,
+  "events_dev_port_s": 22.9,
+  "d_determinism_probe_s": 43.0,
+  "polars_order_probe_s": 2.0,
+  "note": "wall seconds as printed by each stage; the D re-runs exist only to test reproducibility and are not val consumption"
+ },
+ "port_verification": {
+  "b1m_dev": "PASS (1e-9 vs R16 configs.C05 b1m_*)",
+  "b1m_val": "PASS (1e-9 vs TL-30 -0.148%/-23.44%)",
+  "events_dev": "PASS (6/7 artifacts byte-identical; events_dev.parquet content-bit-identical, row order only)",
+  "factor_dev": "FAIL 8/17 (D family 7 + E16); 6/17 byte-identical; 3/17 value-bit-identical with a permuted row order; the 7 D factors and E16 are not reproducible from the frozen artifacts (see outputs/d_family_reproducibility.json and the e16_stability block of outputs/port_check_factors_dev.json)",
+  "arm_dev_anchors": "NOT RUN (stopped earlier by the factor port)"
+ },
+ "incidents": {
+  "f2r1_f_xsec_summary_overwritten": "the F-family dev port run rewrote artifacts/runs/20260919T180000-f2r1-factor-batch/f_xsec_summary.json (the generated script inherited the frozen script's write target). The rewrite runs the same code over the same dev-window inputs, so the recorded values are the F2R1 values; the F2R1 run has no manifest.json, so no original hash exists to restore or verify against. The generator was corrected (the summary now writes into this run's outputs) and the incident is registered here.",
+  "e16_not_from_family_script": "the frozen outputs/E_event/E16.parquet was produced by the out-of-band correction tmp_accept/fix_E16_dupcount.py, not by f2r1_e_event.py; the val generator re-implements that correction (disclosed in the generated script) and reproduces the frozen frame to 1.15e-4."
+ },
+ "trial_accounting": {
+  "this_round": "0 val configs consumed (F line stopped at the port gate)",
+  "strategy_line": "unchanged"
+ },
+ "outputs": {
+  "outputs/b1m_dev.json": "3250d7d2df271bcb0e12c8524feb823cd22c55ab175904867efcd06d72376e57",
+  "outputs/b1m_val.json": "7778f935c37aa364a071c90b57b47952c021f75fdeca9e673819ed424f4b9f2b",
+  "outputs/d_family_reproducibility.json": "9134d27023f6b9945f7f6e4c12c4b25b82895693d3f59d530cb2845522bb29f9",
+  "outputs/d_pipeline_determinism_probe.json": "a9db00371403a29e9c1ab35c3cb0f3d408b94a61a945e5e5a7ea7fbdbd834fed",
+  "outputs/port_check_events_dev.json": "b1dacacee02b7666717ecdf7a22c49fc39560f19ecc522a0e8c86b30900b5507",
+  "outputs/port_check_factors_dev.json": "757054224c6ade29c7755368e85613b634cee0cfe5700d9fb27381fe0cd0870c",
+  "scripts/adapt_event_script.py": "4b9d85c970d1998a5bdbb8ae24f2ebe948ae40f736d3ef1b359dc53dc27cce72",
+  "scripts/adapt_factor_scripts.py": "b889e7c8e094c03681b9d3161bcbf2f3fdec311d61cb283ee062e0c9c9f48e88",
+  "scripts/d_determinism_probe.py": "45abda410b687c7feff2b1974a997e8c77f89d488aad4341c1f15eaabd94c3c3",
+  "scripts/finalize_stop.py": "e15869632ccf9735bd1c3edf048652de61d1cfa9f8dc2bfe89f7907fe1004f5f",
+  "scripts/generated/f2val_A_price.py": "8f2b6f790fa764b4636bea55b66b4843642dbab794c1bc0f45ef6f8a18266ca8",
+  "scripts/generated/f2val_B_value.py": "b35626ed5d653715824ad9b249983d3c1513af65648e273c258ecbd79453d733",
+  "scripts/generated/f2val_C_micro.py": "df30134db7847cb444a1efea1292b9c07fe12943d7bd7616e4873f93a3398c30",
+  "scripts/generated/f2val_D_fund.py": "b82a5930e8cf4d343b9f763018f5aa289ac21219407f7946b189c4e4e8ab553e",
+  "scripts/generated/f2val_E_event.py": "8e726e7e3363704e69a304292c9c094fff719ad2e423d025248eee6e106f4742",
+  "scripts/generated/f2val_F_xsec.py": "c6c9a5d5cdc61b91d6dedc96ddc9ff0d8bd081d6e32cc8d3d3f7eedbd09c9a11",
+  "scripts/generated/val_events.py": "253641cf434fe9505fe9d5fe5baa49ae367a5cd229b64b7940554539a23991aa",
+  "scripts/polars_order_probe.py": "aa33cf44a6fd7b1ce4b0538c79cf6c265c33b5ec7214928278f1c1f1ded36058",
+  "scripts/port_check_factors.py": "9980f7f18bfded8164994e65d2d8a7fdb91fd592e9a44dd8d91f453f7412770a",
+  "scripts/val_b1m.py": "7984268758d8a419a128be91bc67b04b8965e6544d0ec49c552b4d19c1d96f9f",
+  "tmp/E16_runA.parquet": "6e0a96515798716b391f86d216ecd4dcafef2dcd92c21089457dd553ccdb1025",
+  "tmp/manifest_events_dev.json": "85dad812bba9d962112d48dbdcef34d894d6186c4d9f8c2da8f51ba8dc27c30d",
+  "tmp/stop_report.md": "40cbbd017beb87d58f4ef08b40578f5b41bec2902316fe843360b3262dad866c",
+  "tmp/t1_batch_sha256_dev.txt": "c03099ea2c9b0149495f342dab83c38b8ba8d8088c85bd0586633f0eaf886a94"
+ }
+}

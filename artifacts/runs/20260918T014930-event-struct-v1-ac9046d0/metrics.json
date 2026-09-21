@@ -1,0 +1,52 @@
+{
+  "families": {
+    "forecast": {
+      "in_bounds": 37227,
+      "out_of_bounds": 9576,
+      "in_pool_false": 31,
+      "removed_bj": 749,
+      "removed_nonstandard": 10,
+      "fail_closed_missing_knowledge": 0
+    },
+    "express": {
+      "in_bounds": 7619,
+      "out_of_bounds": 169,
+      "in_pool_false": 2,
+      "removed_bj": 700,
+      "removed_nonstandard": 0,
+      "fail_closed_missing_knowledge": 0
+    },
+    "repurchase": {
+      "in_bounds": 12204,
+      "out_of_bounds": 2618,
+      "in_pool_false": 0,
+      "removed_bj": 1463,
+      "removed_nonstandard": 1080,
+      "fail_closed_missing_knowledge": 0
+    },
+    "share_float": {
+      "in_bounds": 19101,
+      "out_of_bounds": 3629,
+      "in_pool_false": 0,
+      "removed_bj": 14320,
+      "removed_nonstandard": 2229,
+      "fail_closed_missing_knowledge": 0
+    },
+    "stk_holdertrade": {
+      "in_bounds": 126098,
+      "out_of_bounds": 19982,
+      "in_pool_false": 0,
+      "removed_bj": 3028,
+      "removed_nonstandard": 0,
+      "fail_closed_missing_knowledge": 0
+    },
+    "disclosure_date": {
+      "in_bounds": 109483,
+      "out_of_bounds": 34282,
+      "in_pool_false": 323,
+      "removed_bj": 4548,
+      "removed_nonstandard": 0,
+      "fail_closed_missing_knowledge": 0
+    }
+  }
+}

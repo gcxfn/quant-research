@@ -1,0 +1,122 @@
+{
+ "seed": 20260917,
+ "records": [
+  {
+   "oid": "000001.XSHE",
+   "instrument": {
+    "order_book_id": "000001.XSHE",
+    "symbol": "平安银行",
+    "type": "CS",
+    "round_lot": 100,
+    "listed_date": "1991-04-03",
+    "de_listed_date": "2999-12-31",
+    "board_type": "MainBoard",
+    "market_tplus": 1
+   },
+   "stock_basic_row": {
+    "ts_code": "000001.SZ",
+    "name": "平安银行",
+    "list_status": "L",
+    "list_date": 19910403,
+    "delist_date": null
+   }
+  },
+  {
+   "oid": "300774.XSHE",
+   "instrument": {
+    "order_book_id": "300774.XSHE",
+    "symbol": "倍杰特",
+    "type": "CS",
+    "round_lot": 100,
+    "listed_date": "2021-08-04",
+    "de_listed_date": "2999-12-31",
+    "board_type": "ChiNext",
+    "market_tplus": 1
+   },
+   "stock_basic_row": {
+    "ts_code": "300774.SZ",
+    "name": "倍杰特",
+    "list_status": "L",
+    "list_date": 20210804,
+    "delist_date": null
+   }
+  },
+  {
+   "oid": "600148.XSHG",
+   "instrument": {
+    "order_book_id": "600148.XSHG",
+    "symbol": "长春一东",
+    "type": "CS",
+    "round_lot": 100,
+    "listed_date": "1998-05-20",
+    "de_listed_date": "2999-12-31",
+    "board_type": "MainBoard",
+    "market_tplus": 1
+   },
+   "stock_basic_row": {
+    "ts_code": "600148.SH",
+    "name": "长春一东",
+    "list_status": "L",
+    "list_date": 19980520,
+    "delist_date": null
+   }
+  },
+  {
+   "oid": "510300.XSHG",
+   "instrument": {
+    "order_book_id": "510300.XSHG",
+    "symbol": "华泰柏瑞沪深300ETF",
+    "type": "ETF",
+    "round_lot": 100,
+    "listed_date": "2012-05-28",
+    "de_listed_date": "2999-12-31",
+    "market_tplus": 1
+   },
+   "fund_basic_row": {
+    "ts_code": "510300.SH",
+    "name": "华泰柏瑞沪深300ETF",
+    "found_date": 20120504,
+    "list_date": 20120528,
+    "delist_date": null,
+    "market": "E"
+   }
+  },
+  {
+   "oid": "159672.XSHE",
+   "instrument": {
+    "order_book_id": "159672.XSHE",
+    "symbol": "博时中证主要消费ETF",
+    "type": "ETF",
+    "round_lot": 100,
+    "listed_date": "2023-04-03",
+    "de_listed_date": "2999-12-31",
+    "market_tplus": 1
+   },
+   "fund_basic_row": {
+    "ts_code": "159672.SZ",
+    "name": "博时中证主要消费ETF",
+    "found_date": 20230323,
+    "list_date": 20230403,
+    "delist_date": null,
+    "market": "E"
+   }
+  }
+ ],
+ "types": {
+  "CS": 4745,
+  "ETF": 1169,
+  "INDX": 1
+ },
+ "indx": [
+  {
+   "order_book_id": "000300.XSHG",
+   "symbol": "沪深300",
+   "abbrev_symbol": "HS300",
+   "round_lot": 1,
+   "exchange": "XSHG",
+   "type": "INDX",
+   "listed_date": "2005-04-08",
+   "de_listed_date": "2999-12-31"
+  }
+ ]
+}

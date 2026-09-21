@@ -1,0 +1,168 @@
+{
+ "seed": 20260917,
+ "disclosed_placeholders": [
+  "futures.h5 empty: no futures instruments in this bundle",
+  "yield_curve.h5 all-zero placeholder rows on calendar days: no bond-yield source in data/raw; analyser queries a risk-free rate at tear-down and an empty table hard-crashes (YieldCurveStore.get_yield_curve IndexError), so risk-free rate is the disclosed neutral 0.0",
+  "share_transformation.json empty: no share-transformation source (share mergers/successor conversions are NOT modeled; delisted-in-window stocks keep their own instruments with real de_listed_date)",
+  "future_info.json single structural placeholder (rqalpha FutureInfoStore requires margin_rate on first item at load); no futures in bundle",
+  "stock limit prices: tushare stk_limit verbatim; (stock, day) pairs with no source row (the 5 header-only chunk days [20170307, 20170308, 20170309, 20220726, 20230421] plus mostly suspended-day omissions) carry limit_up/limit_down = NaN, which rqalpha treats as NO price limit that day (optimistic fallback; 26954 of 9047670 bar rows affected, of which 8360 are suspended-day rows that cannot trade anyway)",
+  "ETF limit_up/limit_down all NaN: tushare stk_limit contains no ETF rows (verified); no ETF limit source on disk",
+  "ETF dividends absent from dividends.h5: no ETF cash-dividend event source on disk (fund_adj only carries factor steps); the engine will NOT pay ETF cash dividends, while ETF price factors ARE adjusted -- ETF total-return accounting under-counts dividends until an event source is registered",
+  "ETF suspension unknown -> no suspended_days/st keys for ETF oids (rqalpha DateSet then reports never-suspended)",
+  "split_factor rows = 1 + stk_div (tushare 每股送转合计) on the ex-date; engine consumption (position quantity x ratio, price / ratio) verified by source reading only -- not exercised by the fixed smoke scene",
+  "ETF ex_cum_factor identity-only (empty/missing fund_adj chunk): 159842.XSHE"
+ ],
+ "index_keys": [
+  "000001.XSHG",
+  "000300.XSHG"
+ ],
+ "000001_probe": {
+  "n_rows": 2431,
+  "first_day": 20150105,
+  "last_day": 20241231,
+  "all_ohlc_nan": true,
+  "all_volume_zero": true,
+  "all_turnover_nan": true
+ },
+ "000300": {
+  "n_rows": 826,
+  "first_day": 20210805,
+  "last_day": 20241231,
+  "nan_counts": {
+   "open": 0,
+   "close": 0,
+   "high": 0,
+   "low": 0,
+   "volume": 0,
+   "total_turnover": 0
+  },
+  "first_row": [
+   20210805,
+   4946.1668,
+   4948.6703,
+   4997.1397,
+   4921.9382,
+   16738182900.0,
+   398772206808.0
+  ],
+  "last_row": [
+   20241231,
+   3995.8705,
+   3934.9109,
+   4004.3462,
+   3934.9109,
+   18392839700.0,
+   347880439530.4
+  ]
+ },
+ "000300_sample": [
+  {
+   "day": 20211123,
+   "open": 4905.7587,
+   "close": 4913.3457,
+   "high": 4927.5211,
+   "low": 4896.8781,
+   "volume": 15430441100.0,
+   "total_turnover": 301022146081.0
+  },
+  {
+   "day": 20220228,
+   "open": 4563.7427,
+   "close": 4581.6459,
+   "high": 4581.6459,
+   "low": 4530.6764,
+   "volume": 13540697800.0,
+   "total_turnover": 248363727483.0
+  },
+  {
+   "day": 20220616,
+   "open": 4282.0827,
+   "close": 4250.0614,
+   "high": 4302.9212,
+   "low": 4241.075,
+   "volume": 18407441600.0,
+   "total_turnover": 337235911542.0
+  },
+  {
+   "day": 20230410,
+   "open": 4132.0096,
+   "close": 4104.8118,
+   "high": 4132.2952,
+   "low": 4099.0519,
+   "volume": 15245300200.0,
+   "total_turnover": 340822557208.0
+  },
+  {
+   "day": 20231026,
+   "open": 3484.7807,
+   "close": 3514.1448,
+   "high": 3515.5716,
+   "low": 3478.0503,
+   "volume": 10514356600.0,
+   "total_turnover": 176088467226.0
+  }
+ ],
+ "index_inputs": [
+  {
+   "role": "benchmark_index_bars",
+   "path": "data\\raw\\bigquant\\intraday-t0-20260914\\000300.SH_2021-08-05_2024-12-31_bar1d.csv",
+   "sha256": "05aabfb00992e762df80d09418958dd476fc8a183a31745cb0245869600a85f5"
+  }
+ ],
+ "raw_source_columns": [
+  "date",
+  "instrument",
+  "open",
+  "high",
+  "low",
+  "close",
+  "volume",
+  "amount"
+ ],
+ "cross_source_checks": [
+  {
+   "day": 20211123,
+   "bundle_close": 4913.3457,
+   "raw_close": null
+  },
+  {
+   "day": 20220228,
+   "bundle_close": 4581.6459,
+   "raw_close": null
+  },
+  {
+   "day": 20220616,
+   "bundle_close": 4250.0614,
+   "raw_close": null
+  },
+  {
+   "day": 20230410,
+   "bundle_close": 4104.8118,
+   "raw_close": null
+  },
+  {
+   "day": 20231026,
+   "bundle_close": 3514.1448,
+   "raw_close": null
+  }
+ ],
+ "yield_curve": {
+  "n_rows": 2431,
+  "tenors": [
+   "0S",
+   "1M",
+   "3M",
+   "6M",
+   "1Y",
+   "2Y",
+   "3Y",
+   "5Y",
+   "7Y",
+   "10Y"
+  ],
+  "all_zero": true,
+  "date_first": 20150105,
+  "date_last": 20241231,
+  "dates_match_calendar": true
+ }
+}

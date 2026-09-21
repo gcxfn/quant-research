@@ -1,0 +1,24 @@
+{
+  "experiment_id": "exp-20260920-e16-rebuild-eval",
+  "name": "e16-rebuild-eval",
+  "panel_end": "2020-12-31",
+  "signal_end": "2020-12-31",
+  "factor_eval": {
+    "horizon_days": 20,
+    "n_groups": 10,
+    "eval_freq": "M",
+    "exclude_st": true,
+    "require_trading": true,
+    "exclude_boards": true,
+    "min_history_rows": 60
+  },
+  "inputs": {
+    "panel": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_2015_2024.parquet",
+    "factors": [
+      "D:\\量化\\artifacts\\runs\\20260920T180001-e16-rebuild-real\\E16.parquet"
+    ],
+    "panel_end": "2020-12-31",
+    "signal_end": "2020-12-31",
+    "freeze_end": "2024-12-31"
+  }
+}

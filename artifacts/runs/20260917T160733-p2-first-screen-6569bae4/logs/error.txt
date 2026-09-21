@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2_first_screen.py", line 113, in main
+    outcome = run_signal_config(daily, eligible, calendar, signal_set,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\p2_first_screen.py", line 224, in run_signal_config
+    candidates = signal_candidates(daily, eligible, signal_set)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\p2_first_screen.py", line 108, in signal_candidates
+    (-pl.col('ret_20_adj')).rank(method='standard').over('date').alias('_rank'),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\expr\expr.py", line 9979, in rank
+    return wrap_expr(self._pyexpr.rank(method, descending, seed))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: rank `method` must be one of {'min', 'max', 'average', 'dense', 'ordinal', 'random'}, got standard
+while processing 'method'

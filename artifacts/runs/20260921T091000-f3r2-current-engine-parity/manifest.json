@@ -1,0 +1,329 @@
+{
+ "run_id": "20260921T091000-f3r2-current-engine-parity",
+ "experiment_id": "exp-20260919-factor-round-f3r2",
+ "status": "completed",
+ "started_at_utc": "1970-01-02T11:42:07.979955+00:00",
+ "ended_at_utc": "2026-09-20T16:08:08.247764+00:00",
+ "wall_seconds": 47.33967909999774,
+ "peak_rss_gb": 3.39232768,
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "artifacts/runs/20260921T091000-f3r2-current-engine-parity/scripts/runner_f3r2.py"
+ ],
+ "random_seed": null,
+ "determinism": "no RNG in runner or engine; static intent frames; engine-owned deterministic lifecycle",
+ "engine": {
+  "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+  "sha256_at_start": "31022babbc2858ea27a9142141fba9c14f7361294ea84e4257025ce820aa6076",
+  "sha256_at_end": "31022babbc2858ea27a9142141fba9c14f7361294ea84e4257025ce820aa6076",
+  "bytes_modified_by_this_run": false,
+  "version": "v1.3 (pin 84a2443a...; corporate_actions=None = v1.2-identical path)"
+ },
+ "pins": {
+  "engine": {
+   "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+   "sha256": "31022babbc2858ea27a9142141fba9c14f7361294ea84e4257025ce820aa6076",
+   "expected": "31022babbc2858ea27a9142141fba9c14f7361294ea84e4257025ce820aa6076",
+   "match": true
+  },
+  "r16_config": {
+   "path": "D:\\量化\\configs\\experiments\\p2r16-trend-dispersion.json",
+   "sha256": "27f846a7330919a4965d83ec07cf2a0be3e29b2476cc37c14c84558957a93df4",
+   "expected": "27f846a7330919a4",
+   "match": true
+  },
+  "daily": {
+   "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_1999_2024.parquet",
+   "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6",
+   "expected": "d9a63f4cc3032926",
+   "match": true,
+   "rows_total": 16344349,
+   "rows_after_freeze_filter": 16344349
+  },
+  "halfday_manifest": {
+   "path": "D:\\量化\\data\\processed\\halfday-bars-20260918\\manifest.json",
+   "sha256": "2a414174b5df2eeed4c6bd6a7cd7f9f09f9b2efc8f05673ccc4b7695812cd679",
+   "expected": "2a414174b5df2eee",
+   "match": true
+  },
+  "split_factor": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\split_factor.h5",
+   "sha256": "2f436b2f13d09a9bfdcbdb0bf35669c10a377d180ce1ca37bef53d6c96a3365d",
+   "expected": "2f436b2f13d09a9b",
+   "match": true
+  },
+  "dividends": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\dividends.h5",
+   "sha256": "46121c09cddde72e725c2d4ae025cc259b049aeaa77c868b492fdbba60214846",
+   "expected": "46121c09cddde72e",
+   "match": true
+  },
+  "index_000300": {
+   "path": "D:\\量化\\data\\raw\\tushare\\index_daily\\20260917-r1\\chunk_000300.SH.csv",
+   "sha256": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878",
+   "expected": "05aaa8183a11c674",
+   "match": true
+  },
+  "f3r1_ew_composite": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190500-f3r1-rebuild\\outputs\\F3-EW_composite.parquet",
+   "sha256": "ff3c21d1aceefa0b6d250c21466b12b893f5152f7fa72d410afc0f8b93075c6f",
+   "expected": null,
+   "match": true
+  },
+  "f3r1_icw_composite": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190500-f3r1-rebuild\\outputs\\F3-ICW_composite.parquet",
+   "sha256": "e125acb1cbb627ee4d5bef04e4808648659bea56bb1939c11f8d865279dda3a9",
+   "expected": null,
+   "match": true
+  },
+  "f3r1_dedup_clusters": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190500-f3r1-rebuild\\outputs\\dedup_clusters.csv",
+   "sha256": "b8113749759cecd5270a4c2fea322e0b391c4921c4421983e7d10e0abf041dd3",
+   "expected": null,
+   "match": true
+  },
+  "f3r1_all120": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T180000-f2r1-factor-batch\\outputs\\f2r1_all120.csv",
+   "sha256": "df35f17604595b345b4f6757ece0b22c68c36795c6e0ef11ec240c690bd1420a",
+   "expected": null,
+   "match": true
+  },
+  "f3r1_manifest": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190500-f3r1-rebuild\\manifest.json",
+   "sha256": "07e4812758c80eb492dd2d8ad4c81a5b07b802084a4bd27074138630a25e6ba6",
+   "expected": null,
+   "match": true
+  },
+  "f3r1_prereg_inherited": {
+   "path": "D:\\量化\\docs\\research\\exp-20260919-factor-round-f3r1-prereg.md",
+   "sha256": "858beb421421ccb4b5d886ae9093ec04304f6aff43d7db48af17fe97deab9118",
+   "expected": null,
+   "match": true
+  },
+  "f3r1_metrics": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T190500-f3r1-rebuild\\outputs\\metrics_and_gates.json",
+   "sha256": "fc8ee1612c6c9237cb84d0f1531d60d7e00d1828d47d5a8b3b623035c0aca902",
+   "expected": null,
+   "match": true
+  },
+  "prereg": {
+   "path": "D:\\量化\\docs\\research\\exp-20260919-factor-round-f3r2-prereg.md",
+   "sha256": "bd56fb5cfb5da4dff88b9ecb95f0d1afa2dcf39229f81fbc98955374c1511ca8",
+   "expected": null,
+   "match": true
+  },
+  "v3_prereg_inherited": {
+   "path": "D:\\量化\\docs\\research\\exp-20260919-hybrid-family-v3-prereg.md",
+   "sha256": "8e3c534fad39e3e71961eebf6db0d184ffa9a897f2d023c0b7efc2db1f813415",
+   "expected": null,
+   "match": true
+  },
+  "f3r2_config": {
+   "path": "D:\\量化\\configs\\experiments\\f3r2-hybrid-chassis.json",
+   "sha256": "d2a2136ebf1bd3d7f6f3a27d151d550fb275139b80a2f4919f4ff9205f1de7d8",
+   "expected": null,
+   "match": true
+  },
+  "v3_metrics_r306_anchor_source": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T110500-hybrid-v3-r3ld\\outputs\\metrics_and_gates.json",
+   "sha256": "9e2cd4aafec15c0801dbb09bcebe1cc0aa0bf7abc29c63030ae8fbcd71d4b3bc",
+   "expected": null,
+   "match": true
+  },
+  "v3_r306_intents": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T110500-hybrid-v3-r3ld\\outputs\\R3-06_intents.parquet",
+   "sha256": "c1e874bddb88d23804fb5af9b847c6daa2e0d440c878ab9cd71d7909ccfe3e4d",
+   "expected": null,
+   "match": true
+  },
+  "v3_r306_fills": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T110500-hybrid-v3-r3ld\\outputs\\R3-06_fills.parquet",
+   "sha256": "2f509f6894d54787df4a77b1508bcc9fab9bac1879e2b384140b1701228d4f00",
+   "expected": null,
+   "match": true
+  },
+  "v3_r306_events": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T110500-hybrid-v3-r3ld\\outputs\\R3-06_events.parquet",
+   "sha256": "6be782d8ac781c6adf78f111779fa70f95052e00157d184d1a14a8421b062255",
+   "expected": null,
+   "match": true
+  },
+  "v3_r306_daily": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T110500-hybrid-v3-r3ld\\outputs\\R3-06_daily_equity.parquet",
+   "sha256": "123e4cb385368abc8bc24a9c96b61ea170d12a7010c52955f66a2dcb9f177738",
+   "expected": null,
+   "match": true
+  },
+  "v3_r306_clips": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T110500-hybrid-v3-r3ld\\outputs\\R3-06_clips_final.parquet",
+   "sha256": "af1fb490c49790d898ccc1674aa16d79cc22e6ec9d1f3b7426445098adc919e1",
+   "expected": null,
+   "match": true
+  },
+  "r16_metrics": {
+   "path": "D:\\量化\\artifacts\\runs\\20260918T083650-p2r16-trend-dispersion-afab466f\\metrics.json",
+   "sha256": "8d0b6ebbdea6ebb9dc8146ead84ca408021e72749e1e7540f3483c6ed2a5fcc9",
+   "expected": null,
+   "match": true
+  },
+  "etf_manifest": {
+   "path": "D:\\量化\\data\\processed\\etf-daily-20260919\\manifest.json",
+   "sha256": "8b5b3fe56c0e02fd6af634bb3740c4f40c3b5f1dfabc984764433c0134eb1c8a",
+   "expected": null,
+   "match": true
+  },
+  "stk_limit_aggregate": {
+   "path": "D:\\量化\\data\\raw\\tushare\\stk_limit\\20260917-r1",
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "3c53abf3b0c39b425389137d9f630f0de158990fcdc55b0bd41bf7d9c3bde673",
+   "files": 2432,
+   "total_bytes": 301278245,
+   "expected": "3c53abf3b0c39b42",
+   "match": true
+  },
+  "fund_adj_batch_manifest": {
+   "path": "D:\\量化\\data\\raw\\tushare\\fund_adj\\20260917-r1\\manifest.json",
+   "sha256": "348d2ec4e8fd6df3ab856f2a09677d87b62d668529abe8b00b2ec38b68efccd4"
+  },
+  "fund_adj_aggregate": {
+   "rule": "sha256 of sorted '<chunk>:<per_file_sha256>' lines per the etf standardization agg_hash; per-file hashes re-verified against the raw batch manifest",
+   "recomputed": "b06242469db048a01231b26085073b6eecbf25a9106cfa63ae1b06c1764c0979",
+   "expected_declared_in_etf_manifest": "b06242469db048a01231b26085073b6eecbf25a9106cfa63ae1b06c1764c0979",
+   "chunks_in_batch_manifest": 1169,
+   "rehash_mismatches": [],
+   "match": true
+  },
+  "etf_processed_aggregate": {
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "75777221a8b335028bf8da60f14c59c6a3659f9d91578204308488d0f0fb7c2e",
+   "files": 7,
+   "total_bytes": 18153828,
+   "expected": null,
+   "match": true
+  },
+  "trade_cal_aggregate": {
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "aac75421cd89d9fc562490f78d14cdcfcc5033976a37853d2fa3fa5cace261f4",
+   "files": 4,
+   "total_bytes": 367805,
+   "expected": null,
+   "match": true
+  },
+  "etf_manifest_declared_fund_daily_aggregate": "d6d3cd9be853fd1d912e876e83de9522c24398c8a787d82e8798d9ba405a9d29",
+  "halfday_rows_total": 18486939
+ },
+ "env_versions": {
+  "python": "3.11.15",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "polars": "1.44.2",
+  "numpy": "1.26.4"
+ },
+ "window": {
+  "dev": "2015-01-05..2020-12-31",
+  "signals": "2015-01-30..2020-11-30 (71)",
+  "val_consumed": false
+ },
+ "stage_timings_s": {
+  "    0.0": "0. identity pins (engine v1.3 frozen, prereg frozen)",
+  "   14.7": "1. calendar & signal days",
+  "   15.1": "2. exposures (T200-40)",
+  "   15.2": "3. pools (r16 build_history + signal_pools)",
+  "   27.6": "4. F3 composite sleeve: load composites + buffer membership",
+  "   29.6": "5. market frames",
+  "   43.0": "6. ETF assets",
+  "   43.1": "9. per-config engine input frames",
+  "   43.2": "10. F3R2-A0 regression anchor vs v3 R3-06",
+  "   43.5": "11. remaining configs",
+  "   46.8": "12. per-intent attribution",
+  "   47.0": "13. metrics & gates",
+  "   47.2": "14. disclosures",
+  "   47.3": "15. outputs"
+ },
+ "configs_run": [
+  "F3R2-A0",
+  "F3R2-EW",
+  "F3R2-ICW"
+ ],
+ "configs_blocked": [],
+ "sleeve_consistency": {
+  "arms": {
+   "EW": {
+    "max_members": 3,
+    "total_entries": 174
+   },
+   "ICW": {
+    "max_members": 3,
+    "total_entries": 185
+   }
+  },
+  "panel_f3_symbols": 206,
+  "note": "buffer_membership K=3 q5-off over F3R1 frozen composites; w_T = e_T*(0.20/0.90), e_T = R16 T200-40 verbatim"
+ },
+ "f3r2a0_regression": {
+  "intents": true,
+  "fills": true,
+  "events": true,
+  "daily": true,
+  "clips_final": true,
+  "net_cagr_matches_v3_metrics": true
+ },
+ "leg_struct_check": {
+  "F3R2-A0": {
+   "leg_cap_terminated": [],
+   "total_cap_terminated": 0,
+   "drift_breaches": 79
+  },
+  "F3R2-EW": {
+   "leg_cap_terminated": [],
+   "total_cap_terminated": 0,
+   "drift_breaches": 2
+  },
+  "F3R2-ICW": {
+   "leg_cap_terminated": [],
+   "total_cap_terminated": 0,
+   "drift_breaches": 99
+  }
+ },
+ "spec_seams": {
+  "S1_park_init_source": "engine requires date-typed source_signal; pinned 'park_init' literal is un-runnable; resolved to the park decision date 2015-01-30 (no K impact: buys have no fallback); carried over from v1 unresolved; pending adjudication",
+  "S2_leg_rotation_collision": "RESOLVED by the frozen v2 spec: leg symbols are removed from the ranking universe; F3R2-A0 verifies at frame construction; the F3 stock sleeve universe (R16 stock pool) is disjoint from the 9 ETF symbols by construction",
+  "S4_parkw_vs_cap25": "RESOLVED by the frozen v2 spec: multi-leg structures with every symbol <= 25% (park 40%); runner hard-checks that no leg intent is cap-voided (a cap-void would contradict the frozen structure and abort)",
+  "S5_no_topup_primitive": "engine has no top-up primitive (P3R2 seam inherited): when e_T rises the sleeve does not add to existing positions; freed cash reaches the market only via new entries and the m7 cash-competition channel"
+ },
+ "benchmark_seam_S3": "family anchor B1m/C05 (T200-40, rate_only) + B3prime[T200-40] inherited verbatim; the F3R2 sleeve DOES carry the T200-40 path, so the anchor mapping is closer here than for pure-ROT arms (carried over from v1; pending adjudication)",
+ "dividend_events_built": 18,
+ "trial_accounting": {
+  "this_round": "3 (F3R2-A0 anchor + EW + ICW)",
+  "strategy_line": "264->267; factor line FT-01=120 unchanged"
+ },
+ "gates_dev_pass": [],
+ "advanced_to_validation": false,
+ "val_consumed": false,
+ "stop_note": "no ARM passed all dev gates (0/2); F-line PAUSED per the F3R2 prereg stop clause (F3R3 is a separate user decision); val not consumed",
+ "outputs": {
+  "outputs/dividend_events.csv": "3fedab0fa065d94781aca3e06849188cd27937c95cf1adebe77d9e90fab9be14",
+  "outputs/F3R2-A0_clips_final.parquet": "af1fb490c49790d898ccc1674aa16d79cc22e6ec9d1f3b7426445098adc919e1",
+  "outputs/F3R2-A0_daily_equity.parquet": "123e4cb385368abc8bc24a9c96b61ea170d12a7010c52955f66a2dcb9f177738",
+  "outputs/F3R2-A0_events.parquet": "6be782d8ac781c6adf78f111779fa70f95052e00157d184d1a14a8421b062255",
+  "outputs/F3R2-A0_fills.parquet": "2f509f6894d54787df4a77b1508bcc9fab9bac1879e2b384140b1701228d4f00",
+  "outputs/F3R2-A0_intents.parquet": "c1e874bddb88d23804fb5af9b847c6daa2e0d440c878ab9cd71d7909ccfe3e4d",
+  "outputs/F3R2-A0_stats.json": "ad52618a66d9a42d87eb84a491e51c08d16958d09f620b0c6b2d0799c172a6f0",
+  "outputs/F3R2-EW_clips_final.parquet": "6839cfcb7f17cc3aab35257a489ec04925cfe6052a9bcad564d153e131218351",
+  "outputs/F3R2-EW_daily_equity.parquet": "73fb1889d7ee85d6f2f8f36ac1902ea6e6a08e9a3b0db8f51174d7977709e196",
+  "outputs/F3R2-EW_events.parquet": "e0323150b966ec3df43b8f7ffe4a9517764ec6867154709fe3445eefa5caf2bc",
+  "outputs/F3R2-EW_fills.parquet": "4f8f78d868ac084269973e510821e9c2dbd131818c2f91068d9af3cc021a698d",
+  "outputs/F3R2-EW_intents.parquet": "20717b04ebdcdda557ef199a5ffd6d41c3b3879c5fa9e79400d81b6604432719",
+  "outputs/F3R2-EW_stats.json": "cd1c3cfde1fce58673121b7abb1383f34f9c7b7669ba31aa1d19e4a9749ba7bb",
+  "outputs/F3R2-ICW_clips_final.parquet": "c5fbd562320f00fec099d945326bb879bf9857c355027cf41e13b1d035aee8c9",
+  "outputs/F3R2-ICW_daily_equity.parquet": "697d730f99e84abf06e9996b83a8132b85b3271b975ca8b4ab4835474ec088cc",
+  "outputs/F3R2-ICW_events.parquet": "d230b0719133bb9091e09a65fe67d37af0fcf1c50b319e818f8ea2c64dab35ed",
+  "outputs/F3R2-ICW_fills.parquet": "4c3ab522c90c34b9b4c43ba0dcb1f7a10ad8030e8fd42ceb2ef003dc1cd30bfb",
+  "outputs/F3R2-ICW_intents.parquet": "e51a52a7b1f9d740b55f5a8c79d8efcf107df83d53d011585d9788b3af56144b",
+  "outputs/F3R2-ICW_stats.json": "33e39d2697b951709fe26a6beef6e1b534c65f91ad95c5028cb6ee42396fce18",
+  "outputs/metrics_and_gates.json": "29d03a2ecc250535296a43f74be3da2377fc198e38df77fcc2ed7ceabefec648",
+  "outputs/rotation_monthly_log.json": "35d8de06098a5def6cfcde8783406b793a23893d957369e7a59fb15128e2a422",
+  "outputs/sleeve_monthly_log.json": "928b2782ac6b937f799797d659fb7fd77509bcfd11b0bcf3b8b71cc9ea80e67f",
+  "report.md": "70e0ab682ebda792c7d19f099857871ff239ccd2ee3fc2add9567ec64fbfbc1a",
+  "scripts/runner_current_engine_parity.py": "a29a84289508e8aba60e7a3ce4a494b0c2b6ae8f120c9e9f6496254d266ea034"
+ }
+}

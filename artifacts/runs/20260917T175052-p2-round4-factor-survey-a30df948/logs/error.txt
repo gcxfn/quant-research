@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2_factor_survey.py", line 73, in main
+    daily = load_daily(root, config, symbol_limit=args.symbols)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\p2_first_screen.py", line 64, in load_daily
+    subset.update(config['benchmarks']['broad_index'].values())
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'values'

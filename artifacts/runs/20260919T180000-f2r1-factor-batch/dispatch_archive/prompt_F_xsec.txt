@@ -1,0 +1,14 @@
+你是 F2 首轮因子批量的 F 族（横截面/组合特征，10 个因子）实施代理。工作目录 D:\量化（Windows，Git Bash，python 用 D:/量化/.venv，polars 1.44）。先读 D:\量化\AGENTS.md。
+
+## 权威文件（先读，逐字遵守）
+- 冻结预登记：`docs/research/exp-20260919-factor-round-f2r1-prereg.md`（§1、§2、§3-F 因子表 10 个）。
+- 评估 harness：`src/quant/factors/eval.py`（API 见 `artifacts/runs/20260919T171500-f1-eval-harness-main/delivery_report.md`）。
+- 数据：v0 面板 `data/processed/baostock-daily-20260917/daily_2015_2024.parquet`（日收益链 close/preclose；隔夜/日内分解用 open）；市场基准 `data/raw/tushare/index_daily/`（分块 csv，ts_code 如 000001.SH 上证综指，先摸列名与覆盖；若 000001.SH 缺，用可得的主板综指并披露）。
+
+## 任务
+1. 输出 `artifacts/runs/20260919T180000-f2r1-factor-batch/outputs/F_xsec/`。dev 2015–2020，月频月末，`FactorEvalConfig(horizon_days=20, n_groups=10, eval_freq="M", min_history_rows=60)`。
+2. β/残差族（F01-F03/F10）：个股日收益对基准日收益 OLS（60/240 日窗，月末时点只用 ≤当日数据）；残差动量=残差累计收益 120d；特质波动=残差 std 60d。
+3. 逐因子 F01..F10：按 §3-F 冻结公式出 `(symbol, signal_date, value)` → `F<NN>.parquet` → evaluate_factor → `F<NN>.json`。
+4. `family_report.md`：基准指数选择与覆盖核验、OLS 口径（无截距/有截距，写明）、逐因子一行表（IC/t/单调/2015/覆盖/换手）+ §2 初判存活列。10 个全部报告。
+5. 纪律：data/ 只读；无 git；中文 Write 工具；预算 ≤60 分钟；signal_date ≤2024-12-31 断言。
+6. 最终消息：完成数、初判存活 ID、最显著 3 个、基准与口径披露、输出路径。

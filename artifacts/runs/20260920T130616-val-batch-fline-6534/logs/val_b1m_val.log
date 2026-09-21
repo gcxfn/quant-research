@@ -1,0 +1,13 @@
+[    0.0s] == 0. identity pins (window val) ==
+[    0.4s]   engine a01cb29ce4cf2148 == pin; daily d9a63f4cc3032926
+[    0.4s] == 1. calendar + signal days ==
+[    0.5s]   47 signal days (2021-01-29..2024-11-29); last month-end dropped as signal, kept as expiry anchor
+[    0.5s] == 2. exposures (T200-40) + R16 pools ==
+[    0.5s]   t200 behavioral anchor: {"anchor_years": ["2016", "2017", "2018", "2019", "2020"], "reproduced_stats": {"2016": {"n_sessions": 244, "n_switches": 5, "off_share": 0.
+[    0.5s]   exposures[2021-01-29]=0.90 [2024-11-29]=0.90
+[    6.3s]   pool n: min 1372 max 2695
+[    6.3s] == 3. B1(m) simulate (K=0, fractional, rate_only, T200-40) ==
+[   39.6s]   B1(m)(val): net_cagr -0.00148060 mdd -0.23441430 by-year {2021: 0.14274922609277585, 2022: -0.05202635253338672, 2023: -0.061879245529232296, 2024: -0.021801197364535896}
+[   39.6s] == 4. val reference assert vs TL-30 run 20260919T151630-hybrid-val-v1p3 ==
+[   39.6s]   B1(m)(val) REPRODUCES TL-30 (-0.148% / -23.44%) to 1e-9; port chain closed
+[   39.7s] == val done -> b1m_val.json; wall 39.7s ==

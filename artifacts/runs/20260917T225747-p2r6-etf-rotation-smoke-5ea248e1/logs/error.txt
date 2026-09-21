@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2r6_etf_rotation.py", line 435, in main
+    report = build_report(config, run.metrics, smoke)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\cli\p2r6_etf_rotation.py", line 462, in build_report
+    lines.append('- B4 现金 0%', '')
+TypeError: list.append() takes exactly one argument (2 given)

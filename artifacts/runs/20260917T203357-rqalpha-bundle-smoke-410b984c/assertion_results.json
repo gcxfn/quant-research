@@ -1,0 +1,119 @@
+{
+ "bundle_build_seconds": 1.69,
+ "bundle_files": [
+  "dividends.h5 (4176 bytes)",
+  "ex_cum_factor.h5 (5360 bytes)",
+  "funds.h5 (12880 bytes)",
+  "future_info.json (236 bytes)",
+  "futures.h5 (800 bytes)",
+  "indexes.h5 (186488 bytes)",
+  "instruments.pk (1035 bytes)",
+  "manifest.json (44862 bytes)",
+  "share_transformation.json (2 bytes)",
+  "split_factor.h5 (800 bytes)",
+  "st_stock_days.h5 (800 bytes)",
+  "stocks.h5 (30152 bytes)",
+  "suspended_days.h5 (3600 bytes)",
+  "trading_dates.npy (19576 bytes)",
+  "yield_curve.h5 (1416 bytes)"
+ ],
+ "A3_calendar": {
+  "status": "PASS",
+  "days": 2431,
+  "range": [
+   "20150105",
+   "20241231"
+  ],
+  "detail": "trading_dates.npy == xiaodefa SSE calendar (is_open==1), 2015-01-01..2024-12-31, int64 plain YYYYMMDD (verified against rqalpha convert_date_to_int / ExchangeTradingCalendarStore)",
+  "problems": []
+ },
+ "A1_stock_bar_fidelity": {
+  "status": "PASS",
+  "values_checked": 150,
+  "detail": "stocks.h5 open/high/low/close/volume/total_turnover == baostock parquet (unadjusted), 5 sampled dates x 5 stocks, exact float equality",
+  "mismatches": []
+ },
+ "A2_etf_bar_fidelity": {
+  "status": "PASS",
+  "values_checked": 50,
+  "detail": "funds.h5 open/close/high/low/volume == tx qfqday rows, 5 sampled dates x 2 ETFs, exact float equality; tx source is forward-adjusted and total_turnover=NaN (disclosed in bundle manifest)",
+  "mismatches": []
+ },
+ "A4_freeze_and_indexes": {
+  "status": "PASS",
+  "max_bar_datetime_per_security": {
+   "000001.XSHE": 20241231,
+   "000651.XSHE": 20241231,
+   "600000.XSHG": 20241231,
+   "600036.XSHG": 20241231,
+   "601318.XSHG": 20241231,
+   "510050.XSHG": 20241231,
+   "510300.XSHG": 20241231
+  },
+  "detail": "no bar beyond the 2024-12-31 freeze line; indexes.h5 carries real 000300.XSHG bars plus the disclosed NaN range-probe placeholder for 000001.XSHG (rqalpha hardcoded probe key)",
+  "problems": []
+ },
+ "A5_instruments_and_files": {
+  "status": "PASS",
+  "instruments": {
+   "000001.XSHE": {
+    "type": "CS",
+    "symbol": "平安银行",
+    "listed_date": "1991-04-03",
+    "round_lot": 100,
+    "market_tplus": 1
+   },
+   "000300.XSHG": {
+    "type": "INDX",
+    "symbol": "沪深300",
+    "listed_date": "2005-04-08",
+    "round_lot": 1,
+    "market_tplus": 0
+   },
+   "000651.XSHE": {
+    "type": "CS",
+    "symbol": "格力电器",
+    "listed_date": "1996-11-18",
+    "round_lot": 100,
+    "market_tplus": 1
+   },
+   "510050.XSHG": {
+    "type": "ETF",
+    "symbol": "华夏上证50ETF",
+    "listed_date": "2005-02-23",
+    "round_lot": 100,
+    "market_tplus": 1
+   },
+   "510300.XSHG": {
+    "type": "ETF",
+    "symbol": "华泰柏瑞沪深300ETF",
+    "listed_date": "2012-05-28",
+    "round_lot": 100,
+    "market_tplus": 1
+   },
+   "600000.XSHG": {
+    "type": "CS",
+    "symbol": "浦发银行",
+    "listed_date": "1999-11-10",
+    "round_lot": 100,
+    "market_tplus": 1
+   },
+   "600036.XSHG": {
+    "type": "CS",
+    "symbol": "招商银行",
+    "listed_date": "2002-04-09",
+    "round_lot": 100,
+    "market_tplus": 1
+   },
+   "601318.XSHG": {
+    "type": "CS",
+    "symbol": "中国平安",
+    "listed_date": "2007-03-01",
+    "round_lot": 100,
+    "market_tplus": 1
+   }
+  },
+  "detail": "instruments.pk exposes all 7 securities with type/round_lot=100/market_tplus=1, and every file BaseDataSource.__init__ reads exists",
+  "problems": []
+ }
+}

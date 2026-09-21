@@ -1,0 +1,108 @@
+[    0.0s] meanrev-anchored; window 2017-01-01..2017-06-30 (SMOKE)
+[    9.1s] pins done
+[    9.1s] == 1. daily panel -> monthly series ==
+[    9.6s]   month-symbol rows: 104626
+[    9.6s] == 2. daily_basic month-end ==
+[    9.7s]   reading 1 month-end daily_basic chunks
+[    0.0s] meanrev-anchored; window 2017-01-01..2017-06-30 (SMOKE)
+[    5.7s] pins done
+[    5.7s] == 1. daily panel -> monthly series ==
+[    5.9s]   month-symbol rows: 104626
+[    5.9s] == 2. daily_basic month-end ==
+[    6.0s]   reading 30 month-end daily_basic chunks
+[    6.2s]   daily_basic month-end rows: 77586
+[    6.5s] == 3. fina_indicator PIT + forecast ==
+[    0.0s] meanrev-anchored; window 2017-01-01..2017-06-30 (SMOKE)
+[    5.7s] pins done
+[    5.7s] == 1. daily panel -> monthly series ==
+[    6.0s]   month-symbol rows: 104626
+[    6.0s] == 2. daily_basic month-end ==
+[    6.0s]   reading 30 month-end daily_basic chunks
+[    6.4s]   daily_basic month-end rows: 77586
+[    6.6s] == 3. fina_indicator PIT + forecast ==
+[    0.0s] meanrev-anchored; window 2017-01-01..2017-06-30 (SMOKE)
+[    5.8s] pins done
+[    5.8s] == 1. daily panel -> monthly series ==
+[    6.0s]   month-symbol rows: 104626
+[    6.0s] == 2. daily_basic month-end ==
+[    6.1s]   reading 30 month-end daily_basic chunks
+[    6.4s]   daily_basic month-end rows: 77586
+[    6.7s] == 3. fina_indicator PIT + forecast ==
+[   52.5s]   fina rows: 437996
+[   53.2s]   bad-forecast symbols: 4152
+[   54.7s] == 4. simulation ==
+[   54.8s]   months 6; pool median 0 max 19; triggers total 0
+[   54.8s]   M1: cagr +0.00% mdd 0.0% adv 1/1 turn 0.0 -> fail ['3_advantage_years_ge_3_of_4']
+[   54.8s]   M2: cagr +0.00% mdd 0.0% adv 1/1 turn 0.0 -> fail ['3_advantage_years_ge_3_of_4']
+[   54.8s]   B0: cagr -10.54% mdd -13.4% adv 0/1
+[   54.8s]   C1: cagr -0.02% mdd -0.0% adv 1/1
+[   54.8s]   C2: cagr -0.02% mdd -0.0% adv 1/1
+[   54.8s]   M0: cagr +0.00% mdd 0.0% adv 1/1
+[   54.8s] done
+[    0.0s] meanrev-anchored; window 2017-01-01..2017-06-30 (SMOKE)
+[    9.2s] pins done
+[    9.2s] == 1. daily panel -> monthly series ==
+[    9.6s]   month-symbol rows: 104626
+[    9.6s] == 2. daily_basic month-end ==
+[    9.6s]   reading 30 month-end daily_basic chunks
+[   10.0s]   daily_basic month-end rows: 77586
+[   10.2s] == 3. fina_indicator PIT + forecast ==
+[   54.7s]   fina rows: 437996
+[   55.3s]   bad-forecast symbols: 4152
+[   56.7s] == 4. simulation ==
+[   56.8s]   months 6; pool median 0 max 23; triggers total 0
+[   56.8s]   M1: cagr +0.00% mdd 0.0% adv 1/1 turn 0.0 -> fail ['3_advantage_years_ge_3_of_4']
+[   56.8s]   M2: cagr +0.00% mdd 0.0% adv 1/1 turn 0.0 -> fail ['3_advantage_years_ge_3_of_4']
+[   56.8s]   B0: cagr -10.54% mdd -13.4% adv 0/1
+[   56.8s]   C1: cagr -0.02% mdd -0.0% adv 1/1
+[   56.8s]   C2: cagr -0.02% mdd -0.0% adv 1/1
+[   56.8s]   M0: cagr +0.00% mdd 0.0% adv 1/1
+[   56.8s] done
+[    0.0s] meanrev-anchored; window 2017-04-01..2017-04-30 (SMOKE)
+[    9.1s] pins done
+[    9.1s] == 1. daily panel -> monthly series ==
+[    9.4s]   month-symbol rows: 98098
+[    9.4s] == 2. daily_basic month-end ==
+[    9.5s]   reading 28 month-end daily_basic chunks
+[    9.8s]   daily_basic month-end rows: 71590
+[   10.0s] == 3. fina_indicator PIT + forecast ==
+[   52.7s]   fina rows: 437996
+[   53.5s]   bad-forecast symbols: 4152
+[    0.0s] meanrev-anchored; window 2017-01-01..2017-06-30 (SMOKE)
+[    9.0s] pins done
+[    9.0s] == 1. daily panel -> monthly series ==
+[    9.6s]   month-symbol rows: 104626
+[    9.6s] == 2. daily_basic month-end ==
+[    9.7s]   reading 30 month-end daily_basic chunks
+[   10.0s]   daily_basic month-end rows: 77586
+[   10.3s] == 3. fina_indicator PIT + forecast ==
+[   55.7s]   fina rows: 437996
+[   56.4s]   bad-forecast symbols: 4152
+[   57.8s] == 4. simulation ==
+[   58.1s]   months 6; pool median 223 max 552; triggers total 68
+[   58.1s]   M1: cagr +21.15% mdd -5.5% adv 1/1 turn 6.7 -> fail ['3_advantage_years_ge_3_of_4', '4_turnover_le_6']
+[   58.1s]   M2: cagr +22.00% mdd -5.5% adv 1/1 turn 6.6 -> fail ['3_advantage_years_ge_3_of_4', '4_turnover_le_6']
+[   58.1s]   B0: cagr -10.54% mdd -13.4% adv 0/1
+[   58.1s]   C1: cagr +15.75% mdd -4.9% adv 1/1
+[   58.1s]   C2: cagr -24.15% mdd -18.5% adv 0/1
+[   58.1s]   M0: cagr +14.68% mdd -1.7% adv 1/1
+[   58.1s] done
+[    0.0s] meanrev-anchored; window 2016-12-31..2020-12-31
+[    8.9s] pins done
+[    8.9s] == 1. daily panel -> monthly series ==
+[    9.6s]   month-symbol rows: 258501
+[    9.6s] == 2. daily_basic month-end ==
+[    9.8s]   reading 72 month-end daily_basic chunks
+[   10.9s]   daily_basic month-end rows: 226711
+[   11.9s] == 3. fina_indicator PIT + forecast ==
+[   57.3s]   fina rows: 437996
+[   58.1s]   bad-forecast symbols: 4152
+[   60.3s] == 4. simulation ==
+[   64.5s]   months 48; pool median 348 max 638; triggers total 2798
+[   64.5s]   M1: cagr +5.16% mdd -28.6% adv 3/4 turn 6.7 -> fail ['4_turnover_le_6']
+[   64.5s]   M2: cagr +4.51% mdd -30.9% adv 3/4 turn 6.8 -> fail ['2_mdd_le_30pct', '4_turnover_le_6']
+[   64.5s]   B0: cagr -1.42% mdd -41.3% adv 0/4
+[   64.5s]   C1: cagr +16.06% mdd -28.2% adv 4/4
+[   64.5s]   C2: cagr -32.38% mdd -80.3% adv 0/4
+[   64.5s]   M0: cagr -0.45% mdd -31.6% adv 2/4
+[   64.5s] done

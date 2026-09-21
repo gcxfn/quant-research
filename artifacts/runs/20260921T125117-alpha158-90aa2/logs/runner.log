@@ -1,0 +1,56 @@
+[   0.1s] 72 signal days 2015-01-30..2020-12-31
+[   6.9s] pool union 2943 symbols
+[   9.1s] panel rows 4020798; building per-symbol series
+[  13.9s] 2943 symbol series built
+[  49.6s]   features 2015-01-30: 1438 symbols
+[ 273.0s]   features 2016-07-29: 1910 symbols
+[ 342.4s]   features 2018-01-31: 1168 symbols
+[ 398.9s]   features 2019-07-31: 1060 symbols
+[ 463.4s]   features 2020-12-31: 1495 symbols
+[ 463.4s] features done
+[ 481.6s] step1: 158 features evaluated; |t|>=2: 111; top ic_mean 0.0558 (LOW0), bottom -0.0757
+[ 484.3s] step2: 71 monthly sections (2015-01-30..2020-11-30), dim 158
+[ 500.5s]   12 models; last IC 0.0027
+[ 518.7s]   24 models; last IC 0.0069
+[ 536.7s]   36 models; last IC 0.0401
+[ 555.1s]   48 models; last IC 0.0190
+[ 571.7s] step2: 59 models, 59 IC months; rank_ic mean 0.0461 t 4.94; by_year {'2016': 0.060911693222590206, '2017': 0.03419048795927229, '2018': 0.05159852354699431, '2019': 0.04265290579049406, '2020': 0.04083826882941921}
+[ 571.8s] == branch: IC gate PASSED -- proceed to engine replay ==
+[   0.1s] 72 signal days 2015-01-30..2020-12-31
+[   2.9s] pool union 2943 symbols
+[   3.4s] panel rows 4020798; building per-symbol series
+[   4.2s] 2943 symbol series built
+[   8.2s]   features 2015-01-30: 1438 symbols
+[ 280.0s]   features 2016-07-29: 1910 symbols
+[ 525.1s]   features 2018-01-31: 1168 symbols
+[ 599.4s]   features 2019-07-31: 1060 symbols
+[ 675.1s]   features 2020-12-31: 1495 symbols
+[ 675.1s] features done
+[ 696.7s] step1: 158 features evaluated; |t|>=2: 111; top ic_mean 0.0558 (LOW0), bottom -0.0757
+[ 699.7s] step2: 71 monthly sections (2015-01-30..2020-11-30), dim 158
+[ 718.4s]   12 models; last IC 0.0027
+[ 738.5s]   24 models; last IC 0.0069
+[ 758.4s]   36 models; last IC 0.0401
+[ 778.8s]   48 models; last IC 0.0190
+[ 796.1s] step2: 59 models, 59 IC months; rank_ic mean 0.0461 t 4.94; by_year {'2016': 0.060911693222590206, '2017': 0.03419048795927229, '2018': 0.05159852354699431, '2019': 0.04265290579049406, '2020': 0.04083826882941921}
+[ 796.2s] == branch: IC gate PASSED -- proceed to engine replay ==
+[    0.0s] fixed-scheme; window=2015-01-05..2020-12-31; curves=['R2A']
+[    4.8s]   engine f3650f8440c713b8 OK; pins OK; rss 0.27 GB
+[    4.8s] == 1. calendar & signal days ==
+[    5.0s]   71 signal days (2015-01-30..2020-11-30)
+[    5.0s] == 2. R16 pools ==
+[    9.7s]   pool n min 810 max 2260
+[    9.7s] == 3. stock legs ==
+[   12.5s]   M-F: 20 reps; eligible median 1510
+[   12.6s]   MF: members/month min 0 max 4
+[   12.6s]   MC: members/month min 0 max 0
+[   12.6s] == 4. market frames ==
+[   24.4s]   frames: 214 stocks + 3 ETFs; daily 303746; half 557441; limits 298562; rss 2.90 GB
+[   24.6s] == 5. benchmarks B1(m)_mix / B3'_mix ==
+[   33.5s]   B1(m)_mix net +6.16% mdd -15.51%; B3'_mix mean +5.83%
+[   34.2s] == 7. engine runs ==
+[   38.9s]   R2A: 4.7s; calls 2924 injected 2361 orders 2355 filled 342 k3 None | etf exits 2 sn {'stops': 112, 'protections': 0, 'takes': 0} | rss 2.89 GB
+[   38.9s] == 8. metrics & eight gates ==
+[   39.1s]   R2A: net -0.34% exc -6.50pp adv 2/6 mdd -19.99% turn 3.29 w 20.7% exec 25.6% -> fail ['1_net_cagr_gt_0', '2_excess_vs_B1mix_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1mix', '7_vs_B3mix_plus_1pp', '8_execution_rate_ge_95pct']; 10% no
+[   39.1s] == 9. outputs ==
+[   39.2s] == done; wall 39s; peak rss 2.90 GB

@@ -1,0 +1,3445 @@
+{
+ "experiment_id": "exp-20260918-p3r2-band-v1-readjudication",
+ "engine_sha256_16": "d7108c0eccdd77ff",
+ "execution_model": "v1.1 engine-side intent layer (prereg sec 9 rev 2/3); one static intent frame per config; no fixed point",
+ "metrics": {
+  "C01": {
+   "net_cagr": 0.006810559017570883,
+   "net_total_return": 0.04147836404999983,
+   "max_drawdown": -0.21647383522322805,
+   "b1m_net_cagr": 0.0059905923579064435,
+   "b1m_max_drawdown": -0.3982378364862026,
+   "b1m_net_return_by_year": {
+    "2015": 0.22735356961586017,
+    "2016": -0.036271319473570096,
+    "2017": -0.11258228102926204,
+    "2018": -0.1962740727688722,
+    "2019": 0.12375649932752708,
+    "2020": 0.09319791239431541
+   },
+   "excess_vs_b1m": 0.0008199666596644395,
+   "net_return_by_year": {
+    "2015": -0.0033048050000002993,
+    "2016": -0.06071081490465102,
+    "2017": 0.11845044828438533,
+    "2018": -0.14519835692720273,
+    "2019": 0.12066362650836848,
+    "2020": 0.038319937568906504
+   },
+   "advantage_years_list": [
+    2017,
+    2018
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 168492.0,
+     "mean_equity": 206962.36876229517,
+     "one_side_turnover": 0.8141190159720293
+    },
+    "2016": {
+     "buy_notional": 283728.0,
+     "mean_equity": 190827.71085245901,
+     "one_side_turnover": 1.486828085567552
+    },
+    "2017": {
+     "buy_notional": 295185.0,
+     "mean_equity": 199028.37607786886,
+     "one_side_turnover": 1.4831302240264994
+    },
+    "2018": {
+     "buy_notional": 124351.0,
+     "mean_equity": 193436.0144382715,
+     "one_side_turnover": 0.6428534022535001
+    },
+    "2019": {
+     "buy_notional": 233065.0,
+     "mean_equity": 192546.96530655725,
+     "one_side_turnover": 1.2104319568419752
+    },
+    "2020": {
+     "buy_notional": 243475.0,
+     "mean_equity": 197110.22861168723,
+     "one_side_turnover": 1.2352225539733541
+    }
+   },
+   "max_one_side_turnover": 1.486828085567552,
+   "max_single_name_weight": 0.09415241859024125,
+   "execution_rate": 0.5841584158415841,
+   "execution_rate_mapping": "7.7-m6: filled + rule-blocked intents / (filled + rule-blocked + terminated intents); re-anchors neutral; R16 at_target/feemin skips outside the frame (excluded)"
+  },
+  "C02": {
+   "net_cagr": -0.04913045968144014,
+   "net_total_return": -0.2604029484500001,
+   "max_drawdown": -0.3854206210510046,
+   "b1m_net_cagr": 0.0059905923579064435,
+   "b1m_max_drawdown": -0.3982378364862026,
+   "b1m_net_return_by_year": {
+    "2015": 0.22735356961586017,
+    "2016": -0.036271319473570096,
+    "2017": -0.11258228102926204,
+    "2018": -0.1962740727688722,
+    "2019": 0.12375649932752708,
+    "2020": 0.09319791239431541
+   },
+   "excess_vs_b1m": -0.055121052039346585,
+   "net_return_by_year": {
+    "2015": -0.015911969999999998,
+    "2016": -0.12782390768435614,
+    "2017": -0.04419796816444499,
+    "2018": -0.14500138565180132,
+    "2019": 0.07773275615388853,
+    "2020": -0.021608657879295112
+   },
+   "advantage_years_list": [
+    2017,
+    2018
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 179561.0,
+     "mean_equity": 205704.7858893442,
+     "one_side_turnover": 0.8729062827764841
+    },
+    "2016": {
+     "buy_notional": 418086.0,
+     "mean_equity": 184965.12877459003,
+     "one_side_turnover": 2.2603503847987776
+    },
+    "2017": {
+     "buy_notional": 408996.0,
+     "mean_equity": 164808.73788934437,
+     "one_side_turnover": 2.4816402651818588
+    },
+    "2018": {
+     "buy_notional": 85875.0,
+     "mean_equity": 148375.65822427996,
+     "one_side_turnover": 0.578767440884367
+    },
+    "2019": {
+     "buy_notional": 181069.0,
+     "mean_equity": 147765.69488934427,
+     "one_side_turnover": 1.2253791391540183
+    },
+    "2020": {
+     "buy_notional": 155127.0,
+     "mean_equity": 146559.47739728395,
+     "one_side_turnover": 1.0584576497874085
+    }
+   },
+   "max_one_side_turnover": 2.4816402651818588,
+   "max_single_name_weight": 0.08999411626013637,
+   "execution_rate": 0.5766423357664233,
+   "execution_rate_mapping": "7.7-m6: filled + rule-blocked intents / (filled + rule-blocked + terminated intents); re-anchors neutral; R16 at_target/feemin skips outside the frame (excluded)"
+  },
+  "C03": {
+   "net_cagr": -0.008727097543602236,
+   "net_total_return": -0.05113089325000009,
+   "max_drawdown": -0.4544637273201293,
+   "b1m_net_cagr": 0.018551675073019247,
+   "b1m_max_drawdown": -0.5559615161856944,
+   "b1m_net_return_by_year": {
+    "2015": 0.4194621340812228,
+    "2016": -0.08789440159052753,
+    "2017": -0.09363961023236667,
+    "2018": -0.2990832010981138,
+    "2019": 0.19693355456514583,
+    "2020": 0.13394943384963365
+   },
+   "excess_vs_b1m": -0.027278772616621483,
+   "net_return_by_year": {
+    "2015": -0.029635059999999935,
+    "2016": -0.13951230039288098,
+    "2017": 0.10681565683359451,
+    "2018": -0.224024155594732,
+    "2019": 0.18531910970966559,
+    "2020": 0.11626616589760363
+   },
+   "advantage_years_list": [
+    2017,
+    2018
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 334366.0,
+     "mean_equity": 214038.72488934372,
+     "one_side_turnover": 1.5621752567105065
+    },
+    "2016": {
+     "buy_notional": 302671.0,
+     "mean_equity": 167888.29042622953,
+     "one_side_turnover": 1.8028118532363893
+    },
+    "2017": {
+     "buy_notional": 220793.0,
+     "mean_equity": 174409.99926229514,
+     "one_side_turnover": 1.2659423251756883
+    },
+    "2018": {
+     "buy_notional": 143707.0,
+     "mean_equity": 165814.46426337434,
+     "one_side_turnover": 0.8666734873728533
+    },
+    "2019": {
+     "buy_notional": 145241.0,
+     "mean_equity": 162539.63325327862,
+     "one_side_turnover": 0.8935728295490682
+    },
+    "2020": {
+     "buy_notional": 122471.0,
+     "mean_equity": 176452.54835925935,
+     "one_side_turnover": 0.6940732856441817
+    }
+   },
+   "max_one_side_turnover": 1.8028118532363893,
+   "max_single_name_weight": 0.08630580768044745,
+   "execution_rate": 0.5662790697674419,
+   "execution_rate_mapping": "7.7-m6: filled + rule-blocked intents / (filled + rule-blocked + terminated intents); re-anchors neutral; R16 at_target/feemin skips outside the frame (excluded)"
+  },
+  "C04": {
+   "net_cagr": -0.043531312479778594,
+   "net_total_return": -0.2339401807499999,
+   "max_drawdown": -0.5514562603520402,
+   "b1m_net_cagr": 0.018551675073019247,
+   "b1m_max_drawdown": -0.5559615161856944,
+   "b1m_net_return_by_year": {
+    "2015": 0.4194621340812228,
+    "2016": -0.08789440159052753,
+    "2017": -0.09363961023236667,
+    "2018": -0.2990832010981138,
+    "2019": 0.19693355456514583,
+    "2020": 0.13394943384963365
+   },
+   "excess_vs_b1m": -0.06208298755279784,
+   "net_return_by_year": {
+    "2015": -0.055274980000000196,
+    "2016": -0.2142793651215038,
+    "2017": -0.03136997912375694,
+    "2018": -0.1926268044097884,
+    "2019": 0.19584597331959275,
+    "2020": 0.10352356066465429
+   },
+   "advantage_years_list": [
+    2017,
+    2018
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 359722.0,
+     "mean_equity": 211022.83175819676,
+     "one_side_turnover": 1.7046591451876265
+    },
+    "2016": {
+     "buy_notional": 429114.0,
+     "mean_equity": 158754.2888258194,
+     "one_side_turnover": 2.7030072899057953
+    },
+    "2017": {
+     "buy_notional": 284458.0,
+     "mean_equity": 143473.10205737702,
+     "one_side_turnover": 1.9826573477601468
+    },
+    "2018": {
+     "buy_notional": 100181.0,
+     "mean_equity": 129232.58147942416,
+     "one_side_turnover": 0.7751992481551595
+    },
+    "2019": {
+     "buy_notional": 128664.0,
+     "mean_equity": 133443.62937868843,
+     "one_side_turnover": 0.9641824086998958
+    },
+    "2020": {
+     "buy_notional": 125328.0,
+     "mean_equity": 148909.77016378596,
+     "one_side_turnover": 0.8416371864797834
+    }
+   },
+   "max_one_side_turnover": 2.7030072899057953,
+   "max_single_name_weight": 0.12254028741796523,
+   "execution_rate": 0.5827686350435625,
+   "execution_rate_mapping": "7.7-m6: filled + rule-blocked intents / (filled + rule-blocked + terminated intents); re-anchors neutral; R16 at_target/feemin skips outside the frame (excluded)"
+  },
+  "C05": {
+   "net_cagr": 0.03883228074264511,
+   "net_total_return": 0.2562288805499999,
+   "max_drawdown": -0.21196584331074653,
+   "b1m_net_cagr": 0.0059905923579064435,
+   "b1m_max_drawdown": -0.3982378364862026,
+   "b1m_net_return_by_year": {
+    "2015": 0.22735356961586017,
+    "2016": -0.036271319473570096,
+    "2017": -0.11258228102926204,
+    "2018": -0.1962740727688722,
+    "2019": 0.12375649932752708,
+    "2020": 0.09319791239431541
+   },
+   "excess_vs_b1m": 0.032841688384738665,
+   "net_return_by_year": {
+    "2015": -0.012900510000000032,
+    "2016": -0.04567724475270496,
+    "2017": 0.11388764832548426,
+    "2018": -0.07705806902840606,
+    "2019": 0.1289514979805091,
+    "2020": 0.1490039376480432
+   },
+   "advantage_years_list": [
+    2017,
+    2018,
+    2019,
+    2020
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 166096.0,
+     "mean_equity": 205744.63248360655,
+     "one_side_turnover": 0.8072920201854321
+    },
+    "2016": {
+     "buy_notional": 278593.0,
+     "mean_equity": 189455.98731557364,
+     "one_side_turnover": 1.4704892885541396
+    },
+    "2017": {
+     "buy_notional": 314585.0,
+     "mean_equity": 198226.54185655736,
+     "one_side_turnover": 1.5869973670208255
+    },
+    "2018": {
+     "buy_notional": 128493.0,
+     "mean_equity": 203015.07349382708,
+     "one_side_turnover": 0.6329234464647128
+    },
+    "2019": {
+     "buy_notional": 175549.0,
+     "mean_equity": 206108.90508278686,
+     "one_side_turnover": 0.8517293317796628
+    },
+    "2020": {
+     "buy_notional": 286553.0,
+     "mean_equity": 225202.16169769553,
+     "one_side_turnover": 1.272425619007423
+    }
+   },
+   "max_one_side_turnover": 1.5869973670208255,
+   "max_single_name_weight": 0.11115622475250649,
+   "execution_rate": 0.5326164874551972,
+   "execution_rate_mapping": "7.7-m6: filled + rule-blocked intents / (filled + rule-blocked + terminated intents); re-anchors neutral; R16 at_target/feemin skips outside the frame (excluded)"
+  },
+  "C06": {
+   "net_cagr": -0.04956425775571571,
+   "net_total_return": -0.26242097244999996,
+   "max_drawdown": -0.3958598459855165,
+   "b1m_net_cagr": 0.0059905923579064435,
+   "b1m_max_drawdown": -0.3982378364862026,
+   "b1m_net_return_by_year": {
+    "2015": 0.22735356961586017,
+    "2016": -0.036271319473570096,
+    "2017": -0.11258228102926204,
+    "2018": -0.1962740727688722,
+    "2019": 0.12375649932752708,
+    "2020": 0.09319791239431541
+   },
+   "excess_vs_b1m": -0.055554850113622156,
+   "net_return_by_year": {
+    "2015": 0.0010181149999999306,
+    "2016": -0.13841890363792242,
+    "2017": -0.10450157598057042,
+    "2018": -0.10896967771038468,
+    "2019": 0.07360122393105839,
+    "2020": -0.001679122287384427
+   },
+   "advantage_years_list": [
+    2017,
+    2018
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 147484.0,
+     "mean_equity": 206071.28534836054,
+     "one_side_turnover": 0.7156940849409485
+    },
+    "2016": {
+     "buy_notional": 390426.0,
+     "mean_equity": 186702.63843852462,
+     "one_side_turnover": 2.0911648772899114
+    },
+    "2017": {
+     "buy_notional": 369583.0,
+     "mean_equity": 158826.1515286884,
+     "one_side_turnover": 2.3269656567435186
+    },
+    "2018": {
+     "buy_notional": 60874.0,
+     "mean_equity": 145991.60409876547,
+     "one_side_turnover": 0.41696918378140324
+    },
+    "2019": {
+     "buy_notional": 137050.0,
+     "mean_equity": 144166.48025655746,
+     "one_side_turnover": 0.9506370673412222
+    },
+    "2020": {
+     "buy_notional": 141960.0,
+     "mean_equity": 144754.9907767079,
+     "one_side_turnover": 0.9806915757328234
+    }
+   },
+   "max_one_side_turnover": 2.3269656567435186,
+   "max_single_name_weight": 0.0900597679173998,
+   "execution_rate": 0.4927797833935018,
+   "execution_rate_mapping": "7.7-m6: filled + rule-blocked intents / (filled + rule-blocked + terminated intents); re-anchors neutral; R16 at_target/feemin skips outside the frame (excluded)"
+  },
+  "C07": {
+   "net_cagr": -0.0061654489444176175,
+   "net_total_return": -0.03635374525000046,
+   "max_drawdown": -0.4292475977880985,
+   "b1m_net_cagr": 0.018551675073019247,
+   "b1m_max_drawdown": -0.5559615161856944,
+   "b1m_net_return_by_year": {
+    "2015": 0.4194621340812228,
+    "2016": -0.08789440159052753,
+    "2017": -0.09363961023236667,
+    "2018": -0.2990832010981138,
+    "2019": 0.19693355456514583,
+    "2020": 0.13394943384963365
+   },
+   "excess_vs_b1m": -0.024717124017436864,
+   "net_return_by_year": {
+    "2015": -0.03510553000000016,
+    "2016": -0.1259547326455296,
+    "2017": 0.06615629079415641,
+    "2018": -0.1832341885928892,
+    "2019": 0.1465345113218013,
+    "2020": 0.1444539930521389
+   },
+   "advantage_years_list": [
+    2017,
+    2018,
+    2020
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 322602.0,
+     "mean_equity": 211032.9906639343,
+     "one_side_turnover": 1.5286804161996503
+    },
+    "2016": {
+     "buy_notional": 301253.0,
+     "mean_equity": 170207.30461475367,
+     "one_side_turnover": 1.7699181635115748
+    },
+    "2017": {
+     "buy_notional": 198246.0,
+     "mean_equity": 174167.59538524563,
+     "one_side_turnover": 1.1382484759090503
+    },
+    "2018": {
+     "buy_notional": 135228.0,
+     "mean_equity": 167857.24604032942,
+     "one_side_turnover": 0.8056131218041673
+    },
+    "2019": {
+     "buy_notional": 91655.0,
+     "mean_equity": 162669.51884426238,
+     "one_side_turnover": 0.5634429895114479
+    },
+    "2020": {
+     "buy_notional": 104866.0,
+     "mean_equity": 182580.25328847716,
+     "one_side_turnover": 0.5743556497005813
+    }
+   },
+   "max_one_side_turnover": 1.7699181635115748,
+   "max_single_name_weight": 0.11619963948133129,
+   "execution_rate": 0.5160532498042286,
+   "execution_rate_mapping": "7.7-m6: filled + rule-blocked intents / (filled + rule-blocked + terminated intents); re-anchors neutral; R16 at_target/feemin skips outside the frame (excluded)"
+  },
+  "C08": {
+   "net_cagr": -0.05678638767938826,
+   "net_total_return": -0.2953504624500003,
+   "max_drawdown": -0.5530444399640777,
+   "b1m_net_cagr": 0.018551675073019247,
+   "b1m_max_drawdown": -0.5559615161856944,
+   "b1m_net_return_by_year": {
+    "2015": 0.4194621340812228,
+    "2016": -0.08789440159052753,
+    "2017": -0.09363961023236667,
+    "2018": -0.2990832010981138,
+    "2019": 0.19693355456514583,
+    "2020": 0.13394943384963365
+   },
+   "excess_vs_b1m": -0.07533806275240751,
+   "net_return_by_year": {
+    "2015": -0.018609660000000194,
+    "2016": -0.20908306984150693,
+    "2017": -0.11716827725072076,
+    "2018": -0.16621514327366282,
+    "2019": 0.1328225079449339,
+    "2020": 0.08869622637045183
+   },
+   "advantage_years_list": [
+    2018
+   ],
+   "turnover_by_year": {
+    "2015": {
+     "buy_notional": 308531.0,
+     "mean_equity": 211062.74799180342,
+     "one_side_turnover": 1.4617975125197449
+    },
+    "2016": {
+     "buy_notional": 395794.0,
+     "mean_equity": 167123.86610245873,
+     "one_side_turnover": 2.368267376948726
+    },
+    "2017": {
+     "buy_notional": 256511.0,
+     "mean_equity": 142980.02533196707,
+     "one_side_turnover": 1.794033812796157
+    },
+    "2018": {
+     "buy_notional": 72654.0,
+     "mean_equity": 127146.78574485592,
+     "one_side_turnover": 0.5714182987354002
+    },
+    "2019": {
+     "buy_notional": 87071.0,
+     "mean_equity": 126092.04255983616,
+     "one_side_turnover": 0.6905352489526135
+    },
+    "2020": {
+     "buy_notional": 83661.0,
+     "mean_equity": 135182.92379316868,
+     "one_side_turnover": 0.6188725443459281
+    }
+   },
+   "max_one_side_turnover": 2.368267376948726,
+   "max_single_name_weight": 0.06703163043540289,
+   "execution_rate": 0.5088062622309197,
+   "execution_rate_mapping": "7.7-m6: filled + rule-blocked intents / (filled + rule-blocked + terminated intents); re-anchors neutral; R16 at_target/feemin skips outside the frame (excluded)"
+  }
+ },
+ "gates": {
+  "C01": {
+   "dev": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": false,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": false,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8_execution_rate_ge_95pct": false,
+    "advantage_years": 2,
+    "dev_excess_vs_b1m": 0.0008199666596644395,
+    "failed_gates": [
+     "2_excess_vs_B1m_ge_2pp",
+     "3_advantage_years_ge_5_of_6",
+     "4_mdd_le_20pct_and_le_B1m",
+     "8_execution_rate_ge_95pct"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated"
+   },
+   "verdict": "eliminated"
+  },
+  "C02": {
+   "dev": {
+    "1_net_cagr_gt_0": false,
+    "2_excess_vs_B1m_ge_2pp": false,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": false,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": false,
+    "8_execution_rate_ge_95pct": false,
+    "advantage_years": 2,
+    "dev_excess_vs_b1m": -0.055121052039346585,
+    "failed_gates": [
+     "1_net_cagr_gt_0",
+     "2_excess_vs_B1m_ge_2pp",
+     "3_advantage_years_ge_5_of_6",
+     "4_mdd_le_20pct_and_le_B1m",
+     "7_vs_B3prime_plus_1pp",
+     "8_execution_rate_ge_95pct"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated"
+   },
+   "verdict": "eliminated"
+  },
+  "C03": {
+   "dev": {
+    "1_net_cagr_gt_0": false,
+    "2_excess_vs_B1m_ge_2pp": false,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": false,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": false,
+    "8_execution_rate_ge_95pct": false,
+    "advantage_years": 2,
+    "dev_excess_vs_b1m": -0.027278772616621483,
+    "failed_gates": [
+     "1_net_cagr_gt_0",
+     "2_excess_vs_B1m_ge_2pp",
+     "3_advantage_years_ge_5_of_6",
+     "4_mdd_le_20pct_and_le_B1m",
+     "7_vs_B3prime_plus_1pp",
+     "8_execution_rate_ge_95pct"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated"
+   },
+   "verdict": "eliminated"
+  },
+  "C04": {
+   "dev": {
+    "1_net_cagr_gt_0": false,
+    "2_excess_vs_B1m_ge_2pp": false,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": false,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": false,
+    "8_execution_rate_ge_95pct": false,
+    "advantage_years": 2,
+    "dev_excess_vs_b1m": -0.06208298755279784,
+    "failed_gates": [
+     "1_net_cagr_gt_0",
+     "2_excess_vs_B1m_ge_2pp",
+     "3_advantage_years_ge_5_of_6",
+     "4_mdd_le_20pct_and_le_B1m",
+     "7_vs_B3prime_plus_1pp",
+     "8_execution_rate_ge_95pct"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated"
+   },
+   "verdict": "eliminated"
+  },
+  "C05": {
+   "dev": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": true,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": false,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8_execution_rate_ge_95pct": false,
+    "advantage_years": 4,
+    "dev_excess_vs_b1m": 0.032841688384738665,
+    "failed_gates": [
+     "3_advantage_years_ge_5_of_6",
+     "4_mdd_le_20pct_and_le_B1m",
+     "8_execution_rate_ge_95pct"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated"
+   },
+   "verdict": "eliminated"
+  },
+  "C06": {
+   "dev": {
+    "1_net_cagr_gt_0": false,
+    "2_excess_vs_B1m_ge_2pp": false,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": false,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": false,
+    "8_execution_rate_ge_95pct": false,
+    "advantage_years": 2,
+    "dev_excess_vs_b1m": -0.055554850113622156,
+    "failed_gates": [
+     "1_net_cagr_gt_0",
+     "2_excess_vs_B1m_ge_2pp",
+     "3_advantage_years_ge_5_of_6",
+     "4_mdd_le_20pct_and_le_B1m",
+     "7_vs_B3prime_plus_1pp",
+     "8_execution_rate_ge_95pct"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated"
+   },
+   "verdict": "eliminated"
+  },
+  "C07": {
+   "dev": {
+    "1_net_cagr_gt_0": false,
+    "2_excess_vs_B1m_ge_2pp": false,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": false,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": false,
+    "8_execution_rate_ge_95pct": false,
+    "advantage_years": 3,
+    "dev_excess_vs_b1m": -0.024717124017436864,
+    "failed_gates": [
+     "1_net_cagr_gt_0",
+     "2_excess_vs_B1m_ge_2pp",
+     "3_advantage_years_ge_5_of_6",
+     "4_mdd_le_20pct_and_le_B1m",
+     "7_vs_B3prime_plus_1pp",
+     "8_execution_rate_ge_95pct"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated"
+   },
+   "verdict": "eliminated"
+  },
+  "C08": {
+   "dev": {
+    "1_net_cagr_gt_0": false,
+    "2_excess_vs_B1m_ge_2pp": false,
+    "3_advantage_years_ge_5_of_6": false,
+    "4_mdd_le_20pct_and_le_B1m": false,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": false,
+    "8_execution_rate_ge_95pct": false,
+    "advantage_years": 1,
+    "dev_excess_vs_b1m": -0.07533806275240751,
+    "failed_gates": [
+     "1_net_cagr_gt_0",
+     "2_excess_vs_B1m_ge_2pp",
+     "3_advantage_years_ge_5_of_6",
+     "4_mdd_le_20pct_and_le_B1m",
+     "7_vs_B3prime_plus_1pp",
+     "8_execution_rate_ge_95pct"
+    ],
+    "dev_pass": false,
+    "verdict": "eliminated"
+   },
+   "verdict": "eliminated"
+  }
+ },
+ "disclosures": {
+  "C01": {
+   "verdict": "eliminated",
+   "1_fill_rate": {
+    "gate8_mapped_execution_rate": 0.5841584158415841,
+    "gate8_mapping": "7.7-m6 / 9cc4 registered: R16 no-trade skip legs are outside the frame (excluded)",
+    "p3r1_comparable_rate_supplementary": {
+     "value": 0.7449392712550608,
+     "note": "NOT the gate: treats R16 at_target/feemin skip legs as executed no-ops (P3R1 numerator convention) for an apples-to-apples delta"
+    },
+    "order_session_fill_rate": {
+     "buy": 0.033067890403563234,
+     "sell_risk": 0.7089552238805971,
+     "sell_profit": null
+    },
+    "filled_intents": 530,
+    "rule_blocked": {
+     "below_min_lot": 0,
+     "void_no_position": 1,
+     "void_insufficient_cash": 0
+    },
+    "termination": {
+     "expiry": 110,
+     "override_same_name": 268,
+     "cap_void": 0,
+     "suspension_abandon": 0
+    },
+    "engine_reason_x_host_class": {
+     "filled": {
+      "filled": 530
+     },
+     "overridden by a later same-symbol intent (streak resets via source change)": {
+      "terminated:override_same_name": 268
+     },
+     "expired at 2015-05-30": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2015-07-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2015-08-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2015-09-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2015-10-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2015-12-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-01-01": {
+      "terminated:expiry": 2
+     },
+     "expired at 2016-03-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2016-07-30": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2016-09-01": {
+      "terminated:expiry": 1
+     },
+     "expired at 2016-10-01": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2016-11-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2017-01-27": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-06-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-07-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2017-08-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2017-09-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2017-09-30": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-11-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2018-02-01": {
+      "terminated:expiry": 1,
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-06-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-06-30": {
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 1
+     },
+     "expired at 2018-08-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2018-09-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2018-09-29": {
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 1
+     },
+     "expired at 2018-11-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-12-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2018-12-29": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2019-02-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2019-03-30": {
+      "terminated:expired_at_target_noop": 6
+     },
+     "expired at 2019-05-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2019-06-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2019-06-29": {
+      "terminated:expired_at_target_noop": 6
+     },
+     "expired at 2019-08-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2019-08-31": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2019-10-01": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2019-11-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2019-11-30": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2020-01-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2020-01-24": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2020-08-01": {
+      "terminated:expired_at_target_noop": 6,
+      "terminated:expiry": 1
+     },
+     "expired at 2020-09-01": {
+      "executed_rule_blocked:void_no_position": 1,
+      "terminated:expiry": 2,
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2020-10-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2020-10-31": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2020-12-01": {
+      "terminated:expiry": 2,
+      "terminated:expired_at_target_noop": 1
+     },
+     "still_active(no lifecycle event)": {
+      "terminated:expired_at_target_noop": 4,
+      "terminated:expiry": 3
+     }
+    },
+    "decision_point_fill_share": {
+     "am": 0.18867924528301888,
+     "pm": 0.8113207547169812
+    },
+    "vs_p3r1": {
+     "gate8_mapped_pp": -32.944158415841585,
+     "order_session_buy_pp": -45.841629451127865,
+     "order_session_sell_pp": -11.814757985772072
+    }
+   },
+   "2_turnover_fees": {
+    "buy_notional_total": 1348296.0,
+    "sell_notional_total": 1245540.7,
+    "fees_total": 3895.5407,
+    "commission_warnings": 0,
+    "max_one_side_turnover": 1.486828085567552,
+    "vs_p3r1": {
+     "fees_total": 1052.8573999999999,
+     "max_turnover": 0.11670289181316051
+    }
+   },
+   "3_mdd_attribution": {
+    "max_drawdown": -0.21647383522322805,
+    "p3r1_max_drawdown": -0.3060639176675909,
+    "delta_pp": 8.959008244436284,
+    "rescale_reduce_intents_emitted": 284,
+    "rescale_reduce_intents_filled": 93,
+    "k3_market_exits_executed": 8,
+    "note": "mechanism counters, not a counterfactual decomposition; market-path component not separable without a no-rescale twin run (not run: zero-trial discipline); rescale TOP-UP hole noted in item 4"
+   },
+   "4_mapping_diffs": {
+    "lifecycle_ownership": "revision 2: the ENGINE intent layer owns the order lifecycle (re-anchor at every decision point, re-hang, fill-stop, expiry/override/cap-void); host submits ONE static frame -- replaces 9cc4's dead host-side conventions (convention-A full-window numbers are INVALID diagnostics, prereg rev 1)",
+    "in_loop_pricing": "revision 3: buy/rescale sizing = target_weight x decision-point equity snapshot recomputed by the engine at every decision point; replaces P3R1's host-side fixed-point iteration (5-6 rounds) -- deterministic, zero feedback",
+    "re_anchor_cadence": "v0 dead anchor (signal-day close) -> v1.1 mechanical re-anchor at EVERY decision point (am = am.close, pm = official close), qty recomputed in-loop (7.7-M3); fill-rate uplift is a RULE difference, disclosed not celebrated",
+    "rescale_mapping": "R16 rescale legs -> standing reduce-to-target risk sell (target_weight = exposure/K), self-neutralizing via engine at_target skips. REGISTERED HOLE: the top-up side is NOT mapped (no engine buy top-up primitive; a full-seat buy would double the seat); P3R1/9cc4 mapped it via fixed-point sizing -- vs-P3R1 turnover/fee deltas are confounded by this hole",
+    "rescale_skips": "R16 outcome at_target/feemin_skipped rescale legs are outside the frame (9cc4 mapping-fidelity asset; R16 no-trade record)",
+    "sell_intent_mapping": "sell_full -> intent=risk full exit; K=3 SESSION-level fallback keyed (symbol, intent, source) (7.7-M1); rescale-down same intent semantics with explicit target weight",
+    "fill_granularity": "official daily extremes -> half-day bar extremes (conservative subset; gaps fill at the limit)",
+    "proceeds": "sale proceeds usable next SESSION (v0: next day)",
+    "expiry_boundary": "expiry_date = T'+1 cal day -> last emission is the (T','am') decision living (T','pm'), i.e. the frozen 9cc4 window; same-name override fires at (T','pm')",
+    "signal_day_drop": "same as P3R1: 2020-12-31 signal dropped (execution would cross into 2021)",
+    "profit_ladder": "intent=profit still unmapped (R16 has no profit-ladder signal) -- prereg sec 4.8 mapping hole, unchanged"
+   },
+   "5_increments": {
+    "cap_single_name_voids": 0,
+    "single_name_drift_breaches": 0,
+    "decision_point_fills": {
+     "am": 0.18867924528301888,
+     "pm": 0.8113207547169812
+    },
+    "k3": {
+     "armed": 8,
+     "executed": 8,
+     "deferred_limitdown": 11,
+     "deferred_suspended": 0,
+     "deferred_t1locked": 0
+    },
+    "gate8_termination_reasons": {
+     "expiry": 110,
+     "override_same_name": 268,
+     "cap_void": 0,
+     "suspension_abandon": 0
+    },
+    "gate8_expired_at_target_noop": 96,
+    "rule_blocked_executed": {
+     "below_min_lot": 0,
+     "void_no_position": 1,
+     "void_insufficient_cash": 0
+    },
+    "r16_outcome_skips": {
+     "r16_at_target": 357,
+     "r16_feemin_skipped": 216
+    },
+    "rescale_topup_hole_intents": 284,
+    "insufficient_cash_orders": 0,
+    "below_min_lot_abandons": 6245,
+    "void_days": {
+     "not_penetrated": 897,
+     "limit_out_of_range": 6,
+     "suspended": 12,
+     "no_limit_info": 8
+    },
+    "m5a_pm_nobar_rehangs": 3,
+    "m5a_halfmarket_days_market_level": [
+     "2016-01-07"
+    ],
+    "m5c_static_stats_lazy_keys": {
+     "order_generation": "engine_intents",
+     "intent_layer": {
+      "n_intents": 909,
+      "activated": 909,
+      "orders_generated": 7819,
+      "stopped_filled": 530,
+      "terminated_override": 268,
+      "terminated_expired": 104,
+      "terminated_cap": 0,
+      "at_target_skips": 7949,
+      "emissions_skipped_no_anchor": 1200,
+      "emissions_skipped_no_live_session": 7
+     }
+    },
+    "engine3_no_limit_info": {
+     "sell_voids": 2,
+     "sell_voids_on_2017_03_07_09": 2,
+     "note": "v0 ruling #2/#3 semantics restored in-engine (void + K count + disclose); 9cc4 host-side skip is dead"
+    },
+    "engine_warnings_n": 0,
+    "engine_warnings_sample": [],
+    "corp_action": {
+     "splits": 6,
+     "dividends": 95,
+     "dividend_cash_total": 7452.513510000001
+    },
+    "final_positions": {
+     "settled_cash": 100801.67280999997,
+     "pending_am_to_pm": 0.0,
+     "pending_next_day": 0.0,
+     "n_open_clips": 17
+    }
+   },
+   "engine_reconciliation": {
+    "filled_vs_stopped_filled": [
+     530,
+     530
+    ],
+    "override_total": 268,
+    "expired_total": 104,
+    "cap_total": 0
+   }
+  },
+  "C02": {
+   "verdict": "eliminated",
+   "1_fill_rate": {
+    "gate8_mapped_execution_rate": 0.5766423357664233,
+    "gate8_mapping": "7.7-m6 / 9cc4 registered: R16 no-trade skip legs are outside the frame (excluded)",
+    "p3r1_comparable_rate_supplementary": {
+     "value": 0.7246290801186943,
+     "note": "NOT the gate: treats R16 at_target/feemin skip legs as executed no-ops (P3R1 numerator convention) for an apples-to-apples delta"
+    },
+    "order_session_fill_rate": {
+     "buy": 0.026597203180696465,
+     "sell_risk": 0.5818815331010453,
+     "sell_profit": null
+    },
+    "filled_intents": 625,
+    "rule_blocked": {
+     "below_min_lot": 3,
+     "void_no_position": 4,
+     "void_insufficient_cash": 0
+    },
+    "termination": {
+     "expiry": 102,
+     "override_same_name": 361,
+     "cap_void": 0,
+     "suspension_abandon": 1
+    },
+    "engine_reason_x_host_class": {
+     "filled": {
+      "filled": 625
+     },
+     "overridden by a later same-symbol intent (streak resets via source change)": {
+      "terminated:override_same_name": 361,
+      "executed_rule_blocked:below_min_lot": 3
+     },
+     "expired at 2015-04-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2015-05-30": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2015-07-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2015-08-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2015-09-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2015-10-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2015-12-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-01-01": {
+      "terminated:expiry": 2,
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-03-01": {
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 1,
+      "terminated:suspension_abandon": 1
+     },
+     "expired at 2016-07-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-07-30": {
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 1
+     },
+     "expired at 2016-09-01": {
+      "terminated:expiry": 1
+     },
+     "expired at 2016-10-01": {
+      "terminated:expired_at_target_noop": 5
+     },
+     "expired at 2016-11-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2016-12-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-12-31": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-03-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-04-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-07-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-08-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-09-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2017-09-30": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-11-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-02-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2018-06-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-06-30": {
+      "executed_rule_blocked:void_no_position": 1,
+      "terminated:expired_at_target_noop": 2,
+      "terminated:expiry": 2
+     },
+     "expired at 2018-08-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2018-09-01": {
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 1
+     },
+     "expired at 2018-09-29": {
+      "terminated:expired_at_target_noop": 4,
+      "terminated:expiry": 2
+     },
+     "expired at 2018-12-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2019-02-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2019-03-30": {
+      "terminated:expired_at_target_noop": 5
+     },
+     "expired at 2019-05-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2019-06-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2019-06-29": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2019-08-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2019-08-31": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2019-10-01": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2019-11-30": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2020-01-01": {
+      "terminated:expiry": 1
+     },
+     "expired at 2020-01-24": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2020-02-29": {
+      "executed_rule_blocked:void_no_position": 1,
+      "terminated:expiry": 1
+     },
+     "expired at 2020-05-01": {
+      "terminated:expiry": 1
+     },
+     "expired at 2020-07-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2020-08-01": {
+      "executed_rule_blocked:void_no_position": 1,
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2020-09-01": {
+      "terminated:expiry": 2,
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2020-10-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2020-10-31": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "still_active(no lifecycle event)": {
+      "executed_rule_blocked:void_no_position": 1,
+      "terminated:expiry": 7,
+      "terminated:expired_at_target_noop": 2
+     }
+    },
+    "decision_point_fill_share": {
+     "am": 0.2016,
+     "pm": 0.7984
+    },
+    "vs_p3r1": {
+     "gate8_mapped_pp": -35.62769188919618,
+     "order_session_buy_pp": -43.821761163411836,
+     "order_session_sell_pp": -27.094865557820004
+    }
+   },
+   "2_turnover_fees": {
+    "buy_notional_total": 1428714.0,
+    "sell_notional_total": 1316536.0,
+    "fees_total": 4441.536,
+    "commission_warnings": 0,
+    "max_one_side_turnover": 2.4816402651818588,
+    "vs_p3r1": {
+     "fees_total": 1052.2588999999998,
+     "max_turnover": 0.28213008592086286
+    }
+   },
+   "3_mdd_attribution": {
+    "max_drawdown": -0.3854206210510046,
+    "p3r1_max_drawdown": -0.4832703107085691,
+    "delta_pp": 9.784968965756446,
+    "rescale_reduce_intents_emitted": 291,
+    "rescale_reduce_intents_filled": 94,
+    "k3_market_exits_executed": 6,
+    "note": "mechanism counters, not a counterfactual decomposition; market-path component not separable without a no-rescale twin run (not run: zero-trial discipline); rescale TOP-UP hole noted in item 4"
+   },
+   "4_mapping_diffs": {
+    "lifecycle_ownership": "revision 2: the ENGINE intent layer owns the order lifecycle (re-anchor at every decision point, re-hang, fill-stop, expiry/override/cap-void); host submits ONE static frame -- replaces 9cc4's dead host-side conventions (convention-A full-window numbers are INVALID diagnostics, prereg rev 1)",
+    "in_loop_pricing": "revision 3: buy/rescale sizing = target_weight x decision-point equity snapshot recomputed by the engine at every decision point; replaces P3R1's host-side fixed-point iteration (5-6 rounds) -- deterministic, zero feedback",
+    "re_anchor_cadence": "v0 dead anchor (signal-day close) -> v1.1 mechanical re-anchor at EVERY decision point (am = am.close, pm = official close), qty recomputed in-loop (7.7-M3); fill-rate uplift is a RULE difference, disclosed not celebrated",
+    "rescale_mapping": "R16 rescale legs -> standing reduce-to-target risk sell (target_weight = exposure/K), self-neutralizing via engine at_target skips. REGISTERED HOLE: the top-up side is NOT mapped (no engine buy top-up primitive; a full-seat buy would double the seat); P3R1/9cc4 mapped it via fixed-point sizing -- vs-P3R1 turnover/fee deltas are confounded by this hole",
+    "rescale_skips": "R16 outcome at_target/feemin_skipped rescale legs are outside the frame (9cc4 mapping-fidelity asset; R16 no-trade record)",
+    "sell_intent_mapping": "sell_full -> intent=risk full exit; K=3 SESSION-level fallback keyed (symbol, intent, source) (7.7-M1); rescale-down same intent semantics with explicit target weight",
+    "fill_granularity": "official daily extremes -> half-day bar extremes (conservative subset; gaps fill at the limit)",
+    "proceeds": "sale proceeds usable next SESSION (v0: next day)",
+    "expiry_boundary": "expiry_date = T'+1 cal day -> last emission is the (T','am') decision living (T','pm'), i.e. the frozen 9cc4 window; same-name override fires at (T','pm')",
+    "signal_day_drop": "same as P3R1: 2020-12-31 signal dropped (execution would cross into 2021)",
+    "profit_ladder": "intent=profit still unmapped (R16 has no profit-ladder signal) -- prereg sec 4.8 mapping hole, unchanged"
+   },
+   "5_increments": {
+    "cap_single_name_voids": 0,
+    "single_name_drift_breaches": 0,
+    "decision_point_fills": {
+     "am": 0.2016,
+     "pm": 0.7984
+    },
+    "k3": {
+     "armed": 8,
+     "executed": 6,
+     "deferred_limitdown": 8,
+     "deferred_suspended": 0,
+     "deferred_t1locked": 0
+    },
+    "gate8_termination_reasons": {
+     "expiry": 102,
+     "override_same_name": 361,
+     "cap_void": 0,
+     "suspension_abandon": 1
+    },
+    "gate8_expired_at_target_noop": 80,
+    "rule_blocked_executed": {
+     "below_min_lot": 3,
+     "void_no_position": 4,
+     "void_insufficient_cash": 0
+    },
+    "r16_outcome_skips": {
+     "r16_at_target": 344,
+     "r16_feemin_skipped": 245
+    },
+    "rescale_topup_hole_intents": 291,
+    "insufficient_cash_orders": 4,
+    "below_min_lot_abandons": 9331,
+    "void_days": {
+     "not_penetrated": 1287,
+     "limit_out_of_range": 10,
+     "suspended": 13,
+     "no_limit_info": 8,
+     "insufficient_cash": 4
+    },
+    "m5a_pm_nobar_rehangs": 3,
+    "m5a_halfmarket_days_market_level": [
+     "2016-01-07"
+    ],
+    "m5c_static_stats_lazy_keys": {
+     "order_generation": "engine_intents",
+     "intent_layer": {
+      "n_intents": 1096,
+      "activated": 1096,
+      "orders_generated": 11521,
+      "stopped_filled": 625,
+      "terminated_override": 364,
+      "terminated_expired": 97,
+      "terminated_cap": 0,
+      "at_target_skips": 8179,
+      "emissions_skipped_no_anchor": 1231,
+      "emissions_skipped_no_live_session": 10
+     }
+    },
+    "engine3_no_limit_info": {
+     "sell_voids": 2,
+     "sell_voids_on_2017_03_07_09": 2,
+     "note": "v0 ruling #2/#3 semantics restored in-engine (void + K count + disclose); 9cc4 host-side skip is dead"
+    },
+    "engine_warnings_n": 0,
+    "engine_warnings_sample": [],
+    "corp_action": {
+     "splits": 6,
+     "dividends": 96,
+     "dividend_cash_total": 5589.946310000001
+    },
+    "final_positions": {
+     "settled_cash": 88970.41030999998,
+     "pending_am_to_pm": 0.0,
+     "pending_next_day": 0.0,
+     "n_open_clips": 13
+    }
+   },
+   "engine_reconciliation": {
+    "filled_vs_stopped_filled": [
+     625,
+     625
+    ],
+    "override_total": 364,
+    "expired_total": 97,
+    "cap_total": 0
+   }
+  },
+  "C03": {
+   "verdict": "eliminated",
+   "1_fill_rate": {
+    "gate8_mapped_execution_rate": 0.5662790697674419,
+    "gate8_mapping": "7.7-m6 / 9cc4 registered: R16 no-trade skip legs are outside the frame (excluded)",
+    "p3r1_comparable_rate_supplementary": {
+     "value": 0.7493279569892473,
+     "note": "NOT the gate: treats R16 at_target/feemin skip legs as executed no-ops (P3R1 numerator convention) for an apples-to-apples delta"
+    },
+    "order_session_fill_rate": {
+     "buy": 0.03580028897094237,
+     "sell_risk": 0.6184834123222749,
+     "sell_profit": null
+    },
+    "filled_intents": 484,
+    "rule_blocked": {
+     "below_min_lot": 1,
+     "void_no_position": 2,
+     "void_insufficient_cash": 0
+    },
+    "termination": {
+     "expiry": 122,
+     "override_same_name": 251,
+     "cap_void": 0,
+     "suspension_abandon": 0
+    },
+    "engine_reason_x_host_class": {
+     "filled": {
+      "filled": 484
+     },
+     "overridden by a later same-symbol intent (streak resets via source change)": {
+      "terminated:override_same_name": 251,
+      "executed_rule_blocked:below_min_lot": 1
+     },
+     "expired at 2015-07-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2015-08-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2015-09-01": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2015-10-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2015-10-31": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2015-12-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2016-03-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2016-04-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-04-30": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-07-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-07-30": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2016-09-01": {
+      "terminated:expiry": 1
+     },
+     "expired at 2016-10-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-11-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-06-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-07-01": {
+      "terminated:expired_at_target_noop": 5
+     },
+     "expired at 2017-09-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2017-09-30": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2017-11-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-02-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-03-31": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-04-28": {
+      "terminated:expiry": 1,
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2018-06-30": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2018-08-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2018-09-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-12-01": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2018-12-29": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2019-02-01": {
+      "terminated:expiry": 1,
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2019-03-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2019-03-30": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2019-06-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2019-06-29": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2019-08-01": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2019-08-31": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2019-10-01": {
+      "terminated:expired_at_target_noop": 5
+     },
+     "expired at 2019-11-30": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2020-01-24": {
+      "terminated:expired_at_target_noop": 2,
+      "terminated:expiry": 1
+     },
+     "expired at 2020-02-29": {
+      "executed_rule_blocked:void_no_position": 1,
+      "terminated:expiry": 1
+     },
+     "expired at 2020-04-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2020-05-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2020-07-01": {
+      "terminated:expiry": 1,
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2020-08-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2020-09-01": {
+      "terminated:expiry": 2,
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2020-10-01": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2020-10-31": {
+      "terminated:expired_at_target_noop": 4,
+      "terminated:expiry": 1
+     },
+     "expired at 2020-12-01": {
+      "terminated:expiry": 2,
+      "terminated:expired_at_target_noop": 1
+     },
+     "still_active(no lifecycle event)": {
+      "executed_rule_blocked:void_no_position": 1,
+      "terminated:expired_at_target_noop": 4,
+      "terminated:expiry": 5
+     }
+    },
+    "decision_point_fill_share": {
+     "am": 0.2024793388429752,
+     "pm": 0.7975206611570248
+    },
+    "vs_p3r1": {
+     "gate8_mapped_pp": -34.51348995681629,
+     "order_session_buy_pp": -50.915883909445284,
+     "order_session_sell_pp": -21.788022404136143
+    }
+   },
+   "2_turnover_fees": {
+    "buy_notional_total": 1269249.0,
+    "sell_notional_total": 1169532.0,
+    "fees_total": 3589.5319999999997,
+    "commission_warnings": 0,
+    "max_one_side_turnover": 1.8028118532363893,
+    "vs_p3r1": {
+     "fees_total": 732.7653999999998,
+     "max_turnover": 0.04158415102343693
+    }
+   },
+   "3_mdd_attribution": {
+    "max_drawdown": -0.4544637273201293,
+    "p3r1_max_drawdown": -0.4990624035997686,
+    "delta_pp": 4.4598676279639315,
+    "rescale_reduce_intents_emitted": 273,
+    "rescale_reduce_intents_filled": 64,
+    "k3_market_exits_executed": 7,
+    "note": "mechanism counters, not a counterfactual decomposition; market-path component not separable without a no-rescale twin run (not run: zero-trial discipline); rescale TOP-UP hole noted in item 4"
+   },
+   "4_mapping_diffs": {
+    "lifecycle_ownership": "revision 2: the ENGINE intent layer owns the order lifecycle (re-anchor at every decision point, re-hang, fill-stop, expiry/override/cap-void); host submits ONE static frame -- replaces 9cc4's dead host-side conventions (convention-A full-window numbers are INVALID diagnostics, prereg rev 1)",
+    "in_loop_pricing": "revision 3: buy/rescale sizing = target_weight x decision-point equity snapshot recomputed by the engine at every decision point; replaces P3R1's host-side fixed-point iteration (5-6 rounds) -- deterministic, zero feedback",
+    "re_anchor_cadence": "v0 dead anchor (signal-day close) -> v1.1 mechanical re-anchor at EVERY decision point (am = am.close, pm = official close), qty recomputed in-loop (7.7-M3); fill-rate uplift is a RULE difference, disclosed not celebrated",
+    "rescale_mapping": "R16 rescale legs -> standing reduce-to-target risk sell (target_weight = exposure/K), self-neutralizing via engine at_target skips. REGISTERED HOLE: the top-up side is NOT mapped (no engine buy top-up primitive; a full-seat buy would double the seat); P3R1/9cc4 mapped it via fixed-point sizing -- vs-P3R1 turnover/fee deltas are confounded by this hole",
+    "rescale_skips": "R16 outcome at_target/feemin_skipped rescale legs are outside the frame (9cc4 mapping-fidelity asset; R16 no-trade record)",
+    "sell_intent_mapping": "sell_full -> intent=risk full exit; K=3 SESSION-level fallback keyed (symbol, intent, source) (7.7-M1); rescale-down same intent semantics with explicit target weight",
+    "fill_granularity": "official daily extremes -> half-day bar extremes (conservative subset; gaps fill at the limit)",
+    "proceeds": "sale proceeds usable next SESSION (v0: next day)",
+    "expiry_boundary": "expiry_date = T'+1 cal day -> last emission is the (T','am') decision living (T','pm'), i.e. the frozen 9cc4 window; same-name override fires at (T','pm')",
+    "signal_day_drop": "same as P3R1: 2020-12-31 signal dropped (execution would cross into 2021)",
+    "profit_ladder": "intent=profit still unmapped (R16 has no profit-ladder signal) -- prereg sec 4.8 mapping hole, unchanged"
+   },
+   "5_increments": {
+    "cap_single_name_voids": 0,
+    "single_name_drift_breaches": 0,
+    "decision_point_fills": {
+     "am": 0.2024793388429752,
+     "pm": 0.7975206611570248
+    },
+    "k3": {
+     "armed": 7,
+     "executed": 7,
+     "deferred_limitdown": 11,
+     "deferred_suspended": 0,
+     "deferred_t1locked": 0
+    },
+    "gate8_termination_reasons": {
+     "expiry": 122,
+     "override_same_name": 251,
+     "cap_void": 0,
+     "suspension_abandon": 0
+    },
+    "gate8_expired_at_target_noop": 106,
+    "rule_blocked_executed": {
+     "below_min_lot": 1,
+     "void_no_position": 2,
+     "void_insufficient_cash": 0
+    },
+    "r16_outcome_skips": {
+     "r16_at_target": 391,
+     "r16_feemin_skipped": 237
+    },
+    "rescale_topup_hole_intents": 273,
+    "insufficient_cash_orders": 0,
+    "below_min_lot_abandons": 5205,
+    "void_days": {
+     "not_penetrated": 788,
+     "suspended": 6,
+     "no_limit_info": 6,
+     "limit_out_of_range": 3
+    },
+    "m5a_pm_nobar_rehangs": 1,
+    "m5a_halfmarket_days_market_level": [
+     "2016-01-07"
+    ],
+    "m5c_static_stats_lazy_keys": {
+     "order_generation": "engine_intents",
+     "intent_layer": {
+      "n_intents": 860,
+      "activated": 860,
+      "orders_generated": 6658,
+      "stopped_filled": 484,
+      "terminated_override": 252,
+      "terminated_expired": 114,
+      "terminated_cap": 0,
+      "at_target_skips": 8759,
+      "emissions_skipped_no_anchor": 1171,
+      "emissions_skipped_no_live_session": 10
+     }
+    },
+    "engine3_no_limit_info": {
+     "sell_voids": 0,
+     "sell_voids_on_2017_03_07_09": 0,
+     "note": "v0 ruling #2/#3 semantics restored in-engine (void + K count + disclose); 9cc4 host-side skip is dead"
+    },
+    "engine_warnings_n": 0,
+    "engine_warnings_sample": [],
+    "corp_action": {
+     "splits": 9,
+     "dividends": 97,
+     "dividend_cash_total": 9248.753349999999
+    },
+    "final_positions": {
+     "settled_cash": 105942.22134999999,
+     "pending_am_to_pm": 0.0,
+     "pending_next_day": 0.0,
+     "n_open_clips": 15
+    }
+   },
+   "engine_reconciliation": {
+    "filled_vs_stopped_filled": [
+     484,
+     484
+    ],
+    "override_total": 252,
+    "expired_total": 114,
+    "cap_total": 0
+   }
+  },
+  "C04": {
+   "verdict": "eliminated",
+   "1_fill_rate": {
+    "gate8_mapped_execution_rate": 0.5827686350435625,
+    "gate8_mapping": "7.7-m6 / 9cc4 registered: R16 no-trade skip legs are outside the frame (excluded)",
+    "p3r1_comparable_rate_supplementary": {
+     "value": 0.7451212300413956,
+     "note": "NOT the gate: treats R16 at_target/feemin skip legs as executed no-ops (P3R1 numerator convention) for an apples-to-apples delta"
+    },
+    "order_session_fill_rate": {
+     "buy": 0.030759162303664923,
+     "sell_risk": 0.6946902654867256,
+     "sell_profit": null
+    },
+    "filled_intents": 596,
+    "rule_blocked": {
+     "below_min_lot": 4,
+     "void_no_position": 2,
+     "void_insufficient_cash": 0
+    },
+    "termination": {
+     "expiry": 106,
+     "override_same_name": 324,
+     "cap_void": 0,
+     "suspension_abandon": 1
+    },
+    "engine_reason_x_host_class": {
+     "filled": {
+      "filled": 596
+     },
+     "overridden by a later same-symbol intent (streak resets via source change)": {
+      "terminated:override_same_name": 324,
+      "executed_rule_blocked:below_min_lot": 3
+     },
+     "expired at 2015-07-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2015-08-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2015-09-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2015-10-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2015-10-31": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2015-12-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2016-03-01": {
+      "terminated:expired_at_target_noop": 2,
+      "terminated:suspension_abandon": 1
+     },
+     "expired at 2016-04-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-04-30": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2016-07-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-07-30": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2016-10-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2016-11-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-01-27": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-03-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-04-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2017-07-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2017-09-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-09-30": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-12-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-02-01": {
+      "terminated:expired_at_target_noop": 2,
+      "executed_rule_blocked:below_min_lot": 1,
+      "terminated:expiry": 1
+     },
+     "expired at 2018-03-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-03-31": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-06-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2018-06-30": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2018-08-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-09-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2018-09-29": {
+      "terminated:expiry": 1,
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-11-01": {
+      "executed_rule_blocked:void_no_position": 1
+     },
+     "expired at 2018-12-01": {
+      "terminated:expired_at_target_noop": 5
+     },
+     "expired at 2018-12-29": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2019-03-01": {
+      "executed_rule_blocked:void_no_position": 1,
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2019-03-30": {
+      "terminated:expired_at_target_noop": 2,
+      "terminated:expiry": 1
+     },
+     "expired at 2019-06-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2019-06-29": {
+      "terminated:expired_at_target_noop": 2,
+      "terminated:expiry": 1
+     },
+     "expired at 2019-08-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2019-08-31": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2019-10-01": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2019-11-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2019-11-30": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2020-01-24": {
+      "terminated:expiry": 1
+     },
+     "expired at 2020-02-29": {
+      "terminated:expiry": 1
+     },
+     "expired at 2020-05-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2020-05-30": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2020-07-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2020-08-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2020-09-01": {
+      "terminated:expiry": 2
+     },
+     "expired at 2020-10-01": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2020-10-31": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2020-12-01": {
+      "terminated:expiry": 1
+     },
+     "still_active(no lifecycle event)": {
+      "terminated:expiry": 8,
+      "terminated:expired_at_target_noop": 4
+     }
+    },
+    "decision_point_fill_share": {
+     "am": 0.19463087248322147,
+     "pm": 0.8053691275167785
+    },
+    "vs_p3r1": {
+     "gate8_mapped_pp": -34.533594011983624,
+     "order_session_buy_pp": -46.519225470038364,
+     "order_session_sell_pp": -16.139829539888318
+    }
+   },
+   "2_turnover_fees": {
+    "buy_notional_total": 1427467.0,
+    "sell_notional_total": 1303460.3,
+    "fees_total": 4283.460300000001,
+    "commission_warnings": 0,
+    "max_one_side_turnover": 2.7030072899057953,
+    "vs_p3r1": {
+     "fees_total": 895.8052000000002,
+     "max_turnover": 0.3062162456146389
+    }
+   },
+   "3_mdd_attribution": {
+    "max_drawdown": -0.5514562603520402,
+    "p3r1_max_drawdown": -0.6151674673120612,
+    "delta_pp": 6.371120696002097,
+    "rescale_reduce_intents_emitted": 268,
+    "rescale_reduce_intents_filled": 66,
+    "k3_market_exits_executed": 7,
+    "note": "mechanism counters, not a counterfactual decomposition; market-path component not separable without a no-rescale twin run (not run: zero-trial discipline); rescale TOP-UP hole noted in item 4"
+   },
+   "4_mapping_diffs": {
+    "lifecycle_ownership": "revision 2: the ENGINE intent layer owns the order lifecycle (re-anchor at every decision point, re-hang, fill-stop, expiry/override/cap-void); host submits ONE static frame -- replaces 9cc4's dead host-side conventions (convention-A full-window numbers are INVALID diagnostics, prereg rev 1)",
+    "in_loop_pricing": "revision 3: buy/rescale sizing = target_weight x decision-point equity snapshot recomputed by the engine at every decision point; replaces P3R1's host-side fixed-point iteration (5-6 rounds) -- deterministic, zero feedback",
+    "re_anchor_cadence": "v0 dead anchor (signal-day close) -> v1.1 mechanical re-anchor at EVERY decision point (am = am.close, pm = official close), qty recomputed in-loop (7.7-M3); fill-rate uplift is a RULE difference, disclosed not celebrated",
+    "rescale_mapping": "R16 rescale legs -> standing reduce-to-target risk sell (target_weight = exposure/K), self-neutralizing via engine at_target skips. REGISTERED HOLE: the top-up side is NOT mapped (no engine buy top-up primitive; a full-seat buy would double the seat); P3R1/9cc4 mapped it via fixed-point sizing -- vs-P3R1 turnover/fee deltas are confounded by this hole",
+    "rescale_skips": "R16 outcome at_target/feemin_skipped rescale legs are outside the frame (9cc4 mapping-fidelity asset; R16 no-trade record)",
+    "sell_intent_mapping": "sell_full -> intent=risk full exit; K=3 SESSION-level fallback keyed (symbol, intent, source) (7.7-M1); rescale-down same intent semantics with explicit target weight",
+    "fill_granularity": "official daily extremes -> half-day bar extremes (conservative subset; gaps fill at the limit)",
+    "proceeds": "sale proceeds usable next SESSION (v0: next day)",
+    "expiry_boundary": "expiry_date = T'+1 cal day -> last emission is the (T','am') decision living (T','pm'), i.e. the frozen 9cc4 window; same-name override fires at (T','pm')",
+    "signal_day_drop": "same as P3R1: 2020-12-31 signal dropped (execution would cross into 2021)",
+    "profit_ladder": "intent=profit still unmapped (R16 has no profit-ladder signal) -- prereg sec 4.8 mapping hole, unchanged"
+   },
+   "5_increments": {
+    "cap_single_name_voids": 0,
+    "single_name_drift_breaches": 0,
+    "decision_point_fills": {
+     "am": 0.19463087248322147,
+     "pm": 0.8053691275167785
+    },
+    "k3": {
+     "armed": 9,
+     "executed": 7,
+     "deferred_limitdown": 19,
+     "deferred_suspended": 0,
+     "deferred_t1locked": 0
+    },
+    "gate8_termination_reasons": {
+     "expiry": 106,
+     "override_same_name": 324,
+     "cap_void": 0,
+     "suspension_abandon": 1
+    },
+    "gate8_expired_at_target_noop": 89,
+    "rule_blocked_executed": {
+     "below_min_lot": 4,
+     "void_no_position": 2,
+     "void_insufficient_cash": 0
+    },
+    "r16_outcome_skips": {
+     "r16_at_target": 397,
+     "r16_feemin_skipped": 261
+    },
+    "rescale_topup_hole_intents": 268,
+    "insufficient_cash_orders": 0,
+    "below_min_lot_abandons": 7741,
+    "void_days": {
+     "not_penetrated": 1125,
+     "suspended": 7,
+     "limit_out_of_range": 8,
+     "no_limit_info": 6
+    },
+    "m5a_pm_nobar_rehangs": 0,
+    "m5a_halfmarket_days_market_level": [
+     "2016-01-07"
+    ],
+    "m5c_static_stats_lazy_keys": {
+     "order_generation": "engine_intents",
+     "intent_layer": {
+      "n_intents": 1033,
+      "activated": 1033,
+      "orders_generated": 9627,
+      "stopped_filled": 596,
+      "terminated_override": 327,
+      "terminated_expired": 98,
+      "terminated_cap": 0,
+      "at_target_skips": 8427,
+      "emissions_skipped_no_anchor": 1204,
+      "emissions_skipped_no_live_session": 12
+     }
+    },
+    "engine3_no_limit_info": {
+     "sell_voids": 0,
+     "sell_voids_on_2017_03_07_09": 0,
+     "note": "v0 ruling #2/#3 semantics restored in-engine (void + K count + disclose); 9cc4 host-side skip is dead"
+    },
+    "engine_warnings_n": 0,
+    "engine_warnings_sample": [],
+    "corp_action": {
+     "splits": 10,
+     "dividends": 98,
+     "dividend_cash_total": 7116.424150000002
+    },
+    "final_positions": {
+     "settled_cash": 78826.26385000002,
+     "pending_am_to_pm": 0.0,
+     "pending_next_day": 0.0,
+     "n_open_clips": 17
+    }
+   },
+   "engine_reconciliation": {
+    "filled_vs_stopped_filled": [
+     596,
+     596
+    ],
+    "override_total": 327,
+    "expired_total": 98,
+    "cap_total": 0
+   }
+  },
+  "C05": {
+   "verdict": "eliminated",
+   "1_fill_rate": {
+    "gate8_mapped_execution_rate": 0.5326164874551972,
+    "gate8_mapping": "7.7-m6 / 9cc4 registered: R16 no-trade skip legs are outside the frame (excluded)",
+    "p3r1_comparable_rate_supplementary": {
+     "value": 0.7057761732851986,
+     "note": "NOT the gate: treats R16 at_target/feemin skip legs as executed no-ops (P3R1 numerator convention) for an apples-to-apples delta"
+    },
+    "order_session_fill_rate": {
+     "buy": 0.019351291918636614,
+     "sell_risk": 0.6101426307448494,
+     "sell_profit": null
+    },
+    "filled_intents": 737,
+    "rule_blocked": {
+     "below_min_lot": 3,
+     "void_no_position": 3,
+     "void_insufficient_cash": 0
+    },
+    "termination": {
+     "expiry": 136,
+     "override_same_name": 515,
+     "cap_void": 0,
+     "suspension_abandon": 1
+    },
+    "engine_reason_x_host_class": {
+     "filled": {
+      "filled": 737
+     },
+     "overridden by a later same-symbol intent (streak resets via source change)": {
+      "terminated:override_same_name": 515,
+      "terminated:suspension_abandon": 1,
+      "executed_rule_blocked:below_min_lot": 2
+     },
+     "expired at 2015-04-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2015-07-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2015-08-01": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2015-09-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2015-10-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2015-10-31": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2015-12-01": {
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 2
+     },
+     "expired at 2016-01-01": {
+      "terminated:expiry": 3
+     },
+     "expired at 2016-01-30": {
+      "terminated:expiry": 1
+     },
+     "expired at 2016-03-01": {
+      "terminated:expired_at_target_noop": 4,
+      "terminated:expiry": 1
+     },
+     "expired at 2016-04-01": {
+      "terminated:expiry": 1
+     },
+     "expired at 2016-04-30": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2016-07-01": {
+      "terminated:expiry": 2
+     },
+     "expired at 2016-09-01": {
+      "terminated:expiry": 3
+     },
+     "expired at 2016-10-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2016-11-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2017-01-27": {
+      "executed_rule_blocked:void_no_position": 1
+     },
+     "expired at 2017-03-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-04-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-07-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2017-08-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2017-09-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2017-09-30": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2017-11-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-12-30": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2018-02-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-03-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-06-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-08-01": {
+      "terminated:expired_at_target_noop": 2,
+      "terminated:expiry": 1
+     },
+     "expired at 2018-09-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2018-09-29": {
+      "terminated:expired_at_target_noop": 2,
+      "terminated:expiry": 2,
+      "executed_rule_blocked:below_min_lot": 1
+     },
+     "expired at 2018-11-01": {
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 1
+     },
+     "expired at 2018-12-01": {
+      "terminated:expired_at_target_noop": 2,
+      "terminated:expiry": 1
+     },
+     "expired at 2018-12-29": {
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 1
+     },
+     "expired at 2019-02-01": {
+      "executed_rule_blocked:void_no_position": 1,
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2019-03-01": {
+      "terminated:expiry": 2
+     },
+     "expired at 2019-03-30": {
+      "terminated:expired_at_target_noop": 6
+     },
+     "expired at 2019-05-01": {
+      "executed_rule_blocked:void_no_position": 1,
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2019-06-01": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2019-06-29": {
+      "terminated:expiry": 1,
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2019-08-01": {
+      "terminated:expired_at_target_noop": 5
+     },
+     "expired at 2019-08-31": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2019-10-01": {
+      "terminated:expired_at_target_noop": 5
+     },
+     "expired at 2019-11-30": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2020-01-01": {
+      "terminated:expiry": 1,
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2020-05-01": {
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 2
+     },
+     "expired at 2020-08-01": {
+      "terminated:expired_at_target_noop": 3,
+      "terminated:expiry": 1
+     },
+     "expired at 2020-09-01": {
+      "terminated:expired_at_target_noop": 2,
+      "terminated:expiry": 1
+     },
+     "expired at 2020-10-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2020-10-31": {
+      "terminated:expiry": 1
+     },
+     "expired at 2020-12-01": {
+      "terminated:expiry": 2
+     },
+     "still_active(no lifecycle event)": {
+      "terminated:expiry": 9,
+      "terminated:expired_at_target_noop": 4
+     }
+    },
+    "decision_point_fill_share": {
+     "am": 0.1926729986431479,
+     "pm": 0.8073270013568521
+    },
+    "vs_p3r1": {
+     "gate8_mapped_pp": -38.38902303950908,
+     "order_session_buy_pp": -31.785801040694476,
+     "order_session_sell_pp": -20.702154835962816
+    }
+   },
+   "2_turnover_fees": {
+    "buy_notional_total": 1349869.0,
+    "sell_notional_total": 1222754.8,
+    "fees_total": 4907.7548,
+    "commission_warnings": 0,
+    "max_one_side_turnover": 1.5869973670208255,
+    "vs_p3r1": {
+     "fees_total": 1753.6333999999997,
+     "max_turnover": 0.16633196830957298
+    }
+   },
+   "3_mdd_attribution": {
+    "max_drawdown": -0.21196584331074653,
+    "p3r1_max_drawdown": -0.33572210202453734,
+    "delta_pp": 12.375625871379082,
+    "rescale_reduce_intents_emitted": 353,
+    "rescale_reduce_intents_filled": 145,
+    "k3_market_exits_executed": 6,
+    "note": "mechanism counters, not a counterfactual decomposition; market-path component not separable without a no-rescale twin run (not run: zero-trial discipline); rescale TOP-UP hole noted in item 4"
+   },
+   "4_mapping_diffs": {
+    "lifecycle_ownership": "revision 2: the ENGINE intent layer owns the order lifecycle (re-anchor at every decision point, re-hang, fill-stop, expiry/override/cap-void); host submits ONE static frame -- replaces 9cc4's dead host-side conventions (convention-A full-window numbers are INVALID diagnostics, prereg rev 1)",
+    "in_loop_pricing": "revision 3: buy/rescale sizing = target_weight x decision-point equity snapshot recomputed by the engine at every decision point; replaces P3R1's host-side fixed-point iteration (5-6 rounds) -- deterministic, zero feedback",
+    "re_anchor_cadence": "v0 dead anchor (signal-day close) -> v1.1 mechanical re-anchor at EVERY decision point (am = am.close, pm = official close), qty recomputed in-loop (7.7-M3); fill-rate uplift is a RULE difference, disclosed not celebrated",
+    "rescale_mapping": "R16 rescale legs -> standing reduce-to-target risk sell (target_weight = exposure/K), self-neutralizing via engine at_target skips. REGISTERED HOLE: the top-up side is NOT mapped (no engine buy top-up primitive; a full-seat buy would double the seat); P3R1/9cc4 mapped it via fixed-point sizing -- vs-P3R1 turnover/fee deltas are confounded by this hole",
+    "rescale_skips": "R16 outcome at_target/feemin_skipped rescale legs are outside the frame (9cc4 mapping-fidelity asset; R16 no-trade record)",
+    "sell_intent_mapping": "sell_full -> intent=risk full exit; K=3 SESSION-level fallback keyed (symbol, intent, source) (7.7-M1); rescale-down same intent semantics with explicit target weight",
+    "fill_granularity": "official daily extremes -> half-day bar extremes (conservative subset; gaps fill at the limit)",
+    "proceeds": "sale proceeds usable next SESSION (v0: next day)",
+    "expiry_boundary": "expiry_date = T'+1 cal day -> last emission is the (T','am') decision living (T','pm'), i.e. the frozen 9cc4 window; same-name override fires at (T','pm')",
+    "signal_day_drop": "same as P3R1: 2020-12-31 signal dropped (execution would cross into 2021)",
+    "profit_ladder": "intent=profit still unmapped (R16 has no profit-ladder signal) -- prereg sec 4.8 mapping hole, unchanged"
+   },
+   "5_increments": {
+    "cap_single_name_voids": 0,
+    "single_name_drift_breaches": 0,
+    "decision_point_fills": {
+     "am": 0.1926729986431479,
+     "pm": 0.8073270013568521
+    },
+    "k3": {
+     "armed": 7,
+     "executed": 6,
+     "deferred_limitdown": 10,
+     "deferred_suspended": 0,
+     "deferred_t1locked": 0
+    },
+    "gate8_termination_reasons": {
+     "expiry": 136,
+     "override_same_name": 515,
+     "cap_void": 0,
+     "suspension_abandon": 1
+    },
+    "gate8_expired_at_target_noop": 97,
+    "rule_blocked_executed": {
+     "below_min_lot": 3,
+     "void_no_position": 3,
+     "void_insufficient_cash": 0
+    },
+    "r16_outcome_skips": {
+     "r16_at_target": 501,
+     "r16_feemin_skipped": 320
+    },
+    "rescale_topup_hole_intents": 353,
+    "insufficient_cash_orders": 0,
+    "below_min_lot_abandons": 15695,
+    "void_days": {
+     "suspended": 22,
+     "not_penetrated": 2107,
+     "limit_out_of_range": 11,
+     "no_limit_info": 6
+    },
+    "m5a_pm_nobar_rehangs": 7,
+    "m5a_halfmarket_days_market_level": [
+     "2016-01-07"
+    ],
+    "m5c_static_stats_lazy_keys": {
+     "order_generation": "engine_intents",
+     "intent_layer": {
+      "n_intents": 1395,
+      "activated": 1395,
+      "orders_generated": 18827,
+      "stopped_filled": 737,
+      "terminated_override": 518,
+      "terminated_expired": 127,
+      "terminated_cap": 0,
+      "at_target_skips": 8683,
+      "emissions_skipped_no_anchor": 1423,
+      "emissions_skipped_no_live_session": 13
+     }
+    },
+    "engine3_no_limit_info": {
+     "sell_voids": 0,
+     "sell_voids_on_2017_03_07_09": 0,
+     "note": "v0 ruling #2/#3 semantics restored in-engine (void + K count + disclose); 9cc4 host-side skip is dead"
+    },
+    "engine_warnings_n": 0,
+    "engine_warnings_sample": [],
+    "corp_action": {
+     "splits": 6,
+     "dividends": 140,
+     "dividend_cash_total": 8968.330909999999
+    },
+    "final_positions": {
+     "settled_cash": 76946.37610999997,
+     "pending_am_to_pm": 0.0,
+     "pending_next_day": 0.0,
+     "n_open_clips": 31
+    }
+   },
+   "engine_reconciliation": {
+    "filled_vs_stopped_filled": [
+     737,
+     737
+    ],
+    "override_total": 518,
+    "expired_total": 127,
+    "cap_total": 0
+   }
+  },
+  "C06": {
+   "verdict": "eliminated",
+   "1_fill_rate": {
+    "gate8_mapped_execution_rate": 0.4927797833935018,
+    "gate8_mapping": "7.7-m6 / 9cc4 registered: R16 no-trade skip legs are outside the frame (excluded)",
+    "p3r1_comparable_rate_supplementary": {
+     "value": 0.6600806451612903,
+     "note": "NOT the gate: treats R16 at_target/feemin skip legs as executed no-ops (P3R1 numerator convention) for an apples-to-apples delta"
+    },
+    "order_session_fill_rate": {
+     "buy": 0.015415869980879541,
+     "sell_risk": 0.690671031096563,
+     "sell_profit": null
+    },
+    "filled_intents": 809,
+    "rule_blocked": {
+     "below_min_lot": 8,
+     "void_no_position": 2,
+     "void_insufficient_cash": 0
+    },
+    "termination": {
+     "expiry": 142,
+     "override_same_name": 700,
+     "cap_void": 0,
+     "suspension_abandon": 1
+    },
+    "engine_reason_x_host_class": {
+     "overridden by a later same-symbol intent (streak resets via source change)": {
+      "terminated:override_same_name": 700,
+      "terminated:suspension_abandon": 1,
+      "executed_rule_blocked:below_min_lot": 7
+     },
+     "filled": {
+      "filled": 809
+     },
+     "expired at 2015-04-01": {
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 1
+     },
+     "expired at 2015-05-01": {
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 1
+     },
+     "expired at 2015-05-30": {
+      "terminated:expiry": 1
+     },
+     "expired at 2015-07-01": {
+      "executed_rule_blocked:below_min_lot": 1,
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2015-08-01": {
+      "terminated:expired_at_target_noop": 5
+     },
+     "expired at 2015-09-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2015-10-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2015-10-31": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2015-12-01": {
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 2
+     },
+     "expired at 2016-01-01": {
+      "terminated:expiry": 3,
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-03-01": {
+      "terminated:expired_at_target_noop": 5,
+      "terminated:expiry": 1
+     },
+     "expired at 2016-04-01": {
+      "terminated:expiry": 1
+     },
+     "expired at 2016-04-30": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2016-07-01": {
+      "terminated:expiry": 1
+     },
+     "expired at 2016-07-30": {
+      "terminated:expiry": 1
+     },
+     "expired at 2016-09-01": {
+      "terminated:expiry": 2
+     },
+     "expired at 2016-10-01": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2016-12-01": {
+      "terminated:expired_at_target_noop": 3,
+      "terminated:expiry": 1
+     },
+     "expired at 2017-01-27": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-03-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-07-01": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2017-08-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-09-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2017-09-30": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-02-01": {
+      "terminated:expired_at_target_noop": 2,
+      "terminated:expiry": 1
+     },
+     "expired at 2018-06-30": {
+      "terminated:expired_at_target_noop": 3,
+      "terminated:expiry": 1
+     },
+     "expired at 2018-08-01": {
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 1
+     },
+     "expired at 2018-09-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2018-09-29": {
+      "terminated:expiry": 1,
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-11-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-12-01": {
+      "terminated:expiry": 2,
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-12-29": {
+      "terminated:expiry": 2
+     },
+     "expired at 2019-02-01": {
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 1
+     },
+     "expired at 2019-03-01": {
+      "terminated:expiry": 1
+     },
+     "expired at 2019-03-30": {
+      "terminated:expired_at_target_noop": 6
+     },
+     "expired at 2019-06-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2019-06-29": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2019-08-01": {
+      "executed_rule_blocked:void_no_position": 1,
+      "terminated:expired_at_target_noop": 6
+     },
+     "expired at 2019-08-31": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2019-10-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2019-11-01": {
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 1
+     },
+     "expired at 2019-11-30": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2020-01-24": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2020-05-01": {
+      "terminated:expiry": 2
+     },
+     "expired at 2020-07-01": {
+      "terminated:expiry": 1
+     },
+     "expired at 2020-08-01": {
+      "terminated:expired_at_target_noop": 3,
+      "terminated:expiry": 1
+     },
+     "expired at 2020-10-01": {
+      "executed_rule_blocked:void_no_position": 1,
+      "terminated:expired_at_target_noop": 5
+     },
+     "expired at 2020-10-31": {
+      "terminated:expired_at_target_noop": 2,
+      "terminated:expiry": 1
+     },
+     "expired at 2020-12-01": {
+      "terminated:expiry": 3
+     },
+     "still_active(no lifecycle event)": {
+      "terminated:expiry": 13,
+      "terminated:expired_at_target_noop": 3
+     }
+    },
+    "decision_point_fill_share": {
+     "am": 0.1903584672435105,
+     "pm": 0.8096415327564895
+    },
+    "vs_p3r1": {
+     "gate8_mapped_pp": -41.8698086073865,
+     "order_session_buy_pp": -30.299715138229445,
+     "order_session_sell_pp": -9.218611176057978
+    }
+   },
+   "2_turnover_fees": {
+    "buy_notional_total": 1247377.0,
+    "sell_notional_total": 1126396.0,
+    "fees_total": 5171.396000000001,
+    "commission_warnings": 0,
+    "max_one_side_turnover": 2.3269656567435186,
+    "vs_p3r1": {
+     "fees_total": 1417.9300000000007,
+     "max_turnover": 0.238162418739718
+    }
+   },
+   "3_mdd_attribution": {
+    "max_drawdown": -0.3958598459855165,
+    "p3r1_max_drawdown": -0.4847137065995075,
+    "delta_pp": 8.885386061399103,
+    "rescale_reduce_intents_emitted": 329,
+    "rescale_reduce_intents_filled": 118,
+    "k3_market_exits_executed": 6,
+    "note": "mechanism counters, not a counterfactual decomposition; market-path component not separable without a no-rescale twin run (not run: zero-trial discipline); rescale TOP-UP hole noted in item 4"
+   },
+   "4_mapping_diffs": {
+    "lifecycle_ownership": "revision 2: the ENGINE intent layer owns the order lifecycle (re-anchor at every decision point, re-hang, fill-stop, expiry/override/cap-void); host submits ONE static frame -- replaces 9cc4's dead host-side conventions (convention-A full-window numbers are INVALID diagnostics, prereg rev 1)",
+    "in_loop_pricing": "revision 3: buy/rescale sizing = target_weight x decision-point equity snapshot recomputed by the engine at every decision point; replaces P3R1's host-side fixed-point iteration (5-6 rounds) -- deterministic, zero feedback",
+    "re_anchor_cadence": "v0 dead anchor (signal-day close) -> v1.1 mechanical re-anchor at EVERY decision point (am = am.close, pm = official close), qty recomputed in-loop (7.7-M3); fill-rate uplift is a RULE difference, disclosed not celebrated",
+    "rescale_mapping": "R16 rescale legs -> standing reduce-to-target risk sell (target_weight = exposure/K), self-neutralizing via engine at_target skips. REGISTERED HOLE: the top-up side is NOT mapped (no engine buy top-up primitive; a full-seat buy would double the seat); P3R1/9cc4 mapped it via fixed-point sizing -- vs-P3R1 turnover/fee deltas are confounded by this hole",
+    "rescale_skips": "R16 outcome at_target/feemin_skipped rescale legs are outside the frame (9cc4 mapping-fidelity asset; R16 no-trade record)",
+    "sell_intent_mapping": "sell_full -> intent=risk full exit; K=3 SESSION-level fallback keyed (symbol, intent, source) (7.7-M1); rescale-down same intent semantics with explicit target weight",
+    "fill_granularity": "official daily extremes -> half-day bar extremes (conservative subset; gaps fill at the limit)",
+    "proceeds": "sale proceeds usable next SESSION (v0: next day)",
+    "expiry_boundary": "expiry_date = T'+1 cal day -> last emission is the (T','am') decision living (T','pm'), i.e. the frozen 9cc4 window; same-name override fires at (T','pm')",
+    "signal_day_drop": "same as P3R1: 2020-12-31 signal dropped (execution would cross into 2021)",
+    "profit_ladder": "intent=profit still unmapped (R16 has no profit-ladder signal) -- prereg sec 4.8 mapping hole, unchanged"
+   },
+   "5_increments": {
+    "cap_single_name_voids": 0,
+    "single_name_drift_breaches": 0,
+    "decision_point_fills": {
+     "am": 0.1903584672435105,
+     "pm": 0.8096415327564895
+    },
+    "k3": {
+     "armed": 8,
+     "executed": 6,
+     "deferred_limitdown": 12,
+     "deferred_suspended": 0,
+     "deferred_t1locked": 0
+    },
+    "gate8_termination_reasons": {
+     "expiry": 142,
+     "override_same_name": 700,
+     "cap_void": 0,
+     "suspension_abandon": 1
+    },
+    "gate8_expired_at_target_noop": 95,
+    "rule_blocked_executed": {
+     "below_min_lot": 8,
+     "void_no_position": 2,
+     "void_insufficient_cash": 0
+    },
+    "r16_outcome_skips": {
+     "r16_at_target": 490,
+     "r16_feemin_skipped": 328
+    },
+    "rescale_topup_hole_intents": 329,
+    "insufficient_cash_orders": 8,
+    "below_min_lot_abandons": 21783,
+    "void_days": {
+     "suspended": 32,
+     "not_penetrated": 2874,
+     "limit_out_of_range": 17,
+     "insufficient_cash": 8,
+     "no_limit_info": 9
+    },
+    "m5a_pm_nobar_rehangs": 7,
+    "m5a_halfmarket_days_market_level": [
+     "2016-01-07"
+    ],
+    "m5c_static_stats_lazy_keys": {
+     "order_generation": "engine_intents",
+     "intent_layer": {
+      "n_intents": 1662,
+      "activated": 1662,
+      "orders_generated": 25721,
+      "stopped_filled": 809,
+      "terminated_override": 708,
+      "terminated_expired": 129,
+      "terminated_cap": 0,
+      "at_target_skips": 8722,
+      "emissions_skipped_no_anchor": 2482,
+      "emissions_skipped_no_live_session": 16
+     }
+    },
+    "engine3_no_limit_info": {
+     "sell_voids": 3,
+     "sell_voids_on_2017_03_07_09": 2,
+     "note": "v0 ruling #2/#3 semantics restored in-engine (void + K count + disclose); 9cc4 host-side skip is dead"
+    },
+    "engine_warnings_n": 0,
+    "engine_warnings_sample": [],
+    "corp_action": {
+     "splits": 4,
+     "dividends": 119,
+     "dividend_cash_total": 5927.20151
+    },
+    "final_positions": {
+     "settled_cash": 79774.80551,
+     "pending_am_to_pm": 0.0,
+     "pending_next_day": 0.0,
+     "n_open_clips": 21
+    }
+   },
+   "engine_reconciliation": {
+    "filled_vs_stopped_filled": [
+     809,
+     809
+    ],
+    "override_total": 708,
+    "expired_total": 129,
+    "cap_total": 0
+   }
+  },
+  "C07": {
+   "verdict": "eliminated",
+   "1_fill_rate": {
+    "gate8_mapped_execution_rate": 0.5160532498042286,
+    "gate8_mapping": "7.7-m6 / 9cc4 registered: R16 no-trade skip legs are outside the frame (excluded)",
+    "p3r1_comparable_rate_supplementary": {
+     "value": 0.723613595706619,
+     "note": "NOT the gate: treats R16 at_target/feemin skip legs as executed no-ops (P3R1 numerator convention) for an apples-to-apples delta"
+    },
+    "order_session_fill_rate": {
+     "buy": 0.018315676063925302,
+     "sell_risk": 0.7073170731707317,
+     "sell_profit": null
+    },
+    "filled_intents": 654,
+    "rule_blocked": {
+     "below_min_lot": 4,
+     "void_no_position": 1,
+     "void_insufficient_cash": 0
+    },
+    "termination": {
+     "expiry": 154,
+     "override_same_name": 463,
+     "cap_void": 0,
+     "suspension_abandon": 1
+    },
+    "engine_reason_x_host_class": {
+     "filled": {
+      "filled": 654
+     },
+     "expired at 2015-04-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "overridden by a later same-symbol intent (streak resets via source change)": {
+      "terminated:override_same_name": 463,
+      "terminated:suspension_abandon": 1,
+      "executed_rule_blocked:below_min_lot": 3
+     },
+     "expired at 2015-05-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2015-07-01": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2015-08-01": {
+      "terminated:expired_at_target_noop": 5
+     },
+     "expired at 2015-09-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2015-10-01": {
+      "terminated:expired_at_target_noop": 5
+     },
+     "expired at 2015-10-31": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2015-12-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-01-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2016-03-01": {
+      "terminated:expired_at_target_noop": 5
+     },
+     "expired at 2016-04-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2016-04-30": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2016-07-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-07-30": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-09-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-10-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-11-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-12-31": {
+      "terminated:expiry": 1
+     },
+     "expired at 2017-01-27": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-03-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-04-29": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-07-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-08-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2017-09-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2017-09-30": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-11-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2017-12-30": {
+      "terminated:expiry": 1
+     },
+     "expired at 2018-02-01": {
+      "terminated:expired_at_target_noop": 2,
+      "terminated:expiry": 1
+     },
+     "expired at 2018-03-31": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-04-28": {
+      "terminated:expiry": 1,
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2018-06-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-06-30": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2018-08-01": {
+      "terminated:expired_at_target_noop": 6,
+      "terminated:expiry": 2
+     },
+     "expired at 2018-09-01": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2018-09-29": {
+      "terminated:expired_at_target_noop": 2,
+      "executed_rule_blocked:below_min_lot": 1
+     },
+     "expired at 2018-11-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-12-01": {
+      "terminated:expired_at_target_noop": 2,
+      "terminated:expiry": 1
+     },
+     "expired at 2018-12-29": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2019-03-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2019-03-30": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2019-06-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2019-06-29": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2019-08-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2019-08-31": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2019-10-01": {
+      "executed_rule_blocked:void_no_position": 1,
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2019-11-01": {
+      "terminated:expired_at_target_noop": 2,
+      "terminated:expiry": 1
+     },
+     "expired at 2019-11-30": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2020-01-01": {
+      "terminated:expiry": 1,
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2020-01-24": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2020-04-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2020-05-01": {
+      "terminated:expired_at_target_noop": 3,
+      "terminated:expiry": 2
+     },
+     "expired at 2020-07-01": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2020-08-01": {
+      "terminated:expired_at_target_noop": 4,
+      "terminated:expiry": 2
+     },
+     "expired at 2020-09-01": {
+      "terminated:expiry": 2
+     },
+     "expired at 2020-10-01": {
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2020-10-31": {
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 1
+     },
+     "expired at 2020-12-01": {
+      "terminated:expiry": 2
+     },
+     "still_active(no lifecycle event)": {
+      "terminated:expiry": 15,
+      "terminated:expired_at_target_noop": 2
+     }
+    },
+    "decision_point_fill_share": {
+     "am": 0.20795107033639143,
+     "pm": 0.7920489296636085
+    },
+    "vs_p3r1": {
+     "gate8_mapped_pp": -40.17132476577003,
+     "order_session_buy_pp": -35.040742293177054,
+     "order_session_sell_pp": -11.907181571815716
+    }
+   },
+   "2_turnover_fees": {
+    "buy_notional_total": 1153850.0,
+    "sell_notional_total": 1067377.4000000001,
+    "fees_total": 4337.377399999999,
+    "commission_warnings": 0,
+    "max_one_side_turnover": 1.7699181635115748,
+    "vs_p3r1": {
+     "fees_total": 1067.6155999999992,
+     "max_turnover": 0.16250631233134283
+    }
+   },
+   "3_mdd_attribution": {
+    "max_drawdown": -0.4292475977880985,
+    "p3r1_max_drawdown": -0.4664295915624421,
+    "delta_pp": 3.7181993774343614,
+    "rescale_reduce_intents_emitted": 292,
+    "rescale_reduce_intents_filled": 87,
+    "k3_market_exits_executed": 7,
+    "note": "mechanism counters, not a counterfactual decomposition; market-path component not separable without a no-rescale twin run (not run: zero-trial discipline); rescale TOP-UP hole noted in item 4"
+   },
+   "4_mapping_diffs": {
+    "lifecycle_ownership": "revision 2: the ENGINE intent layer owns the order lifecycle (re-anchor at every decision point, re-hang, fill-stop, expiry/override/cap-void); host submits ONE static frame -- replaces 9cc4's dead host-side conventions (convention-A full-window numbers are INVALID diagnostics, prereg rev 1)",
+    "in_loop_pricing": "revision 3: buy/rescale sizing = target_weight x decision-point equity snapshot recomputed by the engine at every decision point; replaces P3R1's host-side fixed-point iteration (5-6 rounds) -- deterministic, zero feedback",
+    "re_anchor_cadence": "v0 dead anchor (signal-day close) -> v1.1 mechanical re-anchor at EVERY decision point (am = am.close, pm = official close), qty recomputed in-loop (7.7-M3); fill-rate uplift is a RULE difference, disclosed not celebrated",
+    "rescale_mapping": "R16 rescale legs -> standing reduce-to-target risk sell (target_weight = exposure/K), self-neutralizing via engine at_target skips. REGISTERED HOLE: the top-up side is NOT mapped (no engine buy top-up primitive; a full-seat buy would double the seat); P3R1/9cc4 mapped it via fixed-point sizing -- vs-P3R1 turnover/fee deltas are confounded by this hole",
+    "rescale_skips": "R16 outcome at_target/feemin_skipped rescale legs are outside the frame (9cc4 mapping-fidelity asset; R16 no-trade record)",
+    "sell_intent_mapping": "sell_full -> intent=risk full exit; K=3 SESSION-level fallback keyed (symbol, intent, source) (7.7-M1); rescale-down same intent semantics with explicit target weight",
+    "fill_granularity": "official daily extremes -> half-day bar extremes (conservative subset; gaps fill at the limit)",
+    "proceeds": "sale proceeds usable next SESSION (v0: next day)",
+    "expiry_boundary": "expiry_date = T'+1 cal day -> last emission is the (T','am') decision living (T','pm'), i.e. the frozen 9cc4 window; same-name override fires at (T','pm')",
+    "signal_day_drop": "same as P3R1: 2020-12-31 signal dropped (execution would cross into 2021)",
+    "profit_ladder": "intent=profit still unmapped (R16 has no profit-ladder signal) -- prereg sec 4.8 mapping hole, unchanged"
+   },
+   "5_increments": {
+    "cap_single_name_voids": 0,
+    "single_name_drift_breaches": 0,
+    "decision_point_fills": {
+     "am": 0.20795107033639143,
+     "pm": 0.7920489296636085
+    },
+    "k3": {
+     "armed": 8,
+     "executed": 7,
+     "deferred_limitdown": 21,
+     "deferred_suspended": 0,
+     "deferred_t1locked": 0
+    },
+    "gate8_termination_reasons": {
+     "expiry": 154,
+     "override_same_name": 463,
+     "cap_void": 0,
+     "suspension_abandon": 1
+    },
+    "gate8_expired_at_target_noop": 121,
+    "rule_blocked_executed": {
+     "below_min_lot": 4,
+     "void_no_position": 1,
+     "void_insufficient_cash": 0
+    },
+    "r16_outcome_skips": {
+     "r16_at_target": 580,
+     "r16_feemin_skipped": 379
+    },
+    "rescale_topup_hole_intents": 292,
+    "insufficient_cash_orders": 0,
+    "below_min_lot_abandons": 14343,
+    "void_days": {
+     "suspended": 12,
+     "not_penetrated": 2031,
+     "limit_out_of_range": 11,
+     "no_limit_info": 6
+    },
+    "m5a_pm_nobar_rehangs": 4,
+    "m5a_halfmarket_days_market_level": [
+     "2016-01-07"
+    ],
+    "m5c_static_stats_lazy_keys": {
+     "order_generation": "engine_intents",
+     "intent_layer": {
+      "n_intents": 1277,
+      "activated": 1277,
+      "orders_generated": 17206,
+      "stopped_filled": 654,
+      "terminated_override": 467,
+      "terminated_expired": 139,
+      "terminated_cap": 0,
+      "at_target_skips": 8674,
+      "emissions_skipped_no_anchor": 1474,
+      "emissions_skipped_no_live_session": 17
+     }
+    },
+    "engine3_no_limit_info": {
+     "sell_voids": 0,
+     "sell_voids_on_2017_03_07_09": 0,
+     "note": "v0 ruling #2/#3 semantics restored in-engine (void + K count + disclose); 9cc4 host-side skip is dead"
+    },
+    "engine_warnings_n": 0,
+    "engine_warnings_sample": [],
+    "corp_action": {
+     "splits": 4,
+     "dividends": 124,
+     "dividend_cash_total": 8704.628349999997
+    },
+    "final_positions": {
+     "settled_cash": 117894.65094999991,
+     "pending_am_to_pm": 0.0,
+     "pending_next_day": 0.0,
+     "n_open_clips": 17
+    }
+   },
+   "engine_reconciliation": {
+    "filled_vs_stopped_filled": [
+     654,
+     654
+    ],
+    "override_total": 467,
+    "expired_total": 139,
+    "cap_total": 0
+   }
+  },
+  "C08": {
+   "verdict": "eliminated",
+   "1_fill_rate": {
+    "gate8_mapped_execution_rate": 0.5088062622309197,
+    "gate8_mapping": "7.7-m6 / 9cc4 registered: R16 no-trade skip legs are outside the frame (excluded)",
+    "p3r1_comparable_rate_supplementary": {
+     "value": 0.6980753809141941,
+     "note": "NOT the gate: treats R16 at_target/feemin skip legs as executed no-ops (P3R1 numerator convention) for an apples-to-apples delta"
+    },
+    "order_session_fill_rate": {
+     "buy": 0.017196456487754037,
+     "sell_risk": 0.5018633540372671,
+     "sell_profit": null
+    },
+    "filled_intents": 767,
+    "rule_blocked": {
+     "below_min_lot": 6,
+     "void_no_position": 7,
+     "void_insufficient_cash": 0
+    },
+    "termination": {
+     "expiry": 151,
+     "override_same_name": 601,
+     "cap_void": 0,
+     "suspension_abandon": 1
+    },
+    "engine_reason_x_host_class": {
+     "filled": {
+      "filled": 767
+     },
+     "overridden by a later same-symbol intent (streak resets via source change)": {
+      "terminated:override_same_name": 601,
+      "terminated:suspension_abandon": 1,
+      "executed_rule_blocked:below_min_lot": 5,
+      "executed_rule_blocked:void_no_position": 1
+     },
+     "expired at 2015-04-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2015-05-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2015-07-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2015-08-01": {
+      "terminated:expired_at_target_noop": 7
+     },
+     "expired at 2015-09-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2015-10-01": {
+      "terminated:expired_at_target_noop": 5
+     },
+     "expired at 2015-10-31": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2015-12-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2016-01-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2016-01-30": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-03-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2016-04-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-04-30": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2016-07-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2016-07-30": {
+      "terminated:expired_at_target_noop": 2,
+      "terminated:expiry": 1
+     },
+     "expired at 2016-09-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-10-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-11-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2016-12-01": {
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 1
+     },
+     "expired at 2016-12-31": {
+      "terminated:expiry": 2
+     },
+     "expired at 2017-01-27": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-03-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-04-29": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-06-01": {
+      "terminated:expiry": 1
+     },
+     "expired at 2017-07-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2017-08-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-09-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-09-30": {
+      "terminated:expiry": 1
+     },
+     "expired at 2017-11-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-12-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2017-12-30": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-02-01": {
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 2,
+      "executed_rule_blocked:below_min_lot": 1
+     },
+     "expired at 2018-03-31": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-04-28": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2018-06-01": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-06-30": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2018-08-01": {
+      "terminated:expired_at_target_noop": 3,
+      "terminated:expiry": 1
+     },
+     "expired at 2018-09-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2018-09-29": {
+      "terminated:expiry": 1,
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2018-12-01": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2018-12-29": {
+      "executed_rule_blocked:void_no_position": 1,
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 2
+     },
+     "expired at 2019-02-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2019-03-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2019-03-30": {
+      "terminated:expired_at_target_noop": 3
+     },
+     "expired at 2019-06-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2019-06-29": {
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 1
+     },
+     "expired at 2019-08-01": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2019-08-31": {
+      "terminated:expired_at_target_noop": 3,
+      "terminated:expiry": 1
+     },
+     "expired at 2019-10-01": {
+      "terminated:expiry": 1,
+      "terminated:expired_at_target_noop": 5
+     },
+     "expired at 2019-11-01": {
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 2
+     },
+     "expired at 2019-11-30": {
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2020-01-24": {
+      "terminated:expired_at_target_noop": 1
+     },
+     "expired at 2020-02-29": {
+      "terminated:expiry": 1
+     },
+     "expired at 2020-05-01": {
+      "terminated:expired_at_target_noop": 1,
+      "terminated:expiry": 2
+     },
+     "expired at 2020-05-30": {
+      "executed_rule_blocked:void_no_position": 1
+     },
+     "expired at 2020-07-01": {
+      "executed_rule_blocked:void_no_position": 2,
+      "terminated:expired_at_target_noop": 2
+     },
+     "expired at 2020-08-01": {
+      "terminated:expired_at_target_noop": 2,
+      "terminated:expiry": 1
+     },
+     "expired at 2020-09-01": {
+      "executed_rule_blocked:void_no_position": 1
+     },
+     "expired at 2020-10-01": {
+      "executed_rule_blocked:void_no_position": 1,
+      "terminated:expired_at_target_noop": 4
+     },
+     "expired at 2020-10-31": {
+      "terminated:expired_at_target_noop": 2,
+      "terminated:expiry": 1
+     },
+     "expired at 2020-12-01": {
+      "terminated:expiry": 4
+     },
+     "still_active(no lifecycle event)": {
+      "terminated:expiry": 17,
+      "terminated:expired_at_target_noop": 3
+     }
+    },
+    "decision_point_fill_share": {
+     "am": 0.2033898305084746,
+     "pm": 0.7966101694915254
+    },
+    "vs_p3r1": {
+     "gate8_mapped_pp": -40.55493658278079,
+     "order_session_buy_pp": -34.59125922361439,
+     "order_session_sell_pp": -29.20926899187768
+    }
+   },
+   "2_turnover_fees": {
+    "buy_notional_total": 1204222.0,
+    "sell_notional_total": 1108063.0,
+    "fees_total": 4943.063000000001,
+    "commission_warnings": 0,
+    "max_one_side_turnover": 2.368267376948726,
+    "vs_p3r1": {
+     "fees_total": 1098.2110000000011,
+     "max_turnover": 0.29657344704440636
+    }
+   },
+   "3_mdd_attribution": {
+    "max_drawdown": -0.5530444399640777,
+    "p3r1_max_drawdown": -0.5736751352092149,
+    "delta_pp": 2.0630695245137165,
+    "rescale_reduce_intents_emitted": 307,
+    "rescale_reduce_intents_filled": 87,
+    "k3_market_exits_executed": 7,
+    "note": "mechanism counters, not a counterfactual decomposition; market-path component not separable without a no-rescale twin run (not run: zero-trial discipline); rescale TOP-UP hole noted in item 4"
+   },
+   "4_mapping_diffs": {
+    "lifecycle_ownership": "revision 2: the ENGINE intent layer owns the order lifecycle (re-anchor at every decision point, re-hang, fill-stop, expiry/override/cap-void); host submits ONE static frame -- replaces 9cc4's dead host-side conventions (convention-A full-window numbers are INVALID diagnostics, prereg rev 1)",
+    "in_loop_pricing": "revision 3: buy/rescale sizing = target_weight x decision-point equity snapshot recomputed by the engine at every decision point; replaces P3R1's host-side fixed-point iteration (5-6 rounds) -- deterministic, zero feedback",
+    "re_anchor_cadence": "v0 dead anchor (signal-day close) -> v1.1 mechanical re-anchor at EVERY decision point (am = am.close, pm = official close), qty recomputed in-loop (7.7-M3); fill-rate uplift is a RULE difference, disclosed not celebrated",
+    "rescale_mapping": "R16 rescale legs -> standing reduce-to-target risk sell (target_weight = exposure/K), self-neutralizing via engine at_target skips. REGISTERED HOLE: the top-up side is NOT mapped (no engine buy top-up primitive; a full-seat buy would double the seat); P3R1/9cc4 mapped it via fixed-point sizing -- vs-P3R1 turnover/fee deltas are confounded by this hole",
+    "rescale_skips": "R16 outcome at_target/feemin_skipped rescale legs are outside the frame (9cc4 mapping-fidelity asset; R16 no-trade record)",
+    "sell_intent_mapping": "sell_full -> intent=risk full exit; K=3 SESSION-level fallback keyed (symbol, intent, source) (7.7-M1); rescale-down same intent semantics with explicit target weight",
+    "fill_granularity": "official daily extremes -> half-day bar extremes (conservative subset; gaps fill at the limit)",
+    "proceeds": "sale proceeds usable next SESSION (v0: next day)",
+    "expiry_boundary": "expiry_date = T'+1 cal day -> last emission is the (T','am') decision living (T','pm'), i.e. the frozen 9cc4 window; same-name override fires at (T','pm')",
+    "signal_day_drop": "same as P3R1: 2020-12-31 signal dropped (execution would cross into 2021)",
+    "profit_ladder": "intent=profit still unmapped (R16 has no profit-ladder signal) -- prereg sec 4.8 mapping hole, unchanged"
+   },
+   "5_increments": {
+    "cap_single_name_voids": 0,
+    "single_name_drift_breaches": 0,
+    "decision_point_fills": {
+     "am": 0.2033898305084746,
+     "pm": 0.7966101694915254
+    },
+    "k3": {
+     "armed": 9,
+     "executed": 7,
+     "deferred_limitdown": 24,
+     "deferred_suspended": 0,
+     "deferred_t1locked": 0
+    },
+    "gate8_termination_reasons": {
+     "expiry": 151,
+     "override_same_name": 601,
+     "cap_void": 0,
+     "suspension_abandon": 1
+    },
+    "gate8_expired_at_target_noop": 108,
+    "rule_blocked_executed": {
+     "below_min_lot": 6,
+     "void_no_position": 7,
+     "void_insufficient_cash": 0
+    },
+    "r16_outcome_skips": {
+     "r16_at_target": 566,
+     "r16_feemin_skipped": 395
+    },
+    "rescale_topup_hole_intents": 307,
+    "insufficient_cash_orders": 0,
+    "below_min_lot_abandons": 18220,
+    "void_days": {
+     "suspended": 24,
+     "not_penetrated": 2482,
+     "limit_out_of_range": 16,
+     "no_limit_info": 6
+    },
+    "m5a_pm_nobar_rehangs": 4,
+    "m5a_halfmarket_days_market_level": [
+     "2016-01-07"
+    ],
+    "m5c_static_stats_lazy_keys": {
+     "order_generation": "engine_intents",
+     "intent_layer": {
+      "n_intents": 1533,
+      "activated": 1533,
+      "orders_generated": 21921,
+      "stopped_filled": 767,
+      "terminated_override": 608,
+      "terminated_expired": 138,
+      "terminated_cap": 0,
+      "at_target_skips": 9230,
+      "emissions_skipped_no_anchor": 2318,
+      "emissions_skipped_no_live_session": 20
+     }
+    },
+    "engine3_no_limit_info": {
+     "sell_voids": 0,
+     "sell_voids_on_2017_03_07_09": 0,
+     "note": "v0 ruling #2/#3 semantics restored in-engine (void + K count + disclose); 9cc4 host-side skip is dead"
+    },
+    "engine_warnings_n": 0,
+    "engine_warnings_sample": [],
+    "corp_action": {
+     "splits": 5,
+     "dividends": 114,
+     "dividend_cash_total": 6266.470509999999
+    },
+    "final_positions": {
+     "settled_cash": 105164.40750999995,
+     "pending_am_to_pm": 0.0,
+     "pending_next_day": 0.0,
+     "n_open_clips": 14
+    }
+   },
+   "engine_reconciliation": {
+    "filled_vs_stopped_filled": [
+     767,
+     767
+    ],
+    "override_total": 608,
+    "expired_total": 138,
+    "cap_total": 0
+   }
+  }
+ },
+ "b3prime_dev_mean_net_cagr": {
+  "T200-40": -0.01991746425477723,
+  "FIX75": -0.0035871088487231862
+ },
+ "b3prime_source": "R16 metrics.json verbatim (benchmarks unchanged)",
+ "consistency": {
+  "C01": {
+   "membership_mismatches": 0,
+   "membership_events_mismatches": 0,
+   "n_signal_days": 71
+  },
+  "C02": {
+   "membership_mismatches": 0,
+   "membership_events_mismatches": 0,
+   "n_signal_days": 71
+  },
+  "C03": {
+   "membership_mismatches": 0,
+   "membership_events_mismatches": 0,
+   "n_signal_days": 71
+  },
+  "C04": {
+   "membership_mismatches": 0,
+   "membership_events_mismatches": 0,
+   "n_signal_days": 71
+  },
+  "C05": {
+   "membership_mismatches": 0,
+   "membership_events_mismatches": 0,
+   "n_signal_days": 71
+  },
+  "C06": {
+   "membership_mismatches": 0,
+   "membership_events_mismatches": 0,
+   "n_signal_days": 71
+  },
+  "C07": {
+   "membership_mismatches": 0,
+   "membership_events_mismatches": 0,
+   "n_signal_days": 71
+  },
+  "C08": {
+   "membership_mismatches": 0,
+   "membership_events_mismatches": 0,
+   "n_signal_days": 71
+  }
+ },
+ "advanced_to_validation": false,
+ "val_consumed": false,
+ "stop_note": "no config passed all dev gates (0/8); val not consumed"
+}

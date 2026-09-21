@@ -1,0 +1,69 @@
+{
+  "purpose": "user_minute_1m identity verification for G2 half-day prep (pure data engineering)",
+  "run_id": "20260918T032049-halfday-prep-f3mbfd",
+  "checked_at": "2026-09-18T03:26:12",
+  "source_root": "D:\\量化\\data\\raw\\user_minute_1m",
+  "meta_tsv": "data\\_meta\\sha256.tsv",
+  "tsv_total_lines": 143665,
+  "registered_entries": 2433,
+  "disk_files": 2433,
+  "disk_total_bytes": 38304266167,
+  "missing_registered": [],
+  "unregistered_on_disk": [],
+  "size_mismatch": [],
+  "sample_rehash": [
+    {
+      "path": "user_minute_1m/20260913-143215/2015/20150601.parquet",
+      "date": "20150601",
+      "tsv_sha256": "7a183f8828781647d64499cd9b5b6b88bc7540ff7635eaedd0a15d7dd5717ac3",
+      "recomputed_sha256": "7a183f8828781647d64499cd9b5b6b88bc7540ff7635eaedd0a15d7dd5717ac3",
+      "match": true,
+      "tsv_bytes": 10571110,
+      "disk_bytes": 10571110,
+      "hash_seconds": 0.009
+    },
+    {
+      "path": "user_minute_1m/20260913-143215/2017/20170601.parquet",
+      "date": "20170601",
+      "tsv_sha256": "18ffffb6144b03d71a05af99e434d163a3c10b9f1437d01d972a8330482c496b",
+      "recomputed_sha256": "18ffffb6144b03d71a05af99e434d163a3c10b9f1437d01d972a8330482c496b",
+      "match": true,
+      "tsv_bytes": 12429752,
+      "disk_bytes": 12429752,
+      "hash_seconds": 0.012
+    },
+    {
+      "path": "user_minute_1m/20260913-143215/2019/20190603.parquet",
+      "date": "20190603",
+      "tsv_sha256": "53aa40ecb8cd94bc552b838a77504efe05cf095b89f1fd75dac1e48d4d3d63bc",
+      "recomputed_sha256": "53aa40ecb8cd94bc552b838a77504efe05cf095b89f1fd75dac1e48d4d3d63bc",
+      "match": true,
+      "tsv_bytes": 14307190,
+      "disk_bytes": 14307190,
+      "hash_seconds": 0.011
+    },
+    {
+      "path": "user_minute_1m/20260913-2020-2024/2021/20210601.parquet",
+      "date": "20210601",
+      "tsv_sha256": "0e441a1db1c30ea542842b31eba404e864736f20e004768a001d961c50c87740",
+      "recomputed_sha256": "0e441a1db1c30ea542842b31eba404e864736f20e004768a001d961c50c87740",
+      "match": true,
+      "tsv_bytes": 17549143,
+      "disk_bytes": 17549143,
+      "hash_seconds": 0.014
+    },
+    {
+      "path": "user_minute_1m/20260913-2020-2024/2024/20240603.parquet",
+      "date": "20240603",
+      "tsv_sha256": "b592b68ec2ba90c82f363c9895c07d9261f78a651d1adabfc05a6dbcea969866",
+      "recomputed_sha256": "b592b68ec2ba90c82f363c9895c07d9261f78a651d1adabfc05a6dbcea969866",
+      "match": true,
+      "tsv_bytes": 20867475,
+      "disk_bytes": 20867475,
+      "hash_seconds": 0.016
+    }
+  ],
+  "status": "REGISTERED_VERIFIED",
+  "conclusion": "两批次 2,431 个 parquet + 2 个 transfer-manifest 已逐文件登记于 data/_meta/sha256.tsv；全量字节数比对一致，抽样 5 文件重算 sha256 与登记值一致。无需补登记清单。",
+  "elapsed_seconds": 0.377
+}

@@ -1,0 +1,229 @@
+{
+  "experiment_id": "exp-20260918-p2r11-halfday-combo",
+  "name": "P2-R11 halfday candidate combination (F03/F06/F09/F11 -> tradable portfolio line)",
+  "prereg": "docs/research/exp-20260918-p2r11-halfday-combo-prereg.md",
+  "preregistered_at": "2026-09-18T06:35:00+08:00",
+  "frozen_at": "2026-09-18T06:35:00+08:00",
+  "status": "frozen",
+  "authority_chain": {
+    "inherits_factor_definitions_from": "configs/experiments/p2r10-halfday-survey.json",
+    "p2r10_config_sha256": "df4a645f05dc47769bb6090b711778d20a12282bf240955ca6ff23d788b7c236",
+    "r10_review_contingency": "若 R10 双签复核推翻 R10 判定则本轮作废留档不判定",
+    "datasets": [
+      {
+        "path": "data/processed/halfday-1130-20260918/halfday_1130.parquet",
+        "sha256": "f3d4ec036594a31446e728af498039378f635fe99adc3b14ce4e134c8836dda2",
+        "role": "11:30 截面因子与执行行情（open_1300/close_1130/close_1500/close_day_official/limit_up/limit_down/tradestatus/isST/suspended_flag）"
+      },
+      {
+        "path": "data/processed/baostock-daily-20260917/daily_2015_2024.parquet",
+        "manifest_sha256": "2b89bef9ef6f4ae58b69ca43021552db067b185551c92a05ef6ac71d2be59bd3",
+        "role": "日线 open（09:25 竞价卖出）、preclose（公司行动桥）、amount（20 日中位门禁）、上市日（120 日规则）"
+      }
+    ],
+    "freeze_boundary": "2025-01-01 及以后数据不得进入任何计算路径"
+  },
+  "seed": 17,
+  "universe": {
+    "exclude": [
+      "创业板 300/301/302（用户 2026-09-18 决定，X-07 关闭）",
+      "科创板 688/689",
+      "北交所",
+      "ST/*ST（历史时点 isST）",
+      "停牌（tradestatus!=1 或 suspended_flag）"
+    ],
+    "listing_min_days": 120,
+    "median_amount_20d_min_cny": 30000000,
+    "amount_am_min_cny": 3000000,
+    "insufficient_history_rule": "20 日历史不足即剔除（第三次更新③语义）"
+  },
+  "execution": {
+    "signal_time": "T 日 11:30 截面",
+    "buy": {
+      "time": "T 日 13:01 bar 开盘价 open_1300",
+      "unbuyable": [
+        "open_1300 >= limit_up - 0.001",
+        "停牌",
+        "目标金额不足一手"
+      ],
+      "replacement": "按得分序递补下一名，至多 2 名，仍不足现金闲置"
+    },
+    "sell_schedules": {
+      "S_0925": "T+1 日日线 open（集合竞价）",
+      "S_1130": "T+1 日 close_1130",
+      "S_close": "T+1 日 close_day_official",
+      "S_T2_1301": "T+2 日 open_1300"
+    },
+    "sell_blocked_rule": "卖出点跌停（价格 <= limit_down + 0.001）或停牌 -> 顺延至下一交易日同时点，计执行失败",
+    "concurrent_cap": "K（并发持仓上限；空位才买，未到卖出点不提前卖）",
+    "capital_cny": 200000,
+    "per_stock_target": "min(equity/K, 50000)",
+    "lot": "整手向下取整",
+    "fees": {
+      "commission_pct": 0.0001,
+      "commission_min_cny": 5.0,
+      "stamp_sell": "2015-01-01..2023-08-27: 0.001; 2023-08-28..: 0.0005",
+      "slippage": "不入场（按建议价位成交口径）"
+    },
+    "corporate_action_bridge": "跨日段收益用 preclose 桥：close(T+1)/preclose(T+1)-1（T 收->T+1 收）；close_1130(T+1)/preclose(T+1)-1（T 收->T+1 11:30）；open(T+1)/preclose(T+1)-1（T 收->T+1 竞价）；当日段用同日原始价直除；T+2 链式相乘",
+    "circuit_breaker_rule": "无有效行情点按不可成交顺延（单测覆盖 2016-01-07）"
+  },
+  "composite": {
+    "standardize": "每日横截面 1%/99% winsorize 后 z 标准化",
+    "direction": "按 R10 判定方向翻转（高分=买入侧）",
+    "equal_z": "(z_F03 + z_F06 + z_F09 + z_F11)/4",
+    "drop_f06": "(z_F03 + z_F09 + z_F11)/3",
+    "rank_avg": "四因子当日秩平均",
+    "tie_break": "并列按 symbol 升序"
+  },
+  "configs": {
+    "C01": {
+      "composite": "equal_z",
+      "K": 3,
+      "sell": "S_1130"
+    },
+    "C02": {
+      "composite": "equal_z",
+      "K": 3,
+      "sell": "S_close"
+    },
+    "C03": {
+      "composite": "equal_z",
+      "K": 3,
+      "sell": "S_T2_1301"
+    },
+    "C04": {
+      "composite": "equal_z",
+      "K": 5,
+      "sell": "S_1130"
+    },
+    "C05": {
+      "composite": "single_F03",
+      "K": 3,
+      "sell": "S_1130"
+    },
+    "C06": {
+      "composite": "single_F06",
+      "K": 3,
+      "sell": "S_1130"
+    },
+    "C07": {
+      "composite": "single_F09",
+      "K": 3,
+      "sell": "S_1130"
+    },
+    "C08": {
+      "composite": "single_F11",
+      "K": 3,
+      "sell": "S_1130"
+    },
+    "C09": {
+      "composite": "equal_z",
+      "K": 3,
+      "sell": "S_0925"
+    },
+    "C10": {
+      "composite": "drop_f06",
+      "K": 3,
+      "sell": "S_1130"
+    },
+    "C11": {
+      "composite": "rank_avg",
+      "K": 3,
+      "sell": "S_1130"
+    },
+    "C12": {
+      "composite": "equal_z",
+      "K": 10,
+      "sell": "S_1130"
+    }
+  },
+  "benchmarks": {
+    "B1": "同池等权全持有、同费用、买入 13:01 卖出次日 11:30（日频再平衡）",
+    "B3prime": "同池随机 K=3 同计划，种子 17-36 共 20 次，报均值"
+  },
+  "gates": {
+    "dev_window": [
+      "2015-01-05",
+      "2020-12-31"
+    ],
+    "dev": [
+      {
+        "id": 1,
+        "rule": "net_cagr > 0"
+      },
+      {
+        "id": 2,
+        "rule": "net_cagr - B1.net_cagr >= 0.02 (年化算术差)"
+      },
+      {
+        "id": 3,
+        "rule": "优势年 >= 5/6（逐年净收益 > B1 同年）"
+      },
+      {
+        "id": 4,
+        "rule": "max_dd <= 0.20 且 <= B1.max_dd"
+      },
+      {
+        "id": 5,
+        "rule": "年单边换手 <= 300（dev 全窗年化，买入名义/平均权益）"
+      },
+      {
+        "id": 6,
+        "rule": "任一交易日单票权重 <= 0.40"
+      },
+      {
+        "id": 7,
+        "rule": "net_cagr >= B3prime_mean.net_cagr + 0.01"
+      },
+      {
+        "id": 8,
+        "rule": "计划成交率 >= 0.95"
+      }
+    ],
+    "validation_window": [
+      "2021-01-01",
+      "2022-12-31"
+    ],
+    "validation": [
+      {
+        "rule": "超额 >= +0.010（对 B1(val) 净年化）"
+      },
+      {
+        "rule": "优势年 2/2"
+      },
+      {
+        "rule": "max_dd <= 0.20 且 <= B1(val).max_dd"
+      }
+    ],
+    "test_window": [
+      "2023-01-01",
+      "2024-12-31"
+    ],
+    "test": "同 validation 三条一次性消费 + 衰减披露；不用于调参",
+    "val_consumption_rule": "dev 全过者按优先序仅取首位进 val",
+    "priority": [
+      "C01",
+      "C11",
+      "C10",
+      "C04",
+      "C12",
+      "C02",
+      "C03",
+      "C09",
+      "C05",
+      "C06",
+      "C07",
+      "C08"
+    ]
+  },
+  "trials_cumulative_before": 151,
+  "trials_cumulative_after": 163,
+  "stop_rule": "dev 0 全过 -> 二轮关闭，四候选留档不升级，同因子族不再组合化重试；结果不构成盈利/实盘声称",
+  "limits": {
+    "max_runtime_s": 1800,
+    "max_ram_gb": 11,
+    "smoke": "3 个月窗口先行，全断言通过才全窗"
+  },
+  "mode": "smoke_3m_2015Q1"
+}

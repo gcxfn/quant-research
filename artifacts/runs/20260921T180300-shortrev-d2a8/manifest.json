@@ -1,0 +1,37 @@
+{
+ "run_id": "20260921T180300-shortrev-d2a8",
+ "experiment_id": "exp-20260921-short-reversal",
+ "status": "completed",
+ "mode": "full",
+ "started_at_utc": "2026-09-21T08:42:28.887562+00:00",
+ "wall_seconds": 57.302994099998614,
+ "pins": {
+  "prereg": {
+   "sha256": "01105ff007cbcd8379bca1c375bf8c3433d1da3386ff9e99bda61e2bd1aea682"
+  },
+  "daily": {
+   "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6"
+  }
+ },
+ "params": {
+  "mv_min_wide_wan": 200000.0,
+  "mv_min_stable_wan": 300000.0,
+  "lists": "REV30/REV100/MOM30/SREV20"
+ },
+ "trial_accounting": {
+  "strategy_line": {
+   "before": 301,
+   "this_round": 5,
+   "after": 306
+  }
+ },
+ "known_simplifications": [
+  "monthly composition caliber (month-end fills); engine gap lesson registered",
+  "stamp duty modelled 0.1% throughout (conservative post-2023.08)"
+ ],
+ "outputs": {
+  "outputs/metrics.json": "6feb2e86ca5bb1b69115783f7d72677c5f7a19e19f1b56e205e531fd89ac0dcc",
+  "report.md": "d3da3d3cf22e6990768b3b1fa2cdc12188bb60672ad787b8c1c632373ae72ab2",
+  "tmp/runner_shortrev.py": "80a62ea6163313d37a2d4c9ee5b69797396ed4050154e6f71cf6d425b916c52d"
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "stage": "d_pipeline_determinism_probe",
+ "question": "is the frozen D pipeline's (ts_code,end_date) revision tie-break reproducible?",
+ "probe_frame": "tushare/fina_indicator (dev window inputs)",
+ "rows_raw": 458718,
+ "A_frozen_expression_repeat_stable": true,
+ "A_hashes": [
+  "75a91656605224c3cbd2f6a9aa43d49984eb0d23112751c9b69b93e282f3245b",
+  "75a91656605224c3cbd2f6a9aa43d49984eb0d23112751c9b69b93e282f3245b"
+ ],
+ "B_rows_frozen": 263769,
+ "B_rows_explicit": 263769,
+ "B_rows_differing_ann_date": 0,
+ "B_rows_differing_bps": 0,
+ "C_rows_ann_after_2024": 52086,
+ "C_rows_ann_after_2024_with_end_date_le_2020": 0,
+ "C_ann_date_max": "2026-09-01",
+ "wall_seconds": 42.53062653541565
+}

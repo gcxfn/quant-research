@@ -1,0 +1,29 @@
+run_id: 20260919T044343-engine-v12-2632
+status: completed
+task: band_engine v1.1 -> v1.2 (contract section 8 ETF leg; zero regression)
+scope: src/quant/backtest/band_engine.py + tests/test_band_hybrid.py ONLY;
+       configs/, docs/, data/ untouched; git not initialized
+engine_sha256_v1.1 (pre-change snapshot): d7108c0eccdd77ff3fcbff01e7bd84bfdd2e7cad716b646e357c5644da970a0d
+engine_sha256_v1.2: 46dedf57eb32900fe5ea749ee89f05db65633f470282de355e17220f45328de4
+test_band_hybrid.py sha256: ab5835cff09d9f7dade1dfc9571ce0948c0760d78e7970f60885ea34eb7514ba
+old tests (byte-identical, mtimes unchanged):
+  tests/test_band_contract.py  aaea75007b58852c6b95bcab8d86b8c765971a2dbcde787f3e37abda74f0cdf3
+  tests/test_band_intents.py   01393b81a56fa13fff795d2f95a305c44bfa247024e0f425597e9ad388e031d5
+tests: 29 old (unchanged, all pass) + 9 new h1-h9; full repo pytest 399 passed / 0 failed
+command: D:\量化\.venv\Scripts\python.exe -m pytest tests/ -q
+python: 3.11.15 (repo .venv)
+evidence: capture_h9_golden.py + h9_golden.* (v1.1 golden), pytest_full_output.txt,
+          band_engine_v1.1_snapshot.py / band_engine_v1.2.py (both delivered copies)
+notes: zero trial consumption; no strategy judgement; 2025+ freeze untouched
+
+--- delta round 2 (2026-09-19, R1/R3/R12 adjudication) ---
+status: completed (awaiting re-review)
+engine_sha256_v1.2_delta: ceb7be6414280e4c5d5f37dc6ca1148a85e306b2de1a216147f67f89cc4a746d
+test_band_hybrid.py sha256 (12 tests h1-h12): 31100f480604b9f0d60a723a80be0c266de07a5707037a0aaed2c6d376e68235
+old tests: byte-identical, mtimes unchanged (re-verified)
+full pytest: 402 passed / 0 failed (pytest_full_output_delta.txt)
+fixes: R1 decimal-exact half-up (_tick_round + new _etf_band_limit);
+       R3 etf stamp_buy forced 0 (eff_stamp_buy);
+       R12 static entry hard-rejects etf-meta symbols (run_band_backtest)
+rulings accepted as implemented: R2 R4 R5 R6 R7 R8 R9 R10 R11 R13 R14 R15
+       (runner-side assertions for R4/R5/R6 logged in delivery.md section 7.1)

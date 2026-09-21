@@ -1,0 +1,39 @@
+{
+ "funnel": {
+  "rows_after_dedup_and_type": 15803,
+  "unconvertible_ts_code": 28,
+  "board_excluded": 6426,
+  "no_traded_row_on_ann_date": 2098,
+  "of_which_ann_date_not_market_session": 1843,
+  "of_which_suspended_on_session": 255,
+  "listing_lt60_sessions": 24,
+  "is_st_at_event": 591,
+  "pool_pass": 6664,
+  "type_counts_after_pool": {
+   "预增": 2070,
+   "首亏": 1229,
+   "预减": 1119,
+   "续亏": 513,
+   "略增": 644,
+   "扭亏": 537,
+   "略减": 384,
+   "续盈": 168
+  }
+ },
+ "type_counts_after_pool": {
+  "预增": 2070,
+  "首亏": 1229,
+  "预减": 1119,
+  "续亏": 513,
+  "略增": 644,
+  "扭亏": 537,
+  "略减": 384,
+  "续盈": 168
+ },
+ "gate": {
+  "min_total": 5000,
+  "min_type": 100,
+  "total_pass": true,
+  "types_pass": true
+ }
+}

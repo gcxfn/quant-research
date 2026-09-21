@@ -1,0 +1,26 @@
+{
+ "H1": "falsified",
+ "H0": "confirmed",
+ "reason": "prereg sec 5.4: suspect list EMPTY -> H1 falsified, F3 combo keeps the 17-factor composite unchanged; sec 5.2 condemnation and sec 5.3 clean-combo steps are vacuous (no suspects to judge, nothing to adopt)",
+ "suspects": [],
+ "condemned": [],
+ "retained_observe": [],
+ "clean_combo_run": false,
+ "baseline": {
+  "net_cagr": 0.04877310918741218,
+  "max_drawdown": -0.17848532843799414
+ },
+ "leave_zero_out_anchor": {
+  "pass": true,
+  "frames": {
+   "intents": true,
+   "fills": true,
+   "events": true,
+   "daily": true,
+   "clips_final": true,
+   "net_cagr_matches_chassis": true
+  },
+  "net_cagr": 0.04877310918741218
+ },
+ "loo_max_delta_cagr": 0.018849496043963798
+}

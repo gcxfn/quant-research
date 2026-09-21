@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2_factor_survey.py", line 88, in main
+    'moneyflow': load_moneyflow(root, start, end),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\factor_survey.py", line 73, in load_moneyflow
+    return _read_chunks(
+           ^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\factor_survey.py", line 64, in _read_chunks
+    raw = pl.concat(frames)
+          ^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\functions\eager.py", line 287, in concat
+    out = wrap_df(plr.concat_df(elems))
+                  ^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ShapeError: unable to vstack, column names don't match: "trade_date" and "ts_code"

@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2r13_lowfreq_survey.py", line 525, in main
+    render_report(run.metrics, run.manifest, smoke),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\cli\p2r13_lowfreq_survey.py", line 295, in render_report
+    f"- control C6 dev IC: {fmt(metrics['control_C6_dev_ic'])}",
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\cli\p2r13_lowfreq_survey.py", line 284, in fmt
+    return f'{value:.4f}'
+           ^^^^^^^^^^^^^^
+TypeError: unsupported format string passed to dict.__format__

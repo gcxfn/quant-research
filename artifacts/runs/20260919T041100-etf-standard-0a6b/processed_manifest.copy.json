@@ -1,0 +1,210 @@
+{
+  "dataset_id": "etf-daily-20260919",
+  "created": "2026-09-19",
+  "run_id": "20260919T041100-etf-standard-0a6b",
+  "source": {
+    "fund_daily": {
+      "path": "data/raw/tushare/fund_daily/20260917-r1/",
+      "identity": {
+        "files": 1169,
+        "total_rows": 1017121,
+        "per_file_sha256_verified_against_batch_manifest": true,
+        "aggregate_sha256_of_sorted_per_file_hashes": "d6d3cd9be853fd1d912e876e83de9522c24398c8a787d82e8798d9ba405a9d29",
+        "batch_manifest_range": "20150101..20241231",
+        "universe": {
+          "source": "data/raw/tushare/fund_basic/20260909-r1/chunk_market_E.csv",
+          "filter": "market==E and 'ETF' in name and list_date<=20241231 and (delist_date empty or >=20150101)",
+          "count": 1169
+        }
+      },
+      "raw_read_only": true
+    },
+    "fund_adj": {
+      "path": "data/raw/tushare/fund_adj/20260917-r1/",
+      "identity": {
+        "files": 1168,
+        "total_rows": 1032863,
+        "per_file_sha256_verified_against_batch_manifest": true,
+        "aggregate_sha256_of_sorted_per_file_hashes": "b06242469db048a01231b26085073b6eecbf25a9106cfa63ae1b06c1764c0979",
+        "skipped": [
+          "159842.SZ: empty result (0 rows) at 2026-09-17T20:08:20"
+        ]
+      }
+    },
+    "pool_source": "data/raw/tushare/fund_basic/20260909-r1/chunk_market_E.csv (same universe filter as raw batch, 1169)"
+  },
+  "files": {
+    "daily_2015_2024.parquet": {
+      "rows": 1017121,
+      "research_window": "2015-01-01..2024-12-31"
+    },
+    "pool.parquet": {
+      "rows": 1169,
+      "note": "1 ETF pool row per ts_code; asset_class per conservative rule"
+    },
+    "adj_factor_coverage.parquet": {
+      "rows": 1169
+    },
+    "adj_factor_missing.csv": {
+      "rows": 2
+    },
+    "preclose_mismatch_detail.csv": {
+      "rows": 495
+    }
+  },
+  "schema": {
+    "key": [
+      "symbol",
+      "date"
+    ],
+    "columns": [
+      "symbol",
+      "date",
+      "open",
+      "high",
+      "low",
+      "close",
+      "preclose",
+      "volume",
+      "amount"
+    ],
+    "symbol_format": "sh.XXXXXX / sz.XXXXXX (aligned with data/processed/baostock-daily-20260917 stock leg)",
+    "rename_from_source": {
+      "ts_code": "symbol (suffix lowercased, dot-joined)",
+      "trade_date": "date (Date)",
+      "pre_close": "preclose",
+      "vol*100": "volume",
+      "amount*1000": "amount"
+    },
+    "dropped_source_columns": [
+      "change",
+      "pct_chg (derivable from close/preclose; stock leg keeps its own pctChg from baostock)"
+    ],
+    "units": {
+      "volume": "shares (raw vol in 手 x100)",
+      "amount": "yuan (raw amount in 千元 x1000)",
+      "prices": "yuan unadjusted (market close semantics)"
+    },
+    "types": {
+      "date": "Date",
+      "symbol": "Utf8",
+      "others": "Float64"
+    }
+  },
+  "asset_class_rules": {
+    "basis": "conservative: code prefix + name keywords; first match wins; no per-fund certification",
+    "priority": [
+      "money",
+      "bond",
+      "commodity",
+      "cross_border",
+      "equity",
+      "unknown"
+    ],
+    "money_keywords": [
+      "货币",
+      "现金",
+      "添益",
+      "快线",
+      "保证金",
+      "理财"
+    ],
+    "bond_keywords": [
+      "债",
+      "短融",
+      "存单"
+    ],
+    "commodity_keywords": [
+      "黄金",
+      "上海金",
+      "豆粕",
+      "原油",
+      "能源化工",
+      "期货",
+      "白银"
+    ],
+    "commodity_guard": "name containing 股票 never classified commodity (黄金产业股票ETF is gold-industry equity)",
+    "cross_border": {
+      "prefix": [
+        "513"
+      ],
+      "keywords": [
+        "QDII",
+        "纳斯达克",
+        "纳指",
+        "日经",
+        "恒生",
+        "港股",
+        "中概",
+        "海外",
+        "全球",
+        "美国",
+        "德国",
+        "法国",
+        "亚太",
+        "道琼斯",
+        "DAX",
+        "沙特",
+        "东盟",
+        "印度"
+      ]
+    },
+    "equity": {
+      "prefix": [
+        "510",
+        "512",
+        "515",
+        "516",
+        "517",
+        "560",
+        "561",
+        "562",
+        "563",
+        "588",
+        "159"
+      ],
+      "keywords": [
+        "指数",
+        "中证",
+        "上证",
+        "深证",
+        "国证",
+        "科创",
+        "创业",
+        "双创",
+        "MSCI",
+        "A股",
+        "300",
+        "500",
+        "800",
+        "1000",
+        "180",
+        "红利",
+        "龙头"
+      ]
+    },
+    "unknown": "no rule matched -> unknown (conservative)",
+    "known_limitations": [
+      "上证大宗商品股票ETF is an equity sector fund; keyword 商品 intentionally NOT used for commodity to avoid it",
+      "标普/国际 keywords intentionally NOT used (they also match A-share funds like 标普中国A股红利); QDII marker or non-A keywords used instead",
+      "bond rule keyword 债 may miss exotic names; 短融/存单 added for 511360-type funds"
+    ]
+  },
+  "reconciliation": {
+    "input_rows": 1017121,
+    "input_rows_match_batch_manifest": true,
+    "rows_out_of_window": 0,
+    "rows_2025_plus": 0,
+    "rows_before_2015": 0,
+    "output_rows": 1017121,
+    "difference_note": "input batch was fetched with range 20150101..20241231; the filter found 0 rows on/after 2025-01-01 and 0 rows before 2015-01-01, both applied defensively before write; difference 0 rows = out-of-window filter only (no other row was dropped)"
+  },
+  "quality_ref": "quality.json (same directory)",
+  "limitations": [
+    "single upstream (tushare pro) for prices and factors; sina/tx cross-checks are same-target comparisons, not independent verification",
+    "unadjusted prices: multi-day returns across distributions require fund_adj factors; 159842.SZ has no factor rows (registered gap)",
+    "preclose on ex-distribution days is the exchange adjusted reference, not close(t-1); see preclose_mismatch_detail.csv",
+    "stk_limit batch contains no ETF rows: ETF limit prices must be derived (proxy), see run gaps.json",
+    "2025+ excluded by design; labels/holdings must not cross 2024-12-31"
+  ]
+}

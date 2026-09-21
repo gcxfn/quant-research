@@ -1,0 +1,126 @@
+{
+  "purpose": "11:30 snapshot extraction prototype, 3 sample days ONLY (full window NOT run; awaiting preregistration)",
+  "run_id": "20260918T032049-halfday-prep-f3mbfd",
+  "generated_at": "2026-09-18T03:30:54",
+  "output_cache_dir": "data\\cache\\halfday_1130_proto_20260918",
+  "schema_of_snapshot": {
+    "code": "String",
+    "date": "String",
+    "open": "Float64",
+    "high": "Float64",
+    "low": "Float64",
+    "close": "Float64",
+    "vol": "Float64",
+    "amount": "Float64",
+    "pre_close": "Float64"
+  },
+  "per_day": [
+    {
+      "date": "2015-06-01",
+      "file": "data\\raw\\user_minute_1m\\20260913-143215\\2015\\20150601.parquet",
+      "source_bytes": 10571110,
+      "source_rows": 559361,
+      "snapshot_rows": 2321,
+      "read_full_s": 0.022,
+      "extract_s": 0.0203,
+      "fen_round_s": 0.0019,
+      "write_zstd_s": 0.0042,
+      "write_snappy_s": 0.0016,
+      "zstd_bytes": 59290,
+      "snappy_bytes": 88956,
+      "zstd_bytes_per_row": 25.55,
+      "fen_bad_rate": {
+        "open": 0.0,
+        "high": 0.0,
+        "low": 0.0,
+        "close": 0.0,
+        "pre_close": 0.0
+      },
+      "preclose_vs_baostock": {
+        "matched": 1690,
+        "of": 2321,
+        "rate": 0.72813
+      },
+      "close_in_daily_range": {
+        "in": 2321,
+        "of": 2321
+      }
+    },
+    {
+      "date": "2020-06-01",
+      "file": "data\\raw\\user_minute_1m\\20260913-2020-2024\\2020\\20200601.parquet",
+      "source_bytes": 15166612,
+      "source_rows": 924476,
+      "snapshot_rows": 3836,
+      "read_full_s": 0.032,
+      "extract_s": 0.0303,
+      "fen_round_s": 0.0013,
+      "write_zstd_s": 0.0023,
+      "write_snappy_s": 0.0017,
+      "zstd_bytes": 87347,
+      "snappy_bytes": 133604,
+      "zstd_bytes_per_row": 22.77,
+      "fen_bad_rate": {
+        "open": 0.0,
+        "high": 0.0,
+        "low": 0.0,
+        "close": 0.0,
+        "pre_close": 0.0
+      },
+      "preclose_vs_baostock": {
+        "matched": 3783,
+        "of": 3836,
+        "rate": 0.98618
+      },
+      "close_in_daily_range": {
+        "in": 3836,
+        "of": 3836
+      }
+    },
+    {
+      "date": "2024-06-03",
+      "file": "data\\raw\\user_minute_1m\\20260913-2020-2024\\2024\\20240603.parquet",
+      "source_bytes": 20867475,
+      "source_rows": 1232474,
+      "snapshot_rows": 5114,
+      "read_full_s": 0.028,
+      "extract_s": 0.0392,
+      "fen_round_s": 0.0015,
+      "write_zstd_s": 0.002,
+      "write_snappy_s": 0.0066,
+      "zstd_bytes": 116422,
+      "snappy_bytes": 178760,
+      "zstd_bytes_per_row": 22.77,
+      "fen_bad_rate": {
+        "open": 0.0,
+        "high": 0.0,
+        "low": 0.0,
+        "close": 0.0,
+        "pre_close": 0.0
+      },
+      "preclose_vs_baostock": {
+        "matched": 5055,
+        "of": 5114,
+        "rate": 0.98846
+      },
+      "close_in_daily_range": {
+        "in": 5114,
+        "of": 5114
+      }
+    }
+  ],
+  "extrapolation_full_window": {
+    "n_days_full_window": 2431,
+    "total_source_rows": 2303083300,
+    "total_source_bytes": 38304261295,
+    "snapshot_rows_total_est": 9556362,
+    "measured_rate_rows_per_s": 14682762,
+    "measured_rate_bytes_per_s": 251919984,
+    "est_total_seconds_by_rows": 157,
+    "est_total_seconds_by_bytes": 152,
+    "est_wall_minutes": 2.5,
+    "est_output_bytes_zstd": 226453931,
+    "zstd_bytes_per_snapshot_row_avg": 23.7,
+    "note": "线性外推（按行/按字节两口径取保守小者）；3 个抽样日未覆盖 2016/2018/2022/2023，num_rows 来自 02 号脚本全窗口元数据，snap 行数按每股 241 bar 换算（483 个 .BJ 尾盘日误差可忽略且 .BJ 本就不入池）"
+  }
+}

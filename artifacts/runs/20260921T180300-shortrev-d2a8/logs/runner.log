@@ -1,0 +1,24 @@
+[    0.0s] short-reversal; window 2015-02-01..2015-05-31 (SMOKE)
+[    0.4s] pins done
+[    0.9s]   month-symbol rows: 31235
+[    1.0s]   daily_basic month-end rows: 11786
+[   51.0s]   fina rows 437996; bad-forecast symbols 4152
+[   51.2s]   months 4; mid-run pools wide 2166 stable 14
+[   51.2s]   B0: cagr +560.76% mdd -0.0% adv 0/1 buy-turn 3.1
+[   51.2s]   REV30: cagr +468.03% mdd -0.0% adv 0/1 buy-turn 11.9 -> fail ['1_cagr_ge_B0_plus_2pp', '3_advantage_years_ge_4_of_6']
+[   51.2s]   REV100: cagr +493.26% mdd -0.0% adv 0/1 buy-turn 11.8
+[   51.2s]   MOM30: cagr +562.47% mdd -0.0% adv 1/1 buy-turn 11.9
+[   51.2s]   SREV20: cagr +160.04% mdd -0.0% adv 0/1 buy-turn 8.3
+[   51.2s] done
+[    0.0s] short-reversal; window 2015-01-05..2020-12-31
+[    0.4s] pins done
+[    1.4s]   month-symbol rows: 258501
+[    3.1s]   daily_basic month-end rows: 227862
+[   52.7s]   fina rows 437996; bad-forecast symbols 4152
+[   57.3s]   months 72; mid-run pools wide 2754 stable 636
+[   57.3s]   B0: cagr +9.50% mdd -44.0% adv 0/6 buy-turn 0.7
+[   57.3s]   REV30: cagr -4.46% mdd -73.7% adv 0/6 buy-turn 11.8 -> fail ['1_cagr_ge_B0_plus_2pp', '2_mdd_le_30pct', '3_advantage_years_ge_4_of_6']
+[   57.3s]   REV100: cagr +4.52% mdd -59.7% adv 2/6 buy-turn 11.6
+[   57.3s]   MOM30: cagr -22.87% mdd -93.0% adv 1/6 buy-turn 11.6
+[   57.3s]   SREV20: cagr +14.05% mdd -36.1% adv 4/6 buy-turn 10.1
+[   57.3s] done

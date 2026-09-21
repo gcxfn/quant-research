@@ -1,0 +1,163 @@
+[    0.0s] == 0. identity pins (engine v1.2 frozen, prereg frozen) ==
+[    0.0s]   engine: 84a2443ac28fe1b8 expect 84a2443ac28fe1b87e4a18f988fd38cc67cf706d5778e262f11465147234082c match=True
+[    0.0s]   p3r2_config: b49025b44c719685 expect b49025b44c719685 match=True
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.4s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.4s]   halfday_manifest: 2a414174b5df2eee expect 2a414174b5df2eee match=True
+[    0.4s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.4s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.4s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    0.4s]   p3r2_c05_fills: 11f8af46686df411 expect None match=True
+[    0.4s]   p3r2_c05_events: 2dde945782accd70 expect None match=True
+[    0.4s]   p3r2_c05_daily: c3945567de4250ef expect None match=True
+[    0.4s]   p3r2_c05_clips: b44dbea22a529529 expect None match=True
+[    0.4s]   p3r2_c05_intents: 36dedda1cf8d7661 expect None match=True
+[    0.4s]   prereg: ad308f0a107d0257 expect None match=True
+[    0.4s]   v2_prereg_inherited: 4ced8ce1db44cef3 expect None match=True
+[    0.4s]   v1_prereg_inherited: 266a1b850373a6f7 expect None match=True
+[    0.4s]   hyb_config: 3b2a3a2f16967ed4 expect None match=True
+[    0.4s]   v3_metrics_r306_anchor_source: 9e2cd4aafec15c08 expect None match=True
+[    0.5s]   v3_r306_intents: c1e874bddb88d238 expect None match=True
+[    0.5s]   v3_r306_fills: 2f509f6894d54787 expect None match=True
+[    0.5s]   v3_r306_events: 6be782d8ac781c6a expect None match=True
+[    0.5s]   v3_r306_daily: 123e4cb385368abc expect None match=True
+[    0.5s]   v3_r306_clips: af1fb490c49790d8 expect None match=True
+[    0.5s]   v1_config_reference: 6388465cc31a6957 expect None match=True
+[    0.5s]   v1_metrics_rot01_source: 54a528a996a9caaa expect None match=True
+[    0.5s]   r16_metrics: 8d0b6ebbdea6ebb9 expect None match=True
+[    0.5s]   p3r2_runner: 7477c2a8fcc2d291 expect None match=True
+[    0.5s]   etf_manifest: 8b5b3fe56c0e02fd expect None match=True
+[    3.4s]   etf processed dir aggregate: 75777221a8b33502 (7 files); fund_adj batch re-verified (1169 chunks, 0 mismatches) aggregate matches manifest: True
+[    3.4s]   python 3.11.15 | polars 1.44.2 | numpy 1.26.4 | rss 0.28 GB
+[    3.5s] == 1. calendar & signal days ==
+[    3.6s]   71 signal days (2015-01-30..2020-11-30; 2020-12-31 dropped as signal, kept as expiry anchor)
+[    3.6s] == 2. exposures (T200-40) ==
+[    3.6s]   t200 behavioral anchor check: {"anchor_years": ["2016", "2017", "2018", "2019", "2020"], "reproduced_stats": {"2016": {"n_sessions": 244, "n_switches"
+[    3.6s]   exposures[2015-01-30]=0.40 [2020-11-30]=0.90
+[    3.6s] == 3. pools (r16 build_history + signal_pools) ==
+[   17.2s]   B1m dev port-check: reproduces r16_metrics to 1e-9 PASS
+[   17.2s]   pools at 2015-01-30: n=1438; union of ranked symbols: 2937
+[   17.2s] == 4. C05 leg_log + membership consistency ==
+[   17.2s]   C05: membership mismatches=0, events mismatches=0 / 71
+[   17.2s] == 5. market frames ==
+[   17.9s]   daily panel: 3841824 rows, 2937 symbols
+[   18.9s]   halfday: 7254698 rows kept of 18486939 total (panel x dev), 2935 symbols
+[   27.0s]   limits: 3829171 rows (dev x panel)
+[   29.5s]   splits 2894 rows, dividends 20138 rows (panel)
+[   29.5s]   rss after frames: 4.50 GB
+[   29.5s] == 6. ETF assets ==
+[   29.5s]   etf panel dev rows: 13158 per member {'sh.518880': 1462, 'sh.513100': 1462, 'sz.159915': 1462, 'sh.510880': 1462, 'sh.511010': 1462, 'sh.510300': 1462, 'sz.159934': 1462, 'sh.513500': 1462, 'sh.510050': 1462}
+[   29.6s]   assertion (ii) preclose nulls: 0
+[   29.6s]   disclosure: member-dev rows with volume<=0: 0
+[   29.6s]   assertion (iii): sse 1462 days, panel union 1462 days, missing [], extra []
+[   29.6s]   factor coverage gaps per member: {'sh.511010': 0, 'sh.518880': 0, 'sh.510050': 0, 'sh.510300': 0, 'sz.159915': 0, 'sh.510880': 0, 'sh.513100': 0, 'sh.513500': 0, 'sz.159934': 0}
+[   29.6s]   dividend events built: 18 {'sh.510050': 5, 'sh.510300': 6, 'sh.510880': 6, 'sh.511010': 1}
+[   29.6s]     sh.510050 2016-11-29 div/share=0.053
+[   29.6s]     sh.510050 2017-11-28 div/share=0.054
+[   29.6s]     sh.510050 2018-12-03 div/share=0.049
+[   29.6s]     sh.510050 2019-12-02 div/share=0.047
+[   29.6s]     sh.510050 2020-11-30 div/share=0.051
+[   29.6s]     sh.510300 2015-01-20 div/share=0.035
+[   29.6s]     sh.510300 2016-01-20 div/share=0.051
+[   29.6s]     sh.510300 2017-01-23 div/share=0.055
+[   29.6s]     sh.510300 2018-01-23 div/share=0.046
+[   29.6s]     sh.510300 2019-01-16 div/share=0.059
+[   29.6s]     sh.510300 2019-12-11 div/share=0.062
+[   29.6s]     sh.510880 2015-01-20 div/share=0.080
+[   29.6s]     sh.510880 2016-01-20 div/share=0.050
+[   29.6s]     sh.510880 2017-01-23 div/share=0.091
+[   29.6s]     sh.510880 2018-01-23 div/share=0.109
+[   29.6s]     sh.510880 2019-01-16 div/share=0.098
+[   29.6s]     sh.510880 2020-01-17 div/share=0.144
+[   29.6s]     sh.511010 2015-10-09 div/share=1.000
+[   29.6s]   corporate actions built: 0 {}
+[   29.6s]   159934 dev mismatch rows: 1 [{"symbol": "sz.159934", "date": "2020-02-26", "preclose": 3.614, "prev_close": 3.622, "rel_diff": -0.002208724461623457, "factor_ratio": 1.0}]; dividend-rule events: 0 (frozen)
+[   29.6s]   symbol_meta: 9 symbols (8 members + sz.159934), explicit band 0.10, t_plus 0 (assertion (i) basis)
+[   29.6s] == 7. momentum ranking (adj close, month-end) ==
+[   29.6s]   lookback 4m universe[sh.510050+sh.510300+sz.159915+sh.510880+sh.513100+sh.513500]: 67 ranking months (2015-05-29..2020-11-30)
+[   29.6s]   lookback 6m universe[sh.510050+sh.510300+sz.159915+sh.510880+sh.513100+sh.513500]: 65 ranking months (2015-07-31..2020-11-30)
+[   29.6s]   lookback 6m universe[sh.510050+sh.510300+sh.510880+sh.513100+sh.513500]: 65 ranking months (2015-07-31..2020-11-30)
+[   29.6s]   lookback 6m universe[sh.510050+sh.510300+sz.159915+sh.510880+sh.513100]: 65 ranking months (2015-07-31..2020-11-30)
+[   29.6s]   lookback 6m universe[sh.510050+sh.510300+sz.159915+sh.510880+sh.513500]: 65 ranking months (2015-07-31..2020-11-30)
+[   29.6s]   lookback 9m universe[sh.510050+sh.510300+sz.159915+sh.510880+sh.513100+sh.513500]: 62 ranking months (2015-10-30..2020-11-30)
+[   29.6s] == 8. static intent frames ==
+[   29.6s]   C05 (stock leg): intents 1395; R16 skips {'r16_at_target': 501, 'r16_feemin_skipped': 320}
+[   29.6s]   C05 frame == P3R2 C05_intents.parquet (.equals) PASS
+[   29.6s]   RB-A0: intents 206 (etf 206, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   29.6s]   RB-01: intents 216 (etf 216, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   29.6s]   RB-02: intents 206 (etf 206, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   29.6s]   RB-03: intents 204 (etf 204, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   29.6s]   RB-04: intents 204 (etf 204, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   29.6s]   RB-05: intents 145 (etf 145, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   29.6s]   RB-06: intents 135 (etf 135, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   29.6s]   RB-07: intents 133 (etf 133, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   29.6s]   RB-08: intents 133 (etf 133, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   29.6s]   RB-09: intents 198 (etf 198, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   29.6s]   RB-10: intents 190 (etf 190, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   29.6s]   RB-11: intents 198 (etf 198, stock 0); m5-b + first-decision uniqueness PASS; S2 disjointness PASS
+[   29.6s] == 9. per-config engine input frames ==
+[   29.7s]   stock frames (C05 universe): daily 270206, half 518093, limits 269531
+[   29.7s] == 10. RB-A0 regression anchor vs v3 R3-06 ==
+[   29.9s]   RB-A0: engine 0.2s, intents 206 orders 172 filled 65 cap 0 | rss 4.64 GB
+[   29.9s]   RB-A0 intents.equals(v3 R3-06 intents) = True (mine 206 rows / ref 206 rows)
+[   29.9s]   RB-A0 fills.equals(v3 R3-06 fills) = True (mine 65 rows / ref 65 rows)
+[   29.9s]   RB-A0 events.equals(v3 R3-06 events) = True (mine 383 rows / ref 383 rows)
+[   29.9s]   RB-A0 daily.equals(v3 R3-06 daily) = True (mine 1462 rows / ref 1462 rows)
+[   29.9s]   RB-A0 clips_final.equals(v3 R3-06 clips_final) = True (mine 5 rows / ref 5 rows)
+[   29.9s]   RB-A0 net_cagr 0.1106293669 vs v3 R3-06 0.1106293669 -> True
+[   29.9s]   RB-A0 regression anchor PASS (== v3 R3-06, 5/5 frames)
+[   29.9s] == 11. remaining configs ==
+[   30.1s]   RB-01: engine 0.2s, intents 216 orders 209 filled 81 cap 0 | rss 4.65 GB
+[   30.3s]   RB-02: engine 0.2s, intents 206 orders 186 filled 72 cap 0 | rss 4.65 GB
+[   30.5s]   RB-03: engine 0.1s, intents 204 orders 693 filled 19 cap 31 | rss 4.62 GB
+[   30.7s]   RB-04: engine 0.2s, intents 204 orders 191 filled 66 cap 0 | rss 4.55 GB
+[   30.8s]   RB-05: engine 0.2s, intents 145 orders 364 filled 72 cap 0 | rss 4.55 GB
+[   31.0s]   RB-06: engine 0.2s, intents 135 orders 408 filled 65 cap 0 | rss 4.55 GB
+[   31.1s]   RB-07: engine 0.1s, intents 133 orders 695 filled 19 cap 31 | rss 4.55 GB
+[   31.3s]   RB-08: engine 0.2s, intents 133 orders 341 filled 58 cap 0 | rss 4.56 GB
+[   31.5s]   RB-09: engine 0.2s, intents 198 orders 172 filled 65 cap 0 | rss 4.56 GB
+[   31.7s]   RB-10: engine 0.2s, intents 190 orders 150 filled 53 cap 0 | rss 4.56 GB
+[   31.9s]   RB-11: engine 0.2s, intents 198 orders 162 filled 61 cap 0 | rss 4.55 GB
+[   31.9s]   RB-A0: leg cap-voids 0 (OK); drift breaches 79 (recorded-only)
+[   31.9s]   RB-01: leg cap-voids 0 (OK); drift breaches 85 (recorded-only)
+[   31.9s]   RB-02: leg cap-voids 0 (OK); drift breaches 133 (recorded-only)
+[   31.9s]   RB-03: leg cap-voids 0 (OK); drift breaches 179 (recorded-only)
+[   31.9s]   RB-04: leg cap-voids 0 (OK); drift breaches 34 (recorded-only)
+[   31.9s]   RB-05: leg cap-voids 0 (OK); drift breaches 2417 (recorded-only)
+[   31.9s]   RB-06: leg cap-voids 0 (OK); drift breaches 2088 (recorded-only)
+[   31.9s]   RB-07: leg cap-voids 0 (OK); drift breaches 185 (recorded-only)
+[   31.9s]   RB-08: leg cap-voids 0 (OK); drift breaches 52 (recorded-only)
+[   31.9s]   RB-09: leg cap-voids 0 (OK); drift breaches 210 (recorded-only)
+[   31.9s]   RB-10: leg cap-voids 0 (OK); drift breaches 109 (recorded-only)
+[   31.9s]   RB-11: leg cap-voids 0 (OK); drift breaches 115 (recorded-only)
+[   31.9s] == 12. per-intent attribution ==
+[   32.0s]   RB-A0: R16-mapped exec 33.0% (filled 65, rule-blocked 3, terminated 138); term {'expiry': 2, 'override_same_name': 136, 'cap_void': 0, 'suspension_abandon': 0}
+[   32.0s]   RB-01: R16-mapped exec 38.9% (filled 81, rule-blocked 3, terminated 132); term {'expiry': 2, 'override_same_name': 130, 'cap_void': 0, 'suspension_abandon': 0}
+[   32.0s]   RB-02: R16-mapped exec 36.4% (filled 72, rule-blocked 3, terminated 131); term {'expiry': 2, 'override_same_name': 129, 'cap_void': 0, 'suspension_abandon': 0}
+[   32.0s]   RB-03: R16-mapped exec 24.5% (filled 19, rule-blocked 31, terminated 154); term {'expiry': 2, 'override_same_name': 121, 'cap_void': 31, 'suspension_abandon': 0}
+[   32.0s]   RB-04: R16-mapped exec 34.3% (filled 66, rule-blocked 4, terminated 134); term {'expiry': 2, 'override_same_name': 132, 'cap_void': 0, 'suspension_abandon': 0}
+[   32.0s]   RB-05: R16-mapped exec 53.8% (filled 72, rule-blocked 6, terminated 67); term {'expiry': 5, 'override_same_name': 62, 'cap_void': 0, 'suspension_abandon': 0}
+[   32.0s]   RB-06: R16-mapped exec 54.1% (filled 65, rule-blocked 8, terminated 62); term {'expiry': 5, 'override_same_name': 57, 'cap_void': 0, 'suspension_abandon': 0}
+[   32.0s]   RB-07: R16-mapped exec 37.6% (filled 19, rule-blocked 31, terminated 83); term {'expiry': 1, 'override_same_name': 51, 'cap_void': 31, 'suspension_abandon': 0}
+[   32.0s]   RB-08: R16-mapped exec 49.6% (filled 58, rule-blocked 8, terminated 67); term {'expiry': 4, 'override_same_name': 63, 'cap_void': 0, 'suspension_abandon': 0}
+[   32.0s]   RB-09: R16-mapped exec 34.3% (filled 65, rule-blocked 3, terminated 130); term {'expiry': 2, 'override_same_name': 128, 'cap_void': 0, 'suspension_abandon': 0}
+[   32.0s]   RB-10: R16-mapped exec 29.5% (filled 53, rule-blocked 3, terminated 134); term {'expiry': 2, 'override_same_name': 132, 'cap_void': 0, 'suspension_abandon': 0}
+[   32.0s]   RB-11: R16-mapped exec 32.3% (filled 61, rule-blocked 3, terminated 134); term {'expiry': 2, 'override_same_name': 132, 'cap_void': 0, 'suspension_abandon': 0}
+[   32.0s] == 13. metrics & gates ==
+[   32.1s]   RB-A0: net +11.06% excess +10.46pp adv 5/6 mdd -16.22% turn 1.59 w 27.5% g8v3 0+0/0=n/a(0 armed) (8v2对照 0/0=n/a(0 armed)) goal10 True -> PASS
+[   32.1s]   RB-01: net +8.23% excess +7.63pp adv 5/6 mdd -16.06% turn 1.79 w 26.9% g8v3 0+0/0=n/a(0 armed) (8v2对照 0/0=n/a(0 armed)) goal10 False -> PASS
+[   32.1s]   RB-02: net +8.03% excess +7.43pp adv 5/6 mdd -16.17% turn 1.77 w 27.9% g8v3 1+0/1=100.0% (8v2对照 1/1=100.0%) goal10 False -> PASS
+[   32.1s]   RB-03: net +2.00% excess +1.40pp adv 3/6 mdd -4.46% turn 0.36 w 27.5% g8v3 0+0/0=n/a(0 armed) (8v2对照 0/0=n/a(0 armed)) goal10 False -> eliminated ['2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6']
+[   32.1s]   RB-04: net +8.34% excess +7.74pp adv 5/6 mdd -14.21% turn 1.21 w 26.5% g8v3 0+0/0=n/a(0 armed) (8v2对照 0/0=n/a(0 armed)) goal10 False -> PASS
+[   32.1s]   RB-05: net +8.04% excess +7.44pp adv 5/6 mdd -19.21% turn 2.00 w 34.1% g8v3 0+0/0=n/a(0 armed) (8v2对照 0/0=n/a(0 armed)) goal10 False -> PASS
+[   32.1s]   RB-06: net +6.59% excess +5.99pp adv 5/6 mdd -17.11% turn 1.74 w 36.3% g8v3 0+0/0=n/a(0 armed) (8v2对照 0/0=n/a(0 armed)) goal10 False -> PASS
+[   32.2s]   RB-07: net +1.72% excess +1.12pp adv 3/6 mdd -4.40% turn 0.26 w 27.6% g8v3 2+0/2=100.0% (8v2对照 2/2=100.0%) goal10 False -> eliminated ['2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6']
+[   32.2s]   RB-08: net +7.72% excess +7.12pp adv 5/6 mdd -17.16% turn 1.53 w 28.1% g8v3 0+0/0=n/a(0 armed) (8v2对照 0/0=n/a(0 armed)) goal10 False -> PASS
+[   32.2s]   RB-09: net +7.40% excess +6.80pp adv 5/6 mdd -16.65% turn 1.64 w 29.8% g8v3 0+0/0=n/a(0 armed) (8v2对照 0/0=n/a(0 armed)) goal10 False -> PASS
+[   32.2s]   RB-10: net +8.99% excess +8.39pp adv 5/6 mdd -14.88% turn 1.62 w 26.8% g8v3 0+0/0=n/a(0 armed) (8v2对照 0/0=n/a(0 armed)) goal10 False -> PASS
+[   32.2s]   RB-11: net +8.41% excess +7.81pp adv 5/6 mdd -16.25% turn 1.40 w 29.6% g8v3 0+0/0=n/a(0 armed) (8v2对照 0/0=n/a(0 armed)) goal10 False -> PASS
+[   32.2s] == gates: 10/12 dev_pass ==
+[   32.2s] == 14. disclosures ==
+[   32.5s] == 15. outputs ==
+[   32.7s] == manifest + report written; wall 33s, peak rss 4.65 GB ==
+[   32.7s] == VERDICT: 10/12 dev_pass; blocked=[]; robustness round (prereg exp-20260919-hybrid-robustness sec 0/2/4): anchor RB-A0 regression PASS; 10/12 configs pass all 8 dev gates (descriptive count only); ALL neighborhood results are exploration-grade (dev-only, post-val, meta-overfitting discount) -- NO selection, NO champion change, NO ledger elimination semantics; val not consumed

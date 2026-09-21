@@ -1,0 +1,82 @@
+{
+ "000001XSHE": {
+  "n_rows_total": 11,
+  "rows_in_2015_2024": 11,
+  "ex_dates": [
+   20150413,
+   20160616,
+   20170721,
+   20180712,
+   20190626,
+   20200528,
+   20210514,
+   20220722,
+   20230614,
+   20240614,
+   20241010
+  ],
+  "rows_2020": [
+   {
+    "book_closure_date": 20200527,
+    "dividend_cash_before_tax": 21.8,
+    "ex_dividend_date": 20200528,
+    "payable_date": 20200528,
+    "round_lot": 100,
+    "raw_cash_div_per_share": 0.218,
+    "cash_div_x_round_lot": 21.8,
+    "exact_equal": true,
+    "raw_pay_date": "20200528",
+    "raw_record_date": "20200527"
+   }
+  ]
+ },
+ "nonempty_chunks": 2180,
+ "raw_total_rows_all_proc": 43566,
+ "raw_shishi_rows": 43498,
+ "raw_shishi_rows_per_year": {
+  "2015": 2405,
+  "2016": 2416,
+  "2017": 2805,
+  "2018": 3209,
+  "2019": 3013,
+  "2020": 3167,
+  "2021": 3598,
+  "2022": 3875,
+  "2023": 4157,
+  "2024": 5358,
+  "2025": 5390,
+  "2026": 4105
+ },
+ "raw_000001_2020": [
+  {
+   "ts_code": "000001.SZ",
+   "end_date": 20191231,
+   "div_proc": "实施",
+   "cash_div": 0.218,
+   "cash_div_tax": 0.218,
+   "record_date": "20200527",
+   "ex_date": 20200528,
+   "pay_date": "20200528"
+  }
+ ],
+ "bundle_rows_per_year": {
+  "2015": 2206,
+  "2016": 2152,
+  "2017": 2540,
+  "2018": 2904,
+  "2019": 2715,
+  "2020": 2734,
+  "2021": 2943,
+  "2022": 3063,
+  "2023": 3166,
+  "2024": 4027
+ },
+ "bundle_total_rows": 28450,
+ "bundle_codes": 4512,
+ "splice": {
+  "r2_last_chunk": "20171229",
+  "r3_first_chunk": "20180102",
+  "raw_2017_rows": 2805,
+  "raw_2018_rows": 3209
+ }
+}

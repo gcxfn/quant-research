@@ -1,0 +1,99 @@
+{
+ "run_id": "20260921T023606-etf-dynamic-identity-e41c",
+ "days": [
+  "2015-01-05",
+  "2015-01-06",
+  "2015-01-07",
+  "2015-01-08",
+  "2015-01-09"
+ ],
+ "etf_legs": [
+  "sh.511010",
+  "sh.518880",
+  "sz.159934"
+ ],
+ "stock_control": "sh.600000",
+ "cases": {
+  "P1_real_etf_daily_real_stock_bars_halfday": {
+   "outcome": "BandContractError",
+   "message": "halfday clock requires ETF am and pm bars"
+  },
+  "P2_pm_only_section81_bars_halfday": {
+   "outcome": "BandContractError",
+   "message": "halfday clock requires ETF am and pm bars"
+  },
+  "P3_control_stock_only_halfday": {
+   "outcome": "ran",
+   "rows": {
+    "date": "2015-01-09",
+    "settled_cash": 200000.0,
+    "positions_value": 0.0,
+    "equity": 200000.0,
+    "n_positions": 0
+   },
+   "session_events": null,
+   "orders_generated": 0,
+   "orders_filled": {
+    "buy": 0,
+    "sell_risk": 0,
+    "sell_profit": 0
+   },
+   "terminations": {},
+   "warnings": [],
+   "fills": []
+  },
+  "P4_pm_only_section81_bars_legacy_one_buy": {
+   "outcome": "ran",
+   "rows": {
+    "date": "2015-01-09",
+    "settled_cash": 180190.5,
+    "positions_value": 19755.9,
+    "equity": 199946.4,
+    "n_positions": 1
+   },
+   "session_events": null,
+   "orders_generated": 3,
+   "orders_filled": {
+    "buy": 1,
+    "sell_risk": 0,
+    "sell_profit": 0
+   },
+   "terminations": {},
+   "warnings": [],
+   "fills": [
+    {
+     "date": "2015-01-08",
+     "session": "pm",
+     "symbol": "sh.518880",
+     "side": "buy",
+     "shares": 8100,
+     "price": 2.445,
+     "fees_total": 5.0
+    }
+   ],
+   "provider_calls": [
+    {
+     "day": "2015-01-05",
+     "session": "am",
+     "cash": 200000.0,
+     "equity_snapshot": 200000.0,
+     "positions": 0
+    },
+    {
+     "day": "2015-01-05",
+     "session": "pm",
+     "cash": 200000.0,
+     "equity_snapshot": 200000.0,
+     "positions": 0
+    },
+    {
+     "day": "2015-01-06",
+     "session": "am",
+     "cash": 200000.0,
+     "equity_snapshot": 200000.0,
+     "positions": 0
+    }
+   ]
+  }
+ }
+}

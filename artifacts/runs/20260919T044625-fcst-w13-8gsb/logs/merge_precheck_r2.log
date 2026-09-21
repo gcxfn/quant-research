@@ -1,0 +1,13 @@
+{
+ "merged_rows": 600,
+ "part_files": [
+  "batch_013_part1.jsonl",
+  "batch_013_part2.jsonl",
+  "batch_013_part3.jsonl",
+  "batch_013_part4.jsonl",
+  "batch_013_part5.jsonl",
+  "batch_013_part6.jsonl"
+ ],
+ "output": "data/features/fcst-reason-struct-full-20260918/batch_013.jsonl",
+ "precheck": "OK (600/600, quotes verbatim, vocab closed, secondary!=primary, frozen-zone clear)"
+}

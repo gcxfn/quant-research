@@ -1,0 +1,180 @@
+{
+ "run_id": "20260921T031044-engine-v15-pm-only-9f3a",
+ "task": "任务②：halfday 时钟 ETF pm-only 路由落地与动态冒烟（引擎扩展交付与验收）",
+ "status": "completed",
+ "mode": "engine-extension-and-verification",
+ "date_utc": "2026-09-21",
+ "trial_accounting": "纯工程（引擎扩展 + 验收），试验计数消费 0",
+ "engine_pin": {
+  "path": "src/quant/backtest/band_engine.py",
+  "version_before": "v1.4.1 (bcbdd44bb855b803…)",
+  "version_after": "v1.5",
+  "sha256": "d4b6c3764780e6dec5443174bb8fb0c1ca57ffd737da4e59069cbd3ca6735ed6",
+  "lines": 4425,
+  "bytes": 226756
+ },
+ "acceptance": {
+  "full_suite": {
+   "log": "logs/pytest_full_suite.log",
+   "result": "638 passed / 0 failed / 0 skipped",
+   "baseline_collected_before_change": 630,
+   "new_tests": 8
+  },
+  "d1_d8_untouched": {
+   "log": "logs/pytest_band_dynamic_d1d8.log",
+   "result": "9 passed",
+   "test_file_sha256_unchanged": true
+  },
+  "targeted_tests": {
+   "log": "logs/pytest_v15_targeted.log",
+   "result": "8 passed",
+   "file": "tests/test_band_engine_v15_etf_pm_only.py"
+  },
+  "f3r3_anchor": {
+   "runner": "artifacts/runs/20260921T031044-f3r3-anchor-replay-9f3a/tmp/runner_f3r3_anchor.py (verbatim copy + 8-line header comment; body differs only in the engine pin line)",
+   "engine_product_frames": {
+    "required": [
+     "F3-EW_fills.parquet",
+     "F3-EW_events.parquet",
+     "F3-EW_daily_equity.parquet",
+     "F3-EW_clips_final.parquet",
+     "F3-ICW_fills.parquet",
+     "F3-ICW_events.parquet",
+     "F3-ICW_daily_equity.parquet",
+     "F3-ICW_clips_final.parquet"
+    ],
+    "verdicts": {
+     "F3-EW_clips_final.parquet": "BYTE-EQUAL",
+     "F3-EW_daily_equity.parquet": "BYTE-EQUAL",
+     "F3-EW_events.parquet": "BYTE-EQUAL",
+     "F3-EW_fills.parquet": "BYTE-EQUAL",
+     "F3-ICW_clips_final.parquet": "BYTE-EQUAL",
+     "F3-ICW_daily_equity.parquet": "BYTE-EQUAL",
+     "F3-ICW_events.parquet": "BYTE-EQUAL",
+     "F3-ICW_fills.parquet": "BYTE-EQUAL"
+    }
+   },
+   "other_products": {
+    "F3-EW_clips_final.parquet": "BYTE-EQUAL",
+    "F3-EW_composite.parquet": "DIFF",
+    "F3-EW_daily_equity.parquet": "BYTE-EQUAL",
+    "F3-EW_events.parquet": "BYTE-EQUAL",
+    "F3-EW_fills.parquet": "BYTE-EQUAL",
+    "F3-EW_seat_outcomes.csv": "BYTE-EQUAL",
+    "F3-ICW_clips_final.parquet": "BYTE-EQUAL",
+    "F3-ICW_composite.parquet": "DIFF",
+    "F3-ICW_daily_equity.parquet": "BYTE-EQUAL",
+    "F3-ICW_events.parquet": "BYTE-EQUAL",
+    "F3-ICW_fills.parquet": "BYTE-EQUAL",
+    "F3-ICW_seat_outcomes.csv": "BYTE-EQUAL",
+    "dedup_clusters.csv": "BYTE-EQUAL",
+    "metrics_and_gates.json": "DIFF",
+    "pool_sizes.csv": "BYTE-EQUAL"
+   },
+   "engine_product_frames_byte_equal": 8,
+   "anchor_parquet_total": 10,
+   "comparison": "artifacts/runs/20260921T031044-f3r3-anchor-replay-9f3a/outputs/anchor_frame_comparison.json",
+   "disclosed_benign_diffs": [
+    "F3-{EW,ICW}_composite.parquet: file bytes differ, row multiset and key-sorted content identical (input to the engine; the resulting fill frames are byte-equal)",
+    "metrics_and_gates.json: engine_sha256_16 field + ~1e-15 float reduction noise in F3-ICW turnover/mean_equity; gate verdicts and judgement numbers unchanged (0/2 dev_pass)"
+   ]
+  },
+  "probe": {
+   "script": "tmp/etf_pm_only_probe.py",
+   "json": "tmp/etf_pm_only_probe.json",
+   "result": "P1/P2 (default routing) rejected; P1p/P2p (pm_only) run and agree; P3 control unchanged; P4 legacy matches the pre-change identity run field by field"
+  }
+ },
+ "double_signature": {
+  "first_signature": "语义节执行者（本 run）：实现 + 验收亲跑（§acceptance）",
+  "second_signature": "独立复核代理 EngineDoubleSign：APPROVE（零 CRITICAL/零 MAJOR、1 项 P3 已按复核方案处置）；报告 verification_report.md",
+  "delta_reverification": "同一复核代理对处置后的三处增量再确认：测试 8 passed 且其余测试未变；冒烟 19 判据全 True、8 个数据产物逐字节不变；引擎 src/.venv 副本 sha 未变 -> APPROVE 对最终字节维持有效",
+  "review_hygiene_dispositions": {
+   "F2": "manifest 输出哈希排除 logs/__pycache__/*.pyc 并加 outputs_note；无陈旧哈希",
+   "F3": "冒烟 report 确定性表述改写为按数据产物口径",
+   "F4": "判据计数口径统一为 19（routing 5/matching 4/fees 2/t0 3/ledger 5）"
+  },
+  "review_finding_disposition": {
+   "F1_P3": "test_t1_am_decision_point_never_emits_an_etf_order_under_pm_only 的不可证伪断言 -> 改为提交真实单 + am 会话零事件；测试文件 sha d4dbd177.. -> fd29fa21..",
+   "C1": "t1 注释误标（2.005 说成 at the anchor）已更正",
+   "C2": "冒烟 runner 恒真的 am 判据 -> routing_no_etf_order_in_any_am_session（可证伪）；冒烟已重跑，16 笔成交与其余判据不变"
+  }
+ },
+ "env": {
+  "python": "3.11.15",
+  "polars": "1.44.2",
+  "numpy": "1.26.4",
+  "platform": "Windows-10-10.0.26200-SP0"
+ },
+ "outputs": {
+  "logs/f3r3_anchor_first_attempt_failed_copylog.txt": "891aae5bbc5dd2e1a680a6e18bc6f5366b8e816c1d4eb9ef1ad7151a09d47f6f",
+  "logs/probe_stdout.log": "1fef765386c4a5d7b4a2e90f2d63d16fa346d207264309f6b136291bc45f2ce7",
+  "logs/pytest_band_dynamic_d1d8.log": "b7e08d106dc7a7d8cfb089f56af0052d1023c5a81d94d2cc7ea75ec6a7c6ce15",
+  "logs/pytest_full_suite.log": "c1d42fe975cd1fe092a1150110e3179a184cd09df55a3e4c526ae56292ad1fb6",
+  "logs/pytest_v15_targeted.log": "71589eaa6106a484808c251737143f89a5c9495b5f03b205c10406b31ba2ed47",
+  "report.md": "2afa5b68bb80056386163a88f9a380827782982d7011069fefcbb1a40117cd2f",
+  "tmp/etf_pm_only_probe.json": "fda7fff8b2e1fde6ced5d06b30094a509c39670b4027cc092baaaa25d3b5c017",
+  "tmp/etf_pm_only_probe.py": "935a3fe620afb7c05dc0d84fdf165d6ec3e948b3fde6de571c77d9b41becc1bb",
+  "tmp/make_manifest.py": "e0ce9aa21ee1b23f3ad29f92fb35c587383a4b6a1f2db2c7fb90dae5ffd752b8",
+  "verification_report.md": "d9ecec3ecf4183b4094aa3076a1d081b2e692f27d9c079594f9ce0d6b347db31"
+ },
+ "external_artifacts": {
+  "engine": {
+   "path": "src/quant/backtest/band_engine.py",
+   "version": "v1.5",
+   "sha256": "d4b6c3764780e6dec5443174bb8fb0c1ca57ffd737da4e59069cbd3ca6735ed6"
+  },
+  "engine_installed_copy": {
+   "path": ".venv/Lib/site-packages/quant/backtest/band_engine.py",
+   "sha256": "d4b6c3764780e6dec5443174bb8fb0c1ca57ffd737da4e59069cbd3ca6735ed6"
+  },
+  "new_tests": {
+   "path": "tests/test_band_engine_v15_etf_pm_only.py",
+   "sha256": "fd29fa215990a7ace5a8e4abdc24b38a7854433be5ffa132c0de29bcbd9a20a7"
+  },
+  "d1_d8_tests_untouched": {
+   "path": "tests/test_band_dynamic.py",
+   "sha256": "c56dc9432d8737eda5c81bbccf7c7fdbc3371fd7a8cac5595bd755f02f3c3bf8"
+  },
+  "v14_zones_tests_version_labels": {
+   "path": "tests/test_band_engine_v14_zones.py",
+   "sha256": "9953c27f9074a53c44b7f00b712e072e97dc4cb37fd337407d8dce6b2e7110e2"
+  },
+  "prereg_smoke": {
+   "path": "docs/research/exp-20260921-etf-pm-only-smoke-prereg.md",
+   "sha256": "245d22b9ea7adc16218297fc8f73bca5fde6d2fd0e5494e6eeddce66abc3902b"
+  },
+  "decision": {
+   "path": "docs/decisions/2026-09-21-etf-pm-only-routing.md",
+   "sha256": "717ebc83d3c3878c1cbcf779927eb709e645806c010c2b98ca9412c0e3b312e7"
+  },
+  "anchor_replay_run": {
+   "path": "artifacts/runs/20260921T031044-f3r3-anchor-replay-9f3a",
+   "comparison": "a345199857c90a75a380b9be57dc0eae1d8d4b35e8c073bcaf302306e4846dd9"
+  },
+  "f3r3_frozen_run_outputs": {
+   "path": "artifacts/runs/20260921T024449-f3r3-dynamic-45037d",
+   "frames": {
+    "F3-EW_clips_final.parquet": "c5c19268a4b3d4360c28d8089d3013d63ce7e5c9f963313b00ea7ef7f7ed7283",
+    "F3-EW_composite.parquet": "ee17bf0afcc67cac39fa4393eb6a2b11f18481da43e57684103c9c714a615d1f",
+    "F3-EW_daily_equity.parquet": "2cd1f0b7e2ef7b1d179655ff4633517f9300fcd27e9556889389ce64d93d76d1",
+    "F3-EW_events.parquet": "b0e7b75f7d2413fc907a55adcbfc43672808c02475040c024dfe8570a3814211",
+    "F3-EW_fills.parquet": "552214a742b4c958cb1a1cdcf23b4868452901c18f9b3d233f9a2d126613f5b6",
+    "F3-ICW_clips_final.parquet": "e41b01e8757a7d860ea61008a49409e630240f17b3cd7780d6d29c09decc55dc",
+    "F3-ICW_composite.parquet": "51b7faec2c97576c2890eec81e829bdbcf535fc28588a41b56eaa01473b7f9c0",
+    "F3-ICW_daily_equity.parquet": "dc55af6672ae7b4ee61cb2c30d296988228752377d00b5221ca8e08b19c79a1d",
+    "F3-ICW_events.parquet": "138c590aeaececcd269d1a0888a4bad2cd9ca5e9fc5a4077aafa87c0e3f94776",
+    "F3-ICW_fills.parquet": "77c4cff7699207f6c07c763a0a938c0079070622b6caf5ccac32e10c30c7546d"
+   }
+  },
+  "smoke_run": {
+   "path": "artifacts/runs/20260921T032048-etf-pm-only-smoke-c4d1",
+   "manifest_sha256": "cc1b2b3090759e1e4b435d2da92617a8e3ada076e658140c6a276771f5a994eb",
+   "report_sha256": "7b6cf47a4163476af5e6709dd34b27b4ad84a173f05e9e3f7614899a9d4f4172"
+  },
+  "identity_run_reference": {
+   "path": "artifacts/runs/20260921T023606-etf-dynamic-identity-e41c",
+   "probe_json_sha256": "b81010ffed2c1dd32747e7d0353a1ea6bcc70707cd34763f312f80cf8fd94ad1"
+  }
+ }
+}

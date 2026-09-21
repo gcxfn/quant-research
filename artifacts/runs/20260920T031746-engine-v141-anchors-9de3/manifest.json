@@ -1,0 +1,32 @@
+{
+  "run_id": "20260920T031746-engine-v141-anchors-9de3",
+  "purpose": "engine v1.4.1 zero-regression anchor replay (contract sec 10.8): three v1.4 acceptance anchors re-run on the tp1-optional engine; outputs must be byte-identical to the pin-time products",
+  "engine_v140_pin_sha256": "7ad35014d72711cb43ab6aedc232d70adf7eece60604b2a057ee039c9bd11e78",
+  "engine_v141_sha256": "c5c073035d63c59d4803f469e427505223edb30aa65d05d2184385c33a85c493",
+  "engine_change": "zones tp1_mult/tp1_frac optional (row.get), zero-tier take-profit; tp1 null + tp2 set rejected; tp1-present assertions verbatim",
+  "runners": {
+    "anchor1_P3R2_C05": "scripts/runner_p3r2_intents.py  (copied from 20260919T222634-engine-v14-impl/tmp, ONLY ENGINE_SHA_EXPECT_FULL updated)",
+    "anchor2_H2_A0": "scripts/runner_hybrid_v2.py  (same)",
+    "anchor3_F3R3_A0": "scripts/runner_f3r3.py  (same)"
+  },
+  "compare_targets": {
+    "anchor1_P3R2_C05": "artifacts/runs/20260919T030640-p3r2-dev-ad9e/outputs (5 parquet)",
+    "anchor2_H2_A0": "artifacts/runs/20260919T063022-hybrid-v2-2k5b/outputs (5 parquet + dividend_events.csv)",
+    "anchor3_F3R3_A0": "artifacts/runs/20260919T201500-f3r3-industry-cap-4b2e/outputs (5 parquet)"
+  },
+  "commands": [
+    ".venv/Scripts/python.exe <run>/scripts/runner_p3r2_intents.py",
+    ".venv/Scripts/python.exe <run>/scripts/runner_hybrid_v2.py",
+    ".venv/Scripts/python.exe <run>/scripts/runner_f3r3.py"
+  ],
+  "started_at": "2026-09-20T03:17+08:00",
+  "status": "completed",
+  "finished_at": "2026-09-20T03:35+08:00",
+  "results": {
+    "pytest_full": "463 passed, 6 warnings in 21.69s (baseline 460 + 3 new: test_t30_tp1_null_no_tp_intent / test_t31_tp1_null_tp2_set_rejected / test_t32_tp1_present_same_as_v14)",
+    "anchors": "16/16 data products BYTE-EQUAL vs pin-time products (compare_anchors.py exit 0); anchor2/anchor3 nested stats.stats EQUAL after stripping {engine_version, wall_s} (contract 10.7 precedent); anchor1 first attempt failed on missing outputs/ dir (runner does not mkdir it; dir pre-created, rerun exit 0 wall 23s)",
+    "runner_engine_identity": "all three runners pinned engine sha256 c5c07303... match=True at start",
+    "probe_rerun": "tmp/s1_tp_disable_probe_rerun_result.json: null_tp1 and drop_tp1cols now RAN with zero ztp orders/events (was REJECTED_TypeError / REJECTED_missing-column at pin); nan_tp1 still fail-closed rejected (v1.4.1 keeps the isfinite asserts verbatim; NaN is a supplied-illegal value, not null, same semantics as tp2)",
+    "engine_version_label": "kept 'band_engine v1.4' (test_t21 asserts it; task brief forbids editing existing tests and expects 463 pass; pin identity = sha256, disclosed to main conversation)"
+  }
+}

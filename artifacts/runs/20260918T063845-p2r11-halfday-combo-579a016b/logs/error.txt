@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2r11_halfday_combo.py", line 322, in main
+    static = prepare_market(exec_tab, breaker_dates)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\p2r11_halfday_combo.py", line 361, in prepare_market
+    dates = tab['date'].unique().sort().to_list()
+            ~~~^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\lazyframe\frame.py", line 746, in __getitem__
+    raise TypeError(msg)
+TypeError: LazyFrame is not subscriptable (aside from slicing)
+
+Use `select()` or `filter()` instead.

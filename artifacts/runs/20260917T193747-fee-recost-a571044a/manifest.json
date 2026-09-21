@@ -1,0 +1,94 @@
+{
+ "run_id": "20260917T193747-fee-recost-a571044a",
+ "experiment_id": "exp-20260917-fee-recost",
+ "status": "completed",
+ "started_at": "2026-09-17T19:37:48.290103+08:00",
+ "ended_at": "2026-09-17T19:37:49.739480+08:00",
+ "duration_s": 1.449,
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "-X",
+  "utf8",
+  "tools\\fee_recost.py",
+  "--out",
+  "artifacts/runs/20260917T193747-fee-recost-a571044a",
+  "R1=artifacts/runs/20260917T161253-p2-first-screen-2443f74c",
+  "R2=artifacts/runs/20260917T163824-p2-round2-screen-7f9584bc",
+  "R3=artifacts/runs/20260917T164836-p2-round3-screen-a8702198",
+  "R5=artifacts/runs/20260917T182002-p2-round5-trend-dip-3961e8c1"
+ ],
+ "inputs": [
+  {
+   "tag": "R1",
+   "run_id": "20260917T161253-p2-first-screen-2443f74c",
+   "experiment_id": "exp-20260917-p2-first-screen",
+   "run_status": "completed",
+   "path": "D:\\量化\\artifacts\\runs\\20260917T161253-p2-first-screen-2443f74c",
+   "config_sha256": "2aa141399c4da18fad1a4217c5b3d349fb4fe4bd3d17caec797fe66fdd9e5056",
+   "events_sha256": "7dce3884700075ca9a3b96822e36f52822d82c7bb46fab4a1e0977daba84f289",
+   "n_events_total": 63984,
+   "n_completed_recosted": 61328
+  },
+  {
+   "tag": "R2",
+   "run_id": "20260917T163824-p2-round2-screen-7f9584bc",
+   "experiment_id": "exp-20260917-p2-round2-screen",
+   "run_status": "completed",
+   "path": "D:\\量化\\artifacts\\runs\\20260917T163824-p2-round2-screen-7f9584bc",
+   "config_sha256": "69261f25df54cc2445b77e69d2040a9724e3b2ad3e790db968ec7177605a598b",
+   "events_sha256": "9764bc6cd72607b4182c6a3be22088cbe29545deb9c8655a9812006c33fb8779",
+   "n_events_total": 39373,
+   "n_completed_recosted": 38018
+  },
+  {
+   "tag": "R3",
+   "run_id": "20260917T164836-p2-round3-screen-a8702198",
+   "experiment_id": "exp-20260917-p2-round3-screen",
+   "run_status": "completed",
+   "path": "D:\\量化\\artifacts\\runs\\20260917T164836-p2-round3-screen-a8702198",
+   "config_sha256": "0f9ecd01038e097c7609c5e0191fe0707040f960efff1c1cd43f7cb008aca91e",
+   "events_sha256": "5ec96fc439958c99eaf0f7303e2c057f3354bd9ee578574312e655a09b2fc7b0",
+   "n_events_total": 54642,
+   "n_completed_recosted": 53385
+  },
+  {
+   "tag": "R5",
+   "run_id": "20260917T182002-p2-round5-trend-dip-3961e8c1",
+   "experiment_id": "exp-20260917-p2-round5-trend-dip",
+   "run_status": "completed",
+   "path": "D:\\量化\\artifacts\\runs\\20260917T182002-p2-round5-trend-dip-3961e8c1",
+   "config_sha256": "0e4ca66398ea87e5db1af5ae65c82bc459c93757d787c3b97ecef7d641f1499f",
+   "events_sha256": "b142c491bdc8e3a752164844a00cd9ac6016bcfa84539e8ea0779c76126b8f51",
+   "n_events_total": 26470,
+   "n_completed_recosted": 25993
+  }
+ ],
+ "assumptions": {
+  "commission_stock_pct": 0.00025,
+  "commission_stock_min": 5.0,
+  "stamp_sell_pct": 0.0005,
+  "stamp_note": "current single-sided 0.05% rate applied to ALL exit dates, including 2015-2023-08 when the historical rate was 0.1%; verify against the live account",
+  "slippage": 0.0,
+  "quantity_frozen": true,
+  "etf_rate": {
+   "commission_pct": 0.0001,
+   "commission_min": 0.0,
+   "stamp_sell_pct": 0.0,
+   "applies_to": "none of these runs"
+  }
+ },
+ "environment": {
+  "python": "3.11.15",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "polars": "1.44.2"
+ },
+ "source_sha256": {
+  "tools/fee_recost.py": "a6697b99b79d6fdb5a7b912ae5ee9f0d6f955fcba3c658fbc165398bf6409916",
+  "src/quant/research/fee_recost.py": "683ec48aecbc298c1a19ce895a6de6ff28f2bb71e392216cbaf9ff1ca5fb3a6a"
+ },
+ "outputs": {
+  "recost_events.parquet": "recost_events.parquet",
+  "recost_summary.csv": "recost_summary.csv",
+  "recost_summary.json": "recost_summary.json"
+ }
+}

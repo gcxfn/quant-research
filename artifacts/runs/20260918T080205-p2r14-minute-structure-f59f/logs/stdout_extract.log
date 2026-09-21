@@ -1,0 +1,81 @@
+[    0.5s] identity fail-closed checks passed
+[   16.6s] progress 200/2431 elapsed=17s (83ms/day) rss=0.85GiB
+[   20.3s] year 2015 flushed: 568845 rows rss=0.86GiB
+[   34.4s] progress 400/2431 elapsed=34s (86ms/day) rss=0.94GiB
+[   43.1s] year 2016 flushed: 640639 rows rss=0.96GiB
+[   55.7s] progress 600/2431 elapsed=56s (93ms/day) rss=0.99GiB
+[   69.6s] year 2017 flushed: 742401 rows rss=1.15GiB
+[   80.2s] progress 800/2431 elapsed=80s (100ms/day) rss=1.16GiB
+[  104.4s] year 2018 flushed: 816361 rows rss=1.16GiB
+[  107.6s] progress 1000/2431 elapsed=108s (108ms/day) rss=1.16GiB
+[  132.8s] progress 1200/2431 elapsed=133s (111ms/day) rss=1.16GiB
+[  136.6s] year 2019 flushed: 884402 rows rss=1.16GiB
+[  161.6s] progress 1400/2431 elapsed=162s (115ms/day) rss=1.16GiB
+[  170.1s] year 2020 flushed: 945719 rows rss=1.16GiB
+[  189.8s] progress 1600/2431 elapsed=190s (119ms/day) rss=1.20GiB
+[  208.4s] year 2021 flushed: 1058620 rows rss=1.65GiB
+[  223.5s] progress 1800/2431 elapsed=223s (124ms/day) rss=1.65GiB
+[  247.5s] year 2022 flushed: 1146021 rows rss=1.65GiB
+[  257.6s] progress 2000/2431 elapsed=258s (129ms/day) rss=1.65GiB
+[  292.8s] year 2023 flushed: 1209236 rows rss=1.65GiB
+[  294.6s] progress 2200/2431 elapsed=295s (134ms/day) rss=1.65GiB
+[  330.8s] progress 2400/2431 elapsed=331s (138ms/day) rss=1.65GiB
+[  336.8s] progress 2431/2431 elapsed=337s (139ms/day) rss=1.65GiB
+[  336.8s] year 2024 flushed: 1232960 rows rss=1.65GiB
+[  337.0s] scan done: 9245204 rows; finalize (med20 + limits)
+Traceback (most recent call last):
+  File "D:\量化\artifacts\runs\20260918T080205-p2r14-minute-structure-f59f\scripts\01_extract_minute_feats.py", line 455, in <module>
+    main()
+  File "D:\量化\artifacts\runs\20260918T080205-p2r14-minute-structure-f59f\scripts\01_extract_minute_feats.py", line 347, in main
+    consistency = limit_consistency(feats, half_limits)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\artifacts\runs\20260918T080205-p2r14-minute-structure-f59f\scripts\01_extract_minute_feats.py", line 283, in limit_consistency
+    d["state_seal_rows"] = int((pl.col("limit_close_state") == 2).sum())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'Expr'
+[    0.5s] identity fail-closed checks passed
+[    0.7s] resumed from cache: 10 parts, 9245204 rows
+[    0.7s] scan done: 9245204 rows; finalize (med20 + limits)
+Traceback (most recent call last):
+  File "D:\量化\artifacts\runs\20260918T080205-p2r14-minute-structure-f59f\scripts\01_extract_minute_feats.py", line 473, in <module>
+    main()
+  File "D:\量化\artifacts\runs\20260918T080205-p2r14-minute-structure-f59f\scripts\01_extract_minute_feats.py", line 365, in main
+    consistency = limit_consistency(feats, half_limits)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\artifacts\runs\20260918T080205-p2r14-minute-structure-f59f\scripts\01_extract_minute_feats.py", line 296, in limit_consistency
+    d["touch_state_contradictions"] = int(j.select(
+                                          ^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\dataframe\frame.py", line 10585, in select
+    ._collect_eager(optimizations=QueryOptFlags._eager())
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\lazyframe\frame.py", line 2240, in _collect_eager
+    return _eager_engine().collect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\lazyframe\engine.py", line 443, in collect
+    return wrap_df(ldf.collect(self.name, callback))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: unable to find column "limit_up"; valid columns: ["symbol", "date", "close_share30", "tail_amt_share", "last30_ret", "day_high", "day_low", "am_range30", "first_bar_vol", "first_bar_vol_med20", "pm_touch_limit_down", "limit_close_state", "high_am", "low_am"]
+[    0.5s] identity fail-closed checks passed
+[    0.7s] resumed from cache: 10 parts, 9245204 rows
+[    0.7s] scan done: 9245204 rows; finalize (med20 + limits)
+[    3.8s] consistency: {"state_seal_rows": 175259, "state_broke_rows": 78565, "state_untouched_rows": 8972978, "state_null_rows_limit_missing": 18402, "pm_touch_true_rows": 160537, "pm_touch_null_rows": 18402, "touch_state_contradictions": 1, "day_high_lt_halfday_high_am": 23116, "day_low_gt_halfday_low_am": 21575, "day_high_eq_halfday_high_am": 6786415}
+[    5.2s] auction crosscheck 2020-02-12: {"date": "2020-02-12", "n_checked": 2000, "n_rel_gt_1e-3": 2000, "vol_ratio_file_over_first_bar_p10_p50_p90": [14.951834633162791, 78.54770066861948, 575.2200000000003], "file_ohlc_eq_daily_ohlc_1fen_share": 0.4255}
+[    5.4s] auction crosscheck 2021-12-21: {"date": "2021-12-21", "n_checked": 2000, "n_rel_gt_1e-3": 2000, "vol_ratio_file_over_first_bar_p10_p50_p90": [14.158217944618668, 68.04740803489301, 459.05378571428747], "file_ohlc_eq_daily_ohlc_1fen_share": 0.371875}
+[    5.5s] auction crosscheck 2023-10-20: {"date": "2023-10-20", "n_checked": 2000, "n_rel_gt_1e-3": 2000, "vol_ratio_file_over_first_bar_p10_p50_p90": [15.299974169179258, 63.05188466962653, 457.1242628571438], "file_ohlc_eq_daily_ohlc_1fen_share": 0.44375}
+[    5.5s] auction crosscheck: {"verdict": "REFUTED_AND_REPLACED_BY_INTERNAL_CHECK", "prereg_assumption": "stk_auction_c \u4e3a\u9996 bar \u7ade\u4ef7\u91cf\u7684\u72ec\u7acb\u8bb0\u5f55\u6e90", "empirics": [{"date": "2020-02-12", "n_checked": 2000, "n_rel_gt_1e-3": 2000, "vol_ratio_file_over_first_bar_p10_p50_p90": [14.951834633162791, 78.54770066861948, 575.2200000000003], "file_ohlc_eq_daily_ohlc_1fen_share": 0.4255}, {"date": "2021-12-21", "n_checked": 2000, "n_rel_gt_1e-3": 2000, "vol_ratio_file_over_first_bar_p10_p50_p90": [14.158217944618668, 68.04740803489301, 459.05378571428747], "file_ohlc_eq_daily_ohlc_1fen_share": 0.371875}, {"date": "2023-10-20", "n_checked": 2000, "n_rel_gt_1e-3": 2000, "vol_ratio_file_over_first_bar_p10_p50_p90": [15.299974169179258, 63.05188466962653, 457.1242628571438], "file_ohlc_eq_daily_ohlc_1fen_share": 0.44375}], "internal_check": [{"date": "2020-02-12", "bars_sh_sz": 3774, "bars_vol_gt0": 3584, "vol_gt0_share": 0.949655537890832, "single_price_share": 1.0, "open_eq_close_share": 1.0}, {"date": "2021-12-21", "bars_sh_sz": 4580, "bars_vol_gt0": 4367, "vol_gt0_share": 0.9534934497816594, "single_price_share": 0.7797114724066865, "open_eq_close_share": 0.8074192809709182}, {"date": "2023-10-20", "bars_sh_sz": 5068, "bars_vol_gt0": 4894, "vol_gt0_share": 0.9656669297553275, "single_price_share": 0.6665304454434001, "open_eq_close_share": 0.7511238250919493}], "note": "vol \u5355\u4f4d\u4e24\u4fa7\u5747\u4e3a\u80a1\u3002\u5b9e\u6d4b\uff1a\u6587\u4ef6 vol \u4e0e\u5206\u949f\u9996 bar \u7ade\u4ef7\u91cf\u7cfb\u7edf\u6027\u4e0d\u7b26\uff08\u6bd4\u503c 5\u2013300 \u500d\uff0c\u65e0\u4e00\u5339\u914d\uff09\uff1b\u6587\u4ef6 OHLC \u4e0e\u65e5\u7ebf OHLC \u4ec5\u7ea640%\uff081 \u5206\u5185\uff09\u4e00\u81f4\u3001\u4e0e\u5206\u949f PM \u7a97\u53e3\u4ea6\u4e0d\u5b8c\u5168\u4e00\u81f4\uff0c\u771f\u5b9e\u8bed\u4e49\u672a\u5b9a\u2014\u2014\u786e\u5b9a\u4e0d\u662f\u5f00\u76d8\u7ade\u4ef7\u64ae\u5408\u8bb0\u5f55\u3002\u9996 bar \u7ade\u4ef7\u91cf\u6539\u4ee5\u5206\u949f\u5305\u5185\u90e8\u8bc1\u636e\uff08\u5355\u4e00\u4ef7\u683c\u5360\u6bd4\u7b49\uff09\u62ab\u9732\u8bed\u4e49\uff1a45\u201372% \u80a1\u7968\u65e5\u9996 bar \u975e\u7eaf\u5355\u70b9\u4ef7\uff0c\u5373 vendor 09:30 bar \u542b\u5c11\u91cf\u6700\u65e9\u8fde\u7eed\u6210\u4ea4\uff0cU6 \u7279\u5f81\u6309\u300c09:30 bar\u91cf\u300d\u89e3\u8bfb\u5e76\u643a\u5e26\u8be5\u8bed\u4e49\u566a\u58f0\u3002\u5224\u636e/\u9608\u503c/\u6c60\u4e0d\u53d8\uff0c\u4ec5\u6838\u9a8c\u62ab\u9732\u53d8\u66f4\u3002"}
+Traceback (most recent call last):
+  File "D:\量化\artifacts\runs\20260918T080205-p2r14-minute-structure-f59f\scripts\01_extract_minute_feats.py", line 473, in <module>
+    main()
+  File "D:\量化\artifacts\runs\20260918T080205-p2r14-minute-structure-f59f\scripts\01_extract_minute_feats.py", line 418, in main
+    "sampled_reshash": identity["sampled_reshash"],
+                       ~~~~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'sampled_reshash'
+[    0.5s] identity fail-closed checks passed
+[    0.7s] resumed from cache: 10 parts, 9245204 rows
+[    0.7s] scan done: 9245204 rows; finalize (med20 + limits)
+[    3.7s] consistency: {"state_seal_rows": 175259, "state_broke_rows": 78565, "state_untouched_rows": 8972978, "state_null_rows_limit_missing": 18402, "pm_touch_true_rows": 160537, "pm_touch_null_rows": 18402, "touch_state_contradictions": 1, "day_high_lt_halfday_high_am": 23116, "day_low_gt_halfday_low_am": 21575, "day_high_eq_halfday_high_am": 6786415}
+[    5.1s] auction crosscheck 2020-02-12: {"date": "2020-02-12", "n_checked": 2000, "n_rel_gt_1e-3": 2000, "vol_ratio_file_over_first_bar_p10_p50_p90": [14.951834633162791, 78.54770066861948, 575.2200000000003], "file_ohlc_eq_daily_ohlc_1fen_share": 0.4255}
+[    5.3s] auction crosscheck 2021-12-21: {"date": "2021-12-21", "n_checked": 2000, "n_rel_gt_1e-3": 2000, "vol_ratio_file_over_first_bar_p10_p50_p90": [14.158217944618668, 68.04740803489301, 459.05378571428747], "file_ohlc_eq_daily_ohlc_1fen_share": 0.371875}
+[    5.4s] auction crosscheck 2023-10-20: {"date": "2023-10-20", "n_checked": 2000, "n_rel_gt_1e-3": 2000, "vol_ratio_file_over_first_bar_p10_p50_p90": [15.299974169179258, 63.05188466962653, 457.1242628571438], "file_ohlc_eq_daily_ohlc_1fen_share": 0.44375}
+[    5.4s] auction crosscheck: {"verdict": "REFUTED_AND_REPLACED_BY_INTERNAL_CHECK", "prereg_assumption": "stk_auction_c \u4e3a\u9996 bar \u7ade\u4ef7\u91cf\u7684\u72ec\u7acb\u8bb0\u5f55\u6e90", "empirics": [{"date": "2020-02-12", "n_checked": 2000, "n_rel_gt_1e-3": 2000, "vol_ratio_file_over_first_bar_p10_p50_p90": [14.951834633162791, 78.54770066861948, 575.2200000000003], "file_ohlc_eq_daily_ohlc_1fen_share": 0.4255}, {"date": "2021-12-21", "n_checked": 2000, "n_rel_gt_1e-3": 2000, "vol_ratio_file_over_first_bar_p10_p50_p90": [14.158217944618668, 68.04740803489301, 459.05378571428747], "file_ohlc_eq_daily_ohlc_1fen_share": 0.371875}, {"date": "2023-10-20", "n_checked": 2000, "n_rel_gt_1e-3": 2000, "vol_ratio_file_over_first_bar_p10_p50_p90": [15.299974169179258, 63.05188466962653, 457.1242628571438], "file_ohlc_eq_daily_ohlc_1fen_share": 0.44375}], "internal_check": [{"date": "2020-02-12", "bars_sh_sz": 3774, "bars_vol_gt0": 3584, "vol_gt0_share": 0.949655537890832, "single_price_share": 1.0, "open_eq_close_share": 1.0}, {"date": "2021-12-21", "bars_sh_sz": 4580, "bars_vol_gt0": 4367, "vol_gt0_share": 0.9534934497816594, "single_price_share": 0.7797114724066865, "open_eq_close_share": 0.8074192809709182}, {"date": "2023-10-20", "bars_sh_sz": 5068, "bars_vol_gt0": 4894, "vol_gt0_share": 0.9656669297553275, "single_price_share": 0.6665304454434001, "open_eq_close_share": 0.7511238250919493}], "note": "vol \u5355\u4f4d\u4e24\u4fa7\u5747\u4e3a\u80a1\u3002\u5b9e\u6d4b\uff1a\u6587\u4ef6 vol \u4e0e\u5206\u949f\u9996 bar \u7ade\u4ef7\u91cf\u7cfb\u7edf\u6027\u4e0d\u7b26\uff08\u6bd4\u503c 5\u2013300 \u500d\uff0c\u65e0\u4e00\u5339\u914d\uff09\uff1b\u6587\u4ef6 OHLC \u4e0e\u65e5\u7ebf OHLC \u4ec5\u7ea640%\uff081 \u5206\u5185\uff09\u4e00\u81f4\u3001\u4e0e\u5206\u949f PM \u7a97\u53e3\u4ea6\u4e0d\u5b8c\u5168\u4e00\u81f4\uff0c\u771f\u5b9e\u8bed\u4e49\u672a\u5b9a\u2014\u2014\u786e\u5b9a\u4e0d\u662f\u5f00\u76d8\u7ade\u4ef7\u64ae\u5408\u8bb0\u5f55\u3002\u9996 bar \u7ade\u4ef7\u91cf\u6539\u4ee5\u5206\u949f\u5305\u5185\u90e8\u8bc1\u636e\uff08\u5355\u4e00\u4ef7\u683c\u5360\u6bd4\u7b49\uff09\u62ab\u9732\u8bed\u4e49\uff1a45\u201372% \u80a1\u7968\u65e5\u9996 bar \u975e\u7eaf\u5355\u70b9\u4ef7\uff0c\u5373 vendor 09:30 bar \u542b\u5c11\u91cf\u6700\u65e9\u8fde\u7eed\u6210\u4ea4\uff0cU6 \u7279\u5f81\u6309\u300c09:30 bar\u91cf\u300d\u89e3\u8bfb\u5e76\u643a\u5e26\u8be5\u8bed\u4e49\u566a\u58f0\u3002\u5224\u636e/\u9608\u503c/\u6c60\u4e0d\u53d8\uff0c\u4ec5\u6838\u9a8c\u62ab\u9732\u53d8\u66f4\u3002"}
+[    5.4s] table written: 9245204 rows sha256=9404bd0cc9fcb785... elapsed=5s peak=6.08GiB

@@ -1,0 +1,14 @@
+你是 F2 首轮因子批量的 A 族（量价，25 个因子）实施代理。工作目录 D:\量化（Windows，Git Bash，python 用 D:/量化/.venv，polars 1.44）。先读 D:\量化\AGENTS.md。
+
+## 权威文件（先读，逐字遵守）
+- 冻结预登记：`docs/research/exp-20260919-factor-round-f2r1-prereg.md`（§1 统一口径、§2 淘汰标准、§3-A 因子表 25 个、§5 风险）——你只实施 A01..A25。
+- 评估 harness：`src/quant/factors/eval.py`（`evaluate_factor`/`FactorEvalConfig`；先读其 docstring 与 `artifacts/runs/20260919T171500-f1-eval-harness-main/delivery_report.md` 的 API 节）。
+- 数据：`data/processed/baostock-daily-20260917/daily_2015_2024.parquet`（16.3M 行；date 为 temporal；close/preclose/open/high/low/volume/amount；复权收益用 close/preclose 链）。
+
+## 任务
+1. 输出目录 `artifacts/runs/20260919T180000-f2r1-factor-batch/outputs/A_price/`（自行 mkdir -p）。**评估窗 dev 2015–2020，月频月末信号，h=20**；评估配置逐字 `FactorEvalConfig(horizon_days=20, n_groups=10, eval_freq="M", min_history_rows=60)`（池默认）。
+2. 月末网格 = 面板 dev 窗内每月最后交易日（全市场并集日历）。逐因子按预登记 §3-A 冻结公式计算 `(symbol, signal_date, value)`（signal_date=月末；因子只允许用 ≤该日数据，无前视）；因子帧先写 `A<NN>.parquet`（F3 复用），再跑 evaluate_factor。
+3. 每因子输出 `A<NN>.json`（完整评估字典 + 公式一行 + 试验计数=1）。全部 25 个一次性报告，无静默淘汰；某因子计算失败 → 如实留 fail 记录，不修数不跳过。
+4. 写 `family_report.md`：逐因子 IC 均值/t 值/单调性/2015 逐年/覆盖/换手 一行表 + 按 §2 标准的初判存活列（主对话终裁）+ 实现口径披露（复权链、月末定义、窗口边界）。
+5. 纪律：data/ 只读；不做 git；中文 Write 工具；零策略回测零盈利表述；预算 ≤60 分钟；冻结断言（因子表 signal_date ≤2024-12-31，且只评 dev 窗）。
+6. 最终消息：25 因子完成数、初判存活 ID 列表（按 §2 逐字）、最显著的 3 个（IC/t 值）、实现披露要点、输出目录路径。

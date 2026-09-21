@@ -1,0 +1,4124 @@
+{
+ "EW": [
+  {
+   "month": "2015-01-30",
+   "members": [
+    "sh.601677",
+    "sz.000708",
+    "sz.002664"
+   ],
+   "entries": [
+    "sh.601677",
+    "sz.000708",
+    "sz.002664"
+   ],
+   "exits": [],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.601677": 1,
+    "sz.002664": 2,
+    "sz.000708": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 0,
+   "info_n_left": 0,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-02-27",
+   "members": [
+    "sh.601677",
+    "sz.000418",
+    "sz.002508"
+   ],
+   "entries": [
+    "sz.000418",
+    "sz.002508"
+   ],
+   "exits": [
+    "sz.000708",
+    "sz.002664"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.601677": 1,
+    "sz.002508": 2,
+    "sz.000418": 3
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-03-31",
+   "members": [
+    "sh.601677",
+    "sz.000418",
+    "sz.002601"
+   ],
+   "entries": [
+    "sz.002601"
+   ],
+   "exits": [
+    "sz.002508"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.601677": 3,
+    "sz.000418": 1,
+    "sz.002601": 2
+   },
+   "info_n_kept": 2,
+   "info_n_entrants": 1,
+   "info_n_prev": 3,
+   "info_n_left": 1,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-04-30",
+   "members": [
+    "sz.000639",
+    "sz.002537",
+    "sz.002662"
+   ],
+   "entries": [
+    "sz.000639",
+    "sz.002537",
+    "sz.002662"
+   ],
+   "exits": [
+    "sh.601677",
+    "sz.000418",
+    "sz.002601"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002537": 1,
+    "sz.000639": 2,
+    "sz.002662": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-05-29",
+   "members": [
+    "sh.600742",
+    "sz.000418",
+    "sz.000776"
+   ],
+   "entries": [
+    "sh.600742",
+    "sz.000418",
+    "sz.000776"
+   ],
+   "exits": [
+    "sz.000639",
+    "sz.002537",
+    "sz.002662"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.000776": 1,
+    "sz.000418": 2,
+    "sh.600742": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-06-30",
+   "members": [
+    "sz.000501",
+    "sz.000776",
+    "sz.002399"
+   ],
+   "entries": [
+    "sz.000501",
+    "sz.002399"
+   ],
+   "exits": [
+    "sh.600742",
+    "sz.000418"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.000776": 6,
+    "sz.002399": 1,
+    "sz.000501": 2
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-07-31",
+   "members": [
+    "sz.000501",
+    "sz.002563",
+    "sz.002588"
+   ],
+   "entries": [
+    "sz.002563",
+    "sz.002588"
+   ],
+   "exits": [
+    "sz.000776",
+    "sz.002399"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.000501": 4,
+    "sz.002588": 1,
+    "sz.002563": 2
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-08-31",
+   "members": [
+    "sh.601555",
+    "sh.601688",
+    "sh.603369"
+   ],
+   "entries": [
+    "sh.601555",
+    "sh.601688",
+    "sh.603369"
+   ],
+   "exits": [
+    "sz.000501",
+    "sz.002563",
+    "sz.002588"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.603369": 1,
+    "sh.601688": 2,
+    "sh.601555": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-09-30",
+   "members": [
+    "sz.000501",
+    "sz.002317",
+    "sz.002595"
+   ],
+   "entries": [
+    "sz.000501",
+    "sz.002317",
+    "sz.002595"
+   ],
+   "exits": [
+    "sh.601555",
+    "sh.601688",
+    "sh.603369"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.000501": 1,
+    "sz.002317": 2,
+    "sz.002595": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-10-30",
+   "members": [
+    "sh.600066",
+    "sz.000501",
+    "sz.000776"
+   ],
+   "entries": [
+    "sh.600066",
+    "sz.000776"
+   ],
+   "exits": [
+    "sz.002317",
+    "sz.002595"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.000501": 3,
+    "sh.600066": 1,
+    "sz.000776": 2
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-11-30",
+   "members": [
+    "sh.600066",
+    "sz.000418",
+    "sz.000615"
+   ],
+   "entries": [
+    "sz.000418",
+    "sz.000615"
+   ],
+   "exits": [
+    "sz.000501",
+    "sz.000776"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.600066": 2,
+    "sz.000418": 1,
+    "sz.000615": 3
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-12-31",
+   "members": [
+    "sh.600066",
+    "sz.000615",
+    "sz.002372"
+   ],
+   "entries": [
+    "sz.002372"
+   ],
+   "exits": [
+    "sz.000418"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.600066": 2,
+    "sz.000615": 3,
+    "sz.002372": 1
+   },
+   "info_n_kept": 2,
+   "info_n_entrants": 1,
+   "info_n_prev": 3,
+   "info_n_left": 1,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-01-29",
+   "members": [
+    "sh.600642",
+    "sh.601633",
+    "sz.002538"
+   ],
+   "entries": [
+    "sh.600642",
+    "sh.601633",
+    "sz.002538"
+   ],
+   "exits": [
+    "sh.600066",
+    "sz.000615",
+    "sz.002372"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.601633": 1,
+    "sz.002538": 2,
+    "sh.600642": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-02-29",
+   "members": [
+    "sh.600386",
+    "sz.002267",
+    "sz.002763"
+   ],
+   "entries": [
+    "sh.600386",
+    "sz.002267",
+    "sz.002763"
+   ],
+   "exits": [
+    "sh.600642",
+    "sh.601633",
+    "sz.002538"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.600386": 1,
+    "sz.002763": 2,
+    "sz.002267": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-03-31",
+   "members": [
+    "sh.600062",
+    "sh.600066",
+    "sh.603885"
+   ],
+   "entries": [
+    "sh.600062",
+    "sh.600066",
+    "sh.603885"
+   ],
+   "exits": [
+    "sh.600386",
+    "sz.002267",
+    "sz.002763"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.600062": 1,
+    "sh.603885": 2,
+    "sh.600066": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-04-29",
+   "members": [
+    "sh.600039",
+    "sh.601186",
+    "sz.002487"
+   ],
+   "entries": [
+    "sh.600039",
+    "sh.601186",
+    "sz.002487"
+   ],
+   "exits": [
+    "sh.600062",
+    "sh.600066",
+    "sh.603885"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002487": 1,
+    "sh.600039": 2,
+    "sh.601186": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-05-31",
+   "members": [
+    "sh.600729",
+    "sz.002271",
+    "sz.002701"
+   ],
+   "entries": [
+    "sh.600729",
+    "sz.002271",
+    "sz.002701"
+   ],
+   "exits": [
+    "sh.600039",
+    "sh.601186",
+    "sz.002487"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.600729": 1,
+    "sz.002271": 2,
+    "sz.002701": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-06-30",
+   "members": [
+    "sh.600093",
+    "sz.002437",
+    "sz.002602"
+   ],
+   "entries": [
+    "sh.600093",
+    "sz.002437",
+    "sz.002602"
+   ],
+   "exits": [
+    "sh.600729",
+    "sz.002271",
+    "sz.002701"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002602": 1,
+    "sz.002437": 2,
+    "sh.600093": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-07-29",
+   "members": [
+    "sh.603006",
+    "sz.002437",
+    "sz.002602"
+   ],
+   "entries": [
+    "sh.603006"
+   ],
+   "exits": [
+    "sh.600093"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002602": 5,
+    "sz.002437": 1,
+    "sh.603006": 2
+   },
+   "info_n_kept": 2,
+   "info_n_entrants": 1,
+   "info_n_prev": 3,
+   "info_n_left": 1,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-08-31",
+   "members": [
+    "sh.600482",
+    "sh.601799",
+    "sz.002372"
+   ],
+   "entries": [
+    "sh.600482",
+    "sh.601799",
+    "sz.002372"
+   ],
+   "exits": [
+    "sh.603006",
+    "sz.002437",
+    "sz.002602"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002372": 1,
+    "sh.600482": 2,
+    "sh.601799": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-09-30",
+   "members": [
+    "sz.000587",
+    "sz.002477",
+    "sz.002714"
+   ],
+   "entries": [
+    "sz.000587",
+    "sz.002477",
+    "sz.002714"
+   ],
+   "exits": [
+    "sh.600482",
+    "sh.601799",
+    "sz.002372"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002714": 1,
+    "sz.002477": 2,
+    "sz.000587": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-10-31",
+   "members": [
+    "sh.600482",
+    "sh.600690",
+    "sz.000761"
+   ],
+   "entries": [
+    "sh.600482",
+    "sh.600690",
+    "sz.000761"
+   ],
+   "exits": [
+    "sz.000587",
+    "sz.002477",
+    "sz.002714"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.000761": 1,
+    "sh.600690": 2,
+    "sh.600482": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-11-30",
+   "members": [
+    "sh.600258",
+    "sz.000550",
+    "sz.002001"
+   ],
+   "entries": [
+    "sh.600258",
+    "sz.000550",
+    "sz.002001"
+   ],
+   "exits": [
+    "sh.600482",
+    "sh.600690",
+    "sz.000761"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.600258": 1,
+    "sz.002001": 2,
+    "sz.000550": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-12-30",
+   "members": [
+    "sh.600258",
+    "sh.600278",
+    "sz.000550"
+   ],
+   "entries": [
+    "sh.600278"
+   ],
+   "exits": [
+    "sz.002001"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.600258": 1,
+    "sz.000550": 2,
+    "sh.600278": 3
+   },
+   "info_n_kept": 2,
+   "info_n_entrants": 1,
+   "info_n_prev": 3,
+   "info_n_left": 1,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-01-26",
+   "members": [
+    "sh.600216",
+    "sh.600383",
+    "sz.002477"
+   ],
+   "entries": [
+    "sh.600216",
+    "sh.600383",
+    "sz.002477"
+   ],
+   "exits": [
+    "sh.600258",
+    "sh.600278",
+    "sz.000550"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.600216": 1,
+    "sh.600383": 2,
+    "sz.002477": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-02-28",
+   "members": [
+    "sh.600383",
+    "sh.603868",
+    "sz.000550"
+   ],
+   "entries": [
+    "sh.603868",
+    "sz.000550"
+   ],
+   "exits": [
+    "sh.600216",
+    "sz.002477"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.600383": 4,
+    "sh.603868": 1,
+    "sz.000550": 2
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-03-31",
+   "members": [
+    "sz.000011",
+    "sz.000031",
+    "sz.000936"
+   ],
+   "entries": [
+    "sz.000011",
+    "sz.000031",
+    "sz.000936"
+   ],
+   "exits": [
+    "sh.600383",
+    "sh.603868",
+    "sz.000550"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.000011": 1,
+    "sz.000031": 2,
+    "sz.000936": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-04-28",
+   "members": [
+    "sh.601011",
+    "sz.000587",
+    "sz.002133"
+   ],
+   "entries": [
+    "sh.601011",
+    "sz.000587",
+    "sz.002133"
+   ],
+   "exits": [
+    "sz.000011",
+    "sz.000031",
+    "sz.000936"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.000587": 1,
+    "sh.601011": 2,
+    "sz.002133": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-05-31",
+   "members": [
+    "sz.000525",
+    "sz.000901",
+    "sz.000951"
+   ],
+   "entries": [
+    "sz.000525",
+    "sz.000901",
+    "sz.000951"
+   ],
+   "exits": [
+    "sh.601011",
+    "sz.000587",
+    "sz.002133"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.000525": 1,
+    "sz.000951": 2,
+    "sz.000901": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-06-30",
+   "members": [
+    "sz.000525",
+    "sz.002582",
+    "sz.002668"
+   ],
+   "entries": [
+    "sz.002582",
+    "sz.002668"
+   ],
+   "exits": [
+    "sz.000901",
+    "sz.000951"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.000525": 5,
+    "sz.002668": 1,
+    "sz.002582": 2
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-07-31",
+   "members": [
+    "sh.603328",
+    "sh.603858",
+    "sz.002831"
+   ],
+   "entries": [
+    "sh.603328",
+    "sh.603858",
+    "sz.002831"
+   ],
+   "exits": [
+    "sz.000525",
+    "sz.002582",
+    "sz.002668"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.603858": 1,
+    "sh.603328": 2,
+    "sz.002831": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-08-31",
+   "members": [
+    "sh.600612",
+    "sh.600859",
+    "sh.601222"
+   ],
+   "entries": [
+    "sh.600612",
+    "sh.600859",
+    "sh.601222"
+   ],
+   "exits": [
+    "sh.603328",
+    "sh.603858",
+    "sz.002831"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.600859": 1,
+    "sh.600612": 2,
+    "sh.601222": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-09-29",
+   "members": [
+    "sh.600612",
+    "sh.601689",
+    "sz.002258"
+   ],
+   "entries": [
+    "sh.601689",
+    "sz.002258"
+   ],
+   "exits": [
+    "sh.600859",
+    "sh.601222"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.600612": 1,
+    "sz.002258": 2,
+    "sh.601689": 3
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-10-31",
+   "members": [
+    "sh.600177",
+    "sh.600395",
+    "sz.002648"
+   ],
+   "entries": [
+    "sh.600177",
+    "sh.600395",
+    "sz.002648"
+   ],
+   "exits": [
+    "sh.600612",
+    "sh.601689",
+    "sz.002258"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.600177": 1,
+    "sh.600395": 2,
+    "sz.002648": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-11-30",
+   "members": [
+    "sh.600160",
+    "sh.600177",
+    "sz.002567"
+   ],
+   "entries": [
+    "sh.600160",
+    "sz.002567"
+   ],
+   "exits": [
+    "sh.600395",
+    "sz.002648"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.600177": 3,
+    "sh.600160": 1,
+    "sz.002567": 2
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-12-29",
+   "members": [
+    "sh.600177",
+    "sh.600729",
+    "sz.002354"
+   ],
+   "entries": [
+    "sh.600729",
+    "sz.002354"
+   ],
+   "exits": [
+    "sh.600160",
+    "sz.002567"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.600177": 1,
+    "sh.600729": 2,
+    "sz.002354": 3
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-01-31",
+   "members": [
+    "sh.600120",
+    "sh.603387",
+    "sz.002859"
+   ],
+   "entries": [
+    "sh.600120",
+    "sh.603387",
+    "sz.002859"
+   ],
+   "exits": [
+    "sh.600177",
+    "sh.600729",
+    "sz.002354"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.600120": 1,
+    "sh.603387": 2,
+    "sz.002859": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-02-28",
+   "members": [
+    "sh.600120",
+    "sz.000980",
+    "sz.000990"
+   ],
+   "entries": [
+    "sz.000980",
+    "sz.000990"
+   ],
+   "exits": [
+    "sh.603387",
+    "sz.002859"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.600120": 1,
+    "sz.000980": 2,
+    "sz.000990": 3
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-03-30",
+   "members": [
+    "sh.600123",
+    "sh.600177",
+    "sz.000980"
+   ],
+   "entries": [
+    "sh.600123",
+    "sh.600177"
+   ],
+   "exits": [
+    "sh.600120",
+    "sz.000990"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.000980": 3,
+    "sh.600123": 1,
+    "sh.600177": 2
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-04-27",
+   "members": [
+    "sh.600655",
+    "sh.601006",
+    "sz.002562"
+   ],
+   "entries": [
+    "sh.600655",
+    "sh.601006",
+    "sz.002562"
+   ],
+   "exits": [
+    "sh.600123",
+    "sh.600177",
+    "sz.000980"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002562": 1,
+    "sh.601006": 2,
+    "sh.600655": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-05-31",
+   "members": [
+    "sh.600366",
+    "sh.601788",
+    "sz.002251"
+   ],
+   "entries": [
+    "sh.600366",
+    "sh.601788",
+    "sz.002251"
+   ],
+   "exits": [
+    "sh.600655",
+    "sh.601006",
+    "sz.002562"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.600366": 1,
+    "sz.002251": 2,
+    "sh.601788": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-06-29",
+   "members": [
+    "sh.600160",
+    "sh.600172",
+    "sz.002251"
+   ],
+   "entries": [
+    "sh.600160",
+    "sh.600172"
+   ],
+   "exits": [
+    "sh.600366",
+    "sh.601788"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002251": 2,
+    "sh.600160": 1,
+    "sh.600172": 3
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-07-31",
+   "members": [
+    "sz.000623",
+    "sz.002900",
+    "sz.002923"
+   ],
+   "entries": [
+    "sz.000623",
+    "sz.002900",
+    "sz.002923"
+   ],
+   "exits": [
+    "sh.600160",
+    "sh.600172",
+    "sz.002251"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002900": 1,
+    "sz.002923": 2,
+    "sz.000623": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-08-31",
+   "members": [
+    "sh.600699",
+    "sh.601633",
+    "sz.002626"
+   ],
+   "entries": [
+    "sh.600699",
+    "sh.601633",
+    "sz.002626"
+   ],
+   "exits": [
+    "sz.000623",
+    "sz.002900",
+    "sz.002923"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.601633": 1,
+    "sz.002626": 2,
+    "sh.600699": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-09-28",
+   "members": [
+    "sh.600699",
+    "sz.002626",
+    "sz.002798"
+   ],
+   "entries": [
+    "sz.002798"
+   ],
+   "exits": [
+    "sh.601633"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002626": 6,
+    "sh.600699": 3,
+    "sz.002798": 1
+   },
+   "info_n_kept": 2,
+   "info_n_entrants": 1,
+   "info_n_prev": 3,
+   "info_n_left": 1,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-10-31",
+   "members": [
+    "sh.601588",
+    "sh.603026",
+    "sz.000778"
+   ],
+   "entries": [
+    "sh.601588",
+    "sh.603026",
+    "sz.000778"
+   ],
+   "exits": [
+    "sh.600699",
+    "sz.002626",
+    "sz.002798"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.603026": 1,
+    "sz.000778": 2,
+    "sh.601588": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-11-30",
+   "members": [
+    "sh.603225",
+    "sz.000157",
+    "sz.002020"
+   ],
+   "entries": [
+    "sh.603225",
+    "sz.000157",
+    "sz.002020"
+   ],
+   "exits": [
+    "sh.601588",
+    "sh.603026",
+    "sz.000778"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002020": 1,
+    "sz.000157": 2,
+    "sh.603225": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-12-28",
+   "members": [
+    "sh.600160",
+    "sz.000778",
+    "sz.000898"
+   ],
+   "entries": [
+    "sh.600160",
+    "sz.000778",
+    "sz.000898"
+   ],
+   "exits": [
+    "sh.603225",
+    "sz.000157",
+    "sz.002020"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.000898": 1,
+    "sz.000778": 2,
+    "sh.600160": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-01-31",
+   "members": [
+    "sh.600062",
+    "sh.600623",
+    "sh.600668"
+   ],
+   "entries": [
+    "sh.600062",
+    "sh.600623",
+    "sh.600668"
+   ],
+   "exits": [
+    "sh.600160",
+    "sz.000778",
+    "sz.000898"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.600668": 1,
+    "sh.600623": 2,
+    "sh.600062": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-02-28",
+   "members": [
+    "sh.600612",
+    "sh.601113",
+    "sz.000036"
+   ],
+   "entries": [
+    "sh.600612",
+    "sh.601113",
+    "sz.000036"
+   ],
+   "exits": [
+    "sh.600062",
+    "sh.600623",
+    "sh.600668"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.601113": 1,
+    "sz.000036": 2,
+    "sh.600612": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-03-29",
+   "members": [
+    "sh.603968",
+    "sz.000042",
+    "sz.002101"
+   ],
+   "entries": [
+    "sh.603968",
+    "sz.000042",
+    "sz.002101"
+   ],
+   "exits": [
+    "sh.600612",
+    "sh.601113",
+    "sz.000036"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002101": 1,
+    "sh.603968": 2,
+    "sz.000042": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-04-30",
+   "members": [
+    "sh.603313",
+    "sh.603810",
+    "sz.002267"
+   ],
+   "entries": [
+    "sh.603313",
+    "sh.603810",
+    "sz.002267"
+   ],
+   "exits": [
+    "sh.603968",
+    "sz.000042",
+    "sz.002101"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.603313": 1,
+    "sz.002267": 2,
+    "sh.603810": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-05-31",
+   "members": [
+    "sh.603393",
+    "sz.002352",
+    "sz.002831"
+   ],
+   "entries": [
+    "sh.603393",
+    "sz.002352",
+    "sz.002831"
+   ],
+   "exits": [
+    "sh.603313",
+    "sh.603810",
+    "sz.002267"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002831": 1,
+    "sh.603393": 2,
+    "sz.002352": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-06-28",
+   "members": [
+    "sz.002746",
+    "sz.002757",
+    "sz.002831"
+   ],
+   "entries": [
+    "sz.002746",
+    "sz.002757"
+   ],
+   "exits": [
+    "sh.603393",
+    "sz.002352"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002831": 3,
+    "sz.002746": 1,
+    "sz.002757": 2
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-07-31",
+   "members": [
+    "sh.600755",
+    "sh.603538",
+    "sh.603858"
+   ],
+   "entries": [
+    "sh.600755",
+    "sh.603538",
+    "sh.603858"
+   ],
+   "exits": [
+    "sz.002746",
+    "sz.002757",
+    "sz.002831"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.603538": 1,
+    "sh.603858": 2,
+    "sh.600755": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-08-30",
+   "members": [
+    "sh.600020",
+    "sz.000732",
+    "sz.002798"
+   ],
+   "entries": [
+    "sh.600020",
+    "sz.000732",
+    "sz.002798"
+   ],
+   "exits": [
+    "sh.600755",
+    "sh.603538",
+    "sh.603858"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.000732": 1,
+    "sz.002798": 2,
+    "sh.600020": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-09-30",
+   "members": [
+    "sh.600859",
+    "sz.002128",
+    "sz.002746"
+   ],
+   "entries": [
+    "sh.600859",
+    "sz.002128",
+    "sz.002746"
+   ],
+   "exits": [
+    "sh.600020",
+    "sz.000732",
+    "sz.002798"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002746": 1,
+    "sh.600859": 2,
+    "sz.002128": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-10-31",
+   "members": [
+    "sh.603508",
+    "sz.000966",
+    "sz.002128"
+   ],
+   "entries": [
+    "sh.603508",
+    "sz.000966"
+   ],
+   "exits": [
+    "sh.600859",
+    "sz.002746"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002128": 2,
+    "sh.603508": 1,
+    "sz.000966": 3
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-11-29",
+   "members": [
+    "sh.600346",
+    "sz.002746",
+    "sz.002869"
+   ],
+   "entries": [
+    "sh.600346",
+    "sz.002746",
+    "sz.002869"
+   ],
+   "exits": [
+    "sh.603508",
+    "sz.000966",
+    "sz.002128"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002869": 1,
+    "sz.002746": 2,
+    "sh.600346": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-12-31",
+   "members": [
+    "sh.603368",
+    "sh.603886",
+    "sz.002746"
+   ],
+   "entries": [
+    "sh.603368",
+    "sh.603886"
+   ],
+   "exits": [
+    "sh.600346",
+    "sz.002869"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002746": 1,
+    "sh.603368": 2,
+    "sh.603886": 3
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-01-23",
+   "members": [
+    "sz.000708",
+    "sz.002234",
+    "sz.002746"
+   ],
+   "entries": [
+    "sz.000708",
+    "sz.002234"
+   ],
+   "exits": [
+    "sh.603368",
+    "sh.603886"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002746": 1,
+    "sz.002234": 2,
+    "sz.000708": 3
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-02-28",
+   "members": [
+    "sh.600761",
+    "sh.601717",
+    "sz.000402"
+   ],
+   "entries": [
+    "sh.600761",
+    "sh.601717",
+    "sz.000402"
+   ],
+   "exits": [
+    "sz.000708",
+    "sz.002234",
+    "sz.002746"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.000402": 1,
+    "sh.600761": 2,
+    "sh.601717": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-03-31",
+   "members": [
+    "sh.600761",
+    "sh.603313",
+    "sh.603360"
+   ],
+   "entries": [
+    "sh.603313",
+    "sh.603360"
+   ],
+   "exits": [
+    "sh.601717",
+    "sz.000402"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.600761": 6,
+    "sh.603360": 1,
+    "sh.603313": 2
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-04-30",
+   "members": [
+    "sh.601229",
+    "sh.603238",
+    "sz.000983"
+   ],
+   "entries": [
+    "sh.601229",
+    "sh.603238",
+    "sz.000983"
+   ],
+   "exits": [
+    "sh.600761",
+    "sh.603313",
+    "sh.603360"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.601229": 1,
+    "sz.000983": 2,
+    "sh.603238": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-05-29",
+   "members": [
+    "sh.600390",
+    "sh.603238",
+    "sz.000703"
+   ],
+   "entries": [
+    "sh.600390",
+    "sz.000703"
+   ],
+   "exits": [
+    "sh.601229",
+    "sz.000983"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.603238": 1,
+    "sz.000703": 2,
+    "sh.600390": 3
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-06-30",
+   "members": [
+    "sh.601328",
+    "sh.603238",
+    "sz.000703"
+   ],
+   "entries": [
+    "sh.601328"
+   ],
+   "exits": [
+    "sh.600390"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.603238": 4,
+    "sz.000703": 1,
+    "sh.601328": 2
+   },
+   "info_n_kept": 2,
+   "info_n_entrants": 1,
+   "info_n_prev": 3,
+   "info_n_left": 1,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-07-31",
+   "members": [
+    "sh.601028",
+    "sh.603238",
+    "sz.002778"
+   ],
+   "entries": [
+    "sh.601028",
+    "sz.002778"
+   ],
+   "exits": [
+    "sh.601328",
+    "sz.000703"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.603238": 1,
+    "sz.002778": 2,
+    "sh.601028": 3
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-08-31",
+   "members": [
+    "sh.603238",
+    "sz.002432",
+    "sz.002486"
+   ],
+   "entries": [
+    "sz.002432",
+    "sz.002486"
+   ],
+   "exits": [
+    "sh.601028",
+    "sz.002778"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.603238": 1,
+    "sz.002432": 2,
+    "sz.002486": 3
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-09-30",
+   "members": [
+    "sz.002223",
+    "sz.002432",
+    "sz.002486"
+   ],
+   "entries": [
+    "sz.002223"
+   ],
+   "exits": [
+    "sh.603238"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002432": 1,
+    "sz.002486": 2,
+    "sz.002223": 3
+   },
+   "info_n_kept": 2,
+   "info_n_entrants": 1,
+   "info_n_prev": 3,
+   "info_n_left": 1,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-10-30",
+   "members": [
+    "sz.002223",
+    "sz.002432",
+    "sz.002980"
+   ],
+   "entries": [
+    "sz.002980"
+   ],
+   "exits": [
+    "sz.002486"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002432": 1,
+    "sz.002223": 3,
+    "sz.002980": 2
+   },
+   "info_n_kept": 2,
+   "info_n_entrants": 1,
+   "info_n_prev": 3,
+   "info_n_left": 1,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-11-30",
+   "members": [
+    "sz.002223",
+    "sz.002432",
+    "sz.002932"
+   ],
+   "entries": [
+    "sz.002932"
+   ],
+   "exits": [
+    "sz.002980"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002432": 1,
+    "sz.002223": 4,
+    "sz.002932": 2
+   },
+   "info_n_kept": 2,
+   "info_n_entrants": 1,
+   "info_n_prev": 3,
+   "info_n_left": 1,
+   "info_n_cash_seats": 0
+  }
+ ],
+ "ICW": [
+  {
+   "month": "2015-01-30",
+   "members": [
+    "sh.600307",
+    "sh.601677",
+    "sz.002664"
+   ],
+   "entries": [
+    "sh.600307",
+    "sh.601677",
+    "sz.002664"
+   ],
+   "exits": [],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.600307": 1,
+    "sh.601677": 2,
+    "sz.002664": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 0,
+   "info_n_left": 0,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-02-27",
+   "members": [
+    "sh.600697",
+    "sh.601677",
+    "sz.002508"
+   ],
+   "entries": [
+    "sh.600697",
+    "sz.002508"
+   ],
+   "exits": [
+    "sh.600307",
+    "sz.002664"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.601677": 2,
+    "sz.002508": 1,
+    "sh.600697": 3
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-03-31",
+   "members": [
+    "sh.601233",
+    "sz.000418",
+    "sz.002601"
+   ],
+   "entries": [
+    "sh.601233",
+    "sz.000418",
+    "sz.002601"
+   ],
+   "exits": [
+    "sh.600697",
+    "sh.601677",
+    "sz.002508"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.000418": 1,
+    "sz.002601": 2,
+    "sh.601233": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-04-30",
+   "members": [
+    "sz.000639",
+    "sz.002537",
+    "sz.002662"
+   ],
+   "entries": [
+    "sz.000639",
+    "sz.002537",
+    "sz.002662"
+   ],
+   "exits": [
+    "sh.601233",
+    "sz.000418",
+    "sz.002601"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002537": 1,
+    "sz.000639": 2,
+    "sz.002662": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-05-29",
+   "members": [
+    "sz.000418",
+    "sz.002372",
+    "sz.002557"
+   ],
+   "entries": [
+    "sz.000418",
+    "sz.002372",
+    "sz.002557"
+   ],
+   "exits": [
+    "sz.000639",
+    "sz.002537",
+    "sz.002662"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002372": 1,
+    "sz.000418": 2,
+    "sz.002557": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-06-30",
+   "members": [
+    "sh.603456",
+    "sz.002281",
+    "sz.002399"
+   ],
+   "entries": [
+    "sh.603456",
+    "sz.002281",
+    "sz.002399"
+   ],
+   "exits": [
+    "sz.000418",
+    "sz.002372",
+    "sz.002557"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002281": 1,
+    "sz.002399": 2,
+    "sh.603456": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-07-31",
+   "members": [
+    "sz.002563",
+    "sz.002588",
+    "sz.002597"
+   ],
+   "entries": [
+    "sz.002563",
+    "sz.002588",
+    "sz.002597"
+   ],
+   "exits": [
+    "sh.603456",
+    "sz.002281",
+    "sz.002399"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002563": 1,
+    "sz.002597": 2,
+    "sz.002588": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-08-31",
+   "members": [
+    "sh.600885",
+    "sh.603369",
+    "sz.002393"
+   ],
+   "entries": [
+    "sh.600885",
+    "sh.603369",
+    "sz.002393"
+   ],
+   "exits": [
+    "sz.002563",
+    "sz.002588",
+    "sz.002597"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.603369": 1,
+    "sh.600885": 2,
+    "sz.002393": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-09-30",
+   "members": [
+    "sh.600885",
+    "sz.000501",
+    "sz.002274"
+   ],
+   "entries": [
+    "sz.000501",
+    "sz.002274"
+   ],
+   "exits": [
+    "sh.603369",
+    "sz.002393"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.600885": 6,
+    "sz.002274": 1,
+    "sz.000501": 2
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-10-30",
+   "members": [
+    "sh.600066",
+    "sh.600885",
+    "sz.000501"
+   ],
+   "entries": [
+    "sh.600066"
+   ],
+   "exits": [
+    "sz.002274"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.600885": 1,
+    "sz.000501": 4,
+    "sh.600066": 2
+   },
+   "info_n_kept": 2,
+   "info_n_entrants": 1,
+   "info_n_prev": 3,
+   "info_n_left": 1,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-11-30",
+   "members": [
+    "sh.600066",
+    "sh.600885",
+    "sz.000418"
+   ],
+   "entries": [
+    "sz.000418"
+   ],
+   "exits": [
+    "sz.000501"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.600885": 3,
+    "sh.600066": 4,
+    "sz.000418": 1
+   },
+   "info_n_kept": 2,
+   "info_n_entrants": 1,
+   "info_n_prev": 3,
+   "info_n_left": 1,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2015-12-31",
+   "members": [
+    "sh.600066",
+    "sh.600885",
+    "sz.002372"
+   ],
+   "entries": [
+    "sz.002372"
+   ],
+   "exits": [
+    "sz.000418"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.600885": 2,
+    "sh.600066": 4,
+    "sz.002372": 1
+   },
+   "info_n_kept": 2,
+   "info_n_entrants": 1,
+   "info_n_prev": 3,
+   "info_n_left": 1,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-01-29",
+   "members": [
+    "sh.601633",
+    "sz.002258",
+    "sz.002538"
+   ],
+   "entries": [
+    "sh.601633",
+    "sz.002258",
+    "sz.002538"
+   ],
+   "exits": [
+    "sh.600066",
+    "sh.600885",
+    "sz.002372"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002538": 1,
+    "sh.601633": 2,
+    "sz.002258": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-02-29",
+   "members": [
+    "sh.600386",
+    "sz.002267",
+    "sz.002588"
+   ],
+   "entries": [
+    "sh.600386",
+    "sz.002267",
+    "sz.002588"
+   ],
+   "exits": [
+    "sh.601633",
+    "sz.002258",
+    "sz.002538"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.600386": 1,
+    "sz.002267": 2,
+    "sz.002588": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-03-31",
+   "members": [
+    "sh.600062",
+    "sh.600529",
+    "sz.002382"
+   ],
+   "entries": [
+    "sh.600062",
+    "sh.600529",
+    "sz.002382"
+   ],
+   "exits": [
+    "sh.600386",
+    "sz.002267",
+    "sz.002588"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.600062": 1,
+    "sh.600529": 2,
+    "sz.002382": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-04-29",
+   "members": [
+    "sh.600039",
+    "sh.600578",
+    "sz.002487"
+   ],
+   "entries": [
+    "sh.600039",
+    "sh.600578",
+    "sz.002487"
+   ],
+   "exits": [
+    "sh.600062",
+    "sh.600529",
+    "sz.002382"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.600039": 1,
+    "sh.600578": 2,
+    "sz.002487": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-05-31",
+   "members": [
+    "sh.600291",
+    "sh.600729",
+    "sz.002271"
+   ],
+   "entries": [
+    "sh.600291",
+    "sh.600729",
+    "sz.002271"
+   ],
+   "exits": [
+    "sh.600039",
+    "sh.600578",
+    "sz.002487"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.600729": 1,
+    "sz.002271": 2,
+    "sh.600291": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-06-30",
+   "members": [
+    "sh.600093",
+    "sz.000600",
+    "sz.002602"
+   ],
+   "entries": [
+    "sh.600093",
+    "sz.000600",
+    "sz.002602"
+   ],
+   "exits": [
+    "sh.600291",
+    "sh.600729",
+    "sz.002271"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002602": 1,
+    "sh.600093": 2,
+    "sz.000600": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-07-29",
+   "members": [
+    "sz.002394",
+    "sz.002437",
+    "sz.002602"
+   ],
+   "entries": [
+    "sz.002394",
+    "sz.002437"
+   ],
+   "exits": [
+    "sh.600093",
+    "sz.000600"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002602": 6,
+    "sz.002437": 1,
+    "sz.002394": 2
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-08-31",
+   "members": [
+    "sh.600482",
+    "sh.601799",
+    "sz.002372"
+   ],
+   "entries": [
+    "sh.600482",
+    "sh.601799",
+    "sz.002372"
+   ],
+   "exits": [
+    "sz.002394",
+    "sz.002437",
+    "sz.002602"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.600482": 1,
+    "sz.002372": 2,
+    "sh.601799": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-09-30",
+   "members": [
+    "sz.000587",
+    "sz.002477",
+    "sz.002714"
+   ],
+   "entries": [
+    "sz.000587",
+    "sz.002477",
+    "sz.002714"
+   ],
+   "exits": [
+    "sh.600482",
+    "sh.601799",
+    "sz.002372"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002714": 1,
+    "sz.002477": 2,
+    "sz.000587": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-10-31",
+   "members": [
+    "sh.600350",
+    "sh.600690",
+    "sz.000761"
+   ],
+   "entries": [
+    "sh.600350",
+    "sh.600690",
+    "sz.000761"
+   ],
+   "exits": [
+    "sz.000587",
+    "sz.002477",
+    "sz.002714"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.000761": 1,
+    "sh.600350": 2,
+    "sh.600690": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-11-30",
+   "members": [
+    "sh.600258",
+    "sz.000967",
+    "sz.002001"
+   ],
+   "entries": [
+    "sh.600258",
+    "sz.000967",
+    "sz.002001"
+   ],
+   "exits": [
+    "sh.600350",
+    "sh.600690",
+    "sz.000761"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.000967": 1,
+    "sz.002001": 2,
+    "sh.600258": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2016-12-30",
+   "members": [
+    "sh.600258",
+    "sh.600278",
+    "sz.002249"
+   ],
+   "entries": [
+    "sh.600278",
+    "sz.002249"
+   ],
+   "exits": [
+    "sz.000967",
+    "sz.002001"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.600258": 4,
+    "sh.600278": 1,
+    "sz.002249": 2
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-01-26",
+   "members": [
+    "sh.600216",
+    "sh.600383",
+    "sz.002148"
+   ],
+   "entries": [
+    "sh.600216",
+    "sh.600383",
+    "sz.002148"
+   ],
+   "exits": [
+    "sh.600258",
+    "sh.600278",
+    "sz.002249"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002148": 1,
+    "sh.600216": 2,
+    "sh.600383": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-02-28",
+   "members": [
+    "sh.600053",
+    "sh.600383",
+    "sh.603868"
+   ],
+   "entries": [
+    "sh.600053",
+    "sh.603868"
+   ],
+   "exits": [
+    "sh.600216",
+    "sz.002148"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.600383": 5,
+    "sh.600053": 1,
+    "sh.603868": 2
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-03-31",
+   "members": [
+    "sh.600051",
+    "sz.000031",
+    "sz.000936"
+   ],
+   "entries": [
+    "sh.600051",
+    "sz.000031",
+    "sz.000936"
+   ],
+   "exits": [
+    "sh.600053",
+    "sh.600383",
+    "sh.603868"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.000031": 1,
+    "sz.000936": 2,
+    "sh.600051": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-04-28",
+   "members": [
+    "sh.601011",
+    "sz.000587",
+    "sz.002133"
+   ],
+   "entries": [
+    "sh.601011",
+    "sz.000587",
+    "sz.002133"
+   ],
+   "exits": [
+    "sh.600051",
+    "sz.000031",
+    "sz.000936"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.601011": 1,
+    "sz.000587": 2,
+    "sz.002133": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-05-31",
+   "members": [
+    "sh.601011",
+    "sz.000525",
+    "sz.000951"
+   ],
+   "entries": [
+    "sz.000525",
+    "sz.000951"
+   ],
+   "exits": [
+    "sz.000587",
+    "sz.002133"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.601011": 4,
+    "sz.000525": 1,
+    "sz.000951": 2
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-06-30",
+   "members": [
+    "sz.002425",
+    "sz.002582",
+    "sz.002668"
+   ],
+   "entries": [
+    "sz.002425",
+    "sz.002582",
+    "sz.002668"
+   ],
+   "exits": [
+    "sh.601011",
+    "sz.000525",
+    "sz.000951"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002668": 1,
+    "sz.002582": 2,
+    "sz.002425": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-07-31",
+   "members": [
+    "sh.603118",
+    "sh.603328",
+    "sh.603858"
+   ],
+   "entries": [
+    "sh.603118",
+    "sh.603328",
+    "sh.603858"
+   ],
+   "exits": [
+    "sz.002425",
+    "sz.002582",
+    "sz.002668"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.603328": 1,
+    "sh.603858": 2,
+    "sh.603118": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-08-31",
+   "members": [
+    "sh.600657",
+    "sh.601222",
+    "sz.002020"
+   ],
+   "entries": [
+    "sh.600657",
+    "sh.601222",
+    "sz.002020"
+   ],
+   "exits": [
+    "sh.603118",
+    "sh.603328",
+    "sh.603858"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.601222": 1,
+    "sz.002020": 2,
+    "sh.600657": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-09-29",
+   "members": [
+    "sh.600612",
+    "sz.002258",
+    "sz.002322"
+   ],
+   "entries": [
+    "sh.600612",
+    "sz.002258",
+    "sz.002322"
+   ],
+   "exits": [
+    "sh.600657",
+    "sh.601222",
+    "sz.002020"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.600612": 1,
+    "sz.002258": 2,
+    "sz.002322": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-10-31",
+   "members": [
+    "sh.600177",
+    "sh.600395",
+    "sz.002648"
+   ],
+   "entries": [
+    "sh.600177",
+    "sh.600395",
+    "sz.002648"
+   ],
+   "exits": [
+    "sh.600612",
+    "sz.002258",
+    "sz.002322"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.600395": 1,
+    "sz.002648": 2,
+    "sh.600177": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-11-30",
+   "members": [
+    "sh.600075",
+    "sh.600177",
+    "sz.002567"
+   ],
+   "entries": [
+    "sh.600075",
+    "sz.002567"
+   ],
+   "exits": [
+    "sh.600395",
+    "sz.002648"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.600177": 3,
+    "sh.600075": 1,
+    "sz.002567": 2
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2017-12-29",
+   "members": [
+    "sh.600177",
+    "sh.600729",
+    "sh.600963"
+   ],
+   "entries": [
+    "sh.600729",
+    "sh.600963"
+   ],
+   "exits": [
+    "sh.600075",
+    "sz.002567"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.600177": 1,
+    "sh.600963": 2,
+    "sh.600729": 3
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-01-31",
+   "members": [
+    "sh.600120",
+    "sh.600315",
+    "sz.002120"
+   ],
+   "entries": [
+    "sh.600120",
+    "sh.600315",
+    "sz.002120"
+   ],
+   "exits": [
+    "sh.600177",
+    "sh.600729",
+    "sh.600963"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.600120": 1,
+    "sz.002120": 2,
+    "sh.600315": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-02-28",
+   "members": [
+    "sh.600120",
+    "sz.000980",
+    "sz.000990"
+   ],
+   "entries": [
+    "sz.000980",
+    "sz.000990"
+   ],
+   "exits": [
+    "sh.600315",
+    "sz.002120"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.600120": 2,
+    "sz.000980": 1,
+    "sz.000990": 3
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-03-30",
+   "members": [
+    "sh.600123",
+    "sh.600177",
+    "sh.600395"
+   ],
+   "entries": [
+    "sh.600123",
+    "sh.600177",
+    "sh.600395"
+   ],
+   "exits": [
+    "sh.600120",
+    "sz.000980",
+    "sz.000990"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.600177": 1,
+    "sh.600395": 2,
+    "sh.600123": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-04-27",
+   "members": [
+    "sh.600655",
+    "sz.002061",
+    "sz.002562"
+   ],
+   "entries": [
+    "sh.600655",
+    "sz.002061",
+    "sz.002562"
+   ],
+   "exits": [
+    "sh.600123",
+    "sh.600177",
+    "sh.600395"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002562": 1,
+    "sz.002061": 2,
+    "sh.600655": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-05-31",
+   "members": [
+    "sh.600366",
+    "sh.600633",
+    "sz.002251"
+   ],
+   "entries": [
+    "sh.600366",
+    "sh.600633",
+    "sz.002251"
+   ],
+   "exits": [
+    "sh.600655",
+    "sz.002061",
+    "sz.002562"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002251": 1,
+    "sh.600366": 2,
+    "sh.600633": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-06-29",
+   "members": [
+    "sh.600160",
+    "sz.002251",
+    "sz.002440"
+   ],
+   "entries": [
+    "sh.600160",
+    "sz.002440"
+   ],
+   "exits": [
+    "sh.600366",
+    "sh.600633"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002251": 2,
+    "sh.600160": 1,
+    "sz.002440": 3
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-07-31",
+   "members": [
+    "sz.000975",
+    "sz.002626",
+    "sz.002900"
+   ],
+   "entries": [
+    "sz.000975",
+    "sz.002626",
+    "sz.002900"
+   ],
+   "exits": [
+    "sh.600160",
+    "sz.002251",
+    "sz.002440"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.000975": 1,
+    "sz.002900": 2,
+    "sz.002626": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-08-31",
+   "members": [
+    "sh.600637",
+    "sh.601633",
+    "sz.002626"
+   ],
+   "entries": [
+    "sh.600637",
+    "sh.601633"
+   ],
+   "exits": [
+    "sz.000975",
+    "sz.002900"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002626": 1,
+    "sh.601633": 2,
+    "sh.600637": 3
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-09-28",
+   "members": [
+    "sz.002626",
+    "sz.002737",
+    "sz.002798"
+   ],
+   "entries": [
+    "sz.002737",
+    "sz.002798"
+   ],
+   "exits": [
+    "sh.600637",
+    "sh.601633"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002626": 4,
+    "sz.002737": 1,
+    "sz.002798": 2
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-10-31",
+   "members": [
+    "sh.603026",
+    "sz.000778",
+    "sz.002430"
+   ],
+   "entries": [
+    "sh.603026",
+    "sz.000778",
+    "sz.002430"
+   ],
+   "exits": [
+    "sz.002626",
+    "sz.002737",
+    "sz.002798"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.000778": 1,
+    "sh.603026": 2,
+    "sz.002430": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-11-30",
+   "members": [
+    "sh.600808",
+    "sz.000157",
+    "sz.002020"
+   ],
+   "entries": [
+    "sh.600808",
+    "sz.000157",
+    "sz.002020"
+   ],
+   "exits": [
+    "sh.603026",
+    "sz.000778",
+    "sz.002430"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.002020": 1,
+    "sz.000157": 2,
+    "sh.600808": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2018-12-28",
+   "members": [
+    "sh.600160",
+    "sz.000778",
+    "sz.000898"
+   ],
+   "entries": [
+    "sh.600160",
+    "sz.000778",
+    "sz.000898"
+   ],
+   "exits": [
+    "sh.600808",
+    "sz.000157",
+    "sz.002020"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.000778": 1,
+    "sz.000898": 2,
+    "sh.600160": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-01-31",
+   "members": [
+    "sh.600623",
+    "sh.600668",
+    "sz.000778"
+   ],
+   "entries": [
+    "sh.600623",
+    "sh.600668"
+   ],
+   "exits": [
+    "sh.600160",
+    "sz.000898"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sz.000778": 5,
+    "sh.600668": 1,
+    "sh.600623": 2
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-02-28",
+   "members": [
+    "sh.601113",
+    "sz.000036",
+    "sz.000656"
+   ],
+   "entries": [
+    "sh.601113",
+    "sz.000036",
+    "sz.000656"
+   ],
+   "exits": [
+    "sh.600623",
+    "sh.600668",
+    "sz.000778"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.601113": 1,
+    "sz.000656": 2,
+    "sz.000036": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-03-29",
+   "members": [
+    "sh.600389",
+    "sh.603788",
+    "sz.002101"
+   ],
+   "entries": [
+    "sh.600389",
+    "sh.603788",
+    "sz.002101"
+   ],
+   "exits": [
+    "sh.601113",
+    "sz.000036",
+    "sz.000656"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002101": 1,
+    "sh.600389": 2,
+    "sh.603788": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-04-30",
+   "members": [
+    "sh.603313",
+    "sz.000863",
+    "sz.002416"
+   ],
+   "entries": [
+    "sh.603313",
+    "sz.000863",
+    "sz.002416"
+   ],
+   "exits": [
+    "sh.600389",
+    "sh.603788",
+    "sz.002101"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.603313": 1,
+    "sz.002416": 2,
+    "sz.000863": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-05-31",
+   "members": [
+    "sh.603393",
+    "sz.000989",
+    "sz.002831"
+   ],
+   "entries": [
+    "sh.603393",
+    "sz.000989",
+    "sz.002831"
+   ],
+   "exits": [
+    "sh.603313",
+    "sz.000863",
+    "sz.002416"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002831": 1,
+    "sh.603393": 2,
+    "sz.000989": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-06-28",
+   "members": [
+    "sz.000989",
+    "sz.002746",
+    "sz.002831"
+   ],
+   "entries": [
+    "sz.002746"
+   ],
+   "exits": [
+    "sh.603393"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002831": 5,
+    "sz.000989": 6,
+    "sz.002746": 1
+   },
+   "info_n_kept": 2,
+   "info_n_entrants": 1,
+   "info_n_prev": 3,
+   "info_n_left": 1,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-07-31",
+   "members": [
+    "sh.601311",
+    "sh.603858",
+    "sz.002358"
+   ],
+   "entries": [
+    "sh.601311",
+    "sh.603858",
+    "sz.002358"
+   ],
+   "exits": [
+    "sz.000989",
+    "sz.002746",
+    "sz.002831"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.603858": 1,
+    "sz.002358": 2,
+    "sh.601311": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-08-30",
+   "members": [
+    "sh.600020",
+    "sz.000732",
+    "sz.002798"
+   ],
+   "entries": [
+    "sh.600020",
+    "sz.000732",
+    "sz.002798"
+   ],
+   "exits": [
+    "sh.601311",
+    "sh.603858",
+    "sz.002358"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.000732": 1,
+    "sh.600020": 2,
+    "sz.002798": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-09-30",
+   "members": [
+    "sh.600859",
+    "sh.601666",
+    "sz.002746"
+   ],
+   "entries": [
+    "sh.600859",
+    "sh.601666",
+    "sz.002746"
+   ],
+   "exits": [
+    "sh.600020",
+    "sz.000732",
+    "sz.002798"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002746": 1,
+    "sh.601666": 2,
+    "sh.600859": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-10-31",
+   "members": [
+    "sh.601700",
+    "sh.603508",
+    "sz.000966"
+   ],
+   "entries": [
+    "sh.601700",
+    "sh.603508",
+    "sz.000966"
+   ],
+   "exits": [
+    "sh.600859",
+    "sh.601666",
+    "sz.002746"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.603508": 1,
+    "sz.000966": 2,
+    "sh.601700": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-11-29",
+   "members": [
+    "sh.600346",
+    "sh.600557",
+    "sh.603806"
+   ],
+   "entries": [
+    "sh.600346",
+    "sh.600557",
+    "sh.603806"
+   ],
+   "exits": [
+    "sh.601700",
+    "sh.603508",
+    "sz.000966"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.603806": 1,
+    "sh.600557": 2,
+    "sh.600346": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2019-12-31",
+   "members": [
+    "sh.603368",
+    "sh.603609",
+    "sz.002746"
+   ],
+   "entries": [
+    "sh.603368",
+    "sh.603609",
+    "sz.002746"
+   ],
+   "exits": [
+    "sh.600346",
+    "sh.600557",
+    "sh.603806"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002746": 1,
+    "sh.603609": 2,
+    "sh.603368": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-01-23",
+   "members": [
+    "sh.603187",
+    "sz.000708",
+    "sz.002746"
+   ],
+   "entries": [
+    "sh.603187",
+    "sz.000708"
+   ],
+   "exits": [
+    "sh.603368",
+    "sh.603609"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002746": 1,
+    "sh.603187": 2,
+    "sz.000708": 3
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-02-28",
+   "members": [
+    "sh.600761",
+    "sh.601717",
+    "sz.000402"
+   ],
+   "entries": [
+    "sh.600761",
+    "sh.601717",
+    "sz.000402"
+   ],
+   "exits": [
+    "sh.603187",
+    "sz.000708",
+    "sz.002746"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.600761": 1,
+    "sz.000402": 2,
+    "sh.601717": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-03-31",
+   "members": [
+    "sh.600761",
+    "sh.603360",
+    "sz.002861"
+   ],
+   "entries": [
+    "sh.603360",
+    "sz.002861"
+   ],
+   "exits": [
+    "sh.601717",
+    "sz.000402"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.600761": 5,
+    "sh.603360": 1,
+    "sz.002861": 2
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-04-30",
+   "members": [
+    "sh.600928",
+    "sh.601229",
+    "sz.000983"
+   ],
+   "entries": [
+    "sh.600928",
+    "sh.601229",
+    "sz.000983"
+   ],
+   "exits": [
+    "sh.600761",
+    "sh.603360",
+    "sz.002861"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.601229": 1,
+    "sz.000983": 2,
+    "sh.600928": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-05-29",
+   "members": [
+    "sh.600390",
+    "sh.603238",
+    "sz.000703"
+   ],
+   "entries": [
+    "sh.600390",
+    "sh.603238",
+    "sz.000703"
+   ],
+   "exits": [
+    "sh.600928",
+    "sh.601229",
+    "sz.000983"
+   ],
+   "e_T": 0.4,
+   "w_T": 0.0888888888888889,
+   "ranks": {
+    "sh.603238": 1,
+    "sz.000703": 2,
+    "sh.600390": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-06-30",
+   "members": [
+    "sh.600177",
+    "sz.000703",
+    "sz.002312"
+   ],
+   "entries": [
+    "sh.600177",
+    "sz.002312"
+   ],
+   "exits": [
+    "sh.600390",
+    "sh.603238"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.000703": 1,
+    "sz.002312": 2,
+    "sh.600177": 3
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-07-31",
+   "members": [
+    "sh.601028",
+    "sh.603238",
+    "sz.002778"
+   ],
+   "entries": [
+    "sh.601028",
+    "sh.603238",
+    "sz.002778"
+   ],
+   "exits": [
+    "sh.600177",
+    "sz.000703",
+    "sz.002312"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.603238": 1,
+    "sz.002778": 2,
+    "sh.601028": 3
+   },
+   "info_n_kept": 0,
+   "info_n_entrants": 3,
+   "info_n_prev": 3,
+   "info_n_left": 3,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-08-31",
+   "members": [
+    "sh.603200",
+    "sh.603238",
+    "sz.002486"
+   ],
+   "entries": [
+    "sh.603200",
+    "sz.002486"
+   ],
+   "exits": [
+    "sh.601028",
+    "sz.002778"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sh.603238": 3,
+    "sz.002486": 1,
+    "sh.603200": 2
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-09-30",
+   "members": [
+    "sh.603229",
+    "sz.002432",
+    "sz.002486"
+   ],
+   "entries": [
+    "sh.603229",
+    "sz.002432"
+   ],
+   "exits": [
+    "sh.603200",
+    "sh.603238"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002486": 3,
+    "sz.002432": 1,
+    "sh.603229": 2
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-10-30",
+   "members": [
+    "sh.600583",
+    "sz.002432",
+    "sz.002980"
+   ],
+   "entries": [
+    "sh.600583",
+    "sz.002980"
+   ],
+   "exits": [
+    "sh.603229",
+    "sz.002486"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002432": 1,
+    "sh.600583": 2,
+    "sz.002980": 3
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  },
+  {
+   "month": "2020-11-30",
+   "members": [
+    "sz.000955",
+    "sz.002432",
+    "sz.002932"
+   ],
+   "entries": [
+    "sz.000955",
+    "sz.002932"
+   ],
+   "exits": [
+    "sh.600583",
+    "sz.002980"
+   ],
+   "e_T": 0.9,
+   "w_T": 0.2,
+   "ranks": {
+    "sz.002432": 1,
+    "sz.002932": 2,
+    "sz.000955": 3
+   },
+   "info_n_kept": 1,
+   "info_n_entrants": 2,
+   "info_n_prev": 3,
+   "info_n_left": 2,
+   "info_n_cash_seats": 0
+  }
+ ]
+}

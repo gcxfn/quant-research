@@ -1,0 +1,462 @@
+{
+  "experiment_id": "exp-20260918-p2r14-minute-structure",
+  "run_id": "20260918T080205-p2r14-minute-structure-f59f",
+  "window": {
+    "dev": [
+      "2015-01-05",
+      "2020-12-31"
+    ],
+    "val": [
+      "2021-01-01",
+      "2024-12-31"
+    ],
+    "val_rule": "仅过门单元一次性消费"
+  },
+  "pool_waterfall": {
+    "feats_rows": 9245204,
+    "feats_rows_missing_in_halfday": 0,
+    "after_tradestatus": 9245197,
+    "after_st": 8984193,
+    "after_boards": 6454273,
+    "after_listing_120": 6312768,
+    "after_liq_50m": 4046440,
+    "pool_rows": 4023163,
+    "pool_rows_null_T2": 8667,
+    "names_per_day_mean": 1654.9415878239408
+  },
+  "units": {
+    "U1": {
+      "dev": {
+        "ic": {
+          "n_days": 1460,
+          "mean_ic": -0.01947062921662474,
+          "nw_t": -8.60769874333655,
+          "n_days_dropped_nonfinite": 2
+        },
+        "yearly_ic": [
+          {
+            "year": 2015,
+            "n_days": 244,
+            "mean_ic": -0.0005062039952720725,
+            "nw_t": -0.06967477577636573
+          },
+          {
+            "year": 2016,
+            "n_days": 242,
+            "mean_ic": -0.014312577664513782,
+            "nw_t": -3.551650782860539
+          },
+          {
+            "year": 2017,
+            "n_days": 244,
+            "mean_ic": -0.03179945620277673,
+            "nw_t": -8.454688037759166
+          },
+          {
+            "year": 2018,
+            "n_days": 243,
+            "mean_ic": -0.026531033093228084,
+            "nw_t": -5.02562490057917
+          },
+          {
+            "year": 2019,
+            "n_days": 244,
+            "mean_ic": -0.022097532469745808,
+            "nw_t": -3.8298063015073947
+          },
+          {
+            "year": 2020,
+            "n_days": 243,
+            "mean_ic": -0.02157224201178384,
+            "nw_t": -4.347753030779584
+          }
+        ],
+        "decile": {
+          "n_days": 1462,
+          "annualized": 0.2861718877190994,
+          "month_share_same_sign": 0.8055555555555556,
+          "mean_daily": 0.001172835605406145
+        },
+        "residual": {
+          "mean_ic": -0.021824975755646285,
+          "nw_t": -11.346728037100497,
+          "n_days": 1462
+        },
+        "arms": {
+          "sh_pre": {
+            "ic": {
+              "n_days": 884,
+              "mean_ic": -0.01845323548339575,
+              "nw_t": -5.685363449238787,
+              "n_days_dropped_nonfinite": 2
+            },
+            "annualized": 0.2611626164125661,
+            "month_share_same_sign": 0.75,
+            "n_days": 886
+          },
+          "sh_post": {
+            "ic": {
+              "n_days": 576,
+              "mean_ic": -0.02139933734406926,
+              "nw_t": -5.399875705885701,
+              "n_days_dropped_nonfinite": 0
+            },
+            "annualized": 0.35927417555550323,
+            "month_share_same_sign": 0.7931034482758621,
+            "n_days": 576
+          },
+          "sz_only": {
+            "ic": {
+              "n_days": 1460,
+              "mean_ic": -0.018847221046422908,
+              "nw_t": -8.1302085619586,
+              "n_days_dropped_nonfinite": 2
+            },
+            "annualized": 0.264799790104621,
+            "month_share_same_sign": 0.7777777777777778,
+            "n_days": 1462
+          }
+        },
+        "gates": {
+          "ic": false,
+          "decile": true,
+          "increment_residual": true
+        },
+        "passed": false
+      }
+    },
+    "U2": {
+      "dev": {
+        "n_events": 50858,
+        "base_rate": 0.0231129968228605,
+        "diffs": {
+          "n_days": 1457,
+          "mean_diff": -0.0008473014441916969,
+          "nw_t": -3.1656080262325603,
+          "years": [
+            {
+              "year": 2015,
+              "n_days": 242,
+              "mean_diff": 0.0005888638886900987
+            },
+            {
+              "year": 2016,
+              "n_days": 242,
+              "mean_diff": -5.381362685116069e-05
+            },
+            {
+              "year": 2017,
+              "n_days": 244,
+              "mean_diff": 5.194838347137968e-05
+            },
+            {
+              "year": 2018,
+              "n_days": 242,
+              "mean_diff": -0.0008836572232371985
+            },
+            {
+              "year": 2019,
+              "n_days": 244,
+              "mean_diff": -0.001770613517250943
+            },
+            {
+              "year": 2020,
+              "n_days": 243,
+              "mean_diff": -0.003007411633278642
+            }
+          ],
+          "years_same_sign": 0.6666666666666666,
+          "n_years": 6
+        },
+        "arms": {
+          "sh_pre": {
+            "mean_diff": 7.175671831023415e-05,
+            "nw_t": 0.20072916036475827,
+            "n_days": 877
+          },
+          "sh_post": {
+            "mean_diff": -0.0022786882528315097,
+            "nw_t": -3.316032186037516,
+            "n_days": 562
+          },
+          "sz_only": {
+            "mean_diff": -0.0009696315597458989,
+            "nw_t": -2.918456858541322,
+            "n_days": 1447
+          }
+        },
+        "gates": {
+          "primary": false,
+          "years": true,
+          "base_rate_enough": true
+        },
+        "passed": false
+      }
+    },
+    "U3": {
+      "dev": {
+        "n_events_with_t2": 61369,
+        "n_events_all": 62500,
+        "heavy_month_share": 0.194288,
+        "heavy_month_flag": false,
+        "diffs": {
+          "n_days": 1025,
+          "mean_diff": 0.005270538173774838,
+          "nw_t": 7.410796777642396,
+          "years": [
+            {
+              "year": 2015,
+              "n_days": 190,
+              "mean_diff": 0.005914291302980181
+            },
+            {
+              "year": 2016,
+              "n_days": 145,
+              "mean_diff": 0.0059094941166633625
+            },
+            {
+              "year": 2017,
+              "n_days": 143,
+              "mean_diff": 0.0020207203706147196
+            },
+            {
+              "year": 2018,
+              "n_days": 190,
+              "mean_diff": 0.004566538132840009
+            },
+            {
+              "year": 2019,
+              "n_days": 159,
+              "mean_diff": 0.0066083644711353575
+            },
+            {
+              "year": 2020,
+              "n_days": 198,
+              "mean_diff": 0.006133204164084641
+            }
+          ],
+          "years_same_sign": 0.0,
+          "n_years": 6
+        },
+        "gates": {
+          "primary": false,
+          "years": false,
+          "sample_500": true
+        },
+        "passed": false
+      }
+    },
+    "U4": {
+      "dev": {
+        "broke": {
+          "n_events": 20728,
+          "mean_diff": 0.003512607664885276,
+          "nw_t": 6.23008040303343,
+          "n_days": 1374,
+          "mean_event_t2": 0.0063186512974385085,
+          "mean_ctrl_t2": 0.004305019885346798,
+          "years": [
+            {
+              "year": 2015,
+              "n_days": 238,
+              "mean_diff": 0.0038201226087414024
+            },
+            {
+              "year": 2016,
+              "n_days": 236,
+              "mean_diff": 0.0011644297819765163
+            },
+            {
+              "year": 2017,
+              "n_days": 215,
+              "mean_diff": 0.0015919004690511695
+            },
+            {
+              "year": 2018,
+              "n_days": 218,
+              "mean_diff": 0.004037765785959185
+            },
+            {
+              "year": 2019,
+              "n_days": 227,
+              "mean_diff": 0.0073550089322959936
+            },
+            {
+              "year": 2020,
+              "n_days": 240,
+              "mean_diff": 0.0031260406346215112
+            }
+          ]
+        },
+        "seal": {
+          "n_events": 44594,
+          "mean_diff": -0.004541113864449116,
+          "nw_t": -2.5670619467233404,
+          "n_days": 149,
+          "mean_event_t2": 0.006079547935212755,
+          "mean_ctrl_t2": 0.00840255311657561,
+          "years": [
+            {
+              "year": 2015,
+              "n_days": 63,
+              "mean_diff": -0.0037256800681666337
+            },
+            {
+              "year": 2016,
+              "n_days": 45,
+              "mean_diff": -0.004724963718073196
+            },
+            {
+              "year": 2017,
+              "n_days": 2,
+              "mean_diff": 0.0050905547876314424
+            },
+            {
+              "year": 2018,
+              "n_days": 2,
+              "mean_diff": 0.00963793900781927
+            },
+            {
+              "year": 2019,
+              "n_days": 17,
+              "mean_diff": -0.0034223251782873644
+            },
+            {
+              "year": 2020,
+              "n_days": 20,
+              "mean_diff": -0.010028110687757125
+            }
+          ]
+        },
+        "gates": {
+          "broke_negative": false,
+          "seal_positive": false
+        },
+        "passed": false,
+        "broke_also_positive": true,
+        "f09_t2_ic": {
+          "n_days": 1455,
+          "mean_ic": -0.005839041047287086,
+          "nw_t": -3.408484316517539,
+          "n_days_dropped_nonfinite": 4
+        },
+        "state_mean_t2": {
+          "state_0": 0.0019199363494123445,
+          "state_1": 0.006615168241743176,
+          "state_2": 0.0004784057133270456
+        }
+      }
+    },
+    "U5": {
+      "dev": {
+        "ic": {
+          "n_days": 1462,
+          "mean_ic": 0.007900161207445121,
+          "nw_t": 2.872739466237572,
+          "n_days_dropped_nonfinite": 0
+        },
+        "residual": {
+          "mean_ic": 0.14196544318250054,
+          "nw_t": 61.526210821841076,
+          "n_days": 1462
+        },
+        "use_gate": {
+          "n_host": 220740,
+          "p5_before": -0.031272669637468886,
+          "p5_after": -0.03308349152526106,
+          "p5_improvement": -0.05790429498934008,
+          "mean_net_before": -0.00017307088186780035,
+          "mean_net_after": -9.974939218360753e-05,
+          "mean_net_cost": -7.332148968419282e-05,
+          "n_after": 166472
+        },
+        "gates": {
+          "prediction": false,
+          "use": false
+        },
+        "passed": false
+      }
+    },
+    "U6": {
+      "dev": {
+        "n_events": 191280,
+        "base_rate": 0.08819912492524423,
+        "diffs": {
+          "n_days": 1442,
+          "mean_diff": -0.0005913155392830633,
+          "nw_t": -5.171971937858307,
+          "years": [
+            {
+              "year": 2015,
+              "n_days": 224,
+              "mean_diff": -0.0009982079992580512
+            },
+            {
+              "year": 2016,
+              "n_days": 244,
+              "mean_diff": -0.0001743342145771149
+            },
+            {
+              "year": 2017,
+              "n_days": 244,
+              "mean_diff": 0.00011207571923673999
+            },
+            {
+              "year": 2018,
+              "n_days": 243,
+              "mean_diff": -0.000225952139193264
+            },
+            {
+              "year": 2019,
+              "n_days": 244,
+              "mean_diff": -0.0010706378079367728
+            },
+            {
+              "year": 2020,
+              "n_days": 243,
+              "mean_diff": -0.0012252894978962414
+            }
+          ],
+          "years_same_sign": 0.8333333333333334,
+          "n_years": 6
+        },
+        "split": {
+          "gap_up": {
+            "mean_diff": -0.00142969992400851,
+            "nw_t": -11.162707639634592,
+            "n_days": 1441
+          },
+          "gap_down": {
+            "mean_diff": 0.0004699486275673053,
+            "nw_t": 3.926281542743888,
+            "n_days": 1442
+          }
+        },
+        "orthogonality": {
+          "rho_f07": 0.5175852643494531,
+          "rho_f03": 0.003958370165817368,
+          "resid_coef_mean": -0.0006333340549687237,
+          "resid_coef_nw_t": -4.754860523958691,
+          "n_coef_days": 1442
+        },
+        "gates": {
+          "primary": false,
+          "orthogonality": false
+        },
+        "passed": false,
+        "downgraded_execution_note": false
+      }
+    }
+  },
+  "pass_rule": ">=2 单元过门 → 微观结构过滤线有候选（组合资格）",
+  "n_units_passed_dev": 0,
+  "passed_units": [],
+  "trials_this_round": 6,
+  "trials_cumulative_after": 189,
+  "disclaimers": [
+    "全部单元为过滤/事件/标记/裁决用途，非独立入场触发",
+    "无盈利声称；dev 为第 8 次重用（淘汰用）；val 一次性",
+    "2025+ 零接触（结构性与文件级双重保证）"
+  ],
+  "elapsed_s": 42.5
+}

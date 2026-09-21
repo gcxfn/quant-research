@@ -1,0 +1,35 @@
+{
+ "run_id": "20260917T203152-rqalpha-bundle-smoke-fcb67fde",
+ "status": "failed",
+ "started_at": "2026-09-17T20:31:52",
+ "task": "RQAlpha self-built bundle ETL + fixed-scene wiring smoke: 5 stocks + 2 ETFs, 2024-10-08..2024-12-31",
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "-X",
+  "utf8",
+  "tools/rqalpha_bundle_smoke.py"
+ ],
+ "env": {
+  "python": "3.11.15",
+  "cwd": "D:\\量化",
+  "PYTHONPATH": "D:/量化/src",
+  "pythonpath_note": "PYTHONPATH=src makes quant.* resolve to src/, not the copied site-packages install"
+ },
+ "inputs": {
+  "bundle_dataset_id": "rqalpha-bundle-smoke-20260917",
+  "bundle_dir": "D:\\量化\\data\\processed\\rqalpha-bundle-smoke-20260917",
+  "bundle_manifest": null
+ },
+ "outputs": [
+  "D:\\量化\\artifacts\\runs\\20260917T203152-rqalpha-bundle-smoke-fcb67fde"
+ ],
+ "notes": [
+  "wiring smoke only: engine built-in A-share semantics are exempted from independent re-verification by user decision (docs/decisions/2026-09-17-rqalpha-account-engine.md)",
+  "fee config: 万1全包 -> stock_commission_multiplier=0.125 (0.0008*0.125=0.0001), tax_multiplier=0, stock_min_commission=5",
+  "scenario: day1 buy all 7 (101/201 shares), same-day sell attempt (T+1 reject), 55-share odd order (round-lot reject); day60 liquidate all; window contains two real stock dividends (000001.XSHE ex 2024-10-10, 601318.XSHG ex 2024-10-18) exercising the dividends.h5 path"
+ ],
+ "finished_at": "2026-09-17T20:31:52",
+ "elapsed_seconds": 0.45,
+ "assertions": {},
+ "error": "Traceback (most recent call last):\n  File \"D:\\量化\\tools\\rqalpha_bundle_smoke.py\", line 536, in main\n    bundle_manifest = etl.build_bundle(root, bundle_dir, spec)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\量化\\src\\quant\\data\\rqalpha_bundle.py\", line 513, in build_bundle\n    stock_bars = load_stock_bars(root, spec, calendar)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\量化\\src\\quant\\data\\rqalpha_bundle.py\", line 194, in load_stock_bars\n    arr['limit_up'] = [lim[int(d)][0] for d in arr['datetime']]\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\量化\\src\\quant\\data\\rqalpha_bundle.py\", line 194, in <listcomp>\n    arr['limit_up'] = [lim[int(d)][0] for d in arr['datetime']]\n                       ~~~^^^^^^^^\nKeyError: 20241008000000\n"
+}

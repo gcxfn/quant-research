@@ -1,0 +1,4 @@
+PRECHECK FAILURES: 3
+FAIL: ordinal 06017: quote NOT verbatim; quote='受新型冠状病毒肺炎疫情影响'; orig='新型冠状病毒肺炎疫情影响，政府出台居民居家隔离、限制出行和景区限流管控等措施，游客旅游出行意愿降低，整体接待规模和销售收'
+FAIL: ordinal 06427: key_quote empty or len 41 > 40
+FAIL: ordinal 06512: quote NOT verbatim; quote='2022年上半年新冠疫情在国内多点散发，特别是上海地区受疫情影响较为严重'; orig='2022年全年净利润下滑主要系上半年新冠疫情在国内多点散发，特别是上海地区受疫情影响较为严重，各项实施成本增加，影响公司'

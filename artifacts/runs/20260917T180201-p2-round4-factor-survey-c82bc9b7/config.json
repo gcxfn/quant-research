@@ -1,0 +1,282 @@
+{
+  "experiment_id": "exp-20260917-p2-round4-factor-survey",
+  "name": "p2-round4-factor-survey",
+  "preregistered_at": "2026-09-17",
+  "round": 4,
+  "budget_note": "factor-survey re-orientation approved by user 2026-09-17; 20 factors + 2 preregistered combination rules; cumulative trial count disclosed (23 signal configs in rounds 1-3 + this survey's 20x2-window comparisons); no open-ended grid",
+  "seed": 17,
+  "start": "2015-01-05",
+  "end": "2024-12-31",
+  "data": {
+    "dataset_id": "baostock-daily-20260917",
+    "file": "data/processed/baostock-daily-20260917/daily_2015_2024.parquet",
+    "rows_expected": 9532019,
+    "adj_factors": "data/raw/xiaodefa/adj_factor/20260913-bulk1",
+    "extra_sources": {
+      "moneyflow": {
+        "path": "data/raw/xiaodefa/moneyflow/20260913-bulk1",
+        "coverage": "2015-2024",
+        "units": "amounts in 万元 (x1e4 for yuan)"
+      },
+      "daily_basic": {
+        "paths": [
+          "data/raw/tushare/daily_basic/20260913-r2",
+          "data/raw/tushare/daily_basic/20260909-r1"
+        ],
+        "coverage": "2015-2024"
+      },
+      "cyq_perf": {
+        "path": "data/raw/xiaodefa/cyq_perf/20260913-bulk1",
+        "coverage": "2018-2024"
+      },
+      "margin_detail": {
+        "path": "data/raw/tushare/margin_detail/20260909-r1",
+        "coverage": "2019-2024"
+      }
+    },
+    "disclosure": "moneyflow/daily_basic/cyq/margin are single-source (tushare-compatible proxy) and not independently cross-checked; factor definitions using them carry this limitation"
+  },
+  "universe_filter": {
+    "exclude_boards": [
+      "688",
+      "689",
+      "300",
+      "301",
+      "302"
+    ],
+    "exclude_bse_prefixes": [
+      "4",
+      "8"
+    ],
+    "exclude_symbols_styled_as_indexes": [
+      "sz.000905",
+      "sz.000852"
+    ],
+    "exclude_st": true,
+    "exclude_suspended": true,
+    "amount_median_window": 20,
+    "amount_median_min_history": "full window",
+    "amount_median_20d_min": 50000000,
+    "price_min": 2.0
+  },
+  "protocol": {
+    "hold_days": 5,
+    "forward_return": "adjusted open(t+1) -> open(t+6), exact calendar sessions, both tradable, adj_factor-continuous",
+    "ic": "per-day Spearman rank corr of factor vs forward return over eligible pool; days with < 50 eligible stocks excluded",
+    "quantile_spread": "per-day quintiles by factor (1=lowest..5=highest); report mean forward return spread Q5-Q1, gross of fees",
+    "tail_exam": "top-3/day picks ranked by factor in the dev-IC-sign direction, through the identical event pipeline (historical fee schedule, limit-open blocks, 50k budget)",
+    "windows": {
+      "dev": "2015-01-05..2020-12-31",
+      "validation": "2021-01-01..2024-12-31"
+    }
+  },
+  "factors": [
+    {
+      "id": "ret_5",
+      "source": "daily",
+      "definition": "5-day adjusted return",
+      "expected": "reversal family"
+    },
+    {
+      "id": "ret_20",
+      "source": "daily",
+      "definition": "20-day adjusted return",
+      "expected": "weak/reversal"
+    },
+    {
+      "id": "volatility_20",
+      "source": "daily",
+      "definition": "20-day std of daily adjusted returns",
+      "expected": "low vol preferred"
+    },
+    {
+      "id": "vol_ratio_20",
+      "source": "daily",
+      "definition": "volume / 20-session mean volume",
+      "expected": "shrinkage preferred"
+    },
+    {
+      "id": "turn_level",
+      "source": "daily",
+      "definition": "turnover percent",
+      "expected": "low preferred"
+    },
+    {
+      "id": "z20",
+      "source": "daily",
+      "definition": "(adj_close-sma20)/std20",
+      "expected": "oversold preferred"
+    },
+    {
+      "id": "range_mean_20",
+      "source": "daily",
+      "definition": "20-day mean (high-low)/close",
+      "expected": "compressed preferred"
+    },
+    {
+      "id": "near52w",
+      "source": "daily",
+      "definition": "adj_close/max250_adj",
+      "expected": "near high preferred"
+    },
+    {
+      "id": "close_vs_vwap",
+      "source": "daily",
+      "definition": "close/(amount/volume)-1, same-day vwap position",
+      "expected": "strong close preferred"
+    },
+    {
+      "id": "intraday_pos",
+      "source": "daily",
+      "definition": "(close-low)/(high-low) of the day",
+      "expected": "high close position preferred"
+    },
+    {
+      "id": "gap_1",
+      "source": "daily",
+      "definition": "open/preclose-1",
+      "expected": "either"
+    },
+    {
+      "id": "mf_lg_net_ratio",
+      "source": "moneyflow",
+      "definition": "(buy_lg+buy_elg-sell_lg-sell_elg)*1e4/amount",
+      "expected": "inflow preferred"
+    },
+    {
+      "id": "mf_net_ratio",
+      "source": "moneyflow",
+      "definition": "net_mf_amount*1e4/amount (field convention not independently verified)",
+      "expected": "inflow preferred"
+    },
+    {
+      "id": "mf_lg_net_ratio_5",
+      "source": "moneyflow",
+      "definition": "5-session mean of mf_lg_net_ratio",
+      "expected": "inflow preferred"
+    },
+    {
+      "id": "vr_ts",
+      "source": "daily_basic",
+      "definition": "volume_ratio (tushare convention)",
+      "expected": "either"
+    },
+    {
+      "id": "circ_mv",
+      "source": "daily_basic",
+      "definition": "circulating market value (万元)",
+      "expected": "small preferred"
+    },
+    {
+      "id": "pe_ttm",
+      "source": "daily_basic",
+      "definition": "PE ttm (null when negative)",
+      "expected": "either"
+    },
+    {
+      "id": "pb",
+      "source": "daily_basic",
+      "definition": "PB (null when negative)",
+      "expected": "either"
+    },
+    {
+      "id": "winner_rate",
+      "source": "cyq_perf",
+      "definition": "chip winner rate percent, coverage 2018+",
+      "expected": "either"
+    },
+    {
+      "id": "margin_buy_ratio",
+      "source": "margin_detail",
+      "definition": "rzmre/amount, coverage 2019+",
+      "expected": "either"
+    }
+  ],
+  "screening_rule_dev": {
+    "ic_threshold": 0.02,
+    "icir_note": "mean IC / std IC reported; no separate threshold",
+    "sign_consistency": "same-sign yearly mean IC in >= 4 of 6 dev years (partial-coverage factors: >= 2 of their covered dev years)",
+    "tail_condition": "tail top-3 dev mean net return beats dev pool mean (same window/hold)",
+    "pass": "all three conditions"
+  },
+  "combination_rules": [
+    {
+      "id": "C1-all-z",
+      "rule": "equal-weight sum of per-day z-scores of ALL screened-in factors, signed by dev IC sign; tail top-3"
+    },
+    {
+      "id": "C2-top3-icir",
+      "rule": "equal-weight z-combo of the 3 screened-in factors with highest |dev ICIR|; tail top-3"
+    }
+  ],
+  "execution": {
+    "entry": "next session open after signal close",
+    "exit": "open of session entry_index + 5",
+    "top_n_per_day": 3,
+    "capital": 200000,
+    "position_budget": 50000,
+    "block_limits": true,
+    "limit_pct": 0.1
+  },
+  "fees": {
+    "mode": "historical_schedule",
+    "schedule": [
+      {
+        "from": "2015-01-01",
+        "commission_pct": 0.0003,
+        "commission_min": 5.0,
+        "stamp_sell_pct": 0.001
+      },
+      {
+        "from": "2018-01-01",
+        "commission_pct": 0.00025,
+        "commission_min": 5.0,
+        "stamp_sell_pct": 0.001
+      },
+      {
+        "from": "2020-01-01",
+        "commission_pct": 0.0002,
+        "commission_min": 5.0,
+        "stamp_sell_pct": 0.001
+      },
+      {
+        "from": "2022-01-01",
+        "commission_pct": 0.00015,
+        "commission_min": 5.0,
+        "stamp_sell_pct": 0.001
+      },
+      {
+        "from": "2023-08-28",
+        "commission_pct": 0.00015,
+        "commission_min": 5.0,
+        "stamp_sell_pct": 0.0005
+      }
+    ],
+    "disclosure": "commission segments are conservative assumptions; stamp segments institutional facts; user actual fee (万1 all-in) is P3 scope"
+  },
+  "selection_rule": {
+    "dev_pass": [
+      "mean net per completed event beats pool mean on dev",
+      "per-year net edge vs pool positive in >= 4 of 6 dev years",
+      "top-decile symbol share <= 40%",
+      "completion >= 60%"
+    ],
+    "validation_pass": [
+      "mean net beats pool mean on validation",
+      "per-year net edge positive in >= 2 of 4 validation years"
+    ],
+    "multiple_testing": "validation window touched once, after screening and combination weights are frozen; results never feed back into the roster",
+    "survivors_to_p3": 2
+  },
+  "benchmarks": {
+    "cash": 0.0,
+    "pool_equal_weight": "identical convention to rounds 1-3",
+    "random_pick": "3 random eligible picks/day through identical pipeline, seed 17",
+    "broad_index": {},
+    "broad_index_note": "deferred until real index data is fetched (see plan correction 2026-09-17)"
+  },
+  "limits": {
+    "max_runtime_s": 1800,
+    "max_ram_gb": 11
+  }
+}

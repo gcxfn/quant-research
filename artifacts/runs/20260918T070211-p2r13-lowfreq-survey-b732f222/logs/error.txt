@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2r13_lowfreq_survey.py", line 385, in main
+    run.manifest['identity_checks'] = verify_identities(root)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\cli\p2r13_lowfreq_survey.py", line 133, in verify_identities
+    lf.assert_uniform_headers(root, d, pat)
+  File "D:\量化\src\quant\research\p2r13_lowfreq.py", line 188, in assert_uniform_headers
+    raise RuntimeError(f'identity fail-closed: empty header {f.name} '
+RuntimeError: identity fail-closed: empty header chunk_600482.SH.csv in tushare/income/20260909-r3

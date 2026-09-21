@@ -1,0 +1,5 @@
+variant,n,k_groups,F,p,verdict,eta_squared,groups,merged_into_other
+S1_drop_sd-1_and_low,6360,13,3.4486378682933294,0.00004396146750646648,H1,0.006477953839057633,"core_ops,cost_down,cost_up,demand_down,demand_up,epidemic_shock,impairment,ma_restructuring,non_recurring,orders,other,price_down,price_up","accounting,fx"
+S2_h5,6656,13,2.258738205783621,0.007549705760047256,H1,0.004063633037940461,"core_ops,cost_down,cost_up,demand_down,demand_up,epidemic_shock,impairment,ma_restructuring,non_recurring,orders,other,price_down,price_up","accounting,fx"
+S2_h10,6656,13,2.37027300129306,0.004826334347055538,H1,0.004263436686597193,"core_ops,cost_down,cost_up,demand_down,demand_up,epidemic_shock,impairment,ma_restructuring,non_recurring,orders,other,price_down,price_up","accounting,fx"
+S3_no_dedup,7423,13,4.129076029792609,1.767901443069675e-6,H1,0.00664234700243448,"core_ops,cost_down,cost_up,demand_down,demand_up,epidemic_shock,impairment,ma_restructuring,non_recurring,orders,other,price_down,price_up","accounting,fx"

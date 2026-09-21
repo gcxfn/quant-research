@@ -1,0 +1,338 @@
+{
+  "load_stats": {
+    "rows_whitelisted": 813201,
+    "codes_whitelisted": 943,
+    "rows_missing_factor": 1200,
+    "codes_missing_factor": 1
+  },
+  "timings": {
+    "load_s": 4.03,
+    "pools_s": 0.0,
+    "benchmarks_s": 0.01,
+    "sim_C01_s": 0.0,
+    "sim_C04_s": 0.0
+  },
+  "pool_sizes": {
+    "monthly": {
+      "2016": {
+        "min": 0,
+        "mean": 0.0,
+        "max": 0,
+        "sizes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "weekly": {
+      "2016": {
+        "min": 0,
+        "mean": 0.0,
+        "max": 0,
+        "sizes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "configs": {
+    "C01": {
+      "freq": "monthly",
+      "W": "W3",
+      "gate": true,
+      "max_negative_cash": 0.0,
+      "n_trades": 0,
+      "exec_stats": {
+        "planned_buy_legs": 33,
+        "buys_filled": 0,
+        "buys_no_candidate": 33,
+        "buys_cancelled_slot_busy": 0,
+        "planned_sell_legs": 0,
+        "sells_filled": 0,
+        "sells_postponed_then_filled": 0,
+        "sells_forced_delist": 0,
+        "sells_pending_at_end": 0,
+        "entry_limit_blocked": 0,
+        "entry_suspended": 0,
+        "exit_limit_blocked": 0,
+        "exit_suspended": 0,
+        "legs_executed": 33,
+        "legs_planned": 33,
+        "execution_rate": 1.0
+      },
+      "dev": {
+        "net_cagr": 0.0,
+        "gross_cagr": 0.0,
+        "net_total_return": 0.0,
+        "gross_total_return": 0.0,
+        "b1_net_cagr": 0.0,
+        "max_drawdown": 0.0,
+        "mdd_window": {
+          "max_drawdown": 0.0,
+          "peak_date": null,
+          "trough_date": null
+        },
+        "b1_max_drawdown": 0.0,
+        "excess_vs_b1": 0.0,
+        "net_return_by_year": {
+          "2016": 0.0
+        },
+        "excess_by_year": {
+          "2016": 0.0
+        },
+        "gross_return_by_year": {
+          "2016": 0.0
+        },
+        "turnover_by_year": {
+          "2016": null
+        },
+        "max_one_side_turnover": null,
+        "concentration": {
+          "pnl_by_code": {},
+          "total_pnl": 0,
+          "top1_share": null,
+          "top3_share": null,
+          "n_codes_positive": 0
+        },
+        "monthly_top_decile": {
+          "top_decile_share": null,
+          "n_months": 12,
+          "total_pnl": 0.0
+        },
+        "forced_delist": {
+          "count": 0,
+          "pnl_sum": 0
+        }
+      }
+    },
+    "C04": {
+      "freq": "weekly",
+      "W": "W3",
+      "gate": false,
+      "max_negative_cash": 0.0,
+      "n_trades": 0,
+      "exec_stats": {
+        "planned_buy_legs": 147,
+        "buys_filled": 0,
+        "buys_no_candidate": 147,
+        "buys_cancelled_slot_busy": 0,
+        "planned_sell_legs": 0,
+        "sells_filled": 0,
+        "sells_postponed_then_filled": 0,
+        "sells_forced_delist": 0,
+        "sells_pending_at_end": 0,
+        "entry_limit_blocked": 0,
+        "entry_suspended": 0,
+        "exit_limit_blocked": 0,
+        "exit_suspended": 0,
+        "legs_executed": 147,
+        "legs_planned": 147,
+        "execution_rate": 1.0
+      },
+      "dev": {
+        "net_cagr": 0.0,
+        "gross_cagr": 0.0,
+        "net_total_return": 0.0,
+        "gross_total_return": 0.0,
+        "b1_net_cagr": 0.0,
+        "max_drawdown": 0.0,
+        "mdd_window": {
+          "max_drawdown": 0.0,
+          "peak_date": null,
+          "trough_date": null
+        },
+        "b1_max_drawdown": 0.0,
+        "excess_vs_b1": 0.0,
+        "net_return_by_year": {
+          "2016": 0.0
+        },
+        "excess_by_year": {
+          "2016": 0.0
+        },
+        "gross_return_by_year": {
+          "2016": 0.0
+        },
+        "turnover_by_year": {
+          "2016": null
+        },
+        "max_one_side_turnover": null,
+        "concentration": {
+          "pnl_by_code": {},
+          "total_pnl": 0,
+          "top1_share": null,
+          "top3_share": null,
+          "n_codes_positive": 0
+        },
+        "monthly_top_decile": {
+          "top_decile_share": null,
+          "n_months": 12,
+          "total_pnl": 0.0
+        },
+        "forced_delist": {
+          "count": 0,
+          "pnl_sum": 0
+        }
+      }
+    }
+  },
+  "B3_dev_monthly": {
+    "n_seeds": 20,
+    "mean_net_cagr": 0.0,
+    "min": 0.0,
+    "max": 0.0,
+    "std": 0.0,
+    "per_seed": {
+      "17": 0.0,
+      "18": 0.0,
+      "19": 0.0,
+      "20": 0.0,
+      "21": 0.0,
+      "22": 0.0,
+      "23": 0.0,
+      "24": 0.0,
+      "25": 0.0,
+      "26": 0.0,
+      "27": 0.0,
+      "28": 0.0,
+      "29": 0.0,
+      "30": 0.0,
+      "31": 0.0,
+      "32": 0.0,
+      "33": 0.0,
+      "34": 0.0,
+      "35": 0.0,
+      "36": 0.0
+    }
+  },
+  "B3_dev_weekly": {
+    "n_seeds": 20,
+    "mean_net_cagr": 0.0,
+    "min": 0.0,
+    "max": 0.0,
+    "std": 0.0,
+    "per_seed": {
+      "17": 0.0,
+      "18": 0.0,
+      "19": 0.0,
+      "20": 0.0,
+      "21": 0.0,
+      "22": 0.0,
+      "23": 0.0,
+      "24": 0.0,
+      "25": 0.0,
+      "26": 0.0,
+      "27": 0.0,
+      "28": 0.0,
+      "29": 0.0,
+      "30": 0.0,
+      "31": 0.0,
+      "32": 0.0,
+      "33": 0.0,
+      "34": 0.0,
+      "35": 0.0,
+      "36": 0.0
+    }
+  },
+  "benchmarks": {
+    "B1": {
+      "monthly": {
+        "dev": {
+          "net_cagr": 0.0,
+          "net_total_return": 0.0,
+          "max_drawdown": 0.0,
+          "turnover_by_year": {
+            "2016": null
+          }
+        }
+      },
+      "weekly": {
+        "dev": {
+          "net_cagr": 0.0,
+          "net_total_return": 0.0,
+          "max_drawdown": 0.0,
+          "turnover_by_year": {
+            "2016": null
+          }
+        }
+      }
+    },
+    "B2": {
+      "dev": {
+        "net_total_return": -0.09670196416613497,
+        "gross_total_return": -0.034926264123173456,
+        "net_cagr": -0.09778286395112845,
+        "entry": "2016-01-04",
+        "exit": "2016-12-30",
+        "fees": {
+          "buy": 20.0,
+          "sell": 18.067767493426643
+        }
+      }
+    },
+    "B2_dev_plus_val": {
+      "net_total_return": -0.09670196416613497,
+      "entry": "2016-01-04",
+      "exit": "2016-12-30"
+    },
+    "B4_cash": 0.0
+  }
+}

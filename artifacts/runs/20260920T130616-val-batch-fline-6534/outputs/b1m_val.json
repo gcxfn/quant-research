@@ -1,0 +1,69 @@
+{
+ "stage": "val_b1m",
+ "window": "val",
+ "status": "val_recomputed",
+ "start": "2021-01-04",
+ "end": "2024-12-31",
+ "n_signal_days": 47,
+ "signal_first": "2021-01-29",
+ "signal_last": "2024-11-29",
+ "net_cagr": -0.00148060230384095,
+ "max_drawdown": -0.23441429674947534,
+ "net_total_return": -0.005893138163128864,
+ "net_return_by_year": {
+  "2021": 0.14274922609277585,
+  "2022": -0.05202635253338672,
+  "2023": -0.061879245529232296,
+  "2024": -0.021801197364535896
+ },
+ "mdd_window": {
+  "max_drawdown": -0.23441429674947534,
+  "peak_date": "2022-01-04",
+  "trough_date": "2024-09-13"
+ },
+ "benchmark_caliber": "T200-40 monthly exposures; R16 frozen pool; simulate_r16(K=0, fractional=True, B1_FEE_SCHEDULE_RATE_ONLY); TL-30 assembly verbatim",
+ "reference": {
+  "net_cagr": -0.00148060230384095,
+  "max_drawdown": -0.23441429674947534,
+  "by_year": {
+   "2021": 0.14274922609277585,
+   "2022": -0.05202635253338672,
+   "2023": -0.061879245529232296,
+   "2024": -0.021801197364535896
+  }
+ },
+ "reference_tolerance": 1e-09,
+ "reference_source": "TL-30 run 20260919T151630-hybrid-val-v1p3 outputs/metrics_and_gates.json metrics.R3-05.b1m_* (val)",
+ "pins": {
+  "engine": {
+   "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+   "sha256": "a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3",
+   "expected": "a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3",
+   "match": true,
+   "version": "v1.4.1 (non-zones path = v1.3 semantics)"
+  },
+  "r16_metrics": {
+   "path": "D:\\量化\\artifacts\\runs\\20260918T083650-p2r16-trend-dispersion-afab466f\\metrics.json",
+   "sha256": "8d0b6ebbdea6ebb9dc8146ead84ca408021e72749e1e7540f3483c6ed2a5fcc9"
+  },
+  "r16_config": {
+   "path": "D:\\量化\\configs\\experiments\\p2r16-trend-dispersion.json",
+   "sha256": "27f846a7330919a4965d83ec07cf2a0be3e29b2476cc37c14c84558957a93df4"
+  },
+  "daily": {
+   "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_1999_2024.parquet",
+   "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6"
+  },
+  "index_000300": {
+   "path": "D:\\量化\\data\\raw\\tushare\\index_daily\\20260917-r1\\chunk_000300.SH.csv",
+   "sha256": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878"
+  }
+ },
+ "env": {
+  "python": "3.11.15",
+  "polars": "1.44.2",
+  "numpy": "1.26.4",
+  "platform": "Windows-10-10.0.26200-SP0"
+ },
+ "wall_seconds": 39.66139569999359
+}

@@ -1,0 +1,66 @@
+{
+ "factor_id": "E10",
+ "name": "hb_net120",
+ "formula": "120d 增持净比例 = ΣIN-ΣDE (change_ratio, %总股本)",
+ "source": "stk_holdertrade",
+ "fill_policy": "无事件为 null（不入因子帧）",
+ "n_rows": 53962,
+ "t_value": 0.6241260240273928,
+ "coverage_median_symbols": 773.0,
+ "coverage_median_active_months": 906.0,
+ "pool_median_symbols": 3126.0,
+ "criteria": {
+  "c1_abs_t>=2": false,
+  "c2_mono_consistent>=0.3": false,
+  "c3_2015_non_disaster": true,
+  "c4_coverage>=50%pool": false
+ },
+ "survived_prelim": false,
+ "eval": {
+  "n_dates": 59,
+  "coverage_mean_symbols": 871.3050847457627,
+  "ic_mean": 0.006888872568278371,
+  "ic_std": 0.08478165017698044,
+  "icir": 0.08125428738291779,
+  "ic_win_rate": 0.559322033898305,
+  "group_mean_ret": [
+   0.007112151875311082,
+   0.010332440110364983,
+   0.007552857433586195,
+   0.00728641020589921,
+   0.006042836754661443,
+   0.0076050119353650815,
+   0.010008519909105389,
+   0.011711661698879765,
+   0.006365789945314014,
+   0.0015243364011952427
+  ],
+  "long_short_mean": -0.00558781547411584,
+  "monotonicity": -0.3097752948642892,
+  "ic_by_year": {
+   "2016": 0.03951498178506803,
+   "2017": -0.0033724331829047254,
+   "2018": 0.014251538099308519,
+   "2019": -0.039960899528792115,
+   "2020": 0.02556774867784248
+  },
+  "long_short_by_year": {
+   "2016": 0.005029475030415967,
+   "2017": -0.00021074542712605157,
+   "2018": -0.0022847144141317603,
+   "2019": -0.027887987411230764,
+   "2020": 4.218867913691367e-05
+  },
+  "turnover_top_group": 0.27137913076196046,
+  "corr_with_others": {},
+  "config": {
+   "horizon_days": 20,
+   "n_groups": 10,
+   "eval_freq": "M",
+   "exclude_st": true,
+   "require_trading": true,
+   "exclude_boards": true,
+   "min_history_rows": 60
+  }
+ }
+}

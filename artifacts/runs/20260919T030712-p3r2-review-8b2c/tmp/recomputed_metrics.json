@@ -1,0 +1,828 @@
+{
+ "C01": {
+  "equity_rows": 1462,
+  "first_date": "2015-01-05",
+  "last_date": "2020-12-31",
+  "initial_equity": 200000.0,
+  "final_equity": 208295.67280999996,
+  "net_total_return": 0.04147836404999983,
+  "net_cagr_365.25": 0.006810559017570883,
+  "net_cagr_365": 0.006805881616797738,
+  "net_cagr_244sess": 0.006805856022325418,
+  "net_cagr_252sess": 0.007029781362980492,
+  "max_drawdown": -0.21647383522322805,
+  "net_return_by_year": {
+   "2015": -0.0033048050000002993,
+   "2016": -0.06071081490465102,
+   "2017": 0.11845044828438533,
+   "2018": -0.14519835692720273,
+   "2019": 0.12066362650836848,
+   "2020": 0.038319937568906504
+  },
+  "advantage_years": [
+   2017,
+   2018
+  ],
+  "turnover_by_year": {
+   "2015": {
+    "buy_notional": 168492.0,
+    "mean_equity": 206962.36876229517,
+    "one_side_turnover": 0.8141190159720293
+   },
+   "2016": {
+    "buy_notional": 283728.0,
+    "mean_equity": 190827.710852459,
+    "one_side_turnover": 1.4868280855675522
+   },
+   "2017": {
+    "buy_notional": 295185.0,
+    "mean_equity": 199028.37607786886,
+    "one_side_turnover": 1.4831302240264994
+   },
+   "2018": {
+    "buy_notional": 124351.0,
+    "mean_equity": 193436.01443827155,
+    "one_side_turnover": 0.6428534022535
+   },
+   "2019": {
+    "buy_notional": 233065.0,
+    "mean_equity": 192546.96530655716,
+    "one_side_turnover": 1.2104319568419757
+   },
+   "2020": {
+    "buy_notional": 243475.0,
+    "mean_equity": 197110.2286116874,
+    "one_side_turnover": 1.235222553973353
+   }
+  },
+  "max_one_side_turnover": 1.4868280855675522,
+  "fees": {
+   "n_fills": 530,
+   "commission": 2650.0,
+   "stamp": 1245.5407,
+   "fees_total": 3895.5407,
+   "buy_notional_total": 1348296.0,
+   "sell_notional_total": 1245540.7
+  },
+  "b1_cited": {
+   "net_cagr": 0.0059905923579064435,
+   "mdd": -0.3982378364862026,
+   "by_year": {
+    "2015": 0.22735356961586017,
+    "2016": -0.036271319473570096,
+    "2017": -0.11258228102926204,
+    "2018": -0.1962740727688722,
+    "2019": 0.12375649932752708,
+    "2020": 0.09319791239431541
+   }
+  },
+  "b3prime_cited": -0.01991746425477723,
+  "excess_vs_b1m": 0.0008199666596644395,
+  "gates_partial": {
+   "1_net_cagr_gt_0": true,
+   "2_excess_vs_B1m_ge_2pp": false,
+   "3_advantage_years_ge_5_of_6": false,
+   "4_mdd_le_20pct_and_le_B1m": false,
+   "5_one_side_turnover_le_6": true,
+   "7_vs_B3prime_plus_1pp": true
+  },
+  "comparison": {
+   "net_cagr_match": true,
+   "net_cagr_absdiff": 0.0,
+   "net_total_return_match": true,
+   "max_drawdown_match": true,
+   "excess_match": true,
+   "year_returns_match": true,
+   "turnover_by_year_match": false,
+   "max_one_side_turnover_match": false,
+   "b1m_net_cagr_match": true,
+   "b1m_mdd_match": true,
+   "advantage_years_match": true
+  },
+  "p3r1_fees_total": 2842.6833,
+  "p3r1_fees_delta": 1052.8573999999999
+ },
+ "C02": {
+  "equity_rows": 1462,
+  "first_date": "2015-01-05",
+  "last_date": "2020-12-31",
+  "initial_equity": 200000.0,
+  "final_equity": 147919.41030999998,
+  "net_total_return": -0.2604029484500001,
+  "net_cagr_365.25": -0.04913045968144014,
+  "net_cagr_365": -0.04909767109894558,
+  "net_cagr_244sess": -0.049097491678147254,
+  "net_cagr_252sess": -0.05066577030269048,
+  "max_drawdown": -0.3854206210510046,
+  "net_return_by_year": {
+   "2015": -0.015911969999999998,
+   "2016": -0.12782390768435614,
+   "2017": -0.04419796816444499,
+   "2018": -0.14500138565180132,
+   "2019": 0.07773275615388853,
+   "2020": -0.021608657879295112
+  },
+  "advantage_years": [
+   2017,
+   2018
+  ],
+  "turnover_by_year": {
+   "2015": {
+    "buy_notional": 179561.0,
+    "mean_equity": 205704.78588934455,
+    "one_side_turnover": 0.8729062827764826
+   },
+   "2016": {
+    "buy_notional": 418086.0,
+    "mean_equity": 184965.12877459012,
+    "one_side_turnover": 2.2603503847987763
+   },
+   "2017": {
+    "buy_notional": 408996.0,
+    "mean_equity": 164808.73788934428,
+    "one_side_turnover": 2.48164026518186
+   },
+   "2018": {
+    "buy_notional": 85875.0,
+    "mean_equity": 148375.65822427996,
+    "one_side_turnover": 0.578767440884367
+   },
+   "2019": {
+    "buy_notional": 181069.0,
+    "mean_equity": 147765.6948893443,
+    "one_side_turnover": 1.225379139154018
+   },
+   "2020": {
+    "buy_notional": 155127.0,
+    "mean_equity": 146559.47739728395,
+    "one_side_turnover": 1.0584576497874085
+   }
+  },
+  "max_one_side_turnover": 2.48164026518186,
+  "fees": {
+   "n_fills": 625,
+   "commission": 3125.0,
+   "stamp": 1316.5359999999998,
+   "fees_total": 4441.536,
+   "buy_notional_total": 1428714.0,
+   "sell_notional_total": 1316536.0
+  },
+  "b1_cited": {
+   "net_cagr": 0.0059905923579064435,
+   "mdd": -0.3982378364862026,
+   "by_year": {
+    "2015": 0.22735356961586017,
+    "2016": -0.036271319473570096,
+    "2017": -0.11258228102926204,
+    "2018": -0.1962740727688722,
+    "2019": 0.12375649932752708,
+    "2020": 0.09319791239431541
+   }
+  },
+  "b3prime_cited": -0.01991746425477723,
+  "excess_vs_b1m": -0.055121052039346585,
+  "gates_partial": {
+   "1_net_cagr_gt_0": false,
+   "2_excess_vs_B1m_ge_2pp": false,
+   "3_advantage_years_ge_5_of_6": false,
+   "4_mdd_le_20pct_and_le_B1m": false,
+   "5_one_side_turnover_le_6": true,
+   "7_vs_B3prime_plus_1pp": false
+  },
+  "comparison": {
+   "net_cagr_match": true,
+   "net_cagr_absdiff": 0.0,
+   "net_total_return_match": true,
+   "max_drawdown_match": true,
+   "excess_match": true,
+   "year_returns_match": true,
+   "turnover_by_year_match": false,
+   "max_one_side_turnover_match": false,
+   "b1m_net_cagr_match": true,
+   "b1m_mdd_match": true,
+   "advantage_years_match": true
+  },
+  "p3r1_fees_total": 3389.2771000000002,
+  "p3r1_fees_delta": 1052.2588999999998
+ },
+ "C03": {
+  "equity_rows": 1462,
+  "first_date": "2015-01-05",
+  "last_date": "2020-12-31",
+  "initial_equity": 200000.0,
+  "final_equity": 189773.82134999998,
+  "net_total_return": -0.05113089325000009,
+  "net_cagr_365.25": -0.008727097543602236,
+  "net_cagr_365": -0.008721150294301983,
+  "net_cagr_244sess": -0.008721117751116059,
+  "net_cagr_252sess": -0.009005764670592886,
+  "max_drawdown": -0.4544637273201293,
+  "net_return_by_year": {
+   "2015": -0.029635059999999935,
+   "2016": -0.13951230039288098,
+   "2017": 0.10681565683359451,
+   "2018": -0.224024155594732,
+   "2019": 0.18531910970966559,
+   "2020": 0.11626616589760363
+  },
+  "advantage_years": [
+   2017,
+   2018
+  ],
+  "turnover_by_year": {
+   "2015": {
+    "buy_notional": 334366.0,
+    "mean_equity": 214038.724889344,
+    "one_side_turnover": 1.5621752567105043
+   },
+   "2016": {
+    "buy_notional": 302671.0,
+    "mean_equity": 167888.2904262296,
+    "one_side_turnover": 1.8028118532363886
+   },
+   "2017": {
+    "buy_notional": 220793.0,
+    "mean_equity": 174409.99926229488,
+    "one_side_turnover": 1.2659423251756903
+   },
+   "2018": {
+    "buy_notional": 143707.0,
+    "mean_equity": 165814.46426337436,
+    "one_side_turnover": 0.8666734873728532
+   },
+   "2019": {
+    "buy_notional": 145241.0,
+    "mean_equity": 162539.63325327847,
+    "one_side_turnover": 0.893572829549069
+   },
+   "2020": {
+    "buy_notional": 122471.0,
+    "mean_equity": 176452.54835925932,
+    "one_side_turnover": 0.6940732856441818
+   }
+  },
+  "max_one_side_turnover": 1.8028118532363886,
+  "fees": {
+   "n_fills": 484,
+   "commission": 2420.0,
+   "stamp": 1169.532,
+   "fees_total": 3589.5319999999997,
+   "buy_notional_total": 1269249.0,
+   "sell_notional_total": 1169532.0
+  },
+  "b1_cited": {
+   "net_cagr": 0.018551675073019247,
+   "mdd": -0.5559615161856944,
+   "by_year": {
+    "2015": 0.4194621340812228,
+    "2016": -0.08789440159052753,
+    "2017": -0.09363961023236667,
+    "2018": -0.2990832010981138,
+    "2019": 0.19693355456514583,
+    "2020": 0.13394943384963365
+   }
+  },
+  "b3prime_cited": -0.0035871088487231862,
+  "excess_vs_b1m": -0.027278772616621483,
+  "gates_partial": {
+   "1_net_cagr_gt_0": false,
+   "2_excess_vs_B1m_ge_2pp": false,
+   "3_advantage_years_ge_5_of_6": false,
+   "4_mdd_le_20pct_and_le_B1m": false,
+   "5_one_side_turnover_le_6": true,
+   "7_vs_B3prime_plus_1pp": false
+  },
+  "comparison": {
+   "net_cagr_match": true,
+   "net_cagr_absdiff": 0.0,
+   "net_total_return_match": true,
+   "max_drawdown_match": true,
+   "excess_match": true,
+   "year_returns_match": true,
+   "turnover_by_year_match": false,
+   "max_one_side_turnover_match": false,
+   "b1m_net_cagr_match": true,
+   "b1m_mdd_match": true,
+   "advantage_years_match": true
+  },
+  "p3r1_fees_total": 2856.7666,
+  "p3r1_fees_delta": 732.7653999999998
+ },
+ "C04": {
+  "equity_rows": 1462,
+  "first_date": "2015-01-05",
+  "last_date": "2020-12-31",
+  "initial_equity": 200000.0,
+  "final_equity": 153211.96385000003,
+  "net_total_return": -0.2339401807499999,
+  "net_cagr_365.25": -0.043531312479778594,
+  "net_cagr_365": -0.04350217461697048,
+  "net_cagr_244sess": -0.043502015173418895,
+  "net_cagr_252sess": -0.04489581098159856,
+  "max_drawdown": -0.5514562603520402,
+  "net_return_by_year": {
+   "2015": -0.055274980000000196,
+   "2016": -0.2142793651215038,
+   "2017": -0.03136997912375694,
+   "2018": -0.1926268044097884,
+   "2019": 0.19584597331959275,
+   "2020": 0.10352356066465429
+  },
+  "advantage_years": [
+   2017,
+   2018
+  ],
+  "turnover_by_year": {
+   "2015": {
+    "buy_notional": 359722.0,
+    "mean_equity": 211022.8317581967,
+    "one_side_turnover": 1.704659145187627
+   },
+   "2016": {
+    "buy_notional": 429114.0,
+    "mean_equity": 158754.28882581953,
+    "one_side_turnover": 2.703007289905793
+   },
+   "2017": {
+    "buy_notional": 284458.0,
+    "mean_equity": 143473.102057377,
+    "one_side_turnover": 1.9826573477601472
+   },
+   "2018": {
+    "buy_notional": 100181.0,
+    "mean_equity": 129232.58147942391,
+    "one_side_turnover": 0.775199248155161
+   },
+   "2019": {
+    "buy_notional": 128664.0,
+    "mean_equity": 133443.62937868852,
+    "one_side_turnover": 0.9641824086998952
+   },
+   "2020": {
+    "buy_notional": 125328.0,
+    "mean_equity": 148909.77016378604,
+    "one_side_turnover": 0.8416371864797828
+   }
+  },
+  "max_one_side_turnover": 2.703007289905793,
+  "fees": {
+   "n_fills": 596,
+   "commission": 2980.0,
+   "stamp": 1303.4603000000002,
+   "fees_total": 4283.460300000001,
+   "buy_notional_total": 1427467.0,
+   "sell_notional_total": 1303460.3
+  },
+  "b1_cited": {
+   "net_cagr": 0.018551675073019247,
+   "mdd": -0.5559615161856944,
+   "by_year": {
+    "2015": 0.4194621340812228,
+    "2016": -0.08789440159052753,
+    "2017": -0.09363961023236667,
+    "2018": -0.2990832010981138,
+    "2019": 0.19693355456514583,
+    "2020": 0.13394943384963365
+   }
+  },
+  "b3prime_cited": -0.0035871088487231862,
+  "excess_vs_b1m": -0.06208298755279784,
+  "gates_partial": {
+   "1_net_cagr_gt_0": false,
+   "2_excess_vs_B1m_ge_2pp": false,
+   "3_advantage_years_ge_5_of_6": false,
+   "4_mdd_le_20pct_and_le_B1m": false,
+   "5_one_side_turnover_le_6": true,
+   "7_vs_B3prime_plus_1pp": false
+  },
+  "comparison": {
+   "net_cagr_match": true,
+   "net_cagr_absdiff": 0.0,
+   "net_total_return_match": true,
+   "max_drawdown_match": true,
+   "excess_match": true,
+   "year_returns_match": true,
+   "turnover_by_year_match": false,
+   "max_one_side_turnover_match": false,
+   "b1m_net_cagr_match": true,
+   "b1m_mdd_match": true,
+   "advantage_years_match": true
+  },
+  "p3r1_fees_total": 3387.6551000000004,
+  "p3r1_fees_delta": 895.8052000000002
+ },
+ "C05": {
+  "equity_rows": 1462,
+  "first_date": "2015-01-05",
+  "last_date": "2020-12-31",
+  "initial_equity": 200000.0,
+  "final_equity": 251245.77610999998,
+  "net_total_return": 0.2562288805499999,
+  "net_cagr_365.25": 0.03883228074264511,
+  "net_cagr_365": 0.03880519233508317,
+  "net_cagr_244sess": 0.03880504411044616,
+  "net_cagr_252sess": 0.04010252275253556,
+  "max_drawdown": -0.21196584331074653,
+  "net_return_by_year": {
+   "2015": -0.012900510000000032,
+   "2016": -0.04567724475270496,
+   "2017": 0.11388764832548426,
+   "2018": -0.07705806902840606,
+   "2019": 0.1289514979805091,
+   "2020": 0.1490039376480432
+  },
+  "advantage_years": [
+   2017,
+   2018,
+   2019,
+   2020
+  ],
+  "turnover_by_year": {
+   "2015": {
+    "buy_notional": 166096.0,
+    "mean_equity": 205744.63248360652,
+    "one_side_turnover": 0.8072920201854322
+   },
+   "2016": {
+    "buy_notional": 278593.0,
+    "mean_equity": 189455.9873155738,
+    "one_side_turnover": 1.4704892885541385
+   },
+   "2017": {
+    "buy_notional": 314585.0,
+    "mean_equity": 198226.5418565572,
+    "one_side_turnover": 1.5869973670208268
+   },
+   "2018": {
+    "buy_notional": 128493.0,
+    "mean_equity": 203015.07349382705,
+    "one_side_turnover": 0.6329234464647129
+   },
+   "2019": {
+    "buy_notional": 175549.0,
+    "mean_equity": 206108.90508278683,
+    "one_side_turnover": 0.8517293317796629
+   },
+   "2020": {
+    "buy_notional": 286553.0,
+    "mean_equity": 225202.1616976954,
+    "one_side_turnover": 1.2724256190074237
+   }
+  },
+  "max_one_side_turnover": 1.5869973670208268,
+  "fees": {
+   "n_fills": 737,
+   "commission": 3685.0,
+   "stamp": 1222.7548,
+   "fees_total": 4907.7548,
+   "buy_notional_total": 1349869.0,
+   "sell_notional_total": 1222754.8
+  },
+  "b1_cited": {
+   "net_cagr": 0.0059905923579064435,
+   "mdd": -0.3982378364862026,
+   "by_year": {
+    "2015": 0.22735356961586017,
+    "2016": -0.036271319473570096,
+    "2017": -0.11258228102926204,
+    "2018": -0.1962740727688722,
+    "2019": 0.12375649932752708,
+    "2020": 0.09319791239431541
+   }
+  },
+  "b3prime_cited": -0.01991746425477723,
+  "excess_vs_b1m": 0.032841688384738665,
+  "gates_partial": {
+   "1_net_cagr_gt_0": true,
+   "2_excess_vs_B1m_ge_2pp": true,
+   "3_advantage_years_ge_5_of_6": false,
+   "4_mdd_le_20pct_and_le_B1m": false,
+   "5_one_side_turnover_le_6": true,
+   "7_vs_B3prime_plus_1pp": true
+  },
+  "comparison": {
+   "net_cagr_match": true,
+   "net_cagr_absdiff": 0.0,
+   "net_total_return_match": true,
+   "max_drawdown_match": true,
+   "excess_match": true,
+   "year_returns_match": true,
+   "turnover_by_year_match": false,
+   "max_one_side_turnover_match": false,
+   "b1m_net_cagr_match": true,
+   "b1m_mdd_match": true,
+   "advantage_years_match": true
+  },
+  "p3r1_fees_total": 3154.1214,
+  "p3r1_fees_delta": 1753.6333999999997
+ },
+ "C06": {
+  "equity_rows": 1462,
+  "first_date": "2015-01-05",
+  "last_date": "2020-12-31",
+  "initial_equity": 200000.0,
+  "final_equity": 147515.80551,
+  "net_total_return": -0.26242097244999996,
+  "net_cagr_365.25": -0.04956425775571571,
+  "net_cagr_365": -0.04953118727062211,
+  "net_cagr_244sess": -0.04953100630720997,
+  "net_cagr_252sess": -0.05111275676794613,
+  "max_drawdown": -0.3958598459855165,
+  "net_return_by_year": {
+   "2015": 0.0010181149999999306,
+   "2016": -0.13841890363792242,
+   "2017": -0.10450157598057042,
+   "2018": -0.10896967771038468,
+   "2019": 0.07360122393105839,
+   "2020": -0.001679122287384427
+  },
+  "advantage_years": [
+   2017,
+   2018
+  ],
+  "turnover_by_year": {
+   "2015": {
+    "buy_notional": 147484.0,
+    "mean_equity": 206071.2853483604,
+    "one_side_turnover": 0.7156940849409491
+   },
+   "2016": {
+    "buy_notional": 390426.0,
+    "mean_equity": 186702.63843852462,
+    "one_side_turnover": 2.0911648772899114
+   },
+   "2017": {
+    "buy_notional": 369583.0,
+    "mean_equity": 158826.15152868838,
+    "one_side_turnover": 2.326965656743519
+   },
+   "2018": {
+    "buy_notional": 60874.0,
+    "mean_equity": 145991.6040987655,
+    "one_side_turnover": 0.41696918378140313
+   },
+   "2019": {
+    "buy_notional": 137050.0,
+    "mean_equity": 144166.48025655746,
+    "one_side_turnover": 0.9506370673412222
+   },
+   "2020": {
+    "buy_notional": 141960.0,
+    "mean_equity": 144754.99077670783,
+    "one_side_turnover": 0.980691575732824
+   }
+  },
+  "max_one_side_turnover": 2.326965656743519,
+  "fees": {
+   "n_fills": 809,
+   "commission": 4045.0,
+   "stamp": 1126.3960000000002,
+   "fees_total": 5171.396000000001,
+   "buy_notional_total": 1247377.0,
+   "sell_notional_total": 1126396.0
+  },
+  "b1_cited": {
+   "net_cagr": 0.0059905923579064435,
+   "mdd": -0.3982378364862026,
+   "by_year": {
+    "2015": 0.22735356961586017,
+    "2016": -0.036271319473570096,
+    "2017": -0.11258228102926204,
+    "2018": -0.1962740727688722,
+    "2019": 0.12375649932752708,
+    "2020": 0.09319791239431541
+   }
+  },
+  "b3prime_cited": -0.01991746425477723,
+  "excess_vs_b1m": -0.055554850113622156,
+  "gates_partial": {
+   "1_net_cagr_gt_0": false,
+   "2_excess_vs_B1m_ge_2pp": false,
+   "3_advantage_years_ge_5_of_6": false,
+   "4_mdd_le_20pct_and_le_B1m": false,
+   "5_one_side_turnover_le_6": true,
+   "7_vs_B3prime_plus_1pp": false
+  },
+  "comparison": {
+   "net_cagr_match": true,
+   "net_cagr_absdiff": 0.0,
+   "net_total_return_match": true,
+   "max_drawdown_match": true,
+   "excess_match": true,
+   "year_returns_match": true,
+   "turnover_by_year_match": false,
+   "max_one_side_turnover_match": false,
+   "b1m_net_cagr_match": true,
+   "b1m_mdd_match": true,
+   "advantage_years_match": true
+  },
+  "p3r1_fees_total": 3753.466,
+  "p3r1_fees_delta": 1417.9300000000007
+ },
+ "C07": {
+  "equity_rows": 1462,
+  "first_date": "2015-01-05",
+  "last_date": "2020-12-31",
+  "initial_equity": 200000.0,
+  "final_equity": 192729.2509499999,
+  "net_total_return": -0.03635374525000046,
+  "net_cagr_365.25": -0.0061654489444176175,
+  "net_cagr_365": -0.006161241951678775,
+  "net_cagr_244sess": -0.006161218931149737,
+  "net_cagr_252sess": -0.00636258211998364,
+  "max_drawdown": -0.4292475977880985,
+  "net_return_by_year": {
+   "2015": -0.03510553000000016,
+   "2016": -0.1259547326455296,
+   "2017": 0.06615629079415641,
+   "2018": -0.1832341885928892,
+   "2019": 0.1465345113218013,
+   "2020": 0.1444539930521389
+  },
+  "advantage_years": [
+   2017,
+   2018,
+   2020
+  ],
+  "turnover_by_year": {
+   "2015": {
+    "buy_notional": 322602.0,
+    "mean_equity": 211032.99066393432,
+    "one_side_turnover": 1.5286804161996501
+   },
+   "2016": {
+    "buy_notional": 301253.0,
+    "mean_equity": 170207.30461475367,
+    "one_side_turnover": 1.7699181635115748
+   },
+   "2017": {
+    "buy_notional": 198246.0,
+    "mean_equity": 174167.59538524604,
+    "one_side_turnover": 1.1382484759090477
+   },
+   "2018": {
+    "buy_notional": 135228.0,
+    "mean_equity": 167857.2460403293,
+    "one_side_turnover": 0.8056131218041679
+   },
+   "2019": {
+    "buy_notional": 91655.0,
+    "mean_equity": 162669.5188442622,
+    "one_side_turnover": 0.5634429895114484
+   },
+   "2020": {
+    "buy_notional": 104866.0,
+    "mean_equity": 182580.25328847734,
+    "one_side_turnover": 0.5743556497005807
+   }
+  },
+  "max_one_side_turnover": 1.7699181635115748,
+  "fees": {
+   "n_fills": 654,
+   "commission": 3270.0,
+   "stamp": 1067.3774,
+   "fees_total": 4337.377399999999,
+   "buy_notional_total": 1153850.0,
+   "sell_notional_total": 1067377.4
+  },
+  "b1_cited": {
+   "net_cagr": 0.018551675073019247,
+   "mdd": -0.5559615161856944,
+   "by_year": {
+    "2015": 0.4194621340812228,
+    "2016": -0.08789440159052753,
+    "2017": -0.09363961023236667,
+    "2018": -0.2990832010981138,
+    "2019": 0.19693355456514583,
+    "2020": 0.13394943384963365
+   }
+  },
+  "b3prime_cited": -0.0035871088487231862,
+  "excess_vs_b1m": -0.024717124017436864,
+  "gates_partial": {
+   "1_net_cagr_gt_0": false,
+   "2_excess_vs_B1m_ge_2pp": false,
+   "3_advantage_years_ge_5_of_6": false,
+   "4_mdd_le_20pct_and_le_B1m": false,
+   "5_one_side_turnover_le_6": true,
+   "7_vs_B3prime_plus_1pp": false
+  },
+  "comparison": {
+   "net_cagr_match": true,
+   "net_cagr_absdiff": 0.0,
+   "net_total_return_match": true,
+   "max_drawdown_match": true,
+   "excess_match": true,
+   "year_returns_match": true,
+   "turnover_by_year_match": false,
+   "max_one_side_turnover_match": true,
+   "b1m_net_cagr_match": true,
+   "b1m_mdd_match": true,
+   "advantage_years_match": true
+  },
+  "p3r1_fees_total": 3269.7618,
+  "p3r1_fees_delta": 1067.6155999999992
+ },
+ "C08": {
+  "equity_rows": 1462,
+  "first_date": "2015-01-05",
+  "last_date": "2020-12-31",
+  "initial_equity": 200000.0,
+  "final_equity": 140929.90750999993,
+  "net_total_return": -0.2953504624500003,
+  "net_cagr_365.25": -0.05678638767938826,
+  "net_cagr_365": -0.05674864385527578,
+  "net_cagr_244sess": -0.0567484373185676,
+  "net_cagr_252sess": -0.05855349131142129,
+  "max_drawdown": -0.5530444399640777,
+  "net_return_by_year": {
+   "2015": -0.018609660000000194,
+   "2016": -0.20908306984150693,
+   "2017": -0.11716827725072076,
+   "2018": -0.16621514327366282,
+   "2019": 0.1328225079449339,
+   "2020": 0.08869622637045183
+  },
+  "advantage_years": [
+   2018
+  ],
+  "turnover_by_year": {
+   "2015": {
+    "buy_notional": 308531.0,
+    "mean_equity": 211062.74799180325,
+    "one_side_turnover": 1.461797512519746
+   },
+   "2016": {
+    "buy_notional": 395794.0,
+    "mean_equity": 167123.86610245894,
+    "one_side_turnover": 2.368267376948723
+   },
+   "2017": {
+    "buy_notional": 256511.0,
+    "mean_equity": 142980.0253319672,
+    "one_side_turnover": 1.7940338127961555
+   },
+   "2018": {
+    "buy_notional": 72654.0,
+    "mean_equity": 127146.78574485592,
+    "one_side_turnover": 0.5714182987354002
+   },
+   "2019": {
+    "buy_notional": 87071.0,
+    "mean_equity": 126092.042559836,
+    "one_side_turnover": 0.6905352489526144
+   },
+   "2020": {
+    "buy_notional": 83661.0,
+    "mean_equity": 135182.92379316868,
+    "one_side_turnover": 0.6188725443459281
+   }
+  },
+  "max_one_side_turnover": 2.368267376948723,
+  "fees": {
+   "n_fills": 767,
+   "commission": 3835.0,
+   "stamp": 1108.0629999999999,
+   "fees_total": 4943.063000000001,
+   "buy_notional_total": 1204222.0,
+   "sell_notional_total": 1108063.0
+  },
+  "b1_cited": {
+   "net_cagr": 0.018551675073019247,
+   "mdd": -0.5559615161856944,
+   "by_year": {
+    "2015": 0.4194621340812228,
+    "2016": -0.08789440159052753,
+    "2017": -0.09363961023236667,
+    "2018": -0.2990832010981138,
+    "2019": 0.19693355456514583,
+    "2020": 0.13394943384963365
+   }
+  },
+  "b3prime_cited": -0.0035871088487231862,
+  "excess_vs_b1m": -0.07533806275240751,
+  "gates_partial": {
+   "1_net_cagr_gt_0": false,
+   "2_excess_vs_B1m_ge_2pp": false,
+   "3_advantage_years_ge_5_of_6": false,
+   "4_mdd_le_20pct_and_le_B1m": false,
+   "5_one_side_turnover_le_6": true,
+   "7_vs_B3prime_plus_1pp": false
+  },
+  "comparison": {
+   "net_cagr_match": true,
+   "net_cagr_absdiff": 0.0,
+   "net_total_return_match": true,
+   "max_drawdown_match": true,
+   "excess_match": true,
+   "year_returns_match": true,
+   "turnover_by_year_match": false,
+   "max_one_side_turnover_match": false,
+   "b1m_net_cagr_match": true,
+   "b1m_mdd_match": true,
+   "advantage_years_match": true
+  },
+  "p3r1_fees_total": 3844.852,
+  "p3r1_fees_delta": 1098.2110000000011
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "run_note": "sampling stats for pilot",
+ "filter_counts": {
+  "total_rows_all_chunks": 50406,
+  "pool_rows": 38567,
+  "excluded_ann_date_ge_2025_with_reason": 10015,
+  "excluded_ann_date_le_2024_change_reason_empty": 1512,
+  "excluded_ann_date_missing_or_invalid": 0,
+  "of_which_invalid_anndate_but_reason_nonempty": 0
+ },
+ "n_strata": 63,
+ "sample_reason_len_chars": {
+  "mean": 215.6,
+  "p50": 170,
+  "p90": 427,
+  "p99": 869,
+  "max": 944
+ },
+ "pool_reason_len_chars": {
+  "mean": 210.0,
+  "p50": 163,
+  "p90": 419,
+  "p99": 820,
+  "max": 1097
+ },
+ "type_totals_pool": {
+  "预增": 11385,
+  "首亏": 5358,
+  "预减": 5056,
+  "续亏": 4826,
+  "略增": 4365,
+  "扭亏": 3985,
+  "略减": 2270,
+  "续盈": 787,
+  "不确定": 535
+ }
+}

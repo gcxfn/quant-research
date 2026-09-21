@@ -1,0 +1,145 @@
+{
+ "run_id": "20260917T193157-tushare-fund-batch-c48f2d",
+ "status": "completed",
+ "started_at": "2026-09-17T19:31:57",
+ "task": "tushare raw batch pull: fund_daily + fund_adj (primary), stk_limit (secondary)",
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "-X",
+  "utf8",
+  "tools/fetch_tushare_fund_batch.py",
+  "funds",
+  "--datasets",
+  "fund_daily,fund_adj",
+  "--budget-min",
+  "150",
+  "--sleep",
+  "0.7",
+  "--run-dir",
+  "artifacts/runs/20260917T193157-tushare-fund-batch-c48f2d"
+ ],
+ "token": {
+  "file": "~/.quant-credentials/tushare-token",
+  "content_in_logs": false,
+  "probe": "fund_daily+fund_adj permission confirmed 2026-09-17 19:34 (510300.SH 20260911-20260917, 5 rows each, data discarded)"
+ },
+ "hard_window": {
+  "start": "20150101",
+  "end": "20241231",
+  "note": "2025-01-01+ frozen; no request outside window by script assertion"
+ },
+ "inputs": {
+  "fund_basic": {
+   "path": "data/raw/tushare/fund_basic/20260909-r1/chunk_market_E.csv",
+   "sha256": "b98932a79f838bf4a4995e703b77a267ecc5d9168c7ad2c2d9a022d502af97db"
+  },
+  "trade_cal": "data/raw/tushare/trade_cal/20260909-r1 (SSE is_open==1 clipped 2015-2024)"
+ },
+ "universe": {
+  "filter": "market==E and 'ETF' in name and list_date<=20241231 and (delist empty or >=20150101)",
+  "count": 1169
+ },
+ "budgets_min": {
+  "fund_daily+fund_adj": 150,
+  "stk_limit": 90
+ },
+ "source_sha256": {
+  "tools\fetch_tushare_fund_batch.py": "b432a1221261f1aa547e654bf5086274751a3565cf93a2e4fc23a021883fac88"
+ },
+ "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+ "packages": {
+  "tushare": "1.4.29"
+ },
+ "machine": {
+  "platform": "Windows-10-10.0.26200-SP0"
+ },
+ "outputs": [
+  "data/raw/tushare/fund_daily/20260917-r1",
+  "data/raw/tushare/fund_adj/20260917-r1",
+  "data/raw/tushare/stk_limit/20260917-r1 (secondary, if budget allows)"
+ ],
+ "notes": [
+  "probe rows (2026-09-11..17) discarded, not saved to raw",
+  "resume: manifest.json per chunk sha256; skipped chunks reused on rerun"
+ ],
+ "stages": [
+  {
+   "stage": "probe",
+   "at": "2026-09-17T19:34:37",
+   "result": "fund_daily 510300.SH 20260911-20260917 rows=5; fund_adj rows=5; permission OK; probe data discarded (2026 dates, not saved)",
+   "log": "logs/fetch_probe_20260917-r1.log"
+  },
+  {
+   "stage": "funds-smoke",
+   "at": "2026-09-17T19:35:15",
+   "result": "3 ETF (159001/159003/159005.SZ) x 2 datasets OK; resumed by full run"
+  },
+  {
+   "stage": "funds-full",
+   "started_at": "2026-09-17T19:35:26",
+   "finished_at": "2026-09-17T20:25:39",
+   "elapsed_min": 50.2,
+   "budget_min": 150,
+   "result": "fund_daily 1169/1169 chunks completed 0 failed 0 retry(attempts=1 all); fund_adj 1169/1169 completed, 1 empty chunk (159842.SZ adj has no rows); 2025+ guard asserts passed (max trade_date 20241231)",
+   "logs": [
+    "logs/fetch_funds_20260917-r1.log"
+   ]
+  },
+  {
+   "stage": "stk-limit-smoke",
+   "at": "2026-09-17T20:29:38",
+   "result": "first attempt failed: stk_limit returns columns [trade_date,ts_code,up_limit,down_limit] (no pre_close); fixed STK_LIMIT_COLS, reset empty 20260917-r1 dir, smoke 3 days OK (2591 rows/day in 2015, no row-cap truncation)",
+   "note": "API error recorded verbatim: \"['pre_close'] not in index\""
+  },
+  {
+   "stage": "stk-limit-full",
+   "started_at": "2026-09-17T20:31:52",
+   "status": "completed",
+   "budget_min": 80,
+   "finished_at": "2026-09-17T21:42:17",
+   "elapsed_min_wall": 70.4,
+   "result": "2431/2431 trade days; first process killed externally at chunk 2061 (manifest state 'running'), resumed 21:32:22 and skipped 2069 done chunks; 0 api failures, 0 retries; 5 zero-row days recorded as source gaps (20170307,20170308,20170309,20220726,20230421)",
+   "logs": [
+    "logs/fetch_stk_limit_20260917-r1.log"
+   ]
+  }
+ ],
+ "ledger": {
+  "sha256.tsv": "appended 2340 lines (2338 chunk csv + 2 manifest) for fund_daily/fund_adj batches; existing lines untouched",
+  "inventory.json": "appended 2 batch entries; existing entries preserved",
+  "at": "2026-09-17T20:28",
+  "final": "sha256.tsv appended 2340+2432 lines total; inventory.json appended 3 entries; existing records untouched"
+ },
+ "finished_at": "2026-09-17T21:42:17",
+ "totals": {
+  "fund_daily": {
+   "chunks": 1169,
+   "rows": 1017121,
+   "span": "20150105..20241231"
+  },
+  "fund_adj": {
+   "chunks": 1169,
+   "rows": 1032863,
+   "span": "20150105..20241231",
+   "empty": [
+    "159842.SZ"
+   ]
+  },
+  "stk_limit": {
+   "chunks": 2431,
+   "rows": 9705448,
+   "days_with_data": 2426,
+   "zero_row_days": [
+    "20170307",
+    "20170308",
+    "20170309",
+    "20220726",
+    "20230421"
+   ]
+  },
+  "budgets": {
+   "fund_daily+fund_adj": "50.2min used / 150min cap",
+   "stk_limit": "70.4min wall / 80min cap (90min task cap)"
+  }
+ }
+}

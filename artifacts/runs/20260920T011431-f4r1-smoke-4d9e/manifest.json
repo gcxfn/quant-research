@@ -1,0 +1,1182 @@
+{
+ "run_id": "20260920T011431-f4r1-smoke-4d9e",
+ "experiment_id": "exp-20260919-zone-sheet-f4r1",
+ "status": "completed",
+ "scope": "SMOKE ONLY (prereg sec 7): correctness checks on W1/W2, 3 arms; NO performance conclusions; full-period dev run NOT started (awaits main-conversation smoke acceptance)",
+ "started_at_utc": "1970-01-01T13:24:45.707930+00:00",
+ "ended_at_utc": "2026-09-19T17:50:53.434386+00:00",
+ "wall_seconds": 55.84256829999504,
+ "peak_rss_gb": 1.50171648,
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "artifacts/runs/20260920T011431-f4r1-smoke-4d9e/scripts/runner_f4r1.py"
+ ],
+ "random_seed": null,
+ "determinism": "no RNG in runner or engine; static zones/intent frames; engine-owned deterministic lifecycle",
+ "engine": {
+  "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+  "sha256_at_start": "7ad35014d72711cb43ab6aedc232d70adf7eece60604b2a057ee039c9bd11e78",
+  "sha256_at_end": "7ad35014d72711cb43ab6aedc232d70adf7eece60604b2a057ee039c9bd11e78",
+  "sha256_pin_expected": "7ad35014d72711cb43ab6aedc232d70adf7eece60604b2a057ee039c9bd11e78",
+  "bytes_modified_by_this_run": false,
+  "version": "v1.4 (pin 7ad35014...; zones mode per contract sec 10)"
+ },
+ "pins": {
+  "engine": {
+   "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+   "sha256": "7ad35014d72711cb43ab6aedc232d70adf7eece60604b2a057ee039c9bd11e78",
+   "expected": "7ad35014d72711cb43ab6aedc232d70adf7eece60604b2a057ee039c9bd11e78",
+   "match": true
+  },
+  "daily": {
+   "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_1999_2024.parquet",
+   "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6",
+   "expected": "d9a63f4cc3032926",
+   "match": true
+  },
+  "halfday_manifest": {
+   "path": "D:\\量化\\data\\processed\\halfday-bars-20260918\\manifest.json",
+   "sha256": "2a414174b5df2eeed4c6bd6a7cd7f9f09f9b2efc8f05673ccc4b7695812cd679",
+   "expected": "2a414174b5df2eee",
+   "match": true
+  },
+  "split_factor": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\split_factor.h5",
+   "sha256": "2f436b2f13d09a9bfdcbdb0bf35669c10a377d180ce1ca37bef53d6c96a3365d",
+   "expected": "2f436b2f13d09a9b",
+   "match": true
+  },
+  "dividends": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\dividends.h5",
+   "sha256": "46121c09cddde72e725c2d4ae025cc259b049aeaa77c868b492fdbba60214846",
+   "expected": "46121c09cddde72e",
+   "match": true
+  },
+  "index_000300": {
+   "path": "D:\\量化\\data\\raw\\tushare\\index_daily\\20260917-r1\\chunk_000300.SH.csv",
+   "sha256": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878",
+   "expected": "05aaa8183a11c674",
+   "match": true
+  },
+  "f3r1_icw_composite": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T191524-f3r1-factor-combo-c212\\outputs\\F3-ICW_composite.parquet",
+   "sha256": "b09242ee542cf675fd48871337a7df268dae7b2950e885aaeead94ec02b38498",
+   "expected": "b09242ee542cf675",
+   "match": true
+  },
+  "f3r1_manifest": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T191524-f3r1-factor-combo-c212\\manifest.json",
+   "sha256": "9feb6080e985971a74e850e4e403b94519cecbbd5feccf74f4691853bfc06293",
+   "expected": null,
+   "match": true
+  },
+  "f3r1_metrics": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T191524-f3r1-factor-combo-c212\\outputs\\metrics_and_gates.json",
+   "sha256": "714fd8acb7174c2b290c2ff6176a04364be4218a3cb90885c0f0d39eba3952fb",
+   "expected": null,
+   "match": true
+  },
+  "industry_l1": {
+   "path": "D:\\量化\\data\\raw\\tushare\\index_member_all\\20260909-r1\\chunk_all.csv",
+   "sha256": "4edffc3994fb527aa4a8d77ea9b654792e31902b6c1e6e80501483a57816b129",
+   "expected": "4edffc3994fb527a",
+   "match": true
+  },
+  "prereg": {
+   "path": "D:\\量化\\docs\\research\\exp-20260919-zone-sheet-f4r1-prereg.md",
+   "sha256": "e9538bedfc33fabbdd38cce9adc855adaec479d11cd0b0b4a7e5c2a94d994347",
+   "expected": null,
+   "match": true
+  },
+  "f4r1_config": {
+   "path": "D:\\量化\\configs\\experiments\\f4r1-zone-sheet.json",
+   "sha256": "aa5699aec021aa463d184cacc5bfb7f554ab3fd154cb8332b7db7573da5e1ca0",
+   "expected": null,
+   "match": true
+  },
+  "f3r3_runner_source": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e\\scripts\\runner_f3r3.py",
+   "sha256": "e404845b442a2bdad232c87580a0ee88514260dc3b7cf1ab8e279f3141181ba3",
+   "expected": null,
+   "match": true
+  },
+  "f3r3_manifest": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e\\manifest.json",
+   "sha256": "2b5a680575d40161c92e97d405c538447cdcf48ef5964e0ebbeacff2a483f496",
+   "expected": null,
+   "match": true
+  },
+  "v3_metrics_r306_anchor_source": {
+   "path": "D:\\量化\\artifacts\\runs\\20260919T110500-hybrid-v3-r3ld\\outputs\\metrics_and_gates.json",
+   "sha256": "9e2cd4aafec15c0801dbb09bcebe1cc0aa0bf7abc29c63030ae8fbcd71d4b3bc",
+   "expected": null,
+   "match": true
+  },
+  "etf_manifest": {
+   "path": "D:\\量化\\data\\processed\\etf-daily-20260919\\manifest.json",
+   "sha256": "8b5b3fe56c0e02fd6af634bb3740c4f40c3b5f1dfabc984764433c0134eb1c8a",
+   "expected": null,
+   "match": true
+  },
+  "f3r1_engine_provenance": {
+   "engine_sha256_16": "84a2443ac28fe1b8",
+   "match": true
+  },
+  "halfday_rows_total": {
+   "rows": 18486939,
+   "expected": 18486939,
+   "match": true
+  },
+  "stk_limit_aggregate": {
+   "path": "D:\\量化\\data\\raw\\tushare\\stk_limit\\20260917-r1",
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "3c53abf3b0c39b425389137d9f630f0de158990fcdc55b0bd41bf7d9c3bde673",
+   "files": 2432,
+   "total_bytes": 301278245,
+   "expected": "3c53abf3b0c39b42",
+   "match": true
+  },
+  "fund_adj_batch_manifest": {
+   "path": "D:\\量化\\data\\raw\\tushare\\fund_adj\\20260917-r1\\manifest.json",
+   "sha256": "348d2ec4e8fd6df3ab856f2a09677d87b62d668529abe8b00b2ec38b68efccd4"
+  },
+  "fund_adj_aggregate": {
+   "rule": "sha256 of sorted '<chunk>:<per_file_sha256>' lines per the etf standardization agg_hash; per-file hashes re-verified against the raw batch manifest",
+   "recomputed": "b06242469db048a01231b26085073b6eecbf25a9106cfa63ae1b06c1764c0979",
+   "expected_declared_in_etf_manifest": "b06242469db048a01231b26085073b6eecbf25a9106cfa63ae1b06c1764c0979",
+   "chunks_in_batch_manifest": 1169,
+   "rehash_mismatches": [],
+   "match": true
+  },
+  "etf_processed_aggregate": {
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "75777221a8b335028bf8da60f14c59c6a3659f9d91578204308488d0f0fb7c2e",
+   "files": 7,
+   "total_bytes": 18153828,
+   "expected": null,
+   "match": true
+  },
+  "trade_cal_aggregate": {
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "aac75421cd89d9fc562490f78d14cdcfcc5033976a37853d2fa3fa5cace261f4",
+   "files": 4,
+   "total_bytes": 367805,
+   "expected": null,
+   "match": true
+  }
+ },
+ "env_versions": {
+  "python": "3.11.15",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "polars": "1.44.2",
+  "numpy": "1.26.4"
+ },
+ "windows": {
+  "W1": "2015-01-05..2015-02-28",
+  "W2": "2016-01-01..2016-02-29"
+ },
+ "window_signals": {
+  "W1": [
+   "2015-01-30",
+   "2015-02-27"
+  ],
+  "W2": [
+   "2016-01-29",
+   "2016-02-29"
+  ]
+ },
+ "full_dev_window_not_run": true,
+ "parameters": {
+  "K": 10,
+  "top_2k": 20,
+  "ind_cap": 2,
+  "buffer_mult": 2,
+  "stop_mult": 3.0,
+  "invalid_mult": 3.5,
+  "ladder_offsets": "0.5,1.5,2.5",
+  "ladder_fracs": "0.4,0.4,0.2",
+  "tp_A_B": "tp1 2.0/0.5 + tp2 3.0/1.0",
+  "tp_C": "tp1 2.0/1.0 (tp2 null, one-shot full sell)",
+  "w_T_A_C": 0.06,
+  "w_T_B": "e_T * 0.06/0.90 (T200-40 exposures, F3R3 path)",
+  "initial_cash_arms": 500000.0,
+  "initial_cash_anchor": 200000.0,
+  "zone_priority_base": 1000,
+  "sigma_lookback_returns": 20,
+  "sigma_ddof": 1,
+  "sigma_closes": "21 official closes incl. signal day"
+ },
+ "runner_adaptations_disclosed": {
+  "leg_intent_priority_999": "BR-1 guard: intent priority must be < zone_priority_base(1000); F3R3 used 10**6.  999 keeps the ETF leg the lowest layer, but it is now funded BEFORE stock ladders in same-decision cash competition (in F3R3 it sat after rank 1..20 stock intents).",
+  "park_expiry_window": "smoke windows have 2 signal days; the frozen '4th signal day + 1' park expiry is approximated by 'first full-calendar month-end after the window + 1' (park stays live for the whole window; monthly reduce sells unchanged).",
+  "arm_B_path_wt_only": "zones mode has no month-end reduce-to-target primitive for stocks (BR-7) and stock symbols cannot appear in the intent frame (S-v14-15 overlap guard): arm B keeps the T200-40 path ONLY through w_T = e_T*0.06/0.90 scaling of NEW ladder sizing.  Comparability seam vs F3R3's de-risking mechanism; needs adjudication before full-period interpretation.",
+  "sigma_estimator": "sample stdev ddof=1 over the last 20 close-to-close log returns ending at the signal day (21 closes incl. P0); raw official closes (no adjustment); excluded candidates counted by reason.",
+  "rank_not_renumbered": "sigma-excluded candidates keep their composite rank vacated (survivors are not renumbered); the rank is the composite rank.",
+  "industry_blocked_caliber": "engine has no industry-block counter; reconstructed runner-side per month from the frame + engine admissions (never-admitted candidates whose industry already holds 2 among admissions + continuations)."
+ },
+ "f4r1_a0_anchor": {
+  "intents": {
+   "mine": "outputs\\F4R1-A0_intents.parquet",
+   "ref": "artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e\\outputs\\F3R3-A0_intents.parquet",
+   "byte_equal": true,
+   "rows_equal": true
+  },
+  "fills": {
+   "mine": "outputs\\F4R1-A0_fills.parquet",
+   "ref": "artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e\\outputs\\F3R3-A0_fills.parquet",
+   "byte_equal": true,
+   "rows_equal": true
+  },
+  "events": {
+   "mine": "outputs\\F4R1-A0_events.parquet",
+   "ref": "artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e\\outputs\\F3R3-A0_events.parquet",
+   "byte_equal": true,
+   "rows_equal": true
+  },
+  "daily_equity": {
+   "mine": "outputs\\F4R1-A0_daily_equity.parquet",
+   "ref": "artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e\\outputs\\F3R3-A0_daily_equity.parquet",
+   "byte_equal": true,
+   "rows_equal": true
+  },
+  "clips_final": {
+   "mine": "outputs\\F4R1-A0_clips_final.parquet",
+   "ref": "artifacts\\runs\\20260919T201500-f3r3-industry-cap-4b2e\\outputs\\F3R3-A0_clips_final.parquet",
+   "byte_equal": true,
+   "rows_equal": true
+  },
+  "rule": "filecmp byte comparison vs F3R3-A0 outputs; mismatch = STOP (prereg sec 7; did not trigger)"
+ },
+ "smoke": {
+  "F4R1-A/W1": {
+   "pass": true,
+   "fail": [],
+   "zones_rows": 40,
+   "sigma_excluded": {},
+   "admissions_by_month": {
+    "2015-01-30": 18
+   },
+   "admissions_first_scan": {
+    "2015-01-30": 10,
+    "2015-02-27": 0
+   },
+   "continuations_by_month": {
+    "2015-01-30": 0,
+    "2015-02-27": 1
+   },
+   "industry_blocked_reconstructed": [],
+   "fills_checked": {
+    "routed": 51,
+    "ladder_price": 18,
+    "tp_price": 31
+   },
+   "cash_conservation_max_abs_err": 8.731149137020111e-11,
+   "equity_identity_max_abs_err": 0.0,
+   "tp_samples_n": 12,
+   "stop_samples": [
+    {
+     "symbol": "sz.002424",
+     "date": "2015-02-06",
+     "session": "am",
+     "price": 41.12946247533609,
+     "shares": 200,
+     "line_reconstructed": 41.12946247533609,
+     "session_open": 41.74,
+     "session_low": 41.02,
+     "sigma0": 0.9468458415546369,
+     "open_at_or_below_limit_down": false
+    },
+    {
+     "symbol": "sz.000513",
+     "date": "2015-02-06",
+     "session": "pm",
+     "price": 48.152504078767336,
+     "shares": 100,
+     "line_reconstructed": 48.152504078767336,
+     "session_open": 48.51,
+     "session_low": 47.7,
+     "sigma0": 0.8491653070775562,
+     "open_at_or_below_limit_down": false
+    },
+    {
+     "symbol": "sh.601677",
+     "date": "2015-02-09",
+     "session": "am",
+     "price": 12.113612480392483,
+     "shares": 900,
+     "line_reconstructed": 12.113612480392483,
+     "session_open": 12.12,
+     "session_low": 12.1,
+     "sigma0": 0.35879583986917196,
+     "open_at_or_below_limit_down": false
+    },
+    {
+     "symbol": "sh.601877",
+     "date": "2015-02-09",
+     "session": "am",
+     "price": 32.33796414926104,
+     "shares": 100,
+     "line_reconstructed": 32.33796414926104,
+     "session_open": 33.01,
+     "session_low": 32.2,
+     "sigma0": 0.7740119502463187,
+     "open_at_or_below_limit_down": false
+    },
+    {
+     "symbol": "sz.000759",
+     "date": "2015-02-09",
+     "session": "am",
+     "price": 8.29470018967988,
+     "shares": 1300,
+     "line_reconstructed": 8.29470018967988,
+     "session_open": 8.45,
+     "session_low": 8.23,
+     "sigma0": 0.17843327010670665,
+     "open_at_or_below_limit_down": false
+    }
+   ],
+   "gate8": {
+    "armed_events": 0,
+    "resolved_fallback": 0,
+    "resolved_other": 0,
+    "stuck_end": 0,
+    "zone_stop_armed_events": 0,
+    "market_exit_deferred": {},
+    "k3_armed_total": 0,
+    "k3_executed_total": 0,
+    "tp_expired_sessions": 372,
+    "tier_expired": 20,
+    "tier_invalidated": 0,
+    "tier_below_min_lot": 0,
+    "tier_cap_voided": 0,
+    "tp_below_min_lot": 21
+   },
+   "zone_events": {
+    "zone_admitted": 18,
+    "zone_holding": 17,
+    "zone_stop_triggered": 5,
+    "zone_cooling": 8,
+    "zone_ladder_expired": 10,
+    "zone_done": 9,
+    "zone_exiting_boundary": 8,
+    "zone_continued": 1
+   },
+   "armed_edge_cases": [
+    {
+     "date": "2015-02-06",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sz.002424 (signal 2015-01-30): session low 41.0200 < stop line 41.1295; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 41.1295"
+    },
+    {
+     "date": "2015-02-06",
+     "session": "pm",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sz.000513 (signal 2015-01-30): session low 47.7000 < stop line 48.1525; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 48.1525"
+    },
+    {
+     "date": "2015-02-09",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sh.601677 (signal 2015-01-30): session low 12.1000 < stop line 12.1136; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 12.1136"
+    },
+    {
+     "date": "2015-02-09",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sh.601877 (signal 2015-01-30): session low 32.2000 < stop line 32.3380; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 32.3380"
+    },
+    {
+     "date": "2015-02-09",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sz.000759 (signal 2015-01-30): session low 8.2300 < stop line 8.2947; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 8.2947"
+    }
+   ],
+   "n_fills": 56,
+   "wall_s": 0.042886600000201724
+  },
+  "F4R1-B/W1": {
+   "pass": true,
+   "fail": [],
+   "zones_rows": 40,
+   "sigma_excluded": {},
+   "admissions_by_month": {
+    "2015-01-30": 18
+   },
+   "admissions_first_scan": {
+    "2015-01-30": 10,
+    "2015-02-27": 0
+   },
+   "continuations_by_month": {
+    "2015-01-30": 0,
+    "2015-02-27": 1
+   },
+   "industry_blocked_reconstructed": [],
+   "fills_checked": {
+    "routed": 37,
+    "ladder_price": 18,
+    "tp_price": 17
+   },
+   "cash_conservation_max_abs_err": 1.0186340659856796e-10,
+   "equity_identity_max_abs_err": 0.0,
+   "tp_samples_n": 12,
+   "stop_samples": [
+    {
+     "symbol": "sz.002424",
+     "date": "2015-02-06",
+     "session": "am",
+     "price": 41.12946247533609,
+     "shares": 100,
+     "line_reconstructed": 41.12946247533609,
+     "session_open": 41.74,
+     "session_low": 41.02,
+     "sigma0": 0.9468458415546369,
+     "open_at_or_below_limit_down": false
+    },
+    {
+     "symbol": "sh.601233",
+     "date": "2015-02-09",
+     "session": "am",
+     "price": 11.055415755478865,
+     "shares": 400,
+     "line_reconstructed": 11.055415755478865,
+     "session_open": 11.5,
+     "session_low": 11.0,
+     "sigma0": 0.3848614148403786,
+     "open_at_or_below_limit_down": false
+    },
+    {
+     "symbol": "sh.601677",
+     "date": "2015-02-09",
+     "session": "am",
+     "price": 12.113612480392483,
+     "shares": 400,
+     "line_reconstructed": 12.113612480392483,
+     "session_open": 12.12,
+     "session_low": 12.1,
+     "sigma0": 0.35879583986917196,
+     "open_at_or_below_limit_down": false
+    },
+    {
+     "symbol": "sh.601877",
+     "date": "2015-02-09",
+     "session": "am",
+     "price": 32.33796414926104,
+     "shares": 100,
+     "line_reconstructed": 32.33796414926104,
+     "session_open": 33.01,
+     "session_low": 32.2,
+     "sigma0": 0.7740119502463187,
+     "open_at_or_below_limit_down": false
+    },
+    {
+     "symbol": "sz.000759",
+     "date": "2015-02-09",
+     "session": "am",
+     "price": 8.29470018967988,
+     "shares": 600,
+     "line_reconstructed": 8.29470018967988,
+     "session_open": 8.45,
+     "session_low": 8.23,
+     "sigma0": 0.17843327010670665,
+     "open_at_or_below_limit_down": false
+    }
+   ],
+   "gate8": {
+    "armed_events": 0,
+    "resolved_fallback": 0,
+    "resolved_other": 0,
+    "stuck_end": 0,
+    "zone_stop_armed_events": 0,
+    "market_exit_deferred": {},
+    "k3_armed_total": 0,
+    "k3_executed_total": 0,
+    "tp_expired_sessions": 343,
+    "tier_expired": 20,
+    "tier_invalidated": 0,
+    "tier_below_min_lot": 6,
+    "tier_cap_voided": 0,
+    "tp_below_min_lot": 41
+   },
+   "zone_events": {
+    "zone_admitted": 18,
+    "zone_below_min_lot": 1,
+    "zone_holding": 17,
+    "zone_stop_triggered": 5,
+    "zone_cooling": 8,
+    "zone_ladder_expired": 10,
+    "zone_done": 9,
+    "zone_exiting_boundary": 8,
+    "zone_continued": 1
+   },
+   "armed_edge_cases": [
+    {
+     "date": "2015-02-06",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sz.002424 (signal 2015-01-30): session low 41.0200 < stop line 41.1295; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 41.1295"
+    },
+    {
+     "date": "2015-02-09",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sh.601233 (signal 2015-01-30): session low 11.0000 < stop line 11.0554; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 11.0554"
+    },
+    {
+     "date": "2015-02-09",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sh.601677 (signal 2015-01-30): session low 12.1000 < stop line 12.1136; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 12.1136"
+    },
+    {
+     "date": "2015-02-09",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sh.601877 (signal 2015-01-30): session low 32.2000 < stop line 32.3380; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 32.3380"
+    },
+    {
+     "date": "2015-02-09",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sz.000759 (signal 2015-01-30): session low 8.2300 < stop line 8.2947; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 8.2947"
+    }
+   ],
+   "n_fills": 42,
+   "wall_s": 0.03817669999989448
+  },
+  "F4R1-C/W1": {
+   "pass": true,
+   "fail": [],
+   "zones_rows": 40,
+   "sigma_excluded": {},
+   "admissions_by_month": {
+    "2015-01-30": 20
+   },
+   "admissions_first_scan": {
+    "2015-01-30": 10,
+    "2015-02-27": 0
+   },
+   "continuations_by_month": {
+    "2015-01-30": 0,
+    "2015-02-27": 0
+   },
+   "industry_blocked_reconstructed": [],
+   "fills_checked": {
+    "routed": 34,
+    "ladder_price": 21,
+    "tp_price": 11
+   },
+   "cash_conservation_max_abs_err": 8.731149137020111e-11,
+   "equity_identity_max_abs_err": 0.0,
+   "tp_samples_n": 11,
+   "stop_samples": [
+    {
+     "symbol": "sz.002424",
+     "date": "2015-02-06",
+     "session": "am",
+     "price": 41.12946247533609,
+     "shares": 200,
+     "line_reconstructed": 41.12946247533609,
+     "session_open": 41.74,
+     "session_low": 41.02,
+     "sigma0": 0.9468458415546369,
+     "open_at_or_below_limit_down": false
+    },
+    {
+     "symbol": "sh.601677",
+     "date": "2015-02-09",
+     "session": "am",
+     "price": 12.113612480392483,
+     "shares": 900,
+     "line_reconstructed": 12.113612480392483,
+     "session_open": 12.12,
+     "session_low": 12.1,
+     "sigma0": 0.35879583986917196,
+     "open_at_or_below_limit_down": false
+    },
+    {
+     "symbol": "sz.000759",
+     "date": "2015-02-09",
+     "session": "am",
+     "price": 8.29470018967988,
+     "shares": 1300,
+     "line_reconstructed": 8.29470018967988,
+     "session_open": 8.45,
+     "session_low": 8.23,
+     "sigma0": 0.17843327010670665,
+     "open_at_or_below_limit_down": false
+    }
+   ],
+   "gate8": {
+    "armed_events": 0,
+    "resolved_fallback": 0,
+    "resolved_other": 0,
+    "stuck_end": 0,
+    "zone_stop_armed_events": 0,
+    "market_exit_deferred": {},
+    "k3_armed_total": 0,
+    "k3_executed_total": 0,
+    "tp_expired_sessions": 175,
+    "tier_expired": 13,
+    "tier_invalidated": 0,
+    "tier_below_min_lot": 0,
+    "tier_cap_voided": 0,
+    "tp_below_min_lot": 0
+   },
+   "zone_events": {
+    "zone_admitted": 20,
+    "zone_holding": 19,
+    "zone_cooling": 14,
+    "zone_stop_triggered": 3,
+    "zone_ladder_expired": 6,
+    "zone_done": 15,
+    "zone_exiting_boundary": 5
+   },
+   "armed_edge_cases": [
+    {
+     "date": "2015-02-06",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sz.002424 (signal 2015-01-30): session low 41.0200 < stop line 41.1295; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 41.1295"
+    },
+    {
+     "date": "2015-02-09",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sh.601677 (signal 2015-01-30): session low 12.1000 < stop line 12.1136; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 12.1136"
+    },
+    {
+     "date": "2015-02-09",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sz.000759 (signal 2015-01-30): session low 8.2300 < stop line 8.2947; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 8.2947"
+    }
+   ],
+   "n_fills": 37,
+   "wall_s": 0.032656800001859665
+  },
+  "F4R1-A/W2": {
+   "pass": true,
+   "fail": [],
+   "zones_rows": 38,
+   "sigma_excluded": {
+    "lookback_gap": 2
+   },
+   "admissions_by_month": {
+    "2016-01-29": 18
+   },
+   "admissions_first_scan": {
+    "2016-01-29": 10,
+    "2016-02-29": 0
+   },
+   "continuations_by_month": {
+    "2016-01-29": 0,
+    "2016-02-29": 0
+   },
+   "industry_blocked_reconstructed": [],
+   "fills_checked": {
+    "routed": 67,
+    "ladder_price": 22,
+    "tp_price": 43
+   },
+   "cash_conservation_max_abs_err": 5.820766091346741e-11,
+   "equity_identity_max_abs_err": 0.0,
+   "tp_samples_n": 12,
+   "stop_samples": [
+    {
+     "symbol": "sh.600326",
+     "date": "2016-02-29",
+     "session": "am",
+     "price": 7.52572795715504,
+     "shares": 3200,
+     "line_reconstructed": 7.52572795715504,
+     "session_open": 7.77,
+     "session_low": 7.21,
+     "sigma0": 0.3514240142816532,
+     "open_at_or_below_limit_down": false
+    },
+    {
+     "symbol": "sh.600827",
+     "date": "2016-02-29",
+     "session": "am",
+     "price": 11.959097244144154,
+     "shares": 1800,
+     "line_reconstructed": 11.959097244144154,
+     "session_open": 13.09,
+     "session_low": 11.82,
+     "sigma0": 0.5736342519519484,
+     "open_at_or_below_limit_down": false
+    },
+    {
+     "symbol": "sz.000830",
+     "date": "2016-02-29",
+     "session": "am",
+     "price": 4.8510626902951755,
+     "shares": 2400,
+     "line_reconstructed": 4.8510626902951755,
+     "session_open": 5.1,
+     "session_low": 4.81,
+     "sigma0": 0.22631243656827482,
+     "open_at_or_below_limit_down": false
+    },
+    {
+     "symbol": "sz.002398",
+     "date": "2016-02-29",
+     "session": "am",
+     "price": 11.15261358521293,
+     "shares": 100,
+     "line_reconstructed": 11.15261358521293,
+     "session_open": 11.61,
+     "session_low": 10.59,
+     "sigma0": 0.5957954715956901,
+     "open_at_or_below_limit_down": false
+    },
+    {
+     "symbol": "sz.002538",
+     "date": "2016-02-29",
+     "session": "am",
+     "price": 8.381818755786647,
+     "shares": 1500,
+     "line_reconstructed": 8.381818755786647,
+     "session_open": 8.65,
+     "session_low": 8.18,
+     "sigma0": 0.4027270814044508,
+     "open_at_or_below_limit_down": false
+    }
+   ],
+   "gate8": {
+    "armed_events": 0,
+    "resolved_fallback": 0,
+    "resolved_other": 0,
+    "stuck_end": 0,
+    "zone_stop_armed_events": 0,
+    "market_exit_deferred": {},
+    "k3_armed_total": 0,
+    "k3_executed_total": 0,
+    "tp_expired_sessions": 231,
+    "tier_expired": 11,
+    "tier_invalidated": 0,
+    "tier_below_min_lot": 0,
+    "tier_cap_voided": 0,
+    "tp_below_min_lot": 43
+   },
+   "zone_events": {
+    "zone_admitted": 18,
+    "zone_holding": 17,
+    "zone_cooling": 12,
+    "zone_stop_triggered": 5,
+    "zone_ladder_expired": 6,
+    "zone_done": 13,
+    "zone_exiting_boundary": 5
+   },
+   "armed_edge_cases": [
+    {
+     "date": "2016-02-29",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sh.600326 (signal 2016-01-29): session low 7.2100 < stop line 7.5257; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 7.5257"
+    },
+    {
+     "date": "2016-02-29",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sh.600827 (signal 2016-01-29): session low 11.8200 < stop line 11.9591; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 11.9591"
+    },
+    {
+     "date": "2016-02-29",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sz.000830 (signal 2016-01-29): session low 4.8100 < stop line 4.8511; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 4.8511"
+    },
+    {
+     "date": "2016-02-29",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sz.002398 (signal 2016-01-29): session low 10.5900 < stop line 11.1526; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 11.1526"
+    },
+    {
+     "date": "2016-02-29",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sz.002538 (signal 2016-01-29): session low 8.1800 < stop line 8.3818; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 8.3818"
+    }
+   ],
+   "n_fills": 72,
+   "wall_s": 0.07253489999857266
+  },
+  "F4R1-B/W2": {
+   "pass": true,
+   "fail": [],
+   "zones_rows": 38,
+   "sigma_excluded": {
+    "lookback_gap": 2
+   },
+   "admissions_by_month": {
+    "2016-01-29": 18
+   },
+   "admissions_first_scan": {
+    "2016-01-29": 10,
+    "2016-02-29": 0
+   },
+   "continuations_by_month": {
+    "2016-01-29": 0,
+    "2016-02-29": 0
+   },
+   "industry_blocked_reconstructed": [],
+   "fills_checked": {
+    "routed": 54,
+    "ladder_price": 22,
+    "tp_price": 30
+   },
+   "cash_conservation_max_abs_err": 5.4569682106375694e-11,
+   "equity_identity_max_abs_err": 0.0,
+   "tp_samples_n": 12,
+   "stop_samples": [
+    {
+     "symbol": "sh.600326",
+     "date": "2016-02-29",
+     "session": "am",
+     "price": 7.52572795715504,
+     "shares": 1400,
+     "line_reconstructed": 7.52572795715504,
+     "session_open": 7.77,
+     "session_low": 7.21,
+     "sigma0": 0.3514240142816532,
+     "open_at_or_below_limit_down": false
+    },
+    {
+     "symbol": "sh.600827",
+     "date": "2016-02-29",
+     "session": "am",
+     "price": 11.959097244144154,
+     "shares": 800,
+     "line_reconstructed": 11.959097244144154,
+     "session_open": 13.09,
+     "session_low": 11.82,
+     "sigma0": 0.5736342519519484,
+     "open_at_or_below_limit_down": false
+    },
+    {
+     "symbol": "sz.000830",
+     "date": "2016-02-29",
+     "session": "am",
+     "price": 4.8510626902951755,
+     "shares": 1000,
+     "line_reconstructed": 4.8510626902951755,
+     "session_open": 5.1,
+     "session_low": 4.81,
+     "sigma0": 0.22631243656827482,
+     "open_at_or_below_limit_down": false
+    },
+    {
+     "symbol": "sz.002398",
+     "date": "2016-02-29",
+     "session": "am",
+     "price": 11.15261358521293,
+     "shares": 100,
+     "line_reconstructed": 11.15261358521293,
+     "session_open": 11.61,
+     "session_low": 10.59,
+     "sigma0": 0.5957954715956901,
+     "open_at_or_below_limit_down": false
+    },
+    {
+     "symbol": "sz.002538",
+     "date": "2016-02-29",
+     "session": "am",
+     "price": 8.381818755786647,
+     "shares": 700,
+     "line_reconstructed": 8.381818755786647,
+     "session_open": 8.65,
+     "session_low": 8.18,
+     "sigma0": 0.4027270814044508,
+     "open_at_or_below_limit_down": false
+    }
+   ],
+   "gate8": {
+    "armed_events": 0,
+    "resolved_fallback": 0,
+    "resolved_other": 0,
+    "stuck_end": 0,
+    "zone_stop_armed_events": 0,
+    "market_exit_deferred": {},
+    "k3_armed_total": 0,
+    "k3_executed_total": 0,
+    "tp_expired_sessions": 231,
+    "tier_expired": 11,
+    "tier_invalidated": 0,
+    "tier_below_min_lot": 0,
+    "tier_cap_voided": 0,
+    "tp_below_min_lot": 56
+   },
+   "zone_events": {
+    "zone_admitted": 18,
+    "zone_holding": 17,
+    "zone_cooling": 12,
+    "zone_stop_triggered": 5,
+    "zone_ladder_expired": 6,
+    "zone_done": 13,
+    "zone_exiting_boundary": 5
+   },
+   "armed_edge_cases": [
+    {
+     "date": "2016-02-29",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sh.600326 (signal 2016-01-29): session low 7.2100 < stop line 7.5257; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 7.5257"
+    },
+    {
+     "date": "2016-02-29",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sh.600827 (signal 2016-01-29): session low 11.8200 < stop line 11.9591; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 11.9591"
+    },
+    {
+     "date": "2016-02-29",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sz.000830 (signal 2016-01-29): session low 4.8100 < stop line 4.8511; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 4.8511"
+    },
+    {
+     "date": "2016-02-29",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sz.002398 (signal 2016-01-29): session low 10.5900 < stop line 11.1526; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 11.1526"
+    },
+    {
+     "date": "2016-02-29",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sz.002538 (signal 2016-01-29): session low 8.1800 < stop line 8.3818; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 8.3818"
+    }
+   ],
+   "n_fills": 59,
+   "wall_s": 0.042804500000784174
+  },
+  "F4R1-C/W2": {
+   "pass": true,
+   "fail": [],
+   "zones_rows": 38,
+   "sigma_excluded": {
+    "lookback_gap": 2
+   },
+   "admissions_by_month": {
+    "2016-01-29": 18
+   },
+   "admissions_first_scan": {
+    "2016-01-29": 10,
+    "2016-02-29": 0
+   },
+   "continuations_by_month": {
+    "2016-01-29": 0,
+    "2016-02-29": 0
+   },
+   "industry_blocked_reconstructed": [],
+   "fills_checked": {
+    "routed": 36,
+    "ladder_price": 23,
+    "tp_price": 11
+   },
+   "cash_conservation_max_abs_err": 5.820766091346741e-11,
+   "equity_identity_max_abs_err": 0.0,
+   "tp_samples_n": 11,
+   "stop_samples": [
+    {
+     "symbol": "sh.600326",
+     "date": "2016-02-29",
+     "session": "am",
+     "price": 7.585727957155041,
+     "shares": 3200,
+     "line_reconstructed": 7.585727957155041,
+     "session_open": 7.77,
+     "session_low": 7.21,
+     "sigma0": 0.3514240142816532,
+     "open_at_or_below_limit_down": false
+    },
+    {
+     "symbol": "sh.600335",
+     "date": "2016-02-29",
+     "session": "am",
+     "price": 12.561358827469556,
+     "shares": 2000,
+     "line_reconstructed": 12.561358827469556,
+     "session_open": 13.3,
+     "session_low": 12.12,
+     "sigma0": 0.6262137241768145,
+     "open_at_or_below_limit_down": false
+    },
+    {
+     "symbol": "sh.600827",
+     "date": "2016-02-29",
+     "session": "am",
+     "price": 11.959097244144154,
+     "shares": 1800,
+     "line_reconstructed": 11.959097244144154,
+     "session_open": 13.09,
+     "session_low": 11.82,
+     "sigma0": 0.5736342519519484,
+     "open_at_or_below_limit_down": false
+    },
+    {
+     "symbol": "sz.000830",
+     "date": "2016-02-29",
+     "session": "am",
+     "price": 4.8510626902951755,
+     "shares": 2400,
+     "line_reconstructed": 4.8510626902951755,
+     "session_open": 5.1,
+     "session_low": 4.81,
+     "sigma0": 0.22631243656827482,
+     "open_at_or_below_limit_down": false
+    }
+   ],
+   "gate8": {
+    "armed_events": 0,
+    "resolved_fallback": 0,
+    "resolved_other": 0,
+    "stuck_end": 0,
+    "zone_stop_armed_events": 0,
+    "market_exit_deferred": {},
+    "k3_armed_total": 0,
+    "k3_executed_total": 0,
+    "tp_expired_sessions": 130,
+    "tier_expired": 4,
+    "tier_invalidated": 0,
+    "tier_below_min_lot": 0,
+    "tier_cap_voided": 0,
+    "tp_below_min_lot": 0
+   },
+   "zone_events": {
+    "zone_admitted": 18,
+    "zone_holding": 18,
+    "zone_cooling": 15,
+    "zone_stop_triggered": 4,
+    "zone_ladder_expired": 3,
+    "zone_done": 15,
+    "zone_exiting_boundary": 3
+   },
+   "armed_edge_cases": [
+    {
+     "date": "2016-02-29",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sh.600326 (signal 2016-01-29): session low 7.2100 < stop line 7.5857; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 7.5857"
+    },
+    {
+     "date": "2016-02-29",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sh.600335 (signal 2016-01-29): session low 12.1200 < stop line 12.5614; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 12.5614"
+    },
+    {
+     "date": "2016-02-29",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sh.600827 (signal 2016-01-29): session low 11.8200 < stop line 11.9591; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 11.9591"
+    },
+    {
+     "date": "2016-02-29",
+     "session": "am",
+     "symbol": "",
+     "event": "zone_stop_triggered",
+     "detail": "sz.000830 (signal 2016-01-29): session low 4.8100 < stop line 4.8511; ladder tiers and TP orders cancelled for this session; fill at min(line, open) = 4.8511"
+    }
+   ],
+   "n_fills": 40,
+   "wall_s": 0.03518820000317646
+  }
+ },
+ "smoke_all_pass": true,
+ "trial_accounting": {
+  "this_round": "0 consumed (smoke is a correctness run per prereg sec 7; the 270->273 arm trials book at the full-period run)",
+  "strategy_line": "270 (F4R1 full run will book 270->273); factor line FT-01=120"
+ },
+ "advanced_to_validation": false,
+ "val_consumed": false,
+ "stop_note": "smoke correctness-only; no performance conclusions; full-period run pending main-conversation acceptance",
+ "outputs": {
+  "outputs/F4R1-A-W1_clips_final.parquet": "cd09ed7d76f095981b94b0e77516ef41753c4fb3ea805c3091e2f0a11dcb0d65",
+  "outputs/F4R1-A-W1_daily_equity.parquet": "3f7a37c95afa0488075dfe10297fd5822bfdd31dad8152600b10efba656acb65",
+  "outputs/F4R1-A-W1_events.parquet": "942b60a0ae15df3eb0f8a097dbde70d537bd5990bfd520fadd8f593f8e0c22ad",
+  "outputs/F4R1-A-W1_fills.parquet": "501f02a0de2a2f65cd59b931959c24a650c185a5fb5d0a522f2bbd97bfa6202b",
+  "outputs/F4R1-A-W1_intents.parquet": "2a6f291644a03f54e159532b6c496c2ad76918ecdcc345e241bf6bc1458057eb",
+  "outputs/F4R1-A-W1_stats.json": "8bc4d5b31e2479b5f480bb76eb2b2fa5bc8fc98fa9a137472a3fe0e8cce18cca",
+  "outputs/F4R1-A-W1_zones.parquet": "fa4797d4c707cc81487f23264e894cae7d7b79a95e4da7725006cf6901b5b245",
+  "outputs/F4R1-A-W1_zones_input.parquet": "5e33fdbe6fed0765eaa448e8488a0a6308325c92fd30854ed1c8956178458e1c",
+  "outputs/F4R1-A-W2_clips_final.parquet": "0faf3d2c44cd5a08d9d907f5b9050a648b96a318d9886fa70a5ea5b7fc2fbd9d",
+  "outputs/F4R1-A-W2_daily_equity.parquet": "b655a1efb46c6f95d83e1a314fa2b383bfebd3bd4390ffbd31300f2a89e6d1f5",
+  "outputs/F4R1-A-W2_events.parquet": "2502fe3dc8d80b1e21b7defe58bb9ed5041cb77078f5a47ad179dd0add19300d",
+  "outputs/F4R1-A-W2_fills.parquet": "f24add65644c285c6b053a93f095cc269c4349c0b9f3d028a6d68e97ea23069d",
+  "outputs/F4R1-A-W2_intents.parquet": "ab25ab46d1b89ee31f5691e8563cda63deedc8ea708fc061766c007f18f23cf9",
+  "outputs/F4R1-A-W2_stats.json": "bb2e3bb69d13ccc91e7405bc1ef8488f45d022823e8316de4c649d9d3e87da8f",
+  "outputs/F4R1-A-W2_zones.parquet": "69e6124d895cbf810f71f05b016acf3999315d1781232d2c4cb447f43328997b",
+  "outputs/F4R1-A-W2_zones_input.parquet": "03246e7223dede7a94b143e7be896e1a095938d68141e27ce30baf759027ca68",
+  "outputs/F4R1-A0_clips_final.parquet": "af1fb490c49790d898ccc1674aa16d79cc22e6ec9d1f3b7426445098adc919e1",
+  "outputs/F4R1-A0_daily_equity.parquet": "123e4cb385368abc8bc24a9c96b61ea170d12a7010c52955f66a2dcb9f177738",
+  "outputs/F4R1-A0_events.parquet": "6be782d8ac781c6adf78f111779fa70f95052e00157d184d1a14a8421b062255",
+  "outputs/F4R1-A0_fills.parquet": "2f509f6894d54787df4a77b1508bcc9fab9bac1879e2b384140b1701228d4f00",
+  "outputs/F4R1-A0_intents.parquet": "c1e874bddb88d23804fb5af9b847c6daa2e0d440c878ab9cd71d7909ccfe3e4d",
+  "outputs/F4R1-B-W1_clips_final.parquet": "5c34392d3ec5f49e86bab3561799286c5cd105c5269d69766384b8e74aed0d72",
+  "outputs/F4R1-B-W1_daily_equity.parquet": "a3726e3cdd8da81eb04d14827fd945a24f7f7624fdfddfd34a5f949f1d156f90",
+  "outputs/F4R1-B-W1_events.parquet": "3766c0ea1a3b692dfaceaed37d0af50f71d054d43783043e0ce1e0f3c635dd12",
+  "outputs/F4R1-B-W1_fills.parquet": "d80aef8c0c9f60944ed7e59bd8fbd056da50172363a747faf9e8e3ea548092ce",
+  "outputs/F4R1-B-W1_intents.parquet": "2a6f291644a03f54e159532b6c496c2ad76918ecdcc345e241bf6bc1458057eb",
+  "outputs/F4R1-B-W1_stats.json": "c84c21101b3806a5c03c139b5924cd8e5d6972cd1515080f540921d185fc2db6",
+  "outputs/F4R1-B-W1_zones.parquet": "43e3d4e95385bbe88bedfb2a01b157e44c024ce9559db638cb1d12a1c163e8e8",
+  "outputs/F4R1-B-W1_zones_input.parquet": "9bb706cc597e8f381391520e36ed9a702280447f1beca880795abad81f6ec29a",
+  "outputs/F4R1-B-W2_clips_final.parquet": "61053a52243a6a2239bf88177c8b1af3f19b2b1a2420041f3cd80e989ff55117",
+  "outputs/F4R1-B-W2_daily_equity.parquet": "7bc3aa8db29b0346398fdda4fa058ac6b78fcbc9fe5008c81d9389a3f28e8b15",
+  "outputs/F4R1-B-W2_events.parquet": "6fcf63599b67ffab3f2fd9640bfbb6f3ada3ffabacfeb3250c5971c09403c9c6",
+  "outputs/F4R1-B-W2_fills.parquet": "71870ed66481a7f159adbab8c47d092407e9470d8f69254abc5506b9b827466b",
+  "outputs/F4R1-B-W2_intents.parquet": "ab25ab46d1b89ee31f5691e8563cda63deedc8ea708fc061766c007f18f23cf9",
+  "outputs/F4R1-B-W2_stats.json": "e952ad0abec349c5175a2f795477a8bce1d015b4655dad2e2b16744c1f5f97d0",
+  "outputs/F4R1-B-W2_zones.parquet": "333700a1c10d075318468627d0613355c4fc6abd46eb4e6b619e687a9c2bcfa0",
+  "outputs/F4R1-B-W2_zones_input.parquet": "aa2bbec38412a79bce21a4e0f7e26c568c6348238f8db466072bbe10e03a22e6",
+  "outputs/F4R1-C-W1_clips_final.parquet": "fcfe584f687adb502baf7ec127e5f6adf6fe011e8b456ea784ec7c544f8b2650",
+  "outputs/F4R1-C-W1_daily_equity.parquet": "eaf4eac91b27a1cb1897708a203dc3f8fa78d59d3105375755d5ef601d8534c7",
+  "outputs/F4R1-C-W1_events.parquet": "e8f066116eb0af7f2c33c94a2cbc0f5009894348f67681565c647254056c21b8",
+  "outputs/F4R1-C-W1_fills.parquet": "548a8318513640beaad3acfd222622c1cce07f85ec69d88356c72afb67e8c9cb",
+  "outputs/F4R1-C-W1_intents.parquet": "2a6f291644a03f54e159532b6c496c2ad76918ecdcc345e241bf6bc1458057eb",
+  "outputs/F4R1-C-W1_stats.json": "70e502831a499677c3dc10e29665a5be334f8c205b9398f80416b0e91bbf0327",
+  "outputs/F4R1-C-W1_zones.parquet": "46b40a8f1a2a5915dd00e5aa68083ed86bf6c1a75b9de67abae44ca3e6a622fc",
+  "outputs/F4R1-C-W1_zones_input.parquet": "762bd698607a6abc057a98aa93afb76f3bbee7c323e4e2a260939b7a0a5708ac",
+  "outputs/F4R1-C-W2_clips_final.parquet": "ba36f83f6f35b7e8edde81df3147d0c471c0f4852b4bd89540a8261fb0054c53",
+  "outputs/F4R1-C-W2_daily_equity.parquet": "f748b09ceed81fc7a708dced2e69166f95d8a0a842fbdb2d8eee0a8a29b48559",
+  "outputs/F4R1-C-W2_events.parquet": "90d1dac875f8829a0620f790e9bd47b13cde9eea55ff51bb76e1ae00ba5bf1a8",
+  "outputs/F4R1-C-W2_fills.parquet": "0483f46563f22d252d6c433e8187b05c69c4ea3ae4796d621462574aa3bdaa91",
+  "outputs/F4R1-C-W2_intents.parquet": "ab25ab46d1b89ee31f5691e8563cda63deedc8ea708fc061766c007f18f23cf9",
+  "outputs/F4R1-C-W2_stats.json": "a8ad58a68c2132c77bef1c2a2085a7da7bcf04087401697482bfffe3315a88e6",
+  "outputs/F4R1-C-W2_zones.parquet": "12d2aa1d977e3e98452b9ee6dc5501bad15e24bcf418bc9f6ceb36f299bc0075",
+  "outputs/F4R1-C-W2_zones_input.parquet": "3843c963b6b8068a4343149ff5114f32d6b8e6f2614e82b07edafa6fb7e88300",
+  "outputs/smoke_report.md": "291b8d524d87ffd4f2a2e4ad34e919fcffab0bedfcb8d98eb2a9c34acde4c3de",
+  "scripts/__pycache__/runner_f4r1.cpython-311.pyc": "fdb46f9d71de42175db8a642a670dfafdbbd23aee873e42481ecac37cb36d333",
+  "scripts/runner_f4r1.py": "63aa88dca26912185b1c55e62cd4e563898e80ed99aee2cb4b905502f1925072"
+ }
+}

@@ -1,0 +1,408 @@
+{
+ "per_etf": {
+  "510880.XSHG": {
+   "anchor_row": [
+    0,
+    1.0
+   ],
+   "n_change_points": 11,
+   "first_rows": [
+    [
+     20150105000000,
+     1.1245
+    ],
+    [
+     20150120000000,
+     1.1625
+    ],
+    [
+     20160120000000,
+     1.1865
+    ]
+   ],
+   "last_rows": [
+    [
+     20220117000000,
+     1.5054
+    ],
+    [
+     20230116000000,
+     1.5805
+    ],
+    [
+     20240123000000,
+     1.6557
+    ]
+   ],
+   "max_abs_ratio_minus_1": 0.0,
+   "identity_holds_on_matched": true,
+   "n_matched": 11,
+   "change_dates_missing_in_fund_adj": [],
+   "monotonic_nondecreasing": true,
+   "tushare_adj_first": 1.1245,
+   "tushare_adj_last": 1.6557,
+   "change_points_detail": [
+    {
+     "ex_date": 20150120,
+     "pre_close": 2.366,
+     "close_ex": 2.426,
+     "factor_step": 0.038000000000000034,
+     "implied_div_per_unit": 0.0773,
+     "unadj_close_drop": -0.06,
+     "exday_total_return": 0.058
+    },
+    {
+     "ex_date": 20160120,
+     "pre_close": 2.427,
+     "close_ex": 2.387,
+     "factor_step": 0.02400000000000002,
+     "implied_div_per_unit": 0.0491,
+     "unadj_close_drop": 0.04,
+     "exday_total_return": 0.0037
+    },
+    {
+     "ex_date": 20170123,
+     "pre_close": 2.653,
+     "close_ex": 2.652,
+     "factor_step": 0.04069999999999996,
+     "implied_div_per_unit": 0.088,
+     "unadj_close_drop": 0.001,
+     "exday_total_return": 0.0328
+    },
+    {
+     "ex_date": 20180123,
+     "pre_close": 3.21,
+     "close_ex": 3.259,
+     "factor_step": 0.04159999999999986,
+     "implied_div_per_unit": 0.1052,
+     "unadj_close_drop": -0.049,
+     "exday_total_return": 0.0481
+    },
+    {
+     "ex_date": 20190116,
+     "pre_close": 2.533,
+     "close_ex": 2.535,
+     "factor_step": 0.049100000000000144,
+     "implied_div_per_unit": 0.0944,
+     "unadj_close_drop": -0.002,
+     "exday_total_return": 0.038
+    },
+    {
+     "ex_date": 20200117,
+     "pre_close": 2.803,
+     "close_ex": 2.784,
+     "factor_step": 0.06769999999999987,
+     "implied_div_per_unit": 0.137,
+     "unadj_close_drop": 0.019,
+     "exday_total_return": 0.0421
+    },
+    {
+     "ex_date": 20210118,
+     "pre_close": 2.594,
+     "close_ex": 2.608,
+     "factor_step": 0.07540000000000013,
+     "implied_div_per_unit": 0.1339,
+     "unadj_close_drop": -0.014,
+     "exday_total_return": 0.057
+    },
+    {
+     "ex_date": 20220117,
+     "pre_close": 2.825,
+     "close_ex": 2.828,
+     "factor_step": 0.044399999999999995,
+     "implied_div_per_unit": 0.0833,
+     "unadj_close_drop": -0.003,
+     "exday_total_return": 0.0306
+    },
+    {
+     "ex_date": 20230116,
+     "pre_close": 2.769,
+     "close_ex": 2.788,
+     "factor_step": 0.07509999999999994,
+     "implied_div_per_unit": 0.1316,
+     "unadj_close_drop": -0.019,
+     "exday_total_return": 0.0544
+    },
+    {
+     "ex_date": 20240123,
+     "pre_close": 2.75,
+     "close_ex": 2.768,
+     "factor_step": 0.07519999999999993,
+     "implied_div_per_unit": 0.1249,
+     "unadj_close_drop": -0.018,
+     "exday_total_return": 0.052
+    }
+   ]
+  },
+  "510050.XSHG": {
+   "anchor_row": [
+    0,
+    1.0
+   ],
+   "n_change_points": 10,
+   "first_rows": [
+    [
+     20150105000000,
+     1.2093
+    ],
+    [
+     20161129000000,
+     1.2359
+    ],
+    [
+     20171128000000,
+     1.2588
+    ]
+   ],
+   "last_rows": [
+    [
+     20221201000000,
+     1.3602
+    ],
+    [
+     20231127000000,
+     1.382
+    ],
+    [
+     20241202000000,
+     1.4104
+    ]
+   ],
+   "max_abs_ratio_minus_1": 0.0,
+   "identity_holds_on_matched": true,
+   "n_matched": 10,
+   "change_dates_missing_in_fund_adj": [],
+   "monotonic_nondecreasing": true,
+   "tushare_adj_first": 1.2093,
+   "tushare_adj_last": 1.4104,
+   "change_points_detail": [
+    {
+     "ex_date": 20161129,
+     "pre_close": 2.407,
+     "close_ex": 2.446,
+     "factor_step": 0.026599999999999957,
+     "implied_div_per_unit": 0.0518,
+     "unadj_close_drop": -0.039,
+     "exday_total_return": 0.0377
+    },
+    {
+     "ex_date": 20171128,
+     "pre_close": 2.912,
+     "close_ex": 2.896,
+     "factor_step": 0.02289999999999992,
+     "implied_div_per_unit": 0.053,
+     "unadj_close_drop": 0.016,
+     "exday_total_return": 0.0127
+    },
+    {
+     "ex_date": 20181203,
+     "pre_close": 2.425,
+     "close_ex": 2.482,
+     "factor_step": 0.02540000000000009,
+     "implied_div_per_unit": 0.048,
+     "unadj_close_drop": -0.057,
+     "exday_total_return": 0.0433
+    },
+    {
+     "ex_date": 20191202,
+     "pre_close": 2.891,
+     "close_ex": 2.897,
+     "factor_step": 0.02089999999999992,
+     "implied_div_per_unit": 0.0463,
+     "unadj_close_drop": -0.006,
+     "exday_total_return": 0.0181
+    },
+    {
+     "ex_date": 20201130,
+     "pre_close": 3.506,
+     "close_ex": 3.473,
+     "factor_step": 0.019000000000000128,
+     "implied_div_per_unit": 0.0503,
+     "unadj_close_drop": 0.033,
+     "exday_total_return": 0.0049
+    },
+    {
+     "ex_date": 20211129,
+     "pre_close": 3.182,
+     "close_ex": 3.182,
+     "factor_step": 0.017099999999999893,
+     "implied_div_per_unit": 0.0406,
+     "unadj_close_drop": 0.0,
+     "exday_total_return": 0.0127
+    },
+    {
+     "ex_date": 20221201,
+     "pre_close": 2.608,
+     "close_ex": 2.632,
+     "factor_step": 0.019000000000000128,
+     "implied_div_per_unit": 0.0364,
+     "unadj_close_drop": -0.024,
+     "exday_total_return": 0.0232
+    },
+    {
+     "ex_date": 20231127,
+     "pre_close": 2.428,
+     "close_ex": 2.407,
+     "factor_step": 0.02179999999999982,
+     "implied_div_per_unit": 0.0383,
+     "unadj_close_drop": 0.021,
+     "exday_total_return": 0.0071
+    },
+    {
+     "ex_date": 20241202,
+     "pre_close": 2.677,
+     "close_ex": 2.688,
+     "factor_step": 0.028400000000000203,
+     "implied_div_per_unit": 0.0539,
+     "unadj_close_drop": -0.011,
+     "exday_total_return": 0.0242
+    }
+   ]
+  },
+  "510300.XSHG": {
+   "anchor_row": [
+    0,
+    1.0
+   ],
+   "n_change_points": 11,
+   "first_rows": [
+    [
+     20150105000000,
+     1.0364
+    ],
+    [
+     20150120000000,
+     1.0475
+    ],
+    [
+     20160120000000,
+     1.0642
+    ]
+   ],
+   "last_rows": [
+    [
+     20220119000000,
+     1.1642
+    ],
+    [
+     20230116000000,
+     1.1825
+    ],
+    [
+     20240118000000,
+     1.2078
+    ]
+   ],
+   "max_abs_ratio_minus_1": 0.0,
+   "identity_holds_on_matched": true,
+   "n_matched": 11,
+   "change_dates_missing_in_fund_adj": [],
+   "monotonic_nondecreasing": true,
+   "tushare_adj_first": 1.0364,
+   "tushare_adj_last": 1.2078,
+   "change_points_detail": [
+    {
+     "ex_date": 20150120,
+     "pre_close": 3.261,
+     "close_ex": 3.382,
+     "factor_step": 0.01110000000000011,
+     "implied_div_per_unit": 0.0346,
+     "unadj_close_drop": -0.121,
+     "exday_total_return": 0.0477
+    },
+    {
+     "ex_date": 20160120,
+     "pre_close": 3.211,
+     "close_ex": 3.169,
+     "factor_step": 0.016699999999999937,
+     "implied_div_per_unit": 0.0504,
+     "unadj_close_drop": 0.042,
+     "exday_total_return": 0.0026
+    },
+    {
+     "ex_date": 20170123,
+     "pre_close": 3.36,
+     "close_ex": 3.361,
+     "factor_step": 0.01739999999999986,
+     "implied_div_per_unit": 0.0541,
+     "unadj_close_drop": -0.001,
+     "exday_total_return": 0.0164
+    },
+    {
+     "ex_date": 20180123,
+     "pre_close": 4.344,
+     "close_ex": 4.388,
+     "factor_step": 0.011400000000000077,
+     "implied_div_per_unit": 0.0453,
+     "unadj_close_drop": -0.044,
+     "exday_total_return": 0.0206
+    },
+    {
+     "ex_date": 20190116,
+     "pre_close": 3.129,
+     "close_ex": 3.129,
+     "factor_step": 0.02069999999999994,
+     "implied_div_per_unit": 0.0582,
+     "unadj_close_drop": 0.0,
+     "exday_total_return": 0.0186
+    },
+    {
+     "ex_date": 20191211,
+     "pre_close": 3.894,
+     "close_ex": 3.9,
+     "factor_step": 0.01770000000000005,
+     "implied_div_per_unit": 0.0609,
+     "unadj_close_drop": -0.006,
+     "exday_total_return": 0.0172
+    },
+    {
+     "ex_date": 20210118,
+     "pre_close": 5.454,
+     "close_ex": 5.513,
+     "factor_step": 0.014900000000000135,
+     "implied_div_per_unit": 0.0709,
+     "unadj_close_drop": -0.059,
+     "exday_total_return": 0.0238
+    },
+    {
+     "ex_date": 20220119,
+     "pre_close": 4.806,
+     "close_ex": 4.78,
+     "factor_step": 0.017899999999999805,
+     "implied_div_per_unit": 0.0739,
+     "unadj_close_drop": 0.026,
+     "exday_total_return": 0.01
+    },
+    {
+     "ex_date": 20230116,
+     "pre_close": 4.08,
+     "close_ex": 4.143,
+     "factor_step": 0.018300000000000205,
+     "implied_div_per_unit": 0.0631,
+     "unadj_close_drop": -0.063,
+     "exday_total_return": 0.0309
+    },
+    {
+     "ex_date": 20240118,
+     "pre_close": 3.223,
+     "close_ex": 3.268,
+     "factor_step": 0.025299999999999878,
+     "implied_div_per_unit": 0.0675,
+     "unadj_close_drop": -0.045,
+     "exday_total_return": 0.0349
+    }
+   ]
+  }
+ },
+ "known_case_510050_20161129": [
+  {
+   "ex_date": 20161129,
+   "pre_close": 2.407,
+   "close_ex": 2.446,
+   "factor_step": 0.026599999999999957,
+   "implied_div_per_unit": 0.0518,
+   "unadj_close_drop": -0.039,
+   "exday_total_return": 0.0377
+  }
+ ]
+}

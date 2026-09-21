@@ -1,0 +1,49 @@
+D:\量化\artifacts\runs\20260920T130616-val-batch-fline-6534\scripts\generated\f2val_D_fund.py:248: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  .filter(pl.col("date").is_in(pl.Series(ME)))
+[  26.7s] fina 458718
+[  41.5s] income 421912
+[  68.0s] bal 409022
+[  86.7s] cf 396773
+[ 100.1s] fina pit 键集一致（219794 行；同日多公告 tie-break 差异 18210 行=取最新报告期）
+[ 101.9s] income pit 键集一致（291424 行；同日多公告 tie-break 差异 22594 行=取最新报告期）
+[ 104.8s] bal pit 键集一致（245141 行；同日多公告 tie-break 差异 16647 行=取最新报告期）
+[ 106.6s] cf pit 键集一致（260341 行；同日多公告 tie-break 差异 20452 行=取最新报告期）
+[ 106.7s] PIT 后 fina 97152（90d 兜底 0 行）；inc 94254；bal 94062；cf 94110
+[ 106.8s] 派生完成
+[ 108.9s] 月末 as-of 312694 行
+[ 113.4s] D01 roe        ic=+0.0257 t=+1.74 mono=+0.63 ic15=+0.0125 cov=95%  (4.2s)
+[ 116.4s] D02 roa        ic=+0.0249 t=+1.81 mono=+0.69 ic15=+0.0250 cov=93%  (3.0s)
+[ 119.2s] D03 gm         ic=+0.0150 t=+1.20 mono=+0.79 ic15=+0.0267 cov=93%  (2.8s)
+[ 122.0s] D04 nm         ic=+0.0190 t=+1.61 mono=+0.17 ic15=+0.0173 cov=95%  (2.8s)
+[ 124.5s] D05 debt_assets ic=-0.0065 t=-0.45 mono=-0.88 ic15=-0.0568 cov=94%  (2.5s)
+[ 127.6s] D06 cur_ratio  ic=+0.0058 t=+0.41 mono=+0.93 ic15=+0.0450 cov=92%  (3.1s)
+[ 131.4s] D07 ocf_opinc  ic=+0.0238 t=+2.63 mono=+0.42 ic15=-0.0084 cov=85% 存活 (3.8s)
+[ 135.3s] D08 ocf_roa    ic=+0.0291 t=+2.95 mono=+0.89 ic15=-0.0009 cov=85% 存活 (3.9s)
+[ 140.8s] D09 eps        ic=+0.0343 t=+2.17 mono=+0.81 ic15=+0.0239 cov=94% 存活 (5.5s)
+[ 146.1s] D10 bps        ic=+0.0311 t=+2.90 mono=+0.91 ic15=+0.0313 cov=93% 存活 (5.3s)
+[ 149.6s] D11 rev_yoy    ic=+0.0166 t=+1.54 mono=+0.80 ic15=+0.0393 cov=94%  (3.5s)
+[ 152.2s] D12 np_yoy     ic=+0.0218 t=+2.09 mono=+0.81 ic15=+0.0291 cov=94% 存活 (2.6s)
+[ 154.6s] D13 roe_d      ic=+0.0220 t=+2.35 mono=+0.88 ic15=+0.0251 cov=84% 存活 (2.4s)
+[ 157.0s] D14 gm_d       ic=+0.0185 t=+3.17 mono=+0.83 ic15=+0.0123 cov=82% 存活 (2.4s)
+[ 159.6s] D15 accruals   ic=-0.0155 t=-1.74 mono=-0.74 ic15=+0.0138 cov=83%  (2.5s)
+[ 162.3s] D16 ep_roe     ic=+0.0379 t=+2.50 mono=+0.64 ic15=+0.0201 cov=84% 存活 (2.6s)
+[ 165.0s] D17 quality    ic=+0.0202 t=+2.23 mono=+0.93 ic15=+0.0325 cov=84% 存活 (2.7s)
+[ 167.7s] D18 asset_turn ic=+0.0193 t=+2.60 mono=+0.73 ic15=+0.0210 cov=94% 存活 (2.6s)
+[ 170.4s] D19 ocf_yoy    ic=+0.0141 t=+3.74 mono=+0.83 ic15=+0.0010 cov=94% 存活 (2.7s)
+[ 172.9s] D20 rev_q_yoy  ic=+0.0228 t=+2.32 mono=+0.87 ic15=+0.0375 cov=93% 存活 (2.6s)
+[ 175.3s] D21 np_q_yoy   ic=+0.0139 t=+1.40 mono=+0.58 ic15=+0.0018 cov=72%  (2.4s)
+[ 177.8s] D22 roe_ttm    ic=+0.0223 t=+1.49 mono=+0.08 ic15=+0.0050 cov=91%  (2.4s)
+[ 180.4s] D23 gm_ttm     ic=+0.0150 t=+1.20 mono=+0.79 ic15=+0.0267 cov=93%  (2.6s)
+[ 183.1s] D24 eps_dq     ic=+0.0159 t=+1.18 mono=+0.27 ic15=+0.0036 cov=93%  (2.6s)
+[ 185.7s] D25 debt_d     ic=+0.0057 t=+1.26 mono=+0.72 ic15=+0.0088 cov=84%  (2.6s)
+[ 188.4s] D26 eq_mult    ic=-0.0052 t=-0.35 mono=-0.87 ic15=-0.0581 cov=88%  (2.7s)
+[ 191.0s] D27 tangible   ic=+0.0052 t=+0.33 mono=-0.64 ic15=-0.0600 cov=50%  (2.5s)
+[ 193.4s] D28 sga_r      ic=-0.0001 t=-0.01 mono=+0.75 ic15=+0.0371 cov=84%  (2.4s)
+[ 195.6s] D29 nonrecc    ic=-0.0116 t=-1.53 mono=-0.23 ic15=-0.0139 cov=87%  (2.2s)
+[ 197.9s] D30 ocf_ps     ic=+0.0312 t=+3.02 mono=+0.89 ic15=+0.0024 cov=94% 存活 (2.2s)
+年度 PIT 覆盖率(roe 非空占比): {2015: 0.961, 2016: 0.955, 2017: 0.962, 2018: 0.966, 2019: 0.964, 2020: 0.967}
+
+== D 族完成：30/30，终裁存活 13：['D07', 'D08', 'D09', 'D10', 'D12', 'D13', 'D14', 'D16', 'D17', 'D18', 'D19', 'D20', 'D30']；90d 兜底 0 行；总耗时 198s ==

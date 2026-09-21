@@ -1,0 +1,67 @@
+{
+ "factor_id": "A18",
+ "name": "liq_ratio",
+ "family": "A 量价",
+ "prereg": "exp-20260919-factor-round-f2r1 §3-A",
+ "formula": "mean(amount,5)/mean(amount,60)",
+ "panel_sha256": "1cbb09a11f7c10136981749c13467f12a1757b59e7e95fb6f86666f96edfc1de",
+ "eval_panel_end": "2020-12-31",
+ "implementer": "主对话接管（两次代理派发死于基建后）",
+ "screen": {
+  "t_ic": -4.528692390814618,
+  "crit1_abs_t_ge2": true,
+  "crit2_mono": true,
+  "ic_2015": null,
+  "crit3_2015_ok": true,
+  "pool_median_symbols": 3530.0,
+  "coverage_ratio": 1.173021517690314,
+  "crit4_coverage": true,
+  "screen_pass": true
+ },
+ "eval": {
+  "n_dates": 47,
+  "coverage_mean_symbols": 4140.765957446809,
+  "ic_mean": -0.07377533670457394,
+  "ic_std": 0.11168306054540156,
+  "icir": -0.6605776770827541,
+  "ic_win_rate": 0.2978723404255319,
+  "group_mean_ret": [
+   0.01947947517798818,
+   0.017494301162020255,
+   0.01627432002210638,
+   0.014046175065011535,
+   0.015921158533523442,
+   0.013684546022229998,
+   0.01306643812821684,
+   0.01139591980096056,
+   0.007206178287192275,
+   -0.005496260082563692
+  ],
+  "long_short_mean": -0.02497573526055187,
+  "monotonicity": -0.8409070252976285,
+  "ic_by_year": {
+   "2021": -0.10627518454255887,
+   "2022": -0.08937192020694366,
+   "2023": -0.02033098935628327,
+   "2024": -0.07960942689504956
+  },
+  "long_short_by_year": {
+   "2021": -0.03673159779977745,
+   "2022": -0.02628444045516588,
+   "2023": -0.003219823924749742,
+   "2024": -0.03501496378938749
+  },
+  "turnover_top_group": 0.8769783053495348,
+  "corr_with_others": {},
+  "config": {
+   "horizon_days": 20,
+   "n_groups": 10,
+   "eval_freq": "M",
+   "exclude_st": true,
+   "require_trading": true,
+   "exclude_boards": true,
+   "min_history_rows": 60
+  }
+ },
+ "n_rows": 222066
+}

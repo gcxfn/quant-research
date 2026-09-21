@@ -1,0 +1,167 @@
+{
+ "run_id": "20260919T222634-engine-v14-impl",
+ "experiment_id": "engine-v1.4-zones (docs/plans/p3-band-contract.md §10 + BR-1..BR-12 task brief; §10.3 A-C)",
+ "status": "completed",
+ "started_at_utc": "2026-09-19T14:05:00+00:00",
+ "ended_at_utc": "2026-09-19T16:00:00+00:00",
+ "wall_seconds_total": 6900,
+ "trial_accounting": {
+  "trials_consumed": 0,
+  "note": "engine engineering task; no val run; no new data pull; no git operations"
+ },
+ "environment": {
+  "python": "3.11.15",
+  "polars": "1.44.2",
+  "platform": "win32 (Windows 10.0.26200, Git Bash shell)",
+  "venv": "D:/量化/.venv"
+ },
+ "commands": [
+  "sha256sum src/quant/backtest/band_engine.py (baseline check = v1.3 pin 84a2443a...082c)",
+  "D:/量化/.venv/Scripts/python.exe -m pytest tests -q",
+  "D:/量化/.venv/Scripts/python.exe artifacts/runs/20260919T222634-engine-v14-impl/tmp/runner_p3r2_intents.py",
+  "D:/量化/.venv/Scripts/python.exe artifacts/runs/20260919T222634-engine-v14-impl/tmp/runner_hybrid_v2.py",
+  "D:/量化/.venv/Scripts/python.exe artifacts/runs/20260919T222634-engine-v14-impl/tmp/runner_f3r3.py",
+  "sha256 filecmp byte-equality checks of all anchor outputs vs source run outputs"
+ ],
+ "code_identity": {
+  "engine": {
+   "path": "D:/量化/src/quant/backtest/band_engine.py",
+   "sha256_before_v14": "84a2443ac28fe1b87e4a18f988fd38cc67cf706d577f89b6e262f11465147234082c (v1.3 baseline, verified at task start, 2919 lines)",
+   "sha256_after_v14": "56f5fec4d5491fc6dd0cb7110f8e27e54b783889f622d9cbadb98cc8264fe5ad (3910 lines)",
+   "version_label_in_stats": "band_engine v1.4",
+   "pin_status": "NOT pinned (pin is the main conversation's step per contract §10.5-4/5 after dual-sign review and seam adjudication S-v14-*)"
+  },
+  "new_test_file": {
+   "path": "D:/量化/tests/test_band_engine_v14_zones.py",
+   "sha256": "2fc1015fca4dd28194ff4fccf3c0886c5b6e1b9ff7f88f0017520e71497d5466",
+   "tests": 26
+  },
+  "replay_scripts": {
+   "anchor1": {
+    "path": "tmp/runner_p3r2_intents.py",
+    "sha256": "fda5ec6af3dc234a53a77ad3b56ad24ec558b19cc0b5196a3ad28b8da00374c0",
+    "copied_from": "artifacts/runs/20260919T030640-p3r2-dev-ad9e/tmp/runner_p3r2_intents.py (src sha 7477c2a8fcc2d291c6c46a52b72b62b09e7e87dfea5689502482454bf3f6df19)",
+    "edits": [
+     "CONFIG_IDS -> [\"C05\"]",
+     "engine sha pin -> v1.4 sha 56f5fec4...",
+     "log filename -> logs/anchor1_p3r2.log",
+     "PANEL_BY_CFG setdefault (r16 metrics carry all 8 configs)",
+     "manifest/report writes redirected to tmp/anchor1_*.json/md"
+    ]
+   },
+   "anchor2": {
+    "path": "tmp/runner_hybrid_v2.py",
+    "sha256": "e4140199d876709d59611bedca2f946a6c14f24c5354b44da94046127f92901e",
+    "copied_from": "artifacts/runs/20260919T063022-hybrid-v2-2k5b/scripts/runner_hybrid_v2.py (src sha 2a78d4171b4466d40362620e7707f56c6ee4d94159c5764a533d8b1affab0a2e)",
+    "edits": [
+     "CONFIG_IDS -> [\"H2-A0\"]",
+     "engine sha pin -> v1.4 sha 56f5fec4...",
+     "log filename -> logs/anchor2_hybrid.log",
+     "manifest/report writes redirected to tmp/anchor2_*.json/md"
+    ]
+   },
+   "anchor3": {
+    "path": "tmp/runner_f3r3.py",
+    "sha256": "1c25b0eee26640a439bfb37e0b599694125f9595685f17a07de8e942b42d1af2",
+    "copied_from": "artifacts/runs/20260919T201500-f3r3-industry-cap-4b2e/scripts/runner_f3r3.py (src sha e404845b442a2bdad232c87580a0ee88514260dc3b7cf1ab8e279f3141181ba3)",
+    "edits": [
+     "CONFIG_IDS -> [\"F3R3-A0\"]",
+     "engine sha pin -> v1.4 sha 56f5fec4...",
+     "log filename -> logs/anchor3_f3r3.log",
+     "manifest/report writes redirected to tmp/anchor3_*.json/md",
+     "F3R1 prereg assert repinned to the F3R1 producer sha 84a2443a prefix (that assert checks the HISTORICAL F3R1 composite's engine, not this replay's)"
+    ]
+   }
+  }
+ },
+ "input_data_identity": {
+  "anchor1_pins": "engine(56f5fec4...), r16_config, p3r2_config, baostock daily d9a63f4c..., split_factor 2f436b2f..., dividends 46121c09..., index_000300, halfday manifest 2a414174..., stk_limit aggregate 3c53abf3... -- all match=true, see tmp/anchor1_manifest.json",
+  "anchor2_pins": "same engine + prereg/config pins + etf processed aggregate + fund_adj manifest -- all match=true, see tmp/anchor2_manifest.json",
+  "anchor3_pins": "same engine + f3r3 prereg pins + daily/stk_limit/halfday/fund_adj/etf aggregates -- all match=true, see tmp/anchor3_manifest.json",
+  "note": "all anchors run on the frozen raw/processed data in place; zero new batches; source run directories read-only"
+ },
+ "results": {
+  "full_test_suite": {
+   "command": "python -m pytest tests -q",
+   "passed": 458,
+   "failed": 0,
+   "skipped": 0,
+   "baseline_before_task": 432,
+   "new_tests": 26,
+   "wall_s": 30.1,
+   "warnings": "6 pre-existing UserWarnings in unrelated research modules (polars join_asof sortedness); no engine warnings"
+  },
+  "anchor1_p3r2_c05": {
+   "status": "PASS",
+   "compared": [
+    "C05_fills.parquet",
+    "C05_events.parquet",
+    "C05_daily_equity.parquet",
+    "C05_clips_final.parquet",
+    "C05_intents.parquet"
+   ],
+   "result": "ALL BYTE-EQUAL vs artifacts/runs/20260919T030640-p3r2-dev-ad9e/outputs/ (sha256 per-file identical)",
+   "not_compared": "metrics_and_gates.json (contains this replay's engine sha + timing + C05-only scope; the copy in THIS run's outputs/ was written by the anchor-1 replay runner)",
+   "wall_s": 32,
+   "peak_rss_gb": 4.02
+  },
+  "anchor2_hybrid_h2a0": {
+   "status": "PASS",
+   "compared": [
+    "H2-A0_fills.parquet",
+    "H2-A0_events.parquet",
+    "H2-A0_daily_equity.parquet",
+    "H2-A0_clips_final.parquet",
+    "H2-A0_intents.parquet",
+    "dividend_events.csv"
+   ],
+   "result": "ALL BYTE-EQUAL vs artifacts/runs/20260919T063022-hybrid-v2-2k5b/outputs/",
+   "stats_json": "normalized-equal: the ONLY differing leaf fields are engine_version (v1.2 -> v1.4 label) and wall_s (wall-clock); all other bytes identical after key-wise normalization",
+   "runner_internal_check": "H2-A0 4-frame polars .equals() vs P3R2 C05 outputs all True; net_cagr matches to 1e-12 (see logs/anchor2_hybrid.log)",
+   "wall_s": 43,
+   "peak_rss_gb": 2.38
+  },
+  "anchor3_f3r3_a0": {
+   "status": "PASS",
+   "compared": [
+    "F3R3-A0_fills.parquet",
+    "F3R3-A0_events.parquet",
+    "F3R3-A0_daily_equity.parquet",
+    "F3R3-A0_clips_final.parquet",
+    "F3R3-A0_intents.parquet"
+   ],
+   "result": "ALL BYTE-EQUAL vs artifacts/runs/20260919T201500-f3r3-industry-cap-4b2e/outputs/",
+   "stats_json": "normalized-equal: the ONLY differing leaf fields are engine_version (v1.3 -> v1.4 label) and wall_s (wall-clock)",
+   "wall_s": 38,
+   "peak_rss_gb": 2.61
+  }
+ },
+ "outputs_manifest_note": "outputs/ holds the three anchors' replay artifacts (C05_* from anchor 1; H2-A0_* + dividend_events.csv + metrics_and_gates.json from anchor 2; F3R3-A0_* from anchor 3). logs/ holds the three runner logs. tmp/ holds the adapted runners + per-anchor manifests/reports; tmp/dirhash_f4r1.py and tmp/probe_halfday_hash.py predate this task (22:29/22:30, orchestrator's brief-preparation working files) and were left untouched. delivery_report.md is the task deliverable (change summary, test table, seam register S-7..S-17 candidates + BR-11 pre-disclosures).",
+ "non_goals_respected": [
+  "no F4 experiment",
+  "no val run",
+  "no new data batch",
+  "no git init/commit",
+  "docs/README/configs/data and existing artifacts run dirs untouched (read-only)",
+  "no zones frame => v1.3 paths byte-identical (proven by the three anchors + 432 pre-existing tests)",
+  "no pin performed (main conversation's step after dual-sign review)"
+ ],
+ "post_adjudication": {
+  "date": "2026-09-20",
+  "adjudication_record": "adjudication-v14.md",
+  "seams_adjudicated": "S-v14-7..22 (5x BR-11 accepted, 9x candidates accepted, 2x fail-closed guards implemented by main conversation: S-v14-12 fractional tp2_frac raise, S-v14-15 zone/intent symbol overlap raise)",
+  "engine_sha_after_guards": "7ad35014d72711cb43ab6aedc232d70adf7eece60604b2a057ee039c9bd11e78",
+  "full_suite_after_guards": {
+   "passed": 460,
+   "failed": 0,
+   "skipped": 0
+  },
+  "anchors_replayed_after_guards": {
+   "note": "runner engine sha pins updated to the post-guard hash; replays re-run by main conversation",
+   "anchor1_p3r2_c05": "16/16 compared files BYTE-EQUAL (26s)",
+   "anchor2_h2a0": "BYTE-EQUAL; stats nested-normalized equal except engine_version/wall_s (85s)",
+   "anchor3_f3r3_a0": "BYTE-EQUAL; stats nested-normalized equal except engine_version/wall_s (80s)"
+  },
+  "pin_status": "NOT pinned; awaiting independent review (user restart pending), then contract 10.7 + README + pin"
+ }
+}

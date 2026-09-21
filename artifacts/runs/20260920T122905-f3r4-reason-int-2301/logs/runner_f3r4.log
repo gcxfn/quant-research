@@ -1,0 +1,181 @@
+[    0.0s] == arms requested: ['F3R4-LZO', 'F3R4-A', 'F3R4-B', 'F3R4-C'] ==
+[    0.0s] == 0. identity pins (engine v1.4.1 pin, chassis config verbatim) ==
+[    0.0s]   engine: a01cb29ce4cf2148 expect a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3 match=True
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.4s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.4s]   halfday_manifest: 2a414174b5df2eee expect 2a414174b5df2eee match=True
+[    0.4s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.4s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.4s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    0.4s]   f3r1_ew_composite: 9b93696b14fdd31f expect None match=True
+[    0.4s]   f3r1_dedup_clusters: 7b80b95bbbbbc34d expect None match=True
+[    0.4s]   f2r1_all120: df35f17604595b34 expect None match=True
+[    0.4s]   prereg: 19ac8e9a658d27f7 expect None match=True
+[    0.4s]   f3r4_config: 8c4c51b0b3ab1c14 expect None match=True
+[    0.4s]   industry_l1: 4edffc3994fb527a expect 4edffc3994fb527a match=True
+[    0.4s]   chassis_sleeve_log: c62446715685f851 expect None match=True
+[    0.4s]   chassis_metrics: bc74572dd3e78347 expect None match=True
+[    0.4s]   chassis_ew_intents: afbd41c55f887379 expect None match=True
+[    0.4s]   chassis_ew_fills: 6e1dc925c99f8538 expect None match=True
+[    0.4s]   chassis_ew_events: af0ca5463344b4ca expect None match=True
+[    0.4s]   chassis_ew_daily: b71cf93135fcca2a expect None match=True
+[    0.4s]   chassis_ew_clips: f4695404f1f1a2e7 expect None match=True
+[    0.4s]   etf_manifest: 8b5b3fe56c0e02fd expect None match=True
+[    2.6s]   aggregates OK (etf 75777221a8b33502, fund_adj b06242469db048a0, trade_cal aac75421cd89d9fc)
+[    2.6s]   chassis anchor net_cagr 0.04877310918741218 maxDD -0.17848532843799414
+[    2.6s] == 1. calendar & signal days ==
+[    2.7s]   71 signal days (2015-01-30..2020-11-30)
+[    2.7s] == stage done: calendar (2.7s) ==
+[    2.7s] == 2. exposures (T200-40) ==
+[    2.7s]   exposures[2015-01-30]=0.40 [2020-11-30]=0.90
+[    2.7s] == stage done: exposures (2.7s) ==
+[    2.7s] == 3. pools (r16 build_history + signal_pools) ==
+[    5.2s]   pools at 2015-01-30: n=1438; union of ranked symbols: 2937
+[    5.2s] == stage done: pools (5.2s) ==
+[    5.2s] == 5. market frames ==
+[    5.9s]   daily panel: 3841824 rows, 2937 symbols
+[    6.5s]   halfday: 7254698 rows kept of 18486939 total
+[   12.6s]   limits: 3829171 rows (dev x panel)
+[   15.0s]   splits 2894 rows, dividends 20138 rows (panel)
+[   15.0s]   rss after frames: 3.00 GB
+[   15.0s] == stage done: market_frames (15.0s) ==
+[   15.0s] == 6. ETF assets ==
+[   15.0s]   etf panel dev rows: 13158 per member {'sh.510300': 1462, 'sz.159934': 1462, 'sh.513500': 1462, 'sz.159915': 1462, 'sh.518880': 1462, 'sh.513100': 1462, 'sh.510880': 1462, 'sh.510050': 1462, 'sh.511010': 1462}
+[   15.0s]   dividend events: 18 {'sh.510050': 5, 'sh.510300': 6, 'sh.510880': 6, 'sh.511010': 1}
+[   15.0s] == stage done: etf_assets (15.0s) ==
+[   15.0s] == 7. shared engine input frames (mixed mode) ==
+[   15.0s] == stage done: engine_input_frames (15.0s) ==
+[   15.1s] ===== arm F3R4-LZO (composite F3-EW_composite.parquet) =====
+[   15.1s] == 4. arm composite load (F3R4-LZO) ==
+[   15.1s]   composite F3R4-LZO: 71 days, eligible min 810 median 1510 max 2258
+[   15.2s]   industry L1 map: 5902 stocks; composite-candidate unmapped 2 -> UNMAPPED bucket (same cap)
+[   15.2s]   sleeve F3R4-LZO: max members/month 10 (<= 10 req), entries 510 over 71 months, industry-blocked 62, cash seats 44, max industry count 2, panel symbols 381
+[   15.2s] == stage done: F3R4-LZO_sleeve (15.2s) ==
+[   15.2s]   stock frames (381 syms): daily 525118, half 1003802, limits 524035
+[   19.2s]   F3R4-LZO: engine 3.9s, intents 1308 orders 3387 filled 1018 cap 0 | rss 3.32 GB
+[   19.5s]   F3R4-LZO: R16-mapped exec 79.4% (filled 1018, rule-blocked 20, terminated 270); term {'expiry': 8, 'override_same_name': 247, 'cap_void': 0, 'suspension_abandon': 15}
+[   19.7s]   F3R4-LZO: net +4.88% excess +4.28pp adv 4/6 mdd -17.85% turn 4.45 w 28.0% g8v3 5+0/6=83.3% failed ['3_advantage_years_ge_5_of_6', '8v3_final_delivery_ge_99pct']
+[   19.7s]   LEAVE-ZERO-OUT ANCHOR: 5-frame .equals() vs chassis F3R3-EW
+[   19.7s]     intents.equals(chassis) = True (mine 1308 / ref 1308)
+[   19.7s]     fills.equals(chassis) = True (mine 1018 / ref 1018)
+[   19.7s]     events.equals(chassis) = True (mine 4779 / ref 4779)
+[   19.7s]     daily.equals(chassis) = True (mine 1462 / ref 1462)
+[   19.7s]     clips_final.equals(chassis) = True (mine 16 / ref 16)
+[   19.7s]     net_cagr 0.04877310918741218 vs chassis 0.04877310918741218 -> True; maxDD -0.17848532843799414 vs -0.17848532843799414 -> True
+[   19.7s]   LEAVE-ZERO-OUT ANCHOR PASS (5/5 frames + net_cagr + maxDD)
+[   19.8s]   F3R4-LZO: subrun written to tmp/subruns/F3R4-LZO/
+[   20.0s] ===== arm F3R4-A (composite composite_A.parquet) =====
+[   20.0s] == 4. arm composite load (F3R4-A) ==
+[   20.0s]   composite F3R4-A: 71 days, eligible min 810 median 1510 max 2258
+[   20.1s]   industry L1 map: 5902 stocks; composite-candidate unmapped 2 -> UNMAPPED bucket (same cap)
+[   20.1s]   sleeve F3R4-A: max members/month 10 (<= 10 req), entries 519 over 71 months, industry-blocked 53, cash seats 38, max industry count 2, panel symbols 392
+[   20.1s] == stage done: F3R4-A_sleeve (20.1s) ==
+[   20.1s]   stock frames (392 syms): daily 541401, half 1033060, limits 540285
+[   24.2s]   F3R4-A: engine 4.0s, intents 1324 orders 3699 filled 1026 cap 0 | rss 3.35 GB
+[   24.5s]   F3R4-A: R16-mapped exec 79.3% (filled 1026, rule-blocked 24, terminated 274); term {'expiry': 7, 'override_same_name': 252, 'cap_void': 0, 'suspension_abandon': 15}
+[   24.6s]   F3R4-A: net +5.34% excess +4.74pp adv 4/6 mdd -17.85% turn 4.48 w 28.0% g8v3 4+1/6=83.3% failed ['3_advantage_years_ge_5_of_6', '8v3_final_delivery_ge_99pct']
+[   24.7s]   F3R4-A: subrun written to tmp/subruns/F3R4-A/
+[   24.9s] ===== arm F3R4-B (composite composite_B.parquet) =====
+[   24.9s] == 4. arm composite load (F3R4-B) ==
+[   25.0s]   composite F3R4-B: 71 days, eligible min 810 median 1510 max 2258
+[   25.0s]   industry L1 map: 5902 stocks; composite-candidate unmapped 2 -> UNMAPPED bucket (same cap)
+[   25.0s]   sleeve F3R4-B: max members/month 10 (<= 10 req), entries 518 over 71 months, industry-blocked 55, cash seats 39, max industry count 2, panel symbols 390
+[   25.0s] == stage done: F3R4-B_sleeve (25.0s) ==
+[   25.1s]   stock frames (390 syms): daily 536170, half 1024852, limits 535066
+[   29.1s]   F3R4-B: engine 4.0s, intents 1322 orders 3650 filled 1030 cap 0 | rss 3.38 GB
+[   29.4s]   F3R4-B: R16-mapped exec 79.7% (filled 1030, rule-blocked 23, terminated 269); term {'expiry': 7, 'override_same_name': 247, 'cap_void': 0, 'suspension_abandon': 15}
+[   29.5s]   F3R4-B: net +4.94% excess +4.34pp adv 4/6 mdd -17.85% turn 4.46 w 28.0% g8v3 5+0/6=83.3% failed ['3_advantage_years_ge_5_of_6', '8v3_final_delivery_ge_99pct']
+[   29.6s]   F3R4-B: subrun written to tmp/subruns/F3R4-B/
+[   29.8s] ===== arm F3R4-C (composite composite_C.parquet) =====
+[   29.8s] == 4. arm composite load (F3R4-C) ==
+[   29.9s]   composite F3R4-C: 71 days, eligible min 810 median 1510 max 2258
+[   29.9s]   industry L1 map: 5902 stocks; composite-candidate unmapped 2 -> UNMAPPED bucket (same cap)
+[   29.9s]   sleeve F3R4-C: max members/month 10 (<= 10 req), entries 511 over 71 months, industry-blocked 62, cash seats 44, max industry count 2, panel symbols 385
+[   29.9s] == stage done: F3R4-C_sleeve (29.9s) ==
+[   30.0s]   stock frames (385 syms): daily 530578, half 1013816, limits 529483
+[   34.0s]   F3R4-C: engine 3.9s, intents 1310 orders 3395 filled 1020 cap 0 | rss 3.41 GB
+[   34.3s]   F3R4-C: R16-mapped exec 79.4% (filled 1020, rule-blocked 20, terminated 270); term {'expiry': 7, 'override_same_name': 248, 'cap_void': 0, 'suspension_abandon': 15}
+[   34.4s]   F3R4-C: net +4.85% excess +4.25pp adv 4/6 mdd -17.85% turn 4.45 w 28.0% g8v3 6+0/7=85.7% failed ['3_advantage_years_ge_5_of_6', '8v3_final_delivery_ge_99pct']
+[   34.5s]   F3R4-C: subrun written to tmp/subruns/F3R4-C/
+[   34.7s] == arm loop complete: 4 arms, wall 35s, peak rss 4.57 GB ==
+[    0.0s] == arms requested: ['F3R4-A-w20', 'F3R4-A-w40', 'F3R4-A-b68'] ==
+[    0.0s] == 0. identity pins (engine v1.4.1 pin, chassis config verbatim) ==
+[    0.0s]   engine: a01cb29ce4cf2148 expect a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3 match=True
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.4s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.4s]   halfday_manifest: 2a414174b5df2eee expect 2a414174b5df2eee match=True
+[    0.4s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.4s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.4s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    0.4s]   f3r1_ew_composite: 9b93696b14fdd31f expect None match=True
+[    0.4s]   f3r1_dedup_clusters: 7b80b95bbbbbc34d expect None match=True
+[    0.4s]   f2r1_all120: df35f17604595b34 expect None match=True
+[    0.4s]   prereg: 19ac8e9a658d27f7 expect None match=True
+[    0.4s]   f3r4_config: 8c4c51b0b3ab1c14 expect None match=True
+[    0.4s]   industry_l1: 4edffc3994fb527a expect 4edffc3994fb527a match=True
+[    0.4s]   chassis_sleeve_log: c62446715685f851 expect None match=True
+[    0.4s]   chassis_metrics: bc74572dd3e78347 expect None match=True
+[    0.4s]   chassis_ew_intents: afbd41c55f887379 expect None match=True
+[    0.4s]   chassis_ew_fills: 6e1dc925c99f8538 expect None match=True
+[    0.4s]   chassis_ew_events: af0ca5463344b4ca expect None match=True
+[    0.4s]   chassis_ew_daily: b71cf93135fcca2a expect None match=True
+[    0.4s]   chassis_ew_clips: f4695404f1f1a2e7 expect None match=True
+[    0.4s]   etf_manifest: 8b5b3fe56c0e02fd expect None match=True
+[    2.7s]   aggregates OK (etf 75777221a8b33502, fund_adj b06242469db048a0, trade_cal aac75421cd89d9fc)
+[    2.7s]   chassis anchor net_cagr 0.04877310918741218 maxDD -0.17848532843799414
+[    2.7s] == 1. calendar & signal days ==
+[    2.8s]   71 signal days (2015-01-30..2020-11-30)
+[    2.8s] == stage done: calendar (2.8s) ==
+[    2.8s] == 2. exposures (T200-40) ==
+[    2.8s]   exposures[2015-01-30]=0.40 [2020-11-30]=0.90
+[    2.8s] == stage done: exposures (2.8s) ==
+[    2.8s] == 3. pools (r16 build_history + signal_pools) ==
+[    5.1s]   pools at 2015-01-30: n=1438; union of ranked symbols: 2937
+[    5.1s] == stage done: pools (5.1s) ==
+[    5.1s] == 5. market frames ==
+[    5.8s]   daily panel: 3841824 rows, 2937 symbols
+[    6.3s]   halfday: 7254698 rows kept of 18486939 total
+[   12.7s]   limits: 3829171 rows (dev x panel)
+[   14.8s]   splits 2894 rows, dividends 20138 rows (panel)
+[   14.8s]   rss after frames: 3.05 GB
+[   14.8s] == stage done: market_frames (14.8s) ==
+[   14.8s] == 6. ETF assets ==
+[   14.8s]   etf panel dev rows: 13158 per member {'sh.510300': 1462, 'sh.513500': 1462, 'sh.511010': 1462, 'sh.513100': 1462, 'sh.510050': 1462, 'sz.159915': 1462, 'sh.510880': 1462, 'sz.159934': 1462, 'sh.518880': 1462}
+[   14.8s]   dividend events: 18 {'sh.510050': 5, 'sh.510300': 6, 'sh.510880': 6, 'sh.511010': 1}
+[   14.8s] == stage done: etf_assets (14.8s) ==
+[   14.8s] == 7. shared engine input frames (mixed mode) ==
+[   14.8s] == stage done: engine_input_frames (14.8s) ==
+[   14.9s] ===== arm F3R4-A-w20 (composite composite_A_w20.parquet) =====
+[   14.9s] == 4. arm composite load (F3R4-A-w20) ==
+[   14.9s]   composite F3R4-A-w20: 71 days, eligible min 810 median 1510 max 2258
+[   14.9s]   industry L1 map: 5902 stocks; composite-candidate unmapped 2 -> UNMAPPED bucket (same cap)
+[   15.0s]   sleeve F3R4-A-w20: max members/month 10 (<= 10 req), entries 517 over 71 months, industry-blocked 57, cash seats 39, max industry count 2, panel symbols 390
+[   15.0s] == stage done: F3R4-A-w20_sleeve (15.0s) ==
+[   15.0s]   stock frames (390 syms): daily 536971, half 1025860, limits 535867
+[   19.1s]   F3R4-A-w20: engine 4.0s, intents 1321 orders 3552 filled 1027 cap 0 | rss 3.39 GB
+[   19.3s]   F3R4-A-w20: R16-mapped exec 79.4% (filled 1027, rule-blocked 22, terminated 272); term {'expiry': 7, 'override_same_name': 250, 'cap_void': 0, 'suspension_abandon': 15}
+[   19.5s]   F3R4-A-w20: net +4.68% excess +4.08pp adv 4/6 mdd -17.85% turn 4.53 w 27.2% g8v3 6+0/7=85.7% failed ['3_advantage_years_ge_5_of_6', '8v3_final_delivery_ge_99pct']
+[   19.5s]   F3R4-A-w20: subrun written to tmp/subruns/F3R4-A-w20/
+[   19.7s] ===== arm F3R4-A-w40 (composite composite_A_w40.parquet) =====
+[   19.7s] == 4. arm composite load (F3R4-A-w40) ==
+[   19.8s]   composite F3R4-A-w40: 71 days, eligible min 810 median 1510 max 2258
+[   19.8s]   industry L1 map: 5902 stocks; composite-candidate unmapped 2 -> UNMAPPED bucket (same cap)
+[   19.8s]   sleeve F3R4-A-w40: max members/month 10 (<= 10 req), entries 519 over 71 months, industry-blocked 53, cash seats 38, max industry count 2, panel symbols 393
+[   19.9s] == stage done: F3R4-A-w40_sleeve (19.9s) ==
+[   19.9s]   stock frames (393 syms): daily 540473, half 1031459, limits 539363
+[   24.0s]   F3R4-A-w40: engine 4.0s, intents 1324 orders 3708 filled 1029 cap 0 | rss 3.43 GB
+[   24.3s]   F3R4-A-w40: R16-mapped exec 79.5% (filled 1029, rule-blocked 24, terminated 271); term {'expiry': 6, 'override_same_name': 250, 'cap_void': 0, 'suspension_abandon': 15}
+[   24.4s]   F3R4-A-w40: net +4.73% excess +4.13pp adv 4/6 mdd -17.85% turn 4.51 w 28.0% g8v3 4+1/6=83.3% failed ['3_advantage_years_ge_5_of_6', '8v3_final_delivery_ge_99pct']
+[   24.5s]   F3R4-A-w40: subrun written to tmp/subruns/F3R4-A-w40/
+[   24.7s] ===== arm F3R4-A-b68 (composite composite_A_b68.parquet) =====
+[   24.7s] == 4. arm composite load (F3R4-A-b68) ==
+[   24.8s]   composite F3R4-A-b68: 71 days, eligible min 810 median 1510 max 2258
+[   24.8s]   industry L1 map: 5902 stocks; composite-candidate unmapped 2 -> UNMAPPED bucket (same cap)
+[   24.8s]   sleeve F3R4-A-b68: max members/month 10 (<= 10 req), entries 519 over 71 months, industry-blocked 53, cash seats 38, max industry count 2, panel symbols 392
+[   24.8s] == stage done: F3R4-A-b68_sleeve (24.8s) ==
+[   24.9s]   stock frames (392 syms): daily 541401, half 1033060, limits 540285
+[   28.9s]   F3R4-A-b68: engine 4.0s, intents 1324 orders 3699 filled 1026 cap 0 | rss 3.46 GB
+[   29.2s]   F3R4-A-b68: R16-mapped exec 79.3% (filled 1026, rule-blocked 24, terminated 274); term {'expiry': 7, 'override_same_name': 252, 'cap_void': 0, 'suspension_abandon': 15}
+[   29.3s]   F3R4-A-b68: net +5.34% excess +4.74pp adv 4/6 mdd -17.85% turn 4.48 w 28.0% g8v3 4+1/6=83.3% failed ['3_advantage_years_ge_5_of_6', '8v3_final_delivery_ge_99pct']
+[   29.4s]   F3R4-A-b68: subrun written to tmp/subruns/F3R4-A-b68/
+[   29.6s] == arm loop complete: 3 arms, wall 30s, peak rss 4.76 GB ==

@@ -1,0 +1,327 @@
+{
+  "run_id": "20260920T185600-f2r1-rebuild-94bd2058",
+  "experiment_id": "exp-20260920-f2r1-rebuild",
+  "status": "completed",
+  "started_at": "2026-09-20T10:56:00.560897+00:00",
+  "command": [
+    "D:\\量化\\.venv\\Scripts\\python.exe",
+    "src/quant/cli/factor_eval_run.py",
+    "--panel",
+    "data/processed/baostock-daily-20260917/daily_2015_2024.parquet",
+    "--factor-root",
+    "artifacts/runs/20260920T190000-d-fund-rebuild-real/D_fund",
+    "--config",
+    "configs/experiments/exp-20260920-f2r1-rebuild.json",
+    "--repo-root",
+    ".",
+    "--artifacts-root",
+    "artifacts"
+  ],
+  "config_sha256": "16df961a910a1a89c80a69993acc9751b9ef3fd5a4fa3b4daec8d3881a5f8083",
+  "source_sha256": {
+    "src\\quant\\__init__.py": "8c87349ce293131565a8ace05f9e339c81fa76951bde07525c354c74c4cf3307",
+    "src\\quant\\backtest\\__init__.py": "dde15cd80a7f5bb490b6b3f7ed7a68f3fca1a18121e9000939c417e0ed3b8999",
+    "src\\quant\\backtest\\backtrader_adapter.py": "fc2813a4f5cdd735a26051b800e02e9106403440c08d84a139eda05269093966",
+    "src\\quant\\backtest\\band_engine.py": "31022babbc2858ea27a9142141fba9c14f7361294ea84e4257025ce820aa6076",
+    "src\\quant\\backtest\\orders.py": "aec9750d59f4b7316ab89a0b175b0a7839998f68ed7debf2b0bd18dde405318e",
+    "src\\quant\\backtest\\results.py": "c43324de29ce0c2f17d521497879bfca6cfaa5be7618a89453226f2ca72bf830",
+    "src\\quant\\backtest\\vectorbt_adapter.py": "73847bb6997dc26697657871199b8bd7392acc70cf329cc2e18dd27062c494a9",
+    "src\\quant\\cli\\__init__.py": "b0536f9542c22462c17ef58d483a1adf6bf0c25369954507844e0421e5c0723a",
+    "src\\quant\\cli\\factor_correlation_dedupe.py": "4db1b1ee6f3b01ef2118acf91ceeae2ab46f990d38d5d7d9692c68e79970f319",
+    "src\\quant\\cli\\factor_eval_run.py": "39d5a2be85f33d2b7b59108b3d900bb339dea9e55596aff82c2dac45de3ba732",
+    "src\\quant\\cli\\main.py": "ddde31f438600e5447517ce7a9db8b2a5c1ba14f61351fa39272255b6ccbb471",
+    "src\\quant\\cli\\p0_benchmark.py": "fb7d38b8f1abba17d25dfab844b9771f8de53eafd39d4d654cc42eb2d64357e6",
+    "src\\quant\\cli\\p2_factor_survey.py": "155eed8d1985e5ebd3aab4c5f7b808e4a5722b67f20bf8ef9fa59568e274a08f",
+    "src\\quant\\cli\\p2_first_screen.py": "9d7b6288191ef30ade1fca27e9a94d84bb65197960614e0100c3dbba560d5fd0",
+    "src\\quant\\cli\\p2_window_diagnostic.py": "dfd6152db397cb2a358db44d374d9c9c0417a69d5810575485b00450cd28687a",
+    "src\\quant\\cli\\p2r10_halfday_survey.py": "be97cc4dfeebc7f8c29ec56ea5334b39787b3583d19e88f57fe01f0b15b652c5",
+    "src\\quant\\cli\\p2r11_halfday_combo.py": "6d0380d87987ac51b0204c2dec8eb6050365a7a8e633d97d5e02c2562e492aea",
+    "src\\quant\\cli\\p2r13_lowfreq_survey.py": "d710f20ac5590011c9a4373bce433ce48c07f9ed99fb8cad38671b016094ed5f",
+    "src\\quant\\cli\\p2r16_trend_dispersion.py": "0fe5002016e625d5fcd09a1477682b96b4e2a0378180a645fb3bfb0ff1c23774",
+    "src\\quant\\cli\\p2r6_etf_rotation.py": "fc815d8fe1e782d40d4c3e7d279834fa1af50ab3642153f724bb4a47e483d299",
+    "src\\quant\\cli\\p2r7_etf_exposure.py": "8a31a6950f49ba5e5ce5c487cfb3a2189b0fc6622b6bded5bc6c6368086f32dd",
+    "src\\quant\\cli\\p2r8_daily_risk.py": "89896f2a24bac5d7ba0cb91d6b17f45d3fe1b309b3b0388df2999ca5653f9aaf",
+    "src\\quant\\cli\\p2r9_risk_delivery.py": "92b53702aa2f0edbcba044532596fa341ade39ea01644edaedf5c0065a383cef",
+    "src\\quant\\data\\adjustment.py": "6cf5f7e7cc0d9e15b4030196f56c77009495279a206804361a7c86891d89a0ac",
+    "src\\quant\\data\\baostock_daily.py": "c83603ef05c805e7f81b60ff87a40088b23177b690f2a9bf421be390b6477e78",
+    "src\\quant\\data\\event_batches.py": "b8a0994a2adcec8fbc18a2c024abe088868eef3fcf90e0a2480a7f6087890691",
+    "src\\quant\\data\\rqalpha_bundle.py": "2ae8d0eed45d1216c84827eefb7bee0227fbdc985be0c38fa3f4794d7209d523",
+    "src\\quant\\factors\\__init__.py": "5b555032251c683b0c9b6cdb5857ff356c81e02dd4c14e6cff1055c309acade4",
+    "src\\quant\\factors\\cache.py": "949736dd8a9482bd64d939e13940a323d8341cf0518bddffa7db8a97315e8f9a",
+    "src\\quant\\factors\\core.py": "5c6ddcf87505fdb82fb63cbc9658964b7372da326879f89bcd4aac50d33f7a77",
+    "src\\quant\\factors\\eval.py": "02664076ce284d768b798fd0f647de72714a3be55b404d37330539b9f1ba65ed",
+    "src\\quant\\factors\\fund_derive.py": "5f836978fc4a4b4425fff7ec4e45c58ea828fa83b60d59ab71f8bc06493966d1",
+    "src\\quant\\factors\\signals.py": "9ef501a069ffaaef731d8f6f04682674b818c82e1f2a627af1023565e9e8692c",
+    "src\\quant\\research\\__init__.py": "ae42337e69dedb044718bfe63a1832ef0c85cf1886c9b45e0403d63208869a51",
+    "src\\quant\\research\\d_fund_rebuild.py": "a3525ec64f8ca819984e00645ef3d7dee63ac8efd953bdfea30a07375e7d4b3c",
+    "src\\quant\\research\\etf_rotation.py": "1c064efce2cf211505f62f46ac61ca39abf63c1f529e008518a8b26d2ca59b70",
+    "src\\quant\\research\\f2r1_rebuild.py": "f6283b7cc77867a4e1e51adc9b9b0c8faf2d57202e95d02242a82171facc63e5",
+    "src\\quant\\research\\factor_correlation_dedupe.py": "1c1cda942b8c286b28d39054f85d29c1ea35f5d72e3091cb2573e9d10db2aadb",
+    "src\\quant\\research\\factor_eval_run.py": "a78e71c27f5885d6018fbec76758468fe4329f9c3a35db29e3ce726c2793190a",
+    "src\\quant\\research\\factor_survey.py": "354bd65c557965f54fe7743be01716e37362483768eb5b7c7c420111aa2d041b",
+    "src\\quant\\research\\fee_recost.py": "683ec48aecbc298c1a19ce895a6de6ff28f2bb71e392216cbaf9ff1ca5fb3a6a",
+    "src\\quant\\research\\financial_snapshot.py": "4cebeca8aef5bd607d2c7e8ffc71180430fc420cc9e94640cdf4285596f61b96",
+    "src\\quant\\research\\p2_first_screen.py": "17f119402c02c87a7288fb9cdd93cc6e1b3d3d45e9b6642a317942e100060e80",
+    "src\\quant\\research\\p2r10_halfday.py": "25eb29ada94e336eeddb2d81e718f0983dfde7434ff87db6a4729b29f5009188",
+    "src\\quant\\research\\p2r11_halfday_combo.py": "41f95396457d6fb4694d2cb894230fc0c9734e26b6f6b3a0567748d9f61f669b",
+    "src\\quant\\research\\p2r12_event_veto.py": "885d0761fe7fea4a156ea762c63ff83006fab50328c0d74398b8f728409034e6",
+    "src\\quant\\research\\p2r13_lowfreq.py": "49034ba833ad8bff95a8dc66cb48e5d3cbc366a12f8ff282b26e48f102b8e349",
+    "src\\quant\\research\\p2r14_minute_structure.py": "979a1845c5bdc42360082ee82e13b6c2a5c54e1879fdaa7b6cf4da66ad00b055",
+    "src\\quant\\research\\p2r16_trend_dispersion.py": "04242366f8f5a3293088dfd5993c5dd08e6be9ea358696c84c0022cc5b8bc2c1",
+    "src\\quant\\research\\runs.py": "979f0ab108b8bd0fb97bd8a67435ebe46537d9cb06ef83a5ac1485c77593acbc",
+    "src\\quant\\research\\screen.py": "100cfef7927a7727089eeb3634eb810571a9313dfe09600964866a6c208249df",
+    "src\\quant\\research\\synthetic.py": "968818be521defdc028435123806f7de0e97858b06d8d0c67c87319cf3aa8795",
+    "src\\quant\\research\\t1_event.py": "c9183e14577036f50094c5782f9570a603bbb46cdeb6ae579ccf006c8cb84101"
+  },
+  "lock_sha256": "5694af16960733c0e6ce4e3ef84e9d586e9d4452fdbe00b992d321687dc50c25",
+  "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "polars": "1.44.2",
+    "pyarrow": "25.0.1",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "vectorbt": "0.28.5",
+    "backtrader": "1.9.78.123",
+    "psutil": "7.2.2"
+  },
+  "machine": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 20,
+    "ram_bytes": 16780566528,
+    "disk_free_bytes": 236258205696
+  },
+  "seed": null,
+  "date_range": [
+    null,
+    null
+  ],
+  "inputs": [
+    {
+      "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_2015_2024.parquet",
+      "sha256": "1cbb09a11f7c10136981749c13467f12a1757b59e7e95fb6f86666f96edfc1de",
+      "rows": 4871112,
+      "role": "panel"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D01.parquet",
+      "sha256": "160b0bcf0d530ea234b905ca48947aa6da0278dc1aa9410ee5d36cbeeb370fd2",
+      "rows": 319771,
+      "role": "factor",
+      "name": "D01"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D02.parquet",
+      "sha256": "332b6532b72319a4031bd7ea28ceb39dec45d94a7d16f7a689a8fd6db15d94c5",
+      "rows": 315012,
+      "role": "factor",
+      "name": "D02"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D03.parquet",
+      "sha256": "8692057a800685c61fe78c030e920195a2cbb4778733f3ceea87a8d774ba989b",
+      "rows": 313236,
+      "role": "factor",
+      "name": "D03"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D04.parquet",
+      "sha256": "f691071a948842a3af9f5a54420d74da5c77271bfe093a0a92dc28a511204225",
+      "rows": 320599,
+      "role": "factor",
+      "name": "D04"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D05.parquet",
+      "sha256": "21ef8e819e86eb849ba8df30dcb036f9cf6deb1189ca1a82c02c7be73ebb78f4",
+      "rows": 322731,
+      "role": "factor",
+      "name": "D05"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D06.parquet",
+      "sha256": "ef09d91cc3f4127d992fe6efaadde67214d17f334006163551d4cab20ad01faa",
+      "rows": 315996,
+      "role": "factor",
+      "name": "D06"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D07.parquet",
+      "sha256": "668a31f1211ad70357897747c1dbda9f72b96d072e1eda7f8e6431f926c59495",
+      "rows": 304524,
+      "role": "factor",
+      "name": "D07"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D08.parquet",
+      "sha256": "5a93e09e9cfa3b6c04441dfb817ff4ffbcb3e2dbb4509e7b2d333914c62a37aa",
+      "rows": 305297,
+      "role": "factor",
+      "name": "D08"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D09.parquet",
+      "sha256": "aa1b9cbb41636c031c8486c9ab1d57604dfcf4684f02b2f0fc68aaff8fbbe331",
+      "rows": 313630,
+      "role": "factor",
+      "name": "D09"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D10.parquet",
+      "sha256": "92cedf313fa4bc37fe4187096d7108d7b3f674b7585b802e05b6ea9842e7643f",
+      "rows": 321334,
+      "role": "factor",
+      "name": "D10"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D11.parquet",
+      "sha256": "3b7b8909b31bf48235ffea0df4bbe7394ac8c8e8993ad3c0c04bbd6852ea81f4",
+      "rows": 302778,
+      "role": "factor",
+      "name": "D11"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D12.parquet",
+      "sha256": "097f3214f236c3230a25c5853d8f3f555ca0442cd2bf7f2eddd4d6e688e936c0",
+      "rows": 304518,
+      "role": "factor",
+      "name": "D12"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D13.parquet",
+      "sha256": "b2008a8504492754be7104c150bc24ffefa7e0649a282f236310e6f1d102e4b8",
+      "rows": 291661,
+      "role": "factor",
+      "name": "D13"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D14.parquet",
+      "sha256": "1bebe3ad08e173d744dc6eed6272e853e63e5c062fc4b85c5f9102d84be5c541",
+      "rows": 287164,
+      "role": "factor",
+      "name": "D14"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D15.parquet",
+      "sha256": "420ee9e3361d04fa9ad8cf516e7488bbeda72af92bbf93bd37c54f1e69ac46f9",
+      "rows": 304736,
+      "role": "factor",
+      "name": "D15"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D16.parquet",
+      "sha256": "66feec14f7d33f22bee3b7b8050229d593e6b4fe983028a2b5fa0c692e17ebd4",
+      "rows": 310262,
+      "role": "factor",
+      "name": "D16"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D17.parquet",
+      "sha256": "d6933a6a9c3b4defcc0bdea1ec00c0f1555a471784f15eaa668e39fc5c1e7c70",
+      "rows": 304080,
+      "role": "factor",
+      "name": "D17"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D18.parquet",
+      "sha256": "18a1535503d4980af21ad92eb58f380021a22fb6d588a214cf3c79f9dc4e4053",
+      "rows": 322505,
+      "role": "factor",
+      "name": "D18"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D19.parquet",
+      "sha256": "2f625f56a3433dfa5275c4474f82b65560c735424513f5abe10d88bcd78f7937",
+      "rows": 298197,
+      "role": "factor",
+      "name": "D19"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D20.parquet",
+      "sha256": "b31523979ab19f1ccc00b14978a5781f730e126ab0d419341232559549e100db",
+      "rows": 250475,
+      "role": "factor",
+      "name": "D20"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D21.parquet",
+      "sha256": "e6aed47f9168b4afa6c55f7d627b843b1ac4f05d28ed5deb435c8d3b8e2c02b0",
+      "rows": 244320,
+      "role": "factor",
+      "name": "D21"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D22.parquet",
+      "sha256": "c91c3ebadc3e7bbc042fe8d9aeff606ac0b046c9f975be5fba1aba7267869db1",
+      "rows": 244982,
+      "role": "factor",
+      "name": "D22"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D23.parquet",
+      "sha256": "8692057a800685c61fe78c030e920195a2cbb4778733f3ceea87a8d774ba989b",
+      "rows": 313236,
+      "role": "factor",
+      "name": "D23"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D24.parquet",
+      "sha256": "7a304263916bccfdeb57b39509ce29cf698b981f97763018aa3dfc8190ca60f4",
+      "rows": 300063,
+      "role": "factor",
+      "name": "D24"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D25.parquet",
+      "sha256": "4979832dafde1717fceaf5f985a1eb7f194c21bda501f823ad8ba3de58de888d",
+      "rows": 279355,
+      "role": "factor",
+      "name": "D25"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D26.parquet",
+      "sha256": "8dd6bca77f744fafcae0383fe25b26385f28aff7a8898379b79c5b660057c20d",
+      "rows": 316818,
+      "role": "factor",
+      "name": "D26"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D27.parquet",
+      "sha256": "3faae6ad6c9bb95adea1842501298f0d2434866c8fe854ddf83dd81100874f7a",
+      "rows": 143937,
+      "role": "factor",
+      "name": "D27"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D28.parquet",
+      "sha256": "7d4b15c5a21e5ab51b71bf24ad3addcabb7671dee56e3323492565a568a2850b",
+      "rows": 292230,
+      "role": "factor",
+      "name": "D28"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D29.parquet",
+      "sha256": "3db4f6f69124a3d87b680b8cd2d0d7870bef4253f70b0970f18746acac6ff5bb",
+      "rows": 302934,
+      "role": "factor",
+      "name": "D29"
+    },
+    {
+      "path": "D:\\量化\\artifacts\\runs\\20260920T190000-d-fund-rebuild-real\\D_fund\\D30.parquet",
+      "sha256": "62840959571ef126360444c3af25fc0561ed9db884ce5078e3af0dec310c890c",
+      "rows": 321087,
+      "role": "factor",
+      "name": "D30"
+    }
+  ],
+  "limits": {},
+  "ended_at": "2026-09-20T10:57:47.706521+00:00",
+  "elapsed_seconds": 107.14421790000051,
+  "peak_rss_bytes": 3468496896,
+  "memory_method": "20ms process RSS sampling; includes imported libraries, excludes children",
+  "outputs": {
+    "config.json": "d973c06f0aa13eb490e449fd0c5e75e4fefe24910684acf0a29e3e343d0ad196",
+    "factor_results.json": "01d35b6d3f3fa403cf5ba05d8dcea9e318b7467b8437eca9226b69382f08d15c",
+    "metrics.json": "b688e2677bed2947013c1d3696a5132d6016066892a3744d19f96b1575e472db",
+    "report.md": "e8fd934a4883ed9fcb78ffe6cf25eee6f5492d1e0b888dee15c7dfb70686267c"
+  }
+}

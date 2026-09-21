@@ -1,0 +1,33 @@
+{
+ "probe": "F4R2-S1 frame-level tp-disable feasibility (prereg sec 6)",
+ "engine_pin_expected": "7ad35014d72711cb43ab6aedc232d70adf7eece60604b2a057ee039c9bd11e78",
+ "cases": [
+  {
+   "case": "control (tp1 2.0/0.5, tp2 null) -> TP expected",
+   "outcome": "RAN",
+   "ztp_fill_orders": 0,
+   "zone_tp_events": 0,
+   "n_fills": 0
+  },
+  {
+   "case": "null_tp1 (tp1_mult/tp1_frac None)",
+   "outcome": "RAN",
+   "ztp_fill_orders": 0,
+   "zone_tp_events": 0,
+   "n_fills": 0
+  },
+  {
+   "case": "nan_tp1 (tp1_mult/tp1_frac NaN)",
+   "outcome": "REJECTED_BandContractError",
+   "message": "zones: tp1_mult must be finite > 0 for sh.600001 2024-01-02"
+  },
+  {
+   "case": "drop_tp1cols (columns removed)",
+   "outcome": "RAN",
+   "ztp_fill_orders": 0,
+   "zone_tp_events": 0,
+   "n_fills": 0
+  }
+ ],
+ "frame_level_feasible": false
+}

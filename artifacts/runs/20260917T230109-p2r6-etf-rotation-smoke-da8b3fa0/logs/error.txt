@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2r6_etf_rotation.py", line 308, in main
+    metrics[cid] = build_metrics(cid)
+                   ^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\cli\p2r6_etf_rotation.py", line 293, in build_metrics
+    seg_m['concentration'] = concentration(
+                             ^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\etf_rotation.py", line 835, in concentration
+    pnl = pos['pnl']
+          ~~~^^^^^^^
+KeyError: 'pnl'

@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "D:\量化\tools\run_p2r12_event_veto.py", line 445, in main
+    metrics, details = run_units(s, frames)
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\tools\run_p2r12_event_veto.py", line 304, in run_units
+    metrics['C03'], details['C03'] = unit_c03(s)
+                                     ^^^^^^^^^^^
+  File "D:\量化\tools\run_p2r12_event_veto.py", line 228, in unit_c03
+    out = ev.evaluate_c03(matched)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\p2r12_event_veto.py", line 993, in evaluate_c03
+    rate_m = float(part['block5_exit'].mean())
+                   ~~~~^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\dataframe\frame.py", line 1445, in __getitem__
+    return get_df_item_by_key(self, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\_utils\getitem.py", line 163, in get_df_item_by_key
+    return df.get_column(key)
+           ^^^^^^^^^^^^^^^^^^
+  File "D:\量化\.venv\Lib\site-packages\polars\dataframe\frame.py", line 9400, in get_column
+    return wrap_s(self._df.get_column(name))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+polars.exceptions.ColumnNotFoundError: "block5_exit" not found

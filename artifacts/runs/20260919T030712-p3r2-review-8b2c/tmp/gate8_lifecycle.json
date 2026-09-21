@@ -1,0 +1,162 @@
+{
+ "C01": {
+  "n_intents_frame": 909,
+  "n_lifecycle_events": 902,
+  "n_intents_stats": 909,
+  "activated": 909,
+  "filled_cls": 530,
+  "override_cls": 268,
+  "expiry_cls": 104,
+  "other_cls": {},
+  "run_filled": 530,
+  "run_term": {
+   "expiry": 110,
+   "override_same_name": 268,
+   "cap_void": 0,
+   "suspension_abandon": 0
+  },
+  "run_rule_blocked": 1,
+  "rate_recomputed": 0.5841584158415841,
+  "run_rate": 0.5841584158415841
+ },
+ "C02": {
+  "n_intents_frame": 1096,
+  "n_lifecycle_events": 1086,
+  "n_intents_stats": 1096,
+  "activated": 1096,
+  "filled_cls": 625,
+  "override_cls": 364,
+  "expiry_cls": 97,
+  "other_cls": {},
+  "run_filled": 625,
+  "run_term": {
+   "expiry": 102,
+   "override_same_name": 361,
+   "cap_void": 0,
+   "suspension_abandon": 1
+  },
+  "run_rule_blocked": 7,
+  "rate_recomputed": 0.5766423357664233,
+  "run_rate": 0.5766423357664233
+ },
+ "C03": {
+  "n_intents_frame": 860,
+  "n_lifecycle_events": 850,
+  "n_intents_stats": 860,
+  "activated": 860,
+  "filled_cls": 484,
+  "override_cls": 252,
+  "expiry_cls": 114,
+  "other_cls": {},
+  "run_filled": 484,
+  "run_term": {
+   "expiry": 122,
+   "override_same_name": 251,
+   "cap_void": 0,
+   "suspension_abandon": 0
+  },
+  "run_rule_blocked": 3,
+  "rate_recomputed": 0.5662790697674419,
+  "run_rate": 0.5662790697674419
+ },
+ "C04": {
+  "n_intents_frame": 1033,
+  "n_lifecycle_events": 1021,
+  "n_intents_stats": 1033,
+  "activated": 1033,
+  "filled_cls": 596,
+  "override_cls": 327,
+  "expiry_cls": 98,
+  "other_cls": {},
+  "run_filled": 596,
+  "run_term": {
+   "expiry": 106,
+   "override_same_name": 324,
+   "cap_void": 0,
+   "suspension_abandon": 1
+  },
+  "run_rule_blocked": 6,
+  "rate_recomputed": 0.5827686350435625,
+  "run_rate": 0.5827686350435625
+ },
+ "C05": {
+  "n_intents_frame": 1395,
+  "n_lifecycle_events": 1382,
+  "n_intents_stats": 1395,
+  "activated": 1395,
+  "filled_cls": 737,
+  "override_cls": 518,
+  "expiry_cls": 127,
+  "other_cls": {},
+  "run_filled": 737,
+  "run_term": {
+   "expiry": 136,
+   "override_same_name": 515,
+   "cap_void": 0,
+   "suspension_abandon": 1
+  },
+  "run_rule_blocked": 6,
+  "rate_recomputed": 0.5326164874551972,
+  "run_rate": 0.5326164874551972
+ },
+ "C06": {
+  "n_intents_frame": 1662,
+  "n_lifecycle_events": 1646,
+  "n_intents_stats": 1662,
+  "activated": 1662,
+  "filled_cls": 809,
+  "override_cls": 708,
+  "expiry_cls": 129,
+  "other_cls": {},
+  "run_filled": 809,
+  "run_term": {
+   "expiry": 142,
+   "override_same_name": 700,
+   "cap_void": 0,
+   "suspension_abandon": 1
+  },
+  "run_rule_blocked": 10,
+  "rate_recomputed": 0.4927797833935018,
+  "run_rate": 0.4927797833935018
+ },
+ "C07": {
+  "n_intents_frame": 1277,
+  "n_lifecycle_events": 1260,
+  "n_intents_stats": 1277,
+  "activated": 1277,
+  "filled_cls": 654,
+  "override_cls": 467,
+  "expiry_cls": 139,
+  "other_cls": {},
+  "run_filled": 654,
+  "run_term": {
+   "expiry": 154,
+   "override_same_name": 463,
+   "cap_void": 0,
+   "suspension_abandon": 1
+  },
+  "run_rule_blocked": 5,
+  "rate_recomputed": 0.5160532498042286,
+  "run_rate": 0.5160532498042286
+ },
+ "C08": {
+  "n_intents_frame": 1533,
+  "n_lifecycle_events": 1513,
+  "n_intents_stats": 1533,
+  "activated": 1533,
+  "filled_cls": 767,
+  "override_cls": 608,
+  "expiry_cls": 138,
+  "other_cls": {},
+  "run_filled": 767,
+  "run_term": {
+   "expiry": 151,
+   "override_same_name": 601,
+   "cap_void": 0,
+   "suspension_abandon": 1
+  },
+  "run_rule_blocked": 13,
+  "rate_recomputed": 0.5088062622309197,
+  "run_rate": 0.5088062622309197
+ }
+}

@@ -1,0 +1,391 @@
+{
+  "run_id": "20260918T145900-p3r1-dev-262f",
+  "experiment_id": "exp-20260918-p3r1-band-readjudication",
+  "purpose": "P3R1 eight-config dev readjudication under the approved band-contract engine (SIGN-OFF artifacts/runs/20260918T140610-p3r1-engine-fix-e850/SIGN-OFF.md)",
+  "status": "completed",
+  "started_at": "2026-09-18T07:00:03.801712+00:00",
+  "ended_at": "2026-09-18T07:00:34.529185+00:00",
+  "command": [
+    "D:\\量化\\.venv\\Scripts\\python.exe",
+    "artifacts\\runs\\20260918T145900-p3r1-dev-262f\\tmp\\run_adjudication.py"
+  ],
+  "trial_accounting": {
+    "cumulative_before": 189,
+    "this_round": 8,
+    "cumulative_after": 197,
+    "note": "prereg exp-20260918-p3r1 §0; engine acceptance consumed zero trials"
+  },
+  "window": {
+    "dev": "2015-01-05..2020-12-31 (engine calendar clipped at DEV_END; 2021+ zero access)",
+    "val": "NOT consumed (one-shot discipline; requires separate approval even if a config passes)",
+    "signals_dropped": [
+      "2020-12-31"
+    ],
+    "signals_used": [
+      "2015-01-30",
+      "2015-02-27",
+      "2015-03-31",
+      "2015-04-30",
+      "2015-05-29",
+      "2015-06-30",
+      "2015-07-31",
+      "2015-08-31",
+      "2015-09-30",
+      "2015-10-30",
+      "2015-11-30",
+      "2015-12-31",
+      "2016-01-29",
+      "2016-02-29",
+      "2016-03-31",
+      "2016-04-29",
+      "2016-05-31",
+      "2016-06-30",
+      "2016-07-29",
+      "2016-08-31",
+      "2016-09-30",
+      "2016-10-31",
+      "2016-11-30",
+      "2016-12-30",
+      "2017-01-26",
+      "2017-02-28",
+      "2017-03-31",
+      "2017-04-28",
+      "2017-05-31",
+      "2017-06-30",
+      "2017-07-31",
+      "2017-08-31",
+      "2017-09-29",
+      "2017-10-31",
+      "2017-11-30",
+      "2017-12-29",
+      "2018-01-31",
+      "2018-02-28",
+      "2018-03-30",
+      "2018-04-27",
+      "2018-05-31",
+      "2018-06-29",
+      "2018-07-31",
+      "2018-08-31",
+      "2018-09-28",
+      "2018-10-31",
+      "2018-11-30",
+      "2018-12-28",
+      "2019-01-31",
+      "2019-02-28",
+      "2019-03-29",
+      "2019-04-30",
+      "2019-05-31",
+      "2019-06-28",
+      "2019-07-31",
+      "2019-08-30",
+      "2019-09-30",
+      "2019-10-31",
+      "2019-11-29",
+      "2019-12-31",
+      "2020-01-23",
+      "2020-02-28",
+      "2020-03-31",
+      "2020-04-30",
+      "2020-05-29",
+      "2020-06-30",
+      "2020-07-31",
+      "2020-08-31",
+      "2020-09-30",
+      "2020-10-30",
+      "2020-11-30"
+    ]
+  },
+  "authority_chain": {
+    "pins": {
+      "p2r16_config": {
+        "path": "configs/experiments/p2r16-trend-dispersion.json",
+        "sha256": "27f846a7330919a4965d83ec07cf2a0be3e29b2476cc37c14c84558957a93df4",
+        "expected16": "27f846a7330919a4",
+        "match": true,
+        "role": "eight-config authority"
+      },
+      "daily_parquet": {
+        "path": "data/processed/baostock-daily-20260917/daily_1999_2024.parquet",
+        "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6",
+        "expected16": "d9a63f4cc3032926",
+        "match": true,
+        "role": "daily OHLC/pool source"
+      },
+      "split_factor_h5": {
+        "path": "data/processed/rqalpha-bundle-v2-1-20260918/split_factor.h5",
+        "sha256": "2f436b2f13d09a9bfdcbdb0bf35669c10a377d180ce1ca37bef53d6c96a3365d",
+        "expected16": "2f436b2f13d09a9b",
+        "match": true,
+        "role": "share multipliers"
+      },
+      "dividends_h5": {
+        "path": "data/processed/rqalpha-bundle-v2-1-20260918/dividends.h5",
+        "sha256": "46121c09cddde72e725c2d4ae025cc259b049aeaa77c868b492fdbba60214846",
+        "expected16": "46121c09cddde72e",
+        "match": true,
+        "role": "per-lot pre-tax cash"
+      },
+      "index_chunk_000300": {
+        "path": "data/raw/tushare/index_daily/20260917-r1/chunk_000300.SH.csv",
+        "sha256": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878",
+        "expected16": null,
+        "match": true,
+        "role": "T200-40 trend basis (R8 pin via r8 config)"
+      }
+    },
+    "r8_mechanism_identity": {
+      "module_file": "D:\\量化\\src\\quant\\research\\etf_rotation.py",
+      "module_sha256": "1c064efce2cf211505f62f46ac61ca39abf63c1f529e008518a8b26d2ca59b70",
+      "function_source_sha256": {
+        "sma_trend_state": "83c546e7bd74e10f5efd52e293b9f811c9b683d88312f6fab7d9edf78caeaf14",
+        "exposures_from_state": "7154aafc694ff703f3acdb812fb7d5edde9d2b60f77c679ebd9cf4c5585012a2",
+        "constant_risk_fn": "37c9e42013ebaaa2ef9c2e34d66c4f5ac101a5a902cc08c48a19a7fa7db16f6b"
+      },
+      "r8_run_dir": "20260918T021054-p2r8-daily-risk-d19a9c07",
+      "r9_run_dir": "20260918T030528-p2r9-risk-delivery-ef2777dc"
+    },
+    "t200_behavioral_anchor": {
+      "all_match": true
+    },
+    "r16_authority_run": {
+      "path": "artifacts\\runs\\20260918T083650-p2r16-trend-dispersion-afab466f",
+      "config_file_sha256": "27f846a7330919a4965d83ec07cf2a0be3e29b2476cc37c14c84558957a93df4",
+      "status": "completed"
+    },
+    "stk_limit_batch_aggregate": {
+      "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by name",
+      "aggregate_sha256": "3c53abf3b0c39b425389137d9f630f0de158990fcdc55b0bd41bf7d9c3bde673",
+      "files": 2432,
+      "total_bytes": 301278245
+    }
+  },
+  "signal_reconstruction": {
+    "source": "R16 leg_log.parquet REUSED as authoritative (buy_open->buy, sell_full->sell, rescale->held); independent recompute with the verbatim r16 module (signal_pools + buffer_membership) compared on every (config, signal)",
+    "consistency": {
+      "per_config": {
+        "C01": {
+          "signals_checked": 71,
+          "membership_mismatches": [],
+          "count_mismatches_vs_membership_events": [],
+          "match": true
+        },
+        "C02": {
+          "signals_checked": 71,
+          "membership_mismatches": [],
+          "count_mismatches_vs_membership_events": [],
+          "match": true
+        },
+        "C03": {
+          "signals_checked": 71,
+          "membership_mismatches": [],
+          "count_mismatches_vs_membership_events": [],
+          "match": true
+        },
+        "C04": {
+          "signals_checked": 71,
+          "membership_mismatches": [],
+          "count_mismatches_vs_membership_events": [],
+          "match": true
+        },
+        "C05": {
+          "signals_checked": 71,
+          "membership_mismatches": [],
+          "count_mismatches_vs_membership_events": [],
+          "match": true
+        },
+        "C06": {
+          "signals_checked": 71,
+          "membership_mismatches": [],
+          "count_mismatches_vs_membership_events": [],
+          "match": true
+        },
+        "C07": {
+          "signals_checked": 71,
+          "membership_mismatches": [],
+          "count_mismatches_vs_membership_events": [],
+          "match": true
+        },
+        "C08": {
+          "signals_checked": 71,
+          "membership_mismatches": [],
+          "count_mismatches_vs_membership_events": [],
+          "match": true
+        }
+      },
+      "all_match": true
+    },
+    "verdict": "PASS",
+    "re_pin_note": "consistency is RECOMPUTED and re-pinned by every run (deterministic); the failed predecessor run 20260918T143931-p3r1-dev-43b7 had already verified the identical 8/8 PASS state (archived, untouched)",
+    "exposure_paths": {
+      "T200-40_fallback_signals": 9,
+      "matches_r16": true
+    },
+    "sizing": "target_notional = exposure(t) x band-account equity(t) / K; iterated to fixed point",
+    "sizing_iterations": {
+      "C01": 5,
+      "C02": 5,
+      "C03": 5,
+      "C04": 5,
+      "C05": 5,
+      "C06": 6,
+      "C07": 5,
+      "C08": 6
+    }
+  },
+  "mapping_decisions": [
+    "rescale legs (incumbent drift trimming) not mapped: band contract v0 has no partial-exit primitive; exposure scales entry sizing only; incumbents held until membership exit",
+    "all signals expire at the next signal date (re-issued while the intent persists; replacement per contract)",
+    "the 2020-12-31 signal dropped: execution would land in 2021 (val window zero-touch)",
+    "priority = liquidity rank at the signal date (1 = highest); departed names without rank get 10**6",
+    "sizing iterations disclose equity fixed-point convergence"
+  ],
+  "signoff_conditions": {
+    "splits_pool_assertion": {
+      "passed": true,
+      "fed_rows": 242,
+      "excluded_rows": 4688,
+      "excluded_symbols_sample": [
+        "sh.510030",
+        "sh.510100",
+        "sh.510150",
+        "sh.510170",
+        "sh.510210"
+      ]
+    },
+    "stk_limit_missing_info_market_fallbacks": {
+      "C01": 0,
+      "C02": 0,
+      "C03": 0,
+      "C04": 0,
+      "C05": 0,
+      "C06": 0,
+      "C07": 0,
+      "C08": 0
+    }
+  },
+  "inputs": {
+    "daily_parquet": {
+      "path": "data/processed/baostock-daily-20260917/daily_1999_2024.parquet",
+      "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6",
+      "expected16": "d9a63f4cc3032926",
+      "match": true,
+      "role": "daily OHLC/pool source"
+    },
+    "stk_limit_batch": {
+      "path": "data\\raw\\tushare\\stk_limit\\20260917-r1",
+      "aggregate": {
+        "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by name",
+        "aggregate_sha256": "3c53abf3b0c39b425389137d9f630f0de158990fcdc55b0bd41bf7d9c3bde673",
+        "files": 2432,
+        "total_bytes": 301278245
+      }
+    },
+    "split_factor_h5": {
+      "path": "data/processed/rqalpha-bundle-v2-1-20260918/split_factor.h5",
+      "sha256": "2f436b2f13d09a9bfdcbdb0bf35669c10a377d180ce1ca37bef53d6c96a3365d",
+      "expected16": "2f436b2f13d09a9b",
+      "match": true,
+      "role": "share multipliers"
+    },
+    "dividends_h5": {
+      "path": "data/processed/rqalpha-bundle-v2-1-20260918/dividends.h5",
+      "sha256": "46121c09cddde72e725c2d4ae025cc259b049aeaa77c868b492fdbba60214846",
+      "expected16": "46121c09cddde72e",
+      "match": true,
+      "role": "per-lot pre-tax cash"
+    },
+    "ex_cum_factor": "REMOVED_FROM_ACCOUNT_INPUTS (F1)",
+    "r16_reused_artifacts": {
+      "leg_log": "artifacts\\runs\\20260918T083650-p2r16-trend-dispersion-afab466f\\leg_log.parquet",
+      "membership_events": "artifacts\\runs\\20260918T083650-p2r16-trend-dispersion-afab466f\\membership_events.parquet",
+      "metrics_json": "artifacts\\runs\\20260918T083650-p2r16-trend-dispersion-afab466f\\metrics.json"
+    },
+    "index_chunk_000300": {
+      "path": "data/raw/tushare/index_daily/20260917-r1/chunk_000300.SH.csv",
+      "sha256": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878",
+      "expected16": null,
+      "match": true,
+      "role": "T200-40 trend basis (R8 pin via r8 config)"
+    }
+  },
+  "engine": {
+    "path": "src/quant/backtest/band_engine.py",
+    "sha256": "68f1025281a241861bffd172ab9debb305efeafb41132226b34f3a9ac3437952",
+    "modified_by_this_run": false,
+    "approval": "SIGN-OFF APPROVE 20260918T140610-p3r1-engine-fix-e850",
+    "finding_for_referee": "load_stk_limit_batch returns raw tushare names (up_limit/down_limit) while run_band_backtest validates limit_up/limit_down; bridged by a caller-side rename in this runner (engine byte-untouched). Naming inconsistency only; recommend aligning the loader in a future tooling pass"
+  },
+  "engine_fix_ENGINE_1": {
+    "authorized_by": "orchestrator ruling 2026-09-18 14:56 (prereg §7)",
+    "scope": "band_engine._frame ONLY: construct with the caller-passed declared schema instead of first-100-row type inference; semantics null (same values, typed per the module's own constants)",
+    "sha256_before": "0582949193ad229f (approved engine-fix-e850 bytes)",
+    "sha256_after": "68f1025281a241861bffd172ab9debb305efeafb41132226b34f3a9ac3437952",
+    "diff": {
+      "removed": "return pl.DataFrame(rows).select(list(schema)).cast(schema)",
+      "added": [
+        "ENGINE-1 comment lines (authorized-fix provenance),",
+        "return pl.DataFrame(rows, schema=schema)"
+      ]
+    },
+    "tests": {
+      "passed": 14,
+      "failed": 0,
+      "note": "13 pre-existing tests UNCHANGED (expectations untouched) + new test_14_frame_schema_regression (>100-row logs, None-first columns, declared dtypes)"
+    }
+  },
+  "environment": {
+    "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "polars": "1.44.2",
+      "numpy": "1.26.4",
+      "pandas": "2.3.3",
+      "pyarrow": "25.0.1"
+    },
+    "peak_rss_gb": 1.59,
+    "elapsed_seconds": 32.3,
+    "budget": {
+      "max_runtime_s": 1800.0,
+      "max_ram_gb": 8
+    }
+  },
+  "outputs": {
+    "logs/pytest.log": "49c4037c0cca7dc651f89a02c6da0ee3261b5e9646694ff880a03465aad8752d",
+    "logs/runner.log": "cb8d9c0f8438fd72c0574402413c93586db1158145e1748dde4052bfc78516c1",
+    "outputs/C01_daily_equity.parquet": "5dc9e292d5709aa6b70d21c9c52744efbbb3b3b86898e52e5e1043c87e143f9c",
+    "outputs/C01_events.parquet": "82a89d59f2ba87f9b8d22f7a0cc3c5b55014ea6a7a7c4a6d17712b9652c0841a",
+    "outputs/C01_fills.parquet": "cdf8f3d24101250d1962e57ecd3ad1f46e3343ee5c42a910dd0db72f4fd2e990",
+    "outputs/C01_positions_final.parquet": "066b091766079f2f0616d00ecfd88ff4c094a96273cfd10c33741d0b40271f3f",
+    "outputs/C02_daily_equity.parquet": "63b089a79f37c598f10082d741cbe3b515b7dcebe2aa4bf8cb8f496e127424f8",
+    "outputs/C02_events.parquet": "ba224f382117d39e58400146936cb1cff557dbbd84e6f6c9d99e3aef52cee861",
+    "outputs/C02_fills.parquet": "bd1830a2fdca315cb86be18486cbf2ffe5ff3d13429ab877a6366936d860a46d",
+    "outputs/C02_positions_final.parquet": "89d4ea46c6697a517ceea23f6ea732b034f7f9d27d0e05587a735d6929bb7a05",
+    "outputs/C03_daily_equity.parquet": "f15d33dfd955508525921da4c2edfdf6af42498c727afd188f1176e0aebce816",
+    "outputs/C03_events.parquet": "2a10a7909322d438f630363a76ffc86a9736ebf07575e5fd11e23a604f528363",
+    "outputs/C03_fills.parquet": "9a942a9d3f17eeb944aaa591aba39420e0873b9ae3bcd590bfabb81610a0c2a3",
+    "outputs/C03_positions_final.parquet": "f0dcad09b6386ec7b44c70f01e380c9b14c842479adcdf1e831fc8691e2e0573",
+    "outputs/C04_daily_equity.parquet": "28885a3e1c4192cd312b8e2932e328996a681281a6f6f2e0c23eac1cc548da8e",
+    "outputs/C04_events.parquet": "a15d51f2a1ac94b3fb98727e8d84e5ae88a547085149fa06456a569409b61897",
+    "outputs/C04_fills.parquet": "885210fbf1b086130f4c60f7277bd4df730c1356f241199aaa3bb254762cf36e",
+    "outputs/C04_positions_final.parquet": "35c3b1bf57dc9feb28affeda2f75989f0b873d36f51e231a4461230faa784ee3",
+    "outputs/C05_daily_equity.parquet": "be9e677a6548b4e29021bb66e07dc1620a6603d8231bfce772031cc801a33c31",
+    "outputs/C05_events.parquet": "c257fe62dc18121715751bc6550b9cdc9d61c04268a8c3dabc79724f2e6619c8",
+    "outputs/C05_fills.parquet": "c99cb6f2d5ae383219bbe911c97e69144b0d7b096220013a657e7f771317e3c3",
+    "outputs/C05_positions_final.parquet": "db4fbb7fd23f4f1c7c7385db94313244d1ea1e068bec4fcd6deddc6478ac2885",
+    "outputs/C06_daily_equity.parquet": "2afde70f2486fb67957222178c14257d561b1fdd6de517f6ced2b5fc03bf8b2e",
+    "outputs/C06_events.parquet": "a6c585ddbeeaf40f16534774b85e0dfea0a8dd31d1aeb267525902b6535761b2",
+    "outputs/C06_fills.parquet": "da9106ad12150259121e1dee6d3687e0a4f97ce652aa563c4f5ef2cdf8587a5f",
+    "outputs/C06_positions_final.parquet": "3689391527704d5f964672651f4d12548ba89a41d7bec9d6508ee5d9d39663f4",
+    "outputs/C07_daily_equity.parquet": "919edb6b9e713e036c08141f169984804235e3c8f2173f6d0c2eef85a0a4457b",
+    "outputs/C07_events.parquet": "31de3133627eb7ab4de110df3b4c1087b9e62fac9bf255fed6cef9e5153d0cab",
+    "outputs/C07_fills.parquet": "85003fcb77eb5a31fdef849772c13ee0cba3de7bcc18dfa888e0819fe9a5ae94",
+    "outputs/C07_positions_final.parquet": "a03abb4f22a64eb060108f7d35e48f6a8423337a65410ef5bc2038e429bc7a3b",
+    "outputs/C08_daily_equity.parquet": "7d0e14e145f6ba035f27090bdad07513b222d3ac4404ea12ff6bb119ea3eff9a",
+    "outputs/C08_events.parquet": "7dfe3b6c84eb967ff4a6ad5b480a3259af2abe3f092209a623769075749ba4fa",
+    "outputs/C08_fills.parquet": "59822e3e71e1d6019305d5efbd6b7b01b0de83c602b8a009b131db9194a0d37b",
+    "outputs/C08_positions_final.parquet": "85a8f301b6d4812913dd56ace347e2223e6ea2ba72cfa577d966ed7d93536ca2",
+    "outputs/metrics_and_gates.json": "b7a82a021e79d5e898089c95a9e71a6f084c0d7d308e256334187e0030a214c7",
+    "report.md": "85802b7252f1247cf3d170c41787c890fb8c287c2179d62e696707978939afa3",
+    "tmp/run_adjudication.py": "2665df5418eed99c70a72217675853a806af0deee4f90f06884bd82da369ad9f"
+  }
+}

@@ -1,0 +1,35 @@
+[    0.0s] fixed-scheme; window=2015-01-05..2020-12-31; curves=['R2C']
+[   15.3s]   engine f3650f8440c713b8 OK; pins OK; rss 0.27 GB
+[   15.3s] == 1. calendar & signal days ==
+[   15.7s]   23 signal days (2015-03-31..2020-09-30)
+[   15.7s] == 2. R16 pools ==
+[   26.3s]   pool n min 810 max 2260
+[   26.3s] == 3. stock legs ==
+D:\量化\artifacts\runs\20260921T123431-fs-r2-c-779be\tmp\runner_fixed_scheme.py:246: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  f = f.filter(pl.col("signal_date").is_in(pl.Series(sig_days))
+D:\量化\artifacts\runs\20260921T123431-fs-r2-c-779be\tmp\runner_fixed_scheme.py:250: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  wide = wide.filter(pl.col("signal_date").is_in(pl.Series(sig_days)))
+D:\量化\artifacts\runs\20260921T123431-fs-r2-c-779be\tmp\runner_fixed_scheme.py:257: DeprecationWarning: `is_in` with a collection of the same datatype is ambiguous and deprecated.
+Please use `implode` to return to previous behavior.
+
+See https://github.com/pola-rs/polars/issues/22149 for more information.
+  .filter(pl.col("symbol").is_in(pl.Series(sorted(pool_set[t]))))
+[   29.7s]   M-F: 20 reps; eligible median 1554
+[   29.7s]   MF: members/month min 4 max 4
+[   29.7s]   MC: members/month min 1 max 4
+[   29.7s] == 4. market frames ==
+[   39.2s]   frames: 104 stocks + 3 ETFs; daily 151699; half 282907; limits 147008; rss 2.64 GB
+[   39.3s] == 5. benchmarks B1(m)_mix / B3'_mix ==
+[   46.4s]   B1(m)_mix net +4.19% mdd -21.16%; B3'_mix mean +4.32%
+[   46.7s] == 7. engine runs ==
+[   48.9s]   R2C: 2.2s; calls 2924 injected 2030 orders 2014 filled 220 k3 None | etf exits 2 sn {'stops': 133, 'protections': 0, 'takes': 0} | rss 2.79 GB
+[   48.9s] == 8. metrics & eight gates ==
+[   49.0s]   R2C: net +1.01% exc -3.18pp adv 3/6 mdd -14.15% turn 2.58 w 20.4% exec 15.0% -> fail ['2_excess_vs_B1mix_ge_2pp', '3_advantage_years_ge_5_of_6', '7_vs_B3mix_plus_1pp', '8_execution_rate_ge_95pct']; 10% no
+[   49.0s] == 9. outputs ==
+[   49.1s] == done; wall 49s; peak rss 2.79 GB

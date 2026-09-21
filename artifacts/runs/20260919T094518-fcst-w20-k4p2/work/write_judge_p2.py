@@ -1,0 +1,126 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""wave-20 part2 (ordinal 11500-11599) 逐行判定写入（python 文件写，非 shell heredoc）。"""
+import json
+import os
+
+ROWS = [
+ (11500, "other", "cost_up", 0, "出现正常季节性亏损", "high"),
+ (11501, "other", None, 0, "2018年度受计提坏账损失影响业绩大幅下降", "high"),
+ (11502, "core_ops", None, -1, "结算进度略好于2018年第一季度", "high"),
+ (11503, "orders", "demand_down", 1, "新开发客户订单量尚未规模释放", "high"),
+ (11504, "orders", None, -1, "公司客户订单量逐步释放", "high"),
+ (11505, "non_recurring", None, -1, "可完成全资子公司长沙显示100%股权对外处置", "high"),
+ (11506, "non_recurring", None, 1, "该部分投资收益未能在2019年第三季度体现", "high"),
+ (11507, "price_up", None, -1, "公司主要产品价格同比提升", "high"),
+ (11508, "other", None, 0, "基于目前经营状况作出的谨慎预计", "low"),
+ (11509, "other", None, 0, "新签约团餐项目主要处于筹备期", "high"),
+ (11510, "other", "cost_up", 0, "主要处于筹备期，在报告期内有较大投入", "high"),
+ (11511, "non_recurring", "demand_up", 1, "按权益法核算产生投资损失", "high"),
+ (11512, "non_recurring", "demand_up", 1, "按权益法核算分摊的投资损失所致", "high"),
+ (11513, "non_recurring", "demand_up", 1, "按权益法核算分摊的投资损失所致", "high"),
+ (11514, "demand_down", None, 1, "房地产开发业务项目结算较少", "high"),
+ (11515, "impairment", None, -1, "应收账款的坏账准备计提相对去年同期减少", "high"),
+ (11516, "demand_down", "cost_up", 1, "公司资金紧张、部分账户被封等因素影响，使得公司承接项目减少", "high"),
+ (11517, "impairment", None, 1, "可供出售金融资产计提减值损失", "high"),
+ (11518, "cost_up", "fx", 1, "报告期原材料上涨压力较大", "high"),
+ (11519, "other", None, 0, "受行业淡季影响", "high"),
+ (11520, "other", None, 0, "业绩预计与上年同期基本持平", "low"),
+ (11521, "cost_up", "demand_down", 1, "承担了较高的资金成本", "high"),
+ (11522, "impairment", "cost_up", 1, "本报告期内，类金融板块计提了大额坏账准备", "high"),
+ (11523, "impairment", None, 1, "计提了大额坏账准备", "high"),
+ (11524, "demand_down", "impairment", 1, "电信运营业务大部分暂停", "high"),
+ (11525, "ma_restructuring", "cost_up", 1, "合并范围增加了控股孙公司国显光电有限公司", "high"),
+ (11526, "cost_up", "demand_up", 1, "各项成本费用支出对报告期利润形成较大压力", "high"),
+ (11527, "other", "cost_up", 0, "一季度为公司业务淡季，加之春节放假，产销量较少", "high"),
+ (11528, "ma_restructuring", None, -1, "将亏损的商业保理及融资租赁业务进行了关停及转让处理", "high"),
+ (11529, "cost_up", "ma_restructuring", 1, "上述中介费用支出在持续投入中", "high"),
+ (11530, "demand_down", "other", 1, "因银行抽贷造成流动资金紧张，影响新能源汽车生产", "high"),
+ (11531, "demand_down", "other", 1, "2019年上半年公司新能源汽车产能未释放", "high"),
+ (11532, "demand_down", "other", 1, "订单生产量少，销售额较上年同期大幅下降", "high"),
+ (11533, "demand_down", "other", 1, "订单生产量少，销售额较上年同期大幅下降", "high"),
+ (11534, "demand_down", "other", 1, "新能源汽车业务受行业等影响订单量减少", "high"),
+ (11535, "demand_down", "impairment", 1, "市场销售不达预期，销售收入下降", "high"),
+ (11536, "cost_up", "other", 1, "公司按照法律规定支付了离职补偿金", "high"),
+ (11537, "cost_up", None, 1, "公司按照相关法律法规支付一次性补偿金", "high"),
+ (11538, "cost_up", "demand_up", 1, "需要支付离职补偿金，管理费用增加", "high"),
+ (11539, "demand_down", None, 1, "行业竞争加剧影响，公司主营业务收入下滑", "high"),
+ (11540, "demand_down", "cost_up", 1, "生猪出栏较上年同期大幅下滑", "high"),
+ (11541, "demand_down", None, 1, "公司停产收入减少等影响", "high"),
+ (11542, "demand_down", None, 1, "部分子公司停产导致收入减少", "high"),
+ (11543, "other", None, 0, "经营状况未发生明显改善", "low"),
+ (11544, "demand_down", "cost_up", 1, "无法采购充足原材料进行生产，导致收入减少", "high"),
+ (11545, "other", "demand_down", 1, "公司现金流出现严重困境", "high"),
+ (11546, "demand_down", "other", 1, "从而导致收入确认同比大幅下降所致", "high"),
+ (11547, "demand_up", "cost_up", -1, "2019年一季度公司经营环境得到明显改善", "high"),
+ (11548, "other", None, 0, "本期停产损失小于去年", "high"),
+ (11549, "ma_restructuring", "other", -1, "本期并入了医疗板块收入", "high"),
+ (11550, "demand_down", "cost_up", 1, "下游客户需求减弱", "high"),
+ (11551, "impairment", "demand_down", 1, "公司对上述三个诉讼计提了相应的预计负债", "high"),
+ (11552, "demand_up", None, -1, "服装销售情况较去年同期有所好转", "high"),
+ (11553, "impairment", None, 1, "公司计提了本案预计负债", "high"),
+ (11554, "other", None, 0, "一季度收入受季节性波动的影响", "high"),
+ (11555, "core_ops", None, 1, "经营环境发生变化", "high"),
+ (11556, "other", None, 1, "受债务危机影响，流动性受限", "high"),
+ (11557, "other", None, 1, "受债务危机影响，流动性受限", "high"),
+ (11558, "demand_up", None, -1, "收入较去年同期实现稳定增长", "high"),
+ (11559, "cost_up", "other", 1, "导致管理费用在一定程度上有所增加", "high"),
+ (11560, "cost_down", None, -1, "报告期内人工等运营成本有所降低", "high"),
+ (11561, "cost_down", "non_recurring", -1, "人工成本等日常运营成本大幅减少", "high"),
+ (11562, "cost_down", "non_recurring", -1, "报告期内运营成本大幅降低", "high"),
+ (11563, "non_recurring", None, -1, "收到科技项目奖励323.97万元", "high"),
+ (11564, "demand_down", None, 1, "主营业务收入较上年同期减少1,500万元", "high"),
+ (11565, "demand_down", "impairment", 1, "预计2019年1-9月营业收入比上年同期下降", "high"),
+ (11566, "impairment", "demand_down", 1, "预计将对公司收购车网互联、泰合佳通确认的剩余商誉计提减值准备", "high"),
+ (11567, "demand_up", "cost_up", -1, "预计营业收入较上年同期增长80%", "high"),
+ (11568, "cost_up", "accounting", 1, "导致报告期内财务费用较上年同期增长", "high"),
+ (11569, "cost_up", "accounting", 1, "导致报告期内财务费用较上年同期增长", "high"),
+ (11570, "other", "cost_up", 0, "受春节假期影响产品出货减少、营收减少", "high"),
+ (11571, "ma_restructuring", "non_recurring", 1, "其2019年1-3月财务数据不再包含在本报告期合并范围中", "high"),
+ (11572, "demand_up", "cost_down", -1, "泰国项目的业务及盈利情况开始好转", "high"),
+ (11573, "demand_down", "cost_up", 1, "公司整体营业收入远不如预期", "high"),
+ (11574, "demand_down", "cost_up", 1, "公司整体营业收入低于上年同期", "high"),
+ (11575, "demand_down", "cost_up", 1, "公司整体营业收入低于上年同期", "high"),
+ (11576, "demand_down", "price_down", 1, "对本公司在手订单转化产生了直接影响", "high"),
+ (11577, "demand_down", "price_down", 1, "公司电梯产品执行量与去年同比下降较多", "high"),
+ (11578, "demand_down", "price_down", 1, "主营产品电梯的执行台数比上年同期有一定幅度的下滑", "high"),
+ (11579, "non_recurring", "cost_up", 0, "上年同期南洋大厦房产转让增加上期收益871万元", "high"),
+ (11580, "other", None, 0, "净利润较上年同期无重大变动", "low"),
+ (11581, "demand_down", "cost_up", 1, "公司自有产品销售压力明显，收入较去年同期出现下滑", "high"),
+ (11582, "demand_down", None, 1, "管道业务部分区域销量下滑", "high"),
+ (11583, "other", "cost_up", 1, "老产品盈利下降，而新产品需要大量投入", "high"),
+ (11584, "demand_down", "other", 1, "预计汽车行业表现不佳，导致营业收入下降", "high"),
+ (11585, "demand_down", "cost_up", 1, "汽车行业整体表现不佳", "high"),
+ (11586, "other", "cost_up", 0, "受季节性影响较大", "high"),
+ (11587, "price_down", "cost_up", 1, "公司在2019年一季度生猪销售价格较低", "high"),
+ (11588, "demand_down", "orders", 1, "受汽车行业销量放缓影响", "high"),
+ (11589, "demand_down", "fx", 1, "下游通信营运商和设备集成商压缩资本开支", "high"),
+ (11590, "demand_down", None, 1, "受汽车市场不景气影响", "high"),
+ (11591, "demand_down", None, 1, "老产品销售下降，新产品上量较慢", "high"),
+ (11592, "demand_down", None, 1, "公司销售收入和毛利率有所下降", "high"),
+ (11593, "other", None, 0, "亏损的原因为生产季节性所致", "high"),
+ (11594, "other", "demand_up", 0, "受气候影响，公司的经营业绩存在明显的季节性波动", "high"),
+ (11595, "other", None, 0, "为季节性因素所致", "high"),
+ (11596, "other", "cost_up", 0, "受春节假期及安防行业季节性等因素影响", "high"),
+ (11597, "other", "cost_up", 0, "受春节假期的影响", "high"),
+ (11598, "demand_down", "cost_up", 1, "市场需求变弱，由于行业竞争、成本上涨等因素", "high"),
+ (11599, "demand_down", "cost_up", 1, "受中美贸易战及国内外经济下行压力的影响，全球市场需求变弱", "high"),
+]
+
+
+def main():
+    out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "batch_020_judge_part2.jsonl")
+    lines = []
+    for oid, pc, sc, sd, q, cf in ROWS:
+        rec = {"ordinal": oid, "primary_code": pc, "secondary_code": sc,
+               "supports_direction": sd, "key_quote": q, "confidence": cf}
+        lines.append(json.dumps(rec, ensure_ascii=False, separators=(",", ":")))
+    with open(out, "w", encoding="utf-8", newline="\n") as f:
+        f.write("\n".join(lines) + "\n")
+    qlen = sorted(len(r[4]) for r in ROWS)
+    print(json.dumps({"part": 2, "rows": len(ROWS), "ordinals": [ROWS[0][0], ROWS[-1][0]],
+                      "quote_len_max": qlen[-1]}, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()

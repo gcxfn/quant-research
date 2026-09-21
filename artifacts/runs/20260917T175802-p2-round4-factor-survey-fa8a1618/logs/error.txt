@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2_factor_survey.py", line 120, in main
+    entry = survey_factor(factor, panel, pool, daily, calendar, cfg, config)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\cli\p2_factor_survey.py", line 166, in survey_factor
+    events = tail_events(panel, factor, direction, daily, calendar, cfg)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\factor_survey.py", line 263, in tail_events
+    picks = daily_rank_picks(feats, pl.col('score'), n_per_day=cfg.top_n)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\screen.py", line 310, in daily_rank_picks
+    _require_columns(feat, (signal_date_col, symbol_col), 'feat')
+  File "D:\量化\src\quant\research\screen.py", line 196, in _require_columns
+    raise ValueError(f'{name} is missing required columns: {missing}')
+ValueError: feat is missing required columns: ['date']

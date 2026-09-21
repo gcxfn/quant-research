@@ -1,0 +1,90 @@
+{
+ "run_id": "20260918T025456-fcst-full-w1-a3f7c2",
+ "experiment_id": "exp-20260918-fcst-reason-llm-full",
+ "task": "forecast.change_reason 全量 LLM 结构化 wave-1（全序第 0-599 行，batch_001，600 行）",
+ "status": "completed",
+ "time_start": "2026-09-18T02:54:56+08:00",
+ "time_end": "2026-09-18T03:48:10+08:00",
+ "timezone": "Asia/Shanghai",
+ "started_by": "ZCode 数据工程代理（会话内 LLM 结构化，无外部 API 调用、无网络、无 token）",
+ "inputs": {
+  "raw_dir": "data/raw/tushare/forecast/20260909-r1（只读，97 个 chunk_*.csv）",
+  "raw_batch_manifest": "data/raw/tushare/forecast/20260909-r1/manifest.json（batch 20260909-r1，未改动）",
+  "input_identity_file": "work/input_identity.json（97 个 chunk 的逐文件 sha256）",
+  "total_rows": 50406,
+  "pool_rows_ann_date_le_20241231_and_reason_nonempty": 38567,
+  "excluded_ann_date_ge_2025_with_reason": 10015,
+  "excluded_ann_date_le_2024_change_reason_empty": 1512,
+  "freeze_note": "入池已在抽取层滤除 ann_date>=20250101；2025+ 行一行未读取进结构化流程，data/raw 全程只读"
+ },
+ "config_summary": {
+  "schema": "schema v1（llm-v1），与 pilot 完全一致：data/features/fcst-reason-struct-pilot-20260918/schema.md（含 15 词封闭词表与补充判定细则），未改动",
+  "ordering_rules": "与 pilot 相同的 seed-17 分层框架（type×年份 63 层，(type,year) 升序遍历）；全量目标=N 的比例分配退化为恒等分配（每层全取）；层内按 (ts_code, ann_date, end_date, update_flag) 升序展开为全序 0..38566；batch_id=ordinal//600+1；batch_idx=ordinal%600",
+  "determinism": "全序展开无 rng 调用（pilot 的 rng 仅用于层内抽子集，取整层时 sorted(choice) 恒等），同输入重跑逐字节一致；wave-N 复用 build_row_index.py 得同一全序",
+  "batch_size": 600,
+  "n_batches_total": 65,
+  "last_batch_rows": 167,
+  "wave_1_rows": "ordinal 0-599（strata 首层 type=不确定 起始段）",
+  "key_uniqueness": "(ts_code, ann_date, end_date, update_flag) 全池唯一（程序断言）"
+ },
+ "actual_commands": [
+  "PYTHONPATH=D:/量化/src .venv/Scripts/python.exe -X utf8 artifacts/runs/20260918T025456-fcst-full-w1-a3f7c2/scripts/build_row_index.py --repo-root D:/量化",
+  "PYTHONPATH=D:/量化/src .venv/Scripts/python.exe -X utf8 .../scripts/render_batch.py --repo-root D:/量化 --batch 1",
+  "（逐行结构化：代理会话内按渲染文件 6 段处理，写 work/batch_001_part1..6.jsonl 后按序合并为 features batch_001.jsonl）",
+  ".venv/Scripts/python.exe -X utf8 .../scripts/check_batch_full.py --repo-root D:/量化 --batch 1（首轮 2 失败→定点修复→复检 600/600 OK）",
+  ".venv/Scripts/python.exe -X utf8 .../scripts/quality_stats.py --repo-root D:/量化 --batch 1 --fix-note \"...\"（更新 progress.json）"
+ ],
+ "code_summary": {
+  "build_row_index.py": "f436b0d8a1a0db4e2762bd23210bbf4be5bba0cdc3ac1a256db002315a6c8c14",
+  "render_batch.py": "41ba7b0ae569cb23bd440b6f5e27e8427b6bc33ffa5db4285fde95e13795a2ef",
+  "check_batch_full.py": "67470de19a734ccb5da7dad1a486850a79c32993eb82e138026e4c1de3ce7001",
+  "quality_stats.py": "80301483af6d99b912ccfcd13977de33a8e5f4c6fe2855652ae585ab0b55d997",
+  "pilot_scripts_reused": "check 逻辑沿用 pilot check_batch.py / quality_check.py 口径，仅适配 row_index.parquet 行清单与批大小 600"
+ },
+ "outputs": {
+  "features_dir": "data/features/fcst-reason-struct-full-20260918",
+  "files": {
+   "row_index.parquet": "d9c6060104b5beb78caa9da6db07aae68e19b5de610aec8b527d1b74521632ed",
+   "batch_001.jsonl": "0b949a486771b154f3918368d7e076dfc2e0d66212cb9488b96c1e4570657ab6",
+   "progress.json": "bfc70b3a3bc2d4f645c36bf077be7cd189f0b9d36f4210733ef45caa7005dfcd",
+   "row_index_stats.json（run work/）": "全序规则、过滤计数、63 层层表、池文本长度统计",
+   "input_identity.json（run work/）": "97 个 chunk sha256"
+  }
+ },
+ "environment": {
+  "os": "Windows 10.0.26200 x64, Git Bash",
+  "python": "3.11.15（D:/量化/.venv/Scripts/python.exe，-X utf8，PYTHONPATH=D:/量化/src）",
+  "polars": "1.44.2（row_index.parquet 读写；zstd 压缩）",
+  "pyarrow": "25.0.1（未直接使用）",
+  "git": "仓库未初始化 Git，按 AGENTS §5.3 以文件 sha256 记录源码身份"
+ },
+ "random_seed": "无随机成分（seed-17 仅记录为分层框架来源，全序展开确定）",
+ "time_split": "不适用（结构化数据工程，非收益验证）；入池已冻结 ann_date>=20250101",
+ "durations": {
+  "row_index_build_sec": 2,
+  "render_sec": 2,
+  "llm_structuring_wall_sec": 3178,
+  "note": "结构化挂钟时间含 6 段逐行阅读/生成/写盘与校验修复回路，不代表 API 吞吐；600 行/53 分钟量级可作后续 wave 预算外推"
+ },
+ "peak_memory": "未测量（raw CSV 35MB 量级 + parquet 索引，内存不构成约束）",
+ "checkpoint_resume_design": "每 wave 落盘 batch_NNN.jsonl 并跑 check_batch_full 校验；后续会话若 batch_NNN.jsonl 存在、行数与 row_index 一致且校验通过则跳过。本 wave 为首次运行，未触发恢复路径。",
+ "verification": {
+  "rows_checked": 600,
+  "all_checks_passed": true,
+  "quote_verbatim_pass_rate": 1.0,
+  "fix_loop": "check_batch_full 首轮捕获 2 处 update_flag 转录错误（ordinal 00003: 1→0、00283: 0→1），定点修复后复检 600/600 OK"
+ },
+ "outputs_quality_summary": {
+  "other_rate_primary": 0.1283,
+  "secondary_null_rate": 0.6833,
+  "supports_direction_distribution": {"-1": 2, "0": 539, "1": 59},
+  "confidence_distribution": {"high": 577, "low": 23},
+  "note": "direction 0 占比高因本批 535/600 行 type=不确定（固化细则规定恒为 0）；-1 的 2 行为 type=扭亏 而原文为恶化驱动（002163.SZ、002333.SZ），按 schema 留作数据质量信号"
+ },
+ "notes": [
+  "仅数据工程产出，无策略结论；confidence=low 行不得直接进入研究判据。",
+  "supports_direction 对'上年损失/减值基数'类原因按经济方向记 +1（如坏账转回、上年减值基数），与词表极性的机械映射不同；此口径已在本 manifest 固化，后续 wave 沿用。",
+  "row_index.parquet 不含 change_reason 原文（原文以 raw CSV 为唯一事实源），quote 校验始终回读 raw。",
+  "pilot 中与本批重叠的行（如 600909.SH 2018、002337.SZ 2019Q3、601916.SH 2019）标注与 pilot 一致。"
+ ]
+}

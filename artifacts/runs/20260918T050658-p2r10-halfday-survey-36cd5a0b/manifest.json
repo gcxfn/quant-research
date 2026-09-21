@@ -1,0 +1,125 @@
+{
+  "run_id": "20260918T050658-p2r10-halfday-survey-36cd5a0b",
+  "experiment_id": "exp-20260918-p2r10-halfday-survey",
+  "status": "failed",
+  "started_at": "2026-09-17T21:06:58.239906+00:00",
+  "command": [
+    "D:\\量化\\.venv\\Scripts\\python.exe",
+    "src/quant/cli/p2r10_halfday_survey.py",
+    "--smoke"
+  ],
+  "config_sha256": "d84894e0443246587c5dfaafcb364aee969edb30204bc9f553f93a6f56bb4768",
+  "source_sha256": {
+    "src\\quant\\__init__.py": "8c87349ce293131565a8ace05f9e339c81fa76951bde07525c354c74c4cf3307",
+    "src\\quant\\backtest\\__init__.py": "dde15cd80a7f5bb490b6b3f7ed7a68f3fca1a18121e9000939c417e0ed3b8999",
+    "src\\quant\\backtest\\backtrader_adapter.py": "fc2813a4f5cdd735a26051b800e02e9106403440c08d84a139eda05269093966",
+    "src\\quant\\backtest\\orders.py": "aec9750d59f4b7316ab89a0b175b0a7839998f68ed7debf2b0bd18dde405318e",
+    "src\\quant\\backtest\\results.py": "c43324de29ce0c2f17d521497879bfca6cfaa5be7618a89453226f2ca72bf830",
+    "src\\quant\\backtest\\vectorbt_adapter.py": "73847bb6997dc26697657871199b8bd7392acc70cf329cc2e18dd27062c494a9",
+    "src\\quant\\cli\\__init__.py": "b0536f9542c22462c17ef58d483a1adf6bf0c25369954507844e0421e5c0723a",
+    "src\\quant\\cli\\main.py": "ddde31f438600e5447517ce7a9db8b2a5c1ba14f61351fa39272255b6ccbb471",
+    "src\\quant\\cli\\p0_benchmark.py": "fb7d38b8f1abba17d25dfab844b9771f8de53eafd39d4d654cc42eb2d64357e6",
+    "src\\quant\\cli\\p2_factor_survey.py": "155eed8d1985e5ebd3aab4c5f7b808e4a5722b67f20bf8ef9fa59568e274a08f",
+    "src\\quant\\cli\\p2_first_screen.py": "9d7b6288191ef30ade1fca27e9a94d84bb65197960614e0100c3dbba560d5fd0",
+    "src\\quant\\cli\\p2_window_diagnostic.py": "dfd6152db397cb2a358db44d374d9c9c0417a69d5810575485b00450cd28687a",
+    "src\\quant\\cli\\p2r10_halfday_survey.py": "339c0ac8eb20d4bf33c8e83e2385dc1669eb6dcb5e7e3cb7a0c11f2d2b9e154a",
+    "src\\quant\\cli\\p2r6_etf_rotation.py": "fc815d8fe1e782d40d4c3e7d279834fa1af50ab3642153f724bb4a47e483d299",
+    "src\\quant\\cli\\p2r7_etf_exposure.py": "8a31a6950f49ba5e5ce5c487cfb3a2189b0fc6622b6bded5bc6c6368086f32dd",
+    "src\\quant\\cli\\p2r8_daily_risk.py": "89896f2a24bac5d7ba0cb91d6b17f45d3fe1b309b3b0388df2999ca5653f9aaf",
+    "src\\quant\\cli\\p2r9_risk_delivery.py": "92b53702aa2f0edbcba044532596fa341ade39ea01644edaedf5c0065a383cef",
+    "src\\quant\\data\\adjustment.py": "6cf5f7e7cc0d9e15b4030196f56c77009495279a206804361a7c86891d89a0ac",
+    "src\\quant\\data\\baostock_daily.py": "c83603ef05c805e7f81b60ff87a40088b23177b690f2a9bf421be390b6477e78",
+    "src\\quant\\data\\event_batches.py": "b8a0994a2adcec8fbc18a2c024abe088868eef3fcf90e0a2480a7f6087890691",
+    "src\\quant\\data\\rqalpha_bundle.py": "2ae8d0eed45d1216c84827eefb7bee0227fbdc985be0c38fa3f4794d7209d523",
+    "src\\quant\\factors\\__init__.py": "5b555032251c683b0c9b6cdb5857ff356c81e02dd4c14e6cff1055c309acade4",
+    "src\\quant\\factors\\cache.py": "949736dd8a9482bd64d939e13940a323d8341cf0518bddffa7db8a97315e8f9a",
+    "src\\quant\\factors\\core.py": "5c6ddcf87505fdb82fb63cbc9658964b7372da326879f89bcd4aac50d33f7a77",
+    "src\\quant\\factors\\signals.py": "9ef501a069ffaaef731d8f6f04682674b818c82e1f2a627af1023565e9e8692c",
+    "src\\quant\\research\\__init__.py": "ae42337e69dedb044718bfe63a1832ef0c85cf1886c9b45e0403d63208869a51",
+    "src\\quant\\research\\etf_rotation.py": "1c064efce2cf211505f62f46ac61ca39abf63c1f529e008518a8b26d2ca59b70",
+    "src\\quant\\research\\factor_survey.py": "354bd65c557965f54fe7743be01716e37362483768eb5b7c7c420111aa2d041b",
+    "src\\quant\\research\\fee_recost.py": "683ec48aecbc298c1a19ce895a6de6ff28f2bb71e392216cbaf9ff1ca5fb3a6a",
+    "src\\quant\\research\\p2_first_screen.py": "17f119402c02c87a7288fb9cdd93cc6e1b3d3d45e9b6642a317942e100060e80",
+    "src\\quant\\research\\p2r10_halfday.py": "6c98de3dbbf478fc920ec0cafc4b1f4391c4a3ba13eab8bf849ed0abdd55877a",
+    "src\\quant\\research\\runs.py": "979f0ab108b8bd0fb97bd8a67435ebe46537d9cb06ef83a5ac1485c77593acbc",
+    "src\\quant\\research\\screen.py": "100cfef7927a7727089eeb3634eb810571a9313dfe09600964866a6c208249df",
+    "src\\quant\\research\\synthetic.py": "968818be521defdc028435123806f7de0e97858b06d8d0c67c87319cf3aa8795"
+  },
+  "lock_sha256": "5694af16960733c0e6ce4e3ef84e9d586e9d4452fdbe00b992d321687dc50c25",
+  "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "polars": "1.44.2",
+    "pyarrow": "25.0.1",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "vectorbt": "0.28.5",
+    "backtrader": "1.9.78.123",
+    "psutil": "7.2.2"
+  },
+  "machine": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 20,
+    "ram_bytes": 16780566528,
+    "disk_free_bytes": 238048124928
+  },
+  "seed": 17,
+  "date_range": [
+    null,
+    null
+  ],
+  "inputs": [],
+  "limits": {
+    "max_runtime_s": 1800,
+    "max_ram_gb": 11
+  },
+  "prereg": "docs/research/exp-20260918-p2r10-halfday-survey-prereg.md",
+  "preregistered_at": "2026-09-18",
+  "config_frozen_at": "2026-09-18T03:50 (before any R10 run; dependent on extraction dataset completion - survey starts only after extraction manifest assertions all pass)",
+  "mode": "smoke",
+  "dataset": {
+    "id": "halfday-1130-20260918",
+    "halfday_parquet": {
+      "path": "data\\processed\\halfday-1130-20260918\\halfday_1130.parquet",
+      "sha256": "f3d4ec036594a31446e728af498039378f635fe99adc3b14ce4e134c8836dda2",
+      "rows": 9440361,
+      "extract_run": "20260918T035435-halfday-extract-k4x8vt"
+    },
+    "baostock_daily_1999_2024": {
+      "path": "data\\processed\\baostock-daily-20260917\\daily_1999_2024.parquet",
+      "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6",
+      "use": "F03/F07 past-20-session daily volume + listing age (superset of the P1-accepted 2015-2024 file: pre-2015 history for pre-2015 listings)"
+    },
+    "extract_assertions_note": "A3 sampled-day 3 violations are covered by the A3b full-window diagnostic (268 rows = 243 suspended placeholders + 25 trading-row vendor divergence); 243 suspended rows are dropped by the tradestatus filter, the 25 trading rows remain and are disclosed"
+  },
+  "window_declarations": {
+    "dev": "2015-01-01..2020-12-31 DECLARED CONSUMED by 91 prior stock-side units; same-window new-information-set claim (11:30 cross-section vs prior close cross-sections)",
+    "descriptive_2021_2024": "consumed once by 47 units; yearly descriptive disclosure only, NO gates",
+    "freeze": "no rows on/after 2025-01-01 (dataset ends 2024-12-31)"
+  },
+  "trial_count": {
+    "prior_cumulative": 139,
+    "this_round_factors": 12,
+    "cumulative_after": 151
+  },
+  "semantics": {
+    "open_1300": "13:01 first afternoon bar open (vendor has no 13:00 bar); T1 = close_day_official/open_1300 - 1 therefore starts at 13:01, disclosed as deviation",
+    "t1": "close_day_official / open_1300 - 1 (primary)",
+    "t2": "next filtered open_930 / close_1130 - 1 (descriptive)",
+    "min_ic_stocks": 50,
+    "sessions_per_year": 244,
+    "chinext_ruling": "ChiNext included per user 2026-09-17 permission confirmation (overrides main-plan v4 exclusion); disclosed decision"
+  },
+  "ended_at": "2026-09-17T21:07:05.752006+00:00",
+  "elapsed_seconds": 7.5116932000091765,
+  "peak_rss_bytes": 8750325760,
+  "memory_method": "20ms process RSS sampling; includes imported libraries, excludes children",
+  "error": "'trial_count'",
+  "outputs": {
+    "config.json": "f282dba070b2c3fcb6f606ac21064e61458dad5be5755a459a41dd9815a85d65",
+    "decile_spread_daily.parquet": "9fe38f5756453b7377e5eefd8c620f7b970d6a25c43393ce03f43d406c469414",
+    "ic_daily.parquet": "f6b56065295efe1d40f7a1d7e39b6738830cebfaae4e1192e60d35274ed0e146",
+    "metrics.json": "63bba600e959552ffaf0522a59ea12158858dfc815e86271f06c34a2825bb82c",
+    "report.md": "1c5d8830c4d325257733da47bb8becdeea9e367240d3c006ce4358bb0d61461b",
+    "logs\\error.txt": "c2bce5764bef1ecbe4797e6115414ed2c8839325d9080f2c7b8c165343448a91"
+  }
+}

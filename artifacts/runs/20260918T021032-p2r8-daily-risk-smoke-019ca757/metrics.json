@@ -1,0 +1,559 @@
+{
+  "pin_checks": [
+    {
+      "what": "inherits_from (R7 config)",
+      "path": "configs/experiments/p2r7-etf-exposure.json",
+      "expected": "902ac69b8627f3b00db07e94777665b68d40ce15790f60b56d0e1de65ea91f77",
+      "actual": "902ac69b8627f3b00db07e94777665b68d40ce15790f60b56d0e1de65ea91f77",
+      "ok": true,
+      "resolution": "primary"
+    },
+    {
+      "what": "fund_basic",
+      "path": "data\\raw\\tushare\\fund_basic\\20260909-r1\\chunk_market_E.csv",
+      "expected": "b98932a79f838bf4a4995e703b77a267ecc5d9168c7ad2c2d9a022d502af97db",
+      "actual": "b98932a79f838bf4a4995e703b77a267ecc5d9168c7ad2c2d9a022d502af97db",
+      "ok": true,
+      "resolution": "primary"
+    },
+    {
+      "what": "fund_daily_manifest",
+      "path": "data\\raw\\tushare\\fund_daily\\20260917-r1\\manifest.json",
+      "expected": "b355322fae15ff1722c83b0a8c8f44efa03f276b8ff0a36ac30b1bbc59a17dae",
+      "actual": "b355322fae15ff1722c83b0a8c8f44efa03f276b8ff0a36ac30b1bbc59a17dae",
+      "ok": true,
+      "resolution": "primary"
+    },
+    {
+      "what": "fund_adj_manifest",
+      "path": "data\\raw\\tushare\\fund_adj\\20260917-r1\\manifest.json",
+      "expected": "348d2ec4e8fd6df3ab856f2a09677d87b62d668529abe7b00b2ec38b68efccd4",
+      "actual": "348d2ec4e8fd6df3ab856f2a09677d87b62d668529abe8b00b2ec38b68efccd4",
+      "ok": true,
+      "resolution": "r8_pin_transcription_defect_confirmed_via_r7_inheritance (deviation 10)"
+    },
+    {
+      "what": "index_000300",
+      "path": "data\\raw\\tushare\\index_daily\\20260917-r1\\chunk_000300.SH.csv",
+      "expected": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878",
+      "actual": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878",
+      "ok": true,
+      "resolution": "primary"
+    },
+    {
+      "what": "index_manifest",
+      "path": "data\\raw\\tushare\\index_daily\\20260917-r1\\manifest.json",
+      "expected": "14372f9d2cd9bf19e6bbd21c4ad4c450f83473a315b1711a6717647e88f4d77a",
+      "actual": "14372f9d2cd9bf19e6bbd21c4ad4c450f83473a315b1711a6717647e88f4d77a",
+      "ok": true,
+      "resolution": "primary"
+    }
+  ],
+  "inherited_blocks_injected": [
+    "u1_whitelist_frozen",
+    "universe",
+    "preflight"
+  ],
+  "deviations": [
+    {
+      "id": 1,
+      "item": "section-0 \"local peak\" disambiguation: D mechanisms use their own rule window peak; SMA mechanisms (T200/T60/T20c2/X1) use the trailing 252-session index peak, expanding before it is formed. Fixed definition, recorded before the run; not a tunable."
+    },
+    {
+      "id": 2,
+      "item": "index batch starts 2015-01-05 (~242 sessions before 2016), so the 252-session rolling peak is not fully formed at the first 2016 sessions; the REGISTERED fallback (insufficient history -> e_low) applies to D252/D60/X1 for those sessions. The warmup_guarantee note (>=200 sessions) is accurate for SMA200 only. Count disclosed in metrics.d252_warmup_fallback_sessions_2016; X1 treats an unavailable D252 as firing (risk-off), consistent with that fallback."
+    },
+    {
+      "id": 3,
+      "item": "combined monthly+risk execution reading: on a signal day WITH a state change the plan is member updates x current E_t budget AND continuing incumbents are re-sized to the same leg target (one execution). On a signal day WITHOUT a state change incumbents drift (R7 semantics unchanged)."
+    },
+    {
+      "id": 4,
+      "item": "a monthly full exit supersedes a postponed risk re-scale on the same slot (leaver slot: the exit is the terminal target); the superseded leg is logged outcome=superseded_by_exit and counted as NOT executed (conservative for gate-8). Same conservative treatment for superseded_latest when a fresher target replaces a postponed one."
+    },
+    {
+      "id": 5,
+      "item": "PDD (C10/C11) is equity-path-dependent, so fees feed back into the exposure state: net vs gross trade-sequence parity is structurally not guaranteed for PDD (it held for every equity-independent mechanism in R7). Parity is asserted for C01-C09/C12 and reported as-is for C10/C11."
+    },
+    {
+      "id": 6,
+      "item": "position bookkeeping on partial re-sizes: a retarget sell reduces the position cumulative net-spend proportionally by units, a retarget buy adds its budget; close-out pnl stays cash-flow consistent. Attribution convention only, no cash effect."
+    },
+    {
+      "id": 7,
+      "item": "B1(m) daily rescale postponement is not spelled out in the prereg; implemented as: retry at later opens until filled or superseded, latest target wins, buys capped by the idle pool (never negative), capped-at-commission-min leaves the leg under-invested. Matches the strategy-side semantics."
+    },
+    {
+      "id": 8,
+      "item": "a risk re-size of a leg whose full exit is already postponed (exit_due) is skipped: the leg is no longer a target holding; its pending exit completes at the next tradable open."
+    },
+    {
+      "id": 9,
+      "item": "de-minimis risk re-size guard (found in code review before ANY run): a retarget SELL whose gross notional is at/below the 5-CNY commission minimum would pay a fee larger than the proceeds and overdraw the never-negative cash pool (the registered hard rule), so the leg is skipped as a rule-compliant cash slot (outcome cash_capped, separate counter risk_sells_feemin_skipped; the B1(m) rescale path applies the same guard). The registered buy-side rule is the exact analog (capped budget <= commission_min -> skip)."
+    },
+    {
+      "id": 10,
+      "item": "frozen-config transcription defect discovered at startup, BEFORE any signal computation (R7-precedent class, pre-run): the R8 config data block pin for the fund_adj batch manifest (20260917-r1) reads ...abe7b00b... but the actual file hashes to ...abe8b00b... -- a one-character copy defect. The R8 config was NOT modified (freeze respected). Identity resolved through the pinned inheritance source instead: the R8 config pins the R7 config by sha256 (verified at startup), and the R7 config pin for the SAME batch manifest matches the actual file bit-for-bit, exactly as recorded in the R7 formal run manifest. The data consumed is byte-identical to the R7 formal run. Any pin matching NEITHER the R8 nor the R7 value still hard-fails the run."
+    },
+    {
+      "id": 11,
+      "item": "effective-config materialization (in memory, pre-run; R7-precedent deviation 1 class): the frozen R8 config inherits u1_whitelist_frozen / universe / preflight from the R7 config BY HASH and intentionally does not repeat them in its own file, but the data-loading layer reads them from the config dict. At startup the effective config is materialized by injecting those three blocks VERBATIM from the sha256-verified R7 config (no value changed, conflict-checked: the R8 file defines none of them). The frozen config file on disk is never modified; the run-dir config.json snapshot records the materialized effective config, as in R7."
+    }
+  ],
+  "preanalysis_file": "preanalysis.json",
+  "d252_warmup_fallback_sessions_2016": 8,
+  "load_stats": {
+    "rows_whitelisted": 813201,
+    "codes_whitelisted": 943,
+    "rows_missing_factor": 1200,
+    "codes_missing_factor": 1
+  },
+  "timings": {
+    "preanalysis_s": 0.02,
+    "load_s": 3.28,
+    "pools_s": 0.01,
+    "b1_b2_s": 0.01,
+    "b3prime_s": 0.02,
+    "sim_C01_s": 0.0,
+    "sim_C07_s": 0.0,
+    "anchors_s": 0.01,
+    "total_s": 3.41
+  },
+  "mech_keys": {
+    "C01": "FIX75",
+    "C07": "D2520.10-L0.40"
+  },
+  "net_gross_parity": {
+    "C01": true,
+    "C07": true
+  },
+  "anchor_regressions": {
+    "r7_run": "artifacts\\runs\\20260918T004441-p2r7-etf-exposure-d01f4e7a",
+    "scope": "sessions<=2016-12-31",
+    "c01_sessions_equal": true,
+    "c01_net_bit_exact": true,
+    "c01_gross_bit_exact": true,
+    "B1-FIX75_vs_B1-FIX_sessions_equal": true,
+    "B1-FIX75_vs_B1-FIX_bit_exact": true,
+    "B1-FIX75-gross_vs_B1-FIX-gross_sessions_equal": true,
+    "B1-FIX75-gross_vs_B1-FIX-gross_bit_exact": true,
+    "B1-100_vs_B1-100_sessions_equal": true,
+    "B1-100_vs_B1-100_bit_exact": true,
+    "b1_100_dev_metrics": "skipped in smoke (dev window is 2016 only)",
+    "all_pass": true
+  },
+  "configs": {
+    "C01": {
+      "freq": "monthly",
+      "W": [
+        20,
+        60
+      ],
+      "N": 3,
+      "mech": "FIX75",
+      "mech_key": "FIX75",
+      "max_negative_cash": 0.0,
+      "n_trades": 35,
+      "exec_stats": {
+        "planned_buy_legs": 19,
+        "buys_filled": 19,
+        "buys_no_candidate": 0,
+        "buys_cancelled_slot_busy": 0,
+        "planned_sell_legs": 16,
+        "sells_filled": 16,
+        "sells_postponed_then_filled": 0,
+        "sells_forced_delist": 0,
+        "sells_pending_at_end": 3,
+        "entry_limit_blocked": 0,
+        "entry_suspended": 0,
+        "exit_limit_blocked": 0,
+        "exit_suspended": 0,
+        "buys_cash_capped": 0,
+        "risk_legs_planned": 0,
+        "risk_buys_filled": 0,
+        "risk_sells_filled": 0,
+        "risk_buys_cash_capped": 0,
+        "risk_sells_feemin_skipped": 0,
+        "risk_suspended": 0,
+        "risk_limit_blocked": 0,
+        "legs_executed": 35,
+        "legs_planned": 35,
+        "execution_rate": 1.0
+      },
+      "switch_stats_by_year": {
+        "2016": {
+          "n_sessions": 244,
+          "n_switches": 0,
+          "off_share": null,
+          "mean_exposure": 0.75
+        }
+      },
+      "dev": {
+        "net_cagr": 0.08173015803859518,
+        "gross_cagr": 0.08269008006816048,
+        "net_total_return": 0.08074176347720474,
+        "gross_total_return": 0.0816896441998245,
+        "b1m_net_cagr": 0.07221017082275472,
+        "b1m_gross_cagr": 0.07603577481667356,
+        "max_drawdown": -0.06511827325809516,
+        "mdd_window": {
+          "max_drawdown": -0.06511827325809516,
+          "peak_date": "2016-04-14",
+          "trough_date": "2016-06-13"
+        },
+        "b1m_max_drawdown": -0.07146231145466242,
+        "excess_vs_b1m": 0.009519987215840464,
+        "gross_excess_vs_b1m": 0.006654305251486914,
+        "execution_rate": 1.0,
+        "execution_rate_dev_window": {
+          "legs_executed": 35,
+          "legs_planned": 35,
+          "execution_rate": 1.0
+        },
+        "execution_rate_full_window": 1.0,
+        "net_return_by_year": {
+          "2016": 0.08074176347720474
+        },
+        "excess_by_year": {
+          "2016": 0.00940109933318345
+        },
+        "turnover_by_year": {
+          "2016": {
+            "buy_notional": 1001431.4043261365,
+            "sell_notional": 854474.3729670616,
+            "mean_equity": 212752.70898076307,
+            "one_side_turnover": 4.7070206961110195
+          }
+        },
+        "max_one_side_turnover": 4.7070206961110195,
+        "risk_trades": {
+          "n_trades": 0,
+          "n_buys": 0,
+          "n_sells": 0,
+          "buy_notional": 0,
+          "sell_notional": 0,
+          "fees": 0,
+          "fee_share_of_total": 0.0
+        },
+        "concentration": {
+          "pnl_by_code": {
+            "518880.SH": 2407.840435659855,
+            "159915.SZ": -103.1257381325704,
+            "510300.SH": 5594.976193764269,
+            "510050.SH": 6610.590930038088,
+            "510500.SH": -1412.209041839742,
+            "159902.SZ": 2063.5864269650338,
+            "159934.SZ": 1908.5706554352291,
+            "159937.SZ": 992.5710946491672,
+            "518800.SH": -1914.4482610983832
+          },
+          "total_pnl": 16148.352695440946,
+          "top1_share": 0.4093662712670631,
+          "top3_share": 0.9049472621184398,
+          "top5_share": 1.1509263509651737,
+          "n_codes_positive": 6
+        },
+        "monthly_top_decile": {
+          "top_decile_share": 1.1875922898639133,
+          "n_months": 12,
+          "top_months": [
+            [
+              2016,
+              3
+            ],
+            [
+              2016,
+              11
+            ]
+          ],
+          "total_pnl": 16148.352695440932
+        },
+        "forced_delist": {
+          "count": 0
+        }
+      }
+    },
+    "C07": {
+      "freq": "monthly",
+      "W": [
+        20,
+        60
+      ],
+      "N": 3,
+      "mech": "D252",
+      "mech_key": "D2520.10-L0.40",
+      "max_negative_cash": 0.0,
+      "n_trades": 47,
+      "exec_stats": {
+        "planned_buy_legs": 19,
+        "buys_filled": 19,
+        "buys_no_candidate": 0,
+        "buys_cancelled_slot_busy": 0,
+        "planned_sell_legs": 16,
+        "sells_filled": 16,
+        "sells_postponed_then_filled": 0,
+        "sells_forced_delist": 0,
+        "sells_pending_at_end": 3,
+        "entry_limit_blocked": 0,
+        "entry_suspended": 0,
+        "exit_limit_blocked": 0,
+        "exit_suspended": 0,
+        "buys_cash_capped": 0,
+        "risk_legs_planned": 12,
+        "risk_buys_filled": 6,
+        "risk_sells_filled": 6,
+        "risk_buys_cash_capped": 0,
+        "risk_sells_feemin_skipped": 0,
+        "risk_suspended": 0,
+        "risk_limit_blocked": 0,
+        "legs_executed": 35,
+        "legs_planned": 35,
+        "execution_rate": 1.0
+      },
+      "switch_stats_by_year": {
+        "2016": {
+          "n_sessions": 244,
+          "n_switches": 4,
+          "off_share": 0.9713,
+          "mean_exposure": 0.4143
+        }
+      },
+      "dev": {
+        "net_cagr": 0.026185277285335262,
+        "gross_cagr": 0.027366175939119275,
+        "net_total_return": 0.02587668051759162,
+        "gross_total_return": 0.027043479593863662,
+        "b1m_net_cagr": 0.017602524361308935,
+        "b1m_gross_cagr": 0.02217616923690824,
+        "max_drawdown": -0.045568708918749534,
+        "mdd_window": {
+          "max_drawdown": -0.045568708918749534,
+          "peak_date": "2016-11-29",
+          "trough_date": "2016-12-29"
+        },
+        "b1m_max_drawdown": -0.04739239966623887,
+        "excess_vs_b1m": 0.008582752924026327,
+        "gross_excess_vs_b1m": 0.005190006702211036,
+        "execution_rate": 1.0,
+        "execution_rate_dev_window": {
+          "legs_executed": 47,
+          "legs_planned": 47,
+          "execution_rate": 1.0
+        },
+        "execution_rate_full_window": 1.0,
+        "net_return_by_year": {
+          "2016": 0.02587668051759162
+        },
+        "excess_by_year": {
+          "2016": 0.008480747989288329
+        },
+        "turnover_by_year": {
+          "2016": {
+            "buy_notional": 665776.155475396,
+            "sell_notional": 589879.4310761794,
+            "mean_equity": 206501.6739513018,
+            "one_side_turnover": 3.2240714699116793
+          }
+        },
+        "max_one_side_turnover": 3.2240714699116793,
+        "risk_trades": {
+          "n_trades": 12,
+          "n_buys": 6,
+          "n_sells": 6,
+          "buy_notional": 144560.7938062252,
+          "sell_notional": 144050.39263518306,
+          "fees": 60.0,
+          "fee_share_of_total": 0.2553191489361702
+        },
+        "concentration": {
+          "pnl_by_code": {
+            "518880.SH": 1286.2305739643707,
+            "159915.SZ": -52.45066778006367,
+            "510300.SH": 1095.926876075424,
+            "510050.SH": 2189.1267903872467,
+            "510500.SH": -1086.8658038358044,
+            "159902.SZ": 1075.9376738836327,
+            "159934.SZ": 977.3922976867216,
+            "159937.SZ": 500.0618532060216,
+            "518800.SH": -985.5669315939958
+          },
+          "total_pnl": 4999.792661993553,
+          "top1_share": 0.4378435143977315,
+          "top3_share": 0.9142947616960472,
+          "top5_share": 1.3249777860500283,
+          "n_codes_positive": 6
+        },
+        "monthly_top_decile": {
+          "top_decile_share": 1.9193921909442089,
+          "n_months": 12,
+          "top_months": [
+            [
+              2016,
+              3
+            ],
+            [
+              2016,
+              11
+            ]
+          ],
+          "total_pnl": 5175.336103518319
+        },
+        "forced_delist": {
+          "count": 0
+        }
+      }
+    }
+  },
+  "benchmarks": {
+    "B1": {
+      "D2520.10-L0.40": {
+        "dev": {
+          "net_cagr": 0.017602524361308935,
+          "gross_cagr": 0.02217616923690824,
+          "net_total_return": 0.017395932528303293,
+          "gross_total_return": 0.02191532335549118,
+          "max_drawdown": -0.04739239966623887,
+          "one_side_turnover": 5.908920828916247
+        }
+      },
+      "FIX75": {
+        "dev": {
+          "net_cagr": 0.07221017082275472,
+          "gross_cagr": 0.07603577481667356,
+          "net_total_return": 0.07134066414402129,
+          "gross_total_return": 0.07511860932532999,
+          "max_drawdown": -0.07146231145466242,
+          "one_side_turnover": 8.233394256547223
+        }
+      },
+      "100": {
+        "dev": {
+          "net_cagr": 0.09677326867515168,
+          "gross_cagr": 0.10058706475237145,
+          "net_total_return": 0.09559505305781513,
+          "gross_total_return": 0.09936034690642792,
+          "max_drawdown": -0.09335279502065608,
+          "one_side_turnover": 10.971035441173989
+        }
+      }
+    },
+    "B2": {
+      "dev": {
+        "net_total_return": -0.09670196416613497,
+        "gross_total_return": -0.09652127745641359,
+        "entry": "2016-01-04",
+        "exit": "2016-12-30",
+        "fees": {
+          "buy": 20.0,
+          "sell": 18.067767493426643
+        }
+      }
+    },
+    "B4_cash": 0.0
+  },
+  "B3prime_D2520.10-L0.40": {
+    "n_seeds": 20,
+    "mean_net_cagr": 0.01232410224614589,
+    "min": -0.03226336589772105,
+    "max": 0.07528324535982045,
+    "per_seed": {
+      "17": -0.004287072046514795,
+      "18": -0.0018824303092949135,
+      "19": -0.016348782102099446,
+      "20": -0.0029012844153445405,
+      "21": -0.008948341650674152,
+      "22": -0.03226336589772105,
+      "23": 0.041058001346621964,
+      "24": 0.00507525241633755,
+      "25": 0.0626602338174902,
+      "26": -0.0002013656618523596,
+      "27": 0.033906862927368886,
+      "28": 0.033748105973486986,
+      "29": -0.02042212544591182,
+      "30": 0.01523487219897457,
+      "31": 0.031460163562054166,
+      "32": 0.07528324535982045,
+      "33": 0.01601712814594003,
+      "34": -0.00028168883876988904,
+      "35": 0.007670413726226455,
+      "36": 0.011904221816779526
+    }
+  },
+  "B3prime_FIX75": {
+    "n_seeds": 20,
+    "mean_net_cagr": 0.05251509010615898,
+    "min": -0.025401993520535848,
+    "max": 0.1502154622063312,
+    "per_seed": {
+      "17": 0.020348118682802285,
+      "18": 0.025518184075115302,
+      "19": -0.0024109890462979955,
+      "20": 0.02509302230350685,
+      "21": 0.016969598212851933,
+      "22": -0.025401993520535848,
+      "23": 0.107823786831174,
+      "24": 0.048916244773759665,
+      "25": 0.1502154622063312,
+      "26": 0.018704180903144074,
+      "27": 0.08413452407671929,
+      "28": 0.10217913654636579,
+      "29": 0.004613421506290294,
+      "30": 0.05915347086708311,
+      "31": 0.07877492692615262,
+      "32": 0.14869324834696762,
+      "33": 0.06950460192803298,
+      "34": 0.040509625287874274,
+      "35": 0.03441468124722302,
+      "36": 0.04254854996861912
+    }
+  },
+  "tradeoff_vs_C01": [
+    {
+      "config_id": "C07",
+      "mech": "D252",
+      "saved_drawdown_pp": 1.95,
+      "lost_net_cagr_pp": 5.55,
+      "saved_per_lost": 0.352
+    }
+  ],
+  "gates": {
+    "C01": {
+      "dev": {
+        "1_net_cagr_gt_0": true,
+        "2_excess_vs_B1_ge_2pp": false,
+        "3_positive_years_ge_4_of_5": false,
+        "4_mdd_le_20_and_le_B1": true,
+        "5_turnover_le_cap": true,
+        "5_turnover_cap": 6.0,
+        "6_top1_le_40_top3_le_70": false,
+        "7_vs_random_plus_1pp": true,
+        "8_execution_ge_95pct": true,
+        "dev_pass": false,
+        "dev_excess_vs_b1": 0.009519987215840464,
+        "positive_years": 1,
+        "smoke_non_binding": true
+      }
+    },
+    "C07": {
+      "dev": {
+        "1_net_cagr_gt_0": true,
+        "2_excess_vs_B1_ge_2pp": false,
+        "3_positive_years_ge_4_of_5": false,
+        "4_mdd_le_20_and_le_B1": true,
+        "5_turnover_le_cap": true,
+        "5_turnover_cap": 6.0,
+        "6_top1_le_40_top3_le_70": false,
+        "7_vs_random_plus_1pp": true,
+        "8_execution_ge_95pct": true,
+        "dev_pass": false,
+        "dev_excess_vs_b1": 0.008582752924026327,
+        "positive_years": 1,
+        "smoke_non_binding": true
+      }
+    }
+  },
+  "dev_pass_configs": [],
+  "advanced_to_validation": null,
+  "p3_candidates": [],
+  "trial_count_cumulative": 127
+}

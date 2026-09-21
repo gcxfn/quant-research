@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2r7_etf_exposure.py", line 495, in main
+    m = metrics[cid]
+        ~~~~~~~^^^^^
+KeyError: 'C02'

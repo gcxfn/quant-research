@@ -1,0 +1,205 @@
+{
+ "stats": {
+  "initial_cash": 200000.0,
+  "engine_version": "band_engine v1.4.1",
+  "etf_leg": {
+   "meta_symbols": [
+    "sh.510050",
+    "sh.510300",
+    "sh.510880",
+    "sh.511010",
+    "sh.513100",
+    "sh.513500",
+    "sh.518880",
+    "sz.159915",
+    "sz.159934"
+   ],
+   "etf_symbols": [
+    "sh.510050",
+    "sh.510300",
+    "sh.510880",
+    "sh.511010",
+    "sh.513100",
+    "sh.513500",
+    "sh.518880",
+    "sz.159915",
+    "sz.159934"
+   ],
+   "etf_bands": {
+    "sh.510050": 0.1,
+    "sh.510300": 0.1,
+    "sh.510880": 0.1,
+    "sh.511010": 0.1,
+    "sh.513100": 0.1,
+    "sh.513500": 0.1,
+    "sh.518880": 0.1,
+    "sz.159915": 0.1,
+    "sz.159934": 0.1
+   },
+   "etf_default_band_symbols": [],
+   "t_plus_zero_symbols": [
+    "sh.510050",
+    "sh.510300",
+    "sh.510880",
+    "sh.511010",
+    "sh.513100",
+    "sh.513500",
+    "sh.518880",
+    "sz.159915",
+    "sz.159934"
+   ],
+   "dividend_event_symbols": [
+    "sh.510050",
+    "sh.510300",
+    "sh.510880",
+    "sh.511010"
+   ],
+   "dividend_events_cash": 200.0,
+   "limit_source": "computed per section 8.3 (preclose x (1 +/- band), 0.001 tick)",
+   "routing": "section 8.2: ETF pm decisions live next pm; ETF fallbacks execute at pm opens"
+  },
+  "contract": "v1 (docs/plans/p3-band-contract.md section 7) + v1.1 engine-side intent layer (prereg section 9 revision 2)",
+  "order_generation": "engine_intents",
+  "intent_layer": {
+   "n_intents": 537,
+   "activated": 537,
+   "orders_generated": 9426,
+   "stopped_filled": 141,
+   "terminated_override": 273,
+   "terminated_expired": 116,
+   "terminated_cap": 0,
+   "at_target_skips": 3853,
+   "emissions_skipped_no_anchor": 302,
+   "emissions_skipped_no_live_session": 7
+  },
+  "fees": {
+   "commission_rate": 0.0001,
+   "commission_min": 5.0,
+   "stamp_sell_before": 0.001,
+   "stamp_sell_from": 0.0005,
+   "stamp_boundary": "2023-08-28",
+   "etf_stamp": "exempt (is_etf)",
+   "transfer_fee": "not modelled (~0.1bp/leg SSE only; standing disclosure)"
+  },
+  "contract_constants": {
+   "K_FALLBACK_SESSIONS": 3,
+   "LIMIT_DOWN_TOL": 0.0001,
+   "LOT": 100,
+   "FREEZE_END": "2024-12-31",
+   "commission_warning_notional": 50000.0,
+   "cap_single_name": 0.25,
+   "cap_total": 1.0,
+   "pm_close_official_cutoff": "2018-08-20"
+  },
+  "signals": {
+   "buy": 4805,
+   "sell_risk": 4621,
+   "sell_profit": 0
+  },
+  "orders_filled": {
+   "buy": 71,
+   "sell_risk": 70,
+   "sell_profit": 0
+  },
+  "fill_rate_order_session": {
+   "buy": 0.01477627471383975,
+   "sell_risk": 0.015148236312486475,
+   "sell_profit": null
+  },
+  "unfilled_exit_reasons": {
+   "buy": {
+    "not_penetrated": 524,
+    "void_insufficient_cash": 4202,
+    "void_suspended": 1,
+    "void_no_limit_info": 6,
+    "void_limit_out_of_range": 1
+   },
+   "risk": {
+    "session_unfilled": 14,
+    "void_no_position": 4527,
+    "void_no_limit_info": 6,
+    "void_limit_out_of_range": 2,
+    "void_suspended": 2
+   },
+   "profit": {}
+  },
+  "unfilled_exit_share_buys": 0.9852237252861602,
+  "k3_fallback": {
+   "armed": 1,
+   "executed": 0,
+   "deferred_limitdown_sessions": 0,
+   "deferred_suspended": 0,
+   "deferred_t1locked": 0,
+   "pnl_contribution_total": 0.0,
+   "pnl_contribution_list": [],
+   "pnl_definition": "net market-exit proceeds minus shares * previous official close",
+   "definition": "risk-intent sells unfilled for 3 consecutive live sessions are market-exited at the next session open (opening limit-down / suspension / T+1-lock defer)"
+  },
+  "corp_actions": {
+   "splits": 10,
+   "dividends": 42,
+   "dividend_cash_total_pre_tax": 16186.336449999999
+  },
+  "turnover": {
+   "buy_notional_total": 1781774.8,
+   "sell_notional_total": 1617384.6
+  },
+  "cash_friction": {
+   "insufficient_cash_orders": 4202,
+   "below_min_lot_abandons": 0,
+   "quantity_capped_fills": 0,
+   "no_position_voids": 4527,
+   "t1_locked_voids": 0
+  },
+  "caps": {
+   "single_name_voids": 0,
+   "single_name_drift_breaches": 99,
+   "total_voids": 0,
+   "definition": "section 7.3 (section 7.7 M2): single-name MV <= 25% of the decision-point equity snapshot, validated at order construction (breach -> whole order voids); drift breaches are recorded only (no force trim); the total<=100% cap is implied by full funding and never fires on an affordable order"
+  },
+  "odd_lot_exits": 1,
+  "commission_warnings": 18,
+  "risk_streaks_open_at_end": [],
+  "void_days": {
+   "not_penetrated": 524,
+   "insufficient_cash": 4202,
+   "suspended": 3,
+   "no_limit_info": 12,
+   "limit_out_of_range": 3
+  },
+  "stale_mark_days": 706,
+  "final": {
+   "settled_cash": 49469.14605,
+   "pending_am_to_pm": 0.0,
+   "pending_next_day": 0.0,
+   "n_open_clips": 19
+  },
+  "definitions": {
+   "fill_rate_order_session": "filled orders / orders (every order lives exactly one session)",
+   "unfilled_exit_share_buys": "buy orders never filled / buy orders",
+   "k3_pnl_contribution": "net market-exit proceeds minus shares * previous official close",
+   "caps": "section 7.3 limits enforced at fill evaluation against last completed day's official-close marks (conservative, no intraday look-ahead)"
+  }
+ },
+ "warnings": [
+  "commission guard: sell fill sh.600482 2016-10-10 notional 52592.00 > 50000 (commission 5.26; the 5-yuan minimum no longer binds)",
+  "commission guard: buy fill sz.002477 2016-10-10 notional 52700.00 > 50000 (commission 5.27; the 5-yuan minimum no longer binds)",
+  "commission guard: sell fill sz.002477 2016-11-01 notional 52700.00 > 50000 (commission 5.27; the 5-yuan minimum no longer binds)",
+  "commission guard: buy fill sz.000761 2016-11-01 notional 53103.00 > 50000 (commission 5.31; the 5-yuan minimum no longer binds)",
+  "commission guard: sell fill sz.000761 2016-12-01 notional 53847.00 > 50000 (commission 5.38; the 5-yuan minimum no longer binds)",
+  "commission guard: buy fill sz.000967 2016-12-01 notional 53206.00 > 50000 (commission 5.32; the 5-yuan minimum no longer binds)",
+  "commission guard: sell fill sz.000967 2017-01-03 notional 51726.00 > 50000 (commission 5.17; the 5-yuan minimum no longer binds)",
+  "commission guard: buy fill sh.600278 2017-01-03 notional 54615.00 > 50000 (commission 5.46; the 5-yuan minimum no longer binds)",
+  "commission guard: sell fill sh.600278 2017-02-03 notional 51414.00 > 50000 (commission 5.14; the 5-yuan minimum no longer binds)",
+  "commission guard: buy fill sz.002148 2017-02-03 notional 50960.00 > 50000 (commission 5.10; the 5-yuan minimum no longer binds)",
+  "commission guard: sell fill sz.002148 2017-03-01 notional 58324.00 > 50000 (commission 5.83; the 5-yuan minimum no longer binds)",
+  "commission guard: buy fill sh.603868 2017-03-01 notional 54924.00 > 50000 (commission 5.49; the 5-yuan minimum no longer binds)",
+  "commission guard: sell fill sh.603868 2017-04-05 notional 56664.00 > 50000 (commission 5.67; the 5-yuan minimum no longer binds)",
+  "commission guard: buy fill sz.000031 2017-04-05 notional 56442.00 > 50000 (commission 5.64; the 5-yuan minimum no longer binds)",
+  "commission guard: sell fill sz.000031 2017-05-02 notional 58236.00 > 50000 (commission 5.82; the 5-yuan minimum no longer binds)",
+  "commission guard: buy fill sh.601011 2017-05-03 notional 56238.00 > 50000 (commission 5.62; the 5-yuan minimum no longer binds)",
+  "commission guard: sell fill sh.601011 2017-07-03 notional 57227.00 > 50000 (commission 5.72; the 5-yuan minimum no longer binds)",
+  "commission guard: buy fill sz.002668 2017-07-03 notional 55272.00 > 50000 (commission 5.53; the 5-yuan minimum no longer binds)"
+ ],
+ "wall_s": 1.6119010999973398
+}

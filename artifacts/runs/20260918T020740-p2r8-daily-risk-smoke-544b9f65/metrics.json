@@ -1,0 +1,128 @@
+{
+  "pin_checks": [
+    {
+      "what": "inherits_from (R7 config)",
+      "path": "configs/experiments/p2r7-etf-exposure.json",
+      "expected": "902ac69b8627f3b00db07e94777665b68d40ce15790f60b56d0e1de65ea91f77",
+      "actual": "902ac69b8627f3b00db07e94777665b68d40ce15790f60b56d0e1de65ea91f77",
+      "ok": true,
+      "resolution": "primary"
+    },
+    {
+      "what": "fund_basic",
+      "path": "data\\raw\\tushare\\fund_basic\\20260909-r1\\chunk_market_E.csv",
+      "expected": "b98932a79f838bf4a4995e703b77a267ecc5d9168c7ad2c2d9a022d502af97db",
+      "actual": "b98932a79f838bf4a4995e703b77a267ecc5d9168c7ad2c2d9a022d502af97db",
+      "ok": true,
+      "resolution": "primary"
+    },
+    {
+      "what": "fund_daily_manifest",
+      "path": "data\\raw\\tushare\\fund_daily\\20260917-r1\\manifest.json",
+      "expected": "b355322fae15ff1722c83b0a8c8f44efa03f276b8ff0a36ac30b1bbc59a17dae",
+      "actual": "b355322fae15ff1722c83b0a8c8f44efa03f276b8ff0a36ac30b1bbc59a17dae",
+      "ok": true,
+      "resolution": "primary"
+    },
+    {
+      "what": "fund_adj_manifest",
+      "path": "data\\raw\\tushare\\fund_adj\\20260917-r1\\manifest.json",
+      "expected": "348d2ec4e8fd6df3ab856f2a09677d87b62d668529abe7b00b2ec38b68efccd4",
+      "actual": "348d2ec4e8fd6df3ab856f2a09677d87b62d668529abe8b00b2ec38b68efccd4",
+      "ok": true,
+      "resolution": "r8_pin_transcription_defect_confirmed_via_r7_inheritance (deviation 10)"
+    },
+    {
+      "what": "index_000300",
+      "path": "data\\raw\\tushare\\index_daily\\20260917-r1\\chunk_000300.SH.csv",
+      "expected": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878",
+      "actual": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878",
+      "ok": true,
+      "resolution": "primary"
+    },
+    {
+      "what": "index_manifest",
+      "path": "data\\raw\\tushare\\index_daily\\20260917-r1\\manifest.json",
+      "expected": "14372f9d2cd9bf19e6bbd21c4ad4c450f83473a315b1711a6717647e88f4d77a",
+      "actual": "14372f9d2cd9bf19e6bbd21c4ad4c450f83473a315b1711a6717647e88f4d77a",
+      "ok": true,
+      "resolution": "primary"
+    }
+  ],
+  "inherited_blocks_injected": [
+    "u1_whitelist_frozen",
+    "universe",
+    "preflight"
+  ],
+  "deviations": [
+    {
+      "id": 1,
+      "item": "section-0 \"local peak\" disambiguation: D mechanisms use their own rule window peak; SMA mechanisms (T200/T60/T20c2/X1) use the trailing 252-session index peak, expanding before it is formed. Fixed definition, recorded before the run; not a tunable."
+    },
+    {
+      "id": 2,
+      "item": "index batch starts 2015-01-05 (~242 sessions before 2016), so the 252-session rolling peak is not fully formed at the first 2016 sessions; the REGISTERED fallback (insufficient history -> e_low) applies to D252/D60/X1 for those sessions. The warmup_guarantee note (>=200 sessions) is accurate for SMA200 only. Count disclosed in metrics.d252_warmup_fallback_sessions_2016; X1 treats an unavailable D252 as firing (risk-off), consistent with that fallback."
+    },
+    {
+      "id": 3,
+      "item": "combined monthly+risk execution reading: on a signal day WITH a state change the plan is member updates x current E_t budget AND continuing incumbents are re-sized to the same leg target (one execution). On a signal day WITHOUT a state change incumbents drift (R7 semantics unchanged)."
+    },
+    {
+      "id": 4,
+      "item": "a monthly full exit supersedes a postponed risk re-scale on the same slot (leaver slot: the exit is the terminal target); the superseded leg is logged outcome=superseded_by_exit and counted as NOT executed (conservative for gate-8). Same conservative treatment for superseded_latest when a fresher target replaces a postponed one."
+    },
+    {
+      "id": 5,
+      "item": "PDD (C10/C11) is equity-path-dependent, so fees feed back into the exposure state: net vs gross trade-sequence parity is structurally not guaranteed for PDD (it held for every equity-independent mechanism in R7). Parity is asserted for C01-C09/C12 and reported as-is for C10/C11."
+    },
+    {
+      "id": 6,
+      "item": "position bookkeeping on partial re-sizes: a retarget sell reduces the position cumulative net-spend proportionally by units, a retarget buy adds its budget; close-out pnl stays cash-flow consistent. Attribution convention only, no cash effect."
+    },
+    {
+      "id": 7,
+      "item": "B1(m) daily rescale postponement is not spelled out in the prereg; implemented as: retry at later opens until filled or superseded, latest target wins, buys capped by the idle pool (never negative), capped-at-commission-min leaves the leg under-invested. Matches the strategy-side semantics."
+    },
+    {
+      "id": 8,
+      "item": "a risk re-size of a leg whose full exit is already postponed (exit_due) is skipped: the leg is no longer a target holding; its pending exit completes at the next tradable open."
+    },
+    {
+      "id": 9,
+      "item": "de-minimis risk re-size guard (found in code review before ANY run): a retarget SELL whose gross notional is at/below the 5-CNY commission minimum would pay a fee larger than the proceeds and overdraw the never-negative cash pool (the registered hard rule), so the leg is skipped as a rule-compliant cash slot (outcome cash_capped, separate counter risk_sells_feemin_skipped; the B1(m) rescale path applies the same guard). The registered buy-side rule is the exact analog (capped budget <= commission_min -> skip)."
+    },
+    {
+      "id": 10,
+      "item": "frozen-config transcription defect discovered at startup, BEFORE any signal computation (R7-precedent class, pre-run): the R8 config data block pin for the fund_adj batch manifest (20260917-r1) reads ...abe7b00b... but the actual file hashes to ...abe8b00b... -- a one-character copy defect. The R8 config was NOT modified (freeze respected). Identity resolved through the pinned inheritance source instead: the R8 config pins the R7 config by sha256 (verified at startup), and the R7 config pin for the SAME batch manifest matches the actual file bit-for-bit, exactly as recorded in the R7 formal run manifest. The data consumed is byte-identical to the R7 formal run. Any pin matching NEITHER the R8 nor the R7 value still hard-fails the run."
+    },
+    {
+      "id": 11,
+      "item": "effective-config materialization (in memory, pre-run; R7-precedent deviation 1 class): the frozen R8 config inherits u1_whitelist_frozen / universe / preflight from the R7 config BY HASH and intentionally does not repeat them in its own file, but the data-loading layer reads them from the config dict. At startup the effective config is materialized by injecting those three blocks VERBATIM from the sha256-verified R7 config (no value changed, conflict-checked: the R8 file defines none of them). The frozen config file on disk is never modified; the run-dir config.json snapshot records the materialized effective config, as in R7."
+    }
+  ],
+  "preanalysis_file": "preanalysis.json",
+  "d252_warmup_fallback_sessions_2016": 8,
+  "load_stats": {
+    "rows_whitelisted": 813201,
+    "codes_whitelisted": 943,
+    "rows_missing_factor": 1200,
+    "codes_missing_factor": 1
+  },
+  "timings": {
+    "preanalysis_s": 0.01,
+    "load_s": 4.27,
+    "pools_s": 0.01,
+    "b1_b2_s": 0.01,
+    "b3prime_s": 0.02,
+    "sim_C01_s": 0.0,
+    "sim_C07_s": 0.0
+  },
+  "mech_keys": {
+    "C01": "FIX75",
+    "C07": "D2520.10-L0.40"
+  },
+  "net_gross_parity": {
+    "C01": true,
+    "C07": true
+  }
+}

@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2r7_etf_exposure.py", line 154, in main
+    loaded = er.load_frames(root, config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\etf_rotation.py", line 130, in load_frames
+    feat = feat.join(registry_frame(root, config), on='ts_code', how='inner')
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\research\etf_rotation.py", line 86, in registry_frame
+    qdii = config['universe']['u2_qdii_keywords_frozen']
+           ~~~~~~^^^^^^^^^^^^
+KeyError: 'universe'

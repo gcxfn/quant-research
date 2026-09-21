@@ -1,0 +1,22 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- D:\量化\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: D:\量化
+configfile: pyproject.toml
+collecting ... collected 13 items
+
+tests/test_band_contract.py::test_01_fee_conservation PASSED             [  7%]
+tests/test_band_contract.py::test_02_t1_zero_violations PASSED           [ 15%]
+tests/test_band_contract.py::test_03_lot_invariant PASSED                [ 23%]
+tests/test_band_contract.py::test_04_cash_nonneg_priority_order PASSED   [ 30%]
+tests/test_band_contract.py::test_05_touch_vs_penetration PASSED         [ 38%]
+tests/test_band_contract.py::test_06_corporate_actions PASSED            [ 46%]
+tests/test_band_contract.py::test_06b_real_600000_corp_actions PASSED    [ 53%]
+tests/test_band_contract.py::test_06c_split_loader_anchor_regression PASSED [ 61%]
+tests/test_band_contract.py::test_07_suspension_and_limit_legality PASSED [ 69%]
+tests/test_band_contract.py::test_08_sell_reanchor_k3_fallback PASSED    [ 76%]
+tests/test_band_contract.py::test_09_sale_proceeds_next_day PASSED       [ 84%]
+tests/test_band_contract.py::test_10_stamp_tax_segmentation PASSED       [ 92%]
+tests/test_band_contract.py::test_00_input_guards PASSED                 [100%]
+
+============================= 13 passed in 4.75s ==============================

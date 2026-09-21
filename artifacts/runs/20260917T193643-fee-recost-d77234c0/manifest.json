@@ -1,0 +1,15 @@
+{
+ "run_id": "20260917T193643-fee-recost-d77234c0",
+ "experiment_id": "exp-20260917-fee-recost",
+ "status": "aborted",
+ "started_at": "2026-09-17T19:36:43+08:00",
+ "abort_reason": "TypeError in manifest build (*argv with argv=None) after all four inputs were recosted and verified; no conclusions from this run; superseded by the completed run that follows",
+ "completed_before_abort": [
+  "recost_events.parquet",
+  "recost_summary.csv",
+  "recost_summary.json"
+ ],
+ "missing": [
+  "manifest.json (the file whose construction crashed)"
+ ]
+}

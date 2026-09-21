@@ -1,0 +1,80 @@
+{
+ "run_id": "20260921T152145-mkt-fill-anchor-a1b2",
+ "experiment_id": "exp-20260921-etf-momentum-comb",
+ "status": "completed",
+ "mode": "full",
+ "started_at_utc": "2026-09-21T07:21:53.436330+00:00",
+ "ended_at_utc": "2026-09-21T07:21:56.142321+00:00",
+ "wall_seconds": 2.706660499999998,
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "artifacts/runs/20260921T152145-mkt-fill-anchor-a1b2/tmp/runner_etf_mom.py"
+ ],
+ "engine": {
+  "version": "v1.5+clip-price",
+  "clock": "halfday+pm_only"
+ },
+ "pins": {
+  "prereg": {
+   "sha256": "7b8ae37c36b97004cc2907a23737c0f52b5b69a8f724b91ed8ade9f0f8824b2e"
+  },
+  "etf_daily": {
+   "path": "D:\\量化\\data\\processed\\etf-daily-20260919\\daily_2015_2024.parquet",
+   "sha256": "b7225d50523106f53fc87bf21a92f12978ecc31a7b195ed2b4cf4e39f7a0d661"
+  },
+  "pool": {
+   "path": "D:\\量化\\data\\processed\\etf-daily-20260919\\pool.parquet",
+   "sha256": "b48256dbb14a1372fae5f3f334c2c88ceed6d3ff042aa4cc2ebced4a7473f675"
+  },
+  "fs_gates": {
+   "path": "D:\\量化\\artifacts\\runs\\20260921T121615-fixed-scheme-6e8be\\outputs\\metrics_and_gates.json",
+   "sha256": "d801eed1989fb4a6b6d667f5c237b5a1732f0a39c7cc8a80e7f4c23d93d6ec94"
+  },
+  "fund_adj_aggregate": {
+   "sha256": "18650ec95eb0611ab99cb048448d8a5c76446ef22141858ac6c0acfa4d1ec261"
+  }
+ },
+ "pool": [
+  "sh.510050",
+  "sh.510500",
+  "sz.159915",
+  "sh.510880",
+  "sh.510900",
+  "sh.513100",
+  "sh.513500",
+  "sh.512880",
+  "sh.512800",
+  "sz.159938",
+  "sz.159928",
+  "sz.159939",
+  "sh.512980",
+  "sh.512660",
+  "sh.512400",
+  "sh.510610",
+  "sh.510620",
+  "sh.512200",
+  "sh.512580"
+ ],
+ "trial_accounting": {
+  "strategy_line": {
+   "before": 289,
+   "this_round": 1,
+   "after": 290
+  }
+ },
+ "known_simplifications": [
+  "ETF cash dividends not modelled in engine (same as fixed-scheme); stage-A signal uses adj-factor returns so sleeve is comparable",
+  "D3 overlay observed once per pm point (engine pm-only routing)"
+ ],
+ "outputs": {
+  "outputs/engine_warnings.json": "b8ece18328bb82dcef40e0fba48002c953b7ebbf97579910daafb2a826ba84f2",
+  "outputs/metrics_and_gates.json": "eaffe925aed3bde1af6ccbf5dd1a057bab2d2b29c0d97c6e818a30f67e36a253",
+  "outputs/momD3_clips_final.parquet": "e9a842a2074dbdf28b6f0d53167e33c7ad5182d7d70356b07b75da23c1cb11ae",
+  "outputs/momD3_daily_equity.parquet": "c59dfbb46413958b4f8f2724225af25f9f4ddadfb7c4cf807e35bba1c41500e7",
+  "outputs/momD3_events.parquet": "61eeb1596f610ec9ee9ba9469c2e6e1ceae2724000b12cac238120ada952fb3a",
+  "outputs/momD3_fills.parquet": "f820f8969953b6aec4f5d90627999df2bef0bc5b49d5ed717bbbe0a72c8442b2",
+  "outputs/stageA.json": "ad506a0187422d316d3bb0aa6a7329f609c37abb9364a34c3a46415aaca0658e",
+  "report.md": "dc74143fa935dace4c0b0bb438e103b3f2e234c5fcc085d5d6014c67d2183a26",
+  "tmp/runner_anchor.py": "9e92f9a48c8d54426e5314d388138f1ea99c10388b333967e3d8eeac9c3b642e"
+ }
+}

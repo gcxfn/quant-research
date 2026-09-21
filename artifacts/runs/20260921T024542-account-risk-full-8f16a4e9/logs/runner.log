@@ -1,0 +1,89 @@
+[    0.0s] account-risk dynamic replay; curves=D0,D1,D2,D3; window=2015-01-05..2020-12-31
+[    0.0s] == 0. identity pins ==
+[    2.3s]   engine bcbdd44bb855b803 OK (frozen dynamic engine); pins OK; python 3.11.15 | rss 0.27 GB
+[    2.3s] == 1. calendar & signal days ==
+[    2.4s]   71 signal days (2015-01-30..2020-11-30)
+[    2.4s] == 2. R16 pool (build_history + signal_pools, verbatim) ==
+[    5.4s]   pool n: min 810 max 2260
+[    5.4s] == 3. dedup: |rho|>=0.6 connected components, rep = max |t| ==
+[    5.4s]   20 clusters, 20 representatives == F3R1 list OK
+[    5.4s] == 4. composite: EW + ICW arms on executable cross-sections ==
+[    6.4s]   wide frame 319147 rows, 5162 symbols
+[    6.5s]   2015-01-30: pool 1438 -> eligible 1433
+[   10.1s]   2017-12-29: pool 982 -> eligible 982
+[   13.2s]   2020-11-30: pool 1542 -> eligible 1542
+[   13.2s] == 5. seat membership + overlay hosts (one per curve) ==
+[   13.2s]   F3-EW: members/month min 10 max 10
+[   13.2s]   F3-ICW: members/month min 10 max 10
+[   13.2s] == 6. benchmarks: B1(m)_F3 fractional + B3'_F3 random K=10 ==
+[   22.3s]   B1(m)_F3: net +1.66% mdd -64.42% (2937 union symbols)
+[   24.0s]   B3'_F3: mean net -1.89% (seeds 17..36, range -10.14..+5.43%)
+[   24.1s] == 7. band engine market frames ==
+[   35.6s]   frames: panel 505 symbols; daily 700292; half 1340367; limits 698338; rss 1.61 GB
+[   35.7s] == 8. band engine dynamic runs, one pass per curve ==
+[   44.4s]   D0: engine 8.3s; provider calls 2924 injected 2855 (entry 2298 exit 557 overlay 2298); steps 2885 reduced 0; orders 2799 filled 542 expired_halfday 2150 no_anchor 148 override 15 | rss 2.47 GB
+[   52.5s]   D1: engine 8.1s; provider calls 2924 injected 4083 (entry 1839 exit 565 overlay 3518); steps 2885 reduced 246; orders 3972 filled 550 expired_halfday 3313 no_anchor 205 override 15 | rss 2.51 GB
+[   76.0s]   D2: engine 23.5s; provider calls 2924 injected 2547 (entry 1422 exit 568 overlay 1979); steps 2885 reduced 1601; orders 2451 filled 553 expired_halfday 1789 no_anchor 190 override 15 | rss 2.55 GB
+[   82.0s]   D3: engine 6.0s; provider calls 2924 injected 1767 (entry 1040 exit 570 overlay 1197); steps 2885 reduced 2711; orders 1716 filled 555 expired_halfday 1052 no_anchor 145 override 15 | rss 2.57 GB
+[   82.0s] == 8b. D0 carrier parity gate (five-frame comparison) ==
+[   82.0s]   fills: 1093 rows, reference 1093 rows, equal=True
+[   82.0s]   events: 6428 rows, reference 6428 rows, equal=True
+[   82.0s]   daily_equity: 1462 rows, reference 1462 rows, equal=True
+[   82.0s]   clips_final: 10 rows, reference 10 rows, equal=True
+[   82.0s] == 9. account-level state trace ==
+[   82.0s]   D0: reduce 0 restore 0 reduced-sessions 0 mean E-ratio 1.000 trims 0 topups 0 fail-closed 0
+[   82.0s]   D1: reduce 41 restore 41 reduced-sessions 123 mean E-ratio 0.953 trims 391 topups 1288 fail-closed 0
+[   82.0s]   D2: reduce 13 restore 12 reduced-sessions 801 mean E-ratio 0.692 trims 152 topups 405 fail-closed 0
+[   82.1s]   D3: reduce 2 restore 1 reduced-sessions 1356 mean E-ratio 0.478 trims 79 topups 78 fail-closed 0
+[   82.1s] == 10. comparison: D0 control vs the three pre-registered schemes ==
+[   82.2s]   D0: net +8.52% mdd -39.50% gross 94.4% cash 5.1% turn 9.93 fills 1093
+[   82.3s]   D1: net +2.68% mdd -45.18% gross 90.5% cash 8.8% turn 14.57 fills 1863
+[   82.4s]   D2: net +4.66% mdd -38.14% gross 65.4% cash 34.2% turn 8.67 fills 1378
+[   82.6s]   D3: net +6.49% mdd -29.86% gross 44.7% cash 55.1% turn 5.35 fills 1192
+[   82.6s]   comparison vs D0: D1 dd -5.68pp / cagr +5.84pp; D2 dd +1.36pp / cagr +3.86pp; D3 dd +9.64pp / cagr +2.04pp
+[   82.6s] == 11. outputs ==
+[    0.0s] account-risk dynamic replay; curves=D0,D1,D2,D3; window=2015-01-05..2020-12-31
+[    0.0s] == 0. identity pins ==
+[    2.9s]   engine bcbdd44bb855b803 OK (frozen dynamic engine); pins OK; python 3.11.15 | rss 0.27 GB
+[    2.9s] == 1. calendar & signal days ==
+[    3.1s]   71 signal days (2015-01-30..2020-11-30)
+[    3.1s] == 2. R16 pool (build_history + signal_pools, verbatim) ==
+[    7.7s]   pool n: min 810 max 2260
+[    7.7s] == 3. dedup: |rho|>=0.6 connected components, rep = max |t| ==
+[    7.7s]   20 clusters, 20 representatives == F3R1 list OK
+[    7.8s] == 4. composite: EW + ICW arms on executable cross-sections ==
+[    9.1s]   wide frame 319147 rows, 5162 symbols
+[    9.2s]   2015-01-30: pool 1438 -> eligible 1433
+[   13.2s]   2017-12-29: pool 982 -> eligible 982
+[   19.1s]   2020-11-30: pool 1542 -> eligible 1542
+[   19.1s] == 5. seat membership + overlay hosts (one per curve) ==
+[   19.3s]   F3-EW: members/month min 10 max 10
+[   19.3s]   F3-ICW: members/month min 10 max 10
+[   19.3s] == 6. benchmarks: B1(m)_F3 fractional + B3'_F3 random K=10 ==
+[   72.8s]   B1(m)_F3: net +1.66% mdd -64.42% (2937 union symbols)
+[   83.8s]   B3'_F3: mean net -1.89% (seeds 17..36, range -10.14..+5.43%)
+[   84.1s] == 7. band engine market frames ==
+[  130.8s]   frames: panel 505 symbols; daily 700292; half 1340367; limits 698338; rss 1.80 GB
+[  131.4s] == 8. band engine dynamic runs, one pass per curve ==
+[  166.0s]   D0: engine 31.9s; provider calls 2924 injected 2855 (entry 2298 exit 557 overlay 2298); steps 2885 reduced 0; orders 2799 filled 542 expired_halfday 2150 no_anchor 148 override 15 | rss 2.65 GB
+[  172.7s]   D1: engine 6.8s; provider calls 2924 injected 4083 (entry 1839 exit 565 overlay 3518); steps 2885 reduced 246; orders 3972 filled 550 expired_halfday 3313 no_anchor 205 override 15 | rss 2.72 GB
+[  186.7s]   D2: engine 14.0s; provider calls 2924 injected 2547 (entry 1422 exit 568 overlay 1979); steps 2885 reduced 1601; orders 2451 filled 553 expired_halfday 1789 no_anchor 190 override 15 | rss 2.75 GB
+[  233.7s]   D3: engine 46.9s; provider calls 2924 injected 1767 (entry 1040 exit 570 overlay 1197); steps 2885 reduced 2711; orders 1716 filled 555 expired_halfday 1052 no_anchor 145 override 15 | rss 2.18 GB
+[  233.7s] == 8b. D0 carrier parity gate (five-frame comparison) ==
+[  233.7s]   fills: 1093 rows, reference 1093 rows, equal=True
+[  233.7s]   events: 6428 rows, reference 6428 rows, equal=True
+[  233.8s]   daily_equity: 1462 rows, reference 1462 rows, equal=True
+[  233.8s]   clips_final: 10 rows, reference 10 rows, equal=True
+[  233.8s] == 9. account-level state trace ==
+[  233.8s]   D0: reduce 0 restore 0 reduced-sessions 0 mean E-ratio 1.000 trims 0 topups 0 fail-closed 0
+[  233.8s]   D1: reduce 41 restore 41 reduced-sessions 123 mean E-ratio 0.953 trims 391 topups 1288 fail-closed 0
+[  233.8s]   D2: reduce 13 restore 12 reduced-sessions 801 mean E-ratio 0.692 trims 152 topups 405 fail-closed 0
+[  233.8s]   D3: reduce 2 restore 1 reduced-sessions 1356 mean E-ratio 0.478 trims 79 topups 78 fail-closed 0
+[  233.8s] == 10. comparison: D0 control vs the three pre-registered schemes ==
+[  234.6s]   D0: net +8.52% mdd -39.50% gross 94.4% cash 5.1% turn 9.93 fills 1093
+[  235.4s]   D1: net +2.68% mdd -45.18% gross 90.5% cash 8.8% turn 14.57 fills 1863
+[  236.2s]   D2: net +4.66% mdd -38.14% gross 65.4% cash 34.2% turn 8.67 fills 1378
+[  236.9s]   D3: net +6.49% mdd -29.86% gross 44.7% cash 55.1% turn 5.35 fills 1192
+[  236.9s]   comparison vs D0: D1 dd -5.68pp / cagr +5.84pp; D2 dd +1.36pp / cagr +3.86pp; D3 dd +9.64pp / cagr +2.04pp
+[  236.9s] == 11. outputs ==
+[  238.5s] == manifest + report written; wall 239s, peak rss 2.75 GB ==

@@ -1,0 +1,933 @@
+{
+  "timings": {
+    "identity_s": 0.7769716000184417,
+    "calendar_signals_s": 0.08344529999885708,
+    "pools_bank_s": 1.5454828000220004,
+    "sim_C01_s": 0.0,
+    "sim_C02_s": 0.01,
+    "sim_C03_s": 0.01,
+    "sim_C04_s": 0.02,
+    "sim_C05_s": 0.02,
+    "sim_C06_s": 0.03,
+    "sim_C07_s": 0.04,
+    "sim_C08_s": 0.04,
+    "b1_s": 0.89,
+    "b3_T200-40_s": 0.11,
+    "b3_FIX75_s": 0.22,
+    "baselines_s": 0.02,
+    "metrics_gates_s": 0.01,
+    "evidence_write_s": 0.17,
+    "total_s": 3.81
+  },
+  "signals": {
+    "n_signals": 5,
+    "first": "2015-01-30",
+    "last": "2015-05-29",
+    "dropped_execution_beyond_calendar": [
+      "2015-06-30"
+    ]
+  },
+  "t200_behavioral_anchor": {
+    "anchor_years": [
+      "2016",
+      "2017",
+      "2018",
+      "2019",
+      "2020"
+    ],
+    "reproduced_stats": {
+      "2016": {
+        "n_sessions": 244,
+        "n_switches": 5,
+        "off_share": 0.623,
+        "mean_exposure": 0.5885
+      },
+      "2017": {
+        "n_sessions": 244,
+        "n_switches": 2,
+        "off_share": 0.0164,
+        "mean_exposure": 0.8918
+      },
+      "2018": {
+        "n_sessions": 243,
+        "n_switches": 3,
+        "off_share": 0.786,
+        "mean_exposure": 0.507
+      },
+      "2019": {
+        "n_sessions": 244,
+        "n_switches": 3,
+        "off_share": 0.1066,
+        "mean_exposure": 0.8467
+      },
+      "2020": {
+        "n_sessions": 243,
+        "n_switches": 6,
+        "off_share": 0.1687,
+        "mean_exposure": 0.8156
+      }
+    },
+    "all_match": true
+  },
+  "t200_fallback_signals": {
+    "n": 5,
+    "dates": [
+      "2015-01-30",
+      "2015-02-27",
+      "2015-03-31",
+      "2015-04-30",
+      "2015-05-29"
+    ],
+    "rule": "registered fallback: SMA200 unavailable -> risk-off e_low (R8 sma_trend_state docstring)"
+  },
+  "pool_stats": {
+    "n_symbols_ever_in_pool": 2109,
+    "mean_pool_size": 1684.0,
+    "min_pool_size": 1412,
+    "mean_q5_share": 0.10025732383214568
+  },
+  "B3prime_dev_mean_net_cagr": {
+    "T200-40": 0.4540766940101045,
+    "FIX75": 1.1503523110004577
+  },
+  "B3prime_per_seed_dev_net_cagr": {
+    "T200-40-s17": 0.46256853121122465,
+    "T200-40-s18": 0.5782590535315795,
+    "T200-40-s19": 0.37724487916750626,
+    "T200-40-s20": 0.4134911740057732,
+    "T200-40-s21": 0.3892377977020467,
+    "T200-40-s22": 0.42451672355194225,
+    "T200-40-s23": 0.48843146919147107,
+    "T200-40-s24": 0.37491981577349187,
+    "T200-40-s25": 0.46800120843613224,
+    "T200-40-s26": 0.3629695518313143,
+    "T200-40-s27": 0.4994463654995944,
+    "T200-40-s28": 0.4961913838939229,
+    "T200-40-s29": 0.47607987060322143,
+    "T200-40-s30": 0.3203506460877281,
+    "T200-40-s31": 0.490357182429088,
+    "T200-40-s32": 0.2716598197508151,
+    "T200-40-s33": 0.43291360693553993,
+    "T200-40-s34": 0.6728613405150445,
+    "T200-40-s35": 0.5968665181835267,
+    "T200-40-s36": 0.48516694190112486,
+    "FIX75-s17": 1.138085265488317,
+    "FIX75-s18": 1.5337287617714943,
+    "FIX75-s19": 1.156432616052125,
+    "FIX75-s20": 0.8998802208330898,
+    "FIX75-s21": 1.0119150637335346,
+    "FIX75-s22": 1.1864678184134583,
+    "FIX75-s23": 1.1618323566039952,
+    "FIX75-s24": 1.0336694443640804,
+    "FIX75-s25": 1.1715403324249762,
+    "FIX75-s26": 0.8950556287587896,
+    "FIX75-s27": 1.1798969017864627,
+    "FIX75-s28": 1.2566521974674378,
+    "FIX75-s29": 1.2138456267077462,
+    "FIX75-s30": 0.8029237569787921,
+    "FIX75-s31": 1.188779239404266,
+    "FIX75-s32": 0.5361330755439677,
+    "FIX75-s33": 1.1011724397883529,
+    "FIX75-s34": 1.6790546283609191,
+    "FIX75-s35": 1.733912239836839,
+    "FIX75-s36": 1.1260686056905014
+  },
+  "configs": {
+    "C01": {
+      "net_cagr": 0.19671878368490092,
+      "net_total_return": 0.0903888770138439,
+      "max_drawdown": -0.0698008303996488,
+      "mdd_window": {
+        "max_drawdown": -0.0698008303996488,
+        "peak_date": "2015-06-08",
+        "trough_date": "2015-06-29"
+      },
+      "max_single_name_weight": 0.029546074508672037,
+      "turnover_by_year": {
+        "2015": {
+          "buy_notional": 75866.0,
+          "sell_notional": 29753.616925324288,
+          "mean_equity": 212740.89441653472,
+          "one_side_turnover": 0.35661220757800627,
+          "membership_buy_notional": 74347.0,
+          "membership_sell_notional": 29753.616925324288,
+          "membership_one_side_turnover": 0.3494720664962175
+        }
+      },
+      "max_one_side_turnover": 0.35661220757800627,
+      "max_membership_one_side_turnover": 0.3494720664962175,
+      "execution_rate": 1.0,
+      "execution_rate_window": {
+        "legs_executed": 97,
+        "legs_planned": 97,
+        "execution_rate": 1.0
+      },
+      "net_return_by_year": {
+        "2015": 0.0903888770138439
+      },
+      "b1m_net_cagr": 0.577053888074702,
+      "b1m_max_drawdown": -0.12102458810586003,
+      "excess_vs_b1m": -0.3803351043898011,
+      "excess_by_year": {
+        "2015": -0.1550851481170783
+      },
+      "b1m_net_return_by_year": {
+        "2015": 0.2454740251309222
+      },
+      "membership_stats": {
+        "n_signals": 5,
+        "mean_kept": 14.2,
+        "mean_entrants": 4.6,
+        "mean_left": 0.6,
+        "mean_cash_seats": 1.2
+      },
+      "config": {
+        "K": 20,
+        "path": "T200-40",
+        "filter": "on"
+      },
+      "b1m_variant": "rate_only (deviation 2 primary)"
+    },
+    "C02": {
+      "net_cagr": 0.17215568294996553,
+      "net_total_return": 0.07954655383872944,
+      "max_drawdown": -0.07620050544320656,
+      "mdd_window": {
+        "max_drawdown": -0.07620050544320656,
+        "peak_date": "2015-06-08",
+        "trough_date": "2015-06-29"
+      },
+      "max_single_name_weight": 0.02971513027096644,
+      "turnover_by_year": {
+        "2015": {
+          "buy_notional": 85915.0,
+          "sell_notional": 40371.396977427,
+          "mean_equity": 212826.7642142175,
+          "one_side_turnover": 0.40368513009728224,
+          "membership_buy_notional": 85481.0,
+          "membership_sell_notional": 40371.396977427,
+          "membership_one_side_turnover": 0.40164591288885276
+        }
+      },
+      "max_one_side_turnover": 0.40368513009728224,
+      "max_membership_one_side_turnover": 0.40164591288885276,
+      "execution_rate": 1.0,
+      "execution_rate_window": {
+        "legs_executed": 106,
+        "legs_planned": 106,
+        "execution_rate": 1.0
+      },
+      "net_return_by_year": {
+        "2015": 0.07954655383872944
+      },
+      "b1m_net_cagr": 0.577053888074702,
+      "b1m_max_drawdown": -0.12102458810586003,
+      "excess_vs_b1m": -0.4048982051247365,
+      "excess_by_year": {
+        "2015": -0.16592747129219276
+      },
+      "b1m_net_return_by_year": {
+        "2015": 0.2454740251309222
+      },
+      "membership_stats": {
+        "n_signals": 5,
+        "mean_kept": 14.8,
+        "mean_entrants": 5.2,
+        "mean_left": 1.2,
+        "mean_cash_seats": 0.0
+      },
+      "config": {
+        "K": 20,
+        "path": "T200-40",
+        "filter": "off"
+      },
+      "b1m_variant": "rate_only (deviation 2 primary)"
+    },
+    "C03": {
+      "net_cagr": 0.4319865036716568,
+      "net_total_return": 0.18888815843205986,
+      "max_drawdown": -0.14195792880198055,
+      "mdd_window": {
+        "max_drawdown": -0.14195792880198055,
+        "peak_date": "2015-06-08",
+        "trough_date": "2015-06-29"
+      },
+      "max_single_name_weight": 0.05163082829278102,
+      "turnover_by_year": {
+        "2015": {
+          "buy_notional": 171234.0,
+          "sell_notional": 59158.00000000002,
+          "mean_equity": 227548.01879714924,
+          "one_side_turnover": 0.7525180878531351,
+          "membership_buy_notional": 163733.0,
+          "membership_sell_notional": 59158.00000000002,
+          "membership_one_side_turnover": 0.7195536171464626
+        }
+      },
+      "max_one_side_turnover": 0.7525180878531351,
+      "max_membership_one_side_turnover": 0.7195536171464626,
+      "execution_rate": 1.0,
+      "execution_rate_window": {
+        "legs_executed": 97,
+        "legs_planned": 97,
+        "execution_rate": 1.0
+      },
+      "net_return_by_year": {
+        "2015": 0.18888815843205986
+      },
+      "b1m_net_cagr": 1.2764842502378202,
+      "b1m_max_drawdown": -0.21349322169701113,
+      "excess_vs_b1m": -0.8444977465661634,
+      "excess_by_year": {
+        "2015": -0.29756820785848914
+      },
+      "b1m_net_return_by_year": {
+        "2015": 0.486456366290549
+      },
+      "membership_stats": {
+        "n_signals": 5,
+        "mean_kept": 14.2,
+        "mean_entrants": 4.6,
+        "mean_left": 0.6,
+        "mean_cash_seats": 1.2
+      },
+      "config": {
+        "K": 20,
+        "path": "FIX75",
+        "filter": "on"
+      },
+      "b1m_variant": "rate_only (deviation 2 primary)"
+    },
+    "C04": {
+      "net_cagr": 0.397490845200448,
+      "net_total_return": 0.17500065344208382,
+      "max_drawdown": -0.1523694709404202,
+      "mdd_window": {
+        "max_drawdown": -0.1523694709404202,
+        "peak_date": "2015-06-08",
+        "trough_date": "2015-06-29"
+      },
+      "max_single_name_weight": 0.05188309125431486,
+      "turnover_by_year": {
+        "2015": {
+          "buy_notional": 189793.0,
+          "sell_notional": 80745.34015630816,
+          "mean_equity": 228593.28811680502,
+          "one_side_turnover": 0.8302649721851014,
+          "membership_buy_notional": 183773.0,
+          "membership_sell_notional": 80745.34015630816,
+          "membership_one_side_turnover": 0.8039299907445092
+        }
+      },
+      "max_one_side_turnover": 0.8302649721851014,
+      "max_membership_one_side_turnover": 0.8039299907445092,
+      "execution_rate": 1.0,
+      "execution_rate_window": {
+        "legs_executed": 106,
+        "legs_planned": 106,
+        "execution_rate": 1.0
+      },
+      "net_return_by_year": {
+        "2015": 0.17500065344208382
+      },
+      "b1m_net_cagr": 1.2764842502378202,
+      "b1m_max_drawdown": -0.21349322169701113,
+      "excess_vs_b1m": -0.8789934050373722,
+      "excess_by_year": {
+        "2015": -0.3114557128484652
+      },
+      "b1m_net_return_by_year": {
+        "2015": 0.486456366290549
+      },
+      "membership_stats": {
+        "n_signals": 5,
+        "mean_kept": 14.8,
+        "mean_entrants": 5.2,
+        "mean_left": 1.2,
+        "mean_cash_seats": 0.0
+      },
+      "config": {
+        "K": 20,
+        "path": "FIX75",
+        "filter": "off"
+      },
+      "b1m_variant": "rate_only (deviation 2 primary)"
+    },
+    "C05": {
+      "net_cagr": 0.16713141114593544,
+      "net_total_return": 0.077314345662858,
+      "max_drawdown": -0.06722951904360064,
+      "mdd_window": {
+        "max_drawdown": -0.06722951904360064,
+        "peak_date": "2015-06-08",
+        "trough_date": "2015-06-29"
+      },
+      "max_single_name_weight": 0.02025100795995962,
+      "turnover_by_year": {
+        "2015": {
+          "buy_notional": 77636.0,
+          "sell_notional": 39051.65931077621,
+          "mean_equity": 210736.65679905427,
+          "one_side_turnover": 0.3684029213485578,
+          "membership_buy_notional": 75336.0,
+          "membership_sell_notional": 39051.65931077621,
+          "membership_one_side_turnover": 0.35748882583743297
+        }
+      },
+      "max_one_side_turnover": 0.3684029213485578,
+      "max_membership_one_side_turnover": 0.35748882583743297,
+      "execution_rate": 1.0,
+      "execution_rate_window": {
+        "legs_executed": 149,
+        "legs_planned": 149,
+        "execution_rate": 1.0
+      },
+      "net_return_by_year": {
+        "2015": 0.077314345662858
+      },
+      "b1m_net_cagr": 0.577053888074702,
+      "b1m_max_drawdown": -0.12102458810586003,
+      "excess_vs_b1m": -0.4099224769287666,
+      "excess_by_year": {
+        "2015": -0.1681596794680642
+      },
+      "b1m_net_return_by_year": {
+        "2015": 0.2454740251309222
+      },
+      "membership_stats": {
+        "n_signals": 5,
+        "mean_kept": 21.4,
+        "mean_entrants": 7.2,
+        "mean_left": 1.2,
+        "mean_cash_seats": 1.4
+      },
+      "config": {
+        "K": 30,
+        "path": "T200-40",
+        "filter": "on"
+      },
+      "b1m_variant": "rate_only (deviation 2 primary)"
+    },
+    "C06": {
+      "net_cagr": 0.1542578100924359,
+      "net_total_return": 0.07157197284370809,
+      "max_drawdown": -0.07114053071316373,
+      "mdd_window": {
+        "max_drawdown": -0.07114053071316373,
+        "peak_date": "2015-06-08",
+        "trough_date": "2015-06-29"
+      },
+      "max_single_name_weight": 0.02018137924319875,
+      "turnover_by_year": {
+        "2015": {
+          "buy_notional": 78439.0,
+          "sell_notional": 37581.99085072283,
+          "mean_equity": 210924.56859178253,
+          "one_side_turnover": 0.37188176097118697,
+          "membership_buy_notional": 77382.0,
+          "membership_sell_notional": 37581.99085072283,
+          "membership_one_side_turnover": 0.36687049079504314
+        }
+      },
+      "max_one_side_turnover": 0.37188176097118697,
+      "max_membership_one_side_turnover": 0.36687049079504314,
+      "execution_rate": 1.0,
+      "execution_rate_window": {
+        "legs_executed": 157,
+        "legs_planned": 157,
+        "execution_rate": 1.0
+      },
+      "net_return_by_year": {
+        "2015": 0.07157197284370809
+      },
+      "b1m_net_cagr": 0.577053888074702,
+      "b1m_max_drawdown": -0.12102458810586003,
+      "excess_vs_b1m": -0.42279607798226615,
+      "excess_by_year": {
+        "2015": -0.17390205228721412
+      },
+      "b1m_net_return_by_year": {
+        "2015": 0.2454740251309222
+      },
+      "membership_stats": {
+        "n_signals": 5,
+        "mean_kept": 22.0,
+        "mean_entrants": 8.0,
+        "mean_left": 2.0,
+        "mean_cash_seats": 0.0
+      },
+      "config": {
+        "K": 30,
+        "path": "T200-40",
+        "filter": "off"
+      },
+      "b1m_variant": "rate_only (deviation 2 primary)"
+    },
+    "C07": {
+      "net_cagr": 0.36055472918259857,
+      "net_total_return": 0.1599322730048247,
+      "max_drawdown": -0.14506462072795967,
+      "mdd_window": {
+        "max_drawdown": -0.14506462072795967,
+        "peak_date": "2015-06-08",
+        "trough_date": "2015-06-29"
+      },
+      "max_single_name_weight": 0.038362580002705385,
+      "turnover_by_year": {
+        "2015": {
+          "buy_notional": 163154.0,
+          "sell_notional": 61754.072584807705,
+          "mean_equity": 223979.79296694286,
+          "one_side_turnover": 0.7284317832371596,
+          "membership_buy_notional": 156639.0,
+          "membership_sell_notional": 61754.072584807705,
+          "membership_one_side_turnover": 0.6993443378310397
+        }
+      },
+      "max_one_side_turnover": 0.7284317832371596,
+      "max_membership_one_side_turnover": 0.6993443378310397,
+      "execution_rate": 1.0,
+      "execution_rate_window": {
+        "legs_executed": 149,
+        "legs_planned": 149,
+        "execution_rate": 1.0
+      },
+      "net_return_by_year": {
+        "2015": 0.1599322730048247
+      },
+      "b1m_net_cagr": 1.2764842502378202,
+      "b1m_max_drawdown": -0.21349322169701113,
+      "excess_vs_b1m": -0.9159295210552216,
+      "excess_by_year": {
+        "2015": -0.3265240932857243
+      },
+      "b1m_net_return_by_year": {
+        "2015": 0.486456366290549
+      },
+      "membership_stats": {
+        "n_signals": 5,
+        "mean_kept": 21.4,
+        "mean_entrants": 7.2,
+        "mean_left": 1.2,
+        "mean_cash_seats": 1.4
+      },
+      "config": {
+        "K": 30,
+        "path": "FIX75",
+        "filter": "on"
+      },
+      "b1m_variant": "rate_only (deviation 2 primary)"
+    },
+    "C08": {
+      "net_cagr": 0.3431665588289943,
+      "net_total_return": 0.15276526574138316,
+      "max_drawdown": -0.1525971862603822,
+      "mdd_window": {
+        "max_drawdown": -0.1525971862603822,
+        "peak_date": "2015-06-08",
+        "trough_date": "2015-06-29"
+      },
+      "max_single_name_weight": 0.038243585521536914,
+      "turnover_by_year": {
+        "2015": {
+          "buy_notional": 179508.0,
+          "sell_notional": 74810.72778732193,
+          "mean_equity": 224930.1976671636,
+          "one_side_turnover": 0.7980609178391588,
+          "membership_buy_notional": 172368.0,
+          "membership_sell_notional": 74810.72778732193,
+          "membership_one_side_turnover": 0.766317736736525
+        }
+      },
+      "max_one_side_turnover": 0.7980609178391588,
+      "max_membership_one_side_turnover": 0.766317736736525,
+      "execution_rate": 1.0,
+      "execution_rate_window": {
+        "legs_executed": 160,
+        "legs_planned": 160,
+        "execution_rate": 1.0
+      },
+      "net_return_by_year": {
+        "2015": 0.15276526574138316
+      },
+      "b1m_net_cagr": 1.2764842502378202,
+      "b1m_max_drawdown": -0.21349322169701113,
+      "excess_vs_b1m": -0.9333176914088259,
+      "excess_by_year": {
+        "2015": -0.33369110054916584
+      },
+      "b1m_net_return_by_year": {
+        "2015": 0.486456366290549
+      },
+      "membership_stats": {
+        "n_signals": 5,
+        "mean_kept": 22.0,
+        "mean_entrants": 8.0,
+        "mean_left": 2.0,
+        "mean_cash_seats": 0.0
+      },
+      "config": {
+        "K": 30,
+        "path": "FIX75",
+        "filter": "off"
+      },
+      "b1m_variant": "rate_only (deviation 2 primary)"
+    }
+  },
+  "gates": {
+    "C01": {
+      "dev": {
+        "1_net_cagr_gt_0": true,
+        "2_excess_vs_B1m_ge_2pp": false,
+        "3_advantage_years_ge_5_of_6": false,
+        "4_mdd_le_20pct_and_le_B1m": true,
+        "5_one_side_turnover_le_6": true,
+        "6_single_name_weight_le_40pct": true,
+        "7_vs_B3prime_plus_1pp": false,
+        "8_execution_rate_ge_95pct": true,
+        "advantage_years": 0,
+        "dev_excess_vs_b1m": -0.3803351043898011,
+        "failed_gates": [
+          "2_excess_vs_B1m_ge_2pp",
+          "3_advantage_years_ge_5_of_6",
+          "7_vs_B3prime_plus_1pp"
+        ],
+        "dev_pass": false,
+        "mechanism_only_gate2_fail": false,
+        "smoke_non_binding": true
+      }
+    },
+    "C02": {
+      "dev": {
+        "1_net_cagr_gt_0": true,
+        "2_excess_vs_B1m_ge_2pp": false,
+        "3_advantage_years_ge_5_of_6": false,
+        "4_mdd_le_20pct_and_le_B1m": true,
+        "5_one_side_turnover_le_6": true,
+        "6_single_name_weight_le_40pct": true,
+        "7_vs_B3prime_plus_1pp": false,
+        "8_execution_rate_ge_95pct": true,
+        "advantage_years": 0,
+        "dev_excess_vs_b1m": -0.4048982051247365,
+        "failed_gates": [
+          "2_excess_vs_B1m_ge_2pp",
+          "3_advantage_years_ge_5_of_6",
+          "7_vs_B3prime_plus_1pp"
+        ],
+        "dev_pass": false,
+        "mechanism_only_gate2_fail": false,
+        "smoke_non_binding": true
+      }
+    },
+    "C03": {
+      "dev": {
+        "1_net_cagr_gt_0": true,
+        "2_excess_vs_B1m_ge_2pp": false,
+        "3_advantage_years_ge_5_of_6": false,
+        "4_mdd_le_20pct_and_le_B1m": true,
+        "5_one_side_turnover_le_6": true,
+        "6_single_name_weight_le_40pct": true,
+        "7_vs_B3prime_plus_1pp": false,
+        "8_execution_rate_ge_95pct": true,
+        "advantage_years": 0,
+        "dev_excess_vs_b1m": -0.8444977465661634,
+        "failed_gates": [
+          "2_excess_vs_B1m_ge_2pp",
+          "3_advantage_years_ge_5_of_6",
+          "7_vs_B3prime_plus_1pp"
+        ],
+        "dev_pass": false,
+        "mechanism_only_gate2_fail": false,
+        "smoke_non_binding": true
+      }
+    },
+    "C04": {
+      "dev": {
+        "1_net_cagr_gt_0": true,
+        "2_excess_vs_B1m_ge_2pp": false,
+        "3_advantage_years_ge_5_of_6": false,
+        "4_mdd_le_20pct_and_le_B1m": true,
+        "5_one_side_turnover_le_6": true,
+        "6_single_name_weight_le_40pct": true,
+        "7_vs_B3prime_plus_1pp": false,
+        "8_execution_rate_ge_95pct": true,
+        "advantage_years": 0,
+        "dev_excess_vs_b1m": -0.8789934050373722,
+        "failed_gates": [
+          "2_excess_vs_B1m_ge_2pp",
+          "3_advantage_years_ge_5_of_6",
+          "7_vs_B3prime_plus_1pp"
+        ],
+        "dev_pass": false,
+        "mechanism_only_gate2_fail": false,
+        "smoke_non_binding": true
+      }
+    },
+    "C05": {
+      "dev": {
+        "1_net_cagr_gt_0": true,
+        "2_excess_vs_B1m_ge_2pp": false,
+        "3_advantage_years_ge_5_of_6": false,
+        "4_mdd_le_20pct_and_le_B1m": true,
+        "5_one_side_turnover_le_6": true,
+        "6_single_name_weight_le_40pct": true,
+        "7_vs_B3prime_plus_1pp": false,
+        "8_execution_rate_ge_95pct": true,
+        "advantage_years": 0,
+        "dev_excess_vs_b1m": -0.4099224769287666,
+        "failed_gates": [
+          "2_excess_vs_B1m_ge_2pp",
+          "3_advantage_years_ge_5_of_6",
+          "7_vs_B3prime_plus_1pp"
+        ],
+        "dev_pass": false,
+        "mechanism_only_gate2_fail": false,
+        "smoke_non_binding": true
+      }
+    },
+    "C06": {
+      "dev": {
+        "1_net_cagr_gt_0": true,
+        "2_excess_vs_B1m_ge_2pp": false,
+        "3_advantage_years_ge_5_of_6": false,
+        "4_mdd_le_20pct_and_le_B1m": true,
+        "5_one_side_turnover_le_6": true,
+        "6_single_name_weight_le_40pct": true,
+        "7_vs_B3prime_plus_1pp": false,
+        "8_execution_rate_ge_95pct": true,
+        "advantage_years": 0,
+        "dev_excess_vs_b1m": -0.42279607798226615,
+        "failed_gates": [
+          "2_excess_vs_B1m_ge_2pp",
+          "3_advantage_years_ge_5_of_6",
+          "7_vs_B3prime_plus_1pp"
+        ],
+        "dev_pass": false,
+        "mechanism_only_gate2_fail": false,
+        "smoke_non_binding": true
+      }
+    },
+    "C07": {
+      "dev": {
+        "1_net_cagr_gt_0": true,
+        "2_excess_vs_B1m_ge_2pp": false,
+        "3_advantage_years_ge_5_of_6": false,
+        "4_mdd_le_20pct_and_le_B1m": true,
+        "5_one_side_turnover_le_6": true,
+        "6_single_name_weight_le_40pct": true,
+        "7_vs_B3prime_plus_1pp": false,
+        "8_execution_rate_ge_95pct": true,
+        "advantage_years": 0,
+        "dev_excess_vs_b1m": -0.9159295210552216,
+        "failed_gates": [
+          "2_excess_vs_B1m_ge_2pp",
+          "3_advantage_years_ge_5_of_6",
+          "7_vs_B3prime_plus_1pp"
+        ],
+        "dev_pass": false,
+        "mechanism_only_gate2_fail": false,
+        "smoke_non_binding": true
+      }
+    },
+    "C08": {
+      "dev": {
+        "1_net_cagr_gt_0": true,
+        "2_excess_vs_B1m_ge_2pp": false,
+        "3_advantage_years_ge_5_of_6": false,
+        "4_mdd_le_20pct_and_le_B1m": true,
+        "5_one_side_turnover_le_6": true,
+        "6_single_name_weight_le_40pct": true,
+        "7_vs_B3prime_plus_1pp": false,
+        "8_execution_rate_ge_95pct": true,
+        "advantage_years": 0,
+        "dev_excess_vs_b1m": -0.9333176914088259,
+        "failed_gates": [
+          "2_excess_vs_B1m_ge_2pp",
+          "3_advantage_years_ge_5_of_6",
+          "7_vs_B3prime_plus_1pp"
+        ],
+        "dev_pass": false,
+        "mechanism_only_gate2_fail": false,
+        "smoke_non_binding": true
+      }
+    }
+  },
+  "benchmarks": {
+    "B1m[T200-40][rate_only]": {
+      "net_cagr": 0.577053888074702,
+      "net_total_return": 0.2454740251309222,
+      "max_drawdown": -0.12102458810586003,
+      "mdd_window": {
+        "max_drawdown": -0.12102458810586003,
+        "peak_date": "2015-06-12",
+        "trough_date": "2015-06-29"
+      },
+      "max_single_name_weight": 0.0006445679427045942,
+      "turnover_by_year": {
+        "2015": {
+          "buy_notional": 131390.6124788755,
+          "sell_notional": 78117.50079694059,
+          "mean_equity": 228921.56997655277,
+          "one_side_turnover": 0.5739547063753457,
+          "membership_buy_notional": 0.0,
+          "membership_sell_notional": 78117.50079694059,
+          "membership_one_side_turnover": 0.0
+        }
+      },
+      "max_one_side_turnover": 0.5739547063753457,
+      "max_membership_one_side_turnover": 0.0,
+      "execution_rate": 0.9660696406719324,
+      "execution_rate_window": {
+        "legs_executed": 8684,
+        "legs_planned": 8989,
+        "execution_rate": 0.9660696406719324
+      },
+      "net_return_by_year": {
+        "2015": 0.2454740251309222
+      }
+    },
+    "B1m[T200-40][literal_min5]": {
+      "net_cagr": 0.07336249597049882,
+      "net_total_return": 0.0347025556977445,
+      "max_drawdown": -0.12285615591834642,
+      "mdd_window": {
+        "max_drawdown": -0.12285615591834642,
+        "peak_date": "2015-06-12",
+        "trough_date": "2015-06-29"
+      },
+      "max_single_name_weight": 0.0006624957862507272,
+      "turnover_by_year": {
+        "2015": {
+          "buy_notional": 128966.96942324235,
+          "sell_notional": 66657.65192487562,
+          "mean_equity": 206853.42188446288,
+          "one_side_turnover": 0.6234703213915229,
+          "membership_buy_notional": 0.0,
+          "membership_sell_notional": 66657.65192487562,
+          "membership_one_side_turnover": 0.0
+        }
+      },
+      "max_one_side_turnover": 0.6234703213915229,
+      "max_membership_one_side_turnover": 0.0,
+      "execution_rate": 0.9660696406719324,
+      "execution_rate_window": {
+        "legs_executed": 8684,
+        "legs_planned": 8989,
+        "execution_rate": 0.9660696406719324
+      },
+      "net_return_by_year": {
+        "2015": 0.0347025556977445
+      }
+    },
+    "B1m[FIX75][rate_only]": {
+      "net_cagr": 1.2764842502378202,
+      "net_total_return": 0.486456366290549,
+      "max_drawdown": -0.21349322169701113,
+      "mdd_window": {
+        "max_drawdown": -0.21349322169701113,
+        "peak_date": "2015-06-12",
+        "trough_date": "2015-06-29"
+      },
+      "max_single_name_weight": 0.0011354412647310865,
+      "turnover_by_year": {
+        "2015": {
+          "buy_notional": 268825.7648599052,
+          "sell_notional": 130937.02928936941,
+          "mean_equity": 258151.1115961734,
+          "one_side_turnover": 1.0413504059607932,
+          "membership_buy_notional": 0.0,
+          "membership_sell_notional": 130937.02928936941,
+          "membership_one_side_turnover": 0.0
+        }
+      },
+      "max_one_side_turnover": 1.0413504059607932,
+      "max_membership_one_side_turnover": 0.0,
+      "execution_rate": 0.9660696406719324,
+      "execution_rate_window": {
+        "legs_executed": 8684,
+        "legs_planned": 8989,
+        "execution_rate": 0.9660696406719324
+      },
+      "net_return_by_year": {
+        "2015": 0.486456366290549
+      }
+    },
+    "B1m[FIX75][literal_min5]": {
+      "net_cagr": 0.5908594506734,
+      "net_total_return": 0.2507158558239819,
+      "max_drawdown": -0.21606998056580262,
+      "mdd_window": {
+        "max_drawdown": -0.21606998056580262,
+        "peak_date": "2015-06-12",
+        "trough_date": "2015-06-29"
+      },
+      "max_single_name_weight": 0.0011919406730939964,
+      "turnover_by_year": {
+        "2015": {
+          "buy_notional": 256955.3421139621,
+          "sell_notional": 123548.31177012858,
+          "mean_equity": 233571.32375838055,
+          "one_side_turnover": 1.1001151082218095,
+          "membership_buy_notional": 0.0,
+          "membership_sell_notional": 123548.31177012858,
+          "membership_one_side_turnover": 0.0
+        }
+      },
+      "max_one_side_turnover": 1.1001151082218095,
+      "max_membership_one_side_turnover": 0.0,
+      "execution_rate": 0.9660696406719324,
+      "execution_rate_window": {
+        "legs_executed": 8684,
+        "legs_planned": 8989,
+        "execution_rate": 0.9660696406719324
+      },
+      "net_return_by_year": {
+        "2015": 0.2507158558239819
+      }
+    }
+  },
+  "h47_buffer_turnover_effect": {
+    "K20_Q5on": {
+      "buffer_config": "C01",
+      "buffer_max_membership_turnover": 0.3494720664962175,
+      "full_rebalance_max_membership_turnover": 1.4277912262876336,
+      "reduction": -1.0783191597914161,
+      "reduction_share": -0.7552358775835375
+    },
+    "K20_Q5off": {
+      "buffer_config": "C02",
+      "buffer_max_membership_turnover": 0.40164591288885276,
+      "full_rebalance_max_membership_turnover": 1.374124739903054,
+      "reduction": -0.9724788270142013,
+      "reduction_share": -0.707707822131789
+    },
+    "K30_Q5on": {
+      "buffer_config": "C05",
+      "buffer_max_membership_turnover": 0.35748882583743297,
+      "full_rebalance_max_membership_turnover": 1.191691821996921,
+      "reduction": -0.8342029961594881,
+      "reduction_share": -0.7000157093984349
+    },
+    "K30_Q5off": {
+      "buffer_config": "C06",
+      "buffer_max_membership_turnover": 0.36687049079504314,
+      "full_rebalance_max_membership_turnover": 1.1338115100223616,
+      "reduction": -0.7669410192273185,
+      "reduction_share": -0.6764272654210333
+    }
+  },
+  "dev_pass_configs": [],
+  "advanced_to_validation": null,
+  "val_pass": false,
+  "trial_count_cumulative": 183,
+  "mechanism_only_gate2_fail": {
+    "C01": false,
+    "C02": false,
+    "C03": false,
+    "C04": false,
+    "C05": false,
+    "C06": false,
+    "C07": false,
+    "C08": false
+  }
+}

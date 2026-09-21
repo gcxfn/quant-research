@@ -1,0 +1,508 @@
+[    0.0s] == 0. identity pins (engine v1.1 re-anchored, prereg rev 5) ==
+[    0.0s]   engine: d7108c0eccdd77ff expect d7108c0eccdd77ff3fcbff01e7bd84bfdd2e7cad716b646e357c5644da970a0d match=True
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.0s]   p3r2_config: b49025b44c719685 expect b49025b44c719685 match=True
+[    0.4s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.4s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.4s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.4s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    3.0s]   stk_limit aggregate: 3c53abf3b0c39b42 (2432 files) match=True
+[    3.0s]   python 3.11.15 | rss 0.27 GB
+[    3.0s] == 1. calendar & signal days ==
+[    3.0s]   12 signal days (2015-01-30..2015-12-31) [SMOKE: 2015 only]
+[    3.0s] == 2. exposures ==
+[    3.1s]   t200 behavioral anchor check: {"anchor_years": ["2016", "2017", "2018", "2019", "2020"], "reproduced_stats": {"2016": {"n_sessions": 244, "n_switches"
+[    3.1s]   exposures: T200-40[0]=0.40 [T200-40][-1]=0.40; FIX75[0]=0.75 [FIX75][-1]=0.75
+[    3.1s] == 3. pools (r16 build_history + signal_pools) ==
+[    5.8s]   pools at 2015-01-30: n=1438; union of ranked symbols: 2265
+[    5.8s] == 4. leg_log + 8/8 membership consistency ==
+[    5.8s]   C01: membership mismatches=0, events mismatches=0 / 12
+[    5.8s]   C02: membership mismatches=0, events mismatches=0 / 12
+[    5.8s]   C03: membership mismatches=0, events mismatches=0 / 12
+[    5.8s]   C04: membership mismatches=0, events mismatches=0 / 12
+[    5.8s]   C05: membership mismatches=0, events mismatches=0 / 12
+[    5.8s]   C06: membership mismatches=0, events mismatches=0 / 12
+[    5.9s]   C07: membership mismatches=0, events mismatches=0 / 12
+[    5.9s]   C08: membership mismatches=0, events mismatches=0 / 12
+[    5.9s]   8/8 configs PASS (leg_log <-> independent buffer_membership + events)
+[    5.9s] == 5. market frames ==
+[    6.6s]   daily panel: 3289219 rows, 2265 symbols, max 2020-12-31
+[    7.1s]   halfday: 6172507 rows kept of 18486939 total (panel x dev), 2263 symbols
+[   13.7s]   limits: 3277327 rows (dev x panel)
+[   16.0s]   splits 1949 rows, dividends 15797 rows (panel)
+[   16.0s]   rss after frames: 2.87 GB
+[   17.5s]   host diagnostics: 2265 official series; market-level half-market days (pm<50% am, >500 am rows): ['2016-01-07']
+[   17.5s] == 7. static intent frames (engine-side lifecycle, prereg rev 2) ==
+[   17.5s]   C01: intents 151 (buy_open 69, sell_full 40, rescale->reduce 42; R16 skips {'r16_at_target': 67, 'r16_feemin_skipped': 46}); m5-b uniqueness PASS
+[   17.5s]   C02: intents 160 (buy_open 78, sell_full 41, rescale->reduce 41; R16 skips {'r16_at_target': 70, 'r16_feemin_skipped': 51}); m5-b uniqueness PASS
+[   17.5s]   C03: intents 164 (buy_open 59, sell_full 42, rescale->reduce 63; R16 skips {'r16_at_target': 75, 'r16_feemin_skipped': 27}); m5-b uniqueness PASS
+[   17.5s]   C04: intents 167 (buy_open 63, sell_full 43, rescale->reduce 61; R16 skips {'r16_at_target': 85, 'r16_feemin_skipped': 31}); m5-b uniqueness PASS
+[   17.5s]   C05: intents 237 (buy_open 130, sell_full 53, rescale->reduce 54; R16 skips {'r16_at_target': 94, 'r16_feemin_skipped': 67}); m5-b uniqueness PASS
+[   17.5s]   C06: intents 228 (buy_open 127, sell_full 48, rescale->reduce 53; R16 skips {'r16_at_target': 109, 'r16_feemin_skipped': 71}); m5-b uniqueness PASS
+[   17.5s]   C07: intents 223 (buy_open 93, sell_full 60, rescale->reduce 70; R16 skips {'r16_at_target': 111, 'r16_feemin_skipped': 71}); m5-b uniqueness PASS
+[   17.5s]   C08: intents 229 (buy_open 94, sell_full 58, rescale->reduce 77; R16 skips {'r16_at_target': 111, 'r16_feemin_skipped': 78}); m5-b uniqueness PASS
+[   17.5s]   total intents: 1559
+[   17.5s] == 8. per-config intent-mode engine runs ==
+[   17.5s]   C01: panel 54 symbols, daily 13022 / half 23929 / limits 13021 rows, intents 151, rss 4.49 GB
+[   17.6s]   C01: engine done in 0.1s; intents 151 activated 151 orders 559 filled 97 override 22 expired 11 cap 0 | rss 4.50 GB
+[   17.6s] == 9. intent_layer reconciliation ==
+[   17.6s]   C01: reconciliation PASS (activated 151/151, orders 559, done 130, active-at-end 21, at_target_skips 1155, no_anchor_skips 27)
+[   17.6s] SMOKE complete (wall 18s, peak rss 4.50 GB) -> tmp/smoke_reconciliation.json
+[    0.0s] == 0. identity pins (engine v1.1 re-anchored, prereg rev 5) ==
+[    0.0s]   engine: d7108c0eccdd77ff expect d7108c0eccdd77ff3fcbff01e7bd84bfdd2e7cad716b646e357c5644da970a0d match=True
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.0s]   p3r2_config: b49025b44c719685 expect b49025b44c719685 match=True
+[    0.4s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.4s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.4s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.4s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    2.2s]   stk_limit aggregate: 3c53abf3b0c39b42 (2432 files) match=True
+[    2.2s]   python 3.11.15 | rss 0.01 GB
+[    2.2s] == 1. calendar & signal days ==
+[    2.3s]   71 signal days (2015-01-30..2020-11-30) (2020-12-31 dropped as signal, kept as expiry anchor)
+[    2.3s] == 2. exposures ==
+[    2.3s]   t200 behavioral anchor check: {"anchor_years": ["2016", "2017", "2018", "2019", "2020"], "reproduced_stats": {"2016": {"n_sessions": 244, "n_switches"
+[    2.3s]   exposures: T200-40[0]=0.40 [T200-40][-1]=0.90; FIX75[0]=0.75 [FIX75][-1]=0.75
+[    2.3s] == 3. pools (r16 build_history + signal_pools) ==
+[    4.8s]   pools at 2015-01-30: n=1438; union of ranked symbols: 2937
+[    4.8s] == 4. leg_log + 8/8 membership consistency ==
+[    4.9s]   C01: membership mismatches=0, events mismatches=0 / 71
+[    4.9s]   C02: membership mismatches=0, events mismatches=0 / 71
+[    4.9s]   C03: membership mismatches=0, events mismatches=0 / 71
+[    4.9s]   C04: membership mismatches=0, events mismatches=0 / 71
+[    4.9s]   C05: membership mismatches=0, events mismatches=0 / 71
+[    4.9s]   C06: membership mismatches=0, events mismatches=0 / 71
+[    4.9s]   C07: membership mismatches=0, events mismatches=0 / 71
+[    4.9s]   C08: membership mismatches=0, events mismatches=0 / 71
+[    4.9s]   8/8 configs PASS (leg_log <-> independent buffer_membership + events)
+[    4.9s] == 5. market frames ==
+[    5.5s]   daily panel: 3841824 rows, 2937 symbols, max 2020-12-31
+[    6.0s]   halfday: 7254698 rows kept of 18486939 total (panel x dev), 2935 symbols
+[   12.9s]   limits: 3829171 rows (dev x panel)
+[   15.3s]   splits 2894 rows, dividends 20138 rows (panel)
+[   15.3s]   rss after frames: 2.91 GB
+[   17.2s]   host diagnostics: 2937 official series; market-level half-market days (pm<50% am, >500 am rows): ['2016-01-07']
+[   17.2s] == 7. static intent frames (engine-side lifecycle, prereg rev 2) ==
+[   17.2s]   C01: intents 909 (buy_open 411, sell_full 214, rescale->reduce 284; R16 skips {'r16_at_target': 357, 'r16_feemin_skipped': 216}); m5-b uniqueness PASS
+[   17.2s]   C02: intents 1096 (buy_open 540, sell_full 265, rescale->reduce 291; R16 skips {'r16_at_target': 344, 'r16_feemin_skipped': 245}); m5-b uniqueness PASS
+[   17.2s]   C03: intents 860 (buy_open 367, sell_full 220, rescale->reduce 273; R16 skips {'r16_at_target': 391, 'r16_feemin_skipped': 237}); m5-b uniqueness PASS
+[   17.3s]   C04: intents 1033 (buy_open 494, sell_full 271, rescale->reduce 268; R16 skips {'r16_at_target': 397, 'r16_feemin_skipped': 261}); m5-b uniqueness PASS
+[   17.3s]   C05: intents 1395 (buy_open 774, sell_full 268, rescale->reduce 353; R16 skips {'r16_at_target': 501, 'r16_feemin_skipped': 320}); m5-b uniqueness PASS
+[   17.3s]   C06: intents 1662 (buy_open 983, sell_full 350, rescale->reduce 329; R16 skips {'r16_at_target': 490, 'r16_feemin_skipped': 328}); m5-b uniqueness PASS
+[   17.3s]   C07: intents 1277 (buy_open 697, sell_full 288, rescale->reduce 292; R16 skips {'r16_at_target': 580, 'r16_feemin_skipped': 379}); m5-b uniqueness PASS
+[   17.3s]   C08: intents 1533 (buy_open 862, sell_full 364, rescale->reduce 307; R16 skips {'r16_at_target': 566, 'r16_feemin_skipped': 395}); m5-b uniqueness PASS
+[   17.3s]   total intents: 9765
+[   17.3s] == 8. per-config intent-mode engine runs ==
+[   17.3s]   C01: panel 134 symbols, daily 192490 / half 370778 / limits 192093 rows, intents 909, rss 4.87 GB
+[   19.4s]   C01: engine done in 2.1s; intents 909 activated 909 orders 7819 filled 530 override 268 expired 104 cap 0 | rss 4.45 GB
+[   19.5s]   C02: panel 196 symbols, daily 280782 / half 534980 / limits 279801 rows, intents 1096, rss 4.48 GB
+[   22.3s]   C02: engine done in 2.9s; intents 1096 activated 1096 orders 11521 filled 625 override 364 expired 97 cap 0 | rss 4.52 GB
+[   22.4s]   C03: panel 134 symbols, daily 192490 / half 370778 / limits 192093 rows, intents 860, rss 4.54 GB
+[   24.4s]   C03: engine done in 2.1s; intents 860 activated 860 orders 6658 filled 484 override 252 expired 114 cap 0 | rss 4.50 GB
+[   24.5s]   C04: panel 196 symbols, daily 280782 / half 534980 / limits 279801 rows, intents 1033, rss 4.53 GB
+[   27.4s]   C04: engine done in 2.9s; intents 1033 activated 1033 orders 9627 filled 596 override 327 expired 98 cap 0 | rss 4.56 GB
+[   27.4s]   C05: panel 188 symbols, daily 270206 / half 518093 / limits 269531 rows, intents 1395, rss 4.59 GB
+[   30.9s]   C05: engine done in 3.5s; intents 1395 activated 1395 orders 18827 filled 737 override 518 expired 127 cap 0 | rss 4.70 GB
+[   31.0s]   C06: panel 261 symbols, daily 375359 / half 713915 / limits 373861 rows, intents 1662, rss 4.73 GB
+[   35.0s]   C06: engine done in 4.0s; intents 1662 activated 1662 orders 25721 filled 809 override 708 expired 129 cap 0 | rss 4.73 GB
+[   35.0s]   C07: panel 188 symbols, daily 270206 / half 518093 / limits 269531 rows, intents 1277, rss 4.76 GB
+[    0.0s] == 0. identity pins (engine v1.1 re-anchored, prereg rev 5) ==
+[    0.0s]   engine: d7108c0eccdd77ff expect d7108c0eccdd77ff3fcbff01e7bd84bfdd2e7cad716b646e357c5644da970a0d match=True
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.0s]   p3r2_config: b49025b44c719685 expect b49025b44c719685 match=True
+[    0.4s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.4s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.4s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.4s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    2.3s]   stk_limit aggregate: 3c53abf3b0c39b42 (2432 files) match=True
+[    2.3s]   python 3.11.15 | rss 0.27 GB
+[    2.3s] == 1. calendar & signal days ==
+[    2.4s]   12 signal days (2015-01-30..2015-12-31) [SMOKE: 2015 only]
+[    2.4s] == 2. exposures ==
+[    2.4s]   t200 behavioral anchor check: {"anchor_years": ["2016", "2017", "2018", "2019", "2020"], "reproduced_stats": {"2016": {"n_sessions": 244, "n_switches"
+[    2.4s]   exposures: T200-40[0]=0.40 [T200-40][-1]=0.40; FIX75[0]=0.75 [FIX75][-1]=0.75
+[    2.4s] == 3. pools (r16 build_history + signal_pools) ==
+[    5.1s]   pools at 2015-01-30: n=1438; union of ranked symbols: 2265
+[    5.1s] == 4. leg_log + 8/8 membership consistency ==
+[    5.1s]   C01: membership mismatches=0, events mismatches=0 / 12
+[    5.1s]   C02: membership mismatches=0, events mismatches=0 / 12
+[    5.1s]   C03: membership mismatches=0, events mismatches=0 / 12
+[    5.1s]   C04: membership mismatches=0, events mismatches=0 / 12
+[    5.1s]   C05: membership mismatches=0, events mismatches=0 / 12
+[    5.1s]   C06: membership mismatches=0, events mismatches=0 / 12
+[    5.1s]   C07: membership mismatches=0, events mismatches=0 / 12
+[    5.1s]   C08: membership mismatches=0, events mismatches=0 / 12
+[    5.1s]   8/8 configs PASS (leg_log <-> independent buffer_membership + events)
+[    5.1s] == 5. market frames ==
+[    5.7s]   daily panel: 3289219 rows, 2265 symbols, max 2020-12-31
+[    6.2s]   halfday: 6172507 rows kept of 18486939 total (panel x dev), 2263 symbols
+[   13.2s]   limits: 3277327 rows (dev x panel)
+[   15.6s]   splits 1949 rows, dividends 15797 rows (panel)
+[   15.6s]   rss after frames: 2.84 GB
+[   17.1s]   host diagnostics: 2265 official series; market-level half-market days (pm<50% am, >500 am rows): ['2016-01-07']
+[   17.1s] == 7. static intent frames (engine-side lifecycle, prereg rev 2) ==
+[   17.1s]   C01: intents 151 (buy_open 69, sell_full 40, rescale->reduce 42; R16 skips {'r16_at_target': 67, 'r16_feemin_skipped': 46}); m5-b uniqueness PASS
+[   17.1s]   C02: intents 160 (buy_open 78, sell_full 41, rescale->reduce 41; R16 skips {'r16_at_target': 70, 'r16_feemin_skipped': 51}); m5-b uniqueness PASS
+[   17.1s]   C03: intents 164 (buy_open 59, sell_full 42, rescale->reduce 63; R16 skips {'r16_at_target': 75, 'r16_feemin_skipped': 27}); m5-b uniqueness PASS
+[   17.1s]   C04: intents 167 (buy_open 63, sell_full 43, rescale->reduce 61; R16 skips {'r16_at_target': 85, 'r16_feemin_skipped': 31}); m5-b uniqueness PASS
+[   17.2s]   C05: intents 237 (buy_open 130, sell_full 53, rescale->reduce 54; R16 skips {'r16_at_target': 94, 'r16_feemin_skipped': 67}); m5-b uniqueness PASS
+[   17.2s]   C06: intents 228 (buy_open 127, sell_full 48, rescale->reduce 53; R16 skips {'r16_at_target': 109, 'r16_feemin_skipped': 71}); m5-b uniqueness PASS
+[   17.2s]   C07: intents 223 (buy_open 93, sell_full 60, rescale->reduce 70; R16 skips {'r16_at_target': 111, 'r16_feemin_skipped': 71}); m5-b uniqueness PASS
+[   17.2s]   C08: intents 229 (buy_open 94, sell_full 58, rescale->reduce 77; R16 skips {'r16_at_target': 111, 'r16_feemin_skipped': 78}); m5-b uniqueness PASS
+[   17.2s]   total intents: 1559
+[   17.2s] == 8. per-config intent-mode engine runs ==
+[   17.2s]   C01: panel 54 symbols, daily 13022 / half 23929 / limits 13021 rows, intents 151, rss 4.53 GB
+[   17.3s]   C01: engine done in 0.1s; intents 151 activated 151 orders 559 filled 97 override 22 expired 11 cap 0 | rss 4.54 GB
+[   17.3s] == 9. intent_layer reconciliation ==
+[   17.3s]   C01: reconciliation PASS (activated 151/151, orders 559, done 130, active-at-end 21, at_target_skips 1155, no_anchor_skips 27)
+[   17.3s] SMOKE complete (wall 17s, peak rss 4.54 GB) -> tmp/smoke_reconciliation.json
+[    0.0s] == 0. identity pins (engine v1.1 re-anchored, prereg rev 5) ==
+[    0.0s]   engine: d7108c0eccdd77ff expect d7108c0eccdd77ff3fcbff01e7bd84bfdd2e7cad716b646e357c5644da970a0d match=True
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.0s]   p3r2_config: b49025b44c719685 expect b49025b44c719685 match=True
+[    0.4s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.4s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.4s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.4s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    2.0s]   stk_limit aggregate: 3c53abf3b0c39b42 (2432 files) match=True
+[    2.0s]   python 3.11.15 | rss 0.27 GB
+[    2.0s] == 1. calendar & signal days ==
+[    2.1s]   71 signal days (2015-01-30..2020-11-30) (2020-12-31 dropped as signal, kept as expiry anchor)
+[    2.1s] == 2. exposures ==
+[    2.1s]   t200 behavioral anchor check: {"anchor_years": ["2016", "2017", "2018", "2019", "2020"], "reproduced_stats": {"2016": {"n_sessions": 244, "n_switches"
+[    2.1s]   exposures: T200-40[0]=0.40 [T200-40][-1]=0.90; FIX75[0]=0.75 [FIX75][-1]=0.75
+[    2.1s] == 3. pools (r16 build_history + signal_pools) ==
+[    4.2s]   pools at 2015-01-30: n=1438; union of ranked symbols: 2937
+[    4.2s] == 4. leg_log + 8/8 membership consistency ==
+[    4.2s]   C01: membership mismatches=0, events mismatches=0 / 71
+[    4.2s]   C02: membership mismatches=0, events mismatches=0 / 71
+[    4.2s]   C03: membership mismatches=0, events mismatches=0 / 71
+[    4.2s]   C04: membership mismatches=0, events mismatches=0 / 71
+[    4.2s]   C05: membership mismatches=0, events mismatches=0 / 71
+[    4.2s]   C06: membership mismatches=0, events mismatches=0 / 71
+[    4.2s]   C07: membership mismatches=0, events mismatches=0 / 71
+[    4.2s]   C08: membership mismatches=0, events mismatches=0 / 71
+[    4.2s]   8/8 configs PASS (leg_log <-> independent buffer_membership + events)
+[    4.2s] == 5. market frames ==
+[    4.8s]   daily panel: 3841824 rows, 2937 symbols, max 2020-12-31
+[    5.2s]   halfday: 7254698 rows kept of 18486939 total (panel x dev), 2935 symbols
+[   11.5s]   limits: 3829171 rows (dev x panel)
+[   13.6s]   splits 2894 rows, dividends 20138 rows (panel)
+[   13.6s]   rss after frames: 3.14 GB
+[   15.2s]   host diagnostics: 2937 official series; market-level half-market days (pm<50% am, >500 am rows): ['2016-01-07']
+[   15.2s] == 7. static intent frames (engine-side lifecycle, prereg rev 2) ==
+[   15.2s]   C01: intents 909 (buy_open 411, sell_full 214, rescale->reduce 284; R16 skips {'r16_at_target': 357, 'r16_feemin_skipped': 216}); m5-b uniqueness PASS
+[   15.2s]   C02: intents 1096 (buy_open 540, sell_full 265, rescale->reduce 291; R16 skips {'r16_at_target': 344, 'r16_feemin_skipped': 245}); m5-b uniqueness PASS
+[   15.2s]   C03: intents 860 (buy_open 367, sell_full 220, rescale->reduce 273; R16 skips {'r16_at_target': 391, 'r16_feemin_skipped': 237}); m5-b uniqueness PASS
+[   15.2s]   C04: intents 1033 (buy_open 494, sell_full 271, rescale->reduce 268; R16 skips {'r16_at_target': 397, 'r16_feemin_skipped': 261}); m5-b uniqueness PASS
+[   15.2s]   C05: intents 1395 (buy_open 774, sell_full 268, rescale->reduce 353; R16 skips {'r16_at_target': 501, 'r16_feemin_skipped': 320}); m5-b uniqueness PASS
+[   15.2s]   C06: intents 1662 (buy_open 983, sell_full 350, rescale->reduce 329; R16 skips {'r16_at_target': 490, 'r16_feemin_skipped': 328}); m5-b uniqueness PASS
+[   15.2s]   C07: intents 1277 (buy_open 697, sell_full 288, rescale->reduce 292; R16 skips {'r16_at_target': 580, 'r16_feemin_skipped': 379}); m5-b uniqueness PASS
+[   15.2s]   C08: intents 1533 (buy_open 862, sell_full 364, rescale->reduce 307; R16 skips {'r16_at_target': 566, 'r16_feemin_skipped': 395}); m5-b uniqueness PASS
+[   15.2s]   total intents: 9765
+[   15.2s] == 8. per-config intent-mode engine runs ==
+[   15.2s]   C01: panel 134 symbols, daily 192490 / half 370778 / limits 192093 rows, intents 909, rss 5.10 GB
+[   17.2s]   C01: engine done in 2.0s; intents 909 activated 909 orders 7819 filled 530 override 268 expired 104 cap 0 | rss 4.61 GB
+[   17.2s]   C02: panel 196 symbols, daily 280782 / half 534980 / limits 279801 rows, intents 1096, rss 4.65 GB
+[   19.9s]   C02: engine done in 2.7s; intents 1096 activated 1096 orders 11521 filled 625 override 364 expired 97 cap 0 | rss 4.69 GB
+[   19.9s]   C03: panel 134 symbols, daily 192490 / half 370778 / limits 192093 rows, intents 860, rss 4.71 GB
+[   21.8s]   C03: engine done in 1.9s; intents 860 activated 860 orders 6658 filled 484 override 252 expired 114 cap 0 | rss 4.67 GB
+[   21.9s]   C04: panel 196 symbols, daily 280782 / half 534980 / limits 279801 rows, intents 1033, rss 4.71 GB
+[   24.5s]   C04: engine done in 2.6s; intents 1033 activated 1033 orders 9627 filled 596 override 327 expired 98 cap 0 | rss 4.71 GB
+[   24.5s]   C05: panel 188 symbols, daily 270206 / half 518093 / limits 269531 rows, intents 1395, rss 4.74 GB
+[   27.6s]   C05: engine done in 3.1s; intents 1395 activated 1395 orders 18827 filled 737 override 518 expired 127 cap 0 | rss 4.73 GB
+[   27.7s]   C06: panel 261 symbols, daily 375359 / half 713915 / limits 373861 rows, intents 1662, rss 4.77 GB
+[   31.3s]   C06: engine done in 3.6s; intents 1662 activated 1662 orders 25721 filled 809 override 708 expired 129 cap 0 | rss 4.79 GB
+[   31.3s]   C07: panel 188 symbols, daily 270206 / half 518093 / limits 269531 rows, intents 1277, rss 4.82 GB
+[   34.1s]   C07: engine done in 2.7s; intents 1277 activated 1277 orders 17206 filled 654 override 467 expired 139 cap 0 | rss 4.78 GB
+[   34.1s]   C08: panel 261 symbols, daily 375359 / half 713915 / limits 373861 rows, intents 1533, rss 4.80 GB
+[   37.8s]   C08: engine done in 3.7s; intents 1533 activated 1533 orders 21921 filled 767 override 608 expired 138 cap 0 | rss 4.79 GB
+[   37.8s] == 9. intent_layer reconciliation ==
+[   37.8s]   C01: reconciliation PASS (activated 909/909, orders 7819, done 902, active-at-end 7, at_target_skips 7949, no_anchor_skips 1200)
+[   37.8s]   C02: reconciliation PASS (activated 1096/1096, orders 11521, done 1086, active-at-end 10, at_target_skips 8179, no_anchor_skips 1231)
+[   37.8s]   C03: reconciliation PASS (activated 860/860, orders 6658, done 850, active-at-end 10, at_target_skips 8759, no_anchor_skips 1171)
+[   37.8s]   C04: reconciliation PASS (activated 1033/1033, orders 9627, done 1021, active-at-end 12, at_target_skips 8427, no_anchor_skips 1204)
+[   37.8s]   C05: reconciliation PASS (activated 1395/1395, orders 18827, done 1382, active-at-end 13, at_target_skips 8683, no_anchor_skips 1423)
+[   37.8s]   C06: reconciliation PASS (activated 1662/1662, orders 25721, done 1646, active-at-end 16, at_target_skips 8722, no_anchor_skips 2482)
+[   37.8s]   C07: reconciliation PASS (activated 1277/1277, orders 17206, done 1260, active-at-end 17, at_target_skips 8674, no_anchor_skips 1474)
+[   37.8s]   C08: reconciliation PASS (activated 1533/1533, orders 21921, done 1513, active-at-end 20, at_target_skips 9230, no_anchor_skips 2318)
+[   37.8s] == 10. per-intent attribution & gate 8 ==
+[    0.0s] == 0. identity pins (engine v1.1 re-anchored, prereg rev 5) ==
+[    0.0s]   engine: d7108c0eccdd77ff expect d7108c0eccdd77ff3fcbff01e7bd84bfdd2e7cad716b646e357c5644da970a0d match=True
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.0s]   p3r2_config: b49025b44c719685 expect b49025b44c719685 match=True
+[    0.4s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.4s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.4s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.4s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    2.0s]   stk_limit aggregate: 3c53abf3b0c39b42 (2432 files) match=True
+[    2.0s]   python 3.11.15 | rss 0.27 GB
+[    2.0s] == 1. calendar & signal days ==
+[    2.0s]   71 signal days (2015-01-30..2020-11-30) (2020-12-31 dropped as signal, kept as expiry anchor)
+[    2.0s] == 2. exposures ==
+[    2.0s]   t200 behavioral anchor check: {"anchor_years": ["2016", "2017", "2018", "2019", "2020"], "reproduced_stats": {"2016": {"n_sessions": 244, "n_switches"
+[    2.1s]   exposures: T200-40[0]=0.40 [T200-40][-1]=0.90; FIX75[0]=0.75 [FIX75][-1]=0.75
+[    2.1s] == 3. pools (r16 build_history + signal_pools) ==
+[    4.3s]   pools at 2015-01-30: n=1438; union of ranked symbols: 2937
+[    4.3s] == 4. leg_log + 8/8 membership consistency ==
+[    4.4s]   C01: membership mismatches=0, events mismatches=0 / 71
+[    4.4s]   C02: membership mismatches=0, events mismatches=0 / 71
+[    4.4s]   C03: membership mismatches=0, events mismatches=0 / 71
+[    4.4s]   C04: membership mismatches=0, events mismatches=0 / 71
+[    4.4s]   C05: membership mismatches=0, events mismatches=0 / 71
+[    4.4s]   C06: membership mismatches=0, events mismatches=0 / 71
+[    4.4s]   C07: membership mismatches=0, events mismatches=0 / 71
+[    4.4s]   C08: membership mismatches=0, events mismatches=0 / 71
+[    4.4s]   8/8 configs PASS (leg_log <-> independent buffer_membership + events)
+[    4.4s] == 5. market frames ==
+[    5.0s]   daily panel: 3841824 rows, 2937 symbols, max 2020-12-31
+[    5.5s]   halfday: 7254698 rows kept of 18486939 total (panel x dev), 2935 symbols
+[   12.1s]   limits: 3829171 rows (dev x panel)
+[   14.1s]   splits 2894 rows, dividends 20138 rows (panel)
+[   14.1s]   rss after frames: 3.15 GB
+[   15.8s]   host diagnostics: 2937 official series; market-level half-market days (pm<50% am, >500 am rows): ['2016-01-07']
+[   15.8s] == 7. static intent frames (engine-side lifecycle, prereg rev 2) ==
+[   15.8s]   C01: intents 909 (buy_open 411, sell_full 214, rescale->reduce 284; R16 skips {'r16_at_target': 357, 'r16_feemin_skipped': 216}); m5-b uniqueness PASS
+[   15.8s]   C02: intents 1096 (buy_open 540, sell_full 265, rescale->reduce 291; R16 skips {'r16_at_target': 344, 'r16_feemin_skipped': 245}); m5-b uniqueness PASS
+[   15.8s]   C03: intents 860 (buy_open 367, sell_full 220, rescale->reduce 273; R16 skips {'r16_at_target': 391, 'r16_feemin_skipped': 237}); m5-b uniqueness PASS
+[   15.8s]   C04: intents 1033 (buy_open 494, sell_full 271, rescale->reduce 268; R16 skips {'r16_at_target': 397, 'r16_feemin_skipped': 261}); m5-b uniqueness PASS
+[   15.8s]   C05: intents 1395 (buy_open 774, sell_full 268, rescale->reduce 353; R16 skips {'r16_at_target': 501, 'r16_feemin_skipped': 320}); m5-b uniqueness PASS
+[   15.8s]   C06: intents 1662 (buy_open 983, sell_full 350, rescale->reduce 329; R16 skips {'r16_at_target': 490, 'r16_feemin_skipped': 328}); m5-b uniqueness PASS
+[   15.8s]   C07: intents 1277 (buy_open 697, sell_full 288, rescale->reduce 292; R16 skips {'r16_at_target': 580, 'r16_feemin_skipped': 379}); m5-b uniqueness PASS
+[   15.8s]   C08: intents 1533 (buy_open 862, sell_full 364, rescale->reduce 307; R16 skips {'r16_at_target': 566, 'r16_feemin_skipped': 395}); m5-b uniqueness PASS
+[   15.8s]   total intents: 9765
+[   15.8s] == 8. per-config intent-mode engine runs ==
+[   15.8s]   C01: panel 134 symbols, daily 192490 / half 370778 / limits 192093 rows, intents 909, rss 5.18 GB
+[   17.8s]   C01: engine done in 2.0s; intents 909 activated 909 orders 7819 filled 530 override 268 expired 104 cap 0 | rss 4.65 GB
+[   17.8s]   C02: panel 196 symbols, daily 280782 / half 534980 / limits 279801 rows, intents 1096, rss 4.68 GB
+[   20.4s]   C02: engine done in 2.6s; intents 1096 activated 1096 orders 11521 filled 625 override 364 expired 97 cap 0 | rss 4.74 GB
+[   20.5s]   C03: panel 134 symbols, daily 192490 / half 370778 / limits 192093 rows, intents 860, rss 4.76 GB
+[   22.3s]   C03: engine done in 1.9s; intents 860 activated 860 orders 6658 filled 484 override 252 expired 114 cap 0 | rss 4.73 GB
+[   22.4s]   C04: panel 196 symbols, daily 280782 / half 534980 / limits 279801 rows, intents 1033, rss 4.76 GB
+[   25.0s]   C04: engine done in 2.6s; intents 1033 activated 1033 orders 9627 filled 596 override 327 expired 98 cap 0 | rss 4.77 GB
+[   25.0s]   C05: panel 188 symbols, daily 270206 / half 518093 / limits 269531 rows, intents 1395, rss 4.82 GB
+[   28.1s]   C05: engine done in 3.1s; intents 1395 activated 1395 orders 18827 filled 737 override 518 expired 127 cap 0 | rss 4.80 GB
+[   28.1s]   C06: panel 261 symbols, daily 375359 / half 713915 / limits 373861 rows, intents 1662, rss 4.83 GB
+[   31.8s]   C06: engine done in 3.6s; intents 1662 activated 1662 orders 25721 filled 809 override 708 expired 129 cap 0 | rss 4.82 GB
+[   31.8s]   C07: panel 188 symbols, daily 270206 / half 518093 / limits 269531 rows, intents 1277, rss 4.86 GB
+[   34.5s]   C07: engine done in 2.7s; intents 1277 activated 1277 orders 17206 filled 654 override 467 expired 139 cap 0 | rss 4.84 GB
+[   34.5s]   C08: panel 261 symbols, daily 375359 / half 713915 / limits 373861 rows, intents 1533, rss 4.86 GB
+[   38.1s]   C08: engine done in 3.6s; intents 1533 activated 1533 orders 21921 filled 767 override 608 expired 138 cap 0 | rss 4.83 GB
+[   38.1s] == 9. intent_layer reconciliation ==
+[   38.1s]   C01: reconciliation PASS (activated 909/909, orders 7819, done 902, active-at-end 7, at_target_skips 7949, no_anchor_skips 1200)
+[   38.1s]   C02: reconciliation PASS (activated 1096/1096, orders 11521, done 1086, active-at-end 10, at_target_skips 8179, no_anchor_skips 1231)
+[   38.1s]   C03: reconciliation PASS (activated 860/860, orders 6658, done 850, active-at-end 10, at_target_skips 8759, no_anchor_skips 1171)
+[   38.1s]   C04: reconciliation PASS (activated 1033/1033, orders 9627, done 1021, active-at-end 12, at_target_skips 8427, no_anchor_skips 1204)
+[   38.1s]   C05: reconciliation PASS (activated 1395/1395, orders 18827, done 1382, active-at-end 13, at_target_skips 8683, no_anchor_skips 1423)
+[   38.1s]   C06: reconciliation PASS (activated 1662/1662, orders 25721, done 1646, active-at-end 16, at_target_skips 8722, no_anchor_skips 2482)
+[   38.1s]   C07: reconciliation PASS (activated 1277/1277, orders 17206, done 1260, active-at-end 17, at_target_skips 8674, no_anchor_skips 1474)
+[   38.1s]   C08: reconciliation PASS (activated 1533/1533, orders 21921, done 1513, active-at-end 20, at_target_skips 9230, no_anchor_skips 2318)
+[   38.1s] == 10. per-intent attribution & gate 8 ==
+[   38.1s]   C01: gate8 mapped 58.4% (filled 530, rule-blocked 1, terminated 378, zero-emission 211); term {'expiry': 374, 'override_same_name': 0, 'cap_void': 0, 'suspension_abandon': 4}; pm-no-bar rehangs 3; no-limit sell voids 2 (gap days 2)
+[   38.5s]   C02: gate8 mapped 57.7% (filled 625, rule-blocked 7, terminated 464, zero-emission 217); term {'expiry': 461, 'override_same_name': 0, 'cap_void': 0, 'suspension_abandon': 3}; pm-no-bar rehangs 3; no-limit sell voids 2 (gap days 2)
+[   38.5s]   C03: gate8 mapped 56.6% (filled 484, rule-blocked 3, terminated 373, zero-emission 230); term {'expiry': 369, 'override_same_name': 0, 'cap_void': 0, 'suspension_abandon': 4}; pm-no-bar rehangs 1; no-limit sell voids 0 (gap days 0)
+[   38.6s]   C04: gate8 mapped 58.3% (filled 596, rule-blocked 6, terminated 431, zero-emission 221); term {'expiry': 426, 'override_same_name': 0, 'cap_void': 0, 'suspension_abandon': 5}; pm-no-bar rehangs 0; no-limit sell voids 0 (gap days 0)
+[   38.7s]   C05: gate8 mapped 53.3% (filled 737, rule-blocked 6, terminated 652, zero-emission 229); term {'expiry': 647, 'override_same_name': 0, 'cap_void': 0, 'suspension_abandon': 5}; pm-no-bar rehangs 7; no-limit sell voids 0 (gap days 0)
+[   38.8s]   C06: gate8 mapped 49.3% (filled 809, rule-blocked 10, terminated 843, zero-emission 252); term {'expiry': 839, 'override_same_name': 0, 'cap_void': 0, 'suspension_abandon': 4}; pm-no-bar rehangs 7; no-limit sell voids 3 (gap days 2)
+[   38.8s]   C07: gate8 mapped 51.6% (filled 654, rule-blocked 5, terminated 618, zero-emission 229); term {'expiry': 615, 'override_same_name': 0, 'cap_void': 0, 'suspension_abandon': 3}; pm-no-bar rehangs 4; no-limit sell voids 0 (gap days 0)
+[   38.9s]   C08: gate8 mapped 50.9% (filled 767, rule-blocked 13, terminated 753, zero-emission 257); term {'expiry': 749, 'override_same_name': 0, 'cap_void': 0, 'suspension_abandon': 4}; pm-no-bar rehangs 4; no-limit sell voids 0 (gap days 0)
+[   38.9s] == 11. metrics & gates ==
+[   39.0s]   C01: net +0.68% excess +0.08pp adv 2/6 mdd -21.65% turn 1.49 w 9.4% exec 58.4% -> eliminated ['2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '8_execution_rate_ge_95pct']
+[   39.1s]   C02: net -4.91% excess -5.51pp adv 2/6 mdd -38.54% turn 2.48 w 9.0% exec 57.7% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[   39.1s]   C03: net -0.87% excess -2.73pp adv 2/6 mdd -45.45% turn 1.80 w 8.6% exec 56.6% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[   39.2s]   C04: net -4.35% excess -6.21pp adv 2/6 mdd -55.15% turn 2.70 w 12.3% exec 58.3% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[   39.3s]   C05: net +3.88% excess +3.28pp adv 4/6 mdd -21.20% turn 1.59 w 11.1% exec 53.3% -> eliminated ['3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '8_execution_rate_ge_95pct']
+[   39.4s]   C06: net -4.96% excess -5.56pp adv 2/6 mdd -39.59% turn 2.33 w 9.0% exec 49.3% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[   39.5s]   C07: net -0.62% excess -2.47pp adv 3/6 mdd -42.92% turn 1.77 w 11.6% exec 51.6% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[   39.6s]   C08: net -5.68% excess -7.53pp adv 1/6 mdd -55.30% turn 2.37 w 6.7% exec 50.9% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[   39.6s] == gates: 0/8 dev_pass ==
+[   39.6s] == 12. disclosures ==
+[   41.4s] == 13. outputs ==
+[   41.5s] == manifest + report written; wall 41s, peak rss 5.18 GB ==
+[   41.5s] == VERDICT: 0/8 dev_pass; no config passed all dev gates (0/8); val not consumed
+[    0.0s] == 0. identity pins (engine v1.1 re-anchored, prereg rev 5) ==
+[    0.0s]   engine: d7108c0eccdd77ff expect d7108c0eccdd77ff3fcbff01e7bd84bfdd2e7cad716b646e357c5644da970a0d match=True
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.0s]   p3r2_config: b49025b44c719685 expect b49025b44c719685 match=True
+[    0.4s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.4s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.4s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.4s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    2.3s]   stk_limit aggregate: 3c53abf3b0c39b42 (2432 files) match=True
+[    2.3s]   python 3.11.15 | rss 0.27 GB
+[    2.3s] == 1. calendar & signal days ==
+[    2.4s]   71 signal days (2015-01-30..2020-11-30) (2020-12-31 dropped as signal, kept as expiry anchor)
+[    2.4s] == 2. exposures ==
+[    2.4s]   t200 behavioral anchor check: {"anchor_years": ["2016", "2017", "2018", "2019", "2020"], "reproduced_stats": {"2016": {"n_sessions": 244, "n_switches"
+[    2.5s]   exposures: T200-40[0]=0.40 [T200-40][-1]=0.90; FIX75[0]=0.75 [FIX75][-1]=0.75
+[    2.5s] == 3. pools (r16 build_history + signal_pools) ==
+[    5.1s]   pools at 2015-01-30: n=1438; union of ranked symbols: 2937
+[    5.1s] == 4. leg_log + 8/8 membership consistency ==
+[    5.1s]   C01: membership mismatches=0, events mismatches=0 / 71
+[    5.1s]   C02: membership mismatches=0, events mismatches=0 / 71
+[    5.1s]   C03: membership mismatches=0, events mismatches=0 / 71
+[    5.1s]   C04: membership mismatches=0, events mismatches=0 / 71
+[    5.1s]   C05: membership mismatches=0, events mismatches=0 / 71
+[    5.1s]   C06: membership mismatches=0, events mismatches=0 / 71
+[    5.2s]   C07: membership mismatches=0, events mismatches=0 / 71
+[    5.2s]   C08: membership mismatches=0, events mismatches=0 / 71
+[    5.2s]   8/8 configs PASS (leg_log <-> independent buffer_membership + events)
+[    5.2s] == 5. market frames ==
+[    5.7s]   daily panel: 3841824 rows, 2937 symbols, max 2020-12-31
+[    6.4s]   halfday: 7254698 rows kept of 18486939 total (panel x dev), 2935 symbols
+[   13.7s]   limits: 3829171 rows (dev x panel)
+[   16.0s]   splits 2894 rows, dividends 20138 rows (panel)
+[   16.0s]   rss after frames: 3.09 GB
+[   18.1s]   host diagnostics: 2937 official series; market-level half-market days (pm<50% am, >500 am rows): ['2016-01-07']
+[   18.1s] == 7. static intent frames (engine-side lifecycle, prereg rev 2) ==
+[   18.1s]   C01: intents 909 (buy_open 411, sell_full 214, rescale->reduce 284; R16 skips {'r16_at_target': 357, 'r16_feemin_skipped': 216}); m5-b uniqueness PASS
+[   18.1s]   C02: intents 1096 (buy_open 540, sell_full 265, rescale->reduce 291; R16 skips {'r16_at_target': 344, 'r16_feemin_skipped': 245}); m5-b uniqueness PASS
+[   18.1s]   C03: intents 860 (buy_open 367, sell_full 220, rescale->reduce 273; R16 skips {'r16_at_target': 391, 'r16_feemin_skipped': 237}); m5-b uniqueness PASS
+[   18.1s]   C04: intents 1033 (buy_open 494, sell_full 271, rescale->reduce 268; R16 skips {'r16_at_target': 397, 'r16_feemin_skipped': 261}); m5-b uniqueness PASS
+[   18.1s]   C05: intents 1395 (buy_open 774, sell_full 268, rescale->reduce 353; R16 skips {'r16_at_target': 501, 'r16_feemin_skipped': 320}); m5-b uniqueness PASS
+[   18.1s]   C06: intents 1662 (buy_open 983, sell_full 350, rescale->reduce 329; R16 skips {'r16_at_target': 490, 'r16_feemin_skipped': 328}); m5-b uniqueness PASS
+[   18.1s]   C07: intents 1277 (buy_open 697, sell_full 288, rescale->reduce 292; R16 skips {'r16_at_target': 580, 'r16_feemin_skipped': 379}); m5-b uniqueness PASS
+[   18.1s]   C08: intents 1533 (buy_open 862, sell_full 364, rescale->reduce 307; R16 skips {'r16_at_target': 566, 'r16_feemin_skipped': 395}); m5-b uniqueness PASS
+[   18.1s]   total intents: 9765
+[   18.1s] == 8. per-config intent-mode engine runs ==
+[   18.2s]   C01: panel 134 symbols, daily 192490 / half 370778 / limits 192093 rows, intents 909, rss 5.10 GB
+[   20.8s]   C01: engine done in 2.6s; intents 909 activated 909 orders 7819 filled 530 override 268 expired 104 cap 0 | rss 4.65 GB
+[   20.8s]   C02: panel 196 symbols, daily 280782 / half 534980 / limits 279801 rows, intents 1096, rss 4.67 GB
+[   24.0s]   C02: engine done in 3.2s; intents 1096 activated 1096 orders 11521 filled 625 override 364 expired 97 cap 0 | rss 4.70 GB
+[   24.1s]   C03: panel 134 symbols, daily 192490 / half 370778 / limits 192093 rows, intents 860, rss 4.71 GB
+[   26.1s]   C03: engine done in 2.0s; intents 860 activated 860 orders 6658 filled 484 override 252 expired 114 cap 0 | rss 4.70 GB
+[   26.1s]   C04: panel 196 symbols, daily 280782 / half 534980 / limits 279801 rows, intents 1033, rss 4.73 GB
+[   29.0s]   C04: engine done in 2.9s; intents 1033 activated 1033 orders 9627 filled 596 override 327 expired 98 cap 0 | rss 4.74 GB
+[   29.1s]   C05: panel 188 symbols, daily 270206 / half 518093 / limits 269531 rows, intents 1395, rss 4.77 GB
+[   32.5s]   C05: engine done in 3.5s; intents 1395 activated 1395 orders 18827 filled 737 override 518 expired 127 cap 0 | rss 4.75 GB
+[   32.6s]   C06: panel 261 symbols, daily 375359 / half 713915 / limits 373861 rows, intents 1662, rss 4.78 GB
+[   36.7s]   C06: engine done in 4.1s; intents 1662 activated 1662 orders 25721 filled 809 override 708 expired 129 cap 0 | rss 4.78 GB
+[   36.7s]   C07: panel 188 symbols, daily 270206 / half 518093 / limits 269531 rows, intents 1277, rss 4.81 GB
+[   39.8s]   C07: engine done in 3.1s; intents 1277 activated 1277 orders 17206 filled 654 override 467 expired 139 cap 0 | rss 4.80 GB
+[   39.8s]   C08: panel 261 symbols, daily 375359 / half 713915 / limits 373861 rows, intents 1533, rss 4.82 GB
+[   43.9s]   C08: engine done in 4.1s; intents 1533 activated 1533 orders 21921 filled 767 override 608 expired 138 cap 0 | rss 4.82 GB
+[   43.9s] == 9. intent_layer reconciliation ==
+[   43.9s]   C01: reconciliation PASS (activated 909/909, orders 7819, done 902, active-at-end 7, at_target_skips 7949, no_anchor_skips 1200)
+[   43.9s]   C02: reconciliation PASS (activated 1096/1096, orders 11521, done 1086, active-at-end 10, at_target_skips 8179, no_anchor_skips 1231)
+[   43.9s]   C03: reconciliation PASS (activated 860/860, orders 6658, done 850, active-at-end 10, at_target_skips 8759, no_anchor_skips 1171)
+[   43.9s]   C04: reconciliation PASS (activated 1033/1033, orders 9627, done 1021, active-at-end 12, at_target_skips 8427, no_anchor_skips 1204)
+[   43.9s]   C05: reconciliation PASS (activated 1395/1395, orders 18827, done 1382, active-at-end 13, at_target_skips 8683, no_anchor_skips 1423)
+[   43.9s]   C06: reconciliation PASS (activated 1662/1662, orders 25721, done 1646, active-at-end 16, at_target_skips 8722, no_anchor_skips 2482)
+[   43.9s]   C07: reconciliation PASS (activated 1277/1277, orders 17206, done 1260, active-at-end 17, at_target_skips 8674, no_anchor_skips 1474)
+[   43.9s]   C08: reconciliation PASS (activated 1533/1533, orders 21921, done 1513, active-at-end 20, at_target_skips 9230, no_anchor_skips 2318)
+[   43.9s] == 10. per-intent attribution & gate 8 ==
+[   44.0s]   C01: gate8 mapped 58.4% (filled 530, rule-blocked 1, terminated 378, zero-emission 211); term {'expiry': 14, 'override_same_name': 268, 'cap_void': 0, 'suspension_abandon': 96}; pm-no-bar rehangs 3; no-limit sell voids 2 (gap days 2)
+[   44.4s]   C02: gate8 mapped 57.7% (filled 625, rule-blocked 7, terminated 464, zero-emission 217); term {'expiry': 22, 'override_same_name': 361, 'cap_void': 0, 'suspension_abandon': 81}; pm-no-bar rehangs 3; no-limit sell voids 2 (gap days 2)
+[   44.4s]   C03: gate8 mapped 56.6% (filled 484, rule-blocked 3, terminated 373, zero-emission 230); term {'expiry': 16, 'override_same_name': 251, 'cap_void': 0, 'suspension_abandon': 106}; pm-no-bar rehangs 1; no-limit sell voids 0 (gap days 0)
+[   44.5s]   C04: gate8 mapped 58.3% (filled 596, rule-blocked 6, terminated 431, zero-emission 221); term {'expiry': 17, 'override_same_name': 324, 'cap_void': 0, 'suspension_abandon': 90}; pm-no-bar rehangs 0; no-limit sell voids 0 (gap days 0)
+[   44.5s]   C05: gate8 mapped 53.3% (filled 737, rule-blocked 6, terminated 652, zero-emission 229); term {'expiry': 39, 'override_same_name': 515, 'cap_void': 0, 'suspension_abandon': 98}; pm-no-bar rehangs 7; no-limit sell voids 0 (gap days 0)
+[   44.7s]   C06: gate8 mapped 49.3% (filled 809, rule-blocked 10, terminated 843, zero-emission 252); term {'expiry': 47, 'override_same_name': 700, 'cap_void': 0, 'suspension_abandon': 96}; pm-no-bar rehangs 7; no-limit sell voids 3 (gap days 2)
+[   44.7s]   C07: gate8 mapped 51.6% (filled 654, rule-blocked 5, terminated 618, zero-emission 229); term {'expiry': 33, 'override_same_name': 463, 'cap_void': 0, 'suspension_abandon': 122}; pm-no-bar rehangs 4; no-limit sell voids 0 (gap days 0)
+[   44.9s]   C08: gate8 mapped 50.9% (filled 767, rule-blocked 13, terminated 753, zero-emission 257); term {'expiry': 43, 'override_same_name': 601, 'cap_void': 0, 'suspension_abandon': 109}; pm-no-bar rehangs 4; no-limit sell voids 0 (gap days 0)
+[   44.9s] == 11. metrics & gates ==
+[   44.9s]   C01: net +0.68% excess +0.08pp adv 2/6 mdd -21.65% turn 1.49 w 9.4% exec 58.4% -> eliminated ['2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '8_execution_rate_ge_95pct']
+[   45.0s]   C02: net -4.91% excess -5.51pp adv 2/6 mdd -38.54% turn 2.48 w 9.0% exec 57.7% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[   45.1s]   C03: net -0.87% excess -2.73pp adv 2/6 mdd -45.45% turn 1.80 w 8.6% exec 56.6% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[   45.2s]   C04: net -4.35% excess -6.21pp adv 2/6 mdd -55.15% turn 2.70 w 12.3% exec 58.3% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[   45.3s]   C05: net +3.88% excess +3.28pp adv 4/6 mdd -21.20% turn 1.59 w 11.1% exec 53.3% -> eliminated ['3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '8_execution_rate_ge_95pct']
+[   45.4s]   C06: net -4.96% excess -5.56pp adv 2/6 mdd -39.59% turn 2.33 w 9.0% exec 49.3% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[   45.5s]   C07: net -0.62% excess -2.47pp adv 3/6 mdd -42.92% turn 1.77 w 11.6% exec 51.6% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[   45.6s]   C08: net -5.68% excess -7.53pp adv 1/6 mdd -55.30% turn 2.37 w 6.7% exec 50.9% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[   45.6s] == gates: 0/8 dev_pass ==
+[   45.6s] == 12. disclosures ==
+[   47.9s] == 13. outputs ==
+[   48.0s] == manifest + report written; wall 48s, peak rss 5.10 GB ==
+[   48.0s] == VERDICT: 0/8 dev_pass; no config passed all dev gates (0/8); val not consumed
+[    0.0s] == 0. identity pins (engine v1.1 re-anchored, prereg rev 5) ==
+[    0.0s]   engine: d7108c0eccdd77ff expect d7108c0eccdd77ff3fcbff01e7bd84bfdd2e7cad716b646e357c5644da970a0d match=True
+[    0.0s]   r16_config: 27f846a7330919a4 expect 27f846a7330919a4 match=True
+[    0.0s]   p3r2_config: b49025b44c719685 expect b49025b44c719685 match=True
+[    0.4s]   daily: d9a63f4cc3032926 expect d9a63f4cc3032926 match=True
+[    0.4s]   split_factor: 2f436b2f13d09a9b expect 2f436b2f13d09a9b match=True
+[    0.4s]   dividends: 46121c09cddde72e expect 46121c09cddde72e match=True
+[    0.4s]   index_000300: 05aaa8183a11c674 expect 05aaa8183a11c674 match=True
+[    2.2s]   stk_limit aggregate: 3c53abf3b0c39b42 (2432 files) match=True
+[    2.2s]   python 3.11.15 | rss 0.27 GB
+[    2.2s] == 1. calendar & signal days ==
+[    2.3s]   71 signal days (2015-01-30..2020-11-30) (2020-12-31 dropped as signal, kept as expiry anchor)
+[    2.3s] == 2. exposures ==
+[    2.3s]   t200 behavioral anchor check: {"anchor_years": ["2016", "2017", "2018", "2019", "2020"], "reproduced_stats": {"2016": {"n_sessions": 244, "n_switches"
+[    2.3s]   exposures: T200-40[0]=0.40 [T200-40][-1]=0.90; FIX75[0]=0.75 [FIX75][-1]=0.75
+[    2.3s] == 3. pools (r16 build_history + signal_pools) ==
+[    4.8s]   pools at 2015-01-30: n=1438; union of ranked symbols: 2937
+[    4.8s] == 4. leg_log + 8/8 membership consistency ==
+[    4.8s]   C01: membership mismatches=0, events mismatches=0 / 71
+[    4.8s]   C02: membership mismatches=0, events mismatches=0 / 71
+[    4.8s]   C03: membership mismatches=0, events mismatches=0 / 71
+[    4.9s]   C04: membership mismatches=0, events mismatches=0 / 71
+[    4.9s]   C05: membership mismatches=0, events mismatches=0 / 71
+[    4.9s]   C06: membership mismatches=0, events mismatches=0 / 71
+[    4.9s]   C07: membership mismatches=0, events mismatches=0 / 71
+[    4.9s]   C08: membership mismatches=0, events mismatches=0 / 71
+[    4.9s]   8/8 configs PASS (leg_log <-> independent buffer_membership + events)
+[    4.9s] == 5. market frames ==
+[    5.5s]   daily panel: 3841824 rows, 2937 symbols, max 2020-12-31
+[    6.1s]   halfday: 7254698 rows kept of 18486939 total (panel x dev), 2935 symbols
+[   13.7s]   limits: 3829171 rows (dev x panel)
+[   16.2s]   splits 2894 rows, dividends 20138 rows (panel)
+[   16.2s]   rss after frames: 3.11 GB
+[   18.1s]   host diagnostics: 2937 official series; market-level half-market days (pm<50% am, >500 am rows): ['2016-01-07']
+[   18.1s] == 7. static intent frames (engine-side lifecycle, prereg rev 2) ==
+[   18.1s]   C01: intents 909 (buy_open 411, sell_full 214, rescale->reduce 284; R16 skips {'r16_at_target': 357, 'r16_feemin_skipped': 216}); m5-b uniqueness PASS
+[   18.1s]   C02: intents 1096 (buy_open 540, sell_full 265, rescale->reduce 291; R16 skips {'r16_at_target': 344, 'r16_feemin_skipped': 245}); m5-b uniqueness PASS
+[   18.1s]   C03: intents 860 (buy_open 367, sell_full 220, rescale->reduce 273; R16 skips {'r16_at_target': 391, 'r16_feemin_skipped': 237}); m5-b uniqueness PASS
+[   18.1s]   C04: intents 1033 (buy_open 494, sell_full 271, rescale->reduce 268; R16 skips {'r16_at_target': 397, 'r16_feemin_skipped': 261}); m5-b uniqueness PASS
+[   18.1s]   C05: intents 1395 (buy_open 774, sell_full 268, rescale->reduce 353; R16 skips {'r16_at_target': 501, 'r16_feemin_skipped': 320}); m5-b uniqueness PASS
+[   18.1s]   C06: intents 1662 (buy_open 983, sell_full 350, rescale->reduce 329; R16 skips {'r16_at_target': 490, 'r16_feemin_skipped': 328}); m5-b uniqueness PASS
+[   18.1s]   C07: intents 1277 (buy_open 697, sell_full 288, rescale->reduce 292; R16 skips {'r16_at_target': 580, 'r16_feemin_skipped': 379}); m5-b uniqueness PASS
+[   18.1s]   C08: intents 1533 (buy_open 862, sell_full 364, rescale->reduce 307; R16 skips {'r16_at_target': 566, 'r16_feemin_skipped': 395}); m5-b uniqueness PASS
+[   18.1s]   total intents: 9765
+[   18.1s] == 8. per-config intent-mode engine runs ==
+[   18.1s]   C01: panel 134 symbols, daily 192490 / half 370778 / limits 192093 rows, intents 909, rss 5.08 GB
+[   20.4s]   C01: engine done in 2.2s; intents 909 activated 909 orders 7819 filled 530 override 268 expired 104 cap 0 | rss 4.61 GB
+[   20.4s]   C02: panel 196 symbols, daily 280782 / half 534980 / limits 279801 rows, intents 1096, rss 4.63 GB
+[   23.6s]   C02: engine done in 3.2s; intents 1096 activated 1096 orders 11521 filled 625 override 364 expired 97 cap 0 | rss 0.06 GB
+[   23.7s]   C03: panel 134 symbols, daily 192490 / half 370778 / limits 192093 rows, intents 860, rss 0.94 GB
+[   26.0s]   C03: engine done in 2.3s; intents 860 activated 860 orders 6658 filled 484 override 252 expired 114 cap 0 | rss 1.08 GB
+[   26.0s]   C04: panel 196 symbols, daily 280782 / half 534980 / limits 279801 rows, intents 1033, rss 1.14 GB
+[   29.0s]   C04: engine done in 3.0s; intents 1033 activated 1033 orders 9627 filled 596 override 327 expired 98 cap 0 | rss 1.28 GB
+[   29.0s]   C05: panel 188 symbols, daily 270206 / half 518093 / limits 269531 rows, intents 1395, rss 1.34 GB
+[   32.7s]   C05: engine done in 3.7s; intents 1395 activated 1395 orders 18827 filled 737 override 518 expired 127 cap 0 | rss 2.31 GB
+[   32.8s]   C06: panel 261 symbols, daily 375359 / half 713915 / limits 373861 rows, intents 1662, rss 2.35 GB
+[   36.8s]   C06: engine done in 4.1s; intents 1662 activated 1662 orders 25721 filled 809 override 708 expired 129 cap 0 | rss 2.43 GB
+[   36.8s]   C07: panel 188 symbols, daily 270206 / half 518093 / limits 269531 rows, intents 1277, rss 2.46 GB
+[   40.1s]   C07: engine done in 3.3s; intents 1277 activated 1277 orders 17206 filled 654 override 467 expired 139 cap 0 | rss 2.47 GB
+[   40.1s]   C08: panel 261 symbols, daily 375359 / half 713915 / limits 373861 rows, intents 1533, rss 2.50 GB
+[   44.0s]   C08: engine done in 3.8s; intents 1533 activated 1533 orders 21921 filled 767 override 608 expired 138 cap 0 | rss 2.52 GB
+[   44.0s] == 9. intent_layer reconciliation ==
+[   44.0s]   C01: reconciliation PASS (activated 909/909, orders 7819, done 902, active-at-end 7, at_target_skips 7949, no_anchor_skips 1200)
+[   44.0s]   C02: reconciliation PASS (activated 1096/1096, orders 11521, done 1086, active-at-end 10, at_target_skips 8179, no_anchor_skips 1231)
+[   44.0s]   C03: reconciliation PASS (activated 860/860, orders 6658, done 850, active-at-end 10, at_target_skips 8759, no_anchor_skips 1171)
+[   44.0s]   C04: reconciliation PASS (activated 1033/1033, orders 9627, done 1021, active-at-end 12, at_target_skips 8427, no_anchor_skips 1204)
+[   44.0s]   C05: reconciliation PASS (activated 1395/1395, orders 18827, done 1382, active-at-end 13, at_target_skips 8683, no_anchor_skips 1423)
+[   44.0s]   C06: reconciliation PASS (activated 1662/1662, orders 25721, done 1646, active-at-end 16, at_target_skips 8722, no_anchor_skips 2482)
+[   44.0s]   C07: reconciliation PASS (activated 1277/1277, orders 17206, done 1260, active-at-end 17, at_target_skips 8674, no_anchor_skips 1474)
+[   44.0s]   C08: reconciliation PASS (activated 1533/1533, orders 21921, done 1513, active-at-end 20, at_target_skips 9230, no_anchor_skips 2318)
+[   44.0s] == 10. per-intent attribution & gate 8 ==
+[   44.0s]   C01: gate8 mapped 58.4% (filled 530, rule-blocked 1, terminated 378, zero-emission 211); term {'expiry': 110, 'override_same_name': 268, 'cap_void': 0, 'suspension_abandon': 0}; pm-no-bar rehangs 3; no-limit sell voids 2 (gap days 2)
+[   44.4s]   C02: gate8 mapped 57.7% (filled 625, rule-blocked 7, terminated 464, zero-emission 217); term {'expiry': 102, 'override_same_name': 361, 'cap_void': 0, 'suspension_abandon': 1}; pm-no-bar rehangs 3; no-limit sell voids 2 (gap days 2)
+[   44.4s]   C03: gate8 mapped 56.6% (filled 484, rule-blocked 3, terminated 373, zero-emission 230); term {'expiry': 122, 'override_same_name': 251, 'cap_void': 0, 'suspension_abandon': 0}; pm-no-bar rehangs 1; no-limit sell voids 0 (gap days 0)
+[   44.5s]   C04: gate8 mapped 58.3% (filled 596, rule-blocked 6, terminated 431, zero-emission 221); term {'expiry': 106, 'override_same_name': 324, 'cap_void': 0, 'suspension_abandon': 1}; pm-no-bar rehangs 0; no-limit sell voids 0 (gap days 0)
+[   44.6s]   C05: gate8 mapped 53.3% (filled 737, rule-blocked 6, terminated 652, zero-emission 229); term {'expiry': 136, 'override_same_name': 515, 'cap_void': 0, 'suspension_abandon': 1}; pm-no-bar rehangs 7; no-limit sell voids 0 (gap days 0)
+[   44.7s]   C06: gate8 mapped 49.3% (filled 809, rule-blocked 10, terminated 843, zero-emission 252); term {'expiry': 142, 'override_same_name': 700, 'cap_void': 0, 'suspension_abandon': 1}; pm-no-bar rehangs 7; no-limit sell voids 3 (gap days 2)
+[   44.7s]   C07: gate8 mapped 51.6% (filled 654, rule-blocked 5, terminated 618, zero-emission 229); term {'expiry': 154, 'override_same_name': 463, 'cap_void': 0, 'suspension_abandon': 1}; pm-no-bar rehangs 4; no-limit sell voids 0 (gap days 0)
+[   44.8s]   C08: gate8 mapped 50.9% (filled 767, rule-blocked 13, terminated 753, zero-emission 257); term {'expiry': 151, 'override_same_name': 601, 'cap_void': 0, 'suspension_abandon': 1}; pm-no-bar rehangs 4; no-limit sell voids 0 (gap days 0)
+[   44.8s] == 11. metrics & gates ==
+[   44.9s]   C01: net +0.68% excess +0.08pp adv 2/6 mdd -21.65% turn 1.49 w 9.4% exec 58.4% -> eliminated ['2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '8_execution_rate_ge_95pct']
+[   45.0s]   C02: net -4.91% excess -5.51pp adv 2/6 mdd -38.54% turn 2.48 w 9.0% exec 57.7% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[   45.1s]   C03: net -0.87% excess -2.73pp adv 2/6 mdd -45.45% turn 1.80 w 8.6% exec 56.6% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[   45.1s]   C04: net -4.35% excess -6.21pp adv 2/6 mdd -55.15% turn 2.70 w 12.3% exec 58.3% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[   45.2s]   C05: net +3.88% excess +3.28pp adv 4/6 mdd -21.20% turn 1.59 w 11.1% exec 53.3% -> eliminated ['3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '8_execution_rate_ge_95pct']
+[   45.3s]   C06: net -4.96% excess -5.56pp adv 2/6 mdd -39.59% turn 2.33 w 9.0% exec 49.3% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[   45.4s]   C07: net -0.62% excess -2.47pp adv 3/6 mdd -42.92% turn 1.77 w 11.6% exec 51.6% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[   45.5s]   C08: net -5.68% excess -7.53pp adv 1/6 mdd -55.30% turn 2.37 w 6.7% exec 50.9% -> eliminated ['1_net_cagr_gt_0', '2_excess_vs_B1m_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1m', '7_vs_B3prime_plus_1pp', '8_execution_rate_ge_95pct']
+[   45.5s] == gates: 0/8 dev_pass ==
+[   45.5s] == 12. disclosures ==
+[   47.6s] == 13. outputs ==
+[   47.7s] == manifest + report written; wall 48s, peak rss 5.08 GB ==
+[   47.7s] == VERDICT: 0/8 dev_pass; no config passed all dev gates (0/8); val not consumed

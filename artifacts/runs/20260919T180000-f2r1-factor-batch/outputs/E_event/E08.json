@@ -1,0 +1,66 @@
+{
+ "factor_id": "E08",
+ "name": "repo_120",
+ "formula": "120d 回购金额(元, 每(ts_code,end_date)取进度最大额)/流通市值(元)",
+ "source": "repurchase+daily_basic",
+ "fill_policy": "无事件为 null（不入因子帧）",
+ "n_rows": 24714,
+ "t_value": 0.19473988148304355,
+ "coverage_median_symbols": 251.0,
+ "coverage_median_active_months": 438.0,
+ "pool_median_symbols": 3126.0,
+ "criteria": {
+  "c1_abs_t>=2": false,
+  "c2_mono_consistent>=0.3": false,
+  "c3_2015_non_disaster": true,
+  "c4_coverage>=50%pool": false
+ },
+ "survived_prelim": false,
+ "eval": {
+  "n_dates": 59,
+  "coverage_mean_symbols": 416.4406779661017,
+  "ic_mean": 0.002772635056980945,
+  "ic_std": 0.10936133788381196,
+  "icir": 0.02535297309481215,
+  "ic_win_rate": 0.4745762711864407,
+  "group_mean_ret": [
+   0.01151359271255134,
+   0.01897679292620074,
+   0.008290398807086565,
+   0.007943096022124648,
+   0.007855723768453563,
+   0.009774161332128856,
+   0.011687938708909757,
+   0.008096292890177886,
+   0.011218476359698668,
+   0.009795143366333404
+  ],
+  "long_short_mean": -0.0017184493462179366,
+  "monotonicity": -0.31699727564986097,
+  "ic_by_year": {
+   "2016": 0.04910063584547117,
+   "2017": -0.049044655777897996,
+   "2018": 0.034463867810825194,
+   "2019": -0.013317253843968714,
+   "2020": -0.008258696368298178
+  },
+  "long_short_by_year": {
+   "2016": -0.013916569481446175,
+   "2017": 0.00014103732676693827,
+   "2018": 0.009160932735993861,
+   "2019": 0.002620119373679543,
+   "2020": -0.012223091712710608
+  },
+  "turnover_top_group": 0.2494375666866605,
+  "corr_with_others": {},
+  "config": {
+   "horizon_days": 20,
+   "n_groups": 10,
+   "eval_freq": "M",
+   "exclude_st": true,
+   "require_trading": true,
+   "exclude_boards": true,
+   "min_history_rows": 60
+  }
+ }
+}

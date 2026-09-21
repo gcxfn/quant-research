@@ -1,0 +1,67 @@
+{
+  "timings": {
+    "identity_s": 0.7675724999862723,
+    "calendar_signals_s": 0.07913309999275953
+  },
+  "signals": {
+    "n_signals": 5,
+    "first": "2015-01-30",
+    "last": "2015-05-29",
+    "dropped_execution_beyond_calendar": [
+      "2015-06-30"
+    ]
+  },
+  "t200_behavioral_anchor": {
+    "anchor_years": [
+      "2016",
+      "2017",
+      "2018",
+      "2019",
+      "2020"
+    ],
+    "reproduced_stats": {
+      "2016": {
+        "n_sessions": 244,
+        "n_switches": 5,
+        "off_share": 0.623,
+        "mean_exposure": 0.5885
+      },
+      "2017": {
+        "n_sessions": 244,
+        "n_switches": 2,
+        "off_share": 0.0164,
+        "mean_exposure": 0.8918
+      },
+      "2018": {
+        "n_sessions": 243,
+        "n_switches": 3,
+        "off_share": 0.786,
+        "mean_exposure": 0.507
+      },
+      "2019": {
+        "n_sessions": 244,
+        "n_switches": 3,
+        "off_share": 0.1066,
+        "mean_exposure": 0.8467
+      },
+      "2020": {
+        "n_sessions": 243,
+        "n_switches": 6,
+        "off_share": 0.1687,
+        "mean_exposure": 0.8156
+      }
+    },
+    "all_match": true
+  },
+  "t200_fallback_signals": {
+    "n": 5,
+    "dates": [
+      "2015-01-30",
+      "2015-02-27",
+      "2015-03-31",
+      "2015-04-30",
+      "2015-05-29"
+    ],
+    "rule": "registered fallback: SMA200 unavailable -> risk-off e_low (R8 sma_trend_state docstring)"
+  }
+}

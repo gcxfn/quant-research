@@ -1,0 +1,55 @@
+{
+ "run_id": "20260919T132557-engine-v13-b7e2",
+ "experiment_id": "engine-v1.3-corporate-actions (docs/plans/p3-band-contract.md §9.3 A–D)",
+ "status": "completed",
+ "started_at_utc": "2026-09-19T05:25:57+00:00",
+ "ended_at_utc": "2026-09-19T06:02:20+00:00",
+ "wall_seconds_total": 2183,
+ "trial_accounting": {"trials_consumed": 0, "note": "engine engineering task; no val run; no new data pull; no git operations"},
+ "environment": {
+  "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+  "polars": "1.44.2",
+  "platform": "win32 (Windows 10.0.26200, Git Bash shell)",
+  "venv": "D:/量化/.venv"
+ },
+ "commands": [
+  "D:/量化/.venv/Scripts/python.exe -m pytest tests -q",
+  "D:/量化/.venv/Scripts/python.exe artifacts/runs/20260919T132557-engine-v13-b7e2/tmp/runner_p3r2_intents.py",
+  "D:/量化/.venv/Scripts/python.exe artifacts/runs/20260919T132557-engine-v13-b7e2/tmp/runner_hybrid_v2.py",
+  "D:/量化/.venv/Scripts/python.exe -m pytest tests/test_band_engine_v13_corporate_actions.py -q (iterative development)"
+ ],
+ "code_identity": {
+  "engine": {
+   "path": "D:/量化/src/quant/backtest/band_engine.py",
+   "sha256_before_v13": "ceb7be6414280e4c5d5f37dc6ca1148a85e306b2de1a216147f67f89cc4a746d (v1.2 baseline, verified at task start, 2627 lines)",
+   "sha256_after_v13": "84a2443ac28fe1b87e4a18f988fd38cc67cf706d5778e262f11465147234082c",
+   "version_label_in_stats": "band_engine v1.3",
+   "pin_status": "NOT pinned (pin is the main conversation's step E after dual-sign review)"
+  },
+  "new_test_file": {
+   "path": "D:/量化/tests/test_band_engine_v13_corporate_actions.py",
+   "sha256": "4e9d5c8ee7ae2e4174943edb59064f76eb7cea024d05e36b23b54e7aa21202b5",
+   "tests": 18
+  },
+  "replay_scripts": {
+   "anchor1": {"path": "tmp/runner_p3r2_intents.py", "copied_from": "artifacts/runs/20260919T030640-p3r2-dev-ad9e/tmp/runner_p3r2_intents.py (src sha 7477c2a8fcc2d291c6c46a52b72b62b09e7e87dfea5689502482454bf3f6df19)",
+    "edits": ["CONFIG_IDS -> [\"C05\"]", "engine sha pin -> v1.3 sha", "log filename", "PANEL_BY_CFG setdefault (C05-only scope)", "report/manifest writes redirected to tmp/"]},
+   "anchor2": {"path": "tmp/runner_hybrid_v2.py", "copied_from": "artifacts/runs/20260919T063022-hybrid-v2-2k5b/scripts/runner_hybrid_v2.py (src sha 2a78d4171b4466d40362620e7707f56c6ee4d94159c5764a533d8b1affab0a2e)",
+    "edits": ["CONFIG_IDS -> [\"H2-A0\"]", "engine sha pin -> v1.3 sha", "log filename", "report/manifest writes redirected to tmp/"]}
+  }
+ },
+ "input_data_identity": {
+  "etf_daily_parquet": {"path": "D:/量化/data/processed/etf-daily-20260919/daily_2015_2024.parquet", "sha256": "b7225d50523106f53fc87bf21a92f12978ecc31a7b195ed2b4cf4e39f7a0d661", "rows": 1017121, "used_by": "v1.3 real-event replay tests (513100/513500)"},
+  "etf_batch_manifest": {"path": "D:/量化/data/processed/etf-daily-20260919/manifest.json", "sha256": "8b5b3fe56c0e02fd6af634bb3740c4f40c3b5f1dfabc984764433c0134eb1c8a"},
+  "anchor1_pins": "engine(84a2443a...), r16_config, p3r2_config, baostock daily d9a63f4c..., split_factor 2f436b2f..., dividends 46121c09..., index_000300, halfday manifest 2a414174..., stk_limit aggregate 3c53abf3... -- all match=true, see tmp/anchor1_manifest.json",
+  "anchor2_pins": "same engine + prereg/config pins + etf processed aggregate + fund_adj manifest -- see tmp/anchor2_manifest.json",
+  "evidence": {"path": "tmp/corporate-action-announcements-evidence.md", "source": "Wind MCP get_company_announcements, retrieved 2026-09-19 (public disclosure excerpts: GuoTai 513100 1:5, BoShi 513500 1:2)"}
+ },
+ "results": {
+  "full_test_suite": {"command": "python -m pytest tests -q", "passed": 420, "failed": 0, "skipped": 0, "baseline_before_task": 402, "new_tests": 18, "wall_s": 61.5, "warnings": "6 pre-existing UserWarnings in unrelated research modules (polars join_asof sortedness); no engine warnings"},
+  "anchor1_p3r2_c05": {"status": "PASS", "compared": ["C05_fills.parquet", "C05_events.parquet", "C05_daily_equity.parquet", "C05_clips_final.parquet", "C05_intents.parquet"], "result": "ALL BYTE-EQUAL vs artifacts/runs/20260919T030640-p3r2-dev-ad9e/outputs/", "not_compared": "metrics_and_gates.json (contains this replay's engine sha + timing + C05-only scope; provenance note: the metrics_and_gates.json in THIS run's outputs/ was written by the anchor-1 replay runner)", "wall_s": 84.1, "peak_rss_gb": 4.85},
+  "anchor2_hybrid_h2a0": {"status": "PASS", "compared": ["H2-A0_fills.parquet", "H2-A0_events.parquet", "H2-A0_daily_equity.parquet", "H2-A0_clips_final.parquet", "H2-A0_intents.parquet", "dividend_events.csv"], "result": "ALL BYTE-EQUAL vs artifacts/runs/20260919T063022-hybrid-v2-2k5b/outputs/", "stats_json": "normalized-equal: the ONLY differing fields are engine_version (v1.2 -> v1.3 label, seam S-v13-3) and wall_s (wall-clock, non-deterministic in the source too); all other bytes identical after key-wise normalization", "rotation_monthly_log_json": "differs only by replay scope (source holds all 8 configs' entries; this replay holds H2-A0: null; the H2-A0 entries are identical)", "runner_internal_check": "H2-A0 4-frame polars .equals() vs P3R2 C05 outputs all True; net_cagr matches to 1e-12", "wall_s": 36.9, "peak_rss_gb": 3.26}
+ },
+ "outputs_manifest_note": "outputs/ holds the two anchors' replay artifacts (C05_* from anchor 1; H2-A0_* + dividend_events.csv + rotation_monthly_log.json + metrics_and_gates.json from the anchor runners). delivery_report.md is the task deliverable.",
+ "non_goals_respected": ["no val run", "no new data batch", "no git init/commit", "data/raw and existing artifacts run dirs untouched (read-only)", "static-signal path and stock-side split_factor path byte-identical (proven by anchors + 402 pre-existing tests)"]
+}

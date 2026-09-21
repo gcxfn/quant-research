@@ -1,0 +1,38 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0 -- D:\量化\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: D:\量化
+configfile: pyproject.toml
+collecting ... collected 29 items
+
+tests/test_band_contract.py::test_01_fee_conservation PASSED             [  3%]
+tests/test_band_contract.py::test_02_t1_clip PASSED                      [  6%]
+tests/test_band_contract.py::test_03_lot_odd PASSED                      [ 10%]
+tests/test_band_contract.py::test_04_cash_priority PASSED                [ 13%]
+tests/test_band_contract.py::test_05_touch_penetrate PASSED              [ 17%]
+tests/test_band_contract.py::test_06_corporate_actions PASSED            [ 20%]
+tests/test_band_contract.py::test_06b_real_600000_corp_actions PASSED    [ 24%]
+tests/test_band_contract.py::test_06c_split_loader_anchor_regression PASSED [ 27%]
+tests/test_band_contract.py::test_07_suspension_limit PASSED             [ 31%]
+tests/test_band_contract.py::test_08_risk_k3_profit PASSED               [ 34%]
+tests/test_band_contract.py::test_09_proceeds_timing PASSED              [ 37%]
+tests/test_band_contract.py::test_10_stamp_segmentation PASSED           [ 41%]
+tests/test_band_contract.py::test_14_frame_schema_regression PASSED      [ 44%]
+tests/test_band_contract.py::test_15_multi_clip_fifo PASSED              [ 48%]
+tests/test_band_contract.py::test_16_t0_roundtrip PASSED                 [ 51%]
+tests/test_band_contract.py::test_17_am_reanchor_fill PASSED             [ 55%]
+tests/test_band_contract.py::test_18_close_bridge PASSED                 [ 58%]
+tests/test_band_contract.py::test_19_caps PASSED                         [ 62%]
+tests/test_band_contract.py::test_00_input_guards PASSED                 [ 65%]
+tests/test_band_contract.py::test_20_partial_risk_exit_fallback PASSED   [ 68%]
+tests/test_band_contract.py::test_21_m4_split_added_whole_lot_clip PASSED [ 72%]
+tests/test_band_intents.py::test_i1_fill_stop PASSED                     [ 75%]
+tests/test_band_intents.py::test_i2_reanchor_streak PASSED               [ 79%]
+tests/test_band_intents.py::test_i3_expiry PASSED                        [ 82%]
+tests/test_band_intents.py::test_i4_override PASSED                      [ 86%]
+tests/test_band_intents.py::test_i5_rescale_weight PASSED                [ 89%]
+tests/test_band_intents.py::test_i6_engine3_regression PASSED            [ 93%]
+tests/test_band_intents.py::test_i7_determinism PASSED                   [ 96%]
+tests/test_band_intents.py::test_i8_guards PASSED                        [100%]
+
+============================= 29 passed in 5.00s ==============================

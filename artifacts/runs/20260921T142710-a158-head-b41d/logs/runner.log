@@ -1,0 +1,66 @@
+[   0.1s] 72 signal days 2015-01-30..2020-12-31
+[   6.4s] pool union 2943 symbols
+[   7.5s] panel rows 4020798; building per-symbol series
+[   9.5s] 2943 symbol series built
+[  15.2s]   features 2015-01-30: 1438 symbols
+[ 173.9s]   features 2016-07-29: 1910 symbols
+[ 305.1s]   features 2018-01-31: 1168 symbols
+[ 380.6s]   features 2019-07-31: 1060 symbols
+[ 472.8s]   features 2020-12-31: 1495 symbols
+[ 472.8s] features done
+[ 495.2s] step1: 158 features evaluated; |t|>=2: 111
+[ 498.3s] step2: 71 monthly sections (2015-01-30..2020-11-30), dim 158
+[ 515.8s]   12 models; last IC -0.0377
+[ 536.4s]   24 models; last IC -0.0120
+[ 558.4s]   36 models; last IC -0.0192
+[ 578.6s]   48 models; last IC 0.0481
+[ 596.2s] step2: 59 models, 59 IC months; rank_ic mean 0.0361 t 3.62; by_year {'2016': 0.04203113336664343, '2017': 0.029972817170302767, '2018': 0.03442669755737176, '2019': 0.03676319007535101, '2020': 0.03727922798715746}
+[ 596.3s] head metrics: top4 hit-rate vs median 0.525 (236 picks over 59 months); mean monthly excess vs pool +1.78pp (positive months 56%)
+[ 596.4s] done
+[    0.0s] fixed-scheme; window=2015-01-01..2015-03-31 (SMOKE: MF-G0 only); curves=['HEAD']
+[    5.9s]   engine f3650f8440c713b8 OK; pins OK; rss 0.27 GB
+[    5.9s] == 1. calendar & signal days ==
+[    6.1s]   2 signal days (2015-01-30..2015-02-27)
+[    6.1s] == 2. R16 pools ==
+[    9.7s]   pool n min 1412 max 1438
+[    9.7s] == 3. stock legs ==
+[   10.2s]   M-F: 20 reps; eligible median 1421
+[   10.2s]   MF: members/month min 0 max 0
+[   10.2s]   MC: members/month min 0 max 0
+[   10.2s] == 4. market frames ==
+[    0.0s] fixed-scheme; window=2016-03-01..2016-06-30 (SMOKE: MF-G0 only); curves=['HEAD']
+[    3.9s]   engine f3650f8440c713b8 OK; pins OK; rss 0.27 GB
+[    3.9s] == 1. calendar & signal days ==
+[    4.0s]   3 signal days (2016-03-31..2016-05-31)
+[    4.0s] == 2. R16 pools ==
+[    7.3s]   pool n min 1524 max 1928
+[    7.3s] == 3. stock legs ==
+[    7.6s]   M-F: 20 reps; eligible median 1867
+[    7.7s]   MF: members/month min 4 max 4
+[    7.7s]   MC: members/month min 0 max 0
+[    7.7s] == 4. market frames ==
+[   18.6s]   frames: 12 stocks + 3 ETFs; daily 1260; half 1792; limits 1008; rss 2.44 GB
+[   18.7s] == 7. engine runs ==
+[   18.7s]   HEAD: 0.1s; calls 168 injected 232 orders 229 filled 13 k3 None | etf exits 0 sn {'stops': 6, 'protections': 0, 'takes': 0} | rss 2.53 GB
+[   18.7s] == 9. outputs ==
+[   18.8s] == done; wall 19s; peak rss 2.53 GB
+[    0.0s] fixed-scheme; window=2015-01-05..2020-12-31; curves=['HEAD']
+[    4.4s]   engine f3650f8440c713b8 OK; pins OK; rss 0.27 GB
+[    4.4s] == 1. calendar & signal days ==
+[    4.6s]   71 signal days (2015-01-30..2020-11-30)
+[    4.6s] == 2. R16 pools ==
+[    8.0s]   pool n min 810 max 2260
+[    8.0s] == 3. stock legs ==
+[   10.8s]   M-F: 20 reps; eligible median 1510
+[   10.8s]   MF: members/month min 0 max 4
+[   10.8s]   MC: members/month min 0 max 0
+[   10.8s] == 4. market frames ==
+[   21.8s]   frames: 217 stocks + 3 ETFs; daily 304660; half 551091; limits 299658; rss 2.98 GB
+[   22.0s] == 5. benchmarks B1(m)_mix / B3'_mix ==
+[   33.9s]   B1(m)_mix net +6.16% mdd -15.51%; B3'_mix mean +5.70%
+[   34.5s] == 7. engine runs ==
+[   39.2s]   HEAD: 4.7s; calls 2924 injected 2359 orders 2388 filled 349 k3 None | etf exits 2 sn {'stops': 107, 'protections': 0, 'takes': 0} | rss 1.50 GB
+[   39.2s] == 8. metrics & eight gates ==
+[   39.5s]   HEAD: net +1.13% exc -5.02pp adv 2/6 mdd -17.46% turn 5.11 w 20.4% exec 26.2% -> fail ['2_excess_vs_B1mix_ge_2pp', '3_advantage_years_ge_5_of_6', '4_mdd_le_20pct_and_le_B1mix', '7_vs_B3mix_plus_1pp', '8_execution_rate_ge_95pct']; 10% no
+[   39.5s] == 9. outputs ==
+[   39.6s] == done; wall 40s; peak rss 2.98 GB

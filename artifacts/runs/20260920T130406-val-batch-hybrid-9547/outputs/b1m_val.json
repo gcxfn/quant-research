@@ -1,0 +1,46 @@
+{
+ "benchmark": "B1(m)(val)",
+ "definition": "r16.simulate_r16(fractional=True, K=0, T200-40, fee_bands=B1_FEE_SCHEDULE_RATE_ONLY) on the val window, computed in-runner (prereg sec 3)",
+ "net_cagr": -0.00148060230384095,
+ "max_drawdown": -0.23441429674947534,
+ "net_return_by_year": {
+  "2021": 0.14274922609277585,
+  "2022": -0.05202635253338672,
+  "2023": -0.061879245529232296,
+  "2024": -0.021801197364535896
+ },
+ "tl30_published": {
+  "net_cagr": -0.00148060230384095,
+  "max_drawdown": -0.23441429674947534,
+  "net_return_by_year": {
+   "2021": 0.14274922609277585,
+   "2022": -0.05202635253338672,
+   "2023": -0.061879245529232296,
+   "2024": -0.021801197364535896
+  }
+ },
+ "tl30_match_bit_for_bit": true,
+ "dev_port_check": "the same assembly on the dev window reproduces R16 metrics.json configs.C05 b1m_net_cagr / b1m_max_drawdown / b1m_net_return_by_year to 1e-9 (dev phase of this run)",
+ "per_year_pool_and_exposure": {
+  "2021": {
+   "mean_exposure": 0.6500000000000002,
+   "mean_pool_size": 1662.0833333333333,
+   "n_signals": 12
+  },
+  "2022": {
+   "mean_exposure": 0.39999999999999997,
+   "mean_pool_size": 1986.5833333333333,
+   "n_signals": 12
+  },
+  "2023": {
+   "mean_exposure": 0.6083333333333335,
+   "mean_pool_size": 1829.6666666666667,
+   "n_signals": 12
+  },
+  "2024": {
+   "mean_exposure": 0.6272727272727274,
+   "mean_pool_size": 1993.909090909091,
+   "n_signals": 11
+  }
+ }
+}

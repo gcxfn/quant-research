@@ -1,0 +1,516 @@
+{
+ "159329.SZ": {
+  "asset": "股票跨境(QDII)",
+  "cross_border_qdii": true,
+  "evidence": [
+   "LLM: name含[QDII]字样",
+   "LLM: 沙特阿拉伯=境外市场, 冻结QDII关键词表漏判"
+  ]
+ },
+ "520830.SH": {
+  "asset": "股票跨境(QDII)",
+  "cross_border_qdii": true,
+  "evidence": [
+   "LLM: name含[QDII]字样",
+   "LLM: 沙特阿拉伯=境外市场, 冻结QDII关键词表漏判"
+  ]
+ },
+ "513310.SH": {
+  "asset": "股票跨境(QDII)",
+  "cross_border_qdii": true,
+  "evidence": [
+   "LLM: name含[QDII]字样(已知漏判QDII-1)",
+   "LLM: 韩交所=韩国交易所"
+  ]
+ },
+ "513730.SH": {
+  "asset": "股票跨境(QDII)",
+  "cross_border_qdii": true,
+  "evidence": [
+   "LLM: name含[QDII]字样(已知漏判QDII-2)",
+   "LLM: 新交所=新加坡交易所"
+  ]
+ },
+ "513800.SH": {
+  "asset": "股票跨境(QDII)",
+  "cross_border_qdii": true,
+  "evidence": [
+   "LLM: name含[QDII]字样(已知漏判QDII-3)",
+   "LLM: TOPIX=日本东证指数"
+  ]
+ },
+ "159320.SZ": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: 恒生A股电网设备指数为A股指数",
+   "LLM: 冻结QDII表[恒生]误触发"
+  ]
+ },
+ "561380.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: 恒生A股电网设备指数为A股指数",
+   "LLM: 冻结QDII表[恒生]误触发"
+  ]
+ },
+ "512090.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: MSCI中国A股国际通指数为A股指数",
+   "LLM: 冻结QDII表[国际]误触发"
+  ]
+ },
+ "512160.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: MSCI中国A股国际通指数为A股指数",
+   "LLM: 冻结QDII表[国际]误触发"
+  ]
+ },
+ "512180.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: MSCI中国A股国际通指数为A股指数",
+   "LLM: 冻结QDII表[国际]误触发"
+  ]
+ },
+ "512280.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: MSCI中国A股国际通指数为A股指数",
+   "LLM: 冻结QDII表[国际]误触发"
+  ]
+ },
+ "512360.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: MSCI中国A股国际指数为A股指数",
+   "LLM: 冻结QDII表[国际]误触发"
+  ]
+ },
+ "512520.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: MSCI中国A股国际通指数为A股指数",
+   "LLM: 冻结QDII表[国际]误触发"
+  ]
+ },
+ "512860.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: MSCI中国A股国际指数为A股指数",
+   "LLM: 冻结QDII表[国际]误触发"
+  ]
+ },
+ "512920.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: MSCI中国A股国际指数为A股指数",
+   "LLM: 冻结QDII表[国际]误触发"
+  ]
+ },
+ "512990.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: MSCI中国A股国际通指数为A股指数",
+   "LLM: 冻结QDII表[国际]误触发"
+  ]
+ },
+ "515160.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: MSCI中国A股国际通指数为A股指数",
+   "LLM: 冻结QDII表[国际]误触发"
+  ]
+ },
+ "515910.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: MSCI中国A股国际质量指数为A股指数",
+   "LLM: 冻结QDII表[国际]误触发"
+  ]
+ },
+ "515450.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: 标普中国A股大盘红利低波50为A股指数",
+   "LLM: 冻结QDII表[标普]误触发"
+  ]
+ },
+ "562060.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: 标普中国A股红利机会指数为A股指数",
+   "LLM: 冻结QDII表[标普]误触发"
+  ]
+ },
+ "501029.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: 标普中国A股红利机会指数为A股指数",
+   "LLM: 冻结QDII表[标普]误触发"
+  ]
+ },
+ "159309.SZ": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: 中证油气资源指数为A股股票指数",
+   "LLM: 冻结QDII表[油气]误触发(曾误标商品)"
+  ]
+ },
+ "159588.SZ": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: 国证石油天然气指数为A股股票指数",
+   "LLM: 冻结QDII表[油气/石油]误触发(曾误标商品)"
+  ]
+ },
+ "159697.SZ": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: 国证石油天然气指数为A股股票指数",
+   "LLM: 冻结QDII表[油气/石油]误触发(曾误标商品)"
+  ]
+ },
+ "561360.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: 中证油气产业指数为A股股票指数",
+   "LLM: 冻结QDII表[油气]误触发(曾误标商品)"
+  ]
+ },
+ "561570.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: 中证油气产业指数为A股股票指数",
+   "LLM: 冻结QDII表[油气]误触发(曾误标商品)"
+  ]
+ },
+ "561760.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: 中证油气资源指数为A股股票指数",
+   "LLM: 冻结QDII表[油气]误触发(曾误标商品)"
+  ]
+ },
+ "563150.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: 中证油气资源指数为A股股票指数",
+   "LLM: 冻结QDII表[油气]误触发(曾误标商品)"
+  ]
+ },
+ "159315.SZ": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "subtype": "跨市场指数(含港股成分)",
+  "evidence": [
+   "LLM: 中证沪深港黄金产业股票=股票指数, 非商品现货/期货",
+   "LLM: 冻结商品词[黄金]误触发"
+  ]
+ },
+ "159321.SZ": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "subtype": "跨市场指数(含港股成分)",
+  "evidence": [
+   "LLM: 中证沪深港黄金产业股票=股票指数, 非商品现货/期货",
+   "LLM: 冻结商品词[黄金]误触发"
+  ]
+ },
+ "159322.SZ": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "subtype": "跨市场指数(含港股成分)",
+  "evidence": [
+   "LLM: 中证沪深港黄金产业股票=股票指数, 非商品现货/期货",
+   "LLM: 冻结商品词[黄金]误触发"
+  ]
+ },
+ "159562.SZ": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "subtype": "跨市场指数(含港股成分)",
+  "evidence": [
+   "LLM: 中证沪深港黄金产业股票=股票指数, 非商品现货/期货",
+   "LLM: 冻结商品词[黄金]误触发"
+  ]
+ },
+ "517400.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "subtype": "跨市场指数(含港股成分)",
+  "evidence": [
+   "LLM: 中证沪深港黄金产业股票=股票指数, 非商品现货/期货",
+   "LLM: 冻结商品词[黄金]误触发"
+  ]
+ },
+ "517520.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "subtype": "跨市场指数(含港股成分)",
+  "evidence": [
+   "LLM: 中证沪深港黄金产业股票=股票指数, 非商品现货/期货",
+   "LLM: 冻结商品词[黄金]误触发"
+  ]
+ },
+ "159518.SZ": {
+  "asset": "股票跨境(QDII)",
+  "cross_border_qdii": true,
+  "evidence": [
+   "LLM: 标普石油天然气勘探及生产精选行业=美股股票指数",
+   "LLM: name含[QDII]字样, 曾误标商品"
+  ]
+ },
+ "513350.SH": {
+  "asset": "股票跨境(QDII)",
+  "cross_border_qdii": true,
+  "evidence": [
+   "LLM: 标普石油天然气勘探及生产精选行业=美股股票指数",
+   "LLM: name含[QDII]字样, 曾误标商品"
+  ]
+ },
+ "159830.SZ": {
+  "asset": "商品",
+  "evidence": [
+   "LLM: 上海金=黄金现货基准价, asset=商品"
+  ]
+ },
+ "159831.SZ": {
+  "asset": "商品",
+  "evidence": [
+   "LLM: 上海金=黄金现货基准价, asset=商品"
+  ]
+ },
+ "159832.SZ": {
+  "asset": "商品",
+  "evidence": [
+   "LLM: 上海金=黄金现货基准价, asset=商品"
+  ]
+ },
+ "159833.SZ": {
+  "asset": "商品",
+  "evidence": [
+   "LLM: 上海金=黄金现货基准价, asset=商品"
+  ]
+ },
+ "159834.SZ": {
+  "asset": "商品",
+  "evidence": [
+   "LLM: 上海金=黄金现货基准价, asset=商品"
+  ]
+ },
+ "518600.SH": {
+  "asset": "商品",
+  "evidence": [
+   "LLM: 上海金=黄金现货基准价, asset=商品"
+  ]
+ },
+ "518680.SH": {
+  "asset": "商品",
+  "evidence": [
+   "LLM: 上海金=黄金现货基准价, asset=商品"
+  ]
+ },
+ "518860.SH": {
+  "asset": "商品",
+  "evidence": [
+   "LLM: 上海金=黄金现货基准价, asset=商品"
+  ]
+ },
+ "518890.SH": {
+  "asset": "商品",
+  "evidence": [
+   "LLM: 上海金=黄金现货基准价, asset=商品"
+  ]
+ },
+ "180302.SZ": {
+  "asset": "其他",
+  "cross_border_qdii": false,
+  "subtype": "REITs",
+  "evidence": [
+   "LLM: 仓储物流REITs为境内基础设施",
+   "LLM: 冻结QDII表[国际]误触发(深国际为企业名)"
+  ]
+ },
+ "508029.SH": {
+  "asset": "其他",
+  "cross_border_qdii": false,
+  "subtype": "REITs",
+  "evidence": [
+   "LLM: 产业园区REITs为境内基础设施",
+   "LLM: 冻结QDII表[国际]误触发(国际软件园为地名)"
+  ]
+ },
+ "508096.SH": {
+  "asset": "其他",
+  "cross_border_qdii": false,
+  "subtype": "REITs",
+  "evidence": [
+   "LLM: 能源基础设施REITs为境内资产",
+   "LLM: 冻结QDII表[国际]误触发(京能国际为企业名)"
+  ]
+ },
+ "184801.SZ": {
+  "asset": "其他",
+  "subtype": "REITs",
+  "evidence": [
+   "LLM: name含[REITs]字样, 鹏华前海万科REITs"
+  ]
+ },
+ "160140.SZ": {
+  "instrument": "LOF",
+  "subtype": "QDII-LOF(REIT指数)",
+  "asset": "股票跨境(QDII)",
+  "cross_border_qdii": true,
+  "evidence": [
+   "LLM: name含[QDII-LOF]字样",
+   "LLM: 道琼斯美国精选REIT指数=美国REIT"
+  ]
+ },
+ "160923.SZ": {
+  "asset": "混合",
+  "cross_border_qdii": true,
+  "subtype": "QDII-LOF",
+  "evidence": [
+   "LLM: name含[QDII-LOF]+[海外], 大成海外中国机会混合=QDII混合型"
+  ]
+ },
+ "501300.SH": {
+  "asset": "债券",
+  "cross_border_qdii": true,
+  "subtype": "QDII-LOF",
+  "evidence": [
+   "LLM: name含[QDII-LOF], 全球美元收益债券=QDII债券"
+  ]
+ },
+ "159803.SZ": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "subtype": "命名疑点(QDII字样但A股指数)",
+  "evidence": [
+   "LLM: 中证浙江新动能为A股指数且fund_type=股票型",
+   "LLM: 注册名含[QDII]字样与指数性质矛盾, 存疑留档"
+  ]
+ },
+ "159809.SZ": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "subtype": "跨市场指数(含港股成分)",
+  "evidence": [
+   "LLM: 恒生沪深港通大湾区综合指数为沪深港跨市场指数"
+  ]
+ },
+ "517380.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "subtype": "跨市场指数(含港股成分)",
+  "evidence": [
+   "LLM: 恒生沪深港创新药精选50为沪深港跨市场指数",
+   "LLM: 冻结QDII表[恒生]对沪深港跨市场指数不适用"
+  ]
+ },
+ "150003.SZ": {
+  "subtype": "分级/分离交易子份额",
+  "evidence": [
+   "LLM: 长盛同庆可分离交易/建信优势动力=老分级(分离交易)份额, 15段"
+  ]
+ },
+ "150006.SZ": {
+  "subtype": "分级/分离交易子份额",
+  "evidence": [
+   "LLM: 长盛同庆可分离交易/建信优势动力=老分级(分离交易)份额, 15段"
+  ]
+ },
+ "150007.SZ": {
+  "subtype": "分级/分离交易子份额",
+  "evidence": [
+   "LLM: 长盛同庆可分离交易/建信优势动力=老分级(分离交易)份额, 15段"
+  ]
+ },
+ "506000.SH": {
+  "subtype": "定开(封闭期)",
+  "evidence": [
+   "LLM: 科创板定开基金, 506段上市封闭期份额"
+  ]
+ },
+ "506001.SH": {
+  "subtype": "定开(封闭期)",
+  "evidence": [
+   "LLM: 科创板定开基金, 506段上市封闭期份额"
+  ]
+ },
+ "506002.SH": {
+  "subtype": "定开(封闭期)",
+  "evidence": [
+   "LLM: 科创板定开基金, 506段上市封闭期份额"
+  ]
+ },
+ "506003.SH": {
+  "subtype": "定开(封闭期)",
+  "evidence": [
+   "LLM: 科创板定开基金, 506段上市封闭期份额"
+  ]
+ },
+ "506005.SH": {
+  "subtype": "定开(封闭期)",
+  "evidence": [
+   "LLM: 科创板定开基金, 506段上市封闭期份额"
+  ]
+ },
+ "506006.SH": {
+  "subtype": "定开(封闭期)",
+  "evidence": [
+   "LLM: 科创板定开基金, 506段上市封闭期份额"
+  ]
+ },
+ "506007.SH": {
+  "subtype": "定开(封闭期)",
+  "evidence": [
+   "LLM: 科创板定开基金, 506段上市封闭期份额"
+  ]
+ },
+ "506008.SH": {
+  "subtype": "定开(封闭期)",
+  "evidence": [
+   "LLM: 科创板定开基金, 506段上市封闭期份额"
+  ]
+ },
+ "506009.SH": {
+  "subtype": "定开(封闭期)",
+  "evidence": [
+   "LLM: 科创板定开基金, 506段上市封闭期份额"
+  ]
+ },
+ "510170.SH": {
+  "asset": "股票A股",
+  "cross_border_qdii": false,
+  "evidence": [
+   "LLM: 上证大宗商品股票指数=A股股票指数(能源/材料股), 非商品现货/期货",
+   "LLM: 冻结商品词[商品]误触发"
+  ]
+ }
+}

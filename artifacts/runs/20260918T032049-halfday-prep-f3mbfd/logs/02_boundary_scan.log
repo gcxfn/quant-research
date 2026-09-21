@@ -1,0 +1,18 @@
+[file-level] files=2431, range=2015-01-05..2024-12-31, violations=0, bad_names=0, other_files=['20260913-143215\\transfer-manifest.json', '20260913-2020-2024\\transfer-manifest.json']
+[row-level] 300/2431 elapsed=1.3s
+[row-level] 600/2431 elapsed=2.6s
+[row-level] 900/2431 elapsed=4.6s
+[row-level] 1200/2431 elapsed=6.3s
+[row-level] 1500/2431 elapsed=8.3s
+[row-level] 1800/2431 elapsed=10.8s
+[row-level] 2100/2431 elapsed=13.1s
+[row-level] 2400/2431 elapsed=15.7s
+[row-level] 2431/2431 elapsed=16.1s
+[full-read] 20260913-143215/2015/20150105.parquet: rows=564422, tt_max=2015-01-05 15:00:00
+[full-read] 20260913-143215/2015/20150601.parquet: rows=559361, tt_max=2015-06-01 15:00:00
+[full-read] 20260913-143215/2017/20170601.parquet: rows=781081, tt_max=2017-06-01 15:00:00
+[full-read] 20260913-143215/2019/20190603.parquet: rows=870251, tt_max=2019-06-03 15:00:00
+[full-read] 20260913-2020-2024/2020/20200601.parquet: rows=924476, tt_max=2020-06-01 15:00:00
+[full-read] 20260913-2020-2024/2021/20210601.parquet: rows=1040156, tt_max=2021-06-01 15:00:00
+[full-read] 20260913-2020-2024/2024/20241231.parquet: rows=1304922, tt_max=2024-12-31 15:30:00
+[done] status=FREEZE_CLEAN, global trade_time max=2024-12-31 15:30:00

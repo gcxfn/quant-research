@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "D:\量化\src\quant\cli\p2r8_daily_risk.py", line 623, in main
+    run.metrics['anchor_regressions'] = verify_anchors(
+                                        ^^^^^^^^^^^^^^^
+  File "D:\量化\src\quant\cli\p2r8_daily_risk.py", line 396, in verify_anchors
+    raise RuntimeError(f'ANCHOR REGRESSION FAILED: {failed}; results must '
+RuntimeError: ANCHOR REGRESSION FAILED: ['B1-FIX_sessions_equal', 'B1-FIX_bit_exact', 'B1-FIX-gross_sessions_equal', 'B1-FIX-gross_bit_exact']; results must not be consumed (failed run kept for the record)

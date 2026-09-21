@@ -1,0 +1,153 @@
+{
+  "purpose": "freeze boundary scan for user_minute_1m (pure data engineering, no 2025+ content read beyond min/max string of trade_time)",
+  "run_id": "20260918T032049-halfday-prep-f3mbfd",
+  "checked_at": "2026-09-18T03:27:53",
+  "n_files": 2431,
+  "file_level": {
+    "min": "2015-01-05",
+    "max": "2024-12-31",
+    "violations": [],
+    "bad_names": [],
+    "other_files": [
+      "20260913-143215\\transfer-manifest.json",
+      "20260913-2020-2024\\transfer-manifest.json"
+    ]
+  },
+  "row_level": {
+    "method": "projection scan trade_time min/max per file (polars lazy, statistics/column pruning)",
+    "violations": [],
+    "global_max": "2024-12-31 15:30:00",
+    "global_min": "2015-01-05 09:30:00"
+  },
+  "full_read_samples": [
+    {
+      "path": "20260913-143215/2015/20150105.parquet",
+      "rows": 564422,
+      "date_col_min": "20150105",
+      "date_col_max": "20150105",
+      "trade_time_min": "2015-01-05 09:30:00",
+      "trade_time_max": "2015-01-05 15:00:00",
+      "symbols": 2342
+    },
+    {
+      "path": "20260913-143215/2015/20150601.parquet",
+      "rows": 559361,
+      "date_col_min": "20150601",
+      "date_col_max": "20150601",
+      "trade_time_min": "2015-06-01 09:30:00",
+      "trade_time_max": "2015-06-01 15:00:00",
+      "symbols": 2321
+    },
+    {
+      "path": "20260913-143215/2017/20170601.parquet",
+      "rows": 781081,
+      "date_col_min": "20170601",
+      "date_col_max": "20170601",
+      "trade_time_min": "2017-06-01 09:30:00",
+      "trade_time_max": "2017-06-01 15:00:00",
+      "symbols": 3241
+    },
+    {
+      "path": "20260913-143215/2019/20190603.parquet",
+      "rows": 870251,
+      "date_col_min": "20190603",
+      "date_col_max": "20190603",
+      "trade_time_min": "2019-06-03 09:30:00",
+      "trade_time_max": "2019-06-03 15:00:00",
+      "symbols": 3611
+    },
+    {
+      "path": "20260913-2020-2024/2020/20200601.parquet",
+      "rows": 924476,
+      "date_col_min": "20200601",
+      "date_col_max": "20200601",
+      "trade_time_min": "2020-06-01 09:30:00",
+      "trade_time_max": "2020-06-01 15:00:00",
+      "symbols": 3836
+    },
+    {
+      "path": "20260913-2020-2024/2021/20210601.parquet",
+      "rows": 1040156,
+      "date_col_min": "20210601",
+      "date_col_max": "20210601",
+      "trade_time_min": "2021-06-01 09:30:00",
+      "trade_time_max": "2021-06-01 15:00:00",
+      "symbols": 4316
+    },
+    {
+      "path": "20260913-2020-2024/2024/20241231.parquet",
+      "rows": 1304922,
+      "date_col_min": "20241231",
+      "date_col_max": "20241231",
+      "trade_time_min": "2024-12-31 09:30:00",
+      "trade_time_max": "2024-12-31 15:30:00",
+      "symbols": 5382
+    }
+  ],
+  "per_year": {
+    "2015": {
+      "files": 244,
+      "rows": 143695286,
+      "bytes": 2566304897,
+      "tt_max": "2015-12-31 15:00:00"
+    },
+    "2016": {
+      "files": 244,
+      "rows": 167878190,
+      "bytes": 2760973417,
+      "tt_max": "2016-12-30 15:00:00"
+    },
+    "2017": {
+      "files": 244,
+      "rows": 192338003,
+      "bytes": 3008155490,
+      "tt_max": "2017-12-29 15:00:00"
+    },
+    "2018": {
+      "files": 243,
+      "rows": 206303953,
+      "bytes": 3149461553,
+      "tt_max": "2018-12-28 15:00:00"
+    },
+    "2019": {
+      "files": 244,
+      "rows": 213979562,
+      "bytes": 3394071091,
+      "tt_max": "2019-12-31 15:00:00"
+    },
+    "2020": {
+      "files": 243,
+      "rows": 228604165,
+      "bytes": 3851798066,
+      "tt_max": "2020-12-31 15:00:00"
+    },
+    "2021": {
+      "files": 243,
+      "rows": 255594719,
+      "bytes": 4422875354,
+      "tt_max": "2021-12-31 15:00:00"
+    },
+    "2022": {
+      "files": 242,
+      "rows": 280393027,
+      "bytes": 4867792446,
+      "tt_max": "2022-12-30 15:30:00"
+    },
+    "2023": {
+      "files": 242,
+      "rows": 301732387,
+      "bytes": 5030706386,
+      "tt_max": "2023-12-29 15:00:00"
+    },
+    "2024": {
+      "files": 242,
+      "rows": 312564008,
+      "bytes": 5252122595,
+      "tt_max": "2024-12-31 15:30:00"
+    }
+  },
+  "status": "FREEZE_CLEAN",
+  "conclusion": "两批次 2,431 个日文件名全部为 20150105..20241231 内的交易日；行级投影扫描全部文件 trade_time 最大值 < 2025-01-01，6 个抽样文件全列读复核一致；无任何 2025+ 内容。",
+  "projection_scan_seconds": 14.09,
+  "elapsed_seconds": 16.52
+}

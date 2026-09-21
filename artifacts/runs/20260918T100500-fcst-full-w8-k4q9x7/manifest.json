@@ -1,0 +1,113 @@
+{
+ "run_id": "20260918T100500-fcst-full-w8-k4q9x7",
+ "experiment_id": "exp-20260918-fcst-reason-llm-full",
+ "task": "forecast.change_reason 全量 LLM 结构化 wave-8（全序第 4,200-4,799 行，batch_008，600 行，type 为扭亏 320 行 + 略减 280 行）",
+ "status": "completed",
+ "time_start": "2026-09-18T09:44:00+08:00",
+ "time_end": "2026-09-18T10:48:40+08:00",
+ "timezone": "Asia/Shanghai",
+ "started_by": "ZCode 数据工程代理（会话内 LLM 结构化，无外部 API 调用、无网络、无 token）",
+ "checkpoint_resume": "开始时 batch_008.jsonl 不存在（features 目录仅 batch_001-007.jsonl），未触发恢复路径，全量新跑",
+ "inputs": {
+  "row_index": "data/features/fcst-reason-struct-full-20260918/row_index.parquet（38,567 行全序，batch_id=8 过滤 600 行，ordinal 4200-4799）",
+  "raw_dir": "data/raw/tushare/forecast/20260909-r1（只读，97 个 chunk_*.csv）",
+  "input_identity_file": "artifacts/runs/20260918T025456-fcst-full-w1-a3f7c2/work/input_identity.json（97 个 chunk 逐文件 sha256，与 wave-1/2/3/4/5/6/7 完全一致，raw 未变动）",
+  "freeze_note": "入池已由 row_index 固定 ann_date<=20241231 且 change_reason 非空；2025+ 行一行未读取，data/raw 全程只读。本批 ann_date 分布：2024 年 320 行、2018 年 253 行、2019 年 27 行"
+ },
+ "config_summary": {
+  "schema": "schema v1（llm-v1），与 pilot/wave-1/2/3/4/5/6/7 完全一致：data/features/fcst-reason-struct-pilot-20260918/schema.md（15 词封闭词表 + 补充判定细则），未改动",
+  "ordering": "batch_id=8 → ordinal 4200-4799，按 batch_idx 升序渲染；本批 600 行 type=扭亏 320 行（2024 公告）+ 略减 280 行（2018/2019 公告）",
+  "supports_direction_口径": "沿用 wave-1/2/3/4/5/6/7 manifest 固化口径：以 primary_code 经济方向对照 type（改善组/恶化组）判定一致性；上年收益/损失基数类原因按经济方向记 ±1；下修/更正及原因与 type 方向相悖记 -1（数据质量信号）；方向未明、程序性占位、纯列报调整记 0",
+  "batch_size": 600,
+  "wave_8_rows": "ordinal 4200-4799"
+ },
+ "actual_commands": [
+  "PYTHONPATH=D:/量化/src .venv/Scripts/python.exe -X utf8 artifacts/runs/20260918T100500-fcst-full-w8-k4q9x7/scripts/render_batch.py --repo-root D:/量化 --batch 8 --work-dir artifacts/runs/20260918T100500-fcst-full-w8-k4q9x7/work",
+  "（逐行结构化：代理会话内按渲染文件 6 段处理，手写 6 段结构化判断 batch_008_judge_part1..6.jsonl（仅 LLM 判断字段），元信息不经手抄）",
+  ".venv/Scripts/python.exe -X utf8 .../scripts/merge_batch8.py --repo-root D:/量化（新增辅助脚本：把 6 段判断与 row_index 元信息程序化合并为全字段 batch_008_part1..6.jsonl 及合并 batch_008.jsonl，并做合并前预检：ordinal 对齐、词表闭合、secondary!=primary、key_quote 原文逐字子串）",
+  ".venv/Scripts/python.exe -X utf8 .../scripts/check_batch_full.py --repo-root D:/量化 --batch 8（首轮 600/600 OK，退出码 0）",
+  ".venv/Scripts/python.exe -X utf8 .../scripts/quality_stats.py --repo-root D:/量化 --batch 8 --fix-note \"...\"（更新 progress.json）"
+ ],
+ "code_summary": {
+  "scripts_copied_from": "artifacts/runs/20260918T082900-fcst-full-w7-h6j3n8/scripts/（4 个脚本逐字节复制，sha256 相同）",
+  "build_row_index.py": "f436b0d8a1a0db4e2762bd23210bbf4be5bba0cdc3ac1a256db002315a6c8c14",
+  "render_batch.py": "41ba7b0ae569cb23bd440b6f5e27e8427b6bc33ffa5db4285fde95e13795a2ef",
+  "check_batch_full.py": "67470de19a734ccb5da7dad1a486850a79c32993eb82e138026e4c1de3ce7001",
+  "quality_stats.py": "80301483af6d99b912ccfcd13977de33a8e5f4c6fe2855652ae585ab0b55d997",
+  "merge_batch8.py（本波新增辅助脚本）": "ba3f19b5903c8accc733a91818074cf43cc3348c3b40222d42088fdaaf6ea28f",
+  "note": "merge_batch8.py 不改变结构化口径与校验逻辑，仅把历史由人工手抄元信息改为从 row_index 程序化转录，以消除 wave-1/2/4/5/6/7 反复出现的元信息转录失败模式；官方校验仍由未改动的 check_batch_full.py 独立执行"
+ },
+ "outputs": {
+  "features_dir": "data/features/fcst-reason-struct-full-20260918",
+  "files": {
+   "batch_008.jsonl": "e04e10c949f09ea3d9f6ae19945de048fb10c2d389ae875fa002ef9e1b79bbb7",
+   "progress.json（更新后）": "先读后写脚本追加 batch=8 并重算跨批累计（rows_completed=4800，batches_completed=[1,2,3,4,5,6,7,8]）",
+   "batch_008_input.txt（run work/）": "render_batch.py canonical 渲染输入，182,591 字符，sha256=dece4bf53bf4710f102a7d4cce5b5f82b70831fb685cc413db962ba20acf5dd1",
+   "batch_008_judge_part1..6.jsonl（run work/）": "6 段逐行结构化判断留痕（仅 LLM 判断字段，按 ordinal 键）",
+   "batch_008_part1..6.jsonl（run work/）": "6 段全字段结构化产出留痕（part1 含 04226 key_quote 修复后版本），sha256 依次为 df065b49.../ca644a3e.../d036b72e.../8551047a.../a5511a25.../da845f25..."
+  }
+ },
+ "environment": {
+  "os": "Windows 10.0.26200 x64, Git Bash",
+  "python": "3.11.15（D:/量化/.venv/Scripts/python.exe，-X utf8，PYTHONPATH=D:/量化/src）",
+  "polars": "1.44.2（row_index.parquet 读取）",
+  "git": "仓库未初始化 Git，按 AGENTS §5.3 以文件 sha256 记录源码身份"
+ },
+ "random_seed": "无随机成分（渲染、合并与合并前预检均为确定性顺序读写）",
+ "time_split": "不适用（结构化数据工程，非收益验证）；入池已冻结 ann_date>=20250101",
+ "durations": {
+  "render_sec": 1,
+  "llm_structuring_wall_sec": 3700,
+  "note": "结构化挂钟时间（09:45 render 完成 → 10:48 progress.json 更新），含 6 段逐行阅读/生成/写盘与合并前预检修复回路；与 wave-1（3,178s）至 wave-7（5,170s）量级一致"
+ },
+ "peak_memory": "未测量（raw CSV 35MB 量级 + parquet 索引，内存不构成约束）",
+ "checkpoint_resume_design": "每 wave 落盘 batch_NNN.jsonl 并跑 check_batch_full 校验；后续会话若 batch_009.jsonl 存在、行数与 row_index 一致且校验通过则跳过。",
+ "verification": {
+  "rows_checked": 600,
+  "all_checks_passed": true,
+  "quote_verbatim_pass_rate": 1.0,
+  "fix_loop": "merge_batch8.py 合并前预检捕获 1 处失败：04226 key_quote 与原文不符（原文为'天然气重卡车销量大幅回升'，误引为'天然气重卡销量大幅回升'，原文多一'车'字），定点修复 judge_part1 后重新合并；check_batch_full 官方校验首轮 600/600 OK（该失败未进入官方校验轮）"
+ },
+ "outputs_quality_summary": {
+  "other_rate_primary": 0.0467,
+  "secondary_null_rate": 0.35,
+  "supports_direction_distribution": {
+   "-1": 21,
+   "0": 9,
+   "1": 570
+  },
+  "confidence_distribution": {
+   "high": 594,
+   "low": 6
+  },
+  "key_quote_len_chars": {
+   "mean": 17.4,
+   "p50": 17,
+   "p90": 25,
+   "max": 35
+  },
+  "primary_code_distribution": {
+   "demand_up": 193,
+   "cost_up": 97,
+   "non_recurring": 80,
+   "demand_down": 69,
+   "cost_down": 37,
+   "other": 28,
+   "impairment": 24,
+   "price_down": 21,
+   "ma_restructuring": 18,
+   "price_up": 12,
+   "orders": 9,
+   "core_ops": 7,
+   "accounting": 5
+  },
+  "note": "本批前 320 行（2024 公告）type=扭亏，后 280 行（2018/2019 公告）type=略减，故 demand_up（193）与 cost_up/demand_down/price_down（187）并存；+1 共 570 行。-1 共 21 行，其中扭亏批内为原因与扭亏方向相悖的更正/负面驱动（04306 补提坏账致利润减少、04337 非经常收益增加但地产收入下滑、04437 业绩预告更正系核算错误、04525 并表口径增利而 type 为略减），略减批内为原因与下滑方向相悖的利好驱动（04529/04538/04546/04573/04593/04594/04597/04610/04619/04634/04637/04672/04684/04690/04792/04793/04794 等：原文给出销量/价格向好、利润增长或合并范围口径变化但 type 为略减，按 schema 留作数据质量信号）；0 共 9 行（04233 纯列报口径修正、04551/04564/04561/04598/04621/04635/04668 无明确方向、04768 证券市场波动难以估计、04780 资产置换口径）；confidence=low 共 6 行（04551、04573、04610、04619、04621、04767，均为无具体因果陈述或需推断行）。other 率 4.67%，主要由略减批的 2018/2019 年政策类（光伏 531、房地产调控、环保督查、医保控费等）与基数/口径类表述构成。本批 2018/2019 略减段原材料成本上涨（cost_up 97 行）为最集中单一驱动，与 2024 扭亏段的需求恢复（demand_up）形成鲜明对照"
+ },
+ "notes": [
+  "仅数据工程产出，无策略结论；confidence=low 行不得直接进入研究判据。",
+  "上年基数类原因按经济方向记 ±1、修正下调/口径矛盾记 -1 的口径沿用 wave-1/2/3/4/5/6/7 manifest 固化约定。",
+  "progress.json 更新为脚本先读后写、仅追加 batch=8 字段并重算跨批累计。",
+  "不改其他文件，不跑任何回测；batch_001-007.jsonl 未触碰。",
+  "key_quote 全角/半角标点（如 04241/04512/04513/04640 的半角逗号、04289 的全角％、04649/04799 的弯引号、04504/04566/04764 的公司名括号连写）均按原文逐字保留，由程序预检与官方校验双重确认。"
+ ]
+}

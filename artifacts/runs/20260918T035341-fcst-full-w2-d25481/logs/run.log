@@ -1,0 +1,12 @@
+2026-09-18T03:53:41+08:00 run start: fcst-reason-struct-full wave-2 batch_002 (ordinal 600-1199, 600 rows, all type=扭亏)
+checkpoint: batch_002.jsonl absent -> full run (no resume)
+03:54 raw identity verified: 97 chunk sha256 == wave-1 identity (raw read-only, 2025+ rows untouched)
+03:54 render_batch.py --batch 2 -> work/batch_002_input.txt (600 rows, 151,567 chars)
+03:55-04:24 LLM structuring in 6 segments -> work/batch_002_part1..6.jsonl (schema llm-v1, vocab 15, quote<=40 verbatim)
+04:25 merge -> data/features/fcst-reason-struct-full-20260918/batch_002.jsonl (600 lines)
+04:25 check_batch_full.py --batch 2: 2 FAILURES (00664 quote non-contiguous due to alias parenthesis; 00966 end/ann_date transcription)
+04:26 fix part1 (00664) + part4 (00966), re-merge
+04:26 check_batch_full.py --batch 2: 600/600 OK (exit 0)
+04:27 quality_stats.py --batch 2 -> progress.json updated (read-then-write, batch=2 appended; rows_completed=1200)
+04:28 manifest.json written; run completed
+quality: other_rate_primary=0.035; sd {-1:22, 0:15, 1:563}; confidence {high:587, low:13}; quote pass rate 1.0

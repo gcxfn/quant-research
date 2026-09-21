@@ -1,0 +1,66 @@
+{
+ "factor_id": "B14",
+ "name": "small_value",
+ "family": "B 估值/规模",
+ "prereg": "exp-20260919-factor-round-f2r1 §3-B",
+ "panel_sha256": "1cbb09a11f7c10136981749c13467f12a1757b59e7e95fb6f86666f96edfc1de",
+ "eval_panel_end": "2020-11-30",
+ "implementer": "主对话接管（代理派发死于基建后）",
+ "screen": {
+  "t_ic": 4.9247123203440655,
+  "crit1_abs_t_ge2": true,
+  "crit2_mono": true,
+  "ic_2015": null,
+  "crit3_2015_ok": true,
+  "pool_median_symbols": 3530.0,
+  "coverage_ratio": 1.1710807064070883,
+  "crit4_coverage": true,
+  "screen_pass": true
+ },
+ "eval": {
+  "n_dates": 47,
+  "coverage_mean_symbols": 4133.914893617021,
+  "ic_mean": 0.12089840716241536,
+  "ic_std": 0.16830175395631325,
+  "icir": 0.7183431207365637,
+  "ic_win_rate": 0.7446808510638298,
+  "group_mean_ret": [
+   -0.006734276331983728,
+   0.00028053470700989755,
+   0.005803700727032556,
+   0.011096188356998039,
+   0.012772082009956763,
+   0.015802448498278953,
+   0.01665390986599565,
+   0.0196076203486898,
+   0.021434929313904758,
+   0.026484687182073776
+  ],
+  "long_short_mean": 0.0332189635140575,
+  "monotonicity": 0.9724123800302373,
+  "ic_by_year": {
+   "2021": 0.14963319084781207,
+   "2022": 0.08961601298748355,
+   "2023": 0.19449559791578172,
+   "2024": 0.04338977414732664
+  },
+  "long_short_by_year": {
+   "2021": 0.05055211589835882,
+   "2022": 0.032791365131216124,
+   "2023": 0.04436357422781528,
+   "2024": 0.0023281928041122696
+  },
+  "turnover_top_group": 0.1285934672897371,
+  "corr_with_others": {},
+  "config": {
+   "horizon_days": 20,
+   "n_groups": 10,
+   "eval_freq": "M",
+   "exclude_st": true,
+   "require_trading": true,
+   "exclude_boards": true,
+   "min_history_rows": 60
+  }
+ },
+ "n_rows": 230429
+}

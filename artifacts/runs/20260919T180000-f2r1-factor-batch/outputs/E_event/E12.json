@@ -1,0 +1,66 @@
+{
+ "factor_id": "E12",
+ "name": "hb_key60",
+ "formula": "60d 关键股东(公司C+高管P)净增持 ΣIN-ΣDE",
+ "source": "stk_holdertrade",
+ "fill_policy": "无事件为 null（不入因子帧）",
+ "n_rows": 26325,
+ "t_value": -0.6938276896398438,
+ "coverage_median_symbols": 372.0,
+ "coverage_median_active_months": 453.0,
+ "pool_median_symbols": 3126.0,
+ "criteria": {
+  "c1_abs_t>=2": false,
+  "c2_mono_consistent>=0.3": true,
+  "c3_2015_non_disaster": true,
+  "c4_coverage>=50%pool": false
+ },
+ "survived_prelim": false,
+ "eval": {
+  "n_dates": 59,
+  "coverage_mean_symbols": 426.6949152542373,
+  "ic_mean": -0.008980607125284245,
+  "ic_std": 0.09942144607901546,
+  "icir": -0.09032867132255232,
+  "ic_win_rate": 0.4576271186440678,
+  "group_mean_ret": [
+   0.008180842035717768,
+   0.014994340906458398,
+   0.011130791063530605,
+   0.006331675215661871,
+   0.006968433930503286,
+   0.006509320413418152,
+   0.008614745190529871,
+   0.010251437934744742,
+   0.0037872115568645427,
+   0.000510054300891138
+  ],
+  "long_short_mean": -0.00767078773482663,
+  "monotonicity": -0.668875864873778,
+  "ic_by_year": {
+   "2016": 0.01954775266763521,
+   "2017": -0.017591581926118545,
+   "2018": -0.0067927164657062755,
+   "2019": -0.03892147444399364,
+   "2020": -0.0004326889430519313
+  },
+  "long_short_by_year": {
+   "2016": -0.002278566444490128,
+   "2017": -0.008512628549205004,
+   "2018": -0.005107141128480517,
+   "2019": -0.02096153610278522,
+   "2020": 0.0005314278232972786
+  },
+  "turnover_top_group": 0.5028445044891835,
+  "corr_with_others": {},
+  "config": {
+   "horizon_days": 20,
+   "n_groups": 10,
+   "eval_freq": "M",
+   "exclude_st": true,
+   "require_trading": true,
+   "exclude_boards": true,
+   "min_history_rows": 60
+  }
+ }
+}

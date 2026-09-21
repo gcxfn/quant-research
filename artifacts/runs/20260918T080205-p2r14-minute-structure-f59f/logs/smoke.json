@@ -1,0 +1,91 @@
+{
+  "mode": "smoke",
+  "days": [
+    "2015-06-01",
+    "2020-06-01",
+    "2024-06-03"
+  ],
+  "counters": {
+    "source_rows": 2716311,
+    "date_col_mismatch_filename": 0,
+    "date_col_rows_gt_freeze": 0,
+    "bj_rows_removed": 0,
+    "gt15_rows_removed_raw": 0,
+    "gt15_rows_removed_non_bj": 0,
+    "bar_1300_rows_present": 0,
+    "zerovol_bars_removed": 111761,
+    "first_bar_zerovol": 257,
+    "rows_dropped_all_zerovol": 55,
+    "missing_close_1430": 362,
+    "missing_close_1500": 92,
+    "zero_range_denominator": 128,
+    "rows_out": 11216
+  },
+  "auction_crosscheck": {
+    "verdict": "REFUTED_AND_REPLACED_BY_INTERNAL_CHECK",
+    "prereg_assumption": "stk_auction_c 为首 bar 竞价量的独立记录源",
+    "empirics": [
+      {
+        "date": "2015-06-01",
+        "n_checked": 1985,
+        "n_rel_gt_1e-3": 1985,
+        "vol_ratio_file_over_first_bar_p10_p50_p90": [
+          5.29907557724134,
+          46.88680035242291,
+          135.03672197569722
+        ],
+        "file_ohlc_eq_daily_ohlc_1fen_share": 0.3938287153652393
+      },
+      {
+        "date": "2020-06-01",
+        "n_checked": 1999,
+        "n_rel_gt_1e-3": 1999,
+        "vol_ratio_file_over_first_bar_p10_p50_p90": [
+          11.516577329480555,
+          51.713347921225385,
+          308.0895918840582
+        ],
+        "file_ohlc_eq_daily_ohlc_1fen_share": 0.3989494747373687
+      },
+      {
+        "date": "2024-06-03",
+        "n_checked": 2000,
+        "n_rel_gt_1e-3": 2000,
+        "vol_ratio_file_over_first_bar_p10_p50_p90": [
+          8.6881926898357,
+          36.93036982122243,
+          156.56167832167833
+        ],
+        "file_ohlc_eq_daily_ohlc_1fen_share": 0.4265
+      }
+    ],
+    "internal_check": [
+      {
+        "date": "2015-06-01",
+        "bars_sh_sz": 2321,
+        "bars_vol_gt0": 2299,
+        "vol_gt0_share": 0.990521327014218,
+        "single_price_share": 0.7198782079164854,
+        "open_eq_close_share": 0.7807742496737712
+      },
+      {
+        "date": "2020-06-01",
+        "bars_sh_sz": 3836,
+        "bars_vol_gt0": 3698,
+        "vol_gt0_share": 0.9640250260688217,
+        "single_price_share": 1.0,
+        "open_eq_close_share": 1.0
+      },
+      {
+        "date": "2024-06-03",
+        "bars_sh_sz": 5114,
+        "bars_vol_gt0": 5017,
+        "vol_gt0_share": 0.9810324599139617,
+        "single_price_share": 0.44907315128562886,
+        "open_eq_close_share": 0.5704604345226231
+      }
+    ],
+    "note": "vol 单位两侧均为股。实测：文件 vol 与分钟首 bar 竞价量系统性不符（比值 5–300 倍，无一匹配）；文件 OHLC 与日线 OHLC 仅约40%（1 分内）一致、与分钟 PM 窗口亦不完全一致，真实语义未定——确定不是开盘竞价撮合记录。首 bar 竞价量改以分钟包内部证据（单一价格占比等）披露语义：45–72% 股票日首 bar 非纯单点价，即 vendor 09:30 bar 含少量最早连续成交，U6 特征按「09:30 bar量」解读并携带该语义噪声。判据/阈值/池不变，仅核验披露变更。"
+  },
+  "elapsed_s": 1.1
+}

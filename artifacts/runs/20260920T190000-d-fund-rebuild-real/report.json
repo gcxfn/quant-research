@@ -1,0 +1,112 @@
+{
+  "status": "completed",
+  "rows": 130784,
+  "columns": [
+    "symbol",
+    "end_date",
+    "ts_code",
+    "ann_date",
+    "eps",
+    "bps",
+    "roe",
+    "roa",
+    "grossprofit_margin",
+    "netprofit_margin",
+    "debt_to_assets",
+    "current_ratio",
+    "netprofit_yoy",
+    "tr_yoy",
+    "ocf_yoy",
+    "assets_turn",
+    "q_sales_yoy",
+    "q_roe",
+    "profit_dedt",
+    "ocfps",
+    "signal_date",
+    "f_ann_date",
+    "signal_date_income",
+    "revenue",
+    "n_income_attr_p",
+    "sell_exp",
+    "admin_exp",
+    "signal_date_balancesheet",
+    "total_assets",
+    "total_hldr_eqy_exc_min_int",
+    "intan_assets",
+    "goodwill",
+    "total_share",
+    "signal_date_cashflow",
+    "n_cashflow_act",
+    "revenue_q",
+    "n_income_attr_p_q",
+    "roe_ly",
+    "grossprofit_margin_ly",
+    "debt_to_assets_ly",
+    "eps_ly",
+    "_ly_signal_date"
+  ],
+  "seconds": 361.5883424282074,
+  "report": {
+    "sources": {
+      "fina_indicator": {
+        "label": "financial",
+        "total_rows": 458718,
+        "kept_rows": 254913,
+        "dropped_rows": 203805,
+        "dropped_missing_signal_date": 0,
+        "dropped_after_dev_end": 203805,
+        "dropped_after_freeze_end": 52086,
+        "dev_end": "2020-12-31",
+        "freeze_end": "2024-12-31"
+      },
+      "income": {
+        "label": "financial",
+        "total_rows": 421912,
+        "kept_rows": 248798,
+        "dropped_rows": 173114,
+        "dropped_missing_signal_date": 0,
+        "dropped_after_dev_end": 173114,
+        "dropped_after_freeze_end": 52235,
+        "dev_end": "2020-12-31",
+        "freeze_end": "2024-12-31"
+      },
+      "balancesheet": {
+        "label": "financial",
+        "total_rows": 409022,
+        "kept_rows": 235453,
+        "dropped_rows": 173569,
+        "dropped_missing_signal_date": 0,
+        "dropped_after_dev_end": 173569,
+        "dropped_after_freeze_end": 49352,
+        "dev_end": "2020-12-31",
+        "freeze_end": "2024-12-31"
+      },
+      "cashflow": {
+        "label": "financial",
+        "total_rows": 396773,
+        "kept_rows": 199178,
+        "dropped_rows": 197595,
+        "dropped_missing_signal_date": 0,
+        "dropped_after_dev_end": 197595,
+        "dropped_after_freeze_end": 66006,
+        "dev_end": "2020-12-31",
+        "freeze_end": "2024-12-31"
+      }
+    },
+    "non_quarter_rows_dropped": 25,
+    "quarter": {
+      "n_rows": 130784,
+      "n_q1": 28398,
+      "n_diff": 82900,
+      "n_broken_chain": 19486,
+      "caliber": "Q1 keeps the cumulative level; Q2-Q4 subtract the same-year previous quarter's cumulative; a gap yields null (R12: the old month!=1 branch wrongly subtracted the prior-year annual from Q1)"
+    },
+    "yoy": {
+      "n_current_rows": 130784,
+      "n_yoy_linked": 110134,
+      "n_yoy_blocked_unseen": 223,
+      "n_yoy_missing": 20427,
+      "caliber": "both legs resolved AS OF the current report's signal_date over the full revision history; an invisible last-year revision links NULL (R13: the old join ignored last year's signal_date entirely)"
+    }
+  }
+}

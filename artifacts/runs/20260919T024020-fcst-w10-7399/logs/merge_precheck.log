@@ -1,0 +1,7 @@
+PRECHECK FAILURES: 6
+FAIL: ordinal 05681: key_quote empty or len 43 > 40
+FAIL: ordinal 05779: key_quote empty or len 46 > 40
+FAIL: ordinal 05785: quote NOT verbatim; quote='受“新冠肺炎”疫情影响,公司及行业上,下游单位复工复产时间延迟'; orig='(一)报告期内,受“新冠肺炎”疫情影响,为响应国家关于防控疫情工作会议精神,公司及行业上,下游单位复工复产时间延迟,从而'
+FAIL: ordinal 05805: quote NOT verbatim; quote='受新冠肺炎疫情影响，上述产品所对应科室的手术量同比减少显著'; orig='公司主营业务收入主要来自口腔修复膜和生物膜,均为第三类植入性医疗器械,分别对应口腔相关科室和神经外科相关科室.报告期内,'
+FAIL: ordinal 05810: key_quote empty or len 41 > 40
+FAIL: ordinal 05977: quote NOT verbatim; quote='因行业市场竞争加大,公司智能工厂及系统工程业务本期收入减少'; orig='因行业市场竞争加大，公司智能工厂及系统工程业务本期收入减少、效益下滑。另“新冠”肺炎疫情及其防控措施对公司的生产经营和销'

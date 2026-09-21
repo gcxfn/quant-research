@@ -1,0 +1,87 @@
+{
+ "seed": 20260917,
+ "pairs": [
+  {
+   "oid": "000001.XSHE",
+   "date": 20241202,
+   "bundle_limit_up": 12.52,
+   "bundle_limit_down": 10.24,
+   "raw_up_limit": 12.52,
+   "raw_down_limit": 10.24,
+   "exact_equal_up": true,
+   "exact_equal_down": true,
+   "raw_chunk_rows_that_day": 5455
+  },
+  {
+   "oid": "300774.XSHE",
+   "date": 20231030,
+   "bundle_limit_up": 12.78,
+   "bundle_limit_down": 8.52,
+   "raw_up_limit": 12.78,
+   "raw_down_limit": 8.52,
+   "exact_equal_up": true,
+   "exact_equal_down": true,
+   "raw_chunk_rows_that_day": 5338
+  },
+  {
+   "oid": "000929.XSHE",
+   "date": 20160817,
+   "bundle_limit_up": 19.93,
+   "bundle_limit_down": 16.31,
+   "raw_up_limit": 19.93,
+   "raw_down_limit": 16.31,
+   "exact_equal_up": true,
+   "exact_equal_down": true,
+   "raw_chunk_rows_that_day": 2898
+  },
+  {
+   "oid": "002626.XSHE",
+   "date": 20181227,
+   "bundle_limit_up": 13.34,
+   "bundle_limit_down": 10.92,
+   "raw_up_limit": 13.34,
+   "raw_down_limit": 10.92,
+   "exact_equal_up": true,
+   "exact_equal_down": true,
+   "raw_chunk_rows_that_day": 3566
+  },
+  {
+   "oid": "301608.XSHE",
+   "date": 20241107,
+   "bundle_limit_up": 78.84,
+   "bundle_limit_down": 52.56,
+   "raw_up_limit": 78.84,
+   "raw_down_limit": 52.56,
+   "exact_equal_up": true,
+   "exact_equal_down": true,
+   "raw_chunk_rows_that_day": 5448
+  }
+ ],
+ "nan_rule_days": {
+  "20170307": {
+   "raw_chunk_rows": 0,
+   "bundle_bars_that_day": 3130,
+   "bundle_nan_limit_up": 3130
+  },
+  "20170308": {
+   "raw_chunk_rows": 0,
+   "bundle_bars_that_day": 3131,
+   "bundle_nan_limit_up": 3131
+  },
+  "20170309": {
+   "raw_chunk_rows": 0,
+   "bundle_bars_that_day": 3131,
+   "bundle_nan_limit_up": 3131
+  },
+  "20220726": {
+   "raw_chunk_rows": 0,
+   "bundle_bars_that_day": 4296,
+   "bundle_nan_limit_up": 4296
+  },
+  "20230421": {
+   "raw_chunk_rows": 0,
+   "bundle_bars_that_day": 4453,
+   "bundle_nan_limit_up": 4453
+  }
+ }
+}

@@ -1,0 +1,203 @@
+{
+ "phase": "dev",
+ "all_ports_pass": true,
+ "b1m_dev_port_pass": true,
+ "c05_port_pass": true,
+ "c05_port": {
+  "window": "dev",
+  "construction": "window-local rerun of r16.simulate_r16(C05) (K=30, filter=on) on this window's signal days; leg rows/outcomes imported verbatim from that run",
+  "n_leg_rows": 2216,
+  "n_signals": 71,
+  "first_signal": "2015-01-30",
+  "first_signal_kind_counts": {
+   "buy_open": 23
+  },
+  "c05_window_metrics": {
+   "net_cagr": 0.03406309102222016,
+   "max_drawdown": -0.17480729428326758,
+   "net_return_by_year": {
+    "2015": 0.0013353579552752848,
+    "2016": -0.04152146856177319,
+    "2017": 0.1156703899320155,
+    "2018": -0.057556986346738226,
+    "2019": 0.08591834013081123,
+    "2020": 0.11520031207112602
+   },
+   "max_single_name_weight": 0.043983987586482504,
+   "execution_rate": 0.9887184115523465,
+   "max_one_side_turnover": 1.5897592374172718
+  },
+  "membership_events": 71,
+  "dev_reproduction": {
+   "leg_log_equals_r16_artifact": true,
+   "leg_log_equals_r16_artifact_sorted": true,
+   "membership_events_equals_r16_artifact": true,
+   "metrics_tolerance": 1e-09,
+   "metrics_max_abs_diff": 0.0,
+   "metrics_diffs": {
+    "net_cagr": 0.0,
+    "max_drawdown": 0.0,
+    "max_single_name_weight": 0.0,
+    "max_one_side_turnover": 0.0,
+    "yr2015": 0.0,
+    "yr2016": 0.0,
+    "yr2017": 0.0,
+    "yr2018": 0.0,
+    "yr2019": 0.0,
+    "yr2020": 0.0
+   },
+   "execution_rate_caliber": {
+    "mine": 0.9887184115523465,
+    "r16_published": 0.9888740542946151,
+    "r16_restricted_to_window_signals": 0.9887184115523465,
+    "rate_match_1e-12": true,
+    "boundary_legs_planned": 31,
+    "boundary_legs_executed": 31,
+    "note": "the R16 dev caliber counts legs planned at the 2020-12-31 boundary signal (executed 2021-01-04); window-local construction excludes them, so the rate is compared on the identical planned-row set and the difference must be exactly those boundary legs"
+   },
+   "reference": "R16 run 20260918T083650 leg_log/membership_events config_id=C05 + metrics.json configs.C05",
+   "port_pass": true
+  }
+ },
+ "blocked": [],
+ "detail": {},
+ "dev_repro": {
+  "R3-01": {
+   "intents": true,
+   "fills": true,
+   "events": true,
+   "daily": true,
+   "clips_final": true,
+   "net_cagr_matches_metrics": true,
+   "net_cagr": 0.08866327362378268,
+   "ref_net_cagr": 0.08866327362378268,
+   "ref_run": "20260919T110500-hybrid-v3-r3ld",
+   "frame_rows": {
+    "intents": 204,
+    "fills": 66,
+    "events": 366,
+    "daily": 1462,
+    "clips_final": 4
+   }
+  },
+  "R3-02": {
+   "intents": true,
+   "fills": true,
+   "events": true,
+   "daily": true,
+   "clips_final": true,
+   "net_cagr_matches_metrics": true,
+   "net_cagr": 0.0873821075379766,
+   "ref_net_cagr": 0.0873821075379766,
+   "ref_run": "20260919T110500-hybrid-v3-r3ld",
+   "frame_rows": {
+    "intents": 204,
+    "fills": 67,
+    "events": 366,
+    "daily": 1462,
+    "clips_final": 4
+   }
+  },
+  "R3-03": {
+   "intents": true,
+   "fills": true,
+   "events": true,
+   "daily": true,
+   "clips_final": true,
+   "net_cagr_matches_metrics": true,
+   "net_cagr": 0.08601833105626899,
+   "ref_net_cagr": 0.08601833105626899,
+   "ref_run": "20260919T110500-hybrid-v3-r3ld",
+   "frame_rows": {
+    "intents": 204,
+    "fills": 67,
+    "events": 367,
+    "daily": 1462,
+    "clips_final": 4
+   }
+  },
+  "R3-04": {
+   "intents": true,
+   "fills": true,
+   "events": true,
+   "daily": true,
+   "clips_final": true,
+   "net_cagr_matches_metrics": true,
+   "net_cagr": 0.08505498260709432,
+   "ref_net_cagr": 0.08505498260709432,
+   "ref_run": "20260919T110500-hybrid-v3-r3ld",
+   "frame_rows": {
+    "intents": 133,
+    "fills": 66,
+    "events": 269,
+    "daily": 1462,
+    "clips_final": 3
+   }
+  },
+  "H2-01": {
+   "intents": true,
+   "fills": true,
+   "events": true,
+   "daily": true,
+   "clips_final": true,
+   "net_cagr_matches_metrics": true,
+   "net_cagr": 0.05153828505258695,
+   "ref_net_cagr": 0.05153828505258695,
+   "ref_run": "20260919T063022-hybrid-v2-2k5b",
+   "frame_rows": {
+    "intents": 1537,
+    "fills": 708,
+    "events": 21708,
+    "daily": 1462,
+    "clips_final": 28
+   }
+  },
+  "H2-03": {
+   "intents": true,
+   "fills": true,
+   "events": true,
+   "daily": true,
+   "clips_final": true,
+   "net_cagr_matches_metrics": true,
+   "net_cagr": 0.06663506957678766,
+   "ref_net_cagr": 0.06663506957678766,
+   "ref_run": "20260919T063022-hybrid-v2-2k5b",
+   "frame_rows": {
+    "intents": 1608,
+    "fills": 668,
+    "events": 23231,
+    "daily": 1462,
+    "clips_final": 27
+   }
+  },
+  "H2-04": {
+   "intents": true,
+   "fills": true,
+   "events": true,
+   "daily": true,
+   "clips_final": true,
+   "net_cagr_matches_metrics": true,
+   "net_cagr": 0.05755147510268843,
+   "ref_net_cagr": 0.05755147510268843,
+   "ref_run": "20260919T063022-hybrid-v2-2k5b",
+   "frame_rows": {
+    "intents": 1537,
+    "fills": 714,
+    "events": 21426,
+    "daily": 1462,
+    "clips_final": 31
+   }
+  }
+ },
+ "r3a0_regression": {
+  "intents": true,
+  "fills": true,
+  "events": true,
+  "daily": true,
+  "clips_final": true,
+  "net_cagr_matches_v2_metrics": true
+ },
+ "manifest": "manifest_dev.json",
+ "runner_sha256": "3bcca9a10f34ad0161662d92c0ef5e8e3aaf0635cf7696ea4c74dea4ed79ab17",
+ "timestamp": "2026-09-20T05:43:19.858675+00:00"
+}

@@ -1,0 +1,66 @@
+{
+ "factor_id": "C06",
+ "name": "mf_mom",
+ "family": "C 微观结构",
+ "prereg": "exp-20260919-factor-round-f2r1 §3-C",
+ "panel_sha256": "1cbb09a11f7c10136981749c13467f12a1757b59e7e95fb6f86666f96edfc1de",
+ "eval_panel_end": "2020-11-30",
+ "implementer": "主对话接管（代理派发死于基建后）",
+ "screen": {
+  "t_ic": -2.1101142085619964,
+  "crit1_abs_t_ge2": true,
+  "crit2_mono": true,
+  "ic_2015": null,
+  "crit3_2015_ok": true,
+  "pool_median_symbols": 4144.5,
+  "coverage_ratio": 0.9990990366622775,
+  "crit4_coverage": true,
+  "screen_pass": true
+ },
+ "eval": {
+  "n_dates": 47,
+  "coverage_mean_symbols": 4140.765957446809,
+  "ic_mean": -0.017603289588755205,
+  "ic_std": 0.0571921997215421,
+  "icir": -0.3077917910914821,
+  "ic_win_rate": 0.3617021276595745,
+  "group_mean_ret": [
+   0.01178471568361356,
+   0.014790044810454256,
+   0.013646427559464403,
+   0.013160409834728565,
+   0.01203567326129268,
+   0.012237163809294726,
+   0.012288007445880439,
+   0.012496464262374912,
+   0.011298008985092069,
+   0.009316446754985623
+  ],
+  "long_short_mean": -0.002468268928627936,
+  "monotonicity": -0.6916998282515487,
+  "ic_by_year": {
+   "2021": 6.088533097570759e-05,
+   "2022": -0.02336880672613785,
+   "2023": -0.013005124776143085,
+   "2024": -0.03559982332871199
+  },
+  "long_short_by_year": {
+   "2021": 0.004522998314251025,
+   "2022": -0.007556894371767825,
+   "2023": -0.000500280032826983,
+   "2024": -0.006696223593362308
+  },
+  "turnover_top_group": 0.8981824920001805,
+  "corr_with_others": {},
+  "config": {
+   "horizon_days": 20,
+   "n_groups": 10,
+   "eval_freq": "M",
+   "exclude_st": true,
+   "require_trading": true,
+   "exclude_boards": true,
+   "min_history_rows": 60
+  }
+ },
+ "n_rows": 224383
+}

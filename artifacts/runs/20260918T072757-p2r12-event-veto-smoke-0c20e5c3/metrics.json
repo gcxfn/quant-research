@@ -1,0 +1,80 @@
+{
+  "smoke": {
+    "dropped_not_in_pool_session": 142,
+    "counts": {
+      "events": 94,
+      "events_with_covariates": 94,
+      "matched": 94,
+      "no_candidate_in_cell": 0,
+      "unmatched": 0,
+      "events_total": 94,
+      "purged_dev_exit_crossing": 0
+    },
+    "dev": {
+      "n_matched": 94,
+      "mean_excess": 0.0027870645380567867,
+      "ci": {
+        "mean": 0.0027870645380567867,
+        "ci_lo": -0.01182669828827824,
+        "ci_hi": 0.017439385525361936,
+        "n": 94,
+        "n_clusters": 40
+      },
+      "per_year": [
+        {
+          "year": 2019,
+          "n": 94,
+          "metric": 0.0027870645380567867
+        }
+      ],
+      "years_gate": {
+        "n_years_covered": 1,
+        "n_same_sign": 0,
+        "required": 1,
+        "pass": false
+      },
+      "mean_excess10": -0.0009169115853462657,
+      "ci10": {
+        "mean": -0.0009169115853462657,
+        "ci_lo": -0.022389339591355552,
+        "ci_hi": 0.019352528236256553,
+        "n": 94,
+        "n_clusters": 40
+      },
+      "gate_primary": false,
+      "gate_no_rebound": false,
+      "gate_years": false,
+      "pass": false
+    },
+    "val": {
+      "n_matched": 0,
+      "mean_excess": null,
+      "ci": null,
+      "per_year": [],
+      "years_gate": {
+        "pass": false,
+        "n_years_covered": 0
+      },
+      "mean_excess10": null,
+      "ci10": null,
+      "gate_primary": false,
+      "gate_no_rebound": false,
+      "gate_years": false,
+      "pass": false
+    },
+    "smoke_checks": {
+      "pit_knowledge_not_after_signal": true,
+      "window_2_to_21": true,
+      "controls_unmarked": true,
+      "labels_within_freeze": true,
+      "exit5_exact_session": true,
+      "bootstrap_deterministic": true,
+      "freeze_s": true
+    },
+    "smoke_window": [
+      "2019-01-01",
+      "2019-03-31"
+    ],
+    "smoke_events": 236
+  }
+}

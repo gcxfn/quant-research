@@ -1,0 +1,179 @@
+{
+  "run_id": "20260918T083428-p2r16-trend-dispersion-643895ca",
+  "experiment_id": "exp-20260918-p2r16-trend-dispersion",
+  "status": "completed",
+  "started_at": "2026-09-18T00:34:28.196569+00:00",
+  "command": [
+    "D:\\量化\\.venv\\Scripts\\python.exe",
+    "src/quant/cli/p2r16_trend_dispersion.py"
+  ],
+  "config_sha256": "0c8428440bfb305e97efffe4dee061317c82d744dc21d2b04ca586146555cd81",
+  "source_sha256": {
+    "src\\quant\\__init__.py": "8c87349ce293131565a8ace05f9e339c81fa76951bde07525c354c74c4cf3307",
+    "src\\quant\\backtest\\__init__.py": "dde15cd80a7f5bb490b6b3f7ed7a68f3fca1a18121e9000939c417e0ed3b8999",
+    "src\\quant\\backtest\\backtrader_adapter.py": "fc2813a4f5cdd735a26051b800e02e9106403440c08d84a139eda05269093966",
+    "src\\quant\\backtest\\orders.py": "aec9750d59f4b7316ab89a0b175b0a7839998f68ed7debf2b0bd18dde405318e",
+    "src\\quant\\backtest\\results.py": "c43324de29ce0c2f17d521497879bfca6cfaa5be7618a89453226f2ca72bf830",
+    "src\\quant\\backtest\\vectorbt_adapter.py": "73847bb6997dc26697657871199b8bd7392acc70cf329cc2e18dd27062c494a9",
+    "src\\quant\\cli\\__init__.py": "b0536f9542c22462c17ef58d483a1adf6bf0c25369954507844e0421e5c0723a",
+    "src\\quant\\cli\\main.py": "ddde31f438600e5447517ce7a9db8b2a5c1ba14f61351fa39272255b6ccbb471",
+    "src\\quant\\cli\\p0_benchmark.py": "fb7d38b8f1abba17d25dfab844b9771f8de53eafd39d4d654cc42eb2d64357e6",
+    "src\\quant\\cli\\p2_factor_survey.py": "155eed8d1985e5ebd3aab4c5f7b808e4a5722b67f20bf8ef9fa59568e274a08f",
+    "src\\quant\\cli\\p2_first_screen.py": "9d7b6288191ef30ade1fca27e9a94d84bb65197960614e0100c3dbba560d5fd0",
+    "src\\quant\\cli\\p2_window_diagnostic.py": "dfd6152db397cb2a358db44d374d9c9c0417a69d5810575485b00450cd28687a",
+    "src\\quant\\cli\\p2r10_halfday_survey.py": "be97cc4dfeebc7f8c29ec56ea5334b39787b3583d19e88f57fe01f0b15b652c5",
+    "src\\quant\\cli\\p2r11_halfday_combo.py": "6d0380d87987ac51b0204c2dec8eb6050365a7a8e633d97d5e02c2562e492aea",
+    "src\\quant\\cli\\p2r13_lowfreq_survey.py": "d710f20ac5590011c9a4373bce433ce48c07f9ed99fb8cad38671b016094ed5f",
+    "src\\quant\\cli\\p2r16_trend_dispersion.py": "91c61613863e77465fd15a04a27b96fe4f6e20f352782991dd225c1079b0fa0e",
+    "src\\quant\\cli\\p2r6_etf_rotation.py": "fc815d8fe1e782d40d4c3e7d279834fa1af50ab3642153f724bb4a47e483d299",
+    "src\\quant\\cli\\p2r7_etf_exposure.py": "8a31a6950f49ba5e5ce5c487cfb3a2189b0fc6622b6bded5bc6c6368086f32dd",
+    "src\\quant\\cli\\p2r8_daily_risk.py": "89896f2a24bac5d7ba0cb91d6b17f45d3fe1b309b3b0388df2999ca5653f9aaf",
+    "src\\quant\\cli\\p2r9_risk_delivery.py": "92b53702aa2f0edbcba044532596fa341ade39ea01644edaedf5c0065a383cef",
+    "src\\quant\\data\\adjustment.py": "6cf5f7e7cc0d9e15b4030196f56c77009495279a206804361a7c86891d89a0ac",
+    "src\\quant\\data\\baostock_daily.py": "c83603ef05c805e7f81b60ff87a40088b23177b690f2a9bf421be390b6477e78",
+    "src\\quant\\data\\event_batches.py": "b8a0994a2adcec8fbc18a2c024abe088868eef3fcf90e0a2480a7f6087890691",
+    "src\\quant\\data\\rqalpha_bundle.py": "2ae8d0eed45d1216c84827eefb7bee0227fbdc985be0c38fa3f4794d7209d523",
+    "src\\quant\\factors\\__init__.py": "5b555032251c683b0c9b6cdb5857ff356c81e02dd4c14e6cff1055c309acade4",
+    "src\\quant\\factors\\cache.py": "949736dd8a9482bd64d939e13940a323d8341cf0518bddffa7db8a97315e8f9a",
+    "src\\quant\\factors\\core.py": "5c6ddcf87505fdb82fb63cbc9658964b7372da326879f89bcd4aac50d33f7a77",
+    "src\\quant\\factors\\signals.py": "9ef501a069ffaaef731d8f6f04682674b818c82e1f2a627af1023565e9e8692c",
+    "src\\quant\\research\\__init__.py": "ae42337e69dedb044718bfe63a1832ef0c85cf1886c9b45e0403d63208869a51",
+    "src\\quant\\research\\etf_rotation.py": "1c064efce2cf211505f62f46ac61ca39abf63c1f529e008518a8b26d2ca59b70",
+    "src\\quant\\research\\factor_survey.py": "354bd65c557965f54fe7743be01716e37362483768eb5b7c7c420111aa2d041b",
+    "src\\quant\\research\\fee_recost.py": "683ec48aecbc298c1a19ce895a6de6ff28f2bb71e392216cbaf9ff1ca5fb3a6a",
+    "src\\quant\\research\\p2_first_screen.py": "17f119402c02c87a7288fb9cdd93cc6e1b3d3d45e9b6642a317942e100060e80",
+    "src\\quant\\research\\p2r10_halfday.py": "25eb29ada94e336eeddb2d81e718f0983dfde7434ff87db6a4729b29f5009188",
+    "src\\quant\\research\\p2r11_halfday_combo.py": "41f95396457d6fb4694d2cb894230fc0c9734e26b6f6b3a0567748d9f61f669b",
+    "src\\quant\\research\\p2r12_event_veto.py": "885d0761fe7fea4a156ea762c63ff83006fab50328c0d74398b8f728409034e6",
+    "src\\quant\\research\\p2r13_lowfreq.py": "49034ba833ad8bff95a8dc66cb48e5d3cbc366a12f8ff282b26e48f102b8e349",
+    "src\\quant\\research\\p2r14_minute_structure.py": "979a1845c5bdc42360082ee82e13b6c2a5c54e1879fdaa7b6cf4da66ad00b055",
+    "src\\quant\\research\\p2r16_trend_dispersion.py": "04242366f8f5a3293088dfd5993c5dd08e6be9ea358696c84c0022cc5b8bc2c1",
+    "src\\quant\\research\\runs.py": "979f0ab108b8bd0fb97bd8a67435ebe46537d9cb06ef83a5ac1485c77593acbc",
+    "src\\quant\\research\\screen.py": "100cfef7927a7727089eeb3634eb810571a9313dfe09600964866a6c208249df",
+    "src\\quant\\research\\synthetic.py": "968818be521defdc028435123806f7de0e97858b06d8d0c67c87319cf3aa8795"
+  },
+  "lock_sha256": "5694af16960733c0e6ce4e3ef84e9d586e9d4452fdbe00b992d321687dc50c25",
+  "python": "3.11.15 (main, Jul 23 2026, 14:42:43) [MSC v.1944 64 bit (AMD64)]",
+  "packages": {
+    "polars": "1.44.2",
+    "pyarrow": "25.0.1",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "vectorbt": "0.28.5",
+    "backtrader": "1.9.78.123",
+    "psutil": "7.2.2"
+  },
+  "machine": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "logical_cpus": 20,
+    "ram_bytes": 16780566528,
+    "disk_free_bytes": 237421064192
+  },
+  "seed": 17,
+  "date_range": [
+    null,
+    null
+  ],
+  "inputs": [],
+  "limits": {
+    "max_runtime_s": 1800,
+    "max_ram_gb": 8,
+    "smoke": "2015 年 6 个月先行"
+  },
+  "mode": "full",
+  "prereg": "docs/research/exp-20260918-p2r16-trend-dispersion-prereg.md",
+  "config_frozen_at": "2026-09-18T07:40:00+08:00",
+  "config_file_sha256": "27f846a7330919a4965d83ec07cf2a0be3e29b2476cc37c14c84558957a93df4",
+  "deviations_registered_before_run": [
+    {
+      "id": 1,
+      "item": "history warmup reads daily_1999_2024.parquet (same processed dataset and manifest identity as the pinned daily_2015_2024.parquet; the 2015+ slice asserted row-count-identical to the pinned file) so listing_index, amt_med20 and vol20/turn20 exist at the FIRST 2015 signals - R13 precedent, disclosed there as the same deviation."
+    },
+    {
+      "id": 2,
+      "item": "B1(m) fee convention: the pool-equal-weight benchmark holds ~800-2000 names on 200k CNY (per-leg ~50-150 CNY); the registered 5-CNY per-order minimum would charge ~3-10%/side and destroy the benchmark that the registered gate-2 design (expected DECIDING gate, +2pp margin) assumes.  Primary B1(m) pays the SAME commission RATE and segmented stamp with NO per-order minimum; the literal per-leg-minimum B1(m) is ALSO computed and disclosed as a sensitivity.  Strategy and B3\" always pay the literal schedule (their legs are 4-9k CNY)."
+    },
+    {
+      "id": 3,
+      "item": "Q5 is ENTRY-SIDE only: filter-on arms drop Q5-flagged names from the entry candidate list; incumbents are governed purely by the buffer-band rank rule.  V2-10 usage property \"zero turnover increment\" implies the filter never force-exits incumbents.  Un-fillable seats (top K exhausted by kept+Q5 names on filter-on arms) stay CASH (rule-compliant slot)."
+    },
+    {
+      "id": 4,
+      "item": "TREND basis is the PINNED 000300.SH INDEX (R8 code as published: sma_trend_state on the index close vs SMA200 of index sessions); not pool-self.  The index batch starts 2015-01-05, so SMA200 is unavailable at early 2015 signals and the REGISTERED fallback (unavailable -> risk-off e_low) applies; the affected signal count is disclosed in metrics (t200_fallback_signals) and the affected months are listed in the results doc."
+    },
+    {
+      "id": 5,
+      "item": "R8 module identity: the R8 formal run pinned etf_rotation.py@9d283200 (pre-R9 revision, bytes not archived); the current file hashes 1c064efc, the bytes of the COMPLETED R9 formal run whose registered anchor regressions reproduce R8 published C01/C09/B1-100 curves bit-exactly, and of every completed run since (R10-R13).  Equivalence chain: pinned bytes + R9-vs-R8 bit-exact anchors + the R8-published T200 daily state statistics reproduced exactly on this round calendar (behavioral anchor, hard-asserted)."
+    },
+    {
+      "id": 6,
+      "item": "incumbent absent from the signal pool (suspended, ST, or eligibility lost) is planned a FULL EXIT at the next open (postponed until executable); the 2K buffer only protects rankable incumbents.  A quote series that ends before the data end is force-exited at the last available close with fees (R6/R8 convention)."
+    },
+    {
+      "id": 7,
+      "item": "B3\" is computed per exposure path (T200-40 and FIX75, 20 seeds each; seeds 17-36) and gate 7 uses the config path mean - R8 precedent (mechanism-matched B1/B3), avoiding a 0.75-vs-path exposure mismatch inside the gate.  Random membership is a fresh draw each signal (no buffer state exists for random ranks) and does not apply Q5."
+    },
+    {
+      "id": 8,
+      "item": "board-lot reality: with 200k/K=20 legs of ~4-9k CNY, names priced above ~400-900 CNY have zero affordable lots and unfillable seats stay CASH (counted, disclosed).  Membership is liquidity-rank based with NO price re-selection (prereg: no alpha selection), so such members keep their seat in cash."
+    },
+    {
+      "id": 9,
+      "item": "partial (rescale) sell bookkeeping follows the R8 deviation-6 attribution convention (entry budget/units reduced proportionally by units); per-position pnl stays cash-flow consistent; no cash effect."
+    },
+    {
+      "id": 10,
+      "item": "the H-47 evidence arm (full-rebalance top-K baselines, K in {20,30} x filter {on,off}, FIX75 path) is DESCRIPTIVE ONLY (prereg-required comparator for the buffer-band turnover effect); it consumes no gates and is not counted as a trial."
+    }
+  ],
+  "trial_count": {
+    "prior_cumulative": 175,
+    "this_round_configs": 8,
+    "cumulative_after": 183
+  },
+  "window_declarations": {
+    "dev": "2015-01-05..2020-12-31, 7th reuse, elimination use only",
+    "val": "2021-01..2024-12 one-shot; 5th declared consumption of this window (C08, R11 not reached, R12 if reached, R13 not consumed, this round); consumed ONLY for the first dev-passer in the frozen priority order",
+    "freeze": "no rows on/after 2025-01-01; the 2024-12-31 signal is dropped (its execution would land in 2025)"
+  },
+  "identity_checks": {
+    "mechanism": {
+      "module_file": "D:\\量化\\src\\quant\\research\\etf_rotation.py",
+      "module_sha256": "1c064efce2cf211505f62f46ac61ca39abf63c1f529e008518a8b26d2ca59b70",
+      "function_source_sha256": {
+        "sma_trend_state": "83c546e7bd74e10f5efd52e293b9f811c9b683d88312f6fab7d9edf78caeaf14",
+        "exposures_from_state": "7154aafc694ff703f3acdb812fb7d5edde9d2b60f77c679ebd9cf4c5585012a2",
+        "constant_risk_fn": "37c9e42013ebaaa2ef9c2e34d66c4f5ac101a5a902cc08c48a19a7fa7db16f6b"
+      },
+      "r8_run_dir": "20260918T021054-p2r8-daily-risk-d19a9c07",
+      "r9_run_dir": "20260918T030528-p2r9-risk-delivery-ef2777dc"
+    },
+    "processed": {
+      "manifest": "data/processed/baostock-daily-20260917/manifest.json",
+      "sha256": "2b89bef9ef6f4ae58b69ca43021552db067b185551c92a05ef6ac71d2be59bd3"
+    },
+    "daily_2015_2024_sha256": "1cbb09a11f7c10136981749c13467f12a1757b59e7e95fb6f86666f96edfc1de",
+    "daily_1999_2024_sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6",
+    "row_count_2015_slice_matches_pinned": true,
+    "index_chunk_000300_sha256": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878",
+    "index_manifest_sha256": "14372f9d2cd9bf19e6bbd21c4ad4c450f83473a315b1711a6717647e88f4d77a",
+    "index_pin_source": "configs/experiments/p2r8-daily-risk.json",
+    "index_batch_ledger": {
+      "dir": "data/raw/tushare/index_daily/20260917-r1",
+      "files_verified": 0
+    }
+  },
+  "ended_at": "2026-09-18T00:35:00.681893+00:00",
+  "elapsed_seconds": 32.48560489999363,
+  "peak_rss_bytes": 7568781312,
+  "memory_method": "20ms process RSS sampling; includes imported libraries, excludes children",
+  "outputs": {
+    "config.json": "8f9d0383e92a964f0273d88b2d74e3bb06b8c39c1696de320fe472de144d16a3",
+    "equity_curves.parquet": "558a546014a78dc90cee4123148122883396d4774a5180f1e1e9206956201b52",
+    "leg_log.parquet": "b87560a3ce96f9eda85f93538a56e30640e04f34bdbec2e24be1ef29361aca3a",
+    "membership_events.parquet": "1197e6ad1fb6377035f217cda2baf5cb1b32feaf6f4d5ad8a8a021ae3d1d75ec",
+    "metrics.json": "c35e65d75bdefc09ff9fceac7300e42cb1ea31dc021b5160fa8c953fa036f84a",
+    "report.md": "3a16a870cc777286f614c891bf3767c15ad6f90a301eca39ec269cceb743d3e9",
+    "trades.parquet": "26ff22384f33747cc3efc392a1dc0a2cba4d9b21c784b4066f65d498e208173c"
+  }
+}

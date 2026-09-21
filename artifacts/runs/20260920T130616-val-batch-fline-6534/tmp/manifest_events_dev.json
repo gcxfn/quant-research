@@ -1,0 +1,392 @@
+{
+ "experiment_id": "exp-20260920-t1-reason-event",
+ "run_id": "20260920T130616-val-batch-fline-6534",
+ "status": "completed",
+ "started_at": "2026-09-20T13:55:19",
+ "prereg": "D:\\量化\\docs\\research\\exp-20260920-t1-reason-event-prereg.md",
+ "stages_s": {
+  "merge_dev": 2.257530400005635,
+  "dedup": 2.331330100001651,
+  "pool_filter": 9.424874400006956,
+  "fwd_returns": 21.684155099996133,
+  "baseline": 21.72261470000376,
+  "main_anova": 21.76920159999281,
+  "category_tests": 21.8657516999956,
+  "sensitivity_diagnostics": 22.86007399999653
+ },
+ "window_spill_note": "all events have ann_date<=2020-12-31 (asserted at merge, pool filter and every variant sample); the h=20 forward window right edge uses traded prices after the event (price data only, never a 2021+ event); most windows end 2021-01, multi-year suspensions stretch a few (quantified in results)",
+ "pins": {
+  "prereg": {
+   "path": "D:\\量化\\docs\\research\\exp-20260920-t1-reason-event-prereg.md",
+   "sha256": "5c19dbeabb4c6106a3838b93ef6bf8c1d054c72f7a425399a7c203faa8e60268"
+  },
+  "row_index": {
+   "path": "D:\\量化\\data\\features\\fcst-reason-struct-full-20260918\\row_index.parquet",
+   "sha256": "d9c6060104b5beb78caa9da6db07aae68e19b5de610aec8b527d1b74521632ed"
+  },
+  "daily_calendar_pools": {
+   "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_1999_2024.parquet",
+   "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6"
+  },
+  "daily_eval_panel": {
+   "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_2015_2024.parquet",
+   "sha256": "1cbb09a11f7c10136981749c13467f12a1757b59e7e95fb6f86666f96edfc1de"
+  },
+  "lib_p2r13_lowfreq": {
+   "path": "D:\\量化\\src\\quant\\research\\p2r13_lowfreq.py",
+   "sha256": "49034ba833ad8bff95a8dc66cb48e5d3cbc366a12f8ff282b26e48f102b8e349"
+  },
+  "lib_p2r16_trend_dispersion": {
+   "path": "D:\\量化\\src\\quant\\research\\p2r16_trend_dispersion.py",
+   "sha256": "04242366f8f5a3293088dfd5993c5dd08e6be9ea358696c84c0022cc5b8bc2c1"
+  },
+  "lib_factors_eval": {
+   "path": "D:\\量化\\src\\quant\\factors\\eval.py",
+   "sha256": "19b704b21786eadd36cd3c0908fa7160d334e37d77022d5c604362743cdaa2cf"
+  },
+  "script": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T130616-val-batch-fline-6534\\scripts\\generated\\val_events.py",
+   "sha256": "253641cf434fe9505fe9d5fe5baa49ae367a5cd229b64b7940554539a23991aa"
+  },
+  "t1_batch_files": {
+   "n_files": 65,
+   "listing": "D:\\量化\\artifacts\\runs\\20260920T130616-val-batch-fline-6534\\tmp\\t1_batch_sha256_dev.txt",
+   "listing_sha256": "c03099ea2c9b0149495f342dab83c38b8ba8d8088c85bd0586633f0eaf886a94"
+  },
+  "annotations_merged": {
+   "path": "D:\\量化\\artifacts\\runs\\20260920T130616-val-batch-fline-6534\\tmp\\annotations_merged_dev.parquet",
+   "sha256": "594a436cf12797d07f7e633348e1da533fcf8780d4bf3f22425bf4d7f2788b7c"
+  }
+ },
+ "wall_seconds": 22.887103899993235,
+ "peak_rss_gb": 3.38040832,
+ "env": {
+  "python": "3.11.15",
+  "polars": "1.44.2",
+  "numpy": "1.26.4",
+  "scipy": "1.17.1",
+  "platform": "Windows-10-10.0.26200-SP0"
+ },
+ "stage_a": {
+  "rows_merged": 38567,
+  "rows_dev": 17582,
+  "ann_date_min": "20180904",
+  "ann_date_max": "20201231",
+  "dedup": {
+   "before": 17582,
+   "after": 16202,
+   "dropped_superseded": 1380,
+   "dropped_uncertain": 399
+  }
+ },
+ "pool_filter_counts": {
+  "rows_after_dedup_and_type": 15803,
+  "unconvertible_ts_code": 28,
+  "board_excluded": 6426,
+  "no_traded_row_on_ann_date": 2098,
+  "of_which_ann_date_not_market_session": 1843,
+  "of_which_suspended_on_session": 255,
+  "listing_lt60_sessions": 24,
+  "is_st_at_event": 591,
+  "pool_pass": 6664,
+  "type_counts_after_pool": {
+   "预增": 2070,
+   "首亏": 1229,
+   "预减": 1119,
+   "续亏": 513,
+   "略增": 644,
+   "扭亏": 537,
+   "略减": 384,
+   "续盈": 168
+  }
+ },
+ "panel_identity": {
+  "traded_rows_2015plus": 9254330,
+  "daily_1999_2024_sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6",
+  "daily_2015_2024_sha256": "1cbb09a11f7c10136981749c13467f12a1757b59e7e95fb6f86666f96edfc1de"
+ },
+ "te_s2": {
+  "tolerance": 1e-09,
+  "sampled_pairs": [
+   {
+    "symbol": "sh.600008",
+    "event_date": "2019-07-18",
+    "own": -0.09917355371900782,
+    "harness": -0.09917355371900782,
+    "abs_diff": 0.0
+   },
+   {
+    "symbol": "sh.600008",
+    "event_date": "2020-07-16",
+    "own": 0.03636363636363593,
+    "harness": 0.03636363636363593,
+    "abs_diff": 0.0
+   },
+   {
+    "symbol": "sh.600008",
+    "event_date": "2020-10-13",
+    "own": 0.0033112582781458233,
+    "harness": 0.0033112582781458233,
+    "abs_diff": 0.0
+   },
+   {
+    "symbol": "sz.002104",
+    "event_date": "2018-10-29",
+    "own": 0.09645669291338543,
+    "harness": 0.09645669291338543,
+    "abs_diff": 0.0
+   },
+   {
+    "symbol": "sz.002104",
+    "event_date": "2020-03-27",
+    "own": 0.1502209131075105,
+    "harness": 0.1502209131075105,
+    "abs_diff": 0.0
+   },
+   {
+    "symbol": "sz.002104",
+    "event_date": "2020-04-28",
+    "own": 0.003749999999999698,
+    "harness": 0.003749999999999698,
+    "abs_diff": 0.0
+   },
+   {
+    "symbol": "sz.002973",
+    "event_date": "2020-04-14",
+    "own": 0.15576323987538943,
+    "harness": 0.15576323987538943,
+    "abs_diff": 0.0
+   },
+   {
+    "symbol": "sz.002973",
+    "event_date": "2020-07-14",
+    "own": -0.03086649312011913,
+    "harness": -0.03086649312011913,
+    "abs_diff": 0.0
+   },
+   {
+    "symbol": "sz.002973",
+    "event_date": "2020-10-12",
+    "own": -0.05057034220532319,
+    "harness": -0.05057034220532319,
+    "abs_diff": 0.0
+   }
+  ],
+  "n_pairs": 9,
+  "max_abs_diff_sampled": 0.0,
+  "global_checked_keys": 6655,
+  "global_missing_in_harness": 1,
+  "global_max_abs_diff": 0.0,
+  "global_keys_gt_tol": 0,
+  "harness_cfg": {
+   "horizon_days": 20,
+   "n_groups": 10,
+   "eval_freq": "M",
+   "exclude_st": true,
+   "require_trading": true,
+   "exclude_boards": true,
+   "min_history_rows": 60
+  },
+  "note": "harness 参照 = F2R1 EVAL_CFG 逐字；min_history_rows=60 使部分上市较晚键不在 harness 网格（universe 截断，披露，非数值差异）"
+ },
+ "sanity": {
+  "definition": "预增 vs 预亏组(=首亏+续亏，操作化披露)；只验证不判定",
+  "mean_adj_prezeng": -0.004340040041549839,
+  "mean_adj_loss": 0.00375193916480162,
+  "mean_raw_prezeng": 0.03926834207237907,
+  "mean_raw_loss": 0.04702854649007346,
+  "direction_ok_adj": false,
+  "direction_ok_raw": false
+ },
+ "analysis_sample": {
+  "n": 6656,
+  "n_no_fwd_h20": 8,
+  "n_primary_code_null": 0,
+  "n_months": 27
+ },
+ "decision": {
+  "anova_F": 3.3426032578568496,
+  "anova_p": 7.134201321418822e-05,
+  "df": [
+   12,
+   6643
+  ],
+  "k_groups": 13,
+  "n": 6656,
+  "eta_squared": 0.006001881108852858,
+  "verdict": "H1"
+ },
+ "category_tests": {
+  "core_ops": {
+   "n_class": 358,
+   "mean_diff_vs_rest": 0.00214234630641147,
+   "t": 0.3118516613379204,
+   "p": 0.7553046863982241,
+   "p_bh": 0.9063656236778689
+  },
+  "cost_down": {
+   "n_class": 199,
+   "mean_diff_vs_rest": -0.003178841653837285,
+   "t": -0.3280645466388001,
+   "p": 0.7431805811872522,
+   "p_bh": 0.9063656236778689
+  },
+  "cost_up": {
+   "n_class": 305,
+   "mean_diff_vs_rest": 0.0006164663146398482,
+   "t": 0.06422949706739747,
+   "p": 0.9488260975865223,
+   "p_bh": 0.9488260975865223
+  },
+  "demand_down": {
+   "n_class": 568,
+   "mean_diff_vs_rest": -0.006401382834416947,
+   "t": -0.9442654010349618,
+   "p": 0.3453657525171619,
+   "p_bh": 0.8288778060411885
+  },
+  "demand_up": {
+   "n_class": 1555,
+   "mean_diff_vs_rest": 0.006071715746651621,
+   "t": 1.3477004890437818,
+   "p": 0.17786797775349245,
+   "p_bh": 0.5336039332604774
+  },
+  "epidemic_shock": {
+   "n_class": 1178,
+   "mean_diff_vs_rest": -0.01760186762233015,
+   "t": -4.025661167200431,
+   "p": 5.882301458730447e-05,
+   "p_bh": 0.0007058761750476537
+  },
+  "impairment": {
+   "n_class": 424,
+   "mean_diff_vs_rest": 0.03805530816016876,
+   "t": 3.654145070602425,
+   "p": 0.0002881012169882266,
+   "p_bh": 0.0017286073019293596
+  },
+  "ma_restructuring": {
+   "n_class": 255,
+   "mean_diff_vs_rest": -0.0015456506884671784,
+   "t": -0.12601952885505413,
+   "p": 0.8998110172785554,
+   "p_bh": 0.9488260975865223
+  },
+  "non_recurring": {
+   "n_class": 813,
+   "mean_diff_vs_rest": -0.002271584790555518,
+   "t": -0.36505810470654204,
+   "p": 0.7151431716127713,
+   "p_bh": 0.9063656236778689
+  },
+  "orders": {
+   "n_class": 143,
+   "mean_diff_vs_rest": 0.0034663177819322143,
+   "t": 0.36223887811976946,
+   "p": 0.7176663076790353,
+   "p_bh": 0.9063656236778689
+  },
+  "price_down": {
+   "n_class": 241,
+   "mean_diff_vs_rest": 0.006841225168517444,
+   "t": 0.7369883253360267,
+   "p": 0.46178360981296634,
+   "p_bh": 0.9063656236778689
+  },
+  "price_up": {
+   "n_class": 204,
+   "mean_diff_vs_rest": -0.027328120874928155,
+   "t": -2.54662712478715,
+   "p": 0.011567277677585587,
+   "p_bh": 0.04626911071034235
+  }
+ },
+ "sensitivity": {
+  "main": {
+   "p": 7.134201321418822e-05,
+   "verdict": "H1"
+  },
+  "fragile": false,
+  "flips": [],
+  "operationalization": "方向翻转操作化=主判定结论(H1)在任一敏感性下不再成立(p>=0.05)；F 检验无方向，附 eta_squared 对照",
+  "rows": [
+   {
+    "variant": "S1_drop_sd-1_and_low",
+    "n": 6360,
+    "k_groups": 13,
+    "F": 3.4486378682933294,
+    "p": 4.396146750646648e-05,
+    "verdict": "H1",
+    "eta_squared": 0.006477953839057633,
+    "groups": "core_ops,cost_down,cost_up,demand_down,demand_up,epidemic_shock,impairment,ma_restructuring,non_recurring,orders,other,price_down,price_up",
+    "merged_into_other": "accounting,fx"
+   },
+   {
+    "variant": "S2_h5",
+    "n": 6656,
+    "k_groups": 13,
+    "F": 2.258738205783621,
+    "p": 0.007549705760047256,
+    "verdict": "H1",
+    "eta_squared": 0.004063633037940461,
+    "groups": "core_ops,cost_down,cost_up,demand_down,demand_up,epidemic_shock,impairment,ma_restructuring,non_recurring,orders,other,price_down,price_up",
+    "merged_into_other": "accounting,fx"
+   },
+   {
+    "variant": "S2_h10",
+    "n": 6656,
+    "k_groups": 13,
+    "F": 2.37027300129306,
+    "p": 0.004826334347055538,
+    "verdict": "H1",
+    "eta_squared": 0.004263436686597193,
+    "groups": "core_ops,cost_down,cost_up,demand_down,demand_up,epidemic_shock,impairment,ma_restructuring,non_recurring,orders,other,price_down,price_up",
+    "merged_into_other": "accounting,fx"
+   },
+   {
+    "variant": "S3_no_dedup",
+    "n": 7423,
+    "k_groups": 13,
+    "F": 4.129076029792609,
+    "p": 1.767901443069675e-06,
+    "verdict": "H1",
+    "eta_squared": 0.00664234700243448,
+    "groups": "core_ops,cost_down,cost_up,demand_down,demand_up,epidemic_shock,impairment,ma_restructuring,non_recurring,orders,other,price_down,price_up",
+    "merged_into_other": "accounting,fx"
+   }
+  ]
+ },
+ "concentration_top1": {
+  "core_ops": 0.07205737452209353,
+  "cost_down": 0.15743371573647877,
+  "cost_up": 0.05202859733194434,
+  "demand_down": 0.05037224125179175,
+  "demand_up": 0.027865784015961452,
+  "epidemic_shock": null,
+  "impairment": 0.026639905649578098,
+  "ma_restructuring": 0.1229767789322753,
+  "non_recurring": 0.05535007601743689,
+  "orders": 0.0795709174125469,
+  "price_down": 0.10742641850455274,
+  "price_up": 0.27845565048629195
+ },
+ "outputs": {
+  "events_dev.parquet": "602ebd7f7ff711fc4cf13fa33e7619b2eee9761a084acf02eca6ac378dd4a6bd",
+  "type_drift.csv": "f42b26a6795403cd303decdd0ba28ef32deeab95b54d1d2f8057fc309f97e1bd",
+  "primary_within_type.csv": "93640253069c7b7e23fc68248a1105e53f857d96d57d83fdfaa9404dab20eb0b",
+  "anova_main.json": "9a1bad74ec79881da313f67980b0ad2dae783fb93d6f66e035956d6fb959c206",
+  "sensitivity.csv": "af5b613b9c687e1832d9e8db90f4a2b26b5fdd0226f49e099d450fe310171b49",
+  "pool_filter_counts.json": "3b2b00a180640d32df6bec9bcaebd162c2bae9d7a828746397fbe9af92b7ca9b",
+  "category_diagnostics.csv": "70ee6ab73abf63e64d5d72c0be7fc232667207beb8437db474e10080bb66ef94"
+ },
+ "results": {
+  "main_p": 7.134201321418822e-05,
+  "main_verdict": "H1",
+  "max_event_date": "2020-12-31",
+  "window_end_max": "2024-09-10",
+  "window_end_beyond_2021_02": 42,
+  "window_end_beyond_2022_01": 18,
+  "window_end_note": "h=20 为 own-session 交易日窗（harness 同式）：多数事件窗口右端自然溢出到 2021-01-2x；长期停牌股（约 0.6%）的 20 个交易日窗在日历上跨越数年，极端至 window_end_max（冻结口径内的正常结果，量化披露）"
+ }
+}

@@ -1,0 +1,241 @@
+{
+ "run_id": "20260921T032048-etf-pm-only-smoke-c4d1",
+ "authority": "docs/decisions/2026-09-21-etf-pm-only-routing.md",
+ "prereg": "docs/research/exp-20260921-etf-pm-only-smoke-prereg.md",
+ "engine_sha256": "d4b6c3764780e6dec5443174bb8fb0c1ca57ffd737da4e59069cbd3ca6735ed6",
+ "engine_routing": "halfday pm-only ETF (etf_routing='pm_only'): ETF pm decisions live the next day's pm session on the REAL daily bar; ETF am decisions are rejected; ETF fallbacks execute at pm opens",
+ "window": [
+  "2019-01-01",
+  "2019-12-31"
+ ],
+ "full_year_registered_window": true,
+ "trading_days": 244,
+ "months": [
+  "2019-01-31",
+  "2019-02-28",
+  "2019-03-29",
+  "2019-04-30",
+  "2019-05-31",
+  "2019-06-28",
+  "2019-07-31",
+  "2019-08-30",
+  "2019-09-30",
+  "2019-10-31",
+  "2019-11-29",
+  "2019-12-31"
+ ],
+ "intent_layer": {
+  "n_intents": 0,
+  "activated": 20,
+  "orders_generated": 26,
+  "stopped_filled": 8,
+  "terminated_override": 0,
+  "terminated_expired": 0,
+  "terminated_cap": 0,
+  "at_target_skips": 0,
+  "emissions_skipped_no_anchor": 0,
+  "emissions_skipped_no_live_session": 0,
+  "provider_calls": 488,
+  "dynamic_injected": 20,
+  "terminated_expired_halfday": 12
+ },
+ "dynamic_layer": {
+  "provider_calls": 488,
+  "dynamic_injected": 20,
+  "ledger": "single live ledger: settled cash + pending buckets + M2 equity snapshot + clips + next-session sellable",
+  "state_transition": "halfday clock + pm-only ETF: ETF intents tick once a day (pm) and their live session is the next pm; normal ETF intents void after one decision point, ETF risk exits carry with the K pm-session streak (stocks keep the halfday semantics)"
+ },
+ "k3": {
+  "armed": 0,
+  "executed": 0,
+  "deferred_limitdown_sessions": 0,
+  "deferred_suspended": 0,
+  "deferred_t1locked": 0,
+  "pnl_contribution_total": 0.0,
+  "pnl_contribution_list": [],
+  "pnl_definition": "net market-exit proceeds minus shares * previous official close",
+  "definition": "risk-intent sells unfilled for 3 consecutive live sessions are market-exited at the next session open (opening limit-down / suspension / T+1-lock defer)"
+ },
+ "void_days": {
+  "not_penetrated": 4
+ },
+ "unfilled_exit": {
+  "buy": {
+   "not_penetrated": 4
+  },
+  "risk": {
+   "session_unfilled": 6
+  },
+  "profit": {}
+ },
+ "orders_generated_by_side": {
+  "buy": 12,
+  "sell_risk": 14,
+  "sell_profit": 0
+ },
+ "orders_filled": {
+  "buy": 8,
+  "sell_risk": 8,
+  "sell_profit": 0
+ },
+ "checks": {
+  "routing_all_fills_pm_decision_next_pm_session": {
+   "pass": true,
+   "detail": {
+    "fills": 16,
+    "violations": []
+   }
+  },
+  "routing_provider_calls_eq_decision_points": {
+   "pass": true,
+   "detail": {
+    "provider_calls": 488,
+    "expected": 488
+   }
+  },
+  "routing_all_intents_pm_decisions": {
+   "pass": true,
+   "detail": {
+    "submitted_rows": 20
+   }
+  },
+  "routing_injected_eq_submitted": {
+   "pass": true,
+   "detail": {
+    "injected": 20,
+    "submitted": 20
+   }
+  },
+  "routing_no_etf_order_in_any_am_session": {
+   "pass": true,
+   "detail": {
+    "am_session_events_with_symbol": 0,
+    "note": "independent review 2026-09-21: the previous form of this check was unfalsifiable; the engine now raises if a pm-only ETF ever reaches an am live session (session_bar invariant), and the am-INTENT rejection is covered by tests/test_band_engine_v15_etf_pm_only.py t2"
+   }
+  },
+  "matching_fill_price_eq_decision_day_close_anchor": {
+   "pass": true,
+   "detail": {
+    "buy_checks": 8,
+    "sell_checks": 8,
+    "rule": "price == half-up(0.001) of the decision-day official close",
+    "violations": []
+   }
+  },
+  "matching_strict_penetration_on_daily_extremes": {
+   "pass": true,
+   "detail": {
+    "buy_rule": "execution-day daily low < anchor (strict)",
+    "sell_rule": "execution-day daily high > anchor (strict)",
+    "violations": [],
+    "fills_where_a_better_price_was_available_but_not_taken": 14
+   }
+  },
+  "matching_price_inside_computed_etf_band": {
+   "pass": true,
+   "detail": {
+    "violations": [],
+    "rule": "preclose x (1 +/- 0.10) on the 0.001 tick"
+   }
+  },
+  "matching_order_accounting_identity": {
+   "pass": true,
+   "detail": {
+    "orders_generated": 26,
+    "fills": 16,
+    "unfilled_exit_total": 10,
+    "not_penetrated_events": 10,
+    "void_suspended": 0
+   }
+  },
+  "fees_etf_stamp_exempt_both_sides": {
+   "pass": true,
+   "detail": {
+    "fills": 16
+   }
+  },
+  "fees_commission_max_wan1_min5_hand_checked": {
+   "pass": true,
+   "detail": {
+    "checked": 16,
+    "violations": [],
+    "fees_total_window": 80.0,
+    "fees_total_hand": 80.0
+   }
+  },
+  "t0_all_legs_flagged": {
+   "pass": true,
+   "detail": {
+    "t_plus_zero_symbols": [
+     "sh.511010",
+     "sh.518880",
+     "sz.159934"
+    ]
+   }
+  },
+  "t0_all_fills_etf_flag": {
+   "pass": true,
+   "detail": {
+    "fills": 16
+   }
+  },
+  "t0_sell_sellable_equals_full_holdings": {
+   "pass": true,
+   "detail": {
+    "sell_fills": 8,
+    "violations": [],
+    "note": "pm-only: a clip bought at an earlier pm is fully sellable at the next pm; the same-day buy->sell round trip is structurally impossible (no ETF am session), disclosed"
+   }
+  },
+  "ledger_provider_calls_eq_decision_points_recorded": {
+   "pass": true,
+   "detail": {
+    "rows": 488
+   }
+  },
+  "ledger_snapshot_independently_reproduced": {
+   "pass": true,
+   "detail": {
+    "checks": 488,
+    "max_abs_diff": 2.9103830456733704e-11,
+    "failures": []
+   }
+  },
+  "ledger_cash_conservation": {
+   "pass": true,
+   "detail": {
+    "initial": 200000.0,
+    "sum_net_cash_flow": -105969.2,
+    "closing_cash": 94030.8,
+    "delta": -1.5e-11
+   }
+  },
+  "ledger_daily_equity_identity": {
+   "pass": true,
+   "detail": {
+    "days": 244,
+    "violations": []
+   }
+  },
+  "ledger_am_snapshot_hand_samples": {
+   "pass": true,
+   "detail": {
+    "samples": 2,
+    "max_abs_diff": 2.9103830456733704e-11
+   }
+  }
+ },
+ "failures": [],
+ "hand_checks": {
+  "fill_rows": 16,
+  "ledger_am_samples": 2
+ },
+ "disclosures": {
+  "corporate_actions_in_window": 0,
+  "corporate_actions_note": "preclose == previous traded close on every 2019 row of all three legs, so no dividend / share change is modelled or needed",
+  "t0_note": "pm-only ETF routing has no am session, so a same-day buy->sell round trip is structurally impossible: T+0 vs T+1 is observationally equivalent on ETF legs; the flag is asserted and the sellable path is hand-checked instead",
+  "halfday_bars_supplied": 0,
+  "smoke_numbers_are_not_strategy_evidence": true,
+  "val_2021_2024_and_2025plus_untouched": true
+ }
+}

@@ -1,0 +1,305 @@
+{
+  "run_id": "20260918T035435-halfday-extract-k4x8vt",
+  "experiment_id": "exp-20260918-halfday-extract",
+  "task": "user_minute_1m 全窗口（2015–2024, 2,431 日）→ 11:30 半天截面分析表（每股每日一行）",
+  "nature": "纯数据工程：无因子、无回测、无策略结论、不消费试验数；data/raw 与 data/_meta 全程只读",
+  "provenance": {
+    "prereq_research_doc": "docs/research/exp-20260918-halfday-prep.md",
+    "prereq_run": "artifacts/runs/20260918T032049-halfday-prep-f3mbfd",
+    "reading_rules": "docs/DATA_COVERAGE.md（冻结过滤、列名归一、空表头校验）"
+  },
+  "started_at": "1970-01-03T14:22:44",
+  "finished_at": "2026-09-18T04:39:37",
+  "status": "completed_with_failed_assertions",
+  "environment": {
+    "platform": "win32 (Windows 10.0.26200 x64), Git Bash",
+    "python": "3.11.15 (D:/量化/.venv/Scripts/python.exe, -X utf8)",
+    "polars": "1.44.2",
+    "command": "PYTHONPATH=D:/量化/src .venv/Scripts/python.exe -X utf8 artifacts/runs/20260918T035435-halfday-extract-k4x8vt/scripts/01_extract_halfday.py"
+  },
+  "inputs": {
+    "minute_batches": [
+      {
+        "path": "data/raw/user_minute_1m/20260913-143215",
+        "day_parquet_files": 1219,
+        "identity": "data/_meta/sha256.tsv 逐文件登记（prep run 01 全量字节比对+抽样重哈希 REGISTERED_VERIFIED）"
+      },
+      {
+        "path": "data/raw/user_minute_1m/20260913-2020-2024",
+        "day_parquet_files": 1212,
+        "identity": "同上；两批次合计 2,431 个日 parquet + 各 1 个 transfer-manifest.json = 2,433 条登记"
+      }
+    ],
+    "minute_day_list": {
+      "path": "artifacts\\runs\\20260918T032049-halfday-prep-f3mbfd\\boundary\\minute_day_files.csv",
+      "sha256": "e9cde37f237e387d782f8dbc4452367d3c7e1b2b3c50c424fa5fe67d570f4dfe",
+      "source": "prep run boundary/minute_day_files.csv（2,431 日 bytes/num_rows/trade_time min-max）",
+      "sha256_tsv": {
+        "path": "data/_meta/sha256.tsv",
+        "sha256": "386b920cdabafe074214e0ff39bf3bc88dff2b91f60784496a6e600da18ccee7"
+      }
+    },
+    "stk_limit": {
+      "path": "data/raw/tushare/stk_limit/20260917-r1",
+      "manifest_sha256": "6aee2b7e6b08b06f6bb0d9c553c308aead62e8c3e0e245fa615b2c844d677fd9",
+      "rows": 9705448,
+      "chunks": 2431,
+      "range": "20150105..20241231",
+      "registered_as": "docs/market-rules-handbook.md trade-009 涨跌停注册主源",
+      "known_gap": "5 个零行日（2017-03-07/08/09、2022-07-26、2023-04-21）→ 本表 limit_up/limit_down 如实 NaN",
+      "read_rule": "按列名归一（列序不可信）；零行日=仅表头文件"
+    },
+    "baostock_daily": {
+      "path": "data/processed/baostock-daily-20260917/daily_2015_2024.parquet",
+      "manifest_sha256": "2b89bef9ef6f4ae58b69ca43021552db067b185551c92a05ef6ac71d2be59bd3",
+      "rows": 9532019,
+      "note": "P1 已验收池（5,328 只；preclose/close/tradestatus/isST；未复权）"
+    }
+  },
+  "outputs": {
+    "halfday_1130_parquet": {
+      "path": "data\\processed\\halfday-1130-20260918\\halfday_1130.parquet",
+      "rows": 9440361,
+      "bytes": 333220273,
+      "sha256": "f3d4ec036594a31446e728af498039378f635fe99adc3b14ce4e134c8836dda2",
+      "compression": "zstd level 3",
+      "sort": "symbol, date"
+    },
+    "year_parts_cache": {
+      "path": "data\\cache\\halfday-1130-20260918",
+      "files": [
+        "part_2015.parquet",
+        "part_2016.parquet",
+        "part_2017.parquet",
+        "part_2018.parquet",
+        "part_2019.parquet",
+        "part_2020.parquet",
+        "part_2021.parquet",
+        "part_2022.parquet",
+        "part_2023.parquet",
+        "part_2024.parquet"
+      ],
+      "note": "分年增量落盘（可重建的中间产物，非唯一证据）"
+    },
+    "per_year_rows": {
+      "2015": 596246,
+      "2016": 696541,
+      "2017": 798083,
+      "2018": 856033,
+      "2019": 887882,
+      "2020": 948565,
+      "2021": 1060559,
+      "2022": 1148747,
+      "2023": 1211667,
+      "2024": 1236038
+    }
+  },
+  "column_contract": {
+    "symbol": "baostock 风格 sh.XXXXXX / sz.XXXXXX（分钟包 600000.SH 无损映射；.BJ 已剔除）",
+    "date": "交易日（pl.Date；与源文件名、行内 date 列双验一致）",
+    "pre_close_vendor": "元，分钟包自带昨收口径=当日 09:30 首 bar 的 pre_close（vendor 内逐 bar pre_close 为上一分钟收价，仅 09:30 bar 的等价昨收；除权日=原始前收，非交易所除权昨收——跨日收益一律改用 preclose_official）",
+    "preclose_official": "元，baostock daily preclose join（除权昨收；跨日收益唯一合规昨收）",
+    "open_930": "元，09:30 bar open，float32→float64 分币还原（0.01 元取整，prep 验证残差率 0）",
+    "close_1100": "元，11:00 bar close，同上还原",
+    "close_1130": "元，11:30 bar close，同上还原",
+    "open_1300": "元，13:01 bar open（vendor 无 13:00 bar：下午自 13:01 起，121 上午+120 下午=241 根；契约列名 open_1300 保留，语义=午后首根 bar open），分币还原",
+    "close_1500": "元，15:00 bar close，同上还原；注意 2015–2017 沪市不得充当官方收盘（vendor 早收盘口径差，prep §5.1）",
+    "close_day_official": "元，baostock daily close（官方日线收盘）",
+    "high_am": "元，09:30–11:30 全部 bar 的 high 最大值，分币还原",
+    "low_am": "元，09:30–11:30 全部 bar 的 low 最小值，分币还原",
+    "vol_am": "股，09:30–11:30 bar vol 逐值 float32→float64 后求和（float32 编码精度受限为源数据已知缺陷）",
+    "amount_am": "元，09:30–11:30 bar amount 逐值 float32→float64 后求和（同上）",
+    "limit_up": "元，tushare stk_limit 20260917-r1 按 (date,ts_code) join 的 up_limit；5 个零行日如实 NaN",
+    "limit_down": "元，同上 down_limit；5 个零行日如实 NaN",
+    "am_limit_up_touch_minutes": "上午 09:30–11:30 内满足 fen_restore(high) >= limit_up 的 bar 数（涨停板缺失日为 0；触板≠可成交，成交语义须回测层保守建模）。注意与 prep §5.4 的 214/106 只区分：那是「11:30 单 bar high≥limit−0.005」口径（本 run 复算逐只一致 214/106），本列是全上午逐 bar 计数，股票级 ≥1 分钟只数为 2015-06-01=289、2020-06-01=139，两口径不同、均正确",
+    "tradestatus": "baostock daily tradestatus（0=停牌 1=交易），Int8；停牌股有 241 根占位 bar 照常成行",
+    "isST": "baostock daily isST（0/1），Int8，历史时点标记",
+    "suspended_flag": "tradestatus==0；「该日无 bar」的 (symbol,date) 不成行，计数见 filters_and_counts.no_bar_pairs_*",
+    "bars_that_day": "该股该日 ≤15:00 的 SH/SZ bar 数（常态 241=121 上午+120 下午；诊断占位/缺失用）",
+    "adjustment": "本表不做任何复权：价格为原始价，昨收双口径（vendor/官方）并排供因子层自选"
+  },
+  "filters_and_counts": {
+    "baostock_join_miss_rows_dropped": 49,
+    "baostock_join_miss_symbols_distinct": 49,
+    "bar_1300_rows_present": 0,
+    "bj_rows_removed": 27944490,
+    "date_col_mismatch_filename": 0,
+    "date_col_rows_gt_freeze": 0,
+    "gt15_rows_removed_non_bj": 0,
+    "gt15_rows_removed_raw": 3040380,
+    "key_bar_dup_violations": 0,
+    "key_bar_missing_close_1100": 0,
+    "key_bar_missing_close_1130": 0,
+    "key_bar_missing_close_1500": 0,
+    "key_bar_missing_open_1300": 0,
+    "key_bar_missing_open_930": 0,
+    "no_bar_pairs_suspended_tradestatus0": 82526,
+    "no_bar_pairs_total": 91658,
+    "source_rows": 2303083300,
+    "stk_limit_unmatched_rows": 21070,
+    "stk_limit_unmatched_rows_limit_down": 21070,
+    "stk_limit_unmatched_rows_outside_zero_days": 1997,
+    "stk_limit_zero_row_day": 5
+  },
+  "diagnostics_evidence": {
+    "baostock_join_miss_pairs": "logs/baostock_join_miss_pairs.json（池外剔除的 (date,symbol) 逐行清单，应为空、非空则须归因）",
+    "a3_checked_days_violations": "logs/a3_checked_days_violations.json",
+    "a3_full_window_violations": "logs/a3_full_window_violations.json",
+    "per_day_stats": "logs/per_day_stats.json"
+  },
+  "assertions": {
+    "A1_rows_within_5pct": {
+      "rows": 9440361,
+      "expected_prep_extrapolation": 9556362,
+      "lower": 9078543,
+      "upper": 10034180,
+      "pass": true
+    },
+    "A2_symbol_year_rows_le_244": {
+      "max": 244,
+      "limit": 244,
+      "pass": true
+    },
+    "A3_close1130_in_daily_range": {
+      "proto_days_full": {
+        "2015-06-01": {
+          "pass": true
+        },
+        "2020-06-01": {
+          "pass": true
+        },
+        "2024-06-03": {
+          "pass": true
+        }
+      },
+      "proto_days_violations": 0,
+      "sampled_days": [
+        "2015-10-20",
+        "2015-11-11",
+        "2016-08-23",
+        "2016-11-08",
+        "2017-02-13",
+        "2017-08-07",
+        "2017-08-21",
+        "2018-01-23",
+        "2018-03-16",
+        "2018-08-28",
+        "2019-11-15",
+        "2020-03-11",
+        "2020-06-29",
+        "2020-08-31",
+        "2020-12-08",
+        "2021-01-12",
+        "2021-03-25",
+        "2022-04-12",
+        "2024-04-08",
+        "2024-12-13"
+      ],
+      "rows_checked": 85471,
+      "sampled_days_violations": 3,
+      "violation_evidence": "logs/a3_checked_days_violations.json",
+      "pass": false
+    },
+    "A3b_close1130_in_daily_range_full_window_diagnostic": {
+      "rows": 9440361,
+      "violations": 268,
+      "violations_suspended_placeholder": 243,
+      "violations_trading_rows": 25,
+      "distinct_symbols": 26,
+      "attribution": "越界集中为停牌占位行（baostock 冻结日线 OHLC 与 vendor 冻结分钟价不一致，如 sz.000033 长期停牌段 228 行）与极少量交易日源间分歧（2015 极端日）；全部逐行证据见 logs/a3_full_window_violations.json",
+      "note": "诊断性全窗口，非契约要求"
+    },
+    "A4_bj_residual_zero": {
+      "rows": 0,
+      "bj_rows_removed_in_extract": 27944490,
+      "pass": true
+    },
+    "A5_no_rows_after_2024_12_31": {
+      "rows": 0,
+      "max_date": "2024-12-31",
+      "row_level_violations_in_extract": 0,
+      "pass": true
+    },
+    "A6_proto_3day_value_identical": {
+      "columns_compared": [
+        "pre_close_vendor↔pre_close",
+        "close_1130↔close"
+      ],
+      "pre_close_mismatches": 0,
+      "close_1130_mismatches": 0,
+      "keys_missing_vs_proto": 0,
+      "pass": true
+    },
+    "A7_symbol_date_unique": {
+      "duplicate_keys": 0,
+      "pass": true
+    },
+    "A8_key_bars_complete": {
+      "nulls": {
+        "open_930": 0,
+        "close_1100": 0,
+        "close_1130": 0,
+        "open_1300": 0,
+        "close_1500": 0,
+        "high_am": 0,
+        "low_am": 0
+      },
+      "pass": true
+    },
+    "diagnostics_bars_that_day_distribution": {
+      "241": 9440361
+    },
+    "diagnostics_limit_nan_days": {
+      "expected_zero_row_days": [
+        "2017-03-07",
+        "2017-03-08",
+        "2017-03-09",
+        "2022-07-26",
+        "2023-04-21"
+      ],
+      "nan_rows_on_zero_days": 19073,
+      "nan_rows_outside_zero_days_in_table": 1948,
+      "outside_distinct_dates": 643,
+      "outside_suspended_rows": 1947,
+      "outside_is_stock_first_row": 4,
+      "attribution": "零行日外 NaN 集中为停牌股（tushare stk_limit 对停牌股不出涨跌停价）与少量上市首日；与抽取期计数差 = 池外剔除行（其本身亦无涨跌停价）",
+      "extraction_phase_unmatched_total": 21070,
+      "extraction_phase_unmatched_outside_zero_days": 1997
+    }
+  },
+  "timing": {
+    "total_seconds": 325.0,
+    "total_minutes": 5.42,
+    "extract_phase_seconds": 318.7,
+    "mean_ms_per_day": 131.1,
+    "peak_rss_bytes": 5704945664,
+    "peak_rss_gib": 5.31,
+    "budget": "30 min / 11 GB",
+    "per_day_detail": "logs/per_day_stats.json"
+  },
+  "config_and_code_summary": "单脚本流式逐日处理：读分钟日文件→.BJ/15:00 过滤→上午聚合+触板计数+关键 bar→stk_limit r1 按日 chunk join（列名归一）→baostock 日线 join（池外剔除）→分年落盘→合并排序→断言",
+  "random_seed": "断言抽样 random.Random(20260918)（仅用于 A3 的 20 日抽样，确定性）",
+  "time_splits": "不适用（未计算任何标签/信号/收益；全部数据 ≤2024-12-31）",
+  "known_limitations": [
+    "open_1300 实为 13:01 首 bar open：vendor 分钟包无 13:00 bar（下午 13:01–15:00 共 120 根，+上午 121=241）；列名按契约保留",
+    "close_1130∈日线[low,high] 存在 268/9,440,361 全窗口越界行（0.0028%）：243 行为停牌占位行（baostock 冻结日线与 vendor 冻结分钟价不一致，sz.000033 长停段 228 行为主），25 行为交易日源间分歧（2015 极端日为主）；逐行证据见 logs/a3_full_window_violations.json",
+    "baostock 池外分钟代码剔除 49 行（契约预期 0）：逐行清单与归因见 logs/baostock_join_miss_pairs.json",
+    "vol_am/amount_am 源于 float32 编码 bar 值求和，精度受源编码限制（vendor 已知缺陷，非本表引入）",
+    "5 个 stk_limit 零行日（2017-03-07/08/09、2022-07-26、2023-04-21）limit_up/limit_down 整日 NaN；零行日之外还有少量个股级 NaN（集中为停牌股——stk_limit 对停牌股不出价，及少量上市首日），如实保留，运行时归因计数见 assertions.diagnostics_limit_nan_days",
+    "2015-07-01 为登记受审日（尾盘零量占位，实测波及 1,405 只），11:30 前数据不受影响；消费方按 DATA_SOURCES §1 处置",
+    "22 项登记待补/受审证券日与 sz.300114 无分钟沿 DATA_SOURCES §1，本表如实缺行/缺值",
+    "本表为普查层：股票池（科创板/ST/停牌/创业板权限）过滤留给消费层按历史时点执行，本表只提供 tradestatus/isST/板块可判列",
+    "触板分钟数是「硬边界触碰」计数，不构成成交证据（一字板排队、瞬时开板不可见）",
+    "baostock 2 行全空价格行（sz.000022 2018-12-26、sz.000043 2019-12-16，tradestatus=0）join 后 preclose/close 为 NaN"
+  ],
+  "logs": [
+    "a3_checked_days_violations.json",
+    "a3_full_window_violations.json",
+    "baostock_join_miss_pairs.json",
+    "extract.log",
+    "per_day_stats.json",
+    "smoke_counters.json",
+    "smoke_proto_compare.json",
+    "stdout.log"
+  ]
+}

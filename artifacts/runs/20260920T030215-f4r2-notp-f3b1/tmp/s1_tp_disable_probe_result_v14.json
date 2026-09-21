@@ -1,0 +1,37 @@
+{
+ "probe": "F4R2-S1 frame-level tp-disable feasibility (prereg sec 6)",
+ "engine_pin_expected": "7ad35014d72711cb43ab6aedc232d70adf7eece60604b2a057ee039c9bd11e78",
+ "cases": [
+  {
+   "case": "control (tp1 2.0/0.5, tp2 null) -> TP expected",
+   "outcome": "RAN",
+   "ztp_fill_orders": 0,
+   "zone_tp_events": 0,
+   "n_fills": 0
+  },
+  {
+   "case": "null_tp1 (tp1_mult/tp1_frac None)",
+   "outcome": "REJECTED_TypeError",
+   "message": "float() argument must be a string or a real number, not 'NoneType'"
+  },
+  {
+   "case": "nan_tp1 (tp1_mult/tp1_frac NaN)",
+   "outcome": "REJECTED_BandContractError",
+   "message": "zones: tp1_mult must be finite > 0 for sh.600001 2024-01-02"
+  },
+  {
+   "case": "drop_tp1cols (columns removed)",
+   "outcome": "REJECTED_BandContractError",
+   "message": "zones: missing required column 'tp1_mult'"
+  }
+ ],
+ "frame_level_feasible": false,
+ "engine_sha256_verified_now": "7ad35014d72711cb43ab6aedc232d70adf7eece60604b2a057ee039c9bd11e78",
+ "engine_pin_match": true,
+ "static_reading": [
+  "band_engine.py _ZONES_REQUIRED (line ~1168) includes tp1_mult/tp1_frac -> absent column raises BandContractError 'missing required column'",
+  "band_engine.py _validate_zones (lines 1278-1285): tp1_mult = float(row['tp1_mult']) then requires math.isfinite(tp1_mult) and tp1_mult > 0 -> null raises TypeError, NaN raises BandContractError; tp1_frac likewise",
+  "tp2_mult/tp2_frac are OPTIONAL (row.get) -> F4R1-C one-shot form (tp2 null) tolerated, but tp1 is NOT"
+ ],
+ "verdict": "F4R2-S1 priority-(1) frame-level tp-disable is NOT feasible: the pinned v1.4 engine fail-closed rejects all three frame forms (null / NaN / column absent).  Priority-(2) minimal engine extension (tp1 columns optional, semantics = no TP intent emission, fail-closed asserts retained) requires the main-conversation dual-sign re-pin; implementation agent stops here per prereg sec 6 and does NOT modify the engine."
+}

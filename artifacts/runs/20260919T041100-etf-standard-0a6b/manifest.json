@@ -1,0 +1,80 @@
+{
+  "run_id": "20260919T041100-etf-standard-0a6b",
+  "experiment_id": "exp-20260919-etf-standard",
+  "status": "completed",
+  "created": "2026-09-19",
+  "task": "ETF leg standardization (tushare fund_daily/fund_adj 20260917-r1) + auxiliary data inventory + sina/tx cross-check",
+  "command": [
+    "D:\\量化\\.venv\\Scripts\\python.exe",
+    "artifacts/runs/20260919T041100-etf-standard-0a6b/scripts/standardize_etf_daily.py",
+    "artifacts/runs/20260919T041100-etf-standard-0a6b/scripts/etf_aux_inventory.py",
+    "artifacts/runs/20260919T041100-etf-standard-0a6b/scripts/crosscheck_sina_tx.py"
+  ],
+  "scripts_sha256": {
+    "crosscheck_sina_tx.py": "ab960f440a3e47cce68823643d8612168a928c8b6dd38ef7ead071b880a98f5e",
+    "etf_aux_inventory.py": "dcf83bb285015202033b7a621733f56c66bce8090d8576050f6788f56d232f20",
+    "standardize_etf_daily.py": "5a5994bd6c562a8d4eaf3a7e2e63b0539bb3966267a293b249cc6d38b92ea69a"
+  },
+  "processed_dataset": {
+    "path": "data/processed/etf-daily-20260919/",
+    "dataset_id": "etf-daily-20260919",
+    "manifest_copy": "processed_manifest.copy.json",
+    "files": {
+      "adj_factor_coverage.parquet": {
+        "sha256": "bfc5c2158542d404e413e12d2d14c85335a964104a2771c2125043e2f6623d3e"
+      },
+      "adj_factor_missing.csv": {
+        "sha256": "788b90e0674a0dc7449839c1565d6219e2880e2378cdd1814f113fafa3a65d22"
+      },
+      "daily_2015_2024.parquet": {
+        "sha256": "b7225d50523106f53fc87bf21a92f12978ecc31a7b195ed2b4cf4e39f7a0d661"
+      },
+      "manifest.json": {
+        "sha256": "8b5b3fe56c0e02fd6af634bb3740c4f40c3b5f1dfabc984764433c0134eb1c8a"
+      },
+      "pool.parquet": {
+        "sha256": "b48256dbb14a1372fae5f3f334c2c88ceed6d3ff042aa4cc2ebced4a7473f675"
+      },
+      "preclose_mismatch_detail.csv": {
+        "sha256": "a65a569d4426ad457b5d9b5651c3805b4246d26db587e0e68da96161edb7f5a8"
+      },
+      "quality.json": {
+        "sha256": "d3103b85bb63813b49548642c417dd14af349818ee460ee6425d21007588a6ab"
+      }
+    },
+    "headline": {
+      "rows": 1017121,
+      "symbols": 1169,
+      "duplicate_key_rows": 0,
+      "date_min": "2015-01-05",
+      "date_max": "2024-12-31",
+      "rows_2025_plus": 0
+    }
+  },
+  "run_artifacts": [
+    "report.md",
+    "gaps.json",
+    "crosscheck.json",
+    "config.json",
+    "processed_manifest.copy.json",
+    "manifest.json",
+    "logs/",
+    "scripts/"
+  ],
+  "environment": {
+    "python": "3.11.15",
+    "polars": "1.44.2",
+    "pyarrow": "25.0.1",
+    "os": "Windows-10-10.0.26200-SP0"
+  },
+  "timing": {
+    "read_fund_daily": 1.58,
+    "read_fund_adj": 0.12,
+    "standardize": 0.19,
+    "preclose_check": 0.13,
+    "adj_coverage": 0.11,
+    "pool": 0.05,
+    "write_daily": 0.05,
+    "manifest": 0.07
+  }
+}
