@@ -1,0 +1,49 @@
+[  10.3s] pools: 71 months, union 2937
+[  37.8s] series ready: 2937
+[  39.6s] B rows: 17554
+[  71.8s] events[A1] = 216 == run manifest (identity OK)
+[  71.8s] events[A2] = 136 == run manifest (identity OK)
+[  71.8s] events[B1] = 102 == run manifest (identity OK)
+[  71.8s] events[B2] = 767 == run manifest (identity OK)
+[ 161.2s] A1: events 216, fill-matched 68 (run trig filled 68)
+[ 196.0s] A2: events 136, fill-matched 59 (run trig filled 59)
+[ 218.4s] B1: events 102, fill-matched 35 (run trig filled 35)
+[ 302.1s] B2: events 767, fill-matched 73 (run trig filled 73)
+[ 302.2s] A1: sig(mean) +1.93% post-fill {'n': 68, 'mean': -0.027693825185229826, 'median': -0.04029928554336326, 'win': 0.38235294117647056} | inc vs pool_med -0.73pp
+[ 302.2s] A2: sig(mean) +1.40% post-fill {'n': 59, 'mean': -0.03596960681570741, 'median': -0.03624161073825505, 'win': 0.4067796610169492} | inc vs pool_med -1.60pp
+[   6.0s] pools: 71 months, union 2937
+[  22.1s] series ready: 2937
+[  24.2s] B rows: 17554
+[  59.8s] events[A1] = 216 == run manifest (identity OK)
+[  59.8s] events[A2] = 136 == run manifest (identity OK)
+[  59.8s] events[B1] = 102 == run manifest (identity OK)
+[  59.8s] events[B2] = 767 == run manifest (identity OK)
+[ 146.6s] A1: events 216, fill-matched 68 (run trig filled 68)
+[ 153.1s] A2: events 136, fill-matched 59 (run trig filled 59)
+[ 162.0s] B1: events 102, fill-matched 35 (run trig filled 35)
+[ 251.9s] B2: events 767, fill-matched 73 (run trig filled 73)
+[ 252.0s] A1: sig(mean) +1.93% post-fill {'n': 68, 'mean': -0.027693825185229826, 'median': -0.04029928554336326, 'win': 0.38235294117647056} | inc vs pool_med -0.73pp
+[ 252.0s] A2: sig(mean) +1.40% post-fill {'n': 59, 'mean': -0.03596960681570741, 'median': -0.03624161073825505, 'win': 0.4067796610169492} | inc vs pool_med -1.60pp
+[ 252.0s] B1: sig(mean) +7.07% post-fill {'n': 35, 'mean': 0.0106358218925151, 'median': -0.017173051519154603, 'win': 0.42857142857142855} | inc vs pool_med +5.99pp
+[ 252.1s] B2: sig(mean) +0.96% post-fill {'n': 73, 'mean': -0.005902579993913189, 'median': -0.03255208333333348, 'win': 0.3561643835616438} | inc vs pool_med +2.40pp
+[ 253.5s] == done; wall 253s ==
+[   6.0s] pools: 71 months, union 2937
+[  34.3s] series ready: 2937
+[  36.3s] B rows: 17554
+[  70.5s] events[A1] = 216 == run manifest (identity OK)
+[  70.5s] events[A2] = 136 == run manifest (identity OK)
+[  70.5s] events[B1] = 102 == run manifest (identity OK)
+[  70.5s] events[B2] = 767 == run manifest (identity OK)
+[ 145.0s] A1: events 216, fill-matched 68 (run trig filled 68)
+[ 176.1s] A2: events 136, fill-matched 59 (run trig filled 59)
+[ 198.5s] B1: events 102, fill-matched 35 (run trig filled 35)
+[ 261.7s] B2: events 767, fill-matched 73 (run trig filled 73)
+[ 261.8s] A1: sig(mean) +1.93% post-fill {'n': 68, 'mean': -0.027693825185229826, 'median': -0.04029928554336326, 'win': 0.38235294117647056} | inc vs pool_med -0.73pp
+[ 261.8s] A2: sig(mean) +1.40% post-fill {'n': 59, 'mean': -0.03596960681570741, 'median': -0.03624161073825505, 'win': 0.4067796610169492} | inc vs pool_med -1.60pp
+[ 261.8s] B1: sig(mean) +7.07% post-fill {'n': 35, 'mean': 0.0106358218925151, 'median': -0.017173051519154603, 'win': 0.42857142857142855} | inc vs pool_med +5.99pp
+[ 261.8s] B2: sig(mean) +0.96% post-fill {'n': 73, 'mean': -0.005902579993913189, 'median': -0.03255208333333348, 'win': 0.3561643835616438} | inc vs pool_med +2.40pp
+[ 262.2s] A1 timeline: s1-2: +0.42% s1-5: +0.64% s1-10: +1.12% s1-20: +1.93%
+[ 262.4s] A2 timeline: s1-2: -0.20% s1-5: -0.36% s1-10: -0.85% s1-20: +1.40%
+[ 262.5s] B1 timeline: s1-2: +0.61% s1-5: +1.66% s1-10: +2.05% s1-20: +7.07%
+[ 263.8s] B2 timeline: s1-2: -0.51% s1-5: -0.25% s1-10: +0.87% s1-20: +0.96%
+[ 265.3s] == done; wall 265s ==
