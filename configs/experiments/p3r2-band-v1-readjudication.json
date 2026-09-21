@@ -1,0 +1,52 @@
+{
+  "experiment_id": "exp-20260918-p3r2-band-v1-readjudication",
+  "frozen_at": "2026-09-18T23:54:37",
+  "prereg": "docs/research/exp-20260918-p3r2-band-v1-readjudication-prereg.md",
+  "authority": {
+    "contract": "docs/plans/p3-band-contract.md §7（v1 冻结）+ §7.7（接缝裁定）",
+    "r16_config": {
+      "path": "configs/experiments/p2r16-trend-dispersion.json",
+      "sha256_16": "27f846a7330919a4",
+      "role": "八配置权威，原封不动"
+    },
+    "p3r1_precedent_run": "artifacts/runs/20260918T145900-p3r1-dev-262f"
+  },
+  "engine": {
+    "path": "src/quant/backtest/band_engine.py",
+    "sha256_16": "d7108c0eccdd77ff",
+    "sha256_full": "d7108c0eccdd77ff3fcbff01e7bd84bfdd2e7cad716b646e357c5644da970a0d",
+    "version": "v1.1（意图层，预登记 §9 修订 5 回填 2026-09-19）",
+    "tests": "21/21 静态原样 + 8/8 意图层 = 29；全仓库 390",
+    "approval": "artifacts/runs/20260919T023558-p3v1-intent-review-c4d1/review.md (APPROVE, 0C/0M/4m)；交付 artifacts/runs/20260919T021744-p3v1-intent-ce78",
+    "rule": "运行中引擎字节不得修改；发现问题停下报告"
+  },
+  "configs": [
+    {"id": "C01", "K": 20, "path": "T200-40", "q5": true},
+    {"id": "C02", "K": 20, "path": "T200-40", "q5": false},
+    {"id": "C03", "K": 20, "path": "FIX75", "q5": true},
+    {"id": "C04", "K": 20, "path": "FIX75", "q5": false},
+    {"id": "C05", "K": 30, "path": "T200-40", "q5": true},
+    {"id": "C06", "K": 30, "path": "T200-40", "q5": false},
+    {"id": "C07", "K": 30, "path": "FIX75", "q5": true},
+    {"id": "C08", "K": 30, "path": "FIX75", "q5": false}
+  ],
+  "window": {
+    "dev": "2015-01-05..2020-12-31",
+    "signals": "2015-01-30..2020-11-30（2020-12-31 按冻结先例丢弃）",
+    "val": "NOT consumed（一次性纪律，须用户另行批准）"
+  },
+  "gates": "R16 预登记 §2 八门逐字（净CAGR>0；超额≥+2pp；优势年≥5/6；回撤≤20%且≤B1(m)；换手≤6.0；单票权重≤40%；≥B3′+1pp；成交率≥95%）——prereg §3",
+  "mapping": "prereg §4：月末 15:00 入场、每决策点全单重锚+未成交意图重挂（§7.7-M3）、sell_full→intent=risk（K=3 键控 §7.7-M1）、rescale-up→加仓 clip / down→风减单、expiry=下月末、上限 §7.7-M2、利润梯不映射（空洞披露）",
+  "data_pins": {
+    "halfday_bars": {"path": "data/processed/halfday-bars-20260918", "manifest_sha256_16": "2a414174b5df2eee", "rows": 18486939},
+    "daily_official": {"path": "data/processed/baostock-daily-20260917/daily_1999_2024.parquet", "sha256_16": "d9a63f4cc3032926"},
+    "stk_limit": {"path": "data/raw/tushare/stk_limit/20260917-r1", "aggregate_sha256_16": "3c53abf3b0c39b42"},
+    "split_factor": {"path": "data/processed/rqalpha-bundle-v2-1-20260918/split_factor.h5", "sha256_16": "2f436b2f13d09a9b"},
+    "dividends": {"path": "data/processed/rqalpha-bundle-v2-1-20260918/dividends.h5", "sha256_16": "46121c09cddde72e"},
+    "r16_leg_log": "artifacts/runs/20260918T083650-p2r16-trend-dispersion-afab466f/leg_log.parquet（+8/8 一致性独立重算，沿 P3R1）"
+  },
+  "disclosures": "prereg §5 五项：成交率 vs P3R1 delta；换手费用 delta；回撤归因；映射差异清单；上限作废计数+双决策点成交拆分+K=3 明细+门8终止原因单列",
+  "trial_accounting": {"cumulative_before": 197, "this_round": 8, "cumulative_after": 205},
+  "budget": {"smoke": "2015 年 × C01 单配置", "full": "8 配置 ≤60 分钟 / 8GB，超限先停披露"},
+  "stop_clauses": "引擎字节不改；冻结后查看结果前不得改配置/判据/池；失败留档；不构成盈利或实盘声称；2025+ 零接触"
+}

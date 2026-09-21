@@ -1,0 +1,78 @@
+{
+  "never_sellable": [],
+  "single_name_benchmark": [
+    {
+      "entry": "2020-02-03",
+      "gross": -0.1,
+      "bench_gross": -0.09999999999999998,
+      "net_proxy": -0.1017
+    },
+    {
+      "entry": "2020-03-02",
+      "gross": 0.22222222222222238,
+      "bench_gross": 0.22222222222222232,
+      "net_proxy": 0.22222222222222238
+    }
+  ],
+  "missing_boundary_open": {
+    "prior_close": 10.0,
+    "same_day_future_close": 20.0,
+    "mark_at_open": 10.0
+  },
+  "final_mark_helper": 20.0,
+  "persistently_immature": [
+    {
+      "entry": "2020-02-03",
+      "month_type": "immature",
+      "n_immature": 1,
+      "gross": null,
+      "net": null
+    },
+    {
+      "entry": "2020-03-02",
+      "month_type": "immature",
+      "n_immature": 1,
+      "gross": null,
+      "net": null
+    }
+  ],
+  "removed_etf_reentry": {
+    "input": {
+      "thscode": "517520.SH",
+      "name": "黄金股ETF永赢"
+    },
+    "keep_etf": false
+  },
+  "axis_contract": {
+    "short_high_inside_rank": {
+      "pure": {
+        "error": "CompileError",
+        "message": "field 'high' series length 1 != close axis length 3 for symbol 'a' (referenced series must align to the market date axis; short series are rejected, never padded with None)"
+      },
+      "numpy": {
+        "error": "CompileError",
+        "message": "field 'high' series length 1 != close axis length 3 for symbol 'a' (referenced series must align to the market date axis; short series are rejected, never padded with None)"
+      }
+    },
+    "ghost_high": {
+      "pure": {
+        "error": "CompileError",
+        "message": "missing data for field 'close' symbol 'ghost' (symbol is outside the bundle's market close universe; PRICE coverage is required for every evaluated symbol, explicit symbols path included)"
+      },
+      "numpy": {
+        "error": "CompileError",
+        "message": "missing data for field 'close' symbol 'ghost' (symbol is outside the bundle's market close universe; PRICE coverage is required for every evaluated symbol, explicit symbols path included)"
+      }
+    },
+    "ragged_close": {
+      "pure": {
+        "error": "CompileError",
+        "message": "market date axis mismatch: close series length 1 for symbol 'b' != 3 for symbol 'a' (one bundle = one market calendar; ragged close axes are rejected at the data entry, never padded or cross-ranked)"
+      },
+      "numpy": {
+        "error": "CompileError",
+        "message": "market date axis mismatch: close series length 1 for symbol 'b' != 3 for symbol 'a' (one bundle = one market calendar; ragged close axes are rejected at the data entry, never padded or cross-ranked)"
+      }
+    }
+  }
+}

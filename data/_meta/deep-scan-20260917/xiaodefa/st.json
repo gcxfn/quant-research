@@ -1,0 +1,140 @@
+{
+ "source": "xiaodefa",
+ "dataset": "st",
+ "batches": {
+  "xiaodefa/st/20260913-bulk1": {
+   "batch_dir": "xiaodefa/st/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 2,
+    "n_csv": 1,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 679032
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 pub_date 有 615 行 > 2024-12-31 (max=20260912); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['ts_code'] 重复: 266 个键 / 763 行"
+    }
+   ],
+   "inventory_registration": {
+    "files": 2,
+    "bytes": 679032
+   },
+   "schema": {
+    "ts_code": "String",
+    "name": "String",
+    "pub_date": "Int64",
+    "imp_date": "Int64",
+    "st_tpye": "String",
+    "st_reason": "String",
+    "st_explain": "String"
+   },
+   "n_columns": 7,
+   "date_columns": [
+    "pub_date",
+    "imp_date"
+   ],
+   "numeric_columns_checked": [
+    "imp_date",
+    "pub_date"
+   ],
+   "rows_total": 1000,
+   "date_coverage": {
+    "pub_date": {
+     "min": "20230428",
+     "max": "20260912",
+     "rows_gt_20241231": 615,
+     "null_rows": 0
+    },
+    "imp_date": {
+     "min": "20230426",
+     "max": "20260910",
+     "rows_gt_20241231": 613,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 615,
+   "numeric_magnitude": {
+    "imp_date": {
+     "min": 20230426.0,
+     "max": 20260910.0
+    },
+    "pub_date": {
+     "min": 20230428.0,
+     "max": 20260912.0
+    }
+   },
+   "primary_key": [
+    "ts_code"
+   ],
+   "duplicate_keys": 266,
+   "duplicate_rows": 763,
+   "sample_rows": [
+    {
+     "ts_code": "688121.SH",
+     "name": "*ST卓然",
+     "pub_date": "20260912",
+     "imp_date": "20260506",
+     "st_tpye": "叠加*ST",
+     "st_reason": "公司最近一年被出具无法表示意见或者否定意见的内部控制审计报告或者鉴证报告",
+     "st_explain": "证券代码： 688121 证券简称：*ST 卓然 公告编号：2026-082 上海卓然工程技术股"
+    },
+    {
+     "ts_code": "000909.SZ",
+     "name": "*ST数源",
+     "pub_date": "20260910",
+     "imp_date": "20260910",
+     "st_tpye": "叠加*ST",
+     "st_reason": "最近一个会计年度经审计的利润总额、净利润或者扣除非经常性损益后的净利润孰低者为负值且营业收入低于",
+     "st_explain": "1、因中汇会计师事务所(特殊普通合伙)对数源科技股份有限公司(以下简称“公司”)出具了否定意见的"
+    },
+    {
+     "ts_code": "301139.SZ",
+     "name": "*ST元道",
+     "pub_date": "20260907",
+     "imp_date": "20260629",
+     "st_tpye": "ST",
+     "st_reason": "触及其他风险警示情形",
+     "st_explain": "1、元道通信股份有限公司（以下简称“公司”或“元道通信”）于 2026 年8 月 28 日收到中"
+    },
+    {
+     "ts_code": "002743.SZ",
+     "name": "富煌钢构",
+     "pub_date": "20260905",
+     "imp_date": "20260907",
+     "st_tpye": "ST",
+     "st_reason": "触及其他风险警示情形",
+     "st_explain": "1、因安徽富煌钢构股份有限公司(以下简称“富煌钢构”或“公司”)及子公司主要银行账户被冻结，根据"
+    },
+    {
+     "ts_code": "300096.SZ",
+     "name": "ST易联众",
+     "pub_date": "20260904",
+     "imp_date": "20240102",
+     "st_tpye": "ST",
+     "st_reason": "公司向控股股东或其关联方提供资金或违反规定程序对外提供担保且情形严重",
+     "st_explain": "根据《深圳证券交易所创业板股票上市规则》（以下简称“《创业板上市规则》”）的相关规定，易联众信息"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:08:09"
+  }
+ },
+ "updated_at": "2026-09-18T00:08:09"
+}

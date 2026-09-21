@@ -1,0 +1,103 @@
+{
+ "source": "tx",
+ "dataset": "sh515030",
+ "batches": {
+  "tx/sh515030/20260904T185752": {
+   "batch_dir": "tx/sh515030/20260904T185752",
+   "mode": "json",
+   "status": "completed",
+   "issues": [
+    {
+     "level": "warning",
+     "code": "meta_row_count_mismatch",
+     "detail": "meta n_rows=1581, 实际解析 1582 行, 其中跨页重复日期 1 行"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_kline_dates_across_pages",
+     "detail": "跨页重复日期 1 行, 例: ['20230523']"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "407 个记录日期 > 2024-12-31 (max=20260904); 冻结边界: 只报告"
+    }
+   ],
+   "inventory_registration": {
+    "files": 3,
+    "bytes": 99636
+   },
+   "files": {
+    "n_total": 3,
+    "response_pages": [
+     "response_000.json",
+     "response_001.json"
+    ],
+    "total_bytes": 99636
+   },
+   "duplicate_date_rows": 1,
+   "rows_total": 1582,
+   "date_coverage": {
+    "record_date": {
+     "min": "20200304",
+     "max": "20260904",
+     "rows_gt_20241231": 407
+    }
+   },
+   "numeric_magnitude": {
+    "close": {
+     "min": 0.719,
+     "median": 1.549,
+     "max": 2.688
+    }
+   },
+   "sample_rows": [
+    {
+     "date": "2023-05-23",
+     "ohlc": [
+      "1.583",
+      "1.559",
+      "1.589",
+      "1.558"
+     ],
+     "volume": "2099601.000"
+    },
+    {
+     "date": "2023-05-24",
+     "ohlc": [
+      "1.551",
+      "1.550",
+      "1.571",
+      "1.546"
+     ],
+     "volume": "1886292.000"
+    },
+    {
+     "date": "2023-05-25",
+     "ohlc": [
+      "1.548",
+      "1.543",
+      "1.558",
+      "1.533"
+     ],
+     "volume": "1829204.000"
+    },
+    {
+     "date": "2023-05-26",
+     "ohlc": [
+      "1.542",
+      "1.517",
+      "1.542",
+      "1.501"
+     ],
+     "volume": "2001643.000"
+    }
+   ],
+   "sha256_verified_pages": 1,
+   "sha256_concat_ok": false,
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:54"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:54"
+}

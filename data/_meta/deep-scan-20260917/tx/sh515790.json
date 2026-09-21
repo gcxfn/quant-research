@@ -1,0 +1,103 @@
+{
+ "source": "tx",
+ "dataset": "sh515790",
+ "batches": {
+  "tx/sh515790/20260904T185745": {
+   "batch_dir": "tx/sh515790/20260904T185745",
+   "mode": "json",
+   "status": "completed",
+   "issues": [
+    {
+     "level": "warning",
+     "code": "meta_row_count_mismatch",
+     "detail": "meta n_rows=1386, 实际解析 1387 行, 其中跨页重复日期 1 行"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_kline_dates_across_pages",
+     "detail": "跨页重复日期 1 行, 例: ['20230523']"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "407 个记录日期 > 2024-12-31 (max=20260904); 冻结边界: 只报告"
+    }
+   ],
+   "inventory_registration": {
+    "files": 3,
+    "bytes": 88270
+   },
+   "files": {
+    "n_total": 3,
+    "response_pages": [
+     "response_000.json",
+     "response_001.json"
+    ],
+    "total_bytes": 88270
+   },
+   "duplicate_date_rows": 1,
+   "rows_total": 1387,
+   "date_coverage": {
+    "record_date": {
+     "min": "20201218",
+     "max": "20260904",
+     "rows_gt_20241231": 407
+    }
+   },
+   "numeric_magnitude": {
+    "close": {
+     "min": 0.626,
+     "median": 1.061,
+     "max": 1.901
+    }
+   },
+   "sample_rows": [
+    {
+     "date": "2023-05-23",
+     "ohlc": [
+      "1.242",
+      "1.238",
+      "1.262",
+      "1.234"
+     ],
+     "volume": "5122272.000"
+    },
+    {
+     "date": "2023-05-24",
+     "ohlc": [
+      "1.232",
+      "1.262",
+      "1.279",
+      "1.229"
+     ],
+     "volume": "8118769.000"
+    },
+    {
+     "date": "2023-05-25",
+     "ohlc": [
+      "1.261",
+      "1.286",
+      "1.300",
+      "1.255"
+     ],
+     "volume": "11072362.000"
+    },
+    {
+     "date": "2023-05-26",
+     "ohlc": [
+      "1.281",
+      "1.253",
+      "1.281",
+      "1.240"
+     ],
+     "volume": "6971767.000"
+    }
+   ],
+   "sha256_verified_pages": 1,
+   "sha256_concat_ok": false,
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:54"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:54"
+}

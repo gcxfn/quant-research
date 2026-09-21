@@ -1,0 +1,130 @@
+{
+ "source": "tushare",
+ "dataset": "stock_basic",
+ "batches": {
+  "tushare/stock_basic/20260909-r3": {
+   "batch_dir": "tushare/stock_basic/20260909-r3",
+   "mode": "full",
+   "files": {
+    "n_total": 4,
+    "n_csv": 2,
+    "n_parquet": 0,
+    "n_empty_csv": 1,
+    "n_manifest": 1,
+    "n_other": 1,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [
+     "chunk_P.csv"
+    ],
+    "total_bytes": 213778
+   },
+   "issues": [
+    {
+     "level": "info",
+     "code": "empty_csv_chunks",
+     "detail": "1 个 0 字节空 CSV(如按日抓取无数据日), 例: ['chunk_P.csv']; 未计入行数统计"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 list_date 有 227 行 > 2024-12-31 (max=20260909); 冻结边界审查: 只报告不删除"
+    }
+   ],
+   "inventory_registration": {
+    "files": 4,
+    "bytes": 213778
+   },
+   "schema": {
+    "ts_code": "String",
+    "name": "String",
+    "list_status": "String",
+    "list_date": "Int64",
+    "delist_date": "Int64"
+   },
+   "n_columns": 5,
+   "date_columns": [
+    "list_date",
+    "delist_date"
+   ],
+   "numeric_columns_checked": [
+    "delist_date",
+    "list_date"
+   ],
+   "rows_total": 5899,
+   "date_coverage": {
+    "list_date": {
+     "min": "19901201",
+     "max": "20260909",
+     "rows_gt_20241231": 227,
+     "null_rows": 0
+    },
+    "delist_date": {
+     "min": "19990712",
+     "max": "20260730",
+     "rows_gt_20241231": 50,
+     "null_rows": 5560
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 227,
+   "numeric_magnitude": {
+    "delist_date": {
+     "min": 19990712.0,
+     "max": 20260730.0
+    },
+    "list_date": {
+     "min": 19901201.0,
+     "max": 20260909.0
+    }
+   },
+   "primary_key": [
+    "ts_code"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "ts_code": "000003.SZ",
+     "name": "PT金田A(退)",
+     "list_status": "D",
+     "list_date": "19910703",
+     "delist_date": "20020614"
+    },
+    {
+     "ts_code": "000004.SZ",
+     "name": "国华退",
+     "list_status": "D",
+     "list_date": "19901201",
+     "delist_date": "20260714"
+    },
+    {
+     "ts_code": "000005.SZ",
+     "name": "ST星源(退)",
+     "list_status": "D",
+     "list_date": "19901210",
+     "delist_date": "20240426"
+    },
+    {
+     "ts_code": "000013.SZ",
+     "name": "*ST石化A(退)",
+     "list_status": "D",
+     "list_date": "19920506",
+     "delist_date": "20040920"
+    },
+    {
+     "ts_code": "000015.SZ",
+     "name": "PT中浩A(退)",
+     "list_status": "D",
+     "list_date": "19920625",
+     "delist_date": "20011022"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:44"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:44"
+}

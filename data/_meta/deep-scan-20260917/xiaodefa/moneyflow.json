@@ -1,0 +1,235 @@
+{
+ "source": "xiaodefa",
+ "dataset": "moneyflow",
+ "batches": {
+  "xiaodefa/moneyflow/20260913-bulk1": {
+   "batch_dir": "xiaodefa/moneyflow/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 3089,
+    "n_csv": 3088,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 1628406544
+   },
+   "issues": [
+    {
+     "level": "warning",
+     "code": "bulk_scan_failed_perfile_fallback",
+     "detail": "ComputeError: schema names differ: got trade_date, expected ts_code"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 2135000 行 > 2024-12-31"
+    }
+   ],
+   "inventory_registration": {
+    "files": 3089,
+    "bytes": 1628406544
+   },
+   "schema": {
+    "trade_date": "Int64",
+    "ts_code": "String",
+    "buy_elg_amount": "Float64",
+    "buy_elg_vol": "Int64",
+    "buy_lg_amount": "Float64",
+    "buy_lg_vol": "Int64",
+    "buy_md_amount": "Float64",
+    "buy_md_vol": "Int64",
+    "buy_sm_amount": "Float64",
+    "buy_sm_vol": "Int64",
+    "net_mf_amount": "Float64",
+    "net_mf_vol": "Int64",
+    "sell_elg_amount": "Float64",
+    "sell_elg_vol": "Int64",
+    "sell_lg_amount": "Float64",
+    "sell_lg_vol": "Int64",
+    "sell_md_amount": "Float64",
+    "sell_md_vol": "Int64",
+    "sell_sm_amount": "Float64",
+    "sell_sm_vol": "Int64"
+   },
+   "n_columns": 20,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "buy_elg_amount",
+    "buy_elg_vol",
+    "buy_lg_amount",
+    "buy_lg_vol",
+    "buy_md_amount",
+    "buy_md_vol",
+    "buy_sm_amount",
+    "buy_sm_vol",
+    "net_mf_amount",
+    "net_mf_vol",
+    "sell_elg_amount",
+    "sell_elg_vol",
+    "sell_lg_amount",
+    "sell_lg_vol",
+    "sell_md_amount",
+    "sell_md_vol",
+    "sell_sm_amount",
+    "sell_sm_vol",
+    "trade_date"
+   ],
+   "rows_total": 11947770,
+   "rows_counted_files": 3088,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20140102",
+     "max": "20260911",
+     "rows_gt_20241231": 2135000,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 2135000,
+   "primary_key": [
+    "ts_code",
+    "trade_date"
+   ],
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "trade_date": "20140102",
+     "ts_code": "300134.SZ",
+     "buy_elg_amount": "113.14",
+     "buy_elg_vol": "800",
+     "buy_lg_amount": "1850.31",
+     "buy_lg_vol": "13165",
+     "buy_md_amount": "3364.04",
+     "buy_md_vol": "23996",
+     "buy_sm_amount": "2537.79",
+     "buy_sm_vol": "18102",
+     "net_mf_amount": "848.95",
+     "net_mf_vol": "6044",
+     "sell_elg_amount": "0.0",
+     "sell_elg_vol": "0",
+     "sell_lg_amount": "1573.13",
+     "sell_lg_vol": "11203",
+     "sell_md_amount": "3640.76",
+     "sell_md_vol": "25948",
+     "sell_sm_amount": "2651.39",
+     "sell_sm_vol": "18912"
+    },
+    {
+     "trade_date": "20140102",
+     "ts_code": "002090.SZ",
+     "buy_elg_amount": "39.52",
+     "buy_elg_vol": "380",
+     "buy_lg_amount": "482.47",
+     "buy_lg_vol": "4665",
+     "buy_md_amount": "1316.22",
+     "buy_md_vol": "12761",
+     "buy_sm_amount": "1585.72",
+     "buy_sm_vol": "15379",
+     "net_mf_amount": "-52.67",
+     "net_mf_vol": "-520",
+     "sell_elg_amount": "0.0",
+     "sell_elg_vol": "0",
+     "sell_lg_amount": "363.09",
+     "sell_lg_vol": "3511",
+     "sell_md_amount": "1388.09",
+     "sell_md_vol": "13469",
+     "sell_sm_amount": "1672.75",
+     "sell_sm_vol": "16205"
+    },
+    {
+     "trade_date": "20140102",
+     "ts_code": "002032.SZ",
+     "buy_elg_amount": "0.0",
+     "buy_elg_vol": "0",
+     "buy_lg_amount": "182.23",
+     "buy_lg_vol": "1269",
+     "buy_md_amount": "838.16",
+     "buy_md_vol": "5843",
+     "buy_sm_amount": "860.32",
+     "buy_sm_vol": "5991",
+     "net_mf_amount": "-546.74",
+     "net_mf_vol": "-3816",
+     "sell_elg_amount": "0.0",
+     "sell_elg_vol": "0",
+     "sell_lg_amount": "439.4",
+     "sell_lg_vol": "3067",
+     "sell_md_amount": "729.97",
+     "sell_md_vol": "5087",
+     "sell_sm_amount": "711.35",
+     "sell_sm_vol": "4949"
+    },
+    {
+     "trade_date": "20140102",
+     "ts_code": "002551.SZ",
+     "buy_elg_amount": "343.5",
+     "buy_elg_vol": "1109",
+     "buy_lg_amount": "2025.75",
+     "buy_lg_vol": "6574",
+     "buy_md_amount": "2897.73",
+     "buy_md_vol": "9389",
+     "buy_sm_amount": "1589.39",
+     "buy_sm_vol": "5160",
+     "net_mf_amount": "1047.01",
+     "net_mf_vol": "3398",
+     "sell_elg_amount": "417.28",
+     "sell_elg_vol": "1346",
+     "sell_lg_amount": "1636.35",
+     "sell_lg_vol": "5298",
+     "sell_md_amount": "2910.2",
+     "sell_md_vol": "9440",
+     "sell_sm_amount": "1892.53",
+     "sell_sm_vol": "6149"
+    },
+    {
+     "trade_date": "20140102",
+     "ts_code": "600655.SH",
+     "buy_elg_amount": "0.0",
+     "buy_elg_vol": "0",
+     "buy_lg_amount": "1375.93",
+     "buy_lg_vol": "17560",
+     "buy_md_amount": "1242.97",
+     "buy_md_vol": "15883",
+     "buy_sm_amount": "1582.79",
+     "buy_sm_vol": "20236",
+     "net_mf_amount": "348.45",
+     "net_mf_vol": "4386",
+     "sell_elg_amount": "3.49",
+     "sell_elg_vol": "45",
+     "sell_lg_amount": "1003.82",
+     "sell_lg_vol": "12837",
+     "sell_md_amount": "1462.62",
+     "sell_md_vol": "18681",
+     "sell_sm_amount": "1731.76",
+     "sell_sm_vol": "22117"
+    }
+   ],
+   "status": "completed(per-file fallback)",
+   "duration_s": 29.5,
+   "finished_at": "2026-09-18T00:08:09",
+   "unit_check": {
+    "600519_20240930_amounts": {
+     "buy_lg_amount": 823495.74,
+     "sell_lg_amount": 788417.35,
+     "buy_elg_amount": 894742.56
+    },
+    "unit_note": "tushare moneyflow 文档口径金额为万元; 以上为原始值量级, verdict 基于常识区间",
+    "unit_conclusion": {
+     "amount_like_cols": "万元量级(单票主力净额数千至数万元档)",
+     "confidence": "medium"
+    }
+   },
+   "unit_check_conclusion": {
+    "amount_like_cols": "万元量级(单票主力净额数千至数万元档)",
+    "confidence": "medium"
+   },
+   "supplemental_check": "deepscan_supplement.py (per-file fallback 批次的补查)"
+  }
+ },
+ "updated_at": "2026-09-18T00:08:09"
+}

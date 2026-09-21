@@ -1,0 +1,117 @@
+{
+ "experiment_id": "exp-20260918-p2r9-risk-delivery",
+ "name": "p2r9-risk-delivery",
+ "prereg": "docs/research/exp-20260918-p2r9-risk-delivery-prereg.md",
+ "preregistered_at": "2026-09-18",
+ "frozen_at": "2026-09-18T02:40 (before any R9 signal run)",
+ "status": "config_frozen_before_any_signal_run",
+ "user_authority": "overnight autonomous direction authority 2026-09-18; operates under the R8-closure escape clause (trend/drawdown mechanism + more diversified shape); frequency variable NOT varied (all daily)",
+ "inherits_from": {
+  "file": "configs/experiments/p2r7-etf-exposure.json",
+  "sha256": "902ac69b8627f3b00db07e94777665b68d40ce15790f60b56d0e1de65ea91f77",
+  "resolution_rule": "runner verifies this sha256 before loading (fail-closed); inherits VERBATIM: u1_whitelist_frozen (1,168 codes), universe (U2/U3/U4/U5), preflight, fees, sizing base rule, execution_semantics base, warmup, segments, benchmarks B2/B4"
+ },
+ "hash_verification_policy": "ALL data hashes below must ALSO be verified against disk manifests/files at runner start (fail-closed); R8 lesson: a hand-copied hash in config can have a typo (R8 fund_adj pin), disk truth + R7 pin are the cross-check",
+ "seed": 17,
+ "warmup": { "start": "2015-01-05", "end": "2015-12-31", "use": "indicator lookback only (max 252 sessions for D252 rolling peak); no signals, no metrics" },
+ "segments": {
+  "dev": { "start": "2016-01-01", "end": "2020-12-31" },
+  "validation": { "start": "2021-01-01", "end": "2022-12-31" },
+  "test": { "start": "2023-01-01", "end": "2024-12-31" },
+  "isolation": "single continuous simulation per config; segment metrics sliced from one equity curve; boundary mark-to-market carry; test slice evaluated once and only for val-passing configs",
+  "freeze_end": "2024-12-31",
+  "history_note": "dev consumed FOUR times (R6/R7/R8/R9, third reuse); val/test never used in any decision; false-positive risk on dev elevated by design iteration - val/test is the only real filter"
+ },
+ "data": {
+  "fund_basic": {
+   "batch": "data/raw/tushare/fund_basic/20260909-r1",
+   "file": "chunk_market_E.csv",
+   "sha256": "b98932a79f838bf4a4995e703b77a267ecc5d9168c7ad2c2d9a022d502af97db"
+  },
+  "fund_daily": {
+   "batch": "data/raw/tushare/fund_daily/20260917-r1",
+   "manifest_sha256": "b355322fae15ff1722c83b0a8c8f44efa03f276b8ff0a36ac30b1bbc59a17dae"
+  },
+  "fund_adj": {
+   "batch": "data/raw/tushare/fund_adj/20260917-r1",
+   "manifest_sha256": "348d2ec4e8fd6df3ab856f2a09677d87b62d668529abe8b00b2ec38b68efccd4"
+  },
+  "index_daily": {
+   "batch": "data/raw/tushare/index_daily/20260917-r1",
+   "range": ["20150105", "20241231"],
+   "risk_index": "000300.SH",
+   "risk_file": "chunk_000300.SH.csv",
+   "chunk_000300_sha256": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878",
+   "manifest_sha256": "14372f9d2cd9bf19e6bbd21c4ad4c450f83473a315b1711a6717647e88f4d77a"
+  }
+ },
+ "signal": {
+  "selection_freq": "monthly (last trading session of each calendar month; inherited verbatim)",
+  "momentum": "inherited R7: R_k percentile-rank mean, ties by ts_code ascending",
+  "windows": { "W2S": [20, 60], "W2L": [60, 120] },
+  "top_n": "per-config N in {3, 4}",
+  "absolute_gate": "OFF (inherited)",
+  "signal_execution": "selection at monthly close t, fills t+1 open; risk state computed EVERY session close t, traded t+1 open ONLY on state change"
+ },
+ "configs_grid": {
+  "common": "E_on=0.90 (saturates: N=3 -> 25%/leg = 75% effective; N=4 -> 22.5%/leg = 90% effective - higher on-exposure for N=4 disclosed as the diversification tradeoff)",
+  "hysteresis_semantics": "state machine init ON; OFF when drawdown >= T; re-arm ON when drawdown from the SAME reference peak <= T/2 (PDD reference = all-time running peak, never resets; D-family reference = rolling-window peak, window keeps rolling); X1: OFF if either arm triggers, ON only when BOTH arms re-armed",
+  "twelve": {
+   "C01": { "W": "W2S", "N": 3, "mech": "D60", "T": 0.08, "e_low": 0.40, "rearm": 0.04 },
+   "C02": { "W": "W2L", "N": 3, "mech": "D60", "T": 0.08, "e_low": 0.40, "rearm": null },
+   "C03": { "W": "W2L", "N": 3, "mech": "D60", "T": 0.08, "e_low": 0.40, "rearm": 0.04 },
+   "C04": { "W": "W2S", "N": 4, "mech": "D60", "T": 0.08, "e_low": 0.40, "rearm": 0.04 },
+   "C05": { "W": "W2L", "N": 4, "mech": "D60", "T": 0.08, "e_low": 0.40, "rearm": 0.04 },
+   "C06": { "W": "W2L", "N": 3, "mech": "D252", "T": 0.10, "e_low": 0.40, "rearm": 0.05 },
+   "C07": { "W": "W2L", "N": 4, "mech": "D252", "T": 0.10, "e_low": 0.40, "rearm": 0.05 },
+   "C08": { "W": "W2S", "N": 3, "mech": "PDD", "T": 0.10, "e_low": 0.40, "rearm": 0.05 },
+   "C09": { "W": "W2L", "N": 3, "mech": "PDD", "T": 0.10, "e_low": 0.40, "rearm": 0.05 },
+   "C10": { "W": "W2L", "N": 4, "mech": "PDD", "T": 0.10, "e_low": 0.40, "rearm": 0.05 },
+   "C11": { "W": "W2S", "N": 4, "mech": "X1", "arms": [ { "mech": "D60", "T": 0.08 }, { "mech": "PDD", "T": 0.10 } ], "e_low": 0.40, "rearm": "both arms re-armed (D60 arm <=0.04, PDD arm <=0.05)" },
+   "C12": { "W": "W2S", "N": 3, "mech": "D60", "T": 0.08, "e_low": 0.30, "rearm": 0.04 }
+  },
+  "mechanism_definitions": {
+   "D60": "000300.SH close vs rolling 60-index-session peak (inclusive of t): dd = 1 - close/peak; OFF when dd >= T",
+   "D252": "same over 252 index sessions",
+   "PDD": "own-instance total equity marked at session close vs all-time running peak: dd = 1 - equity/peak; OFF when dd >= T; path-dependent per instance (strategy / B1(m) / B3prime each use own equity)",
+   "X1": "OFF if D60-arm OR PDD-arm condition; ON only when both re-armed"
+  },
+  "anchors_non_judged": {
+   "A1": { "W": "W2S", "N": 3, "mech": "FIX75", "requirement": "bit-exact equity vs R8 run 20260918T021054-p2r8-daily-risk-d19a9c07 C01 (net and gross)" },
+   "A2": { "W": "W2S", "N": 3, "mech": "D60", "T": 0.08, "e_low": 0.40, "rearm": null, "requirement": "bit-exact equity vs R8 run C09 (hysteresis code must not perturb the no-hysteresis path)" }
+  }
+ },
+ "benchmarks": {
+  "B1m_matched": "same pool, equal weight, same monthly signal days, SAME mechanism DAILY exposure path with SAME hysteresis (PDD uses B1 own equity peak); idle cash carries forward; gross AND net disclosed, net primary",
+  "B1_at_100": "exposure = 1.0 reference (must reproduce +10.40%/+63.9%/-27.47% dev)",
+  "B2": "inherited (510300.SH segment buy-hold)",
+  "B3prime": "random Top-N same mechanism+hysteresis, seeds 17..36",
+  "B4": 0.0
+ },
+ "gates": {
+  "dev_all_required": {
+   "1_net_cagr_gt_0": "dev net CAGR > 0",
+   "2_excess_vs_B1m": "dev net CAGR - B1(m) dev net CAGR >= +0.020 (annualized, pp)",
+   "3_positive_years": "net excess vs B1(m) > 0 in >= 4 of 5 dev calendar years",
+   "4_drawdown": "dev max drawdown <= 0.20 AND <= B1(m) dev max drawdown",
+   "5_turnover": "annual one-side (buy notional / mean equity) max over dev years <= 12.0; monthly sub-cap <= 6.0 (selection monthly; risk overlay buys count; NOT relaxed - solved by design: W2L churn headroom + hysteresis)",
+   "6_concentration": "dev net profit top-1 code share <= 40% AND top-3 <= 70% (N=4 configs additionally disclose top-4 share; gate stays top-1/top-3)",
+   "7_vs_random": "dev net CAGR >= mean(B3prime 20 seeds, same mechanism+hysteresis) + 0.010 (limited power, noted)",
+   "8_execution": "dev-window leg-level execution rate >= 0.95 (planned legs on dev signal days AND risk-state-change days; executed = filled/backfilled/rule-compliant cash slot/postponed-then-filled)"
+  },
+  "validation": [
+   "val net CAGR excess vs B1(m) >= +0.010",
+   "net excess vs B1(m) > 0 in both 2021 and 2022",
+   "val max drawdown <= 0.20; turnover and concentration <= same dev-gate limits"
+  ],
+  "test_rule": "test net excess vs B1(m) >= 0 AND test max drawdown <= 0.20 => P3 candidate; test run once, terminal",
+  "advancement": "dev all-pass -> highest net excess vs B1(m) advances (tie: lower id); at most 1; no all-pass -> record and close this line; STOP RULE: this line gets NO further rounds tonight regardless of outcome; val/test passer => P3 candidate, stop and report; failure => switch to G2/G3 preparation",
+  "anchor_regressions_required_before_consumption": [
+   "A1 bit-exact vs R8 C01",
+   "A2 bit-exact vs R8 C09",
+   "B1@100% dev +10.40% / +63.9% / -27.47%"
+  ],
+  "trial_count_note": "cumulative trials: 115 + 12 (R8) = 127 + 12 here = 139"
+ },
+ "limits": { "max_runtime_s": 1800, "max_ram_gb": 11 }
+}

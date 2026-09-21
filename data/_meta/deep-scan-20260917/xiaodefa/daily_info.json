@@ -1,0 +1,276 @@
+{
+ "source": "xiaodefa",
+ "dataset": "daily_info",
+ "batches": {
+  "xiaodefa/daily_info/20260913-bulk1": {
+   "batch_dir": "xiaodefa/daily_info/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 3089,
+    "n_csv": 3088,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 6045413
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 4904 行 > 2024-12-31 (max=20260911); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['trade_date'] 重复: 3088 个键 / 61441 行"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 3089,
+    "bytes": 6045413
+   },
+   "schema": {
+    "trade_date": "Int64",
+    "ts_code": "String",
+    "ts_name": "String",
+    "com_count": "Float64",
+    "total_share": "Float64",
+    "float_share": "Float64",
+    "total_mv": "Float64",
+    "float_mv": "Float64",
+    "amount": "Float64",
+    "vol": "Float64",
+    "trans_count": "Float64",
+    "pe": "Float64",
+    "tr": "Float64",
+    "exchange": "String"
+   },
+   "n_columns": 14,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "vol",
+    "amount",
+    "total_mv",
+    "pe",
+    "com_count",
+    "float_mv",
+    "float_share",
+    "total_share",
+    "tr",
+    "trade_date",
+    "trans_count"
+   ],
+   "rows_total": 61441,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20140102",
+     "max": "20260911",
+     "rows_gt_20241231": 4904,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 4904,
+   "numeric_magnitude": {
+    "vol": {
+     "min": 0.0,
+     "max": 3382.77
+    },
+    "amount": {
+     "min": 0.0,
+     "max": 23356.38
+    },
+    "total_mv": {
+     "min": 0.0,
+     "max": 706966.48
+    },
+    "pe": {
+     "min": 0.0,
+     "max": 146.57
+    },
+    "com_count": {
+     "min": 0.0,
+     "max": 8550.0
+    },
+    "float_mv": {
+     "min": 0.0,
+     "max": 656948.97
+    },
+    "float_share": {
+     "min": 0.0,
+     "max": 448617.9469
+    },
+    "total_share": {
+     "min": 0.0,
+     "max": 27773.73
+    },
+    "tr": {
+     "min": 0.0,
+     "max": 77.92
+    },
+    "trade_date": {
+     "min": 20140102.0,
+     "max": 20260911.0
+    },
+    "trans_count": {
+     "min": 0.0,
+     "max": 4773.0
+    }
+   },
+   "primary_key": [
+    "trade_date"
+   ],
+   "duplicate_keys": 3088,
+   "duplicate_rows": 61441,
+   "sample_rows": [
+    {
+     "trade_date": "20140102",
+     "ts_code": "SH_A",
+     "ts_name": "上海主板A股",
+     "com_count": "944.0",
+     "total_share": null,
+     "float_share": null,
+     "total_mv": "150065.96",
+     "float_mv": "135353.79",
+     "amount": "622.74",
+     "vol": "68.86",
+     "trans_count": "326.0",
+     "pe": "10.95",
+     "tr": "0.29",
+     "exchange": "SH"
+    },
+    {
+     "trade_date": "20140102",
+     "ts_code": "SH_B",
+     "ts_name": "上海主板B股",
+     "com_count": "53.0",
+     "total_share": null,
+     "float_share": null,
+     "total_mv": "757.92",
+     "float_mv": "757.92",
+     "amount": "0.84",
+     "vol": "0.17",
+     "trans_count": "1.0",
+     "pe": "11.62",
+     "tr": "0.11",
+     "exchange": "SH"
+    },
+    {
+     "trade_date": "20140102",
+     "ts_code": "SH_FUND",
+     "ts_name": "上海基金市场",
+     "com_count": "58.0",
+     "total_share": null,
+     "float_share": null,
+     "total_mv": null,
+     "float_mv": null,
+     "amount": "39.360965",
+     "vol": "8.887647",
+     "trans_count": "4.0",
+     "pe": null,
+     "tr": null,
+     "exchange": "SH"
+    },
+    {
+     "trade_date": "20140102",
+     "ts_code": "SH_FUND_CEF",
+     "ts_name": "上海封闭式基金",
+     "com_count": "9.0",
+     "total_share": null,
+     "float_share": null,
+     "total_mv": null,
+     "float_mv": null,
+     "amount": "0.72277",
+     "vol": "0.684418",
+     "trans_count": "0.0",
+     "pe": null,
+     "tr": null,
+     "exchange": "SH"
+    },
+    {
+     "trade_date": "20140102",
+     "ts_code": "SH_FUND_ETF",
+     "ts_name": "上海基金ETF",
+     "com_count": "47.0",
+     "total_share": null,
+     "float_share": null,
+     "total_mv": null,
+     "float_mv": null,
+     "amount": "13.867396",
+     "vol": "7.88405",
+     "trans_count": "2.0",
+     "pe": null,
+     "tr": null,
+     "exchange": "SH"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 3088,
+    "distinct_headers": 1,
+    "modal_header_cols": 14,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "20240523",
+      "manifest_rows": 12,
+      "actual_rows": 11
+     },
+     {
+      "chunk": "20160315",
+      "manifest_rows": 25,
+      "actual_rows": 24
+     },
+     {
+      "chunk": "20250110",
+      "manifest_rows": 12,
+      "actual_rows": 11
+     },
+     {
+      "chunk": "20260908",
+      "manifest_rows": 12,
+      "actual_rows": 11
+     },
+     {
+      "chunk": "20190321",
+      "manifest_rows": 25,
+      "actual_rows": 24
+     },
+     {
+      "chunk": "20180517",
+      "manifest_rows": 23,
+      "actual_rows": 22
+     },
+     {
+      "chunk": "20230512",
+      "manifest_rows": 12,
+      "actual_rows": 11
+     },
+     {
+      "chunk": "20171219",
+      "manifest_rows": 25,
+      "actual_rows": 24
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 2.4,
+   "finished_at": "2026-09-18T00:07:20"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:20"
+}

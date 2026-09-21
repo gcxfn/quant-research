@@ -1,0 +1,53 @@
+{
+  "experiment_id": "exp-20260919-factor-round-f3r1",
+  "frozen_at": "2026-09-19T00:00:00+08:00 (pre-run; timestamp recorded at run launch in manifest)",
+  "prereg": "docs/research/exp-20260919-factor-round-f3r1-prereg.md",
+  "window": {
+    "dev_start": "2015-01-05",
+    "dev_end": "2020-12-31",
+    "signal_grid": "month-end trading days; 2020-12-31 dropped as signal (P3R2 precedent), kept as expiry anchor",
+    "val": "2021-2024 zero contact"
+  },
+  "dedup": {
+    "matrix": "artifacts/runs/20260919T180000-f2r1-factor-batch/outputs/f2r1_survivors_corr.csv",
+    "edge_abs_rho": 0.6,
+    "cluster": "connected components",
+    "representative": "max |t_ic| (ties: higher coverage, then factor_id lexicographic)"
+  },
+  "composite": {
+    "pool": "r16.signal_pools verbatim (mainboard, isST=0, listing>120 sessions, amt_med20>=50M, close>=2)",
+    "coverage_rule": "symbol eligible iff >= ceil(M/2) representative factors non-null at t (arm-independent)",
+    "component": "x_i = (rank_pct - 0.5) * sign(ic_mean_i), ranked within executable cross-section",
+    "arms": {
+      "F3-EW": "equal-weight mean of available components",
+      "F3-ICW": "sum(abs(icir_i) * x_i) / sum(abs(icir_i)) over available components (pre-run clarification: components are sign-oriented, weights are |icir|)"
+    },
+    "tie_break": "composite desc, symbol asc"
+  },
+  "portfolio": {
+    "K": 10,
+    "target_weight_per_seat": 0.1,
+    "entry_rank": 10,
+    "exit_rank": 20,
+    "buffer_rule": "r16.buffer_membership (H-47), q5 filter OFF",
+    "intra_month_rebalance": false
+  },
+  "intent_mapping": {
+    "buy": "target_weight=0.10, priority=composite rank, decision=(T,'pm'), expiry=T'+1 calendar day",
+    "sell": "full exit, intent=risk (K=3 session fallback)",
+    "rescale": "none (registered note: no mid-cycle weight correction)"
+  },
+  "benchmarks": {
+    "B1m": "executable pool equal-weight monthly, fractional, exposure=1, rate-only fee schedule",
+    "B3prime": "random K=10, seeds 17-36 (20 runs), STOCK_FEE_SCHEDULE integer lots, exposure=1, mean net CAGR"
+  },
+  "gates": "R16 prereg section 2 eight gates verbatim (P3R1/P3R2 precedent) + goal-alignment criterion dev net CAGR >= 10%",
+  "engine": {
+    "path": "src/quant/backtest/band_engine.py",
+    "version": "v1.3",
+    "sha256_16": "84a2443ac28fe1b8",
+    "corporate_actions": null
+  },
+  "budget": {"wall_minutes": 60, "peak_rss_gb": 8.0},
+  "trial_accounting": {"strategy_line": "262 -> 264 (2 arms)", "factor_line": "no new trials"}
+}

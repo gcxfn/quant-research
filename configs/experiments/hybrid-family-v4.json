@@ -1,0 +1,50 @@
+{
+  "experiment_id": "exp-20260919-hybrid-family-v4",
+  "frozen_at": "2026-09-19 11:20",
+  "prereg": "docs/research/exp-20260919-hybrid-family-v4-prereg.md",
+  "authority": "user directives 2026-09-19: (1) lower bond, freed weight to the STOCK engine; (2) 200k capital makes bonds pointless -> replace bond leg with dividend ETF 510880; (3) gold band question answered by control arms; (4) T1 paused pending user approval (bookkeeping, not this experiment)",
+  "engine": {
+    "module": "src/quant/backtest/band_engine.py",
+    "version": "band_engine v1.2",
+    "sha256": "ceb7be6414280e4c5d5f37dc6ca1148a85e306b2de1a216147f67f89cc4a746d",
+    "check": "before+after each run"
+  },
+  "inherited_from_v2_v3": [
+    "universe+exclusions", "band table (all 0.10)", "dividend events rule (18 dev events incl. 510880 x6)",
+    "runner assertions x3", "fees", "window dev 2015-2020 / val frozen",
+    "Design B leg semantics", "gates 1-7 (R16 verbatim) + gate 8 v3",
+    "benchmarks B1(m)/B3'"
+  ],
+  "rotation_universe_uni6g": ["sh.518880", "sh.510050", "sh.510300", "sz.159915", "sh.513100", "sh.513500"],
+  "uni6g_rule": "8 members minus {sh.511010 bond, sh.510880 leg}; gold 518880 IS rankable",
+  "mechanism_note": "freed bond weight reaches the stock engine via the m7 cash-competition channel (fewer insufficient-cash voids, higher fill rate); C05 target weights are signal-driven and do NOT scale with available cash",
+  "baseline_facts_dev": {
+    "sh.511010": {"cagr": 0.0288, "maxdd": -0.0492},
+    "sh.510880": {"cagr": 0.0350, "maxdd": -0.4656, "note": "equity beta, NOT defensive"},
+    "sh.518880": {"cagr": 0.0811, "maxdd": -0.1729, "rank_freq_top1": 0.17, "rank_freq_top2": 0.23, "neg_6m_momentum_months": 0.38}
+  },
+  "configs": [
+    {"id": "H4-A0", "stock": true, "legs": {"sh.511010": 0.25, "sh.518880": 0.25}, "rotation": null, "role": "regression anchor = H2-01 verbatim; 5 frames must equal v2 outputs byte-for-byte; no re-adjudication"},
+    {"id": "H4-01", "stock": true, "legs": {"sh.511010": 0.15, "sh.518880": 0.25}, "rotation": null},
+    {"id": "H4-02", "stock": true, "legs": {"sh.511010": 0.1, "sh.518880": 0.25}, "rotation": null},
+    {"id": "H4-03", "stock": true, "legs": {"sh.518880": 0.25}, "rotation": null},
+    {"id": "H4-04", "stock": true, "legs": {"sh.510880": 0.15, "sh.518880": 0.25}, "rotation": null},
+    {"id": "H4-05", "stock": true, "legs": {"sh.510880": 0.25, "sh.518880": 0.25}, "rotation": null},
+    {"id": "H4-06", "stock": true, "legs": {"sh.510880": 0.25}, "rotation": null},
+    {"id": "H4-07", "stock": true, "legs": {"sh.510880": 0.25}, "rotation": {"universe": "UNI6G", "top_n": 1, "weight": 0.25, "lookback_m": 6}},
+    {"id": "H4-08", "stock": true, "legs": {"sh.510880": 0.25}, "rotation": {"universe": "UNI6G", "top_n": 2, "weight": 0.2, "lookback_m": 6}}
+  ],
+  "gates": {
+    "1-7": "R16 verbatim",
+    "8v3": "final delivery rate >= 99% + end-of-run armed stuck = 0 hard assert",
+    "benchmarks": {"B1m": "R16 metrics.json C05 verbatim", "B3prime_T200_40": -0.0199},
+    "goal_column_non_gate": "dev net CAGR >= 10%"
+  },
+  "stop_clauses": [
+    "any config passes all 8 gates AND net CAGR >= 10% -> stop, report user",
+    "configs pass gates but < 10% -> bookkeep and CONTINUE dev",
+    "all eliminated -> family direction re-evaluated with user"
+  ],
+  "budget": {"configs": 9, "engine_time": "<1.5 min", "wall": "<=20 min", "abort_if": "H4-A0 frames != v2 H2-01 byte-for-byte"},
+  "trial_accounting": "229 -> 238 (9 trials; anchor counts like v2/v3 anchors)"
+}

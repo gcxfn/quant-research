@@ -1,0 +1,550 @@
+{
+ "source": "tushare",
+ "dataset": "dividend",
+ "batches": {
+  "tushare/dividend/20260909-r3": {
+   "batch_dir": "tushare/dividend/20260909-r3",
+   "mode": "full",
+   "files": {
+    "n_total": 2110,
+    "n_csv": 1647,
+    "n_parquet": 0,
+    "n_empty_csv": 462,
+    "n_manifest": 1,
+    "n_other": 462,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [
+     "chunk_20180102.csv",
+     "chunk_20180104.csv",
+     "chunk_20180105.csv",
+     "chunk_20180108.csv",
+     "chunk_20180109.csv",
+     "chunk_20180110.csv",
+     "chunk_20180112.csv",
+     "chunk_20180115.csv",
+     "chunk_20180116.csv",
+     "chunk_20180117.csv"
+    ],
+    "total_bytes": 3652806
+   },
+   "issues": [
+    {
+     "level": "info",
+     "code": "empty_csv_chunks",
+     "detail": "462 个 0 字节空 CSV(如按日抓取无数据日), 例: ['chunk_20180102.csv', 'chunk_20180104.csv', 'chunk_20180105.csv', 'chunk_20180108.csv', 'chunk_20180109.csv']; 未计入行数统计"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 record_date 有 9510 行 > 2024-12-31 (max=20260908); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['ts_code', 'end_date', 'div_proc'] 重复: 920 个键 / 1840 行"
+    },
+    {
+     "level": "info",
+     "code": "header_check_failed",
+     "detail": "NoDataError: empty CSV"
+    }
+   ],
+   "inventory_registration": {
+    "files": 2110,
+    "bytes": 3652806
+   },
+   "schema": {
+    "ts_code": "String",
+    "end_date": "Int64",
+    "ann_date": "Int64",
+    "div_proc": "String",
+    "stk_div": "Float64",
+    "stk_bo_rate": "String",
+    "stk_co_rate": "String",
+    "cash_div": "Float64",
+    "cash_div_tax": "Float64",
+    "record_date": "Int64",
+    "ex_date": "Int64",
+    "pay_date": "Int64",
+    "div_listdate": "String",
+    "imp_ann_date": "Int64"
+   },
+   "n_columns": 14,
+   "date_columns": [
+    "end_date",
+    "ann_date",
+    "record_date",
+    "ex_date",
+    "pay_date",
+    "div_listdate",
+    "imp_ann_date"
+   ],
+   "numeric_columns_checked": [
+    "ann_date",
+    "cash_div",
+    "cash_div_tax",
+    "end_date",
+    "ex_date",
+    "imp_ann_date",
+    "pay_date",
+    "record_date",
+    "stk_div"
+   ],
+   "rows_total": 35940,
+   "date_coverage": {
+    "end_date": {
+     "min": "20150513",
+     "max": "20260630",
+     "rows_gt_20241231": 5226,
+     "null_rows": 0
+    },
+    "ann_date": {
+     "min": "20150513",
+     "max": "20260901",
+     "rows_gt_20241231": 9382,
+     "null_rows": 1
+    },
+    "record_date": {
+     "min": "20150717",
+     "max": "20260908",
+     "rows_gt_20241231": 9510,
+     "null_rows": 2
+    },
+    "ex_date": {
+     "min": "20180103",
+     "max": "20260909",
+     "rows_gt_20241231": 9510,
+     "null_rows": 0
+    },
+    "pay_date": {
+     "min": "20180103",
+     "max": "20260909",
+     "rows_gt_20241231": 9419,
+     "null_rows": 519
+    },
+    "div_listdate": {
+     "min": "20180126",
+     "max": "20260901",
+     "rows_gt_20241231": 877,
+     "null_rows": 31223
+    },
+    "imp_ann_date": {
+     "min": "20171226",
+     "max": "20260903",
+     "rows_gt_20241231": 9478,
+     "null_rows": 67
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 9510,
+   "numeric_magnitude": {
+    "ann_date": {
+     "min": 20150513.0,
+     "max": 20260901.0
+    },
+    "cash_div": {
+     "min": 0.0,
+     "max": 30.876
+    },
+    "cash_div_tax": {
+     "min": 0.0,
+     "max": 30.876
+    },
+    "end_date": {
+     "min": 20150513.0,
+     "max": 20260630.0
+    },
+    "ex_date": {
+     "min": 20180103.0,
+     "max": 20260909.0
+    },
+    "imp_ann_date": {
+     "min": 20171226.0,
+     "max": 20260903.0
+    },
+    "pay_date": {
+     "min": 20180103.0,
+     "max": 20260909.0
+    },
+    "record_date": {
+     "min": 20150717.0,
+     "max": 20260908.0
+    },
+    "stk_div": {
+     "min": 0.0,
+     "max": 5.8513
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "end_date",
+    "div_proc"
+   ],
+   "duplicate_keys": 920,
+   "duplicate_rows": 1840,
+   "sample_rows": [
+    {
+     "ts_code": "603157.SH",
+     "end_date": "20170930",
+     "ann_date": "20171219",
+     "div_proc": "实施",
+     "stk_div": "0.0",
+     "stk_bo_rate": null,
+     "stk_co_rate": null,
+     "cash_div": "0.33",
+     "cash_div_tax": "0.33",
+     "record_date": "20180102",
+     "ex_date": "20180103",
+     "pay_date": "20180103",
+     "div_listdate": null,
+     "imp_ann_date": "20171226"
+    },
+    {
+     "ts_code": "601326.SH",
+     "end_date": "20170930",
+     "ann_date": "20171221",
+     "div_proc": "实施",
+     "stk_div": "0.0",
+     "stk_bo_rate": null,
+     "stk_co_rate": null,
+     "cash_div": "0.05",
+     "cash_div_tax": "0.05",
+     "record_date": "20180110",
+     "ex_date": "20180111",
+     "pay_date": "20180111",
+     "div_listdate": null,
+     "imp_ann_date": "20180104"
+    },
+    {
+     "ts_code": "838837.BJ",
+     "end_date": "20170630",
+     "ann_date": "20171215",
+     "div_proc": "实施",
+     "stk_div": "0.0",
+     "stk_bo_rate": null,
+     "stk_co_rate": null,
+     "cash_div": "0.3",
+     "cash_div_tax": "0.3",
+     "record_date": "20180123",
+     "ex_date": "20180124",
+     "pay_date": "20180124",
+     "div_listdate": null,
+     "imp_ann_date": "20180118"
+    },
+    {
+     "ts_code": "603618.SH",
+     "end_date": "20170930",
+     "ann_date": "20180113",
+     "div_proc": "实施",
+     "stk_div": "0.0",
+     "stk_bo_rate": null,
+     "stk_co_rate": null,
+     "cash_div": "0.05",
+     "cash_div_tax": "0.05",
+     "record_date": "20180124",
+     "ex_date": "20180125",
+     "pay_date": "20180125",
+     "div_listdate": null,
+     "imp_ann_date": "20180119"
+    },
+    {
+     "ts_code": "000756.SZ",
+     "end_date": "20171031",
+     "ann_date": "20171223",
+     "div_proc": "实施",
+     "stk_div": "0.0",
+     "stk_bo_rate": null,
+     "stk_co_rate": null,
+     "cash_div": "0.03",
+     "cash_div_tax": "0.03",
+     "record_date": "20180125",
+     "ex_date": "20180126",
+     "pay_date": "20180126",
+     "div_listdate": null,
+     "imp_ann_date": "20180120"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 1647,
+    "distinct_headers": 1,
+    "modal_header_cols": 14,
+    "deviating_files": 0
+   },
+   "status": "completed",
+   "duration_s": 1.5,
+   "finished_at": "2026-09-18T00:09:26"
+  },
+  "tushare/dividend/20260913-r2": {
+   "batch_dir": "tushare/dividend/20260913-r2",
+   "mode": "full",
+   "files": {
+    "n_total": 733,
+    "n_csv": 533,
+    "n_parquet": 0,
+    "n_empty_csv": 199,
+    "n_manifest": 1,
+    "n_other": 199,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [
+     "chunk_20150105.csv",
+     "chunk_20150107.csv",
+     "chunk_20150108.csv",
+     "chunk_20150112.csv",
+     "chunk_20150113.csv",
+     "chunk_20150114.csv",
+     "chunk_20150115.csv",
+     "chunk_20150116.csv",
+     "chunk_20150119.csv",
+     "chunk_20150120.csv"
+    ],
+    "total_bytes": 980273
+   },
+   "issues": [
+    {
+     "level": "info",
+     "code": "empty_csv_chunks",
+     "detail": "199 个 0 字节空 CSV(如按日抓取无数据日), 例: ['chunk_20150105.csv', 'chunk_20150107.csv', 'chunk_20150108.csv', 'chunk_20150112.csv', 'chunk_20150113.csv']; 未计入行数统计"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['ts_code', 'end_date', 'div_proc'] 重复: 236 个键 / 472 行"
+    },
+    {
+     "level": "info",
+     "code": "header_check_failed",
+     "detail": "NoDataError: empty CSV"
+    }
+   ],
+   "inventory_registration": {
+    "files": 733,
+    "bytes": 980273
+   },
+   "schema": {
+    "ts_code": "String",
+    "end_date": "Int64",
+    "ann_date": "Int64",
+    "div_proc": "String",
+    "stk_div": "Float64",
+    "stk_bo_rate": "String",
+    "stk_co_rate": "String",
+    "cash_div": "Float64",
+    "cash_div_tax": "Float64",
+    "record_date": "Int64",
+    "ex_date": "Int64",
+    "pay_date": "Int64",
+    "div_listdate": "String",
+    "imp_ann_date": "Int64"
+   },
+   "n_columns": 14,
+   "date_columns": [
+    "end_date",
+    "ann_date",
+    "record_date",
+    "ex_date",
+    "pay_date",
+    "div_listdate",
+    "imp_ann_date"
+   ],
+   "numeric_columns_checked": [
+    "ann_date",
+    "cash_div",
+    "cash_div_tax",
+    "end_date",
+    "ex_date",
+    "imp_ann_date",
+    "pay_date",
+    "record_date",
+    "stk_div"
+   ],
+   "rows_total": 7626,
+   "date_coverage": {
+    "end_date": {
+     "min": "20140630",
+     "max": "20171109",
+     "rows_gt_20241231": 0,
+     "null_rows": 0
+    },
+    "ann_date": {
+     "min": "20141223",
+     "max": "20171201",
+     "rows_gt_20241231": 0,
+     "null_rows": 3
+    },
+    "record_date": {
+     "min": "20150105",
+     "max": "20171227",
+     "rows_gt_20241231": 0,
+     "null_rows": 0
+    },
+    "ex_date": {
+     "min": "20150106",
+     "max": "20171228",
+     "rows_gt_20241231": 0,
+     "null_rows": 0
+    },
+    "pay_date": {
+     "min": "20150106",
+     "max": "20171228",
+     "rows_gt_20241231": 0,
+     "null_rows": 418
+    },
+    "div_listdate": {
+     "min": "20150302",
+     "max": "20171227",
+     "rows_gt_20241231": 0,
+     "null_rows": 5549
+    },
+    "imp_ann_date": {
+     "min": "20141225",
+     "max": "20171223",
+     "rows_gt_20241231": 0,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 0,
+   "numeric_magnitude": {
+    "ann_date": {
+     "min": 20141223.0,
+     "max": 20171201.0
+    },
+    "cash_div": {
+     "min": 0.0,
+     "max": 6.787
+    },
+    "cash_div_tax": {
+     "min": 0.0,
+     "max": 6.787
+    },
+    "end_date": {
+     "min": 20140630.0,
+     "max": 20171109.0
+    },
+    "ex_date": {
+     "min": 20150106.0,
+     "max": 20171228.0
+    },
+    "imp_ann_date": {
+     "min": 20141225.0,
+     "max": 20171223.0
+    },
+    "pay_date": {
+     "min": 20150106.0,
+     "max": 20171228.0
+    },
+    "record_date": {
+     "min": 20150105.0,
+     "max": 20171227.0
+    },
+    "stk_div": {
+     "min": 0.0,
+     "max": 7.96
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "end_date",
+    "div_proc"
+   ],
+   "duplicate_keys": 236,
+   "duplicate_rows": 472,
+   "sample_rows": [
+    {
+     "ts_code": "000511.SZ",
+     "end_date": "20140630",
+     "ann_date": "20141223",
+     "div_proc": "实施",
+     "stk_div": "0.0",
+     "stk_bo_rate": null,
+     "stk_co_rate": null,
+     "cash_div": "0.019",
+     "cash_div_tax": "0.02",
+     "record_date": "20150105",
+     "ex_date": "20150106",
+     "pay_date": "20150106",
+     "div_listdate": null,
+     "imp_ann_date": "20141225"
+    },
+    {
+     "ts_code": "600016.SH",
+     "end_date": "20140630",
+     "ann_date": "20141224",
+     "div_proc": "实施",
+     "stk_div": "0.0",
+     "stk_bo_rate": null,
+     "stk_co_rate": null,
+     "cash_div": "0.07125",
+     "cash_div_tax": "0.075",
+     "record_date": "20150108",
+     "ex_date": "20150109",
+     "pay_date": "20150109",
+     "div_listdate": null,
+     "imp_ann_date": "20141231"
+    },
+    {
+     "ts_code": "831175.BJ",
+     "end_date": "20140630",
+     "ann_date": "20141226",
+     "div_proc": "实施",
+     "stk_div": "0.0",
+     "stk_bo_rate": null,
+     "stk_co_rate": null,
+     "cash_div": "0.225",
+     "cash_div_tax": "0.25",
+     "record_date": "20150122",
+     "ex_date": "20150123",
+     "pay_date": "20150123",
+     "div_listdate": null,
+     "imp_ann_date": "20150117"
+    },
+    {
+     "ts_code": "002340.SZ",
+     "end_date": "20140930",
+     "ann_date": "20150117",
+     "div_proc": "实施",
+     "stk_div": "0.0",
+     "stk_bo_rate": null,
+     "stk_co_rate": null,
+     "cash_div": "0.05225",
+     "cash_div_tax": "0.055",
+     "record_date": "20150123",
+     "ex_date": "20150126",
+     "pay_date": "20150126",
+     "div_listdate": null,
+     "imp_ann_date": "20150120"
+    },
+    {
+     "ts_code": "603009.SH",
+     "end_date": "20140930",
+     "ann_date": "20141227",
+     "div_proc": "实施",
+     "stk_div": "0.0",
+     "stk_bo_rate": null,
+     "stk_co_rate": null,
+     "cash_div": "0.209",
+     "cash_div_tax": "0.22",
+     "record_date": "20150129",
+     "ex_date": "20150130",
+     "pay_date": "20150130",
+     "div_listdate": null,
+     "imp_ann_date": "20150124"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 533,
+    "distinct_headers": 1,
+    "modal_header_cols": 14,
+    "deviating_files": 0
+   },
+   "status": "completed",
+   "duration_s": 0.5,
+   "finished_at": "2026-09-18T00:09:26"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:26"
+}

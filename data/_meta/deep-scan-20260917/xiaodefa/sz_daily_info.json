@@ -1,0 +1,231 @@
+{
+ "source": "xiaodefa",
+ "dataset": "sz_daily_info",
+ "batches": {
+  "xiaodefa/sz_daily_info/20260913-bulk1": {
+   "batch_dir": "xiaodefa/sz_daily_info/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 3083,
+    "n_csv": 3082,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 4395321
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 5742 行 > 2024-12-31 (max=20260911); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['trade_date'] 重复: 3080 个键 / 45274 行"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 3083,
+    "bytes": 4395321
+   },
+   "schema": {
+    "trade_date": "Int64",
+    "ts_code": "String",
+    "count": "Int64",
+    "amount": "Float64",
+    "vol": "Int64",
+    "total_share": "Float64",
+    "total_mv": "Float64",
+    "float_share": "Float64",
+    "float_mv": "Float64"
+   },
+   "n_columns": 9,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "vol",
+    "amount",
+    "total_mv",
+    "count",
+    "float_mv",
+    "float_share",
+    "total_share",
+    "trade_date"
+   ],
+   "rows_total": 45276,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20140102",
+     "max": "20260911",
+     "rows_gt_20241231": 5742,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 5742,
+   "numeric_magnitude": {
+    "vol": {
+     "min": 0.0,
+     "max": 76390857205.0
+    },
+    "amount": {
+     "min": 0.0,
+     "max": 2335638829463.72
+    },
+    "total_mv": {
+     "min": 0.0,
+     "max": 107312914581196.64
+    },
+    "count": {
+     "min": 0.0,
+     "max": 19021.0
+    },
+    "float_mv": {
+     "min": 0.0,
+     "max": 43877161199110.0
+    },
+    "float_share": {
+     "min": 8091842.0,
+     "max": 2084319945295.0
+    },
+    "total_share": {
+     "min": 0.0,
+     "max": 2492305079785.0
+    },
+    "trade_date": {
+     "min": 20140102.0,
+     "max": 20260911.0
+    }
+   },
+   "primary_key": [
+    "trade_date"
+   ],
+   "duplicate_keys": 3080,
+   "duplicate_rows": 45274,
+   "sample_rows": [
+    {
+     "trade_date": "20140102",
+     "ts_code": "ETF",
+     "count": "32",
+     "amount": "792625678.0",
+     "vol": "791256484",
+     "total_share": "47687669871.0",
+     "total_mv": "54428169304.35",
+     "float_share": "47687669871.0",
+     "float_mv": "54428169304.35"
+    },
+    {
+     "trade_date": "20140102",
+     "ts_code": "LOF",
+     "count": "116",
+     "amount": "41511762.0",
+     "vol": "42877323",
+     "total_share": "16156467297.0",
+     "total_mv": "14840149440.2",
+     "float_share": "16108510623.0",
+     "float_mv": "14794280616.07"
+    },
+    {
+     "trade_date": "20140102",
+     "ts_code": "中小板",
+     "count": "701",
+     "amount": "44369192197.0",
+     "vol": "3253666759",
+     "total_share": "281847985513.0",
+     "total_mv": "3767759120126.28",
+     "float_share": "205455816682.0",
+     "float_mv": "2592899105198.7"
+    },
+    {
+     "trade_date": "20140102",
+     "ts_code": "主板A股",
+     "count": "468",
+     "amount": "23314502737.0",
+     "vol": "2787450983",
+     "total_share": "436105624968.0",
+     "total_mv": "3480344193207.02",
+     "float_share": "365008350563.0",
+     "float_mv": "2839590691621.77"
+    },
+    {
+     "trade_date": "20140102",
+     "ts_code": "主板B股",
+     "count": "53",
+     "amount": "110617006.0",
+     "vol": "22405627",
+     "total_share": "13713353147.0",
+     "total_mv": "91373653436.89",
+     "float_share": "13593056742.0",
+     "float_mv": "90352233678.49"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 3082,
+    "distinct_headers": 1,
+    "modal_header_cols": 9,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "20240527",
+      "manifest_rows": 14,
+      "actual_rows": 13
+     },
+     {
+      "chunk": "20160315",
+      "manifest_rows": 16,
+      "actual_rows": 15
+     },
+     {
+      "chunk": "20250120",
+      "manifest_rows": 14,
+      "actual_rows": 13
+     },
+     {
+      "chunk": "20190321",
+      "manifest_rows": 14,
+      "actual_rows": 13
+     },
+     {
+      "chunk": "20180517",
+      "manifest_rows": 14,
+      "actual_rows": 13
+     },
+     {
+      "chunk": "20230515",
+      "manifest_rows": 14,
+      "actual_rows": 13
+     },
+     {
+      "chunk": "20171219",
+      "manifest_rows": 16,
+      "actual_rows": 15
+     },
+     {
+      "chunk": "20140128",
+      "manifest_rows": 16,
+      "actual_rows": 15
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 2.4,
+   "finished_at": "2026-09-18T00:08:52"
+  }
+ },
+ "updated_at": "2026-09-18T00:08:52"
+}

@@ -1,0 +1,56 @@
+{
+  "experiment_id": "exp-20260918-p2r12-event-veto",
+  "name": "P2-R12 event veto chain (解禁前瞻/预告下修/披露日临近/公司层减持/应计极端)",
+  "prereg": "docs/research/exp-20260918-p2r12-event-veto-prereg.md",
+  "preregistered_at": "2026-09-18T07:25:00+08:00",
+  "frozen_at": "2026-09-18T07:25:00+08:00",
+  "status": "frozen",
+  "authority_chain": {
+    "proposals": [
+      "artifacts/runs/20260918T055115-hypomarket-v1-g3v1/vendor-1-event.md (H-V1-01/03/06/07/09)",
+      "artifacts/runs/20260918T054700-hypomarket-v2-lf7q/vendor-2-lowfreq.md (H-V2-08 趋同)",
+      "筛选量尺 docs/research/exp-20260918-hypothesis-market-charter.md（先于提案冻结）"
+    ],
+    "datasets": [
+      { "path": "data/features/event-factors-v1-20260918/", "role": "share_float/disclosure_date/stk_holdertrade 事件表（manifest 在目录内，运行时校验）" },
+      { "path": "data/raw/tushare/forecast/20260909-r1", "role": "全版本预告排链（经 data/_meta sha256 台账校验）" },
+      { "path": "data/raw/tushare/cashflow/20260909-r3 与 income/20260909-r3", "role": "应计构造（同上校验）" },
+      { "path": "data/processed/baostock-daily-20260917/daily_2015_2024.parquet", "manifest_sha256": "2b89bef9ef6f4ae58b69ca43021552db067b185551c92a05ef6ac71d2be59bd3", "role": "收益标签/池/ST/停牌" },
+      { "path": "data/raw/tushare/daily_basic/20260909-r1 + 20260913-r2", "role": "匹配对照 circ_mv 分位" }
+    ],
+    "freeze_boundary": "2025-01-01 及以后数据不得进入任何计算路径",
+    "user_authorization": "2026-09-18 用户批复'都批准，你自己推进'（假设市场打包轮授权自动开轮）"
+  },
+  "seed": 17,
+  "universe": {
+    "boards": "沪深主板（剔创业板 300/301/302、科创 688/689、北交所、ST、停牌，历史时点）",
+    "liquidity": "20 日中位成交额 >= 50,000,000 CNY；收盘 >= 2 元；上市满 120 交易日"
+  },
+  "matching": {
+    "design": "同日、前 5 日收益十分位 × 流通市值五分位",
+    "bootstrap": { "n": 2000, "seed": 17, "ci": 0.95 }
+  },
+  "windows": {
+    "forward": [5, 10],
+    "dev": ["2015-01-05", "2020-12-31"],
+    "val": ["2021-01-01", "2024-12-31"],
+    "per_family_coverage": "各事件族按自身覆盖 ∩ 窗口；覆盖披露于结果文档",
+    "year_consistency": "分年同号 >= 4/6（不足 6 年按 >= 2/3）"
+  },
+  "units": {
+    "C01": { "name": "解禁前瞻否决", "mark": "ts_knowledge<=信号日 且 float_date 距信号日 <=20 交易日 且 聚合 float_ratio >= 1%（agg_ann_date_count=1 收紧）", "gates": { "primary": "5 日超额 <= -0.003 且 Bootstrap CI 不含 0", "no_rebound": "10 日累计超额 <= -0.002", "years": "分年同号达标" } },
+    "C02": { "name": "预告下修否决", "mark": "排链尾版相对首版 type 恶化或 p_change_min 下移", "gates": { "primary": "下修组 5 日超额 <= -0.005", "deep": "深下修组 <= -0.010 且劣于首披即预减组 >= 0.003", "min_sample": "窗内事件 < 300 判证据不足" } },
+    "C03": { "name": "披露日临近否决（双向）", "mark": "入场日距 pre_date <= 3 交易日（ts_knowledge PIT）", "gates": { "tail": "P5 分位差 >= 0.015（标记组更差）", "block": "跌停阻断退出发生率 >= 2x", "mean_cap": "均值损失 <= 0.0015", "pass_rule": "tail+block 成立且 mean_cap 不越限" } },
+    "C04": { "name": "公司层减持否决", "mark": "direction=DE 且 holder_type=C 且 change_ratio >= 0.5%", "gates": { "primary": "10 日超额 <= -0.005 且 CI 不含 0", "asymmetry_secondary": "G/P 组 |差| < 0.002（失败不杀主命题，降级记录）", "segment": "2017-05-27 前后分段各判" } },
+    "C05": { "name": "应计极端否决", "mark": "(净利-经营现金流)/总资产 截面前 10%，最新 PIT 年报（max(ann_date 有效, end_date+90d)），金融业剔除", "gates": { "primary_incidence": "12 个月内首亏/预减预告发生率 >= 1.5x 同池", "secondary_return": "60 日超额 <= -0.010", "pass_rule": "主判据过即过" } },
+    "C06": { "name": "否决链组合", "host": "同池等权 5 日前瞻（每笔视作池内随机入场）", "gates": { "mean_loss": "毛均值损失 <= 0.001/笔", "tail_gain": "P5 左尾改善 >= 10%", "cut_share": "剔除比例 <= 15%", "pass_rule": "三条全过" } },
+    "C07": { "name": "解禁×减持重叠结构（非判定附属）", "role": "去重规则证据，不占判据" }
+  },
+  "fees_note": "C01-C05 判定在信息层（毛超额）；C06 链效应报告毛口径为主、费用后（万1最低5元+印花分段）为附注",
+  "trials_cumulative_before": 163,
+  "trials_counted_this_round": 6,
+  "trials_cumulative_after": 169,
+  "val_consumption_note": "val 2021-2024 本窗第 3 次消费（C08、R11（如到）、本轮），逐条披露",
+  "stop_rule": "全灭 -> 事件否决链线关闭，标记保留为已测无效；>=1 过 dev -> val 一次性判定；无独立 test 段（事件族覆盖限制，判定为 dev->val 两段）；结果不构成盈利/实盘声称",
+  "limits": { "max_runtime_s": 1200, "max_ram_gb": 8, "smoke": "单事件族 3 个月样本全断言先行" }
+}

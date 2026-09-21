@@ -1,0 +1,112 @@
+{
+ "source": "xiaodefa",
+ "dataset": "stock_st",
+ "batches": {
+  "xiaodefa/stock_st/20260913-bulk1": {
+   "batch_dir": "xiaodefa/stock_st/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 2,
+    "n_csv": 1,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 4915024
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 79691 行 > 2024-12-31 (max=20260913); 冻结边界审查: 只报告不删除"
+    }
+   ],
+   "inventory_registration": {
+    "files": 2,
+    "bytes": 4915024
+   },
+   "schema": {
+    "ts_code": "String",
+    "name": "String",
+    "trade_date": "Int64",
+    "type": "String",
+    "type_name": "String"
+   },
+   "n_columns": 5,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "trade_date"
+   ],
+   "rows_total": 101000,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20240516",
+     "max": "20260913",
+     "rows_gt_20241231": 79691,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 79691,
+   "numeric_magnitude": {
+    "trade_date": {
+     "min": 20240516.0,
+     "max": 20260913.0
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "trade_date"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "ts_code": "920090.BJ",
+     "name": "*ST同辉",
+     "trade_date": "20260913",
+     "type": "ST",
+     "type_name": "风险警示板"
+    },
+    {
+     "ts_code": "002731.SZ",
+     "name": "*ST萃华",
+     "trade_date": "20260913",
+     "type": "ST",
+     "type_name": "风险警示板"
+    },
+    {
+     "ts_code": "000016.SZ",
+     "name": "*ST康佳A",
+     "trade_date": "20260913",
+     "type": "ST",
+     "type_name": "风险警示板"
+    },
+    {
+     "ts_code": "002789.SZ",
+     "name": "*ST建艺",
+     "trade_date": "20260913",
+     "type": "ST",
+     "type_name": "风险警示板"
+    },
+    {
+     "ts_code": "300385.SZ",
+     "name": "ST雪浪",
+     "trade_date": "20260913",
+     "type": "ST",
+     "type_name": "风险警示板"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:08:41"
+  }
+ },
+ "updated_at": "2026-09-18T00:08:41"
+}

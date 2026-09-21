@@ -1,0 +1,42 @@
+# 大型数据、可重建产物与真实账户不入库
+/data/raw/
+/data/processed/
+/data/features/
+/data/cache/
+/data/local/
+/artifacts/
+
+# 历史输出路径继续忽略，不再新增同类目录
+/data/artifacts/
+/logs/
+/docs/legacy/old-source-snapshot.zip
+/docs/legacy/old-history.bundle
+
+# 前端 desk 应用与服务器（本地保留，不入库）
+/quantdesk/
+/quantdesk-server/
+
+# 根目录临时目录（AGENTS.md 约定的运行期临时文件）
+/tmp/
+
+# 项目环境、测试和解释器缓存
+/.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+*.egg-info/
+/build/
+/dist/
+.ipynb_checkpoints/
+
+# 凭据绝不入库（token 只放 ~/.quant-credentials）
+secrets.env
+.env
+.env.*
+!.env.example
+*.key
+*.pem

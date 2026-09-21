@@ -1,0 +1,38 @@
+{
+ "source": "xiaodefa",
+ "dataset": "stock_hsgt",
+ "batches": {
+  "xiaodefa/stock_hsgt/20260913-bulk1": {
+   "batch_dir": "xiaodefa/stock_hsgt/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 1,
+    "n_csv": 0,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 412
+   },
+   "issues": [
+    {
+     "level": "info",
+     "code": "no_data_files",
+     "detail": "无 csv/parquet 数据文件; 仅 0 个其他文件"
+    }
+   ],
+   "inventory_registration": {
+    "files": 1,
+    "bytes": 412
+   },
+   "status": "no_tabular_data",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:08:41"
+  }
+ },
+ "updated_at": "2026-09-18T00:08:41"
+}

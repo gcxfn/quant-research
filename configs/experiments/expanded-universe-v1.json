@@ -1,0 +1,53 @@
+{
+ "experiment_id": "exp-20260919-expanded-universe-v1",
+ "frozen_at": "2026-09-19 16:55",
+ "prereg": "docs/research/exp-20260919-expanded-universe-v1-prereg.md",
+ "authority": "user directive 2026-09-19 (large-scale exploration batched, then one-shot second-pass val per docs/decisions/2026-09-19-second-pass-val-protocol.md); universe screening run 20260919T153628-etf-universe-screen-2xkj accepted by main conversation",
+ "engine": {
+  "module": "src/quant/backtest/band_engine.py",
+  "version": "band_engine v1.3",
+  "sha256": "84a2443ac28fe1b87e4a18f988fd38cc67cf706d5778e262f11465147234082c",
+  "check": "before+after each run",
+  "corporate_actions": "NOT passed (zero dev-window split events in all universes after §1 exclusions)"
+ },
+ "inherited_from_v3": [
+  "band table (all 0.10)",
+  "dividend events extraction rule (applied to full 45-symbol panel)",
+  "runner assertions",
+  "fees",
+  "window dev 2015-2020 / val frozen",
+  "Design B leg semantics (leg symbols excluded from rotation universes)",
+  "gates 1-7 (R16 verbatim) + gate 8 v3",
+  "benchmarks B1(m) dev port (r16.simulate_r16 fractional, rate-only bands, T200-40; dev port validated 1e-9)"
+ ],
+ "rotation_universe_uni6": [
+  "sh.510050", "sh.510300", "sz.159915", "sh.510880", "sh.513100", "sh.513500"
+ ],
+ "universes": {
+  "EQ28": ["sh.510050","sh.510150","sh.510180","sh.510210","sh.510300","sh.510310","sh.510330","sh.510410","sh.510510","sh.510630","sh.510650","sh.510660","sh.510880","sh.512010","sh.512070","sh.512120","sh.512990","sz.159901","sz.159902","sz.159905","sz.159915","sz.159922","sz.159928","sz.159929","sz.159930","sz.159938","sz.159939","sz.160706"],
+  "XB7": ["sh.510900","sh.513030","sh.513100","sh.513500","sh.513600","sh.513660","sz.159920"],
+  "MO8": ["sh.511800","sh.511810","sh.511860","sh.511880","sh.511990","sz.159001","sz.159003","sz.159005"],
+  "EQ35": "= EQ28 + XB7",
+  "EQ43": "= EQ35 + MO8",
+  "SEC20": ["sh.510050","sh.510300","sz.159915","sh.510880","sh.513100","sh.513500","sh.510150","sh.510410","sh.510630","sh.510650","sh.510660","sz.159905","sz.159928","sz.159929","sz.159930","sz.159938","sz.159939","sh.512010","sh.512070","sh.512120"],
+  "BROAD15": ["sh.510050","sh.510300","sz.159915","sh.510880","sh.513100","sh.513500","sh.510180","sh.510310","sh.510330","sh.510510","sh.512990","sz.159901","sz.159902","sz.159922","sz.160706"],
+  "SECXB25": ["sh.510050","sh.510300","sz.159915","sh.510880","sh.513100","sh.513500","sh.510150","sh.510410","sh.510630","sh.510650","sh.510660","sz.159905","sz.159928","sz.159929","sz.159930","sz.159938","sz.159939","sh.512010","sh.512070","sh.512120","sh.510900","sh.513030","sh.513600","sh.513660","sz.159920"]
+ },
+ "panel_note": "EU-01..10 data panel = U-EQ43 union legs {sh.511010, sh.518880} = 45 symbols; anchor EU-A0 replays v3 R3-06 with the v3 panel verbatim (incl unused sz.159934)",
+ "configs": [
+  {"id": "EU-A0", "stock": null, "legs": {"sh.511010": 0.15, "sh.518880": 0.25}, "rotation": {"universe": "UNI6", "top_n": 3, "weight": 0.20, "lookback_m": 6}, "role": "regression anchor = R3-06 verbatim; all frames byte-equal vs run 20260919T110500-hybrid-v3-r3ld R3-06; no re-adjudication; not counted as trial"},
+  {"id": "EU-01", "stock": null, "legs": {"sh.511010": 0.15, "sh.518880": 0.25}, "rotation": {"universe": "EQ28", "top_n": 3, "weight": 0.20, "lookback_m": 6}},
+  {"id": "EU-02", "stock": null, "legs": {"sh.511010": 0.15, "sh.518880": 0.25}, "rotation": {"universe": "EQ35", "top_n": 3, "weight": 0.20, "lookback_m": 6}},
+  {"id": "EU-03", "stock": null, "legs": {"sh.511010": 0.15, "sh.518880": 0.25}, "rotation": {"universe": "EQ43", "top_n": 3, "weight": 0.20, "lookback_m": 6}},
+  {"id": "EU-04", "stock": null, "legs": {"sh.511010": 0.15, "sh.518880": 0.25}, "rotation": {"universe": "EQ35", "top_n": 4, "weight": 0.15, "lookback_m": 6}},
+  {"id": "EU-05", "stock": null, "legs": {"sh.511010": 0.15, "sh.518880": 0.25}, "rotation": {"universe": "EQ35", "top_n": 5, "weight": 0.12, "lookback_m": 6}},
+  {"id": "EU-06", "stock": null, "legs": {"sh.511010": 0.15, "sh.518880": 0.25}, "rotation": {"universe": "EQ35", "top_n": 3, "weight": 0.20, "lookback_m": 4}},
+  {"id": "EU-07", "stock": null, "legs": {"sh.511010": 0.15, "sh.518880": 0.25}, "rotation": {"universe": "EQ35", "top_n": 3, "weight": 0.20, "lookback_m": 9}},
+  {"id": "EU-08", "stock": null, "legs": {"sh.511010": 0.15, "sh.518880": 0.25}, "rotation": {"universe": "SEC20", "top_n": 3, "weight": 0.20, "lookback_m": 6}},
+  {"id": "EU-09", "stock": null, "legs": {"sh.511010": 0.15, "sh.518880": 0.25}, "rotation": {"universe": "BROAD15", "top_n": 3, "weight": 0.20, "lookback_m": 6}},
+  {"id": "EU-10", "stock": null, "legs": {"sh.511010": 0.15, "sh.518880": 0.25}, "rotation": {"universe": "SECXB25", "top_n": 3, "weight": 0.20, "lookback_m": 6}}
+ ],
+ "gates": "dev gates 1-7 R16 verbatim + gate 8 v3 verbatim + target column dev net CAGR >= 10%; roster qualification (second-pass protocol) = all 8 dev gates AND >= 10%; exploration-grade",
+ "trials": "+10 (252 -> 262); anchor not counted",
+ "stop_rule": "report all 12 results incl failed-gate structure; no mid-run selection; no champion change"
+}

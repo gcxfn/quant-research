@@ -1,0 +1,241 @@
+{
+ "source": "xiaodefa",
+ "dataset": "stk_auction_o",
+ "batches": {
+  "xiaodefa/stk_auction_o/20260913-bulk1": {
+   "batch_dir": "xiaodefa/stk_auction_o/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 3089,
+    "n_csv": 3088,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 795021828
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 2246039 行 > 2024-12-31 (max=20260911); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 3089,
+    "bytes": 795021828
+   },
+   "schema": {
+    "ts_code": "String",
+    "trade_date": "Int64",
+    "close": "Float64",
+    "open": "Float64",
+    "high": "Float64",
+    "low": "Float64",
+    "vol": "Float64",
+    "amount": "Float64",
+    "vwap": "Float64"
+   },
+   "n_columns": 9,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "close",
+    "open",
+    "high",
+    "low",
+    "vol",
+    "amount",
+    "trade_date",
+    "vwap"
+   ],
+   "rows_total": 12480358,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20140102",
+     "max": "20260911",
+     "rows_gt_20241231": 2246039,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 2246039,
+   "numeric_magnitude": {
+    "close": {
+     "min": 0.0,
+     "max": 2750.0
+    },
+    "open": {
+     "min": 0.0,
+     "max": 2700.0
+    },
+    "high": {
+     "min": 0.0,
+     "max": 2750.0
+    },
+    "low": {
+     "min": 0.0,
+     "max": 2688.0
+    },
+    "vol": {
+     "min": 0.0,
+     "max": 3476743782.4
+    },
+    "amount": {
+     "min": 0.0,
+     "max": 15282455859.0
+    },
+    "trade_date": {
+     "min": 20140102.0,
+     "max": 20260911.0
+    },
+    "vwap": {
+     "min": 0.0,
+     "max": 2750.3595
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "trade_date"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "ts_code": "002306.SZ",
+     "trade_date": "20140102",
+     "close": "5.17",
+     "open": "5.17",
+     "high": "5.17",
+     "low": "5.17",
+     "vol": "0.0",
+     "amount": "0.0",
+     "vwap": "5.17"
+    },
+    {
+     "ts_code": "002267.SZ",
+     "trade_date": "20140102",
+     "close": "10.26",
+     "open": "10.26",
+     "high": "10.26",
+     "low": "10.26",
+     "vol": "0.0",
+     "amount": "0.0",
+     "vwap": "10.26"
+    },
+    {
+     "ts_code": "002247.SZ",
+     "trade_date": "20140102",
+     "close": "20.3",
+     "open": "20.3",
+     "high": "20.3",
+     "low": "20.3",
+     "vol": "52540.0",
+     "amount": "1066562.0",
+     "vwap": "20.3"
+    },
+    {
+     "ts_code": "002227.SZ",
+     "trade_date": "20140102",
+     "close": "28.89",
+     "open": "28.89",
+     "high": "28.89",
+     "low": "28.89",
+     "vol": "3380.0",
+     "amount": "97648.0",
+     "vwap": "28.89"
+    },
+    {
+     "ts_code": "002207.SZ",
+     "trade_date": "20140102",
+     "close": "16.67",
+     "open": "16.67",
+     "high": "16.67",
+     "low": "16.67",
+     "vol": "0.0",
+     "amount": "0.0",
+     "vwap": "16.67"
+    }
+   ],
+   "unit_check": {
+    "close_magnitude": {
+     "600519.SH": {
+      "min": 118.85,
+      "median": 2587.98,
+      "max": 1217.655
+     },
+     "000001.SZ": {
+      "min": 8.56,
+      "median": 24.85,
+      "max": 11.59
+     },
+     "600519_verdict": "合理(数百~数千元)"
+    }
+   },
+   "header_consistency": {
+    "n_files": 3088,
+    "distinct_headers": 1,
+    "modal_header_cols": 9,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "20240524",
+      "manifest_rows": 5329,
+      "actual_rows": 5328
+     },
+     {
+      "chunk": "20160315",
+      "manifest_rows": 2824,
+      "actual_rows": 2823
+     },
+     {
+      "chunk": "20250113",
+      "manifest_rows": 5419,
+      "actual_rows": 5418
+     },
+     {
+      "chunk": "20260909",
+      "manifest_rows": 5550,
+      "actual_rows": 5549
+     },
+     {
+      "chunk": "20190322",
+      "manifest_rows": 3590,
+      "actual_rows": 3589
+     },
+     {
+      "chunk": "20180518",
+      "manifest_rows": 3518,
+      "actual_rows": 3517
+     },
+     {
+      "chunk": "20230515",
+      "manifest_rows": 5054,
+      "actual_rows": 5053
+     },
+     {
+      "chunk": "20171220",
+      "manifest_rows": 3460,
+      "actual_rows": 3459
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 4.8,
+   "finished_at": "2026-09-18T00:08:19"
+  }
+ },
+ "updated_at": "2026-09-18T00:08:19"
+}

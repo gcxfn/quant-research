@@ -1,0 +1,104 @@
+{
+ "source": "tx",
+ "dataset": "sz300666",
+ "batches": {
+  "tx/sz300666/20260904T012514": {
+   "batch_dir": "tx/sz300666/20260904T012514",
+   "mode": "json",
+   "status": "completed",
+   "issues": [
+    {
+     "level": "warning",
+     "code": "meta_row_count_mismatch",
+     "detail": "meta n_rows=2221, 实际解析 2223 行, 其中跨页重复日期 2 行"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_kline_dates_across_pages",
+     "detail": "跨页重复日期 2 行, 例: ['20200121', '20230515']"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "401 个记录日期 > 2024-12-31 (max=20260903); 冻结边界: 只报告"
+    }
+   ],
+   "inventory_registration": {
+    "files": 4,
+    "bytes": 147308
+   },
+   "files": {
+    "n_total": 4,
+    "response_pages": [
+     "response_000.json",
+     "response_001.json",
+     "response_002.json"
+    ],
+    "total_bytes": 147308
+   },
+   "duplicate_date_rows": 2,
+   "rows_total": 2223,
+   "date_coverage": {
+    "record_date": {
+     "min": "20170615",
+     "max": "20260903",
+     "rows_gt_20241231": 401
+    }
+   },
+   "numeric_magnitude": {
+    "close": {
+     "min": 5.183,
+     "median": 55.414,
+     "max": 394.33
+    }
+   },
+   "sample_rows": [
+    {
+     "date": "2023-05-15",
+     "ohlc": [
+      "61.505",
+      "63.835",
+      "63.895",
+      "60.705"
+     ],
+     "volume": "70158.000"
+    },
+    {
+     "date": "2023-05-16",
+     "ohlc": [
+      "63.655",
+      "64.115",
+      "65.095",
+      "63.415"
+     ],
+     "volume": "56022.000"
+    },
+    {
+     "date": "2023-05-17",
+     "ohlc": [
+      "63.715",
+      "64.955",
+      "65.505",
+      "63.405"
+     ],
+     "volume": "48161.000"
+    },
+    {
+     "date": "2023-05-18",
+     "ohlc": [
+      "64.585",
+      "66.465",
+      "67.295",
+      "64.105"
+     ],
+     "volume": "68487.000"
+    }
+   ],
+   "sha256_verified_pages": 1,
+   "sha256_concat_ok": false,
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:55"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:55"
+}

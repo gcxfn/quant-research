@@ -1,0 +1,257 @@
+{
+ "source": "tushare",
+ "dataset": "margin_detail",
+ "batches": {
+  "tushare/margin_detail/20260909-r1": {
+   "batch_dir": "tushare/margin_detail/20260909-r1",
+   "mode": "full",
+   "files": {
+    "n_total": 1867,
+    "n_csv": 1865,
+    "n_parquet": 0,
+    "n_empty_csv": 1,
+    "n_manifest": 1,
+    "n_other": 1,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [
+     "chunk_20260909.csv"
+    ],
+    "total_bytes": 509370214
+   },
+   "issues": [
+    {
+     "level": "info",
+     "code": "empty_csv_chunks",
+     "detail": "1 个 0 字节空 CSV(如按日抓取无数据日), 例: ['chunk_20260909.csv']; 未计入行数统计"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 1730402 行 > 2024-12-31 (max=20260908); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 1867,
+    "bytes": 509370214
+   },
+   "schema": {
+    "trade_date": "Int64",
+    "ts_code": "String",
+    "rzye": "Float64",
+    "rqye": "Float64",
+    "rzmre": "Float64",
+    "rqyl": "Float64",
+    "rzche": "Float64",
+    "rqchl": "Float64",
+    "rqmcl": "Float64",
+    "rzrqye": "Float64"
+   },
+   "n_columns": 10,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "rzye",
+    "rqye",
+    "rzmre",
+    "rqchl",
+    "rqmcl",
+    "rqyl",
+    "rzche",
+    "rzrqye",
+    "trade_date"
+   ],
+   "rows_total": 5474653,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20190102",
+     "max": "20260908",
+     "rows_gt_20241231": 1730402,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 1730402,
+   "numeric_magnitude": {
+    "rzye": {
+     "min": 0.0,
+     "max": 46748464530.0
+    },
+    "rqye": {
+     "min": 0.0,
+     "max": 19231972079.292
+    },
+    "rzmre": {
+     "min": 0.0,
+     "max": 16954004305.0
+    },
+    "rqchl": {
+     "min": -42731220.0,
+     "max": 515405211.0
+    },
+    "rqmcl": {
+     "min": 0.0,
+     "max": 243875762.0
+    },
+    "rqyl": {
+     "min": 0.0,
+     "max": 2762609780.0
+    },
+    "rzche": {
+     "min": -1127616063.0,
+     "max": 25919254781.0
+    },
+    "rzrqye": {
+     "min": 0.0,
+     "max": 46897965135.0
+    },
+    "trade_date": {
+     "min": 20190102.0,
+     "max": 20260908.0
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "trade_date"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "trade_date": "20190102",
+     "ts_code": "000001.SZ",
+     "rzye": "4113214250.0",
+     "rqye": "5573386.0",
+     "rzmre": "60559546.0",
+     "rqyl": "606462.0",
+     "rzche": "57889484.0",
+     "rqchl": "275100.0",
+     "rqmcl": "83500.0",
+     "rzrqye": "4118787636.0"
+    },
+    {
+     "trade_date": "20190102",
+     "ts_code": "000002.SZ",
+     "rzye": "1894981608.0",
+     "rqye": "39504214.0",
+     "rzmre": "38522201.0",
+     "rqyl": "1652896.0",
+     "rzche": "40626207.0",
+     "rqchl": "54100.0",
+     "rqmcl": "99700.0",
+     "rzrqye": "1934485822.0"
+    },
+    {
+     "trade_date": "20190102",
+     "ts_code": "000006.SZ",
+     "rzye": "669447827.0",
+     "rqye": "2238612.0",
+     "rzmre": "7510129.0",
+     "rqyl": "434682.0",
+     "rzche": "7670520.0",
+     "rqchl": "58300.0",
+     "rqmcl": "109500.0",
+     "rzrqye": "671686439.0"
+    },
+    {
+     "trade_date": "20190102",
+     "ts_code": "000008.SZ",
+     "rzye": "102455493.0",
+     "rqye": "0.0",
+     "rzmre": "2740349.0",
+     "rqyl": "0.0",
+     "rzche": "3950193.0",
+     "rqchl": "0.0",
+     "rqmcl": "0.0",
+     "rzrqye": "102455493.0"
+    },
+    {
+     "trade_date": "20190102",
+     "ts_code": "000009.SZ",
+     "rzye": "1105617900.0",
+     "rqye": "308955.0",
+     "rzmre": "5416215.0",
+     "rqyl": "71850.0",
+     "rzche": "10710786.0",
+     "rqchl": "239100.0",
+     "rqmcl": "15800.0",
+     "rzrqye": "1105926855.0"
+    }
+   ],
+   "unit_check": {
+    "file": "chunk_20241231.csv",
+    "600519": {
+     "rzye": 17142196268.0,
+     "rqye": 108348780.0,
+     "rzche": 362751290.0
+    },
+    "rzye_verdict": "元量级: 茅台融资余额数十亿元 ≈ 1e10",
+    "unit_conclusion": {
+     "rzye": "元量级: 茅台融资余额数十亿元 ≈ 1e10",
+     "confidence": "medium"
+    }
+   },
+   "header_consistency": {
+    "n_files": 1865,
+    "distinct_headers": 1,
+    "modal_header_cols": 10,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "chunk_20240318.csv",
+      "manifest_rows": 3862,
+      "actual_rows": 3861
+     },
+     {
+      "chunk": "chunk_20200212.csv",
+      "manifest_rows": 1762,
+      "actual_rows": 1761
+     },
+     {
+      "chunk": "chunk_20240715.csv",
+      "manifest_rows": 3910,
+      "actual_rows": 3909
+     },
+     {
+      "chunk": "chunk_20250516.csv",
+      "manifest_rows": 4103,
+      "actual_rows": 4102
+     },
+     {
+      "chunk": "chunk_20260630.csv",
+      "manifest_rows": 4372,
+      "actual_rows": 4371
+     },
+     {
+      "chunk": "chunk_20210812.csv",
+      "manifest_rows": 2247,
+      "actual_rows": 2246
+     },
+     {
+      "chunk": "chunk_20210315.csv",
+      "manifest_rows": 2045,
+      "actual_rows": 2044
+     },
+     {
+      "chunk": "chunk_20230907.csv",
+      "manifest_rows": 3616,
+      "actual_rows": 3615
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 2.4,
+   "finished_at": "2026-09-18T00:09:43"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:43"
+}

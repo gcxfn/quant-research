@@ -1,0 +1,1097 @@
+{
+ "source": "tushare",
+ "dataset": "cashflow",
+ "batches": {
+  "tushare/cashflow/20260909-r3": {
+   "batch_dir": "tushare/cashflow/20260909-r3",
+   "mode": "full",
+   "files": {
+    "n_total": 5900,
+    "n_csv": 5881,
+    "n_parquet": 0,
+    "n_empty_csv": 18,
+    "n_manifest": 1,
+    "n_other": 18,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [
+     "chunk_000412.SZ.csv",
+     "chunk_000508.SZ.csv",
+     "chunk_000542.SZ.csv",
+     "chunk_000618.SZ.csv",
+     "chunk_000763.SZ.csv",
+     "chunk_000817.SZ.csv",
+     "chunk_001301.SZ.csv",
+     "chunk_002079.SZ.csv",
+     "chunk_300256.SZ.csv",
+     "chunk_300992.SZ.csv"
+    ],
+    "total_bytes": 233977766
+   },
+   "issues": [
+    {
+     "level": "info",
+     "code": "empty_csv_chunks",
+     "detail": "18 个 0 字节空 CSV(如按日抓取无数据日), 例: ['chunk_000412.SZ.csv', 'chunk_000508.SZ.csv', 'chunk_000542.SZ.csv', 'chunk_000618.SZ.csv', 'chunk_000763.SZ.csv']; 未计入行数统计"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 f_ann_date 有 65923 行 > 2024-12-31 (max=20260901); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['ts_code', 'end_date', 'report_type'] 重复 173133 行; 含 update_flag 后仍重复 1299 行"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 5900,
+    "bytes": 233977766
+   },
+   "schema": {
+    "ts_code": "String",
+    "ann_date": "Int64",
+    "f_ann_date": "Int64",
+    "end_date": "Int64",
+    "comp_type": "Int64",
+    "report_type": "Int64",
+    "end_type": "Int64",
+    "net_profit": "Float64",
+    "finan_exp": "String",
+    "c_fr_sale_sg": "String",
+    "recp_tax_rends": "String",
+    "n_depos_incr_fi": "Float64",
+    "n_incr_loans_cb": "Float64",
+    "n_inc_borr_oth_fi": "Float64",
+    "prem_fr_orig_contr": "String",
+    "n_incr_insured_dep": "String",
+    "n_reinsur_prem": "String",
+    "n_incr_disp_tfa": "String",
+    "ifc_cash_incr": "Float64",
+    "n_incr_disp_faas": "String",
+    "n_incr_loans_oth_bank": "Float64",
+    "n_cap_incr_repur": "String",
+    "c_fr_oth_operate_a": "Float64",
+    "c_inf_fr_operate_a": "Float64",
+    "c_paid_goods_s": "String",
+    "c_paid_to_for_empl": "Float64",
+    "c_paid_for_taxes": "Float64",
+    "n_incr_clt_loan_adv": "Float64",
+    "n_incr_dep_cbob": "Float64",
+    "c_pay_claims_orig_inco": "String",
+    "pay_handling_chrg": "Float64",
+    "pay_comm_insur_plcy": "String",
+    "oth_cash_pay_oper_act": "Float64",
+    "st_cash_out_act": "Float64",
+    "n_cashflow_act": "Float64",
+    "oth_recp_ral_inv_act": "String",
+    "c_disp_withdrwl_invest": "Float64",
+    "c_recp_return_invest": "Float64",
+    "n_recp_disp_fiolta": "Float64",
+    "n_recp_disp_sobu": "String",
+    "stot_inflows_inv_act": "Float64",
+    "c_pay_acq_const_fiolta": "Float64",
+    "c_paid_invest": "Float64",
+    "n_disp_subs_oth_biz": "String",
+    "oth_pay_ral_inv_act": "String",
+    "n_incr_pledge_loan": "String",
+    "stot_out_inv_act": "Float64",
+    "n_cashflow_inv_act": "Float64",
+    "c_recp_borrow": "String",
+    "proc_issue_bonds": "Float64",
+    "oth_cash_recp_ral_fnc_act": "Float64",
+    "stot_cash_in_fnc_act": "Float64",
+    "free_cashflow": "Float64",
+    "c_prepay_amt_borr": "Float64",
+    "c_pay_dist_dpcp_int_exp": "Float64",
+    "incl_dvd_profit_paid_sc_ms": "String",
+    "oth_cashpay_ral_fnc_act": "Float64",
+    "stot_cashout_fnc_act": "Float64",
+    "n_cash_flows_fnc_act": "Float64",
+    "eff_fx_flu_cash": "Float64",
+    "n_incr_cash_cash_equ": "Float64",
+    "c_cash_equ_beg_period": "Float64",
+    "c_cash_equ_end_period": "Float64",
+    "c_recp_cap_contrib": "String",
+    "incl_cash_rec_saims": "String",
+    "uncon_invest_loss": "String",
+    "prov_depr_assets": "Float64",
+    "depr_fa_coga_dpba": "Float64",
+    "amort_intang_assets": "Float64",
+    "lt_amort_deferred_exp": "Float64",
+    "decr_deferred_exp": "String",
+    "incr_acc_exp": "String",
+    "loss_disp_fiolta": "Float64",
+    "loss_scr_fa": "String",
+    "loss_fv_chg": "Float64",
+    "invest_loss": "String",
+    "decr_def_inc_tax_assets": "Float64",
+    "incr_def_inc_tax_liab": "Float64",
+    "decr_inventories": "String",
+    "decr_oper_payable": "Float64",
+    "incr_oper_payable": "Float64",
+    "others": "String",
+    "im_net_cashflow_oper_act": "Float64",
+    "conv_debt_into_cap": "String",
+    "conv_copbonds_due_within_1y": "String",
+    "fa_fnc_leases": "String",
+    "im_n_incr_cash_equ": "Float64",
+    "net_dism_capital_add": "Float64",
+    "net_cash_rece_sec": "String",
+    "credit_impa_loss": "Float64",
+    "use_right_asset_dep": "Float64",
+    "oth_loss_asset": "Float64",
+    "end_bal_cash": "Float64",
+    "beg_bal_cash": "Float64",
+    "end_bal_cash_equ": "Float64",
+    "beg_bal_cash_equ": "Float64",
+    "update_flag": "Int64"
+   },
+   "n_columns": 97,
+   "date_columns": [
+    "ann_date",
+    "f_ann_date",
+    "end_date"
+   ],
+   "numeric_columns_checked": [
+    "amort_intang_assets",
+    "ann_date",
+    "beg_bal_cash",
+    "beg_bal_cash_equ",
+    "c_cash_equ_beg_period",
+    "c_cash_equ_end_period",
+    "c_disp_withdrwl_invest",
+    "c_fr_oth_operate_a",
+    "c_inf_fr_operate_a",
+    "c_paid_for_taxes",
+    "c_paid_invest",
+    "c_paid_to_for_empl",
+    "c_pay_acq_const_fiolta",
+    "c_pay_dist_dpcp_int_exp",
+    "c_prepay_amt_borr",
+    "c_recp_return_invest",
+    "comp_type",
+    "credit_impa_loss",
+    "decr_def_inc_tax_assets",
+    "decr_oper_payable",
+    "depr_fa_coga_dpba",
+    "eff_fx_flu_cash",
+    "end_bal_cash",
+    "end_bal_cash_equ",
+    "end_date",
+    "end_type",
+    "f_ann_date",
+    "free_cashflow",
+    "ifc_cash_incr",
+    "im_n_incr_cash_equ",
+    "im_net_cashflow_oper_act",
+    "incr_def_inc_tax_liab",
+    "incr_oper_payable",
+    "loss_disp_fiolta",
+    "loss_fv_chg",
+    "lt_amort_deferred_exp",
+    "n_cash_flows_fnc_act",
+    "n_cashflow_act",
+    "n_cashflow_inv_act",
+    "n_depos_incr_fi"
+   ],
+   "rows_total": 396385,
+   "date_coverage": {
+    "ann_date": {
+     "min": "20060118",
+     "max": "20260901",
+     "rows_gt_20241231": 65722,
+     "null_rows": 0
+    },
+    "f_ann_date": {
+     "min": "20060118",
+     "max": "20260901",
+     "rows_gt_20241231": 65923,
+     "null_rows": 0
+    },
+    "end_date": {
+     "min": "20011231",
+     "max": "20260630",
+     "rows_gt_20241231": 57315,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 65923,
+   "numeric_magnitude": {
+    "amort_intang_assets": {
+     "min": -47695801.2,
+     "max": 10505000000.0
+    },
+    "ann_date": {
+     "min": 20060118.0,
+     "max": 20260901.0
+    },
+    "beg_bal_cash": {
+     "min": -248803000000.0,
+     "max": 4582410832200.0
+    },
+    "beg_bal_cash_equ": {
+     "min": -2689033000000.0,
+     "max": 2689033000000.0
+    },
+    "c_cash_equ_beg_period": {
+     "min": -61406772.76,
+     "max": 4582410832200.0
+    },
+    "c_cash_equ_end_period": {
+     "min": -2633029000.0,
+     "max": 3994583000000.0
+    },
+    "c_disp_withdrwl_invest": {
+     "min": -13217386585.92,
+     "max": 7065004000000.0
+    },
+    "c_fr_oth_operate_a": {
+     "min": -6038000000.0,
+     "max": 853556231342.32
+    },
+    "c_inf_fr_operate_a": {
+     "min": -64021259027.46,
+     "max": 19549493000000.0
+    },
+    "c_paid_for_taxes": {
+     "min": -36104000000.0,
+     "max": 449034000000.0
+    },
+    "c_paid_invest": {
+     "min": -4405545648.17,
+     "max": 8028463000000.0
+    },
+    "c_paid_to_for_empl": {
+     "min": -19460000000.0,
+     "max": 956930871700.0
+    },
+    "c_pay_acq_const_fiolta": {
+     "min": -1297845523.0,
+     "max": 330861000000.0
+    },
+    "c_pay_dist_dpcp_int_exp": {
+     "min": -747035482.17,
+     "max": 1000815000000.0
+    },
+    "c_prepay_amt_borr": {
+     "min": -60279720.74,
+     "max": 3873894000000.0
+    },
+    "c_recp_return_invest": {
+     "min": -173670825.01,
+     "max": 422148000000.0
+    },
+    "comp_type": {
+     "min": 1.0,
+     "max": 7.0
+    },
+    "credit_impa_loss": {
+     "min": -4484964362.43,
+     "max": 193491000000.0
+    },
+    "decr_def_inc_tax_assets": {
+     "min": -141534436000.0,
+     "max": 22650000000.0
+    },
+    "decr_oper_payable": {
+     "min": -3631623000000.0,
+     "max": 1504916000000.0
+    },
+    "depr_fa_coga_dpba": {
+     "min": -178595100.99,
+     "max": 229645629500.0
+    },
+    "eff_fx_flu_cash": {
+     "min": -52166000000.0,
+     "max": 102263000000.0
+    },
+    "end_bal_cash": {
+     "min": -61887549.34,
+     "max": 2780308000000.0
+    },
+    "end_bal_cash_equ": {
+     "min": -2048779190.21,
+     "max": 3925614000000.0
+    },
+    "end_date": {
+     "min": 20011231.0,
+     "max": 20260630.0
+    },
+    "end_type": {
+     "min": 1.0,
+     "max": 4.0
+    },
+    "f_ann_date": {
+     "min": 20060118.0,
+     "max": 20260901.0
+    },
+    "free_cashflow": {
+     "min": -1461909981605.59,
+     "max": 924338364998.304
+    },
+    "ifc_cash_incr": {
+     "min": -45944975.24,
+     "max": 1263526000000.0
+    },
+    "im_n_incr_cash_equ": {
+     "min": -1959696832600.0,
+     "max": 1591251000000.0
+    },
+    "im_net_cashflow_oper_act": {
+     "min": -588009000000.0,
+     "max": 2112907000000.0
+    },
+    "incr_def_inc_tax_liab": {
+     "min": -32650871915.01,
+     "max": 186523082000.0
+    },
+    "incr_oper_payable": {
+     "min": -1421450000000.0,
+     "max": 5302578000000.0
+    },
+    "loss_disp_fiolta": {
+     "min": -9046464134.36,
+     "max": 19546000000.0
+    },
+    "loss_fv_chg": {
+     "min": -118160000000.0,
+     "max": 32942000000.0
+    },
+    "lt_amort_deferred_exp": {
+     "min": -298636653.0,
+     "max": 10780975000.0
+    },
+    "n_cash_flows_fnc_act": {
+     "min": -504923000000.0,
+     "max": 536328000000.0
+    },
+    "n_cashflow_act": {
+     "min": -768830000000.0,
+     "max": 2112907000000.0
+    },
+    "n_cashflow_inv_act": {
+     "min": -2456359782500.0,
+     "max": 602337000000.0
+    },
+    "n_depos_incr_fi": {
+     "min": -75888794445.99,
+     "max": 4893673000000.0
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "end_date",
+    "report_type"
+   ],
+   "duplicate_keys": 86337,
+   "duplicate_rows": 173133,
+   "duplicate_rows_with_version_col": 1299,
+   "sample_rows": [
+    {
+     "ts_code": "000001.SZ",
+     "ann_date": "20081024",
+     "f_ann_date": "20081024",
+     "end_date": "20080930",
+     "comp_type": "2",
+     "report_type": "1",
+     "end_type": "3",
+     "net_profit": null,
+     "finan_exp": null,
+     "c_fr_sale_sg": null,
+     "recp_tax_rends": null,
+     "n_depos_incr_fi": "76032426000.0",
+     "n_incr_loans_cb": null,
+     "n_inc_borr_oth_fi": null,
+     "prem_fr_orig_contr": null,
+     "n_incr_insured_dep": null,
+     "n_reinsur_prem": null,
+     "n_incr_disp_tfa": null,
+     "ifc_cash_incr": "18121301000.0",
+     "n_incr_disp_faas": null,
+     "n_incr_loans_oth_bank": "779829000.0",
+     "n_cap_incr_repur": null,
+     "c_fr_oth_operate_a": "9371762000.0",
+     "c_inf_fr_operate_a": "104305318000.0"
+    },
+    {
+     "ts_code": "000001.SZ",
+     "ann_date": "20090320",
+     "f_ann_date": "20090320",
+     "end_date": "20081231",
+     "comp_type": "2",
+     "report_type": "1",
+     "end_type": "4",
+     "net_profit": "614035000.0",
+     "finan_exp": null,
+     "c_fr_sale_sg": null,
+     "recp_tax_rends": null,
+     "n_depos_incr_fi": "82911325000.0",
+     "n_incr_loans_cb": null,
+     "n_inc_borr_oth_fi": null,
+     "prem_fr_orig_contr": null,
+     "n_incr_insured_dep": null,
+     "n_reinsur_prem": null,
+     "n_incr_disp_tfa": null,
+     "ifc_cash_incr": "24691230000.0",
+     "n_incr_disp_faas": null,
+     "n_incr_loans_oth_bank": "5080000000.0",
+     "n_cap_incr_repur": null,
+     "c_fr_oth_operate_a": "2076226000.0",
+     "c_inf_fr_operate_a": "137207314000.0"
+    },
+    {
+     "ts_code": "000001.SZ",
+     "ann_date": "20090320",
+     "f_ann_date": "20090320",
+     "end_date": "20081231",
+     "comp_type": "2",
+     "report_type": "1",
+     "end_type": null,
+     "net_profit": "614035000.0",
+     "finan_exp": null,
+     "c_fr_sale_sg": null,
+     "recp_tax_rends": null,
+     "n_depos_incr_fi": "82911325000.0",
+     "n_incr_loans_cb": null,
+     "n_inc_borr_oth_fi": null,
+     "prem_fr_orig_contr": null,
+     "n_incr_insured_dep": null,
+     "n_reinsur_prem": null,
+     "n_incr_disp_tfa": null,
+     "ifc_cash_incr": "24691230000.0",
+     "n_incr_disp_faas": null,
+     "n_incr_loans_oth_bank": "5080000000.0",
+     "n_cap_incr_repur": null,
+     "c_fr_oth_operate_a": "2076226000.0",
+     "c_inf_fr_operate_a": "137207314000.0"
+    },
+    {
+     "ts_code": "000001.SZ",
+     "ann_date": "20090424",
+     "f_ann_date": "20090424",
+     "end_date": "20090331",
+     "comp_type": "2",
+     "report_type": "1",
+     "end_type": "1",
+     "net_profit": null,
+     "finan_exp": null,
+     "c_fr_sale_sg": null,
+     "recp_tax_rends": null,
+     "n_depos_incr_fi": "42120909000.0",
+     "n_incr_loans_cb": null,
+     "n_inc_borr_oth_fi": null,
+     "prem_fr_orig_contr": null,
+     "n_incr_insured_dep": null,
+     "n_reinsur_prem": null,
+     "n_incr_disp_tfa": null,
+     "ifc_cash_incr": "5461874000.0",
+     "n_incr_disp_faas": null,
+     "n_incr_loans_oth_bank": "12171590000.0",
+     "n_cap_incr_repur": null,
+     "c_fr_oth_operate_a": "1244546000.0",
+     "c_inf_fr_operate_a": "63257285000.0"
+    },
+    {
+     "ts_code": "000001.SZ",
+     "ann_date": "20090821",
+     "f_ann_date": "20090821",
+     "end_date": "20090630",
+     "comp_type": "2",
+     "report_type": "1",
+     "end_type": "2",
+     "net_profit": "2311388000.0",
+     "finan_exp": null,
+     "c_fr_sale_sg": null,
+     "recp_tax_rends": null,
+     "n_depos_incr_fi": "62774902000.0",
+     "n_incr_loans_cb": null,
+     "n_inc_borr_oth_fi": "6895126000.0",
+     "prem_fr_orig_contr": null,
+     "n_incr_insured_dep": null,
+     "n_reinsur_prem": null,
+     "n_incr_disp_tfa": null,
+     "ifc_cash_incr": "10513966000.0",
+     "n_incr_disp_faas": null,
+     "n_incr_loans_oth_bank": null,
+     "n_cap_incr_repur": null,
+     "c_fr_oth_operate_a": "451324000.0",
+     "c_inf_fr_operate_a": "84246070000.0"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 5881,
+    "distinct_headers": 1,
+    "modal_header_cols": 97,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "688135.SH",
+      "manifest_rows": 55,
+      "actual_rows": 54
+     },
+     {
+      "chunk": "002447.SZ",
+      "manifest_rows": 69,
+      "actual_rows": 68
+     },
+     {
+      "chunk": "688556.SH",
+      "manifest_rows": 57,
+      "actual_rows": 56
+     },
+     {
+      "chunk": "300921.SZ",
+      "manifest_rows": 46,
+      "actual_rows": 45
+     },
+     {
+      "chunk": "300495.SZ",
+      "manifest_rows": 65,
+      "actual_rows": 64
+     },
+     {
+      "chunk": "603515.SH",
+      "manifest_rows": 65,
+      "actual_rows": 64
+     },
+     {
+      "chunk": "300299.SZ",
+      "manifest_rows": 82,
+      "actual_rows": 81
+     },
+     {
+      "chunk": "000039.SZ",
+      "manifest_rows": 100,
+      "actual_rows": 99
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 6.8,
+   "finished_at": "2026-09-18T00:09:18"
+  },
+  "tushare/cashflow/20260910-r1": {
+   "batch_dir": "tushare/cashflow/20260910-r1",
+   "mode": "full",
+   "files": {
+    "n_total": 9,
+    "n_csv": 7,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 1,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [
+     "fetch_20260910-r1.log"
+    ],
+    "total_bytes": 239598
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 ann_date 有 83 行 > 2024-12-31 (max=20260828); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "info",
+     "code": "duplicate_rows_version_snapshots",
+     "detail": "主键 ['ts_code', 'end_date', 'report_type'] 重复 200 行, 但 ['ts_code', 'end_date', 'report_type', 'update_flag'] 下唯一 (update_flag 版本快照, 非缺陷; 使用时须按 update_flag 取最新)"
+    }
+   ],
+   "inventory_registration": {
+    "files": 9,
+    "bytes": 239598
+   },
+   "schema": {
+    "ts_code": "String",
+    "ann_date": "Int64",
+    "f_ann_date": "Int64",
+    "end_date": "Int64",
+    "comp_type": "Int64",
+    "report_type": "Int64",
+    "end_type": "Int64",
+    "net_profit": "Float64",
+    "finan_exp": "Float64",
+    "c_fr_sale_sg": "Float64",
+    "recp_tax_rends": "Float64",
+    "n_depos_incr_fi": "String",
+    "n_incr_loans_cb": "String",
+    "n_inc_borr_oth_fi": "String",
+    "prem_fr_orig_contr": "String",
+    "n_incr_insured_dep": "String",
+    "n_reinsur_prem": "String",
+    "n_incr_disp_tfa": "String",
+    "ifc_cash_incr": "String",
+    "n_incr_disp_faas": "String",
+    "n_incr_loans_oth_bank": "String",
+    "n_cap_incr_repur": "String",
+    "c_fr_oth_operate_a": "Float64",
+    "c_inf_fr_operate_a": "Float64",
+    "c_paid_goods_s": "Float64",
+    "c_paid_to_for_empl": "Float64",
+    "c_paid_for_taxes": "Float64",
+    "n_incr_clt_loan_adv": "String",
+    "n_incr_dep_cbob": "String",
+    "c_pay_claims_orig_inco": "String",
+    "pay_handling_chrg": "String",
+    "pay_comm_insur_plcy": "String",
+    "oth_cash_pay_oper_act": "Float64",
+    "st_cash_out_act": "Float64",
+    "n_cashflow_act": "Float64",
+    "oth_recp_ral_inv_act": "Float64",
+    "c_disp_withdrwl_invest": "String",
+    "c_recp_return_invest": "Float64",
+    "n_recp_disp_fiolta": "Float64",
+    "n_recp_disp_sobu": "String",
+    "stot_inflows_inv_act": "Float64",
+    "c_pay_acq_const_fiolta": "Float64",
+    "c_paid_invest": "Float64",
+    "n_disp_subs_oth_biz": "String",
+    "oth_pay_ral_inv_act": "Float64",
+    "n_incr_pledge_loan": "String",
+    "stot_out_inv_act": "Float64",
+    "n_cashflow_inv_act": "Float64",
+    "c_recp_borrow": "Float64",
+    "proc_issue_bonds": "String",
+    "oth_cash_recp_ral_fnc_act": "Float64",
+    "stot_cash_in_fnc_act": "Float64",
+    "free_cashflow": "Float64",
+    "c_prepay_amt_borr": "Float64",
+    "c_pay_dist_dpcp_int_exp": "Float64",
+    "incl_dvd_profit_paid_sc_ms": "String",
+    "oth_cashpay_ral_fnc_act": "Float64",
+    "stot_cashout_fnc_act": "Float64",
+    "n_cash_flows_fnc_act": "Float64",
+    "eff_fx_flu_cash": "Float64",
+    "n_incr_cash_cash_equ": "Float64",
+    "c_cash_equ_beg_period": "Float64",
+    "c_cash_equ_end_period": "Float64",
+    "c_recp_cap_contrib": "Float64",
+    "incl_cash_rec_saims": "String",
+    "uncon_invest_loss": "String",
+    "prov_depr_assets": "Float64",
+    "depr_fa_coga_dpba": "Float64",
+    "amort_intang_assets": "Float64",
+    "lt_amort_deferred_exp": "Float64",
+    "decr_deferred_exp": "String",
+    "incr_acc_exp": "String",
+    "loss_disp_fiolta": "Float64",
+    "loss_scr_fa": "Float64",
+    "loss_fv_chg": "Float64",
+    "invest_loss": "Float64",
+    "decr_def_inc_tax_assets": "Float64",
+    "incr_def_inc_tax_liab": "Float64",
+    "decr_inventories": "Float64",
+    "decr_oper_payable": "Float64",
+    "incr_oper_payable": "Float64",
+    "others": "String",
+    "im_net_cashflow_oper_act": "Float64",
+    "conv_debt_into_cap": "String",
+    "conv_copbonds_due_within_1y": "String",
+    "fa_fnc_leases": "String",
+    "im_n_incr_cash_equ": "Float64",
+    "net_dism_capital_add": "String",
+    "net_cash_rece_sec": "String",
+    "credit_impa_loss": "Float64",
+    "use_right_asset_dep": "Float64",
+    "oth_loss_asset": "String",
+    "end_bal_cash": "Float64",
+    "beg_bal_cash": "Float64",
+    "end_bal_cash_equ": "String",
+    "beg_bal_cash_equ": "String",
+    "update_flag": "Int64"
+   },
+   "n_columns": 97,
+   "date_columns": [
+    "ann_date",
+    "f_ann_date",
+    "end_date"
+   ],
+   "numeric_columns_checked": [
+    "amort_intang_assets",
+    "ann_date",
+    "beg_bal_cash",
+    "c_cash_equ_beg_period",
+    "c_cash_equ_end_period",
+    "c_fr_oth_operate_a",
+    "c_fr_sale_sg",
+    "c_inf_fr_operate_a",
+    "c_paid_for_taxes",
+    "c_paid_goods_s",
+    "c_paid_invest",
+    "c_paid_to_for_empl",
+    "c_pay_acq_const_fiolta",
+    "c_pay_dist_dpcp_int_exp",
+    "c_prepay_amt_borr",
+    "c_recp_borrow",
+    "c_recp_cap_contrib",
+    "c_recp_return_invest",
+    "comp_type",
+    "credit_impa_loss",
+    "decr_def_inc_tax_assets",
+    "decr_inventories",
+    "decr_oper_payable",
+    "depr_fa_coga_dpba",
+    "eff_fx_flu_cash",
+    "end_bal_cash",
+    "end_date",
+    "end_type",
+    "f_ann_date",
+    "finan_exp",
+    "free_cashflow",
+    "im_n_incr_cash_equ",
+    "im_net_cashflow_oper_act",
+    "incr_def_inc_tax_liab",
+    "incr_oper_payable",
+    "invest_loss",
+    "loss_disp_fiolta",
+    "loss_fv_chg",
+    "loss_scr_fa",
+    "lt_amort_deferred_exp"
+   ],
+   "rows_total": 388,
+   "date_coverage": {
+    "ann_date": {
+     "min": "20061020",
+     "max": "20260828",
+     "rows_gt_20241231": 83,
+     "null_rows": 0
+    },
+    "f_ann_date": {
+     "min": "20061020",
+     "max": "20260828",
+     "rows_gt_20241231": 83,
+     "null_rows": 0
+    },
+    "end_date": {
+     "min": "20051231",
+     "max": "20260630",
+     "rows_gt_20241231": 72,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 83,
+   "numeric_magnitude": {
+    "amort_intang_assets": {
+     "min": 14740.56,
+     "max": 54682063.7
+    },
+    "ann_date": {
+     "min": 20061020.0,
+     "max": 20260828.0
+    },
+    "beg_bal_cash": {
+     "min": 3113697.99,
+     "max": 2138886384.41
+    },
+    "c_cash_equ_beg_period": {
+     "min": 3113697.99,
+     "max": 2138886384.41
+    },
+    "c_cash_equ_end_period": {
+     "min": 3113697.99,
+     "max": 2216257289.88
+    },
+    "c_fr_oth_operate_a": {
+     "min": -7575165.56,
+     "max": 407525427.94
+    },
+    "c_fr_sale_sg": {
+     "min": 44380913.25,
+     "max": 6708435117.27
+    },
+    "c_inf_fr_operate_a": {
+     "min": 45860247.34,
+     "max": 6802371208.25
+    },
+    "c_paid_for_taxes": {
+     "min": 28299.5,
+     "max": 479265001.07
+    },
+    "c_paid_goods_s": {
+     "min": 29445497.27,
+     "max": 4386978896.58
+    },
+    "c_paid_invest": {
+     "min": 1.0,
+     "max": 2668955150.0
+    },
+    "c_paid_to_for_empl": {
+     "min": 9373363.0,
+     "max": 1059647311.73
+    },
+    "c_pay_acq_const_fiolta": {
+     "min": 143772.77,
+     "max": 1034679585.75
+    },
+    "c_pay_dist_dpcp_int_exp": {
+     "min": -11072.47,
+     "max": 286154120.26
+    },
+    "c_prepay_amt_borr": {
+     "min": 1960.02,
+     "max": 3430850650.37
+    },
+    "c_recp_borrow": {
+     "min": 66957.0,
+     "max": 3737770276.58
+    },
+    "c_recp_cap_contrib": {
+     "min": -7684564.66,
+     "max": 2100292556.0
+    },
+    "c_recp_return_invest": {
+     "min": -1625978.91,
+     "max": 94461026.68
+    },
+    "comp_type": {
+     "min": 1.0,
+     "max": 1.0
+    },
+    "credit_impa_loss": {
+     "min": -26597670.11,
+     "max": 57440814.25
+    },
+    "decr_def_inc_tax_assets": {
+     "min": -196857875.56,
+     "max": 141383732.61
+    },
+    "decr_inventories": {
+     "min": -1079951957.7,
+     "max": 506069891.73
+    },
+    "decr_oper_payable": {
+     "min": -2076048072.16,
+     "max": 3320002930.19
+    },
+    "depr_fa_coga_dpba": {
+     "min": 126538.92,
+     "max": 438079939.54
+    },
+    "eff_fx_flu_cash": {
+     "min": -23964347.43,
+     "max": 36285974.73
+    },
+    "end_bal_cash": {
+     "min": 8107328.91,
+     "max": 2181492693.79
+    },
+    "end_date": {
+     "min": 20051231.0,
+     "max": 20260630.0
+    },
+    "end_type": {
+     "min": 1.0,
+     "max": 4.0
+    },
+    "f_ann_date": {
+     "min": 20061020.0,
+     "max": 20260828.0
+    },
+    "finan_exp": {
+     "min": -24375833.02,
+     "max": 236315787.51
+    },
+    "free_cashflow": {
+     "min": -2660258145.86,
+     "max": 861176966.58
+    },
+    "im_n_incr_cash_equ": {
+     "min": -2054911999.29,
+     "max": 2017938766.38
+    },
+    "im_net_cashflow_oper_act": {
+     "min": -1873644247.88,
+     "max": 955677366.21
+    },
+    "incr_def_inc_tax_liab": {
+     "min": -31537695.34,
+     "max": 25489869.22
+    },
+    "incr_oper_payable": {
+     "min": -3586651686.95,
+     "max": 944903105.24
+    },
+    "invest_loss": {
+     "min": -5514075821.02,
+     "max": 28371636.69
+    },
+    "loss_disp_fiolta": {
+     "min": -78211055.65,
+     "max": 257346334.43
+    },
+    "loss_fv_chg": {
+     "min": -151384003.01,
+     "max": 82437736.84
+    },
+    "loss_scr_fa": {
+     "min": -812565.78,
+     "max": 27650406.5
+    },
+    "lt_amort_deferred_exp": {
+     "min": 0.0,
+     "max": 155223643.43
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "end_date",
+    "report_type"
+   ],
+   "duplicate_keys": 100,
+   "duplicate_rows": 200,
+   "duplicate_rows_with_version_col": 0,
+   "sample_rows": [
+    {
+     "ts_code": "001301.SZ",
+     "ann_date": "20220118",
+     "f_ann_date": "20220118",
+     "end_date": "20181231",
+     "comp_type": "1",
+     "report_type": "1",
+     "end_type": "4",
+     "net_profit": null,
+     "finan_exp": null,
+     "c_fr_sale_sg": "254797822.69",
+     "recp_tax_rends": null,
+     "n_depos_incr_fi": null,
+     "n_incr_loans_cb": null,
+     "n_inc_borr_oth_fi": null,
+     "prem_fr_orig_contr": null,
+     "n_incr_insured_dep": null,
+     "n_reinsur_prem": null,
+     "n_incr_disp_tfa": null,
+     "ifc_cash_incr": null,
+     "n_incr_disp_faas": null,
+     "n_incr_loans_oth_bank": null,
+     "n_cap_incr_repur": null,
+     "c_fr_oth_operate_a": "6261388.47",
+     "c_inf_fr_operate_a": "261059211.16"
+    },
+    {
+     "ts_code": "001301.SZ",
+     "ann_date": "20221118",
+     "f_ann_date": "20221118",
+     "end_date": "20191231",
+     "comp_type": "1",
+     "report_type": "1",
+     "end_type": "4",
+     "net_profit": "88432936.93",
+     "finan_exp": "1204788.75",
+     "c_fr_sale_sg": "282488087.19",
+     "recp_tax_rends": null,
+     "n_depos_incr_fi": null,
+     "n_incr_loans_cb": null,
+     "n_inc_borr_oth_fi": null,
+     "prem_fr_orig_contr": null,
+     "n_incr_insured_dep": null,
+     "n_reinsur_prem": null,
+     "n_incr_disp_tfa": null,
+     "ifc_cash_incr": null,
+     "n_incr_disp_faas": null,
+     "n_incr_loans_oth_bank": null,
+     "n_cap_incr_repur": null,
+     "c_fr_oth_operate_a": "6551803.61",
+     "c_inf_fr_operate_a": "289039890.8"
+    },
+    {
+     "ts_code": "001301.SZ",
+     "ann_date": "20221118",
+     "f_ann_date": "20221118",
+     "end_date": "20191231",
+     "comp_type": "1",
+     "report_type": "1",
+     "end_type": "4",
+     "net_profit": "88432936.93",
+     "finan_exp": "1204788.75",
+     "c_fr_sale_sg": "282488087.19",
+     "recp_tax_rends": null,
+     "n_depos_incr_fi": null,
+     "n_incr_loans_cb": null,
+     "n_inc_borr_oth_fi": null,
+     "prem_fr_orig_contr": null,
+     "n_incr_insured_dep": null,
+     "n_reinsur_prem": null,
+     "n_incr_disp_tfa": null,
+     "ifc_cash_incr": null,
+     "n_incr_disp_faas": null,
+     "n_incr_loans_oth_bank": null,
+     "n_cap_incr_repur": null,
+     "c_fr_oth_operate_a": "6551803.61",
+     "c_inf_fr_operate_a": "289039890.8"
+    },
+    {
+     "ts_code": "001301.SZ",
+     "ann_date": "20221118",
+     "f_ann_date": "20221118",
+     "end_date": "20201231",
+     "comp_type": "1",
+     "report_type": "1",
+     "end_type": "4",
+     "net_profit": "152556332.29",
+     "finan_exp": "2423215.73",
+     "c_fr_sale_sg": "304275380.6",
+     "recp_tax_rends": null,
+     "n_depos_incr_fi": null,
+     "n_incr_loans_cb": null,
+     "n_inc_borr_oth_fi": null,
+     "prem_fr_orig_contr": null,
+     "n_incr_insured_dep": null,
+     "n_reinsur_prem": null,
+     "n_incr_disp_tfa": null,
+     "ifc_cash_incr": null,
+     "n_incr_disp_faas": null,
+     "n_incr_loans_oth_bank": null,
+     "n_cap_incr_repur": null,
+     "c_fr_oth_operate_a": "11559389.66",
+     "c_inf_fr_operate_a": "315834770.26"
+    },
+    {
+     "ts_code": "001301.SZ",
+     "ann_date": "20221118",
+     "f_ann_date": "20221118",
+     "end_date": "20201231",
+     "comp_type": "1",
+     "report_type": "1",
+     "end_type": "4",
+     "net_profit": "152556332.29",
+     "finan_exp": "2423215.73",
+     "c_fr_sale_sg": "304275380.6",
+     "recp_tax_rends": null,
+     "n_depos_incr_fi": null,
+     "n_incr_loans_cb": null,
+     "n_inc_borr_oth_fi": null,
+     "prem_fr_orig_contr": null,
+     "n_incr_insured_dep": null,
+     "n_reinsur_prem": null,
+     "n_incr_disp_tfa": null,
+     "ifc_cash_incr": null,
+     "n_incr_disp_faas": null,
+     "n_incr_loans_oth_bank": null,
+     "n_cap_incr_repur": null,
+     "c_fr_oth_operate_a": "11559389.66",
+     "c_inf_fr_operate_a": "315834770.26"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:18"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:18"
+}

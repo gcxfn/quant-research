@@ -1,0 +1,167 @@
+{
+ "source": "xiaodefa",
+ "dataset": "index_member_all",
+ "batches": {
+  "xiaodefa/index_member_all/20260913-bulk1": {
+   "batch_dir": "xiaodefa/index_member_all/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 5,
+    "n_csv": 2,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 2,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [
+     "chunk_is_new-N.csv.truncated",
+     "chunk_is_new-Y.csv.truncated"
+    ],
+    "total_bytes": 1288206
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 in_date 有 331 行 > 2024-12-31 (max=20260828); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['ts_code'] 重复: 1649 个键 / 3725 行"
+    }
+   ],
+   "inventory_registration": {
+    "files": 5,
+    "bytes": 1288206
+   },
+   "schema": {
+    "l1_code": "String",
+    "l1_name": "String",
+    "l2_code": "String",
+    "l2_name": "String",
+    "l3_code": "String",
+    "l3_name": "String",
+    "ts_code": "String",
+    "name": "String",
+    "in_date": "Int64",
+    "out_date": "Int64",
+    "is_new": "String"
+   },
+   "n_columns": 11,
+   "date_columns": [
+    "in_date",
+    "out_date"
+   ],
+   "numeric_columns_checked": [
+    "in_date",
+    "out_date"
+   ],
+   "rows_total": 7982,
+   "date_coverage": {
+    "in_date": {
+     "min": "19840509",
+     "max": "20260828",
+     "rows_gt_20241231": 331,
+     "null_rows": 0
+    },
+    "out_date": {
+     "min": "19990831",
+     "max": "20260820",
+     "rows_gt_20241231": 107,
+     "null_rows": 5971
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 331,
+   "numeric_magnitude": {
+    "in_date": {
+     "min": 19840509.0,
+     "max": 20260828.0
+    },
+    "out_date": {
+     "min": 19990831.0,
+     "max": 20260820.0
+    }
+   },
+   "primary_key": [
+    "ts_code"
+   ],
+   "duplicate_keys": 1649,
+   "duplicate_rows": 3725,
+   "sample_rows": [
+    {
+     "l1_code": "801010.SI",
+     "l1_name": "农林牧渔",
+     "l2_code": "801016.SI",
+     "l2_name": "种植业",
+     "l3_code": "850111.SI",
+     "l3_name": "种子",
+     "ts_code": "600313.SH",
+     "name": "农发种业",
+     "in_date": "20010109",
+     "out_date": "20110107",
+     "is_new": "N"
+    },
+    {
+     "l1_code": "801010.SI",
+     "l1_name": "农林牧渔",
+     "l2_code": "801016.SI",
+     "l2_name": "种植业",
+     "l3_code": "850111.SI",
+     "l3_name": "种子",
+     "ts_code": "000918.SZ",
+     "name": "*ST嘉凯(退市)",
+     "in_date": "19990720",
+     "out_date": "20100115",
+     "is_new": "N"
+    },
+    {
+     "l1_code": "801010.SI",
+     "l1_name": "农林牧渔",
+     "l2_code": "801016.SI",
+     "l2_name": "种植业",
+     "l3_code": "850111.SI",
+     "l3_name": "种子",
+     "ts_code": "600248.SH",
+     "name": "陕建股份",
+     "in_date": "20000622",
+     "out_date": "20100531",
+     "is_new": "N"
+    },
+    {
+     "l1_code": "801010.SI",
+     "l1_name": "农林牧渔",
+     "l2_code": "801016.SI",
+     "l2_name": "种植业",
+     "l3_code": "850112.SI",
+     "l3_name": "粮食种植",
+     "ts_code": "000722.SZ",
+     "name": "湖南发展",
+     "in_date": "19970522",
+     "out_date": "20070629",
+     "is_new": "N"
+    },
+    {
+     "l1_code": "801010.SI",
+     "l1_name": "农林牧渔",
+     "l2_code": "801016.SI",
+     "l2_name": "种植业",
+     "l3_code": "850112.SI",
+     "l3_name": "粮食种植",
+     "ts_code": "000829.SZ",
+     "name": "天音控股",
+     "in_date": "19971202",
+     "out_date": "20060831",
+     "is_new": "N"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:07:38"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:38"
+}

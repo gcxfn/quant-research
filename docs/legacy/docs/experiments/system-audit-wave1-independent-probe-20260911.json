@@ -1,0 +1,180 @@
+{
+  "execution_status": [
+    {
+      "input": "{'volume': 1}",
+      "result": [
+        true,
+        null
+      ]
+    },
+    {
+      "input": "{'tradestatus': 1, 'volume': 1, 'isST': None}",
+      "result": [
+        true,
+        null
+      ]
+    },
+    {
+      "input": "{'tradestatus': 1, 'volume': None, 'isST': 0}",
+      "result": [
+        true,
+        null
+      ]
+    },
+    {
+      "input": "{'tradestatus': 1, 'volume': inf, 'isST': 0}",
+      "result": [
+        true,
+        null
+      ]
+    },
+    {
+      "input": "{'tradestatus': 1, 'volume': '1', 'isST': 0}",
+      "result": "TypeError"
+    }
+  ],
+  "carry_months": [
+    {
+      "entry": "2020-02-03",
+      "exit_target": "2020-03-02",
+      "n_hold": 1,
+      "n_executed": 1,
+      "turnover": 1.0,
+      "gross": 0.0,
+      "net": -0.0010000000000000009,
+      "net_proxy": -0.0017,
+      "bench_gross": 0.0,
+      "no_fill": [],
+      "exit_actual": {
+        "a": "2020-03-05"
+      },
+      "exit_status": {
+        "a": "executed"
+      },
+      "n_immature": 0,
+      "n_still_held_into_next": 1
+    },
+    {
+      "entry": "2020-03-02",
+      "exit_target": "2020-04-01",
+      "n_hold": 1,
+      "n_executed": 1,
+      "turnover": 1.0,
+      "gross": 0.0,
+      "net": -0.0010000000000000009,
+      "net_proxy": -0.0017,
+      "bench_gross": 0.0,
+      "no_fill": [],
+      "exit_actual": {
+        "b": "2020-04-01"
+      },
+      "exit_status": {
+        "b": "executed"
+      },
+      "n_immature": 0,
+      "n_still_held_into_next": 0
+    }
+  ],
+  "empty_signal_month": {
+    "entry": "2020-02-03",
+    "exit_target": "2020-03-02",
+    "n_hold": 0,
+    "n_executed": 0,
+    "turnover": 0.0,
+    "gross": null,
+    "net": null,
+    "net_proxy": null,
+    "bench_gross": 0.0,
+    "no_fill": [],
+    "exit_actual": {},
+    "exit_status": {},
+    "n_immature": 0,
+    "n_still_held_into_next": 0
+  },
+  "warmup_alignment_capture": {
+    "dates_length": 110,
+    "factor_length": 90,
+    "first_date": "2020-01-01",
+    "first_factor": 20.0,
+    "factor_actual_date": "2020-01-29"
+  },
+  "corrected_scan": {
+    "R0_actual": {
+      "nonempty": 249,
+      "hits": [
+        [
+          "R0",
+          "REV_cond_15",
+          "silent_empty"
+        ]
+      ],
+      "other_errors": []
+    },
+    "R1_actual": {
+      "nonempty": 203,
+      "hits": [
+        [
+          "A_liqu",
+          "LIQ_impact_asym",
+          "silent_empty"
+        ],
+        [
+          "H_nomi",
+          "NOMINAL_tick_illiq_gate",
+          "silent_empty"
+        ],
+        [
+          "H_nomi",
+          "NOMINAL_lowpx_hotmarket_gate",
+          "silent_empty"
+        ],
+        [
+          "L_uvol",
+          "UVOL_pressure_ratio",
+          "silent_empty"
+        ],
+        [
+          "L_uvol",
+          "UVOL_flow_stab_gap",
+          "silent_empty"
+        ],
+        [
+          "L_uvol",
+          "UVOL_dir_vol_shock",
+          "silent_empty"
+        ],
+        [
+          "L_uvol",
+          "UVOL_maxdom_asym",
+          "silent_empty"
+        ],
+        [
+          "L_uvol",
+          "UVOL_surrender",
+          "error_surface"
+        ],
+        [
+          "L_uvol",
+          "UVOL_flow_mkt_coupling",
+          "error_surface"
+        ],
+        [
+          "L_uvol",
+          "UVOL_bucket_coupling",
+          "silent_empty"
+        ],
+        [
+          "L_uvol",
+          "UVOL_bigvol_purity",
+          "silent_empty"
+        ],
+        [
+          "W3A_tu",
+          "TURN_hotmom_kill_250",
+          "silent_empty"
+        ]
+      ],
+      "other_errors": []
+    }
+  }
+}

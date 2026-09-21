@@ -1,0 +1,150 @@
+{
+ "source": "bigquant",
+ "dataset": "minute-check-20260914-1",
+ "batches": {
+  "bigquant/minute-check-20260914-1": {
+   "batch_dir": "bigquant/minute-check-20260914-1",
+   "mode": "full",
+   "files": {
+    "n_total": 78,
+    "n_csv": 77,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 10597664
+   },
+   "issues": [],
+   "inventory_registration": {
+    "files": 78,
+    "bytes": 10597664
+   },
+   "schema": {
+    "date": "String",
+    "instrument": "String",
+    "open": "Float64",
+    "high": "Float64",
+    "low": "Float64",
+    "close": "Float64",
+    "volume": "Int64",
+    "amount": "Float64"
+   },
+   "n_columns": 8,
+   "date_columns": [
+    "date"
+   ],
+   "numeric_columns_checked": [
+    "close",
+    "open",
+    "high",
+    "low",
+    "volume",
+    "amount"
+   ],
+   "rows_total": 153758,
+   "date_coverage": {
+    "date": {
+     "min": "20150105",
+     "max": "20240201",
+     "rows_gt_20241231": 0,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 0,
+   "numeric_magnitude": {
+    "close": {
+     "min": 2.51,
+     "max": 319.48
+    },
+    "open": {
+     "min": 2.5,
+     "max": 319.3
+    },
+    "high": {
+     "min": 2.51,
+     "max": 322.0
+    },
+    "low": {
+     "min": 2.49,
+     "max": 318.98
+    },
+    "volume": {
+     "min": 0.0,
+     "max": 35443516.0
+    },
+    "amount": {
+     "min": 0.0,
+     "max": 283557034.11
+    }
+   },
+   "primary_key": null,
+   "sample_rows": [
+    {
+     "date": "2015-01-05 09:25:00",
+     "instrument": "600163.SH",
+     "open": "5.21",
+     "high": "5.21",
+     "low": "5.21",
+     "close": "5.21",
+     "volume": "43300",
+     "amount": "225593.0"
+    },
+    {
+     "date": "2015-01-05 09:31:00",
+     "instrument": "600163.SH",
+     "open": "5.21",
+     "high": "5.25",
+     "low": "5.21",
+     "close": "5.22",
+     "volume": "29000",
+     "amount": "151419.0"
+    },
+    {
+     "date": "2015-01-05 09:32:00",
+     "instrument": "600163.SH",
+     "open": "5.22",
+     "high": "5.22",
+     "low": "5.21",
+     "close": "5.21",
+     "volume": "8200",
+     "amount": "42786.0"
+    },
+    {
+     "date": "2015-01-05 09:33:00",
+     "instrument": "600163.SH",
+     "open": "5.22",
+     "high": "5.22",
+     "low": "5.21",
+     "close": "5.21",
+     "volume": "27400",
+     "amount": "142924.0"
+    },
+    {
+     "date": "2015-01-05 09:34:00",
+     "instrument": "600163.SH",
+     "open": "5.21",
+     "high": "5.22",
+     "low": "5.21",
+     "close": "5.21",
+     "volume": "14800",
+     "amount": "77128.0"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 77,
+    "distinct_headers": 1,
+    "modal_header_cols": 8,
+    "deviating_files": 0
+   },
+   "status": "completed",
+   "duration_s": 0.1,
+   "finished_at": "2026-09-18T00:09:54"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:54"
+}

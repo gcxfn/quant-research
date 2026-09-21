@@ -1,0 +1,181 @@
+{
+ "source": "xiaodefa",
+ "dataset": "minute-repairs-20260914-1",
+ "batches": {
+  "xiaodefa/minute-repairs-20260914-1": {
+   "batch_dir": "xiaodefa/minute-repairs-20260914-1",
+   "mode": "full",
+   "files": {
+    "n_total": 20,
+    "n_csv": 17,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 0,
+    "n_other": 3,
+    "manifest_names": [],
+    "other_names": [
+     "patches.json",
+     "sh.603026_2019-05-06_raw.json",
+     "sz.002442_2016-03-01_raw.json"
+    ],
+    "total_bytes": 311997
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "manifest_missing",
+     "detail": "批次目录内无 manifest.json/sha256/meta 清单"
+    }
+   ],
+   "inventory_registration": {
+    "files": 20,
+    "bytes": 311997
+   },
+   "schema": {
+    "open": "Float64",
+    "high": "Float64",
+    "low": "Float64",
+    "close": "Float64",
+    "amount": "Float64",
+    "volume": "Float64",
+    "date": "String",
+    "code": "String",
+    "adjustflag": "Int64",
+    "time": "Int64"
+   },
+   "n_columns": 10,
+   "date_columns": [
+    "date",
+    "time"
+   ],
+   "numeric_columns_checked": [
+    "close",
+    "open",
+    "high",
+    "low",
+    "volume",
+    "amount",
+    "adjustflag",
+    "time"
+   ],
+   "rows_total": 816,
+   "date_coverage": {
+    "date": {
+     "min": "20150701",
+     "max": "20190902",
+     "rows_gt_20241231": 0,
+     "null_rows": 0
+    },
+    "time": {
+     "min": "20150701",
+     "max": "20190902",
+     "rows_gt_20241231": 0,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 0,
+   "numeric_magnitude": {
+    "close": {
+     "min": 6.71,
+     "max": 104.3
+    },
+    "open": {
+     "min": 6.58,
+     "max": 104.33
+    },
+    "high": {
+     "min": 6.74,
+     "max": 104.35
+    },
+    "low": {
+     "min": 6.57,
+     "max": 104.2
+    },
+    "volume": {
+     "min": 2700.0,
+     "max": 3549700.0
+    },
+    "amount": {
+     "min": 98296.0,
+     "max": 86874394.0
+    },
+    "adjustflag": {
+     "min": 3.0,
+     "max": 3.0
+    },
+    "time": {
+     "min": 2.01507010935e+16,
+     "max": 2.019090215e+16
+    }
+   },
+   "primary_key": null,
+   "sample_rows": [
+    {
+     "open": "13.7",
+     "high": "13.79",
+     "low": "13.55",
+     "close": "13.6",
+     "amount": "1673225.0",
+     "volume": "122900.0",
+     "date": "2015-10-08",
+     "code": "sh.600623",
+     "adjustflag": "3",
+     "time": "20151008093500000"
+    },
+    {
+     "open": "13.6",
+     "high": "13.69",
+     "low": "13.38",
+     "close": "13.38",
+     "amount": "2691877.0",
+     "volume": "200200.0",
+     "date": "2015-10-08",
+     "code": "sh.600623",
+     "adjustflag": "3",
+     "time": "20151008094000000"
+    },
+    {
+     "open": "13.33",
+     "high": "13.4",
+     "low": "13.33",
+     "close": "13.4",
+     "amount": "3463027.0",
+     "volume": "258500.0",
+     "date": "2015-10-08",
+     "code": "sh.600623",
+     "adjustflag": "3",
+     "time": "20151008094500000"
+    },
+    {
+     "open": "13.4",
+     "high": "13.5",
+     "low": "13.4",
+     "close": "13.5",
+     "amount": "2425897.0",
+     "volume": "179900.0",
+     "date": "2015-10-08",
+     "code": "sh.600623",
+     "adjustflag": "3",
+     "time": "20151008095000000"
+    },
+    {
+     "open": "13.49",
+     "high": "13.6",
+     "low": "13.49",
+     "close": "13.51",
+     "amount": "3652943.0",
+     "volume": "270200.0",
+     "date": "2015-10-08",
+     "code": "sh.600623",
+     "adjustflag": "3",
+     "time": "20151008095500000"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:07:40"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:40"
+}

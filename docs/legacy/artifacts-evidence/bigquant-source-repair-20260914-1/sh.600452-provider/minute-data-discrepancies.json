@@ -1,0 +1,47 @@
+[
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "accepted_source_baseline": {
+      "decision": "USER_ACCEPTED_SOURCE_BASELINE_20260914",
+      "code": "sh.600452",
+      "date": "2016-06-01",
+      "sha256": "3c3f27e04121981ca0304b7d370341113f5b169e3e97abd387e8ef9336c71c66",
+      "daily": {
+        "open": 31.16,
+        "close": 31.64,
+        "high": 31.66,
+        "low": 30.8,
+        "volume": 1509898.0
+      },
+      "minute": {
+        "open": 31.48,
+        "close": 31.64,
+        "high": 31.66,
+        "low": 30.8,
+        "volume": 1509898.0
+      },
+      "research_only": true,
+      "source_truth_verified": false,
+      "sensitivity_required": true,
+      "scope": "Same previously accepted opening discrepancy retained on BigQuant whole-day replacement; close corrected"
+    },
+    "code": "sh.600452",
+    "date": "2016-06-01",
+    "minute_aggregate": {
+      "open": 31.48,
+      "close": 31.64,
+      "high": 31.66,
+      "low": 30.8,
+      "volume": 1509898.0
+    },
+    "daily": {
+      "open": 31.16,
+      "high": 31.66,
+      "low": 30.8,
+      "close": 31.64,
+      "volume": 1509898.0
+    },
+    "source": "D:\\AI\\workspace\\个人量化\\data\\raw\\bigquant\\minute-repairs-20260914-1\\sh.600452_2016-06-01_f5.csv"
+  }
+]

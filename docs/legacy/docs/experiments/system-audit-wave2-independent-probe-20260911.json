@@ -1,0 +1,128 @@
+{
+  "never_sellable": [
+    {
+      "entry": "2020-06-01",
+      "exit_actual": {
+        "a": "2020-06-02"
+      },
+      "exit_status": {
+        "a": "mtm_deferred_exit"
+      },
+      "n_still_held_into_next": 0,
+      "ledger": {
+        "capital_base": 0.0,
+        "cash_start": 0.0,
+        "carried_mv_start": 50000.0,
+        "equity_start": 50000.0,
+        "capital_injected": 0.0,
+        "buy_cash_out": 0.0,
+        "buy_fees": 0.0,
+        "exit_gross_value": 50000.0,
+        "sell_fees": 37.5,
+        "exit_proceeds": 49962.5,
+        "carried_mv_end": 0.0,
+        "cash_end": 49962.5,
+        "equity_end": 49962.5
+      }
+    }
+  ],
+  "single_name_benchmark": [
+    {
+      "entry": "2020-02-03",
+      "gross": -0.1,
+      "bench_gross": 0.10000000000000009,
+      "net_proxy": -0.1017
+    },
+    {
+      "entry": "2020-03-02",
+      "gross": 0.22222222222222238,
+      "bench_gross": 0.11111111111111116,
+      "net_proxy": 0.22222222222222238
+    }
+  ],
+  "missing_boundary_open": {
+    "prior_close": 10.0,
+    "same_day_future_close": 20.0,
+    "mark_at_open": 20.0
+  },
+  "final_mark_helper": 10.0,
+  "persistently_immature": [
+    {
+      "entry": "2020-02-03",
+      "month_type": "immature",
+      "n_immature": 1,
+      "gross": null,
+      "net": null
+    },
+    {
+      "entry": "2020-03-02",
+      "month_type": "normal",
+      "n_immature": 0,
+      "gross": 0.0,
+      "net": 0.0
+    }
+  ],
+  "removed_etf_reentry": {
+    "input": {
+      "thscode": "517520.SH",
+      "name": "黄金股ETF永赢"
+    },
+    "keep_etf": true
+  },
+  "axis_contract": {
+    "short_high_inside_rank": {
+      "pure": {
+        "a": [
+          1.0,
+          null,
+          null
+        ]
+      },
+      "numpy": {
+        "a": [
+          1.0,
+          null,
+          null
+        ]
+      }
+    },
+    "ghost_high": {
+      "pure": {
+        "ghost": [
+          11.0,
+          11.0,
+          11.0
+        ]
+      },
+      "numpy": {
+        "ghost": [
+          11.0,
+          11.0,
+          11.0
+        ]
+      }
+    },
+    "ragged_close": {
+      "pure": {
+        "a": [
+          0.5,
+          1.0,
+          1.0
+        ],
+        "b": [
+          1.0
+        ]
+      },
+      "numpy": {
+        "a": [
+          0.5,
+          1.0,
+          1.0
+        ],
+        "b": [
+          1.0
+        ]
+      }
+    }
+  }
+}

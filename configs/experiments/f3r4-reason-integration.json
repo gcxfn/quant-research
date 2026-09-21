@@ -1,0 +1,70 @@
+{
+ "experiment_id": "exp-20260920-factor-round-f3r4",
+ "frozen_on": "2026-09-20",
+ "prereg": "docs/research/exp-20260920-factor-round-f3r4-prereg.md",
+ "upstream": {
+  "event_study": "exp-20260920-t1-reason-event",
+  "event_run": "artifacts/runs/20260920T113527-t1-reason-event-b690",
+  "event_table": "outputs/events_dev.parquet",
+  "verdict": "H1 (impairment +3.8% 3/3 years positive, not single-name driven; price_up -2.7% 3/3 negative but top1 concentration 27.8%; epidemic_shock 2020-only, not adopted)"
+ },
+ "chassis": {
+  "runner_source": "artifacts/runs/20260919T201500-f3r3-industry-cap-4b2e/scripts/runner_f3r3.py",
+  "source_run": "20260919T201500-f3r3-industry-cap-4b2e",
+  "baseline_arm": "F3R3-EW",
+  "baseline_net_cagr": 0.04877310918741218,
+  "baseline_max_drawdown": -0.17848532843799414,
+  "sleeve_k": 10,
+  "sleeve_w_on": 0.06,
+  "sleeve_e_ref": 0.90,
+  "industry_cap_l1": 2,
+  "initial_cash": 500000.0,
+  "chassis_legs": {"sh.511010": 0.15, "sh.518880": 0.25},
+  "dev": "2015-01-05..2020-12-31",
+  "engine": {
+   "path": "src/quant/backtest/band_engine.py",
+   "version": "v1.4.1",
+   "sha256": "a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3",
+   "mode": "non-zones (v1.3 semantics; zones argument never passed)"
+  },
+  "derived_runner_allowed_changes": [
+   "composite input path",
+   "arm id / output name prefix",
+   "engine pin (v1.3 84a2443a -> workspace v1.4.1 a01cb29c; precedent: attribution run runner_attrib.py)"
+  ]
+ },
+ "event_flag": {
+  "classes": ["impairment", "price_up"],
+  "direction": {"impairment": 1, "price_up": -1},
+  "window_sessions": 60,
+  "window_rule": "signal_date >= ann_date and trading_days_between(ann_date, signal_date) in [0, 60]; calendar = shared r16 market_calendar",
+  "multi_event_rule": "same class -> nearest (max ann_date); impairment vs price_up conflict -> later announcement wins (max ann_date); equal ann_date -> STOP and report count",
+  "rank_basis": "flags are attached to composite rows only (arm A/B modify composite values; arm C ranks z_event over the same eligible set as the 17 factors)"
+ },
+ "arms": {
+  "F3R4-A": {"adjust": "value' = value + b*(+1 impairment / -1 price_up / 0)", "b_rule": "median over signal months of the F3-EW composite cross-sectional std"},
+  "F3R4-B": {"adjust": "price_up flagged -> value' = -10; impairment unchanged", "suppress_value": -10.0},
+  "F3R4-C": {"adjust": "value' = mean(17 z_i, z_event)", "z_event": "z_event = (rank_pct - 0.5) * (+1) over the eligible set; 0/+1/-1 event column; a month with no flag has z_event null (degenerate column), so C equals the 17-factor composite there"}
+ },
+ "adjudication": {
+  "line": "net CAGR >= baseline + 0.003 AND max_drawdown >= baseline - 0.01",
+  "baseline_plus": 0.05177310918741218,
+  "mdd_floor": -0.18848532843799414,
+  "h1": "any arm passes -> H1 (exploratory)",
+  "h0": "all three arms fail -> H0 (archive)",
+  "edge_band": 0.0001,
+  "secondary_report_only": ["gate 3 advantage years", "gate 4 mdd", "gate 5 turnover", "gate 6 single-name weight", "gate 8v3 delivery", "holdings difference vs baseline"]
+ },
+ "sensitivity": {
+  "only_arm": "F3R4-A",
+  "windows": [20, 40],
+  "role": "disclosure only; never changes the adjudication"
+ },
+ "trial_accounting": {"this_round": 3, "strategy_line": "293->296", "anchor_not_counted": true},
+ "seams": {
+  "TF-S1": "B arm suppression is a parquet-level equivalent of a veto; if every candidate were suppressed the name could still be seated (expected probability ~0, disclosed)",
+  "TF-S2": "derived runner diff vs F3R3 original limited to composite input path + output prefix (+ engine pin, precedent documented); diff recorded in the manifest",
+  "TF-S3": "b value, per-month std and z_event distribution registered for independent recomputation",
+  "TF-S4": "event conflict rule executed mechanically; conflict counts disclosed"
+ }
+}

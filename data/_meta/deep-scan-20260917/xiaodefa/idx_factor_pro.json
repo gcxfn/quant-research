@@ -1,0 +1,542 @@
+{
+ "source": "xiaodefa",
+ "dataset": "idx_factor_pro",
+ "batches": {
+  "xiaodefa/idx_factor_pro/20260913-bulk1": {
+   "batch_dir": "xiaodefa/idx_factor_pro/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 3089,
+    "n_csv": 3088,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 6263526471
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 1404637 行 > 2024-12-31 (max=20260911); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 3089,
+    "bytes": 6263526471
+   },
+   "schema": {
+    "ts_code": "String",
+    "trade_date": "Int64",
+    "open": "Float64",
+    "high": "Float64",
+    "low": "Float64",
+    "close": "Float64",
+    "pre_close": "Float64",
+    "change": "Float64",
+    "pct_change": "Float64",
+    "vol": "Float64",
+    "amount": "Float64",
+    "asi_bfq": "Float64",
+    "asit_bfq": "Float64",
+    "atr_bfq": "Float64",
+    "bbi_bfq": "Float64",
+    "bias1_bfq": "Float64",
+    "bias2_bfq": "Float64",
+    "bias3_bfq": "Float64",
+    "boll_lower_bfq": "Float64",
+    "boll_mid_bfq": "Float64",
+    "boll_upper_bfq": "Float64",
+    "brar_ar_bfq": "Float64",
+    "brar_br_bfq": "Float64",
+    "cci_bfq": "Float64",
+    "cr_bfq": "Float64",
+    "dfma_dif_bfq": "Float64",
+    "dfma_difma_bfq": "Float64",
+    "dmi_adx_bfq": "Float64",
+    "dmi_adxr_bfq": "Float64",
+    "dmi_mdi_bfq": "Float64",
+    "dmi_pdi_bfq": "Float64",
+    "downdays": "Float64",
+    "updays": "Float64",
+    "dpo_bfq": "Float64",
+    "madpo_bfq": "Float64",
+    "ema_bfq_10": "Float64",
+    "ema_bfq_20": "Float64",
+    "ema_bfq_250": "Float64",
+    "ema_bfq_30": "Float64",
+    "ema_bfq_5": "Float64",
+    "ema_bfq_60": "Float64",
+    "ema_bfq_90": "Float64",
+    "emv_bfq": "Float64",
+    "maemv_bfq": "Float64",
+    "expma_12_bfq": "Float64",
+    "expma_50_bfq": "Float64",
+    "kdj_bfq": "Float64",
+    "kdj_d_bfq": "Float64",
+    "kdj_k_bfq": "Float64",
+    "ktn_down_bfq": "Float64",
+    "ktn_mid_bfq": "Float64",
+    "ktn_upper_bfq": "Float64",
+    "lowdays": "Float64",
+    "topdays": "Float64",
+    "ma_bfq_10": "Float64",
+    "ma_bfq_20": "Float64",
+    "ma_bfq_250": "Float64",
+    "ma_bfq_30": "Float64",
+    "ma_bfq_5": "Float64",
+    "ma_bfq_60": "Float64",
+    "ma_bfq_90": "Float64",
+    "macd_bfq": "Float64",
+    "macd_dea_bfq": "Float64",
+    "macd_dif_bfq": "Float64",
+    "mass_bfq": "Float64",
+    "ma_mass_bfq": "Float64",
+    "mfi_bfq": "Float64",
+    "mtm_bfq": "Float64",
+    "mtmma_bfq": "Float64",
+    "obv_bfq": "Float64",
+    "psy_bfq": "Float64",
+    "psyma_bfq": "Float64",
+    "roc_bfq": "Float64",
+    "maroc_bfq": "Float64",
+    "rsi_bfq_12": "Float64",
+    "rsi_bfq_24": "Float64",
+    "rsi_bfq_6": "Float64",
+    "taq_down_bfq": "Float64",
+    "taq_mid_bfq": "Float64",
+    "taq_up_bfq": "Float64",
+    "trix_bfq": "Float64",
+    "trma_bfq": "Float64",
+    "vr_bfq": "Float64",
+    "wr_bfq": "Float64",
+    "wr1_bfq": "Float64",
+    "xsii_td1_bfq": "Float64",
+    "xsii_td2_bfq": "Float64",
+    "xsii_td3_bfq": "Float64",
+    "xsii_td4_bfq": "Float64"
+   },
+   "n_columns": 89,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "close",
+    "open",
+    "high",
+    "low",
+    "pre_close",
+    "vol",
+    "amount",
+    "asi_bfq",
+    "asit_bfq",
+    "atr_bfq",
+    "bbi_bfq",
+    "bias1_bfq",
+    "bias2_bfq",
+    "bias3_bfq",
+    "boll_lower_bfq",
+    "boll_mid_bfq",
+    "boll_upper_bfq",
+    "brar_ar_bfq",
+    "brar_br_bfq",
+    "cci_bfq",
+    "change",
+    "cr_bfq",
+    "dfma_dif_bfq",
+    "dfma_difma_bfq",
+    "dmi_adx_bfq",
+    "dmi_adxr_bfq",
+    "dmi_mdi_bfq",
+    "dmi_pdi_bfq",
+    "downdays",
+    "dpo_bfq",
+    "ema_bfq_10",
+    "ema_bfq_20",
+    "ema_bfq_250",
+    "ema_bfq_30",
+    "ema_bfq_5",
+    "ema_bfq_60",
+    "ema_bfq_90",
+    "emv_bfq",
+    "expma_12_bfq",
+    "expma_50_bfq"
+   ],
+   "rows_total": 7963931,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20140102",
+     "max": "20260911",
+     "rows_gt_20241231": 1404637,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 1404637,
+   "numeric_magnitude": {
+    "close": {
+     "min": 0.0,
+     "max": 186572.5993
+    },
+    "open": {
+     "min": 0.0,
+     "max": 185980.3333
+    },
+    "high": {
+     "min": 0.0,
+     "max": 187830.4857
+    },
+    "low": {
+     "min": 0.0,
+     "max": 182521.8183
+    },
+    "pre_close": {
+     "min": 0.0,
+     "max": 186572.5993
+    },
+    "vol": {
+     "min": 0.0,
+     "max": 21566818678.73
+    },
+    "amount": {
+     "min": 0.0,
+     "max": 73003427272.79
+    },
+    "asi_bfq": {
+     "min": -2352031.5462,
+     "max": 26653836.2688
+    },
+    "asit_bfq": {
+     "min": -1847559.8,
+     "max": 26653836.2688
+    },
+    "atr_bfq": {
+     "min": 0.0,
+     "max": 13334.0545
+    },
+    "bbi_bfq": {
+     "min": 76.355,
+     "max": 178219.2281
+    },
+    "bias1_bfq": {
+     "min": -100.0,
+     "max": 327.28
+    },
+    "bias2_bfq": {
+     "min": -100.0,
+     "max": 540.629
+    },
+    "bias3_bfq": {
+     "min": -100.0,
+     "max": 760.777
+    },
+    "boll_lower_bfq": {
+     "min": -28930.187,
+     "max": 167623.534
+    },
+    "boll_mid_bfq": {
+     "min": 75.999,
+     "max": 176000.506
+    },
+    "boll_upper_bfq": {
+     "min": 76.934,
+     "max": 189020.1
+    },
+    "brar_ar_bfq": {
+     "min": -2141604.9019,
+     "max": 676168.75
+    },
+    "brar_br_bfq": {
+     "min": 0.0,
+     "max": 1065561.9047
+    },
+    "cci_bfq": {
+     "min": -466.6667,
+     "max": 466.6667
+    },
+    "change": {
+     "min": -14321.67,
+     "max": 104665.0558
+    },
+    "cr_bfq": {
+     "min": 0.0,
+     "max": 1000000000.0
+    },
+    "dfma_dif_bfq": {
+     "min": -27168.0342,
+     "max": 41512.6094
+    },
+    "dfma_difma_bfq": {
+     "min": -24797.538,
+     "max": 38179.8006
+    },
+    "dmi_adx_bfq": {
+     "min": 0.0,
+     "max": 100.0
+    },
+    "dmi_adxr_bfq": {
+     "min": 0.0,
+     "max": 100.0
+    },
+    "dmi_mdi_bfq": {
+     "min": 0.0,
+     "max": 730.2216
+    },
+    "dmi_pdi_bfq": {
+     "min": 0.0,
+     "max": 2399.3132
+    },
+    "downdays": {
+     "min": 0.0,
+     "max": 31.0
+    },
+    "dpo_bfq": {
+     "min": -53424.1725,
+     "max": 104288.2126
+    },
+    "ema_bfq_10": {
+     "min": 76.3789,
+     "max": 178626.8263
+    },
+    "ema_bfq_20": {
+     "min": 76.1398,
+     "max": 173519.5503
+    },
+    "ema_bfq_250": {
+     "min": 78.2675,
+     "max": 147038.1847
+    },
+    "ema_bfq_30": {
+     "min": 76.0455,
+     "max": 170437.5767
+    },
+    "ema_bfq_5": {
+     "min": 76.7314,
+     "max": 181985.015
+    },
+    "ema_bfq_60": {
+     "min": 75.9059,
+     "max": 165604.6343
+    },
+    "ema_bfq_90": {
+     "min": 76.0087,
+     "max": 162545.2979
+    },
+    "emv_bfq": {
+     "min": -2944.2825,
+     "max": 1858.236
+    },
+    "expma_12_bfq": {
+     "min": 76.3044,
+     "max": 177376.3463
+    },
+    "expma_50_bfq": {
+     "min": 75.9392,
+     "max": 166862.4161
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "trade_date"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "ts_code": "399322.SZ",
+     "trade_date": "20140102",
+     "open": "3622.129",
+     "high": "3626.723",
+     "low": "3601.914",
+     "close": "3618.23",
+     "pre_close": "3635.463",
+     "change": "-17.233",
+     "pct_change": "-0.474",
+     "vol": "15639640.35",
+     "amount": "17048643.11",
+     "asi_bfq": "-4998.6357",
+     "asit_bfq": "-5218.85844",
+     "atr_bfq": "50.39785",
+     "bbi_bfq": "3625.21919",
+     "bias1_bfq": "0.743",
+     "bias2_bfq": "0.189",
+     "bias3_bfq": "-2.53",
+     "boll_lower_bfq": "3476.122",
+     "boll_mid_bfq": "3688.47",
+     "boll_upper_bfq": "3900.817",
+     "brar_ar_bfq": "95.21792",
+     "brar_br_bfq": "91.87165",
+     "cci_bfq": "-21.12709"
+    },
+    {
+     "ts_code": "h50019.SH",
+     "trade_date": "20140102",
+     "open": "2581.0597",
+     "high": "2582.4212",
+     "low": "2564.7369",
+     "close": "2578.751",
+     "pre_close": "2592.6203",
+     "change": "-13.8693",
+     "pct_change": "-0.535",
+     "vol": "5033258.74",
+     "amount": "5281941.87",
+     "asi_bfq": "-3375.03797",
+     "asit_bfq": "-3154.14416",
+     "atr_bfq": "40.15578",
+     "bbi_bfq": "2591.18467",
+     "bias1_bfq": "0.538",
+     "bias2_bfq": "-0.18",
+     "bias3_bfq": "-3.214",
+     "boll_lower_bfq": "2476.566",
+     "boll_mid_bfq": "2642.671",
+     "boll_upper_bfq": "2808.775",
+     "brar_ar_bfq": "95.1922",
+     "brar_br_bfq": "85.5288",
+     "cci_bfq": "-35.87032"
+    },
+    {
+     "ts_code": "h30366.CSI",
+     "trade_date": "20140102",
+     "open": "2480.36",
+     "high": "2480.36",
+     "low": "2462.354",
+     "close": "2468.652",
+     "pre_close": "2487.583",
+     "change": "-18.931",
+     "pct_change": "-0.761",
+     "vol": "13300611.95",
+     "amount": "8739219.76",
+     "asi_bfq": "-4320.38116",
+     "asit_bfq": "-4291.66778",
+     "atr_bfq": "30.5175",
+     "bbi_bfq": "2483.48931",
+     "bias1_bfq": "0.478",
+     "bias2_bfq": "-0.239",
+     "bias3_bfq": "-3.317",
+     "boll_lower_bfq": "2370.737",
+     "boll_mid_bfq": "2533.396",
+     "boll_upper_bfq": "2696.055",
+     "brar_ar_bfq": "79.20562",
+     "brar_br_bfq": "86.204",
+     "cci_bfq": "-31.99548"
+    },
+    {
+     "ts_code": "h30362.CSI",
+     "trade_date": "20140102",
+     "open": "2752.848",
+     "high": "2752.94",
+     "low": "2732.943",
+     "close": "2741.906",
+     "pre_close": "2760.889",
+     "change": "-18.983",
+     "pct_change": "-0.6876",
+     "vol": "38814657.37",
+     "amount": "37540669.74",
+     "asi_bfq": "-3656.38507",
+     "asit_bfq": "-3458.97669",
+     "atr_bfq": "34.14625",
+     "bbi_bfq": "2754.71561",
+     "bias1_bfq": "0.42",
+     "bias2_bfq": "-0.011",
+     "bias3_bfq": "-2.765",
+     "boll_lower_bfq": "2636.923",
+     "boll_mid_bfq": "2803.095",
+     "boll_upper_bfq": "2969.267",
+     "brar_ar_bfq": "93.15077",
+     "brar_br_bfq": "87.91673",
+     "cci_bfq": "-26.36276"
+    },
+    {
+     "ts_code": "NHCI.NH",
+     "trade_date": "20140102",
+     "open": "1208.27",
+     "high": "1212.83",
+     "low": "1207.35",
+     "close": "1211.58",
+     "pre_close": "1208.4",
+     "change": "3.18",
+     "pct_change": "0.0026",
+     "vol": "79652.64",
+     "amount": null,
+     "asi_bfq": "-735.27487",
+     "asit_bfq": "-659.83439",
+     "atr_bfq": "6.45",
+     "bbi_bfq": "1217.18825",
+     "bias1_bfq": "-0.224",
+     "bias2_bfq": "-0.484",
+     "bias3_bfq": "-1.284",
+     "boll_lower_bfq": "1202.67",
+     "boll_mid_bfq": "1225.698",
+     "boll_upper_bfq": "1248.726",
+     "brar_ar_bfq": "70.98368",
+     "brar_br_bfq": "91.23245",
+     "cci_bfq": "-98.35829"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 3088,
+    "distinct_headers": 1,
+    "modal_header_cols": 89,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "20240523",
+      "manifest_rows": 3245,
+      "actual_rows": 3244
+     },
+     {
+      "chunk": "20160315",
+      "manifest_rows": 1749,
+      "actual_rows": 1748
+     },
+     {
+      "chunk": "20250110",
+      "manifest_rows": 3356,
+      "actual_rows": 3355
+     },
+     {
+      "chunk": "20260908",
+      "manifest_rows": 3392,
+      "actual_rows": 3391
+     },
+     {
+      "chunk": "20190321",
+      "manifest_rows": 2367,
+      "actual_rows": 2366
+     },
+     {
+      "chunk": "20180517",
+      "manifest_rows": 1998,
+      "actual_rows": 1997
+     },
+     {
+      "chunk": "20230512",
+      "manifest_rows": 3077,
+      "actual_rows": 3076
+     },
+     {
+      "chunk": "20171219",
+      "manifest_rows": 1979,
+      "actual_rows": 1978
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 11.8,
+   "finished_at": "2026-09-18T00:07:38"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:38"
+}

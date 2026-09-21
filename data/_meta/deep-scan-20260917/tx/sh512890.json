@@ -1,0 +1,104 @@
+{
+ "source": "tx",
+ "dataset": "sh512890",
+ "batches": {
+  "tx/sh512890/20260904T185659": {
+   "batch_dir": "tx/sh512890/20260904T185659",
+   "mode": "json",
+   "status": "completed",
+   "issues": [
+    {
+     "level": "warning",
+     "code": "meta_row_count_mismatch",
+     "detail": "meta n_rows=1850, 实际解析 1852 行, 其中跨页重复日期 2 行"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_kline_dates_across_pages",
+     "detail": "跨页重复日期 2 行, 例: ['20200205', '20230522']"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "407 个记录日期 > 2024-12-31 (max=20260904); 冻结边界: 只报告"
+    }
+   ],
+   "inventory_registration": {
+    "files": 4,
+    "bytes": 116142
+   },
+   "files": {
+    "n_total": 4,
+    "response_pages": [
+     "response_000.json",
+     "response_001.json",
+     "response_002.json"
+    ],
+    "total_bytes": 116142
+   },
+   "duplicate_date_rows": 2,
+   "rows_total": 1852,
+   "date_coverage": {
+    "record_date": {
+     "min": "20190118",
+     "max": "20260904",
+     "rows_gt_20241231": 407
+    }
+   },
+   "numeric_magnitude": {
+    "close": {
+     "min": 0.5,
+     "median": 0.847,
+     "max": 1.243
+    }
+   },
+   "sample_rows": [
+    {
+     "date": "2023-05-22",
+     "ohlc": [
+      "0.939",
+      "0.939",
+      "0.944",
+      "0.935"
+     ],
+     "volume": "331878.000"
+    },
+    {
+     "date": "2023-05-23",
+     "ohlc": [
+      "0.941",
+      "0.926",
+      "0.942",
+      "0.925"
+     ],
+     "volume": "574354.000"
+    },
+    {
+     "date": "2023-05-24",
+     "ohlc": [
+      "0.924",
+      "0.913",
+      "0.924",
+      "0.910"
+     ],
+     "volume": "610148.000"
+    },
+    {
+     "date": "2023-05-25",
+     "ohlc": [
+      "0.912",
+      "0.907",
+      "0.914",
+      "0.897"
+     ],
+     "volume": "454978.000"
+    }
+   ],
+   "sha256_verified_pages": 1,
+   "sha256_concat_ok": false,
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:54"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:54"
+}

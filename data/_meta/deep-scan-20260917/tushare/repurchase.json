@@ -1,0 +1,241 @@
+{
+ "source": "tushare",
+ "dataset": "repurchase",
+ "batches": {
+  "tushare/repurchase/20260909-r3": {
+   "batch_dir": "tushare/repurchase/20260909-r3",
+   "mode": "full",
+   "files": {
+    "n_total": 130,
+    "n_csv": 129,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 3854047
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 ann_date 有 12625 行 > 2024-12-31 (max=20260909); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['ts_code', 'ann_date'] 重复: 2289 个键 / 5195 行"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 130,
+    "bytes": 3854047
+   },
+   "schema": {
+    "ts_code": "String",
+    "ann_date": "Int64",
+    "end_date": "Int64",
+    "proc": "String",
+    "exp_date": "Int64",
+    "vol": "Float64",
+    "amount": "Float64",
+    "high_limit": "Float64",
+    "low_limit": "Float64"
+   },
+   "n_columns": 9,
+   "date_columns": [
+    "ann_date",
+    "end_date",
+    "exp_date"
+   ],
+   "numeric_columns_checked": [
+    "vol",
+    "amount",
+    "ann_date",
+    "end_date",
+    "exp_date",
+    "high_limit",
+    "low_limit"
+   ],
+   "rows_total": 61718,
+   "date_coverage": {
+    "ann_date": {
+     "min": "20160104",
+     "max": "20260909",
+     "rows_gt_20241231": 12625,
+     "null_rows": 0
+    },
+    "end_date": {
+     "min": "20151231",
+     "max": "20260911",
+     "rows_gt_20241231": 8490,
+     "null_rows": 22777
+    },
+    "exp_date": {
+     "min": "20160618",
+     "max": "20270917",
+     "rows_gt_20241231": 2209,
+     "null_rows": 56334
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 12625,
+   "numeric_magnitude": {
+    "vol": {
+     "min": 1.0,
+     "max": 1955575624.0
+    },
+    "amount": {
+     "min": -79080.0,
+     "max": 40000000000.0
+    },
+    "ann_date": {
+     "min": 20160104.0,
+     "max": 20260909.0
+    },
+    "end_date": {
+     "min": 20151231.0,
+     "max": 20260911.0
+    },
+    "exp_date": {
+     "min": 20160618.0,
+     "max": 20270917.0
+    },
+    "high_limit": {
+     "min": -0.88,
+     "max": 1863.67
+    },
+    "low_limit": {
+     "min": -0.88,
+     "max": 1585.17
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "ann_date"
+   ],
+   "duplicate_keys": 2289,
+   "duplicate_rows": 5195,
+   "sample_rows": [
+    {
+     "ts_code": "002261.SZ",
+     "ann_date": "20160104",
+     "end_date": "20151231",
+     "proc": "完成",
+     "exp_date": null,
+     "vol": "297200.0",
+     "amount": "2897700.0",
+     "high_limit": "9.75",
+     "low_limit": "9.75"
+    },
+    {
+     "ts_code": "002591.SZ",
+     "ann_date": "20160104",
+     "end_date": "20151231",
+     "proc": "完成",
+     "exp_date": null,
+     "vol": "1532983.0",
+     "amount": "4108050.0",
+     "high_limit": "2.68",
+     "low_limit": "2.68"
+    },
+    {
+     "ts_code": "002250.SZ",
+     "ann_date": "20160105",
+     "end_date": "20151231",
+     "proc": "完成",
+     "exp_date": null,
+     "vol": "240000.0",
+     "amount": "1720800.0",
+     "high_limit": "7.17",
+     "low_limit": "7.17"
+    },
+    {
+     "ts_code": "002399.SZ",
+     "ann_date": "20160105",
+     "end_date": "20151231",
+     "proc": "完成",
+     "exp_date": null,
+     "vol": "4001994.0",
+     "amount": "116062642.94",
+     "high_limit": "30.16",
+     "low_limit": "25.53"
+    },
+    {
+     "ts_code": "400221",
+     "ann_date": "20160105",
+     "end_date": null,
+     "proc": "预案",
+     "exp_date": null,
+     "vol": null,
+     "amount": "611230.0",
+     "high_limit": "6.434",
+     "low_limit": "6.434"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 129,
+    "distinct_headers": 1,
+    "modal_header_cols": 9,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "201810",
+      "manifest_rows": 552,
+      "actual_rows": 551
+     },
+     {
+      "chunk": "202208",
+      "manifest_rows": 452,
+      "actual_rows": 451
+     },
+     {
+      "chunk": "202107",
+      "manifest_rows": 428,
+      "actual_rows": 427
+     },
+     {
+      "chunk": "202101",
+      "manifest_rows": 458,
+      "actual_rows": 457
+     },
+     {
+      "chunk": "201602",
+      "manifest_rows": 39,
+      "actual_rows": 38
+     },
+     {
+      "chunk": "201901",
+      "manifest_rows": 647,
+      "actual_rows": 646
+     },
+     {
+      "chunk": "202312",
+      "manifest_rows": 866,
+      "actual_rows": 865
+     },
+     {
+      "chunk": "202301",
+      "manifest_rows": 274,
+      "actual_rows": 273
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 0.1,
+   "finished_at": "2026-09-18T00:09:43"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:43"
+}

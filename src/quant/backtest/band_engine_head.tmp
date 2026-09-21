@@ -1,0 +1,1170 @@
+"""P3 band-contract backtest engine -- v1 (dual-session, clip accounting).
+
+Contract authority: ``docs/plans/p3-band-contract.md`` section 7 (v1, frozen
+2026-09-18 after user alignment); v0 section 1 semantics are preserved except
+where section 7 amends them (amendments listed below and in the module-level
+v0->v1 difference table).  The engine implements EXECUTION AND ACCOUNTING
+ONLY: it consumes a signal table plus market tables and returns fills, an
+event log, a daily account curve and disclosure statistics.  No strategy
+judgement; zero trial consumption.
+
+v1 semantics (section 7)
+------------------------
+- Time structure: each trading day has two sessions, S_am (09:30-11:30) and
+  S_pm (13:00-15:00), and two symmetric decision points (after each session
+  close).  A decision at (D, 'am') hangs orders live at (D, 'pm'); a decision
+  at (D, 'pm') hangs orders live at (next trading day, 'am').  Every order is
+  a HALF-DAY limit order: unfilled at its session end it expires (session
+  granularity of the v0 day-order rule).  Re-hanging/re-anchoring is the
+  host's job at the next decision point (section 7.5 mechanical re-anchor);
+  the same (symbol, side, intent) re-issued at consecutive decision points
+  continues one standing order for risk sells (K streak), see below.
+- Fill determination on HALF-DAY bar extremes: a buy fills when the session
+  low < p (strict) at price p; a sell fills when the session high > q at
+  price q; gaps fill AT the limit (conservative); a session without a bar
+  (suspension) voids the order for that session.
+- Anchors/marks bridge (section 7.4): the 15:00 decision anchor is the
+  OFFICIAL baostock daily close (supplied by the caller), the 11:30 decision
+  anchor is am.close; DAILY VALUATION ALWAYS USES THE OFFICIAL DAILY CLOSE
+  (never pm.close -- before 2018-08-20 the SSE official close is a
+  volume-weighted tail price that pm.close must not impersonate).  The
+  loader-level ``assert_daily_halfday_bridge`` pins half-day extremes inside
+  the official daily range and pm.close == daily.close from the cutoff on.
+- Positions are clip lists (shares + acquisition date).  Buys add clips;
+  sells consume FIFO from the SELLABLE clips: acquisition date < today for
+  stocks and T+1 ETFs; T+0 instruments (is_t0) may sell same-day clips.
+  Corporate-action odd lots created today are sellable today in one order.
+- T+1 per clip: shares bought in ANY session of D cannot be sold on D
+  (unless is_t0).
+- Sale proceeds settle one SESSION later: fills in S_am are available for
+  buys from S_pm the same day; fills in S_pm from the next day's S_am.  A
+  same-session sell->buy path is forbidden (unobservable intraday ordering).
+  This refines v0's next-day rule (fidelity fix, disclosed).
+- K=3 fallback is session-based and intent-split: risk-intent sells
+  (intent='risk') unfilled for 3 consecutive live sessions are market-exited
+  at the NEXT session's open (opening limit-down defers; DAILY limit prices
+  shared by both sessions); a suspended session freezes the streak.
+  profit-intent sells (intent='profit') expire silently at session end, no
+  fallback.  Streak continuity: a risk sell re-issued at every consecutive
+  decision point keeps its streak across re-anchors; a decision point
+  without a re-issue drops the standing order.
+- Caps (section 7.3): single-name MV <= 25% of equity, total MV <= 100%
+  (with fee reserve).  Enforced at fill evaluation against the last
+  COMPLETED day's official-close marks (no intraday look-ahead);
+  breaching orders are voided for that session.
+- Fees: commission max(wan1 x notional, 5 CNY) both legs; sell stamp
+  segmented (0.1% before 2023-08-28, 0.05% from) for STOCKS ONLY -- ETFs
+  (is_etf) are exempt; transfer fee not modelled.  Notional > 50,000 CNY
+  raises the standing cash-basis warning.
+- Corporate actions (v0, preserved): share multipliers ONLY from
+  split_factor (per-event ratios, half-up per clip); cash dividends from
+  dividends.h5 per-lot terms credited pre-tax on the PRE-ex share count;
+  pure-dividend ex-dates leave share counts unchanged; ex_cum_factor is
+  forbidden as an account input (audit loader kept).
+- Freeze: every input frame is hard-checked to <= 2024-12-31.
+
+v0 -> v1 difference table (also mirrored in run manifests)
+----------------------------------------------------------
+1. Day orders with multi-day re-hang/expiry/replacement chains -> half-day
+   orders living exactly one session; expiry_date/replaced_at removed
+   (host re-issues per decision point, section 7.5).
+2. Single 15:00-style close decision -> symmetric 11:30/15:00 decision
+   points; signals gain decision_session ('am' = 11:30 decision, live same
+   day S_pm; 'pm' = 15:00 decision, live next day S_am).
+3. Fill bars: official daily extremes -> half-day session extremes
+   (conservative subset; gaps fill at the limit).
+4. Sell re-anchoring: v0 engine re-anchored to the latest close internally;
+   v1 anchors are host-supplied per decision point (official close / am
+   close) and re-anchoring happens through new rows (mechanical re-anchor).
+5. T+1: v0 deferred whole sell orders on same-day buys -> v1 clip-level
+   acquisition dates (per-name T+0 flag), which resolves the same-bar
+   conflict the v0 deferral conservatively approximated; the v0
+   buy-conflict deferral rule is therefore retired.
+6. Sale proceeds: next DAY -> next SESSION (am fills usable same-day pm).
+7. K=3: days -> sessions; intent='risk' keeps the fallback, intent='profit'
+   expires silently (new).
+8. Positions: single quantity -> clip list with FIFO consumption (new).
+9. New caps: single-name 25% / total 100% with fee reserve (section 7.3).
+10. New instrument flags: is_etf (stamp exempt), is_t0 (same-day sellable).
+11. Fill-lag disclosure retired (a single-session order cannot lag);
+    replaced by risk-sell streak statistics.
+12. Engine now consumes TWO bar tables (official daily + half-day) with a
+    loader-level bridge assertion.
+
+Accounting layer: pure Polars/numpy session loop (v0 rationale unchanged).
+"""
+
+from __future__ import annotations
+
+import bisect
+import math
+from dataclasses import dataclass
+from datetime import date, datetime
+from pathlib import Path
+
+import numpy as np
+import polars as pl
+
+__all__ = [
+    "FREEZE_END",
+    "STAMP_BOUNDARY",
+    "K_FALLBACK_SESSIONS",
+    "LIMIT_DOWN_TOL",
+    "LOT",
+    "COMMISSION_WARNING_NOTIONAL",
+    "PM_CLOSE_OFFICIAL_CUTOFF",
+    "CAP_SINGLE_NAME",
+    "CAP_TOTAL",
+    "BandContractError",
+    "BandResult",
+    "FeeModel",
+    "assert_frozen",
+    "assert_daily_halfday_bridge",
+    "batch_aggregate_sha256",
+    "load_daily_panel",
+    "load_dividends_h5",
+    "load_ex_cum_factor_h5",
+    "load_halfday_bars",
+    "load_stk_limit_batch",
+    "load_split_factor_h5",
+    "run_band_backtest",
+    "stamp_rate",
+]
+
+# --- frozen contract constants -------------------------------------------
+FREEZE_END = date(2024, 12, 31)
+STAMP_BOUNDARY = date(2023, 8, 28)
+K_FALLBACK_SESSIONS = 3     # risk sell: consecutive unfilled sessions
+LIMIT_DOWN_TOL = 1e-4       # opening limit-down tolerance band
+LOT = 100
+COMMISSION_WARNING_NOTIONAL = 50_000.0
+PM_CLOSE_OFFICIAL_CUTOFF = date(2018, 8, 20)  # from here official close == pm close
+CAP_SINGLE_NAME = 0.25      # section 7.3: single-name MV <= 25% equity
+CAP_TOTAL = 1.00            # section 7.3: total MV <= 100% (with fee reserve)
+_FLOAT_TOL = 1e-9
+
+
+class BandContractError(ValueError):
+    """Raised on contract violations in inputs or internal invariants."""
+
+
+def _as_date(value: object, field: str) -> date:
+    if isinstance(value, datetime):
+        return value.date()
+    if isinstance(value, date):
+        return value
+    raise BandContractError(f"{field} must be a datetime.date, got {type(value).__name__}")
+
+
+def _dint(value: date) -> int:
+    return value.year * 10_000 + value.month * 100 + value.day
+
+
+def stamp_rate(day: date) -> float:
+    """Stock sell-leg stamp tax rate by fill date (ETFs are exempt)."""
+    return 0.001 if day < STAMP_BOUNDARY else 0.0005
+
+
+@dataclass(frozen=True)
+class FeeModel:
+    """Contract fee schedule (v1).  Transfer fee intentionally not modelled."""
+
+    commission_rate: float = 1e-4        # 万1
+    commission_min: float = 5.0          # yuan, per fill
+    stamp_sell_before: float = 0.001     # strictly before STAMP_BOUNDARY
+    stamp_sell_from: float = 0.0005      # on/after STAMP_BOUNDARY
+    stamp_boundary: date = STAMP_BOUNDARY
+
+    def commission(self, notional: float) -> float:
+        return max(self.commission_rate * notional, self.commission_min)
+
+    def stamp_sell(self, day: date, notional: float, is_etf: bool) -> float:
+        if is_etf:
+            return 0.0                   # section 7.4: ETFs exempt from stamp
+        rate = self.stamp_sell_before if day < self.stamp_boundary else self.stamp_sell_from
+        return rate * notional
+
+
+# --- freeze guard + loaders ------------------------------------------------
+
+def assert_frozen(frame: pl.DataFrame, column: str, name: str) -> None:
+    """Hard abort if any date in ``column`` exceeds the 2024-12-31 freeze line."""
+    if column not in frame.columns:
+        raise BandContractError(f"{name}: missing required date column {column!r}")
+    dtype = frame.schema[column]
+    if not (isinstance(dtype, pl.datatypes.Datetime) or dtype == pl.Date):
+        raise BandContractError(f"{name}.{column} must be Date/Datetime, got {dtype}")
+    if frame.height == 0:
+        return
+    worst = frame[column].max()
+    if worst is None:          # all-null optional column
+        return
+    worst_d = _as_date(worst, f"{name}.{column}")
+    if worst_d > FREEZE_END:
+        n_bad = frame.filter(pl.col(column) > FREEZE_END).height
+        raise BandContractError(
+            f"freeze violation in {name}.{column}: max {worst_d.isoformat()} > "
+            f"{FREEZE_END.isoformat()} ({n_bad} rows). 2025+ data must be "
+            f"filtered at the read layer; refusing to compute.")
+
+
+def load_daily_panel(parquet_path: Path | str) -> tuple[pl.DataFrame, dict]:
+    """Read the standardized daily parquet, filter to <= 2024-12-31, hard-check."""
+    frame = pl.read_parquet(parquet_path)
+    before = frame.height
+    frame = frame.filter(pl.col("date") <= FREEZE_END)
+    assert_frozen(frame, "date", "daily")
+    meta = {"path": str(parquet_path), "rows_total": before,
+            "rows_after_freeze_filter": frame.height,
+            "rows_dropped_by_freeze": before - frame.height}
+    return frame, meta
+
+
+def load_halfday_bars(batch_dir: Path | str) -> tuple[pl.DataFrame, dict]:
+    """Read the half-day bar batch (year=YYYY/bars.parquet hive partitions),
+    filter to <= 2024-12-31, hard-check.  Columns: symbol, trade_date,
+    session('am'/'pm'), open, high, low, close, volume, amount, n_minutes,
+    n_minutes_expected, partial."""
+    folder = Path(batch_dir)
+    parts = sorted(folder.glob("year=*/bars.parquet"))
+    if not parts:
+        raise BandContractError(f"no year=*/bars.parquet partitions under {folder}")
+    frames = []
+    rows_total = 0
+    for part in parts:
+        frame = pl.read_parquet(part)
+        rows_total += frame.height
+        frame = frame.filter(pl.col("trade_date") <= FREEZE_END)
+        frames.append(frame)
+    half = pl.concat(frames, how="vertical")
+    assert_frozen(half, "trade_date", "halfday")
+    bad_session = half.filter(~pl.col("session").is_in(["am", "pm"]))
+    if bad_session.height:
+        raise BandContractError(
+            f"halfday: {bad_session.height} rows with session not in (am, pm)")
+    meta = {"batch": str(folder), "partitions": len(parts),
+            "rows_total": rows_total, "rows_after_freeze_filter": half.height}
+    return half, meta
+
+
+def assert_daily_halfday_bridge(
+    daily: pl.DataFrame,
+    halfday: pl.DataFrame,
+    *,
+    cutoff: date = PM_CLOSE_OFFICIAL_CUTOFF,
+    tol: float = 1e-6,
+) -> dict:
+    """Section 7.4 bridge assertions between the official daily table and the
+    half-day bar table (fail-closed):
+
+    - for every (symbol, date) present in both: am/pm high <= daily.high,
+      am/pm low >= daily.low (the half-day extremes are a conservative subset),
+      and am/pm close inside the daily range;
+    - from ``cutoff`` (2018-08-20, SSE closing-price reform) pm.close must
+      equal the official daily close (last-minute close convention);
+      before the cutoff the two legitimately differ (official close was a
+      volume-weighted tail price) -- the mismatch count is DISCLOSED, never
+      used as a mark.
+    """
+    need_d = {"symbol", "date", "high", "low", "close"}
+    need_h = {"symbol", "trade_date", "session", "high", "low", "close"}
+    for col in need_d:
+        if col not in daily.columns:
+            raise BandContractError(f"bridge: daily missing column {col!r}")
+    for col in need_h:
+        if col not in halfday.columns:
+            raise BandContractError(f"bridge: halfday missing column {col!r}")
+    j = (halfday.join(
+        daily.select(pl.col("symbol"), pl.col("date"),
+                     pl.col("high").alias("d_high"),
+                     pl.col("low").alias("d_low"),
+                     pl.col("close").alias("d_close")),
+        left_on=["symbol", "trade_date"], right_on=["symbol", "date"],
+        how="inner"))
+    range_bad = j.filter(
+        (pl.col("high") > pl.col("d_high") + tol)
+        | (pl.col("low") < pl.col("d_low") - tol)
+        | (pl.col("close") > pl.col("d_high") + tol)
+        | (pl.col("close") < pl.col("d_low") - tol))
+    if range_bad.height:
+        samples = range_bad.select("symbol", "trade_date", "session").head(5).to_dicts()
+        raise BandContractError(
+            f"bridge violation: {range_bad.height} half-day bars outside the "
+            f"official daily range; samples {samples}")
+    post = j.filter(pl.col("trade_date") >= cutoff)
+    pm_mismatch_post = post.filter(
+        (pl.col("close") - pl.col("d_close")).abs() > tol)
+    if pm_mismatch_post.height:
+        samples = pm_mismatch_post.select("symbol", "trade_date", "session",
+                                          "close", "d_close").head(5).to_dicts()
+        raise BandContractError(
+            f"bridge violation: {pm_mismatch_post.height} pm closes differ "
+            f"from the official daily close on/after {cutoff.isoformat()} "
+            f"(official close == last-minute close from the reform); "
+            f"samples {samples}")
+    pre = j.filter(pl.col("trade_date") < cutoff)
+    pm_mismatch_pre = pre.filter(
+        (pl.col("close") - pl.col("d_close")).abs() > tol).height
+    return {"rows_checked": j.height,
+            "range_violations": 0,
+            "pm_close_mismatches_pre_cutoff": int(pm_mismatch_pre),
+            "pm_close_mismatches_post_cutoff": 0,
+            "cutoff": cutoff.isoformat(),
+            "note": "pre-cutoff pm.close != official close is the REGISTERED "
+                    "reason pm.close must never be a mark or a 15:00 anchor"}
+
+
+def load_stk_limit_batch(batch_dir: Path | str) -> tuple[pl.DataFrame, dict]:
+    """Read every chunk_*.csv of a tushare stk_limit batch (sorted), map
+    ts_code -> repo symbol, parse trade_date, filter to <= 2024-12-31.
+    NOTE: returns the raw tushare column names up_limit/down_limit; callers
+    bridge to the engine's limit_up/limit_down (finding ENGINE-2)."""
+    folder = Path(batch_dir)
+    frames = []
+    for chunk in sorted(folder.glob("chunk_*.csv")):
+        try:
+            part = pl.read_csv(chunk, schema_overrides={
+                "trade_date": pl.Int64, "ts_code": pl.Utf8,
+                "up_limit": pl.Float64, "down_limit": pl.Float64})
+        except pl.exceptions.NoDataError:
+            continue
+        # CRLF-safe: the last column name arrives as 'down_limit\r'; the
+        # schema_overrides above then miss it, so normalize names AND cast.
+        part = part.rename({c: c.strip() for c in part.columns})
+        part = part.with_columns(
+            pl.col("trade_date").cast(pl.Int64),
+            pl.col("ts_code").cast(pl.Utf8),
+            pl.col("up_limit").cast(pl.Float64),
+            pl.col("down_limit").cast(pl.Float64))
+        code_ex = pl.col("ts_code").str.split(".")
+        part = part.with_columns(
+            (code_ex.list[1].str.to_lowercase() + "." + code_ex.list[0]).alias("symbol"),
+            pl.col("trade_date").cast(pl.String).str.to_date("%Y%m%d").alias("date"),
+        ).select("symbol", "date", "up_limit", "down_limit")
+        frames.append(part)
+    if not frames:
+        raise BandContractError(f"no stk_limit chunks found under {folder}")
+    frame = pl.concat(frames, how="vertical")
+    before = frame.height
+    frame = frame.filter(pl.col("date") <= FREEZE_END).sort("symbol", "date")
+    assert_frozen(frame, "date", "stk_limit")
+    meta = {"batch": str(folder), "chunks": len(frames), "rows_total": before,
+            "rows_after_freeze_filter": frame.height}
+    return frame, meta
+
+
+def load_split_factor_h5(h5_path: Path | str) -> tuple[pl.DataFrame, dict]:
+    """Read the rqalpha split_factor.h5 (true A-share 送转 share ratios) into a
+    long frame (symbol, ex_date, split_factor) for the account path (F1).
+
+    Row semantics: ``split_factor`` is the PER-EVENT multiplier applied to the
+    position quantity on that ex-date (bundle generator writes 1 + stk_div;
+    same-day rows compound).  Values are NEVER differenced against
+    neighbouring rows, so a position crossing the FIRST change-point scales
+    by exactly that row's ratio -- the full-history-cumulative failure mode
+    of ex_cum_factor (F2) cannot occur.  Anchor rows (ex_date == 0) are
+    anchors, not events, and are dropped here."""
+    import h5py  # local import: only the loader needs it
+
+    out: list[pl.DataFrame] = []
+    keys = 0
+    anchors_dropped = 0
+    with h5py.File(h5_path, "r") as h5:
+        for oid in sorted(h5):
+            keys += 1
+            arr = h5[oid][:]
+            dates = arr["ex_date"].astype(np.int64)
+            vals = arr["split_factor"].astype(np.float64)
+            keep = dates > 0
+            anchors_dropped += int((~keep).sum())
+            dates, vals = dates[keep], vals[keep]
+            if len(dates) == 0:
+                continue
+            d = dates // 1_000_000
+            out.append(pl.DataFrame({
+                "symbol": [_oid_to_symbol(oid)] * len(d),
+                "ex_date": [date(int(x) // 10_000, int(x) // 100 % 100, int(x) % 100)
+                            for x in d],
+                "split_factor": vals,
+            }))
+    if not out:
+        frame = pl.DataFrame(schema={"symbol": pl.String, "ex_date": pl.Date,
+                                     "split_factor": pl.Float64})
+    else:
+        frame = pl.concat(out, how="vertical").filter(pl.col("ex_date") <= FREEZE_END)
+        frame = frame.sort("symbol", "ex_date")
+    assert_frozen(frame, "ex_date", "split_factor")
+    meta = {"path": str(h5_path), "keys": keys, "rows": frame.height,
+            "anchor_rows_dropped": anchors_dropped}
+    return frame, meta
+
+
+def load_dividends_h5(h5_path: Path | str) -> tuple[pl.DataFrame, dict]:
+    """Read the rqalpha dividends.h5 into a long frame (symbol, ex_date,
+    cash_per_lot_pre_tax, round_lot).  ``dividend_cash_before_tax`` is PER
+    ROUND LOT pre-tax (bundle: per-share cash_div x round_lot; verified
+    sh.600000 2022-07-21: 41.0 = 0.41 yuan/share x 100)."""
+    import h5py  # local import: only the loader needs it
+
+    out: list[pl.DataFrame] = []
+    keys = 0
+    bad_lot_rows = 0
+    with h5py.File(h5_path, "r") as h5:
+        for oid in sorted(h5):
+            keys += 1
+            arr = h5[oid][:]
+            ex = arr["ex_dividend_date"].astype(np.int64)
+            cash = arr["dividend_cash_before_tax"].astype(np.float64)
+            lot = arr["round_lot"].astype(np.int64)
+            keep = ex > 0
+            ex, cash, lot = ex[keep], cash[keep], lot[keep]
+            if len(ex) == 0:
+                continue
+            bad_lot_rows += int((lot <= 0).sum())
+            out.append(pl.DataFrame({
+                "symbol": [_oid_to_symbol(oid)] * len(ex),
+                "ex_date": [date(int(x) // 10_000, int(x) // 100 % 100, int(x) % 100)
+                            for x in ex],
+                "cash_per_lot_pre_tax": cash,
+                "round_lot": lot,
+            }))
+    if bad_lot_rows:
+        raise BandContractError(
+            f"dividends.h5: {bad_lot_rows} rows with round_lot <= 0 cannot be "
+            "converted to a per-share amount")
+    if not out:
+        frame = pl.DataFrame(schema={"symbol": pl.String, "ex_date": pl.Date,
+                                     "cash_per_lot_pre_tax": pl.Float64,
+                                     "round_lot": pl.Int64})
+    else:
+        frame = pl.concat(out, how="vertical").filter(pl.col("ex_date") <= FREEZE_END)
+        frame = frame.sort("symbol", "ex_date")
+    assert_frozen(frame, "ex_date", "dividends")
+    meta = {"path": str(h5_path), "keys": keys, "rows": frame.height}
+    return frame, meta
+
+
+def load_ex_cum_factor_h5(h5_path: Path | str) -> tuple[pl.DataFrame, dict]:
+    """AUDIT-ONLY loader (F1): ex_cum_factor is a PRICE-adjustment chain that
+    embeds cash dividends -- it must never enter the account path (contract
+    section 1.3/7).  Kept solely for read-only cross-checks."""
+    import h5py  # local import: only the loader needs it
+
+    out: list[pl.DataFrame] = []
+    keys = 0
+    with h5py.File(h5_path, "r") as h5:
+        for oid in sorted(h5):
+            keys += 1
+            arr = h5[oid][:]
+            starts = arr["start_date"].astype(np.int64) // 1_000_000
+            vals = arr["ex_cum_factor"].astype(np.float64)
+            keep = starts > 0
+            starts, vals = starts[keep], vals[keep]
+            if len(starts) == 0:
+                continue
+            out.append(pl.DataFrame({
+                "symbol": [_oid_to_symbol(oid)] * len(starts),
+                "ex_date": [date(int(s) // 10_000, int(s) // 100 % 100, int(s) % 100)
+                            for s in starts],
+                "cum_factor": vals,
+            }))
+    if not out:
+        raise BandContractError(f"no ex_cum_factor rows under {h5_path}")
+    frame = pl.concat(out, how="vertical").filter(pl.col("ex_date") <= FREEZE_END)
+    frame = frame.sort("symbol", "ex_date")
+    assert_frozen(frame, "ex_date", "ex_cum_factor")
+    meta = {"path": str(h5_path), "keys": keys, "rows": frame.height}
+    return frame, meta
+
+
+def _oid_to_symbol(oid: str) -> str:
+    """rqalpha order_book_id '600000.XSHG' -> repo symbol 'sh.600000'."""
+    code, exchange = oid.split(".")
+    market = {"XSHG": "sh", "XSHE": "sz"}.get(exchange, exchange[:2].lower())
+    return f"{market}.{code}"
+
+
+def batch_aggregate_sha256(batch_dir: Path | str) -> dict:
+    """Aggregate identity of a data batch: sha256 over the sorted-file
+    manifest lines ``"<sha256>  <name>\\n"`` (files sorted by name)."""
+    import hashlib
+
+    folder = Path(batch_dir)
+    files = sorted(p for p in folder.rglob("*") if p.is_file())
+    h = hashlib.sha256()
+    total_bytes = 0
+    for p in files:
+        fh = hashlib.sha256()
+        with p.open("rb") as stream:
+            for chunk in iter(lambda: stream.read(1 << 20), b""):
+                fh.update(chunk)
+        h.update(f"{fh.hexdigest()}  {p.relative_to(folder).as_posix()}\n".encode("utf-8"))
+        total_bytes += p.stat().st_size
+    return {"rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+            "aggregate_sha256": h.hexdigest(),
+            "files": len(files), "total_bytes": total_bytes}
+
+
+# --- internal state ---------------------------------------------------------
+
+@dataclass
+class _Clip:
+    shares: int
+    acquired: date
+    seq: int                 # insertion order (FIFO tie-break)
+
+
+@dataclass
+class BandResult:
+    """Engine output: fills, session-event log, daily account curve,
+    final clips, disclosure statistics and warnings."""
+
+    fills: pl.DataFrame
+    events: pl.DataFrame
+    daily: pl.DataFrame
+    clips_final: pl.DataFrame
+    stats: dict
+    warnings: list[str]
+
+
+_FILL_SCHEMA = {
+    "fill_id": pl.String, "order_id": pl.String, "symbol": pl.String,
+    "side": pl.String, "intent": pl.String, "fill_type": pl.String,
+    "date": pl.Date, "session": pl.String, "decision_date": pl.Date,
+    "decision_session": pl.String, "priority": pl.Int64, "shares": pl.Int64,
+    "price": pl.Float64, "notional": pl.Float64, "commission": pl.Float64,
+    "stamp_tax": pl.Float64, "fees_total": pl.Float64,
+    "net_cash_flow": pl.Float64, "is_etf": pl.Boolean, "detail": pl.String,
+}
+_EVENT_SCHEMA = {
+    "date": pl.Date, "session": pl.String, "symbol": pl.String,
+    "side": pl.String, "intent": pl.String, "order_id": pl.String,
+    "event": pl.String, "priority": pl.Int64, "limit_price": pl.Float64,
+    "ref_price": pl.Float64, "shares": pl.Int64, "ratio": pl.Float64,
+    "cash_amount": pl.Float64, "detail": pl.String,
+}
+_DAILY_SCHEMA = {
+    "date": pl.Date, "settled_cash": pl.Float64, "pending_am_to_pm": pl.Float64,
+    "pending_next_day": pl.Float64, "positions_value": pl.Float64,
+    "equity": pl.Float64, "n_positions": pl.Int64,
+}
+_CLIP_SCHEMA = {
+    "symbol": pl.String, "shares": pl.Int64, "acquired": pl.Date,
+    "last_close": pl.Float64, "market_value": pl.Float64,
+}
+
+
+def _frame(rows: list[dict], schema: dict) -> pl.DataFrame:
+    if rows:
+        # ENGINE-1 fix (authorized by the orchestrator 2026-09-18 14:56):
+        # construct with the DECLARED schema instead of polars first-100-row
+        # type inference.  Production-scale event logs first see corp-action
+        # ratio/cash values beyond the inference window, and appending f64
+        # into a Null-typed builder crashed the run (finding ENGINE-1,
+        # adjudication run 20260918T143931-p3r1-dev-43b7).  Same values,
+        # typed per this module's own constants -- semantics null.
+        return pl.DataFrame(rows, schema=schema)
+    return pl.DataFrame(schema=schema)
+
+
+# --- input validation ------------------------------------------------------
+
+_SIGNAL_REQUIRED = ("symbol", "decision_date", "decision_session", "side",
+                    "anchor_price", "priority")
+
+
+def _check_date_col(frame: pl.DataFrame, column: str, name: str) -> None:
+    if column not in frame.columns:
+        raise BandContractError(f"{name}: missing required column {column!r}")
+    dtype = frame.schema[column]
+    if not (isinstance(dtype, pl.datatypes.Datetime) or dtype == pl.Date):
+        raise BandContractError(f"{name}.{column} must be Date/Datetime, got {dtype}")
+
+
+@dataclass
+class _Order:
+    order_id: str
+    symbol: str
+    side: str                    # 'buy' | 'sell'
+    intent: str                  # '' | 'risk' | 'profit'
+    decision_date: date
+    decision_session: str        # 'am' | 'pm'
+    live_date: date
+    live_session: str            # 'am' | 'pm'
+    anchor_price: float
+    priority: int
+    target_notional: float | None
+    shares: int | None
+    closed: bool = False
+    close_reason: str = ""
+
+
+def _validate_signals(signals: pl.DataFrame, symbols_in_panel: set[str],
+                      half_symbols: set[str]) -> list[_Order]:
+    for col in _SIGNAL_REQUIRED:
+        if col not in signals.columns:
+            raise BandContractError(f"signals: missing required column {col!r}")
+    _check_date_col(signals, "decision_date", "signals")
+    rows = signals.iter_rows(named=True)
+    orders: list[_Order] = []
+    seen: set[tuple] = set()
+    for row in rows:
+        symbol = row["symbol"]
+        side = row["side"]
+        d_session = row["decision_session"]
+        decision_date = _as_date(row["decision_date"], "signals.decision_date")
+        if side not in ("buy", "sell"):
+            raise BandContractError(f"signals.side must be 'buy'/'sell', got {side!r}")
+        if d_session not in ("am", "pm"):
+            raise BandContractError(
+                f"signals.decision_session must be 'am'/'pm', got {d_session!r}")
+        intent = row.get("intent")
+        intent = "" if intent is None else str(intent)
+        if side == "sell" and intent not in ("risk", "profit"):
+            raise BandContractError(
+                f"sell signal {symbol} {decision_date}: intent must be "
+                f"'risk'/'profit', got {intent!r}")
+        if side == "buy" and intent not in ("", None):
+            raise BandContractError(
+                f"buy signal {symbol} {decision_date}: intent must be empty")
+        if symbol not in symbols_in_panel:
+            raise BandContractError(
+                f"signal {symbol} {decision_date}: symbol absent from the daily "
+                "panel; the caller must pass a panel covering every signaled symbol")
+        if symbol not in half_symbols:
+            raise BandContractError(
+                f"signal {symbol} {decision_date}: symbol absent from the "
+                "half-day bar table")
+        anchor = float(row["anchor_price"])
+        if not math.isfinite(anchor) or anchor <= 0:
+            raise BandContractError(
+                f"signal {symbol} {decision_date}: anchor_price must be finite > 0")
+        priority = int(row["priority"])
+        key = (symbol, side, intent, decision_date, d_session)
+        if key in seen:
+            raise BandContractError(
+                f"duplicate signal for {symbol} {side}/{intent or '-'} "
+                f"{decision_date} {d_session}")
+        seen.add(key)
+        target = row.get("target_notional")
+        shares = row.get("shares")
+        target = None if target is None else float(target)
+        shares = None if shares is None else int(shares)
+        if side == "buy":
+            if target is None and shares is None:
+                raise BandContractError(
+                    f"buy signal {symbol} {decision_date}: needs target_notional "
+                    "or shares")
+            if target is not None and shares is not None:
+                raise BandContractError(
+                    f"buy signal {symbol} {decision_date}: target_notional and "
+                    "shares are mutually exclusive (ambiguous sizing)")
+            if target is not None and (not math.isfinite(target) or target <= 0):
+                raise BandContractError(
+                    f"buy signal {symbol} {decision_date}: target_notional must "
+                    "be finite > 0")
+            if shares is not None and (shares <= 0 or shares % LOT != 0):
+                raise BandContractError(
+                    f"buy signal {symbol} {decision_date}: explicit shares must "
+                    f"be a positive multiple of {LOT}, got {shares}")
+        else:
+            if shares is not None and (shares <= 0 or shares % LOT != 0):
+                raise BandContractError(
+                    f"sell signal {symbol} {decision_date}: explicit shares must "
+                    f"be a positive multiple of {LOT}, got {shares} "
+                    "(None = exit entire sellable position)")
+        orders.append(_Order(
+            order_id=f"{symbol}-{side}{('/' + intent) if intent else ''}-"
+                     f"{decision_date.isoformat()}-{d_session}",
+            symbol=symbol, side=side, intent=intent,
+            decision_date=decision_date, decision_session=d_session,
+            live_date=date(1900, 1, 1), live_session="am",  # patched below
+            anchor_price=anchor, priority=priority,
+            target_notional=target, shares=shares))
+    return orders
+
+
+def _validate_daily(daily: pl.DataFrame) -> None:
+    for col in ("symbol", "date", "open", "high", "low", "close"):
+        if col not in daily.columns:
+            raise BandContractError(f"daily: missing required column {col!r}")
+    _check_date_col(daily, "date", "daily")
+    if daily.height == 0:
+        raise BandContractError("daily panel is empty")
+    trading = (daily if "tradestatus" not in daily.columns
+               else daily.filter(pl.col("tradestatus") != 0))
+    for col in ("open", "high", "low", "close"):
+        bad = trading.filter(
+            pl.col(col).is_null() | ~pl.col(col).is_finite() | (pl.col(col) <= 0))
+        if bad.height:
+            example = bad.select("symbol", "date").head(3).to_dicts()
+            raise BandContractError(
+                f"daily: {bad.height} trading rows with invalid {col}; example {example}")
+    sane = trading.filter(pl.col("high") + _FLOAT_TOL < pl.col("low"))
+    if sane.height:
+        raise BandContractError(
+            f"daily: {sane.height} rows with high < low; example "
+            f"{sane.select('symbol', 'date').head(3).to_dicts()}")
+
+
+def _validate_halfday(halfday: pl.DataFrame) -> None:
+    for col in ("symbol", "trade_date", "session", "open", "high", "low", "close"):
+        if col not in halfday.columns:
+            raise BandContractError(f"halfday: missing required column {col!r}")
+    _check_date_col(halfday, "trade_date", "halfday")
+    if halfday.height == 0:
+        raise BandContractError("halfday bar table is empty")
+    bad = halfday.filter(
+        (pl.col("high") + _FLOAT_TOL < pl.col("low"))
+        | ~pl.col("high").is_finite() | ~pl.col("low").is_finite()
+        | ~pl.col("close").is_finite() | (pl.col("close") <= 0))
+    if bad.height:
+        raise BandContractError(
+            f"halfday: {bad.height} rows with high < low or invalid close; "
+            f"example {bad.select('symbol', 'trade_date', 'session').head(3).to_dicts()}")
+
+
+def _validate_stk_limit(stk_limit: pl.DataFrame) -> None:
+    for col in ("symbol", "date", "limit_up", "limit_down"):
+        if col not in stk_limit.columns:
+            raise BandContractError(f"stk_limit: missing required column {col!r}")
+    _check_date_col(stk_limit, "date", "stk_limit")
+    bad = stk_limit.filter(
+        pl.col("limit_up").is_not_null() & pl.col("limit_down").is_not_null()
+        & (pl.col("limit_up") + _FLOAT_TOL < pl.col("limit_down")))
+    if bad.height:
+        raise BandContractError(
+            f"stk_limit: {bad.height} rows with limit_up < limit_down; example "
+            f"{bad.select('symbol', 'date').head(3).to_dicts()}")
+
+
+def _validate_splits(splits: pl.DataFrame) -> None:
+    for col in ("symbol", "ex_date", "split_factor"):
+        if col not in splits.columns:
+            raise BandContractError(f"splits: missing required column {col!r}")
+    _check_date_col(splits, "ex_date", "splits")
+    bad = splits.filter(
+        pl.col("split_factor").is_null()
+        | ~pl.col("split_factor").is_finite()
+        | (pl.col("split_factor") <= 0))
+    if bad.height:
+        raise BandContractError(
+            f"splits: {bad.height} rows with split_factor <= 0 or non-finite "
+            "(per-event 送转 ratios, e.g. 1.1 / 1.3 -- NOT cumulative factors)")
+
+
+def _validate_dividends(divs: pl.DataFrame) -> None:
+    for col in ("symbol", "ex_date", "cash_per_lot_pre_tax", "round_lot"):
+        if col not in divs.columns:
+            raise BandContractError(f"cash_dividends: missing required column {col!r}")
+    _check_date_col(divs, "ex_date", "cash_dividends")
+    bad = divs.filter(
+        (pl.col("cash_per_lot_pre_tax") < 0)
+        | pl.col("cash_per_lot_pre_tax").is_null()
+        | pl.col("round_lot").is_null()
+        | (pl.col("round_lot") <= 0))
+    if bad.height:
+        raise BandContractError(
+            f"cash_dividends: {bad.height} rows with negative per-lot cash or "
+            f"round_lot <= 0 (per-lot pre-tax口径; per-share = cash/round_lot)")
+
+
+def _validate_instruments(instruments: pl.DataFrame) -> None:
+    for col in ("symbol", "is_etf", "is_t0"):
+        if col not in instruments.columns:
+            raise BandContractError(f"instruments: missing required column {col!r}")
+
+
+# --- per-symbol arrays ------------------------------------------------------
+
+def _dint_expr(col: str) -> pl.Expr:
+    return (pl.col(col).dt.year().cast(pl.Int64) * 10_000
+            + pl.col(col).dt.month().cast(pl.Int64) * 100
+            + pl.col(col).dt.day().cast(pl.Int64))
+
+
+def _build_series(daily: pl.DataFrame) -> dict[str, dict]:
+    """symbol -> sorted arrays of TRADING rows only (marks and official
+    closes never use suspended rows)."""
+    daily = daily.sort("symbol", "date")
+    has_status = "tradestatus" in daily.columns
+    dint = daily.select(_dint_expr("date").alias("dint")).to_numpy()[:, 0]
+    if has_status:
+        trading_mask = (daily.select(pl.col("tradestatus").fill_null(0) != 0)
+                        .to_numpy()[:, 0])
+    else:
+        trading_mask = np.ones(len(dint), dtype=bool)
+    out: dict[str, dict] = {}
+    offset = 0
+    rle = daily["symbol"].rle()
+    for value, length in zip(rle.struct.field("value").to_list(),
+                             rle.struct.field("len").to_list()):
+        sl = slice(offset, offset + length)
+        mask = trading_mask[sl]
+        out[value] = {
+            "dint": np.asarray(dint[sl], dtype=np.int64),
+            "close": np.asarray(daily["close"][sl].to_numpy(), dtype=np.float64),
+            "trading": np.asarray(mask, dtype=bool),
+            "trade_dint": np.asarray(dint[sl][mask], dtype=np.int64),
+            "trade_close": np.asarray(
+                daily["close"][sl].filter(pl.Series(mask)) if has_status
+                else daily["close"][sl], dtype=np.float64),
+        }
+        offset += length
+    return out
+
+
+def _build_halfday(halfday: pl.DataFrame) -> dict[str, dict[str, dict]]:
+    """symbol -> session -> {dint: (open, high, low, close)}."""
+    halfday = halfday.sort("symbol", "trade_date", "session")
+    out: dict[str, dict[str, dict]] = {}
+    for row in halfday.iter_rows(named=True):
+        d = _dint(row["trade_date"])
+        out.setdefault(row["symbol"], {}).setdefault(row["session"], {})[d] = (
+            float(row["open"]), float(row["high"]), float(row["low"]),
+            float(row["close"]))
+    return out
+
+
+def _build_limits(stk_limit: pl.DataFrame) -> dict[str, tuple[np.ndarray, np.ndarray, np.ndarray]]:
+    stk_limit = stk_limit.sort("symbol", "date")
+    out: dict[str, tuple[np.ndarray, np.ndarray, np.ndarray]] = {}
+    offset = 0
+    rle = stk_limit["symbol"].rle()
+    for value, length in zip(rle.struct.field("value").to_list(),
+                             rle.struct.field("len").to_list()):
+        part = stk_limit.slice(offset, length)
+        out[value] = (part.select(_dint_expr("date").alias("dint")).to_numpy()[:, 0],
+                      part["limit_up"].to_numpy(), part["limit_down"].to_numpy())
+        offset += length
+    return out
+
+
+def _build_splits(splits: pl.DataFrame) -> dict[str, dict[int, float]]:
+    """symbol -> {dint: per-event ratio PRODUCT} (F1/F2: split_factor values
+    are applied DIRECTLY as multipliers; same-day rows compound)."""
+    out: dict[str, dict[int, float]] = {}
+    for row in splits.iter_rows(named=True):
+        d = _dint(row["ex_date"])
+        per = out.setdefault(row["symbol"], {})
+        per[d] = per.get(d, 1.0) * float(row["split_factor"])
+    return out
+
+
+def _build_dividends(divs: pl.DataFrame) -> dict[str, dict[int, float]]:
+    """symbol -> {dint: per-share pre-tax cash} (per-lot rows converted)."""
+    out: dict[str, dict[int, float]] = {}
+    for row in divs.iter_rows(named=True):
+        lot = int(row["round_lot"])
+        if lot <= 0:
+            raise BandContractError(
+                f"cash_dividends: round_lot <= 0 for {row['symbol']} {row['ex_date']}")
+        d = _dint(row["ex_date"])
+        per_share = float(row["cash_per_lot_pre_tax"]) / lot
+        per = out.setdefault(row["symbol"], {})
+        per[d] = per.get(d, 0.0) + per_share
+    return out
+
+
+# --- the engine -------------------------------------------------------------
+
+def run_band_backtest(
+    signals: pl.DataFrame,
+    daily: pl.DataFrame,
+    halfday: pl.DataFrame,
+    stk_limit: pl.DataFrame,
+    splits: pl.DataFrame | None = None,
+    cash_dividends: pl.DataFrame | None = None,
+    instruments: pl.DataFrame | None = None,
+    *,
+    initial_cash: float = 200_000.0,
+    fees: FeeModel | None = None,
+    bridge_check: bool = True,
+) -> BandResult:
+    """Run the v1 band-contract execution/accounting (section 7) over the
+    inputs.  See the module docstring for the frozen semantics.
+    Deterministic: no RNG, no wall-clock dependence inside the computation.
+    """
+    fees = fees or FeeModel()
+    if not math.isfinite(initial_cash) or initial_cash <= 0:
+        raise BandContractError("initial_cash must be finite > 0")
+
+    assert_frozen(daily, "date", "daily")
+    assert_frozen(halfday, "trade_date", "halfday")
+    assert_frozen(stk_limit, "date", "stk_limit")
+    if splits is not None:
+        assert_frozen(splits, "ex_date", "splits")
+    if cash_dividends is not None:
+        assert_frozen(cash_dividends, "ex_date", "cash_dividends")
+    assert_frozen(signals, "decision_date", "signals")
+
+    _validate_daily(daily)
+    _validate_halfday(halfday)
+    _validate_stk_limit(stk_limit)
+    if splits is not None:
+        _validate_splits(splits)
+    if cash_dividends is not None:
+        _validate_dividends(cash_dividends)
+    if instruments is not None:
+        _validate_instruments(instruments)
+
+    splits = splits if splits is not None else pl.DataFrame(
+        schema={"symbol": pl.String, "ex_date": pl.Date, "split_factor": pl.Float64})
+    cash_dividends = cash_dividends if cash_dividends is not None else pl.DataFrame(
+        schema={"symbol": pl.String, "ex_date": pl.Date,
+                "cash_per_lot_pre_tax": pl.Float64, "round_lot": pl.Int64})
+    instruments = instruments if instruments is not None else pl.DataFrame(
+        schema={"symbol": pl.String, "is_etf": pl.Boolean, "is_t0": pl.Boolean})
+
+    if bridge_check:
+        assert_daily_halfday_bridge(daily, halfday)
+
+    series = _build_series(daily)
+    half = _build_halfday(halfday)
+    limits = _build_limits(stk_limit)
+    split_map = _build_splits(splits)
+    divs = _build_dividends(cash_dividends)
+    is_etf = {r["symbol"]: bool(r["is_etf"]) for r in instruments.iter_rows(named=True)}
+    is_t0 = {r["symbol"]: bool(r["is_t0"]) for r in instruments.iter_rows(named=True)}
+    half_symbols = set(half)
+
+    calendar: list[date] = sorted(
+        {date(int(d) // 10_000, int(d) // 100 % 100, int(d) % 100)
+         for s in series.values() for d in s["dint"].tolist()})
+    next_day: dict[date, date] = {}
+    for i, d in enumerate(calendar):
+        if i + 1 < len(calendar):
+            next_day[d] = calendar[i + 1]
+
+    orders = _validate_signals(signals, set(series), half_symbols)
+    # live session mapping: decision (D, 'am') -> (D, 'pm');
+    # decision (D, 'pm') -> (next trading day, 'am')
+    live_orders: dict[tuple[date, str], list[_Order]] = {}
+    risk_rows_by_decision: dict[tuple[date, str], list[_Order]] = {}
+    for order in orders:
+        if order.decision_session == "am":
+            order.live_date, order.live_session = order.decision_date, "pm"
+        else:
+            nd = next_day.get(order.decision_date)
+            if nd is None:
+                # no live session inside the panel: dies at validation time
+                order.closed = True
+                order.close_reason = "expired_no_live_session"
+                continue
+            order.live_date, order.live_session = nd, "am"
+        live_orders.setdefault((order.live_date, order.live_session), []).append(order)
+        if order.side == "sell" and order.intent == "risk":
+            risk_rows_by_decision.setdefault(
+                (order.decision_date, order.decision_session), []).append(order)
+    for key in live_orders:
+        live_orders[key].sort(key=lambda o: (o.priority, o.symbol))
+    decision_keys = sorted(risk_rows_by_decision,
+                           key=lambda k: (calendar.index(k[0]) * 2
+                                          + (1 if k[1] == "pm" else 0)))
+    # decision point order index for refresh bookkeeping
+    decision_order = {key: i for i, key in enumerate(decision_keys)}
+
+    cash = float(initial_cash)
+    pend_am_to_pm = 0.0        # am-fill proceeds, usable from same-day pm
+    pend_next_day = 0.0        # pm-fill proceeds, usable from next day's am
+    clips: dict[str, list[_Clip]] = {}
+    clip_seq = 0
+    risk_state: dict[str, dict] = {}   # symbol -> {anchor, streak, armed, decision_key}
+    fills: list[dict] = []
+    events: list[dict] = []
+    daily_rows: list[dict] = []
+    warnings: list[str] = []
+    fill_counter = 0
+    last_decision_seen: dict[str, int] = {}   # symbol -> decision order index
+
+    stats_acc: dict = {
+        "orders": {"buy": 0, "sell_risk": 0, "sell_profit": 0},
+        "orders_filled": {"buy": 0, "sell_risk": 0, "sell_profit": 0},
+        "unfilled_exit": {"buy": {}, "sell_risk": {}, "sell_profit": {}},
+        "void_days": {},
+        "k3_armed": 0, "k3_executed": 0, "k3_deferred_limitdown": 0,
+        "k3_deferred_buyconflict": 0, "k3_deferred_suspended": 0,
+        "k3_deferred_t1locked": 0, "k3_pnl_contribution": [],
+        "corp_action_splits": 0, "corp_action_dividends": 0,
+        "dividend_cash_total": 0.0,
+        "buy_notional_total": 0.0, "sell_notional_total": 0.0,
+        "commission_warnings": 0,
+        "insufficient_cash_orders": 0, "below_min_lot_abandons": 0,
+        "quantity_capped": 0, "no_position_voids": 0, "t1_locked_voids": 0,
+        "odd_lot_exits": 0, "cap_single_name_voids": 0, "cap_total_voids": 0,
+        "risk_streaks": [], "same_session_proceeds_reuse_attempts": 0,
+        "stale_mark_days": 0,
+    }
+
+    def emit(day: date, sess: str, order: _Order | None, event: str, *,
+             limit_price: float | None = None, ref_price: float | None = None,
+             shares: int | None = None, ratio: float | None = None,
+             cash_amount: float | None = None, detail: str = "") -> None:
+        events.append({
+            "date": day, "session": sess,
+            "symbol": order.symbol if order else "",
+            "side": order.side if order else "",
+            "intent": order.intent if order else "",
+            "order_id": order.order_id if order else "",
+            "event": event, "priority": order.priority if order else None,
+            "limit_price": limit_price, "ref_price": ref_price,
+            "shares": shares, "ratio": ratio, "cash_amount": cash_amount,
+            "detail": detail,
+        })
+
+    def close_order(day: date, sess: str, order: _Order, reason: str,
+                    emit_event: bool = True) -> None:
+        if order.closed:
+            return
+        order.closed = True
+        order.close_reason = reason
+        bucket = "sell_risk" if (order.side == "sell" and order.intent == "risk") \
+            else ("sell_profit" if order.side == "sell" else "buy")
+        if reason != "filled":
+            bucket_key = "sell" if order.side == "sell" else "buy"
+            b = stats_acc["unfilled_exit"][bucket_key]
+            b.setdefault(order.intent if order.side == "sell" else "_",
+                         {}).setdefault(reason, 0)
+            b[order.intent if order.side == "sell" else "_"][reason] += 1
+        if reason == "below_min_lot":
+            stats_acc["below_min_lot_abandons"] += 1
+        if emit_event:
+            emit(day, sess, order, reason, detail="order closed")
+
+    def halfbar(sym: str, day: date, sess: str):
+        per = half.get(sym, {}).get(sess, {})
+        return per.get(_dint(day))
+
+    def limits_at(sym: str, day: date) -> tuple[float | None, float | None]:
+        lim = limits.get(sym)
+        if lim is None:
+            return None, None
+        dint_arr, up, down = lim
+        i = int(np.searchsorted(dint_arr, _dint(day)))
+        if i >= len(dint_arr) or dint_arr[i] != _dint(day):
+            return None, None
+        return (None if not math.isfinite(up[i]) else float(up[i]),
+                None if not math.isfinite(down[i]) else float(down[i]))
+
+    def official_close_strict(sym: str, day: date) -> float | None:
+        """Last TRADED official close strictly BEFORE ``day`` (cap marks; no
+        intraday look-ahead)."""
+        s = series.get(sym)
+        if s is None:
+            return None
+        i = int(np.searchsorted(s["trade_dint"], _dint(day)))
+        if i == 0:
+            return None
+        return float(s["trade_close"][i - 1])
+
+    def mark_close(symbol: str, day: date) -> float | None:
+        """Official close on/ before ``day`` (daily valuation mark)."""
+        s = series.get(symbol)
+        if s is None:
+            return None
+        i = int(np.searchsorted(s["trade_dint"], _dint(day), side="right"))
+        if i == 0:
+            return None
+        return float(s["trade_close"][i - 1])
+
+    def split_ratio_at(symbol: str, day: date) -> float | None:
+        per = split_map.get(symbol)
+        if not per:
+            return None
+        r = per.get(_dint(day))
+        return None if r is None else r
+
+    def legal_limit(price: float, up: float | None, down: float | None) -> bool:
+        if up is None and down is None:
+            return False  # no limit info -> cannot validate (conservative)
+        if up is not None and price > up + _FLOAT_TOL:
+            return False
+        if down is not None and price < down - _FLOAT_TOL:
+            return False
+        return True
+
+    def sellable_shares(sym: str, day: date) -> tuple[int, list[_Clip]]:
+        """(sellable shares, sellable clips in FIFO order).  T+1: clips
+        acquired today are locked unless is_t0; corp-action odd lots created
+        TODAY are sellable today in one order (section 7.3)."""
+        t0 = is_t0.get(sym, False)
+        out: list[_Clip] = []
+        for c in clips.get(sym, []):
+            if t0 or c.acquired < day:
+                out.append(c)
+            elif c.shares % LOT != 0:
+                out.append(c)   # corp-action odd lot created today
+        return sum(c.shares for c in out), out
+
+    def total_shares(sym: str) -> int:
+        return sum(c.shares for c in clips.get(sym, []))
+
+    def full_quantity_affordable(price: float, shares: int, available: float) -> bool:
+        cost = shares * price
+        return cost + fees.commission(cost) <= available + _FLOAT_TOL
+
+    def record_fill(day: date, sess: str, order: _Order, fill_type: str,
+                    price: float, shares: int, *, prev_close: float | None,
+                    detail: str) -> None:
+        nonlocal fill_counter, cash
+        is_etf_sym = is_etf.get(order.symbol, False)
+        notional = price * shares
+        commission = fees.commission(notional)
+        stamp = (fees.stamp_sell(day, notional, is_etf_sym)
+                 if order.side == "sell" else 0.0)
+        if order.side == "buy":
+            net = -(notional + commission)
+            cs = clips.setdefault(order.symbol, [])
+            cs.append(_Clip(shares=int(shares), acquired=day, seq=clip_seq))
+            nonlocal clip_seq
+            clip_seq += 1
+            cash += net
+            stats_acc["buy_notional_total"] += notional
+        else:
+            net = notional - commission - stamp
+            if sess == "am":
+                pend_am_to_pm += net      # usable from same-day pm
+            else:
+                pend_next_day += net      # usable from next day's am
+            remaining = shares
+            for c in clips.get(order.symbol, []):
+                if remaining <= 0:
+                    break
+                take = min(c.shares, remaining)
+                c.shares -= take
+                remaining -= take
+            clips[order.symbol] = [c for c in clips.get(order.symbol, []) if c.shares > 0]
+            stats_acc["sell_notional_total"] += notional
+            if shares % LOT != 0:
+                stats_acc["odd_lot_exits"] += 1
+                detail = (detail + "; " if detail else "") + \
+                    "odd_lot_exit (corp-action remainder, single order)"
+            if fill_type == "market_fallback":
+                stats_acc["k3_executed"] += 1
+                stats_acc["k3_pnl_contribution"].append(
+                    net - shares * prev_close)
+        if notional > COMMISSION_WARNING_NOTIONAL + _FLOAT_TOL:
+            stats_acc["commission_warnings"] += 1
+            warnings.append(
+                f"commission guard: {order.side} fill {order.symbol} "
+                f"{day.isoformat()} notional {notional:.2f} > "
+                f"{COMMISSION_WARNING_NOTIONAL:.0f} (commission "
+                f"{commission:.2f}; the 5-yuan minimum no longer binds)")
+        fill_counter += 1
+        fills.append({
+            "fill_id": f"F{fill_counter:06d}", "order_id": order.order_id,
+            "symbol": order.symbol, "side": order.side, "intent": order.intent,
+            "fill_type": fill_type, "date": day, "session": sess,
+            "decision_date": order.decision_date,
+            "decision_session": order.decision_session,
+            "priority": order.priority, "shares": int(shares),
+            "price": float(price), "notional": notional,
+            "commission": commission, "stamp_tax": stamp,
+            "fees_total": commission + stamp, "net_cash_flow": net,
+            "is_etf": is_etf_sym, "detail": detail,
+        })
+        bucket = ("sell_risk" if (order.side == "sell" and order.intent == "risk")
+                  else ("sell_profit" if order.side == "sell" else "buy"))
+        stats_acc["orders_filled"][bucket] += 1
+        close_order(day, sess, order, "filled", emit_event=False)
+

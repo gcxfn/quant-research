@@ -1,0 +1,434 @@
+{
+ "source": "xiaodefa",
+ "dataset": "cn_ppi",
+ "batches": {
+  "xiaodefa/cn_ppi/20260913-bulk1": {
+   "batch_dir": "xiaodefa/cn_ppi/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 152,
+    "n_csv": 151,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 93820
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 month 有 19 行 > 2024-12-31 (max=202607); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 152,
+    "bytes": 93820
+   },
+   "schema": {
+    "month": "Int64",
+    "ppi_yoy": "Float64",
+    "ppi_mp_yoy": "Float64",
+    "ppi_mp_qm_yoy": "Float64",
+    "ppi_mp_rm_yoy": "Float64",
+    "ppi_mp_p_yoy": "Float64",
+    "ppi_cg_yoy": "Float64",
+    "ppi_cg_f_yoy": "Float64",
+    "ppi_cg_c_yoy": "Float64",
+    "ppi_cg_adu_yoy": "Float64",
+    "ppi_cg_dcg_yoy": "Float64",
+    "ppi_mom": "Float64",
+    "ppi_mp_mom": "Float64",
+    "ppi_mp_qm_mom": "Float64",
+    "ppi_mp_rm_mom": "Float64",
+    "ppi_mp_p_mom": "Float64",
+    "ppi_cg_mom": "Float64",
+    "ppi_cg_f_mom": "Float64",
+    "ppi_cg_c_mom": "Float64",
+    "ppi_cg_adu_mom": "Float64",
+    "ppi_cg_dcg_mom": "Float64",
+    "ppi_accu": "Float64",
+    "ppi_mp_accu": "Float64",
+    "ppi_mp_qm_accu": "Float64",
+    "ppi_mp_rm_accu": "Float64",
+    "ppi_mp_p_accu": "Float64",
+    "ppi_cg_accu": "Float64",
+    "ppi_cg_f_accu": "Float64",
+    "ppi_cg_c_accu": "Float64",
+    "ppi_cg_adu_accu": "Float64",
+    "ppi_cg_dcg_accu": "Float64"
+   },
+   "n_columns": 31,
+   "date_columns": [
+    "month"
+   ],
+   "numeric_columns_checked": [
+    "month",
+    "ppi_accu",
+    "ppi_cg_accu",
+    "ppi_cg_adu_accu",
+    "ppi_cg_adu_mom",
+    "ppi_cg_adu_yoy",
+    "ppi_cg_c_accu",
+    "ppi_cg_c_mom",
+    "ppi_cg_c_yoy",
+    "ppi_cg_dcg_accu",
+    "ppi_cg_dcg_mom",
+    "ppi_cg_dcg_yoy",
+    "ppi_cg_f_accu",
+    "ppi_cg_f_mom",
+    "ppi_cg_f_yoy",
+    "ppi_cg_mom",
+    "ppi_cg_yoy",
+    "ppi_mom",
+    "ppi_mp_accu",
+    "ppi_mp_mom",
+    "ppi_mp_p_accu",
+    "ppi_mp_p_mom",
+    "ppi_mp_p_yoy",
+    "ppi_mp_qm_accu",
+    "ppi_mp_qm_mom",
+    "ppi_mp_qm_yoy",
+    "ppi_mp_rm_accu",
+    "ppi_mp_rm_mom",
+    "ppi_mp_rm_yoy",
+    "ppi_mp_yoy",
+    "ppi_yoy"
+   ],
+   "rows_total": 151,
+   "date_coverage": {
+    "month": {
+     "min": "201401",
+     "max": "202607",
+     "rows_gt_20241231": 19,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 19,
+   "numeric_magnitude": {
+    "month": {
+     "min": 201401.0,
+     "max": 202607.0
+    },
+    "ppi_accu": {
+     "min": -5.3,
+     "max": 9.1
+    },
+    "ppi_cg_accu": {
+     "min": -1.7,
+     "max": 1.5
+    },
+    "ppi_cg_adu_accu": {
+     "min": -1.8,
+     "max": 1.6
+    },
+    "ppi_cg_adu_mom": {
+     "min": -0.3,
+     "max": 0.7
+    },
+    "ppi_cg_adu_yoy": {
+     "min": -1.8,
+     "max": 1.9
+    },
+    "ppi_cg_c_accu": {
+     "min": -1.3,
+     "max": 1.9
+    },
+    "ppi_cg_c_mom": {
+     "min": -0.4,
+     "max": 0.7
+    },
+    "ppi_cg_c_yoy": {
+     "min": -1.8,
+     "max": 2.5
+    },
+    "ppi_cg_dcg_accu": {
+     "min": -3.3,
+     "max": 0.6
+    },
+    "ppi_cg_dcg_mom": {
+     "min": -1.1,
+     "max": 0.7
+    },
+    "ppi_cg_dcg_yoy": {
+     "min": -3.9,
+     "max": 0.7
+    },
+    "ppi_cg_f_accu": {
+     "min": -1.9,
+     "max": 5.1
+    },
+    "ppi_cg_f_mom": {
+     "min": -0.8,
+     "max": 1.1
+    },
+    "ppi_cg_f_yoy": {
+     "min": -2.1,
+     "max": 5.4
+    },
+    "ppi_cg_mom": {
+     "min": -0.4,
+     "max": 0.5
+    },
+    "ppi_cg_yoy": {
+     "min": -1.7,
+     "max": 2.2
+    },
+    "ppi_mom": {
+     "min": -1.3,
+     "max": 2.5
+    },
+    "ppi_mp_accu": {
+     "min": -6.9,
+     "max": 11.8
+    },
+    "ppi_mp_mom": {
+     "min": -1.8,
+     "max": 3.3
+    },
+    "ppi_mp_p_accu": {
+     "min": -4.9,
+     "max": 7.0
+    },
+    "ppi_mp_p_mom": {
+     "min": -1.3,
+     "max": 1.8
+    },
+    "ppi_mp_p_yoy": {
+     "min": -5.4,
+     "max": 10.8
+    },
+    "ppi_mp_qm_accu": {
+     "min": -19.8,
+     "max": 36.1
+    },
+    "ppi_mp_qm_mom": {
+     "min": -7.2,
+     "max": 12.1
+    },
+    "ppi_mp_qm_yoy": {
+     "min": -21.23,
+     "max": 66.5
+    },
+    "ppi_mp_rm_accu": {
+     "min": -9.5,
+     "max": 18.2
+    },
+    "ppi_mp_rm_mom": {
+     "min": -3.3,
+     "max": 4.9
+    },
+    "ppi_mp_rm_yoy": {
+     "min": -11.36,
+     "max": 25.7
+    },
+    "ppi_mp_yoy": {
+     "min": -7.72,
+     "max": 17.9
+    },
+    "ppi_yoy": {
+     "min": -5.95,
+     "max": 13.5
+    }
+   },
+   "primary_key": null,
+   "sample_rows": [
+    {
+     "month": "201401",
+     "ppi_yoy": "-1.64",
+     "ppi_mp_yoy": "-2.05",
+     "ppi_mp_qm_yoy": "-4.05",
+     "ppi_mp_rm_yoy": "-2.48",
+     "ppi_mp_p_yoy": "-1.66",
+     "ppi_cg_yoy": "-0.35",
+     "ppi_cg_f_yoy": "-0.09",
+     "ppi_cg_c_yoy": "0.72",
+     "ppi_cg_adu_yoy": "-0.51",
+     "ppi_cg_dcg_yoy": "-1.24",
+     "ppi_mom": "-0.05",
+     "ppi_mp_mom": "-0.05",
+     "ppi_mp_qm_mom": "0.43",
+     "ppi_mp_rm_mom": "-0.04",
+     "ppi_mp_p_mom": "-0.1",
+     "ppi_cg_mom": "-0.06",
+     "ppi_cg_f_mom": "-0.08",
+     "ppi_cg_c_mom": "-0.05",
+     "ppi_cg_adu_mom": "0.01",
+     "ppi_cg_dcg_mom": "-0.1",
+     "ppi_accu": "-1.64",
+     "ppi_mp_accu": "-2.05",
+     "ppi_mp_qm_accu": "-4.05"
+    },
+    {
+     "month": "201402",
+     "ppi_yoy": "-2.02",
+     "ppi_mp_yoy": "-2.54",
+     "ppi_mp_qm_yoy": "-5.33",
+     "ppi_mp_rm_yoy": "-3.22",
+     "ppi_mp_p_yoy": "-1.97",
+     "ppi_cg_yoy": "-0.33",
+     "ppi_cg_f_yoy": "-0.3",
+     "ppi_cg_c_yoy": "0.77",
+     "ppi_cg_adu_yoy": "-0.33",
+     "ppi_cg_dcg_yoy": "-1.06",
+     "ppi_mom": "-0.2",
+     "ppi_mp_mom": "-0.3",
+     "ppi_mp_qm_mom": "-0.88",
+     "ppi_mp_rm_mom": "-0.48",
+     "ppi_mp_p_mom": "-0.17",
+     "ppi_cg_mom": "0.0",
+     "ppi_cg_f_mom": "-0.09",
+     "ppi_cg_c_mom": "0.07",
+     "ppi_cg_adu_mom": "0.11",
+     "ppi_cg_dcg_mom": "-0.04",
+     "ppi_accu": "-1.8",
+     "ppi_mp_accu": "-2.3",
+     "ppi_mp_qm_accu": "-4.69"
+    },
+    {
+     "month": "201403",
+     "ppi_yoy": "-2.3",
+     "ppi_mp_yoy": "-2.95",
+     "ppi_mp_qm_yoy": "-6.66",
+     "ppi_mp_rm_yoy": "-3.81",
+     "ppi_mp_p_yoy": "-2.21",
+     "ppi_cg_yoy": "-0.21",
+     "ppi_cg_f_yoy": "-0.22",
+     "ppi_cg_c_yoy": "0.83",
+     "ppi_cg_adu_yoy": "-0.11",
+     "ppi_cg_dcg_yoy": "-0.94",
+     "ppi_mom": "-0.32",
+     "ppi_mp_mom": "-0.42",
+     "ppi_mp_qm_mom": "-0.99",
+     "ppi_mp_rm_mom": "-0.47",
+     "ppi_mp_p_mom": "-0.34",
+     "ppi_cg_mom": "0.0",
+     "ppi_cg_f_mom": "-0.11",
+     "ppi_cg_c_mom": "-0.01",
+     "ppi_cg_adu_mom": "0.15",
+     "ppi_cg_dcg_mom": "0.04",
+     "ppi_accu": "-1.99",
+     "ppi_mp_accu": "-2.51",
+     "ppi_mp_qm_accu": "-5.35"
+    },
+    {
+     "month": "201404",
+     "ppi_yoy": "-2.0",
+     "ppi_mp_yoy": "-2.61",
+     "ppi_mp_qm_yoy": "-6.06",
+     "ppi_mp_rm_yoy": "-3.06",
+     "ppi_mp_p_yoy": "-2.07",
+     "ppi_cg_yoy": "-0.06",
+     "ppi_cg_f_yoy": "0.08",
+     "ppi_cg_c_yoy": "0.73",
+     "ppi_cg_adu_yoy": "-0.05",
+     "ppi_cg_dcg_yoy": "-0.78",
+     "ppi_mom": "-0.25",
+     "ppi_mp_mom": "-0.33",
+     "ppi_mp_qm_mom": "-1.0",
+     "ppi_mp_rm_mom": "-0.5",
+     "ppi_mp_p_mom": "-0.19",
+     "ppi_cg_mom": "0.02",
+     "ppi_cg_f_mom": "-0.03",
+     "ppi_cg_c_mom": "0.01",
+     "ppi_cg_adu_mom": "0.07",
+     "ppi_cg_dcg_mom": "0.07",
+     "ppi_accu": "-1.99",
+     "ppi_mp_accu": "-2.54",
+     "ppi_mp_qm_accu": "-5.53"
+    },
+    {
+     "month": "201405",
+     "ppi_yoy": "-1.45",
+     "ppi_mp_yoy": "-1.95",
+     "ppi_mp_qm_yoy": "-4.87",
+     "ppi_mp_rm_yoy": "-2.04",
+     "ppi_mp_p_yoy": "-1.62",
+     "ppi_cg_yoy": "0.17",
+     "ppi_cg_f_yoy": "0.41",
+     "ppi_cg_c_yoy": "0.82",
+     "ppi_cg_adu_yoy": "0.17",
+     "ppi_cg_dcg_yoy": "-0.6",
+     "ppi_mom": "-0.06",
+     "ppi_mp_mom": "-0.08",
+     "ppi_mp_qm_mom": "-1.01",
+     "ppi_mp_rm_mom": "-0.07",
+     "ppi_mp_p_mom": "0.01",
+     "ppi_cg_mom": "0.01",
+     "ppi_cg_f_mom": "0.04",
+     "ppi_cg_c_mom": "0.05",
+     "ppi_cg_adu_mom": "0.02",
+     "ppi_cg_dcg_mom": "-0.07",
+     "ppi_accu": "-1.88",
+     "ppi_mp_accu": "-2.42",
+     "ppi_mp_qm_accu": "-5.4"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 151,
+    "distinct_headers": 1,
+    "modal_header_cols": 31,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "201610",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     },
+     {
+      "chunk": "202008",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     },
+     {
+      "chunk": "201907",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     },
+     {
+      "chunk": "202511",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     },
+     {
+      "chunk": "201901",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     },
+     {
+      "chunk": "201402",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     },
+     {
+      "chunk": "201701",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     },
+     {
+      "chunk": "202112",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 0.1,
+   "finished_at": "2026-09-18T00:07:06"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:06"
+}

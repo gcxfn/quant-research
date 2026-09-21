@@ -1,0 +1,187 @@
+{
+ "source": "xiaodefa",
+ "dataset": "ggt_daily",
+ "batches": {
+  "xiaodefa/ggt_daily/20260913-bulk1": {
+   "batch_dir": "xiaodefa/ggt_daily/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 2702,
+    "n_csv": 2701,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 473751
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 402 行 > 2024-12-31 (max=20260911); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 2702,
+    "bytes": 473751
+   },
+   "schema": {
+    "trade_date": "Int64",
+    "buy_amount": "Float64",
+    "buy_volume": "Float64",
+    "sell_amount": "Float64",
+    "sell_volume": "Float64"
+   },
+   "n_columns": 5,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "buy_amount",
+    "buy_volume",
+    "sell_amount",
+    "sell_volume",
+    "trade_date"
+   ],
+   "rows_total": 2701,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20141117",
+     "max": "20260911",
+     "rows_gt_20241231": 402,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 402,
+   "numeric_magnitude": {
+    "buy_amount": {
+     "min": 0.0,
+     "max": 845.37
+    },
+    "buy_volume": {
+     "min": 0.0,
+     "max": 143.12
+    },
+    "sell_amount": {
+     "min": 0.0,
+     "max": 841.0
+    },
+    "sell_volume": {
+     "min": 0.0,
+     "max": 122.81
+    },
+    "trade_date": {
+     "min": 20141117.0,
+     "max": 20260911.0
+    }
+   },
+   "primary_key": [
+    "trade_date"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "trade_date": "20141117",
+     "buy_amount": "17.72",
+     "buy_volume": "3.88",
+     "sell_amount": "0.84",
+     "sell_volume": "0.26"
+    },
+    {
+     "trade_date": "20141118",
+     "buy_amount": "8.58",
+     "buy_volume": "1.74",
+     "sell_amount": "1.16",
+     "sell_volume": "0.33"
+    },
+    {
+     "trade_date": "20141119",
+     "buy_amount": "3.02",
+     "buy_volume": "0.95",
+     "sell_amount": "0.91",
+     "sell_volume": "0.33"
+    },
+    {
+     "trade_date": "20141120",
+     "buy_amount": "2.23",
+     "buy_volume": "0.69",
+     "sell_amount": "0.75",
+     "sell_volume": "0.28"
+    },
+    {
+     "trade_date": "20141121",
+     "buy_amount": "2.44",
+     "buy_volume": "0.74",
+     "sell_amount": "1.06",
+     "sell_volume": "0.34"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 2701,
+    "distinct_headers": 1,
+    "modal_header_cols": 5,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "20251215",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     },
+     {
+      "chunk": "20170324",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     },
+     {
+      "chunk": "20260818",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     },
+     {
+      "chunk": "20200630",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     },
+     {
+      "chunk": "20190724",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     },
+     {
+      "chunk": "20241127",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     },
+     {
+      "chunk": "20190222",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     },
+     {
+      "chunk": "20141211",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 2.0,
+   "finished_at": "2026-09-18T00:07:24"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:24"
+}

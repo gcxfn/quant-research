@@ -1,0 +1,200 @@
+{
+ "source": "xiaodefa",
+ "dataset": "hk_hold",
+ "batches": {
+  "xiaodefa/hk_hold/20260913-bulk1": {
+   "batch_dir": "xiaodefa/hk_hold/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 2285,
+    "n_csv": 2284,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 308209694
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 364971 行 > 2024-12-31 (max=20260911); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['trade_date', 'ts_code'] 重复: 240 个键 / 480 行"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 2285,
+    "bytes": 308209694
+   },
+   "schema": {
+    "code": "Int64",
+    "trade_date": "Int64",
+    "ts_code": "String",
+    "name": "String",
+    "vol": "Int64",
+    "ratio": "Float64",
+    "exchange": "String"
+   },
+   "n_columns": 7,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "vol",
+    "code",
+    "ratio",
+    "trade_date"
+   ],
+   "rows_total": 5650165,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20170103",
+     "max": "20260911",
+     "rows_gt_20241231": 364971,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 364971,
+   "numeric_magnitude": {
+    "vol": {
+     "min": 1.0,
+     "max": 37044915147.0
+    },
+    "code": {
+     "min": 1.0,
+     "max": 95599.0
+    },
+    "ratio": {
+     "min": 0.0,
+     "max": 78.47
+    },
+    "trade_date": {
+     "min": 20170103.0,
+     "max": 20260911.0
+    }
+   },
+   "primary_key": [
+    "trade_date",
+    "ts_code"
+   ],
+   "duplicate_keys": 240,
+   "duplicate_rows": 480,
+   "sample_rows": [
+    {
+     "code": "77026",
+     "trade_date": "20170103",
+     "ts_code": "300026.SZ",
+     "name": "红日药业",
+     "vol": "555000",
+     "ratio": "0.01",
+     "exchange": "SZ"
+    },
+    {
+     "code": "90499",
+     "trade_date": "20170103",
+     "ts_code": "600499.SH",
+     "name": "科达洁能",
+     "vol": "3307694",
+     "ratio": "0.24",
+     "exchange": "SH"
+    },
+    {
+     "code": "90667",
+     "trade_date": "20170103",
+     "ts_code": "600667.SH",
+     "name": "太极实业",
+     "vol": "6706070",
+     "ratio": "0.56",
+     "exchange": "SH"
+    },
+    {
+     "code": "72590",
+     "trade_date": "20170103",
+     "ts_code": "002590.SZ",
+     "name": "万安科技",
+     "vol": "11440",
+     "ratio": "0.0",
+     "exchange": "SZ"
+    },
+    {
+     "code": "72589",
+     "trade_date": "20170103",
+     "ts_code": "002589.SZ",
+     "name": "瑞康医药",
+     "vol": "1114932",
+     "ratio": "0.17",
+     "exchange": "SZ"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 2284,
+    "distinct_headers": 1,
+    "modal_header_cols": 7,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "20190404",
+      "manifest_rows": 2555,
+      "actual_rows": 2554
+     },
+     {
+      "chunk": "20220524",
+      "manifest_rows": 3069,
+      "actual_rows": 3068
+     },
+     {
+      "chunk": "20210706",
+      "manifest_rows": 2959,
+      "actual_rows": 2958
+     },
+     {
+      "chunk": "20260902",
+      "manifest_rows": 959,
+      "actual_rows": 958
+     },
+     {
+      "chunk": "20210201",
+      "manifest_rows": 2867,
+      "actual_rows": 2866
+     },
+     {
+      "chunk": "20170203",
+      "manifest_rows": 1576,
+      "actual_rows": 1575
+     },
+     {
+      "chunk": "20190625",
+      "manifest_rows": 2591,
+      "actual_rows": 2590
+     },
+     {
+      "chunk": "20230619",
+      "manifest_rows": 3888,
+      "actual_rows": 3887
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 2.2,
+   "finished_at": "2026-09-18T00:07:26"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:26"
+}

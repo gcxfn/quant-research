@@ -1,0 +1,64 @@
+{
+ "experiment_id": "exp-20260918-p2r10-halfday-survey",
+ "name": "p2r10-halfday-survey",
+ "prereg": "docs/research/exp-20260918-p2r10-halfday-survey-prereg.md",
+ "preregistered_at": "2026-09-18",
+ "frozen_at": "2026-09-18T03:50 (before any R10 run; dependent on extraction dataset completion - survey starts only after extraction manifest assertions all pass)",
+ "status": "config_frozen_before_any_signal_run",
+ "authority_chain": "plan update-5 approved direction queue (halfday cross-section ranked 3rd; first two exhausted); ETF momentum line R6-R9 closed per stop rules; overnight autonomous authority 2026-09-18",
+ "seed": 17,
+ "dataset": {
+  "id": "halfday-1130-20260918",
+  "path": "data/processed/halfday-1130-20260918/",
+  "table": "halfday_1130.parquet",
+  "source_batches": {
+   "minute_1m": ["data/raw/user_minute_1m/20260913-143215 (2015-2019)", "data/raw/user_minute_1m/20260913-2020-2024 (2020-2024)"],
+   "minute_registration": "data/_meta/sha256.tsv 2,433 rows verified byte-identical by prep run 20260918T032049-halfday-prep-f3mbfd",
+   "stk_limit": "data/raw/tushare/stk_limit/20260917-r1",
+   "baostock_daily": "data/processed/baostock-daily-20260917"
+  },
+  "freeze_end": "2024-12-31",
+  "start_condition": "extraction manifest assertions all pass (row count ~9.56M +/-5%, .BJ residual 0, 2025+ rows 0, close_1130 within daily [low,high] sampled)"
+ },
+ "windows": {
+  "dev": { "start": "2015-01-01", "end": "2020-12-31", "note": "DECLARED CONSUMED by 91 prior stock-side units; same-window new-information-set claim" },
+  "descriptive_only": { "start": "2021-01-01", "end": "2024-12-31", "note": "consumed once by 47 units; yearly descriptive IC disclosed, NO gates" }
+ },
+ "targets": {
+  "T1_primary": "close_day_official / open_1300 - 1 (afternoon return, 11:30-signal executable)",
+  "T2_descriptive": "next open_930 / close_1130 - 1 (overnight + next morning; disclosed only)"
+ },
+ "factors_twelve": {
+  "F01": "morning return close_1130/open_930-1",
+  "F02": "F01 minus same-day cross-sectional median",
+  "F03": "F02 x volume ratio",
+  "F04": "overnight gap open_930/preclose_official-1",
+  "F05": "F04 x F02",
+  "F06": "intraday position (close_1130-low_am)/(high_am-low_am+1e-12)",
+  "F07": "volume ratio vol_am / mean(daily vol, past 20 trading days)",
+  "F08": "negative 5-day mean of F02 (morning reversal)",
+  "F09": "am_limit_up_touch_minutes / 121",
+  "F10": "late-morning momentum close_1130/close_1100-1",
+  "F11": "rank(F02) - rank(F07) same-day cross-sectional rank difference",
+  "F12": "CONTROL full-day return close_day_official/preclose_official-1 (not counted toward the >=2 passers)"
+ },
+ "sample_filters": {
+  "suspended": "tradestatus != 1 excluded",
+  "st": "isST=1 excluded",
+  "new_listing": "listed <= 120 trading sessions excluded",
+  "missing": "preclose_official/open_930/open_1300/close_day_official null excluded",
+  "boards": "SH/SZ mainboard + ChiNext included (user confirmed ChiNext permission 2026-09-17; STAR/BJ excluded per pool rules)",
+  "t1_outlier": "|T1| > 0.21 excluded (beyond limit physical bound)",
+  "disclosure": "D10-D1 decile gate additionally disclosed on the buyable subset (am_limit_up_touch_minutes == 0); the gate itself uses the full filtered sample"
+ },
+ "gates": {
+  "ic_gate": "dev daily cross-sectional rank-IC vs T1: |mean IC| >= 0.02 AND Newey-West(lag 5) t-stat >= 3.0",
+  "decile_gate": "decile D10-D1 (factor-direction aligned) annualized GROSS return >= 4% AND same-sign month share >= 60% (dev)",
+  "increment_gate": "for momentum-family F01/F02/F10 only: |IC| >= 1.3 x |IC of F12| (the half-day increment question)",
+  "pass_rule": "count F01-F11 passing BOTH ic_gate and decile_gate (momentum family additionally increment_gate) >= 2 -> register candidates, round-2 combination prereg awaits USER morning decision; < 2 -> G2 round-1 closed, return to discussion",
+  "gross_primary": "gross is the primary survey metric; net (historical segmented fees + stamp, wan1 commission on 20k notional) disclosed without gates",
+  "trial_count_note": "cumulative trials: 139 + 12 = 151"
+ },
+ "stop_rule": "after this round NO further strategy rounds tonight (including G3 combination); all results and candidate registrations wait for user morning decisions",
+ "limits": { "max_runtime_s": 1800, "max_ram_gb": 11 }
+}

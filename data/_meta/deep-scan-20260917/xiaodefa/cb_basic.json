@@ -1,0 +1,355 @@
+{
+ "source": "xiaodefa",
+ "dataset": "cb_basic",
+ "batches": {
+  "xiaodefa/cb_basic/20260913-bulk1": {
+   "batch_dir": "xiaodefa/cb_basic/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 2,
+    "n_csv": 1,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 469635
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 maturity_date 有 885 行 > 2024-12-31 (max=20320910); 冻结边界审查: 只报告不删除"
+    }
+   ],
+   "inventory_registration": {
+    "files": 2,
+    "bytes": 469635
+   },
+   "schema": {
+    "ts_code": "String",
+    "bond_full_name": "String",
+    "bond_short_name": "String",
+    "cb_type": "String",
+    "cb_code": "Int64",
+    "stk_code": "String",
+    "stk_short_name": "String",
+    "maturity": "Float64",
+    "par": "Float64",
+    "issue_price": "Float64",
+    "issue_size": "Float64",
+    "remain_size": "Float64",
+    "value_date": "Int64",
+    "maturity_date": "Int64",
+    "rate_type": "String",
+    "coupon_rate": "Float64",
+    "add_rate": "Float64",
+    "pay_per_year": "Int64",
+    "list_date": "Int64",
+    "delist_date": "Int64",
+    "exchange": "String",
+    "conv_start_date": "Int64",
+    "conv_end_date": "Int64",
+    "conv_stop_date": "Int64",
+    "first_conv_price": "Float64",
+    "conv_price": "Float64",
+    "rate_clause": "String"
+   },
+   "n_columns": 27,
+   "date_columns": [
+    "value_date",
+    "maturity_date",
+    "list_date",
+    "delist_date",
+    "conv_start_date",
+    "conv_end_date",
+    "conv_stop_date"
+   ],
+   "numeric_columns_checked": [
+    "add_rate",
+    "cb_code",
+    "conv_end_date",
+    "conv_price",
+    "conv_start_date",
+    "conv_stop_date",
+    "coupon_rate",
+    "delist_date",
+    "first_conv_price",
+    "issue_price",
+    "issue_size",
+    "list_date",
+    "maturity",
+    "maturity_date",
+    "par",
+    "pay_per_year",
+    "remain_size",
+    "value_date"
+   ],
+   "rows_total": 1164,
+   "date_coverage": {
+    "value_date": {
+     "min": "19930101",
+     "max": "20260910",
+     "rows_gt_20241231": 103,
+     "null_rows": 1
+    },
+    "maturity_date": {
+     "min": "19960101",
+     "max": "20320910",
+     "rows_gt_20241231": 885,
+     "null_rows": 1
+    },
+    "list_date": {
+     "min": "19930210",
+     "max": "20260909",
+     "rows_gt_20241231": 102,
+     "null_rows": 24
+    },
+    "delist_date": {
+     "min": "19960101",
+     "max": "20261015",
+     "rows_gt_20241231": 299,
+     "null_rows": 347
+    },
+    "conv_start_date": {
+     "min": "19930601",
+     "max": "20270412",
+     "rows_gt_20241231": 133,
+     "null_rows": 1
+    },
+    "conv_end_date": {
+     "min": "19951231",
+     "max": "20320909",
+     "rows_gt_20241231": 885,
+     "null_rows": 1
+    },
+    "conv_stop_date": {
+     "min": "20010525",
+     "max": "20261021",
+     "rows_gt_20241231": 301,
+     "null_rows": 361
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 885,
+   "numeric_magnitude": {
+    "add_rate": {
+     "min": 0.0,
+     "max": 27.0
+    },
+    "cb_code": {
+     "min": 181001.0,
+     "max": 193051.0
+    },
+    "conv_end_date": {
+     "min": 19951231.0,
+     "max": 20320909.0
+    },
+    "conv_price": {
+     "min": 0.84,
+     "max": 364.15
+    },
+    "conv_start_date": {
+     "min": 19930601.0,
+     "max": 20270412.0
+    },
+    "conv_stop_date": {
+     "min": 20010525.0,
+     "max": 20261021.0
+    },
+    "coupon_rate": {
+     "min": 0.01,
+     "max": 10.35
+    },
+    "delist_date": {
+     "min": 19960101.0,
+     "max": 20261015.0
+    },
+    "first_conv_price": {
+     "min": 2.0,
+     "max": 499.89
+    },
+    "issue_price": {
+     "min": 1.0,
+     "max": 100.0
+    },
+    "issue_size": {
+     "min": 0.0,
+     "max": 50000000000.0
+    },
+    "list_date": {
+     "min": 19930210.0,
+     "max": 20260909.0
+    },
+    "maturity": {
+     "min": 1.0,
+     "max": 6.0
+    },
+    "maturity_date": {
+     "min": 19960101.0,
+     "max": 20320910.0
+    },
+    "par": {
+     "min": 1.0,
+     "max": 100.0
+    },
+    "pay_per_year": {
+     "min": 0.0,
+     "max": 2.0
+    },
+    "remain_size": {
+     "min": 0.0,
+     "max": 41351815221.46
+    },
+    "value_date": {
+     "min": 19930101.0,
+     "max": 20260910.0
+    }
+   },
+   "primary_key": [
+    "ts_code"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "ts_code": "125488.SZ",
+     "bond_full_name": "山东晨鸣纸业集团股份有限公司可转换公司债券",
+     "bond_short_name": "晨鸣转债",
+     "cb_type": "CB",
+     "cb_code": null,
+     "stk_code": "000488.SZ",
+     "stk_short_name": "ST晨鸣",
+     "maturity": "5.0",
+     "par": "100.0",
+     "issue_price": "100.0",
+     "issue_size": "2000000000.0",
+     "remain_size": "0.0",
+     "value_date": "20040915",
+     "maturity_date": "20090915",
+     "rate_type": null,
+     "coupon_rate": "2.97",
+     "add_rate": null,
+     "pay_per_year": "1",
+     "list_date": "20040930",
+     "delist_date": "20070521",
+     "exchange": "SZ",
+     "conv_start_date": "20050315",
+     "conv_end_date": "20090914",
+     "conv_stop_date": "20070514"
+    },
+    {
+     "ts_code": "110010.SH",
+     "bond_full_name": "内蒙古包钢钢联股份有限公司可转换公司债券",
+     "bond_short_name": "包钢转债",
+     "cb_type": "CB",
+     "cb_code": "190010",
+     "stk_code": "600010.SH",
+     "stk_short_name": "包钢股份",
+     "maturity": "5.0",
+     "par": "100.0",
+     "issue_price": "100.0",
+     "issue_size": "1800000000.0",
+     "remain_size": "0.0",
+     "value_date": "20041110",
+     "maturity_date": "20091110",
+     "rate_type": null,
+     "coupon_rate": "2.6",
+     "add_rate": "3.8",
+     "pay_per_year": "1",
+     "list_date": "20041125",
+     "delist_date": "20091116",
+     "exchange": "SH",
+     "conv_start_date": "20050510",
+     "conv_end_date": "20091109",
+     "conv_stop_date": "20091109"
+    },
+    {
+     "ts_code": "126301.SZ",
+     "bond_full_name": "吴江丝绸股份有限公司可转换公司债券",
+     "bond_short_name": "丝绸转2",
+     "cb_type": "CB",
+     "cb_code": null,
+     "stk_code": "000301.SZ",
+     "stk_short_name": "东方盛虹",
+     "maturity": "5.0",
+     "par": "100.0",
+     "issue_price": "100.0",
+     "issue_size": "800000000.0",
+     "remain_size": "0.0",
+     "value_date": "20020909",
+     "maturity_date": "20070909",
+     "rate_type": null,
+     "coupon_rate": "1.8",
+     "add_rate": null,
+     "pay_per_year": "1",
+     "list_date": "20020924",
+     "delist_date": "20060918",
+     "exchange": "SZ",
+     "conv_start_date": "20030310",
+     "conv_end_date": "20070908",
+     "conv_stop_date": "20060911"
+    },
+    {
+     "ts_code": "125729.SZ",
+     "bond_full_name": "北京燕京啤酒股份有限公司可转换公司债券",
+     "bond_short_name": "燕京转债",
+     "cb_type": "CB",
+     "cb_code": null,
+     "stk_code": "000729.SZ",
+     "stk_short_name": "燕京啤酒",
+     "maturity": "5.0",
+     "par": "100.0",
+     "issue_price": "100.0",
+     "issue_size": "700000000.0",
+     "remain_size": "0.0",
+     "value_date": "20021016",
+     "maturity_date": "20071016",
+     "rate_type": null,
+     "coupon_rate": "1.2",
+     "add_rate": null,
+     "pay_per_year": "1",
+     "list_date": "20021031",
+     "delist_date": "20071016",
+     "exchange": "SZ",
+     "conv_start_date": "20031016",
+     "conv_end_date": "20071015",
+     "conv_stop_date": "20071016"
+    },
+    {
+     "ts_code": "125930.SZ",
+     "bond_full_name": "安徽丰原生物化学股份有限公司可转换公司债券",
+     "bond_short_name": "丰原转债",
+     "cb_type": "CB",
+     "cb_code": null,
+     "stk_code": "000930.SZ",
+     "stk_short_name": "中粮科技",
+     "maturity": "5.0",
+     "par": "100.0",
+     "issue_price": "100.0",
+     "issue_size": "500000000.0",
+     "remain_size": "0.0",
+     "value_date": "20030424",
+     "maturity_date": "20080424",
+     "rate_type": null,
+     "coupon_rate": "2.2",
+     "add_rate": null,
+     "pay_per_year": "1",
+     "list_date": "20030520",
+     "delist_date": "20060324",
+     "exchange": "SZ",
+     "conv_start_date": "20031027",
+     "conv_end_date": "20080422",
+     "conv_stop_date": "20060313"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:07:01"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:01"
+}

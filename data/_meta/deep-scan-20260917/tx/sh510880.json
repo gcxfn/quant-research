@@ -1,0 +1,107 @@
+{
+ "source": "tx",
+ "dataset": "sh510880",
+ "batches": {
+  "tx/sh510880/20260904T185713": {
+   "batch_dir": "tx/sh510880/20260904T185713",
+   "mode": "json",
+   "status": "completed",
+   "issues": [
+    {
+     "level": "warning",
+     "code": "meta_row_count_mismatch",
+     "detail": "meta n_rows=4770, 实际解析 4775 行, 其中跨页重复日期 5 行"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_kline_dates_across_pages",
+     "detail": "跨页重复日期 5 行, 例: ['20100325', '20130715', '20161025', '20200206', '20230522']"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "407 个记录日期 > 2024-12-31 (max=20260904); 冻结边界: 只报告"
+    }
+   ],
+   "inventory_registration": {
+    "files": 7,
+    "bytes": 295762
+   },
+   "files": {
+    "n_total": 7,
+    "response_pages": [
+     "response_000.json",
+     "response_001.json",
+     "response_002.json",
+     "response_003.json",
+     "response_004.json",
+     "response_005.json"
+    ],
+    "total_bytes": 295762
+   },
+   "duplicate_date_rows": 5,
+   "rows_total": 4775,
+   "date_coverage": {
+    "record_date": {
+     "min": "20070118",
+     "max": "20260904",
+     "rows_gt_20241231": 407
+    }
+   },
+   "numeric_magnitude": {
+    "close": {
+     "min": -0.279,
+     "median": 1.668,
+     "max": 3.612
+    }
+   },
+   "sample_rows": [
+    {
+     "date": "2023-05-22",
+     "ohlc": [
+      "2.649",
+      "2.642",
+      "2.660",
+      "2.629"
+     ],
+     "volume": "697594.000"
+    },
+    {
+     "date": "2023-05-23",
+     "ohlc": [
+      "2.640",
+      "2.604",
+      "2.650",
+      "2.604"
+     ],
+     "volume": "671807.000"
+    },
+    {
+     "date": "2023-05-24",
+     "ohlc": [
+      "2.602",
+      "2.562",
+      "2.602",
+      "2.558"
+     ],
+     "volume": "961954.000"
+    },
+    {
+     "date": "2023-05-25",
+     "ohlc": [
+      "2.558",
+      "2.547",
+      "2.562",
+      "2.516"
+     ],
+     "volume": "910527.000"
+    }
+   ],
+   "sha256_verified_pages": 1,
+   "sha256_concat_ok": false,
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:54"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:54"
+}

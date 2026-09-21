@@ -1,0 +1,48 @@
+{
+  "status": "PASS_WITH_LIMITATIONS",
+  "independent_aggregation": [
+    {
+      "code": "sh.603026",
+      "date": "2019-05-06",
+      "independent_groups": 48,
+      "fields_compared": 288,
+      "sha256": "6a8a82499da9bdd9b93de74ed05538992520d324ec070520682add42a3ff34bc"
+    },
+    {
+      "code": "sz.300420",
+      "date": "2019-09-02",
+      "independent_groups": 48,
+      "fields_compared": 288,
+      "sha256": "a35401b52145d939200073658956c8e9bd7fb7fdef7df5a46462b453d86125d8"
+    },
+    {
+      "code": "sh.600452",
+      "date": "2016-06-01",
+      "independent_groups": 48,
+      "fields_compared": 288,
+      "sha256": "3c3f27e04121981ca0304b7d370341113f5b169e3e97abd387e8ef9336c71c66"
+    }
+  ],
+  "unchanged_patch_entries": 30,
+  "actual_dependencies": 4,
+  "all_actual_dependencies_replayed": true,
+  "all_fills_cash_fees_unchanged": true,
+  "full_account_rerun_required": false,
+  "explanation": "Same daily valuations, strategy and initial state; every changed security-day actual dependency gives identical fills/cash. No change in downstream holdings or signals. Old account artifacts retain old source identity.",
+  "missing_300114": {
+    "status": "TRADING_DAY_MINUTE_MISSING",
+    "daily_volume_shares": 2635640.0,
+    "actual_T2_dependency": false,
+    "local_input_sha256": "d305f5d6da20bc2fb2e27b71457dc20ec64a5daa8dca22b8fa9d280ef93eab9f",
+    "proxy_daily_sha256": "9d5103c5945b7d4cc2231d16f494a0db4d26c49d82b6172b775712465892a680"
+  },
+  "patch_manifest_sha256": "be43d9b3d739985a130882fec8c65187f2389af1853cb6f85d8b7fd4f5527a72",
+  "requests_sha256": {
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\REV_vola_11__main\\requests.json": "583e0b09a922a93d5c3f502a3e36eedb8fe65b144fd2028bd896f0ad8c4b8b50",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\REV_vola_11__stress\\requests.json": "a1b19decc5cc4e46a6c47a0d6305134ca2075bc16f27a6e2954b8e6b67de751c",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\PV1_REV11_RANK50_TRAIN_V1__main\\requests.json": "866d0acc8c42daf460e308b1edd0e172e94075b2388defd8c35d1c3cf10c8f7f",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\PV1_REV11_RANK50_TRAIN_V1__stress\\requests.json": "b8a9e51d117558541912efc39ccdca35fc61fc057e2000efb0bc2852c4940512"
+  },
+  "script_sha256": "6c86320a635902abb6555ddc588436c832dae6492a5f2e1615fb19a61388f310",
+  "limitation": "Conditional source revision, not independent vendor accuracy certification or T3/new engine acceptance"
+}

@@ -1,0 +1,84 @@
+{
+ "source": "em_fin",
+ "dataset": "sh688627",
+ "batches": {
+  "em_fin/sh688627/20260904T013252": {
+   "batch_dir": "em_fin/sh688627/20260904T013252",
+   "mode": "json",
+   "status": "completed",
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "6 个记录日期 > 2024-12-31 (max=20260630); 冻结边界: 只报告"
+    }
+   ],
+   "inventory_registration": {
+    "files": 2,
+    "bytes": 50139
+   },
+   "files": {
+    "n_total": 2,
+    "response_pages": [
+     "response.json"
+    ],
+    "total_bytes": 50139
+   },
+   "rows_total": 9,
+   "date_coverage": {
+    "record_date": {
+     "min": "20240630",
+     "max": "20260630",
+     "rows_gt_20241231": 6
+    }
+   },
+   "sample_rows": [
+    {
+     "SECUCODE": "688627.SH",
+     "SECURITY_CODE": "688627",
+     "SECURITY_NAME_ABBR": "精智达",
+     "ORG_CODE": "10507061",
+     "ORG_TYPE": "通用",
+     "REPORT_DATE": "2026-06-30 00:00:00",
+     "REPORT_TYPE": "中报",
+     "REPORT_DATE_NAME": "2026中报"
+    },
+    {
+     "SECUCODE": "688627.SH",
+     "SECURITY_CODE": "688627",
+     "SECURITY_NAME_ABBR": "精智达",
+     "ORG_CODE": "10507061",
+     "ORG_TYPE": "通用",
+     "REPORT_DATE": "2026-03-31 00:00:00",
+     "REPORT_TYPE": "一季报",
+     "REPORT_DATE_NAME": "2026一季报"
+    },
+    {
+     "SECUCODE": "688627.SH",
+     "SECURITY_CODE": "688627",
+     "SECURITY_NAME_ABBR": "精智达",
+     "ORG_CODE": "10507061",
+     "ORG_TYPE": "通用",
+     "REPORT_DATE": "2025-12-31 00:00:00",
+     "REPORT_TYPE": "年报",
+     "REPORT_DATE_NAME": "2025年报"
+    },
+    {
+     "SECUCODE": "688627.SH",
+     "SECURITY_CODE": "688627",
+     "SECURITY_NAME_ABBR": "精智达",
+     "ORG_CODE": "10507061",
+     "ORG_TYPE": "通用",
+     "REPORT_DATE": "2025-09-30 00:00:00",
+     "REPORT_TYPE": "三季报",
+     "REPORT_DATE_NAME": "2025三季报"
+    }
+   ],
+   "sha256_verified_pages": 1,
+   "sha256_concat_ok": true,
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:54"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:54"
+}

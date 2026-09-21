@@ -1,0 +1,41 @@
+{
+  "experiment_id": "exp-20260919-factor-round-f3r3",
+  "prereg": "docs/research/exp-20260919-factor-round-f3r3-prereg.md",
+  "frozen_at": "2026-09-19T20:15:00+08:00",
+  "engine_pin_sha256_16": "84a2443ac28fe1b8",
+  "engine_mode": "band engine v1.3 intent layer, corporate_actions=None (v1.2-identical path)",
+  "positioning": "user-directed reopen of the F-line after F3R2 pause; three directives: industry cap, capital 500k, larger sleeve K",
+  "trial_accounting": {"strategy_line": "267->270 (F3R3-A0 anchor + 2 arms)", "factor_line_FT01": 120},
+  "dev_window": {"start": "2015-01-05", "end": "2020-12-31", "val_policy": "2021-2024 zero contact"},
+  "capital": {"arms_initial_cash": 500000.0, "anchor_initial_cash": 200000.0,
+              "note": "user directive 500k for arms; A0 anchor stays 200k for byte-reproduction of v3 R3-06"},
+  "chassis": {
+    "source": "hybrid family v3 run 20260919T110500-hybrid-v3-r3ld config R3-06, verbatim",
+    "legs": {"sh.511010": 0.15, "sh.518880": 0.25},
+    "anchor": "F3R3-A0 = R3-06 verbatim replica at 200k; 5-frame .equals + net_cagr bitwise vs v3 outputs"
+  },
+  "industry_constraint": {
+    "source_file": "data/raw/tushare/index_member_all/20260909-r1/chunk_all.csv",
+    "source_sha256_16": "4edffc3994fb527a",
+    "classification": "shenwan L1 (31 industries) + UNMAPPED bucket (2/2933 composite candidates)",
+    "rule": "members per L1 industry (incl. UNMAPPED) <= 2; ENTRIES ONLY (skip candidate if its industry already has 2 seated members); incumbents never force-exited on industry grounds; unfilled seats = rule-compliant cash (monthly stats logged)",
+    "lookahead_disclosure": "single-snapshot 2026 classification applied to 2015-2020; industry membership is sticky but SW-2021 reclassifications misassign some historical months; constraint-purpose (diversification) usage, second-order; carried into any val claim"
+  },
+  "stock_sleeve": {
+    "composite_source": "F3R1 frozen outputs verbatim: F3-EW_composite.parquet / F3-ICW_composite.parquet",
+    "membership": {"first_month": "top 10 subject to industry cap", "enter_rank_le": 10, "stay_rank_le": 20, "exit_rank_gt": 20, "max_members": 10, "industry_cap_per_l1": 2},
+    "weight_rule": "w_T = e_T * (0.06 / 0.90); risk-on per-name 0.06 (sleeve 60%), risk-off 0.02667 (26.67%); e_T = R16 T200-40 verbatim; idle cash in risk-off months disclosed",
+    "intents": "entry -> buy(target_weight=w_T); exit -> sell risk full; continuing -> monthly reduce-to-target; no top-up primitive (S5 seam)",
+    "expiry": "next signal day + 1 calendar day",
+    "priority": "composite rank at T (1-based)",
+    "stock_semantics": "am/pm, T+1, integer lots, STOCK_FEE_SCHEDULE, real stk_limit"
+  },
+  "gates": {
+    "source": "gates 1-7 R16 verbatim; gate 8 = hybrid family v3 final-delivery caliber",
+    "b1m_anchor": "R16 metrics.json configs.C05 (T200-40 / rate_only): net +0.60%, maxDD -39.82%",
+    "b3prime": "R16 B3prime_dev_mean_net_cagr T200-40 = -0.0199",
+    "goal_column": "dev net CAGR >= 10%; goal_met = dev_pass AND goal_column"
+  },
+  "stop_rules": "any arm dev_pass AND >=10% -> stop, present to user (val requires explicit approval); both arms eliminated -> present to user, no F3R4 autonomously; anchor mismatch -> stop, fix runner (no trial consumed)",
+  "budget": {"wall_seconds": 1200, "peak_rss_gb": 8.0, "grids": "none", "single_run": true}
+}

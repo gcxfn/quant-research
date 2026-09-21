@@ -1,0 +1,38 @@
+{
+ "source": "xiaodefa",
+ "dataset": "20260914-300114-status",
+ "batches": {
+  "xiaodefa/20260914-300114-status": {
+   "batch_dir": "xiaodefa/20260914-300114-status",
+   "mode": "full",
+   "files": {
+    "n_total": 1,
+    "n_csv": 0,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 0,
+    "n_other": 1,
+    "manifest_names": [],
+    "other_names": [
+     "daily_20160503.json"
+    ],
+    "total_bytes": 465
+   },
+   "issues": [
+    {
+     "level": "info",
+     "code": "no_data_files",
+     "detail": "无 csv/parquet 数据文件; 仅 1 个其他文件"
+    }
+   ],
+   "inventory_registration": {
+    "files": 1,
+    "bytes": 465
+   },
+   "status": "no_tabular_data",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:06:51"
+  }
+ },
+ "updated_at": "2026-09-18T00:06:51"
+}

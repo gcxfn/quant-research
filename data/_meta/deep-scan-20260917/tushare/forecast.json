@@ -1,0 +1,271 @@
+{
+ "source": "tushare",
+ "dataset": "forecast",
+ "batches": {
+  "tushare/forecast/20260909-r1": {
+   "batch_dir": "tushare/forecast/20260909-r1",
+   "mode": "full",
+   "files": {
+    "n_total": 98,
+    "n_csv": 97,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 35622104
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 ann_date 有 10327 行 > 2024-12-31 (max=20260904); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 98,
+    "bytes": 35622104
+   },
+   "schema": {
+    "ts_code": "String",
+    "ann_date": "Int64",
+    "end_date": "Int64",
+    "type": "String",
+    "p_change_min": "Float64",
+    "p_change_max": "Float64",
+    "net_profit_min": "Float64",
+    "net_profit_max": "Float64",
+    "last_parent_net": "Float64",
+    "first_ann_date": "Int64",
+    "summary": "String",
+    "change_reason": "String",
+    "update_flag": "Int64"
+   },
+   "n_columns": 13,
+   "date_columns": [
+    "ann_date",
+    "end_date",
+    "first_ann_date"
+   ],
+   "numeric_columns_checked": [
+    "ann_date",
+    "end_date",
+    "first_ann_date",
+    "last_parent_net",
+    "net_profit_max",
+    "net_profit_min",
+    "p_change_max",
+    "p_change_min",
+    "update_flag"
+   ],
+   "rows_total": 50406,
+   "date_coverage": {
+    "ann_date": {
+     "min": "20180903",
+     "max": "20260904",
+     "rows_gt_20241231": 10327,
+     "null_rows": 0
+    },
+    "end_date": {
+     "min": "20180930",
+     "max": "20271231",
+     "rows_gt_20241231": 7366,
+     "null_rows": 0
+    },
+    "first_ann_date": {
+     "min": "20180503",
+     "max": "20260826",
+     "rows_gt_20241231": 10293,
+     "null_rows": 31
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 10327,
+   "numeric_magnitude": {
+    "ann_date": {
+     "min": 20180903.0,
+     "max": 20260904.0
+    },
+    "end_date": {
+     "min": 20180930.0,
+     "max": 20271231.0
+    },
+    "first_ann_date": {
+     "min": 20180503.0,
+     "max": 20260826.0
+    },
+    "last_parent_net": {
+     "min": -6400330.8,
+     "max": 10970200.0
+    },
+    "net_profit_max": {
+     "min": -8200000.0,
+     "max": 17768900.0
+    },
+    "net_profit_min": {
+     "min": -8200000.0,
+     "max": 15678500.0
+    },
+    "p_change_max": {
+     "min": -50271.9375,
+     "max": 128630.25
+    },
+    "p_change_min": {
+     "min": -53618.5607,
+     "max": 109125.67
+    },
+    "update_flag": {
+     "min": 0.0,
+     "max": 1.0
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "end_date",
+    "ann_date"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "ts_code": "002937.SZ",
+     "ann_date": "20180903",
+     "end_date": "20180930",
+     "type": "略增",
+     "p_change_min": "14.98",
+     "p_change_max": "18.0",
+     "net_profit_min": "7600.0",
+     "net_profit_max": "7800.0",
+     "last_parent_net": "6610.0",
+     "first_ann_date": "20180903",
+     "summary": "预计净利润7600-7800万",
+     "change_reason": null,
+     "update_flag": "0"
+    },
+    {
+     "ts_code": "002188.SZ",
+     "ann_date": "20180904",
+     "end_date": "20180930",
+     "type": "首亏",
+     "p_change_min": "-862.5877",
+     "p_change_max": "-776.257",
+     "net_profit_min": "-53000.0",
+     "net_profit_max": "-47000.0",
+     "last_parent_net": "6950.02",
+     "first_ann_date": "20180830",
+     "summary": "预计净利润-53000~-47000万",
+     "change_reason": "2018年9月3日，巴士在线股份有限公司(以下简称“公司”)收到北京市高级人民法院送达的案号为“",
+     "update_flag": "0"
+    },
+    {
+     "ts_code": "603810.SH",
+     "ann_date": "20180904",
+     "end_date": "20180930",
+     "type": "预增",
+     "p_change_min": "49.76",
+     "p_change_max": "65.52",
+     "net_profit_min": "9500.0",
+     "net_profit_max": "10500.0",
+     "last_parent_net": "6343.6832",
+     "first_ann_date": "20180904",
+     "summary": "预计净利润9500-10500万",
+     "change_reason": null,
+     "update_flag": "1"
+    },
+    {
+     "ts_code": "002366.SZ",
+     "ann_date": "20180905",
+     "end_date": "20180930",
+     "type": "略减",
+     "p_change_min": "-26.65",
+     "p_change_max": "-14.42",
+     "net_profit_min": "48000.0",
+     "net_profit_max": "56000.0",
+     "last_parent_net": "65438.5",
+     "first_ann_date": "20180830",
+     "summary": "预计净利润48000-56000万",
+     "change_reason": "预测核电市场需求低于同期水平，核电产品收入同比减少所致。",
+     "update_flag": "0"
+    },
+    {
+     "ts_code": "300261.SZ",
+     "ann_date": "20180908",
+     "end_date": "20180930",
+     "type": "预增",
+     "p_change_min": "120.0",
+     "p_change_max": "140.0",
+     "net_profit_min": "11104.0",
+     "net_profit_max": "12114.0",
+     "last_parent_net": "5047.47",
+     "first_ann_date": "20180908",
+     "summary": "预计净利润11104-12114万",
+     "change_reason": "报告期内，公司农药业务大幅增长，医药及生物酶业务稳中有升。公司预期今年主营业务将延续上半年高速增",
+     "update_flag": "0"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 97,
+    "distinct_headers": 1,
+    "modal_header_cols": 13,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "202503",
+      "manifest_rows": 61,
+      "actual_rows": 60
+     },
+     {
+      "chunk": "202001",
+      "manifest_rows": 1962,
+      "actual_rows": 1961
+     },
+     {
+      "chunk": "202508",
+      "manifest_rows": 58,
+      "actual_rows": 57
+     },
+     {
+      "chunk": "202609",
+      "manifest_rows": 2,
+      "actual_rows": 1
+     },
+     {
+      "chunk": "202112",
+      "manifest_rows": 71,
+      "actual_rows": 70
+     },
+     {
+      "chunk": "202106",
+      "manifest_rows": 138,
+      "actual_rows": 137
+     },
+     {
+      "chunk": "202408",
+      "manifest_rows": 56,
+      "actual_rows": 55
+     },
+     {
+      "chunk": "202103",
+      "manifest_rows": 262,
+      "actual_rows": 261
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 0.1,
+   "finished_at": "2026-09-18T00:09:33"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:33"
+}

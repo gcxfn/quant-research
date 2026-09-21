@@ -1,0 +1,171 @@
+{
+ "source": "xiaodefa",
+ "dataset": "tdx_index",
+ "batches": {
+  "xiaodefa/tdx_index/20260913-bulk1": {
+   "batch_dir": "xiaodefa/tdx_index/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 7,
+    "n_csv": 2,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 4,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [
+     "chunk_idx_type-概念板块.csv.truncated",
+     "chunk_idx_type-概念板块.csv.truncated2",
+     "chunk_idx_type-行业板块.csv.truncated",
+     "chunk_idx_type-行业板块.csv.truncated2"
+    ],
+    "total_bytes": 12282594
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 148507 行 > 2024-12-31 (max=20260911); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['ts_code', 'trade_date'] 重复: 132 个键 / 264 行"
+    }
+   ],
+   "inventory_registration": {
+    "files": 7,
+    "bytes": 12282594
+   },
+   "schema": {
+    "ts_code": "String",
+    "trade_date": "Int64",
+    "name": "String",
+    "idx_type": "String",
+    "idx_count": "Int64",
+    "total_share": "Float64",
+    "float_share": "Float64",
+    "total_mv": "Float64",
+    "float_mv": "Float64"
+   },
+   "n_columns": 9,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "total_mv",
+    "float_mv",
+    "float_share",
+    "idx_count",
+    "total_share",
+    "trade_date"
+   ],
+   "rows_total": 148507,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20250328",
+     "max": "20260911",
+     "rows_gt_20241231": 148507,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 148507,
+   "numeric_magnitude": {
+    "total_mv": {
+     "min": 101.09,
+     "max": 376168.28
+    },
+    "float_mv": {
+     "min": 91.35,
+     "max": 326634.13
+    },
+    "float_share": {
+     "min": 11.94,
+     "max": 23038.13
+    },
+    "idx_count": {
+     "min": 3.0,
+     "max": 1216.0
+    },
+    "total_share": {
+     "min": 12.65,
+     "max": 24248.34
+    },
+    "trade_date": {
+     "min": 20250328.0,
+     "max": 20260911.0
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "trade_date"
+   ],
+   "duplicate_keys": 132,
+   "duplicate_rows": 264,
+   "sample_rows": [
+    {
+     "ts_code": "880501.TDX",
+     "trade_date": "20260911",
+     "name": "含H股",
+     "idx_type": "概念板块",
+     "idx_count": "204",
+     "total_share": "24248.34",
+     "float_share": "23038.13",
+     "total_mv": "312013.91",
+     "float_mv": "294800.22"
+    },
+    {
+     "ts_code": "880507.TDX",
+     "trade_date": "20260911",
+     "name": "国防军工",
+     "idx_type": "概念板块",
+     "idx_count": "537",
+     "total_share": "4765.38",
+     "float_share": "4326.98",
+     "total_mv": "83038.65",
+     "float_mv": "71743.09"
+    },
+    {
+     "ts_code": "880513.TDX",
+     "trade_date": "20260911",
+     "name": "海峡西岸",
+     "idx_type": "概念板块",
+     "idx_count": "166",
+     "total_share": "1766.3",
+     "float_share": "1665.81",
+     "total_mv": "39201.62",
+     "float_mv": "37243.34"
+    },
+    {
+     "ts_code": "880505.TDX",
+     "trade_date": "20260911",
+     "name": "稀缺资源",
+     "idx_type": "概念板块",
+     "idx_count": "64",
+     "total_share": "1606.12",
+     "float_share": "1555.24",
+     "total_mv": "30955.76",
+     "float_mv": "30411.13"
+    },
+    {
+     "ts_code": "880506.TDX",
+     "trade_date": "20260911",
+     "name": "5G概念",
+     "idx_type": "概念板块",
+     "idx_count": "453",
+     "total_share": "5062.57",
+     "float_share": "4749.95",
+     "total_mv": "140698.03",
+     "float_mv": "130993.2"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:08:52"
+  }
+ },
+ "updated_at": "2026-09-18T00:08:52"
+}

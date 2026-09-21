@@ -1,0 +1,194 @@
+{
+ "source": "xiaodefa",
+ "dataset": "dc_index",
+ "batches": {
+  "xiaodefa/dc_index/20260913-bulk1": {
+   "batch_dir": "xiaodefa/dc_index/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 7,
+    "n_csv": 3,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 3,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [
+     "chunk_idx_type-地域板块.csv.truncated",
+     "chunk_idx_type-概念板块.csv.truncated",
+     "chunk_idx_type-行业板块.csv.truncated"
+    ],
+    "total_bytes": 23051616
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 195781 行 > 2024-12-31 (max=20260911); 冻结边界审查: 只报告不删除"
+    }
+   ],
+   "inventory_registration": {
+    "files": 7,
+    "bytes": 23051616
+   },
+   "schema": {
+    "ts_code": "String",
+    "trade_date": "Int64",
+    "name": "String",
+    "leading": "String",
+    "leading_code": "String",
+    "pct_change": "Float64",
+    "leading_pct": "Float64",
+    "total_mv": "Float64",
+    "turnover_rate": "Float64",
+    "up_num": "Int64",
+    "down_num": "Int64",
+    "idx_type": "String",
+    "level": "String"
+   },
+   "n_columns": 13,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "turnover_rate",
+    "total_mv",
+    "down_num",
+    "leading_pct",
+    "pct_change",
+    "trade_date",
+    "up_num"
+   ],
+   "rows_total": 195781,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20250530",
+     "max": "20260911",
+     "rows_gt_20241231": 195781,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 195781,
+   "numeric_magnitude": {
+    "turnover_rate": {
+     "min": 0.0,
+     "max": 49.28
+    },
+    "total_mv": {
+     "min": 0.0,
+     "max": 12700150988.8
+    },
+    "down_num": {
+     "min": 0.0,
+     "max": 3556.0
+    },
+    "leading_pct": {
+     "min": -20.0,
+     "max": 30.0
+    },
+    "pct_change": {
+     "min": -14.99,
+     "max": 20.02
+    },
+    "trade_date": {
+     "min": 20250530.0,
+     "max": 20260911.0
+    },
+    "up_num": {
+     "min": 0.0,
+     "max": 3583.0
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "trade_date"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "ts_code": "BK0176.DC",
+     "trade_date": "20260911",
+     "name": "海南板块",
+     "leading": "百迈科",
+     "leading_code": "920268.BJ",
+     "pct_change": "-2.45",
+     "leading_pct": "18.78",
+     "total_mv": "45418470.4",
+     "turnover_rate": "1.98",
+     "up_num": "1",
+     "down_num": "27",
+     "idx_type": "地域板块",
+     "level": null
+    },
+    {
+     "ts_code": "BK0175.DC",
+     "trade_date": "20260911",
+     "name": "内蒙古",
+     "leading": "内蒙一机",
+     "leading_code": "600967.SH",
+     "pct_change": "-2.35",
+     "leading_pct": "9.99",
+     "total_mv": "99733910.4",
+     "turnover_rate": "1.81",
+     "up_num": "4",
+     "down_num": "25",
+     "idx_type": "地域板块",
+     "level": null
+    },
+    {
+     "ts_code": "BK0174.DC",
+     "trade_date": "20260911",
+     "name": "西藏板块",
+     "leading": "华宝股份",
+     "leading_code": "300741.SZ",
+     "pct_change": "-3.12",
+     "leading_pct": "2.86",
+     "total_mv": "28319497.6",
+     "turnover_rate": "2.07",
+     "up_num": "2",
+     "down_num": "20",
+     "idx_type": "地域板块",
+     "level": null
+    },
+    {
+     "ts_code": "BK0173.DC",
+     "trade_date": "20260911",
+     "name": "贵州板块",
+     "leading": "三力制药",
+     "leading_code": "603439.SH",
+     "pct_change": "-1.83",
+     "leading_pct": "10.0",
+     "total_mv": "190689147.2",
+     "turnover_rate": "2.88",
+     "up_num": "6",
+     "down_num": "28",
+     "idx_type": "地域板块",
+     "level": null
+    },
+    {
+     "ts_code": "BK0172.DC",
+     "trade_date": "20260911",
+     "name": "浙江板块",
+     "leading": "冠盛股份",
+     "leading_code": "605088.SH",
+     "pct_change": "-2.09",
+     "leading_pct": "9.98",
+     "total_mv": "894243225.6",
+     "turnover_rate": "1.99",
+     "up_num": "70",
+     "down_num": "676",
+     "idx_type": "地域板块",
+     "level": null
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.1,
+   "finished_at": "2026-09-18T00:07:22"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:22"
+}

@@ -1,0 +1,248 @@
+{
+  "created_at": "2026-09-16T21:31:41+08:00",
+  "rows": [
+    {
+      "pack": "bigquant",
+      "batch": "minute-bulk-20260915-1",
+      "year": "2010",
+      "files": 242,
+      "bytes": 1880208147,
+      "kind": "day-parquet",
+      "sessions": 242,
+      "first_day": "20100104",
+      "last_day": "20101231"
+    },
+    {
+      "pack": "bigquant",
+      "batch": "minute-bulk-20260915-1",
+      "year": "2011",
+      "files": 244,
+      "bytes": 2052734728,
+      "kind": "day-parquet",
+      "sessions": 244,
+      "first_day": "20110104",
+      "last_day": "20111230"
+    },
+    {
+      "pack": "bigquant",
+      "batch": "minute-bulk-20260915-1",
+      "year": "2012",
+      "files": 243,
+      "bytes": 2097348693,
+      "kind": "day-parquet",
+      "sessions": 243,
+      "first_day": "20120104",
+      "last_day": "20121231"
+    },
+    {
+      "pack": "bigquant",
+      "batch": "minute-bulk-20260915-1",
+      "year": "2013",
+      "files": 238,
+      "bytes": 2219374510,
+      "kind": "day-parquet",
+      "sessions": 238,
+      "first_day": "20130104",
+      "last_day": "20131231"
+    },
+    {
+      "pack": "bigquant",
+      "batch": "minute-bulk-20260915-1",
+      "year": "2014",
+      "files": 245,
+      "bytes": 2313138217,
+      "kind": "day-parquet",
+      "sessions": 245,
+      "first_day": "20140102",
+      "last_day": "20141231"
+    },
+    {
+      "pack": "bigquant",
+      "batch": "minute-bulk-20260915-1",
+      "year": "2015",
+      "files": 2607,
+      "bytes": 11462751778,
+      "kind": "symbol-csv",
+      "sessions": null,
+      "first_day": null,
+      "last_day": null
+    },
+    {
+      "pack": "bigquant",
+      "batch": "minute-bulk-20260915-1",
+      "year": "2016",
+      "files": 2834,
+      "bytes": 12606548479,
+      "kind": "symbol-csv",
+      "sessions": null,
+      "first_day": null,
+      "last_day": null
+    },
+    {
+      "pack": "bigquant",
+      "batch": "minute-bulk-20260915-1",
+      "year": "2018",
+      "files": 3370,
+      "bytes": 15742115160,
+      "kind": "symbol-csv",
+      "sessions": null,
+      "first_day": null,
+      "last_day": null
+    },
+    {
+      "pack": "bigquant",
+      "batch": "minute-bulk-20260915-1",
+      "year": "2019",
+      "files": 3572,
+      "bytes": 16903837159,
+      "kind": "symbol-csv",
+      "sessions": null,
+      "first_day": null,
+      "last_day": null
+    },
+    {
+      "pack": "bigquant",
+      "batch": "minute-bulk-20260915-1",
+      "year": "2025",
+      "files": 243,
+      "bytes": 5532103937,
+      "kind": "day-parquet",
+      "sessions": 243,
+      "first_day": "20250102",
+      "last_day": "20251231"
+    },
+    {
+      "pack": "bigquant",
+      "batch": "minute-bulk-20260915-1",
+      "year": "2026",
+      "files": 63,
+      "bytes": 1522559054,
+      "kind": "day-parquet",
+      "sessions": 63,
+      "first_day": "20260105",
+      "last_day": "20260410"
+    },
+    {
+      "pack": "user_minute_1m",
+      "batch": "20260913-143215",
+      "year": "2015",
+      "files": 244,
+      "bytes": 2566304897,
+      "kind": "day-parquet",
+      "sessions": 244,
+      "first_day": "20150105",
+      "last_day": "20151231"
+    },
+    {
+      "pack": "user_minute_1m",
+      "batch": "20260913-143215",
+      "year": "2016",
+      "files": 244,
+      "bytes": 2760973417,
+      "kind": "day-parquet",
+      "sessions": 244,
+      "first_day": "20160104",
+      "last_day": "20161230"
+    },
+    {
+      "pack": "user_minute_1m",
+      "batch": "20260913-143215",
+      "year": "2017",
+      "files": 244,
+      "bytes": 3008155490,
+      "kind": "day-parquet",
+      "sessions": 244,
+      "first_day": "20170103",
+      "last_day": "20171229"
+    },
+    {
+      "pack": "user_minute_1m",
+      "batch": "20260913-143215",
+      "year": "2018",
+      "files": 243,
+      "bytes": 3149461553,
+      "kind": "day-parquet",
+      "sessions": 243,
+      "first_day": "20180102",
+      "last_day": "20181228"
+    },
+    {
+      "pack": "user_minute_1m",
+      "batch": "20260913-143215",
+      "year": "2019",
+      "files": 244,
+      "bytes": 3394071091,
+      "kind": "day-parquet",
+      "sessions": 244,
+      "first_day": "20190102",
+      "last_day": "20191231"
+    },
+    {
+      "pack": "user_minute_1m",
+      "batch": "20260913-2020-2024",
+      "year": "2020",
+      "files": 243,
+      "bytes": 3851798066,
+      "kind": "day-parquet",
+      "sessions": 243,
+      "first_day": "20200102",
+      "last_day": "20201231"
+    },
+    {
+      "pack": "user_minute_1m",
+      "batch": "20260913-2020-2024",
+      "year": "2021",
+      "files": 243,
+      "bytes": 4422875354,
+      "kind": "day-parquet",
+      "sessions": 243,
+      "first_day": "20210104",
+      "last_day": "20211231"
+    },
+    {
+      "pack": "user_minute_1m",
+      "batch": "20260913-2020-2024",
+      "year": "2022",
+      "files": 242,
+      "bytes": 4867792446,
+      "kind": "day-parquet",
+      "sessions": 242,
+      "first_day": "20220104",
+      "last_day": "20221230"
+    },
+    {
+      "pack": "user_minute_1m",
+      "batch": "20260913-2020-2024",
+      "year": "2023",
+      "files": 242,
+      "bytes": 5030706386,
+      "kind": "day-parquet",
+      "sessions": 242,
+      "first_day": "20230103",
+      "last_day": "20231229"
+    },
+    {
+      "pack": "user_minute_1m",
+      "batch": "20260913-2020-2024",
+      "year": "2024",
+      "files": 242,
+      "bytes": 5252122595,
+      "kind": "day-parquet",
+      "sessions": 242,
+      "first_day": "20240102",
+      "last_day": "20241231"
+    }
+  ],
+  "totals": {
+    "bigquant": {
+      "years": 11,
+      "files": 13901,
+      "bytes": 74332719862
+    },
+    "user_minute_1m": {
+      "years": 10,
+      "files": 2431,
+      "bytes": 38304261295
+    }
+  }
+}

@@ -1,0 +1,219 @@
+{
+ "source": "xiaodefa",
+ "dataset": "top10_holders",
+ "batches": {
+  "xiaodefa/top10_holders/20260913-bulk1": {
+   "batch_dir": "xiaodefa/top10_holders/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 5894,
+    "n_csv": 5893,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 343556805
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 ann_date 有 418166 行 > 2024-12-31 (max=20260831); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 5894,
+    "bytes": 343556805
+   },
+   "schema": {
+    "symbol": "String",
+    "ann_date": "Int64",
+    "end_date": "Int64",
+    "holder_name": "String",
+    "hold_amount": "Float64",
+    "hold_ratio": "Float64",
+    "hold_float_ratio": "Float64",
+    "hold_change": "Float64",
+    "holder_type": "String"
+   },
+   "n_columns": 9,
+   "date_columns": [
+    "ann_date",
+    "end_date"
+   ],
+   "numeric_columns_checked": [
+    "ann_date",
+    "end_date",
+    "hold_amount",
+    "hold_change",
+    "hold_float_ratio",
+    "hold_ratio"
+   ],
+   "rows_total": 3283981,
+   "date_coverage": {
+    "ann_date": {
+     "min": "19901210",
+     "max": "20260831",
+     "rows_gt_20241231": 418166,
+     "null_rows": 0
+    },
+    "end_date": {
+     "min": "19901210",
+     "max": "20260630",
+     "rows_gt_20241231": 361798,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 418166,
+   "numeric_magnitude": {
+    "ann_date": {
+     "min": 19901210.0,
+     "max": 20260831.0
+    },
+    "end_date": {
+     "min": 19901210.0,
+     "max": 20260630.0
+    },
+    "hold_amount": {
+     "min": 0.0,
+     "max": 190271558107.0
+    },
+    "hold_change": {
+     "min": -133252012212.0,
+     "max": 142590494651.0
+    },
+    "hold_float_ratio": {
+     "min": 0.0,
+     "max": 313.8462
+    },
+    "hold_ratio": {
+     "min": 0.0,
+     "max": 100.0
+    }
+   },
+   "primary_key": null,
+   "sample_rows": [
+    {
+     "symbol": "000001.SZ",
+     "ann_date": "19920811",
+     "end_date": "19920630",
+     "holder_name": "上海万国公司",
+     "hold_amount": "4561785.0",
+     "hold_ratio": "3.3867",
+     "hold_float_ratio": null,
+     "hold_change": null,
+     "holder_type": "一般企业"
+    },
+    {
+     "symbol": "000001.SZ",
+     "ann_date": "19920811",
+     "end_date": "19920630",
+     "holder_name": "中电深圳工贸公司",
+     "hold_amount": "5541900.0",
+     "hold_ratio": "4.1144",
+     "hold_float_ratio": null,
+     "hold_change": null,
+     "holder_type": "一般企业"
+    },
+    {
+     "symbol": "000001.SZ",
+     "ann_date": "19920811",
+     "end_date": "19920630",
+     "holder_name": "海南南华证券",
+     "hold_amount": "1651248.0",
+     "hold_ratio": "1.2259",
+     "hold_float_ratio": null,
+     "hold_change": null,
+     "holder_type": "金融机构—证券公司"
+    },
+    {
+     "symbol": "000001.SZ",
+     "ann_date": "19920811",
+     "end_date": "19920630",
+     "holder_name": "深圳国际信托投资管理公司",
+     "hold_amount": "9968488.0",
+     "hold_ratio": "7.4007",
+     "hold_float_ratio": null,
+     "hold_change": null,
+     "holder_type": "投资公司"
+    },
+    {
+     "symbol": "000001.SZ",
+     "ann_date": "19920811",
+     "end_date": "19920630",
+     "holder_name": "深圳城建集团",
+     "hold_amount": "2446080.0",
+     "hold_ratio": "1.816",
+     "hold_float_ratio": null,
+     "hold_change": null,
+     "holder_type": "一般企业"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 5893,
+    "distinct_headers": 1,
+    "modal_header_cols": 9,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "688141.SH",
+      "manifest_rows": 210,
+      "actual_rows": 209
+     },
+     {
+      "chunk": "002452.SZ",
+      "manifest_rows": 747,
+      "actual_rows": 746
+     },
+     {
+      "chunk": "688561.SH",
+      "manifest_rows": 280,
+      "actual_rows": 279
+     },
+     {
+      "chunk": "300927.SZ",
+      "manifest_rows": 290,
+      "actual_rows": 289
+     },
+     {
+      "chunk": "300500.SZ",
+      "manifest_rows": 623,
+      "actual_rows": 622
+     },
+     {
+      "chunk": "603520.SH",
+      "manifest_rows": 550,
+      "actual_rows": 549
+     },
+     {
+      "chunk": "300304.SZ",
+      "manifest_rows": 697,
+      "actual_rows": 696
+     },
+     {
+      "chunk": "000039.SZ",
+      "manifest_rows": 1082,
+      "actual_rows": 1081
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 6.1,
+   "finished_at": "2026-09-18T00:09:04"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:04"
+}

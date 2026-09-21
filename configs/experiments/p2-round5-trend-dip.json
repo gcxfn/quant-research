@@ -1,0 +1,101 @@
+{
+  "experiment_id": "exp-20260917-p2-round5-trend-dip",
+  "name": "p2-round5-trend-dip",
+  "preregistered_at": "2026-09-17",
+  "round": 5,
+  "budget_note": "user-specified strategy hypothesis (2026-09-17): above the 30w/60w line, below the 5d/10d line; 4 configs of the round-5 budget; preregistered BEFORE the expanded window diagnostic is viewed, so no diagnostic result feeds this design",
+  "seed": 17,
+  "start": "2015-01-05",
+  "end": "2024-12-31",
+  "data": {
+    "dataset_id": "baostock-daily-20260917",
+    "file": "data/processed/baostock-daily-20260917/daily_2015_2024.parquet",
+    "rows_expected": 9532019,
+    "symbols_expected": 5328,
+    "adj_factors": "data/raw/xiaodefa/adj_factor/20260913-bulk1",
+    "price_convention": "moving averages on the adjusted close; weekly lines expressed in trading sessions (30w = 150, 60w = 300; A-share week = 5 sessions, approximation disclosed)"
+  },
+  "universe_filter": {
+    "exclude_boards": ["688", "689", "300", "301", "302"],
+    "exclude_bse_prefixes": ["4", "8"],
+    "exclude_symbols_styled_as_indexes": ["sz.000905", "sz.000852"],
+    "exclude_st": true,
+    "exclude_suspended": true,
+    "amount_median_window": 20,
+    "amount_median_min_history": "full window",
+    "amount_median_20d_min": 50000000,
+    "price_min": 2.0
+  },
+  "signal_sets": {
+    "R5-trend-dip-30w-5d": {
+      "hypothesis": "处于150日均线上方（长期趋势向上）且跌破5日均线（短期回调）的股票，次开进场持有5日，费用后优于同池基准",
+      "definition": "adj_close > sma150_adj AND adj_close < sma5_adj",
+      "rank": "deepest pullback below the short line first (score = sma5/adj_close - 1)"
+    },
+    "R5-trend-dip-30w-10d": {
+      "hypothesis": "同上，短期线用10日均线",
+      "definition": "adj_close > sma150_adj AND adj_close < sma10_adj",
+      "rank": "sma10/adj_close - 1 descending"
+    },
+    "R5-trend-dip-60w-5d": {
+      "hypothesis": "同上，长期线用300日均线（60周）",
+      "definition": "adj_close > sma300_adj AND adj_close < sma5_adj",
+      "rank": "sma5/adj_close - 1 descending"
+    },
+    "R5-trend-dip-60w-10d": {
+      "hypothesis": "同上，长期300日+短期10日",
+      "definition": "adj_close > sma300_adj AND adj_close < sma10_adj",
+      "rank": "sma10/adj_close - 1 descending"
+    }
+  },
+  "execution": {
+    "entry": "next session open after signal close",
+    "exit": "open of session entry_index + 5",
+    "holds": [5],
+    "top_n_per_day": 3,
+    "capital": 200000,
+    "position_budget": 50000,
+    "block_limits": true,
+    "limit_pct": 0.1,
+    "configs_total": 4
+  },
+  "fees": {
+    "mode": "historical_schedule",
+    "schedule": [
+      {"from": "2015-01-01", "commission_pct": 0.0003, "commission_min": 5.0, "stamp_sell_pct": 0.001},
+      {"from": "2018-01-01", "commission_pct": 0.00025, "commission_min": 5.0, "stamp_sell_pct": 0.001},
+      {"from": "2020-01-01", "commission_pct": 0.0002, "commission_min": 5.0, "stamp_sell_pct": 0.001},
+      {"from": "2022-01-01", "commission_pct": 0.00015, "commission_min": 5.0, "stamp_sell_pct": 0.001},
+      {"from": "2023-08-28", "commission_pct": 0.00015, "commission_min": 5.0, "stamp_sell_pct": 0.0005}
+    ],
+    "disclosure": "stamp segments institutional facts; commission segments conservative assumptions (user actual 万1 all-in is P3 scope)"
+  },
+  "validation": {
+    "dev_window": "2015-01-05..2020-12-31",
+    "validation_window": "2021-01-01..2024-12-31",
+    "isolation": "dev events must exit on or before 2020-12-31; validation events have signal_date >= 2021-01-01",
+    "history_note": "2015-2024 inspected by the old project: rolling historical validation, never unseen-sample proof"
+  },
+  "selection_rule": {
+    "dev_pass": [
+      "mean net per completed event beats pool_equal_weight mean on dev",
+      "per-year net edge vs pool positive in >= 4 of 6 dev years",
+      "top-decile symbol share of total net profit <= 40%",
+      "completion rate >= 60%"
+    ],
+    "validation_pass": [
+      "mean net per completed event beats pool_equal_weight mean on validation",
+      "per-year net edge vs pool positive in >= 2 of 4 validation years"
+    ],
+    "multiple_testing": "4 preregistered configs (cumulative: 23 configs + 20-factor survey + window diagnostic + this); survivors at most 2 proceed to P3; any post-hoc re-picking downgrades to exploratory"
+  },
+  "benchmarks": {
+    "cash": 0.0,
+    "broad_index": {},
+    "broad_index_note": "deferred until real index data is fetched",
+    "pool_equal_weight": "identical convention to rounds 1-4",
+    "random_pick": "3 random eligible picks/day through identical pipeline, seed 17"
+  },
+  "kill_criteria_note": "slippage tiers remain P3 scope",
+  "limits": {"max_runtime_s": 1800, "max_ram_gb": 11}
+}

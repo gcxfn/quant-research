@@ -1,0 +1,712 @@
+{
+ "source": "tushare",
+ "dataset": "daily_basic",
+ "batches": {
+  "tushare/daily_basic/20260909-r1": {
+   "batch_dir": "tushare/daily_basic/20260909-r1",
+   "mode": "full",
+   "files": {
+    "n_total": 1867,
+    "n_csv": 1866,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 1274329737
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 2232372 行 > 2024-12-31 (max=20260909); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 1867,
+    "bytes": 1274329737
+   },
+   "schema": {
+    "ts_code": "String",
+    "trade_date": "Int64",
+    "close": "Float64",
+    "turnover_rate": "Float64",
+    "turnover_rate_f": "Float64",
+    "volume_ratio": "Float64",
+    "pe": "Float64",
+    "pe_ttm": "Float64",
+    "pb": "Float64",
+    "ps": "Float64",
+    "ps_ttm": "Float64",
+    "dv_ratio": "Float64",
+    "dv_ttm": "Float64",
+    "total_share": "Float64",
+    "float_share": "Float64",
+    "free_share": "Float64",
+    "total_mv": "Float64",
+    "circ_mv": "Float64"
+   },
+   "n_columns": 18,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "close",
+    "turnover_rate",
+    "total_mv",
+    "circ_mv",
+    "dv_ratio",
+    "pe",
+    "pb",
+    "dv_ttm",
+    "float_share",
+    "free_share",
+    "pe_ttm",
+    "ps",
+    "ps_ttm",
+    "total_share",
+    "trade_date",
+    "turnover_rate_f",
+    "volume_ratio"
+   ],
+   "rows_total": 8850300,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20190102",
+     "max": "20260909",
+     "rows_gt_20241231": 2232372,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 2232372,
+   "numeric_magnitude": {
+    "close": {
+     "min": 0.09,
+     "max": 2700.0
+    },
+    "turnover_rate": {
+     "min": 0.0001,
+     "max": 106.4833
+    },
+    "total_mv": {
+     "min": 2406.0792,
+     "max": 413323876.098
+    },
+    "circ_mv": {
+     "min": 315.249,
+     "max": 326737047.78
+    },
+    "dv_ratio": {
+     "min": 0.0,
+     "max": 100.0
+    },
+    "pe": {
+     "min": 0.1041,
+     "max": 14234.308
+    },
+    "pb": {
+     "min": 0.0226,
+     "max": 9429.3368
+    },
+    "dv_ttm": {
+     "min": 0.0025,
+     "max": 56.0166
+    },
+    "float_share": {
+     "min": 30.15,
+     "max": 31924421.0777
+    },
+    "free_share": {
+     "min": 5.3122,
+     "max": 5564157.9186
+    },
+    "pe_ttm": {
+     "min": 0.1334,
+     "max": 539273.3383
+    },
+    "ps": {
+     "min": -18.1068,
+     "max": 2223992.7605
+    },
+    "ps_ttm": {
+     "min": -220.032,
+     "max": 2167925.7161
+    },
+    "total_share": {
+     "min": 2600.0,
+     "max": 35640625.7089
+    },
+    "trade_date": {
+     "min": 20190102.0,
+     "max": 20260909.0
+    },
+    "turnover_rate_f": {
+     "min": 0.0001,
+     "max": 5604.9709
+    },
+    "volume_ratio": {
+     "min": 0.0,
+     "max": 1911.28
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "trade_date"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "ts_code": "000681.SZ",
+     "trade_date": "20190102",
+     "close": "23.3",
+     "turnover_rate": "1.0682",
+     "turnover_rate_f": "1.1547",
+     "volume_ratio": "0.75",
+     "pe": "56.1289",
+     "pe_ttm": "46.8731",
+     "pb": "5.8711",
+     "ps": "20.0393",
+     "ps_ttm": "17.4375",
+     "dv_ratio": "0.1803",
+     "dv_ttm": "0.1803",
+     "total_share": "70057.7436",
+     "float_share": "31046.2573",
+     "free_share": "28720.0661",
+     "total_mv": "1632345.4259",
+     "circ_mv": "723377.7951"
+    },
+    {
+     "ts_code": "603603.SH",
+     "trade_date": "20190102",
+     "close": "15.59",
+     "turnover_rate": "3.1258",
+     "turnover_rate_f": "6.7406",
+     "volume_ratio": "1.87",
+     "pe": "30.9796",
+     "pe_ttm": "27.9479",
+     "pb": "4.3067",
+     "ps": "2.0553",
+     "ps_ttm": "1.4074",
+     "dv_ratio": "0.6389",
+     "dv_ttm": "0.6389",
+     "total_share": "40157.0",
+     "float_share": "23483.0015",
+     "free_share": "10889.5111",
+     "total_mv": "626047.63",
+     "circ_mv": "366099.9934"
+    },
+    {
+     "ts_code": "600909.SH",
+     "trade_date": "20190102",
+     "close": "4.68",
+     "turnover_rate": "0.3367",
+     "turnover_rate_f": "0.5007",
+     "volume_ratio": "0.91",
+     "pe": "26.0822",
+     "pe_ttm": "41.8935",
+     "pb": "1.3697",
+     "ps": "8.8368",
+     "ps_ttm": "10.5536",
+     "dv_ratio": "1.2821",
+     "dv_ttm": "1.2821",
+     "total_share": "362100.0",
+     "float_share": "270200.0",
+     "free_share": "181697.1449",
+     "total_mv": "1694628.0",
+     "circ_mv": "1264536.0"
+    },
+    {
+     "ts_code": "300194.SZ",
+     "trade_date": "20190102",
+     "close": "3.2",
+     "turnover_rate": "0.2897",
+     "turnover_rate_f": "0.3159",
+     "volume_ratio": "0.85",
+     "pe": "13.3669",
+     "pe_ttm": "13.7681",
+     "pb": "0.8885",
+     "ps": "1.8209",
+     "ps_ttm": "1.4308",
+     "dv_ratio": "3.125",
+     "dv_ttm": "3.125",
+     "total_share": "118971.2382",
+     "float_share": "59803.9718",
+     "free_share": "54840.3338",
+     "total_mv": "380707.9622",
+     "circ_mv": "191372.7098"
+    },
+    {
+     "ts_code": "300152.SZ",
+     "trade_date": "20190102",
+     "close": "2.63",
+     "turnover_rate": "1.9176",
+     "turnover_rate_f": "2.7201",
+     "volume_ratio": "0.48",
+     "pe": "50.0445",
+     "pe_ttm": null,
+     "pb": "1.658",
+     "ps": "2.8327",
+     "ps_ttm": "3.5713",
+     "dv_ratio": "0.2281",
+     "dv_ttm": "0.2281",
+     "total_share": "71280.0",
+     "float_share": "71272.4025",
+     "free_share": "50244.4025",
+     "total_mv": "187466.4",
+     "circ_mv": "187446.4186"
+    }
+   ],
+   "unit_check_conclusion": {
+    "close": "元, 与 baostock 不复权收盘一致",
+    "total_mv": "万元 (total_mv*1e4 ≈ close*total_share)",
+    "confidence": "high"
+   },
+   "unit_check": {
+    "600519_cross_check_vs_baostock": {
+     "joined_days": 1863,
+     "last_row": {
+      "trade_date": 20260904.0,
+      "close": 1330.0,
+      "bs_close": 1330.0,
+      "close_diff": 0.0
+     },
+     "median_close_diff_vs_baostock": 0.0,
+     "median_total_mv_x1e4_over_close_x_total_share": 1.0
+    },
+    "unit_conclusion": {
+     "close": "元, 与 baostock 不复权收盘一致",
+     "total_mv": "万元 (total_mv*1e4 ≈ close*total_share)",
+     "confidence": "high"
+    },
+    "close_magnitude": {
+     "000001.SZ": {
+      "min": 9.03,
+      "median": 25.01,
+      "max": 12.505
+     },
+     "600519.SH": {
+      "min": 590.0,
+      "median": 2601.0,
+      "max": 1599.5
+     },
+     "600519_verdict": "合理(数百~数千元)"
+    }
+   },
+   "header_consistency": {
+    "n_files": 1866,
+    "distinct_headers": 1,
+    "modal_header_cols": 18,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "chunk_20240318.csv",
+      "manifest_rows": 5348,
+      "actual_rows": 5347
+     },
+     {
+      "chunk": "chunk_20200212.csv",
+      "manifest_rows": 3772,
+      "actual_rows": 3771
+     },
+     {
+      "chunk": "chunk_20240715.csv",
+      "manifest_rows": 5343,
+      "actual_rows": 5342
+     },
+     {
+      "chunk": "chunk_20250516.csv",
+      "manifest_rows": 5391,
+      "actual_rows": 5390
+     },
+     {
+      "chunk": "chunk_20260630.csv",
+      "manifest_rows": 5508,
+      "actual_rows": 5507
+     },
+     {
+      "chunk": "chunk_20210812.csv",
+      "manifest_rows": 4430,
+      "actual_rows": 4429
+     },
+     {
+      "chunk": "chunk_20210315.csv",
+      "manifest_rows": 4189,
+      "actual_rows": 4188
+     },
+     {
+      "chunk": "chunk_20230907.csv",
+      "manifest_rows": 5270,
+      "actual_rows": 5269
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 4.6,
+   "finished_at": "2026-09-18T00:09:22"
+  },
+  "tushare/daily_basic/20260913-r2": {
+   "batch_dir": "tushare/daily_basic/20260913-r2",
+   "mode": "full",
+   "files": {
+    "n_total": 977,
+    "n_csv": 975,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 1,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [
+     "fetch_20260913-r2.log"
+    ],
+    "total_bytes": 401686940
+   },
+   "issues": [
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 977,
+    "bytes": 401686940
+   },
+   "schema": {
+    "ts_code": "String",
+    "trade_date": "Int64",
+    "close": "Float64",
+    "turnover_rate": "Float64",
+    "turnover_rate_f": "Float64",
+    "volume_ratio": "Float64",
+    "pe": "Float64",
+    "pe_ttm": "Float64",
+    "pb": "Float64",
+    "ps": "Float64",
+    "ps_ttm": "Float64",
+    "dv_ratio": "Float64",
+    "dv_ttm": "Float64",
+    "total_share": "Float64",
+    "float_share": "Float64",
+    "free_share": "Float64",
+    "total_mv": "Float64",
+    "circ_mv": "Float64"
+   },
+   "n_columns": 18,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "close",
+    "turnover_rate",
+    "total_mv",
+    "circ_mv",
+    "dv_ratio",
+    "pe",
+    "pb",
+    "dv_ttm",
+    "float_share",
+    "free_share",
+    "pe_ttm",
+    "ps",
+    "ps_ttm",
+    "total_share",
+    "trade_date",
+    "turnover_rate_f",
+    "volume_ratio"
+   ],
+   "rows_total": 2774097,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20150105",
+     "max": "20181228",
+     "rows_gt_20241231": 0,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 0,
+   "numeric_magnitude": {
+    "close": {
+     "min": 0.21,
+     "max": 799.19
+    },
+    "turnover_rate": {
+     "min": 0.0,
+     "max": 87.9464
+    },
+    "total_mv": {
+     "min": 4602.0,
+     "max": 276214849.244
+    },
+    "circ_mv": {
+     "min": 2504.2951,
+     "max": 237215844.0034
+    },
+    "dv_ratio": {
+     "min": 0.0,
+     "max": 20.8381
+    },
+    "pe": {
+     "min": 1.4507,
+     "max": 71986.2551
+    },
+    "pb": {
+     "min": 0.3112,
+     "max": 45723.5682
+    },
+    "dv_ttm": {
+     "min": 0.0038,
+     "max": 28.294
+    },
+    "float_share": {
+     "min": 1000.0,
+     "max": 29405529.3904
+    },
+    "free_share": {
+     "min": 125.96,
+     "max": 3668842.5385
+    },
+    "pe_ttm": {
+     "min": 1.1487,
+     "max": 2653832.2934
+    },
+    "ps": {
+     "min": 0.0249,
+     "max": 3459.4444
+    },
+    "ps_ttm": {
+     "min": 0.0242,
+     "max": 176220.814
+    },
+    "total_share": {
+     "min": 2600.0,
+     "max": 35640625.7089
+    },
+    "trade_date": {
+     "min": 20150105.0,
+     "max": 20181228.0
+    },
+    "turnover_rate_f": {
+     "min": 0.0,
+     "max": 428.3158
+    },
+    "volume_ratio": {
+     "min": 0.0,
+     "max": 1317.76
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "trade_date"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "ts_code": "000001.SZ",
+     "trade_date": "20150105",
+     "close": "16.02",
+     "turnover_rate": "2.9079",
+     "turnover_rate_f": "6.0984",
+     "volume_ratio": "1.21",
+     "pe": "12.0167",
+     "pe_ttm": "9.5183",
+     "pb": "1.4442",
+     "ps": "3.507",
+     "ps_ttm": "2.6337",
+     "dv_ratio": "0.8323",
+     "dv_ttm": "0.8323",
+     "total_share": "1142489.4787",
+     "float_share": "983671.215",
+     "free_share": "469043.8146",
+     "total_mv": "18302681.4488",
+     "circ_mv": "15758412.8643"
+    },
+    {
+     "ts_code": "000002.SZ",
+     "trade_date": "20150105",
+     "close": "14.91",
+     "turnover_rate": "6.7834",
+     "turnover_rate_f": "8.1741",
+     "volume_ratio": "1.78",
+     "pe": "10.8631",
+     "pe_ttm": "10.6532",
+     "pb": "2.0914",
+     "ps": "1.2128",
+     "ps_ttm": "1.2153",
+     "dv_ratio": "2.7492",
+     "dv_ttm": "2.7492",
+     "total_share": "1101502.7119",
+     "float_share": "967191.309",
+     "free_share": "802641.837",
+     "total_mv": "16423405.4344",
+     "circ_mv": "14420822.4172"
+    },
+    {
+     "ts_code": "000004.SZ",
+     "trade_date": "20150105",
+     "close": "15.69",
+     "turnover_rate": "3.3496",
+     "turnover_rate_f": "4.5343",
+     "volume_ratio": "1.21",
+     "pe": null,
+     "pe_ttm": null,
+     "pb": "18.596",
+     "ps": "18.1027",
+     "ps_ttm": "19.4054",
+     "dv_ratio": "0.0",
+     "dv_ttm": null,
+     "total_share": "8397.6684",
+     "float_share": "8387.5459",
+     "free_share": "6196.0792",
+     "total_mv": "131759.4172",
+     "circ_mv": "131600.5952"
+    },
+    {
+     "ts_code": "000006.SZ",
+     "trade_date": "20150105",
+     "close": "7.08",
+     "turnover_rate": "8.0562",
+     "turnover_rate_f": "13.2751",
+     "volume_ratio": "2.24",
+     "pe": "13.731",
+     "pe_ttm": "16.58",
+     "pb": "2.4394",
+     "ps": "2.0729",
+     "ps_ttm": "2.6213",
+     "dv_ratio": "2.1893",
+     "dv_ttm": "2.1893",
+     "total_share": "134999.5046",
+     "float_share": "133889.7143",
+     "free_share": "81253.4178",
+     "total_mv": "955796.4926",
+     "circ_mv": "947939.1772"
+    },
+    {
+     "ts_code": "000007.SZ",
+     "trade_date": "20150105",
+     "close": "14.52",
+     "turnover_rate": "1.3807",
+     "turnover_rate_f": "1.7538",
+     "volume_ratio": "1.18",
+     "pe": "144.1329",
+     "pe_ttm": null,
+     "pb": "8.8839",
+     "ps": "15.6456",
+     "ps_ttm": "15.3354",
+     "dv_ratio": null,
+     "dv_ttm": null,
+     "total_share": "23096.5363",
+     "float_share": "20581.3141",
+     "free_share": "16202.0203",
+     "total_mv": "335361.7071",
+     "circ_mv": "298840.6807"
+    }
+   ],
+   "unit_check_conclusion": {
+    "close": "元, 与 baostock 不复权收盘一致",
+    "total_mv": "万元 (total_mv*1e4 ≈ close*total_share)",
+    "confidence": "high"
+   },
+   "unit_check": {
+    "600519_cross_check_vs_baostock": {
+     "joined_days": 975,
+     "last_row": {
+      "trade_date": 20181228.0,
+      "close": 590.01,
+      "bs_close": 590.01,
+      "close_diff": 0.0
+     },
+     "median_close_diff_vs_baostock": 0.0,
+     "median_total_mv_x1e4_over_close_x_total_share": 1.0
+    },
+    "unit_conclusion": {
+     "close": "元, 与 baostock 不复权收盘一致",
+     "total_mv": "万元 (total_mv*1e4 ≈ close*total_share)",
+     "confidence": "high"
+    },
+    "close_magnitude": {
+     "600519.SH": {
+      "min": 169.64,
+      "median": 799.19,
+      "max": 337.71
+     },
+     "000001.SZ": {
+      "min": 8.57,
+      "median": 19.8,
+      "max": 10.61
+     },
+     "600519_verdict": "合理(数百~数千元)"
+    }
+   },
+   "header_consistency": {
+    "n_files": 975,
+    "distinct_headers": 1,
+    "modal_header_cols": 18,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "chunk_20170804.csv",
+      "manifest_rows": 3066,
+      "actual_rows": 3065
+     },
+     {
+      "chunk": "chunk_20150721.csv",
+      "manifest_rows": 2243,
+      "actual_rows": 2242
+     },
+     {
+      "chunk": "chunk_20170928.csv",
+      "manifest_rows": 3179,
+      "actual_rows": 3178
+     },
+     {
+      "chunk": "chunk_20180305.csv",
+      "manifest_rows": 3229,
+      "actual_rows": 3228
+     },
+     {
+      "chunk": "chunk_20180918.csv",
+      "manifest_rows": 3454,
+      "actual_rows": 3453
+     },
+     {
+      "chunk": "chunk_20160422.csv",
+      "manifest_rows": 2521,
+      "actual_rows": 2520
+     },
+     {
+      "chunk": "chunk_20160203.csv",
+      "manifest_rows": 2556,
+      "actual_rows": 2555
+     },
+     {
+      "chunk": "chunk_20170508.csv",
+      "manifest_rows": 2966,
+      "actual_rows": 2965
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 1.6,
+   "finished_at": "2026-09-18T00:09:24"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:24"
+}

@@ -1,0 +1,91 @@
+{
+ "source": "tx",
+ "dataset": "sh688627",
+ "batches": {
+  "tx/sh688627/20260904T012707": {
+   "batch_dir": "tx/sh688627/20260904T012707",
+   "mode": "json",
+   "status": "completed",
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "406 个记录日期 > 2024-12-31 (max=20260903); 冻结边界: 只报告"
+    }
+   ],
+   "inventory_registration": {
+    "files": 2,
+    "bytes": 52572
+   },
+   "files": {
+    "n_total": 2,
+    "response_pages": [
+     "response_000.json"
+    ],
+    "total_bytes": 52572
+   },
+   "rows_total": 761,
+   "date_coverage": {
+    "record_date": {
+     "min": "20230718",
+     "max": "20260903",
+     "rows_gt_20241231": 406
+    }
+   },
+   "numeric_magnitude": {
+    "close": {
+     "min": 36.909,
+     "median": 84.017,
+     "max": 715.0
+    }
+   },
+   "sample_rows": [
+    {
+     "date": "2023-07-18",
+     "ohlc": [
+      "65.187",
+      "75.687",
+      "85.017",
+      "65.087"
+     ],
+     "volume": "16403761.000"
+    },
+    {
+     "date": "2023-07-19",
+     "ohlc": [
+      "71.087",
+      "82.567",
+      "86.687",
+      "69.887"
+     ],
+     "volume": "12789201.000"
+    },
+    {
+     "date": "2023-07-20",
+     "ohlc": [
+      "80.187",
+      "78.587",
+      "83.987",
+      "75.887"
+     ],
+     "volume": "8200738.000"
+    },
+    {
+     "date": "2023-07-21",
+     "ohlc": [
+      "77.967",
+      "77.087",
+      "82.887",
+      "74.847"
+     ],
+     "volume": "7481938.000"
+    }
+   ],
+   "sha256_verified_pages": 1,
+   "sha256_concat_ok": true,
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:55"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:55"
+}

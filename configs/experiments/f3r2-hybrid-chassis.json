@@ -1,0 +1,36 @@
+{
+  "experiment_id": "exp-20260919-factor-round-f3r2",
+  "prereg": "docs/research/exp-20260919-factor-round-f3r2-prereg.md",
+  "frozen_at": "2026-09-19T19:47:00+08:00",
+  "engine_pin_sha256_16": "84a2443ac28fe1b8",
+  "engine_mode": "band engine v1.3 intent layer, corporate_actions=None (v1.2-identical path)",
+  "positioning": "F3R1 sec-7 follow-up: F3 composite stock sleeve inside the proven R3-06 hybrid chassis; meta-overfitting risk disclosed (design informed by F3R1 gate-4/5/8 deaths and v4 axis-A death)",
+  "trial_accounting": {"strategy_line": "264->267 (F3R2-A0 anchor + 2 arms)", "factor_line_FT01": 120},
+  "dev_window": {"start": "2015-01-05", "end": "2020-12-31", "val_policy": "2021-2024 zero contact"},
+  "signal_days": "71 month-end days 2015-01-30..2020-11-30 (2020-12-31 dropped, P3R2 precedent)",
+  "chassis": {
+    "source": "hybrid family v3 run 20260919T110500-hybrid-v3-r3ld config R3-06, verbatim",
+    "legs": {"sh.511010": 0.15, "sh.518880": 0.25},
+    "leg_conventions": "initial park buy at first signal day (expiry = 4th signal day + 1); monthly reduce-to-target risk sells from second signal day (expiry = next signal day + 1); ETF meta band 0.10 t_plus 0; 18 dividend events in dev (frozen rule)",
+    "anchor": "F3R2-A0 = R3-06 verbatim replica; 5-frame .equals + net_cagr bitwise vs v3 outputs"
+  },
+  "stock_sleeve": {
+    "composite_source": "F3R1 frozen outputs verbatim: F3-EW_composite.parquet / F3-ICW_composite.parquet",
+    "membership": {"first_month": "top 3", "enter_rank_le": 3, "stay_rank_le": 6, "exit_rank_gt": 6, "max_members": 3},
+    "weight_rule": "w_T = e_T * (0.20 / 0.90); e_T = R16 T200-40 exposure path verbatim; risk-on per-name 0.20 (sleeve 60%), risk-off 0.08889 (sleeve 26.67%); idle cash in risk-off months disclosed",
+    "intents": "entry -> buy(target_weight=w_T); exit -> sell risk full (target None); continuing -> monthly reduce-to-target risk sell (target_weight=w_T); no top-up primitive (engine seam, P3R2 disclosed)",
+    "expiry": "next signal day + 1 calendar day",
+    "priority": "composite rank at T (1-based)",
+    "decision_session": "pm",
+    "stock_semantics": "am/pm, T+1, integer lots, STOCK_FEE_SCHEDULE, real stk_limit"
+  },
+  "gates": {
+    "source": "gates 1-7 R16 verbatim; gate 8 = hybrid family v3 final-delivery caliber",
+    "b1m_anchor": "R16 metrics.json configs.C05 (T200-40 / rate_only): net +0.60%, maxDD -39.82%, family anchor verbatim",
+    "b3prime": "R16 B3prime_dev_mean_net_cagr T200-40 = -0.0199",
+    "gate8": "v3: (market-fallback fills + armed-then-limit-self fills) / armed >= 99%; end-of-run armed stuck == 0 hard assert; R16-95% mapped rate and 8v2 kept as comparison columns only",
+    "goal_column": "dev net CAGR >= 10%; goal_met = dev_pass AND goal_column"
+  },
+  "stop_rules": "any arm dev_pass AND >=10% -> stop, present to user (val requires explicit user approval); both arms eliminated -> F-line pause, present to user; anchor mismatch -> stop adjudication, fix runner, re-freeze (no trial consumed)",
+  "budget": {"wall_seconds": 1200, "peak_rss_gb": 8.0, "grids": "none", "single_run": true}
+}

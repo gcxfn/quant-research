@@ -1,0 +1,122 @@
+{
+ "source": "xiaodefa",
+ "dataset": "ths_index",
+ "batches": {
+  "xiaodefa/ths_index/20260913-bulk1": {
+   "batch_dir": "xiaodefa/ths_index/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 8,
+    "n_csv": 7,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 128655
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 list_date 有 453 行 > 2024-12-31 (max=20260731); 冻结边界审查: 只报告不删除"
+    }
+   ],
+   "inventory_registration": {
+    "files": 8,
+    "bytes": 128655
+   },
+   "schema": {
+    "ts_code": "String",
+    "name": "String",
+    "count": "Float64",
+    "exchange": "String",
+    "list_date": "Int64",
+    "type": "String"
+   },
+   "n_columns": 6,
+   "date_columns": [
+    "list_date"
+   ],
+   "numeric_columns_checked": [
+    "count",
+    "list_date"
+   ],
+   "rows_total": 2722,
+   "date_coverage": {
+    "list_date": {
+     "min": "19910715",
+     "max": "20260731",
+     "rows_gt_20241231": 453,
+     "null_rows": 4
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 453,
+   "numeric_magnitude": {
+    "count": {
+     "min": 1.0,
+     "max": 5529.0
+    },
+    "list_date": {
+     "min": 19910715.0,
+     "max": 20260731.0
+    }
+   },
+   "primary_key": [
+    "ts_code"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "ts_code": "700001.TI",
+     "name": "同花顺全A(加权)",
+     "count": "5524.0",
+     "exchange": "A",
+     "list_date": "20061229",
+     "type": "BB"
+    },
+    {
+     "ts_code": "700002.TI",
+     "name": "同花顺全A(除金融、石油石化)",
+     "count": "5399.0",
+     "exchange": "A",
+     "list_date": "20061229",
+     "type": "BB"
+    },
+    {
+     "ts_code": "700003.TI",
+     "name": "同花顺全A(除科创板)",
+     "count": "4914.0",
+     "exchange": "A",
+     "list_date": "20061229",
+     "type": "BB"
+    },
+    {
+     "ts_code": "700004.TI",
+     "name": "同花顺主板",
+     "count": "3191.0",
+     "exchange": "A",
+     "list_date": "20061229",
+     "type": "BB"
+    },
+    {
+     "ts_code": "700005.TI",
+     "name": "同花顺创指",
+     "count": "1398.0",
+     "exchange": "A",
+     "list_date": "20100531",
+     "type": "BB"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:08:55"
+  }
+ },
+ "updated_at": "2026-09-18T00:08:55"
+}

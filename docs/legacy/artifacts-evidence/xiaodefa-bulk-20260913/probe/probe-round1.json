@@ -1,0 +1,148 @@
+[
+ {
+  "api": "stock_basic",
+  "code": 0,
+  "msg": null,
+  "fields": [
+   "ts_code",
+   "symbol",
+   "name",
+   "area",
+   "industry",
+   "cnspell",
+   "market",
+   "list_date",
+   "act_name",
+   "act_ent_type"
+  ],
+  "rows": 341,
+  "sec": 2.15
+ },
+ {
+  "api": "stock_basic",
+  "code": 0,
+  "msg": null,
+  "fields": [],
+  "rows": 0,
+  "sec": 1.38
+ },
+ {
+  "api": "stock_basic",
+  "code": 0,
+  "msg": null,
+  "fields": [],
+  "rows": 0,
+  "sec": 1.3
+ },
+ {
+  "api": "index_basic",
+  "code": 0,
+  "msg": null,
+  "fields": [
+   "ts_code",
+   "name",
+   "market",
+   "publisher",
+   "category",
+   "base_date",
+   "base_point",
+   "list_date"
+  ],
+  "rows": 8000,
+  "sec": 15.17
+ },
+ {
+  "api": "index_classify",
+  "code": 0,
+  "msg": null,
+  "fields": [
+   "index_code",
+   "industry_name",
+   "level",
+   "industry_code",
+   "is_pub",
+   "parent_code",
+   "src"
+  ],
+  "rows": 511,
+  "sec": 2.39
+ },
+ {
+  "api": "trade_cal",
+  "code": 0,
+  "msg": null,
+  "fields": [
+   "exchange",
+   "cal_date",
+   "is_open",
+   "pretrade_date"
+  ],
+  "rows": 4748,
+  "sec": 3.78
+ },
+ {
+  "api": "stk_limit",
+  "code": 0,
+  "msg": null,
+  "fields": [
+   "trade_date",
+   "ts_code",
+   "up_limit",
+   "down_limit"
+  ],
+  "rows": 6320,
+  "sec": 5.18
+ },
+ {
+  "api": "adj_factor",
+  "code": 0,
+  "msg": null,
+  "fields": [
+   "ts_code",
+   "trade_date",
+   "adj_factor"
+  ],
+  "rows": 5155,
+  "sec": 1.96
+ },
+ {
+  "api": "suspend_d",
+  "code": 0,
+  "msg": null,
+  "fields": [
+   "ts_code",
+   "trade_date",
+   "suspend_timing",
+   "suspend_type"
+  ],
+  "rows": 75,
+  "sec": 1.29
+ },
+ {
+  "api": "limit_list_d",
+  "code": 0,
+  "msg": null,
+  "fields": [
+   "trade_date",
+   "ts_code",
+   "industry",
+   "name",
+   "close",
+   "pct_chg",
+   "amount",
+   "limit_amount",
+   "float_mv",
+   "total_mv",
+   "turnover_ratio",
+   "fd_amount",
+   "first_time",
+   "last_time",
+   "open_times",
+   "up_stat",
+   "limit_times",
+   "limit"
+  ],
+  "rows": 108,
+  "sec": 2.77
+ }
+]

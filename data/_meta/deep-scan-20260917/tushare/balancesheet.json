@@ -1,0 +1,1202 @@
+{
+ "source": "tushare",
+ "dataset": "balancesheet",
+ "batches": {
+  "tushare/balancesheet/20260909-r3": {
+   "batch_dir": "tushare/balancesheet/20260909-r3",
+   "mode": "full",
+   "files": {
+    "n_total": 5900,
+    "n_csv": 5894,
+    "n_parquet": 0,
+    "n_empty_csv": 5,
+    "n_manifest": 1,
+    "n_other": 5,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [
+     "chunk_000683.SZ.csv",
+     "chunk_000697.SZ.csv",
+     "chunk_600631.SH.csv",
+     "chunk_688566.SH.csv",
+     "chunk_T600018.SH.csv"
+    ],
+    "total_bytes": 306533555
+   },
+   "issues": [
+    {
+     "level": "info",
+     "code": "empty_csv_chunks",
+     "detail": "5 个 0 字节空 CSV(如按日抓取无数据日), 例: ['chunk_000683.SZ.csv', 'chunk_000697.SZ.csv', 'chunk_600631.SH.csv', 'chunk_688566.SH.csv', 'chunk_T600018.SH.csv']; 未计入行数统计"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 f_ann_date 有 49329 行 > 2024-12-31 (max=20260831); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['ts_code', 'end_date', 'report_type'] 重复 245466 行; 含 update_flag 后仍重复 2093 行"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 5900,
+    "bytes": 306533555
+   },
+   "schema": {
+    "ts_code": "String",
+    "ann_date": "Int64",
+    "f_ann_date": "Int64",
+    "end_date": "Int64",
+    "report_type": "Int64",
+    "comp_type": "Int64",
+    "end_type": "Int64",
+    "total_share": "Float64",
+    "cap_rese": "Float64",
+    "undistr_porfit": "Float64",
+    "surplus_rese": "Float64",
+    "special_rese": "String",
+    "money_cap": "String",
+    "trad_asset": "Float64",
+    "notes_receiv": "String",
+    "accounts_receiv": "Float64",
+    "oth_receiv": "String",
+    "prepayment": "String",
+    "div_receiv": "String",
+    "int_receiv": "Float64",
+    "inventories": "String",
+    "amor_exp": "String",
+    "nca_within_1y": "String",
+    "sett_rsrv": "String",
+    "loanto_oth_bank_fi": "Float64",
+    "premium_receiv": "String",
+    "reinsur_receiv": "String",
+    "reinsur_res_receiv": "String",
+    "pur_resale_fa": "Float64",
+    "oth_cur_assets": "String",
+    "total_cur_assets": "String",
+    "fa_avail_for_sale": "Float64",
+    "htm_invest": "Float64",
+    "lt_eqt_invest": "Float64",
+    "invest_real_estate": "Float64",
+    "time_deposits": "String",
+    "oth_assets": "Float64",
+    "lt_rec": "String",
+    "fix_assets": "Float64",
+    "cip": "String",
+    "const_materials": "String",
+    "fixed_assets_disp": "String",
+    "produc_bio_assets": "String",
+    "oil_and_gas_assets": "String",
+    "intan_assets": "Float64",
+    "r_and_d": "String",
+    "goodwill": "Float64",
+    "lt_amor_exp": "String",
+    "defer_tax_assets": "Float64",
+    "decr_in_disbur": "Float64",
+    "oth_nca": "String",
+    "total_nca": "String",
+    "cash_reser_cb": "Float64",
+    "depos_in_oth_bfi": "Float64",
+    "prec_metals": "Float64",
+    "deriv_assets": "Float64",
+    "rr_reins_une_prem": "String",
+    "rr_reins_outstd_cla": "String",
+    "rr_reins_lins_liab": "String",
+    "rr_reins_lthins_liab": "String",
+    "refund_depos": "String",
+    "ph_pledge_loans": "String",
+    "refund_cap_depos": "String",
+    "indep_acct_assets": "String",
+    "client_depos": "String",
+    "client_prov": "String",
+    "transac_seat_fee": "String",
+    "invest_as_receiv": "Float64",
+    "total_assets": "Float64",
+    "lt_borr": "String",
+    "st_borr": "String",
+    "cb_borr": "Float64",
+    "depos_ib_deposits": "Float64",
+    "loan_oth_bank": "Float64",
+    "trading_fl": "Float64",
+    "notes_payable": "String",
+    "acct_payable": "Float64",
+    "adv_receipts": "String",
+    "sold_for_repur_fa": "Float64",
+    "comm_payable": "String",
+    "payroll_payable": "Float64",
+    "taxes_payable": "Float64",
+    "int_payable": "Float64",
+    "div_payable": "String",
+    "oth_payable": "String",
+    "acc_exp": "String",
+    "deferred_inc": "String",
+    "st_bonds_payable": "String",
+    "payable_to_reinsurer": "String",
+    "rsrv_insur_cont": "String",
+    "acting_trading_sec": "String",
+    "acting_uw_sec": "String",
+    "non_cur_liab_due_1y": "String",
+    "oth_cur_liab": "String",
+    "total_cur_liab": "String",
+    "bond_payable": "Float64",
+    "lt_payable": "String",
+    "specific_payables": "String",
+    "estimated_liab": "Float64",
+    "defer_tax_liab": "Float64",
+    "defer_inc_non_cur_liab": "String",
+    "oth_ncl": "String",
+    "total_ncl": "String",
+    "depos_oth_bfi": "Float64",
+    "deriv_liab": "Float64",
+    "depos": "Float64",
+    "agency_bus_liab": "String",
+    "oth_liab": "Float64",
+    "prem_receiv_adva": "String",
+    "depos_received": "String",
+    "ph_invest": "String",
+    "reser_une_prem": "String",
+    "reser_outstd_claims": "String",
+    "reser_lins_liab": "String",
+    "reser_lthins_liab": "String",
+    "indept_acc_liab": "String",
+    "pledge_borr": "String",
+    "indem_payable": "String",
+    "policy_div_payable": "String",
+    "total_liab": "Float64",
+    "treasury_share": "String",
+    "ordin_risk_reser": "Float64",
+    "forex_differ": "String",
+    "invest_loss_unconf": "String",
+    "minority_int": "Float64",
+    "total_hldr_eqy_exc_min_int": "Float64",
+    "total_hldr_eqy_inc_min_int": "Float64",
+    "total_liab_hldr_eqy": "Float64",
+    "lt_payroll_payable": "String",
+    "oth_comp_income": "Float64",
+    "oth_eqt_tools": "Float64",
+    "oth_eqt_tools_p_shr": "Float64",
+    "lending_funds": "String",
+    "acc_receivable": "String",
+    "st_fin_payable": "String",
+    "payables": "String",
+    "hfs_assets": "String",
+    "hfs_sales": "String",
+    "cost_fin_assets": "Float64",
+    "fair_value_fin_assets": "Float64",
+    "contract_assets": "String",
+    "contract_liab": "String",
+    "accounts_receiv_bill": "String",
+    "accounts_pay": "String",
+    "oth_rcv_total": "String",
+    "fix_assets_total": "Float64",
+    "cip_total": "String",
+    "oth_pay_total": "String",
+    "long_pay_total": "String",
+    "debt_invest": "Float64",
+    "oth_debt_invest": "Float64",
+    "update_flag": "Int64"
+   },
+   "n_columns": 152,
+   "date_columns": [
+    "ann_date",
+    "f_ann_date",
+    "end_date"
+   ],
+   "numeric_columns_checked": [
+    "accounts_receiv",
+    "acct_payable",
+    "ann_date",
+    "bond_payable",
+    "cap_rese",
+    "cash_reser_cb",
+    "cb_borr",
+    "comp_type",
+    "cost_fin_assets",
+    "debt_invest",
+    "decr_in_disbur",
+    "defer_tax_assets",
+    "defer_tax_liab",
+    "depos",
+    "depos_ib_deposits",
+    "depos_in_oth_bfi",
+    "depos_oth_bfi",
+    "deriv_assets",
+    "deriv_liab",
+    "end_date",
+    "end_type",
+    "estimated_liab",
+    "f_ann_date",
+    "fa_avail_for_sale",
+    "fair_value_fin_assets",
+    "fix_assets",
+    "fix_assets_total",
+    "goodwill",
+    "htm_invest",
+    "int_payable",
+    "int_receiv",
+    "intan_assets",
+    "invest_as_receiv",
+    "invest_real_estate",
+    "loan_oth_bank",
+    "loanto_oth_bank_fi",
+    "lt_eqt_invest",
+    "minority_int",
+    "ordin_risk_reser",
+    "oth_assets"
+   ],
+   "rows_total": 408781,
+   "date_coverage": {
+    "ann_date": {
+     "min": "19920223",
+     "max": "20260831",
+     "rows_gt_20241231": 48870,
+     "null_rows": 0
+    },
+    "f_ann_date": {
+     "min": "19920223",
+     "max": "20260831",
+     "rows_gt_20241231": 49329,
+     "null_rows": 0
+    },
+    "end_date": {
+     "min": "19901231",
+     "max": "20260630",
+     "rows_gt_20241231": 42131,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 49329,
+   "numeric_magnitude": {
+    "accounts_receiv": {
+     "min": -1878640045.72,
+     "max": 459600739000.0
+    },
+    "acct_payable": {
+     "min": -27502685.79,
+     "max": 1100261483000.0
+    },
+    "ann_date": {
+     "min": 19920223.0,
+     "max": 20260831.0
+    },
+    "bond_payable": {
+     "min": -505735.85,
+     "max": 12164214767050.0
+    },
+    "cap_rese": {
+     "min": -308692000000.0,
+     "max": 15459513712570.0
+    },
+    "cash_reser_cb": {
+     "min": 7162.85,
+     "max": 4042293000000.0
+    },
+    "cb_borr": {
+     "min": 0.0,
+     "max": 1734055000000.0
+    },
+    "comp_type": {
+     "min": 1.0,
+     "max": 7.0
+    },
+    "cost_fin_assets": {
+     "min": 49984209.84,
+     "max": 13456152000000.0
+    },
+    "debt_invest": {
+     "min": -205555.32,
+     "max": 5482708000000.0
+    },
+    "decr_in_disbur": {
+     "min": -59978104.05,
+     "max": 31162520000000.0
+    },
+    "defer_tax_assets": {
+     "min": -11555167.82,
+     "max": 460211167710.0
+    },
+    "defer_tax_liab": {
+     "min": -63950749.2,
+     "max": 149148569260.0
+    },
+    "depos": {
+     "min": 0.0,
+     "max": 39173265000000.0
+    },
+    "depos_ib_deposits": {
+     "min": 0.0,
+     "max": 44463153000000.0
+    },
+    "depos_in_oth_bfi": {
+     "min": 5002123.92,
+     "max": 1080076000000.0
+    },
+    "depos_oth_bfi": {
+     "min": 26051.93,
+     "max": 6812423000000.0
+    },
+    "deriv_assets": {
+     "min": -5452057.99,
+     "max": 256155000000.0
+    },
+    "deriv_liab": {
+     "min": 0.0,
+     "max": 223352000000.0
+    },
+    "end_date": {
+     "min": 19901231.0,
+     "max": 20260630.0
+    },
+    "end_type": {
+     "min": 0.0,
+     "max": 4.0
+    },
+    "estimated_liab": {
+     "min": -2646833.45,
+     "max": 175227000000.0
+    },
+    "f_ann_date": {
+     "min": 19920223.0,
+     "max": 20260831.0
+    },
+    "fa_avail_for_sale": {
+     "min": 0.0,
+     "max": 2263047000000.0
+    },
+    "fair_value_fin_assets": {
+     "min": 3900000.0,
+     "max": 4807807000000.0
+    },
+    "fix_assets": {
+     "min": -34535546.58,
+     "max": 770198000000.0
+    },
+    "fix_assets_total": {
+     "min": -34535546.58,
+     "max": 895191505380.0
+    },
+    "goodwill": {
+     "min": -18697910.89,
+     "max": 4101258761400.0
+    },
+    "htm_invest": {
+     "min": 0.0,
+     "max": 3542184000000.0
+    },
+    "int_payable": {
+     "min": -650255389.0,
+     "max": 229115000000.0
+    },
+    "int_receiv": {
+     "min": -8256094002.05,
+     "max": 132200000000.0
+    },
+    "intan_assets": {
+     "min": -199608.0,
+     "max": 316580132240.0
+    },
+    "invest_as_receiv": {
+     "min": 333776.56,
+     "max": 2150105000000.0
+    },
+    "invest_real_estate": {
+     "min": 0.0,
+     "max": 159894031000.0
+    },
+    "loan_oth_bank": {
+     "min": 0.0,
+     "max": 1428161888520.0
+    },
+    "loanto_oth_bank_fi": {
+     "min": 0.0,
+     "max": 1008321000000.0
+    },
+    "lt_eqt_invest": {
+     "min": -56371199.27,
+     "max": 330131000000.0
+    },
+    "minority_int": {
+     "min": -17679537431.8,
+     "max": 1208648346840.0
+    },
+    "ordin_risk_reser": {
+     "min": -1521618415.72,
+     "max": 1352335871490.0
+    },
+    "oth_assets": {
+     "min": -194156681.27,
+     "max": 2805975457980.0
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "end_date",
+    "report_type"
+   ],
+   "duplicate_keys": 122349,
+   "duplicate_rows": 245466,
+   "duplicate_rows_with_version_col": 2093,
+   "sample_rows": [
+    {
+     "ts_code": "000001.SZ",
+     "ann_date": "20100825",
+     "f_ann_date": "20100825",
+     "end_date": "20100630",
+     "report_type": "1",
+     "comp_type": "2",
+     "end_type": "2",
+     "total_share": "3485014000.0",
+     "cap_rese": "13555872000.0",
+     "undistr_porfit": "7419989000.0",
+     "surplus_rese": "1283957000.0",
+     "special_rese": null,
+     "money_cap": null,
+     "trad_asset": "543137000.0",
+     "notes_receiv": null,
+     "accounts_receiv": null,
+     "oth_receiv": null,
+     "prepayment": null,
+     "div_receiv": null,
+     "int_receiv": "2006350000.0",
+     "inventories": null,
+     "amor_exp": null,
+     "nca_within_1y": null,
+     "sett_rsrv": null
+    },
+    {
+     "ts_code": "000001.SZ",
+     "ann_date": "20100825",
+     "f_ann_date": "20100825",
+     "end_date": "20100630",
+     "report_type": "1",
+     "comp_type": "2",
+     "end_type": "2",
+     "total_share": "3485014000.0",
+     "cap_rese": "13555872000.0",
+     "undistr_porfit": "7419989000.0",
+     "surplus_rese": "1283957000.0",
+     "special_rese": null,
+     "money_cap": null,
+     "trad_asset": "543137000.0",
+     "notes_receiv": null,
+     "accounts_receiv": null,
+     "oth_receiv": null,
+     "prepayment": null,
+     "div_receiv": null,
+     "int_receiv": "2006350000.0",
+     "inventories": null,
+     "amor_exp": null,
+     "nca_within_1y": null,
+     "sett_rsrv": null
+    },
+    {
+     "ts_code": "000001.SZ",
+     "ann_date": "20101028",
+     "f_ann_date": "20101028",
+     "end_date": "20100930",
+     "report_type": "1",
+     "comp_type": "2",
+     "end_type": "3",
+     "total_share": "3485014000.0",
+     "cap_rese": "13578078000.0",
+     "undistr_porfit": "9120810000.0",
+     "surplus_rese": "1283957000.0",
+     "special_rese": null,
+     "money_cap": null,
+     "trad_asset": "554058000.0",
+     "notes_receiv": null,
+     "accounts_receiv": null,
+     "oth_receiv": null,
+     "prepayment": null,
+     "div_receiv": null,
+     "int_receiv": "2243319000.0",
+     "inventories": null,
+     "amor_exp": null,
+     "nca_within_1y": null,
+     "sett_rsrv": null
+    },
+    {
+     "ts_code": "000001.SZ",
+     "ann_date": "20110225",
+     "f_ann_date": "20110225",
+     "end_date": "20101231",
+     "report_type": "1",
+     "comp_type": "2",
+     "end_type": "4",
+     "total_share": "3485014000.0",
+     "cap_rese": "13396943000.0",
+     "undistr_porfit": "8740798000.0",
+     "surplus_rese": "1912339000.0",
+     "special_rese": null,
+     "money_cap": null,
+     "trad_asset": null,
+     "notes_receiv": null,
+     "accounts_receiv": null,
+     "oth_receiv": null,
+     "prepayment": null,
+     "div_receiv": null,
+     "int_receiv": "2121487000.0",
+     "inventories": null,
+     "amor_exp": null,
+     "nca_within_1y": null,
+     "sett_rsrv": null
+    },
+    {
+     "ts_code": "000001.SZ",
+     "ann_date": "20110225",
+     "f_ann_date": "20110225",
+     "end_date": "20101231",
+     "report_type": "1",
+     "comp_type": "2",
+     "end_type": "4",
+     "total_share": "3485014000.0",
+     "cap_rese": "13396943000.0",
+     "undistr_porfit": "8740798000.0",
+     "surplus_rese": "1912339000.0",
+     "special_rese": null,
+     "money_cap": null,
+     "trad_asset": null,
+     "notes_receiv": null,
+     "accounts_receiv": null,
+     "oth_receiv": null,
+     "prepayment": null,
+     "div_receiv": null,
+     "int_receiv": "2121487000.0",
+     "inventories": null,
+     "amor_exp": null,
+     "nca_within_1y": null,
+     "sett_rsrv": null
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 5894,
+    "distinct_headers": 1,
+    "modal_header_cols": 152,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "688135.SH",
+      "manifest_rows": 46,
+      "actual_rows": 45
+     },
+     {
+      "chunk": "002447.SZ",
+      "manifest_rows": 86,
+      "actual_rows": 85
+     },
+     {
+      "chunk": "688556.SH",
+      "manifest_rows": 45,
+      "actual_rows": 44
+     },
+     {
+      "chunk": "300921.SZ",
+      "manifest_rows": 37,
+      "actual_rows": 36
+     },
+     {
+      "chunk": "300495.SZ",
+      "manifest_rows": 61,
+      "actual_rows": 60
+     },
+     {
+      "chunk": "603515.SH",
+      "manifest_rows": 70,
+      "actual_rows": 69
+     },
+     {
+      "chunk": "300299.SZ",
+      "manifest_rows": 93,
+      "actual_rows": 92
+     },
+     {
+      "chunk": "000039.SZ",
+      "manifest_rows": 100,
+      "actual_rows": 99
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 6.9,
+   "finished_at": "2026-09-18T00:09:11"
+  },
+  "tushare/balancesheet/20260910-r1": {
+   "batch_dir": "tushare/balancesheet/20260910-r1",
+   "mode": "full",
+   "files": {
+    "n_total": 5,
+    "n_csv": 3,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 1,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [
+     "fetch_20260910-r1.log"
+    ],
+    "total_bytes": 189573
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 ann_date 有 23 行 > 2024-12-31 (max=20260828); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "info",
+     "code": "duplicate_rows_version_snapshots",
+     "detail": "主键 ['ts_code', 'end_date', 'report_type'] 重复 138 行, 但 ['ts_code', 'end_date', 'report_type', 'update_flag'] 下唯一 (update_flag 版本快照, 非缺陷; 使用时须按 update_flag 取最新)"
+    }
+   ],
+   "inventory_registration": {
+    "files": 5,
+    "bytes": 189573
+   },
+   "schema": {
+    "ts_code": "String",
+    "ann_date": "Int64",
+    "f_ann_date": "Int64",
+    "end_date": "Int64",
+    "report_type": "Int64",
+    "comp_type": "Int64",
+    "end_type": "Int64",
+    "total_share": "Float64",
+    "cap_rese": "Float64",
+    "undistr_porfit": "Float64",
+    "surplus_rese": "Float64",
+    "special_rese": "Float64",
+    "money_cap": "Float64",
+    "trad_asset": "Float64",
+    "notes_receiv": "Float64",
+    "accounts_receiv": "Float64",
+    "oth_receiv": "Float64",
+    "prepayment": "Float64",
+    "div_receiv": "Float64",
+    "int_receiv": "Float64",
+    "inventories": "Float64",
+    "amor_exp": "String",
+    "nca_within_1y": "Float64",
+    "sett_rsrv": "String",
+    "loanto_oth_bank_fi": "String",
+    "premium_receiv": "String",
+    "reinsur_receiv": "String",
+    "reinsur_res_receiv": "String",
+    "pur_resale_fa": "String",
+    "oth_cur_assets": "Float64",
+    "total_cur_assets": "Float64",
+    "fa_avail_for_sale": "Float64",
+    "htm_invest": "String",
+    "lt_eqt_invest": "Float64",
+    "invest_real_estate": "Float64",
+    "time_deposits": "String",
+    "oth_assets": "String",
+    "lt_rec": "Float64",
+    "fix_assets": "Float64",
+    "cip": "Float64",
+    "const_materials": "Float64",
+    "fixed_assets_disp": "Float64",
+    "produc_bio_assets": "String",
+    "oil_and_gas_assets": "String",
+    "intan_assets": "Float64",
+    "r_and_d": "String",
+    "goodwill": "Float64",
+    "lt_amor_exp": "Float64",
+    "defer_tax_assets": "Float64",
+    "decr_in_disbur": "String",
+    "oth_nca": "Float64",
+    "total_nca": "Float64",
+    "cash_reser_cb": "String",
+    "depos_in_oth_bfi": "String",
+    "prec_metals": "String",
+    "deriv_assets": "String",
+    "rr_reins_une_prem": "String",
+    "rr_reins_outstd_cla": "String",
+    "rr_reins_lins_liab": "String",
+    "rr_reins_lthins_liab": "String",
+    "refund_depos": "String",
+    "ph_pledge_loans": "String",
+    "refund_cap_depos": "String",
+    "indep_acct_assets": "String",
+    "client_depos": "String",
+    "client_prov": "String",
+    "transac_seat_fee": "String",
+    "invest_as_receiv": "String",
+    "total_assets": "Float64",
+    "lt_borr": "Float64",
+    "st_borr": "Float64",
+    "cb_borr": "String",
+    "depos_ib_deposits": "String",
+    "loan_oth_bank": "String",
+    "trading_fl": "Float64",
+    "notes_payable": "Float64",
+    "acct_payable": "Float64",
+    "adv_receipts": "Float64",
+    "sold_for_repur_fa": "String",
+    "comm_payable": "String",
+    "payroll_payable": "Float64",
+    "taxes_payable": "Float64",
+    "int_payable": "Float64",
+    "div_payable": "Float64",
+    "oth_payable": "Float64",
+    "acc_exp": "String",
+    "deferred_inc": "String",
+    "st_bonds_payable": "String",
+    "payable_to_reinsurer": "String",
+    "rsrv_insur_cont": "String",
+    "acting_trading_sec": "String",
+    "acting_uw_sec": "String",
+    "non_cur_liab_due_1y": "Float64",
+    "oth_cur_liab": "Float64",
+    "total_cur_liab": "Float64",
+    "bond_payable": "Float64",
+    "lt_payable": "Float64",
+    "specific_payables": "Float64",
+    "estimated_liab": "Float64",
+    "defer_tax_liab": "Float64",
+    "defer_inc_non_cur_liab": "Float64",
+    "oth_ncl": "Float64",
+    "total_ncl": "Float64",
+    "depos_oth_bfi": "String",
+    "deriv_liab": "String",
+    "depos": "String",
+    "agency_bus_liab": "String",
+    "oth_liab": "String",
+    "prem_receiv_adva": "String",
+    "depos_received": "String",
+    "ph_invest": "String",
+    "reser_une_prem": "String",
+    "reser_outstd_claims": "String",
+    "reser_lins_liab": "String",
+    "reser_lthins_liab": "String",
+    "indept_acc_liab": "String",
+    "pledge_borr": "String",
+    "indem_payable": "String",
+    "policy_div_payable": "String",
+    "total_liab": "Float64",
+    "treasury_share": "Float64",
+    "ordin_risk_reser": "String",
+    "forex_differ": "String",
+    "invest_loss_unconf": "String",
+    "minority_int": "Float64",
+    "total_hldr_eqy_exc_min_int": "Float64",
+    "total_hldr_eqy_inc_min_int": "Float64",
+    "total_liab_hldr_eqy": "Float64",
+    "lt_payroll_payable": "String",
+    "oth_comp_income": "Float64",
+    "oth_eqt_tools": "String",
+    "oth_eqt_tools_p_shr": "String",
+    "lending_funds": "String",
+    "acc_receivable": "String",
+    "st_fin_payable": "String",
+    "payables": "String",
+    "hfs_assets": "String",
+    "hfs_sales": "String",
+    "cost_fin_assets": "String",
+    "fair_value_fin_assets": "String",
+    "contract_assets": "String",
+    "contract_liab": "Float64",
+    "accounts_receiv_bill": "Float64",
+    "accounts_pay": "Float64",
+    "oth_rcv_total": "Float64",
+    "fix_assets_total": "Float64",
+    "cip_total": "Float64",
+    "oth_pay_total": "Float64",
+    "long_pay_total": "Float64",
+    "debt_invest": "String",
+    "oth_debt_invest": "Float64",
+    "update_flag": "Int64"
+   },
+   "n_columns": 152,
+   "date_columns": [
+    "ann_date",
+    "f_ann_date",
+    "end_date"
+   ],
+   "numeric_columns_checked": [
+    "accounts_pay",
+    "accounts_receiv",
+    "accounts_receiv_bill",
+    "acct_payable",
+    "adv_receipts",
+    "ann_date",
+    "bond_payable",
+    "cap_rese",
+    "cip",
+    "cip_total",
+    "comp_type",
+    "const_materials",
+    "contract_liab",
+    "defer_inc_non_cur_liab",
+    "defer_tax_assets",
+    "defer_tax_liab",
+    "div_payable",
+    "div_receiv",
+    "end_date",
+    "end_type",
+    "estimated_liab",
+    "f_ann_date",
+    "fa_avail_for_sale",
+    "fix_assets",
+    "fix_assets_total",
+    "fixed_assets_disp",
+    "goodwill",
+    "int_payable",
+    "int_receiv",
+    "intan_assets",
+    "inventories",
+    "invest_real_estate",
+    "long_pay_total",
+    "lt_amor_exp",
+    "lt_borr",
+    "lt_eqt_invest",
+    "lt_payable",
+    "lt_rec",
+    "minority_int",
+    "money_cap"
+   ],
+   "rows_total": 241,
+   "date_coverage": {
+    "ann_date": {
+     "min": "20090409",
+     "max": "20260828",
+     "rows_gt_20241231": 23,
+     "null_rows": 0
+    },
+    "f_ann_date": {
+     "min": "20090409",
+     "max": "20260828",
+     "rows_gt_20241231": 23,
+     "null_rows": 0
+    },
+    "end_date": {
+     "min": "20081231",
+     "max": "20260630",
+     "rows_gt_20241231": 20,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 23,
+   "numeric_magnitude": {
+    "accounts_pay": {
+     "min": 7568487.44,
+     "max": 4931661350.57
+    },
+    "accounts_receiv": {
+     "min": 287850.0,
+     "max": 673545176.81
+    },
+    "accounts_receiv_bill": {
+     "min": 700000.0,
+     "max": 1152229227.17
+    },
+    "acct_payable": {
+     "min": 7568487.44,
+     "max": 4479247672.7
+    },
+    "adv_receipts": {
+     "min": 12723.6,
+     "max": 785050369.8
+    },
+    "ann_date": {
+     "min": 20090409.0,
+     "max": 20260828.0
+    },
+    "bond_payable": {
+     "min": 823963501.97,
+     "max": 1000000000.0
+    },
+    "cap_rese": {
+     "min": -143594588.0,
+     "max": 6110577536.46
+    },
+    "cip": {
+     "min": 691.09,
+     "max": 7392069000.81
+    },
+    "cip_total": {
+     "min": 691.09,
+     "max": 7468903339.17
+    },
+    "comp_type": {
+     "min": 1.0,
+     "max": 1.0
+    },
+    "const_materials": {
+     "min": 0.0,
+     "max": 177207327.41
+    },
+    "contract_liab": {
+     "min": 584793.91,
+     "max": 2418211034.91
+    },
+    "defer_inc_non_cur_liab": {
+     "min": 4679100.0,
+     "max": 119209035.66
+    },
+    "defer_tax_assets": {
+     "min": 143176.61,
+     "max": 133630122.87
+    },
+    "defer_tax_liab": {
+     "min": 438049.36,
+     "max": 24090734.87
+    },
+    "div_payable": {
+     "min": 70972.08,
+     "max": 1415741676.06
+    },
+    "div_receiv": {
+     "min": 0.0,
+     "max": 110783545.89
+    },
+    "end_date": {
+     "min": 20081231.0,
+     "max": 20260630.0
+    },
+    "end_type": {
+     "min": 1.0,
+     "max": 4.0
+    },
+    "estimated_liab": {
+     "min": 199422.6,
+     "max": 1275267560.66
+    },
+    "f_ann_date": {
+     "min": 20090409.0,
+     "max": 20260828.0
+    },
+    "fa_avail_for_sale": {
+     "min": 9688000.0,
+     "max": 471637350.0
+    },
+    "fix_assets": {
+     "min": 69235020.77,
+     "max": 24369201766.85
+    },
+    "fix_assets_total": {
+     "min": 67025056.55,
+     "max": 24369201766.85
+    },
+    "fixed_assets_disp": {
+     "min": 0.0,
+     "max": 303718.3
+    },
+    "goodwill": {
+     "min": 1852961.76,
+     "max": 2516017703.61
+    },
+    "int_payable": {
+     "min": 0.0,
+     "max": 203546538.4
+    },
+    "int_receiv": {
+     "min": 0.0,
+     "max": 3619000.0
+    },
+    "intan_assets": {
+     "min": 17727742.77,
+     "max": 2145676597.82
+    },
+    "inventories": {
+     "min": 6339213.63,
+     "max": 1029173761.94
+    },
+    "invest_real_estate": {
+     "min": 0.0,
+     "max": 386673735.24
+    },
+    "long_pay_total": {
+     "min": 0.0,
+     "max": 2579646610.67
+    },
+    "lt_amor_exp": {
+     "min": 127395.44,
+     "max": 466420675.18
+    },
+    "lt_borr": {
+     "min": 2200000.0,
+     "max": 10215424471.68
+    },
+    "lt_eqt_invest": {
+     "min": 12515433.72,
+     "max": 5468759119.53
+    },
+    "lt_payable": {
+     "min": 8314.62,
+     "max": 2579646610.67
+    },
+    "lt_rec": {
+     "min": 9414095.49,
+     "max": 284513391.06
+    },
+    "minority_int": {
+     "min": -38573826.05,
+     "max": 5286613232.17
+    },
+    "money_cap": {
+     "min": 42967158.93,
+     "max": 5974259882.68
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "end_date",
+    "report_type"
+   ],
+   "duplicate_keys": 69,
+   "duplicate_rows": 138,
+   "duplicate_rows_with_version_col": 0,
+   "sample_rows": [
+    {
+     "ts_code": "000683.SZ",
+     "ann_date": "20090409",
+     "f_ann_date": "20090409",
+     "end_date": "20081231",
+     "report_type": "1",
+     "comp_type": "1",
+     "end_type": "4",
+     "total_share": "511875989.0",
+     "cap_rese": "520324034.68",
+     "undistr_porfit": "149492456.39",
+     "surplus_rese": "108641942.28",
+     "special_rese": null,
+     "money_cap": "354345954.12",
+     "trad_asset": null,
+     "notes_receiv": "29988496.72",
+     "accounts_receiv": "9953981.17",
+     "oth_receiv": "66004664.33",
+     "prepayment": "256459840.97",
+     "div_receiv": null,
+     "int_receiv": null,
+     "inventories": "229932195.96",
+     "amor_exp": null,
+     "nca_within_1y": null,
+     "sett_rsrv": null
+    },
+    {
+     "ts_code": "000683.SZ",
+     "ann_date": "20090429",
+     "f_ann_date": "20090429",
+     "end_date": "20090331",
+     "report_type": "1",
+     "comp_type": "1",
+     "end_type": "1",
+     "total_share": "511875989.0",
+     "cap_rese": "526355129.72",
+     "undistr_porfit": "117046118.77",
+     "surplus_rese": "108641942.29",
+     "special_rese": null,
+     "money_cap": "286263161.24",
+     "trad_asset": null,
+     "notes_receiv": "35125345.95",
+     "accounts_receiv": "2199574.8",
+     "oth_receiv": "64079349.68",
+     "prepayment": "276107086.88",
+     "div_receiv": null,
+     "int_receiv": null,
+     "inventories": "206537768.03",
+     "amor_exp": null,
+     "nca_within_1y": null,
+     "sett_rsrv": null
+    },
+    {
+     "ts_code": "000683.SZ",
+     "ann_date": "20090808",
+     "f_ann_date": "20090808",
+     "end_date": "20090630",
+     "report_type": "1",
+     "comp_type": "1",
+     "end_type": "2",
+     "total_share": "511875989.0",
+     "cap_rese": "595233129.72",
+     "undistr_porfit": "70611190.87",
+     "surplus_rese": "78663073.0",
+     "special_rese": null,
+     "money_cap": "661365727.53",
+     "trad_asset": null,
+     "notes_receiv": "28335544.97",
+     "accounts_receiv": "8810647.31",
+     "oth_receiv": "73308440.62",
+     "prepayment": "307769713.14",
+     "div_receiv": null,
+     "int_receiv": null,
+     "inventories": "177317595.98",
+     "amor_exp": null,
+     "nca_within_1y": null,
+     "sett_rsrv": null
+    },
+    {
+     "ts_code": "000683.SZ",
+     "ann_date": "20091023",
+     "f_ann_date": "20091023",
+     "end_date": "20090930",
+     "report_type": "1",
+     "comp_type": "1",
+     "end_type": "3",
+     "total_share": "511875989.0",
+     "cap_rese": "595233129.72",
+     "undistr_porfit": "73698317.44",
+     "surplus_rese": "87205972.47",
+     "special_rese": null,
+     "money_cap": "727769114.67",
+     "trad_asset": null,
+     "notes_receiv": "24532235.89",
+     "accounts_receiv": "21904392.56",
+     "oth_receiv": "81738415.56",
+     "prepayment": "273646429.5",
+     "div_receiv": null,
+     "int_receiv": null,
+     "inventories": "234652547.94",
+     "amor_exp": null,
+     "nca_within_1y": null,
+     "sett_rsrv": null
+    },
+    {
+     "ts_code": "000683.SZ",
+     "ann_date": "20100409",
+     "f_ann_date": "20100409",
+     "end_date": "20091231",
+     "report_type": "1",
+     "comp_type": "1",
+     "end_type": "4",
+     "total_share": "511875989.0",
+     "cap_rese": "382072053.01",
+     "undistr_porfit": "955647998.01",
+     "surplus_rese": "169933087.69",
+     "special_rese": "17552576.32",
+     "money_cap": "909779190.25",
+     "trad_asset": null,
+     "notes_receiv": "78684312.09",
+     "accounts_receiv": "6266306.63",
+     "oth_receiv": "789965336.07",
+     "prepayment": "240682495.61",
+     "div_receiv": null,
+     "int_receiv": null,
+     "inventories": "186964668.38",
+     "amor_exp": null,
+     "nca_within_1y": null,
+     "sett_rsrv": null
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:11"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:11"
+}

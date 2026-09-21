@@ -1,0 +1,78 @@
+{
+ "experiment_id": "exp-20260920-zone-sheet-f4r2",
+ "prereg": "docs/research/exp-20260920-zone-sheet-f4r2-prereg.md",
+ "frozen_at": "2026-09-20T03:30:00+08:00",
+ "engine_pin_sha256_16": "7ad35014d72711cb",
+ "engine_mode": "band engine v1.4 intent layer (ladder_buy / take_profit / stop_sell / seat recycling, contract section 10)",
+ "positioning": "user-approved path 1 ablation: stop-only execution (ratchet stop acts as trailing take-profit); tests H1 that F4R1 return collapse was caused by fixed take-profit truncation",
+ "trial_accounting": {
+  "strategy_line": "273->275 (2 arms)",
+  "factor_line_FT01": 120
+ },
+ "dev_window": {
+  "start": "2015-01-05",
+  "end": "2020-12-31",
+  "val_policy": "2021-2024 zero contact"
+ },
+ "capital": {
+  "arms_initial_cash": 500000.0,
+  "anchor_initial_cash": 200000.0,
+  "note": "F3R3-A0 anchor (R3-06 verbatim at 200k) rides along; 5-frame byte-reproduction is a run precondition"
+ },
+ "chassis": {
+  "source": "hybrid family v3 run 20260919T110500-hybrid-v3-r3ld config R3-06, verbatim",
+  "legs": {
+   "sh.511010": 0.15,
+   "sh.518880": 0.25
+  },
+  "sleeve_weighting": "ICW only"
+ },
+ "stock_sleeve": {
+  "composite_source": "F3R1 frozen output F3-ICW_composite.parquet sha256_16 b09242ee542cf675",
+  "membership": {
+   "candidate_list": "top 2K (20) per signal month",
+   "max_members": 10,
+   "industry_cap_per_l1": 2,
+   "buffer_stay_rank_le": 20,
+   "recycling": "engine v1.4 section 10.1-4: rank-order admission, held+ladder<K gate, cooldown for names fully closed mid-month until next signal day, industry counts include live ladders"
+  },
+  "sigma0": "std of last 20 official-session close-to-close log returns x P0; <20 sessions -> excluded from month list (counted)",
+  "target_value": "w_T x equity(signal-day 15:00) / P0, per-level floor to lots; below_min_lot levels dropped and counted"
+ },
+ "zones": {
+  "a1": {"near_off": 0.5, "far_off": 1.0, "frac": 0.4},
+  "a2": {"near_off": 1.5, "far_off": 2.0, "frac": 0.4},
+  "bounce": {"near_off": 2.5, "far_off": 3.0, "frac": 0.2},
+  "invalidation": "session low < P0 - 3.5*sigma0 -> cancel unfilled levels from next decision point",
+  "b1": {"mult": null, "frac": null, "anchor": "WAC+mult*sigma0, no re-anchor, no k3"},
+  "b2": {"mult": null, "frac": null, "anchor": "WAC+mult*sigma0"},
+  "c": {"mult": 3.0, "mode": "ratchet from HWM(decision prices only), fill=min(line,session_open), T+1 residue arms k3"},
+  "same_session_precedence": "stop before take-profit (conservative)",
+  "expiry": "next signal day + 1 calendar day",
+  "tp_does_not_cancel_ladder": true
+ },
+ "zones_D2": {
+  "b1": {"mult": 4.0, "frac": 0.5},
+  "b2": {"mult": 5.0, "frac": 1.0}
+ },
+ "arms": {
+  "F4R2-D1": {
+   "take_profit": "DISABLED (no b1/b2 tiers; exits = 3-sigma ratchet stop + 3.5-sigma invalidation only)",
+   "stop": true,
+   "path_T200_40": false,
+   "w_T": 0.06
+  },
+  "F4R2-D2": {
+   "take_profit": "b1=+4sigma sell 50%, b2=+5sigma clear (WAC-anchored, no re-anchor, no fallback)",
+   "stop": true,
+   "path_T200_40": false,
+   "w_T": 0.06
+  }
+ },
+ "seam_adjudication": {
+  "F4R2-S1": "tp-disable expression: prefer frame-level (null tp1/tp2) if v1.4 tolerates; engine change requires main-conversation dual-sign re-pin, agent MUST NOT modify engine; oversized-mult hack forbidden",
+  "F4R2-S2": "D2 tiers are a designed widening of F4R1 (2x), not historical tuning; disclose in results"
+ },
+ "budget": {"wall_seconds_max": 900, "peak_rss_gb_max": 8.0},
+ "stop_rule": "per prereg section 7: H1 zone -> report to user; H0 zone (<+2% net CAGR on D1) -> F-line execution-layer conclusion closed, stop; no F4R3, val zero-contact"
+}

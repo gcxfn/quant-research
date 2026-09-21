@@ -1,0 +1,42 @@
+{
+  "experiment_id": "exp-20260919-hybrid-family-v3",
+  "frozen_at": "2026-09-19 11:00",
+  "prereg": "docs/research/exp-20260919-hybrid-family-v3-prereg.md",
+  "authority": "user ruling 2026-09-19: val held (not consumed), continue dev toward 10% net CAGR; user hypothesis: lower bond weight in ROT-05",
+  "engine": {
+    "module": "src/quant/backtest/band_engine.py",
+    "version": "band_engine v1.2",
+    "sha256": "ceb7be6414280e4c5d5f37dc6ca1148a85e306b2de1a216147f67f89cc4a746d",
+    "check": "before+after each run"
+  },
+  "inherited_from_v2": [
+    "universe+exclusions", "band table (all 0.10)", "dividend events rule (18 dev events)",
+    "runner assertions x3", "fees", "window dev 2015-2020 / val frozen",
+    "Design B leg semantics", "gates 1-7 (R16 verbatim) + gate 8 v3",
+    "benchmarks B1(m)/B3'"
+  ],
+  "rotation_universe_uni6": ["sh.510050", "sh.510300", "sz.159915", "sh.510880", "sh.513100", "sh.513500"],
+  "panel_note": "sz.159934 stays in the data panel (identical to v2) but is unused by all v3 configs",
+  "configs": [
+    {"id": "R3-A0", "stock": null, "legs": {"sh.511010": 0.25, "sh.518880": 0.25}, "rotation": {"universe": "UNI6", "top_n": 2, "weight": 0.25, "lookback_m": 6}, "role": "regression anchor = ROT-05 verbatim; four frames must equal v2 outputs byte-for-byte; no re-adjudication"},
+    {"id": "R3-01", "stock": null, "legs": {"sh.511010": 0.2, "sh.518880": 0.25}, "rotation": {"universe": "UNI6", "top_n": 2, "weight": 0.25, "lookback_m": 6}},
+    {"id": "R3-02", "stock": null, "legs": {"sh.511010": 0.15, "sh.518880": 0.25}, "rotation": {"universe": "UNI6", "top_n": 2, "weight": 0.25, "lookback_m": 6}},
+    {"id": "R3-03", "stock": null, "legs": {"sh.511010": 0.1, "sh.518880": 0.25}, "rotation": {"universe": "UNI6", "top_n": 2, "weight": 0.25, "lookback_m": 6}},
+    {"id": "R3-04", "stock": null, "legs": {"sh.518880": 0.25}, "rotation": {"universe": "UNI6", "top_n": 2, "weight": 0.25, "lookback_m": 6}},
+    {"id": "R3-05", "stock": null, "legs": {"sh.518880": 0.25}, "rotation": {"universe": "UNI6", "top_n": 3, "weight": 0.25, "lookback_m": 6}},
+    {"id": "R3-06", "stock": null, "legs": {"sh.511010": 0.15, "sh.518880": 0.25}, "rotation": {"universe": "UNI6", "top_n": 3, "weight": 0.2, "lookback_m": 6}}
+  ],
+  "gates": {
+    "1-7": "R16 verbatim (inherited from v2 prereg sec 3)",
+    "8v3": "final delivery rate >= 99% + end-of-run armed stuck = 0 hard assert",
+    "benchmarks": {"B1m": "R16 metrics.json C05 verbatim", "B3prime_T200_40": -0.0199},
+    "goal_column_non_gate": "dev net CAGR >= 10%"
+  },
+  "stop_clauses": [
+    "any config passes all 8 gates AND net CAGR >= 10% -> stop, report user (goal first hit), val application separate",
+    "configs pass gates but < 10% -> bookkeep and CONTINUE dev (user ruled val held; gate-pass alone no longer stops)",
+    "all eliminated -> ROT branch paused, family direction re-evaluated"
+  ],
+  "budget": {"configs": 7, "engine_time": "<1 min", "wall": "<=20 min", "abort_if": "R3-A0 frames != v2 ROT-05 byte-for-byte"},
+  "trial_accounting": "222 -> 229 (7 trials; R3-A0 anchor counts as a trial like v2 H2-A0)"
+}

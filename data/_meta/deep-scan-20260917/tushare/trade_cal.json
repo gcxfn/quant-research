@@ -1,0 +1,132 @@
+{
+ "source": "tushare",
+ "dataset": "trade_cal",
+ "batches": {
+  "tushare/trade_cal/20260909-r1": {
+   "batch_dir": "tushare/trade_cal/20260909-r1",
+   "mode": "full",
+   "files": {
+    "n_total": 4,
+    "n_csv": 2,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 1,
+    "manifest_names": [
+     "chunk_sse_20140101_20171231.meta.json"
+    ],
+    "other_names": [
+     "fetch_20260912-r2.log"
+    ],
+    "total_bytes": 119191
+   },
+   "issues": [
+    {
+     "level": "warning",
+     "code": "frozen_window_rows_reference_calendar",
+     "detail": "日期列 cal_date 有 730 行 > 2024-12-31 (max=20261231); 冻结边界审查: 只报告不删除; 参考日历类数据, 2025+ 为日历定义而非行情观测"
+    }
+   ],
+   "inventory_registration": {
+    "files": 4,
+    "bytes": 119191
+   },
+   "schema": {
+    "exchange": "String",
+    "cal_date": "Int64",
+    "is_open": "Int64",
+    "pretrade_date": "Int64"
+   },
+   "n_columns": 4,
+   "date_columns": [
+    "cal_date",
+    "pretrade_date"
+   ],
+   "numeric_columns_checked": [
+    "cal_date",
+    "is_open",
+    "pretrade_date"
+   ],
+   "rows_total": 4748,
+   "date_coverage": {
+    "cal_date": {
+     "min": "20140101",
+     "max": "20261231",
+     "rows_gt_20241231": 730,
+     "null_rows": 0
+    },
+    "pretrade_date": {
+     "min": "20131231",
+     "max": "20261230",
+     "rows_gt_20241231": 728,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 730,
+   "numeric_magnitude": {
+    "cal_date": {
+     "min": 20140101.0,
+     "max": 20261231.0
+    },
+    "is_open": {
+     "min": 0.0,
+     "max": 1.0
+    },
+    "pretrade_date": {
+     "min": 20131231.0,
+     "max": 20261230.0
+    }
+   },
+   "primary_key": [
+    "exchange",
+    "cal_date"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "exchange": "SSE",
+     "cal_date": "20140101",
+     "is_open": "0",
+     "pretrade_date": "20131231"
+    },
+    {
+     "exchange": "SSE",
+     "cal_date": "20140102",
+     "is_open": "1",
+     "pretrade_date": "20131231"
+    },
+    {
+     "exchange": "SSE",
+     "cal_date": "20140103",
+     "is_open": "1",
+     "pretrade_date": "20140102"
+    },
+    {
+     "exchange": "SSE",
+     "cal_date": "20140104",
+     "is_open": "0",
+     "pretrade_date": "20140103"
+    },
+    {
+     "exchange": "SSE",
+     "cal_date": "20140105",
+     "is_open": "0",
+     "pretrade_date": "20140103"
+    }
+   ],
+   "unit_check": {
+    "is_open_in_0_1": true,
+    "n_rows": 4748,
+    "calendar_range": [
+     "20140101",
+     "20261231"
+    ]
+   },
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:48"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:48"
+}

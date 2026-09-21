@@ -1,0 +1,30 @@
+{
+  "status": "PASS_WITH_LIMITATIONS",
+  "scope": "sz.002812 2018-03-01 only; 48 bars passed existing Provider, empirical lot unit, vendor unknown",
+  "patch_manifest_sha256": "935bc9b2ca2b27a7685d57845d4629cfb5e8a7d4ea412a690d00eee74d0d1428",
+  "validation_sha256": "71d3575ffb20d68917a965e8fb7691d60869ffa490b9c1e13195886fdf52581f",
+  "review_script_sha256": "cca901614321511f90d1906a67b7c0ce05c4d465bdcc16c661249d3ea0627016",
+  "discrepancies": [
+    {
+      "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+      "reviewed_exception": null,
+      "code": "sz.002812",
+      "date": "2018-03-01",
+      "minute_aggregate": {
+        "open": 102.2,
+        "close": 104.2,
+        "high": 104.35,
+        "low": 102.2,
+        "volume": 482100.0
+      },
+      "daily": {
+        "open": 102.2,
+        "high": 104.41,
+        "low": 102.2,
+        "close": 104.2,
+        "volume": 482104.0
+      },
+      "source": "D:\\AI\\workspace\\\u4e2a\u4eba\u91cf\u5316\\data\\raw\\user_csv_1m\\20260913-4\\sz.002812_2018-03-01_f5.csv"
+    }
+  ]
+}

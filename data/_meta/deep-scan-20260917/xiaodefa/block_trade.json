@@ -1,0 +1,202 @@
+{
+ "source": "xiaodefa",
+ "dataset": "block_trade",
+ "batches": {
+  "xiaodefa/block_trade/20260913-bulk1": {
+   "batch_dir": "xiaodefa/block_trade/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 3089,
+    "n_csv": 3088,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 74279684
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 66597 行 > 2024-12-31 (max=20260911); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['ts_code', 'trade_date', 'price', 'vol'] 重复: 49994 个键 / 127449 行"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 3089,
+    "bytes": 74279684
+   },
+   "schema": {
+    "ts_code": "String",
+    "trade_date": "Int64",
+    "price": "Float64",
+    "vol": "Float64",
+    "amount": "Float64",
+    "buyer": "String",
+    "seller": "String"
+   },
+   "n_columns": 7,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "vol",
+    "amount",
+    "price",
+    "trade_date"
+   ],
+   "rows_total": 629797,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20140102",
+     "max": "20260911",
+     "rows_gt_20241231": 66597,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 66597,
+   "numeric_magnitude": {
+    "vol": {
+     "min": 0.0003,
+     "max": 10000000.0
+    },
+    "amount": {
+     "min": 0.0135,
+     "max": 1010900000.0
+    },
+    "price": {
+     "min": 0.01,
+     "max": 2601.0
+    },
+    "trade_date": {
+     "min": 20140102.0,
+     "max": 20260911.0
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "trade_date",
+    "price",
+    "vol"
+   ],
+   "duplicate_keys": 49994,
+   "duplicate_rows": 127449,
+   "sample_rows": [
+    {
+     "ts_code": "002514.SZ",
+     "trade_date": "20140102",
+     "price": "17.65",
+     "vol": "260.0",
+     "amount": "4589.0",
+     "buyer": "中银国际证券有限责任公司南昌会展路证券营业部",
+     "seller": "华泰证券股份有限公司深圳深南大道证券营业部"
+    },
+    {
+     "ts_code": "122857.SH",
+     "trade_date": "20140102",
+     "price": "101.0",
+     "vol": "9.4",
+     "amount": "949.4",
+     "buyer": null,
+     "seller": null
+    },
+    {
+     "ts_code": "111045.SZ",
+     "trade_date": "20140102",
+     "price": "100.06",
+     "vol": "1.0",
+     "amount": "100.06",
+     "buyer": "机构专用",
+     "seller": "机构专用"
+    },
+    {
+     "ts_code": "601688.SH",
+     "trade_date": "20140102",
+     "price": "8.7",
+     "vol": "500.0",
+     "amount": "4350.0",
+     "buyer": "国元证券股份有限公司上海威海路证券营业部",
+     "seller": "中国国际金融有限公司上海淮海中路证券营业部"
+    },
+    {
+     "ts_code": "601818.SH",
+     "trade_date": "20140102",
+     "price": "2.5",
+     "vol": "234.794",
+     "amount": "586.985",
+     "buyer": "信达证券股份有限公司北京北辰东路证券营业部",
+     "seller": "信达证券股份有限公司北京北辰东路证券营业部"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 3088,
+    "distinct_headers": 1,
+    "modal_header_cols": 7,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "20240523",
+      "manifest_rows": 102,
+      "actual_rows": 101
+     },
+     {
+      "chunk": "20160315",
+      "manifest_rows": 93,
+      "actual_rows": 92
+     },
+     {
+      "chunk": "20250110",
+      "manifest_rows": 92,
+      "actual_rows": 91
+     },
+     {
+      "chunk": "20260908",
+      "manifest_rows": 126,
+      "actual_rows": 125
+     },
+     {
+      "chunk": "20190321",
+      "manifest_rows": 204,
+      "actual_rows": 203
+     },
+     {
+      "chunk": "20180517",
+      "manifest_rows": 195,
+      "actual_rows": 194
+     },
+     {
+      "chunk": "20230512",
+      "manifest_rows": 223,
+      "actual_rows": 222
+     },
+     {
+      "chunk": "20171219",
+      "manifest_rows": 302,
+      "actual_rows": 301
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 2.6,
+   "finished_at": "2026-09-18T00:07:01"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:01"
+}

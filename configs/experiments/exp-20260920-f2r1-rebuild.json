@@ -1,0 +1,12 @@
+{
+  "experiment_id": "exp-20260920-f2r1-rebuild",
+  "name": "f2r1-rebuild",
+  "panel_end": "2020-12-31",
+  "signal_end": "2020-12-31",
+  "factor_eval": {
+    "horizon_days": 20,
+    "n_groups": 10,
+    "eval_freq": "M",
+    "min_history_rows": 60
+  }
+}

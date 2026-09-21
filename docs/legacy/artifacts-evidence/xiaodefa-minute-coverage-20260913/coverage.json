@@ -1,0 +1,26 @@
+{
+ "scope": "planned-selection-days upper bound (not actual orders)",
+ "total": 2400,
+ "counts": {
+  "DISCLOSE": 443,
+  "EXACT": 1921,
+  "SUSPENDED_SKIP": 11,
+  "PATCH": 24,
+  "BLOCKED": 1
+ },
+ "blocked": [
+  {
+   "unit": "REV_vola_11",
+   "code": "sz.300114",
+   "date": "2016-05-03",
+   "status": "BLOCKED",
+   "reason": "code_absent_in_archive",
+   "source": ""
+  }
+ ],
+ "patch_manifest": "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\minute-repairs-20260913-3\\patches.json",
+ "patch_manifest_sha256": "94817d0256a64e7b1fdb471e91faaa0c3cce10faba6f7a915da37b9ebc8f1f57",
+ "plan": "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-20260913-2\\planned-selection-days.csv",
+ "plan_sha256": "74475f17e6852c3bd50d81242c7f8d035e7cf6da9b7c26708a8d7609ff5d7bef",
+ "script_sha256": "53a616d30c37ddf601a6e4c8c02b1c5449a23f7480648885b887beb8dceb33ab"
+}

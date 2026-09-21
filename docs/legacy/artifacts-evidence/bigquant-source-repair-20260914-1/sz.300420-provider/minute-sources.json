@@ -1,0 +1,79 @@
+[
+  {
+    "code": "sz.300420",
+    "date": "2019-09-02",
+    "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\bigquant\\minute-repairs-20260914-1\\sz.300420_2019-09-02_f5.csv",
+    "sha256": "a35401b52145d939200073658956c8e9bd7fb7fdef7df5a46462b453d86125d8",
+    "error_code": "0",
+    "source": "bigquant_cn_stock_bar1m_whole_security_day",
+    "raw_path": "D:\\AI\\workspace\\个人量化\\data\\raw\\bigquant\\minute-check-20260914-1\\2019-09-02.csv",
+    "raw_sha256": "1f00049cd0c0898f19fe79767fdb83eca12fa451abb977856ec658ef335db2ec",
+    "trailing_zero_minutes": 0,
+    "minute_volume": 44087544.0,
+    "normalization": "RAW_0925_AUCTION_INCLUDED_IN_0935;CONTINUOUS_RIGHT_END_TIMES_PRESERVED",
+    "previous_derived_path": "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\repairs-20260913-2\\sz.300420_2019-09-02_f5.csv",
+    "previous_derived_sha256": "06688264d5bb65f833fcaf46226e91073d18b71980ac768d0bc50b3d0bd8827a",
+    "previous_entry": {
+      "code": "sz.300420",
+      "date": "2019-09-02",
+      "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\minute-repairs-20260914-1\\sz.300420_2019-09-02_f5.csv",
+      "sha256": "06688264d5bb65f833fcaf46226e91073d18b71980ac768d0bc50b3d0bd8827a",
+      "error_code": "0",
+      "source": "user_csv_1m_lots_to_shares_aggregated_5m",
+      "raw_path": "D:\\AI\\workspace\\个人量化\\data\\raw\\user_csv_1m\\20260913-4\\sz300420_2019.csv",
+      "raw_sha256": "0e887628f5d3df158fd10a3801ac56ac8d9edaa31a8caf4b9d366f51657ae5be",
+      "trailing_zero_minutes": 0,
+      "minute_volume": 44087500.0,
+      "reviewed_low_only_missing_print": {
+        "decision": "LOW_ONLY_MISSING_PRINT_NO_TRIGGER_DEPENDENCY",
+        "reason": "分钟源漏一笔最低价；两独立日线源一致；实际订单成交由 open<=price 决定，与 low 无关",
+        "sha256": "06688264d5bb65f833fcaf46226e91073d18b71980ac768d0bc50b3d0bd8827a",
+        "daily": {
+          "open": 6.58,
+          "high": 7.02,
+          "low": 6.5,
+          "close": 6.82,
+          "volume": 44087544.0
+        },
+        "minute_low": 6.57,
+        "daily_low": 6.5,
+        "evidence": [
+          "user_dataset daily low=6.50",
+          "tushare daily via xiaodefa low=6.50",
+          "user annual 1m CSV low=6.57"
+        ]
+      },
+      "normalization": "OHLC_FROM_POSITIVE_VOLUME_ROWS",
+      "previous_derived_path": "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\repairs-20260913-2\\sz.300420_2019-09-02_f5.csv",
+      "previous_derived_sha256": "06688264d5bb65f833fcaf46226e91073d18b71980ac768d0bc50b3d0bd8827a",
+      "accepted_source_baseline": {
+        "decision": "USER_ACCEPTED_SOURCE_BASELINE_20260914",
+        "code": "sz.300420",
+        "date": "2019-09-02",
+        "sha256": "06688264d5bb65f833fcaf46226e91073d18b71980ac768d0bc50b3d0bd8827a",
+        "daily": {
+          "open": 6.58,
+          "close": 6.82,
+          "high": 7.02,
+          "low": 6.5,
+          "volume": 44087544.0
+        },
+        "minute": {
+          "open": 6.58,
+          "close": 6.82,
+          "high": 7.02,
+          "low": 6.57,
+          "volume": 44087500.0
+        },
+        "research_only": true,
+        "source_truth_verified": false,
+        "sensitivity_required": true,
+        "scope": "Known source discrepancy accepted for descriptive research; no value correction"
+      }
+    },
+    "volume_unit": "shares; checked against baseline daily and minute records",
+    "amount_unit": "yuan",
+    "scope": "Three user-authorized vendor corrections; full source OHLCV, not selected fields",
+    "reused": true
+  }
+]

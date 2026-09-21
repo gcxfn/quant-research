@@ -1,0 +1,1096 @@
+{
+ "source": "tushare",
+ "dataset": "fina_indicator",
+ "batches": {
+  "tushare/fina_indicator/20260909-r3": {
+   "batch_dir": "tushare/fina_indicator/20260909-r3",
+   "mode": "full",
+   "files": {
+    "n_total": 5900,
+    "n_csv": 5896,
+    "n_parquet": 0,
+    "n_empty_csv": 3,
+    "n_manifest": 1,
+    "n_other": 3,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [
+     "chunk_000069.SZ.csv",
+     "chunk_688543.SH.csv",
+     "chunk_T600018.SH.csv"
+    ],
+    "total_bytes": 400863713
+   },
+   "issues": [
+    {
+     "level": "info",
+     "code": "empty_csv_chunks",
+     "detail": "3 个 0 字节空 CSV(如按日抓取无数据日), 例: ['chunk_000069.SZ.csv', 'chunk_688543.SH.csv', 'chunk_T600018.SH.csv']; 未计入行数统计"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 ann_date 有 52067 行 > 2024-12-31 (max=20260901); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['ts_code', 'end_date', 'ann_date'] 重复: 194479 个键 / 388958 行"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 5900,
+    "bytes": 400863713
+   },
+   "schema": {
+    "ts_code": "String",
+    "ann_date": "Int64",
+    "end_date": "Int64",
+    "eps": "Float64",
+    "dt_eps": "Float64",
+    "total_revenue_ps": "Float64",
+    "revenue_ps": "Float64",
+    "capital_rese_ps": "Float64",
+    "surplus_rese_ps": "Float64",
+    "undist_profit_ps": "Float64",
+    "extra_item": "Float64",
+    "profit_dedt": "Float64",
+    "gross_margin": "String",
+    "current_ratio": "String",
+    "quick_ratio": "String",
+    "cash_ratio": "String",
+    "ar_turn": "String",
+    "ca_turn": "String",
+    "fa_turn": "String",
+    "assets_turn": "Float64",
+    "op_income": "Float64",
+    "ebit": "String",
+    "ebitda": "String",
+    "fcff": "Float64",
+    "fcfe": "String",
+    "current_exint": "String",
+    "noncurrent_exint": "String",
+    "interestdebt": "String",
+    "netdebt": "String",
+    "tangible_asset": "String",
+    "working_capital": "String",
+    "networking_capital": "String",
+    "invest_capital": "String",
+    "retained_earnings": "Float64",
+    "diluted2_eps": "Float64",
+    "bps": "Float64",
+    "ocfps": "Float64",
+    "retainedps": "Float64",
+    "cfps": "Float64",
+    "ebit_ps": "String",
+    "fcff_ps": "String",
+    "fcfe_ps": "String",
+    "netprofit_margin": "Float64",
+    "grossprofit_margin": "String",
+    "cogs_of_sales": "String",
+    "expense_of_sales": "String",
+    "profit_to_gr": "Float64",
+    "saleexp_to_gr": "String",
+    "adminexp_of_gr": "Float64",
+    "finaexp_of_gr": "String",
+    "impai_ttm": "Float64",
+    "gc_of_gr": "String",
+    "op_of_gr": "Float64",
+    "ebit_of_gr": "String",
+    "roe": "Float64",
+    "roe_waa": "Float64",
+    "roe_dt": "Float64",
+    "roa": "String",
+    "npta": "Float64",
+    "roic": "String",
+    "roe_yearly": "Float64",
+    "roa2_yearly": "String",
+    "debt_to_assets": "Float64",
+    "assets_to_eqt": "Float64",
+    "dp_assets_to_eqt": "Float64",
+    "ca_to_assets": "String",
+    "nca_to_assets": "String",
+    "tbassets_to_totalassets": "String",
+    "int_to_talcap": "String",
+    "eqt_to_talcapital": "String",
+    "currentdebt_to_debt": "String",
+    "longdeb_to_debt": "String",
+    "ocf_to_shortdebt": "String",
+    "debt_to_eqt": "Float64",
+    "eqt_to_debt": "Float64",
+    "eqt_to_interestdebt": "String",
+    "tangibleasset_to_debt": "String",
+    "tangasset_to_intdebt": "String",
+    "tangibleasset_to_netdebt": "String",
+    "ocf_to_debt": "Float64",
+    "turn_days": "String",
+    "roa_yearly": "Float64",
+    "roa_dp": "Float64",
+    "fixed_assets": "Float64",
+    "profit_to_op": "Float64",
+    "q_saleexp_to_gr": "String",
+    "q_gc_to_gr": "String",
+    "q_roe": "Float64",
+    "q_dt_roe": "Float64",
+    "q_npta": "Float64",
+    "q_ocf_to_sales": "Float64",
+    "basic_eps_yoy": "Float64",
+    "dt_eps_yoy": "Float64",
+    "cfps_yoy": "Float64",
+    "op_yoy": "Float64",
+    "ebt_yoy": "Float64",
+    "netprofit_yoy": "Float64",
+    "dt_netprofit_yoy": "Float64",
+    "ocf_yoy": "Float64",
+    "roe_yoy": "Float64",
+    "bps_yoy": "Float64",
+    "assets_yoy": "Float64",
+    "eqt_yoy": "Float64",
+    "tr_yoy": "Float64",
+    "or_yoy": "Float64",
+    "q_sales_yoy": "Float64",
+    "q_op_qoq": "Float64",
+    "equity_yoy": "Float64"
+   },
+   "n_columns": 108,
+   "date_columns": [
+    "ann_date",
+    "end_date"
+   ],
+   "numeric_columns_checked": [
+    "adminexp_of_gr",
+    "ann_date",
+    "assets_to_eqt",
+    "assets_turn",
+    "assets_yoy",
+    "basic_eps_yoy",
+    "bps",
+    "bps_yoy",
+    "capital_rese_ps",
+    "cfps",
+    "cfps_yoy",
+    "debt_to_assets",
+    "debt_to_eqt",
+    "diluted2_eps",
+    "dp_assets_to_eqt",
+    "dt_eps",
+    "dt_eps_yoy",
+    "dt_netprofit_yoy",
+    "ebt_yoy",
+    "end_date",
+    "eps",
+    "eqt_to_debt",
+    "eqt_yoy",
+    "equity_yoy",
+    "extra_item",
+    "fcff",
+    "fixed_assets",
+    "impai_ttm",
+    "netprofit_margin",
+    "netprofit_yoy",
+    "npta",
+    "ocf_to_debt",
+    "ocf_yoy",
+    "ocfps",
+    "op_income",
+    "op_of_gr",
+    "op_yoy",
+    "or_yoy",
+    "profit_dedt",
+    "profit_to_gr"
+   ],
+   "rows_total": 458575,
+   "date_coverage": {
+    "ann_date": {
+     "min": "19920429",
+     "max": "20260901",
+     "rows_gt_20241231": 52067,
+     "null_rows": 0
+    },
+    "end_date": {
+     "min": "19901231",
+     "max": "20260630",
+     "rows_gt_20241231": 44696,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 52067,
+   "numeric_magnitude": {
+    "adminexp_of_gr": {
+     "min": -180.5538,
+     "max": 7279530.6599
+    },
+    "ann_date": {
+     "min": 19920429.0,
+     "max": 20260901.0
+    },
+    "assets_to_eqt": {
+     "min": 0.5939,
+     "max": 11111.1111
+    },
+    "assets_turn": {
+     "min": -0.1558,
+     "max": 76.532
+    },
+    "assets_yoy": {
+     "min": -99.992,
+     "max": 9673065.0874
+    },
+    "basic_eps_yoy": {
+     "min": -1041566.6667,
+     "max": 412150.0
+    },
+    "bps": {
+     "min": -255048.1254,
+     "max": 124354.2366
+    },
+    "bps_yoy": {
+     "min": -18100.0,
+     "max": 101617336.6631
+    },
+    "capital_rese_ps": {
+     "min": -14.8326,
+     "max": 142658.0053
+    },
+    "cfps": {
+     "min": -1735.6573,
+     "max": 429766.5172
+    },
+    "cfps_yoy": {
+     "min": -109422711689.174,
+     "max": 102700619.3458
+    },
+    "debt_to_assets": {
+     "min": -68.3827,
+     "max": 79794141.737
+    },
+    "debt_to_eqt": {
+     "min": -945.9858,
+     "max": 6300.2463
+    },
+    "diluted2_eps": {
+     "min": -342119.1261,
+     "max": 5134.9754
+    },
+    "dp_assets_to_eqt": {
+     "min": 0.0005,
+     "max": 4047.0948
+    },
+    "dt_eps": {
+     "min": -27.74,
+     "max": 68.64
+    },
+    "dt_eps_yoy": {
+     "min": -138466.6667,
+     "max": 412150.0
+    },
+    "dt_netprofit_yoy": {
+     "min": -442585322.81,
+     "max": 3654509246.14
+    },
+    "ebt_yoy": {
+     "min": -6372922.3028,
+     "max": 5831293135.5721
+    },
+    "end_date": {
+     "min": 19901231.0,
+     "max": 20260630.0
+    },
+    "eps": {
+     "min": -65.88,
+     "max": 68.64
+    },
+    "eqt_to_debt": {
+     "min": -1.0,
+     "max": 2499999.0
+    },
+    "eqt_yoy": {
+     "min": -18822.5029,
+     "max": 233455.1684
+    },
+    "equity_yoy": {
+     "min": -15071444.8697,
+     "max": 611141.6208
+    },
+    "extra_item": {
+     "min": -44537695750.9,
+     "max": 64900764670.54
+    },
+    "fcff": {
+     "min": -941316753161.6821,
+     "max": 924338364998.3044
+    },
+    "fixed_assets": {
+     "min": -34535546.58,
+     "max": 965460000000.0
+    },
+    "impai_ttm": {
+     "min": -382569.0547,
+     "max": 8965174.485
+    },
+    "netprofit_margin": {
+     "min": -37306954.195,
+     "max": 82162434.3185
+    },
+    "netprofit_yoy": {
+     "min": -3773746.9625,
+     "max": 5831293135.5721
+    },
+    "npta": {
+     "min": -332963.5877,
+     "max": 1330569.8016
+    },
+    "ocf_to_debt": {
+     "min": -3203.2703,
+     "max": 52362.5524
+    },
+    "ocf_yoy": {
+     "min": -95716456.0149,
+     "max": 10752690.2551
+    },
+    "ocfps": {
+     "min": -576110577.57,
+     "max": 71891100.0
+    },
+    "op_income": {
+     "min": -186387000000.0,
+     "max": 20161840000000.0
+    },
+    "op_of_gr": {
+     "min": -37049287.57,
+     "max": 703626.3603
+    },
+    "op_yoy": {
+     "min": -13875381.0764,
+     "max": 10634032.8355
+    },
+    "or_yoy": {
+     "min": -225.5412,
+     "max": 6998082.2774
+    },
+    "profit_dedt": {
+     "min": -85917363120.34,
+     "max": 368126000000.0
+    },
+    "profit_to_gr": {
+     "min": -37306954.195,
+     "max": 82162434.3185
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "end_date",
+    "ann_date"
+   ],
+   "duplicate_keys": 194479,
+   "duplicate_rows": 388958,
+   "sample_rows": [
+    {
+     "ts_code": "000001.SZ",
+     "ann_date": "20121026",
+     "end_date": "20120930",
+     "eps": "2.0",
+     "dt_eps": "2.0",
+     "total_revenue_ps": "5.7641",
+     "revenue_ps": "5.7641",
+     "capital_rese_ps": "7.8517",
+     "surplus_rese_ps": "0.5525",
+     "undist_profit_ps": "4.2444",
+     "extra_item": "50513000.0",
+     "profit_dedt": "10187381000.0",
+     "gross_margin": null,
+     "current_ratio": null,
+     "quick_ratio": null,
+     "cash_ratio": null,
+     "ar_turn": null,
+     "ca_turn": null,
+     "fa_turn": null,
+     "assets_turn": "0.0216",
+     "op_income": "12623245000.0",
+     "ebit": null,
+     "ebitda": null,
+     "fcff": null
+    },
+    {
+     "ts_code": "000001.SZ",
+     "ann_date": "20130308",
+     "end_date": "20121231",
+     "eps": "2.62",
+     "dt_eps": "2.62",
+     "total_revenue_ps": "7.7583",
+     "revenue_ps": "7.7583",
+     "capital_rese_ps": "7.8338",
+     "surplus_rese_ps": "0.5525",
+     "undist_profit_ps": "4.5042",
+     "extra_item": "17481000.0",
+     "profit_dedt": "13385220000.0",
+     "gross_margin": null,
+     "current_ratio": null,
+     "quick_ratio": null,
+     "cash_ratio": null,
+     "ar_turn": null,
+     "ca_turn": null,
+     "fa_turn": null,
+     "assets_turn": "0.0278",
+     "op_income": "16704411000.0",
+     "ebit": null,
+     "ebitda": null,
+     "fcff": null
+    },
+    {
+     "ts_code": "000001.SZ",
+     "ann_date": "20130308",
+     "end_date": "20121231",
+     "eps": "2.62",
+     "dt_eps": "2.62",
+     "total_revenue_ps": "7.7583",
+     "revenue_ps": "7.7583",
+     "capital_rese_ps": "7.8338",
+     "surplus_rese_ps": "0.5525",
+     "undist_profit_ps": "4.5042",
+     "extra_item": "17481000.0",
+     "profit_dedt": "13385220000.0",
+     "gross_margin": null,
+     "current_ratio": null,
+     "quick_ratio": null,
+     "cash_ratio": null,
+     "ar_turn": null,
+     "ca_turn": null,
+     "fa_turn": null,
+     "assets_turn": "0.0278",
+     "op_income": "16704411000.0",
+     "ebit": null,
+     "ebitda": null,
+     "fcff": "-161601673671.4137"
+    },
+    {
+     "ts_code": "000001.SZ",
+     "ann_date": "20130424",
+     "end_date": "20130331",
+     "eps": "0.7",
+     "dt_eps": "0.7",
+     "total_revenue_ps": "2.1085",
+     "revenue_ps": "2.1085",
+     "capital_rese_ps": "7.9069",
+     "surplus_rese_ps": "0.5524",
+     "undist_profit_ps": "5.2052",
+     "extra_item": "1000000.0",
+     "profit_dedt": "3588000000.0",
+     "gross_margin": null,
+     "current_ratio": null,
+     "quick_ratio": null,
+     "cash_ratio": null,
+     "ar_turn": null,
+     "ca_turn": null,
+     "fa_turn": null,
+     "assets_turn": "0.0063",
+     "op_income": "4441000000.0",
+     "ebit": null,
+     "ebitda": null,
+     "fcff": null
+    },
+    {
+     "ts_code": "000001.SZ",
+     "ann_date": "20130424",
+     "end_date": "20130331",
+     "eps": "0.7",
+     "dt_eps": "0.7",
+     "total_revenue_ps": "2.1085",
+     "revenue_ps": "2.1085",
+     "capital_rese_ps": "7.9069",
+     "surplus_rese_ps": "0.5524",
+     "undist_profit_ps": "5.2052",
+     "extra_item": "1000000.0",
+     "profit_dedt": "3588000000.0",
+     "gross_margin": null,
+     "current_ratio": null,
+     "quick_ratio": null,
+     "cash_ratio": null,
+     "ar_turn": null,
+     "ca_turn": null,
+     "fa_turn": null,
+     "assets_turn": "0.0063",
+     "op_income": "4441000000.0",
+     "ebit": null,
+     "ebitda": null,
+     "fcff": null
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 5896,
+    "distinct_headers": 1,
+    "modal_header_cols": 108,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "688135.SH",
+      "manifest_rows": 70,
+      "actual_rows": 69
+     },
+     {
+      "chunk": "002447.SZ",
+      "manifest_rows": 100,
+      "actual_rows": 99
+     },
+     {
+      "chunk": "688556.SH",
+      "manifest_rows": 69,
+      "actual_rows": 68
+     },
+     {
+      "chunk": "300921.SZ",
+      "manifest_rows": 51,
+      "actual_rows": 50
+     },
+     {
+      "chunk": "300495.SZ",
+      "manifest_rows": 80,
+      "actual_rows": 79
+     },
+     {
+      "chunk": "603515.SH",
+      "manifest_rows": 86,
+      "actual_rows": 85
+     },
+     {
+      "chunk": "300299.SZ",
+      "manifest_rows": 100,
+      "actual_rows": 99
+     },
+     {
+      "chunk": "000039.SZ",
+      "manifest_rows": 100,
+      "actual_rows": 99
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 6.7,
+   "finished_at": "2026-09-18T00:09:33"
+  },
+  "tushare/fina_indicator/20260910-r1": {
+   "batch_dir": "tushare/fina_indicator/20260910-r1",
+   "mode": "full",
+   "files": {
+    "n_total": 4,
+    "n_csv": 2,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 1,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [
+     "fetch_20260910-r1.log"
+    ],
+    "total_bytes": 128567
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 ann_date 有 19 行 > 2024-12-31 (max=20260829); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['ts_code', 'end_date', 'ann_date'] 重复: 57 个键 / 114 行"
+    }
+   ],
+   "inventory_registration": {
+    "files": 4,
+    "bytes": 128567
+   },
+   "schema": {
+    "ts_code": "String",
+    "ann_date": "Int64",
+    "end_date": "Int64",
+    "eps": "Float64",
+    "dt_eps": "Float64",
+    "total_revenue_ps": "Float64",
+    "revenue_ps": "Float64",
+    "capital_rese_ps": "Float64",
+    "surplus_rese_ps": "Float64",
+    "undist_profit_ps": "Float64",
+    "extra_item": "Float64",
+    "profit_dedt": "Float64",
+    "gross_margin": "Float64",
+    "current_ratio": "Float64",
+    "quick_ratio": "Float64",
+    "cash_ratio": "Float64",
+    "ar_turn": "Float64",
+    "ca_turn": "Float64",
+    "fa_turn": "Float64",
+    "assets_turn": "Float64",
+    "op_income": "Float64",
+    "ebit": "Float64",
+    "ebitda": "Float64",
+    "fcff": "Float64",
+    "fcfe": "Float64",
+    "current_exint": "Float64",
+    "noncurrent_exint": "Float64",
+    "interestdebt": "Float64",
+    "netdebt": "Float64",
+    "tangible_asset": "Float64",
+    "working_capital": "Float64",
+    "networking_capital": "Float64",
+    "invest_capital": "Float64",
+    "retained_earnings": "Float64",
+    "diluted2_eps": "Float64",
+    "bps": "Float64",
+    "ocfps": "Float64",
+    "retainedps": "Float64",
+    "cfps": "Float64",
+    "ebit_ps": "Float64",
+    "fcff_ps": "Float64",
+    "fcfe_ps": "Float64",
+    "netprofit_margin": "Float64",
+    "grossprofit_margin": "Float64",
+    "cogs_of_sales": "Float64",
+    "expense_of_sales": "Float64",
+    "profit_to_gr": "Float64",
+    "saleexp_to_gr": "Float64",
+    "adminexp_of_gr": "Float64",
+    "finaexp_of_gr": "Float64",
+    "impai_ttm": "Float64",
+    "gc_of_gr": "Float64",
+    "op_of_gr": "Float64",
+    "ebit_of_gr": "Float64",
+    "roe": "Float64",
+    "roe_waa": "Float64",
+    "roe_dt": "Float64",
+    "roa": "Float64",
+    "npta": "Float64",
+    "roic": "Float64",
+    "roe_yearly": "Float64",
+    "roa2_yearly": "Float64",
+    "debt_to_assets": "Float64",
+    "assets_to_eqt": "Float64",
+    "dp_assets_to_eqt": "Float64",
+    "ca_to_assets": "Float64",
+    "nca_to_assets": "Float64",
+    "tbassets_to_totalassets": "Float64",
+    "int_to_talcap": "Float64",
+    "eqt_to_talcapital": "Float64",
+    "currentdebt_to_debt": "Float64",
+    "longdeb_to_debt": "Float64",
+    "ocf_to_shortdebt": "Float64",
+    "debt_to_eqt": "Float64",
+    "eqt_to_debt": "Float64",
+    "eqt_to_interestdebt": "Float64",
+    "tangibleasset_to_debt": "Float64",
+    "tangasset_to_intdebt": "Float64",
+    "tangibleasset_to_netdebt": "Float64",
+    "ocf_to_debt": "Float64",
+    "turn_days": "Float64",
+    "roa_yearly": "Float64",
+    "roa_dp": "Float64",
+    "fixed_assets": "Float64",
+    "profit_to_op": "Float64",
+    "q_saleexp_to_gr": "Float64",
+    "q_gc_to_gr": "Float64",
+    "q_roe": "Float64",
+    "q_dt_roe": "Float64",
+    "q_npta": "Float64",
+    "q_ocf_to_sales": "Float64",
+    "basic_eps_yoy": "Float64",
+    "dt_eps_yoy": "Float64",
+    "cfps_yoy": "Float64",
+    "op_yoy": "Float64",
+    "ebt_yoy": "Float64",
+    "netprofit_yoy": "Float64",
+    "dt_netprofit_yoy": "Float64",
+    "ocf_yoy": "Float64",
+    "roe_yoy": "Float64",
+    "bps_yoy": "Float64",
+    "assets_yoy": "Float64",
+    "eqt_yoy": "Float64",
+    "tr_yoy": "Float64",
+    "or_yoy": "Float64",
+    "q_sales_yoy": "Float64",
+    "q_op_qoq": "Float64",
+    "equity_yoy": "Float64"
+   },
+   "n_columns": 108,
+   "date_columns": [
+    "ann_date",
+    "end_date"
+   ],
+   "numeric_columns_checked": [
+    "adminexp_of_gr",
+    "ann_date",
+    "ar_turn",
+    "assets_to_eqt",
+    "assets_turn",
+    "assets_yoy",
+    "basic_eps_yoy",
+    "bps",
+    "bps_yoy",
+    "ca_to_assets",
+    "ca_turn",
+    "capital_rese_ps",
+    "cash_ratio",
+    "cfps",
+    "cfps_yoy",
+    "cogs_of_sales",
+    "current_exint",
+    "current_ratio",
+    "currentdebt_to_debt",
+    "debt_to_assets",
+    "debt_to_eqt",
+    "diluted2_eps",
+    "dp_assets_to_eqt",
+    "dt_eps",
+    "dt_eps_yoy",
+    "dt_netprofit_yoy",
+    "ebit",
+    "ebit_of_gr",
+    "ebit_ps",
+    "ebitda",
+    "ebt_yoy",
+    "end_date",
+    "eps",
+    "eqt_to_debt",
+    "eqt_to_interestdebt",
+    "eqt_to_talcapital",
+    "eqt_yoy",
+    "equity_yoy",
+    "expense_of_sales",
+    "extra_item"
+   ],
+   "rows_total": 143,
+   "date_coverage": {
+    "ann_date": {
+     "min": "20121020",
+     "max": "20260829",
+     "rows_gt_20241231": 19,
+     "null_rows": 0
+    },
+    "end_date": {
+     "min": "20120930",
+     "max": "20260630",
+     "rows_gt_20241231": 17,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 19,
+   "numeric_magnitude": {
+    "adminexp_of_gr": {
+     "min": 2.9257,
+     "max": 37.1275
+    },
+    "ann_date": {
+     "min": 20121020.0,
+     "max": 20260829.0
+    },
+    "ar_turn": {
+     "min": 0.2919,
+     "max": 189.7648
+    },
+    "assets_to_eqt": {
+     "min": 1.266,
+     "max": 5.1534
+    },
+    "assets_turn": {
+     "min": 0.0147,
+     "max": 0.7838
+    },
+    "assets_yoy": {
+     "min": -18.1525,
+     "max": 83.0668
+    },
+    "basic_eps_yoy": {
+     "min": -2735.443,
+     "max": 384.6154
+    },
+    "bps": {
+     "min": 2.2872,
+     "max": 15.4562
+    },
+    "bps_yoy": {
+     "min": -28.8798,
+     "max": 151.3448
+    },
+    "ca_to_assets": {
+     "min": 45.4417,
+     "max": 81.5382
+    },
+    "ca_turn": {
+     "min": 0.0194,
+     "max": 1.2247
+    },
+    "capital_rese_ps": {
+     "min": 0.071,
+     "max": 11.3911
+    },
+    "cash_ratio": {
+     "min": 0.2576,
+     "max": 2.7602
+    },
+    "cfps": {
+     "min": -4.1333,
+     "max": 10.1731
+    },
+    "cfps_yoy": {
+     "min": -3274.7748,
+     "max": 726.6667
+    },
+    "cogs_of_sales": {
+     "min": 34.6205,
+     "max": 95.9837
+    },
+    "current_exint": {
+     "min": 89264089.55,
+     "max": 224284233302.56
+    },
+    "current_ratio": {
+     "min": 0.7089,
+     "max": 3.4392
+    },
+    "currentdebt_to_debt": {
+     "min": 54.4169,
+     "max": 98.3482
+    },
+    "debt_to_assets": {
+     "min": 21.0103,
+     "max": 80.5952
+    },
+    "debt_to_eqt": {
+     "min": 0.266,
+     "max": 4.1534
+    },
+    "diluted2_eps": {
+     "min": -1.8035,
+     "max": 1.5467
+    },
+    "dp_assets_to_eqt": {
+     "min": 1.3231,
+     "max": 7.3741
+    },
+    "dt_eps": {
+     "min": -1.84,
+     "max": 1.5633
+    },
+    "dt_eps_yoy": {
+     "min": -2735.443,
+     "max": 384.6154
+    },
+    "dt_netprofit_yoy": {
+     "min": -1281.77,
+     "max": 154712.7143
+    },
+    "ebit": {
+     "min": -13450891872.45,
+     "max": 23948485099.41
+    },
+    "ebit_of_gr": {
+     "min": -42.8629,
+     "max": 333.1517
+    },
+    "ebit_ps": {
+     "min": -1.6735,
+     "max": 2.9199
+    },
+    "ebitda": {
+     "min": -9603251209.69,
+     "max": 26241442109.59
+    },
+    "ebt_yoy": {
+     "min": -466.789,
+     "max": 441.4811
+    },
+    "end_date": {
+     "min": 20120930.0,
+     "max": 20260630.0
+    },
+    "eps": {
+     "min": -1.84,
+     "max": 1.5633
+    },
+    "eqt_to_debt": {
+     "min": 0.1654,
+     "max": 3.7373
+    },
+    "eqt_to_interestdebt": {
+     "min": 0.2977,
+     "max": 1387.3548
+    },
+    "eqt_to_talcapital": {
+     "min": 20.6794,
+     "max": 99.3011
+    },
+    "eqt_yoy": {
+     "min": -27.1963,
+     "max": 235.1718
+    },
+    "equity_yoy": {
+     "min": -30.6992,
+     "max": 256.8155
+    },
+    "expense_of_sales": {
+     "min": 8.5816,
+     "max": 46.0911
+    },
+    "extra_item": {
+     "min": -109268847.9,
+     "max": 2998014616.86
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "end_date",
+    "ann_date"
+   ],
+   "duplicate_keys": 57,
+   "duplicate_rows": 114,
+   "sample_rows": [
+    {
+     "ts_code": "000069.SZ",
+     "ann_date": "20121020",
+     "end_date": "20120930",
+     "eps": "0.222",
+     "dt_eps": "0.222",
+     "total_revenue_ps": "1.4217",
+     "revenue_ps": "1.4217",
+     "capital_rese_ps": "0.071",
+     "surplus_rese_ps": "0.221",
+     "undist_profit_ps": "1.1315",
+     "extra_item": "1611414.25",
+     "profit_dedt": "1610798315.21",
+     "gross_margin": "5531617439.18",
+     "current_ratio": "1.5059",
+     "quick_ratio": "0.3159",
+     "cash_ratio": "0.288",
+     "ar_turn": "31.8856",
+     "ca_turn": "0.2413",
+     "fa_turn": "0.8527",
+     "assets_turn": "0.1553",
+     "op_income": "2085095758.12",
+     "ebit": "2608120744.95",
+     "ebitda": null,
+     "fcff": "912157587.5881"
+    },
+    {
+     "ts_code": "000069.SZ",
+     "ann_date": "20130309",
+     "end_date": "20121231",
+     "eps": "0.5294",
+     "dt_eps": "0.5294",
+     "total_revenue_ps": "3.0646",
+     "revenue_ps": "3.0646",
+     "capital_rese_ps": "0.085",
+     "surplus_rese_ps": "0.2374",
+     "undist_profit_ps": "1.4227",
+     "extra_item": "21475892.5",
+     "profit_dedt": "3828290562.86",
+     "gross_margin": "11584494342.97",
+     "current_ratio": "1.44",
+     "quick_ratio": "0.3473",
+     "cash_ratio": "0.3104",
+     "ar_turn": "70.2202",
+     "ca_turn": "0.5154",
+     "fa_turn": "1.8391",
+     "assets_turn": "0.3283",
+     "op_income": "4871562045.95",
+     "ebit": "5663973243.17",
+     "ebitda": "7168431748.33",
+     "fcff": "6561208136.8254"
+    },
+    {
+     "ts_code": "000069.SZ",
+     "ann_date": "20130309",
+     "end_date": "20121231",
+     "eps": "0.5294",
+     "dt_eps": "0.5294",
+     "total_revenue_ps": "3.0646",
+     "revenue_ps": "3.0646",
+     "capital_rese_ps": "0.085",
+     "surplus_rese_ps": "0.2374",
+     "undist_profit_ps": "1.4227",
+     "extra_item": "21475892.5",
+     "profit_dedt": "3828290562.86",
+     "gross_margin": "11584494342.97",
+     "current_ratio": "1.44",
+     "quick_ratio": "0.3473",
+     "cash_ratio": "0.3104",
+     "ar_turn": "70.2202",
+     "ca_turn": "0.5154",
+     "fa_turn": "1.8391",
+     "assets_turn": "0.3283",
+     "op_income": "4871562045.95",
+     "ebit": "5663973243.17",
+     "ebitda": "7168431748.33",
+     "fcff": "6561208136.8254"
+    },
+    {
+     "ts_code": "000069.SZ",
+     "ann_date": "20130427",
+     "end_date": "20130331",
+     "eps": "0.067",
+     "dt_eps": "0.067",
+     "total_revenue_ps": "0.5313",
+     "revenue_ps": "0.5313",
+     "capital_rese_ps": "0.0852",
+     "surplus_rese_ps": "0.2374",
+     "undist_profit_ps": "1.4896",
+     "extra_item": "3961660.73",
+     "profit_dedt": "482240714.65",
+     "gross_margin": "1813192110.12",
+     "current_ratio": "1.4459",
+     "quick_ratio": "0.3474",
+     "cash_ratio": "0.3285",
+     "ar_turn": "9.4159",
+     "ca_turn": "0.0822",
+     "fa_turn": "0.3079",
+     "assets_turn": "0.0523",
+     "op_income": "576070934.62",
+     "ebit": "782793129.53",
+     "ebitda": null,
+     "fcff": "-349493830.7961"
+    },
+    {
+     "ts_code": "000069.SZ",
+     "ann_date": "20130427",
+     "end_date": "20130331",
+     "eps": "0.067",
+     "dt_eps": "0.067",
+     "total_revenue_ps": "0.5313",
+     "revenue_ps": "0.5313",
+     "capital_rese_ps": "0.0852",
+     "surplus_rese_ps": "0.2374",
+     "undist_profit_ps": "1.4896",
+     "extra_item": "3961660.73",
+     "profit_dedt": "482240714.65",
+     "gross_margin": "1813192110.12",
+     "current_ratio": "1.4459",
+     "quick_ratio": "0.3474",
+     "cash_ratio": "0.3285",
+     "ar_turn": "9.4159",
+     "ca_turn": "0.0822",
+     "fa_turn": "0.3079",
+     "assets_turn": "0.0523",
+     "op_income": "576070934.62",
+     "ebit": "782793129.53",
+     "ebitda": null,
+     "fcff": "-349493830.7961"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:33"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:33"
+}

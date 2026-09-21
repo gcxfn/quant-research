@@ -1,0 +1,259 @@
+{
+ "source": "tushare",
+ "dataset": "express",
+ "batches": {
+  "tushare/express/20260909-r1": {
+   "batch_dir": "tushare/express/20260909-r1",
+   "mode": "full",
+   "files": {
+    "n_total": 32,
+    "n_csv": 24,
+    "n_parquet": 0,
+    "n_empty_csv": 7,
+    "n_manifest": 1,
+    "n_other": 7,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [
+     "chunk_period_20200331.csv",
+     "chunk_period_20200930.csv",
+     "chunk_period_20211231.csv",
+     "chunk_period_20221231.csv",
+     "chunk_period_20241231.csv",
+     "chunk_period_20250331.csv",
+     "chunk_period_20251231.csv"
+    ],
+    "total_bytes": 1130590
+   },
+   "issues": [
+    {
+     "level": "info",
+     "code": "empty_csv_chunks",
+     "detail": "7 个 0 字节空 CSV(如按日抓取无数据日), 例: ['chunk_period_20200331.csv', 'chunk_period_20200930.csv', 'chunk_period_20211231.csv', 'chunk_period_20221231.csv', 'chunk_period_20241231.csv']; 未计入行数统计"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 ann_date 有 174 行 > 2024-12-31 (max=20260825); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "info",
+     "code": "header_check_failed",
+     "detail": "NoDataError: empty CSV"
+    }
+   ],
+   "inventory_registration": {
+    "files": 32,
+    "bytes": 1130590
+   },
+   "schema": {
+    "ts_code": "String",
+    "ann_date": "Int64",
+    "end_date": "Int64",
+    "revenue": "Float64",
+    "operate_profit": "Float64",
+    "total_profit": "Float64",
+    "n_income": "Float64",
+    "total_assets": "Float64",
+    "total_hldr_eqy_exc_min_int": "Float64",
+    "diluted_eps": "Float64",
+    "diluted_roe": "Float64",
+    "yoy_net_profit": "Float64",
+    "bps": "String",
+    "perf_summary": "String",
+    "update_flag": "Int64"
+   },
+   "n_columns": 15,
+   "date_columns": [
+    "ann_date",
+    "end_date"
+   ],
+   "numeric_columns_checked": [
+    "ann_date",
+    "diluted_eps",
+    "diluted_roe",
+    "end_date",
+    "n_income",
+    "operate_profit",
+    "revenue",
+    "total_assets",
+    "total_hldr_eqy_exc_min_int",
+    "total_profit",
+    "update_flag",
+    "yoy_net_profit"
+   ],
+   "rows_total": 8488,
+   "date_coverage": {
+    "ann_date": {
+     "min": "20190104",
+     "max": "20260825",
+     "rows_gt_20241231": 174,
+     "null_rows": 0
+    },
+    "end_date": {
+     "min": "20181231",
+     "max": "20260630",
+     "rows_gt_20241231": 174,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 174,
+   "numeric_magnitude": {
+    "ann_date": {
+     "min": 20190104.0,
+     "max": 20260825.0
+    },
+    "diluted_eps": {
+     "min": -16.4219,
+     "max": 21.47
+    },
+    "diluted_roe": {
+     "min": -3447.0,
+     "max": 526.62
+    },
+    "end_date": {
+     "min": 20181231.0,
+     "max": 20260630.0
+    },
+    "n_income": {
+     "min": -45812848300.0,
+     "max": 146602000000.0
+    },
+    "operate_profit": {
+     "min": -44813641400.0,
+     "max": 176651000000.0
+    },
+    "revenue": {
+     "min": -114856852.37,
+     "max": 2881582000000.0
+    },
+    "total_assets": {
+     "min": 13420900.0,
+     "max": 11028500000000.0
+    },
+    "total_hldr_eqy_exc_min_int": {
+     "min": -30673424800.0,
+     "max": 1076365000000.0
+    },
+    "total_profit": {
+     "min": -48586686200.0,
+     "max": 176606000000.0
+    },
+    "update_flag": {
+     "min": 0.0,
+     "max": 1.0
+    },
+    "yoy_net_profit": {
+     "min": -13878044830.01,
+     "max": 138012000000.0
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "end_date",
+    "ann_date"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "ts_code": "000001.SZ",
+     "ann_date": "20190104",
+     "end_date": "20181231",
+     "revenue": "116716000000.0",
+     "operate_profit": "32305000000.0",
+     "total_profit": "32231000000.0",
+     "n_income": "24818000000.0",
+     "total_assets": "3420753000000.0",
+     "total_hldr_eqy_exc_min_int": "220088000000.0",
+     "diluted_eps": "1.39",
+     "diluted_roe": "11.49",
+     "yoy_net_profit": "23189000000.0",
+     "bps": null,
+     "perf_summary": null,
+     "update_flag": "0"
+    },
+    {
+     "ts_code": "000004.SZ",
+     "ann_date": "20190415",
+     "end_date": "20181231",
+     "revenue": "366868804.7",
+     "operate_profit": "-23860747.44",
+     "total_profit": "-26099939.24",
+     "n_income": "-20270783.78",
+     "total_assets": "351177470.17",
+     "total_hldr_eqy_exc_min_int": "109235775.72",
+     "diluted_eps": "-0.2414",
+     "diluted_roe": "-16.99",
+     "yoy_net_profit": "8566720.65",
+     "bps": null,
+     "perf_summary": null,
+     "update_flag": "0"
+    },
+    {
+     "ts_code": "000005.SZ",
+     "ann_date": "20190413",
+     "end_date": "20181231",
+     "revenue": "490116900.0",
+     "operate_profit": "196512100.0",
+     "total_profit": "196170000.0",
+     "n_income": "171161200.0",
+     "total_assets": "3177778900.0",
+     "total_hldr_eqy_exc_min_int": "1511841700.0",
+     "diluted_eps": "0.1617",
+     "diluted_roe": "12.16",
+     "yoy_net_profit": "15308400.0",
+     "bps": null,
+     "perf_summary": null,
+     "update_flag": "0"
+    },
+    {
+     "ts_code": "000006.SZ",
+     "ann_date": "20190121",
+     "end_date": "20181231",
+     "revenue": "2502958750.84",
+     "operate_profit": "1077409384.31",
+     "total_profit": "1078910278.32",
+     "n_income": "885200036.27",
+     "total_assets": "13531016273.58",
+     "total_hldr_eqy_exc_min_int": "6208625899.93",
+     "diluted_eps": "0.6557",
+     "diluted_roe": "15.03",
+     "yoy_net_profit": "805636364.61",
+     "bps": null,
+     "perf_summary": null,
+     "update_flag": "0"
+    },
+    {
+     "ts_code": "000007.SZ",
+     "ann_date": "20190413",
+     "end_date": "20181231",
+     "revenue": "42443842.1",
+     "operate_profit": "-52647187.93",
+     "total_profit": "-201143095.04",
+     "n_income": "-196212068.92",
+     "total_assets": "385709995.47",
+     "total_hldr_eqy_exc_min_int": "190712228.15",
+     "diluted_eps": "-0.57",
+     "diluted_roe": "-67.94",
+     "yoy_net_profit": "16453651.05",
+     "bps": null,
+     "perf_summary": null,
+     "update_flag": "0"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 24,
+    "distinct_headers": 1,
+    "modal_header_cols": 15,
+    "deviating_files": 0
+   },
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:26"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:26"
+}

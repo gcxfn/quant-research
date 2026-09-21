@@ -1,0 +1,32 @@
+{
+ "source": "xiaodefa",
+ "dataset": "top_list",
+ "batches": {
+  "xiaodefa/top_list/20260913-bulk1": {
+   "batch_dir": "xiaodefa/top_list/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 0,
+    "n_csv": 0,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 0,
+    "n_other": 0,
+    "manifest_names": [],
+    "other_names": [],
+    "total_bytes": 0
+   },
+   "issues": [
+    {
+     "level": "warning",
+     "code": "not_in_inventory",
+     "detail": "批次未在 data/_meta/inventory.json 登记"
+    }
+   ],
+   "status": "no_tabular_data",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:04"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:04"
+}

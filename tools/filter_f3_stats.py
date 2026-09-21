@@ -1,0 +1,3 @@
+import csv
+from pathlib import Path
+p=Path('artifacts/runs/20260920T190224-f2r1-rebuild-85e7f7e5/f3_inputs/f2r1_all120.csv'); ids=set(__import__('polars').read_csv('artifacts/runs/20260920T190224-f2r1-rebuild-85e7f7e5/final_screen.csv').filter(__import__('polars').col('screen_pass'))['factor_id'].to_list()); rows=list(csv.DictReader(p.open(encoding='utf-8-sig'))); rows=[r for r in rows if r['factor_id'] in ids]; p.write_text('factor_id,family,screen_pass,t_ic,ic_mean,icir,n_dates,coverage\n'+'\n'.join(','.join(r[k] for k in ['factor_id','family','screen_pass','t_ic','ic_mean','icir','n_dates','coverage']) for r in rows)+'\n',encoding='utf-8'); print(len(rows))

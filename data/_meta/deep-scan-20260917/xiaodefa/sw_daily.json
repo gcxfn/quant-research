@@ -1,0 +1,182 @@
+{
+ "source": "xiaodefa",
+ "dataset": "sw_daily",
+ "batches": {
+  "xiaodefa/sw_daily/20260913-bulk1": {
+   "batch_dir": "xiaodefa/sw_daily/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 3087,
+    "n_csv": 3086,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 181865088
+   },
+   "issues": [
+    {
+     "level": "warning",
+     "code": "bulk_scan_failed_perfile_fallback",
+     "detail": "ComputeError: schema names differ: got trade_date, expected ts_code"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 178852 行 > 2024-12-31"
+    }
+   ],
+   "inventory_registration": {
+    "files": 3087,
+    "bytes": 181865088
+   },
+   "schema": {
+    "ts_code": "String",
+    "trade_date": "Int64",
+    "amount": "Float64",
+    "change": "Float64",
+    "close": "Float64",
+    "float_mv": "Float64",
+    "high": "Float64",
+    "low": "Float64",
+    "name": "String",
+    "open": "Float64",
+    "pb": "Float64",
+    "pct_change": "Float64",
+    "pe": "Float64",
+    "total_mv": "Float64",
+    "vol": "Float64"
+   },
+   "n_columns": 15,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "close",
+    "open",
+    "high",
+    "low",
+    "vol",
+    "amount",
+    "total_mv",
+    "pe",
+    "pb",
+    "change",
+    "float_mv",
+    "pct_change",
+    "trade_date"
+   ],
+   "rows_total": 1411239,
+   "rows_counted_files": 3086,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20140102",
+     "max": "20260911",
+     "rows_gt_20241231": 178852,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 178852,
+   "primary_key": [
+    "ts_code",
+    "trade_date"
+   ],
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "ts_code": "859951.SI",
+     "trade_date": "20140102",
+     "amount": "91789.0",
+     "change": "3.18",
+     "close": "2410.6",
+     "float_mv": "4774564.0",
+     "high": "2434.31",
+     "low": "2372.7",
+     "name": "电视广播Ⅲ",
+     "open": "2402.04",
+     "pb": "3.58",
+     "pct_change": "0.13",
+     "pe": "45.45",
+     "total_mv": "12220750.0",
+     "vol": "5180.0"
+    },
+    {
+     "ts_code": "859852.SI",
+     "trade_date": "20140102",
+     "amount": "60556.0",
+     "change": "23.06",
+     "close": "982.78",
+     "float_mv": "1156562.0",
+     "high": "995.44",
+     "low": "950.68",
+     "name": "培训教育",
+     "open": "959.57",
+     "pb": "2.81",
+     "pct_change": "2.4",
+     "pe": "48.45",
+     "total_mv": "2256641.0",
+     "vol": "5049.0"
+    },
+    {
+     "ts_code": "859822.SI",
+     "trade_date": "20140102",
+     "amount": "47178.0",
+     "change": "768.81",
+     "close": "11887.69",
+     "float_mv": "2047697.0",
+     "high": "11979.85",
+     "low": "11192.6",
+     "name": "品牌化妆品",
+     "open": "11245.26",
+     "pb": "9.6",
+     "pct_change": "6.91",
+     "pe": "30.99",
+     "total_mv": "3036081.0",
+     "vol": "1060.0"
+    },
+    {
+     "ts_code": "859821.SI",
+     "trade_date": "20140102",
+     "amount": "3897.0",
+     "change": "17.73",
+     "close": "1940.61",
+     "float_mv": "285625.0",
+     "high": "1950.97",
+     "low": "1913.66",
+     "name": "化妆品制造及其他",
+     "open": "1929.66",
+     "pb": "2.85",
+     "pct_change": "0.92",
+     "pe": "47.45",
+     "total_mv": "696643.0",
+     "vol": "506.0"
+    },
+    {
+     "ts_code": "859811.SI",
+     "trade_date": "20140102",
+     "amount": "2093.0",
+     "change": "4.74",
+     "close": "467.42",
+     "float_mv": "167193.0",
+     "high": "470.19",
+     "low": "462.68",
+     "name": "生活用纸",
+     "open": "462.68",
+     "pb": "1.62",
+     "pct_change": "1.02",
+     "pe": "22.64",
+     "total_mv": "369096.0",
+     "vol": "177.0"
+    }
+   ],
+   "status": "completed(per-file fallback)",
+   "duration_s": 7.0,
+   "finished_at": "2026-09-18T00:08:50"
+  }
+ },
+ "updated_at": "2026-09-18T00:08:50"
+}

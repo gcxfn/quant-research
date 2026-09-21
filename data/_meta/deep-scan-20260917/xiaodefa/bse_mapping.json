@@ -1,0 +1,95 @@
+{
+ "source": "xiaodefa",
+ "dataset": "bse_mapping",
+ "batches": {
+  "xiaodefa/bse_mapping/20260913-bulk1": {
+   "batch_dir": "xiaodefa/bse_mapping/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 2,
+    "n_csv": 1,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 10876
+   },
+   "issues": [],
+   "inventory_registration": {
+    "files": 2,
+    "bytes": 10876
+   },
+   "schema": {
+    "name": "String",
+    "o_code": "String",
+    "n_code": "String",
+    "list_date": "Int64"
+   },
+   "n_columns": 4,
+   "date_columns": [
+    "list_date"
+   ],
+   "numeric_columns_checked": [
+    "list_date"
+   ],
+   "rows_total": 248,
+   "date_coverage": {
+    "list_date": {
+     "min": "20200727",
+     "max": "20240408",
+     "rows_gt_20241231": 0,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 0,
+   "numeric_magnitude": {
+    "list_date": {
+     "min": 20200727.0,
+     "max": 20240408.0
+    }
+   },
+   "primary_key": null,
+   "sample_rows": [
+    {
+     "name": "星昊医药",
+     "o_code": "430017.BJ",
+     "n_code": "920017.BJ",
+     "list_date": "20230531"
+    },
+    {
+     "name": "诺思兰德",
+     "o_code": "430047.BJ",
+     "n_code": "920047.BJ",
+     "list_date": "20201124"
+    },
+    {
+     "name": "同辉信息",
+     "o_code": "430090.BJ",
+     "n_code": "920090.BJ",
+     "list_date": "20210809"
+    },
+    {
+     "name": "华岭股份",
+     "o_code": "430139.BJ",
+     "n_code": "920139.BJ",
+     "list_date": "20221028"
+    },
+    {
+     "name": "微创光电",
+     "o_code": "430198.BJ",
+     "n_code": "920198.BJ",
+     "list_date": "20200727"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:07:01"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:01"
+}

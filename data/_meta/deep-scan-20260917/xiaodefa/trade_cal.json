@@ -1,0 +1,130 @@
+{
+ "source": "xiaodefa",
+ "dataset": "trade_cal",
+ "batches": {
+  "xiaodefa/trade_cal/20260913-bulk1": {
+   "batch_dir": "xiaodefa/trade_cal/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 4,
+    "n_csv": 3,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 367805
+   },
+   "issues": [
+    {
+     "level": "warning",
+     "code": "frozen_window_rows_reference_calendar",
+     "detail": "日期列 cal_date 有 2190 行 > 2024-12-31 (max=20261231); 冻结边界审查: 只报告不删除; 参考日历类数据, 2025+ 为日历定义而非行情观测"
+    }
+   ],
+   "inventory_registration": {
+    "files": 4,
+    "bytes": 367805
+   },
+   "schema": {
+    "exchange": "String",
+    "cal_date": "Int64",
+    "is_open": "Int64",
+    "pretrade_date": "Int64"
+   },
+   "n_columns": 4,
+   "date_columns": [
+    "cal_date",
+    "pretrade_date"
+   ],
+   "numeric_columns_checked": [
+    "cal_date",
+    "is_open",
+    "pretrade_date"
+   ],
+   "rows_total": 14124,
+   "date_coverage": {
+    "cal_date": {
+     "min": "20140101",
+     "max": "20261231",
+     "rows_gt_20241231": 2190,
+     "null_rows": 0
+    },
+    "pretrade_date": {
+     "min": "20131231",
+     "max": "20261230",
+     "rows_gt_20241231": 2184,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 2190,
+   "numeric_magnitude": {
+    "cal_date": {
+     "min": 20140101.0,
+     "max": 20261231.0
+    },
+    "is_open": {
+     "min": 0.0,
+     "max": 1.0
+    },
+    "pretrade_date": {
+     "min": 20131231.0,
+     "max": 20261230.0
+    }
+   },
+   "primary_key": [
+    "exchange",
+    "cal_date"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "exchange": "CFFEX",
+     "cal_date": "20261231",
+     "is_open": "1",
+     "pretrade_date": "20261230"
+    },
+    {
+     "exchange": "CFFEX",
+     "cal_date": "20261230",
+     "is_open": "1",
+     "pretrade_date": "20261229"
+    },
+    {
+     "exchange": "CFFEX",
+     "cal_date": "20261229",
+     "is_open": "1",
+     "pretrade_date": "20261228"
+    },
+    {
+     "exchange": "CFFEX",
+     "cal_date": "20261228",
+     "is_open": "1",
+     "pretrade_date": "20261225"
+    },
+    {
+     "exchange": "CFFEX",
+     "cal_date": "20261227",
+     "is_open": "0",
+     "pretrade_date": "20261225"
+    }
+   ],
+   "unit_check": {
+    "is_open_in_0_1": true,
+    "n_rows": 14124,
+    "calendar_range": [
+     "20140101",
+     "20261231"
+    ]
+   },
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:04"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:04"
+}

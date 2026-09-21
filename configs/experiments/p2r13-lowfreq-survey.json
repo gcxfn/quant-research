@@ -1,0 +1,53 @@
+{
+  "experiment_id": "exp-20260918-p2r13-lowfreq-survey",
+  "name": "P2-R13 G4 low-frequency cross-section survey (20-day horizon, monthly)",
+  "prereg": "docs/research/exp-20260918-p2r13-lowfreq-survey-prereg.md",
+  "preregistered_at": "2026-09-18T06:25:00+08:00",
+  "frozen_at": "2026-09-18T06:25:00+08:00",
+  "status": "frozen",
+  "authority_chain": {
+    "proposals": ["vendor-2 H-V2-01/02/03/04/07（经市场综合排程）", "量尺与授权见 exp-20260918-hypothesis-market-charter.md 及其 07:00 更新"],
+    "datasets": [
+      { "path": "data/processed/baostock-daily-20260917/daily_2015_2024.parquet", "manifest_sha256": "2b89bef9ef6f4ae58b69ca43021552db067b185551c92a05ef6ac71d2be59bd3", "role": "价格/收益/池/ST" },
+      { "path": "data/raw/xiaodefa/hk_hold/20260913-bulk1", "role": "C3 北向（probe 先行）" },
+      { "path": "data/raw/tushare/cashflow/20260909-r3 与 income/20260909-r3 与 balancesheet（如需总资产）", "role": "C4 应计" },
+      { "path": "data/raw/xiaodefa/block_trade/20260913-bulk1", "role": "C5 大宗折价" },
+      { "path": "data/raw/tushare/daily_basic/20260909-r1 + 20260913-r2", "role": "circ_mv 秩相关披露 / C2 无关备用" }
+    ],
+    "freeze_boundary": "2025-01-01 及以后数据不得进入任何计算路径",
+    "hash_verification": "全部输入对 data/_meta sha256 台账核验，fail-closed"
+  },
+  "seed": 17,
+  "universe": {
+    "boards": "沪深主板（剔创业板 300/301/302、科创 688/689、北交所、ST、停牌，历史时点）",
+    "liquidity": "20 日中位成交额 >= 50,000,000 CNY；收盘 >= 2 元；上市满 120 交易日（C2 加 250 日）"
+  },
+  "schedule": { "signal": "月末最后交易日收盘", "forward": "T+1 开盘 -> T+21 开盘（20 交易日，preclose 桥复权）", "frequency": "月度横截面" },
+  "factors": {
+    "C1": { "hyp": "H-28", "name": "隔夜拥挤", "formula": "-sum(60d overnight ret, open/preclose-1, preclose 桥)", "direction": -1, "increment_gate": true },
+    "C2": { "hyp": "H-29", "name": "52周高点邻近", "formula": "close_adj / 250d rolling max close_adj", "direction": +1, "increment_gate": true },
+    "C3": { "hyp": "H-30", "name": "北向20日增量", "formula": "ratio(t)-ratio(t-20), exchange in {SH,SZ}", "direction": +1, "increment_gate": false, "disclosure": "与 circ_mv 秩相关 rho>0.7 判同族退场" },
+    "C4": { "hyp": "H-31", "name": "应计质量", "formula": "-(净利-经营现金流)/总资产, 最新 PIT 年报 max(ann_date, end_date+90d), 金融业剔除", "direction": -1, "increment_gate": false, "disclosure": "pe/pb 正交化残差 IC" },
+    "C5": { "hyp": "H-34", "name": "大宗折价", "formula": "-sum20d(折价率x成交额)/sum20d(成交额), 折价率=1-price/prev_close, ts_available=T+1", "direction": -1, "increment_gate": false },
+    "C6": { "name": "CONTROL 20日收盘动量", "formula": "close_adj(t)/close_adj(t-20)-1", "direction": "双向", "counted": false }
+  },
+  "gates": {
+    "dev": [
+      { "id": 1, "rule": "|月均 rank IC| >= 0.02 且 NW(6)|t| >= 3.0" },
+      { "id": 2, "rule": "方向对齐年化毛 D10-D1 >= 0.04 且同号月 >= 60%" },
+      { "id": 3, "rule": "增量门（仅 C1/C2）|IC| >= 1.3 x |IC_CONTROL|" }
+    ],
+    "pass_rule": ">=2 真因子过全门 -> 普查有候选（组合轮资格）",
+    "val_window": ["2021-01-01", "2024-12-31"],
+    "val_consumption_note": "本窗第 4 次消费（C08、R11（如到）、R12（如到）、本轮）",
+    "val_gates": ["IC 门", "分位门", "方向不变"],
+    "no_test_segment": "无独立 test 段（2015-2024 已被 dev/val 占满；test 需用户解锁 2025+）"
+  },
+  "measurement_M1": { "hyp": "H-35", "rule": "TOM 窗 vs 窗外日均收益 + 随机 6 日窗置换检验（20 种子），非判定描述" },
+  "coverage": { "C1/C2/C6": "2015-01-05..2024-12-31", "C3": "2017-01 起（2017-18 完整性 probe 先行，缺失率>10% 月份弃判披露）", "C4": "2015 起（PIT 年报可得性披露）", "C5": "2015-01-05 起（源 2014 起）" },
+  "trials_cumulative_before": 169,
+  "trials_counted_this_round": 6,
+  "trials_cumulative_after": 175,
+  "stop_rule": "<2 真因子过 dev 全门 -> G4 普查关闭，因子按结果登记，结构模块（H-47/51）无宿主不开；不为过关调判据；无盈利声称",
+  "limits": { "max_runtime_s": 1200, "max_ram_gb": 8, "smoke": "2015 年 6 个月先行" }
+}

@@ -1,0 +1,146 @@
+{
+ "source": "xiaodefa",
+ "dataset": "etf_index",
+ "batches": {
+  "xiaodefa/etf_index/20260913-bulk1": {
+   "batch_dir": "xiaodefa/etf_index/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 2,
+    "n_csv": 1,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 68230
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 pub_date 有 10 行 > 2024-12-31 (max=20250627); 冻结边界审查: 只报告不删除"
+    }
+   ],
+   "inventory_registration": {
+    "files": 2,
+    "bytes": 68230
+   },
+   "schema": {
+    "ts_code": "String",
+    "indx_name": "String",
+    "indx_csname": "String",
+    "pub_party_name": "String",
+    "pub_date": "Int64",
+    "base_date": "Int64",
+    "bp": "Float64",
+    "adj_circle": "String"
+   },
+   "n_columns": 8,
+   "date_columns": [
+    "pub_date",
+    "base_date"
+   ],
+   "numeric_columns_checked": [
+    "base_date",
+    "bp",
+    "pub_date"
+   ],
+   "rows_total": 560,
+   "date_coverage": {
+    "pub_date": {
+     "min": "18960526",
+     "max": "20250627",
+     "rows_gt_20241231": 10,
+     "null_rows": 1
+    },
+    "base_date": {
+     "min": "18960526",
+     "max": "20221230",
+     "rows_gt_20241231": 0,
+     "null_rows": 1
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 10,
+   "numeric_magnitude": {
+    "base_date": {
+     "min": 18960526.0,
+     "max": 20221230.0
+    },
+    "bp": {
+     "min": 10.0,
+     "max": 10000.0
+    },
+    "pub_date": {
+     "min": 18960526.0,
+     "max": 20250627.0
+    }
+   },
+   "primary_key": [
+    "ts_code"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "ts_code": "000001.SH",
+     "indx_name": "上证综合指数",
+     "indx_csname": "上证指数",
+     "pub_party_name": "中证指数有限公司、上海证券交易所",
+     "pub_date": "19910715",
+     "base_date": "19901219",
+     "bp": "100.0",
+     "adj_circle": "自动调整"
+    },
+    {
+     "ts_code": "000009.SH",
+     "indx_name": "上证380指数",
+     "indx_csname": "上证380",
+     "pub_party_name": "中证指数有限公司、上海证券交易所",
+     "pub_date": "20101129",
+     "base_date": "20031231",
+     "bp": "1000.0",
+     "adj_circle": "半年"
+    },
+    {
+     "ts_code": "000010.SH",
+     "indx_name": "上证180指数",
+     "indx_csname": "上证180",
+     "pub_party_name": "中证指数有限公司、上海证券交易所",
+     "pub_date": "20020701",
+     "base_date": "20020628",
+     "bp": "3299.06",
+     "adj_circle": "半年"
+    },
+    {
+     "ts_code": "000015.SH",
+     "indx_name": "上证红利指数",
+     "indx_csname": "红利指数",
+     "pub_party_name": "中证指数有限公司、上海证券交易所",
+     "pub_date": "20050104",
+     "base_date": "20041231",
+     "bp": "1000.0",
+     "adj_circle": "一年"
+    },
+    {
+     "ts_code": "000016.SH",
+     "indx_name": "上证50指数",
+     "indx_csname": "上证50",
+     "pub_party_name": "中证指数有限公司、上海证券交易所",
+     "pub_date": "20040102",
+     "base_date": "20031231",
+     "bp": "1000.0",
+     "adj_circle": "半年"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:07:22"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:22"
+}

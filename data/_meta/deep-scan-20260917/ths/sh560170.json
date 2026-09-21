@@ -1,0 +1,71 @@
+{
+ "source": "ths",
+ "dataset": "sh560170",
+ "batches": {
+  "ths/sh560170/20260903T042312": {
+   "batch_dir": "ths/sh560170/20260903T042312",
+   "mode": "json",
+   "status": "completed",
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "405 个记录日期 > 2024-12-31 (max=20260902); 冻结边界: 只报告"
+    }
+   ],
+   "inventory_registration": {
+    "files": 2,
+    "bytes": 118599
+   },
+   "files": {
+    "n_total": 2,
+    "response_pages": [
+     "response.json"
+    ],
+    "total_bytes": 118599
+   },
+   "rows_total": 768,
+   "date_coverage": {
+    "record_date": {
+     "min": "20230706",
+     "max": "20260902",
+     "rows_gt_20241231": 405
+    }
+   },
+   "numeric_magnitude": {
+    "close": {
+     "min": 0.648,
+     "median": 0.887,
+     "max": 1.534
+    }
+   },
+   "sample_rows": [
+    {
+     "date": "20230706",
+     "close": 0.988,
+     "volume": 554047710
+    },
+    {
+     "date": "20230707",
+     "close": 0.979,
+     "volume": 141888940
+    },
+    {
+     "date": "20230710",
+     "close": 0.984,
+     "volume": 77659426
+    },
+    {
+     "date": "20230711",
+     "close": 0.994,
+     "volume": 91597879
+    }
+   ],
+   "sha256_verified_pages": 1,
+   "sha256_concat_ok": true,
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:54"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:54"
+}

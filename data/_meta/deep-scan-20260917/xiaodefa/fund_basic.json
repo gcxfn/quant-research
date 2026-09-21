@@ -1,0 +1,333 @@
+{
+ "source": "xiaodefa",
+ "dataset": "fund_basic",
+ "batches": {
+  "xiaodefa/fund_basic/20260913-bulk1": {
+   "batch_dir": "xiaodefa/fund_basic/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 4,
+    "n_csv": 3,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 19291735
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 found_date 有 11818 行 > 2024-12-31 (max=20260911); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['ts_code'] 重复: 32978 个键 / 65956 行"
+    }
+   ],
+   "inventory_registration": {
+    "files": 4,
+    "bytes": 19291735
+   },
+   "schema": {
+    "ts_code": "String",
+    "name": "String",
+    "management": "String",
+    "custodian": "String",
+    "fund_type": "String",
+    "found_date": "Int64",
+    "due_date": "Int64",
+    "list_date": "Int64",
+    "issue_date": "Int64",
+    "delist_date": "Int64",
+    "issue_amount": "Float64",
+    "m_fee": "Float64",
+    "c_fee": "Float64",
+    "duration_year": "Float64",
+    "p_value": "Float64",
+    "min_amount": "Float64",
+    "exp_return": "String",
+    "benchmark": "String",
+    "status": "String",
+    "invest_type": "String",
+    "type": "String",
+    "trustee": "String",
+    "purc_startdate": "Int64",
+    "redm_startdate": "Int64",
+    "market": "String"
+   },
+   "n_columns": 25,
+   "date_columns": [
+    "found_date",
+    "due_date",
+    "list_date",
+    "issue_date",
+    "delist_date",
+    "purc_startdate",
+    "redm_startdate"
+   ],
+   "numeric_columns_checked": [
+    "c_fee",
+    "delist_date",
+    "due_date",
+    "duration_year",
+    "found_date",
+    "issue_amount",
+    "issue_date",
+    "list_date",
+    "m_fee",
+    "min_amount",
+    "p_value",
+    "purc_startdate",
+    "redm_startdate"
+   ],
+   "rows_total": 65956,
+   "date_coverage": {
+    "found_date": {
+     "min": "19980327",
+     "max": "20260911",
+     "rows_gt_20241231": 11818,
+     "null_rows": 1326
+    },
+    "due_date": {
+     "min": "20050714",
+     "max": "20261016",
+     "rows_gt_20241231": 2384,
+     "null_rows": 55884
+    },
+    "list_date": {
+     "min": "19980407",
+     "max": "20260916",
+     "rows_gt_20241231": 1362,
+     "null_rows": 60374
+    },
+    "issue_date": {
+     "min": "19980323",
+     "max": "20260907",
+     "rows_gt_20241231": 9860,
+     "null_rows": 12944
+    },
+    "delist_date": {
+     "min": "20060809",
+     "max": "20260824",
+     "rows_gt_20241231": 38,
+     "null_rows": 64696
+    },
+    "purc_startdate": {
+     "min": "20011210",
+     "max": "20260916",
+     "rows_gt_20241231": 10946,
+     "null_rows": 4462
+    },
+    "redm_startdate": {
+     "min": "20011221",
+     "max": "20300529",
+     "rows_gt_20241231": 11416,
+     "null_rows": 4508
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 11818,
+   "numeric_magnitude": {
+    "c_fee": {
+     "min": 0.006,
+     "max": 0.35
+    },
+    "delist_date": {
+     "min": 20060809.0,
+     "max": 20260824.0
+    },
+    "due_date": {
+     "min": 20050714.0,
+     "max": 20261016.0
+    },
+    "duration_year": {
+     "min": 0.0,
+     "max": 19.0
+    },
+    "found_date": {
+     "min": 19980327.0,
+     "max": 20260911.0
+    },
+    "issue_amount": {
+     "min": 0.0,
+     "max": 4579.4338
+    },
+    "issue_date": {
+     "min": 19980323.0,
+     "max": 20260907.0
+    },
+    "list_date": {
+     "min": 19980407.0,
+     "max": 20260916.0
+    },
+    "m_fee": {
+     "min": 0.0,
+     "max": 2.0
+    },
+    "min_amount": {
+     "min": 0.0001,
+     "max": 500.0
+    },
+    "p_value": {
+     "min": 0.01,
+     "max": 100.0
+    },
+    "purc_startdate": {
+     "min": 20011210.0,
+     "max": 20260916.0
+    },
+    "redm_startdate": {
+     "min": 20011221.0,
+     "max": 20300529.0
+    }
+   },
+   "primary_key": [
+    "ts_code"
+   ],
+   "duplicate_keys": 32978,
+   "duplicate_rows": 65956,
+   "sample_rows": [
+    {
+     "ts_code": "520790.SH",
+     "name": "兴业中证港股通互联网ETF",
+     "management": "兴业基金管理有限公司",
+     "custodian": "长江证券股份有限公司",
+     "fund_type": "股票型",
+     "found_date": "20260319",
+     "due_date": null,
+     "list_date": "20260330",
+     "issue_date": "20260302",
+     "delist_date": null,
+     "issue_amount": "2.9908",
+     "m_fee": "0.45",
+     "c_fee": "0.1",
+     "duration_year": null,
+     "p_value": "1.0",
+     "min_amount": "0.1",
+     "exp_return": null,
+     "benchmark": "中证港股通互联网指数收益率(经汇率调整)×100%",
+     "status": "L",
+     "invest_type": "被动指数型",
+     "type": "股票型",
+     "trustee": null,
+     "purc_startdate": "20260330",
+     "redm_startdate": "20260330"
+    },
+    {
+     "ts_code": "159160.SZ",
+     "name": "东财中证电池主题ETF",
+     "management": "东财基金管理有限公司",
+     "custodian": "兴业银行股份有限公司",
+     "fund_type": "股票型",
+     "found_date": "20260319",
+     "due_date": null,
+     "list_date": "20260327",
+     "issue_date": "20260309",
+     "delist_date": null,
+     "issue_amount": "3.1582",
+     "m_fee": "0.5",
+     "c_fee": "0.1",
+     "duration_year": null,
+     "p_value": "1.0",
+     "min_amount": "0.1",
+     "exp_return": null,
+     "benchmark": "中证电池主题指数收益率×100%",
+     "status": "L",
+     "invest_type": "被动指数型",
+     "type": "股票型",
+     "trustee": null,
+     "purc_startdate": "20260327",
+     "redm_startdate": "20260327"
+    },
+    {
+     "ts_code": "520680.SH",
+     "name": "南方中证港股通汽车产业主题ETF",
+     "management": "南方基金管理股份有限公司",
+     "custodian": "招商银行股份有限公司",
+     "fund_type": "股票型",
+     "found_date": "20260318",
+     "due_date": null,
+     "list_date": "20260326",
+     "issue_date": "20260302",
+     "delist_date": null,
+     "issue_amount": "2.1737",
+     "m_fee": "0.4",
+     "c_fee": "0.1",
+     "duration_year": null,
+     "p_value": "1.0",
+     "min_amount": "0.1",
+     "exp_return": null,
+     "benchmark": "中证港股通汽车产业主题指数(人民币)收益率×100%",
+     "status": "L",
+     "invest_type": "被动指数型",
+     "type": "股票型",
+     "trustee": null,
+     "purc_startdate": "20260326",
+     "redm_startdate": "20260326"
+    },
+    {
+     "ts_code": "159190.SZ",
+     "name": "天弘创业板新能源ETF",
+     "management": "天弘基金管理有限公司",
+     "custodian": "中信建投证券股份有限公司",
+     "fund_type": "股票型",
+     "found_date": "20260318",
+     "due_date": null,
+     "list_date": "20260330",
+     "issue_date": "20260309",
+     "delist_date": null,
+     "issue_amount": "2.3407",
+     "m_fee": "0.5",
+     "c_fee": "0.1",
+     "duration_year": null,
+     "p_value": "1.0",
+     "min_amount": "0.1",
+     "exp_return": null,
+     "benchmark": "创业板新能源指数收益率×100%",
+     "status": "L",
+     "invest_type": "被动指数型",
+     "type": "股票型",
+     "trustee": null,
+     "purc_startdate": "20260330",
+     "redm_startdate": "20260330"
+    },
+    {
+     "ts_code": "159191.SZ",
+     "name": "易方达国证港股通科技ETF",
+     "management": "易方达基金管理有限公司",
+     "custodian": "中国建设银行股份有限公司",
+     "fund_type": "股票型",
+     "found_date": "20260318",
+     "due_date": null,
+     "list_date": "20260326",
+     "issue_date": "20260309",
+     "delist_date": null,
+     "issue_amount": "2.241",
+     "m_fee": "0.3",
+     "c_fee": "0.05",
+     "duration_year": null,
+     "p_value": "1.0",
+     "min_amount": "0.1",
+     "exp_return": null,
+     "benchmark": "国证港股通科技指数收益率(使用估值汇率折算)×100%",
+     "status": "L",
+     "invest_type": "被动指数型",
+     "type": "股票型",
+     "trustee": null,
+     "purc_startdate": "20260326",
+     "redm_startdate": "20260326"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:07:22"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:22"
+}

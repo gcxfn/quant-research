@@ -1,0 +1,153 @@
+{
+ "source": "xiaodefa",
+ "dataset": "stk_limit",
+ "batches": {
+  "xiaodefa/stk_limit/20260913-bulk1": {
+   "batch_dir": "xiaodefa/stk_limit/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 3089,
+    "n_csv": 3088,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 459961049
+   },
+   "issues": [
+    {
+     "level": "warning",
+     "code": "bulk_scan_failed_perfile_fallback",
+     "detail": "ComputeError: schema names differ: got 20220705, expected trade_date"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 3016608 行 > 2024-12-31"
+    }
+   ],
+   "inventory_registration": {
+    "files": 3089,
+    "bytes": 459961049
+   },
+   "schema": {
+    "trade_date": "Int64",
+    "ts_code": "String",
+    "up_limit": "Float64",
+    "down_limit": "Float64"
+   },
+   "n_columns": 4,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "up_limit",
+    "down_limit",
+    "trade_date"
+   ],
+   "rows_total": 14832091,
+   "rows_counted_files": 3088,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20140102",
+     "max": "20260911",
+     "rows_gt_20241231": 3016608,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 3016608,
+   "primary_key": [
+    "ts_code",
+    "trade_date"
+   ],
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "trade_date": "20140102",
+     "ts_code": "000001.SZ",
+     "up_limit": "13.48",
+     "down_limit": "11.03"
+    },
+    {
+     "trade_date": "20140102",
+     "ts_code": "000002.SZ",
+     "up_limit": "8.83",
+     "down_limit": "7.23"
+    },
+    {
+     "trade_date": "20140102",
+     "ts_code": "000004.SZ",
+     "up_limit": "12.82",
+     "down_limit": "10.49"
+    },
+    {
+     "trade_date": "20140102",
+     "ts_code": "000005.SZ",
+     "up_limit": "2.75",
+     "down_limit": "2.25"
+    },
+    {
+     "trade_date": "20140102",
+     "ts_code": "000006.SZ",
+     "up_limit": "5.42",
+     "down_limit": "4.44"
+    }
+   ],
+   "status": "completed(per-file fallback)",
+   "duration_s": 16.0,
+   "finished_at": "2026-09-18T00:08:35",
+   "unit_check": {
+    "600519_limit_vs_prevclose_x10pct": {
+     "checked_dates": [
+      {
+       "date": "20240102",
+       "prev_close": 1726.0,
+       "up_limit": 1898.6,
+       "down_limit": 1553.4,
+       "up_dev_vs_x10": -0.0,
+       "dn_dev_vs_x10": 0.0
+      },
+      {
+       "date": "20240603",
+       "prev_close": 1648.45,
+       "up_limit": 1813.3,
+       "down_limit": 1483.61,
+       "up_dev_vs_x10": 3e-06,
+       "dn_dev_vs_x10": 3e-06
+      },
+      {
+       "date": "20240930",
+       "prev_close": 1629.2,
+       "up_limit": 1792.12,
+       "down_limit": 1466.28,
+       "up_dev_vs_x10": -0.0,
+       "dn_dev_vs_x10": 0.0
+      },
+      {
+       "date": "20241231",
+       "prev_close": 1525.0,
+       "up_limit": 1677.5,
+       "down_limit": 1372.5,
+       "up_dev_vs_x10": -0.0,
+       "dn_dev_vs_x10": 0.0
+      }
+     ]
+    },
+    "unit_conclusion": {
+     "limit_price": "元; 与前收盘 ±10% 关系成立",
+     "confidence": "high"
+    }
+   },
+   "unit_check_conclusion": {
+    "limit_price": "元; 与前收盘 ±10% 关系成立",
+    "confidence": "high"
+   },
+   "supplemental_check": "deepscan_supplement.py (per-file fallback 批次的补查)"
+  }
+ },
+ "updated_at": "2026-09-18T00:08:35"
+}

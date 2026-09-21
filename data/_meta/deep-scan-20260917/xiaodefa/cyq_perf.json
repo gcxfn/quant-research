@@ -1,0 +1,155 @@
+{
+ "source": "xiaodefa",
+ "dataset": "cyq_perf",
+ "batches": {
+  "xiaodefa/cyq_perf/20260913-bulk1": {
+   "batch_dir": "xiaodefa/cyq_perf/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 2112,
+    "n_csv": 2111,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 599989011
+   },
+   "issues": [
+    {
+     "level": "warning",
+     "code": "bulk_scan_failed_perfile_fallback",
+     "detail": "ComputeError: schema names differ: got ts_code, expected trade_date"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 2243438 行 > 2024-12-31"
+    }
+   ],
+   "inventory_registration": {
+    "files": 2112,
+    "bytes": 599989011
+   },
+   "schema": {
+    "ts_code": "String",
+    "trade_date": "Int64",
+    "cost_15pct": "Float64",
+    "cost_50pct": "Float64",
+    "cost_5pct": "Float64",
+    "cost_85pct": "Float64",
+    "cost_95pct": "Float64",
+    "his_high": "Float64",
+    "his_low": "Float64",
+    "weight_avg": "Float64",
+    "winner_rate": "Float64"
+   },
+   "n_columns": 11,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "cost_15pct",
+    "cost_50pct",
+    "cost_5pct",
+    "cost_85pct",
+    "cost_95pct",
+    "his_high",
+    "his_low",
+    "trade_date",
+    "weight_avg",
+    "winner_rate"
+   ],
+   "rows_total": 9475775,
+   "rows_counted_files": 2111,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20180102",
+     "max": "20260911",
+     "rows_gt_20241231": 2243438,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 2243438,
+   "primary_key": [
+    "ts_code",
+    "trade_date"
+   ],
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "ts_code": "600718.SH",
+     "trade_date": "20180102",
+     "cost_15pct": "14.4",
+     "cost_50pct": "15.6",
+     "cost_5pct": "14.0",
+     "cost_85pct": "17.2",
+     "cost_95pct": "18.0",
+     "his_high": "34.4",
+     "his_low": "0.6",
+     "weight_avg": "15.78",
+     "winner_rate": "7.9"
+    },
+    {
+     "ts_code": "600717.SH",
+     "trade_date": "20180102",
+     "cost_15pct": "5.3",
+     "cost_50pct": "5.9",
+     "cost_5pct": "5.1",
+     "cost_85pct": "6.4",
+     "cost_95pct": "6.7",
+     "his_high": "14.3",
+     "his_low": "0.2",
+     "weight_avg": "5.95",
+     "winner_rate": "13.19"
+    },
+    {
+     "ts_code": "600716.SH",
+     "trade_date": "20180102",
+     "cost_15pct": "4.9",
+     "cost_50pct": "5.2",
+     "cost_5pct": "4.7",
+     "cost_85pct": "5.5",
+     "cost_95pct": "6.6",
+     "his_high": "16.4",
+     "his_low": "1.0",
+     "weight_avg": "5.4",
+     "winner_rate": "57.08"
+    },
+    {
+     "ts_code": "600702.SH",
+     "trade_date": "20180102",
+     "cost_15pct": "39.2",
+     "cost_50pct": "43.2",
+     "cost_5pct": "35.6",
+     "cost_85pct": "44.8",
+     "cost_95pct": "46.4",
+     "his_high": "48.4",
+     "his_low": "2.0",
+     "weight_avg": "41.96",
+     "winner_rate": "57.01"
+    },
+    {
+     "ts_code": "600704.SH",
+     "trade_date": "20180102",
+     "cost_15pct": "5.1",
+     "cost_50pct": "5.5",
+     "cost_5pct": "4.9",
+     "cost_85pct": "5.8",
+     "cost_95pct": "5.9",
+     "his_high": "15.3",
+     "his_low": "0.3",
+     "weight_avg": "5.45",
+     "winner_rate": "14.96"
+    }
+   ],
+   "status": "completed(per-file fallback)",
+   "duration_s": 12.0,
+   "finished_at": "2026-09-18T00:07:18"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:18"
+}

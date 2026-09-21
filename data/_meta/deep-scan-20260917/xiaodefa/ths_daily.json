@@ -1,0 +1,260 @@
+{
+ "source": "xiaodefa",
+ "dataset": "ths_daily",
+ "batches": {
+  "xiaodefa/ths_daily/20260913-bulk1": {
+   "batch_dir": "xiaodefa/ths_daily/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 3089,
+    "n_csv": 3088,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 305287667
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 637628 行 > 2024-12-31 (max=20260911); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 3089,
+    "bytes": 305287667
+   },
+   "schema": {
+    "ts_code": "String",
+    "trade_date": "Int64",
+    "close": "Float64",
+    "open": "Float64",
+    "high": "Float64",
+    "low": "Float64",
+    "pre_close": "Float64",
+    "avg_price": "Float64",
+    "change": "Float64",
+    "pct_change": "Float64",
+    "vol": "Float64",
+    "turnover_rate": "Float64"
+   },
+   "n_columns": 12,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "close",
+    "open",
+    "high",
+    "low",
+    "pre_close",
+    "vol",
+    "turnover_rate",
+    "avg_price",
+    "change",
+    "pct_change",
+    "trade_date"
+   ],
+   "rows_total": 2902613,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20140102",
+     "max": "20260911",
+     "rows_gt_20241231": 637628,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 637628,
+   "numeric_magnitude": {
+    "close": {
+     "min": 0.002,
+     "max": 11303650800.0
+    },
+    "open": {
+     "min": 0.002,
+     "max": 10641314300.0
+    },
+    "high": {
+     "min": 0.002,
+     "max": 11414040200.0
+    },
+    "low": {
+     "min": 0.002,
+     "max": 10549323100.0
+    },
+    "pre_close": {
+     "min": 0.002,
+     "max": 11303650800.0
+    },
+    "vol": {
+     "min": 0.0,
+     "max": 2922625200.0
+    },
+    "turnover_rate": {
+     "min": 0.0,
+     "max": 5185.0911
+    },
+    "avg_price": {
+     "min": 0.01,
+     "max": 27588.9463
+    },
+    "change": {
+     "min": -11303649757.014,
+     "max": 1387001900.0
+    },
+    "pct_change": {
+     "min": -100.0,
+     "max": 38455050.0
+    },
+    "trade_date": {
+     "min": 20140102.0,
+     "max": 20260911.0
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "trade_date"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "ts_code": "883300.TI",
+     "trade_date": "20140102",
+     "close": "2321.978",
+     "open": "2323.433",
+     "high": "2325.991",
+     "low": "2310.652",
+     "pre_close": "2330.025",
+     "avg_price": "10.8448",
+     "change": "-8.047",
+     "pct_change": "-0.3454",
+     "vol": "45194291.0",
+     "turnover_rate": "0.261713"
+    },
+    {
+     "ts_code": "881109.TI",
+     "trade_date": "20140102",
+     "close": "1385.465",
+     "open": "1369.015",
+     "high": "1385.571",
+     "low": "1365.83",
+     "pre_close": "1369.04",
+     "avg_price": "11.5677",
+     "change": "16.425",
+     "pct_change": "1.1997",
+     "vol": "5143065.1",
+     "turnover_rate": "1.290355"
+    },
+    {
+     "ts_code": "881164.TI",
+     "trade_date": "20140102",
+     "close": "1551.106",
+     "open": "1526.371",
+     "high": "1552.4",
+     "low": "1523.783",
+     "pre_close": "1522.185",
+     "avg_price": "20.7402",
+     "change": "28.921",
+     "pct_change": "1.9",
+     "vol": "1871922.8",
+     "turnover_rate": "1.735329"
+    },
+    {
+     "ts_code": "881135.TI",
+     "trade_date": "20140102",
+     "close": "931.295",
+     "open": "922.262",
+     "high": "931.618",
+     "low": "919.141",
+     "pre_close": "923.333",
+     "avg_price": "7.3195",
+     "change": "7.962",
+     "pct_change": "0.8623",
+     "vol": "2100454.5",
+     "turnover_rate": "1.291826"
+    },
+    {
+     "ts_code": "881136.TI",
+     "trade_date": "20140102",
+     "close": "906.719",
+     "open": "898.963",
+     "high": "907.748",
+     "low": "896.685",
+     "pre_close": "900.519",
+     "avg_price": "9.8021",
+     "change": "6.2",
+     "pct_change": "0.6885",
+     "vol": "1969295.4",
+     "turnover_rate": "1.358142"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 3088,
+    "distinct_headers": 1,
+    "modal_header_cols": 12,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "20240523",
+      "manifest_rows": 1654,
+      "actual_rows": 1653
+     },
+     {
+      "chunk": "20160315",
+      "manifest_rows": 231,
+      "actual_rows": 230
+     },
+     {
+      "chunk": "20250110",
+      "manifest_rows": 1949,
+      "actual_rows": 1948
+     },
+     {
+      "chunk": "20260908",
+      "manifest_rows": 1879,
+      "actual_rows": 1878
+     },
+     {
+      "chunk": "20190321",
+      "manifest_rows": 1012,
+      "actual_rows": 1011
+     },
+     {
+      "chunk": "20180517",
+      "manifest_rows": 387,
+      "actual_rows": 386
+     },
+     {
+      "chunk": "20230512",
+      "manifest_rows": 1607,
+      "actual_rows": 1606
+     },
+     {
+      "chunk": "20171219",
+      "manifest_rows": 346,
+      "actual_rows": 345
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 3.0,
+   "finished_at": "2026-09-18T00:08:55"
+  }
+ },
+ "updated_at": "2026-09-18T00:08:55"
+}

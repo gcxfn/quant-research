@@ -1,0 +1,233 @@
+{
+ "source": "tushare",
+ "dataset": "top_inst",
+ "batches": {
+  "tushare/top_inst/20260909-r3": {
+   "batch_dir": "tushare/top_inst/20260909-r3",
+   "mode": "full",
+   "files": {
+    "n_total": 1867,
+    "n_csv": 1866,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 299804018
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 341394 行 > 2024-12-31 (max=20260909); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['ts_code', 'trade_date'] 重复: 116580 个键 / 1785665 行"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 1867,
+    "bytes": 299804018
+   },
+   "schema": {
+    "trade_date": "Int64",
+    "ts_code": "String",
+    "exalter": "String",
+    "buy": "Float64",
+    "buy_rate": "Float64",
+    "sell": "Float64",
+    "sell_rate": "Float64",
+    "net_buy": "Float64",
+    "side": "Int64",
+    "reason": "String"
+   },
+   "n_columns": 10,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "buy",
+    "buy_rate",
+    "net_buy",
+    "sell",
+    "sell_rate",
+    "side",
+    "trade_date"
+   ],
+   "rows_total": 1785667,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20190102",
+     "max": "20260909",
+     "rows_gt_20241231": 341394,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 341394,
+   "numeric_magnitude": {
+    "buy": {
+     "min": 0.0,
+     "max": 300487251244.21
+    },
+    "buy_rate": {
+     "min": 0.0,
+     "max": 8521.02
+    },
+    "net_buy": {
+     "min": -111512442900.0,
+     "max": 114937164900.0
+    },
+    "sell": {
+     "min": 0.0,
+     "max": 300991412418.39
+    },
+    "sell_rate": {
+     "min": 0.0,
+     "max": 8371.59
+    },
+    "side": {
+     "min": 0.0,
+     "max": 1.0
+    },
+    "trade_date": {
+     "min": 20190102.0,
+     "max": 20260909.0
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "trade_date"
+   ],
+   "duplicate_keys": 116580,
+   "duplicate_rows": 1785665,
+   "sample_rows": [
+    {
+     "trade_date": "20190102",
+     "ts_code": "000056.SZ",
+     "exalter": "东方证券股份有限公司桂林中山中路证券营业部",
+     "buy": "2600.0",
+     "buy_rate": "10.83",
+     "sell": "10479560.0",
+     "sell_rate": "0.0",
+     "net_buy": "10476960.0",
+     "side": "0",
+     "reason": "涨幅偏离值达7%的证券"
+    },
+    {
+     "trade_date": "20190102",
+     "ts_code": "000056.SZ",
+     "exalter": "天风证券股份有限公司广州华夏路证券营业部",
+     "buy": "0.0",
+     "buy_rate": "3.56",
+     "sell": "3447705.0",
+     "sell_rate": "0.0",
+     "net_buy": "3447705.0",
+     "side": "0",
+     "reason": "涨幅偏离值达7%的证券"
+    },
+    {
+     "trade_date": "20190102",
+     "ts_code": "000056.SZ",
+     "exalter": "国泰君安证券股份有限公司成都天府二街证券营业部",
+     "buy": "0.0",
+     "buy_rate": "2.7",
+     "sell": "2615600.0",
+     "sell_rate": "0.0",
+     "net_buy": "2615600.0",
+     "side": "0",
+     "reason": "涨幅偏离值达7%的证券"
+    },
+    {
+     "trade_date": "20190102",
+     "ts_code": "000056.SZ",
+     "exalter": "华泰证券股份有限公司深圳深南大道证券营业部",
+     "buy": "340080.0",
+     "buy_rate": "2.41",
+     "sell": "2328564.0",
+     "sell_rate": "0.35",
+     "net_buy": "1988484.0",
+     "side": "0",
+     "reason": "涨幅偏离值达7%的证券"
+    },
+    {
+     "trade_date": "20190102",
+     "ts_code": "000056.SZ",
+     "exalter": "东吴证券股份有限公司苏州石路证券营业部",
+     "buy": "222816.0",
+     "buy_rate": "1.8",
+     "sell": "1744759.0",
+     "sell_rate": "0.23",
+     "net_buy": "1521943.0",
+     "side": "0",
+     "reason": "涨幅偏离值达7%的证券"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 1866,
+    "distinct_headers": 1,
+    "modal_header_cols": 10,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "20240318",
+      "manifest_rows": 600,
+      "actual_rows": 599
+     },
+     {
+      "chunk": "20200212",
+      "manifest_rows": 1356,
+      "actual_rows": 1355
+     },
+     {
+      "chunk": "20240715",
+      "manifest_rows": 690,
+      "actual_rows": 689
+     },
+     {
+      "chunk": "20250516",
+      "manifest_rows": 820,
+      "actual_rows": 819
+     },
+     {
+      "chunk": "20260630",
+      "manifest_rows": 1080,
+      "actual_rows": 1079
+     },
+     {
+      "chunk": "20210812",
+      "manifest_rows": 1170,
+      "actual_rows": 1169
+     },
+     {
+      "chunk": "20210315",
+      "manifest_rows": 1064,
+      "actual_rows": 1063
+     },
+     {
+      "chunk": "20230907",
+      "manifest_rows": 600,
+      "actual_rows": 599
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 1.9,
+   "finished_at": "2026-09-18T00:09:46"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:46"
+}

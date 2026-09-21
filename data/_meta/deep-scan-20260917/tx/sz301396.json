@@ -1,0 +1,103 @@
+{
+ "source": "tx",
+ "dataset": "sz301396",
+ "batches": {
+  "tx/sz301396/20260904T012602": {
+   "batch_dir": "tx/sz301396/20260904T012602",
+   "mode": "json",
+   "status": "completed",
+   "issues": [
+    {
+     "level": "warning",
+     "code": "meta_row_count_mismatch",
+     "detail": "meta n_rows=926, 实际解析 927 行, 其中跨页重复日期 1 行"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_kline_dates_across_pages",
+     "detail": "跨页重复日期 1 行, 例: ['20230522']"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "406 个记录日期 > 2024-12-31 (max=20260903); 冻结边界: 只报告"
+    }
+   ],
+   "inventory_registration": {
+    "files": 3,
+    "bytes": 62897
+   },
+   "files": {
+    "n_total": 3,
+    "response_pages": [
+     "response_000.json",
+     "response_001.json"
+    ],
+    "total_bytes": 62897
+   },
+   "duplicate_date_rows": 1,
+   "rows_total": 927,
+   "date_coverage": {
+    "record_date": {
+     "min": "20221111",
+     "max": "20260903",
+     "rows_gt_20241231": 406
+    }
+   },
+   "numeric_magnitude": {
+    "close": {
+     "min": 7.071,
+     "median": 17.798,
+     "max": 331.6
+    }
+   },
+   "sample_rows": [
+    {
+     "date": "2023-05-22",
+     "ohlc": [
+      "16.178",
+      "16.611",
+      "16.637",
+      "16.046"
+     ],
+     "volume": "22275.000"
+    },
+    {
+     "date": "2023-05-23",
+     "ohlc": [
+      "16.616",
+      "16.003",
+      "16.726",
+      "15.986"
+     ],
+     "volume": "27282.000"
+    },
+    {
+     "date": "2023-05-24",
+     "ohlc": [
+      "16.122",
+      "16.378",
+      "16.701",
+      "16.118"
+     ],
+     "volume": "26844.000"
+    },
+    {
+     "date": "2023-05-25",
+     "ohlc": [
+      "16.195",
+      "16.242",
+      "16.535",
+      "15.867"
+     ],
+     "volume": "20941.000"
+    }
+   ],
+   "sha256_verified_pages": 1,
+   "sha256_concat_ok": false,
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:55"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:55"
+}

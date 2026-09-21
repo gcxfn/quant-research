@@ -1,0 +1,155 @@
+{
+  "status": "CANDIDATE_NOT_PRODUCTION",
+  "data_window": [
+    "2021-09-06",
+    "2026-09-02"
+  ],
+  "pool_size": 55,
+  "excluded": [],
+  "adjustment_notes": [
+    {
+      "symbol": "sz159915",
+      "adjustment_artifacts": [
+        {
+          "date": "2024-10-08",
+          "adjusted_ret": 0.245581,
+          "raw_ret": 0.199821,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        }
+      ]
+    },
+    {
+      "symbol": "sz159949",
+      "adjustment_artifacts": [
+        {
+          "date": "2024-10-08",
+          "adjusted_ret": 0.242051,
+          "raw_ret": 0.200198,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        }
+      ]
+    }
+  ],
+  "baseline": {
+    "description": "V2: 0.5*R20 + 0.3*R60 + 0.2*R120, Top1, monthly",
+    "summary": {
+      "overall": {
+        "segment": "full",
+        "start": "2021-09-06",
+        "end": "2026-09-02",
+        "days": 1209,
+        "total_return": 0.228857,
+        "ann_return": 0.043891,
+        "ann_vol": 0.376806,
+        "max_drawdown": -0.518801
+      },
+      "segments": [
+        {
+          "segment": "research",
+          "start": "2021-09-06",
+          "end": "2024-09-02",
+          "days": 725,
+          "total_return": -0.36275,
+          "ann_return": -0.144971,
+          "ann_vol": 0.259978,
+          "max_drawdown": -0.382006
+        },
+        {
+          "segment": "validation",
+          "start": "2024-09-03",
+          "end": "2025-09-02",
+          "days": 242,
+          "total_return": 0.146,
+          "ann_return": 0.152472,
+          "ann_vol": 0.396511,
+          "max_drawdown": -0.304174
+        },
+        {
+          "segment": "test",
+          "start": "2025-09-03",
+          "end": "2026-09-02",
+          "days": 242,
+          "total_return": 0.648619,
+          "ann_return": 0.683031,
+          "ann_vol": 0.59228,
+          "max_drawdown": -0.406451
+        }
+      ],
+      "insufficient_sample": false,
+      "n_trades": 61,
+      "total_commission": 2165.74,
+      "days_in_market_pct": 0.7849,
+      "final_equity": 122885.688998,
+      "survivorship_bias_note": "标的池为当前在市标的，历史回放含幸存者偏差，结果仅供研究。",
+      "benchmark_buy_hold": {
+        "segment": "benchmark",
+        "start": "2021-09-06",
+        "end": "2026-09-02",
+        "days": 1209,
+        "total_return": 0.008072,
+        "ann_return": 0.001677,
+        "ann_vol": 0.189964,
+        "max_drawdown": -0.37173
+      }
+    }
+  },
+  "candidate": {
+    "description": "V3 candidate: percentile-rank(R20/R60/R120) equal mean, Top3 equal-weight, monthly",
+    "summary": {
+      "overall": {
+        "segment": "full",
+        "start": "2021-09-06",
+        "end": "2026-09-02",
+        "days": 1209,
+        "total_return": 0.70989156839,
+        "ann_return": 0.11830226835682955,
+        "ann_vol": 0.29406446928814933,
+        "max_drawdown": -0.34737442037985233,
+        "sharpe_rf0": 0.40230045011288645,
+        "calmar": 0.3405612544166797
+      },
+      "segments": [
+        {
+          "segment": "research",
+          "start": "2021-09-06",
+          "end": "2024-09-02",
+          "days": 725,
+          "total_return": -0.014443608600000046,
+          "ann_return": -0.005044243268042314,
+          "ann_vol": 0.20141247942890275,
+          "max_drawdown": -0.3055342382343569,
+          "sharpe_rf0": -0.02504434324201296,
+          "calmar": -0.016509584317595135
+        },
+        {
+          "segment": "validation",
+          "start": "2024-09-03",
+          "end": "2025-09-02",
+          "days": 242,
+          "total_return": 0.3296828421954565,
+          "ann_return": 0.3454315922506024,
+          "ann_vol": 0.3251330427504876,
+          "max_drawdown": -0.2383729980367829,
+          "sharpe_rf0": 1.0624315182744812,
+          "calmar": 1.4491221534970142
+        },
+        {
+          "segment": "test",
+          "start": "2025-09-03",
+          "end": "2026-09-02",
+          "days": 242,
+          "total_return": 0.30997362605356704,
+          "ann_return": 0.324671253981488,
+          "ann_vol": 0.45426742947885423,
+          "max_drawdown": -0.34737442037985233,
+          "sharpe_rf0": 0.714713917205022,
+          "calmar": 0.9346435285202102
+        }
+      ],
+      "n_trades": 171,
+      "total_commission": 3244.22,
+      "final_equity": 170989.156839
+    }
+  },
+  "methodology_note": "本实验仅比较少量预先定义的结构性变体，不做参数网格搜索。但由于同一 5 年历史已被多次查看，任何改进都只能视为候选假设；上线前需进行前向样本外跟踪。"
+}

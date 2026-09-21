@@ -1,0 +1,208 @@
+{
+ "source": "tushare",
+ "dataset": "share_float",
+ "batches": {
+  "tushare/share_float/20260909-r3": {
+   "batch_dir": "tushare/share_float/20260909-r3",
+   "mode": "full",
+   "files": {
+    "n_total": 130,
+    "n_csv": 129,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 858893096
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 float_date 有 1622054 行 > 2024-12-31 (max=20340120); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['ts_code', 'ann_date', 'float_date'] 重复: 21560 个键 / 5654928 行"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 130,
+    "bytes": 858893096
+   },
+   "schema": {
+    "ts_code": "String",
+    "ann_date": "Int64",
+    "float_date": "Int64",
+    "float_share": "Float64",
+    "float_ratio": "Float64",
+    "holder_name": "String",
+    "share_type": "String"
+   },
+   "n_columns": 7,
+   "date_columns": [
+    "ann_date",
+    "float_date"
+   ],
+   "numeric_columns_checked": [
+    "ann_date",
+    "float_date",
+    "float_ratio",
+    "float_share"
+   ],
+   "rows_total": 5661143,
+   "date_coverage": {
+    "ann_date": {
+     "min": "20160101",
+     "max": "20260909",
+     "rows_gt_20241231": 1453353,
+     "null_rows": 0
+    },
+    "float_date": {
+     "min": "20151124",
+     "max": "20340120",
+     "rows_gt_20241231": 1622054,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 1622054,
+   "numeric_magnitude": {
+    "ann_date": {
+     "min": 20160101.0,
+     "max": 20260909.0
+    },
+    "float_date": {
+     "min": 20151124.0,
+     "max": 20340120.0
+    },
+    "float_ratio": {
+     "min": 0.0,
+     "max": 14845.6831
+    },
+    "float_share": {
+     "min": 1.0,
+     "max": 82980370000.0
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "ann_date",
+    "float_date"
+   ],
+   "duplicate_keys": 21560,
+   "duplicate_rows": 5654928,
+   "sample_rows": [
+    {
+     "ts_code": "400081",
+     "ann_date": "20160101",
+     "float_date": "20170103",
+     "float_share": "2100000.0",
+     "float_ratio": "0.0861",
+     "holder_name": "蒋建平",
+     "share_type": "股权激励限售流通"
+    },
+    {
+     "ts_code": "400081",
+     "ann_date": "20160101",
+     "float_date": "20170103",
+     "float_share": "23697018.0",
+     "float_ratio": "0.972",
+     "holder_name": "其他人员（第二期）",
+     "share_type": "股权激励限售流通"
+    },
+    {
+     "ts_code": "400081",
+     "ann_date": "20160101",
+     "float_date": "20170103",
+     "float_share": "4000000.0",
+     "float_ratio": "0.1641",
+     "holder_name": "鹿鹏",
+     "share_type": "股权激励限售流通"
+    },
+    {
+     "ts_code": "400081",
+     "ann_date": "20160101",
+     "float_date": "20170103",
+     "float_share": "2100000.0",
+     "float_ratio": "0.0861",
+     "holder_name": "陈献文",
+     "share_type": "股权激励限售流通"
+    },
+    {
+     "ts_code": "400081",
+     "ann_date": "20160101",
+     "float_date": "20170103",
+     "float_share": "2600000.0",
+     "float_ratio": "0.1066",
+     "holder_name": "周皓琳",
+     "share_type": "股权激励限售流通"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 129,
+    "distinct_headers": 1,
+    "modal_header_cols": 7,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "201810",
+      "manifest_rows": 264,
+      "actual_rows": 263
+     },
+     {
+      "chunk": "202208",
+      "manifest_rows": 43207,
+      "actual_rows": 43206
+     },
+     {
+      "chunk": "202107",
+      "manifest_rows": 53805,
+      "actual_rows": 53804
+     },
+     {
+      "chunk": "202101",
+      "manifest_rows": 8899,
+      "actual_rows": 8898
+     },
+     {
+      "chunk": "201602",
+      "manifest_rows": 728,
+      "actual_rows": 727
+     },
+     {
+      "chunk": "201901",
+      "manifest_rows": 328,
+      "actual_rows": 327
+     },
+     {
+      "chunk": "202312",
+      "manifest_rows": 189316,
+      "actual_rows": 189315
+     },
+     {
+      "chunk": "202301",
+      "manifest_rows": 55546,
+      "actual_rows": 55545
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 0.9,
+   "finished_at": "2026-09-18T00:09:44"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:44"
+}

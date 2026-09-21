@@ -1,0 +1,38 @@
+{
+ "source": "xiaodefa",
+ "dataset": "minute-repairs-20260913-5",
+ "batches": {
+  "xiaodefa/minute-repairs-20260913-5": {
+   "batch_dir": "xiaodefa/minute-repairs-20260913-5",
+   "mode": "full",
+   "files": {
+    "n_total": 1,
+    "n_csv": 0,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 0,
+    "n_other": 1,
+    "manifest_names": [],
+    "other_names": [
+     "patches.json"
+    ],
+    "total_bytes": 21158
+   },
+   "issues": [
+    {
+     "level": "info",
+     "code": "no_data_files",
+     "detail": "无 csv/parquet 数据文件; 仅 1 个其他文件"
+    }
+   ],
+   "inventory_registration": {
+    "files": 1,
+    "bytes": 21158
+   },
+   "status": "no_tabular_data",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:07:40"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:40"
+}

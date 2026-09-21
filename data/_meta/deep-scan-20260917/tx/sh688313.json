@@ -1,0 +1,103 @@
+{
+ "source": "tx",
+ "dataset": "sh688313",
+ "batches": {
+  "tx/sh688313/20260904T012524": {
+   "batch_dir": "tx/sh688313/20260904T012524",
+   "mode": "json",
+   "status": "completed",
+   "issues": [
+    {
+     "level": "warning",
+     "code": "meta_row_count_mismatch",
+     "detail": "meta n_rows=1462, 实际解析 1463 行, 其中跨页重复日期 1 行"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_kline_dates_across_pages",
+     "detail": "跨页重复日期 1 行, 例: ['20230509']"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "397 个记录日期 > 2024-12-31 (max=20260903); 冻结边界: 只报告"
+    }
+   ],
+   "inventory_registration": {
+    "files": 3,
+    "bytes": 99389
+   },
+   "files": {
+    "n_total": 3,
+    "response_pages": [
+     "response_000.json",
+     "response_001.json"
+    ],
+    "total_bytes": 99389
+   },
+   "duplicate_date_rows": 1,
+   "rows_total": 1463,
+   "date_coverage": {
+    "record_date": {
+     "min": "20200812",
+     "max": "20260903",
+     "rows_gt_20241231": 397
+    }
+   },
+   "numeric_magnitude": {
+    "close": {
+     "min": 6.751,
+     "median": 14.061,
+     "max": 203.33
+    }
+   },
+   "sample_rows": [
+    {
+     "date": "2023-05-09",
+     "ohlc": [
+      "12.191",
+      "11.881",
+      "12.531",
+      "11.871"
+     ],
+     "volume": "16204135.000"
+    },
+    {
+     "date": "2023-05-10",
+     "ohlc": [
+      "11.801",
+      "11.641",
+      "12.161",
+      "11.481"
+     ],
+     "volume": "14716056.000"
+    },
+    {
+     "date": "2023-05-11",
+     "ohlc": [
+      "11.581",
+      "11.561",
+      "11.771",
+      "11.401"
+     ],
+     "volume": "11483542.000"
+    },
+    {
+     "date": "2023-05-12",
+     "ohlc": [
+      "11.571",
+      "11.411",
+      "11.851",
+      "11.411"
+     ],
+     "volume": "13441972.000"
+    }
+   ],
+   "sha256_verified_pages": 1,
+   "sha256_concat_ok": false,
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:55"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:55"
+}

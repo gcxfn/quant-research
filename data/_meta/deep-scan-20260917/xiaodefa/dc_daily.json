@@ -1,0 +1,271 @@
+{
+ "source": "xiaodefa",
+ "dataset": "dc_daily",
+ "batches": {
+  "xiaodefa/dc_daily/20260913-bulk1": {
+   "batch_dir": "xiaodefa/dc_daily/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 1625,
+    "n_csv": 1624,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 160815926
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 411871 行 > 2024-12-31 (max=20260911); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['ts_code', 'trade_date'] 重复: 17123 个键 / 34246 行"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 1625,
+    "bytes": 160815926
+   },
+   "schema": {
+    "ts_code": "String",
+    "trade_date": "Int64",
+    "close": "Float64",
+    "open": "Float64",
+    "high": "Float64",
+    "low": "Float64",
+    "change": "Float64",
+    "pct_change": "Float64",
+    "vol": "Float64",
+    "amount": "Float64",
+    "swing": "Float64",
+    "turnover_rate": "Float64",
+    "category": "String"
+   },
+   "n_columns": 13,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "close",
+    "open",
+    "high",
+    "low",
+    "vol",
+    "amount",
+    "turnover_rate",
+    "change",
+    "pct_change",
+    "swing",
+    "trade_date"
+   ],
+   "rows_total": 1470419,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20200102",
+     "max": "20260911",
+     "rows_gt_20241231": 411871,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 411871,
+   "numeric_magnitude": {
+    "close": {
+     "min": 0.11,
+     "max": 184700.8
+    },
+    "open": {
+     "min": 0.11,
+     "max": 186585.11
+    },
+    "high": {
+     "min": 0.11,
+     "max": 187349.03
+    },
+    "low": {
+     "min": 0.1,
+     "max": 183347.97
+    },
+    "vol": {
+     "min": 1990.0,
+     "max": 2303799891.0
+    },
+    "amount": {
+     "min": 563170.0,
+     "max": 3488856778986.0
+    },
+    "turnover_rate": {
+     "min": 0.0,
+     "max": 319.48
+    },
+    "change": {
+     "min": -13440.67,
+     "max": 97390.0
+    },
+    "pct_change": {
+     "min": -99.99,
+     "max": 9739.0
+    },
+    "swing": {
+     "min": 0.0,
+     "max": 297.0
+    },
+    "trade_date": {
+     "min": 20200102.0,
+     "max": 20260911.0
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "trade_date"
+   ],
+   "duplicate_keys": 17123,
+   "duplicate_rows": 34246,
+   "sample_rows": [
+    {
+     "ts_code": "BK1627.DC",
+     "trade_date": "20200102",
+     "close": "6162.19",
+     "open": "6098.83",
+     "high": "6174.94",
+     "low": "6098.69",
+     "change": "104.28",
+     "pct_change": "1.72",
+     "vol": "3565148.0",
+     "amount": "3415959072.0",
+     "swing": "1.26",
+     "turnover_rate": "1.82",
+     "category": "行业板块"
+    },
+    {
+     "ts_code": "BK1626.DC",
+     "trade_date": "20200102",
+     "close": "2647.98",
+     "open": "2618.91",
+     "high": "2652.62",
+     "low": "2603.64",
+     "change": "42.11",
+     "pct_change": "1.62",
+     "vol": "1339396.0",
+     "amount": "1793537540.0",
+     "swing": "1.88",
+     "turnover_rate": "1.98",
+     "category": "行业板块"
+    },
+    {
+     "ts_code": "BK1625.DC",
+     "trade_date": "20200102",
+     "close": "1255.39",
+     "open": "1237.57",
+     "high": "1269.09",
+     "low": "1230.92",
+     "change": "28.69",
+     "pct_change": "2.34",
+     "vol": "570966.0",
+     "amount": "528669095.0",
+     "swing": "3.11",
+     "turnover_rate": "1.28",
+     "category": "行业板块"
+    },
+    {
+     "ts_code": "BK1624.DC",
+     "trade_date": "20200102",
+     "close": "1654.33",
+     "open": "1629.21",
+     "high": "1656.74",
+     "low": "1628.78",
+     "change": "35.8",
+     "pct_change": "2.21",
+     "vol": "1689967.0",
+     "amount": "1685050069.0",
+     "swing": "1.73",
+     "turnover_rate": "2.15",
+     "category": "行业板块"
+    },
+    {
+     "ts_code": "BK1623.DC",
+     "trade_date": "20200102",
+     "close": "465.71",
+     "open": "464.55",
+     "high": "469.17",
+     "low": "462.25",
+     "change": "3.46",
+     "pct_change": "0.75",
+     "vol": "176016.0",
+     "amount": "141924073.0",
+     "swing": "1.5",
+     "turnover_rate": "0.52",
+     "category": "行业板块"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 1624,
+    "distinct_headers": 1,
+    "modal_header_cols": 13,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "20250321",
+      "manifest_rows": 987,
+      "actual_rows": 986
+     },
+     {
+      "chunk": "20210205",
+      "manifest_rows": 777,
+      "actual_rows": 776
+     },
+     {
+      "chunk": "20250717",
+      "manifest_rows": 988,
+      "actual_rows": 987
+     },
+     {
+      "chunk": "20260520",
+      "manifest_rows": 1013,
+      "actual_rows": 1012
+     },
+     {
+      "chunk": "20220816",
+      "manifest_rows": 903,
+      "actual_rows": 902
+     },
+     {
+      "chunk": "20220316",
+      "manifest_rows": 879,
+      "actual_rows": 878
+     },
+     {
+      "chunk": "20240910",
+      "manifest_rows": 975,
+      "actual_rows": 974
+     },
+     {
+      "chunk": "20211230",
+      "manifest_rows": 862,
+      "actual_rows": 861
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 1.5,
+   "finished_at": "2026-09-18T00:07:22"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:22"
+}

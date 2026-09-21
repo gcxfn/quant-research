@@ -1,0 +1,382 @@
+{
+  "created_at": "2026-09-16T21:31:24+08:00",
+  "mode": "verify-only",
+  "archives": 21,
+  "verified": 21,
+  "files": 16332,
+  "bytes": 112636981157,
+  "records": [
+    {
+      "family": "bigquant",
+      "zip": "data/raw\\bigquant\\minute-bulk-20260915-1\\zips\\2010.zip",
+      "dest": "data/raw\\bigquant\\minute-bulk-20260915-1\\years\\2010",
+      "year": "2010",
+      "zip_bytes": null,
+      "archive_present": false,
+      "problems": [],
+      "zip_sha256_recorded": {
+        "sha256": "eaefbe8f4c3ccbfd95a77d1bac326977e4a86a778cf3fc95d9777f641a86f0e9",
+        "zip_name": "2010.zip",
+        "source": "manifest/zips.sha256.json"
+      },
+      "sha256_checked": 242,
+      "files": 242,
+      "bytes": 1880208147,
+      "seconds": 2.8,
+      "verified": true
+    },
+    {
+      "family": "bigquant",
+      "zip": "data/raw\\bigquant\\minute-bulk-20260915-1\\zips\\2011.zip",
+      "dest": "data/raw\\bigquant\\minute-bulk-20260915-1\\years\\2011",
+      "year": "2011",
+      "zip_bytes": null,
+      "archive_present": false,
+      "problems": [],
+      "zip_sha256_recorded": {
+        "sha256": "fd285231a0ebb5e3d57a6e7bce0fa5f3e08944f0e7d5f401f8588eedec1f5357",
+        "zip_name": "2011.zip",
+        "source": "manifest/zips.sha256.json"
+      },
+      "sha256_checked": 244,
+      "files": 244,
+      "bytes": 2052734728,
+      "seconds": 3.0,
+      "verified": true
+    },
+    {
+      "family": "bigquant",
+      "zip": "data/raw\\bigquant\\minute-bulk-20260915-1\\zips\\2012.zip",
+      "dest": "data/raw\\bigquant\\minute-bulk-20260915-1\\years\\2012",
+      "year": "2012",
+      "zip_bytes": null,
+      "archive_present": false,
+      "problems": [],
+      "zip_sha256_recorded": {
+        "sha256": "fa2c89b32288f13d65ce7c17d2f044e58c90d25cfd963fca62cd4adf540b51f8",
+        "zip_name": "2012.zip",
+        "source": "manifest/zips.sha256.json"
+      },
+      "sha256_checked": 243,
+      "files": 243,
+      "bytes": 2097348693,
+      "seconds": 3.1,
+      "verified": true
+    },
+    {
+      "family": "bigquant",
+      "zip": "data/raw\\bigquant\\minute-bulk-20260915-1\\zips\\2013.zip",
+      "dest": "data/raw\\bigquant\\minute-bulk-20260915-1\\years\\2013",
+      "year": "2013",
+      "zip_bytes": null,
+      "archive_present": false,
+      "problems": [],
+      "zip_sha256_recorded": {
+        "sha256": "5d642434266280b97e6eb0e55192bf01921c0e00bfa788fa268c2f296f9aa1d2",
+        "zip_name": "2013.zip",
+        "source": "manifest/zips.sha256.json"
+      },
+      "sha256_checked": 238,
+      "files": 238,
+      "bytes": 2219374510,
+      "seconds": 3.2,
+      "verified": true
+    },
+    {
+      "family": "bigquant",
+      "zip": "data/raw\\bigquant\\minute-bulk-20260915-1\\zips\\2014.zip",
+      "dest": "data/raw\\bigquant\\minute-bulk-20260915-1\\years\\2014",
+      "year": "2014",
+      "zip_bytes": null,
+      "archive_present": false,
+      "problems": [],
+      "zip_sha256_recorded": {
+        "sha256": "ef958297a86b8dfdff0091b05bf299f43e6171cc6df201c7fe2d516d232c2b5a",
+        "zip_name": "2014.zip",
+        "source": "manifest/zips.sha256.json"
+      },
+      "files": 245,
+      "bytes": 2313138217,
+      "seconds": 0.0,
+      "verified": true
+    },
+    {
+      "family": "bigquant",
+      "zip": "data/raw\\bigquant\\minute-bulk-20260915-1\\zips\\2015_1min.zip",
+      "dest": "data/raw\\bigquant\\minute-bulk-20260915-1\\years\\2015",
+      "year": "2015",
+      "zip_bytes": null,
+      "archive_present": false,
+      "problems": [],
+      "zip_sha256_recorded": {
+        "sha256": "693dbbedaab486a4811e8ca145bff515ee33761f4844ba8e5f20c109245b33b7",
+        "zip_name": "2015_1min.zip",
+        "source": "manifest/zips.sha256.json"
+      },
+      "files": 2607,
+      "bytes": 11462751778,
+      "seconds": 0.7,
+      "verified": true
+    },
+    {
+      "family": "bigquant",
+      "zip": "data/raw\\bigquant\\minute-bulk-20260915-1\\zips\\2016_1min.zip",
+      "dest": "data/raw\\bigquant\\minute-bulk-20260915-1\\years\\2016",
+      "year": "2016",
+      "zip_bytes": null,
+      "archive_present": false,
+      "problems": [],
+      "zip_sha256_recorded": {
+        "sha256": "e5c9dfaba6be1a9806d4bb889fb7b5c0e3040b513edf1f2b311ed96d6ae5b253",
+        "zip_name": "2016_1min.zip",
+        "source": "manifest/zips.sha256.json"
+      },
+      "files": 2834,
+      "bytes": 12606548479,
+      "seconds": 1.7,
+      "verified": true
+    },
+    {
+      "family": "bigquant",
+      "zip": "data/raw\\bigquant\\minute-bulk-20260915-1\\zips\\2018_1min.zip",
+      "dest": "data/raw\\bigquant\\minute-bulk-20260915-1\\years\\2018",
+      "year": "2018",
+      "zip_bytes": null,
+      "archive_present": false,
+      "problems": [],
+      "zip_sha256_recorded": {
+        "sha256": "4ae242d58832c48f4d9d7c073a6fa9d8cbf3e89ad17a522d8d9fe8ec598af9df",
+        "zip_name": "2018_1min.zip",
+        "source": "manifest/zips.sha256.json"
+      },
+      "files": 3370,
+      "bytes": 15742115160,
+      "seconds": 1.6,
+      "verified": true
+    },
+    {
+      "family": "bigquant",
+      "zip": "data/raw\\bigquant\\minute-bulk-20260915-1\\zips\\2019_1min.zip",
+      "dest": "data/raw\\bigquant\\minute-bulk-20260915-1\\years\\2019",
+      "year": "2019",
+      "zip_bytes": null,
+      "archive_present": false,
+      "problems": [],
+      "zip_sha256_recorded": {
+        "sha256": "919f698b06a5b9e7d637bbed93fd403824a0517d5a154f1849279083b93bbc1e",
+        "zip_name": "2019_1min.zip",
+        "source": "manifest/zips.sha256.json"
+      },
+      "files": 3572,
+      "bytes": 16903837159,
+      "seconds": 1.1,
+      "verified": true
+    },
+    {
+      "family": "bigquant",
+      "zip": "data/raw\\bigquant\\minute-bulk-20260915-1\\zips\\2025.zip",
+      "dest": "data/raw\\bigquant\\minute-bulk-20260915-1\\years\\2025",
+      "year": "2025",
+      "zip_bytes": null,
+      "archive_present": false,
+      "problems": [],
+      "zip_sha256_recorded": {
+        "sha256": "2eaba73dca4b228eb0065667d1a6941774f079475b9d9048cacfa3cb3da42712",
+        "zip_name": "2025.zip",
+        "source": "manifest/zips.sha256.json"
+      },
+      "files": 243,
+      "bytes": 5532103937,
+      "seconds": 0.1,
+      "verified": true
+    },
+    {
+      "family": "bigquant",
+      "zip": "data/raw\\bigquant\\minute-bulk-20260915-1\\zips\\2026.zip",
+      "dest": "data/raw\\bigquant\\minute-bulk-20260915-1\\years\\2026",
+      "year": "2026",
+      "zip_bytes": null,
+      "archive_present": false,
+      "problems": [],
+      "zip_sha256_recorded": {
+        "sha256": "e7fabd18aa9293f7568bddd2d5ae0f8e665af2552f10883879c17f4a0add7217",
+        "zip_name": "2026.zip",
+        "source": "manifest/zips.sha256.json"
+      },
+      "files": 63,
+      "bytes": 1522559054,
+      "seconds": 0.0,
+      "verified": true
+    },
+    {
+      "family": "user_minute_1m",
+      "zip": "data/raw\\user_minute_1m\\20260913-143215\\2015.zip",
+      "dest": "data/raw\\user_minute_1m\\20260913-143215\\2015",
+      "year": "2015",
+      "zip_bytes": null,
+      "archive_present": false,
+      "problems": [],
+      "zip_sha256_recorded": {
+        "sha256": "9a259d1ae54a6fe82b87814df369c3918d76829df66025bffd2e2565cbe45ef9",
+        "source": "docs/legacy/artifacts-evidence/ten-year-fixed-strategies-minute-accounts-20260913-12/manifest.json"
+      },
+      "files": 244,
+      "bytes": 2566304897,
+      "seconds": 0.2,
+      "verified": true
+    },
+    {
+      "family": "user_minute_1m",
+      "zip": "data/raw\\user_minute_1m\\20260913-143215\\2016.zip",
+      "dest": "data/raw\\user_minute_1m\\20260913-143215\\2016",
+      "year": "2016",
+      "zip_bytes": null,
+      "archive_present": false,
+      "problems": [],
+      "zip_sha256_recorded": {
+        "sha256": "764be2b9e019fc58fdb50d393ca5532b9e5b67c1249533359419e597c01fa3db",
+        "source": "docs/legacy/artifacts-evidence/ten-year-fixed-strategies-minute-accounts-20260913-12/manifest.json"
+      },
+      "files": 244,
+      "bytes": 2760973417,
+      "seconds": 0.1,
+      "verified": true
+    },
+    {
+      "family": "user_minute_1m",
+      "zip": "data/raw\\user_minute_1m\\20260913-143215\\2017.zip",
+      "dest": "data/raw\\user_minute_1m\\20260913-143215\\2017",
+      "year": "2017",
+      "zip_bytes": null,
+      "archive_present": false,
+      "problems": [],
+      "zip_sha256_recorded": {
+        "sha256": "8682d46f9020e5141a3a662666db10a72b42b2938429383f80139c54f115e73a",
+        "source": "docs/legacy/artifacts-evidence/ten-year-fixed-strategies-minute-accounts-20260913-12/manifest.json"
+      },
+      "files": 244,
+      "bytes": 3008155490,
+      "seconds": 0.0,
+      "verified": true
+    },
+    {
+      "family": "user_minute_1m",
+      "zip": "data/raw\\user_minute_1m\\20260913-143215\\2018.zip",
+      "dest": "data/raw\\user_minute_1m\\20260913-143215\\2018",
+      "year": "2018",
+      "zip_bytes": null,
+      "archive_present": false,
+      "problems": [],
+      "zip_sha256_recorded": {
+        "sha256": "ecdd10002189dc506861fb3f526d8b1213d8f9fe04fe782dc1c107b400ba8c40",
+        "source": "docs/legacy/artifacts-evidence/ten-year-fixed-strategies-minute-accounts-20260913-12/manifest.json"
+      },
+      "files": 243,
+      "bytes": 3149461553,
+      "seconds": 0.0,
+      "verified": true
+    },
+    {
+      "family": "user_minute_1m",
+      "zip": "data/raw\\user_minute_1m\\20260913-143215\\2019.zip",
+      "dest": "data/raw\\user_minute_1m\\20260913-143215\\2019",
+      "year": "2019",
+      "zip_bytes": null,
+      "archive_present": false,
+      "problems": [],
+      "zip_sha256_recorded": {
+        "sha256": "b0cbfcc6a5079fe7f0945cb5ecce69b0045926c4dfe73e8f45be838a5642d242",
+        "source": "docs/legacy/artifacts-evidence/ten-year-fixed-strategies-minute-accounts-20260913-12/manifest.json"
+      },
+      "files": 244,
+      "bytes": 3394071091,
+      "seconds": 0.0,
+      "verified": true
+    },
+    {
+      "family": "user_minute_1m",
+      "zip": "data/raw\\user_minute_1m\\20260913-2020-2024\\2020.zip",
+      "dest": "data/raw\\user_minute_1m\\20260913-2020-2024\\2020",
+      "year": "2020",
+      "zip_bytes": null,
+      "archive_present": false,
+      "problems": [],
+      "zip_sha256_recorded": {
+        "sha256": "b7546350f75736d2fdfd85cd86dd42324c6473d1d560eaefc355019566d3ada7",
+        "source": "docs/legacy/artifacts-evidence/ten-year-fixed-strategies-minute-accounts-20260913-12/manifest.json"
+      },
+      "files": 243,
+      "bytes": 3851798066,
+      "seconds": 0.1,
+      "verified": true
+    },
+    {
+      "family": "user_minute_1m",
+      "zip": "data/raw\\user_minute_1m\\20260913-2020-2024\\2021.zip",
+      "dest": "data/raw\\user_minute_1m\\20260913-2020-2024\\2021",
+      "year": "2021",
+      "zip_bytes": null,
+      "archive_present": false,
+      "problems": [],
+      "zip_sha256_recorded": {
+        "sha256": "181853296a79098e1061625b32c723794cabb22ce3b5bb45dee63052fbd5a79c",
+        "source": "docs/legacy/artifacts-evidence/ten-year-fixed-strategies-minute-accounts-20260913-12/manifest.json"
+      },
+      "files": 243,
+      "bytes": 4422875354,
+      "seconds": 0.1,
+      "verified": true
+    },
+    {
+      "family": "user_minute_1m",
+      "zip": "data/raw\\user_minute_1m\\20260913-2020-2024\\2022.zip",
+      "dest": "data/raw\\user_minute_1m\\20260913-2020-2024\\2022",
+      "year": "2022",
+      "zip_bytes": null,
+      "archive_present": false,
+      "problems": [],
+      "zip_sha256_recorded": {
+        "sha256": "c0060d66cfbe1bc4da3bd744e13d7fa020980836257ddfe74aafd1d7e9ef6c96",
+        "source": "docs/legacy/artifacts-evidence/ten-year-fixed-strategies-minute-accounts-20260913-12/manifest.json"
+      },
+      "files": 242,
+      "bytes": 4867792446,
+      "seconds": 0.0,
+      "verified": true
+    },
+    {
+      "family": "user_minute_1m",
+      "zip": "data/raw\\user_minute_1m\\20260913-2020-2024\\2023.zip",
+      "dest": "data/raw\\user_minute_1m\\20260913-2020-2024\\2023",
+      "year": "2023",
+      "zip_bytes": null,
+      "archive_present": false,
+      "problems": [],
+      "zip_sha256_recorded": {
+        "sha256": "3b6e1c2b44347c5345d5d17c815cb5ad9d2f182df1e3c017690ec6bb24660c92",
+        "source": "docs/legacy/artifacts-evidence/ten-year-fixed-strategies-minute-accounts-20260913-12/manifest.json"
+      },
+      "files": 242,
+      "bytes": 5030706386,
+      "seconds": 0.0,
+      "verified": true
+    },
+    {
+      "family": "user_minute_1m",
+      "zip": "data/raw\\user_minute_1m\\20260913-2020-2024\\2024.zip",
+      "dest": "data/raw\\user_minute_1m\\20260913-2020-2024\\2024",
+      "year": "2024",
+      "zip_bytes": null,
+      "archive_present": false,
+      "problems": [],
+      "zip_sha256_recorded": {
+        "sha256": "7cbb045690059eb03b2045d11dcc8cbb453ac08c392b40e3317561afcd916960",
+        "source": "docs/legacy/artifacts-evidence/ten-year-fixed-strategies-minute-accounts-20260913-12/manifest.json"
+      },
+      "files": 242,
+      "bytes": 5252122595,
+      "seconds": 0.0,
+      "verified": true
+    }
+  ]
+}

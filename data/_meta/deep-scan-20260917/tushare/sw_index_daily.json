@@ -1,0 +1,658 @@
+{
+ "source": "tushare",
+ "dataset": "sw_index_daily",
+ "batches": {
+  "tushare/sw_index_daily/20260909-r1": {
+   "batch_dir": "tushare/sw_index_daily/20260909-r1",
+   "mode": "full",
+   "files": {
+    "n_total": 32,
+    "n_csv": 31,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 4193050
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 date 有 12462 行 > 2024-12-31 (max=20260828); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 32,
+    "bytes": 4193050
+   },
+   "schema": {
+    "code": "Int64",
+    "date": "String",
+    "open": "Float64",
+    "high": "Float64",
+    "low": "Float64",
+    "close": "Float64",
+    "volume": "Float64",
+    "amount": "Float64"
+   },
+   "n_columns": 8,
+   "date_columns": [
+    "date"
+   ],
+   "numeric_columns_checked": [
+    "close",
+    "open",
+    "high",
+    "low",
+    "volume",
+    "amount",
+    "code"
+   ],
+   "rows_total": 55155,
+   "date_coverage": {
+    "date": {
+     "min": "20190102",
+     "max": "20260828",
+     "rows_gt_20241231": 12462,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 12462,
+   "numeric_magnitude": {
+    "close": {
+     "min": 449.85,
+     "max": 32381.04
+    },
+    "open": {
+     "min": 455.5,
+     "max": 33364.46
+    },
+    "high": {
+     "min": 452.4,
+     "max": 33772.04
+    },
+    "low": {
+     "min": 462.38,
+     "max": 33998.7
+    },
+    "volume": {
+     "min": 0.789,
+     "max": 269.9164
+    },
+    "amount": {
+     "min": 4.509,
+     "max": 12635.7018
+    },
+    "code": {
+     "min": 801010.0,
+     "max": 801980.0
+    }
+   },
+   "primary_key": null,
+   "sample_rows": [
+    {
+     "code": "801010",
+     "date": "2019-01-02",
+     "open": "2268.97",
+     "high": "2279.13",
+     "low": "2283.12",
+     "close": "2262.93",
+     "volume": "6.75211492",
+     "amount": "49.8441891794"
+    },
+    {
+     "code": "801010",
+     "date": "2019-01-03",
+     "open": "2265.85",
+     "high": "2269.78",
+     "low": "2289.5",
+     "close": "2262.24",
+     "volume": "7.57874739",
+     "amount": "54.650204166099996"
+    },
+    {
+     "code": "801010",
+     "date": "2019-01-04",
+     "open": "2318.38",
+     "high": "2251.27",
+     "low": "2318.38",
+     "close": "2251.27",
+     "volume": "11.38766039",
+     "amount": "78.2070216634"
+    },
+    {
+     "code": "801010",
+     "date": "2019-01-07",
+     "open": "2372.63",
+     "high": "2328.62",
+     "low": "2373.72",
+     "close": "2326.03",
+     "volume": "12.23544641",
+     "amount": "92.2030433121"
+    },
+    {
+     "code": "801010",
+     "date": "2019-01-08",
+     "open": "2355.36",
+     "high": "2354.84",
+     "low": "2365.81",
+     "close": "2342.08",
+     "volume": "9.11999888",
+     "amount": "65.9247054772"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 31,
+    "distinct_headers": 1,
+    "modal_header_cols": 8,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "chunk_801740.csv",
+      "manifest_rows": 1848,
+      "actual_rows": 1847
+     },
+     {
+      "chunk": "chunk_801080.csv",
+      "manifest_rows": 1848,
+      "actual_rows": 1847
+     },
+     {
+      "chunk": "chunk_801750.csv",
+      "manifest_rows": 1848,
+      "actual_rows": 1847
+     },
+     {
+      "chunk": "chunk_801790.csv",
+      "manifest_rows": 1848,
+      "actual_rows": 1847
+     },
+     {
+      "chunk": "chunk_801150.csv",
+      "manifest_rows": 1848,
+      "actual_rows": 1847
+     },
+     {
+      "chunk": "chunk_801140.csv",
+      "manifest_rows": 1848,
+      "actual_rows": 1847
+     },
+     {
+      "chunk": "chunk_801720.csv",
+      "manifest_rows": 1848,
+      "actual_rows": 1847
+     },
+     {
+      "chunk": "chunk_801130.csv",
+      "manifest_rows": 1848,
+      "actual_rows": 1847
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:44"
+  },
+  "tushare/sw_index_daily/20260909-r2": {
+   "batch_dir": "tushare/sw_index_daily/20260909-r2",
+   "mode": "full",
+   "files": {
+    "n_total": 32,
+    "n_csv": 31,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 4187489
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 date 有 12462 行 > 2024-12-31 (max=20260828); 冻结边界审查: 只报告不删除"
+    }
+   ],
+   "inventory_registration": {
+    "files": 32,
+    "bytes": 4187489
+   },
+   "schema": {
+    "code": "Int64",
+    "date": "String",
+    "open": "Float64",
+    "high": "Float64",
+    "low": "Float64",
+    "close": "Float64",
+    "volume": "Float64",
+    "amount": "Float64"
+   },
+   "n_columns": 8,
+   "date_columns": [
+    "date"
+   ],
+   "numeric_columns_checked": [
+    "close",
+    "open",
+    "high",
+    "low",
+    "volume",
+    "amount",
+    "code"
+   ],
+   "rows_total": 55155,
+   "date_coverage": {
+    "date": {
+     "min": "20190102",
+     "max": "20260828",
+     "rows_gt_20241231": 12462,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 12462,
+   "numeric_magnitude": {
+    "close": {
+     "min": 455.5,
+     "max": 33364.46
+    },
+    "open": {
+     "min": 452.4,
+     "max": 33772.04
+    },
+    "high": {
+     "min": 462.38,
+     "max": 33998.7
+    },
+    "low": {
+     "min": 449.85,
+     "max": 32381.04
+    },
+    "volume": {
+     "min": 0.789,
+     "max": 269.9164
+    },
+    "amount": {
+     "min": 4.509,
+     "max": 12635.7018
+    },
+    "code": {
+     "min": 801010.0,
+     "max": 801980.0
+    }
+   },
+   "primary_key": null,
+   "sample_rows": [
+    {
+     "code": "801010",
+     "date": "2019-01-02",
+     "open": "2279.13",
+     "high": "2283.12",
+     "low": "2262.93",
+     "close": "2268.97",
+     "volume": "6.75211492",
+     "amount": "49.8441891794"
+    },
+    {
+     "code": "801010",
+     "date": "2019-01-03",
+     "open": "2269.78",
+     "high": "2289.5",
+     "low": "2262.24",
+     "close": "2265.85",
+     "volume": "7.57874739",
+     "amount": "54.650204166099996"
+    },
+    {
+     "code": "801010",
+     "date": "2019-01-04",
+     "open": "2251.27",
+     "high": "2318.38",
+     "low": "2251.27",
+     "close": "2318.38",
+     "volume": "11.38766039",
+     "amount": "78.2070216634"
+    },
+    {
+     "code": "801010",
+     "date": "2019-01-07",
+     "open": "2328.62",
+     "high": "2373.72",
+     "low": "2326.03",
+     "close": "2372.63",
+     "volume": "12.23544641",
+     "amount": "92.2030433121"
+    },
+    {
+     "code": "801010",
+     "date": "2019-01-08",
+     "open": "2354.84",
+     "high": "2365.81",
+     "low": "2342.08",
+     "close": "2355.36",
+     "volume": "9.11999888",
+     "amount": "65.9247054772"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 31,
+    "distinct_headers": 1,
+    "modal_header_cols": 8,
+    "deviating_files": 0
+   },
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:44"
+  },
+  "tushare/sw_index_daily/20260909-r3": {
+   "batch_dir": "tushare/sw_index_daily/20260909-r3",
+   "mode": "full",
+   "files": {
+    "n_total": 33,
+    "n_csv": 32,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 11315278
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 date 有 12679 行 > 2024-12-31 (max=20260908); 冻结边界审查: 只报告不删除"
+    }
+   ],
+   "inventory_registration": {
+    "files": 33,
+    "bytes": 11315278
+   },
+   "schema": {
+    "code": "Int64",
+    "date": "String",
+    "open": "Float64",
+    "high": "Float64",
+    "low": "Float64",
+    "close": "Float64",
+    "volume": "Float64",
+    "amount": "Float64"
+   },
+   "n_columns": 8,
+   "date_columns": [
+    "date"
+   ],
+   "numeric_columns_checked": [
+    "close",
+    "open",
+    "high",
+    "low",
+    "volume",
+    "amount",
+    "code"
+   ],
+   "rows_total": 148404,
+   "date_coverage": {
+    "date": {
+     "min": "19991230",
+     "max": "20260908",
+     "rows_gt_20241231": 12679,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 12679,
+   "numeric_magnitude": {
+    "close": {
+     "min": 337.64,
+     "max": 33364.46
+    },
+    "open": {
+     "min": 337.17,
+     "max": 33772.04
+    },
+    "high": {
+     "min": 342.74,
+     "max": 33998.7
+    },
+    "low": {
+     "min": 335.87,
+     "max": 32381.04
+    },
+    "volume": {
+     "min": 0.032,
+     "max": 269.9164
+    },
+    "amount": {
+     "min": 0.2145,
+     "max": 12635.7018
+    },
+    "code": {
+     "min": 801010.0,
+     "max": 801980.0
+    }
+   },
+   "primary_key": null,
+   "sample_rows": [
+    {
+     "code": "801010",
+     "date": "1999-12-30",
+     "open": "1000.0",
+     "high": "1000.0",
+     "low": "1000.0",
+     "close": "1000.0",
+     "volume": "0.09864744",
+     "amount": "1.2396662266"
+    },
+    {
+     "code": "801010",
+     "date": "2000-01-04",
+     "open": "1001.98",
+     "high": "1035.36",
+     "low": "985.47",
+     "close": "1027.66",
+     "volume": "0.14011599",
+     "amount": "1.831998425"
+    },
+    {
+     "code": "801010",
+     "date": "2000-01-05",
+     "open": "1035.47",
+     "high": "1057.85",
+     "low": "1013.07",
+     "close": "1028.87",
+     "volume": "0.25330869",
+     "amount": "2.9044457439999998"
+    },
+    {
+     "code": "801010",
+     "date": "2000-01-06",
+     "open": "1025.38",
+     "high": "1070.79",
+     "low": "1011.0",
+     "close": "1065.67",
+     "volume": "0.30202752",
+     "amount": "4.214444842"
+    },
+    {
+     "code": "801010",
+     "date": "2000-01-07",
+     "open": "1076.06",
+     "high": "1117.71",
+     "low": "1058.83",
+     "close": "1106.19",
+     "volume": "0.64830486",
+     "amount": "8.7515782822"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 32,
+    "distinct_headers": 1,
+    "modal_header_cols": 8,
+    "deviating_files": 0
+   },
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:44"
+  },
+  "tushare/sw_index_daily/20260909-r4-verify": {
+   "batch_dir": "tushare/sw_index_daily/20260909-r4-verify",
+   "mode": "full",
+   "files": {
+    "n_total": 32,
+    "n_csv": 31,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 10906356
+   },
+   "issues": [],
+   "inventory_registration": {
+    "files": 32,
+    "bytes": 10906356
+   },
+   "schema": {
+    "代码": "Int64",
+    "日期": "String",
+    "收盘": "Float64",
+    "开盘": "Float64",
+    "最高": "Float64",
+    "最低": "Float64",
+    "成交量": "Float64",
+    "成交额": "Float64"
+   },
+   "n_columns": 8,
+   "date_columns": [],
+   "numeric_columns_checked": [
+    "代码",
+    "开盘",
+    "成交量",
+    "成交额",
+    "收盘",
+    "最低",
+    "最高"
+   ],
+   "rows_total": 143096,
+   "date_coverage": {},
+   "frozen_rows_gt_20241231_maxcol": 0,
+   "numeric_magnitude": {
+    "代码": {
+     "min": 801010.0,
+     "max": 801980.0
+    },
+    "开盘": {
+     "min": 337.17,
+     "max": 33772.04
+    },
+    "成交量": {
+     "min": 0.032,
+     "max": 269.9164
+    },
+    "成交额": {
+     "min": 0.2145,
+     "max": 12635.7018
+    },
+    "收盘": {
+     "min": 337.64,
+     "max": 33364.46
+    },
+    "最低": {
+     "min": 335.87,
+     "max": 32381.04
+    },
+    "最高": {
+     "min": 342.74,
+     "max": 33998.7
+    }
+   },
+   "primary_key": null,
+   "sample_rows": [
+    {
+     "代码": "801010",
+     "日期": "1999-12-30",
+     "收盘": "1000.0",
+     "开盘": "1000.0",
+     "最高": "1000.0",
+     "最低": "1000.0",
+     "成交量": "0.09864744",
+     "成交额": "1.2396662266"
+    },
+    {
+     "代码": "801010",
+     "日期": "2000-01-04",
+     "收盘": "1027.66",
+     "开盘": "1001.98",
+     "最高": "1035.36",
+     "最低": "985.47",
+     "成交量": "0.14011599",
+     "成交额": "1.831998425"
+    },
+    {
+     "代码": "801010",
+     "日期": "2000-01-05",
+     "收盘": "1028.87",
+     "开盘": "1035.47",
+     "最高": "1057.85",
+     "最低": "1013.07",
+     "成交量": "0.25330869",
+     "成交额": "2.9044457439999998"
+    },
+    {
+     "代码": "801010",
+     "日期": "2000-01-06",
+     "收盘": "1065.67",
+     "开盘": "1025.38",
+     "最高": "1070.79",
+     "最低": "1011.0",
+     "成交量": "0.30202752",
+     "成交额": "4.214444842"
+    },
+    {
+     "代码": "801010",
+     "日期": "2000-01-07",
+     "收盘": "1106.19",
+     "开盘": "1076.06",
+     "最高": "1117.71",
+     "最低": "1058.83",
+     "成交量": "0.64830486",
+     "成交额": "8.7515782822"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 31,
+    "distinct_headers": 1,
+    "modal_header_cols": 8,
+    "deviating_files": 0
+   },
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:44"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:44"
+}

@@ -1,0 +1,109 @@
+{
+ "source": "xiaodefa",
+ "dataset": "index_classify",
+ "batches": {
+  "xiaodefa/index_classify/20260913-bulk1": {
+   "batch_dir": "xiaodefa/index_classify/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 3,
+    "n_csv": 2,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 43376
+   },
+   "issues": [],
+   "inventory_registration": {
+    "files": 3,
+    "bytes": 43376
+   },
+   "schema": {
+    "index_code": "String",
+    "industry_name": "String",
+    "level": "String",
+    "industry_code": "Int64",
+    "is_pub": "String",
+    "parent_code": "Int64",
+    "src": "String"
+   },
+   "n_columns": 7,
+   "date_columns": [],
+   "numeric_columns_checked": [
+    "industry_code",
+    "parent_code"
+   ],
+   "rows_total": 870,
+   "date_coverage": {},
+   "frozen_rows_gt_20241231_maxcol": 0,
+   "numeric_magnitude": {
+    "industry_code": {
+     "min": 110000.0,
+     "max": 770302.0
+    },
+    "parent_code": {
+     "min": 0.0,
+     "max": 770300.0
+    }
+   },
+   "primary_key": null,
+   "sample_rows": [
+    {
+     "index_code": "801010.SI",
+     "industry_name": "农林牧渔",
+     "level": "L1",
+     "industry_code": "110000",
+     "is_pub": null,
+     "parent_code": "0",
+     "src": "SW2014"
+    },
+    {
+     "index_code": "801011.SI",
+     "industry_name": "林业",
+     "level": "L2",
+     "industry_code": "110300",
+     "is_pub": null,
+     "parent_code": "110000",
+     "src": "SW2014"
+    },
+    {
+     "index_code": "801012.SI",
+     "industry_name": "农产品加工",
+     "level": "L2",
+     "industry_code": "110500",
+     "is_pub": null,
+     "parent_code": "110000",
+     "src": "SW2014"
+    },
+    {
+     "index_code": "801013.SI",
+     "industry_name": "农业综合",
+     "level": "L2",
+     "industry_code": "110600",
+     "is_pub": null,
+     "parent_code": "110000",
+     "src": "SW2014"
+    },
+    {
+     "index_code": "801014.SI",
+     "industry_name": "饲料",
+     "level": "L2",
+     "industry_code": "110400",
+     "is_pub": null,
+     "parent_code": "110000",
+     "src": "SW2014"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:07:38"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:38"
+}

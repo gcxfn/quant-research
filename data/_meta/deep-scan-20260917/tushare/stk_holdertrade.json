@@ -1,0 +1,240 @@
+{
+ "source": "tushare",
+ "dataset": "stk_holdertrade",
+ "batches": {
+  "tushare/stk_holdertrade/20260909-r3": {
+   "batch_dir": "tushare/stk_holdertrade/20260909-r3",
+   "mode": "full",
+   "files": {
+    "n_total": 130,
+    "n_csv": 129,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 14753573
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 ann_date 有 21356 行 > 2024-12-31 (max=20260909); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['ts_code', 'ann_date', 'holder_name'] 重复: 17435 个键 / 73884 行"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 130,
+    "bytes": 14753573
+   },
+   "schema": {
+    "ts_code": "String",
+    "ann_date": "Int64",
+    "holder_name": "String",
+    "holder_type": "String",
+    "in_de": "String",
+    "change_vol": "Float64",
+    "change_ratio": "Float64",
+    "after_share": "Float64",
+    "after_ratio": "Float64",
+    "avg_price": "Float64",
+    "total_share": "Float64"
+   },
+   "n_columns": 11,
+   "date_columns": [
+    "ann_date"
+   ],
+   "numeric_columns_checked": [
+    "after_ratio",
+    "after_share",
+    "ann_date",
+    "avg_price",
+    "change_ratio",
+    "change_vol",
+    "total_share"
+   ],
+   "rows_total": 149108,
+   "date_coverage": {
+    "ann_date": {
+     "min": "20160101",
+     "max": "20260909",
+     "rows_gt_20241231": 21356,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 21356,
+   "numeric_magnitude": {
+    "after_ratio": {
+     "min": 0.0,
+     "max": 348.2797
+    },
+    "after_share": {
+     "min": 0.0,
+     "max": 188791906533.0
+    },
+    "ann_date": {
+     "min": 20160101.0,
+     "max": 20260909.0
+    },
+    "avg_price": {
+     "min": 0.0152,
+     "max": 1307.7848
+    },
+    "change_ratio": {
+     "min": 0.0,
+     "max": 58.2906
+    },
+    "change_vol": {
+     "min": 1.0,
+     "max": 4000000000.0
+    },
+    "total_share": {
+     "min": 0.0,
+     "max": 188791906533.0
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "ann_date",
+    "holder_name"
+   ],
+   "duplicate_keys": 17435,
+   "duplicate_rows": 73884,
+   "sample_rows": [
+    {
+     "ts_code": "000048.SZ",
+     "ann_date": "20160101",
+     "holder_name": "京基集团有限公司",
+     "holder_type": "C",
+     "in_de": "IN",
+     "change_vol": "19305501.0",
+     "change_ratio": "5.0541",
+     "after_share": "38213531.0",
+     "after_ratio": "10.0041",
+     "avg_price": null,
+     "total_share": "38213531.0"
+    },
+    {
+     "ts_code": "300006.SZ",
+     "ann_date": "20160101",
+     "holder_name": "国金莱美药业1号集合资产管理计划",
+     "holder_type": "C",
+     "in_de": "IN",
+     "change_vol": "1601883.0",
+     "change_ratio": "1.2499",
+     "after_share": null,
+     "after_ratio": null,
+     "avg_price": "40.94",
+     "total_share": null
+    },
+    {
+     "ts_code": "300226.SZ",
+     "ann_date": "20160101",
+     "holder_name": "高波",
+     "holder_type": "G",
+     "in_de": "IN",
+     "change_vol": "17300.0",
+     "change_ratio": "0.0119",
+     "after_share": "19100.0",
+     "after_ratio": "0.0132",
+     "avg_price": "51.992",
+     "total_share": "19100.0"
+    },
+    {
+     "ts_code": "300226.SZ",
+     "ann_date": "20160101",
+     "holder_name": "朱军红",
+     "holder_type": "G",
+     "in_de": "IN",
+     "change_vol": "104500.0",
+     "change_ratio": "0.072",
+     "after_share": "33375.0",
+     "after_ratio": "0.023",
+     "avg_price": "52.844",
+     "total_share": "7406025.0"
+    },
+    {
+     "ts_code": "300293.SZ",
+     "ann_date": "20160101",
+     "holder_name": "民生证券增持16号定向资产管理计划",
+     "holder_type": "C",
+     "in_de": "IN",
+     "change_vol": "2491415.0",
+     "change_ratio": "2.1227",
+     "after_share": null,
+     "after_ratio": null,
+     "avg_price": "19.45",
+     "total_share": null
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 129,
+    "distinct_headers": 1,
+    "modal_header_cols": 11,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "201810",
+      "manifest_rows": 771,
+      "actual_rows": 770
+     },
+     {
+      "chunk": "202208",
+      "manifest_rows": 1041,
+      "actual_rows": 1040
+     },
+     {
+      "chunk": "202107",
+      "manifest_rows": 1723,
+      "actual_rows": 1722
+     },
+     {
+      "chunk": "202101",
+      "manifest_rows": 1640,
+      "actual_rows": 1639
+     },
+     {
+      "chunk": "201602",
+      "manifest_rows": 397,
+      "actual_rows": 396
+     },
+     {
+      "chunk": "201901",
+      "manifest_rows": 1343,
+      "actual_rows": 1342
+     },
+     {
+      "chunk": "202312",
+      "manifest_rows": 816,
+      "actual_rows": 815
+     },
+     {
+      "chunk": "202301",
+      "manifest_rows": 1121,
+      "actual_rows": 1120
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 0.1,
+   "finished_at": "2026-09-18T00:09:44"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:44"
+}

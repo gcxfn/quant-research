@@ -1,0 +1,195 @@
+{
+ "source": "xiaodefa",
+ "dataset": "fund_company",
+ "batches": {
+  "xiaodefa/fund_company/20260913-bulk1": {
+   "batch_dir": "xiaodefa/fund_company/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 2,
+    "n_csv": 1,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 96136
+   },
+   "issues": [],
+   "inventory_registration": {
+    "files": 2,
+    "bytes": 96136
+   },
+   "schema": {
+    "name": "String",
+    "shortname": "String",
+    "province": "String",
+    "city": "String",
+    "address": "String",
+    "phone": "String",
+    "office": "String",
+    "website": "String",
+    "chairman": "String",
+    "manager": "String",
+    "reg_capital": "Float64",
+    "setup_date": "Int64",
+    "end_date": "Int64",
+    "employees": "Float64",
+    "main_business": "String",
+    "org_code": "String",
+    "credit_code": "String"
+   },
+   "n_columns": 17,
+   "date_columns": [
+    "setup_date",
+    "end_date"
+   ],
+   "numeric_columns_checked": [
+    "employees",
+    "end_date",
+    "reg_capital",
+    "setup_date"
+   ],
+   "rows_total": 204,
+   "date_coverage": {
+    "setup_date": {
+     "min": "19900511",
+     "max": "20241216",
+     "rows_gt_20241231": 0,
+     "null_rows": 0
+    },
+    "end_date": {
+     "min": "20091229",
+     "max": "20091229",
+     "rows_gt_20241231": 0,
+     "null_rows": 203
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 0,
+   "numeric_magnitude": {
+    "employees": {
+     "min": 30.0,
+     "max": 4090.0
+    },
+    "end_date": {
+     "min": 20091229.0,
+     "max": 20091229.0
+    },
+    "reg_capital": {
+     "min": 4800.0,
+     "max": 1617400.0
+    },
+    "setup_date": {
+     "min": 19900511.0,
+     "max": 20241216.0
+    }
+   },
+   "primary_key": null,
+   "sample_rows": [
+    {
+     "name": "BMO Global Asset Management (Asia) Limited",
+     "shortname": "BMO Global Asset Management",
+     "province": "中国香港特别行政区",
+     "city": "中国香港特别行政区",
+     "address": "香港中环交易广场第一期36楼及3808室",
+     "phone": null,
+     "office": null,
+     "website": null,
+     "chairman": null,
+     "manager": null,
+     "reg_capital": null,
+     "setup_date": "19910917",
+     "end_date": null,
+     "employees": null,
+     "main_business": null,
+     "org_code": null,
+     "credit_code": null
+    },
+    {
+     "name": "Lyxor Asset Management",
+     "shortname": "领先资产",
+     "province": "中国香港特别行政区",
+     "city": "中国香港特别行政区",
+     "address": "法国",
+     "phone": null,
+     "office": null,
+     "website": "https://www.lyxor.com/en",
+     "chairman": null,
+     "manager": null,
+     "reg_capital": null,
+     "setup_date": "19980612",
+     "end_date": null,
+     "employees": null,
+     "main_business": null,
+     "org_code": null,
+     "credit_code": null
+    },
+    {
+     "name": "Premia Partners Company Limited",
+     "shortname": "Premia Partners",
+     "province": "中国香港特别行政区",
+     "city": "中国香港特别行政区",
+     "address": "香港中环都爹利街13号乐成行12楼",
+     "phone": null,
+     "office": "香港中环都爹利街13号乐成行12楼",
+     "website": null,
+     "chairman": null,
+     "manager": null,
+     "reg_capital": null,
+     "setup_date": "20160819",
+     "end_date": null,
+     "employees": null,
+     "main_business": null,
+     "org_code": null,
+     "credit_code": null
+    },
+    {
+     "name": "万家基金管理有限公司",
+     "shortname": "万家基金",
+     "province": "上海市",
+     "city": "上海市",
+     "address": "中国(上海)自由贸易试验区浦电路360号8层(名义楼层9层)",
+     "phone": "021-38909670;021-38909626;4008880800;021-3890977",
+     "office": "中国上海市浦东新区浦电路360号陆家嘴投资大厦9楼、15楼、16楼",
+     "website": "https://www.wjasset.com",
+     "chairman": "陈广益",
+     "manager": "莫海波",
+     "reg_capital": "30000.0",
+     "setup_date": "20020823",
+     "end_date": null,
+     "employees": "351.0",
+     "main_business": "基金募集、基金销售、资产管理和中国证监会许可的其他业务。\r\n【依法须经批准的项目，经相关部门批准",
+     "org_code": "74265965-6",
+     "credit_code": "913100007426596561"
+    },
+    {
+     "name": "上银基金管理有限公司",
+     "shortname": "上银基金",
+     "province": "上海市",
+     "city": "上海市",
+     "address": "上海市浦东新区秀浦路2388号3幢528室",
+     "phone": "021-60231999;021-60659000;021-60659099",
+     "office": "上海市浦东新区银城中路168号上海银行大厦40-42楼",
+     "website": "http://www.boscam.com.cn",
+     "chairman": "武俊",
+     "manager": "王稼秋",
+     "reg_capital": "30000.0",
+     "setup_date": "20130830",
+     "end_date": null,
+     "employees": "154.0",
+     "main_business": "基金募集、基金销售、资产管理、特定客户资产管理和中国证监会许可的其他业务。\r\n【依法须经批准的项",
+     "org_code": "07648521-9",
+     "credit_code": "913101150764852191"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:07:22"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:22"
+}

@@ -1,0 +1,196 @@
+{
+ "source": "xiaodefa",
+ "dataset": "stk_surv",
+ "batches": {
+  "xiaodefa/stk_surv/20260913-bulk1": {
+   "batch_dir": "xiaodefa/stk_surv/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 1168,
+    "n_csv": 1167,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 82926472
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 surv_date 有 116712 行 > 2024-12-31 (max=20260911); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['ts_code'] 重复: 3956 个键 / 385579 行"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 1168,
+    "bytes": 82926472
+   },
+   "schema": {
+    "ts_code": "String",
+    "name": "String",
+    "surv_date": "Int64",
+    "fund_visitors": "String",
+    "rece_place": "String",
+    "rece_mode": "String",
+    "rece_org": "String",
+    "org_type": "String",
+    "comp_rece": "String"
+   },
+   "n_columns": 9,
+   "date_columns": [
+    "surv_date"
+   ],
+   "numeric_columns_checked": [
+    "surv_date"
+   ],
+   "rows_total": 385967,
+   "date_coverage": {
+    "surv_date": {
+     "min": "20210805",
+     "max": "20260911",
+     "rows_gt_20241231": 116712,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 116712,
+   "numeric_magnitude": {
+    "surv_date": {
+     "min": 20210805.0,
+     "max": 20260911.0
+    }
+   },
+   "primary_key": [
+    "ts_code"
+   ],
+   "duplicate_keys": 3956,
+   "duplicate_rows": 385579,
+   "sample_rows": [
+    {
+     "ts_code": "000661.SZ",
+     "name": "长春高新",
+     "surv_date": "20210805",
+     "fund_visitors": "--",
+     "rece_place": "电话及网络会议",
+     "rece_mode": "电话会议",
+     "rece_org": "全国社会保障基金理事会",
+     "org_type": "国务院直属事业单位",
+     "comp_rece": "公司董事会秘书 张德申,公司子公司金赛药业董事、总经理 金磊"
+    },
+    {
+     "ts_code": "000661.SZ",
+     "name": "长春高新",
+     "surv_date": "20210805",
+     "fund_visitors": "--",
+     "rece_place": "电话及网络会议",
+     "rece_mode": "电话会议",
+     "rece_org": "杭州弘厚投资",
+     "org_type": "投资公司",
+     "comp_rece": "公司董事会秘书 张德申,公司子公司金赛药业董事、总经理 金磊"
+    },
+    {
+     "ts_code": "000661.SZ",
+     "name": "长春高新",
+     "surv_date": "20210805",
+     "fund_visitors": "--",
+     "rece_place": "电话及网络会议",
+     "rece_mode": "电话会议",
+     "rece_org": "中睿合银",
+     "org_type": "投资公司",
+     "comp_rece": "公司董事会秘书 张德申,公司子公司金赛药业董事、总经理 金磊"
+    },
+    {
+     "ts_code": "000661.SZ",
+     "name": "长春高新",
+     "surv_date": "20210805",
+     "fund_visitors": "--",
+     "rece_place": "电话及网络会议",
+     "rece_mode": "电话会议",
+     "rece_org": "上海汐泰投资",
+     "org_type": "投资公司",
+     "comp_rece": "公司董事会秘书 张德申,公司子公司金赛药业董事、总经理 金磊"
+    },
+    {
+     "ts_code": "000661.SZ",
+     "name": "长春高新",
+     "surv_date": "20210805",
+     "fund_visitors": "--",
+     "rece_place": "电话及网络会议",
+     "rece_mode": "电话会议",
+     "rece_org": "元达信资本",
+     "org_type": "资产管理公司",
+     "comp_rece": "公司董事会秘书 张德申,公司子公司金赛药业董事、总经理 金磊"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 1167,
+    "distinct_headers": 1,
+    "modal_header_cols": 9,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "20220922",
+      "manifest_rows": 400,
+      "actual_rows": 399
+     },
+     {
+      "chunk": "20240403",
+      "manifest_rows": 400,
+      "actual_rows": 399
+     },
+     {
+      "chunk": "20231031",
+      "manifest_rows": 400,
+      "actual_rows": 399
+     },
+     {
+      "chunk": "20260727",
+      "manifest_rows": 65,
+      "actual_rows": 64
+     },
+     {
+      "chunk": "20230816",
+      "manifest_rows": 400,
+      "actual_rows": 399
+     },
+     {
+      "chunk": "20210818",
+      "manifest_rows": 400,
+      "actual_rows": 399
+     },
+     {
+      "chunk": "20221103",
+      "manifest_rows": 400,
+      "actual_rows": 399
+     },
+     {
+      "chunk": "20241017",
+      "manifest_rows": 400,
+      "actual_rows": 399
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 0.8,
+   "finished_at": "2026-09-18T00:08:41"
+  }
+ },
+ "updated_at": "2026-09-18T00:08:41"
+}

@@ -1,0 +1,40 @@
+{
+  "experiment_id": "exp-20260918-p2r14-minute-structure",
+  "name": "P2-R14 minute microstructure round (6 features via single merged projection scan)",
+  "prereg": "docs/research/exp-20260918-p2r14-minute-structure-prereg.md",
+  "preregistered_at": "2026-09-18T08:10:00+08:00",
+  "frozen_at": "2026-09-18T08:10:00+08:00",
+  "status": "frozen",
+  "authority_chain": {
+    "proposals": ["vendor-3 H-V3-01..06（artifacts/runs/20260918T055848-hypomarket-v3-intraday）", "量尺与授权见 exp-20260918-hypothesis-market-charter.md"],
+    "datasets": [
+      { "path": "user_minute_1m/（2,431 日 parquet）", "role": "分钟投影扫描源（经 data/_meta sha256 台账核验）" },
+      { "path": "data/processed/halfday-1130-20260918/halfday_1130.parquet", "sha256": "f3d4ec036594a31446e728af498039378f635fe99adc3b14ce4e134c8836dda2", "role": "limit_up/limit_down/T1 口径/am 字段交叉" },
+      { "path": "data/processed/baostock-daily-20260917/daily_2015_2024.parquet", "manifest_sha256": "2b89bef9ef6f4ae58b69ca43021552db067b185551c92a05ef6ac71d2be59bd3", "role": "T2 标签/池/ST/停牌" },
+      { "path": "data/raw/xiaodefa/stk_auction_c/20260913-bulk1", "role": "首 bar 竞价量交叉核验（抽样 3 日）" }
+    ],
+    "freeze_boundary": "2025-01-01 及以后数据不得进入任何计算路径",
+    "regime_break": "沪市收盘集合竞价 2018-08-20 起：U1/U2 含分段臂，主判定全样本+披露"
+  },
+  "seed": 17,
+  "universe": {
+    "boards": "沪深主板（剔创业板 300/301/302、科创 688/689、北交所、ST、停牌，历史时点）",
+    "liquidity": "20 日中位成交额 >= 50,000,000 CNY；收盘 >= 2 元；上市满 120 交易日"
+  },
+  "output_table": "data/processed/minute-feats-20260918/minute_feats.parquet（含 manifest）",
+  "units": {
+    "U1": { "hyp": "H-40", "name": "尾盘量占比", "target": "T2（次日 open_930->次日 close）", "gates": { "ic": "rank IC <= -0.02 且 NW(5)|t|>=3", "decile": "方向对齐年化毛 >= 4% 且同号月 >= 60%", "increment": "对 log(amount)+当日收益正交化残差 |IC| >= 0.015" } },
+    "U2": { "hyp": "H-41", "name": "拉尾盘事件", "event": "last30_ret >= +1.5% 且全日收益 < 9% 且 tail_amt_share >= 20%", "control": "同日全日收益 ±0.5% 桶未触发", "gates": { "primary": "事件-对照 T2 <= -0.5pp 且 NW|t|>=3", "years": "逐年同号 >= 4/6", "base_rate": "< 0.5% 判样本不足不立项" } },
+    "U3": { "hyp": "H-42", "name": "触跌停冻结", "event": "pm_touch_limit_down（low <= limit_down x (1+2e-4)）", "control": "当日收益 ±0.5% 桶且 low > limit_down x (1+0.3%)", "gates": { "primary": "次日差 <= -0.5pp 且 t>=3", "years": "同号 >= 4/6", "sample": ">= 500 股票日；最重单月 >30% 登记聚集" } },
+    "U4": { "hyp": "H-43", "name": "涨停三分（裁决）", "groups": "封板/炸板/未触（5-9.5% 全日收益桶对照）", "gates": { "dual": "炸板组 T2-对照 <= -0.5pp 且 封板组 >= 对照+0.5pp 同时成立", "adjudication": "无论门过与否写 F09-T2 混合假象裁决结论" } },
+    "U5": { "hyp": "H-44", "name": "早盘波动集中度", "target": "次日振幅", "gates": { "ic": "rank IC >= +0.02 且 t>=3；正交化残差 >= +0.01（vs vol20+当日振幅）", "use": "最弱上午十分位宿主代理上四分位剔除后 P5 改善 >= 10% 且净均损失 <= 0.5pp", "pass_rule": "两门全过" } },
+    "U6": { "hyp": "H-45", "name": "竞价爆量", "event": "first_bar_vol >= 5 x first_bar_vol_med20", "gates": { "primary": "当日 T1 - 同池等权 <= -0.3pp 且 t>=3", "orthogonality": "与 F03/F07 秩相关 rho < 0.7 且控制 F03 后残差 >= 0.15pp 同号——不满足则降级执行备注不占存活" } }
+  },
+  "windows": { "dev": ["2015-01-05", "2020-12-31"], "val": ["2021-01-01", "2024-12-31"], "val_rule": "仅过门单元一次性消费；消费序位以实际披露" },
+  "pass_rule": ">=2 单元过门 -> 微观结构过滤线有候选（组合资格）",
+  "trials_cumulative_before": 183,
+  "trials_counted_this_round": 6,
+  "trials_cumulative_after": 189,
+  "stop_rule": "<2 过门 -> 按结果登记（有效=已验证过滤/标记，无效=证伪）；不自动开组合轮（宿主待 R12/R16 判定）；无盈利声称",
+  "limits": { "max_runtime_s": 1800, "max_ram_gb": 8, "extraction_budget": "投影扫描实测 325s/5.3GB；抽取冒烟 3 日先行" }
+}

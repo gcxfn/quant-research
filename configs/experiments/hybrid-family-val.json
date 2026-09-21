@@ -1,0 +1,41 @@
+{
+  "experiment_id": "exp-20260919-hybrid-family-val",
+  "frozen_at": "2026-09-19 15:05",
+  "prereg": "docs/research/exp-20260919-hybrid-family-val-prereg.md",
+  "authority": "user ruling 2026-09-19: approve one-shot val consumption for the pure-ETF dev survivors",
+  "engine": {
+    "module": "src/quant/backtest/band_engine.py",
+    "version": "band_engine v1.3",
+    "sha256": "84a2443ac28fe1b87e4a18f988fd38cc67cf706d5778e262f11465147234082c",
+    "check": "before+after each run"
+  },
+  "window": {
+    "dev_anchor": ["2015-01-05", "2020-12-31"],
+    "val": ["2021-01-04", "2024-12-31"]
+  },
+  "inherited_from_v2_v3": [
+    "universe UNI6 + exclusions", "band table (all 0.10)", "fees",
+    "Design B leg semantics", "rotation intent rules (priority, expiry)",
+    "runner assertions x3", "dividend detection rule (preclose<prev_close, 1.0<ratio<=1.06)"
+  ],
+  "configs": [
+    {"id": "ROT-05", "stock": null, "legs": {"sh.511010": 0.25, "sh.518880": 0.25}, "rotation": {"universe": "UNI6", "top_n": 2, "weight": 0.25, "lookback_m": 6}, "role": "dev regression anchor (runs on dev window, byte-equal vs v3 R3-A0) + val candidate"},
+    {"id": "R3-05", "stock": null, "legs": {"sh.518880": 0.25}, "rotation": {"universe": "UNI6", "top_n": 3, "weight": 0.25, "lookback_m": 6}},
+    {"id": "R3-06", "stock": null, "legs": {"sh.511010": 0.15, "sh.518880": 0.25}, "rotation": {"universe": "UNI6", "top_n": 3, "weight": 0.20, "lookback_m": 6}}
+  ],
+  "excluded_from_this_consumption": [
+    {"id": ["H2-01", "H2-03", "H2-04"], "reason": "stock-engine component requires the R16 signal-layer val port; separate prereg + approval"}
+  ],
+  "val_gates_source": "r16.evaluate_val_gates verbatim (3 gates)",
+  "b1m_val": {
+    "construction": "simulate_r16(fractional=True, fee_bands=B1_FEE_SCHEDULE_RATE_ONLY, T200-40)",
+    "port_verification": "dev-window recompute must reproduce r16_metrics configs.C05 b1m_* fields to 1e-9 before val data touched"
+  },
+  "corporate_actions_val": [
+    {"symbol": "sh.513100", "date": "2022-01-14", "ratio": 5, "factor_jump": 5.0019, "source": "Guotai announcement 2022-01-04/14 (contract sec9 rev1)"},
+    {"symbol": "sh.513500", "date": "2022-03-30", "ratio": 2, "factor_jump": 1.9848, "source": "Bosera announcement 2022-03-18/30 (contract sec9 rev1)"}
+  ],
+  "dividend_expect_val": {"sh.510050": 4, "sh.510300": 4, "sh.510880": 4},
+  "dividend_expect_dev": {"sh.510050": 5, "sh.510300": 6, "sh.510880": 6, "sh.511010": 1},
+  "trials_cumulative_after": 241
+}

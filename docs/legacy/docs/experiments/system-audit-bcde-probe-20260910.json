@@ -1,0 +1,82 @@
+{
+  "B_constant": {
+    "exact_variance": "0",
+    "actual_zscore": -0.9916316520429012,
+    "actual_sign": -1.0
+  },
+  "B_nonfinite_bars_errors": [],
+  "B_future_mutation": true,
+  "C_bootstrap_independent": {
+    "match": true,
+    "lower": 0.0,
+    "upper": 0.23214285714285715
+  },
+  "C_nan_gate": true,
+  "C_train_ci": [
+    0.025,
+    0.975
+  ],
+  "C_tied_spread_order": [
+    1.7999999999999998,
+    -1.7999999999999998
+  ],
+  "C_lockbox": {
+    "builder_calls_after_two_attempts": 2,
+    "ledger_exists": false,
+    "same_set_reordered_hash_equal": false
+  },
+  "D_suspended_trade": [
+    0.10000000000000009,
+    "executed",
+    false
+  ],
+  "D_suspended_monthly": {
+    "entry": "2020-02-03",
+    "exit_target": "2020-03-02",
+    "n_hold": 1,
+    "n_executed": 1,
+    "turnover": 1.0,
+    "gross": 0.10000000000000009,
+    "net": 0.0983000000000001,
+    "bench_gross": 0.10000000000000009
+  },
+  "B_axis_missing_session": [
+    "2020-01-02",
+    "2020-01-06"
+  ],
+  "D_ledger": {
+    "expected_cash": 2089.45,
+    "actual_cash": 2089.45,
+    "fees": 10.55
+  },
+  "D_t0": {
+    "buy_cost": 1005.0,
+    "sell_proceeds": 1094.45,
+    "breakeven": 10.105052526263131
+  },
+  "code_files": {
+    "experiments\\factor_miner\\backtest.py": "725e6f1876349021fd955bcd668fd2cfbd6c8ba3d2f01be56fca60b5bfb4b1a7",
+    "experiments\\factor_miner\\compiler.py": "52cb307557cea71068a17aef15ec17f96e9eb0edafa586c908ba837f26aa65d0",
+    "experiments\\factor_miner\\data_fields.py": "0b70bc95ddecc116f1d292927f24eca6eac9c815f8abce9098a2a7857b5b067f",
+    "experiments\\factor_miner\\director.py": "2940de4f3a1b4fc29c41821f725109172a094b195050f7fce06b793886935a8f",
+    "experiments\\factor_miner\\engine.py": "bb1cc1b2299aea437ff3fde1b05030e6cc303965c5f41eefdb27dde310fa75f1",
+    "experiments\\factor_miner\\event_stats.py": "c7e1d3e5a1373e22d373f40e17b1bf391fd15549a0e8b9358c3ddac93c3dad22",
+    "experiments\\factor_miner\\operators.py": "49eef65ab53be4691fbcc7eddcc2beb42a503ca3fd9e5a06713d78495943aaee",
+    "experiments\\factor_miner\\operators_np.py": "e8ba0b69c8cdcae3b7ef31df6370552d70ab035d16d66629fef7a3417d1f79a6",
+    "experiments\\factor_miner\\partition.py": "ab76914bfbf8aaf64b11e5a67e7a360f447eb75ba0eadbf119254eb071930bb3",
+    "experiments\\factor_miner\\registry.py": "73309cf4100ab0ab77ea57846c5a38d4e587a561d77af5fd109ef3bb32305a21",
+    "experiments\\factor_miner\\schema.py": "c5f908d1f2625a58ab3791ce1d92978f2856de079409fdcf24e4bc1b83f22ff6",
+    "experiments\\factor_miner\\stats.py": "84d32ce548b69574996b73840009aeb267661e687f5d94e310ea4ee1ff430276",
+    "experiments\\factor_miner\\stats_np.py": "ebdc91603e7936ea3e13a7ed65171558666a851fd825fdda227ae6a0403c49ee",
+    "experiments\\factor_miner\\validator.py": "b1f7b22d34dcf9cfd467843fae20d76d06ebb5958b1591c2533d31d6c6cdf2ff",
+    "experiments\\factor_miner\\__init__.py": "4dd6502774d23bb7214c974248c4121e1814b6c37fb18536cd1069adb01f30c7",
+    "quant\\history.py": "197c2eb8a05c711f5f3ad3abefefd57e0e3431e22c42b44daf236b45fd980127",
+    "quant\\validation.py": "b8293270bde68bba3dd849cd75fae70f5ab2e0c1b6c0ba3bf9dca087496dc966",
+    "quant\\execution.py": "e2899b18fc5c8bd3b6ef92cfae4342f54ca6ca2d626ae85b3920011b9fe3a590",
+    "quant\\market.py": "6d6a6fa6541647d0063bf79f9fe4b37a85932c7aa709d810440cf3ec8f276452",
+    "quant\\backtest.py": "ca36161cbb085344f0a9b7bc9da134f941d338e43901474ff4b18b4da5b0f52e",
+    "quant\\account.py": "1d0e9fbb6091c9accc9509858b2099cc5a78e5a9be41374b2341ccc02f3833fa",
+    "quant\\positions.py": "56704819a18384424fc3660afeede8a724af09c97040e4c41c6644c8d6ccc64d",
+    "quant\\t0.py": "d176969de52af59e44a1f582022622f99f6e6cea8701bc40b479ec80b9b7b530"
+  }
+}

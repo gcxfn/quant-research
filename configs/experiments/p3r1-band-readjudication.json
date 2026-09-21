@@ -1,0 +1,44 @@
+{
+  "experiment_id": "exp-20260918-p3r1-band-readjudication",
+  "frozen_at": "2026-09-18T12:07:00+08:00",
+  "trials_before": 189,
+  "trials_delta": 8,
+  "config_source": {
+    "path": "configs/experiments/p2r16-trend-dispersion.json",
+    "sha256_16": "27f846a7330919a4",
+    "rule": "verbatim_inherit_no_new_parameters"
+  },
+  "execution_contract": {
+    "doc": "docs/plans/p3-band-contract.md",
+    "section": "1",
+    "version": "amended 2026-09-18 12:00 (buy fixed-anchor / sell daily-reanchor + K=3 market fallback / sell-proceeds next-day)"
+  },
+  "inputs": {
+    "daily": {
+      "path": "data/processed/baostock-daily-20260917/daily_1999_2024.parquet",
+      "sha256_16": "d9a63f4cc3032926"
+    },
+    "stk_limit": {
+      "batch": "data/raw/tushare/stk_limit/20260917-r1",
+      "aggregate_sha256_rule": "sorted file list, computed and recorded at run start"
+    },
+    "split_factor": {
+      "path": "data/processed/rqalpha-bundle-v2-1-20260918/split_factor.h5",
+      "sha256_16": "2f436b2f13d09a9b",
+      "note": "F1 fix 2026-09-18 13:40: share multiplier = split_factor only; anchor (0,1.0) semantics preserved"
+    },
+    "dividends": {
+      "path": "data/processed/rqalpha-bundle-v2-1-20260918/dividends.h5",
+      "sha256_16": "46121c09cddde72e",
+      "note": "per round_lot (100 shares) pre-tax cash; amount = value / round_lot * shares held before ex_date"
+    },
+    "ex_cum_factor": {
+      "status": "REMOVED_FROM_ACCOUNT_INPUTS",
+      "reason": "price adjustment factor incl. cash dividends; would double-count (review F1, confirmed by orchestrator)"
+    },
+    "date_filter": "trade_date <= 2024-12-31"
+  },
+  "gates": "inherit R16 eight gates verbatim; mandatory disclosures: fill_rate, fill_lag_days, k3_fallback_count_and_pnl, unfilled_expiry_share, vs-R16-delta-table",
+  "judgement_order": "dev 2015-2020 first; val 2021-2024 one-shot only if dev fully passes",
+  "verdict_labels": ["pass", "eliminated", "untradeable_under_contract"]
+}

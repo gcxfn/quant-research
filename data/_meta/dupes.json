@@ -1,0 +1,3120 @@
+{
+  "root": "D:\\量化\\data\\raw",
+  "total_files": 136348,
+  "total_bytes": 156072876417,
+  "candidate_files": 57436,
+  "duplicate_groups": 324,
+  "redundant_bytes": 7690689289,
+  "errors": [],
+  "groups": [
+    {
+      "digest": "aa371fa3e60131dfb83a6ef5a85390fd",
+      "size": 2730324377,
+      "count": 2,
+      "paths": [
+        "bigquant/minute-bulk-20260915-1/zips/2019_1min.zip",
+        "user_csv_1m/20260913-4/2019_1min.zip"
+      ]
+    },
+    {
+      "digest": "ca59eec3b3c7b43a81d8e89d2a947f0d",
+      "size": 2488091285,
+      "count": 2,
+      "paths": [
+        "bigquant/minute-bulk-20260915-1/zips/2018_1min.zip",
+        "user_csv_1m/20260913-4/2018_1min.zip"
+      ]
+    },
+    {
+      "digest": "5f465f5ca98daba1938ec2b4b3af8ba6",
+      "size": 2157014193,
+      "count": 2,
+      "paths": [
+        "bigquant/minute-bulk-20260915-1/zips/2016_1min.zip",
+        "user_csv_1m/20260913-4/2016_1min.zip"
+      ]
+    },
+    {
+      "digest": "66a8cb00a6a312531fa586e66bbb0258",
+      "size": 10318158,
+      "count": 3,
+      "paths": [
+        "hf_minute_1m/20260913-all22/sz.000607.parquet",
+        "hf_minute_1m/20260913-probe/000607.parquet",
+        "hf_minute_1m/20260913-redownload/sz.000607.parquet"
+      ]
+    },
+    {
+      "digest": "a54294f16777ac53a49761fd3977aef1",
+      "size": 11804666,
+      "count": 2,
+      "paths": [
+        "hf_minute_1m/20260913-all22/sz.000032.parquet",
+        "hf_minute_1m/20260913-redownload/sz.000032.parquet"
+      ]
+    },
+    {
+      "digest": "1431b4777ded78433287f6eb5baef9b7",
+      "size": 11625032,
+      "count": 2,
+      "paths": [
+        "hf_minute_1m/20260913-all22/sz.000989.parquet",
+        "hf_minute_1m/20260913-redownload/sz.000989.parquet"
+      ]
+    },
+    {
+      "digest": "324a58ecbdfddef0788ea0c4565379bf",
+      "size": 11577830,
+      "count": 2,
+      "paths": [
+        "hf_minute_1m/20260913-all22/sz.300006.parquet",
+        "hf_minute_1m/20260913-redownload/sz.300006.parquet"
+      ]
+    },
+    {
+      "digest": "33fc4967737619995adcbfaf5c7da34a",
+      "size": 11346138,
+      "count": 2,
+      "paths": [
+        "hf_minute_1m/20260913-all22/sz.300100.parquet",
+        "hf_minute_1m/20260913-redownload/sz.300100.parquet"
+      ]
+    },
+    {
+      "digest": "3caed2feb83126b30589dc9612159164",
+      "size": 11223815,
+      "count": 2,
+      "paths": [
+        "hf_minute_1m/20260913-all22/sz.000681.parquet",
+        "hf_minute_1m/20260913-redownload/sz.000681.parquet"
+      ]
+    },
+    {
+      "digest": "476d56d2395bb7affdc74a57ea8aea31",
+      "size": 11199899,
+      "count": 2,
+      "paths": [
+        "hf_minute_1m/20260913-all22/sz.000802.parquet",
+        "hf_minute_1m/20260913-redownload/sz.000802.parquet"
+      ]
+    },
+    {
+      "digest": "1d4641f8d1a99aeaaab13dddd33c2ca2",
+      "size": 10941515,
+      "count": 2,
+      "paths": [
+        "hf_minute_1m/20260913-all22/sz.002349.parquet",
+        "hf_minute_1m/20260913-redownload/sz.002349.parquet"
+      ]
+    },
+    {
+      "digest": "3be64758597c5859aa9c3b6c71e8ad9d",
+      "size": 10657545,
+      "count": 2,
+      "paths": [
+        "hf_minute_1m/20260913-all22/sz.000632.parquet",
+        "hf_minute_1m/20260913-redownload/sz.000632.parquet"
+      ]
+    },
+    {
+      "digest": "898c93e0f3ef0a5e6a26851059e5aae4",
+      "size": 10514457,
+      "count": 2,
+      "paths": [
+        "hf_minute_1m/20260913-all22/sz.000955.parquet",
+        "hf_minute_1m/20260913-redownload/sz.000955.parquet"
+      ]
+    },
+    {
+      "digest": "f7962102d834d737ce25f5d7ec66b373",
+      "size": 10479974,
+      "count": 2,
+      "paths": [
+        "hf_minute_1m/20260913-all22/sz.300322.parquet",
+        "hf_minute_1m/20260913-redownload/sz.300322.parquet"
+      ]
+    },
+    {
+      "digest": "ae0543372df6d517d5fcaed80b90791f",
+      "size": 10438671,
+      "count": 2,
+      "paths": [
+        "hf_minute_1m/20260913-all22/sz.300209.parquet",
+        "hf_minute_1m/20260913-redownload/sz.300209.parquet"
+      ]
+    },
+    {
+      "digest": "80e12d341d85286c7f99c202cfc0c72f",
+      "size": 10234203,
+      "count": 2,
+      "paths": [
+        "hf_minute_1m/20260913-all22/sz.000560.parquet",
+        "hf_minute_1m/20260913-redownload/sz.000560.parquet"
+      ]
+    },
+    {
+      "digest": "ec1cca41580a7e468e0f58f3b49def58",
+      "size": 10170620,
+      "count": 2,
+      "paths": [
+        "hf_minute_1m/20260913-all22/sh.603026.parquet",
+        "hf_minute_1m/20260913-redownload/sh.603026.parquet"
+      ]
+    },
+    {
+      "digest": "28cd8c015e62c8045f2dc0403db6241b",
+      "size": 9990181,
+      "count": 2,
+      "paths": [
+        "hf_minute_1m/20260913-all22/sz.002442.parquet",
+        "hf_minute_1m/20260913-redownload/sz.002442.parquet"
+      ]
+    },
+    {
+      "digest": "47e08d5b87ccb9478db367f773ef1aae",
+      "size": 4975388,
+      "count": 3,
+      "paths": [
+        "bigquant/minute-bulk-20260915-1/years/2015/sz000032_2015.csv",
+        "user_csv_1m/20260913-1/sz000032_2015.csv",
+        "user_csv_1m/20260913-2/sz000032_2015.csv"
+      ]
+    },
+    {
+      "digest": "e265a12b8f11884842d2103fcc808ab9",
+      "size": 9338876,
+      "count": 2,
+      "paths": [
+        "hf_minute_1m/20260913-all22/sz.002812.parquet",
+        "hf_minute_1m/20260913-redownload/sz.002812.parquet"
+      ]
+    },
+    {
+      "digest": "9626c681998fe0064bf8855f895efd37",
+      "size": 7590765,
+      "count": 2,
+      "paths": [
+        "hf_minute_1m/20260913-all22/sz.300420.parquet",
+        "hf_minute_1m/20260913-redownload/sz.300420.parquet"
+      ]
+    },
+    {
+      "digest": "d5a044a082a1bec97b9665bf8a192d7f",
+      "size": 7329873,
+      "count": 2,
+      "paths": [
+        "hf_minute_1m/20260913-all22/sz.300536.parquet",
+        "hf_minute_1m/20260913-redownload/sz.300536.parquet"
+      ]
+    },
+    {
+      "digest": "4edb139986c2e6ff84925fa3365a9d96",
+      "size": 7184465,
+      "count": 2,
+      "paths": [
+        "hf_minute_1m/20260913-all22/sz.300712.parquet",
+        "hf_minute_1m/20260913-redownload/sz.300712.parquet"
+      ]
+    },
+    {
+      "digest": "7238c390d14fe34ebe88344102ff496b",
+      "size": 5445582,
+      "count": 2,
+      "paths": [
+        "hf_minute_1m/20260913-all22/sh.603557.parquet",
+        "hf_minute_1m/20260913-redownload/sh.603557.parquet"
+      ]
+    },
+    {
+      "digest": "33266b1faae78515d95425be89d86344",
+      "size": 5120647,
+      "count": 2,
+      "paths": [
+        "bigquant/minute-bulk-20260915-1/years/2019/sh603026_2019.csv",
+        "user_csv_1m/20260913-4/sh603026_2019.csv"
+      ]
+    },
+    {
+      "digest": "e1df40f4a2e82af1a157d0b41b85aa07",
+      "size": 5032573,
+      "count": 2,
+      "paths": [
+        "bigquant/minute-bulk-20260915-1/years/2016/sz002442_2016.csv",
+        "user_csv_1m/20260913-4/sz002442_2016.csv"
+      ]
+    },
+    {
+      "digest": "bbcf0bdba91125bda0f3b6d3a216f2ef",
+      "size": 5023646,
+      "count": 2,
+      "paths": [
+        "bigquant/minute-bulk-20260915-1/years/2018/sz002812_2018.csv",
+        "user_csv_1m/20260913-4/sz002812_2018.csv"
+      ]
+    },
+    {
+      "digest": "6e95802db4ed2a9fe30cef6e89a5f6d4",
+      "size": 5019570,
+      "count": 2,
+      "paths": [
+        "bigquant/minute-bulk-20260915-1/years/2015/sz000681_2015.csv",
+        "user_csv_1m/20260913-2/sz000681_2015.csv"
+      ]
+    },
+    {
+      "digest": "ee73494e9b236b9667c36a04346ebb0e",
+      "size": 4972240,
+      "count": 2,
+      "paths": [
+        "bigquant/minute-bulk-20260915-1/years/2015/sz300100_2015.csv",
+        "user_csv_1m/20260913-2/sz300100_2015.csv"
+      ]
+    },
+    {
+      "digest": "1a54644a7d12914e64c18b81a49663a6",
+      "size": 4958746,
+      "count": 2,
+      "paths": [
+        "bigquant/minute-bulk-20260915-1/years/2015/sh600623_2015.csv",
+        "user_csv_1m/20260913-3/sh600623_2015.csv"
+      ]
+    },
+    {
+      "digest": "845ab8c0b0408684229522155745077b",
+      "size": 4932060,
+      "count": 2,
+      "paths": [
+        "bigquant/minute-bulk-20260915-1/years/2015/sz000632_2015.csv",
+        "user_csv_1m/20260913-2/sz000632_2015.csv"
+      ]
+    },
+    {
+      "digest": "5c20c5c2ba557728d484a8398942d7c8",
+      "size": 4911932,
+      "count": 2,
+      "paths": [
+        "bigquant/minute-bulk-20260915-1/years/2015/sz000802_2015.csv",
+        "user_csv_1m/20260913-2/sz000802_2015.csv"
+      ]
+    },
+    {
+      "digest": "2ae84c151479d6cb53ad3298bdc3147a",
+      "size": 4897173,
+      "count": 2,
+      "paths": [
+        "bigquant/minute-bulk-20260915-1/years/2015/sz300006_2015.csv",
+        "user_csv_1m/20260913-2/sz300006_2015.csv"
+      ]
+    },
+    {
+      "digest": "ff67a5cb52fb0e6457c22d0822541fff",
+      "size": 4871299,
+      "count": 2,
+      "paths": [
+        "bigquant/minute-bulk-20260915-1/years/2019/sz300420_2019.csv",
+        "user_csv_1m/20260913-4/sz300420_2019.csv"
+      ]
+    },
+    {
+      "digest": "dbaebe9cf24cba620bf82f089f61e4ad",
+      "size": 4738096,
+      "count": 2,
+      "paths": [
+        "bigquant/minute-bulk-20260915-1/years/2015/sz000560_2015.csv",
+        "user_csv_1m/20260913-2/sz000560_2015.csv"
+      ]
+    },
+    {
+      "digest": "b0b077215b15ca944eb8f639e32a575c",
+      "size": 3602359,
+      "count": 2,
+      "paths": [
+        "bigquant/minute-bulk-20260915-1/years/2015/sz002349_2015.csv",
+        "user_csv_1m/20260913-2/sz002349_2015.csv"
+      ]
+    },
+    {
+      "digest": "ad27ca8bf2ed9fa07c530fd9a215c56a",
+      "size": 3573906,
+      "count": 2,
+      "paths": [
+        "bigquant/minute-bulk-20260915-1/years/2015/sz000607_2015.csv",
+        "user_csv_1m/20260913-2/sz000607_2015.csv"
+      ]
+    },
+    {
+      "digest": "310c5f6b8277841eeeb89cb41088f033",
+      "size": 3141031,
+      "count": 2,
+      "paths": [
+        "bigquant/minute-bulk-20260915-1/years/2015/sz000989_2015.csv",
+        "user_csv_1m/20260913-2/sz000989_2015.csv"
+      ]
+    },
+    {
+      "digest": "b7bc807b69fc2e00d88431647aad91cf",
+      "size": 2911789,
+      "count": 2,
+      "paths": [
+        "bigquant/minute-bulk-20260915-1/years/2015/sz300209_2015.csv",
+        "user_csv_1m/20260913-2/sz300209_2015.csv"
+      ]
+    },
+    {
+      "digest": "08f57a96967e588a4146b3119253e345",
+      "size": 1978440,
+      "count": 2,
+      "paths": [
+        "bigquant/minute-bulk-20260915-1/years/2015/sz300322_2015.csv",
+        "user_csv_1m/20260913-2/sz300322_2015.csv"
+      ]
+    },
+    {
+      "digest": "6cb03cf0a2f5068618b31cefcbc9e880",
+      "size": 1433383,
+      "count": 2,
+      "paths": [
+        "hf_minute_1m/20260913-all22/sz.302132.parquet",
+        "hf_minute_1m/20260913-redownload/sz.302132.parquet"
+      ]
+    },
+    {
+      "digest": "91d2a416eb4ba40379dd739e97b8eff7",
+      "size": 458653,
+      "count": 3,
+      "paths": [
+        "baostock/20260905_225721/delist_sz_000979.csv",
+        "baostock/20260905_230017/delist_sz_000979.csv",
+        "baostock/daily/sz.000979.csv"
+      ]
+    },
+    {
+      "digest": "b41adc0cfdf823caa67d8f883528010a",
+      "size": 426671,
+      "count": 3,
+      "paths": [
+        "baostock/20260905_225721/delist_sh_600087.csv",
+        "baostock/20260905_230017/delist_sh_600087.csv",
+        "baostock/daily/sh.600087.csv"
+      ]
+    },
+    {
+      "digest": "f8cdfa16394e3598871eae73fdae4278",
+      "size": 378657,
+      "count": 3,
+      "paths": [
+        "baostock/20260905_225721/delist_sh_600432.csv",
+        "baostock/20260905_230017/delist_sh_600432.csv",
+        "baostock/daily/sh.600432.csv"
+      ]
+    },
+    {
+      "digest": "4d8be087c463eab7806d3aaababdeded",
+      "size": 534318,
+      "count": 2,
+      "paths": [
+        "sina/sh510050/20260904T165015/response.json",
+        "sina/sh510050/20260904T185651/response.json"
+      ]
+    },
+    {
+      "digest": "dd2248d9252d73c0dcc815b936afe2d7",
+      "size": 262680,
+      "count": 3,
+      "paths": [
+        "baostock/20260905_225721/delist_sh_600646.csv",
+        "baostock/20260905_230017/delist_sh_600646.csv",
+        "baostock/daily/sh.600646.csv"
+      ]
+    },
+    {
+      "digest": "be837a692b248a964f505fbef416ad66",
+      "size": 246891,
+      "count": 3,
+      "paths": [
+        "baostock/20260905_225721/delist_sz_300104.csv",
+        "baostock/20260905_230017/delist_sz_300104.csv",
+        "baostock/daily/sz.300104.csv"
+      ]
+    },
+    {
+      "digest": "738331f9b56985caa5095f3db74e4118",
+      "size": 480920,
+      "count": 2,
+      "paths": [
+        "sina/sh510880/20260904T165024/response.json",
+        "sina/sh510880/20260904T185713/response.json"
+      ]
+    },
+    {
+      "digest": "00d7285380d6232408b0dbf22cd776f8",
+      "size": 215145,
+      "count": 3,
+      "paths": [
+        "baostock/20260905_225721/delist_sh_600813.csv",
+        "baostock/20260905_230017/delist_sh_600813.csv",
+        "baostock/daily/sh.600813.csv"
+      ]
+    },
+    {
+      "digest": "d448138a5dc61312855dadcf0e786eab",
+      "size": 204308,
+      "count": 3,
+      "paths": [
+        "baostock/20260905_225721/delist_sh_600625.csv",
+        "baostock/20260905_230017/delist_sh_600625.csv",
+        "baostock/daily/sh.600625.csv"
+      ]
+    },
+    {
+      "digest": "38ee2976b2ce573a69e035278c8c8cea",
+      "size": 365014,
+      "count": 2,
+      "paths": [
+        "sina/sz159915/20260904T165007/response.json",
+        "sina/sz159915/20260904T185618/response.json"
+      ]
+    },
+    {
+      "digest": "e4cc3200ccd7dc1f41cc3628e1bcf548",
+      "size": 354329,
+      "count": 2,
+      "paths": [
+        "sina/sh510300/20260904T165009/response.json",
+        "sina/sh510300/20260904T185625/response.json"
+      ]
+    },
+    {
+      "digest": "5e94a9a005776623f8b3d10b0b11bb9e",
+      "size": 332460,
+      "count": 2,
+      "paths": [
+        "sina/sh510500/20260904T165011/response.json",
+        "sina/sh510500/20260904T185633/response.json"
+      ]
+    },
+    {
+      "digest": "147f8454921f0eee0e3a34fb91d6ffe5",
+      "size": 324285,
+      "count": 2,
+      "paths": [
+        "sina/sh518880/20260904T165006/response.json",
+        "sina/sh518880/20260904T185612/response.json"
+      ]
+    },
+    {
+      "digest": "44aa4c16459f2abcc35a344f5c24d09d",
+      "size": 149985,
+      "count": 3,
+      "paths": [
+        "baostock/20260905_225721/delist_sz_000508.csv",
+        "baostock/20260905_230017/delist_sz_000508.csv",
+        "baostock/daily/sz.000508.csv"
+      ]
+    },
+    {
+      "digest": "11b2076620f9c624f5ebea5a9bb4ab44",
+      "size": 287691,
+      "count": 2,
+      "paths": [
+        "sina/sh600519/20260904T012509/response.json",
+        "sina/sh600519/20260904T013637/response.json"
+      ]
+    },
+    {
+      "digest": "eae9c7ab6e29b628569ab90e67c78389",
+      "size": 272358,
+      "count": 2,
+      "paths": [
+        "sina/sh512010/20260904T165025/response.json",
+        "sina/sh512010/20260904T185717/response.json"
+      ]
+    },
+    {
+      "digest": "ec37b8fce3b600eb857206e99b4b3572",
+      "size": 263087,
+      "count": 2,
+      "paths": [
+        "sina/sh601179/20260904T080500/response.json",
+        "sina/sh601179/20260904T080802/response.json"
+      ]
+    },
+    {
+      "digest": "9c11c6d4613efae453998e04aaf68ec8",
+      "size": 250793,
+      "count": 2,
+      "paths": [
+        "sina/sz159949/20260904T165013/response.json",
+        "sina/sz159949/20260904T185641/response.json"
+      ]
+    },
+    {
+      "digest": "f60d4bc28f201242d98962a330d367fa",
+      "size": 250367,
+      "count": 2,
+      "paths": [
+        "sina/sh512880/20260904T165012/response.json",
+        "sina/sh512880/20260904T185637/response.json"
+      ]
+    },
+    {
+      "digest": "23d761c1c496d127e5413790e0395295",
+      "size": 242172,
+      "count": 2,
+      "paths": [
+        "sina/sh512100/20260904T165010/response.json",
+        "sina/sh512100/20260904T185628/response.json"
+      ]
+    },
+    {
+      "digest": "afb0e0c4d1187251508039ce6b6e8a0b",
+      "size": 224761,
+      "count": 2,
+      "paths": [
+        "sina/sh512800/20260904T165017/response.json",
+        "sina/sh512800/20260904T185656/response.json"
+      ]
+    },
+    {
+      "digest": "6fcebde25904a52da217183580af8fa8",
+      "size": 223762,
+      "count": 2,
+      "paths": [
+        "baostock/20260905_225721/stock_basic.csv",
+        "baostock/20260905_230017/stock_basic.csv"
+      ]
+    },
+    {
+      "digest": "12d4308ccb4fce91da9cf853e469b402",
+      "size": 221657,
+      "count": 2,
+      "paths": [
+        "sina/sh512400/20260904T165013/response.json",
+        "sina/sh512400/20260904T185644/response.json"
+      ]
+    },
+    {
+      "digest": "914e26f10590bbb54e5474b3b66bc208",
+      "size": 219790,
+      "count": 2,
+      "paths": [
+        "sina/sh512200/20260904T165041/response.json",
+        "sina/sh512200/20260904T185757/response.json"
+      ]
+    },
+    {
+      "digest": "5a65336e626c91472273e05b4b7d695c",
+      "size": 212129,
+      "count": 2,
+      "paths": [
+        "sina/sh512980/20260904T165033/response.json",
+        "sina/sh512980/20260904T185736/response.json"
+      ]
+    },
+    {
+      "digest": "c19d091e6489b69460a1b602c2123f98",
+      "size": 186551,
+      "count": 2,
+      "paths": [
+        "sina/sh512890/20260904T165018/response.json",
+        "sina/sh512890/20260904T185659/response.json"
+      ]
+    },
+    {
+      "digest": "5a673382e8c4257795d17cdd65997f5a",
+      "size": 181949,
+      "count": 2,
+      "paths": [
+        "sina/sh512690/20260904T165028/response.json",
+        "sina/sh512690/20260904T185723/response.json"
+      ]
+    },
+    {
+      "digest": "706e4a3b94ace5ecfbc309c56de8ee6c",
+      "size": 179216,
+      "count": 2,
+      "paths": [
+        "sina/sh512170/20260904T165022/response.json",
+        "sina/sh512170/20260904T185705/response.json"
+      ]
+    },
+    {
+      "digest": "861d5fc0dd4f013330f8be3c33323aa0",
+      "size": 173721,
+      "count": 2,
+      "paths": [
+        "sina/sh512710/20260904T165034/response.json",
+        "sina/sh512710/20260904T185741/response.json"
+      ]
+    },
+    {
+      "digest": "5005ad6f8c13fb8382ca94bc82b1a5d5",
+      "size": 172450,
+      "count": 2,
+      "paths": [
+        "sina/sh515880/20260904T165008/response.json",
+        "sina/sh515880/20260904T185620/response.json"
+      ]
+    },
+    {
+      "digest": "16e7e3eaa3c1444de1ccd2649ea87355",
+      "size": 165674,
+      "count": 2,
+      "paths": [
+        "sina/sz159985/20260904T165032/response.json",
+        "sina/sz159985/20260904T185733/response.json"
+      ]
+    },
+    {
+      "digest": "719b1b92827a0c91ac11da982cfa2847",
+      "size": 165102,
+      "count": 2,
+      "paths": [
+        "sina/sh515800/20260904T165043/response.json",
+        "sina/sh515800/20260904T185802/response.json"
+      ]
+    },
+    {
+      "digest": "94721dfa71f5e50d210c68a802ec856c",
+      "size": 160889,
+      "count": 2,
+      "paths": [
+        "sina/sh515030/20260904T165040/response.json",
+        "sina/sh515030/20260904T185753/response.json"
+      ]
+    },
+    {
+      "digest": "3b036c77785867ca69ed0e0cfe304138",
+      "size": 160870,
+      "count": 2,
+      "paths": [
+        "sina/sh515220/20260904T165020/response.json",
+        "sina/sh515220/20260904T185701/response.json"
+      ]
+    },
+    {
+      "digest": "37a431741ee1169c66aeebfd7f8d7b92",
+      "size": 160116,
+      "count": 2,
+      "paths": [
+        "sina/sh515210/20260904T165042/response.json",
+        "sina/sh515210/20260904T185759/response.json"
+      ]
+    },
+    {
+      "digest": "f7150e262e5fb69358eedd31d467d527",
+      "size": 159092,
+      "count": 2,
+      "paths": [
+        "sina/sz159996/20260904T165046/response.json",
+        "sina/sz159996/20260904T185808/response.json"
+      ]
+    },
+    {
+      "digest": "940921fb93c77028c6f2f68281c8deaa",
+      "size": 158534,
+      "count": 2,
+      "paths": [
+        "sina/sz159992/20260904T165016/response.json",
+        "sina/sz159992/20260904T185653/response.json"
+      ]
+    },
+    {
+      "digest": "3f520fd145673721df757e318277db54",
+      "size": 157018,
+      "count": 2,
+      "paths": [
+        "sina/sz159998/20260904T165044/response.json",
+        "sina/sz159998/20260904T185804/response.json"
+      ]
+    },
+    {
+      "digest": "8942d10c5eaf59f26ee2938d0ce084ec",
+      "size": 38612,
+      "count": 5,
+      "paths": [
+        "sina_universe/page000/20260904T004903/response.json",
+        "sina_universe/page000/20260904T005147/response.json",
+        "sina_universe/page000/20260904T005518/response.json",
+        "sina_universe/page000/20260904T010740/response.json",
+        "sina_universe/page000/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "13cf9516cdbdd63521956b3c290fb0e7",
+      "size": 38384,
+      "count": 5,
+      "paths": [
+        "sina_universe/page001/20260904T004903/response.json",
+        "sina_universe/page001/20260904T005147/response.json",
+        "sina_universe/page001/20260904T005518/response.json",
+        "sina_universe/page001/20260904T010740/response.json",
+        "sina_universe/page001/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "e7c9cc1faa2802e91732b35ee6f3cb24",
+      "size": 38260,
+      "count": 5,
+      "paths": [
+        "sina_universe/page002/20260904T004903/response.json",
+        "sina_universe/page002/20260904T005147/response.json",
+        "sina_universe/page002/20260904T005518/response.json",
+        "sina_universe/page002/20260904T010740/response.json",
+        "sina_universe/page002/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "7e344d49629e75eebf4dc600bcba1116",
+      "size": 38069,
+      "count": 5,
+      "paths": [
+        "sina_universe/page003/20260904T004903/response.json",
+        "sina_universe/page003/20260904T005147/response.json",
+        "sina_universe/page003/20260904T005518/response.json",
+        "sina_universe/page003/20260904T010740/response.json",
+        "sina_universe/page003/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "ed926196b78c2ce99366178bc96ebb0e",
+      "size": 38037,
+      "count": 5,
+      "paths": [
+        "sina_universe/page004/20260904T004903/response.json",
+        "sina_universe/page004/20260904T005147/response.json",
+        "sina_universe/page004/20260904T005518/response.json",
+        "sina_universe/page004/20260904T010740/response.json",
+        "sina_universe/page004/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "6decdee98519ec36fc009adf47b9681f",
+      "size": 37930,
+      "count": 5,
+      "paths": [
+        "sina_universe/page007/20260904T004903/response.json",
+        "sina_universe/page007/20260904T005147/response.json",
+        "sina_universe/page007/20260904T005518/response.json",
+        "sina_universe/page007/20260904T010740/response.json",
+        "sina_universe/page007/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "5aaaf829e7cb18ebfe68a6fe47d166b4",
+      "size": 37906,
+      "count": 5,
+      "paths": [
+        "sina_universe/page006/20260904T004903/response.json",
+        "sina_universe/page006/20260904T005147/response.json",
+        "sina_universe/page006/20260904T005518/response.json",
+        "sina_universe/page006/20260904T010740/response.json",
+        "sina_universe/page006/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "73bb92ebbde43ccc6269fef18049d0d5",
+      "size": 37884,
+      "count": 5,
+      "paths": [
+        "sina_universe/page005/20260904T004903/response.json",
+        "sina_universe/page005/20260904T005147/response.json",
+        "sina_universe/page005/20260904T005518/response.json",
+        "sina_universe/page005/20260904T010740/response.json",
+        "sina_universe/page005/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "2dc5981d9c2591e1f850d7205104167c",
+      "size": 37797,
+      "count": 5,
+      "paths": [
+        "sina_universe/page010/20260904T004903/response.json",
+        "sina_universe/page010/20260904T005147/response.json",
+        "sina_universe/page010/20260904T005518/response.json",
+        "sina_universe/page010/20260904T010740/response.json",
+        "sina_universe/page010/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "a20a2eea128b5d207d7155edb4c5cb97",
+      "size": 37777,
+      "count": 5,
+      "paths": [
+        "sina_universe/page008/20260904T004903/response.json",
+        "sina_universe/page008/20260904T005147/response.json",
+        "sina_universe/page008/20260904T005518/response.json",
+        "sina_universe/page008/20260904T010740/response.json",
+        "sina_universe/page008/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "123b40ca8df305fac82b5c38accc09e7",
+      "size": 37745,
+      "count": 5,
+      "paths": [
+        "sina_universe/page012/20260904T004903/response.json",
+        "sina_universe/page012/20260904T005147/response.json",
+        "sina_universe/page012/20260904T005518/response.json",
+        "sina_universe/page012/20260904T010740/response.json",
+        "sina_universe/page012/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "dda316f3073b7bf9917fecf43b11b192",
+      "size": 37731,
+      "count": 5,
+      "paths": [
+        "sina_universe/page011/20260904T004903/response.json",
+        "sina_universe/page011/20260904T005147/response.json",
+        "sina_universe/page011/20260904T005518/response.json",
+        "sina_universe/page011/20260904T010740/response.json",
+        "sina_universe/page011/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "50b8df65f80f2ecd3b1e4d8ecfe8ca2e",
+      "size": 37719,
+      "count": 5,
+      "paths": [
+        "sina_universe/page009/20260904T004903/response.json",
+        "sina_universe/page009/20260904T005147/response.json",
+        "sina_universe/page009/20260904T005518/response.json",
+        "sina_universe/page009/20260904T010740/response.json",
+        "sina_universe/page009/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "484cb26b62eede79b05afabf90c9ff51",
+      "size": 37691,
+      "count": 5,
+      "paths": [
+        "sina_universe/page015/20260904T004903/response.json",
+        "sina_universe/page015/20260904T005147/response.json",
+        "sina_universe/page015/20260904T005518/response.json",
+        "sina_universe/page015/20260904T010740/response.json",
+        "sina_universe/page015/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "fef64c935dae8a7012730f63b1a0e355",
+      "size": 37677,
+      "count": 5,
+      "paths": [
+        "sina_universe/page017/20260904T004903/response.json",
+        "sina_universe/page017/20260904T005147/response.json",
+        "sina_universe/page017/20260904T005518/response.json",
+        "sina_universe/page017/20260904T010740/response.json",
+        "sina_universe/page017/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "4c0ed21ab3e51aef3ce85b196e20fabb",
+      "size": 37656,
+      "count": 5,
+      "paths": [
+        "sina_universe/page013/20260904T004903/response.json",
+        "sina_universe/page013/20260904T005147/response.json",
+        "sina_universe/page013/20260904T005518/response.json",
+        "sina_universe/page013/20260904T010740/response.json",
+        "sina_universe/page013/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "9432dbdf8847a5413e234b1beb1869b9",
+      "size": 37655,
+      "count": 5,
+      "paths": [
+        "sina_universe/page018/20260904T004903/response.json",
+        "sina_universe/page018/20260904T005147/response.json",
+        "sina_universe/page018/20260904T005518/response.json",
+        "sina_universe/page018/20260904T010740/response.json",
+        "sina_universe/page018/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "49df93cbeb70e507ed6fbdb8c1af90c1",
+      "size": 37645,
+      "count": 5,
+      "paths": [
+        "sina_universe/page023/20260904T004903/response.json",
+        "sina_universe/page023/20260904T005147/response.json",
+        "sina_universe/page023/20260904T005518/response.json",
+        "sina_universe/page023/20260904T010740/response.json",
+        "sina_universe/page023/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "75b0fefb7e0a2a53bbf7ae2c9161896a",
+      "size": 37638,
+      "count": 5,
+      "paths": [
+        "sina_universe/page014/20260904T004903/response.json",
+        "sina_universe/page014/20260904T005147/response.json",
+        "sina_universe/page014/20260904T005518/response.json",
+        "sina_universe/page014/20260904T010740/response.json",
+        "sina_universe/page014/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "563b5fc8eaf44140a4831500247f95fe",
+      "size": 37605,
+      "count": 5,
+      "paths": [
+        "sina_universe/page016/20260904T004903/response.json",
+        "sina_universe/page016/20260904T005147/response.json",
+        "sina_universe/page016/20260904T005518/response.json",
+        "sina_universe/page016/20260904T010740/response.json",
+        "sina_universe/page016/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "da060a4111340209344785050794132d",
+      "size": 37602,
+      "count": 5,
+      "paths": [
+        "sina_universe/page022/20260904T004903/response.json",
+        "sina_universe/page022/20260904T005147/response.json",
+        "sina_universe/page022/20260904T005518/response.json",
+        "sina_universe/page022/20260904T010740/response.json",
+        "sina_universe/page022/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "b57901633f4b317ce89a69b605c591c9",
+      "size": 37563,
+      "count": 5,
+      "paths": [
+        "sina_universe/page019/20260904T004903/response.json",
+        "sina_universe/page019/20260904T005147/response.json",
+        "sina_universe/page019/20260904T005518/response.json",
+        "sina_universe/page019/20260904T010740/response.json",
+        "sina_universe/page019/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "4f1a42997e3763978bcd73c6d5b9ddf7",
+      "size": 37550,
+      "count": 5,
+      "paths": [
+        "sina_universe/page024/20260904T004903/response.json",
+        "sina_universe/page024/20260904T005147/response.json",
+        "sina_universe/page024/20260904T005518/response.json",
+        "sina_universe/page024/20260904T010740/response.json",
+        "sina_universe/page024/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "ba3776bd0cd6a170914cb75d1d64fa8f",
+      "size": 37540,
+      "count": 5,
+      "paths": [
+        "sina_universe/page020/20260904T004903/response.json",
+        "sina_universe/page020/20260904T005147/response.json",
+        "sina_universe/page020/20260904T005518/response.json",
+        "sina_universe/page020/20260904T010740/response.json",
+        "sina_universe/page020/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "c8bd2bf4dd7ae0ec9adb5d40407b16a4",
+      "size": 37534,
+      "count": 5,
+      "paths": [
+        "sina_universe/page021/20260904T004903/response.json",
+        "sina_universe/page021/20260904T005147/response.json",
+        "sina_universe/page021/20260904T005518/response.json",
+        "sina_universe/page021/20260904T010740/response.json",
+        "sina_universe/page021/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "c4ea5e2a3d29a94853b099ea11f38468",
+      "size": 37470,
+      "count": 5,
+      "paths": [
+        "sina_universe/page025/20260904T004903/response.json",
+        "sina_universe/page025/20260904T005147/response.json",
+        "sina_universe/page025/20260904T005518/response.json",
+        "sina_universe/page025/20260904T010740/response.json",
+        "sina_universe/page025/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "1b179bc4035cceb6eb0714a1b3507bf8",
+      "size": 37465,
+      "count": 5,
+      "paths": [
+        "sina_universe/page027/20260904T004903/response.json",
+        "sina_universe/page027/20260904T005147/response.json",
+        "sina_universe/page027/20260904T005518/response.json",
+        "sina_universe/page027/20260904T010740/response.json",
+        "sina_universe/page027/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "c7623176a7bd6c09460a2e1b3a41a3d5",
+      "size": 37461,
+      "count": 5,
+      "paths": [
+        "sina_universe/page026/20260904T004903/response.json",
+        "sina_universe/page026/20260904T005147/response.json",
+        "sina_universe/page026/20260904T005518/response.json",
+        "sina_universe/page026/20260904T010740/response.json",
+        "sina_universe/page026/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "c3d73cd8896535ac07ae63f789885fd0",
+      "size": 37401,
+      "count": 5,
+      "paths": [
+        "sina_universe/page033/20260904T004903/response.json",
+        "sina_universe/page033/20260904T005147/response.json",
+        "sina_universe/page033/20260904T005518/response.json",
+        "sina_universe/page033/20260904T010740/response.json",
+        "sina_universe/page033/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "e88bcfb01725420be3c61edfffa87f93",
+      "size": 37368,
+      "count": 5,
+      "paths": [
+        "sina_universe/page028/20260904T004903/response.json",
+        "sina_universe/page028/20260904T005147/response.json",
+        "sina_universe/page028/20260904T005518/response.json",
+        "sina_universe/page028/20260904T010740/response.json",
+        "sina_universe/page028/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "dd965c309b91d4f80d526cb5dd59761b",
+      "size": 37365,
+      "count": 5,
+      "paths": [
+        "sina_universe/page030/20260904T004903/response.json",
+        "sina_universe/page030/20260904T005147/response.json",
+        "sina_universe/page030/20260904T005518/response.json",
+        "sina_universe/page030/20260904T010740/response.json",
+        "sina_universe/page030/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "362188fbd0f74b7b1ef0031f9d1c2b04",
+      "size": 37337,
+      "count": 5,
+      "paths": [
+        "sina_universe/page031/20260904T004903/response.json",
+        "sina_universe/page031/20260904T005147/response.json",
+        "sina_universe/page031/20260904T005518/response.json",
+        "sina_universe/page031/20260904T010740/response.json",
+        "sina_universe/page031/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "bf3ae84db01a70b7bfe4fba5bf6564c4",
+      "size": 37334,
+      "count": 5,
+      "paths": [
+        "sina_universe/page029/20260904T004903/response.json",
+        "sina_universe/page029/20260904T005147/response.json",
+        "sina_universe/page029/20260904T005518/response.json",
+        "sina_universe/page029/20260904T010740/response.json",
+        "sina_universe/page029/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "edcc5d7aa52ba2c6015a50823ccddbca",
+      "size": 37330,
+      "count": 5,
+      "paths": [
+        "sina_universe/page036/20260904T004903/response.json",
+        "sina_universe/page036/20260904T005147/response.json",
+        "sina_universe/page036/20260904T005518/response.json",
+        "sina_universe/page036/20260904T010740/response.json",
+        "sina_universe/page036/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "ddf97297dd3414b9e05143ad84003d39",
+      "size": 37329,
+      "count": 5,
+      "paths": [
+        "sina_universe/page042/20260904T004903/response.json",
+        "sina_universe/page042/20260904T005147/response.json",
+        "sina_universe/page042/20260904T005518/response.json",
+        "sina_universe/page042/20260904T010740/response.json",
+        "sina_universe/page042/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "2c8b541327a7dd03d15b9926719faa7c",
+      "size": 37315,
+      "count": 5,
+      "paths": [
+        "sina_universe/page037/20260904T004903/response.json",
+        "sina_universe/page037/20260904T005147/response.json",
+        "sina_universe/page037/20260904T005518/response.json",
+        "sina_universe/page037/20260904T010740/response.json",
+        "sina_universe/page037/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "7116f4442afa3d3aff90239c613a60eb",
+      "size": 37300,
+      "count": 5,
+      "paths": [
+        "sina_universe/page040/20260904T004903/response.json",
+        "sina_universe/page040/20260904T005147/response.json",
+        "sina_universe/page040/20260904T005518/response.json",
+        "sina_universe/page040/20260904T010740/response.json",
+        "sina_universe/page040/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "4c1739b87cf79d50a2bf117170d69509",
+      "size": 37289,
+      "count": 5,
+      "paths": [
+        "sina_universe/page043/20260904T004903/response.json",
+        "sina_universe/page043/20260904T005147/response.json",
+        "sina_universe/page043/20260904T005518/response.json",
+        "sina_universe/page043/20260904T010740/response.json",
+        "sina_universe/page043/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "d2e3421ce0a1527feac08021f4a9d3dd",
+      "size": 37288,
+      "count": 5,
+      "paths": [
+        "sina_universe/page039/20260904T004903/response.json",
+        "sina_universe/page039/20260904T005147/response.json",
+        "sina_universe/page039/20260904T005518/response.json",
+        "sina_universe/page039/20260904T010740/response.json",
+        "sina_universe/page039/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "fdca146e56fa109fbf6a01bac0df825e",
+      "size": 37287,
+      "count": 5,
+      "paths": [
+        "sina_universe/page034/20260904T004903/response.json",
+        "sina_universe/page034/20260904T005147/response.json",
+        "sina_universe/page034/20260904T005518/response.json",
+        "sina_universe/page034/20260904T010740/response.json",
+        "sina_universe/page034/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "ba24cf1173b0a6331f8bc2b847ab8ade",
+      "size": 37287,
+      "count": 5,
+      "paths": [
+        "sina_universe/page038/20260904T004903/response.json",
+        "sina_universe/page038/20260904T005147/response.json",
+        "sina_universe/page038/20260904T005518/response.json",
+        "sina_universe/page038/20260904T010740/response.json",
+        "sina_universe/page038/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "f79bcdc48bd29f9b05adc096b3b3594c",
+      "size": 37283,
+      "count": 5,
+      "paths": [
+        "sina_universe/page041/20260904T004903/response.json",
+        "sina_universe/page041/20260904T005147/response.json",
+        "sina_universe/page041/20260904T005518/response.json",
+        "sina_universe/page041/20260904T010740/response.json",
+        "sina_universe/page041/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "2f1402ff0b90e72c976eca82ffa74dce",
+      "size": 37281,
+      "count": 5,
+      "paths": [
+        "sina_universe/page046/20260904T004903/response.json",
+        "sina_universe/page046/20260904T005147/response.json",
+        "sina_universe/page046/20260904T005518/response.json",
+        "sina_universe/page046/20260904T010740/response.json",
+        "sina_universe/page046/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "9ef3a28bbbf5f9e67c653feb3a8f90c7",
+      "size": 37265,
+      "count": 5,
+      "paths": [
+        "sina_universe/page032/20260904T004903/response.json",
+        "sina_universe/page032/20260904T005147/response.json",
+        "sina_universe/page032/20260904T005518/response.json",
+        "sina_universe/page032/20260904T010740/response.json",
+        "sina_universe/page032/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "1afd86c8b43c06af8a05fa2d2298c4cb",
+      "size": 37265,
+      "count": 5,
+      "paths": [
+        "sina_universe/page035/20260904T004903/response.json",
+        "sina_universe/page035/20260904T005147/response.json",
+        "sina_universe/page035/20260904T005518/response.json",
+        "sina_universe/page035/20260904T010740/response.json",
+        "sina_universe/page035/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "eeb2f67a685f10065f0389ce02694528",
+      "size": 37241,
+      "count": 5,
+      "paths": [
+        "sina_universe/page045/20260904T004903/response.json",
+        "sina_universe/page045/20260904T005147/response.json",
+        "sina_universe/page045/20260904T005518/response.json",
+        "sina_universe/page045/20260904T010740/response.json",
+        "sina_universe/page045/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "bc39189e683f3cac6c722d67f07e8c0c",
+      "size": 37222,
+      "count": 5,
+      "paths": [
+        "sina_universe/page044/20260904T004903/response.json",
+        "sina_universe/page044/20260904T005147/response.json",
+        "sina_universe/page044/20260904T005518/response.json",
+        "sina_universe/page044/20260904T010740/response.json",
+        "sina_universe/page044/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "beee82896daddf5aed834dc374d5b353",
+      "size": 37222,
+      "count": 5,
+      "paths": [
+        "sina_universe/page048/20260904T004903/response.json",
+        "sina_universe/page048/20260904T005147/response.json",
+        "sina_universe/page048/20260904T005518/response.json",
+        "sina_universe/page048/20260904T010740/response.json",
+        "sina_universe/page048/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "d74899f89dd46e2fbfbef5195180cc8e",
+      "size": 37217,
+      "count": 5,
+      "paths": [
+        "sina_universe/page049/20260904T004903/response.json",
+        "sina_universe/page049/20260904T005147/response.json",
+        "sina_universe/page049/20260904T005518/response.json",
+        "sina_universe/page049/20260904T010740/response.json",
+        "sina_universe/page049/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "f238c7900c38fa0fe24df3ce9fb0d30b",
+      "size": 37189,
+      "count": 5,
+      "paths": [
+        "sina_universe/page051/20260904T004903/response.json",
+        "sina_universe/page051/20260904T005147/response.json",
+        "sina_universe/page051/20260904T005518/response.json",
+        "sina_universe/page051/20260904T010740/response.json",
+        "sina_universe/page051/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "a6d238ce3ce73166ed3e68b791aadb43",
+      "size": 37160,
+      "count": 5,
+      "paths": [
+        "sina_universe/page047/20260904T004903/response.json",
+        "sina_universe/page047/20260904T005147/response.json",
+        "sina_universe/page047/20260904T005518/response.json",
+        "sina_universe/page047/20260904T010740/response.json",
+        "sina_universe/page047/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "554011bbf5487853b293329414551fc5",
+      "size": 37132,
+      "count": 5,
+      "paths": [
+        "sina_universe/page050/20260904T004903/response.json",
+        "sina_universe/page050/20260904T005147/response.json",
+        "sina_universe/page050/20260904T005518/response.json",
+        "sina_universe/page050/20260904T010740/response.json",
+        "sina_universe/page050/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "d15b1c2b06c1d18f990c80cd6d284a47",
+      "size": 37120,
+      "count": 5,
+      "paths": [
+        "sina_universe/page052/20260904T004903/response.json",
+        "sina_universe/page052/20260904T005147/response.json",
+        "sina_universe/page052/20260904T005518/response.json",
+        "sina_universe/page052/20260904T010740/response.json",
+        "sina_universe/page052/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "601f6252dde36abba65222b726c3fb85",
+      "size": 37018,
+      "count": 5,
+      "paths": [
+        "sina_universe/page053/20260904T004903/response.json",
+        "sina_universe/page053/20260904T005147/response.json",
+        "sina_universe/page053/20260904T005518/response.json",
+        "sina_universe/page053/20260904T010740/response.json",
+        "sina_universe/page053/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "6cfb95191c2362f354e302298c666f01",
+      "size": 36812,
+      "count": 5,
+      "paths": [
+        "sina_universe/page054/20260904T004903/response.json",
+        "sina_universe/page054/20260904T005147/response.json",
+        "sina_universe/page054/20260904T005518/response.json",
+        "sina_universe/page054/20260904T010740/response.json",
+        "sina_universe/page054/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "c1c65a7ec5bf27898405656107bd4a7d",
+      "size": 146541,
+      "count": 2,
+      "paths": [
+        "sina/sz159819/20260904T165026/response.json",
+        "sina/sz159819/20260904T185719/response.json"
+      ]
+    },
+    {
+      "digest": "1b3d8433f92c740ac28bf3b1e1da29ed",
+      "size": 144845,
+      "count": 2,
+      "paths": [
+        "sina/sh588000/20260904T165005/response.json",
+        "sina/sh588000/20260904T185608/response.json"
+      ]
+    },
+    {
+      "digest": "f446588f4a7df089b3c3c83d5e28d700",
+      "size": 141496,
+      "count": 2,
+      "paths": [
+        "sina/sh515790/20260904T165036/response.json",
+        "sina/sh515790/20260904T185745/response.json"
+      ]
+    },
+    {
+      "digest": "ea8d6c35a2924a8b015b8e737e723d4e",
+      "size": 139321,
+      "count": 2,
+      "paths": [
+        "sina/sh515170/20260904T165045/response.json",
+        "sina/sh515170/20260904T185806/response.json"
+      ]
+    },
+    {
+      "digest": "14b4016e4dd90c266c0d274bea0bc10f",
+      "size": 136927,
+      "count": 2,
+      "paths": [
+        "sina/sz159852/20260904T165023/response.json",
+        "sina/sz159852/20260904T185707/response.json"
+      ]
+    },
+    {
+      "digest": "c336937c9d2aff215de9d26e51a514d7",
+      "size": 135988,
+      "count": 2,
+      "paths": [
+        "sina/sz159865/20260904T165035/response.json",
+        "sina/sz159865/20260904T185743/response.json"
+      ]
+    },
+    {
+      "digest": "2ae19eca2a40f1b302e7d12692f21d51",
+      "size": 135879,
+      "count": 2,
+      "paths": [
+        "sina/sz159869/20260904T165027/response.json",
+        "sina/sz159869/20260904T185720/response.json"
+      ]
+    },
+    {
+      "digest": "3c78556b581bd027ece7e67c56d0d71e",
+      "size": 135851,
+      "count": 2,
+      "paths": [
+        "sina/sz159870/20260904T165028/response.json",
+        "sina/sz159870/20260904T185725/response.json"
+      ]
+    },
+    {
+      "digest": "569f7cfbf65d21011a5520674b993b0b",
+      "size": 134547,
+      "count": 2,
+      "paths": [
+        "sina/sh516150/20260904T165038/response.json",
+        "sina/sh516150/20260904T185749/response.json"
+      ]
+    },
+    {
+      "digest": "7d4e9c536486e617186a39ad333366b4",
+      "size": 133135,
+      "count": 2,
+      "paths": [
+        "sina/sh516510/20260904T165037/response.json",
+        "sina/sh516510/20260904T185747/response.json"
+      ]
+    },
+    {
+      "digest": "8d2c3cf1ef4e989b8d755bd1a2111de4",
+      "size": 128713,
+      "count": 2,
+      "paths": [
+        "sina/sz159755/20260904T165031/response.json",
+        "sina/sz159755/20260904T185730/response.json"
+      ]
+    },
+    {
+      "digest": "7515e0a7b057b65007085cba1745d106",
+      "size": 128189,
+      "count": 2,
+      "paths": [
+        "sina/sz159745/20260904T165048/response.json",
+        "sina/sz159745/20260904T185812/response.json"
+      ]
+    },
+    {
+      "digest": "e57150e8ae15caede47ce598a941500c",
+      "size": 127292,
+      "count": 2,
+      "paths": [
+        "sina/sh516970/20260904T165049/response.json",
+        "sina/sh516970/20260904T185814/response.json"
+      ]
+    },
+    {
+      "digest": "12d6e20762b3d87fb0978808a5d18ad1",
+      "size": 126384,
+      "count": 2,
+      "paths": [
+        "sina/sz159766/20260904T165039/response.json",
+        "sina/sz159766/20260904T185751/response.json"
+      ]
+    },
+    {
+      "digest": "52d9b360c5518d33cf92943f9e56fbec",
+      "size": 123515,
+      "count": 2,
+      "paths": [
+        "sina/sz159732/20260904T165030/response.json",
+        "sina/sz159732/20260904T185728/response.json"
+      ]
+    },
+    {
+      "digest": "15bb9fbd2b6d77134194adde92f1ed12",
+      "size": 121459,
+      "count": 2,
+      "paths": [
+        "sina/sh562800/20260904T165034/response.json",
+        "sina/sh562800/20260904T185738/response.json"
+      ]
+    },
+    {
+      "digest": "ab46b03f4b86499b0a0c924a87ea7d3b",
+      "size": 114877,
+      "count": 2,
+      "paths": [
+        "sina/sz159611/20260904T165029/response.json",
+        "sina/sz159611/20260904T185726/response.json"
+      ]
+    },
+    {
+      "digest": "07510b8d066687fde45138089fe6e2e7",
+      "size": 97289,
+      "count": 2,
+      "paths": [
+        "baostock/20260905_225721/stsusp_sz_000792.csv",
+        "baostock/20260905_230017/stsusp_sz_000792.csv"
+      ]
+    },
+    {
+      "digest": "dc34563ef1495ebbe360d83581e5d7cd",
+      "size": 96794,
+      "count": 2,
+      "paths": [
+        "baostock/20260905_225721/stsusp_sh_600556.csv",
+        "baostock/20260905_230017/stsusp_sh_600556.csv"
+      ]
+    },
+    {
+      "digest": "a673bb7a3a4fb8ab7573ce19843a3a90",
+      "size": 95618,
+      "count": 2,
+      "paths": [
+        "sina/sh560080/20260904T165047/response.json",
+        "sina/sh560080/20260904T185810/response.json"
+      ]
+    },
+    {
+      "digest": "3e94b94d37c8de52e881733f143c4797",
+      "size": 82245,
+      "count": 2,
+      "paths": [
+        "xiaodefa/tdx_index/20260913-bulk1/chunk_idx_type-概念板块.csv.truncated",
+        "xiaodefa/tdx_index/20260913-bulk1/chunk_idx_type-概念板块.csv.truncated2"
+      ]
+    },
+    {
+      "digest": "c442b89f4a538376c3243998a72b90cb",
+      "size": 78982,
+      "count": 2,
+      "paths": [
+        "xiaodefa/tdx_index/20260913-bulk1/chunk_idx_type-行业板块.csv.truncated",
+        "xiaodefa/tdx_index/20260913-bulk1/chunk_idx_type-行业板块.csv.truncated2"
+      ]
+    },
+    {
+      "digest": "227c68906e578a58d6cba1d87ca68167",
+      "size": 19697,
+      "count": 5,
+      "paths": [
+        "sina_universe/page055/20260904T004903/response.json",
+        "sina_universe/page055/20260904T005147/response.json",
+        "sina_universe/page055/20260904T005518/response.json",
+        "sina_universe/page055/20260904T010740/response.json",
+        "sina_universe/page055/20260904T011650/response.json"
+      ]
+    },
+    {
+      "digest": "4f2fb8f1b4417eca4b678a3681ed5b9c",
+      "size": 77849,
+      "count": 2,
+      "paths": [
+        "sina/sh560170/20260904T165051/response.json",
+        "sina/sh560170/20260904T185815/response.json"
+      ]
+    },
+    {
+      "digest": "84bfa47be54fa6001b93dfd7e7ced450",
+      "size": 73386,
+      "count": 2,
+      "paths": [
+        "sina/sh588220/20260904T165021/response.json",
+        "sina/sh588220/20260904T185703/response.json"
+      ]
+    },
+    {
+      "digest": "2c3faa061ed7ca6cdcf5da36fc15a739",
+      "size": 73369,
+      "count": 2,
+      "paths": [
+        "sina/sh563300/20260904T165019/response.json",
+        "sina/sh563300/20260904T185700/response.json"
+      ]
+    },
+    {
+      "digest": "b4afd9f618a4407d7915f7a14a0a19ea",
+      "size": 70255,
+      "count": 2,
+      "paths": [
+        "sina/sh517520/20260904T165015/response.json",
+        "sina/sh517520/20260904T185652/response.json"
+      ]
+    },
+    {
+      "digest": "57130ba27f1160c9cd8b52e29f510e75",
+      "size": 69935,
+      "count": 2,
+      "paths": [
+        "sina/sh561360/20260904T165046/response.json",
+        "sina/sh561360/20260904T185806/response.json"
+      ]
+    },
+    {
+      "digest": "0d020a3356a59fb27d43e5d3edbf8cde",
+      "size": 69903,
+      "count": 2,
+      "paths": [
+        "sina/sh560280/20260904T165040/response.json",
+        "sina/sh560280/20260904T185754/response.json"
+      ]
+    },
+    {
+      "digest": "4f3ba8b97d87b7cf0173ad0315a275bf",
+      "size": 64426,
+      "count": 2,
+      "paths": [
+        "sina/sz159530/20260904T165020/response.json",
+        "sina/sz159530/20260904T185702/response.json"
+      ]
+    },
+    {
+      "digest": "19850cb50fff1c7ab71088218d6510b3",
+      "size": 61746,
+      "count": 2,
+      "paths": [
+        "sina/sz159565/20260904T165050/response.json",
+        "sina/sz159565/20260904T185815/response.json"
+      ]
+    },
+    {
+      "digest": "5c6f3da8018ab73a70c34b8127f9d44f",
+      "size": 51934,
+      "count": 2,
+      "paths": [
+        "sina/sz159301/20260904T165051/response.json",
+        "sina/sz159301/20260904T185816/response.json"
+      ]
+    },
+    {
+      "digest": "5923f7a3bd3deb1742b94d3c40352e4b",
+      "size": 49987,
+      "count": 2,
+      "paths": [
+        "em_fin/sh600519/20260904T013230/response.json",
+        "em_fin/sh600519/20260904T013638/response.json"
+      ]
+    },
+    {
+      "digest": "31167ba68227bab004bbee13ee0dbb36",
+      "size": 49928,
+      "count": 2,
+      "paths": [
+        "em_fin/sh601179/20260904T080501/response.json",
+        "em_fin/sh601179/20260904T080803/response.json"
+      ]
+    },
+    {
+      "digest": "92ee29f618ddcdef1f085c5f1c24d01b",
+      "size": 29263,
+      "count": 2,
+      "paths": [
+        "baostock/20260905_225721/board_sh_600519.csv",
+        "baostock/20260905_230017/board_sh_600519.csv"
+      ]
+    },
+    {
+      "digest": "75e208719f3bea1dd4a4a7fb631d4293",
+      "size": 27015,
+      "count": 2,
+      "paths": [
+        "baostock/20260905_225721/board_sz_000002.csv",
+        "baostock/20260905_230017/board_sz_000002.csv"
+      ]
+    },
+    {
+      "digest": "e285e0d5056fbca960c6eb12457b6b10",
+      "size": 7207,
+      "count": 4,
+      "paths": [
+        "sina_industries/nodes/20260904T005147/response.json",
+        "sina_industries/nodes/20260904T005518/response.json",
+        "sina_industries/nodes/20260904T010740/response.json",
+        "sina_industries/nodes/20260904T011651/response.json"
+      ]
+    },
+    {
+      "digest": "168efeac2c40da72cc36d2eabdf3ddf0",
+      "size": 13828,
+      "count": 2,
+      "paths": [
+        "baostock/20260905_225721/board_sz_300750.csv",
+        "baostock/20260905_230017/board_sz_300750.csv"
+      ]
+    },
+    {
+      "digest": "cbaf2cd166530d947e07b9a33c965a55",
+      "size": 13211,
+      "count": 2,
+      "paths": [
+        "baostock/20260905_225721/board_sh_688981.csv",
+        "baostock/20260905_230017/board_sh_688981.csv"
+      ]
+    },
+    {
+      "digest": "11993a8b38bea5af735436b830766955",
+      "size": 4390,
+      "count": 4,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-05-05_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-05-05_f5.csv",
+        "baostock/rev11-dynamic-minute-full-20260912-1/sz_300114_2022-05-05_f5.csv",
+        "baostock/ten-year-repair-20260913-2/sz.300114_2022-05-05_f5.csv"
+      ]
+    },
+    {
+      "digest": "202ab62681274649b735bc264a228aa1",
+      "size": 4570,
+      "count": 3,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-06-01_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-06-01_f5.csv",
+        "baostock/rev11-dynamic-minute-full-20260912-1/sz_300114_2022-06-01_f5.csv"
+      ]
+    },
+    {
+      "digest": "956fcc38ac2448ca006645cc1d33f5a6",
+      "size": 4614,
+      "count": 2,
+      "paths": [
+        "baostock/rev11-minute-probe-20260912-1/sz_300727_2020-12-01_f5.csv",
+        "baostock/ten-year-repair-20260913-3/sz.300727_2020-12-01_f5.csv"
+      ]
+    },
+    {
+      "digest": "313e9b5e2f4746ff06f2f36a3caa132e",
+      "size": 4599,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-24_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-24_f5.csv"
+      ]
+    },
+    {
+      "digest": "938b8d7baa258e33c884109ff0dfa63d",
+      "size": 4597,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-22_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-22_f5.csv"
+      ]
+    },
+    {
+      "digest": "98faf83618e7e92c4bdf26a42216ce38",
+      "size": 4593,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-20_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-20_f5.csv"
+      ]
+    },
+    {
+      "digest": "08542d4da75c0d3595edf0b7386c6ad6",
+      "size": 4592,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-21_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-21_f5.csv"
+      ]
+    },
+    {
+      "digest": "65a894cb9a8d2a313c2cc89e18cbb5e6",
+      "size": 4592,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-23_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-23_f5.csv"
+      ]
+    },
+    {
+      "digest": "7f5aaa1468346e57b991a4978a7b52d3",
+      "size": 4589,
+      "count": 2,
+      "paths": [
+        "baostock/pv1-blend-dynamic-minute-20260912-1/sh_603557_2020-10-09_f5.csv",
+        "baostock/ten-year-repair-20260913-2/sh.603557_2020-10-09_f5.csv"
+      ]
+    },
+    {
+      "digest": "a4c34acf0ae720ab4d2e4204ad9d3f09",
+      "size": 4587,
+      "count": 2,
+      "paths": [
+        "baostock/lowturn-dynamic-minute-full-20260912-1/sh_601628_2020-03-02_f5.csv",
+        "baostock/minute/l2repair_sh_601628_2020-03-02_f5.csv"
+      ]
+    },
+    {
+      "digest": "ebca4e1a7d5948cefd96a1f90bb87a1b",
+      "size": 4587,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-07_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-07_f5.csv"
+      ]
+    },
+    {
+      "digest": "d6fd0e148810e72c6d2f8ad817627062",
+      "size": 4582,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-05-30_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-05-30_f5.csv"
+      ]
+    },
+    {
+      "digest": "e99acb38986ee60214c23a7e0e2d0d9f",
+      "size": 4581,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-03_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-03_f5.csv"
+      ]
+    },
+    {
+      "digest": "2fe4e59ed14bd0e44c28cb478efab3c0",
+      "size": 4581,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-06_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-06_f5.csv"
+      ]
+    },
+    {
+      "digest": "1bcb0d49cda3c6c351f54efe4d32cf94",
+      "size": 4580,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-08_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-08_f5.csv"
+      ]
+    },
+    {
+      "digest": "4932fc8ce75d6e0c76f2b8b6e534cab7",
+      "size": 4579,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-09_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-09_f5.csv"
+      ]
+    },
+    {
+      "digest": "ecd768736f53e1e8eeacd6648a7f552e",
+      "size": 4578,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-05-18_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-05-18_f5.csv"
+      ]
+    },
+    {
+      "digest": "ad07a2b3b1c094721a24523c16159717",
+      "size": 4578,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-05-26_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-05-26_f5.csv"
+      ]
+    },
+    {
+      "digest": "8c06527cb3b12ae7472940fee6e775ac",
+      "size": 4577,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-27_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-27_f5.csv"
+      ]
+    },
+    {
+      "digest": "a1a16e1d352b2ec3bb6898bbfc1aef7f",
+      "size": 4575,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-05-31_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-05-31_f5.csv"
+      ]
+    },
+    {
+      "digest": "882e9b3082b07256ca841008b3ca8dbe",
+      "size": 4574,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-10_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-10_f5.csv"
+      ]
+    },
+    {
+      "digest": "a1c17843a7acdd02643fd907643faa2a",
+      "size": 4574,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-15_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-15_f5.csv"
+      ]
+    },
+    {
+      "digest": "6484943e2c668c7b150eb48a4ca8d20a",
+      "size": 4574,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-05-18_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-05-18_f5.csv"
+      ]
+    },
+    {
+      "digest": "676407d031b32131506154195510288f",
+      "size": 4574,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-05-27_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-05-27_f5.csv"
+      ]
+    },
+    {
+      "digest": "dbffc863d627905d38bfbb6d4746b58e",
+      "size": 4573,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-05-15_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-05-15_f5.csv"
+      ]
+    },
+    {
+      "digest": "0cc25a2dd0699282d80210a96c41dcb0",
+      "size": 4573,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-14_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-14_f5.csv"
+      ]
+    },
+    {
+      "digest": "3c1b8f253b1e3473ae0c5d8a1a4e29be",
+      "size": 4573,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-28_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-28_f5.csv"
+      ]
+    },
+    {
+      "digest": "f03d68fb161b9fa0e1ddbdb4c2a60c3a",
+      "size": 4572,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-02_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-02_f5.csv"
+      ]
+    },
+    {
+      "digest": "b80013942f12d3805325245bf991c449",
+      "size": 4572,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-17_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-17_f5.csv"
+      ]
+    },
+    {
+      "digest": "3c7870b35f87b43ed08500dafd204785",
+      "size": 4571,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-13_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-13_f5.csv"
+      ]
+    },
+    {
+      "digest": "3aaeb800f66dbed969fd3fc5f29de815",
+      "size": 4571,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-05-19_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-05-19_f5.csv"
+      ]
+    },
+    {
+      "digest": "272e370355147c7e04102b6b17303d52",
+      "size": 4571,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-05-24_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-05-24_f5.csv"
+      ]
+    },
+    {
+      "digest": "e05415f87c4c327a1e6ec92bad47efc4",
+      "size": 4570,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-16_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-16_f5.csv"
+      ]
+    },
+    {
+      "digest": "3f66fbe4f27bb02bef147eed12bfa5d1",
+      "size": 4570,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-29_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-29_f5.csv"
+      ]
+    },
+    {
+      "digest": "8ac8ebc484a024e3dbd10503470d4f86",
+      "size": 4569,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-31_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-31_f5.csv"
+      ]
+    },
+    {
+      "digest": "9bc2e0d79828819c452efd178b89e6c3",
+      "size": 4567,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-06-05_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-06-05_f5.csv"
+      ]
+    },
+    {
+      "digest": "55c9d87c2e43fd6443c9263658ce073b",
+      "size": 4567,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-30_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-30_f5.csv"
+      ]
+    },
+    {
+      "digest": "216d9519bea673413e369b1b6172bd32",
+      "size": 4562,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-05-06_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-05-06_f5.csv"
+      ]
+    },
+    {
+      "digest": "7a1517d73479126d1a79a19b901185f4",
+      "size": 4561,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-06-29_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-06-29_f5.csv"
+      ]
+    },
+    {
+      "digest": "808fdf612f7d7b1cafc0d12b6111b072",
+      "size": 4560,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-06-11_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-06-11_f5.csv"
+      ]
+    },
+    {
+      "digest": "88371f43003fd2d70f8f6e49785fe7fa",
+      "size": 4559,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-06-01_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-06-01_f5.csv"
+      ]
+    },
+    {
+      "digest": "5814f470c086714a3f94c1cced9f4834",
+      "size": 4558,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-07-01_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-07-01_f5.csv"
+      ]
+    },
+    {
+      "digest": "a09b77bffb9a985cc7eb0a078d2da25a",
+      "size": 4557,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-06-22_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-06-22_f5.csv"
+      ]
+    },
+    {
+      "digest": "8725b7badb2f1482125a05c35f885b08",
+      "size": 4555,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-05-20_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-05-20_f5.csv"
+      ]
+    },
+    {
+      "digest": "1d8aef3705d23733f151d70ce00cdf26",
+      "size": 4555,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-05-20_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-05-20_f5.csv"
+      ]
+    },
+    {
+      "digest": "ed33d51b73ccd9d3d62c7d8675af2f5f",
+      "size": 4554,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-06-30_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-06-30_f5.csv"
+      ]
+    },
+    {
+      "digest": "eb326c4cc4fd067e60174c6fbfbcaf3a",
+      "size": 4553,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-05-19_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-05-19_f5.csv"
+      ]
+    },
+    {
+      "digest": "bd1ce6156563e7ec629230635cb3cdd7",
+      "size": 4551,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-05-21_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-05-21_f5.csv"
+      ]
+    },
+    {
+      "digest": "33ccd14f8b82b317527bdceb3c91d63b",
+      "size": 4551,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-06-12_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-06-12_f5.csv"
+      ]
+    },
+    {
+      "digest": "e234131c343aa3b1371348b8381a30f3",
+      "size": 4551,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-06-19_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-06-19_f5.csv"
+      ]
+    },
+    {
+      "digest": "bce7c845eceab0b3274a371730a6b5ae",
+      "size": 4550,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-05-25_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-05-25_f5.csv"
+      ]
+    },
+    {
+      "digest": "44a61318d790fc2d90a4827b54fde178",
+      "size": 4549,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-05-23_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-05-23_f5.csv"
+      ]
+    },
+    {
+      "digest": "a58a62a6e994f0bbca324a0f8c3625f4",
+      "size": 4548,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-05-08_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-05-08_f5.csv"
+      ]
+    },
+    {
+      "digest": "3a656fa69116bbed8e7faf9437276e9b",
+      "size": 4547,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-06-17_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-06-17_f5.csv"
+      ]
+    },
+    {
+      "digest": "caa1264f4cd597e8f27e461fe247c9bd",
+      "size": 4544,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-06-24_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-06-24_f5.csv"
+      ]
+    },
+    {
+      "digest": "0d042dcd9772232ffb5f6caaa7e18bbe",
+      "size": 4543,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-05-07_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-05-07_f5.csv"
+      ]
+    },
+    {
+      "digest": "b86c9a10ad9f12a11547ea1d97a44524",
+      "size": 4542,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-05-14_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-05-14_f5.csv"
+      ]
+    },
+    {
+      "digest": "9529314e1cf76f07c7804e7dce17d440",
+      "size": 4542,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300729_2020-11-02_f5.csv",
+        "baostock/rev11-dynamic-minute-full-20260912-1/sz_300729_2020-11-02_f5.csv"
+      ]
+    },
+    {
+      "digest": "1951aa13b44042c2db8c688ebeee613d",
+      "size": 4541,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-05-22_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-05-22_f5.csv"
+      ]
+    },
+    {
+      "digest": "a72b675cd3e83b2f223009b8f4831565",
+      "size": 4540,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-06-10_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-06-10_f5.csv"
+      ]
+    },
+    {
+      "digest": "bb75de5188b1b2c3cd8b4ec8eed8034c",
+      "size": 4536,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-05-27_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-05-27_f5.csv"
+      ]
+    },
+    {
+      "digest": "f25ea8c250f39d524cbdbe7f81e2f3d5",
+      "size": 4536,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-06-15_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-06-15_f5.csv"
+      ]
+    },
+    {
+      "digest": "110753ef7fb6de67e9a99e700fc8b97b",
+      "size": 4536,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-08-03_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-08-03_f5.csv"
+      ]
+    },
+    {
+      "digest": "2c0c7966a3cb57ec56cdfbc999d526e1",
+      "size": 4535,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-06-03_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-06-03_f5.csv"
+      ]
+    },
+    {
+      "digest": "8dde0882cedfaead3ebec3c4cd8c9da4",
+      "size": 4535,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-06-23_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-06-23_f5.csv"
+      ]
+    },
+    {
+      "digest": "f607730828986cbe259cca1b5378cc7c",
+      "size": 4535,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-09-15_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-09-15_f5.csv"
+      ]
+    },
+    {
+      "digest": "846a0e79ffd36ff58395275e56d4a67e",
+      "size": 4535,
+      "count": 2,
+      "paths": [
+        "baostock/rev11-dynamic-minute-full-20260912-1/sz_300712_2020-11-02_f5.csv",
+        "baostock/ten-year-repair-20260913-1/sz.300712_2020-11-02_f5.csv"
+      ]
+    },
+    {
+      "digest": "4c454a0528680aa46f8ae3a6aa221834",
+      "size": 4534,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-05-28_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-05-28_f5.csv"
+      ]
+    },
+    {
+      "digest": "e5906cac4458cfb982ff1813ee9fa3fc",
+      "size": 4534,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-06-16_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-06-16_f5.csv"
+      ]
+    },
+    {
+      "digest": "0936f21331fb77428a44f64037789d40",
+      "size": 4534,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-08_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-08_f5.csv"
+      ]
+    },
+    {
+      "digest": "4a231ce7ec94da6a17c3dd9f772a8d0a",
+      "size": 4533,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-05-26_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-05-26_f5.csv"
+      ]
+    },
+    {
+      "digest": "0dadcd987138c4890dd4cded0b7d0c6c",
+      "size": 4533,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-06-08_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-06-08_f5.csv"
+      ]
+    },
+    {
+      "digest": "043bedaf836e4efa130a5a199d6d8a88",
+      "size": 4532,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-09_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-09_f5.csv"
+      ]
+    },
+    {
+      "digest": "572fc04531d9725cc82fe45b2ef9ec35",
+      "size": 4531,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-05-11_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-05-11_f5.csv"
+      ]
+    },
+    {
+      "digest": "3695ea10c9b2ce45d14619ace351ff1a",
+      "size": 4530,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-06-02_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-06-02_f5.csv"
+      ]
+    },
+    {
+      "digest": "4c866b5767b6f8d4ef004b1a78db08e6",
+      "size": 4530,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-01_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-01_f5.csv"
+      ]
+    },
+    {
+      "digest": "f54b7d0621fd1db7758c649964573415",
+      "size": 4529,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-23_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-23_f5.csv"
+      ]
+    },
+    {
+      "digest": "60e1ac2f3e04b323c059217ed50bc377",
+      "size": 4528,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-05-12_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-05-12_f5.csv"
+      ]
+    },
+    {
+      "digest": "c5e540c0ce9a86f05920f7d025567ec6",
+      "size": 4524,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-04_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-04_f5.csv"
+      ]
+    },
+    {
+      "digest": "b5c51bfcd227f0e723fba66d36953bcb",
+      "size": 4524,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-09-02_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-09-02_f5.csv"
+      ]
+    },
+    {
+      "digest": "f4864fa8a6731b3f90144fd044a52ef2",
+      "size": 4523,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-05-25_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-05-25_f5.csv"
+      ]
+    },
+    {
+      "digest": "8165cb46c9bdaa12ee497a6fb144b382",
+      "size": 4523,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-06-18_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-06-18_f5.csv"
+      ]
+    },
+    {
+      "digest": "bdde579dc8cb54186b168fb27badebe7",
+      "size": 4522,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-16_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-16_f5.csv"
+      ]
+    },
+    {
+      "digest": "2b7c8215ca733635a3c3ef0dbb6801f8",
+      "size": 4520,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-09-13_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-09-13_f5.csv"
+      ]
+    },
+    {
+      "digest": "001f3ff9f4aed9b77ce6cfab41fffd14",
+      "size": 4519,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-05-13_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-05-13_f5.csv"
+      ]
+    },
+    {
+      "digest": "80a52aa349b0de42d38a3e3d79e3e769",
+      "size": 4517,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-10_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-10_f5.csv"
+      ]
+    },
+    {
+      "digest": "3b0095f0fd4ea36ff951d72dab2c0ba9",
+      "size": 4517,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-15_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-15_f5.csv"
+      ]
+    },
+    {
+      "digest": "640d100cde6acdf25936cd041531c549",
+      "size": 4516,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-06-09_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-06-09_f5.csv"
+      ]
+    },
+    {
+      "digest": "caa52a54e3bce445e0c8c0575b38d919",
+      "size": 4516,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-02_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-02_f5.csv"
+      ]
+    },
+    {
+      "digest": "17678fd2956aa87bbd0e957f5053affc",
+      "size": 4516,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-09-01_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-09-01_f5.csv"
+      ]
+    },
+    {
+      "digest": "be26df458ea5291e3f37cd642e3de5f8",
+      "size": 4515,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-03_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-03_f5.csv"
+      ]
+    },
+    {
+      "digest": "dd5bf55a55479c6dd001714f601035e3",
+      "size": 4513,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-09-08_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-09-08_f5.csv"
+      ]
+    },
+    {
+      "digest": "32fc241cf92a300f9519f93af95f40fd",
+      "size": 4512,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-09-06_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-09-06_f5.csv"
+      ]
+    },
+    {
+      "digest": "42ba24e2cb468824273d1efb7d99b66a",
+      "size": 4511,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-06-04_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-06-04_f5.csv"
+      ]
+    },
+    {
+      "digest": "283129876309762a803a527560c735ab",
+      "size": 4511,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-31_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-31_f5.csv"
+      ]
+    },
+    {
+      "digest": "2a5419e606e3e311eb2efddaf29bac0d",
+      "size": 4511,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-09-16_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-09-16_f5.csv"
+      ]
+    },
+    {
+      "digest": "95028c7a165f836a6154b90017835591",
+      "size": 4509,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-07_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-07_f5.csv"
+      ]
+    },
+    {
+      "digest": "40788d464f26b5008329234f6f86b61d",
+      "size": 4509,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-11_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-11_f5.csv"
+      ]
+    },
+    {
+      "digest": "55a0d0d4dc583dfc705f89a30c5eafa9",
+      "size": 4509,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-17_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-17_f5.csv"
+      ]
+    },
+    {
+      "digest": "8fce5e949c02ed3e507fc2218de92cc2",
+      "size": 4509,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-25_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-25_f5.csv"
+      ]
+    },
+    {
+      "digest": "56fbbb98be752bed768468d51b4371e4",
+      "size": 4508,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2020-05-29_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2020-05-29_f5.csv"
+      ]
+    },
+    {
+      "digest": "c096cae70c641723bfb890ba59f8fd0e",
+      "size": 4507,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-14_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-14_f5.csv"
+      ]
+    },
+    {
+      "digest": "2aeccfdf109ef068e0186e4e5e13299d",
+      "size": 4505,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-09-09_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-09-09_f5.csv"
+      ]
+    },
+    {
+      "digest": "75551fbbcd4cb40d760dfb5b2588d93e",
+      "size": 4504,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-09-14_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-09-14_f5.csv"
+      ]
+    },
+    {
+      "digest": "e65a5dbe2a64ec587f26b1a943c63ed6",
+      "size": 4503,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-24_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-24_f5.csv"
+      ]
+    },
+    {
+      "digest": "dd779d4db62c9d2f5063a00dcdac8731",
+      "size": 4502,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-21_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-21_f5.csv"
+      ]
+    },
+    {
+      "digest": "88a53cc8046cf13e40ef4917a17ddc79",
+      "size": 4501,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-29_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-29_f5.csv"
+      ]
+    },
+    {
+      "digest": "1e13808381ab1fea870a6554d11792de",
+      "size": 4501,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-09-07_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-09-07_f5.csv"
+      ]
+    },
+    {
+      "digest": "a77ed9d0b0e980123958c982dd71a4b4",
+      "size": 4499,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-09-05_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-09-05_f5.csv"
+      ]
+    },
+    {
+      "digest": "4114b89ba590009e58482de520387daf",
+      "size": 4498,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-09-22_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-09-22_f5.csv"
+      ]
+    },
+    {
+      "digest": "21046ccabfebe932dbc15e6c13850b0f",
+      "size": 4496,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-22_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-22_f5.csv"
+      ]
+    },
+    {
+      "digest": "e31dbb399d70404c2b1d737d4290c0a5",
+      "size": 4496,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-30_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-30_f5.csv"
+      ]
+    },
+    {
+      "digest": "174079b5f7f2aee0db0087cb902582f6",
+      "size": 4495,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-04-01_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-04-01_f5.csv"
+      ]
+    },
+    {
+      "digest": "a0cad0b9615143f0286432aee6094c10",
+      "size": 4492,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-18_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-18_f5.csv"
+      ]
+    },
+    {
+      "digest": "07e4a5ec7179b2fdbfd31ed9478a1a87",
+      "size": 4492,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-03-28_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-03-28_f5.csv"
+      ]
+    },
+    {
+      "digest": "347f28c068614a91b4b71dc9a877abac",
+      "size": 4467,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-09-20_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-09-20_f5.csv"
+      ]
+    },
+    {
+      "digest": "5e744d8dc4ea8212a1647f5eabba8d17",
+      "size": 4443,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-05-17_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-05-17_f5.csv"
+      ]
+    },
+    {
+      "digest": "1cf5d55e5d5fb362ce5f93bfb760f3f1",
+      "size": 4432,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-05-16_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-05-16_f5.csv"
+      ]
+    },
+    {
+      "digest": "24ea4d6859305adf2aaf772d4e0f3d37",
+      "size": 4420,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-09-23_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-09-23_f5.csv"
+      ]
+    },
+    {
+      "digest": "91f0b3866e81da5f3dd6173fd32a61f4",
+      "size": 4412,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-05-11_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-05-11_f5.csv"
+      ]
+    },
+    {
+      "digest": "1bcfa44fccf0d5d642bed6de3c128d06",
+      "size": 4384,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-09-19_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-09-19_f5.csv"
+      ]
+    },
+    {
+      "digest": "644077a5bce98528e61009d1d9032557",
+      "size": 4379,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-05-06_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-05-06_f5.csv"
+      ]
+    },
+    {
+      "digest": "1e825e86a2dcbba530eb01f94992fea5",
+      "size": 4379,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-05-10_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-05-10_f5.csv"
+      ]
+    },
+    {
+      "digest": "e25d479fd41c0f0cb5e2b3692a68fac7",
+      "size": 4371,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-05-09_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-05-09_f5.csv"
+      ]
+    },
+    {
+      "digest": "d9ee148d8171a809aa318f4c46433c31",
+      "size": 4369,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-05-12_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-05-12_f5.csv"
+      ]
+    },
+    {
+      "digest": "c242ad3c6683b4d01c2e7643801bbca9",
+      "size": 4363,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-09-21_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-09-21_f5.csv"
+      ]
+    },
+    {
+      "digest": "3036d75cae415246939fda763b39bc80",
+      "size": 4359,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-05-13_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-05-13_f5.csv"
+      ]
+    },
+    {
+      "digest": "0037fe4d581c0ff0ab83dc91eb79bbba",
+      "size": 4350,
+      "count": 2,
+      "paths": [
+        "baostock/lowturn-dynamic-minute-full-20260912-1/sh_600236_2021-07-01_f5.csv",
+        "baostock/minute/l2repair_sh_600236_2021-07-01_f5.csv"
+      ]
+    },
+    {
+      "digest": "d4e01913fa065d5241fde60aef11bb0f",
+      "size": 4334,
+      "count": 2,
+      "paths": [
+        "baostock/pv1-blend-dynamic-minute-20260912-1/sz_000955_2020-02-03_f5.csv",
+        "baostock/ten-year-repair-20260913-2/sz.000955_2020-02-03_f5.csv"
+      ]
+    },
+    {
+      "digest": "15dfecd621607eb6bf702537f9d80cef",
+      "size": 4311,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-09-30_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-09-30_f5.csv"
+      ]
+    },
+    {
+      "digest": "896f957c6b233da8dad88bd8a27e9410",
+      "size": 4308,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-09-26_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-09-26_f5.csv"
+      ]
+    },
+    {
+      "digest": "84e2fac5da4e2acca8b3dc84bdd4efaa",
+      "size": 4308,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-09-28_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-09-28_f5.csv"
+      ]
+    },
+    {
+      "digest": "48df917324dc8b0c6eeece0568449955",
+      "size": 4306,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-10-10_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-10-10_f5.csv"
+      ]
+    },
+    {
+      "digest": "9eea2b73d2e1a637e8bfe866dc4b3a62",
+      "size": 4292,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-09-27_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-09-27_f5.csv"
+      ]
+    },
+    {
+      "digest": "794f285a9612277091b5118f6514b961",
+      "size": 4290,
+      "count": 2,
+      "paths": [
+        "baostock/minute/l2repair_sz_300114_2022-09-29_f5.csv",
+        "baostock/minute/l2repair_sz_302132_2022-09-29_f5.csv"
+      ]
+    },
+    {
+      "digest": "faa3fddf2c25343454eb389b48433a43",
+      "size": 4125,
+      "count": 2,
+      "paths": [
+        "user_csv_1m/20260913-2/sz.000607_2015-07-01_f5.csv",
+        "xiaodefa/minute-repairs-20260914-1/sz.000607_2015-07-01_f5.csv"
+      ]
+    },
+    {
+      "digest": "a501566cb633d435d1ed9a668e7e208a",
+      "size": 4120,
+      "count": 2,
+      "paths": [
+        "user_csv_1m/20260913-2/sz.300322_2015-07-01_f5.csv",
+        "xiaodefa/minute-repairs-20260914-1/sz.300322_2015-07-01_f5.csv"
+      ]
+    },
+    {
+      "digest": "1bf7ac67005fbb2c7d416f27c13648f6",
+      "size": 4110,
+      "count": 2,
+      "paths": [
+        "user_csv_1m/20260913-2/sz.000802_2015-07-01_f5.csv",
+        "xiaodefa/minute-repairs-20260914-1/sz.000802_2015-07-01_f5.csv"
+      ]
+    },
+    {
+      "digest": "2755fdf0871a89048bc081052eb434fc",
+      "size": 4110,
+      "count": 2,
+      "paths": [
+        "user_csv_1m/20260913-2/sz.000989_2015-07-01_f5.csv",
+        "xiaodefa/minute-repairs-20260914-1/sz.000989_2015-07-01_f5.csv"
+      ]
+    },
+    {
+      "digest": "32a9531c80abbd598d521c7a417ea76d",
+      "size": 4092,
+      "count": 2,
+      "paths": [
+        "user_csv_1m/20260913-2/sz.000632_2015-07-01_f5.csv",
+        "xiaodefa/minute-repairs-20260914-1/sz.000632_2015-07-01_f5.csv"
+      ]
+    },
+    {
+      "digest": "2d1ffa84ed13c6ef204e354b9f21eb3b",
+      "size": 4091,
+      "count": 2,
+      "paths": [
+        "user_csv_1m/20260913-2/sz.300100_2015-07-01_f5.csv",
+        "xiaodefa/minute-repairs-20260914-1/sz.300100_2015-07-01_f5.csv"
+      ]
+    },
+    {
+      "digest": "35df91f0b3fa0258ae50c0be5ced149d",
+      "size": 4079,
+      "count": 2,
+      "paths": [
+        "user_csv_1m/20260913-2/sz.300209_2015-07-01_f5.csv",
+        "xiaodefa/minute-repairs-20260914-1/sz.300209_2015-07-01_f5.csv"
+      ]
+    },
+    {
+      "digest": "11473056d645630e4c31b355ce899d6e",
+      "size": 4072,
+      "count": 2,
+      "paths": [
+        "user_csv_1m/20260913-2/sz.002349_2015-07-01_f5.csv",
+        "xiaodefa/minute-repairs-20260914-1/sz.002349_2015-07-01_f5.csv"
+      ]
+    },
+    {
+      "digest": "18819623b946c8b79e9e9f0eb6c01815",
+      "size": 4070,
+      "count": 2,
+      "paths": [
+        "user_csv_1m/20260913-2/sz.000681_2015-07-01_f5.csv",
+        "xiaodefa/minute-repairs-20260914-1/sz.000681_2015-07-01_f5.csv"
+      ]
+    },
+    {
+      "digest": "1a39a84ee88594a98efb8125aa296797",
+      "size": 4059,
+      "count": 2,
+      "paths": [
+        "user_csv_1m/20260913-2/sz.000032_2015-07-01_f5.csv",
+        "xiaodefa/minute-repairs-20260914-1/sz.000032_2015-07-01_f5.csv"
+      ]
+    },
+    {
+      "digest": "651079acefe40287cb78cadb3be73b6f",
+      "size": 4053,
+      "count": 2,
+      "paths": [
+        "user_csv_1m/20260913-2/sz.300006_2015-07-01_f5.csv",
+        "xiaodefa/minute-repairs-20260914-1/sz.300006_2015-07-01_f5.csv"
+      ]
+    },
+    {
+      "digest": "7f855c1f68415862248d2593a6580c4a",
+      "size": 4005,
+      "count": 2,
+      "paths": [
+        "user_csv_1m/20260913-2/sz.000560_2015-07-01_f5.csv",
+        "xiaodefa/minute-repairs-20260914-1/sz.000560_2015-07-01_f5.csv"
+      ]
+    },
+    {
+      "digest": "745b38cfcfcf0e6df0d7bf2d295f0b7b",
+      "size": 3955,
+      "count": 2,
+      "paths": [
+        "xiaodefa/minute-repairs-20260914-1/sz.300420_2019-09-02_f5.csv",
+        "xiaodefa/repairs-20260913-2/sz.300420_2019-09-02_f5.csv"
+      ]
+    },
+    {
+      "digest": "53a8959822809d2bf80c466e64fcfa9f",
+      "size": 61,
+      "count": 12,
+      "paths": [
+        "baostock/20260905_230017/min_f1_recent.csv",
+        "baostock/20260905_230017/min_m5_2011.csv",
+        "baostock/20260905_230017/min_m5_2013.csv",
+        "baostock/20260905_230017/min_m5_2015.csv",
+        "baostock/20260905_230017/min_m5_2017.csv",
+        "baostock/20260905_230017/min_m5_2019.csv",
+        "baostock/minute/sz_000792_2020-07-01_2020-07-31_f5.csv",
+        "baostock/minute/target_sz_300641_2024-05-07_f5.csv",
+        "baostock/minute/target_sz_300641_2024-05-08_f5.csv",
+        "baostock/minute/target_sz_300641_2024-05-09_f5.csv",
+        "baostock/minute/target_sz_300641_2024-05-10_f5.csv",
+        "baostock/minute/target_sz_300641_2024-05-13_f5.csv"
+      ]
+    },
+    {
+      "digest": "31f0550a0ecf8167e919a48085d7173f",
+      "size": 236,
+      "count": 2,
+      "paths": [
+        "baostock/20260905_230017/div_sz_000792_2020.csv",
+        "baostock/20260905_230017/div_sz_000792_2021.csv"
+      ]
+    },
+    {
+      "digest": "2f128b2a4424809f3acbdee59b99063d",
+      "size": 94,
+      "count": 2,
+      "paths": [
+        "baostock/20260905_225721/board_bj_430047.csv",
+        "baostock/20260905_230017/board_bj_430047.csv"
+      ]
+    }
+  ]
+}

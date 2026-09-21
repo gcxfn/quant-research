@@ -1,0 +1,104 @@
+{
+  "experiment_id": "exp-20260919-hybrid-family-v1",
+  "frozen_at": "2026-09-19T05:45:00+08:00",
+  "prereg": "docs/research/exp-20260919-hybrid-family-v1-prereg.md（已冻结；本文件为其机器可读镜像，冲突以 prereg 为准）",
+  "authority": [
+    "用户 2026-09-19 批准混合族方向（股票引擎 C05 冻结 + ETF 风险腿 + 纯 ETF 对照臂）",
+    "用户会话目标列：dev 净年化 ≥10%（目标非门）",
+    "契约 docs/plans/p3-band-contract.md §7（含 §7.7）+ §8（TBD 已回填，随本预登记冻结）"
+  ],
+  "engine": {
+    "file": "src/quant/backtest/band_engine.py",
+    "version": "v1.2",
+    "sha256": "ceb7be6414280e4c5d5f37dc6ca1148a85e306b2de1a216147f67f89cc4a746d",
+    "sha256_16": "ceb7be6414280e4c",
+    "entry": "run_band_backtest_intents",
+    "chain": "executor 20260919T044343-engine-v12-2632（两轮）→ 主对话验收+15 项接缝裁定 → review-v12.md APPROVE 0C/0M/3m"
+  },
+  "universe": {
+    "etf_panel": "data/processed/etf-daily-20260919/daily_2015_2024.parquet",
+    "adj_factor_source": "data/raw/tushare/fund_adj/20260917-r1/（按 symbol join，仅动量计算用）",
+    "members": {
+      "sh.511010": {"class": "etf", "band": 0.10, "t_plus": 0, "use": ["leg", "rotation"], "name": "国泰上证5年期国债ETF"},
+      "sh.518880": {"class": "etf", "band": 0.10, "t_plus": 0, "use": ["leg", "rotation"], "name": "华安黄金ETF"},
+      "sh.510050": {"class": "etf", "band": 0.10, "t_plus": 0, "use": ["rotation"], "name": "华夏上证50ETF"},
+      "sh.510300": {"class": "etf", "band": 0.10, "t_plus": 0, "use": ["rotation"], "name": "华泰柏瑞沪深300ETF"},
+      "sz.159915": {"class": "etf", "band": 0.10, "t_plus": 0, "use": ["rotation"], "name": "易方达创业板ETF", "band_note": "dev 运行取 0.10；真实带 2020-08-24 起 20%，dev 内其后 max|日变动|=4.84% 从未约束；val 扩展需时变带宽或剔除（prereg §8-9）"},
+      "sh.510880": {"class": "etf", "band": 0.10, "t_plus": 0, "use": ["rotation"], "name": "华泰柏瑞上证红利ETF"},
+      "sh.513100": {"class": "etf", "band": 0.10, "t_plus": 0, "use": ["rotation"], "name": "国泰纳指100ETF(QDII)"},
+      "sh.513500": {"class": "etf", "band": 0.10, "t_plus": 0, "use": ["rotation"], "name": "博时标普500ETF(QDII)"}
+    },
+    "excluded_with_evidence": {
+      "sz.159919": "2019-01-14 参考价 -9.98% 无因子跳变（份额折算漏记，契约 §8.4）",
+      "sh.510500": "dev 内 2015-04-15 份额合并 ratio 0.2803（参考价上跳类不建模，契约 §8.4）",
+      "sh.512880": "非全窗（2016-08 起）",
+      "sh.588000": "非全窗（2020-11 起）"
+    },
+    "dividend_events_rule": "事件日 preclose(t)<close(t-1) 且当日因子 ratio∈(1.0,1.06] → 现金分红 div/股=close(t-1)-preclose(t)；dev 内共 18 次（510050×5、510300×6、510880×6、511010×1），由 runner 从 preclose_mismatch_detail.csv + fund_adj 因子构建 dividend_events 帧"
+  },
+  "stock_leg": {
+    "base": "P3R2 C05 逐字复用",
+    "params": {"K": 30, "path": "T200-40", "q5": true},
+    "frame_builder": "artifacts/runs/20260919T030640-p3r2-dev-ad9e/tmp/runner_p3r2_intents.py（重建逻辑复制，不改语义）",
+    "mapping": "P3R2 预登记 §4.1-4.9 逐字"
+  },
+  "configs": [
+    {"id": "HYB-00", "stock": "C05", "leg": null, "park_w": null, "rotation": null, "note": "零回归锚：输出必须与 P3R2 C05 运行产物逐字节一致，不一致即中止"},
+    {"id": "HYB-01", "stock": "C05", "leg": "sh.511010", "park_w": 0.40, "rotation": null},
+    {"id": "HYB-02", "stock": "C05", "leg": "sh.518880", "park_w": 0.40, "rotation": null},
+    {"id": "HYB-03", "stock": "C05", "leg": "sh.518880", "park_w": 0.50, "rotation": null},
+    {"id": "HYB-04", "stock": "C05", "leg": "sh.518880", "park_w": 0.30, "rotation": null},
+    {"id": "HYB-05", "stock": "C05", "leg": "sh.511010+sh.518880", "park_w": 0.40, "note": "两腿各 0.20"},
+    {"id": "ROT-01", "stock": null, "leg": null, "park_w": null, "rotation": {"top_n": 4, "weight": 0.25, "lookback_m": 6}},
+    {"id": "ROT-02", "stock": null, "leg": null, "park_w": null, "rotation": {"top_n": 4, "weight": 0.25, "lookback_m": 3}},
+    {"id": "ROT-03", "stock": null, "leg": "sh.511010", "park_w": 0.50, "rotation": {"top_n": 2, "weight": 0.25, "lookback_m": 6}}
+  ],
+  "leg_semantics": {
+    "design": "B（静态帧，无状态反馈）",
+    "initial_buy": "首决策点 2015-01-30 15:00 一次性 park 买入 clip（weight=ParkW，expiry=+3 个月，fill-stop，期间机械重锚）",
+    "monthly": "此后每月末决策点发减至目标 ParkW 风减单（intent=risk、K=3 键 (symbol,risk,monthly_park)、expiry=下月末，同名义新月重置）；无再买入 clip",
+    "cash_competition": "m7 创建序：股票意图在前、腿意图在后"
+  },
+  "rotation_semantics": {
+    "signal": "月末 15:00，复权收盘 trailing 回报排名（8 成员），top_n 各 weight 买入 clip；离场成员 sell_full（intent=risk、K=3）",
+    "expiry": "下月末；同名义新月覆盖"
+  },
+  "window": {
+    "dev": "2015-01-05..2020-12-31",
+    "signals": "2015-01-30..2020-11-30（2020-12-31 丢弃）",
+    "val": "NOT consumed（一次性纪律，须用户另行批准；QDII 2022 合并事件未建模，ROT 臂 val 须先扩引擎或剔除）"
+  },
+  "gates": {
+    "1_net_cagr_gt_0": true,
+    "2_excess_vs_B1m_ge_2pp": true,
+    "3_advantage_years_ge_5_of_6": true,
+    "4_mdd_le_20pct_and_le_B1m": true,
+    "5_one_side_turnover_le_6": true,
+    "6_single_name_weight_le_40pct": true,
+    "7_vs_B3prime_plus_1pp": true,
+    "8_v2_k3_fallback_delivery_ge_99pct": "K=3 兜底成交单数/兜底武装单数 ≥99%（停牌冻结不计入）；R16 原 95% 计划成交率作对照列不设门（P3R2 实测 49-58% 结构性不可达）；三项执行披露（限价直接成交率/K 触发率/平均滑点 vs 决策锚点收盘）不设门",
+    "benchmarks": "B1(m)/B3′ 沿 R16 metrics.json verbatim（与 P3R2 同源）",
+    "goal_column_non_gate": "dev 净年化 ≥10%（用户会话目标）"
+  },
+  "runner_assertions": [
+    "stats.etf_default_band_symbols 为空",
+    "面板 preclose 列对宇宙 etf 行全覆盖无空值",
+    "纯 ETF 配置的面板日期并集 = SSE 交易日历 2015-2020（data/raw/xiaodefa/trade_cal/20260913-bulk1）"
+  ],
+  "data_pins": {
+    "etf_daily": "data/processed/etf-daily-20260919（manifest 聚合 sha256 d6d3cd9b…；验收记录主计划）",
+    "stock_data": "与 P3R2 预登记 data_pins 逐字相同"
+  },
+  "disclosures": "prereg §8 全部 10 项（元过拟合/QDII val 风险/现金竞争代价/159915 偏离与带宽简化/门 8 v2 偏离/K 时标不对称/费率优先级/runner 断言/逐配置指标）",
+  "budget": {
+    "engine_time": "预计 <2 分钟（P3R2 实测 2-3s/config × 9 + 腿意图增量）",
+    "runner_total": "≤30 分钟含数据加载；先 HYB-00 冒烟回归锚通过再放全族"
+  },
+  "stop_clauses": [
+    "HYB-00 输出与 P3R2 C05 不一致 → 中止排查（引擎回归）",
+    "runner 断言任一失败 → 中止",
+    "引擎异常 → 停留档",
+    "任何配置 dev 八门全过 → 停，报告用户申请 val 授权；无全过 → 全族淘汰，val 不动"
+  ],
+  "trial_accounting": "判定后计 1 项试验（9 配置族）；台账与结果文档按惯例回填"
+}

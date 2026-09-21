@@ -1,0 +1,180 @@
+{
+ "source": "xiaodefa",
+ "dataset": "minute-repairs-20260914-2",
+ "batches": {
+  "xiaodefa/minute-repairs-20260914-2": {
+   "batch_dir": "xiaodefa/minute-repairs-20260914-2",
+   "mode": "full",
+   "files": {
+    "n_total": 3,
+    "n_csv": 1,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 0,
+    "n_other": 2,
+    "manifest_names": [],
+    "other_names": [
+     "patches.json",
+     "sz.002442_2016-03-01_reviewed_1m.json"
+    ],
+    "total_bytes": 140575
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "manifest_missing",
+     "detail": "批次目录内无 manifest.json/sha256/meta 清单"
+    }
+   ],
+   "inventory_registration": {
+    "files": 3,
+    "bytes": 140575
+   },
+   "schema": {
+    "open": "Float64",
+    "high": "Float64",
+    "low": "Float64",
+    "close": "Float64",
+    "amount": "Float64",
+    "volume": "Float64",
+    "date": "String",
+    "code": "String",
+    "adjustflag": "Int64",
+    "time": "Int64"
+   },
+   "n_columns": 10,
+   "date_columns": [
+    "date",
+    "time"
+   ],
+   "numeric_columns_checked": [
+    "close",
+    "open",
+    "high",
+    "low",
+    "volume",
+    "amount",
+    "adjustflag",
+    "time"
+   ],
+   "rows_total": 48,
+   "date_coverage": {
+    "date": {
+     "min": "20160301",
+     "max": "20160301",
+     "rows_gt_20241231": 0,
+     "null_rows": 0
+    },
+    "time": {
+     "min": "20160301",
+     "max": "20160301",
+     "rows_gt_20241231": 0,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 0,
+   "numeric_magnitude": {
+    "close": {
+     "min": 11.0,
+     "max": 11.5
+    },
+    "open": {
+     "min": 11.0,
+     "max": 11.5
+    },
+    "high": {
+     "min": 11.1,
+     "max": 11.55
+    },
+    "low": {
+     "min": 10.87,
+     "max": 11.45
+    },
+    "volume": {
+     "min": 8800.0,
+     "max": 446656.0
+    },
+    "amount": {
+     "min": 98296.0,
+     "max": 4984970.8125
+    },
+    "adjustflag": {
+     "min": 3.0,
+     "max": 3.0
+    },
+    "time": {
+     "min": 2.01603010935e+16,
+     "max": 2.016030115e+16
+    }
+   },
+   "primary_key": null,
+   "sample_rows": [
+    {
+     "open": "11.16",
+     "high": "11.34",
+     "low": "10.87",
+     "close": "11.2",
+     "amount": "1632912.484375",
+     "volume": "145956.0",
+     "date": "2016-03-01",
+     "code": "sz.002442",
+     "adjustflag": "3",
+     "time": "20160301093500000"
+    },
+    {
+     "open": "11.2",
+     "high": "11.42",
+     "low": "11.2",
+     "close": "11.3",
+     "amount": "2392783.8125",
+     "volume": "210994.0",
+     "date": "2016-03-01",
+     "code": "sz.002442",
+     "adjustflag": "3",
+     "time": "20160301094000000"
+    },
+    {
+     "open": "11.39",
+     "high": "11.41",
+     "low": "11.3",
+     "close": "11.41",
+     "amount": "1677750.0",
+     "volume": "147500.0",
+     "date": "2016-03-01",
+     "code": "sz.002442",
+     "adjustflag": "3",
+     "time": "20160301094500000"
+    },
+    {
+     "open": "11.41",
+     "high": "11.44",
+     "low": "11.29",
+     "close": "11.44",
+     "amount": "2030512.625",
+     "volume": "178802.0",
+     "date": "2016-03-01",
+     "code": "sz.002442",
+     "adjustflag": "3",
+     "time": "20160301095000000"
+    },
+    {
+     "open": "11.44",
+     "high": "11.44",
+     "low": "11.32",
+     "close": "11.4",
+     "amount": "688677.0",
+     "volume": "60500.0",
+     "date": "2016-03-01",
+     "code": "sz.002442",
+     "adjustflag": "3",
+     "time": "20160301095500000"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:07:40"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:40"
+}

@@ -1,0 +1,754 @@
+{
+  "status": "PASS_WITH_LIMITATIONS",
+  "vendor": "User purchased on Xianyu; original vendor not verified；2026-09-13 科创板两项改以 baostock 5分钟替换（聚合与日线逐字段相等）；2026-09-13 补丁清单推进到 minute-repairs-20260913-3（新增 sh.603178 2022-02-07 baostock 5 分钟整日替换）；2026-09-13 补丁清单推进到 minute-repairs-20260913-4（新增 sh.603209 2023-06-01 baostock 5 分钟整日替换：1 分钟首根开盘取到前收 28.90，日线开盘 29.29，其余字段与量一致）",
+  "scope": "2015-2024 only; old planned selections are source probes, not actual orders",
+  "reviewer_sha256": "7b6804fe4777fbe056fb143f98e4362a8834ed4c1fd479ae5cd0b718ad0d3daf",
+  "archives": [
+    {
+      "year": "2015",
+      "days": 244,
+      "sha256": "9a259d1ae54a6fe82b87814df369c3918d76829df66025bffd2e2565cbe45ef9",
+      "all_member_crc": "PASS",
+      "calendar": "PASS"
+    },
+    {
+      "year": "2016",
+      "days": 244,
+      "sha256": "764be2b9e019fc58fdb50d393ca5532b9e5b67c1249533359419e597c01fa3db",
+      "all_member_crc": "PASS",
+      "calendar": "PASS"
+    },
+    {
+      "year": "2017",
+      "days": 244,
+      "sha256": "8682d46f9020e5141a3a662666db10a72b42b2938429383f80139c54f115e73a",
+      "all_member_crc": "PASS",
+      "calendar": "PASS"
+    },
+    {
+      "year": "2018",
+      "days": 243,
+      "sha256": "ecdd10002189dc506861fb3f526d8b1213d8f9fe04fe782dc1c107b400ba8c40",
+      "all_member_crc": "PASS",
+      "calendar": "PASS"
+    },
+    {
+      "year": "2019",
+      "days": 244,
+      "sha256": "b0cbfcc6a5079fe7f0945cb5ecce69b0045926c4dfe73e8f45be838a5642d242",
+      "all_member_crc": "PASS",
+      "calendar": "PASS"
+    },
+    {
+      "year": "2020",
+      "days": 243,
+      "sha256": "b7546350f75736d2fdfd85cd86dd42324c6473d1d560eaefc355019566d3ada7",
+      "all_member_crc": "PASS",
+      "calendar": "PASS"
+    },
+    {
+      "year": "2021",
+      "days": 243,
+      "sha256": "181853296a79098e1061625b32c723794cabb22ce3b5bb45dee63052fbd5a79c",
+      "all_member_crc": "PASS",
+      "calendar": "PASS"
+    },
+    {
+      "year": "2022",
+      "days": 242,
+      "sha256": "c0060d66cfbe1bc4da3bd744e13d7fa020980836257ddfe74aafd1d7e9ef6c96",
+      "all_member_crc": "PASS",
+      "calendar": "PASS"
+    },
+    {
+      "year": "2023",
+      "days": 242,
+      "sha256": "3b6e1c2b44347c5345d5d17c815cb5ad9d2f182df1e3c017690ec6bb24660c92",
+      "all_member_crc": "PASS",
+      "calendar": "PASS"
+    },
+    {
+      "year": "2024",
+      "days": 242,
+      "sha256": "7cbb045690059eb03b2045d11dcc8cbb453ac08c392b40e3317561afcd916960",
+      "all_member_crc": "PASS",
+      "calendar": "PASS"
+    }
+  ],
+  "probes": [
+    {
+      "path": "D:\\AI\\workspace\\个人量化\\artifacts\\user-minute-1m-source-probe-20260913-1",
+      "manifest_sha256": "2a0030f74a5e04a33f1c72f5aa2caa52772ba5ae7d890c41617576103a1a22f0",
+      "converted": 1072,
+      "structural_failures": 2,
+      "classification": {
+        "bounded_disclose": 245,
+        "match_or_rounding": 820,
+        "block": 7
+      }
+    },
+    {
+      "path": "D:\\AI\\workspace\\个人量化\\artifacts\\user-minute-1m-source-probe-20260913-2",
+      "manifest_sha256": "f0fc7e47573f3ad0756fe2693b45757755e39d6bfaf09710662021d6992a7877",
+      "converted": 1055,
+      "structural_failures": 2,
+      "classification": {
+        "match_or_rounding": 902,
+        "bounded_disclose": 149,
+        "block": 4
+      }
+    }
+  ],
+  "blocking_examples": [
+    {
+      "code": "sz.000681",
+      "date": "2015-07-01",
+      "path": "D:\\AI\\workspace\\个人量化\\artifacts\\user-minute-1m-source-probe-20260913-1\\sz.000681_2015-07-01_f5.csv",
+      "sha256": "5a9b4293e792d0d44e34619730e7d65a138c0ddc5b352eaf9101e2bf61cabaee",
+      "error_code": "0",
+      "source": "user_1m_aggregated_5m",
+      "archive_sha256": "9a259d1ae54a6fe82b87814df369c3918d76829df66025bffd2e2565cbe45ef9",
+      "member_sha256": "6e625967c7273e067393576ee375a2d011a3f6b0d79706be88f3faf96712fada",
+      "input_sha256": "57d4d6c005bf1816b816055af4489663081d152c39383cea86f1dc2d5afc2a5d",
+      "aggregate": {
+        "open": 40.5,
+        "close": 37.6,
+        "high": 42.9,
+        "low": 37.0,
+        "volume": 12406080.0
+      },
+      "daily_difference": {
+        "open": 0.0,
+        "close": -0.3999999999999986,
+        "high": 0.0,
+        "low": 0.0,
+        "volume": -252601.0
+      }
+    },
+    {
+      "code": "sz.000802",
+      "date": "2015-07-01",
+      "path": "D:\\AI\\workspace\\个人量化\\artifacts\\user-minute-1m-source-probe-20260913-1\\sz.000802_2015-07-01_f5.csv",
+      "sha256": "49575cde6a4afa9c5d0d7ca6ab31981494cee843a177596c2288a54d7abfbcd7",
+      "error_code": "0",
+      "source": "user_1m_aggregated_5m",
+      "archive_sha256": "9a259d1ae54a6fe82b87814df369c3918d76829df66025bffd2e2565cbe45ef9",
+      "member_sha256": "6e625967c7273e067393576ee375a2d011a3f6b0d79706be88f3faf96712fada",
+      "input_sha256": "1e04ea848dc5f9247ede00731e2055dfcbc1d31d62cff3b6dae7e4c32d97b401",
+      "aggregate": {
+        "open": 29.9,
+        "close": 29.0,
+        "high": 32.02,
+        "low": 27.0,
+        "volume": 22952413.0
+      },
+      "daily_difference": {
+        "open": 0.0,
+        "close": -0.8000000000000007,
+        "high": 0.0,
+        "low": 0.0,
+        "volume": -915900.0
+      }
+    },
+    {
+      "code": "sz.300209",
+      "date": "2015-07-01",
+      "path": "D:\\AI\\workspace\\个人量化\\artifacts\\user-minute-1m-source-probe-20260913-1\\sz.300209_2015-07-01_f5.csv",
+      "sha256": "6cd3209458a2b221d3a961fa899909e191c2abd4fdb776b6d8c7c3886248d973",
+      "error_code": "0",
+      "source": "user_1m_aggregated_5m",
+      "archive_sha256": "9a259d1ae54a6fe82b87814df369c3918d76829df66025bffd2e2565cbe45ef9",
+      "member_sha256": "6e625967c7273e067393576ee375a2d011a3f6b0d79706be88f3faf96712fada",
+      "input_sha256": "f6be7f285387e7c0aaad7c7d9e0674749634a7a1bcf61d098557d5a3eda635d7",
+      "aggregate": {
+        "open": 23.04,
+        "close": 21.22,
+        "high": 24.64,
+        "low": 21.21,
+        "volume": 8922524.0
+      },
+      "daily_difference": {
+        "open": 0.0,
+        "close": 0.019999999999999574,
+        "high": 0.0,
+        "low": 0.010000000000001563,
+        "volume": -540300.0
+      }
+    },
+    {
+      "code": "sz.002442",
+      "date": "2016-03-01",
+      "path": "D:\\AI\\workspace\\个人量化\\artifacts\\user-minute-1m-source-probe-20260913-1\\sz.002442_2016-03-01_f5.csv",
+      "sha256": "11dd1440cf939eb18ca0db3a5233de6fbf28dc1d82b9adddfb3c7805a36d93ee",
+      "error_code": "0",
+      "source": "user_1m_aggregated_5m",
+      "archive_sha256": "764be2b9e019fc58fdb50d393ca5532b9e5b67c1249533359419e597c01fa3db",
+      "member_sha256": "de9240c82299bdeb4678eb2a6060e1f4e55a7f43efd18526df63092ea3949515",
+      "input_sha256": "ffc1f84f4f5186b7f266f4595758ac602a0fd00ad5c661c547f931aaa4439a1b",
+      "aggregate": {
+        "open": 11.16,
+        "close": 11.4,
+        "high": 11.55,
+        "low": 10.99,
+        "volume": 5239817.0
+      },
+      "daily_difference": {
+        "open": 0.0,
+        "close": 0.0,
+        "high": 0.0,
+        "low": 0.120000000000001,
+        "volume": 0.0
+      }
+    },
+    {
+      "code": "sz.002812",
+      "date": "2018-03-01",
+      "path": "D:\\AI\\workspace\\个人量化\\artifacts\\user-minute-1m-source-probe-20260913-1\\sz.002812_2018-03-01_f5.csv",
+      "sha256": "c59081a23ea2e42b8da20e7d1ef117e02116102b7e3fc09a970a2ec2e1899939",
+      "error_code": "0",
+      "source": "user_1m_aggregated_5m",
+      "archive_sha256": "ecdd10002189dc506861fb3f526d8b1213d8f9fe04fe782dc1c107b400ba8c40",
+      "member_sha256": "d16688f223098dc24c69a031e08536d4d98f4e68e5e8e07eb4f86483d47e2370",
+      "input_sha256": "54222c42a19bb78041359ab92f9cadebb116123a2105ad009e93e754bc5c68aa",
+      "aggregate": {
+        "open": 103.3,
+        "close": 104.2,
+        "high": 104.41,
+        "low": 102.2,
+        "volume": 482104.0
+      },
+      "daily_difference": {
+        "open": 1.0999999999999943,
+        "close": 0.0,
+        "high": 0.0,
+        "low": 0.0,
+        "volume": 0.0
+      }
+    },
+    {
+      "code": "sh.603026",
+      "date": "2019-05-06",
+      "path": "D:\\AI\\workspace\\个人量化\\artifacts\\user-minute-1m-source-probe-20260913-1\\sh.603026_2019-05-06_f5.csv",
+      "sha256": "7dea88ef55fed7111f786cf654cbde266ec0b95a5ddd206ad21f9bb015c1663d",
+      "error_code": "0",
+      "source": "user_1m_aggregated_5m",
+      "archive_sha256": "b0cbfcc6a5079fe7f0945cb5ecce69b0045926c4dfe73e8f45be838a5642d242",
+      "member_sha256": "560da20252594c8bb401d8b56a21b2d5840a6c5a72a85cdf9755aba495b4806c",
+      "input_sha256": "fd577bbf035baded6d569a64ac26a72fca2bd54169fec24d136ae3fc03db9c12",
+      "aggregate": {
+        "open": 31.5,
+        "close": 31.05,
+        "high": 32.78,
+        "low": 30.44,
+        "volume": 9806855.0
+      },
+      "daily_difference": {
+        "open": 0.0,
+        "close": 0.0,
+        "high": 0.0,
+        "low": 0.33000000000000185,
+        "volume": 0.0
+      }
+    },
+    {
+      "code": "sz.300420",
+      "date": "2019-09-02",
+      "path": "D:\\AI\\workspace\\个人量化\\artifacts\\user-minute-1m-source-probe-20260913-1\\sz.300420_2019-09-02_f5.csv",
+      "sha256": "bce8016ccda5285c505cc414d0e3946276b01f96d7b08443565c295238b3663d",
+      "error_code": "0",
+      "source": "user_1m_aggregated_5m",
+      "archive_sha256": "b0cbfcc6a5079fe7f0945cb5ecce69b0045926c4dfe73e8f45be838a5642d242",
+      "member_sha256": "dfb97c2bba614173064f9c7c89cd3ab0a2ad7ca63b13b557cd477432cb2ece61",
+      "input_sha256": "0551431213e81c2bd2bb4fcb9129b2dce29ff7cd9a9431b633d1c1c7072704cc",
+      "aggregate": {
+        "open": 6.58,
+        "close": 6.82,
+        "high": 7.02,
+        "low": 6.57,
+        "volume": 44087544.0
+      },
+      "daily_difference": {
+        "open": 0.0,
+        "close": 0.0,
+        "high": 0.0,
+        "low": 0.07000000000000028,
+        "volume": 0.0
+      }
+    },
+    {
+      "code": "sz.300114",
+      "date": "2016-05-03",
+      "error": "incomplete/duplicate 241-row grid sz.300114 2016-05-03"
+    },
+    {
+      "code": "sz.302132",
+      "date": "2016-05-03",
+      "error": "incomplete/duplicate 241-row grid sz.302132 2016-05-03"
+    },
+    {
+      "code": "sz.000955",
+      "date": "2020-02-03",
+      "path": "D:\\AI\\workspace\\个人量化\\artifacts\\user-minute-1m-source-probe-20260913-2\\sz.000955_2020-02-03_f5.csv",
+      "sha256": "0298e834086c4074347e1dadda1ab4db52f02d6a882bd1e51119d5674c876001",
+      "error_code": "0",
+      "source": "user_1m_aggregated_5m",
+      "archive_sha256": "b7546350f75736d2fdfd85cd86dd42324c6473d1d560eaefc355019566d3ada7",
+      "member_sha256": "2d00e82fcede7c7905cbc5cfd2711d17ac09e1ae7a6b3a03d0627b8dd5122ffa",
+      "input_sha256": "abe9796740b77fe411b91a1edf3943ff4ce6609ff308bf2b02645d7b9c213c25",
+      "aggregate": {
+        "open": 8.04,
+        "close": 8.04,
+        "high": 8.04,
+        "low": 7.46,
+        "volume": 101583571.0
+      },
+      "daily_difference": {
+        "open": 0.0,
+        "close": 0.0,
+        "high": 0.0,
+        "low": 0.11000000000000032,
+        "volume": 0.0
+      }
+    },
+    {
+      "code": "sh.603557",
+      "date": "2020-10-09",
+      "path": "D:\\AI\\workspace\\个人量化\\artifacts\\user-minute-1m-source-probe-20260913-2\\sh.603557_2020-10-09_f5.csv",
+      "sha256": "7704a317735f38d6d809369f7cbe7d96e0770dcd0bf446b63d046d565b881fa2",
+      "error_code": "0",
+      "source": "user_1m_aggregated_5m",
+      "archive_sha256": "b7546350f75736d2fdfd85cd86dd42324c6473d1d560eaefc355019566d3ada7",
+      "member_sha256": "6d75715d2fe9b68676b1c28f03cb93c5dec7d714bbf83c274cfaeaf16d647531",
+      "input_sha256": "1c71187d8ef89bea7bc7646ebd4812c8f35ea86d71fc12397be6420ef2c11287",
+      "aggregate": {
+        "open": 13.76,
+        "close": 14.88,
+        "high": 14.88,
+        "low": 13.76,
+        "volume": 36572540.0
+      },
+      "daily_difference": {
+        "open": 0.0,
+        "close": 0.0,
+        "high": 0.0,
+        "low": 0.16000000000000014,
+        "volume": 0.0
+      }
+    },
+    {
+      "code": "sz.300536",
+      "date": "2020-10-09",
+      "path": "D:\\AI\\workspace\\个人量化\\artifacts\\user-minute-1m-source-probe-20260913-2\\sz.300536_2020-10-09_f5.csv",
+      "sha256": "efe1179b833bfa6480925f370b1c9767f855e1b667d0dd6bbae58148ff46dd9e",
+      "error_code": "0",
+      "source": "user_1m_aggregated_5m",
+      "archive_sha256": "b7546350f75736d2fdfd85cd86dd42324c6473d1d560eaefc355019566d3ada7",
+      "member_sha256": "6d75715d2fe9b68676b1c28f03cb93c5dec7d714bbf83c274cfaeaf16d647531",
+      "input_sha256": "117d1d2c4f1f4f79d76436bd4aa2214e2c333860c0b9a6ac2d71bc3b365e3018",
+      "aggregate": {
+        "open": 13.1,
+        "close": 13.45,
+        "high": 13.87,
+        "low": 13.1,
+        "volume": 3022354.0
+      },
+      "daily_difference": {
+        "open": -0.20000000000000107,
+        "close": 0.0,
+        "high": 0.0,
+        "low": -0.14000000000000057,
+        "volume": 0.0
+      }
+    },
+    {
+      "code": "sz.300712",
+      "date": "2020-11-02",
+      "path": "D:\\AI\\workspace\\个人量化\\artifacts\\user-minute-1m-source-probe-20260913-2\\sz.300712_2020-11-02_f5.csv",
+      "sha256": "32bfb71d1ca7134492cdbb8177bc51b7961ee386ec5d55a8a28220f659bb0e58",
+      "error_code": "0",
+      "source": "user_1m_aggregated_5m",
+      "archive_sha256": "b7546350f75736d2fdfd85cd86dd42324c6473d1d560eaefc355019566d3ada7",
+      "member_sha256": "57ef66ca37be09e44082a82349d24318dd1c6f90ea53f4a59ae9754583fb84ac",
+      "input_sha256": "f6ce1ad9c80519410a23d9c3da05a2be1f7fc5c2a2021b1b72baaabcbd8dae78",
+      "aggregate": {
+        "open": 15.71,
+        "close": 16.42,
+        "high": 16.63,
+        "low": 15.71,
+        "volume": 6943790.0
+      },
+      "daily_difference": {
+        "open": 0.0,
+        "close": 0.0,
+        "high": -0.010000000000001563,
+        "low": 0.20000000000000107,
+        "volume": 0.0
+      }
+    },
+    {
+      "code": "sz.300114",
+      "date": "2022-05-05",
+      "error": "incomplete/duplicate 241-row grid sz.300114 2022-05-05"
+    },
+    {
+      "code": "sz.302132",
+      "date": "2022-05-05",
+      "error": "incomplete/duplicate 241-row grid sz.302132 2022-05-05"
+    }
+  ],
+  "capability": "241-to-48 conversion and existing research_disclose guards; source files are not globally approved",
+  "limitations": [
+    "Unknown original vendor",
+    "Float32 prices recovered only if exact encoding of a cent value",
+    "Volume and amount retained; source differences never overwrite raw data",
+    "1% OHLC / 5% volume are operational anomaly lines, not an error-safety guarantee",
+    "Every actual security-day must independently pass structural and daily guards",
+    "Code-lifetime corrected signals require a new batch; probes are not a final order list",
+    "闲鱼1分钟与Tushare(代购站)1分钟同源，不能互为独立验证",
+    "sz.300114 在2016年主归档与Tushare代理分钟库均无数据；若路径请求该日必须另找来源或记录为数据受限",
+    "sh.603178 2022-02-07 原 1 分钟首根开盘 12.05 低于日线最低 12.10（OHLC 违例），改以 baostock 5 分钟整日替换；聚合与日线逐字段相等，属冻结补丁覆盖",
+    "2026-09-13 补丁清单推进到 minute-repairs-20260913-4（新增 sh.603209 2023-06-01 baostock 5 分钟整日替换：1 分钟首根开盘取到前收 28.90，日线开盘 29.29，其余字段与量一致）"
+  ],
+  "parent_review_sha256": "5dbba99510699c8d98978d9f7b6f6216499f2a1979e690c08c354ac0b7d227f2",
+  "source_hashes": {
+    "experiments/ten_year_account_20260913.py": "b8c00816552116f8d27b0997d1abbfb21bdae354d7dfe0f8b45e1ddaa14937ee",
+    "experiments/ten_year_account_audit_20260913.py": "4f9dd658261f10055cac79f23e2ea266ba8358931834584be5430810cffcd885",
+    "experiments/ten_year_research.py": "b370d91545ad58d42ec2bdb0d649a6e2b8bff8743a0c4025fdd53262735244bc",
+    "experiments/r0_pilot_market_inputs_20260912.py": "789138fde346462cad3f9e86eec43028455b7047631b4d8535bd34a40a9a277b",
+    "experiments/r0_pilot_corporate_actions_20260912.py": "d11e12247b54dd2feecc2cb9e10c4ee7eebf2f0d4f3f25ee40eddb6d08865706",
+    "experiments/r0_mechanism_cost_pilot_20260912.py": "d9942e182e7364da128257eb132dcb21409cd2583866d628a18fecdc2e6f957b",
+    "experiments/factor_miner/fixed_capital_portfolio.py": "8edae34826b117a4c26dfd7080407d3b55ed586606bbb666b577394af58cb673",
+    "quant/execution.py": "8a90ea3c0a95b8605d78340211783ad2056ca0e67edff11eeb101a796a141b63",
+    "quant/market.py": "6d6a6fa6541647d0063bf79f9fe4b37a85932c7aa709d810440cf3ec8f276452",
+    "quant/history.py": "2432fd2db45dabba602c459b354df4d84cc0105353f93ea5f06a4e1798b0210f",
+    "experiments/ten_year_partition.py": "33c815a1e1fd156d9ba6799b070d957def433b625a996eaf60f27444d3018a1d",
+    "experiments/three_account_migration_signals_20260912.py": "4f50514e4f1bb70c85044547aa342411594c88148c447637cf09c951062d1bfd",
+    "experiments/migration_signal_export_20260912.py": "a76fe1ba5a4c4734919e93e40241f0b17d5213d9c3091cb4d334376e20638593",
+    "experiments/migration_runtime_20260912.py": "e9cf7f90183608a9d4f975dc1160dcfb5fcbe32b6524caa2a7a5b833bb0c99cf",
+    "experiments/mr_statarb.py": "aac895cce6d0fb2833e1a2715bef37d7c381cd8c3606d4c7b92586bececa6523",
+    "experiments/r0_pilot_signals_20260912.py": "618b1dee30fa820df717bdee7a7f7d320a056a814bca8d0cdc2ea76ae113ca31",
+    "experiments/pv1_train_refresh_20260912.py": "9affe85046b43595345511910089d4882db82448673198051788b94146dc6114",
+    "experiments/pv1_small_portfolio_signals_20260912.py": "57d933758b98d96ec06ccceaf50b2e3bffd41d5ce3c9722398e4a10e952d1690",
+    "experiments/screen_pricevol.py": "89cf32315f68e619cb17cf7091ad3ab68bdb23f8f026508c8493bf628dbfd011",
+    "experiments/factor_miner/engine.py": "de507dc034228f4edfc75c5623e98165888df06cf40a244bf2a6bf3e0f2a28f2",
+    "experiments/factor_miner/data_fields.py": "306260fd114c62fa841f17ba016a3b6931642b3300724fc1916152953f3ad5f6",
+    "experiments/factor_miner/compiler.py": "a7654ad7d1da92f33c415f5936e50b6d6ae059066dd9f96ec53de69ca014e57e",
+    "experiments/factor_miner/stats.py": "b364471b2620620c7a2ecf0d2877c34fdb310379133de594874f00507dceefe4",
+    "experiments/ten_year_minute_accounts_20260913.py": "aa6fea13339bc2834959dd0686fbd7446b377f9f525f731dcab603f594ad0b98",
+    "experiments/ten_year_minute_execution_20260913.py": "7be4147629b1b0f4d3a1f96e4683b6be478eebe42332cbe3c4c7ef61c99fb9a9",
+    "experiments/user_minute_1m_20260913.py": "33a07d6fdafc3b6f263202717fef171f8ecc9976979f450ca4003b7b30eb5b9a",
+    "experiments/migration_tushare_minute_adapter_20260912.py": "3cbb940ab375b5159d8ba7165e78a10243b42f60578e1ff7fd5d520aa6bd4bfe",
+    "experiments/rev11_dynamic_minute_20260912.py": "75b9e90863e0eebd833169de16c3bef6977e7966783f7c2faea5d4cb7b4cf2df"
+  },
+  "additional_rule": "At least five trailing zero-volume minutes with a daily volume deficit exceeding one share and 1ppm: BLOCK, even within research_disclose anomaly lines",
+  "actual_tail_check": [
+    {
+      "code": "sh.600109",
+      "date": "2015-07-01",
+      "last_positive": "2015-07-01 15:00:00",
+      "blocked": false,
+      "trailing_zero_minutes": 0,
+      "minute_volume": 136059466.0
+    },
+    {
+      "code": "sh.600240",
+      "date": "2015-07-01",
+      "last_positive": "2015-07-01 15:00:00",
+      "blocked": false,
+      "trailing_zero_minutes": 0,
+      "minute_volume": 46924880.0
+    },
+    {
+      "code": "sh.600340",
+      "date": "2015-07-01",
+      "last_positive": "2015-07-01 15:00:00",
+      "blocked": false,
+      "trailing_zero_minutes": 0,
+      "minute_volume": 69457426.0
+    },
+    {
+      "code": "sh.600490",
+      "date": "2015-07-01",
+      "last_positive": "2015-07-01 15:00:00",
+      "blocked": false,
+      "trailing_zero_minutes": 0,
+      "minute_volume": 74583971.0
+    },
+    {
+      "code": "sh.600620",
+      "date": "2015-07-01",
+      "last_positive": "2015-07-01 15:00:00",
+      "blocked": false,
+      "trailing_zero_minutes": 0,
+      "minute_volume": 13640224.0
+    },
+    {
+      "code": "sh.600693",
+      "date": "2015-07-01",
+      "last_positive": "2015-07-01 15:00:00",
+      "blocked": false,
+      "trailing_zero_minutes": 0,
+      "minute_volume": 9174555.0
+    },
+    {
+      "code": "sh.600733",
+      "date": "2015-07-01",
+      "last_positive": "2015-07-01 15:00:00",
+      "blocked": false,
+      "trailing_zero_minutes": 0,
+      "minute_volume": 4838453.0
+    },
+    {
+      "code": "sh.600856",
+      "date": "2015-07-01",
+      "last_positive": "2015-07-01 15:00:00",
+      "blocked": false,
+      "trailing_zero_minutes": 0,
+      "minute_volume": 11075082.0
+    },
+    {
+      "code": "sh.600894",
+      "date": "2015-07-01",
+      "last_positive": "2015-07-01 15:00:00",
+      "blocked": false,
+      "trailing_zero_minutes": 0,
+      "minute_volume": 24148174.0
+    },
+    {
+      "code": "sh.601339",
+      "date": "2015-07-01",
+      "last_positive": "2015-07-01 15:00:00",
+      "blocked": false,
+      "trailing_zero_minutes": 0,
+      "minute_volume": 30415925.0
+    },
+    {
+      "code": "sz.000032",
+      "date": "2015-07-01",
+      "last_positive": "2015-07-01 14:53:00",
+      "blocked": true,
+      "trailing_zero_minutes": 7,
+      "minute_volume": 7039728.0
+    },
+    {
+      "code": "sz.000560",
+      "date": "2015-07-01",
+      "last_positive": "2015-07-01 14:53:00",
+      "blocked": true,
+      "trailing_zero_minutes": 7,
+      "minute_volume": 2368159.0
+    },
+    {
+      "code": "sz.000607",
+      "date": "2015-07-01",
+      "last_positive": "2015-07-01 14:53:00",
+      "blocked": true,
+      "trailing_zero_minutes": 7,
+      "minute_volume": 23877532.0
+    },
+    {
+      "code": "sz.000632",
+      "date": "2015-07-01",
+      "last_positive": "2015-07-01 14:53:00",
+      "blocked": true,
+      "trailing_zero_minutes": 7,
+      "minute_volume": 20368724.0
+    },
+    {
+      "code": "sz.000681",
+      "date": "2015-07-01",
+      "last_positive": "2015-07-01 14:53:00",
+      "blocked": true,
+      "trailing_zero_minutes": 7,
+      "minute_volume": 12406080.0
+    },
+    {
+      "code": "sz.000802",
+      "date": "2015-07-01",
+      "last_positive": "2015-07-01 14:53:00",
+      "blocked": true,
+      "trailing_zero_minutes": 7,
+      "minute_volume": 22952413.0
+    },
+    {
+      "code": "sz.000989",
+      "date": "2015-07-01",
+      "last_positive": "2015-07-01 14:53:00",
+      "blocked": true,
+      "trailing_zero_minutes": 7,
+      "minute_volume": 14799126.0
+    },
+    {
+      "code": "sz.002349",
+      "date": "2015-07-01",
+      "last_positive": "2015-07-01 14:53:00",
+      "blocked": true,
+      "trailing_zero_minutes": 7,
+      "minute_volume": 6032811.0
+    },
+    {
+      "code": "sz.300006",
+      "date": "2015-07-01",
+      "last_positive": "2015-07-01 14:53:00",
+      "blocked": true,
+      "trailing_zero_minutes": 7,
+      "minute_volume": 8165399.0
+    },
+    {
+      "code": "sz.300100",
+      "date": "2015-07-01",
+      "last_positive": "2015-07-01 14:53:00",
+      "blocked": true,
+      "trailing_zero_minutes": 7,
+      "minute_volume": 7051866.0
+    },
+    {
+      "code": "sz.300322",
+      "date": "2015-07-01",
+      "last_positive": "2015-07-01 14:53:00",
+      "blocked": true,
+      "trailing_zero_minutes": 7,
+      "minute_volume": 24242217.0
+    }
+  ],
+  "known_issues": [
+    {
+      "code": "sz.000032",
+      "date": "2015-07-01",
+      "scope": "actual_four_path_order_request",
+      "reason": "zero_tail_and_volume_deficit"
+    },
+    {
+      "code": "sz.000560",
+      "date": "2015-07-01",
+      "scope": "actual_four_path_order_request",
+      "reason": "zero_tail_and_volume_deficit"
+    },
+    {
+      "code": "sz.000632",
+      "date": "2015-07-01",
+      "scope": "actual_four_path_order_request",
+      "reason": "zero_tail_and_volume_deficit"
+    },
+    {
+      "code": "sz.000681",
+      "date": "2015-07-01",
+      "scope": "actual_four_path_order_request",
+      "reason": "zero_tail_and_volume_deficit"
+    },
+    {
+      "code": "sz.000802",
+      "date": "2015-07-01",
+      "scope": "actual_four_path_order_request",
+      "reason": "zero_tail_and_volume_deficit"
+    },
+    {
+      "code": "sz.000989",
+      "date": "2015-07-01",
+      "scope": "actual_four_path_order_request",
+      "reason": "zero_tail_and_volume_deficit"
+    },
+    {
+      "code": "sz.002349",
+      "date": "2015-07-01",
+      "scope": "actual_four_path_order_request",
+      "reason": "zero_tail_and_volume_deficit"
+    },
+    {
+      "code": "sz.300006",
+      "date": "2015-07-01",
+      "scope": "actual_four_path_order_request",
+      "reason": "zero_tail_and_volume_deficit"
+    },
+    {
+      "code": "sz.300100",
+      "date": "2015-07-01",
+      "scope": "actual_four_path_order_request",
+      "reason": "zero_tail_and_volume_deficit"
+    },
+    {
+      "code": "sz.300209",
+      "date": "2015-07-01",
+      "scope": "prospective_selection_not_actual_order",
+      "reason": "zero_tail_and_volume_deficit"
+    },
+    {
+      "code": "sz.300322",
+      "date": "2015-07-01",
+      "scope": "actual_four_path_order_request",
+      "reason": "zero_tail_and_volume_deficit"
+    },
+    {
+      "code": "sz.002442",
+      "date": "2016-03-01",
+      "scope": "prospective_selection_not_actual_order",
+      "reason": "large_daily_discrepancy"
+    },
+    {
+      "code": "sz.002812",
+      "date": "2018-03-01",
+      "scope": "prospective_selection_not_actual_order",
+      "reason": "large_daily_discrepancy"
+    },
+    {
+      "code": "sh.603026",
+      "date": "2019-05-06",
+      "scope": "prospective_selection_not_actual_order",
+      "reason": "large_daily_discrepancy"
+    },
+    {
+      "code": "sz.300420",
+      "date": "2019-09-02",
+      "scope": "prospective_selection_not_actual_order",
+      "reason": "large_daily_discrepancy"
+    },
+    {
+      "code": "sz.300114",
+      "date": "2016-05-03",
+      "scope": "prospective_selection_not_actual_order",
+      "reason": "missing_or_incomplete_minute_grid"
+    },
+    {
+      "code": "sz.000955",
+      "date": "2020-02-03",
+      "scope": "prospective_selection_not_actual_order",
+      "reason": "large_daily_discrepancy"
+    },
+    {
+      "code": "sh.603557",
+      "date": "2020-10-09",
+      "scope": "prospective_selection_not_actual_order",
+      "reason": "large_daily_discrepancy"
+    },
+    {
+      "code": "sz.300536",
+      "date": "2020-10-09",
+      "scope": "prospective_selection_not_actual_order",
+      "reason": "large_daily_discrepancy"
+    },
+    {
+      "code": "sz.300712",
+      "date": "2020-11-02",
+      "scope": "prospective_selection_not_actual_order",
+      "reason": "large_daily_discrepancy"
+    },
+    {
+      "code": "sz.300114",
+      "date": "2022-05-05",
+      "scope": "prospective_selection_not_actual_order",
+      "reason": "missing_or_incomplete_minute_grid"
+    },
+    {
+      "code": "sz.000607",
+      "date": "2015-07-01",
+      "scope": "actual_four_path_order_request",
+      "reason": "zero_tail_and_volume_deficit"
+    }
+  ],
+  "test_results": "本次关联测试 115 passed + 17 subtests（含新增 tests/test_minute_low_only_exception.py 3例：开盘价成交放行并披露、价格落在未记录区间阻断、无审批时阻断）；上一版记录：50 lifecycle/ten-year/normalizer；57 prior adapter/account；56 final scoped；旧两账户账本 PASS_EXACT",
+  "native_comparison_sha256": "119e085185de4dd9f2c43749eaefeb76f8777477016f81041a89419d1b2c9194",
+  "old_account_regression_sha256": "107854a54305676537413156c397aaae6f9453f58c3d904c4084e00edb894cec",
+  "patch_manifest_sha256": "08917aa948c625e7da2cec74ac1b3843a52584140e411bf20ec4ffd906555c7d",
+  "patch_manifest": "data\\raw\\xiaodefa\\minute-repairs-20260913-4\\patches.json",
+  "additional_rule_low_only": "LOW_ONLY_MISSING_PRINT_NO_TRIGGER_DEPENDENCY: open/high/close 与日线逐字段相等、成交量相对差<=1ppm、且分钟最低价高于日线最低价时，仅当每笔买单价格不在(daily_low, minute_low] 区间内才放行；卖单成交只看 high，故不受影响"
+}

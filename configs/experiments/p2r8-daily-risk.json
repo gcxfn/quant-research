@@ -1,0 +1,136 @@
+{
+ "experiment_id": "exp-20260918-p2r8-daily-risk",
+ "name": "p2r8-daily-risk",
+ "prereg": "docs/research/exp-20260918-p2r8-daily-risk-prereg.md",
+ "preregistered_at": "2026-09-18",
+ "frozen_at": "2026-09-18T01:10 (before any R8 signal run)",
+ "status": "config_frozen_before_any_signal_run",
+ "user_decisions_2026_09_18": "risk-check frequency daily (upgraded from weekly by user); event-driven is supplement only; half-day cross-section and >10-day holding approved and queued; 20% drawdown budget stays a hard constraint",
+ "inherits_from": {
+  "file": "configs/experiments/p2r7-etf-exposure.json",
+  "sha256": "902ac69b8627f3b00db07e94777665b68d40ce15790f60b56d0e1de65ea91f77",
+  "resolution_rule": "runner verifies this sha256 before loading (fail-closed); inherits VERBATIM: u1_whitelist_frozen (1,168 codes), universe (U2/U3/U4/U5), preflight, fees, sizing base rule, execution_semantics base (entry/exit/slot_busy/limit_proxy/t_plus/forced_delist/slot_accounting), warmup, segments, benchmarks B2/B4, b2_510300",
+  "note": "inheritance by pinned hash instead of copying the 1,168-code array; any edit to the R7 config breaks the pin and the run refuses to start"
+ },
+ "seed": 17,
+ "warmup": {
+  "start": "2015-01-05",
+  "end": "2015-12-31",
+  "use": "indicator lookback only (max 200 sessions for SMA200/rolling peak); no signals, no metrics"
+ },
+ "segments": {
+  "dev": { "start": "2016-01-01", "end": "2020-12-31" },
+  "validation": { "start": "2021-01-01", "end": "2022-12-31" },
+  "test": { "start": "2023-01-01", "end": "2024-12-31" },
+  "isolation": "single continuous simulation per config; segment metrics sliced from one equity curve; boundary mark-to-market carry; test slice evaluated once and only for val-passing configs",
+  "freeze_end": "2024-12-31",
+  "history_note": "dev consumed by P2-R6 AND P2-R7 (second reuse); val/test never used in any decision, but values exist in archived continuous simulations"
+ },
+ "data": {
+  "fund_basic": {
+   "batch": "data/raw/tushare/fund_basic/20260909-r1",
+   "file": "chunk_market_E.csv",
+   "sha256": "b98932a79f838bf4a4995e703b77a267ecc5d9168c7ad2c2d9a022d502af97db"
+  },
+  "fund_daily": {
+   "batch": "data/raw/tushare/fund_daily/20260917-r1",
+   "manifest_sha256": "b355322fae15ff1722c83b0a8c8f44efa03f276b8ff0a36ac30b1bbc59a17dae"
+  },
+  "fund_adj": {
+   "batch": "data/raw/tushare/fund_adj/20260917-r1",
+   "manifest_sha256": "348d2ec4e8fd6df3ab856f2a09677d87b62d668529abe7b00b2ec38b68efccd4"
+  },
+  "index_daily": {
+   "batch": "data/raw/tushare/index_daily/20260917-r1",
+   "range": ["20150105", "20241231"],
+   "indices": ["000001.SH", "000300.SH", "000905.SH", "000852.SH", "399006.SZ"],
+   "risk_index": "000300.SH",
+   "risk_file": "chunk_000300.SH.csv",
+   "chunk_000300_sha256": "05aaa8183a11c674ef02c1cd3e9a9e7cbef51a923156573809277f0b11243878",
+   "manifest_sha256": "14372f9d2cd9bf19e6bbd21c4ad4c450f83473a315b1711a6717647e88f4d77a"
+  }
+ },
+ "signal": {
+  "selection_freq": "monthly (last trading session of each calendar month; inherited R7 rebalance_days verbatim)",
+  "momentum": "inherited R7: R_k over k in W, equal-weight mean of cross-sectional percentile ranks, ties by ts_code ascending",
+  "windows": { "W2S": [20, 60] },
+  "top_n": 3,
+  "absolute_gate": "OFF (inherited R7 decision)",
+  "signal_execution": "selection signal at close of monthly rebalance day t; fills at t+1 open; risk state computed at EVERY session close t, traded at t+1 open ONLY on state change"
+ },
+ "configs_grid": {
+  "twelve": {
+   "C01": { "mech": "FIX75" },
+   "C02": { "mech": "T200", "e_low": 0.40 },
+   "C03": { "mech": "T200", "e_low": 0.20 },
+   "C04": { "mech": "T60", "e_low": 0.40 },
+   "C05": { "mech": "T60", "e_low": 0.20 },
+   "C06": { "mech": "T20c2", "e_low": 0.40 },
+   "C07": { "mech": "D252", "dd_threshold": 0.10, "e_low": 0.40 },
+   "C08": { "mech": "D252", "dd_threshold": 0.15, "e_low": 0.40 },
+   "C09": { "mech": "D60", "dd_threshold": 0.08, "e_low": 0.40 },
+   "C10": { "mech": "PDD", "dd_threshold": 0.10, "e_low": 0.40 },
+   "C11": { "mech": "PDD", "dd_threshold": 0.08, "e_low": 0.20 },
+   "C12": { "mech": "X1", "e_low": 0.40 }
+  },
+  "common": "W=W2S, N=3, e_on=0.90 (saturates to 25%/leg = 75% effective for N=3; written 0.90 to align B1(m) with R7 TREND)"
+ },
+ "exposure_mechanisms_daily": {
+  "FIX75": { "exposure": 0.75, "note": "control anchor; zero risk trades; MUST reproduce R7 C01 equity curve bit-exact" },
+  "T200": { "rule": "000300.SH close > SMA200(close, 200 index sessions incl. t) at session t -> e_on else e_low", "index": "000300.SH", "join": "index row with trade_date <= t (asof-backward)", "fallback": "SMA200 unavailable -> e_low" },
+  "T60": { "rule": "same as T200 with SMA60", "fallback": "unavailable -> e_low" },
+  "T20c2": { "rule": "close > SMA20 on 2 consecutive sessions (t-1 and t) -> e_on else e_low (fast-out slow-in: one day below exits, two days above re-enters)", "fallback": "insufficient history -> e_low" },
+  "D252": { "rule": "close >= rolling 252-session peak x (1 - dd_threshold) -> e_on else e_low (rolling peak over index sessions ending t inclusive)", "fallback": "insufficient history -> e_low" },
+  "D60": { "rule": "same as D252 over 60 sessions with dd_threshold 0.08" },
+  "PDD": { "rule": "own-instance total equity (marked at session t close) >= running peak x (1 - dd_threshold) -> e_on else e_low; running peak resets never (all-time within simulation); path-dependent per instance (strategy / B1(m) / B3prime each use their own equity)", "fallback": "first sessions before any drawdown computable -> e_on" },
+  "X1": { "rule": "risk-off (e_low) if T200 condition fires OR D252(0.10) condition fires; else e_on" },
+  "warmup_guarantee": "2015 warmup provides >=200 index sessions before first 2016 session; SMA/peak windows fully formed at first judged session"
+ },
+ "risk_overlay_execution": {
+  "state_change_only": "trade only when E_t != E_{t-1}; equal states -> no risk trades (incumbent weight drift preserved)",
+  "retarget": "on the session after a state change, re-target ALL held legs to min(E_t/3, 0.25) x equity(t close); members unchanged, proportional scale; sells and buys at that session's open",
+  "monthly_collision": "if a monthly rebalance and a risk state change coincide, compute ONE combined target (member updates x current E_t budget) and execute once at t+1 open",
+  "postpone": "a re-sizing leg with no quote at t+1 (suspended) or open beyond +/-9.5% vs pre_close -> postpone to next tradable session open; if the target changes again while postponed, the LATEST target applies at the next tradable open; monthly slot_busy rule unchanged",
+  "turnover_counting": "risk re-sizing buys count toward gate-5 buy notional; no exemption",
+  "cash_discipline": "single cash pool never negative; buys additionally capped by cash available after same-session sells; capped budget <= commission_min -> skip leg (rule-compliant cash slot)"
+ },
+ "benchmarks": {
+  "B1m_matched": "same eligible pool, equal weight, same monthly signal days, SAME mechanism DAILY exposure path (own-instance equity peak for PDD); per-leg = min(exposure_t/N_pool, 0.25) x base equity; idle cash carries forward (R7 fixed engine); gross AND net disclosed, net primary",
+  "B1_at_100": "identical engine with exposure = 1.0 (reference; MUST reproduce R7 B1@100% dev +10.40% / +63.9% / -27.47%)",
+  "B2": "inherited R7 (510300.SH segment buy-hold)",
+  "B3prime": "random Top-3 through the same R8 engine, same mechanism exposure semantics (own-instance for PDD), seeds 17..36",
+  "B4": 0.0
+ },
+ "gates": {
+  "dev_all_required": {
+   "1_net_cagr_gt_0": "dev net CAGR > 0",
+   "2_excess_vs_B1m": "dev net CAGR - B1(m) dev net CAGR >= +0.020 (annualized, pp)",
+   "3_positive_years": "net excess vs B1(m) > 0 in >= 4 of 5 dev calendar years",
+   "4_drawdown": "dev max drawdown <= 0.20 AND <= B1(m) dev max drawdown",
+   "5_turnover": "annual one-side (buy notional / mean equity) max over dev years <= 12.0; monthly sub-cap <= 6.0 (selection is monthly; risk overlay buys count, no exemption)",
+   "6_concentration": "dev net profit top-1 code share <= 40% AND top-3 <= 70%",
+   "7_vs_random": "dev net CAGR >= mean(B3prime 20 seeds, same mechanism, dev net CAGR) + 0.010 (limited power, noted)",
+   "8_execution": "dev-window leg-level execution rate >= 0.95 (planned legs on dev signal days AND dev risk-state-change days; executed = filled / backfilled / rule-compliant cash slot incl. cash-capped / postponed-then-filled)"
+  },
+  "validation": [
+   "val net CAGR excess vs B1(m) >= +0.010",
+   "net excess vs B1(m) > 0 in both 2021 and 2022",
+   "val max drawdown <= 0.20; turnover and concentration <= same dev-gate limits"
+  ],
+  "test_rule": "test net excess vs B1(m) >= 0 AND test max drawdown <= 0.20 => P3 candidate; test run once, terminal",
+  "advancement": "all 12 judged on dev (second-reuse exploratory); among dev all-pass only the highest dev net excess vs B1(m) advances (tie: lower config id); at most 1 survivor; no all-pass -> record and close the direction (sub-monthly risk control incl. weekly), no re-grading, no criterion edits",
+  "anchor_regressions_required_before_consumption": [
+   "C01 equity curve bit-exact vs run 20260918T004441-p2r7-etf-exposure-d01f4e7a C01",
+   "B1(FIX-75) matches that run's B1(FIX)",
+   "B1@100% dev +10.40% / +63.9% / -27.47%"
+  ],
+  "trial_count_note": "cumulative trials: 115 (27 stock + 20 factor survey + 44 window diagnostic + 12 P2-R6 + 12 P2-R7) + 12 here = 127"
+ },
+ "preanalysis_sect0": {
+  "scope": "index-only (000300.SH from the pinned batch), computed and archived BEFORE any strategy run output; fixed definitions, not tunable",
+  "per_mechanism_dev_stats": "trigger count 2016-2020, risk-off session share, index decline already suffered from local peak at each trigger (p50/p90/max)",
+  "index_stress": "worst single-session and 5-session 000300 declines 2015-2020",
+  "purpose": "ex-ante disclosure of the daily-check ceiling (e.g. D252-10 fires after >=10% index drawdown x ~1.6 crash beta x 75% on-exposure ~ -12% starting point, plus overnight gaps and residual low-tier exposure); expectation management, NOT a gate; no config may be added/removed based on it"
+ },
+ "limits": { "max_runtime_s": 1800, "max_ram_gb": 11 }
+}

@@ -1,0 +1,187 @@
+{
+ "source": "tushare",
+ "dataset": "index_daily",
+ "batches": {
+  "tushare/index_daily/20260917-r1": {
+   "batch_dir": "tushare/index_daily/20260917-r1",
+   "mode": "full",
+   "files": {
+    "n_total": 6,
+    "n_csv": 5,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 1354204
+   },
+   "issues": [],
+   "inventory_registration": {
+    "files": 6,
+    "bytes": 1354204
+   },
+   "schema": {
+    "ts_code": "String",
+    "trade_date": "Int64",
+    "close": "Float64",
+    "open": "Float64",
+    "high": "Float64",
+    "low": "Float64",
+    "pre_close": "Float64",
+    "change": "Float64",
+    "pct_chg": "Float64",
+    "vol": "Float64",
+    "amount": "Float64"
+   },
+   "n_columns": 11,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "close",
+    "open",
+    "high",
+    "low",
+    "pre_close",
+    "vol",
+    "amount",
+    "change",
+    "pct_chg",
+    "trade_date"
+   ],
+   "rows_total": 12155,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20150105",
+     "max": "20241231",
+     "rows_gt_20241231": 0,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 0,
+   "numeric_magnitude": {
+    "close": {
+     "min": 1205.0314,
+     "max": 15006.3388
+    },
+    "open": {
+     "min": 1186.4904,
+     "max": 15050.5791
+    },
+    "high": {
+     "min": 1230.1324,
+     "max": 15086.4432
+    },
+    "low": {
+     "min": 1184.9066,
+     "max": 14825.2822
+    },
+    "pre_close": {
+     "min": 1205.0314,
+     "max": 15006.3388
+    },
+    "vol": {
+     "min": 3875525.59,
+     "max": 1313460195.0
+    },
+    "amount": {
+     "min": 9398836.5418,
+     "max": 1510513250.8171
+    },
+    "change": {
+     "min": -1029.73,
+     "max": 663.96
+    },
+    "pct_chg": {
+     "min": -10.5941,
+     "max": 17.2494
+    },
+    "trade_date": {
+     "min": 20150105.0,
+     "max": 20241231.0
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "trade_date"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "ts_code": "000001.SH",
+     "trade_date": "20150105",
+     "close": "3350.519",
+     "open": "3258.627",
+     "high": "3369.281",
+     "low": "3253.883",
+     "pre_close": "3234.677",
+     "change": "115.842",
+     "pct_chg": "3.5813",
+     "vol": "531352391.0",
+     "amount": "549760106.398"
+    },
+    {
+     "ts_code": "000001.SH",
+     "trade_date": "20150106",
+     "close": "3351.446",
+     "open": "3330.799",
+     "high": "3394.224",
+     "low": "3303.184",
+     "pre_close": "3350.519",
+     "change": "0.927",
+     "pct_chg": "0.0277",
+     "vol": "501661695.0",
+     "amount": "532398463.844"
+    },
+    {
+     "ts_code": "000001.SH",
+     "trade_date": "20150107",
+     "close": "3373.954",
+     "open": "3326.649",
+     "high": "3374.896",
+     "low": "3312.211",
+     "pre_close": "3351.446",
+     "change": "22.508",
+     "pct_chg": "0.6716",
+     "vol": "391918880.0",
+     "amount": "436416698.934"
+    },
+    {
+     "ts_code": "000001.SH",
+     "trade_date": "20150108",
+     "close": "3293.456",
+     "open": "3371.957",
+     "high": "3381.566",
+     "low": "3285.095",
+     "pre_close": "3373.954",
+     "change": "-80.498",
+     "pct_chg": "-2.3859",
+     "vol": "371131170.0",
+     "amount": "399230297.448"
+    },
+    {
+     "ts_code": "000001.SH",
+     "trade_date": "20150109",
+     "close": "3285.412",
+     "open": "3276.965",
+     "high": "3404.834",
+     "low": "3267.509",
+     "pre_close": "3293.456",
+     "change": "-8.044",
+     "pct_chg": "-0.2442",
+     "vol": "410240872.0",
+     "amount": "458648012.598"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:40"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:40"
+}

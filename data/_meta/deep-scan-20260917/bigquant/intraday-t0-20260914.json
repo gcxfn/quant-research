@@ -1,0 +1,131 @@
+{
+ "source": "bigquant",
+ "dataset": "intraday-t0-20260914",
+ "batches": {
+  "bigquant/intraday-t0-20260914": {
+   "batch_dir": "bigquant/intraday-t0-20260914",
+   "mode": "full",
+   "files": {
+    "n_total": 15,
+    "n_csv": 9,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 5,
+    "n_other": 1,
+    "manifest_names": [
+     "000300.SH_2021-08-05_2024-12-31_bar1d.meta.json",
+     "sh_000300_2021-08-05_2021-12-31_f5.meta.json",
+     "sh_000300_2022-01-01_2022-12-31_f5.meta.json",
+     "sh_000300_2023-01-01_2023-12-31_f5.meta.json",
+     "sh_000300_2024-01-01_2024-12-31_f5.meta.json"
+    ],
+    "other_names": [
+     "fetch_log.json"
+    ],
+    "total_bytes": 22563232
+   },
+   "issues": [
+    {
+     "level": "warning",
+     "code": "bulk_scan_failed_perfile_fallback",
+     "detail": "ComputeError: schema lengths differ"
+    }
+   ],
+   "inventory_registration": {
+    "files": 15,
+    "bytes": 22563232
+   },
+   "schema": {
+    "date": "String",
+    "instrument": "String",
+    "open": "Float64",
+    "high": "Float64",
+    "low": "Float64",
+    "close": "Float64",
+    "volume": "Int64",
+    "amount": "Float64"
+   },
+   "n_columns": 8,
+   "date_columns": [
+    "date"
+   ],
+   "numeric_columns_checked": [
+    "close",
+    "open",
+    "high",
+    "low",
+    "volume",
+    "amount"
+   ],
+   "rows_total": 239540,
+   "rows_counted_files": 9,
+   "date_coverage": {
+    "date": {
+     "min": "20210805",
+     "max": "20241231",
+     "rows_gt_20241231": 0,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 0,
+   "primary_key": null,
+   "duplicate_rows": null,
+   "sample_rows": [
+    {
+     "date": "2021-08-05 09:30:00",
+     "instrument": "000300.SH",
+     "open": "4946.1668",
+     "high": "4946.1668",
+     "low": "4946.1668",
+     "close": "4946.1668",
+     "volume": "125824900",
+     "amount": "3458371823.9"
+    },
+    {
+     "date": "2021-08-05 09:31:00",
+     "instrument": "000300.SH",
+     "open": "4944.049",
+     "high": "4944.049",
+     "low": "4923.3831",
+     "close": "4923.3831",
+     "volume": "321791900",
+     "amount": "8948246055.1"
+    },
+    {
+     "date": "2021-08-05 09:32:00",
+     "instrument": "000300.SH",
+     "open": "4923.3826",
+     "high": "4926.4891",
+     "low": "4921.9382",
+     "close": "4926.4891",
+     "volume": "263163400",
+     "amount": "6777952043.8"
+    },
+    {
+     "date": "2021-08-05 09:33:00",
+     "instrument": "000300.SH",
+     "open": "4928.5202",
+     "high": "4934.2913",
+     "low": "4928.5202",
+     "close": "4932.0762",
+     "volume": "258404900",
+     "amount": "6209216292.4"
+    },
+    {
+     "date": "2021-08-05 09:34:00",
+     "instrument": "000300.SH",
+     "open": "4932.6917",
+     "high": "4940.161",
+     "low": "4932.6917",
+     "close": "4940.161",
+     "volume": "244122000",
+     "amount": "5880010362.3"
+    }
+   ],
+   "status": "completed(per-file fallback)",
+   "duration_s": 0.1,
+   "finished_at": "2026-09-18T00:09:48"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:48"
+}

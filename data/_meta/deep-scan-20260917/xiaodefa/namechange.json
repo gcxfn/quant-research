@@ -1,0 +1,148 @@
+{
+ "source": "xiaodefa",
+ "dataset": "namechange",
+ "batches": {
+  "xiaodefa/namechange/20260913-bulk1": {
+   "batch_dir": "xiaodefa/namechange/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 2,
+    "n_csv": 1,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 1624711
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 start_date 有 1297 行 > 2024-12-31 (max=20260911); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['ts_code', 'start_date', 'change_reason'] 重复: 13507 个键 / 29672 行"
+    }
+   ],
+   "inventory_registration": {
+    "files": 2,
+    "bytes": 1624711
+   },
+   "schema": {
+    "ts_code": "String",
+    "name": "String",
+    "start_date": "Int64",
+    "end_date": "Int64",
+    "ann_date": "Int64",
+    "change_reason": "String"
+   },
+   "n_columns": 6,
+   "date_columns": [
+    "start_date",
+    "end_date",
+    "ann_date"
+   ],
+   "numeric_columns_checked": [
+    "ann_date",
+    "end_date",
+    "start_date"
+   ],
+   "rows_total": 34749,
+   "date_coverage": {
+    "start_date": {
+     "min": "19901201",
+     "max": "20260911",
+     "rows_gt_20241231": 1297,
+     "null_rows": 0
+    },
+    "end_date": {
+     "min": "19920308",
+     "max": "20260910",
+     "rows_gt_20241231": 652,
+     "null_rows": 18702
+    },
+    "ann_date": {
+     "min": "20100623",
+     "max": "20260908",
+     "rows_gt_20241231": 805,
+     "null_rows": 26330
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 1297,
+   "numeric_magnitude": {
+    "ann_date": {
+     "min": 20100623.0,
+     "max": 20260908.0
+    },
+    "end_date": {
+     "min": 19920308.0,
+     "max": 20260910.0
+    },
+    "start_date": {
+     "min": 19901201.0,
+     "max": 20260911.0
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "start_date",
+    "change_reason"
+   ],
+   "duplicate_keys": 13507,
+   "duplicate_rows": 29672,
+   "sample_rows": [
+    {
+     "ts_code": "688607.SH",
+     "name": "康众医疗",
+     "start_date": "20260911",
+     "end_date": null,
+     "ann_date": "20260908",
+     "change_reason": "改名"
+    },
+    {
+     "ts_code": "300562.SZ",
+     "name": "乐心股份",
+     "start_date": "20260908",
+     "end_date": null,
+     "ann_date": "20260908",
+     "change_reason": "改名"
+    },
+    {
+     "ts_code": "002743.SZ",
+     "name": "富煌钢构",
+     "start_date": "20260908",
+     "end_date": null,
+     "ann_date": "20260905",
+     "change_reason": "ST"
+    },
+    {
+     "ts_code": "300096.SZ",
+     "name": "ST易联众",
+     "start_date": "20260904",
+     "end_date": null,
+     "ann_date": "20260904",
+     "change_reason": "撤销ST"
+    },
+    {
+     "ts_code": "300472.SZ",
+     "name": "*ST新元",
+     "start_date": "20260903",
+     "end_date": null,
+     "ann_date": "20260902",
+     "change_reason": "终止上市"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:08:09"
+  }
+ },
+ "updated_at": "2026-09-18T00:08:09"
+}

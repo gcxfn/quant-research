@@ -1,0 +1,146 @@
+{
+ "source": "xiaodefa",
+ "dataset": "index_basic",
+ "batches": {
+  "xiaodefa/index_basic/20260913-bulk1": {
+   "batch_dir": "xiaodefa/index_basic/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 2,
+    "n_csv": 1,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 2186600
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 list_date 有 1707 行 > 2024-12-31 (max=20260921); 冻结边界审查: 只报告不删除"
+    }
+   ],
+   "inventory_registration": {
+    "files": 2,
+    "bytes": 2186600
+   },
+   "schema": {
+    "ts_code": "String",
+    "name": "String",
+    "market": "String",
+    "publisher": "String",
+    "category": "String",
+    "base_date": "Int64",
+    "base_point": "Float64",
+    "list_date": "Int64"
+   },
+   "n_columns": 8,
+   "date_columns": [
+    "base_date",
+    "list_date"
+   ],
+   "numeric_columns_checked": [
+    "base_date",
+    "base_point",
+    "list_date"
+   ],
+   "rows_total": 20752,
+   "date_coverage": {
+    "base_date": {
+     "min": "19280103",
+     "max": "20260703",
+     "rows_gt_20241231": 17,
+     "null_rows": 531
+    },
+    "list_date": {
+     "min": "19221231",
+     "max": "20260921",
+     "rows_gt_20241231": 1707,
+     "null_rows": 311
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 1707,
+   "numeric_magnitude": {
+    "base_date": {
+     "min": 19280103.0,
+     "max": 20260703.0
+    },
+    "base_point": {
+     "min": 0.0,
+     "max": 15703.298
+    },
+    "list_date": {
+     "min": 19221231.0,
+     "max": 20260921.0
+    }
+   },
+   "primary_key": [
+    "ts_code"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "ts_code": "000001.CJ",
+     "name": "能源(长江)",
+     "market": "OTH",
+     "publisher": "长江证券股份有限公司",
+     "category": "行业指数",
+     "base_date": "20021231",
+     "base_point": "1000.0",
+     "list_date": "20200910"
+    },
+    {
+     "ts_code": "000001.SH",
+     "name": "上证指数",
+     "market": "SSE",
+     "publisher": "中证指数有限公司、上海证券交易所",
+     "category": "综合指数",
+     "base_date": "19901219",
+     "base_point": "100.0",
+     "list_date": "19910715"
+    },
+    {
+     "ts_code": "000002.CJ",
+     "name": "原材料(长江)",
+     "market": "OTH",
+     "publisher": "长江证券股份有限公司",
+     "category": "行业指数",
+     "base_date": "20021231",
+     "base_point": "1000.0",
+     "list_date": "20200910"
+    },
+    {
+     "ts_code": "000002.SH",
+     "name": "A股指数",
+     "market": "SSE",
+     "publisher": "中证指数有限公司、上海证券交易所",
+     "category": "规模指数",
+     "base_date": "19901219",
+     "base_point": "100.0",
+     "list_date": "19920221"
+    },
+    {
+     "ts_code": "000003.CJ",
+     "name": "工业(长江)",
+     "market": "OTH",
+     "publisher": "长江证券股份有限公司",
+     "category": "行业指数",
+     "base_date": "20021231",
+     "base_point": "1000.0",
+     "list_date": "20200910"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:07:38"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:38"
+}

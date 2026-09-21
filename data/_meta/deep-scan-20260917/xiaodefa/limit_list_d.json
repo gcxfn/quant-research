@@ -1,0 +1,320 @@
+{
+ "source": "xiaodefa",
+ "dataset": "limit_list_d",
+ "batches": {
+  "xiaodefa/limit_list_d/20260913-bulk1": {
+   "batch_dir": "xiaodefa/limit_list_d/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 1625,
+    "n_csv": 1624,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 22563951
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 45796 行 > 2024-12-31 (max=20260911); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 1625,
+    "bytes": 22563951
+   },
+   "schema": {
+    "trade_date": "Int64",
+    "ts_code": "String",
+    "industry": "String",
+    "name": "String",
+    "close": "Float64",
+    "pct_chg": "Float64",
+    "amount": "Float64",
+    "limit_amount": "Float64",
+    "float_mv": "Float64",
+    "total_mv": "Float64",
+    "turnover_ratio": "Float64",
+    "fd_amount": "Float64",
+    "first_time": "Int64",
+    "last_time": "Int64",
+    "open_times": "Int64",
+    "up_stat": "String",
+    "limit_times": "Float64",
+    "limit": "String"
+   },
+   "n_columns": 18,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "close",
+    "amount",
+    "total_mv",
+    "fd_amount",
+    "first_time",
+    "float_mv",
+    "last_time",
+    "limit_amount",
+    "limit_times",
+    "open_times",
+    "pct_chg",
+    "trade_date",
+    "turnover_ratio"
+   ],
+   "rows_total": 163686,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20200102",
+     "max": "20260911",
+     "rows_gt_20241231": 45796,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 45796,
+   "numeric_magnitude": {
+    "close": {
+     "min": 0.0,
+     "max": 1948.8
+    },
+    "amount": {
+     "min": 0.0,
+     "max": 54244873216.0
+    },
+    "total_mv": {
+     "min": 0.0,
+     "max": 2406725863014.4
+    },
+    "fd_amount": {
+     "min": 0.0,
+     "max": 2784528562600.0
+    },
+    "first_time": {
+     "min": 0.0,
+     "max": 153151.0
+    },
+    "float_mv": {
+     "min": 0.0,
+     "max": 2330246919000.0
+    },
+    "last_time": {
+     "min": 0.0,
+     "max": 153403.0
+    },
+    "limit_amount": {
+     "min": 0.0,
+     "max": 4277376329800.0
+    },
+    "limit_times": {
+     "min": 0.0,
+     "max": 29.0
+    },
+    "open_times": {
+     "min": 0.0,
+     "max": 107.0
+    },
+    "pct_chg": {
+     "min": -100.0,
+     "max": 44.29
+    },
+    "trade_date": {
+     "min": 20200102.0,
+     "max": 20260911.0
+    },
+    "turnover_ratio": {
+     "min": 0.0,
+     "max": 106.48
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "trade_date"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "trade_date": "20200102",
+     "ts_code": "000488.SZ",
+     "industry": "造纸印刷",
+     "name": "晨鸣纸业",
+     "close": "5.36",
+     "pct_chg": "5.3",
+     "amount": "442441376.0",
+     "limit_amount": null,
+     "float_mv": "8878968656.08",
+     "total_mv": "15568699994.88",
+     "turnover_ratio": "4.9",
+     "fd_amount": null,
+     "first_time": "93142",
+     "last_time": null,
+     "open_times": "1",
+     "up_stat": "0/0",
+     "limit_times": null,
+     "limit": "Z"
+    },
+    {
+     "trade_date": "20200102",
+     "ts_code": "000716.SZ",
+     "industry": "食品饮料",
+     "name": "黑芝麻",
+     "close": "4.58",
+     "pct_chg": "10.1",
+     "amount": "370965920.0",
+     "limit_amount": null,
+     "float_mv": "3045613699.06",
+     "total_mv": "3418493240.32",
+     "turnover_ratio": "12.55",
+     "fd_amount": "75656104000.0",
+     "first_time": "101051",
+     "last_time": "101051",
+     "open_times": "0",
+     "up_stat": "4/4",
+     "limit_times": "4.0",
+     "limit": "U"
+    },
+    {
+     "trade_date": "20200102",
+     "ts_code": "000810.SZ",
+     "industry": "通讯行业",
+     "name": "创维数字",
+     "close": "13.19",
+     "pct_chg": "10.01",
+     "amount": "692476384.0",
+     "limit_amount": null,
+     "float_mv": "12950540100.55",
+     "total_mv": "13958696527.84",
+     "turnover_ratio": "5.41",
+     "fd_amount": "12098975960.0",
+     "first_time": "95921",
+     "last_time": "145339",
+     "open_times": "15",
+     "up_stat": "1/1",
+     "limit_times": "1.0",
+     "limit": "U"
+    },
+    {
+     "trade_date": "20200102",
+     "ts_code": "000818.SZ",
+     "industry": "化工行业",
+     "name": "航锦科技",
+     "close": "21.98",
+     "pct_chg": "10.01",
+     "amount": "1466103856.0",
+     "limit_amount": null,
+     "float_mv": "14868864494.96",
+     "total_mv": "15163782200.0",
+     "turnover_ratio": "10.42",
+     "fd_amount": "39279227120.0",
+     "first_time": "141521",
+     "last_time": "141521",
+     "open_times": "0",
+     "up_stat": "3/6",
+     "limit_times": "2.0",
+     "limit": "U"
+    },
+    {
+     "trade_date": "20200102",
+     "ts_code": "000955.SZ",
+     "industry": "化纤行业",
+     "name": "欣龙控股",
+     "close": "9.02",
+     "pct_chg": "10.0",
+     "amount": "1870901952.0",
+     "limit_amount": null,
+     "float_mv": "4849137117.0",
+     "total_mv": "4856322972.16",
+     "turnover_ratio": "39.6",
+     "fd_amount": "6735234000.0",
+     "first_time": "94457",
+     "last_time": "145648",
+     "open_times": "10",
+     "up_stat": "8/8",
+     "limit_times": "8.0",
+     "limit": "U"
+    }
+   ],
+   "unit_check": {
+    "close_magnitude": {
+     "000001.SZ": {
+      "min": 10.8,
+      "median": 15.68,
+      "max": 12.99
+     },
+     "600519.SH": {
+      "min": 1855.0,
+      "median": 1855.0,
+      "max": 1855.0
+     },
+     "600519_verdict": "合理(数百~数千元)"
+    }
+   },
+   "header_consistency": {
+    "n_files": 1624,
+    "distinct_headers": 1,
+    "modal_header_cols": 18,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "20250321",
+      "manifest_rows": 88,
+      "actual_rows": 87
+     },
+     {
+      "chunk": "20210205",
+      "manifest_rows": 125,
+      "actual_rows": 124
+     },
+     {
+      "chunk": "20250717",
+      "manifest_rows": 86,
+      "actual_rows": 85
+     },
+     {
+      "chunk": "20260520",
+      "manifest_rows": 102,
+      "actual_rows": 101
+     },
+     {
+      "chunk": "20220816",
+      "manifest_rows": 110,
+      "actual_rows": 109
+     },
+     {
+      "chunk": "20220316",
+      "manifest_rows": 153,
+      "actual_rows": 152
+     },
+     {
+      "chunk": "20240910",
+      "manifest_rows": 72,
+      "actual_rows": 71
+     },
+     {
+      "chunk": "20211230",
+      "manifest_rows": 111,
+      "actual_rows": 110
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 1.3,
+   "finished_at": "2026-09-18T00:07:40"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:40"
+}

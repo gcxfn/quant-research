@@ -1,0 +1,323 @@
+{
+ "source": "tushare",
+ "dataset": "fund_basic",
+ "batches": {
+  "tushare/fund_basic/20260909-r1": {
+   "batch_dir": "tushare/fund_basic/20260909-r1",
+   "mode": "full",
+   "files": {
+    "n_total": 3,
+    "n_csv": 2,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 10393550
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 found_date 有 6501 行 > 2024-12-31 (max=20260909); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['ts_code'] 重复: 2945 个键 / 5890 行"
+    }
+   ],
+   "inventory_registration": {
+    "files": 3,
+    "bytes": 10393550
+   },
+   "schema": {
+    "ts_code": "String",
+    "name": "String",
+    "management": "String",
+    "custodian": "String",
+    "fund_type": "String",
+    "found_date": "Int64",
+    "due_date": "Int64",
+    "list_date": "String",
+    "issue_date": "Int64",
+    "delist_date": "String",
+    "issue_amount": "Float64",
+    "m_fee": "Float64",
+    "c_fee": "Float64",
+    "duration_year": "Float64",
+    "p_value": "Float64",
+    "min_amount": "Float64",
+    "exp_return": "String",
+    "benchmark": "String",
+    "status": "String",
+    "invest_type": "String",
+    "type": "String",
+    "trustee": "String",
+    "purc_startdate": "Int64",
+    "redm_startdate": "Int64",
+    "market": "String"
+   },
+   "n_columns": 25,
+   "date_columns": [
+    "found_date",
+    "due_date",
+    "list_date",
+    "issue_date",
+    "delist_date",
+    "purc_startdate",
+    "redm_startdate"
+   ],
+   "numeric_columns_checked": [
+    "c_fee",
+    "due_date",
+    "duration_year",
+    "found_date",
+    "issue_amount",
+    "issue_date",
+    "m_fee",
+    "min_amount",
+    "p_value",
+    "purc_startdate",
+    "redm_startdate"
+   ],
+   "rows_total": 35691,
+   "date_coverage": {
+    "found_date": {
+     "min": "19980327",
+     "max": "20260909",
+     "rows_gt_20241231": 6501,
+     "null_rows": 679
+    },
+    "due_date": {
+     "min": "20050714",
+     "max": "20260914",
+     "rows_gt_20241231": 1201,
+     "null_rows": 30078
+    },
+    "list_date": {
+     "min": "19980407",
+     "max": "20260911",
+     "rows_gt_20241231": 1341,
+     "null_rows": 30136
+    },
+    "issue_date": {
+     "min": "19980323",
+     "max": "20260907",
+     "rows_gt_20241231": 5516,
+     "null_rows": 6730
+    },
+    "delist_date": {
+     "min": "20060809",
+     "max": "20260824",
+     "rows_gt_20241231": 38,
+     "null_rows": 34439
+    },
+    "purc_startdate": {
+     "min": "20011210",
+     "max": "20260916",
+     "rows_gt_20241231": 6096,
+     "null_rows": 2651
+    },
+    "redm_startdate": {
+     "min": "20011221",
+     "max": "20300529",
+     "rows_gt_20241231": 6332,
+     "null_rows": 2671
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 6501,
+   "numeric_magnitude": {
+    "c_fee": {
+     "min": 0.006,
+     "max": 0.35
+    },
+    "due_date": {
+     "min": 20050714.0,
+     "max": 20260914.0
+    },
+    "duration_year": {
+     "min": 0.0,
+     "max": 19.0
+    },
+    "found_date": {
+     "min": 19980327.0,
+     "max": 20260909.0
+    },
+    "issue_amount": {
+     "min": 0.0,
+     "max": 4579.4338
+    },
+    "issue_date": {
+     "min": 19980323.0,
+     "max": 20260907.0
+    },
+    "m_fee": {
+     "min": 0.0,
+     "max": 2.0
+    },
+    "min_amount": {
+     "min": 0.0001,
+     "max": 1.338
+    },
+    "p_value": {
+     "min": 0.01,
+     "max": 100.0
+    },
+    "purc_startdate": {
+     "min": 20011210.0,
+     "max": 20260916.0
+    },
+    "redm_startdate": {
+     "min": 20011221.0,
+     "max": 20300529.0
+    }
+   },
+   "primary_key": [
+    "ts_code"
+   ],
+   "duplicate_keys": 2945,
+   "duplicate_rows": 5890,
+   "sample_rows": [
+    {
+     "ts_code": "150001.SZ",
+     "name": "国投瑞银瑞福深证100指数分级-进取",
+     "management": "国投瑞银基金管理有限公司",
+     "custodian": "中国工商银行股份有限公司",
+     "fund_type": "股票型",
+     "found_date": "20120717",
+     "due_date": "20150813",
+     "list_date": "20120817",
+     "issue_date": null,
+     "delist_date": "20150814",
+     "issue_amount": null,
+     "m_fee": null,
+     "c_fee": null,
+     "duration_year": "3.0",
+     "p_value": "1.0",
+     "min_amount": null,
+     "exp_return": null,
+     "benchmark": "深证100价格指数收益率×95%+银行活期存款利率(税后)×5%",
+     "status": "D",
+     "invest_type": "被动指数型",
+     "type": "股票型",
+     "trustee": null,
+     "purc_startdate": "20120725",
+     "redm_startdate": "20120717"
+    },
+    {
+     "ts_code": "1500011.SZ",
+     "name": "国投瑞银瑞福分级封闭-瑞福进取",
+     "management": "国投瑞银基金管理有限公司",
+     "custodian": "中国工商银行股份有限公司",
+     "fund_type": "股票型",
+     "found_date": "20070717",
+     "due_date": "20120716",
+     "list_date": "20070921",
+     "issue_date": "20070710",
+     "delist_date": "20120717",
+     "issue_amount": "30.005",
+     "m_fee": null,
+     "c_fee": null,
+     "duration_year": "5.0",
+     "p_value": "1.0",
+     "min_amount": "0.1",
+     "exp_return": null,
+     "benchmark": "沪深300指数×80%+中信标普全债指数×20%",
+     "status": "D",
+     "invest_type": null,
+     "type": "股票型",
+     "trustee": null,
+     "purc_startdate": null,
+     "redm_startdate": null
+    },
+    {
+     "ts_code": "150002.SZ",
+     "name": "大成优选封闭",
+     "management": "大成基金管理有限公司",
+     "custodian": "中国银行股份有限公司",
+     "fund_type": "股票型",
+     "found_date": "20070801",
+     "due_date": "20120727",
+     "list_date": "20070907",
+     "issue_date": "20070723",
+     "delist_date": "20120727",
+     "issue_amount": "46.7431",
+     "m_fee": null,
+     "c_fee": null,
+     "duration_year": "5.0",
+     "p_value": "1.0",
+     "min_amount": "0.1",
+     "exp_return": null,
+     "benchmark": "沪深300指数×80%+中信标普全债指数×20%",
+     "status": "D",
+     "invest_type": "股票型",
+     "type": "股票型",
+     "trustee": null,
+     "purc_startdate": null,
+     "redm_startdate": null
+    },
+    {
+     "ts_code": "150003.SZ",
+     "name": "建信优势动力股票",
+     "management": "建信基金管理有限责任公司",
+     "custodian": "交通银行股份有限公司",
+     "fund_type": "股票型",
+     "found_date": "20080319",
+     "due_date": "20130318",
+     "list_date": "20080919",
+     "issue_date": "20080218",
+     "delist_date": "20130318",
+     "issue_amount": "46.427",
+     "m_fee": null,
+     "c_fee": null,
+     "duration_year": "5.0",
+     "p_value": "1.0",
+     "min_amount": "0.1",
+     "exp_return": null,
+     "benchmark": "中国债券总指数×10%+沪深300指数×90%",
+     "status": "D",
+     "invest_type": "股票型",
+     "type": "股票型",
+     "trustee": null,
+     "purc_startdate": null,
+     "redm_startdate": null
+    },
+    {
+     "ts_code": "150006.SZ",
+     "name": "长盛同庆可分离交易股票-A",
+     "management": "长盛基金管理有限公司",
+     "custodian": "中国建设银行股份有限公司",
+     "fund_type": "股票型",
+     "found_date": "20090512",
+     "due_date": "20120511",
+     "list_date": "20090526",
+     "issue_date": "20090506",
+     "delist_date": "20120514",
+     "issue_amount": "58.7469",
+     "m_fee": null,
+     "c_fee": null,
+     "duration_year": "3.0",
+     "p_value": "1.0",
+     "min_amount": "0.1",
+     "exp_return": null,
+     "benchmark": "沪深300指数收益率×70%+中证全债指数收益率×30%",
+     "status": "D",
+     "invest_type": "稳健增长型",
+     "type": "股票型",
+     "trustee": null,
+     "purc_startdate": null,
+     "redm_startdate": null
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:33"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:33"
+}

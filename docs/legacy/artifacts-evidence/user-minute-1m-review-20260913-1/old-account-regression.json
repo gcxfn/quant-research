@@ -1,0 +1,29 @@
+{
+  "status": "PASS_EXACT",
+  "units": [
+    {
+      "unit": "REV_vola_11",
+      "status": "PASS_EXACT",
+      "old_account_sha256": "685aa3d29ff409bee6a2386b53fd5c16ddd1a7b6e60b392935ac18d1d2303f2e",
+      "old_signal_sha256": "ec857d6b5eee61dd93706a9d3c00823caba6fa43c739f9bf7ad322ce5bdf3b98",
+      "fills": 292,
+      "daily": 484
+    },
+    {
+      "unit": "PV1_REV11_RANK50_TRAIN_V1",
+      "status": "PASS_EXACT",
+      "old_account_sha256": "5f826eb1b5c652e89b81df2bc23389935679a14e6d83818f174421d7a5399231",
+      "old_signal_sha256": "e8c6de467fc2cc08e96eb551aa71639e7bd727629a95f23107f1519bcdc53d17",
+      "fills": 297,
+      "daily": 484
+    }
+  ],
+  "source_hashes": {
+    "experiments/rev11_dynamic_minute_20260912.py": "ea5f1257ff4b08b339b7e85d4de3d40ccd87f35050ddd7345c0dce84c165ba8f",
+    "experiments/factor_miner/fixed_capital_portfolio.py": "8edae34826b117a4c26dfd7080407d3b55ed586606bbb666b577394af58cb673",
+    "experiments/three_account_migration_run_20260912.py": "deb53f75788941cedc759483be5b041194dfe88c17d01c46e75952afb99e70a5",
+    "experiments/factor_miner/migration_costs.py": "b9ca34bbcde169fec4ff29ccd43fbe7f338ee6593d41a2fec9b8281948f5ef84",
+    "quant/execution.py": "8a90ea3c0a95b8605d78340211783ad2056ca0e67edff11eeb101a796a141b63"
+  },
+  "reviewer_sha256": "b1a193172d2301ea9651b618152dd69abf458f349788935b210267500e3e6a60"
+}

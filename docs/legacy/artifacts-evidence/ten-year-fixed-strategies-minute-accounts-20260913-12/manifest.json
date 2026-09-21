@@ -1,0 +1,150 @@
+{
+  "status": "WAITING_REVIEW",
+  "window": [
+    "2015-01-01",
+    "2024-12-31"
+  ],
+  "signal_manifest_sha256": "479155691fd97a10024d5672a3397a2141449d505a4e4f5ba76957f42d4bfc9f",
+  "signal_identity": {
+    "artifacts\\ten-year-fixed-strategies-20260913-2\\signals\\manifest.json": "479155691fd97a10024d5672a3397a2141449d505a4e4f5ba76957f42d4bfc9f",
+    "artifacts\\ten-year-fixed-strategies-20260913-2\\signals\\calendar.json": "9458a13721e1996f562f789a0dc25ec0f8be9c99228898e43ed145a01fdae5df",
+    "artifacts\\ten-year-fixed-strategies-20260913-2\\signals\\REV_vola_11.jsonl": "9d8ec61feeaef3486d6e0ee6db04f3397804cd59aacc40350e3cd9399c902738",
+    "artifacts\\ten-year-fixed-strategies-20260913-2\\signals\\PV1_REV11_RANK50_TRAIN_V1.jsonl": "232122eca3e8afe67e87d77457c582acf4cb461954c95bfc27513c04a7931ccb"
+  },
+  "signal_directory": "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-20260913-2\\signals",
+  "source_hashes": {
+    "experiments/ten_year_account_20260913.py": "b8c00816552116f8d27b0997d1abbfb21bdae354d7dfe0f8b45e1ddaa14937ee",
+    "experiments/ten_year_account_audit_20260913.py": "4f9dd658261f10055cac79f23e2ea266ba8358931834584be5430810cffcd885",
+    "experiments/ten_year_research.py": "b370d91545ad58d42ec2bdb0d649a6e2b8bff8743a0c4025fdd53262735244bc",
+    "experiments/r0_pilot_market_inputs_20260912.py": "789138fde346462cad3f9e86eec43028455b7047631b4d8535bd34a40a9a277b",
+    "experiments/r0_pilot_corporate_actions_20260912.py": "d11e12247b54dd2feecc2cb9e10c4ee7eebf2f0d4f3f25ee40eddb6d08865706",
+    "experiments/r0_mechanism_cost_pilot_20260912.py": "d9942e182e7364da128257eb132dcb21409cd2583866d628a18fecdc2e6f957b",
+    "experiments/factor_miner/fixed_capital_portfolio.py": "8edae34826b117a4c26dfd7080407d3b55ed586606bbb666b577394af58cb673",
+    "quant/execution.py": "8a90ea3c0a95b8605d78340211783ad2056ca0e67edff11eeb101a796a141b63",
+    "quant/market.py": "6d6a6fa6541647d0063bf79f9fe4b37a85932c7aa709d810440cf3ec8f276452",
+    "quant/history.py": "2432fd2db45dabba602c459b354df4d84cc0105353f93ea5f06a4e1798b0210f",
+    "experiments/ten_year_partition.py": "33c815a1e1fd156d9ba6799b070d957def433b625a996eaf60f27444d3018a1d",
+    "experiments/three_account_migration_signals_20260912.py": "4f50514e4f1bb70c85044547aa342411594c88148c447637cf09c951062d1bfd",
+    "experiments/migration_signal_export_20260912.py": "a76fe1ba5a4c4734919e93e40241f0b17d5213d9c3091cb4d334376e20638593",
+    "experiments/migration_runtime_20260912.py": "e9cf7f90183608a9d4f975dc1160dcfb5fcbe32b6524caa2a7a5b833bb0c99cf",
+    "experiments/mr_statarb.py": "aac895cce6d0fb2833e1a2715bef37d7c381cd8c3606d4c7b92586bececa6523",
+    "experiments/r0_pilot_signals_20260912.py": "618b1dee30fa820df717bdee7a7f7d320a056a814bca8d0cdc2ea76ae113ca31",
+    "experiments/pv1_train_refresh_20260912.py": "9affe85046b43595345511910089d4882db82448673198051788b94146dc6114",
+    "experiments/pv1_small_portfolio_signals_20260912.py": "57d933758b98d96ec06ccceaf50b2e3bffd41d5ce3c9722398e4a10e952d1690",
+    "experiments/screen_pricevol.py": "89cf32315f68e619cb17cf7091ad3ab68bdb23f8f026508c8493bf628dbfd011",
+    "experiments/factor_miner/engine.py": "de507dc034228f4edfc75c5623e98165888df06cf40a244bf2a6bf3e0f2a28f2",
+    "experiments/factor_miner/data_fields.py": "306260fd114c62fa841f17ba016a3b6931642b3300724fc1916152953f3ad5f6",
+    "experiments/factor_miner/compiler.py": "a7654ad7d1da92f33c415f5936e50b6d6ae059066dd9f96ec53de69ca014e57e",
+    "experiments/factor_miner/stats.py": "b364471b2620620c7a2ecf0d2877c34fdb310379133de594874f00507dceefe4",
+    "experiments/ten_year_minute_accounts_20260913.py": "aa6fea13339bc2834959dd0686fbd7446b377f9f525f731dcab603f594ad0b98",
+    "experiments/ten_year_minute_execution_20260913.py": "7be4147629b1b0f4d3a1f96e4683b6be478eebe42332cbe3c4c7ef61c99fb9a9",
+    "experiments/user_minute_1m_20260913.py": "33a07d6fdafc3b6f263202717fef171f8ecc9976979f450ca4003b7b30eb5b9a",
+    "experiments/migration_tushare_minute_adapter_20260912.py": "3cbb940ab375b5159d8ba7165e78a10243b42f60578e1ff7fd5d520aa6bd4bfe",
+    "experiments/rev11_dynamic_minute_20260912.py": "75b9e90863e0eebd833169de16c3bef6977e7966783f7c2faea5d4cb7b4cf2df"
+  },
+  "mismatch_policy": "research_disclose",
+  "security_code_changes": [
+    {
+      "old_code": "sz.000022",
+      "new_code": "sz.001872",
+      "date": "2018-12-26"
+    },
+    {
+      "old_code": "sz.000043",
+      "new_code": "sz.001914",
+      "date": "2019-12-16"
+    }
+  ],
+  "paths": [
+    {
+      "id": "REV_vola_11__main",
+      "status": "WAITING_REVIEW",
+      "participation_rate": 0.005,
+      "friction_bps": 5,
+      "account_sha256": "3d08cfecf8558af81abf62a5eb61452ab65ffc49c2416908325e52a3440db2ef",
+      "data_issues": 1,
+      "data_discrepancies": 276,
+      "fills": 1868
+    },
+    {
+      "id": "REV_vola_11__stress",
+      "status": "WAITING_REVIEW",
+      "participation_rate": 0.0025,
+      "friction_bps": 10,
+      "account_sha256": "4da9ee3da1380b9457a7d8bd59d29dd4ad799cf9ea9928199d386561faf90773",
+      "data_issues": 3,
+      "data_discrepancies": 276,
+      "fills": 2658
+    },
+    {
+      "id": "PV1_REV11_RANK50_TRAIN_V1__main",
+      "status": "WAITING_REVIEW",
+      "participation_rate": 0.005,
+      "friction_bps": 5,
+      "account_sha256": "e562cfa54fb964317b314940a624fd1987180171bd663a5eb885bde54e0fb968",
+      "data_issues": 8,
+      "data_discrepancies": 298,
+      "fills": 1772
+    },
+    {
+      "id": "PV1_REV11_RANK50_TRAIN_V1__stress",
+      "status": "WAITING_REVIEW",
+      "participation_rate": 0.0025,
+      "friction_bps": 10,
+      "account_sha256": "5aa95cef0fd0eff5c16dff2ba31c5e9e1c4ae38a3400143eb76ceeb929cacd9a",
+      "data_issues": 8,
+      "data_discrepancies": 305,
+      "fills": 2480
+    }
+  ],
+  "source_review": "D:\\AI\\workspace\\个人量化\\artifacts\\user-minute-1m-review-20260913-1\\review-v7.json",
+  "source_review_sha256": "4a2d348a93dcf130fafffd8d8f07499b27b07b5562903b650c228e62eaeebcd2",
+  "statistical_validity": "UNKNOWN",
+  "promotion": "BLOCK",
+  "execution": "user_1m_aggregated_5m_or_baostock_5m",
+  "inputs_manifest_sha256": "fdd3e920a9bbd3691c80a4df0352998f7451f56abe357f9100fdcc5e0e8aac46",
+  "patch_manifest_sha256": "c0a19d5e2f5bc55f373a5c544db43fb371887acd80a1f92679c9a7240ff1cf4d",
+  "patch_manifest": "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\minute-repairs-20260913-6\\patches.json",
+  "archives": {
+    "2015": {
+      "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\user_minute_1m\\20260913-143215\\2015.zip",
+      "sha256": "9a259d1ae54a6fe82b87814df369c3918d76829df66025bffd2e2565cbe45ef9"
+    },
+    "2016": {
+      "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\user_minute_1m\\20260913-143215\\2016.zip",
+      "sha256": "764be2b9e019fc58fdb50d393ca5532b9e5b67c1249533359419e597c01fa3db"
+    },
+    "2017": {
+      "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\user_minute_1m\\20260913-143215\\2017.zip",
+      "sha256": "8682d46f9020e5141a3a662666db10a72b42b2938429383f80139c54f115e73a"
+    },
+    "2018": {
+      "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\user_minute_1m\\20260913-143215\\2018.zip",
+      "sha256": "ecdd10002189dc506861fb3f526d8b1213d8f9fe04fe782dc1c107b400ba8c40"
+    },
+    "2019": {
+      "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\user_minute_1m\\20260913-143215\\2019.zip",
+      "sha256": "b0cbfcc6a5079fe7f0945cb5ecce69b0045926c4dfe73e8f45be838a5642d242"
+    },
+    "2020": {
+      "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\user_minute_1m\\20260913-2020-2024\\2020.zip",
+      "sha256": "b7546350f75736d2fdfd85cd86dd42324c6473d1d560eaefc355019566d3ada7"
+    },
+    "2021": {
+      "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\user_minute_1m\\20260913-2020-2024\\2021.zip",
+      "sha256": "181853296a79098e1061625b32c723794cabb22ce3b5bb45dee63052fbd5a79c"
+    },
+    "2022": {
+      "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\user_minute_1m\\20260913-2020-2024\\2022.zip",
+      "sha256": "c0060d66cfbe1bc4da3bd744e13d7fa020980836257ddfe74aafd1d7e9ef6c96"
+    },
+    "2023": {
+      "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\user_minute_1m\\20260913-2020-2024\\2023.zip",
+      "sha256": "3b6e1c2b44347c5345d5d17c815cb5ad9d2f182df1e3c017690ec6bb24660c92"
+    },
+    "2024": {
+      "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\user_minute_1m\\20260913-2020-2024\\2024.zip",
+      "sha256": "7cbb045690059eb03b2045d11dcc8cbb453ac08c392b40e3317561afcd916960"
+    }
+  }
+}

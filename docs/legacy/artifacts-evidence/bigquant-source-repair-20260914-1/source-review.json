@@ -1,0 +1,1390 @@
+{
+  "status": "WAITING_REVIEW",
+  "kind": "WHOLE_SECURITY_DAY_VENDOR_REPLACEMENT",
+  "base_patch_sha256": "7dfdf9202c999d4228503267c0e3f6d6d5872e9826134cd3ff275826ea32e81a",
+  "patch_sha256": "be43d9b3d739985a130882fec8c65187f2389af1853cb6f85d8b7fd4f5527a72",
+  "repairs": [
+    {
+      "code": "sh.603026",
+      "date": "2019-05-06",
+      "previous_entry": {
+        "code": "sh.603026",
+        "date": "2019-05-06",
+        "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\minute-repairs-20260914-1\\sh.603026_2019-05-06_f5.csv",
+        "sha256": "7dea88ef55fed7111f786cf654cbde266ec0b95a5ddd206ad21f9bb015c1663d",
+        "error_code": "0",
+        "source": "xianyu_1m_aggregated_5m_derived_reuse",
+        "raw_path": "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\minute-repairs-20260914-1\\sh.603026_2019-05-06_raw.json",
+        "raw_sha256": "b9534a17d338e93cea9b6a693befcf2924b93d6bdef1dcd5294fb5513d084bab",
+        "trailing_zero_minutes": 0,
+        "minute_volume": 0.0,
+        "reviewed_low_only_missing_print": {
+          "decision": "LOW_ONLY_MISSING_PRINT_NO_TRIGGER_DEPENDENCY",
+          "reason": "分钟源漏一笔最低价；两独立日线源一致；实际订单成交由 open<=price 决定，与 low 无关",
+          "sha256": "7dea88ef55fed7111f786cf654cbde266ec0b95a5ddd206ad21f9bb015c1663d",
+          "daily": {
+            "open": 31.5,
+            "high": 32.78,
+            "low": 30.11,
+            "close": 31.05,
+            "volume": 9806855.0
+          },
+          "minute_low": 30.44,
+          "daily_low": 30.11,
+          "evidence": [
+            "user_dataset daily low=30.11",
+            "tushare daily via xiaodefa low=30.11",
+            "minute sources(xianyu 1m / tushare 1m) low=30.44"
+          ]
+        },
+        "normalization": "OHLC_FROM_POSITIVE_VOLUME_ROWS",
+        "previous_derived_path": "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260913-7\\derived-minute\\sh.603026_2019-05-06_f5.csv",
+        "previous_derived_sha256": "7dea88ef55fed7111f786cf654cbde266ec0b95a5ddd206ad21f9bb015c1663d",
+        "accepted_source_baseline": {
+          "decision": "USER_ACCEPTED_SOURCE_BASELINE_20260914",
+          "code": "sh.603026",
+          "date": "2019-05-06",
+          "sha256": "7dea88ef55fed7111f786cf654cbde266ec0b95a5ddd206ad21f9bb015c1663d",
+          "daily": {
+            "open": 31.5,
+            "close": 31.05,
+            "high": 32.78,
+            "low": 30.11,
+            "volume": 9806855.0
+          },
+          "minute": {
+            "open": 31.5,
+            "close": 31.05,
+            "high": 32.78,
+            "low": 30.44,
+            "volume": 9806855.0
+          },
+          "research_only": true,
+          "source_truth_verified": false,
+          "sensitivity_required": true,
+          "scope": "Known source discrepancy accepted for descriptive research; no value correction"
+        }
+      },
+      "new_entry": {
+        "code": "sh.603026",
+        "date": "2019-05-06",
+        "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\bigquant\\minute-repairs-20260914-1\\sh.603026_2019-05-06_f5.csv",
+        "sha256": "6a8a82499da9bdd9b93de74ed05538992520d324ec070520682add42a3ff34bc",
+        "error_code": "0",
+        "source": "bigquant_cn_stock_bar1m_whole_security_day",
+        "raw_path": "D:\\AI\\workspace\\个人量化\\data\\raw\\bigquant\\minute-check-20260914-1\\2019-05-06.csv",
+        "raw_sha256": "3afb20cd5640b84497ee7037795c0eae131fa0043b0dade6b6f7990b63a33c57",
+        "trailing_zero_minutes": 0,
+        "minute_volume": 9808855.0,
+        "normalization": "RAW_0925_AUCTION_INCLUDED_IN_0935;CONTINUOUS_RIGHT_END_TIMES_PRESERVED",
+        "previous_derived_path": "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260913-7\\derived-minute\\sh.603026_2019-05-06_f5.csv",
+        "previous_derived_sha256": "7dea88ef55fed7111f786cf654cbde266ec0b95a5ddd206ad21f9bb015c1663d",
+        "previous_entry": {
+          "code": "sh.603026",
+          "date": "2019-05-06",
+          "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\minute-repairs-20260914-1\\sh.603026_2019-05-06_f5.csv",
+          "sha256": "7dea88ef55fed7111f786cf654cbde266ec0b95a5ddd206ad21f9bb015c1663d",
+          "error_code": "0",
+          "source": "xianyu_1m_aggregated_5m_derived_reuse",
+          "raw_path": "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\minute-repairs-20260914-1\\sh.603026_2019-05-06_raw.json",
+          "raw_sha256": "b9534a17d338e93cea9b6a693befcf2924b93d6bdef1dcd5294fb5513d084bab",
+          "trailing_zero_minutes": 0,
+          "minute_volume": 0.0,
+          "reviewed_low_only_missing_print": {
+            "decision": "LOW_ONLY_MISSING_PRINT_NO_TRIGGER_DEPENDENCY",
+            "reason": "分钟源漏一笔最低价；两独立日线源一致；实际订单成交由 open<=price 决定，与 low 无关",
+            "sha256": "7dea88ef55fed7111f786cf654cbde266ec0b95a5ddd206ad21f9bb015c1663d",
+            "daily": {
+              "open": 31.5,
+              "high": 32.78,
+              "low": 30.11,
+              "close": 31.05,
+              "volume": 9806855.0
+            },
+            "minute_low": 30.44,
+            "daily_low": 30.11,
+            "evidence": [
+              "user_dataset daily low=30.11",
+              "tushare daily via xiaodefa low=30.11",
+              "minute sources(xianyu 1m / tushare 1m) low=30.44"
+            ]
+          },
+          "normalization": "OHLC_FROM_POSITIVE_VOLUME_ROWS",
+          "previous_derived_path": "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260913-7\\derived-minute\\sh.603026_2019-05-06_f5.csv",
+          "previous_derived_sha256": "7dea88ef55fed7111f786cf654cbde266ec0b95a5ddd206ad21f9bb015c1663d",
+          "accepted_source_baseline": {
+            "decision": "USER_ACCEPTED_SOURCE_BASELINE_20260914",
+            "code": "sh.603026",
+            "date": "2019-05-06",
+            "sha256": "7dea88ef55fed7111f786cf654cbde266ec0b95a5ddd206ad21f9bb015c1663d",
+            "daily": {
+              "open": 31.5,
+              "close": 31.05,
+              "high": 32.78,
+              "low": 30.11,
+              "volume": 9806855.0
+            },
+            "minute": {
+              "open": 31.5,
+              "close": 31.05,
+              "high": 32.78,
+              "low": 30.44,
+              "volume": 9806855.0
+            },
+            "research_only": true,
+            "source_truth_verified": false,
+            "sensitivity_required": true,
+            "scope": "Known source discrepancy accepted for descriptive research; no value correction"
+          }
+        },
+        "volume_unit": "shares; checked against baseline daily and minute records",
+        "amount_unit": "yuan",
+        "scope": "Three user-authorized vendor corrections; full source OHLCV, not selected fields"
+      },
+      "changes": [
+        {
+          "time": "20190506093500000",
+          "field": "high",
+          "before": 31.99,
+          "after": 32.34
+        },
+        {
+          "time": "20190506093500000",
+          "field": "low",
+          "before": 31.42,
+          "after": 31.41
+        },
+        {
+          "time": "20190506093500000",
+          "field": "volume",
+          "before": 998500.0,
+          "after": 1000500.0
+        },
+        {
+          "time": "20190506093500000",
+          "field": "amount",
+          "before": 31525534.0,
+          "after": 31589134.0
+        },
+        {
+          "time": "20190506094000000",
+          "field": "low",
+          "before": 30.7,
+          "after": 30.11
+        },
+        {
+          "time": "20190506094500000",
+          "field": "close",
+          "before": 31.22,
+          "after": 31.23
+        },
+        {
+          "time": "20190506094500000",
+          "field": "volume",
+          "before": 386100.0,
+          "after": 387100.0
+        },
+        {
+          "time": "20190506094500000",
+          "field": "amount",
+          "before": 12019899.0,
+          "after": 12051272.0
+        },
+        {
+          "time": "20190506095000000",
+          "field": "open",
+          "before": 31.23,
+          "after": 31.39
+        },
+        {
+          "time": "20190506095000000",
+          "field": "close",
+          "before": 31.39,
+          "after": 31.34
+        },
+        {
+          "time": "20190506095000000",
+          "field": "volume",
+          "before": 245334.0,
+          "after": 245034.0
+        },
+        {
+          "time": "20190506095000000",
+          "field": "amount",
+          "before": 7687666.0,
+          "after": 7678257.0
+        },
+        {
+          "time": "20190506095500000",
+          "field": "open",
+          "before": 31.34,
+          "after": 31.39
+        },
+        {
+          "time": "20190506095500000",
+          "field": "close",
+          "before": 31.39,
+          "after": 31.26
+        },
+        {
+          "time": "20190506095500000",
+          "field": "volume",
+          "before": 266200.0,
+          "after": 269300.0
+        },
+        {
+          "time": "20190506095500000",
+          "field": "amount",
+          "before": 8333856.0,
+          "after": 8431251.0
+        },
+        {
+          "time": "20190506100000000",
+          "field": "open",
+          "before": 31.26,
+          "after": 31.46
+        },
+        {
+          "time": "20190506100000000",
+          "field": "low",
+          "before": 31.26,
+          "after": 31.43
+        },
+        {
+          "time": "20190506100000000",
+          "field": "volume",
+          "before": 372600.0,
+          "after": 371600.0
+        },
+        {
+          "time": "20190506100000000",
+          "field": "amount",
+          "before": 11786234.0,
+          "after": 11755829.0
+        },
+        {
+          "time": "20190506100500000",
+          "field": "open",
+          "before": 31.76,
+          "after": 31.83
+        },
+        {
+          "time": "20190506100500000",
+          "field": "low",
+          "before": 31.76,
+          "after": 31.77
+        },
+        {
+          "time": "20190506100500000",
+          "field": "close",
+          "before": 31.99,
+          "after": 31.98
+        },
+        {
+          "time": "20190506100500000",
+          "field": "volume",
+          "before": 269566.0,
+          "after": 267466.0
+        },
+        {
+          "time": "20190506100500000",
+          "field": "amount",
+          "before": 8644774.0,
+          "after": 8578206.0
+        },
+        {
+          "time": "20190506101000000",
+          "field": "volume",
+          "before": 233700.0,
+          "after": 233000.0
+        },
+        {
+          "time": "20190506101000000",
+          "field": "amount",
+          "before": 7486967.0,
+          "after": 7464581.0
+        },
+        {
+          "time": "20190506102500000",
+          "field": "open",
+          "before": 32.26,
+          "after": 32.28
+        },
+        {
+          "time": "20190506105000000",
+          "field": "open",
+          "before": 32.31,
+          "after": 32.34
+        },
+        {
+          "time": "20190506110500000",
+          "field": "open",
+          "before": 32.09,
+          "after": 32.0
+        },
+        {
+          "time": "20190506112000000",
+          "field": "open",
+          "before": 32.02,
+          "after": 32.0
+        },
+        {
+          "time": "20190506131500000",
+          "field": "open",
+          "before": 31.55,
+          "after": 31.57
+        },
+        {
+          "time": "20190506131500000",
+          "field": "high",
+          "before": 31.55,
+          "after": 31.57
+        },
+        {
+          "time": "20190506132500000",
+          "field": "open",
+          "before": 31.04,
+          "after": 31.09
+        },
+        {
+          "time": "20190506132500000",
+          "field": "high",
+          "before": 31.04,
+          "after": 31.09
+        },
+        {
+          "time": "20190506133500000",
+          "field": "open",
+          "before": 31.3,
+          "after": 31.22
+        },
+        {
+          "time": "20190506135500000",
+          "field": "open",
+          "before": 31.0,
+          "after": 30.99
+        },
+        {
+          "time": "20190506150000000",
+          "field": "open",
+          "before": 30.96,
+          "after": 30.88
+        },
+        {
+          "time": "20190506150000000",
+          "field": "low",
+          "before": 30.89,
+          "after": 30.88
+        }
+      ],
+      "minute": {
+        "open": 31.5,
+        "close": 31.05,
+        "high": 32.78,
+        "low": 30.11,
+        "volume": 9808855.0
+      },
+      "daily": {
+        "open": 31.5,
+        "close": 31.05,
+        "high": 32.78,
+        "low": 30.11,
+        "volume": 9806855.0
+      },
+      "daily_difference": {
+        "open": 0.0,
+        "close": 0.0,
+        "high": 0.0,
+        "low": 0.0,
+        "volume": 2000.0
+      },
+      "actual_orders": 2,
+      "provider": "PASS_RESEARCH_DISCLOSE",
+      "provenance_file": "D:\\AI\\workspace\\个人量化\\data\\raw\\bigquant\\minute-check-20260914-1\\2019-05-06.csv",
+      "raw_sha256": "3afb20cd5640b84497ee7037795c0eae131fa0043b0dade6b6f7990b63a33c57"
+    },
+    {
+      "code": "sz.300420",
+      "date": "2019-09-02",
+      "previous_entry": {
+        "code": "sz.300420",
+        "date": "2019-09-02",
+        "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\minute-repairs-20260914-1\\sz.300420_2019-09-02_f5.csv",
+        "sha256": "06688264d5bb65f833fcaf46226e91073d18b71980ac768d0bc50b3d0bd8827a",
+        "error_code": "0",
+        "source": "user_csv_1m_lots_to_shares_aggregated_5m",
+        "raw_path": "D:\\AI\\workspace\\个人量化\\data\\raw\\user_csv_1m\\20260913-4\\sz300420_2019.csv",
+        "raw_sha256": "0e887628f5d3df158fd10a3801ac56ac8d9edaa31a8caf4b9d366f51657ae5be",
+        "trailing_zero_minutes": 0,
+        "minute_volume": 44087500.0,
+        "reviewed_low_only_missing_print": {
+          "decision": "LOW_ONLY_MISSING_PRINT_NO_TRIGGER_DEPENDENCY",
+          "reason": "分钟源漏一笔最低价；两独立日线源一致；实际订单成交由 open<=price 决定，与 low 无关",
+          "sha256": "06688264d5bb65f833fcaf46226e91073d18b71980ac768d0bc50b3d0bd8827a",
+          "daily": {
+            "open": 6.58,
+            "high": 7.02,
+            "low": 6.5,
+            "close": 6.82,
+            "volume": 44087544.0
+          },
+          "minute_low": 6.57,
+          "daily_low": 6.5,
+          "evidence": [
+            "user_dataset daily low=6.50",
+            "tushare daily via xiaodefa low=6.50",
+            "user annual 1m CSV low=6.57"
+          ]
+        },
+        "normalization": "OHLC_FROM_POSITIVE_VOLUME_ROWS",
+        "previous_derived_path": "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\repairs-20260913-2\\sz.300420_2019-09-02_f5.csv",
+        "previous_derived_sha256": "06688264d5bb65f833fcaf46226e91073d18b71980ac768d0bc50b3d0bd8827a",
+        "accepted_source_baseline": {
+          "decision": "USER_ACCEPTED_SOURCE_BASELINE_20260914",
+          "code": "sz.300420",
+          "date": "2019-09-02",
+          "sha256": "06688264d5bb65f833fcaf46226e91073d18b71980ac768d0bc50b3d0bd8827a",
+          "daily": {
+            "open": 6.58,
+            "close": 6.82,
+            "high": 7.02,
+            "low": 6.5,
+            "volume": 44087544.0
+          },
+          "minute": {
+            "open": 6.58,
+            "close": 6.82,
+            "high": 7.02,
+            "low": 6.57,
+            "volume": 44087500.0
+          },
+          "research_only": true,
+          "source_truth_verified": false,
+          "sensitivity_required": true,
+          "scope": "Known source discrepancy accepted for descriptive research; no value correction"
+        }
+      },
+      "new_entry": {
+        "code": "sz.300420",
+        "date": "2019-09-02",
+        "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\bigquant\\minute-repairs-20260914-1\\sz.300420_2019-09-02_f5.csv",
+        "sha256": "a35401b52145d939200073658956c8e9bd7fb7fdef7df5a46462b453d86125d8",
+        "error_code": "0",
+        "source": "bigquant_cn_stock_bar1m_whole_security_day",
+        "raw_path": "D:\\AI\\workspace\\个人量化\\data\\raw\\bigquant\\minute-check-20260914-1\\2019-09-02.csv",
+        "raw_sha256": "1f00049cd0c0898f19fe79767fdb83eca12fa451abb977856ec658ef335db2ec",
+        "trailing_zero_minutes": 0,
+        "minute_volume": 44087544.0,
+        "normalization": "RAW_0925_AUCTION_INCLUDED_IN_0935;CONTINUOUS_RIGHT_END_TIMES_PRESERVED",
+        "previous_derived_path": "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\repairs-20260913-2\\sz.300420_2019-09-02_f5.csv",
+        "previous_derived_sha256": "06688264d5bb65f833fcaf46226e91073d18b71980ac768d0bc50b3d0bd8827a",
+        "previous_entry": {
+          "code": "sz.300420",
+          "date": "2019-09-02",
+          "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\minute-repairs-20260914-1\\sz.300420_2019-09-02_f5.csv",
+          "sha256": "06688264d5bb65f833fcaf46226e91073d18b71980ac768d0bc50b3d0bd8827a",
+          "error_code": "0",
+          "source": "user_csv_1m_lots_to_shares_aggregated_5m",
+          "raw_path": "D:\\AI\\workspace\\个人量化\\data\\raw\\user_csv_1m\\20260913-4\\sz300420_2019.csv",
+          "raw_sha256": "0e887628f5d3df158fd10a3801ac56ac8d9edaa31a8caf4b9d366f51657ae5be",
+          "trailing_zero_minutes": 0,
+          "minute_volume": 44087500.0,
+          "reviewed_low_only_missing_print": {
+            "decision": "LOW_ONLY_MISSING_PRINT_NO_TRIGGER_DEPENDENCY",
+            "reason": "分钟源漏一笔最低价；两独立日线源一致；实际订单成交由 open<=price 决定，与 low 无关",
+            "sha256": "06688264d5bb65f833fcaf46226e91073d18b71980ac768d0bc50b3d0bd8827a",
+            "daily": {
+              "open": 6.58,
+              "high": 7.02,
+              "low": 6.5,
+              "close": 6.82,
+              "volume": 44087544.0
+            },
+            "minute_low": 6.57,
+            "daily_low": 6.5,
+            "evidence": [
+              "user_dataset daily low=6.50",
+              "tushare daily via xiaodefa low=6.50",
+              "user annual 1m CSV low=6.57"
+            ]
+          },
+          "normalization": "OHLC_FROM_POSITIVE_VOLUME_ROWS",
+          "previous_derived_path": "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\repairs-20260913-2\\sz.300420_2019-09-02_f5.csv",
+          "previous_derived_sha256": "06688264d5bb65f833fcaf46226e91073d18b71980ac768d0bc50b3d0bd8827a",
+          "accepted_source_baseline": {
+            "decision": "USER_ACCEPTED_SOURCE_BASELINE_20260914",
+            "code": "sz.300420",
+            "date": "2019-09-02",
+            "sha256": "06688264d5bb65f833fcaf46226e91073d18b71980ac768d0bc50b3d0bd8827a",
+            "daily": {
+              "open": 6.58,
+              "close": 6.82,
+              "high": 7.02,
+              "low": 6.5,
+              "volume": 44087544.0
+            },
+            "minute": {
+              "open": 6.58,
+              "close": 6.82,
+              "high": 7.02,
+              "low": 6.57,
+              "volume": 44087500.0
+            },
+            "research_only": true,
+            "source_truth_verified": false,
+            "sensitivity_required": true,
+            "scope": "Known source discrepancy accepted for descriptive research; no value correction"
+          }
+        },
+        "volume_unit": "shares; checked against baseline daily and minute records",
+        "amount_unit": "yuan",
+        "scope": "Three user-authorized vendor corrections; full source OHLCV, not selected fields"
+      },
+      "changes": [
+        {
+          "time": "20190902093500000",
+          "field": "high",
+          "before": 6.74,
+          "after": 6.75
+        },
+        {
+          "time": "20190902093500000",
+          "field": "low",
+          "before": 6.57,
+          "after": 6.5
+        },
+        {
+          "time": "20190902093500000",
+          "field": "amount",
+          "before": 23705867.0,
+          "after": 23698817.0
+        },
+        {
+          "time": "20190902094000000",
+          "field": "volume",
+          "before": 2550200.0,
+          "after": 2550273.0
+        },
+        {
+          "time": "20190902094000000",
+          "field": "amount",
+          "before": 17117193.0,
+          "after": 17117773.0
+        },
+        {
+          "time": "20190902094500000",
+          "field": "volume",
+          "before": 2284500.0,
+          "after": 2284432.0
+        },
+        {
+          "time": "20190902094500000",
+          "field": "amount",
+          "before": 15455971.0,
+          "after": 15451561.0
+        },
+        {
+          "time": "20190902095000000",
+          "field": "amount",
+          "before": 11110975.0,
+          "after": 11110017.0
+        },
+        {
+          "time": "20190902095500000",
+          "field": "amount",
+          "before": 5057882.0,
+          "after": 5057105.0
+        },
+        {
+          "time": "20190902100000000",
+          "field": "volume",
+          "before": 875700.0,
+          "after": 875774.0
+        },
+        {
+          "time": "20190902100000000",
+          "field": "amount",
+          "before": 5890057.0,
+          "after": 5889613.0
+        },
+        {
+          "time": "20190902100500000",
+          "field": "amount",
+          "before": 7425030.0,
+          "after": 7424522.0
+        },
+        {
+          "time": "20190902101000000",
+          "field": "amount",
+          "before": 4459458.0,
+          "after": 4458954.0
+        },
+        {
+          "time": "20190902101500000",
+          "field": "amount",
+          "before": 4690407.0,
+          "after": 4689452.0
+        },
+        {
+          "time": "20190902102000000",
+          "field": "volume",
+          "before": 1174600.0,
+          "after": 1174540.0
+        },
+        {
+          "time": "20190902102000000",
+          "field": "amount",
+          "before": 8001801.0,
+          "after": 8000295.0
+        },
+        {
+          "time": "20190902102500000",
+          "field": "open",
+          "before": 6.79,
+          "after": 6.8
+        },
+        {
+          "time": "20190902102500000",
+          "field": "amount",
+          "before": 5732288.0,
+          "after": 5732573.0
+        },
+        {
+          "time": "20190902103000000",
+          "field": "amount",
+          "before": 4452293.0,
+          "after": 4451578.0
+        },
+        {
+          "time": "20190902103500000",
+          "field": "amount",
+          "before": 5606312.0,
+          "after": 5608209.0
+        },
+        {
+          "time": "20190902104000000",
+          "field": "amount",
+          "before": 10401460.0,
+          "after": 10399529.0
+        },
+        {
+          "time": "20190902104500000",
+          "field": "amount",
+          "before": 4091407.0,
+          "after": 4091051.0
+        },
+        {
+          "time": "20190902105000000",
+          "field": "volume",
+          "before": 1558900.0,
+          "after": 1558980.0
+        },
+        {
+          "time": "20190902105000000",
+          "field": "amount",
+          "before": 10730098.0,
+          "after": 10733747.0
+        },
+        {
+          "time": "20190902105500000",
+          "field": "volume",
+          "before": 1630300.0,
+          "after": 1630280.0
+        },
+        {
+          "time": "20190902105500000",
+          "field": "amount",
+          "before": 11248949.0,
+          "after": 11251801.0
+        },
+        {
+          "time": "20190902110000000",
+          "field": "volume",
+          "before": 928600.0,
+          "after": 928540.0
+        },
+        {
+          "time": "20190902110000000",
+          "field": "amount",
+          "before": 6410827.0,
+          "after": 6410249.0
+        },
+        {
+          "time": "20190902110500000",
+          "field": "open",
+          "before": 6.89,
+          "after": 6.91
+        },
+        {
+          "time": "20190902110500000",
+          "field": "amount",
+          "before": 4698147.0,
+          "after": 4700940.0
+        },
+        {
+          "time": "20190902111000000",
+          "field": "volume",
+          "before": 416200.0,
+          "after": 416260.0
+        },
+        {
+          "time": "20190902111000000",
+          "field": "amount",
+          "before": 2876188.0,
+          "after": 2875738.0
+        },
+        {
+          "time": "20190902111500000",
+          "field": "amount",
+          "before": 2508141.0,
+          "after": 2507780.0
+        },
+        {
+          "time": "20190902112000000",
+          "field": "amount",
+          "before": 4354126.0,
+          "after": 4354714.0
+        },
+        {
+          "time": "20190902112500000",
+          "field": "volume",
+          "before": 786900.0,
+          "after": 786858.0
+        },
+        {
+          "time": "20190902112500000",
+          "field": "amount",
+          "before": 5447552.0,
+          "after": 5447089.0
+        },
+        {
+          "time": "20190902113000000",
+          "field": "amount",
+          "before": 9131801.0,
+          "after": 9144463.0
+        },
+        {
+          "time": "20190902130500000",
+          "field": "volume",
+          "before": 985200.0,
+          "after": 985207.0
+        },
+        {
+          "time": "20190902130500000",
+          "field": "amount",
+          "before": 6881828.0,
+          "after": 6879456.0
+        },
+        {
+          "time": "20190902131000000",
+          "field": "amount",
+          "before": 2503289.0,
+          "after": 2503056.0
+        },
+        {
+          "time": "20190902131500000",
+          "field": "amount",
+          "before": 4654349.0,
+          "after": 4654915.0
+        },
+        {
+          "time": "20190902132000000",
+          "field": "amount",
+          "before": 2703168.0,
+          "after": 2703224.0
+        },
+        {
+          "time": "20190902132500000",
+          "field": "amount",
+          "before": 3890716.0,
+          "after": 3891382.0
+        },
+        {
+          "time": "20190902133000000",
+          "field": "amount",
+          "before": 3587147.0,
+          "after": 3587018.0
+        },
+        {
+          "time": "20190902133500000",
+          "field": "volume",
+          "before": 382300.0,
+          "after": 382280.0
+        },
+        {
+          "time": "20190902133500000",
+          "field": "amount",
+          "before": 2670716.0,
+          "after": 2670768.0
+        },
+        {
+          "time": "20190902134000000",
+          "field": "amount",
+          "before": 1603412.0,
+          "after": 1603507.0
+        },
+        {
+          "time": "20190902134500000",
+          "field": "amount",
+          "before": 2687027.0,
+          "after": 2686677.0
+        },
+        {
+          "time": "20190902135000000",
+          "field": "amount",
+          "before": 2503032.0,
+          "after": 2502638.0
+        },
+        {
+          "time": "20190902135500000",
+          "field": "volume",
+          "before": 340200.0,
+          "after": 340180.0
+        },
+        {
+          "time": "20190902135500000",
+          "field": "amount",
+          "before": 2364877.0,
+          "after": 2364490.0
+        },
+        {
+          "time": "20190902140000000",
+          "field": "amount",
+          "before": 6571896.0,
+          "after": 6576419.0
+        },
+        {
+          "time": "20190902140500000",
+          "field": "volume",
+          "before": 374000.0,
+          "after": 374020.0
+        },
+        {
+          "time": "20190902140500000",
+          "field": "amount",
+          "before": 2586580.0,
+          "after": 2586097.0
+        },
+        {
+          "time": "20190902141000000",
+          "field": "open",
+          "before": 6.91,
+          "after": 6.9
+        },
+        {
+          "time": "20190902141000000",
+          "field": "low",
+          "before": 6.91,
+          "after": 6.9
+        },
+        {
+          "time": "20190902141000000",
+          "field": "amount",
+          "before": 1514257.0,
+          "after": 1514271.0
+        },
+        {
+          "time": "20190902141500000",
+          "field": "amount",
+          "before": 2029936.0,
+          "after": 2030483.0
+        },
+        {
+          "time": "20190902142000000",
+          "field": "amount",
+          "before": 1941668.0,
+          "after": 1941433.0
+        },
+        {
+          "time": "20190902142500000",
+          "field": "amount",
+          "before": 3772219.0,
+          "after": 3774093.0
+        },
+        {
+          "time": "20190902143000000",
+          "field": "amount",
+          "before": 3766931.0,
+          "after": 3768693.0
+        },
+        {
+          "time": "20190902143500000",
+          "field": "amount",
+          "before": 7655619.0,
+          "after": 7659930.0
+        },
+        {
+          "time": "20190902144000000",
+          "field": "amount",
+          "before": 5970040.0,
+          "after": 5970343.0
+        },
+        {
+          "time": "20190902144500000",
+          "field": "amount",
+          "before": 12899445.0,
+          "after": 12893710.0
+        },
+        {
+          "time": "20190902145000000",
+          "field": "volume",
+          "before": 1036000.0,
+          "after": 1036040.0
+        },
+        {
+          "time": "20190902145000000",
+          "field": "amount",
+          "before": 7061023.0,
+          "after": 7062345.0
+        },
+        {
+          "time": "20190902145500000",
+          "field": "volume",
+          "before": 1868700.0,
+          "after": 1868660.0
+        },
+        {
+          "time": "20190902145500000",
+          "field": "amount",
+          "before": 12737372.0,
+          "after": 12730662.0
+        },
+        {
+          "time": "20190902150000000",
+          "field": "volume",
+          "before": 906500.0,
+          "after": 906520.0
+        },
+        {
+          "time": "20190902150000000",
+          "field": "amount",
+          "before": 6164373.0,
+          "after": 6163871.0
+        }
+      ],
+      "minute": {
+        "open": 6.58,
+        "close": 6.82,
+        "high": 7.02,
+        "low": 6.5,
+        "volume": 44087544.0
+      },
+      "daily": {
+        "open": 6.58,
+        "close": 6.82,
+        "high": 7.02,
+        "low": 6.5,
+        "volume": 44087544.0
+      },
+      "daily_difference": {
+        "open": 0.0,
+        "close": 0.0,
+        "high": 0.0,
+        "low": 0.0,
+        "volume": 0.0
+      },
+      "actual_orders": 0,
+      "provider": "PASS_RESEARCH_DISCLOSE",
+      "provenance_file": "D:\\AI\\workspace\\个人量化\\data\\raw\\bigquant\\minute-check-20260914-1\\2019-09-02.csv",
+      "raw_sha256": "1f00049cd0c0898f19fe79767fdb83eca12fa451abb977856ec658ef335db2ec"
+    },
+    {
+      "code": "sh.600452",
+      "date": "2016-06-01",
+      "previous_entry": {
+        "code": "sh.600452",
+        "date": "2016-06-01",
+        "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\minute-repairs-20260914-3\\sh.600452_2016-06-01_f5.csv",
+        "sha256": "df596137c2de5a4d5fcd49522e25f550b4cba6e4860f302d74c6b1477040a742",
+        "raw_path": "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\minute-repairs-20260914-3\\sh.600452_2016-06-01_raw.json",
+        "raw_sha256": "914ee3f888e4a959abbf62b6e42e2eff4164f00a4a42ca301ad9d2d849beceeb",
+        "source": "user_1m_aggregated_5m_source_baseline_unchanged",
+        "error_code": "0",
+        "trailing_zero_minutes": 0,
+        "minute_volume": 1509898.0,
+        "accepted_source_baseline": {
+          "decision": "USER_ACCEPTED_SOURCE_BASELINE_20260914",
+          "code": "sh.600452",
+          "date": "2016-06-01",
+          "sha256": "df596137c2de5a4d5fcd49522e25f550b4cba6e4860f302d74c6b1477040a742",
+          "daily": {
+            "open": 31.16,
+            "close": 31.64,
+            "high": 31.66,
+            "low": 30.8,
+            "volume": 1509898.0
+          },
+          "minute": {
+            "open": 31.48,
+            "close": 31.65,
+            "high": 31.66,
+            "low": 30.8,
+            "volume": 1509898.0
+          },
+          "research_only": true,
+          "source_truth_verified": false,
+          "sensitivity_required": true,
+          "scope": "Known source discrepancy accepted for descriptive research; no value correction"
+        }
+      },
+      "new_entry": {
+        "code": "sh.600452",
+        "date": "2016-06-01",
+        "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\bigquant\\minute-repairs-20260914-1\\sh.600452_2016-06-01_f5.csv",
+        "sha256": "3c3f27e04121981ca0304b7d370341113f5b169e3e97abd387e8ef9336c71c66",
+        "raw_path": "D:\\AI\\workspace\\个人量化\\data\\raw\\bigquant\\minute-check-20260914-1\\2016-06-01.csv",
+        "raw_sha256": "3c75110d9f1821256991cab20f5fcfffa234cb9cf0f91b46b8517241aae48b27",
+        "source": "bigquant_cn_stock_bar1m_whole_security_day",
+        "error_code": "0",
+        "trailing_zero_minutes": 0,
+        "minute_volume": 1509898.0,
+        "previous_entry": {
+          "code": "sh.600452",
+          "date": "2016-06-01",
+          "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\minute-repairs-20260914-3\\sh.600452_2016-06-01_f5.csv",
+          "sha256": "df596137c2de5a4d5fcd49522e25f550b4cba6e4860f302d74c6b1477040a742",
+          "raw_path": "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\minute-repairs-20260914-3\\sh.600452_2016-06-01_raw.json",
+          "raw_sha256": "914ee3f888e4a959abbf62b6e42e2eff4164f00a4a42ca301ad9d2d849beceeb",
+          "source": "user_1m_aggregated_5m_source_baseline_unchanged",
+          "error_code": "0",
+          "trailing_zero_minutes": 0,
+          "minute_volume": 1509898.0,
+          "accepted_source_baseline": {
+            "decision": "USER_ACCEPTED_SOURCE_BASELINE_20260914",
+            "code": "sh.600452",
+            "date": "2016-06-01",
+            "sha256": "df596137c2de5a4d5fcd49522e25f550b4cba6e4860f302d74c6b1477040a742",
+            "daily": {
+              "open": 31.16,
+              "close": 31.64,
+              "high": 31.66,
+              "low": 30.8,
+              "volume": 1509898.0
+            },
+            "minute": {
+              "open": 31.48,
+              "close": 31.65,
+              "high": 31.66,
+              "low": 30.8,
+              "volume": 1509898.0
+            },
+            "research_only": true,
+            "source_truth_verified": false,
+            "sensitivity_required": true,
+            "scope": "Known source discrepancy accepted for descriptive research; no value correction"
+          }
+        },
+        "normalization": "RAW_0925_AUCTION_INCLUDED_IN_0935;CONTINUOUS_RIGHT_END_TIMES_PRESERVED",
+        "volume_unit": "shares; checked against baseline daily and minute records",
+        "amount_unit": "yuan",
+        "scope": "Three user-authorized vendor corrections; full source OHLCV, not selected fields",
+        "accepted_source_baseline": {
+          "decision": "USER_ACCEPTED_SOURCE_BASELINE_20260914",
+          "code": "sh.600452",
+          "date": "2016-06-01",
+          "sha256": "3c3f27e04121981ca0304b7d370341113f5b169e3e97abd387e8ef9336c71c66",
+          "daily": {
+            "open": 31.16,
+            "close": 31.64,
+            "high": 31.66,
+            "low": 30.8,
+            "volume": 1509898.0
+          },
+          "minute": {
+            "open": 31.48,
+            "close": 31.64,
+            "high": 31.66,
+            "low": 30.8,
+            "volume": 1509898.0
+          },
+          "research_only": true,
+          "source_truth_verified": false,
+          "sensitivity_required": true,
+          "scope": "Same previously accepted opening discrepancy retained on BigQuant whole-day replacement; close corrected"
+        }
+      },
+      "changes": [
+        {
+          "time": "20160601095000000",
+          "field": "volume",
+          "before": 173200.0,
+          "after": 175200.0
+        },
+        {
+          "time": "20160601095000000",
+          "field": "amount",
+          "before": 5400431.0,
+          "after": 5462751.0
+        },
+        {
+          "time": "20160601095500000",
+          "field": "volume",
+          "before": 33805.0,
+          "after": 31805.0
+        },
+        {
+          "time": "20160601095500000",
+          "field": "amount",
+          "before": 1053423.0,
+          "after": 991103.0
+        },
+        {
+          "time": "20160601100500000",
+          "field": "low",
+          "before": 31.07,
+          "after": 31.06
+        },
+        {
+          "time": "20160601101000000",
+          "field": "high",
+          "before": 31.09,
+          "after": 31.14
+        },
+        {
+          "time": "20160601101500000",
+          "field": "open",
+          "before": 31.0,
+          "after": 30.96
+        },
+        {
+          "time": "20160601102500000",
+          "field": "open",
+          "before": 30.85,
+          "after": 30.89
+        },
+        {
+          "time": "20160601105500000",
+          "field": "volume",
+          "before": 19100.0,
+          "after": 21700.0
+        },
+        {
+          "time": "20160601105500000",
+          "field": "amount",
+          "before": 590211.0,
+          "after": 670551.0
+        },
+        {
+          "time": "20160601110000000",
+          "field": "volume",
+          "before": 17800.0,
+          "after": 15200.0
+        },
+        {
+          "time": "20160601110000000",
+          "field": "amount",
+          "before": 550014.0,
+          "after": 469674.0
+        },
+        {
+          "time": "20160601110500000",
+          "field": "volume",
+          "before": 28000.0,
+          "after": 28300.0
+        },
+        {
+          "time": "20160601110500000",
+          "field": "amount",
+          "before": 866554.0,
+          "after": 875854.0
+        },
+        {
+          "time": "20160601111000000",
+          "field": "volume",
+          "before": 10000.0,
+          "after": 9700.0
+        },
+        {
+          "time": "20160601111000000",
+          "field": "amount",
+          "before": 310208.0,
+          "after": 300908.0
+        },
+        {
+          "time": "20160601131000000",
+          "field": "close",
+          "before": 31.1,
+          "after": 31.15
+        },
+        {
+          "time": "20160601131000000",
+          "field": "volume",
+          "before": 11800.0,
+          "after": 12000.0
+        },
+        {
+          "time": "20160601131000000",
+          "field": "amount",
+          "before": 366573.0,
+          "after": 372803.0
+        },
+        {
+          "time": "20160601131500000",
+          "field": "volume",
+          "before": 6200.0,
+          "after": 6000.0
+        },
+        {
+          "time": "20160601131500000",
+          "field": "amount",
+          "before": 193151.0,
+          "after": 186921.0
+        },
+        {
+          "time": "20160601132000000",
+          "field": "volume",
+          "before": 6300.0,
+          "after": 6400.0
+        },
+        {
+          "time": "20160601132000000",
+          "field": "amount",
+          "before": 196110.0,
+          "after": 199225.0
+        },
+        {
+          "time": "20160601132500000",
+          "field": "volume",
+          "before": 16900.0,
+          "after": 16800.0
+        },
+        {
+          "time": "20160601132500000",
+          "field": "amount",
+          "before": 526260.0,
+          "after": 523145.0
+        },
+        {
+          "time": "20160601133500000",
+          "field": "open",
+          "before": 31.15,
+          "after": 31.11
+        },
+        {
+          "time": "20160601134500000",
+          "field": "open",
+          "before": 31.16,
+          "after": 31.15
+        },
+        {
+          "time": "20160601141000000",
+          "field": "volume",
+          "before": 5900.0,
+          "after": 6400.0
+        },
+        {
+          "time": "20160601141000000",
+          "field": "amount",
+          "before": 185319.0,
+          "after": 201019.0
+        },
+        {
+          "time": "20160601141500000",
+          "field": "open",
+          "before": 31.4,
+          "after": 31.42
+        },
+        {
+          "time": "20160601141500000",
+          "field": "volume",
+          "before": 13300.0,
+          "after": 12800.0
+        },
+        {
+          "time": "20160601141500000",
+          "field": "amount",
+          "before": 417646.0,
+          "after": 401946.0
+        },
+        {
+          "time": "20160601142000000",
+          "field": "open",
+          "before": 31.4,
+          "after": 31.38
+        },
+        {
+          "time": "20160601143500000",
+          "field": "open",
+          "before": 31.17,
+          "after": 31.28
+        },
+        {
+          "time": "20160601143500000",
+          "field": "high",
+          "before": 31.27,
+          "after": 31.28
+        },
+        {
+          "time": "20160601145500000",
+          "field": "high",
+          "before": 31.51,
+          "after": 31.55
+        },
+        {
+          "time": "20160601145500000",
+          "field": "volume",
+          "before": 73600.0,
+          "after": 74600.0
+        },
+        {
+          "time": "20160601145500000",
+          "field": "amount",
+          "before": 2316321.0,
+          "after": 2347821.0
+        },
+        {
+          "time": "20160601150000000",
+          "field": "high",
+          "before": 31.66,
+          "after": 31.65
+        },
+        {
+          "time": "20160601150000000",
+          "field": "close",
+          "before": 31.65,
+          "after": 31.64
+        },
+        {
+          "time": "20160601150000000",
+          "field": "volume",
+          "before": 118300.0,
+          "after": 117300.0
+        },
+        {
+          "time": "20160601150000000",
+          "field": "amount",
+          "before": 3735619.0,
+          "after": 3704119.0
+        }
+      ],
+      "minute": {
+        "open": 31.48,
+        "close": 31.64,
+        "high": 31.66,
+        "low": 30.8,
+        "volume": 1509898.0
+      },
+      "daily": {
+        "open": 31.16,
+        "close": 31.64,
+        "high": 31.66,
+        "low": 30.8,
+        "volume": 1509898.0
+      },
+      "daily_difference": {
+        "open": 0.3200000000000003,
+        "close": 0.0,
+        "high": 0.0,
+        "low": 0.0,
+        "volume": 0.0
+      },
+      "actual_orders": 2,
+      "provider": "PASS_RESEARCH_DISCLOSE",
+      "provenance_file": "D:\\AI\\workspace\\个人量化\\data\\raw\\bigquant\\minute-check-20260914-1\\2016-06-01.csv",
+      "raw_sha256": "3c75110d9f1821256991cab20f5fcfffa234cb9cf0f91b46b8517241aae48b27"
+    }
+  ],
+  "daily_not_replaced": true,
+  "other_open_discrepancies_unchanged": true,
+  "script_sha256": "a97dcfe743626b6f5bc646d3d40f4f273385b02cadfa6de370fc71cfdd2144a2"
+}

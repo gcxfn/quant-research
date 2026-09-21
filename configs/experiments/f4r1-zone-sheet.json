@@ -1,0 +1,53 @@
+{
+  "experiment_id": "exp-20260919-zone-sheet-f4r1",
+  "prereg": "docs/research/exp-20260919-zone-sheet-f4r1-prereg.md",
+  "frozen_at": "2026-09-19T21:30:00+08:00",
+  "engine_pin_sha256_16": "PENDING-v1.4-pin",
+  "engine_mode": "band engine v1.4 intent layer (ladder_buy / take_profit / stop_sell / seat recycling, contract section 10); v1.3 = baseline",
+  "positioning": "user product definition 2026-09-19: daily laddered zone sheet (a1/a2/bounce buy zones, b take-profit, c stop-loss), half-day refresh, seat recycling; zone params user-approved; take-profit-rotation idea included as arm C",
+  "trial_accounting": {"strategy_line": "270->273 (3 arms)", "factor_line_FT01": 120},
+  "dev_window": {"start": "2015-01-05", "end": "2020-12-31", "val_policy": "2021-2024 zero contact"},
+  "capital": {"arms_initial_cash": 500000.0, "anchor_initial_cash": 200000.0,
+              "note": "F3R3-A0 anchor (R3-06 verbatim at 200k) rides along for byte-reproduction"},
+  "chassis": {
+    "source": "hybrid family v3 run 20260919T110500-hybrid-v3-r3ld config R3-06, verbatim",
+    "legs": {"sh.511010": 0.15, "sh.518880": 0.25},
+    "sleeve_weighting": "ICW only (EW eliminated: weaker in F3R1/R2/R3, disclosed in prereg section 3)"
+  },
+  "stock_sleeve": {
+    "composite_source": "F3R1 frozen output F3-ICW_composite.parquet sha256_16 b09242ee542cf675",
+    "membership": {"candidate_list": "top 2K (20) per signal month", "max_members": 10,
+                   "industry_cap_per_l1": 2, "buffer_stay_rank_le": 20,
+                   "recycling": "engine v1.4 section 10.1-4: rank-order admission, held+ladder<K gate, cooldown for names fully closed mid-month until next signal day, industry counts include live ladders"},
+    "sigma0": "std of last 20 official-session close-to-close log returns x P0; <20 sessions -> excluded from month list (counted)",
+    "target_value": "w_T x equity(signal-day 15:00) / P0, per-level floor to lots; below_min_lot levels dropped and counted"
+  },
+  "zones": {
+    "a1": {"near_off": 0.5, "far_off": 1.0, "frac": 0.40},
+    "a2": {"near_off": 1.5, "far_off": 2.0, "frac": 0.40},
+    "bounce": {"near_off": 2.5, "far_off": 3.0, "frac": 0.20},
+    "invalidation": "session low < P0 - 3.5*sigma0 -> cancel unfilled levels from next decision point",
+    "b1": {"mult": 2.0, "frac": 0.50, "anchor": "WAC+mult*sigma0, no re-anchor, no k3"},
+    "b2": {"mult": 3.0, "frac": 1.0, "anchor": "WAC+mult*sigma0"},
+    "c": {"mult": 3.0, "mode": "ratchet from HWM(decision prices only), fill=min(line,session_open), T+1 residue arms k3"},
+    "same_session_precedence": "stop before take-profit (conservative)",
+    "expiry": "next signal day + 1 calendar day",
+    "tp_does_not_cancel_ladder": true
+  },
+  "arms": {
+    "F4R1-A": {"take_profit": "b1+b2 ladder", "stop": true, "path_T200_40": false, "w_T": 0.06},
+    "F4R1-B": {"take_profit": "b1+b2 ladder", "stop": true, "path_T200_40": true,
+               "note": "w_T=e_T*0.06/0.90; month-end reduce-to-target sells retained (F3R3 mechanism)"},
+    "F4R1-C": {"take_profit": "b_full: WAC+2.0*sigma0 sell 100%", "stop": true, "path_T200_40": false, "w_T": 0.06}
+  },
+  "gates": {
+    "source": "gates 1-7 R16 verbatim; gate 8 = v3 delivery caliber restated for v1.4 order types",
+    "gate8_v14": "armed = stop triggered-but-unfilled carryovers (T+1, suspension); numerator = k3 fallback fills + armed-then-self fills; >=99%; stuck==0 hard assert; TP/buy expiries excluded (counted separately)",
+    "b1m_anchor": "R16 metrics.json configs.C05 (T200-40 / rate_only): net +0.60%, maxDD -39.82%",
+    "b3prime": "R16 B3prime_dev_mean_net_cagr T200-40 = -0.0199",
+    "goal_column": "dev net CAGR >= 10%; goal_met = dev_pass AND goal_column"
+  },
+  "stop_rules": "any arm dev_pass AND >=10% -> stop, present to user (val requires explicit approval); all three eliminated -> present to user, no F4R2 autonomously; anchor mismatch -> stop, fix runner (no trial consumed); smoke window 2015-2016 two months correctness-only first",
+  "budget": {"wall_seconds": 900, "peak_rss_gb": 8.0, "grids": "none", "single_run": true},
+  "disclosures": ["industry 2026 single-snapshot lookahead (carried from F3R3)", "sigma0 frozen within month", "stop-before-TP same-session precedence (conservative)", "TP fill does not cancel live ladder (whipsaw judged by gate 5)", "HWM uses decision prices not intraday highs (later trigger, conservative)", "buy fills at zone near edge, no better price assumed", "halfday bars dir sha256_16 c5ab29a09d2533eb"]
+}

@@ -1,0 +1,103 @@
+{
+ "source": "tx",
+ "dataset": "sh515210",
+ "batches": {
+  "tx/sh515210/20260904T185758": {
+   "batch_dir": "tx/sh515210/20260904T185758",
+   "mode": "json",
+   "status": "completed",
+   "issues": [
+    {
+     "level": "warning",
+     "code": "meta_row_count_mismatch",
+     "detail": "meta n_rows=1583, 实际解析 1584 行, 其中跨页重复日期 1 行"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_kline_dates_across_pages",
+     "detail": "跨页重复日期 1 行, 例: ['20230522']"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "407 个记录日期 > 2024-12-31 (max=20260904); 冻结边界: 只报告"
+    }
+   ],
+   "inventory_registration": {
+    "files": 3,
+    "bytes": 98808
+   },
+   "files": {
+    "n_total": 3,
+    "response_pages": [
+     "response_000.json",
+     "response_001.json"
+    ],
+    "total_bytes": 98808
+   },
+   "duplicate_date_rows": 1,
+   "rows_total": 1584,
+   "date_coverage": {
+    "record_date": {
+     "min": "20200302",
+     "max": "20260904",
+     "rows_gt_20241231": 407
+    }
+   },
+   "numeric_magnitude": {
+    "close": {
+     "min": 0.733,
+     "median": 1.174,
+     "max": 2.167
+    }
+   },
+   "sample_rows": [
+    {
+     "date": "2023-05-22",
+     "ohlc": [
+      "1.146",
+      "1.154",
+      "1.155",
+      "1.145"
+     ],
+     "volume": "342817.000"
+    },
+    {
+     "date": "2023-05-23",
+     "ohlc": [
+      "1.151",
+      "1.139",
+      "1.152",
+      "1.135"
+     ],
+     "volume": "372396.000"
+    },
+    {
+     "date": "2023-05-24",
+     "ohlc": [
+      "1.136",
+      "1.118",
+      "1.136",
+      "1.116"
+     ],
+     "volume": "538123.000"
+    },
+    {
+     "date": "2023-05-25",
+     "ohlc": [
+      "1.117",
+      "1.115",
+      "1.118",
+      "1.101"
+     ],
+     "volume": "365030.000"
+    }
+   ],
+   "sha256_verified_pages": 1,
+   "sha256_concat_ok": false,
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:54"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:54"
+}

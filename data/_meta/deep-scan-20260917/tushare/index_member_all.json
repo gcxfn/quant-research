@@ -1,0 +1,152 @@
+{
+ "source": "tushare",
+ "dataset": "index_member_all",
+ "batches": {
+  "tushare/index_member_all/20260909-r1": {
+   "batch_dir": "tushare/index_member_all/20260909-r1",
+   "mode": "full",
+   "files": {
+    "n_total": 5,
+    "n_csv": 4,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 648710
+   },
+   "issues": [
+    {
+     "level": "warning",
+     "code": "bulk_scan_failed_perfile_fallback",
+     "detail": "ComputeError: schema lengths differ"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 in_date 有 334 行 > 2024-12-31"
+    }
+   ],
+   "inventory_registration": {
+    "files": 5,
+    "bytes": 648710
+   },
+   "schema": {
+    "l1_code": "String",
+    "l1_name": "String",
+    "l2_code": "String",
+    "l2_name": "String",
+    "l3_code": "String",
+    "l3_name": "String",
+    "ts_code": "String",
+    "name": "String",
+    "in_date": "Int64",
+    "out_date": "String",
+    "is_new": "String"
+   },
+   "n_columns": 11,
+   "date_columns": [
+    "in_date",
+    "out_date"
+   ],
+   "numeric_columns_checked": [
+    "in_date"
+   ],
+   "rows_total": 6413,
+   "rows_counted_files": 4,
+   "date_coverage": {
+    "in_date": {
+     "min": "19891101",
+     "max": "20260903",
+     "rows_gt_20241231": 334,
+     "null_rows": 0
+    },
+    "out_date": {
+     "min": null,
+     "max": null,
+     "rows_gt_20241231": 0,
+     "null_rows": 5902
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 334,
+   "primary_key": [
+    "ts_code"
+   ],
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "l1_code": "801880.SI",
+     "l1_name": "汽车",
+     "l2_code": "801881.SI",
+     "l2_name": "摩托车及其他",
+     "l3_code": "858811.SI",
+     "l3_name": "其他运输设备",
+     "ts_code": "600679.SH",
+     "name": "上海凤凰",
+     "in_date": "19931008",
+     "out_date": null,
+     "is_new": "Y"
+    },
+    {
+     "l1_code": "801180.SI",
+     "l1_name": "房地产",
+     "l2_code": "801181.SI",
+     "l2_name": "房地产开发",
+     "l3_code": "851811.SI",
+     "l3_name": "住宅开发",
+     "ts_code": "600683.SH",
+     "name": "京投发展",
+     "in_date": "19931025",
+     "out_date": null,
+     "is_new": "Y"
+    },
+    {
+     "l1_code": "801740.SI",
+     "l1_name": "国防军工",
+     "l2_code": "801744.SI",
+     "l2_name": "航海装备Ⅱ",
+     "l3_code": "850935.SI",
+     "l3_name": "航海装备Ⅲ",
+     "ts_code": "600685.SH",
+     "name": "中船防务",
+     "in_date": "19931028",
+     "out_date": null,
+     "is_new": "Y"
+    },
+    {
+     "l1_code": "801880.SI",
+     "l1_name": "汽车",
+     "l2_code": "801096.SI",
+     "l2_name": "商用车",
+     "l3_code": "850913.SI",
+     "l3_name": "商用载客车",
+     "ts_code": "600686.SH",
+     "name": "金龙汽车",
+     "in_date": "19931108",
+     "out_date": null,
+     "is_new": "Y"
+    },
+    {
+     "l1_code": "801960.SI",
+     "l1_name": "石油石化",
+     "l2_code": "801963.SI",
+     "l2_name": "炼化及贸易",
+     "l3_code": "859631.SI",
+     "l3_name": "炼油化工",
+     "ts_code": "600688.SH",
+     "name": "上海石化",
+     "in_date": "19931108",
+     "out_date": null,
+     "is_new": "Y"
+    }
+   ],
+   "status": "completed(per-file fallback)",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:40"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:40"
+}

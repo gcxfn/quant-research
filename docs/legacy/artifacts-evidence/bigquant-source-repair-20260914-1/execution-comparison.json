@@ -1,0 +1,3341 @@
+{
+  "scope": "ACTUAL_VENDOR_REPLACEMENT_ALL_AFFECTED_DAYS_FIXED_ORDERS_REPLAY",
+  "paths": [
+    {
+      "id": "PV1_REV11_RANK50_TRAIN_V1__main",
+      "date": "2016-06-01",
+      "codes": [
+        "sh.600452"
+      ],
+      "baseline_matches_full_day": true,
+      "fills_unchanged": true,
+      "cash_delta": 0.0,
+      "old_fills": [
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sh.600185_sell",
+          "tag": "rb017",
+          "code": "sh.600185",
+          "side": "sell",
+          "otype": "limit",
+          "price": 6.2,
+          "shares": 2800,
+          "fee": 31.3872,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 17.36,
+            "transfer": 0.3472,
+            "execution_friction": 8.68
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sh.600201_sell",
+          "tag": "rb017",
+          "code": "sh.600201",
+          "side": "sell",
+          "otype": "limit",
+          "price": 27.63,
+          "shares": 700,
+          "fee": 34.39832,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 19.341,
+            "transfer": 0.38682000000000005,
+            "execution_friction": 9.6705
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sh.600482_buy",
+          "tag": "rb017",
+          "code": "sh.600482",
+          "side": "buy",
+          "otype": "limit",
+          "price": 31.54,
+          "shares": 600,
+          "fee": 14.84048,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.37848000000000004,
+            "execution_friction": 9.462
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.000683_sell",
+          "tag": "rb017",
+          "code": "sz.000683",
+          "side": "sell",
+          "otype": "limit",
+          "price": 2.69,
+          "shares": 3400,
+          "fee": 18.90192,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 9.146,
+            "transfer": 0.18292,
+            "execution_friction": 4.573
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.000799_buy",
+          "tag": "rb017",
+          "code": "sz.000799",
+          "side": "buy",
+          "otype": "limit",
+          "price": 18.77,
+          "shares": 1000,
+          "fee": 14.7604,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.3754,
+            "execution_friction": 9.385
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.000981_buy",
+          "tag": "rb017",
+          "code": "sz.000981",
+          "side": "buy",
+          "otype": "limit",
+          "price": 10.21,
+          "shares": 1800,
+          "fee": 14.556560000000001,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.36756000000000005,
+            "execution_friction": 9.189
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.002070_buy",
+          "tag": "rb017",
+          "code": "sz.002070",
+          "side": "buy",
+          "otype": "limit",
+          "price": 27.16,
+          "shares": 700,
+          "fee": 14.88624,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.38024,
+            "execution_friction": 9.506
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.002125_buy",
+          "tag": "rb017",
+          "code": "sz.002125",
+          "side": "buy",
+          "otype": "limit",
+          "price": 16.7,
+          "shares": 1200,
+          "fee": 15.4308,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.01,
+            "stamp": 0.0,
+            "transfer": 0.4008,
+            "execution_friction": 10.02
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.002274_buy",
+          "tag": "rb017",
+          "code": "sz.002274",
+          "side": "buy",
+          "otype": "limit",
+          "price": 9.44,
+          "shares": 200,
+          "fee": 5.9817599999999995,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.03776,
+            "execution_friction": 0.944
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094000000",
+          "order": "rb17_sh.600452_buy",
+          "tag": "rb017",
+          "code": "sh.600452",
+          "side": "buy",
+          "otype": "limit",
+          "price": 31.16,
+          "shares": 100,
+          "fee": 6.6203199999999995,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.06232000000000001,
+            "execution_friction": 1.558
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094000000",
+          "order": "rb17_sz.000683_sell",
+          "tag": "rb017",
+          "code": "sz.000683",
+          "side": "sell",
+          "otype": "limit",
+          "price": 2.69,
+          "shares": 2900,
+          "fee": 16.85752,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 7.801,
+            "transfer": 0.15602,
+            "execution_friction": 3.9005
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094000000",
+          "order": "rb17_sz.000723_sell",
+          "tag": "rb017",
+          "code": "sz.000723",
+          "side": "sell",
+          "otype": "limit",
+          "price": 12.14,
+          "shares": 1400,
+          "fee": 30.83392,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 16.996,
+            "transfer": 0.33992,
+            "execution_friction": 8.498
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094000000",
+          "order": "rb17_sz.000981_buy",
+          "tag": "rb017",
+          "code": "sz.000981",
+          "side": "buy",
+          "otype": "limit",
+          "price": 10.21,
+          "shares": 100,
+          "fee": 5.53092,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.020420000000000004,
+            "execution_friction": 0.5105000000000001
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094500000",
+          "order": "rb17_sh.600452_buy",
+          "tag": "rb017",
+          "code": "sh.600452",
+          "side": "buy",
+          "otype": "limit",
+          "price": 31.16,
+          "shares": 100,
+          "fee": 6.6203199999999995,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.06232000000000001,
+            "execution_friction": 1.558
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094500000",
+          "order": "rb17_sz.000723_sell",
+          "tag": "rb017",
+          "code": "sz.000723",
+          "side": "sell",
+          "otype": "limit",
+          "price": 12.15,
+          "shares": 400,
+          "fee": 12.3872,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 4.86,
+            "transfer": 0.0972,
+            "execution_friction": 2.43
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601095000000",
+          "order": "rb17_sh.600452_buy",
+          "tag": "rb017",
+          "code": "sh.600452",
+          "side": "buy",
+          "otype": "limit",
+          "price": 31.16,
+          "shares": 400,
+          "fee": 11.48128,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.24928000000000003,
+            "execution_friction": 6.232
+          }
+        }
+      ],
+      "new_fills": [
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sh.600185_sell",
+          "tag": "rb017",
+          "code": "sh.600185",
+          "side": "sell",
+          "otype": "limit",
+          "price": 6.2,
+          "shares": 2800,
+          "fee": 31.3872,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 17.36,
+            "transfer": 0.3472,
+            "execution_friction": 8.68
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sh.600201_sell",
+          "tag": "rb017",
+          "code": "sh.600201",
+          "side": "sell",
+          "otype": "limit",
+          "price": 27.63,
+          "shares": 700,
+          "fee": 34.39832,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 19.341,
+            "transfer": 0.38682000000000005,
+            "execution_friction": 9.6705
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sh.600482_buy",
+          "tag": "rb017",
+          "code": "sh.600482",
+          "side": "buy",
+          "otype": "limit",
+          "price": 31.54,
+          "shares": 600,
+          "fee": 14.84048,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.37848000000000004,
+            "execution_friction": 9.462
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.000683_sell",
+          "tag": "rb017",
+          "code": "sz.000683",
+          "side": "sell",
+          "otype": "limit",
+          "price": 2.69,
+          "shares": 3400,
+          "fee": 18.90192,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 9.146,
+            "transfer": 0.18292,
+            "execution_friction": 4.573
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.000799_buy",
+          "tag": "rb017",
+          "code": "sz.000799",
+          "side": "buy",
+          "otype": "limit",
+          "price": 18.77,
+          "shares": 1000,
+          "fee": 14.7604,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.3754,
+            "execution_friction": 9.385
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.000981_buy",
+          "tag": "rb017",
+          "code": "sz.000981",
+          "side": "buy",
+          "otype": "limit",
+          "price": 10.21,
+          "shares": 1800,
+          "fee": 14.556560000000001,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.36756000000000005,
+            "execution_friction": 9.189
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.002070_buy",
+          "tag": "rb017",
+          "code": "sz.002070",
+          "side": "buy",
+          "otype": "limit",
+          "price": 27.16,
+          "shares": 700,
+          "fee": 14.88624,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.38024,
+            "execution_friction": 9.506
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.002125_buy",
+          "tag": "rb017",
+          "code": "sz.002125",
+          "side": "buy",
+          "otype": "limit",
+          "price": 16.7,
+          "shares": 1200,
+          "fee": 15.4308,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.01,
+            "stamp": 0.0,
+            "transfer": 0.4008,
+            "execution_friction": 10.02
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.002274_buy",
+          "tag": "rb017",
+          "code": "sz.002274",
+          "side": "buy",
+          "otype": "limit",
+          "price": 9.44,
+          "shares": 200,
+          "fee": 5.9817599999999995,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.03776,
+            "execution_friction": 0.944
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094000000",
+          "order": "rb17_sh.600452_buy",
+          "tag": "rb017",
+          "code": "sh.600452",
+          "side": "buy",
+          "otype": "limit",
+          "price": 31.16,
+          "shares": 100,
+          "fee": 6.6203199999999995,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.06232000000000001,
+            "execution_friction": 1.558
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094000000",
+          "order": "rb17_sz.000683_sell",
+          "tag": "rb017",
+          "code": "sz.000683",
+          "side": "sell",
+          "otype": "limit",
+          "price": 2.69,
+          "shares": 2900,
+          "fee": 16.85752,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 7.801,
+            "transfer": 0.15602,
+            "execution_friction": 3.9005
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094000000",
+          "order": "rb17_sz.000723_sell",
+          "tag": "rb017",
+          "code": "sz.000723",
+          "side": "sell",
+          "otype": "limit",
+          "price": 12.14,
+          "shares": 1400,
+          "fee": 30.83392,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 16.996,
+            "transfer": 0.33992,
+            "execution_friction": 8.498
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094000000",
+          "order": "rb17_sz.000981_buy",
+          "tag": "rb017",
+          "code": "sz.000981",
+          "side": "buy",
+          "otype": "limit",
+          "price": 10.21,
+          "shares": 100,
+          "fee": 5.53092,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.020420000000000004,
+            "execution_friction": 0.5105000000000001
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094500000",
+          "order": "rb17_sh.600452_buy",
+          "tag": "rb017",
+          "code": "sh.600452",
+          "side": "buy",
+          "otype": "limit",
+          "price": 31.16,
+          "shares": 100,
+          "fee": 6.6203199999999995,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.06232000000000001,
+            "execution_friction": 1.558
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094500000",
+          "order": "rb17_sz.000723_sell",
+          "tag": "rb017",
+          "code": "sz.000723",
+          "side": "sell",
+          "otype": "limit",
+          "price": 12.15,
+          "shares": 400,
+          "fee": 12.3872,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 4.86,
+            "transfer": 0.0972,
+            "execution_friction": 2.43
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601095000000",
+          "order": "rb17_sh.600452_buy",
+          "tag": "rb017",
+          "code": "sh.600452",
+          "side": "buy",
+          "otype": "limit",
+          "price": 31.16,
+          "shares": 400,
+          "fee": 11.48128,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.24928000000000003,
+            "execution_friction": 6.232
+          }
+        }
+      ],
+      "fees_delta": 0.0,
+      "old_starting_cash": 117662.51826310002
+    },
+    {
+      "id": "PV1_REV11_RANK50_TRAIN_V1__main",
+      "date": "2019-05-06",
+      "codes": [
+        "sh.603026"
+      ],
+      "baseline_matches_full_day": true,
+      "fills_unchanged": true,
+      "cash_delta": 0.0,
+      "old_fills": [
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sh.600230_buy",
+          "tag": "rb052",
+          "code": "sh.600230",
+          "side": "buy",
+          "otype": "limit",
+          "price": 17.1,
+          "shares": 1000,
+          "fee": 13.892,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.342,
+            "execution_friction": 8.55
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sh.600517_buy",
+          "tag": "rb052",
+          "code": "sh.600517",
+          "side": "buy",
+          "otype": "limit",
+          "price": 8.24,
+          "shares": 2100,
+          "fee": 13.998079999999998,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.34608,
+            "execution_friction": 8.652
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sh.603026_buy",
+          "tag": "rb052",
+          "code": "sh.603026",
+          "side": "buy",
+          "otype": "limit",
+          "price": 31.5,
+          "shares": 500,
+          "fee": 13.190000000000001,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.315,
+            "execution_friction": 7.875
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sh.603998_buy",
+          "tag": "rb052",
+          "code": "sh.603998",
+          "side": "buy",
+          "otype": "limit",
+          "price": 9.64,
+          "shares": 1800,
+          "fee": 14.02304,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.34704,
+            "execution_friction": 8.676
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sz.002214_buy",
+          "tag": "rb052",
+          "code": "sz.002214",
+          "side": "buy",
+          "otype": "limit",
+          "price": 7.94,
+          "shares": 2200,
+          "fee": 14.083359999999999,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.34936000000000006,
+            "execution_friction": 8.734
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sz.002537_buy",
+          "tag": "rb052",
+          "code": "sz.002537",
+          "side": "buy",
+          "otype": "limit",
+          "price": 9.4,
+          "shares": 1900,
+          "fee": 14.287199999999999,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.3572,
+            "execution_friction": 8.93
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sz.002798_buy",
+          "tag": "rb052",
+          "code": "sz.002798",
+          "side": "buy",
+          "otype": "limit",
+          "price": 19.33,
+          "shares": 800,
+          "fee": 13.041279999999999,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.30928,
+            "execution_friction": 7.731999999999998
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sz.300086_buy",
+          "tag": "rb052",
+          "code": "sz.300086",
+          "side": "buy",
+          "otype": "limit",
+          "price": 6.9,
+          "shares": 700,
+          "fee": 7.5116,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.0966,
+            "execution_friction": 2.415
+          }
+        }
+      ],
+      "new_fills": [
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sh.600230_buy",
+          "tag": "rb052",
+          "code": "sh.600230",
+          "side": "buy",
+          "otype": "limit",
+          "price": 17.1,
+          "shares": 1000,
+          "fee": 13.892,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.342,
+            "execution_friction": 8.55
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sh.600517_buy",
+          "tag": "rb052",
+          "code": "sh.600517",
+          "side": "buy",
+          "otype": "limit",
+          "price": 8.24,
+          "shares": 2100,
+          "fee": 13.998079999999998,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.34608,
+            "execution_friction": 8.652
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sh.603026_buy",
+          "tag": "rb052",
+          "code": "sh.603026",
+          "side": "buy",
+          "otype": "limit",
+          "price": 31.5,
+          "shares": 500,
+          "fee": 13.190000000000001,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.315,
+            "execution_friction": 7.875
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sh.603998_buy",
+          "tag": "rb052",
+          "code": "sh.603998",
+          "side": "buy",
+          "otype": "limit",
+          "price": 9.64,
+          "shares": 1800,
+          "fee": 14.02304,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.34704,
+            "execution_friction": 8.676
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sz.002214_buy",
+          "tag": "rb052",
+          "code": "sz.002214",
+          "side": "buy",
+          "otype": "limit",
+          "price": 7.94,
+          "shares": 2200,
+          "fee": 14.083359999999999,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.34936000000000006,
+            "execution_friction": 8.734
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sz.002537_buy",
+          "tag": "rb052",
+          "code": "sz.002537",
+          "side": "buy",
+          "otype": "limit",
+          "price": 9.4,
+          "shares": 1900,
+          "fee": 14.287199999999999,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.3572,
+            "execution_friction": 8.93
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sz.002798_buy",
+          "tag": "rb052",
+          "code": "sz.002798",
+          "side": "buy",
+          "otype": "limit",
+          "price": 19.33,
+          "shares": 800,
+          "fee": 13.041279999999999,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.30928,
+            "execution_friction": 7.731999999999998
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sz.300086_buy",
+          "tag": "rb052",
+          "code": "sz.300086",
+          "side": "buy",
+          "otype": "limit",
+          "price": 6.9,
+          "shares": 700,
+          "fee": 7.5116,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.0966,
+            "execution_friction": 2.415
+          }
+        }
+      ],
+      "fees_delta": 0.0,
+      "old_starting_cash": 148162.64705309994
+    },
+    {
+      "id": "PV1_REV11_RANK50_TRAIN_V1__stress",
+      "date": "2016-06-01",
+      "codes": [
+        "sh.600452"
+      ],
+      "baseline_matches_full_day": true,
+      "fills_unchanged": true,
+      "cash_delta": 0.0,
+      "old_fills": [
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sh.600185_sell",
+          "tag": "rb017",
+          "code": "sh.600185",
+          "side": "sell",
+          "otype": "limit",
+          "price": 6.2,
+          "shares": 1960,
+          "fee": 29.547039999999996,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 12.152,
+            "transfer": 0.24304,
+            "execution_friction": 12.152
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sh.600201_sell",
+          "tag": "rb017",
+          "code": "sh.600201",
+          "side": "sell",
+          "otype": "limit",
+          "price": 27.63,
+          "shares": 500,
+          "fee": 32.9063,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 13.815,
+            "transfer": 0.2763,
+            "execution_friction": 13.815
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sh.600482_buy",
+          "tag": "rb017",
+          "code": "sh.600482",
+          "side": "buy",
+          "otype": "limit",
+          "price": 31.54,
+          "shares": 600,
+          "fee": 24.30248,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.37848000000000004,
+            "execution_friction": 18.924
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.000683_sell",
+          "tag": "rb017",
+          "code": "sz.000683",
+          "side": "sell",
+          "otype": "limit",
+          "price": 2.69,
+          "shares": 1736,
+          "fee": 14.433076799999998,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 4.66984,
+            "transfer": 0.0933968,
+            "execution_friction": 4.66984
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.000799_buy",
+          "tag": "rb017",
+          "code": "sz.000799",
+          "side": "buy",
+          "otype": "limit",
+          "price": 18.77,
+          "shares": 1000,
+          "fee": 24.1454,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.3754,
+            "execution_friction": 18.77
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.000981_buy",
+          "tag": "rb017",
+          "code": "sz.000981",
+          "side": "buy",
+          "otype": "limit",
+          "price": 10.21,
+          "shares": 900,
+          "fee": 14.372779999999999,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.18378000000000003,
+            "execution_friction": 9.189
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.002070_buy",
+          "tag": "rb017",
+          "code": "sz.002070",
+          "side": "buy",
+          "otype": "limit",
+          "price": 27.16,
+          "shares": 700,
+          "fee": 24.39224,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.38024,
+            "execution_friction": 19.012
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.002125_buy",
+          "tag": "rb017",
+          "code": "sz.002125",
+          "side": "buy",
+          "otype": "limit",
+          "price": 16.7,
+          "shares": 1100,
+          "fee": 23.7374,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.3674,
+            "execution_friction": 18.37
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.002274_buy",
+          "tag": "rb017",
+          "code": "sz.002274",
+          "side": "buy",
+          "otype": "limit",
+          "price": 9.44,
+          "shares": 600,
+          "fee": 10.77728,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.11327999999999999,
+            "execution_friction": 5.664
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094000000",
+          "order": "rb17_sh.600201_sell",
+          "tag": "rb017",
+          "code": "sh.600201",
+          "side": "sell",
+          "otype": "limit",
+          "price": 27.8,
+          "shares": 200,
+          "fee": 16.231199999999998,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 5.56,
+            "transfer": 0.1112,
+            "execution_friction": 5.56
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094000000",
+          "order": "rb17_sz.000683_sell",
+          "tag": "rb017",
+          "code": "sz.000683",
+          "side": "sell",
+          "otype": "limit",
+          "price": 2.69,
+          "shares": 1324,
+          "fee": 12.1943512,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 3.56156,
+            "transfer": 0.0712312,
+            "execution_friction": 3.56156
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094000000",
+          "order": "rb17_sz.000723_sell",
+          "tag": "rb017",
+          "code": "sz.000723",
+          "side": "sell",
+          "otype": "limit",
+          "price": 12.14,
+          "shares": 700,
+          "fee": 22.16596,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 8.498,
+            "transfer": 0.16996,
+            "execution_friction": 8.498
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094000000",
+          "order": "rb17_sz.000981_buy",
+          "tag": "rb017",
+          "code": "sz.000981",
+          "side": "buy",
+          "otype": "limit",
+          "price": 10.21,
+          "shares": 400,
+          "fee": 9.165680000000002,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.08168000000000002,
+            "execution_friction": 4.0840000000000005
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094000000",
+          "order": "rb17_sz.002274_buy",
+          "tag": "rb017",
+          "code": "sz.002274",
+          "side": "buy",
+          "otype": "limit",
+          "price": 9.44,
+          "shares": 1000,
+          "fee": 14.628799999999998,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.1888,
+            "execution_friction": 9.44
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094500000",
+          "order": "rb17_sz.000723_sell",
+          "tag": "rb017",
+          "code": "sz.000723",
+          "side": "sell",
+          "otype": "limit",
+          "price": 12.15,
+          "shares": 400,
+          "fee": 14.8172,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 4.86,
+            "transfer": 0.0972,
+            "execution_friction": 4.86
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094500000",
+          "order": "rb17_sz.000981_buy",
+          "tag": "rb017",
+          "code": "sz.000981",
+          "side": "buy",
+          "otype": "limit",
+          "price": 10.21,
+          "shares": 600,
+          "fee": 11.24852,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.12252000000000003,
+            "execution_friction": 6.126
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094500000",
+          "order": "rb17_sz.002274_buy",
+          "tag": "rb017",
+          "code": "sz.002274",
+          "side": "buy",
+          "otype": "limit",
+          "price": 9.4,
+          "shares": 300,
+          "fee": 7.8764,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.0564,
+            "execution_friction": 2.82
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601095000000",
+          "order": "rb17_sh.600452_buy",
+          "tag": "rb017",
+          "code": "sh.600452",
+          "side": "buy",
+          "otype": "limit",
+          "price": 31.16,
+          "shares": 400,
+          "fee": 17.71328,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.24928000000000003,
+            "execution_friction": 12.464
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601095000000",
+          "order": "rb17_sz.000723_sell",
+          "tag": "rb017",
+          "code": "sz.000723",
+          "side": "sell",
+          "otype": "limit",
+          "price": 12.14,
+          "shares": 300,
+          "fee": 12.35684,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 3.642,
+            "transfer": 0.07284000000000002,
+            "execution_friction": 3.642
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601095500000",
+          "order": "rb17_sz.000723_sell",
+          "tag": "rb017",
+          "code": "sz.000723",
+          "side": "sell",
+          "otype": "limit",
+          "price": 12.14,
+          "shares": 100,
+          "fee": 7.45228,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 1.214,
+            "transfer": 0.02428,
+            "execution_friction": 1.214
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601101000000",
+          "order": "rb17_sh.600452_buy",
+          "tag": "rb017",
+          "code": "sh.600452",
+          "side": "buy",
+          "otype": "limit",
+          "price": 31.09,
+          "shares": 100,
+          "fee": 8.17118,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.062180000000000006,
+            "execution_friction": 3.109
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601102000000",
+          "order": "rb17_sh.600452_buy",
+          "tag": "rb017",
+          "code": "sh.600452",
+          "side": "buy",
+          "otype": "limit",
+          "price": 30.9,
+          "shares": 100,
+          "fee": 8.1518,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.0618,
+            "execution_friction": 3.09
+          }
+        }
+      ],
+      "new_fills": [
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sh.600185_sell",
+          "tag": "rb017",
+          "code": "sh.600185",
+          "side": "sell",
+          "otype": "limit",
+          "price": 6.2,
+          "shares": 1960,
+          "fee": 29.547039999999996,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 12.152,
+            "transfer": 0.24304,
+            "execution_friction": 12.152
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sh.600201_sell",
+          "tag": "rb017",
+          "code": "sh.600201",
+          "side": "sell",
+          "otype": "limit",
+          "price": 27.63,
+          "shares": 500,
+          "fee": 32.9063,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 13.815,
+            "transfer": 0.2763,
+            "execution_friction": 13.815
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sh.600482_buy",
+          "tag": "rb017",
+          "code": "sh.600482",
+          "side": "buy",
+          "otype": "limit",
+          "price": 31.54,
+          "shares": 600,
+          "fee": 24.30248,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.37848000000000004,
+            "execution_friction": 18.924
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.000683_sell",
+          "tag": "rb017",
+          "code": "sz.000683",
+          "side": "sell",
+          "otype": "limit",
+          "price": 2.69,
+          "shares": 1736,
+          "fee": 14.433076799999998,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 4.66984,
+            "transfer": 0.0933968,
+            "execution_friction": 4.66984
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.000799_buy",
+          "tag": "rb017",
+          "code": "sz.000799",
+          "side": "buy",
+          "otype": "limit",
+          "price": 18.77,
+          "shares": 1000,
+          "fee": 24.1454,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.3754,
+            "execution_friction": 18.77
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.000981_buy",
+          "tag": "rb017",
+          "code": "sz.000981",
+          "side": "buy",
+          "otype": "limit",
+          "price": 10.21,
+          "shares": 900,
+          "fee": 14.372779999999999,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.18378000000000003,
+            "execution_friction": 9.189
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.002070_buy",
+          "tag": "rb017",
+          "code": "sz.002070",
+          "side": "buy",
+          "otype": "limit",
+          "price": 27.16,
+          "shares": 700,
+          "fee": 24.39224,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.38024,
+            "execution_friction": 19.012
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.002125_buy",
+          "tag": "rb017",
+          "code": "sz.002125",
+          "side": "buy",
+          "otype": "limit",
+          "price": 16.7,
+          "shares": 1100,
+          "fee": 23.7374,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.3674,
+            "execution_friction": 18.37
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601093500000",
+          "order": "rb17_sz.002274_buy",
+          "tag": "rb017",
+          "code": "sz.002274",
+          "side": "buy",
+          "otype": "limit",
+          "price": 9.44,
+          "shares": 600,
+          "fee": 10.77728,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.11327999999999999,
+            "execution_friction": 5.664
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094000000",
+          "order": "rb17_sh.600201_sell",
+          "tag": "rb017",
+          "code": "sh.600201",
+          "side": "sell",
+          "otype": "limit",
+          "price": 27.8,
+          "shares": 200,
+          "fee": 16.231199999999998,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 5.56,
+            "transfer": 0.1112,
+            "execution_friction": 5.56
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094000000",
+          "order": "rb17_sz.000683_sell",
+          "tag": "rb017",
+          "code": "sz.000683",
+          "side": "sell",
+          "otype": "limit",
+          "price": 2.69,
+          "shares": 1324,
+          "fee": 12.1943512,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 3.56156,
+            "transfer": 0.0712312,
+            "execution_friction": 3.56156
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094000000",
+          "order": "rb17_sz.000723_sell",
+          "tag": "rb017",
+          "code": "sz.000723",
+          "side": "sell",
+          "otype": "limit",
+          "price": 12.14,
+          "shares": 700,
+          "fee": 22.16596,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 8.498,
+            "transfer": 0.16996,
+            "execution_friction": 8.498
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094000000",
+          "order": "rb17_sz.000981_buy",
+          "tag": "rb017",
+          "code": "sz.000981",
+          "side": "buy",
+          "otype": "limit",
+          "price": 10.21,
+          "shares": 400,
+          "fee": 9.165680000000002,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.08168000000000002,
+            "execution_friction": 4.0840000000000005
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094000000",
+          "order": "rb17_sz.002274_buy",
+          "tag": "rb017",
+          "code": "sz.002274",
+          "side": "buy",
+          "otype": "limit",
+          "price": 9.44,
+          "shares": 1000,
+          "fee": 14.628799999999998,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.1888,
+            "execution_friction": 9.44
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094500000",
+          "order": "rb17_sz.000723_sell",
+          "tag": "rb017",
+          "code": "sz.000723",
+          "side": "sell",
+          "otype": "limit",
+          "price": 12.15,
+          "shares": 400,
+          "fee": 14.8172,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 4.86,
+            "transfer": 0.0972,
+            "execution_friction": 4.86
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094500000",
+          "order": "rb17_sz.000981_buy",
+          "tag": "rb017",
+          "code": "sz.000981",
+          "side": "buy",
+          "otype": "limit",
+          "price": 10.21,
+          "shares": 600,
+          "fee": 11.24852,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.12252000000000003,
+            "execution_friction": 6.126
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601094500000",
+          "order": "rb17_sz.002274_buy",
+          "tag": "rb017",
+          "code": "sz.002274",
+          "side": "buy",
+          "otype": "limit",
+          "price": 9.4,
+          "shares": 300,
+          "fee": 7.8764,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.0564,
+            "execution_friction": 2.82
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601095000000",
+          "order": "rb17_sh.600452_buy",
+          "tag": "rb017",
+          "code": "sh.600452",
+          "side": "buy",
+          "otype": "limit",
+          "price": 31.16,
+          "shares": 400,
+          "fee": 17.71328,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.24928000000000003,
+            "execution_friction": 12.464
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601095000000",
+          "order": "rb17_sz.000723_sell",
+          "tag": "rb017",
+          "code": "sz.000723",
+          "side": "sell",
+          "otype": "limit",
+          "price": 12.14,
+          "shares": 300,
+          "fee": 12.35684,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 3.642,
+            "transfer": 0.07284000000000002,
+            "execution_friction": 3.642
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601095500000",
+          "order": "rb17_sz.000723_sell",
+          "tag": "rb017",
+          "code": "sz.000723",
+          "side": "sell",
+          "otype": "limit",
+          "price": 12.14,
+          "shares": 100,
+          "fee": 7.45228,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 1.214,
+            "transfer": 0.02428,
+            "execution_friction": 1.214
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601101000000",
+          "order": "rb17_sh.600452_buy",
+          "tag": "rb017",
+          "code": "sh.600452",
+          "side": "buy",
+          "otype": "limit",
+          "price": 31.09,
+          "shares": 100,
+          "fee": 8.17118,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.062180000000000006,
+            "execution_friction": 3.109
+          }
+        },
+        {
+          "date": "2016-06-01",
+          "time": "20160601102000000",
+          "order": "rb17_sh.600452_buy",
+          "tag": "rb017",
+          "code": "sh.600452",
+          "side": "buy",
+          "otype": "limit",
+          "price": 30.9,
+          "shares": 100,
+          "fee": 8.1518,
+          "data_as_of": [
+            "2016-05-31",
+            "150000"
+          ],
+          "signal_at": [
+            "2016-05-31",
+            "150000"
+          ],
+          "activate_at": [
+            "2016-06-01",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.0618,
+            "execution_friction": 3.09
+          }
+        }
+      ],
+      "fees_delta": 0.0,
+      "old_starting_cash": 132170.4852377001
+    },
+    {
+      "id": "PV1_REV11_RANK50_TRAIN_V1__stress",
+      "date": "2019-05-06",
+      "codes": [
+        "sh.603026"
+      ],
+      "baseline_matches_full_day": true,
+      "fills_unchanged": true,
+      "cash_delta": 0.0,
+      "old_fills": [
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sh.600230_buy",
+          "tag": "rb052",
+          "code": "sh.600230",
+          "side": "buy",
+          "otype": "limit",
+          "price": 17.1,
+          "shares": 900,
+          "fee": 20.6978,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.3078,
+            "execution_friction": 15.390000000000002
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sh.600517_buy",
+          "tag": "rb052",
+          "code": "sh.600517",
+          "side": "buy",
+          "otype": "limit",
+          "price": 8.24,
+          "shares": 2000,
+          "fee": 21.8096,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.3296,
+            "execution_friction": 16.48
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sh.603026_buy",
+          "tag": "rb052",
+          "code": "sh.603026",
+          "side": "buy",
+          "otype": "limit",
+          "price": 31.5,
+          "shares": 500,
+          "fee": 21.065,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.315,
+            "execution_friction": 15.75
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sh.603998_buy",
+          "tag": "rb052",
+          "code": "sh.603998",
+          "side": "buy",
+          "otype": "limit",
+          "price": 9.64,
+          "shares": 1700,
+          "fee": 21.715760000000003,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.32776000000000005,
+            "execution_friction": 16.388
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sz.002214_buy",
+          "tag": "rb052",
+          "code": "sz.002214",
+          "side": "buy",
+          "otype": "limit",
+          "price": 7.94,
+          "shares": 2100,
+          "fee": 22.00748,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.33348,
+            "execution_friction": 16.674
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sz.002537_buy",
+          "tag": "rb052",
+          "code": "sz.002537",
+          "side": "buy",
+          "otype": "limit",
+          "price": 9.4,
+          "shares": 1800,
+          "fee": 22.2584,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.3384,
+            "execution_friction": 16.92
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sz.002798_buy",
+          "tag": "rb052",
+          "code": "sz.002798",
+          "side": "buy",
+          "otype": "limit",
+          "price": 19.33,
+          "shares": 800,
+          "fee": 20.773279999999996,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.30928,
+            "execution_friction": 15.463999999999997
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sz.300086_buy",
+          "tag": "rb052",
+          "code": "sz.300086",
+          "side": "buy",
+          "otype": "limit",
+          "price": 6.9,
+          "shares": 500,
+          "fee": 8.519,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.069,
+            "execution_friction": 3.45
+          }
+        }
+      ],
+      "new_fills": [
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sh.600230_buy",
+          "tag": "rb052",
+          "code": "sh.600230",
+          "side": "buy",
+          "otype": "limit",
+          "price": 17.1,
+          "shares": 900,
+          "fee": 20.6978,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.3078,
+            "execution_friction": 15.390000000000002
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sh.600517_buy",
+          "tag": "rb052",
+          "code": "sh.600517",
+          "side": "buy",
+          "otype": "limit",
+          "price": 8.24,
+          "shares": 2000,
+          "fee": 21.8096,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.3296,
+            "execution_friction": 16.48
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sh.603026_buy",
+          "tag": "rb052",
+          "code": "sh.603026",
+          "side": "buy",
+          "otype": "limit",
+          "price": 31.5,
+          "shares": 500,
+          "fee": 21.065,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.315,
+            "execution_friction": 15.75
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sh.603998_buy",
+          "tag": "rb052",
+          "code": "sh.603998",
+          "side": "buy",
+          "otype": "limit",
+          "price": 9.64,
+          "shares": 1700,
+          "fee": 21.715760000000003,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.32776000000000005,
+            "execution_friction": 16.388
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sz.002214_buy",
+          "tag": "rb052",
+          "code": "sz.002214",
+          "side": "buy",
+          "otype": "limit",
+          "price": 7.94,
+          "shares": 2100,
+          "fee": 22.00748,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.33348,
+            "execution_friction": 16.674
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sz.002537_buy",
+          "tag": "rb052",
+          "code": "sz.002537",
+          "side": "buy",
+          "otype": "limit",
+          "price": 9.4,
+          "shares": 1800,
+          "fee": 22.2584,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.3384,
+            "execution_friction": 16.92
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sz.002798_buy",
+          "tag": "rb052",
+          "code": "sz.002798",
+          "side": "buy",
+          "otype": "limit",
+          "price": 19.33,
+          "shares": 800,
+          "fee": 20.773279999999996,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.30928,
+            "execution_friction": 15.463999999999997
+          }
+        },
+        {
+          "date": "2019-05-06",
+          "time": "20190506093500000",
+          "order": "rb52_sz.300086_buy",
+          "tag": "rb052",
+          "code": "sz.300086",
+          "side": "buy",
+          "otype": "limit",
+          "price": 6.9,
+          "shares": 500,
+          "fee": 8.519,
+          "data_as_of": [
+            "2019-04-30",
+            "150000"
+          ],
+          "signal_at": [
+            "2019-04-30",
+            "150000"
+          ],
+          "activate_at": [
+            "2019-05-06",
+            ""
+          ],
+          "fee_breakdown": {
+            "commission": 5.0,
+            "stamp": 0.0,
+            "transfer": 0.069,
+            "execution_friction": 3.45
+          }
+        }
+      ],
+      "fees_delta": 0.0,
+      "old_starting_cash": 140568.06371970015
+    }
+  ],
+  "inputs": {
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\REV_vola_11__main\\account.json": "2b574a80dd8fe65d54814a5eb6e5d6154c053e74b07d276d071df8613e4292fb",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\REV_vola_11__stress\\account.json": "4c2b9bc98d250a74b0d5ffd879adbabecd57aec677fc0547f7f4938d912ab5ff",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\PV1_REV11_RANK50_TRAIN_V1__main\\account.json": "f15127bb63fe03a968c4963a1e2f389b84f7ae2e4076464b7dbecf5b35b90685",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sh.600185_2016-06-01_f5.csv": "77e5d8a54872d9149c2aea1f4af7b1aaf8e76cae9196e42619bd0133c084af18",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sh.600201_2016-06-01_f5.csv": "0d5a25365dcf3a29c579db4b0e2d04e831e7b8ce36a84c9b920032bd155688a9",
+    "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\minute-repairs-20260914-3\\sh.600452_2016-06-01_f5.csv": "df596137c2de5a4d5fcd49522e25f550b4cba6e4860f302d74c6b1477040a742",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sh.600482_2016-06-01_f5.csv": "d0ff3fe6318bf98e7ecec7d35092207f11c7213d8f8326fa08478b75131f9c72",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sz.000683_2016-06-01_f5.csv": "716d1c0a559f52f61087748c4f252f935bd677b1a46e25bbf1d84b5ed63bf4ca",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sz.000723_2016-06-01_f5.csv": "8e619dc7cb40f798b22e718d011f48e789c4a4c0f46456959197117aadd40169",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sz.000799_2016-06-01_f5.csv": "40a30df00004086fc30967a3f4884141f3a656c13224605bd9def599fda5cfb2",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sz.000981_2016-06-01_f5.csv": "c575a53ab0d1597a32f6fe865a297c4257c0e0634f5ffab376cf6c8b57c82f8f",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sz.002070_2016-06-01_f5.csv": "5d157fa2b34020581f55d0f0f3b4889eb05fb573f30a907b4e3d665fd2bfbff7",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sz.002125_2016-06-01_f5.csv": "ae41035d199f5ab31dd9f9bd7004bbe97410f5238e0df7e92212c85730a162a7",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sz.002274_2016-06-01_f5.csv": "146659883fb38dd3367760ae697d1b46e77a0dcd42fd97c8b8169df812915e67",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sz.300355_2016-06-01_f5.csv": "3800eac7b718b9a4837ca8f36dc29ab9d464c22e5d0a86c9af2f8a0f488bdb29",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sh.600088_2019-05-06_f5.csv": "a289507f2db83c5ed6c5a4e51fb711cd2d5566e410e00fab96ff841f5e4e7302",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sh.600230_2019-05-06_f5.csv": "94ae115fc28a481217ceef26b2ab1697505aa292d4012f74b84f97a75c6fe4e9",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sh.600517_2019-05-06_f5.csv": "fa0b40904aba83ffb2b5a22ca345e59d80a76aa41bdee83fa2d08b3a2e6bc4c0",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sh.603006_2019-05-06_f5.csv": "59bd8bee104339217b796f3b9a3625da7fe868ed38c510d19db796c4a9d92b76",
+    "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\minute-repairs-20260914-1\\sh.603026_2019-05-06_f5.csv": "7dea88ef55fed7111f786cf654cbde266ec0b95a5ddd206ad21f9bb015c1663d",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sh.603998_2019-05-06_f5.csv": "8a93e10371cb75fae703c73f2209db000bb30fd355601a19f0063b8a10fb4207",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sz.002214_2019-05-06_f5.csv": "6ea3f9575fb1162cf43525d4c6ad85c2a47b7abffdd9d49735411d9b56d3ab1d",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sz.002481_2019-05-06_f5.csv": "ad9696d6b7f672913d2a71e1e3c9989c4435d19c68ca51facb5a160277036f73",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sz.002537_2019-05-06_f5.csv": "695430b12e797ddd427dbb93b3fd857b1916a34a5ccaa80cfcece0204cbdf162",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sz.002798_2019-05-06_f5.csv": "f8e6ab68bdc1e4dcc91f22ada2b100ca4ac0af33f34b76c0cbdc8f0cc15e0c22",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sz.300086_2019-05-06_f5.csv": "8ea852edbed636292c5321caecac1cc69a751803f1576ad82a909a20b227ef23",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\derived-minute\\sz.300125_2019-05-06_f5.csv": "540b36a0d872cd6a643e0bf5880835ed004e122eb5d26f27101afd0eee33c95c",
+    "D:\\AI\\workspace\\个人量化\\artifacts\\ten-year-fixed-strategies-minute-accounts-20260914-6\\PV1_REV11_RANK50_TRAIN_V1__stress\\account.json": "9931bd018430897638192afdcabf800f22eaba18f72c59ac7e660652f7515d7e"
+  },
+  "script_sha256": "4d2d522c309e4b85fcfc2310196de3627e4a7297cafca1c63e16561a65171304",
+  "full_account_rerun_required": false
+}

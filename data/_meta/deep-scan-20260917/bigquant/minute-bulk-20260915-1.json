@@ -1,0 +1,1021 @@
+{
+ "source": "bigquant",
+ "dataset": "minute-bulk-20260915-1",
+ "batches": {
+  "bigquant/minute-bulk-20260915-1/manifest": {
+   "batch_dir": "bigquant/minute-bulk-20260915-1/manifest",
+   "mode": "full",
+   "files": {
+    "n_total": 6,
+    "n_csv": 0,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 5,
+    "n_other": 1,
+    "manifest_names": [
+     "2010.sha256.txt",
+     "2011.sha256.txt",
+     "2012.sha256.txt",
+     "2013.sha256.txt",
+     "zips.sha256.json"
+    ],
+    "other_names": [
+     "extract-summary.json"
+    ],
+    "total_bytes": 87780
+   },
+   "issues": [
+    {
+     "level": "warning",
+     "code": "inventory_file_count_mismatch",
+     "detail": "登记 2 个文件, 实际 6"
+    },
+    {
+     "level": "info",
+     "code": "inventory_bytes_diff",
+     "detail": "登记 7519B, 实际 87780B"
+    },
+    {
+     "level": "info",
+     "code": "no_data_files",
+     "detail": "无 csv/parquet 数据文件; 仅 1 个其他文件"
+    }
+   ],
+   "inventory_registration": {
+    "files": 2,
+    "bytes": 7519
+   },
+   "status": "no_tabular_data",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:48"
+  },
+  "bigquant/minute-bulk-20260915-1/years/2010": {
+   "batch_dir": "bigquant/minute-bulk-20260915-1/years/2010",
+   "mode": "parquet-meta",
+   "status": "completed",
+   "issues": [],
+   "files": {
+    "n_total": 242,
+    "total_bytes": 1880208147
+   },
+   "inventory_registration": {
+    "files": 242,
+    "bytes": 1880208147
+   },
+   "rows_total": 108955859,
+   "date_coverage": {
+    "file_date": {
+     "min": "20100104",
+     "max": "20101231",
+     "rows_gt_20241231": 0
+    }
+   },
+   "schema": {
+    "code": "String",
+    "trade_time": "String",
+    "close": "Float32",
+    "open": "Float32",
+    "high": "Float32",
+    "low": "Float32",
+    "vol": "Float32",
+    "amount": "Float32",
+    "date": "String",
+    "pre_close": "Float32",
+    "change": "Float32",
+    "pct_chg": "Float32",
+    "__index_level_0__": "Int64"
+   },
+   "sample_rows": [
+    {
+     "code": "000001.SZ",
+     "trade_time": "2010-01-04 09:30:00",
+     "close": "24.520000457763672",
+     "open": "24.520000457763672",
+     "high": "24.520000457763672",
+     "low": "24.520000457763672",
+     "vol": "40800.0",
+     "amount": "1000416.0",
+     "date": "20100104",
+     "pre_close": "None",
+     "change": "None",
+     "pct_chg": "None",
+     "__index_level_0__": "0"
+    },
+    {
+     "code": "000001.SZ",
+     "trade_time": "2010-01-04 09:31:00",
+     "close": "24.549999237060547",
+     "open": "24.530000686645508",
+     "high": "24.559999465942383",
+     "low": "24.520000457763672",
+     "vol": "100500.0",
+     "amount": "2465407.0",
+     "date": "20100104",
+     "pre_close": "24.520000457763672",
+     "change": "0.029999999329447746",
+     "pct_chg": "0.11999999731779099",
+     "__index_level_0__": "1"
+    },
+    {
+     "code": "000001.SZ",
+     "trade_time": "2010-01-04 09:32:00",
+     "close": "24.5",
+     "open": "24.549999237060547",
+     "high": "24.549999237060547",
+     "low": "24.5",
+     "vol": "88100.0",
+     "amount": "2160077.0",
+     "date": "20100104",
+     "pre_close": "24.549999237060547",
+     "change": "-0.05000000074505806",
+     "pct_chg": "-0.20000000298023224",
+     "__index_level_0__": "2"
+    }
+   ],
+   "rows_note": "行数来自 parquet 元数据; 未逐行读取内容",
+   "duration_s": 0.3,
+   "finished_at": "2026-09-18T00:09:48"
+  },
+  "bigquant/minute-bulk-20260915-1/years/2011": {
+   "batch_dir": "bigquant/minute-bulk-20260915-1/years/2011",
+   "mode": "parquet-meta",
+   "status": "completed",
+   "issues": [],
+   "files": {
+    "n_total": 244,
+    "total_bytes": 2052734728
+   },
+   "inventory_registration": {
+    "files": 244,
+    "bytes": 2052734728
+   },
+   "rows_total": 129144911,
+   "date_coverage": {
+    "file_date": {
+     "min": "20110104",
+     "max": "20111230",
+     "rows_gt_20241231": 0
+    }
+   },
+   "schema": {
+    "code": "String",
+    "trade_time": "String",
+    "close": "Float32",
+    "open": "Float32",
+    "high": "Float32",
+    "low": "Float32",
+    "vol": "Float32",
+    "amount": "Float32",
+    "date": "String",
+    "pre_close": "Float32",
+    "change": "Float32",
+    "pct_chg": "Float32",
+    "__index_level_0__": "Int64"
+   },
+   "sample_rows": [
+    {
+     "code": "000001.SZ",
+     "trade_time": "2011-01-04 09:30:00",
+     "close": "15.819999694824219",
+     "open": "15.819999694824219",
+     "high": "15.819999694824219",
+     "low": "15.789999961853027",
+     "vol": "137200.0",
+     "amount": "2170772.0",
+     "date": "20110104",
+     "pre_close": "15.789999961853027",
+     "change": "0.029999999329447746",
+     "pct_chg": "0.1899999976158142",
+     "__index_level_0__": "0"
+    },
+    {
+     "code": "000001.SZ",
+     "trade_time": "2011-01-04 09:31:00",
+     "close": "15.859999656677246",
+     "open": "15.84000015258789",
+     "high": "15.869999885559082",
+     "low": "15.84000015258789",
+     "vol": "470200.0",
+     "amount": "7451555.0",
+     "date": "20110104",
+     "pre_close": "15.819999694824219",
+     "change": "0.03999999910593033",
+     "pct_chg": "0.25",
+     "__index_level_0__": "1"
+    },
+    {
+     "code": "000001.SZ",
+     "trade_time": "2011-01-04 09:32:00",
+     "close": "15.819999694824219",
+     "open": "15.850000381469727",
+     "high": "15.850000381469727",
+     "low": "15.819999694824219",
+     "vol": "286800.0",
+     "amount": "4543629.0",
+     "date": "20110104",
+     "pre_close": "15.859999656677246",
+     "change": "-0.03999999910593033",
+     "pct_chg": "-0.25",
+     "__index_level_0__": "2"
+    }
+   ],
+   "rows_note": "行数来自 parquet 元数据; 未逐行读取内容",
+   "duration_s": 0.3,
+   "finished_at": "2026-09-18T00:09:49"
+  },
+  "bigquant/minute-bulk-20260915-1/years/2012": {
+   "batch_dir": "bigquant/minute-bulk-20260915-1/years/2012",
+   "mode": "parquet-meta",
+   "status": "completed",
+   "issues": [],
+   "files": {
+    "n_total": 243,
+    "total_bytes": 2097348693
+   },
+   "inventory_registration": {
+    "files": 243,
+    "bytes": 2097348693
+   },
+   "rows_total": 141164545,
+   "date_coverage": {
+    "file_date": {
+     "min": "20120104",
+     "max": "20121231",
+     "rows_gt_20241231": 0
+    }
+   },
+   "schema": {
+    "code": "String",
+    "trade_time": "String",
+    "close": "Float32",
+    "open": "Float32",
+    "high": "Float32",
+    "low": "Float32",
+    "vol": "Float32",
+    "amount": "Float32",
+    "date": "String",
+    "pre_close": "Float32",
+    "change": "Float32",
+    "pct_chg": "Float32",
+    "__index_level_0__": "Int64"
+   },
+   "sample_rows": [
+    {
+     "code": "000001.SZ",
+     "trade_time": "2012-01-04 09:30:00",
+     "close": "15.59000015258789",
+     "open": "15.59000015258789",
+     "high": "15.59000015258789",
+     "low": "15.59000015258789",
+     "vol": "247300.0",
+     "amount": "3855407.0",
+     "date": "20120104",
+     "pre_close": "15.59000015258789",
+     "change": "0.0",
+     "pct_chg": "0.0",
+     "__index_level_0__": "0"
+    },
+    {
+     "code": "000001.SZ",
+     "trade_time": "2012-01-04 09:31:00",
+     "close": "15.520000457763672",
+     "open": "15.579999923706055",
+     "high": "15.579999923706055",
+     "low": "15.520000457763672",
+     "vol": "150494.0",
+     "amount": "2342573.0",
+     "date": "20120104",
+     "pre_close": "15.59000015258789",
+     "change": "-0.07000000029802322",
+     "pct_chg": "-0.44999998807907104",
+     "__index_level_0__": "1"
+    },
+    {
+     "code": "000001.SZ",
+     "trade_time": "2012-01-04 09:32:00",
+     "close": "15.550000190734863",
+     "open": "15.550000190734863",
+     "high": "15.5600004196167",
+     "low": "15.5",
+     "vol": "241401.0",
+     "amount": "3745188.0",
+     "date": "20120104",
+     "pre_close": "15.520000457763672",
+     "change": "0.029999999329447746",
+     "pct_chg": "0.1899999976158142",
+     "__index_level_0__": "2"
+    }
+   ],
+   "rows_note": "行数来自 parquet 元数据; 未逐行读取内容",
+   "duration_s": 0.3,
+   "finished_at": "2026-09-18T00:09:49"
+  },
+  "bigquant/minute-bulk-20260915-1/years/2013": {
+   "batch_dir": "bigquant/minute-bulk-20260915-1/years/2013",
+   "mode": "parquet-meta",
+   "status": "completed",
+   "issues": [],
+   "files": {
+    "n_total": 238,
+    "total_bytes": 2219374510
+   },
+   "inventory_registration": {
+    "files": 238,
+    "bytes": 2219374510
+   },
+   "rows_total": 141375902,
+   "date_coverage": {
+    "file_date": {
+     "min": "20130104",
+     "max": "20131231",
+     "rows_gt_20241231": 0
+    }
+   },
+   "schema": {
+    "code": "String",
+    "trade_time": "String",
+    "close": "Float32",
+    "open": "Float32",
+    "high": "Float32",
+    "low": "Float32",
+    "vol": "Float32",
+    "amount": "Float32",
+    "date": "String",
+    "pre_close": "Float32",
+    "change": "Float32",
+    "pct_chg": "Float32",
+    "__index_level_0__": "Int64"
+   },
+   "sample_rows": [
+    {
+     "code": "000001.SZ",
+     "trade_time": "2013-01-04 09:30:00",
+     "close": "16.31999969482422",
+     "open": "16.31999969482422",
+     "high": "16.31999969482422",
+     "low": "16.31999969482422",
+     "vol": "663000.0",
+     "amount": "10820160.0",
+     "date": "20130104",
+     "pre_close": "16.020000457763672",
+     "change": "0.30000001192092896",
+     "pct_chg": "1.8700000047683716",
+     "__index_level_0__": "0"
+    },
+    {
+     "code": "000001.SZ",
+     "trade_time": "2013-01-04 09:31:00",
+     "close": "16.200000762939453",
+     "open": "16.31999969482422",
+     "high": "16.34000015258789",
+     "low": "16.100000381469727",
+     "vol": "959906.0",
+     "amount": "15599350.0",
+     "date": "20130104",
+     "pre_close": "16.31999969482422",
+     "change": "-0.11999999731779099",
+     "pct_chg": "-0.7400000095367432",
+     "__index_level_0__": "1"
+    },
+    {
+     "code": "000001.SZ",
+     "trade_time": "2013-01-04 09:32:00",
+     "close": "16.260000228881836",
+     "open": "16.219999313354492",
+     "high": "16.290000915527344",
+     "low": "16.219999313354492",
+     "vol": "365379.0",
+     "amount": "5937928.0",
+     "date": "20130104",
+     "pre_close": "16.200000762939453",
+     "change": "0.05999999865889549",
+     "pct_chg": "0.3700000047683716",
+     "__index_level_0__": "2"
+    }
+   ],
+   "rows_note": "行数来自 parquet 元数据; 未逐行读取内容",
+   "duration_s": 0.3,
+   "finished_at": "2026-09-18T00:09:49"
+  },
+  "bigquant/minute-bulk-20260915-1/years/2014": {
+   "batch_dir": "bigquant/minute-bulk-20260915-1/years/2014",
+   "mode": "parquet-meta",
+   "status": "completed",
+   "issues": [],
+   "files": {
+    "n_total": 245,
+    "total_bytes": 2313138217
+   },
+   "inventory_registration": {
+    "files": 245,
+    "bytes": 2313138217
+   },
+   "rows_total": 149165745,
+   "date_coverage": {
+    "file_date": {
+     "min": "20140102",
+     "max": "20141231",
+     "rows_gt_20241231": 0
+    }
+   },
+   "schema": {
+    "code": "String",
+    "trade_time": "String",
+    "close": "Float32",
+    "open": "Float32",
+    "high": "Float32",
+    "low": "Float32",
+    "vol": "Float32",
+    "amount": "Float32",
+    "date": "String",
+    "pre_close": "Float32",
+    "change": "Float32",
+    "pct_chg": "Float32",
+    "__index_level_0__": "Int64"
+   },
+   "sample_rows": [
+    {
+     "code": "000001.SZ",
+     "trade_time": "2014-01-02 09:30:00",
+     "close": "12.119999885559082",
+     "open": "12.119999885559082",
+     "high": "12.119999885559082",
+     "low": "12.119999885559082",
+     "vol": "236865.0",
+     "amount": "2870803.0",
+     "date": "20140102",
+     "pre_close": "12.25",
+     "change": "-0.12999999523162842",
+     "pct_chg": "-1.059999942779541",
+     "__index_level_0__": "0"
+    },
+    {
+     "code": "000001.SZ",
+     "trade_time": "2014-01-02 09:31:00",
+     "close": "12.109999656677246",
+     "open": "12.109999656677246",
+     "high": "12.130000114440918",
+     "low": "12.09000015258789",
+     "vol": "859551.0",
+     "amount": "10411948.0",
+     "date": "20140102",
+     "pre_close": "12.119999885559082",
+     "change": "-0.009999999776482582",
+     "pct_chg": "-0.07999999821186066",
+     "__index_level_0__": "1"
+    },
+    {
+     "code": "000001.SZ",
+     "trade_time": "2014-01-02 09:32:00",
+     "close": "12.100000381469727",
+     "open": "12.109999656677246",
+     "high": "12.119999885559082",
+     "low": "12.100000381469727",
+     "vol": "555000.0",
+     "amount": "6718238.0",
+     "date": "20140102",
+     "pre_close": "12.109999656677246",
+     "change": "-0.009999999776482582",
+     "pct_chg": "-0.07999999821186066",
+     "__index_level_0__": "2"
+    }
+   ],
+   "rows_note": "行数来自 parquet 元数据; 未逐行读取内容",
+   "duration_s": 0.3,
+   "finished_at": "2026-09-18T00:09:50"
+  },
+  "bigquant/minute-bulk-20260915-1/years/2015": {
+   "batch_dir": "bigquant/minute-bulk-20260915-1/years/2015",
+   "mode": "sampled-csv",
+   "status": "completed(sampled 6/2607 files)",
+   "issues": [],
+   "files": {
+    "n_total": 2607,
+    "total_bytes": 11462751778
+   },
+   "inventory_registration": {
+    "files": 2607,
+    "bytes": 11462751778
+   },
+   "rows_sampled": 336918,
+   "sampled_files": [
+    "sh600000_2015.csv",
+    "sh600004_2015.csv",
+    "sh600006_2015.csv",
+    "sz000825_2015.csv",
+    "sz000826_2015.csv",
+    "sz000828_2015.csv"
+   ],
+   "schema": {
+    "时间": "String",
+    "代码": "String",
+    "名称": "String",
+    "开盘价": "Float64",
+    "收盘价": "Float64",
+    "最高价": "Float64",
+    "最低价": "Float64",
+    "成交量": "Int64",
+    "成交额": "Int64",
+    "涨幅": "Float64",
+    "振幅": "Float64"
+   },
+   "schema_consistent_across_samples": true,
+   "date_coverage": {
+    "sampled_file_date": {
+     "min": "20150105",
+     "max": "20151231",
+     "rows_gt_20241231": 0,
+     "note": "仅抽样文件的日期范围, 非全量"
+    }
+   },
+   "numeric_magnitude": {
+    "close_sample": {
+     "min": 4.55,
+     "max": 30.55
+    }
+   },
+   "sample_rows": [
+    {
+     "时间": "2015-01-05 09:30:00",
+     "代码": "sh600000",
+     "名称": "浦发银行",
+     "开盘价": "15.88",
+     "收盘价": "15.88",
+     "最高价": "15.88",
+     "最低价": "15.88",
+     "成交量": "52626",
+     "成交额": "83570088",
+     "涨幅": "0.0",
+     "振幅": "0.0"
+    },
+    {
+     "时间": "2015-01-05 09:31:00",
+     "代码": "sh600000",
+     "名称": "浦发银行",
+     "开盘价": "15.97",
+     "收盘价": "15.9",
+     "最高价": "15.98",
+     "最低价": "15.9",
+     "成交量": "85060",
+     "成交额": "135616366",
+     "涨幅": "0.13",
+     "振幅": "0.5"
+    },
+    {
+     "时间": "2015-01-05 09:32:00",
+     "代码": "sh600000",
+     "名称": "浦发银行",
+     "开盘价": "15.9",
+     "收盘价": "15.89",
+     "最高价": "15.92",
+     "最低价": "15.89",
+     "成交量": "54323",
+     "成交额": "86377306",
+     "涨幅": "-0.06",
+     "振幅": "0.19"
+    }
+   ],
+   "duration_s": 0.4,
+   "finished_at": "2026-09-18T00:09:51"
+  },
+  "bigquant/minute-bulk-20260915-1/years/2016": {
+   "batch_dir": "bigquant/minute-bulk-20260915-1/years/2016",
+   "mode": "sampled-csv",
+   "status": "completed(sampled 6/2834 files)",
+   "issues": [],
+   "files": {
+    "n_total": 2834,
+    "total_bytes": 12606548479
+   },
+   "inventory_registration": {
+    "files": 2834,
+    "bytes": 12606548479
+   },
+   "rows_sampled": 351860,
+   "sampled_files": [
+    "sh600000_2016.csv",
+    "sh600004_2016.csv",
+    "sh600006_2016.csv",
+    "sz000850_2016.csv",
+    "sz000851_2016.csv",
+    "sz000852_2016.csv"
+   ],
+   "schema": {
+    "时间": "String",
+    "代码": "String",
+    "名称": "String",
+    "开盘价": "Float64",
+    "收盘价": "Float64",
+    "最高价": "Float64",
+    "最低价": "Float64",
+    "成交量": "Int64",
+    "成交额": "Int64",
+    "涨幅": "Float64",
+    "振幅": "Float64"
+   },
+   "schema_consistent_across_samples": false,
+   "date_coverage": {
+    "sampled_file_date": {
+     "min": "20160104",
+     "max": "20161230",
+     "rows_gt_20241231": 0,
+     "note": "仅抽样文件的日期范围, 非全量"
+    }
+   },
+   "numeric_magnitude": {
+    "close_sample": {
+     "min": 5.19,
+     "max": 21.54
+    }
+   },
+   "sample_rows": [
+    {
+     "时间": "2016-01-04 09:30:00",
+     "代码": "sh600000",
+     "名称": "浦发银行",
+     "开盘价": "18.28",
+     "收盘价": "18.28",
+     "最高价": "18.28",
+     "最低价": "18.28",
+     "成交量": "913",
+     "成交额": "1668964",
+     "涨幅": "0.0",
+     "振幅": "0.0"
+    },
+    {
+     "时间": "2016-01-04 09:31:00",
+     "代码": "sh600000",
+     "名称": "浦发银行",
+     "开盘价": "18.28",
+     "收盘价": "18.21",
+     "最高价": "18.28",
+     "最低价": "18.21",
+     "成交量": "3459",
+     "成交额": "6306338",
+     "涨幅": "-0.38",
+     "振幅": "0.38"
+    },
+    {
+     "时间": "2016-01-04 09:32:00",
+     "代码": "sh600000",
+     "名称": "浦发银行",
+     "开盘价": "18.2",
+     "收盘价": "18.19",
+     "最高价": "18.21",
+     "最低价": "18.19",
+     "成交量": "2299",
+     "成交额": "4184329",
+     "涨幅": "-0.11",
+     "振幅": "0.11"
+    }
+   ],
+   "duration_s": 0.4,
+   "finished_at": "2026-09-18T00:09:51"
+  },
+  "bigquant/minute-bulk-20260915-1/years/2018": {
+   "batch_dir": "bigquant/minute-bulk-20260915-1/years/2018",
+   "mode": "sampled-csv",
+   "status": "completed(sampled 6/3370 files)",
+   "issues": [],
+   "files": {
+    "n_total": 3370,
+    "total_bytes": 15742115160
+   },
+   "inventory_registration": {
+    "files": 3370,
+    "bytes": 15742115160
+   },
+   "rows_sampled": 351378,
+   "sampled_files": [
+    "sh600000_2018.csv",
+    "sh600004_2018.csv",
+    "sh600006_2018.csv",
+    "sz000851_2018.csv",
+    "sz000852_2018.csv",
+    "sz000856_2018.csv"
+   ],
+   "schema": {
+    "时间": "String",
+    "代码": "String",
+    "名称": "String",
+    "开盘价": "Float64",
+    "收盘价": "Float64",
+    "最高价": "Float64",
+    "最低价": "Float64",
+    "成交量": "Int64",
+    "成交额": "Int64",
+    "涨幅": "Float64",
+    "振幅": "Float64"
+   },
+   "schema_consistent_across_samples": false,
+   "date_coverage": {
+    "sampled_file_date": {
+     "min": "20180102",
+     "max": "20181228",
+     "rows_gt_20241231": 0,
+     "note": "仅抽样文件的日期范围, 非全量"
+    }
+   },
+   "numeric_magnitude": {
+    "close_sample": {
+     "min": 5.6,
+     "max": 25.29
+    }
+   },
+   "sample_rows": [
+    {
+     "时间": "2018-01-02 09:30:00",
+     "代码": "sh600000",
+     "名称": "浦发银行",
+     "开盘价": "12.61",
+     "收盘价": "12.61",
+     "最高价": "12.61",
+     "最低价": "12.61",
+     "成交量": "899",
+     "成交额": "1133639",
+     "涨幅": "0.0",
+     "振幅": "0.0"
+    },
+    {
+     "时间": "2018-01-02 09:31:00",
+     "代码": "sh600000",
+     "名称": "浦发银行",
+     "开盘价": "12.62",
+     "收盘价": "12.65",
+     "最高价": "12.65",
+     "最低价": "12.62",
+     "成交量": "4529",
+     "成交额": "5718175",
+     "涨幅": "0.32",
+     "振幅": "0.24"
+    },
+    {
+     "时间": "2018-01-02 09:32:00",
+     "代码": "sh600000",
+     "名称": "浦发银行",
+     "开盘价": "12.65",
+     "收盘价": "12.63",
+     "最高价": "12.65",
+     "最低价": "12.62",
+     "成交量": "3291",
+     "成交额": "4156729",
+     "涨幅": "-0.16",
+     "振幅": "0.24"
+    }
+   ],
+   "duration_s": 0.5,
+   "finished_at": "2026-09-18T00:09:52"
+  },
+  "bigquant/minute-bulk-20260915-1/years/2019": {
+   "batch_dir": "bigquant/minute-bulk-20260915-1/years/2019",
+   "mode": "sampled-csv",
+   "status": "completed(sampled 6/3572 files)",
+   "issues": [],
+   "files": {
+    "n_total": 3572,
+    "total_bytes": 16903837159
+   },
+   "inventory_registration": {
+    "files": 3572,
+    "bytes": 16903837159
+   },
+   "rows_sampled": 352824,
+   "sampled_files": [
+    "sh600000_2019.csv",
+    "sh600004_2019.csv",
+    "sh600006_2019.csv",
+    "sz000810_2019.csv",
+    "sz000811_2019.csv",
+    "sz000812_2019.csv"
+   ],
+   "schema": {
+    "时间": "String",
+    "代码": "String",
+    "名称": "String",
+    "开盘价": "Float64",
+    "收盘价": "Float64",
+    "最高价": "Float64",
+    "最低价": "Float64",
+    "成交量": "Int64",
+    "成交额": "Int64",
+    "涨幅": "Float64",
+    "振幅": "Float64"
+   },
+   "schema_consistent_across_samples": true,
+   "date_coverage": {
+    "sampled_file_date": {
+     "min": "20190102",
+     "max": "20191231",
+     "rows_gt_20241231": 0,
+     "note": "仅抽样文件的日期范围, 非全量"
+    }
+   },
+   "numeric_magnitude": {
+    "close_sample": {
+     "min": 3.48,
+     "max": 11.59
+    }
+   },
+   "sample_rows": [
+    {
+     "时间": "2019-01-02 09:30:00",
+     "代码": "sh600000",
+     "名称": "浦发银行",
+     "开盘价": "9.74",
+     "收盘价": "9.74",
+     "最高价": "9.74",
+     "最低价": "9.74",
+     "成交量": "1809",
+     "成交额": "1761966",
+     "涨幅": "0.0",
+     "振幅": "0.0"
+    },
+    {
+     "时间": "2019-01-02 09:31:00",
+     "代码": "sh600000",
+     "名称": "浦发银行",
+     "开盘价": "9.75",
+     "收盘价": "9.77",
+     "最高价": "9.79",
+     "最低价": "9.75",
+     "成交量": "2351",
+     "成交额": "2294919",
+     "涨幅": "0.31",
+     "振幅": "0.41"
+    },
+    {
+     "时间": "2019-01-02 09:32:00",
+     "代码": "sh600000",
+     "名称": "浦发银行",
+     "开盘价": "9.77",
+     "收盘价": "9.76",
+     "最高价": "9.78",
+     "最低价": "9.76",
+     "成交量": "1405",
+     "成交额": "1372550",
+     "涨幅": "-0.1",
+     "振幅": "0.2"
+    }
+   ],
+   "duration_s": 0.5,
+   "finished_at": "2026-09-18T00:09:53"
+  },
+  "bigquant/minute-bulk-20260915-1/years/2025": {
+   "batch_dir": "bigquant/minute-bulk-20260915-1/years/2025",
+   "mode": "frozen-name-only",
+   "status": "completed",
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_data_present",
+     "detail": "2025 年目录全部 243 个文件属于冻结区(2025/2026), 按文件名登记未读取内容"
+    }
+   ],
+   "files": {
+    "n_total": 243,
+    "total_bytes": 5532103937
+   },
+   "inventory_registration": {
+    "files": 243,
+    "bytes": 5532103937
+   },
+   "date_coverage": {
+    "file_date": {
+     "min": "20250102",
+     "max": "20251231",
+     "rows_gt_20241231": null,
+     "frozen_files_gt_20241231": 243
+    }
+   },
+   "schema": {
+    "code": "String",
+    "trade_time": "String",
+    "close": "Float32",
+    "open": "Float32",
+    "high": "Float32",
+    "low": "Float32",
+    "vol": "Float32",
+    "amount": "Float32",
+    "date": "String",
+    "pre_close": "Float32",
+    "change": "Float32",
+    "pct_chg": "Float32",
+    "__index_level_0__": "Int64"
+   },
+   "sample_rows": [
+    {
+     "code": "000001.SZ",
+     "trade_time": "2025-01-02 09:30:00",
+     "close": "11.729999542236328",
+     "open": "11.729999542236328",
+     "high": "11.760000228881836",
+     "low": "11.720000267028809",
+     "vol": "1357100.0",
+     "amount": "15928357.0",
+     "date": "20250102",
+     "pre_close": "11.699999809265137",
+     "change": "0.029999999329447746",
+     "pct_chg": "0.25999999046325684",
+     "__index_level_0__": "0"
+    },
+    {
+     "code": "000001.SZ",
+     "trade_time": "2025-01-02 09:31:00",
+     "close": "11.739999771118164",
+     "open": "11.739999771118164",
+     "high": "11.770000457763672",
+     "low": "11.739999771118164",
+     "vol": "2569900.0",
+     "amount": "30186496.0",
+     "date": "20250102",
+     "pre_close": "11.729999542236328",
+     "change": "0.009999999776482582",
+     "pct_chg": "0.09000000357627869",
+     "__index_level_0__": "1"
+    }
+   ],
+   "rows_note": "未统计行数(冻结区, 仅登记)",
+   "duration_s": 0.1,
+   "finished_at": "2026-09-18T00:09:53"
+  },
+  "bigquant/minute-bulk-20260915-1/years/2026": {
+   "batch_dir": "bigquant/minute-bulk-20260915-1/years/2026",
+   "mode": "frozen-name-only",
+   "status": "completed",
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_data_present",
+     "detail": "2026 年目录全部 63 个文件属于冻结区(2025/2026), 按文件名登记未读取内容"
+    }
+   ],
+   "files": {
+    "n_total": 63,
+    "total_bytes": 1522559054
+   },
+   "inventory_registration": {
+    "files": 63,
+    "bytes": 1522559054
+   },
+   "date_coverage": {
+    "file_date": {
+     "min": "20260105",
+     "max": "20260410",
+     "rows_gt_20241231": null,
+     "frozen_files_gt_20241231": 63
+    }
+   },
+   "schema": {
+    "code": "String",
+    "trade_time": "String",
+    "close": "Float32",
+    "open": "Float32",
+    "high": "Float32",
+    "low": "Float32",
+    "vol": "Float32",
+    "amount": "Float32",
+    "date": "String",
+    "pre_close": "Float32",
+    "change": "Float32",
+    "pct_chg": "Float32",
+    "__index_level_0__": "Int64"
+   },
+   "sample_rows": [
+    {
+     "code": "000001.SZ",
+     "trade_time": "2026-01-05 09:30:00",
+     "close": "11.4399995803833",
+     "open": "11.420000076293945",
+     "high": "11.449999809265137",
+     "low": "11.420000076293945",
+     "vol": "474150.0",
+     "amount": "5416289.0",
+     "date": "20260105",
+     "pre_close": "11.40999984741211",
+     "change": "0.029999999329447746",
+     "pct_chg": "0.25999999046325684",
+     "__index_level_0__": "0"
+    },
+    {
+     "code": "000001.SZ",
+     "trade_time": "2026-01-05 09:31:00",
+     "close": "11.430000305175781",
+     "open": "11.4399995803833",
+     "high": "11.4399995803833",
+     "low": "11.420000076293945",
+     "vol": "1442900.0",
+     "amount": "16498572.0",
+     "date": "20260105",
+     "pre_close": "11.4399995803833",
+     "change": "-0.009999999776482582",
+     "pct_chg": "-0.09000000357627869",
+     "__index_level_0__": "1"
+    }
+   ],
+   "rows_note": "未统计行数(冻结区, 仅登记)",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:53"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:53"
+}

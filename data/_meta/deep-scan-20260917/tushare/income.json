@@ -1,0 +1,1067 @@
+{
+ "source": "tushare",
+ "dataset": "income",
+ "batches": {
+  "tushare/income/20260909-r3": {
+   "batch_dir": "tushare/income/20260909-r3",
+   "mode": "full",
+   "files": {
+    "n_total": 5900,
+    "n_csv": 5895,
+    "n_parquet": 0,
+    "n_empty_csv": 4,
+    "n_manifest": 1,
+    "n_other": 4,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [
+     "chunk_600482.SH.csv",
+     "chunk_600631.SH.csv",
+     "chunk_600802.SH.csv",
+     "chunk_T600018.SH.csv"
+    ],
+    "total_bytes": 176309884
+   },
+   "issues": [
+    {
+     "level": "info",
+     "code": "empty_csv_chunks",
+     "detail": "4 个 0 字节空 CSV(如按日抓取无数据日), 例: ['chunk_600482.SH.csv', 'chunk_600631.SH.csv', 'chunk_600802.SH.csv', 'chunk_T600018.SH.csv']; 未计入行数统计"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 f_ann_date 有 52216 行 > 2024-12-31 (max=20260901); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['ts_code', 'end_date', 'report_type'] 重复 149415 行; 含 update_flag 后仍重复 2759 行"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 5900,
+    "bytes": 176309884
+   },
+   "schema": {
+    "ts_code": "String",
+    "ann_date": "Int64",
+    "f_ann_date": "Int64",
+    "end_date": "Int64",
+    "report_type": "Int64",
+    "comp_type": "Int64",
+    "end_type": "Int64",
+    "basic_eps": "Float64",
+    "diluted_eps": "Float64",
+    "total_revenue": "Float64",
+    "revenue": "Float64",
+    "int_income": "Float64",
+    "prem_earned": "String",
+    "comm_income": "Float64",
+    "n_commis_income": "Float64",
+    "n_oth_income": "Float64",
+    "n_oth_b_income": "Float64",
+    "prem_income": "String",
+    "out_prem": "String",
+    "une_prem_reser": "String",
+    "reins_income": "String",
+    "n_sec_tb_income": "String",
+    "n_sec_uw_income": "String",
+    "n_asset_mg_income": "String",
+    "oth_b_income": "Float64",
+    "fv_value_chg_gain": "Float64",
+    "invest_income": "Float64",
+    "ass_invest_income": "Float64",
+    "forex_gain": "Float64",
+    "total_cogs": "Float64",
+    "oper_cost": "Float64",
+    "int_exp": "Float64",
+    "comm_exp": "Float64",
+    "biz_tax_surchg": "Float64",
+    "sell_exp": "Float64",
+    "admin_exp": "Float64",
+    "fin_exp": "Float64",
+    "assets_impair_loss": "Float64",
+    "prem_refund": "String",
+    "compens_payout": "String",
+    "reser_insur_liab": "String",
+    "div_payt": "String",
+    "reins_exp": "String",
+    "oper_exp": "Float64",
+    "compens_payout_refu": "String",
+    "insur_reser_refu": "String",
+    "reins_cost_refund": "String",
+    "other_bus_cost": "Float64",
+    "operate_profit": "Float64",
+    "non_oper_income": "Float64",
+    "non_oper_exp": "Float64",
+    "nca_disploss": "String",
+    "total_profit": "Float64",
+    "income_tax": "Float64",
+    "n_income": "Float64",
+    "n_income_attr_p": "Float64",
+    "minority_gain": "Float64",
+    "oth_compr_income": "Float64",
+    "t_compr_income": "Float64",
+    "compr_inc_attr_p": "Float64",
+    "compr_inc_attr_m_s": "Float64",
+    "ebit": "Float64",
+    "ebitda": "Float64",
+    "insurance_exp": "String",
+    "undist_profit": "Float64",
+    "distable_profit": "Float64",
+    "rd_exp": "String",
+    "fin_exp_int_exp": "String",
+    "fin_exp_int_inc": "String",
+    "transfer_surplus_rese": "String",
+    "transfer_housing_imprest": "String",
+    "transfer_oth": "String",
+    "adj_lossgain": "String",
+    "withdra_legal_surplus": "Float64",
+    "withdra_legal_pubfund": "Float64",
+    "withdra_biz_devfund": "String",
+    "withdra_rese_fund": "String",
+    "withdra_oth_ersu": "String",
+    "workers_welfare": "String",
+    "distr_profit_shrhder": "Float64",
+    "prfshare_payable_dvd": "String",
+    "comshare_payable_dvd": "Float64",
+    "capit_comstock_div": "String",
+    "continued_net_profit": "Float64",
+    "update_flag": "Int64"
+   },
+   "n_columns": 85,
+   "date_columns": [
+    "ann_date",
+    "f_ann_date",
+    "end_date"
+   ],
+   "numeric_columns_checked": [
+    "admin_exp",
+    "ann_date",
+    "ass_invest_income",
+    "assets_impair_loss",
+    "basic_eps",
+    "biz_tax_surchg",
+    "comm_exp",
+    "comm_income",
+    "comp_type",
+    "compr_inc_attr_m_s",
+    "compr_inc_attr_p",
+    "comshare_payable_dvd",
+    "continued_net_profit",
+    "diluted_eps",
+    "distable_profit",
+    "distr_profit_shrhder",
+    "ebit",
+    "ebitda",
+    "end_date",
+    "end_type",
+    "f_ann_date",
+    "fin_exp",
+    "forex_gain",
+    "fv_value_chg_gain",
+    "income_tax",
+    "int_exp",
+    "int_income",
+    "invest_income",
+    "minority_gain",
+    "n_commis_income",
+    "n_income",
+    "n_income_attr_p",
+    "n_oth_b_income",
+    "n_oth_income",
+    "non_oper_exp",
+    "non_oper_income",
+    "oper_cost",
+    "oper_exp",
+    "operate_profit",
+    "oth_b_income"
+   ],
+   "rows_total": 421679,
+   "date_coverage": {
+    "ann_date": {
+     "min": "19950105",
+     "max": "20260901",
+     "rows_gt_20241231": 51833,
+     "null_rows": 0
+    },
+    "f_ann_date": {
+     "min": "19950105",
+     "max": "20260901",
+     "rows_gt_20241231": 52216,
+     "null_rows": 0
+    },
+    "end_date": {
+     "min": "19901231",
+     "max": "20260630",
+     "rows_gt_20241231": 45096,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 52216,
+   "numeric_magnitude": {
+    "admin_exp": {
+     "min": -1954793882.0,
+     "max": 255131000000.0
+    },
+    "ann_date": {
+     "min": 19950105.0,
+     "max": 20260901.0
+    },
+    "ass_invest_income": {
+     "min": -14033112000.0,
+     "max": 28303551928.39
+    },
+    "assets_impair_loss": {
+     "min": -37233000000.0,
+     "max": 202668000000.0
+    },
+    "basic_eps": {
+     "min": -65.88,
+     "max": 303.0
+    },
+    "biz_tax_surchg": {
+     "min": -511103577.51,
+     "max": 295015000000.0
+    },
+    "comm_exp": {
+     "min": -299523.58,
+     "max": 130383000000.0
+    },
+    "comm_income": {
+     "min": -904700.0,
+     "max": 171641000000.0
+    },
+    "comp_type": {
+     "min": 1.0,
+     "max": 7.0
+    },
+    "compr_inc_attr_m_s": {
+     "min": -32056561874.35,
+     "max": 29944363583.65
+    },
+    "compr_inc_attr_p": {
+     "min": -87939855207.67,
+     "max": 418252000000.0
+    },
+    "comshare_payable_dvd": {
+     "min": -335000.0,
+     "max": 29678000000.0
+    },
+    "continued_net_profit": {
+     "min": -91810091101.49,
+     "max": 29681530000000.0
+    },
+    "diluted_eps": {
+     "min": -24.7834,
+     "max": 303.0
+    },
+    "distable_profit": {
+     "min": -20459057000.0,
+     "max": 100992000000.0
+    },
+    "distr_profit_shrhder": {
+     "min": -20459057000.0,
+     "max": 91629000000.0
+    },
+    "ebit": {
+     "min": -135457000000.0,
+     "max": 861502000000.0
+    },
+    "ebitda": {
+     "min": -135457000000.0,
+     "max": 879813000000.0
+    },
+    "end_date": {
+     "min": 19901231.0,
+     "max": 20260630.0
+    },
+    "end_type": {
+     "min": 0.0,
+     "max": 4.0
+    },
+    "f_ann_date": {
+     "min": 19950105.0,
+     "max": 20260901.0
+    },
+    "fin_exp": {
+     "min": -10849000000.0,
+     "max": 27816000000.0
+    },
+    "forex_gain": {
+     "min": -32365000000.0,
+     "max": 22517000000.0
+    },
+    "fv_value_chg_gain": {
+     "min": -49952000000.0,
+     "max": 147655000000.0
+    },
+    "income_tax": {
+     "min": -11341000000.0,
+     "max": 85515000000.0
+    },
+    "int_exp": {
+     "min": -15218022267.0,
+     "max": 790543000000.0
+    },
+    "int_income": {
+     "min": -116120513.42,
+     "max": 1427948000000.0
+    },
+    "invest_income": {
+     "min": -15526000000.0,
+     "max": 241814000000.0
+    },
+    "minority_gain": {
+     "min": -31772298722.78,
+     "max": 29944363583.65
+    },
+    "n_commis_income": {
+     "min": -2294577710.0,
+     "max": 155600000000.0
+    },
+    "n_income": {
+     "min": -91810091101.49,
+     "max": 370766000000.0
+    },
+    "n_income_attr_p": {
+     "min": -88556470495.64,
+     "max": 368562000000.0
+    },
+    "n_oth_b_income": {
+     "min": -21505000000.0,
+     "max": 35380000000.0
+    },
+    "n_oth_income": {
+     "min": -14660000000.0,
+     "max": 276990000000.0
+    },
+    "non_oper_exp": {
+     "min": -3122000000.0,
+     "max": 275100000000.0
+    },
+    "non_oper_income": {
+     "min": -56694262.04,
+     "max": 51391000000.0
+    },
+    "oper_cost": {
+     "min": -89903710.49,
+     "max": 2819363000000.0
+    },
+    "oper_exp": {
+     "min": -2701520691.0,
+     "max": 1040759000000.0
+    },
+    "operate_profit": {
+     "min": -71550910000.0,
+     "max": 424111000000.0
+    },
+    "oth_b_income": {
+     "min": -1111000000.0,
+     "max": 77782000000.0
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "end_date",
+    "report_type"
+   ],
+   "duplicate_keys": 74404,
+   "duplicate_rows": 149415,
+   "duplicate_rows_with_version_col": 2759,
+   "sample_rows": [
+    {
+     "ts_code": "000001.SZ",
+     "ann_date": "19950310",
+     "f_ann_date": "19950310",
+     "end_date": "19941231",
+     "report_type": "1",
+     "comp_type": "2",
+     "end_type": "4",
+     "basic_eps": null,
+     "diluted_eps": null,
+     "total_revenue": "740470380.46",
+     "revenue": "740470380.46",
+     "int_income": "1185875971.56",
+     "prem_earned": null,
+     "comm_income": "17197538.88",
+     "n_commis_income": "16198144.7",
+     "n_oth_income": "70317292.92",
+     "n_oth_b_income": "-14278683.49",
+     "prem_income": null,
+     "out_prem": null,
+     "une_prem_reser": null,
+     "reins_income": null,
+     "n_sec_tb_income": null,
+     "n_sec_uw_income": null,
+     "n_asset_mg_income": null
+    },
+    {
+     "ts_code": "000001.SZ",
+     "ann_date": "19950811",
+     "f_ann_date": "19950811",
+     "end_date": "19950630",
+     "report_type": "1",
+     "comp_type": "2",
+     "end_type": "2",
+     "basic_eps": null,
+     "diluted_eps": null,
+     "total_revenue": "842498953.8",
+     "revenue": "842498953.8",
+     "int_income": null,
+     "prem_earned": null,
+     "comm_income": "11888147.2",
+     "n_commis_income": null,
+     "n_oth_income": null,
+     "n_oth_b_income": null,
+     "prem_income": null,
+     "out_prem": null,
+     "une_prem_reser": null,
+     "reins_income": null,
+     "n_sec_tb_income": null,
+     "n_sec_uw_income": null,
+     "n_asset_mg_income": null
+    },
+    {
+     "ts_code": "000001.SZ",
+     "ann_date": "19960209",
+     "f_ann_date": "19960209",
+     "end_date": "19951231",
+     "report_type": "1",
+     "comp_type": "2",
+     "end_type": "4",
+     "basic_eps": null,
+     "diluted_eps": null,
+     "total_revenue": "980246308.41",
+     "revenue": "980246308.41",
+     "int_income": "1701568683.8",
+     "prem_earned": null,
+     "comm_income": "26752802.43",
+     "n_commis_income": "19318500.03",
+     "n_oth_income": "30270366.58",
+     "n_oth_b_income": "-12643573.24",
+     "prem_income": null,
+     "out_prem": null,
+     "une_prem_reser": null,
+     "reins_income": null,
+     "n_sec_tb_income": null,
+     "n_sec_uw_income": null,
+     "n_asset_mg_income": null
+    },
+    {
+     "ts_code": "000001.SZ",
+     "ann_date": "19960829",
+     "f_ann_date": "19960829",
+     "end_date": "19960630",
+     "report_type": "1",
+     "comp_type": "2",
+     "end_type": "2",
+     "basic_eps": null,
+     "diluted_eps": null,
+     "total_revenue": "1144943258.06",
+     "revenue": "1144943258.06",
+     "int_income": null,
+     "prem_earned": null,
+     "comm_income": "26314712.78",
+     "n_commis_income": null,
+     "n_oth_income": null,
+     "n_oth_b_income": null,
+     "prem_income": null,
+     "out_prem": null,
+     "une_prem_reser": null,
+     "reins_income": null,
+     "n_sec_tb_income": null,
+     "n_sec_uw_income": null,
+     "n_asset_mg_income": null
+    },
+    {
+     "ts_code": "000001.SZ",
+     "ann_date": "19970421",
+     "f_ann_date": "19970421",
+     "end_date": "19961231",
+     "report_type": "1",
+     "comp_type": "2",
+     "end_type": "4",
+     "basic_eps": null,
+     "diluted_eps": null,
+     "total_revenue": "1560669700.41",
+     "revenue": "1560669700.41",
+     "int_income": "2369716467.55",
+     "prem_earned": null,
+     "comm_income": "104834637.26",
+     "n_commis_income": "92570892.11",
+     "n_oth_income": "99703642.86",
+     "n_oth_b_income": "-109303724.52",
+     "prem_income": null,
+     "out_prem": null,
+     "une_prem_reser": null,
+     "reins_income": null,
+     "n_sec_tb_income": null,
+     "n_sec_uw_income": null,
+     "n_asset_mg_income": null
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 5895,
+    "distinct_headers": 1,
+    "modal_header_cols": 85,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "688135.SH",
+      "manifest_rows": 60,
+      "actual_rows": 59
+     },
+     {
+      "chunk": "002447.SZ",
+      "manifest_rows": 72,
+      "actual_rows": 71
+     },
+     {
+      "chunk": "688556.SH",
+      "manifest_rows": 53,
+      "actual_rows": 52
+     },
+     {
+      "chunk": "300921.SZ",
+      "manifest_rows": 58,
+      "actual_rows": 57
+     },
+     {
+      "chunk": "300495.SZ",
+      "manifest_rows": 58,
+      "actual_rows": 57
+     },
+     {
+      "chunk": "603515.SH",
+      "manifest_rows": 60,
+      "actual_rows": 59
+     },
+     {
+      "chunk": "300299.SZ",
+      "manifest_rows": 80,
+      "actual_rows": 79
+     },
+     {
+      "chunk": "000039.SZ",
+      "manifest_rows": 132,
+      "actual_rows": 131
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 7.3,
+   "finished_at": "2026-09-18T00:09:40"
+  },
+  "tushare/income/20260910-r1": {
+   "batch_dir": "tushare/income/20260910-r1",
+   "mode": "full",
+   "files": {
+    "n_total": 4,
+    "n_csv": 2,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 1,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [
+     "fetch_20260910-r1.log"
+    ],
+    "total_bytes": 96646
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 ann_date 有 19 行 > 2024-12-31 (max=20260831); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "info",
+     "code": "duplicate_rows_version_snapshots",
+     "detail": "主键 ['ts_code', 'end_date', 'report_type'] 重复 52 行, 但 ['ts_code', 'end_date', 'report_type', 'update_flag'] 下唯一 (update_flag 版本快照, 非缺陷; 使用时须按 update_flag 取最新)"
+    }
+   ],
+   "inventory_registration": {
+    "files": 4,
+    "bytes": 96646
+   },
+   "schema": {
+    "ts_code": "String",
+    "ann_date": "Int64",
+    "f_ann_date": "Int64",
+    "end_date": "Int64",
+    "report_type": "Int64",
+    "comp_type": "Int64",
+    "end_type": "Int64",
+    "basic_eps": "Float64",
+    "diluted_eps": "Float64",
+    "total_revenue": "Float64",
+    "revenue": "Float64",
+    "int_income": "Float64",
+    "prem_earned": "String",
+    "comm_income": "String",
+    "n_commis_income": "String",
+    "n_oth_income": "String",
+    "n_oth_b_income": "String",
+    "prem_income": "String",
+    "out_prem": "String",
+    "une_prem_reser": "String",
+    "reins_income": "String",
+    "n_sec_tb_income": "String",
+    "n_sec_uw_income": "String",
+    "n_asset_mg_income": "String",
+    "oth_b_income": "String",
+    "fv_value_chg_gain": "Float64",
+    "invest_income": "Float64",
+    "ass_invest_income": "Float64",
+    "forex_gain": "Float64",
+    "total_cogs": "Float64",
+    "oper_cost": "Float64",
+    "int_exp": "String",
+    "comm_exp": "String",
+    "biz_tax_surchg": "Float64",
+    "sell_exp": "Float64",
+    "admin_exp": "Float64",
+    "fin_exp": "Float64",
+    "assets_impair_loss": "Float64",
+    "prem_refund": "String",
+    "compens_payout": "String",
+    "reser_insur_liab": "String",
+    "div_payt": "String",
+    "reins_exp": "String",
+    "oper_exp": "String",
+    "compens_payout_refu": "String",
+    "insur_reser_refu": "String",
+    "reins_cost_refund": "String",
+    "other_bus_cost": "String",
+    "operate_profit": "Float64",
+    "non_oper_income": "Float64",
+    "non_oper_exp": "Float64",
+    "nca_disploss": "Float64",
+    "total_profit": "Float64",
+    "income_tax": "Float64",
+    "n_income": "Float64",
+    "n_income_attr_p": "Float64",
+    "minority_gain": "Float64",
+    "oth_compr_income": "Float64",
+    "t_compr_income": "Float64",
+    "compr_inc_attr_p": "Float64",
+    "compr_inc_attr_m_s": "Float64",
+    "ebit": "Float64",
+    "ebitda": "Float64",
+    "insurance_exp": "String",
+    "undist_profit": "String",
+    "distable_profit": "String",
+    "rd_exp": "Float64",
+    "fin_exp_int_exp": "Float64",
+    "fin_exp_int_inc": "Float64",
+    "transfer_surplus_rese": "String",
+    "transfer_housing_imprest": "String",
+    "transfer_oth": "String",
+    "adj_lossgain": "String",
+    "withdra_legal_surplus": "String",
+    "withdra_legal_pubfund": "String",
+    "withdra_biz_devfund": "String",
+    "withdra_rese_fund": "String",
+    "withdra_oth_ersu": "String",
+    "workers_welfare": "String",
+    "distr_profit_shrhder": "String",
+    "prfshare_payable_dvd": "String",
+    "comshare_payable_dvd": "String",
+    "capit_comstock_div": "String",
+    "continued_net_profit": "Float64",
+    "update_flag": "Int64"
+   },
+   "n_columns": 85,
+   "date_columns": [
+    "ann_date",
+    "f_ann_date",
+    "end_date"
+   ],
+   "numeric_columns_checked": [
+    "admin_exp",
+    "ann_date",
+    "ass_invest_income",
+    "assets_impair_loss",
+    "basic_eps",
+    "biz_tax_surchg",
+    "comp_type",
+    "compr_inc_attr_m_s",
+    "compr_inc_attr_p",
+    "continued_net_profit",
+    "diluted_eps",
+    "ebit",
+    "ebitda",
+    "end_date",
+    "end_type",
+    "f_ann_date",
+    "fin_exp",
+    "fin_exp_int_exp",
+    "fin_exp_int_inc",
+    "forex_gain",
+    "fv_value_chg_gain",
+    "income_tax",
+    "int_income",
+    "invest_income",
+    "minority_gain",
+    "n_income",
+    "n_income_attr_p",
+    "nca_disploss",
+    "non_oper_exp",
+    "non_oper_income",
+    "oper_cost",
+    "operate_profit",
+    "oth_compr_income",
+    "rd_exp",
+    "report_type",
+    "revenue",
+    "sell_exp",
+    "t_compr_income",
+    "total_cogs",
+    "total_profit"
+   ],
+   "rows_total": 233,
+   "date_coverage": {
+    "ann_date": {
+     "min": "19950228",
+     "max": "20260831",
+     "rows_gt_20241231": 19,
+     "null_rows": 0
+    },
+    "f_ann_date": {
+     "min": "19950228",
+     "max": "20260831",
+     "rows_gt_20241231": 19,
+     "null_rows": 0
+    },
+    "end_date": {
+     "min": "19941231",
+     "max": "20260630",
+     "rows_gt_20241231": 16,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 19,
+   "numeric_magnitude": {
+    "admin_exp": {
+     "min": 10835550.97,
+     "max": 2624829998.54
+    },
+    "ann_date": {
+     "min": 19950228.0,
+     "max": 20260831.0
+    },
+    "ass_invest_income": {
+     "min": -7382001.06,
+     "max": 181693616.56
+    },
+    "assets_impair_loss": {
+     "min": -321600412.3,
+     "max": 190504008.83
+    },
+    "basic_eps": {
+     "min": -1.02,
+     "max": 1.223
+    },
+    "biz_tax_surchg": {
+     "min": 144966.18,
+     "max": 647056712.92
+    },
+    "comp_type": {
+     "min": 1.0,
+     "max": 1.0
+    },
+    "compr_inc_attr_m_s": {
+     "min": -145041431.98,
+     "max": 2036611205.3
+    },
+    "compr_inc_attr_p": {
+     "min": -477782916.58,
+     "max": 1365034724.69
+    },
+    "continued_net_profit": {
+     "min": -401983292.39,
+     "max": 3329654118.04
+    },
+    "diluted_eps": {
+     "min": -1.02,
+     "max": 1.223
+    },
+    "ebit": {
+     "min": -343134804.15,
+     "max": 3220107329.02
+    },
+    "ebitda": {
+     "min": -83448397.17,
+     "max": 4724292105.7
+    },
+    "end_date": {
+     "min": 19941231.0,
+     "max": 20260630.0
+    },
+    "end_type": {
+     "min": 1.0,
+     "max": 4.0
+    },
+    "f_ann_date": {
+     "min": 19950228.0,
+     "max": 20260831.0
+    },
+    "fin_exp": {
+     "min": -385069662.69,
+     "max": 144560941.97
+    },
+    "fin_exp_int_exp": {
+     "min": 10133305.88,
+     "max": 351121753.7
+    },
+    "fin_exp_int_inc": {
+     "min": -2510320.21,
+     "max": 614974559.33
+    },
+    "forex_gain": {
+     "min": 0.0,
+     "max": 0.0
+    },
+    "fv_value_chg_gain": {
+     "min": -1390184.23,
+     "max": 22290863.01
+    },
+    "income_tax": {
+     "min": -59750797.47,
+     "max": 630860426.83
+    },
+    "int_income": {
+     "min": 0.0,
+     "max": 0.0
+    },
+    "invest_income": {
+     "min": -9473292.12,
+     "max": 332972127.92
+    },
+    "minority_gain": {
+     "min": -145041431.98,
+     "max": 2028768340.6
+    },
+    "n_income": {
+     "min": -535467941.18,
+     "max": 3329654118.04
+    },
+    "n_income_attr_p": {
+     "min": -390426509.2,
+     "max": 1390869974.66
+    },
+    "nca_disploss": {
+     "min": -105034.5,
+     "max": 12260941.65
+    },
+    "non_oper_exp": {
+     "min": -4584223.14,
+     "max": 155015401.71
+    },
+    "non_oper_income": {
+     "min": 16206.0,
+     "max": 307520604.34
+    },
+    "oper_cost": {
+     "min": 94437152.35,
+     "max": 48031816022.46
+    },
+    "operate_profit": {
+     "min": -550343296.29,
+     "max": 3875607065.54
+    },
+    "oth_compr_income": {
+     "min": -391542675.6,
+     "max": 531959871.8
+    },
+    "rd_exp": {
+     "min": 0.0,
+     "max": 3094123718.29
+    },
+    "report_type": {
+     "min": 1.0,
+     "max": 1.0
+    },
+    "revenue": {
+     "min": 134768991.68,
+     "max": 57799963168.11
+    },
+    "sell_exp": {
+     "min": 4001699.1,
+     "max": 728617113.57
+    },
+    "t_compr_income": {
+     "min": -523210481.18,
+     "max": 3346348752.46
+    },
+    "total_cogs": {
+     "min": 0.0,
+     "max": 55035694234.06
+    },
+    "total_profit": {
+     "min": -542994961.95,
+     "max": 3960514544.87
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "end_date",
+    "report_type"
+   ],
+   "duplicate_keys": 26,
+   "duplicate_rows": 52,
+   "duplicate_rows_with_version_col": 0,
+   "sample_rows": [
+    {
+     "ts_code": "600482.SH",
+     "ann_date": "20040624",
+     "f_ann_date": "20040624",
+     "end_date": "20011231",
+     "report_type": "1",
+     "comp_type": "1",
+     "end_type": "4",
+     "basic_eps": null,
+     "diluted_eps": null,
+     "total_revenue": "533890871.03",
+     "revenue": "533890871.03",
+     "int_income": null,
+     "prem_earned": null,
+     "comm_income": null,
+     "n_commis_income": null,
+     "n_oth_income": null,
+     "n_oth_b_income": null,
+     "prem_income": null,
+     "out_prem": null,
+     "une_prem_reser": null,
+     "reins_income": null,
+     "n_sec_tb_income": null,
+     "n_sec_uw_income": null,
+     "n_asset_mg_income": null
+    },
+    {
+     "ts_code": "600482.SH",
+     "ann_date": "20040624",
+     "f_ann_date": "20040624",
+     "end_date": "20021231",
+     "report_type": "1",
+     "comp_type": "1",
+     "end_type": "4",
+     "basic_eps": null,
+     "diluted_eps": null,
+     "total_revenue": "582150041.1",
+     "revenue": "582150041.1",
+     "int_income": null,
+     "prem_earned": null,
+     "comm_income": null,
+     "n_commis_income": null,
+     "n_oth_income": null,
+     "n_oth_b_income": null,
+     "prem_income": null,
+     "out_prem": null,
+     "une_prem_reser": null,
+     "reins_income": null,
+     "n_sec_tb_income": null,
+     "n_sec_uw_income": null,
+     "n_asset_mg_income": null
+    },
+    {
+     "ts_code": "600482.SH",
+     "ann_date": "20040624",
+     "f_ann_date": "20040624",
+     "end_date": "20031231",
+     "report_type": "1",
+     "comp_type": "1",
+     "end_type": "4",
+     "basic_eps": null,
+     "diluted_eps": null,
+     "total_revenue": "684838347.71",
+     "revenue": "684838347.71",
+     "int_income": null,
+     "prem_earned": null,
+     "comm_income": null,
+     "n_commis_income": null,
+     "n_oth_income": null,
+     "n_oth_b_income": null,
+     "prem_income": null,
+     "out_prem": null,
+     "une_prem_reser": null,
+     "reins_income": null,
+     "n_sec_tb_income": null,
+     "n_sec_uw_income": null,
+     "n_asset_mg_income": null
+    },
+    {
+     "ts_code": "600482.SH",
+     "ann_date": "20040828",
+     "f_ann_date": "20040828",
+     "end_date": "20030630",
+     "report_type": "1",
+     "comp_type": "1",
+     "end_type": "2",
+     "basic_eps": null,
+     "diluted_eps": null,
+     "total_revenue": "259590940.81",
+     "revenue": "259590940.81",
+     "int_income": null,
+     "prem_earned": null,
+     "comm_income": null,
+     "n_commis_income": null,
+     "n_oth_income": null,
+     "n_oth_b_income": null,
+     "prem_income": null,
+     "out_prem": null,
+     "une_prem_reser": null,
+     "reins_income": null,
+     "n_sec_tb_income": null,
+     "n_sec_uw_income": null,
+     "n_asset_mg_income": null
+    },
+    {
+     "ts_code": "600482.SH",
+     "ann_date": "20040828",
+     "f_ann_date": "20040828",
+     "end_date": "20040630",
+     "report_type": "1",
+     "comp_type": "1",
+     "end_type": "2",
+     "basic_eps": null,
+     "diluted_eps": null,
+     "total_revenue": "377494973.36",
+     "revenue": "377494973.36",
+     "int_income": null,
+     "prem_earned": null,
+     "comm_income": null,
+     "n_commis_income": null,
+     "n_oth_income": null,
+     "n_oth_b_income": null,
+     "prem_income": null,
+     "out_prem": null,
+     "une_prem_reser": null,
+     "reins_income": null,
+     "n_sec_tb_income": null,
+     "n_sec_uw_income": null,
+     "n_asset_mg_income": null
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:40"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:40"
+}

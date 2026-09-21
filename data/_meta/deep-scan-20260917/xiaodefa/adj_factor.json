@@ -1,0 +1,228 @@
+{
+ "source": "xiaodefa",
+ "dataset": "adj_factor",
+ "batches": {
+  "xiaodefa/adj_factor/20260913-bulk1": {
+   "batch_dir": "xiaodefa/adj_factor/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 3089,
+    "n_csv": 3088,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 337246173
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 2254223 行 > 2024-12-31 (max=20260911); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "adj_factor_decrease",
+     "detail": "13160 个 (股票内) 复权因子下降点; 最大下降例: [{'ts_code': '600087.SH', 'trade_date': '20180816', 'drop': -18.263, 'from': 19.263, 'to': 1.0}, {'ts_code': '600656.SH', 'trade_date': '20180816', 'drop': -16.771, 'from': 17.771, 'to': 1.0}, {'ts_code': '600381.SH', 'trade_date': '20140627', 'drop': -7.188, 'from': 8.207, 'to': 1.019}] (降至 1.0/1.019 为借壳重整因子重置; 600069 反复振荡需人工复核)"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 3089,
+    "bytes": 337246173
+   },
+   "schema": {
+    "ts_code": "String",
+    "trade_date": "Int64",
+    "adj_factor": "Float64"
+   },
+   "n_columns": 3,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "adj_factor",
+    "trade_date"
+   ],
+   "rows_total": 12862104,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20140102",
+     "max": "20260911",
+     "rows_gt_20241231": 2254223,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 2254223,
+   "numeric_magnitude": {
+    "adj_factor": {
+     "min": 0.645,
+     "max": 10055.6401
+    },
+    "trade_date": {
+     "min": 20140102.0,
+     "max": 20260911.0
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "trade_date"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "ts_code": "000001.SZ",
+     "trade_date": "20140102",
+     "adj_factor": "58.387"
+    },
+    {
+     "ts_code": "000002.SZ",
+     "trade_date": "20140102",
+     "adj_factor": "116.873"
+    },
+    {
+     "ts_code": "000004.SZ",
+     "trade_date": "20140102",
+     "adj_factor": "4.064"
+    },
+    {
+     "ts_code": "000005.SZ",
+     "trade_date": "20140102",
+     "adj_factor": "9.268"
+    },
+    {
+     "ts_code": "000006.SZ",
+     "trade_date": "20140102",
+     "adj_factor": "30.779"
+    }
+   ],
+   "unit_check": {
+    "600519.SH": {
+     "n_rows": 3088,
+     "first": [
+      "20140102",
+      "5.419"
+     ],
+     "last3": [
+      [
+       "20260909",
+       "8.6463"
+      ],
+      [
+       "20260910",
+       "8.6463"
+      ],
+      [
+       "20260911",
+       "8.6463"
+      ]
+     ],
+     "known_reference": "600519 adj_factor 近年约 13.x; 应随分红送转单调不减"
+    },
+    "monotonic_decrease_rows": 13160,
+    "largest_decreases": [
+     {
+      "ts_code": "600087.SH",
+      "trade_date": "20180816",
+      "drop": -18.263,
+      "from": 19.263,
+      "to": 1.0
+     },
+     {
+      "ts_code": "600656.SH",
+      "trade_date": "20180816",
+      "drop": -16.771,
+      "from": 17.771,
+      "to": 1.0
+     },
+     {
+      "ts_code": "600381.SH",
+      "trade_date": "20140627",
+      "drop": -7.188,
+      "from": 8.207,
+      "to": 1.019
+     },
+     {
+      "ts_code": "600069.SH",
+      "trade_date": "20230216",
+      "drop": -5.7546,
+      "from": 6.415,
+      "to": 0.6604
+     },
+     {
+      "ts_code": "600069.SH",
+      "trade_date": "20230426",
+      "drop": -5.7546,
+      "from": 6.415,
+      "to": 0.6604
+     }
+    ],
+    "known_reference": "adj_factor 应随分红送转单调不减; 绝对基准随供应商/基准日不同而不同"
+   },
+   "header_consistency": {
+    "n_files": 3088,
+    "distinct_headers": 1,
+    "modal_header_cols": 3,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "20240523",
+      "manifest_rows": 5384,
+      "actual_rows": 5383
+     },
+     {
+      "chunk": "20160315",
+      "manifest_rows": 2912,
+      "actual_rows": 2911
+     },
+     {
+      "chunk": "20250110",
+      "manifest_rows": 5418,
+      "actual_rows": 5417
+     },
+     {
+      "chunk": "20260908",
+      "manifest_rows": 5558,
+      "actual_rows": 5557
+     },
+     {
+      "chunk": "20190321",
+      "manifest_rows": 3781,
+      "actual_rows": 3780
+     },
+     {
+      "chunk": "20180517",
+      "manifest_rows": 3694,
+      "actual_rows": 3693
+     },
+     {
+      "chunk": "20230512",
+      "manifest_rows": 5235,
+      "actual_rows": 5234
+     },
+     {
+      "chunk": "20171219",
+      "manifest_rows": 3622,
+      "actual_rows": 3621
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 7.8,
+   "finished_at": "2026-09-18T00:06:59"
+  }
+ },
+ "updated_at": "2026-09-18T00:06:59"
+}

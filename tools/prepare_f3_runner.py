@@ -1,0 +1,3 @@
+from pathlib import Path
+src=Path('artifacts/runs/20260919T191524-f3r1-factor-combo-c212/tmp/runner_f3r1.py'); dst=Path('artifacts/runs/20260920T190500-f3r1-rebuild/tmp/runner_f3r1.py'); dst.parent.mkdir(parents=True,exist_ok=True)
+t=src.read_text(encoding='utf-8'); t=t.replace('F2R1 = ROOT / "artifacts/runs/20260919T180000-f2r1-factor-batch/outputs"','F2R1 = ROOT / "artifacts/runs/20260920T190224-f2r1-rebuild-85e7f7e5/f3_inputs"').replace('assert surv.height == 42, f"expected 42 survivors, got {surv.height}"','assert surv.height == 43, f"expected 43 survivors, got {surv.height}"'); dst.write_text(t,encoding='utf-8')

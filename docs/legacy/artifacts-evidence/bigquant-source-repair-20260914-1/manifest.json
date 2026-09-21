@@ -1,0 +1,16 @@
+{
+  "status": "PASS_WITH_LIMITATIONS",
+  "scope": "Three vendor security-day replacements; actual four-path affected-day equivalence only",
+  "patches": "data/raw/bigquant/minute-repairs-20260914-1/patches.json",
+  "full_account_rerun": false,
+  "files": {
+    "compare_execution.py": "4d2d522c309e4b85fcfc2310196de3627e4a7297cafca1c63e16561a65171304",
+    "execution-comparison.json": "145e20ef7a7f23f6ccb786e489f73ec5acb26add83eb99731f6e0a7727aa331d",
+    "minute-capability-review.json": "f1e0154fbc698cf2bb2d07cf7f4fbee392e675daaf8c54a8b8067637637ce46c",
+    "prepare.py": "a97dcfe743626b6f5bc646d3d40f4f273385b02cadfa6de370fc71cfdd2144a2",
+    "review.md": "b663b5ad7a2609e2dae5d0b30490883add67aa74d2d7dfe724bf2c6ba9d92ef1",
+    "source-review.json": "1f7781ba4d0f50884d623af5470e3f3bc4774eb264bea615889b6badf9587087",
+    "verification.json": "46e80e664fbc773d55e1ddd14586b6c612970a61af00530fa5a7b796d66ae0f5",
+    "verify.py": "6c86320a635902abb6555ddc588436c832dae6492a5f2e1615fb19a61388f310"
+  }
+}

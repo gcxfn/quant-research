@@ -1,0 +1,4202 @@
+[
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603799",
+    "date": "2023-09-01",
+    "minute_aggregate": {
+      "open": 40.3,
+      "close": 40.53,
+      "high": 41.29,
+      "low": 40.3,
+      "volume": 26881300.0
+    },
+    "daily": {
+      "open": 40.3,
+      "high": 41.3,
+      "low": 40.29,
+      "close": 40.53,
+      "volume": 26874555.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-1\\REV_vola_11\\minute-raw\\sh_603799_2023-09-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688095",
+    "date": "2023-09-01",
+    "minute_aggregate": {
+      "open": 92.68,
+      "close": 89.88,
+      "high": 94.3,
+      "low": 87.53,
+      "volume": 2466043.0
+    },
+    "daily": {
+      "open": 92.68,
+      "high": 94.3,
+      "low": 87.53,
+      "close": 89.88,
+      "volume": 2457780.0
+    },
+    "source": "artifacts\\migration-20230901-minute-inventory-20260912-1\\sh.688095.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688328",
+    "date": "2023-09-01",
+    "minute_aggregate": {
+      "open": 25.18,
+      "close": 24.77,
+      "high": 25.59,
+      "low": 24.48,
+      "volume": 4045755.0
+    },
+    "daily": {
+      "open": 25.18,
+      "high": 25.61,
+      "low": 24.43,
+      "close": 24.76,
+      "volume": 4068604.0
+    },
+    "source": "artifacts\\migration-20230901-minute-inventory-20260912-1\\sh.688328.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688661",
+    "date": "2023-09-01",
+    "minute_aggregate": {
+      "open": 54.3,
+      "close": 52.51,
+      "high": 55.65,
+      "low": 52.25,
+      "volume": 2353101.0
+    },
+    "daily": {
+      "open": 54.3,
+      "high": 55.65,
+      "low": 52.25,
+      "close": 52.51,
+      "volume": 2349882.0
+    },
+    "source": "artifacts\\migration-20230901-minute-inventory-20260912-1\\sh.688661.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688662",
+    "date": "2023-09-01",
+    "minute_aggregate": {
+      "open": 35.47,
+      "close": 34.72,
+      "high": 35.79,
+      "low": 34.4,
+      "volume": 2408925.0
+    },
+    "daily": {
+      "open": 35.47,
+      "high": 35.79,
+      "low": 34.4,
+      "close": 34.72,
+      "volume": 2404963.0
+    },
+    "source": "artifacts\\migration-20230901-minute-inventory-20260912-1\\sh.688662.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.002694",
+    "date": "2023-09-01",
+    "minute_aggregate": {
+      "open": 6.92,
+      "close": 6.8,
+      "high": 6.92,
+      "low": 6.72,
+      "volume": 7953400.0
+    },
+    "daily": {
+      "open": 6.92,
+      "high": 6.92,
+      "low": 6.72,
+      "close": 6.8,
+      "volume": 7919350.0
+    },
+    "source": "artifacts\\migration-20230901-minute-inventory-20260912-1\\sz.002694.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300033",
+    "date": "2023-09-01",
+    "minute_aggregate": {
+      "open": 167.5,
+      "close": 166.35,
+      "high": 169.5,
+      "low": 165.8,
+      "volume": 4664500.0
+    },
+    "daily": {
+      "open": 167.5,
+      "high": 169.5,
+      "low": 165.8,
+      "close": 166.35,
+      "volume": 4625988.0
+    },
+    "source": "artifacts\\migration-20230901-minute-inventory-20260912-1\\sz.300033.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300085",
+    "date": "2023-09-01",
+    "minute_aggregate": {
+      "open": 13.13,
+      "close": 12.58,
+      "high": 13.24,
+      "low": 12.4,
+      "volume": 36489000.0
+    },
+    "daily": {
+      "open": 13.13,
+      "high": 13.24,
+      "low": 12.4,
+      "close": 12.58,
+      "volume": 36200540.0
+    },
+    "source": "artifacts\\migration-20230901-minute-inventory-20260912-1\\sz.300085.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300168",
+    "date": "2023-09-01",
+    "minute_aggregate": {
+      "open": 10.08,
+      "close": 10.2,
+      "high": 10.41,
+      "low": 9.99,
+      "volume": 24622100.0
+    },
+    "daily": {
+      "open": 10.08,
+      "high": 10.42,
+      "low": 9.99,
+      "close": 10.2,
+      "volume": 24337100.0
+    },
+    "source": "artifacts\\migration-20230901-minute-inventory-20260912-1\\sz.300168.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300377",
+    "date": "2023-09-01",
+    "minute_aggregate": {
+      "open": 9.23,
+      "close": 8.91,
+      "high": 9.23,
+      "low": 8.9,
+      "volume": 25043900.0
+    },
+    "daily": {
+      "open": 9.23,
+      "high": 9.23,
+      "low": 8.9,
+      "close": 8.94,
+      "volume": 25863913.0
+    },
+    "source": "artifacts\\migration-20230901-minute-inventory-20260912-1\\sz.300377.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300380",
+    "date": "2023-09-01",
+    "minute_aggregate": {
+      "open": 29.9,
+      "close": 28.78,
+      "high": 30.28,
+      "low": 28.34,
+      "volume": 13490400.0
+    },
+    "daily": {
+      "open": 29.9,
+      "high": 30.31,
+      "low": 28.3,
+      "close": 28.76,
+      "volume": 13630509.0
+    },
+    "source": "artifacts\\migration-20230901-minute-inventory-20260912-1\\sz.300380.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300399",
+    "date": "2023-09-01",
+    "minute_aggregate": {
+      "open": 14.06,
+      "close": 13.48,
+      "high": 14.28,
+      "low": 13.48,
+      "volume": 15162300.0
+    },
+    "daily": {
+      "open": 14.06,
+      "high": 14.3,
+      "low": 13.48,
+      "close": 13.48,
+      "volume": 15443859.0
+    },
+    "source": "artifacts\\migration-20230901-minute-inventory-20260912-1\\sz.300399.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600610",
+    "date": "2023-10-09",
+    "minute_aggregate": {
+      "open": 9.25,
+      "close": 8.36,
+      "high": 9.25,
+      "low": 8.36,
+      "volume": 27997700.0
+    },
+    "daily": {
+      "open": 9.25,
+      "high": 9.25,
+      "low": 8.36,
+      "close": 8.36,
+      "volume": 27972261.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600610_2023-10-09_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600814",
+    "date": "2023-10-09",
+    "minute_aggregate": {
+      "open": 8.3,
+      "close": 8.03,
+      "high": 8.31,
+      "low": 7.98,
+      "volume": 29790700.0
+    },
+    "daily": {
+      "open": 8.3,
+      "high": 8.34,
+      "low": 7.98,
+      "close": 8.03,
+      "volume": 29660333.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600814_2023-10-09_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603208",
+    "date": "2023-10-09",
+    "minute_aggregate": {
+      "open": 35.05,
+      "close": 34.14,
+      "high": 35.28,
+      "low": 33.39,
+      "volume": 3771100.0
+    },
+    "daily": {
+      "open": 35.05,
+      "high": 35.31,
+      "low": 33.35,
+      "close": 34.14,
+      "volume": 3760047.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603208_2023-10-09_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603326",
+    "date": "2023-10-09",
+    "minute_aggregate": {
+      "open": 10.71,
+      "close": 10.76,
+      "high": 10.81,
+      "low": 10.67,
+      "volume": 16784800.0
+    },
+    "daily": {
+      "open": 10.71,
+      "high": 10.82,
+      "low": 10.67,
+      "close": 10.76,
+      "volume": 16641805.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603326_2023-10-09_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603378",
+    "date": "2023-10-09",
+    "minute_aggregate": {
+      "open": 9.06,
+      "close": 8.88,
+      "high": 9.06,
+      "low": 8.7,
+      "volume": 8517600.0
+    },
+    "daily": {
+      "open": 9.06,
+      "high": 9.08,
+      "low": 8.7,
+      "close": 8.88,
+      "volume": 8482158.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603378_2023-10-09_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688095",
+    "date": "2023-10-09",
+    "minute_aggregate": {
+      "open": 82.0,
+      "close": 79.68,
+      "high": 82.0,
+      "low": 78.51,
+      "volume": 1651596.0
+    },
+    "daily": {
+      "open": 82.0,
+      "high": 82.0,
+      "low": 78.51,
+      "close": 79.68,
+      "volume": 1636834.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688095_2023-10-09_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000560",
+    "date": "2023-10-09",
+    "minute_aggregate": {
+      "open": 2.55,
+      "close": 2.5,
+      "high": 2.56,
+      "low": 2.47,
+      "volume": 67144400.0
+    },
+    "daily": {
+      "open": 2.55,
+      "high": 2.56,
+      "low": 2.47,
+      "close": 2.5,
+      "volume": 66345000.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000560_2023-10-09_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.002694",
+    "date": "2023-10-09",
+    "minute_aggregate": {
+      "open": 7.18,
+      "close": 7.09,
+      "high": 7.18,
+      "low": 7.0,
+      "volume": 6968200.0
+    },
+    "daily": {
+      "open": 7.18,
+      "high": 7.18,
+      "low": 6.99,
+      "close": 7.09,
+      "volume": 6889173.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_002694_2023-10-09_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300033",
+    "date": "2023-10-09",
+    "minute_aggregate": {
+      "open": 147.9,
+      "close": 149.6,
+      "high": 150.87,
+      "low": 144.49,
+      "volume": 5142600.0
+    },
+    "daily": {
+      "open": 147.9,
+      "high": 150.88,
+      "low": 144.31,
+      "close": 149.6,
+      "volume": 5065674.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300033_2023-10-09_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300085",
+    "date": "2023-10-09",
+    "minute_aggregate": {
+      "open": 12.76,
+      "close": 12.51,
+      "high": 12.76,
+      "low": 12.17,
+      "volume": 31730500.0
+    },
+    "daily": {
+      "open": 12.76,
+      "high": 12.82,
+      "low": 12.15,
+      "close": 12.51,
+      "volume": 31500270.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300085_2023-10-09_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300377",
+    "date": "2023-10-09",
+    "minute_aggregate": {
+      "open": 8.51,
+      "close": 8.45,
+      "high": 8.53,
+      "low": 8.4,
+      "volume": 10717000.0
+    },
+    "daily": {
+      "open": 8.51,
+      "high": 8.54,
+      "low": 8.4,
+      "close": 8.45,
+      "volume": 10779180.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300377_2023-10-09_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300380",
+    "date": "2023-10-09",
+    "minute_aggregate": {
+      "open": 25.25,
+      "close": 25.39,
+      "high": 25.76,
+      "low": 25.23,
+      "volume": 4501100.0
+    },
+    "daily": {
+      "open": 25.25,
+      "high": 25.77,
+      "low": 25.07,
+      "close": 25.39,
+      "volume": 4533800.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300380_2023-10-09_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300399",
+    "date": "2023-10-09",
+    "minute_aggregate": {
+      "open": 13.08,
+      "close": 13.0,
+      "high": 13.12,
+      "low": 12.85,
+      "volume": 3404100.0
+    },
+    "daily": {
+      "open": 13.08,
+      "high": 13.14,
+      "low": 12.83,
+      "close": 13.0,
+      "volume": 3377204.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300399_2023-10-09_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600610",
+    "date": "2023-11-01",
+    "minute_aggregate": {
+      "open": 7.39,
+      "close": 7.69,
+      "high": 8.09,
+      "low": 7.35,
+      "volume": 63973700.0
+    },
+    "daily": {
+      "open": 7.39,
+      "high": 8.09,
+      "low": 7.35,
+      "close": 7.69,
+      "volume": 63953401.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600610_2023-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600814",
+    "date": "2023-11-01",
+    "minute_aggregate": {
+      "open": 7.14,
+      "close": 7.09,
+      "high": 7.16,
+      "low": 7.08,
+      "volume": 8505600.0
+    },
+    "daily": {
+      "open": 7.14,
+      "high": 7.16,
+      "low": 7.08,
+      "close": 7.09,
+      "volume": 8495174.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600814_2023-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603208",
+    "date": "2023-11-01",
+    "minute_aggregate": {
+      "open": 34.2,
+      "close": 33.62,
+      "high": 34.21,
+      "low": 33.01,
+      "volume": 1783000.0
+    },
+    "daily": {
+      "open": 34.2,
+      "high": 34.3,
+      "low": 33.01,
+      "close": 33.62,
+      "volume": 1772590.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603208_2023-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603326",
+    "date": "2023-11-01",
+    "minute_aggregate": {
+      "open": 10.06,
+      "close": 10.02,
+      "high": 10.18,
+      "low": 9.99,
+      "volume": 6159900.0
+    },
+    "daily": {
+      "open": 10.06,
+      "high": 10.19,
+      "low": 9.99,
+      "close": 10.02,
+      "volume": 6154384.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603326_2023-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603378",
+    "date": "2023-11-01",
+    "minute_aggregate": {
+      "open": 8.81,
+      "close": 8.8,
+      "high": 8.95,
+      "low": 8.76,
+      "volume": 3089200.0
+    },
+    "daily": {
+      "open": 8.81,
+      "high": 8.95,
+      "low": 8.76,
+      "close": 8.8,
+      "volume": 3086076.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603378_2023-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603599",
+    "date": "2023-11-01",
+    "minute_aggregate": {
+      "open": 16.61,
+      "close": 16.41,
+      "high": 16.72,
+      "low": 16.27,
+      "volume": 6072000.0
+    },
+    "daily": {
+      "open": 16.61,
+      "high": 16.72,
+      "low": 16.26,
+      "close": 16.41,
+      "volume": 6070450.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603599_2023-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603616",
+    "date": "2023-11-01",
+    "minute_aggregate": {
+      "open": 5.97,
+      "close": 5.95,
+      "high": 6.03,
+      "low": 5.91,
+      "volume": 28029900.0
+    },
+    "daily": {
+      "open": 5.97,
+      "high": 6.04,
+      "low": 5.91,
+      "close": 5.95,
+      "volume": 28019280.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603616_2023-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603788",
+    "date": "2023-11-01",
+    "minute_aggregate": {
+      "open": 16.6,
+      "close": 15.82,
+      "high": 16.68,
+      "low": 15.8,
+      "volume": 34018100.0
+    },
+    "daily": {
+      "open": 16.6,
+      "high": 16.8,
+      "low": 15.8,
+      "close": 15.82,
+      "volume": 33936246.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603788_2023-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000090",
+    "date": "2023-11-01",
+    "minute_aggregate": {
+      "open": 5.09,
+      "close": 5.11,
+      "high": 5.13,
+      "low": 5.06,
+      "volume": 31954900.0
+    },
+    "daily": {
+      "open": 5.09,
+      "high": 5.13,
+      "low": 5.05,
+      "close": 5.11,
+      "volume": 30814698.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000090_2023-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000560",
+    "date": "2023-11-01",
+    "minute_aggregate": {
+      "open": 2.4,
+      "close": 2.4,
+      "high": 2.42,
+      "low": 2.38,
+      "volume": 46226200.0
+    },
+    "daily": {
+      "open": 2.4,
+      "high": 2.42,
+      "low": 2.38,
+      "close": 2.4,
+      "volume": 46581870.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000560_2023-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000712",
+    "date": "2023-11-01",
+    "minute_aggregate": {
+      "open": 15.18,
+      "close": 15.02,
+      "high": 15.27,
+      "low": 14.8,
+      "volume": 67952800.0
+    },
+    "daily": {
+      "open": 15.18,
+      "high": 15.28,
+      "low": 14.8,
+      "close": 15.0,
+      "volume": 68385657.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000712_2023-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000786",
+    "date": "2023-11-01",
+    "minute_aggregate": {
+      "open": 24.5,
+      "close": 24.52,
+      "high": 24.83,
+      "low": 24.3,
+      "volume": 14559500.0
+    },
+    "daily": {
+      "open": 24.5,
+      "high": 24.84,
+      "low": 24.28,
+      "close": 24.52,
+      "volume": 14457575.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000786_2023-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.002205",
+    "date": "2023-11-01",
+    "minute_aggregate": {
+      "open": 10.6,
+      "close": 10.38,
+      "high": 10.71,
+      "low": 10.35,
+      "volume": 16524900.0
+    },
+    "daily": {
+      "open": 10.6,
+      "high": 10.74,
+      "low": 10.35,
+      "close": 10.38,
+      "volume": 16448000.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_002205_2023-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300377",
+    "date": "2023-11-01",
+    "minute_aggregate": {
+      "open": 8.71,
+      "close": 8.49,
+      "high": 8.79,
+      "low": 8.48,
+      "volume": 16104000.0
+    },
+    "daily": {
+      "open": 8.71,
+      "high": 8.79,
+      "low": 8.48,
+      "close": 8.48,
+      "volume": 16223298.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300377_2023-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600159",
+    "date": "2023-12-01",
+    "minute_aggregate": {
+      "open": 3.71,
+      "close": 3.84,
+      "high": 3.9,
+      "low": 3.66,
+      "volume": 129741300.0
+    },
+    "daily": {
+      "open": 3.71,
+      "high": 3.9,
+      "low": 3.65,
+      "close": 3.84,
+      "volume": 129707450.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600159_2023-12-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600266",
+    "date": "2023-12-01",
+    "minute_aggregate": {
+      "open": 5.27,
+      "close": 5.37,
+      "high": 5.45,
+      "low": 5.26,
+      "volume": 42744100.0
+    },
+    "daily": {
+      "open": 5.27,
+      "high": 5.45,
+      "low": 5.25,
+      "close": 5.37,
+      "volume": 42720090.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600266_2023-12-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600683",
+    "date": "2023-12-01",
+    "minute_aggregate": {
+      "open": 5.23,
+      "close": 5.31,
+      "high": 5.35,
+      "low": 5.18,
+      "volume": 16308000.0
+    },
+    "daily": {
+      "open": 5.23,
+      "high": 5.35,
+      "low": 5.18,
+      "close": 5.31,
+      "volume": 16456346.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600683_2023-12-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603353",
+    "date": "2023-12-01",
+    "minute_aggregate": {
+      "open": 34.23,
+      "close": 35.89,
+      "high": 36.79,
+      "low": 34.23,
+      "volume": 8821400.0
+    },
+    "daily": {
+      "open": 34.23,
+      "high": 36.8,
+      "low": 34.01,
+      "close": 35.89,
+      "volume": 8811304.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603353_2023-12-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603599",
+    "date": "2023-12-01",
+    "minute_aggregate": {
+      "open": 16.43,
+      "close": 16.29,
+      "high": 16.47,
+      "low": 16.29,
+      "volume": 3217000.0
+    },
+    "daily": {
+      "open": 16.43,
+      "high": 16.47,
+      "low": 16.29,
+      "close": 16.29,
+      "volume": 3204091.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603599_2023-12-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603616",
+    "date": "2023-12-01",
+    "minute_aggregate": {
+      "open": 5.72,
+      "close": 5.75,
+      "high": 5.77,
+      "low": 5.7,
+      "volume": 7936600.0
+    },
+    "daily": {
+      "open": 5.72,
+      "high": 5.77,
+      "low": 5.7,
+      "close": 5.75,
+      "volume": 7926933.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603616_2023-12-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603788",
+    "date": "2023-12-01",
+    "minute_aggregate": {
+      "open": 16.0,
+      "close": 16.11,
+      "high": 16.23,
+      "low": 15.82,
+      "volume": 6142600.0
+    },
+    "daily": {
+      "open": 16.0,
+      "high": 16.23,
+      "low": 15.81,
+      "close": 16.11,
+      "volume": 6129640.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603788_2023-12-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000090",
+    "date": "2023-12-01",
+    "minute_aggregate": {
+      "open": 5.11,
+      "close": 5.12,
+      "high": 5.17,
+      "low": 5.07,
+      "volume": 17468600.0
+    },
+    "daily": {
+      "open": 5.11,
+      "high": 5.17,
+      "low": 5.07,
+      "close": 5.13,
+      "volume": 17544925.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000090_2023-12-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000712",
+    "date": "2023-12-01",
+    "minute_aggregate": {
+      "open": 15.23,
+      "close": 15.36,
+      "high": 15.47,
+      "low": 15.15,
+      "volume": 20773800.0
+    },
+    "daily": {
+      "open": 15.23,
+      "high": 15.47,
+      "low": 15.08,
+      "close": 15.38,
+      "volume": 21155410.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000712_2023-12-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000786",
+    "date": "2023-12-01",
+    "minute_aggregate": {
+      "open": 23.38,
+      "close": 23.06,
+      "high": 23.39,
+      "low": 22.85,
+      "volume": 9161900.0
+    },
+    "daily": {
+      "open": 23.38,
+      "high": 23.45,
+      "low": 22.85,
+      "close": 23.06,
+      "volume": 9134352.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000786_2023-12-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.002331",
+    "date": "2023-12-01",
+    "minute_aggregate": {
+      "open": 9.7,
+      "close": 9.61,
+      "high": 9.97,
+      "low": 9.41,
+      "volume": 99988500.0
+    },
+    "daily": {
+      "open": 9.7,
+      "high": 9.97,
+      "low": 9.4,
+      "close": 9.61,
+      "volume": 98953403.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_002331_2023-12-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300255",
+    "date": "2023-12-01",
+    "minute_aggregate": {
+      "open": 12.7,
+      "close": 12.79,
+      "high": 13.22,
+      "low": 12.58,
+      "volume": 60739100.0
+    },
+    "daily": {
+      "open": 12.7,
+      "high": 13.23,
+      "low": 12.58,
+      "close": 12.77,
+      "volume": 61204161.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300255_2023-12-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600159",
+    "date": "2024-01-02",
+    "minute_aggregate": {
+      "open": 3.94,
+      "close": 3.73,
+      "high": 3.96,
+      "low": 3.73,
+      "volume": 75117800.0
+    },
+    "daily": {
+      "open": 3.94,
+      "high": 3.96,
+      "low": 3.73,
+      "close": 3.73,
+      "volume": 74568437.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600159_2024-01-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600683",
+    "date": "2024-01-02",
+    "minute_aggregate": {
+      "open": 4.77,
+      "close": 4.79,
+      "high": 4.84,
+      "low": 4.73,
+      "volume": 9394100.0
+    },
+    "daily": {
+      "open": 4.77,
+      "high": 4.86,
+      "low": 4.73,
+      "close": 4.79,
+      "volume": 9388000.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600683_2024-01-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.601022",
+    "date": "2024-01-02",
+    "minute_aggregate": {
+      "open": 11.43,
+      "close": 12.2,
+      "high": 12.2,
+      "low": 11.42,
+      "volume": 41374600.0
+    },
+    "daily": {
+      "open": 11.43,
+      "high": 12.2,
+      "low": 11.42,
+      "close": 12.2,
+      "volume": 41407059.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_601022_2024-01-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.601127",
+    "date": "2024-01-02",
+    "minute_aggregate": {
+      "open": 77.5,
+      "close": 73.35,
+      "high": 78.85,
+      "low": 72.73,
+      "volume": 66805600.0
+    },
+    "daily": {
+      "open": 77.5,
+      "high": 78.88,
+      "low": 72.72,
+      "close": 73.35,
+      "volume": 66795510.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_601127_2024-01-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603037",
+    "date": "2024-01-02",
+    "minute_aggregate": {
+      "open": 20.82,
+      "close": 19.92,
+      "high": 20.94,
+      "low": 19.88,
+      "volume": 10428200.0
+    },
+    "daily": {
+      "open": 20.82,
+      "high": 20.95,
+      "low": 19.87,
+      "close": 19.92,
+      "volume": 10419899.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603037_2024-01-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.605011",
+    "date": "2024-01-02",
+    "minute_aggregate": {
+      "open": 25.05,
+      "close": 26.29,
+      "high": 26.91,
+      "low": 25.02,
+      "volume": 12034200.0
+    },
+    "daily": {
+      "open": 25.05,
+      "high": 26.93,
+      "low": 25.0,
+      "close": 26.29,
+      "volume": 11971190.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_605011_2024-01-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688658",
+    "date": "2024-01-02",
+    "minute_aggregate": {
+      "open": 21.04,
+      "close": 19.98,
+      "high": 21.18,
+      "low": 19.72,
+      "volume": 5854439.0
+    },
+    "daily": {
+      "open": 21.04,
+      "high": 21.18,
+      "low": 19.72,
+      "close": 19.98,
+      "volume": 5843118.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688658_2024-01-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000609",
+    "date": "2024-01-02",
+    "minute_aggregate": {
+      "open": 6.64,
+      "close": 6.39,
+      "high": 6.71,
+      "low": 6.36,
+      "volume": 31874700.0
+    },
+    "daily": {
+      "open": 6.64,
+      "high": 6.72,
+      "low": 6.36,
+      "close": 6.39,
+      "volume": 31705301.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000609_2024-01-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.001234",
+    "date": "2024-01-02",
+    "minute_aggregate": {
+      "open": 24.43,
+      "close": 24.47,
+      "high": 24.95,
+      "low": 23.92,
+      "volume": 3730300.0
+    },
+    "daily": {
+      "open": 24.43,
+      "high": 24.95,
+      "low": 23.9,
+      "close": 24.47,
+      "volume": 3704000.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_001234_2024-01-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.002331",
+    "date": "2024-01-02",
+    "minute_aggregate": {
+      "open": 8.44,
+      "close": 8.44,
+      "high": 8.54,
+      "low": 8.43,
+      "volume": 12810600.0
+    },
+    "daily": {
+      "open": 8.44,
+      "high": 8.54,
+      "low": 8.42,
+      "close": 8.44,
+      "volume": 12766558.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_002331_2024-01-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300255",
+    "date": "2024-01-02",
+    "minute_aggregate": {
+      "open": 12.91,
+      "close": 12.89,
+      "high": 13.27,
+      "low": 12.82,
+      "volume": 36345500.0
+    },
+    "daily": {
+      "open": 12.91,
+      "high": 13.28,
+      "low": 12.82,
+      "close": 12.89,
+      "volume": 36062646.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300255_2024-01-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300551",
+    "date": "2024-01-02",
+    "minute_aggregate": {
+      "open": 17.56,
+      "close": 18.24,
+      "high": 18.54,
+      "low": 17.56,
+      "volume": 20230500.0
+    },
+    "daily": {
+      "open": 17.56,
+      "high": 18.56,
+      "low": 17.56,
+      "close": 18.24,
+      "volume": 20102964.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300551_2024-01-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.601127",
+    "date": "2024-02-01",
+    "minute_aggregate": {
+      "open": 56.74,
+      "close": 58.42,
+      "high": 60.48,
+      "low": 56.71,
+      "volume": 53020100.0
+    },
+    "daily": {
+      "open": 56.74,
+      "high": 60.48,
+      "low": 56.71,
+      "close": 58.42,
+      "volume": 52628333.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_601127_2024-02-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603037",
+    "date": "2024-02-01",
+    "minute_aggregate": {
+      "open": 15.89,
+      "close": 15.56,
+      "high": 15.99,
+      "low": 15.2,
+      "volume": 3162600.0
+    },
+    "daily": {
+      "open": 15.89,
+      "high": 15.99,
+      "low": 15.2,
+      "close": 15.56,
+      "volume": 3159510.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603037_2024-02-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.605011",
+    "date": "2024-02-01",
+    "minute_aggregate": {
+      "open": 23.32,
+      "close": 23.3,
+      "high": 24.18,
+      "low": 22.11,
+      "volume": 11659800.0
+    },
+    "daily": {
+      "open": 23.32,
+      "high": 24.2,
+      "low": 22.0,
+      "close": 23.3,
+      "volume": 11635225.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_605011_2024-02-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688213",
+    "date": "2024-02-01",
+    "minute_aggregate": {
+      "open": 38.7,
+      "close": 39.04,
+      "high": 39.82,
+      "low": 37.38,
+      "volume": 5026631.0
+    },
+    "daily": {
+      "open": 38.7,
+      "high": 39.85,
+      "low": 37.38,
+      "close": 39.04,
+      "volume": 4999331.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688213_2024-02-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688609",
+    "date": "2024-02-01",
+    "minute_aggregate": {
+      "open": 7.68,
+      "close": 7.9,
+      "high": 8.23,
+      "low": 7.6,
+      "volume": 28100673.0
+    },
+    "daily": {
+      "open": 7.68,
+      "high": 8.23,
+      "low": 7.55,
+      "close": 7.9,
+      "volume": 28066488.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688609_2024-02-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688658",
+    "date": "2024-02-01",
+    "minute_aggregate": {
+      "open": 15.58,
+      "close": 14.78,
+      "high": 15.58,
+      "low": 14.66,
+      "volume": 4380375.0
+    },
+    "daily": {
+      "open": 15.58,
+      "high": 15.58,
+      "low": 14.65,
+      "close": 14.78,
+      "volume": 4378728.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688658_2024-02-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688668",
+    "date": "2024-02-01",
+    "minute_aggregate": {
+      "open": 34.49,
+      "close": 35.0,
+      "high": 35.8,
+      "low": 33.06,
+      "volume": 2116585.0
+    },
+    "daily": {
+      "open": 34.49,
+      "high": 35.89,
+      "low": 33.06,
+      "close": 35.0,
+      "volume": 2116225.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688668_2024-02-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688685",
+    "date": "2024-02-01",
+    "minute_aggregate": {
+      "open": 26.97,
+      "close": 27.32,
+      "high": 28.48,
+      "low": 25.32,
+      "volume": 2826954.0
+    },
+    "daily": {
+      "open": 26.97,
+      "high": 28.48,
+      "low": 25.28,
+      "close": 27.32,
+      "volume": 2819332.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688685_2024-02-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000609",
+    "date": "2024-02-01",
+    "minute_aggregate": {
+      "open": 5.23,
+      "close": 5.07,
+      "high": 5.23,
+      "low": 4.95,
+      "volume": 13298500.0
+    },
+    "daily": {
+      "open": 5.23,
+      "high": 5.24,
+      "low": 4.94,
+      "close": 5.07,
+      "volume": 13226463.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000609_2024-02-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.001234",
+    "date": "2024-02-01",
+    "minute_aggregate": {
+      "open": 18.45,
+      "close": 18.25,
+      "high": 18.69,
+      "low": 17.67,
+      "volume": 2260200.0
+    },
+    "daily": {
+      "open": 18.45,
+      "high": 18.69,
+      "low": 17.67,
+      "close": 18.25,
+      "volume": 2245600.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_001234_2024-02-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300350",
+    "date": "2024-02-01",
+    "minute_aggregate": {
+      "open": 4.18,
+      "close": 4.41,
+      "high": 4.6,
+      "low": 4.11,
+      "volume": 42911900.0
+    },
+    "daily": {
+      "open": 4.18,
+      "high": 4.6,
+      "low": 4.1,
+      "close": 4.41,
+      "volume": 42541700.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300350_2024-02-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300405",
+    "date": "2024-02-01",
+    "minute_aggregate": {
+      "open": 6.01,
+      "close": 5.81,
+      "high": 6.26,
+      "low": 5.74,
+      "volume": 26901300.0
+    },
+    "daily": {
+      "open": 6.01,
+      "high": 6.27,
+      "low": 5.74,
+      "close": 5.81,
+      "volume": 26735325.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300405_2024-02-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600546",
+    "date": "2024-03-01",
+    "minute_aggregate": {
+      "open": 18.26,
+      "close": 18.94,
+      "high": 19.1,
+      "low": 18.25,
+      "volume": 52867900.0
+    },
+    "daily": {
+      "open": 18.26,
+      "high": 19.1,
+      "low": 18.23,
+      "close": 18.94,
+      "volume": 52818502.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600546_2024-03-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.601156",
+    "date": "2024-03-01",
+    "minute_aggregate": {
+      "open": 15.51,
+      "close": 15.4,
+      "high": 15.53,
+      "low": 14.92,
+      "volume": 17177300.0
+    },
+    "daily": {
+      "open": 15.51,
+      "high": 15.54,
+      "low": 14.91,
+      "close": 15.4,
+      "volume": 17084192.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_601156_2024-03-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603066",
+    "date": "2024-03-01",
+    "minute_aggregate": {
+      "open": 11.96,
+      "close": 11.88,
+      "high": 12.12,
+      "low": 11.65,
+      "volume": 24335100.0
+    },
+    "daily": {
+      "open": 11.96,
+      "high": 12.13,
+      "low": 11.6,
+      "close": 11.88,
+      "volume": 24327622.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603066_2024-03-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603398",
+    "date": "2024-03-01",
+    "minute_aggregate": {
+      "open": 18.6,
+      "close": 18.73,
+      "high": 18.84,
+      "low": 18.3,
+      "volume": 2767200.0
+    },
+    "daily": {
+      "open": 18.6,
+      "high": 18.86,
+      "low": 18.3,
+      "close": 18.73,
+      "volume": 2767097.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603398_2024-03-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.605011",
+    "date": "2024-03-01",
+    "minute_aggregate": {
+      "open": 22.41,
+      "close": 22.36,
+      "high": 22.6,
+      "low": 22.13,
+      "volume": 3768400.0
+    },
+    "daily": {
+      "open": 22.41,
+      "high": 22.6,
+      "low": 22.13,
+      "close": 22.36,
+      "volume": 3757704.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_605011_2024-03-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688213",
+    "date": "2024-03-01",
+    "minute_aggregate": {
+      "open": 47.4,
+      "close": 47.93,
+      "high": 48.8,
+      "low": 46.66,
+      "volume": 4980703.0
+    },
+    "daily": {
+      "open": 47.4,
+      "high": 48.84,
+      "low": 46.66,
+      "close": 47.93,
+      "volume": 4960511.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688213_2024-03-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688609",
+    "date": "2024-03-01",
+    "minute_aggregate": {
+      "open": 9.5,
+      "close": 9.76,
+      "high": 9.83,
+      "low": 9.46,
+      "volume": 35643189.0
+    },
+    "daily": {
+      "open": 9.5,
+      "high": 9.83,
+      "low": 9.46,
+      "close": 9.76,
+      "volume": 35587941.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688609_2024-03-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688668",
+    "date": "2024-03-01",
+    "minute_aggregate": {
+      "open": 42.35,
+      "close": 42.77,
+      "high": 44.44,
+      "low": 41.62,
+      "volume": 3755892.0
+    },
+    "daily": {
+      "open": 42.35,
+      "high": 44.44,
+      "low": 41.35,
+      "close": 42.77,
+      "volume": 3749390.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688668_2024-03-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688685",
+    "date": "2024-03-01",
+    "minute_aggregate": {
+      "open": 32.14,
+      "close": 32.78,
+      "high": 33.55,
+      "low": 31.95,
+      "volume": 1832337.0
+    },
+    "daily": {
+      "open": 32.14,
+      "high": 33.55,
+      "low": 31.95,
+      "close": 32.78,
+      "volume": 1831009.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688685_2024-03-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.001234",
+    "date": "2024-03-01",
+    "minute_aggregate": {
+      "open": 16.83,
+      "close": 16.86,
+      "high": 17.06,
+      "low": 16.61,
+      "volume": 2102100.0
+    },
+    "daily": {
+      "open": 16.83,
+      "high": 17.06,
+      "low": 16.54,
+      "close": 16.86,
+      "volume": 2087800.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_001234_2024-03-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300350",
+    "date": "2024-03-01",
+    "minute_aggregate": {
+      "open": 4.59,
+      "close": 4.62,
+      "high": 4.66,
+      "low": 4.53,
+      "volume": 25443400.0
+    },
+    "daily": {
+      "open": 4.59,
+      "high": 4.66,
+      "low": 4.53,
+      "close": 4.62,
+      "volume": 25269607.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300350_2024-03-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300405",
+    "date": "2024-03-01",
+    "minute_aggregate": {
+      "open": 6.21,
+      "close": 5.89,
+      "high": 6.39,
+      "low": 5.76,
+      "volume": 45982200.0
+    },
+    "daily": {
+      "open": 6.21,
+      "high": 6.4,
+      "low": 5.75,
+      "close": 5.89,
+      "volume": 45452907.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300405_2024-03-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600243",
+    "date": "2024-04-01",
+    "minute_aggregate": {
+      "open": 4.3,
+      "close": 4.35,
+      "high": 4.46,
+      "low": 4.21,
+      "volume": 74483500.0
+    },
+    "daily": {
+      "open": 4.3,
+      "high": 4.46,
+      "low": 4.21,
+      "close": 4.35,
+      "volume": 73551635.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600243_2024-04-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600546",
+    "date": "2024-04-01",
+    "minute_aggregate": {
+      "open": 15.55,
+      "close": 15.45,
+      "high": 15.82,
+      "low": 15.44,
+      "volume": 102758900.0
+    },
+    "daily": {
+      "open": 15.55,
+      "high": 15.84,
+      "low": 15.44,
+      "close": 15.45,
+      "volume": 102630487.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600546_2024-04-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600986",
+    "date": "2024-04-01",
+    "minute_aggregate": {
+      "open": 5.17,
+      "close": 5.32,
+      "high": 5.34,
+      "low": 5.17,
+      "volume": 71467500.0
+    },
+    "daily": {
+      "open": 5.17,
+      "high": 5.34,
+      "low": 5.17,
+      "close": 5.32,
+      "volume": 71172100.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600986_2024-04-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.601156",
+    "date": "2024-04-01",
+    "minute_aggregate": {
+      "open": 17.22,
+      "close": 18.29,
+      "high": 18.36,
+      "low": 16.96,
+      "volume": 29559300.0
+    },
+    "daily": {
+      "open": 17.22,
+      "high": 18.36,
+      "low": 16.96,
+      "close": 18.29,
+      "volume": 29551154.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_601156_2024-04-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603038",
+    "date": "2024-04-01",
+    "minute_aggregate": {
+      "open": 12.78,
+      "close": 13.01,
+      "high": 13.04,
+      "low": 12.42,
+      "volume": 9817000.0
+    },
+    "daily": {
+      "open": 12.78,
+      "high": 13.04,
+      "low": 12.41,
+      "close": 13.01,
+      "volume": 9802825.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603038_2024-04-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603066",
+    "date": "2024-04-01",
+    "minute_aggregate": {
+      "open": 11.08,
+      "close": 11.46,
+      "high": 11.48,
+      "low": 11.06,
+      "volume": 9051400.0
+    },
+    "daily": {
+      "open": 11.08,
+      "high": 11.48,
+      "low": 11.06,
+      "close": 11.46,
+      "volume": 9050600.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603066_2024-04-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603398",
+    "date": "2024-04-01",
+    "minute_aggregate": {
+      "open": 20.14,
+      "close": 20.1,
+      "high": 20.14,
+      "low": 19.7,
+      "volume": 2954800.0
+    },
+    "daily": {
+      "open": 20.14,
+      "high": 20.14,
+      "low": 19.7,
+      "close": 20.1,
+      "volume": 2995700.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603398_2024-04-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688031",
+    "date": "2024-04-01",
+    "minute_aggregate": {
+      "open": 51.11,
+      "close": 51.83,
+      "high": 52.49,
+      "low": 51.11,
+      "volume": 2618987.0
+    },
+    "daily": {
+      "open": 51.11,
+      "high": 52.49,
+      "low": 51.11,
+      "close": 51.83,
+      "volume": 2600895.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688031_2024-04-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688048",
+    "date": "2024-04-01",
+    "minute_aggregate": {
+      "open": 41.87,
+      "close": 42.4,
+      "high": 43.14,
+      "low": 41.87,
+      "volume": 3559631.0
+    },
+    "daily": {
+      "open": 41.87,
+      "high": 43.14,
+      "low": 41.87,
+      "close": 42.4,
+      "volume": 3557914.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688048_2024-04-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688661",
+    "date": "2024-04-01",
+    "minute_aggregate": {
+      "open": 38.55,
+      "close": 38.58,
+      "high": 39.49,
+      "low": 37.29,
+      "volume": 2444000.0
+    },
+    "daily": {
+      "open": 38.55,
+      "high": 39.5,
+      "low": 37.29,
+      "close": 38.58,
+      "volume": 2432211.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688661_2024-04-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688668",
+    "date": "2024-04-01",
+    "minute_aggregate": {
+      "open": 53.7,
+      "close": 53.83,
+      "high": 54.68,
+      "low": 52.68,
+      "volume": 6806184.0
+    },
+    "daily": {
+      "open": 53.7,
+      "high": 54.7,
+      "low": 52.5,
+      "close": 53.83,
+      "volume": 6801609.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688668_2024-04-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300454",
+    "date": "2024-04-01",
+    "minute_aggregate": {
+      "open": 62.29,
+      "close": 63.23,
+      "high": 63.42,
+      "low": 62.28,
+      "volume": 7112800.0
+    },
+    "daily": {
+      "open": 62.29,
+      "high": 63.46,
+      "low": 62.2,
+      "close": 63.23,
+      "volume": 7054276.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300454_2024-04-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300494",
+    "date": "2024-04-01",
+    "minute_aggregate": {
+      "open": 15.12,
+      "close": 15.74,
+      "high": 15.98,
+      "low": 15.12,
+      "volume": 61246300.0
+    },
+    "daily": {
+      "open": 15.12,
+      "high": 16.0,
+      "low": 15.11,
+      "close": 15.74,
+      "volume": 60817494.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300494_2024-04-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600012",
+    "date": "2024-05-06",
+    "minute_aggregate": {
+      "open": 13.11,
+      "close": 13.07,
+      "high": 13.15,
+      "low": 12.77,
+      "volume": 18064100.0
+    },
+    "daily": {
+      "open": 13.11,
+      "high": 13.15,
+      "low": 12.77,
+      "close": 13.07,
+      "volume": 17844867.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600012_2024-05-06_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600243",
+    "date": "2024-05-06",
+    "minute_aggregate": {
+      "open": 3.57,
+      "close": 3.67,
+      "high": 3.69,
+      "low": 3.57,
+      "volume": 12613100.0
+    },
+    "daily": {
+      "open": 3.57,
+      "high": 3.69,
+      "low": 3.57,
+      "close": 3.67,
+      "volume": 12560100.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600243_2024-05-06_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600546",
+    "date": "2024-05-06",
+    "minute_aggregate": {
+      "open": 14.38,
+      "close": 14.49,
+      "high": 14.53,
+      "low": 14.29,
+      "volume": 29757200.0
+    },
+    "daily": {
+      "open": 14.38,
+      "high": 14.53,
+      "low": 14.27,
+      "close": 14.5,
+      "volume": 30147002.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600546_2024-05-06_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600986",
+    "date": "2024-05-06",
+    "minute_aggregate": {
+      "open": 5.08,
+      "close": 5.09,
+      "high": 5.19,
+      "low": 5.05,
+      "volume": 50220200.0
+    },
+    "daily": {
+      "open": 5.08,
+      "high": 5.2,
+      "low": 5.04,
+      "close": 5.1,
+      "volume": 51038809.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600986_2024-05-06_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600987",
+    "date": "2024-05-06",
+    "minute_aggregate": {
+      "open": 7.75,
+      "close": 8.11,
+      "high": 8.13,
+      "low": 7.75,
+      "volume": 12291800.0
+    },
+    "daily": {
+      "open": 7.75,
+      "high": 8.13,
+      "low": 7.75,
+      "close": 8.11,
+      "volume": 12222010.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600987_2024-05-06_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603038",
+    "date": "2024-05-06",
+    "minute_aggregate": {
+      "open": 11.21,
+      "close": 11.51,
+      "high": 11.78,
+      "low": 11.21,
+      "volume": 3150700.0
+    },
+    "daily": {
+      "open": 11.21,
+      "high": 11.78,
+      "low": 11.21,
+      "close": 11.51,
+      "volume": 3147240.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603038_2024-05-06_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603398",
+    "date": "2024-05-06",
+    "minute_aggregate": {
+      "open": 17.48,
+      "close": 17.46,
+      "high": 17.8,
+      "low": 17.21,
+      "volume": 3274000.0
+    },
+    "daily": {
+      "open": 17.48,
+      "high": 17.8,
+      "low": 17.21,
+      "close": 17.45,
+      "volume": 3285500.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603398_2024-05-06_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688031",
+    "date": "2024-05-06",
+    "minute_aggregate": {
+      "open": 45.48,
+      "close": 47.02,
+      "high": 47.2,
+      "low": 45.48,
+      "volume": 2821152.0
+    },
+    "daily": {
+      "open": 45.48,
+      "high": 47.2,
+      "low": 45.48,
+      "close": 47.02,
+      "volume": 2817354.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688031_2024-05-06_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688661",
+    "date": "2024-05-06",
+    "minute_aggregate": {
+      "open": 43.03,
+      "close": 45.7,
+      "high": 46.27,
+      "low": 43.03,
+      "volume": 2359954.0
+    },
+    "daily": {
+      "open": 43.03,
+      "high": 46.27,
+      "low": 43.03,
+      "close": 45.7,
+      "volume": 2365196.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688661_2024-05-06_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688668",
+    "date": "2024-05-06",
+    "minute_aggregate": {
+      "open": 56.55,
+      "close": 58.57,
+      "high": 59.9,
+      "low": 54.96,
+      "volume": 4652380.0
+    },
+    "daily": {
+      "open": 56.55,
+      "high": 59.9,
+      "low": 54.96,
+      "close": 58.57,
+      "volume": 4716755.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688668_2024-05-06_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000550",
+    "date": "2024-05-06",
+    "minute_aggregate": {
+      "open": 26.41,
+      "close": 27.18,
+      "high": 27.38,
+      "low": 26.03,
+      "volume": 15037000.0
+    },
+    "daily": {
+      "open": 26.41,
+      "high": 27.38,
+      "low": 26.03,
+      "close": 27.18,
+      "volume": 14946948.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000550_2024-05-06_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000625",
+    "date": "2024-05-06",
+    "minute_aggregate": {
+      "open": 14.72,
+      "close": 14.77,
+      "high": 15.13,
+      "low": 14.72,
+      "volume": 311107600.0
+    },
+    "daily": {
+      "open": 14.72,
+      "high": 15.15,
+      "low": 14.71,
+      "close": 14.77,
+      "volume": 307903244.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000625_2024-05-06_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000691",
+    "date": "2024-05-06",
+    "minute_aggregate": {
+      "open": 3.62,
+      "close": 3.67,
+      "high": 3.86,
+      "low": 3.61,
+      "volume": 26407500.0
+    },
+    "daily": {
+      "open": 3.62,
+      "high": 3.87,
+      "low": 3.58,
+      "close": 3.67,
+      "volume": 26219292.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000691_2024-05-06_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300494",
+    "date": "2024-05-06",
+    "minute_aggregate": {
+      "open": 13.09,
+      "close": 13.13,
+      "high": 13.41,
+      "low": 13.08,
+      "volume": 29790600.0
+    },
+    "daily": {
+      "open": 13.09,
+      "high": 13.42,
+      "low": 13.05,
+      "close": 13.13,
+      "volume": 29585387.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300494_2024-05-06_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600012",
+    "date": "2024-06-03",
+    "minute_aggregate": {
+      "open": 13.66,
+      "close": 13.54,
+      "high": 13.77,
+      "low": 13.46,
+      "volume": 4362000.0
+    },
+    "daily": {
+      "open": 13.66,
+      "high": 13.77,
+      "low": 13.45,
+      "close": 13.54,
+      "volume": 4356100.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600012_2024-06-03_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603079",
+    "date": "2024-06-03",
+    "minute_aggregate": {
+      "open": 10.77,
+      "close": 10.66,
+      "high": 10.87,
+      "low": 10.56,
+      "volume": 3801700.0
+    },
+    "daily": {
+      "open": 10.77,
+      "high": 10.9,
+      "low": 10.56,
+      "close": 10.66,
+      "volume": 3797600.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603079_2024-06-03_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603566",
+    "date": "2024-06-03",
+    "minute_aggregate": {
+      "open": 16.94,
+      "close": 16.17,
+      "high": 16.94,
+      "low": 15.87,
+      "volume": 12484900.0
+    },
+    "daily": {
+      "open": 16.94,
+      "high": 16.95,
+      "low": 15.86,
+      "close": 16.17,
+      "volume": 12483660.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603566_2024-06-03_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.605198",
+    "date": "2024-06-03",
+    "minute_aggregate": {
+      "open": 30.46,
+      "close": 30.84,
+      "high": 31.38,
+      "low": 30.05,
+      "volume": 2260600.0
+    },
+    "daily": {
+      "open": 30.46,
+      "high": 31.38,
+      "low": 30.05,
+      "close": 30.84,
+      "volume": 2243600.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_605198_2024-06-03_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688559",
+    "date": "2024-06-03",
+    "minute_aggregate": {
+      "open": 36.0,
+      "close": 35.91,
+      "high": 36.87,
+      "low": 35.62,
+      "volume": 7425215.0
+    },
+    "daily": {
+      "open": 36.0,
+      "high": 36.88,
+      "low": 35.62,
+      "close": 35.91,
+      "volume": 7412146.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688559_2024-06-03_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000550",
+    "date": "2024-06-03",
+    "minute_aggregate": {
+      "open": 25.3,
+      "close": 25.03,
+      "high": 25.72,
+      "low": 24.8,
+      "volume": 6050100.0
+    },
+    "daily": {
+      "open": 25.3,
+      "high": 25.72,
+      "low": 24.78,
+      "close": 25.03,
+      "volume": 5956810.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000550_2024-06-03_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000625",
+    "date": "2024-06-03",
+    "minute_aggregate": {
+      "open": 13.75,
+      "close": 13.52,
+      "high": 13.76,
+      "low": 13.43,
+      "volume": 133615700.0
+    },
+    "daily": {
+      "open": 13.75,
+      "high": 13.77,
+      "low": 13.43,
+      "close": 13.52,
+      "volume": 132367802.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000625_2024-06-03_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000702",
+    "date": "2024-06-03",
+    "minute_aggregate": {
+      "open": 5.08,
+      "close": 5.53,
+      "high": 5.53,
+      "low": 5.05,
+      "volume": 72093200.0
+    },
+    "daily": {
+      "open": 5.08,
+      "high": 5.53,
+      "low": 5.05,
+      "close": 5.53,
+      "volume": 71347148.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000702_2024-06-03_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.002225",
+    "date": "2024-06-03",
+    "minute_aggregate": {
+      "open": 4.52,
+      "close": 4.3,
+      "high": 4.52,
+      "low": 4.21,
+      "volume": 68562300.0
+    },
+    "daily": {
+      "open": 4.52,
+      "high": 4.52,
+      "low": 4.2,
+      "close": 4.3,
+      "volume": 68158955.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_002225_2024-06-03_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300254",
+    "date": "2024-06-03",
+    "minute_aggregate": {
+      "open": 9.12,
+      "close": 8.69,
+      "high": 9.12,
+      "low": 8.6,
+      "volume": 19217500.0
+    },
+    "daily": {
+      "open": 9.12,
+      "high": 9.14,
+      "low": 8.6,
+      "close": 8.69,
+      "volume": 19141872.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300254_2024-06-03_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300551",
+    "date": "2024-06-03",
+    "minute_aggregate": {
+      "open": 6.96,
+      "close": 6.71,
+      "high": 7.08,
+      "low": 6.62,
+      "volume": 25097200.0
+    },
+    "daily": {
+      "open": 6.96,
+      "high": 7.08,
+      "low": 6.62,
+      "close": 6.71,
+      "volume": 24593980.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300551_2024-06-03_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300732",
+    "date": "2024-06-03",
+    "minute_aggregate": {
+      "open": 7.62,
+      "close": 7.44,
+      "high": 7.76,
+      "low": 7.29,
+      "volume": 19633600.0
+    },
+    "daily": {
+      "open": 7.62,
+      "high": 7.76,
+      "low": 7.28,
+      "close": 7.44,
+      "volume": 19441915.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300732_2024-06-03_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600208",
+    "date": "2024-07-01",
+    "minute_aggregate": {
+      "open": 1.55,
+      "close": 1.61,
+      "high": 1.62,
+      "low": 1.55,
+      "volume": 173022900.0
+    },
+    "daily": {
+      "open": 1.55,
+      "high": 1.62,
+      "low": 1.55,
+      "close": 1.61,
+      "volume": 172693527.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600208_2024-07-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600246",
+    "date": "2024-07-01",
+    "minute_aggregate": {
+      "open": 6.65,
+      "close": 7.0,
+      "high": 7.03,
+      "low": 6.58,
+      "volume": 74772100.0
+    },
+    "daily": {
+      "open": 6.65,
+      "high": 7.05,
+      "low": 6.57,
+      "close": 7.0,
+      "volume": 74442750.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600246_2024-07-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603079",
+    "date": "2024-07-01",
+    "minute_aggregate": {
+      "open": 10.03,
+      "close": 10.31,
+      "high": 10.33,
+      "low": 9.97,
+      "volume": 2741000.0
+    },
+    "daily": {
+      "open": 10.03,
+      "high": 10.33,
+      "low": 9.97,
+      "close": 10.31,
+      "volume": 2734780.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603079_2024-07-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603278",
+    "date": "2024-07-01",
+    "minute_aggregate": {
+      "open": 6.21,
+      "close": 6.06,
+      "high": 6.26,
+      "low": 6.02,
+      "volume": 10415400.0
+    },
+    "daily": {
+      "open": 6.21,
+      "high": 6.26,
+      "low": 6.01,
+      "close": 6.06,
+      "volume": 10372702.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603278_2024-07-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603566",
+    "date": "2024-07-01",
+    "minute_aggregate": {
+      "open": 13.6,
+      "close": 13.8,
+      "high": 13.84,
+      "low": 13.47,
+      "volume": 3230100.0
+    },
+    "daily": {
+      "open": 13.6,
+      "high": 13.84,
+      "low": 13.47,
+      "close": 13.8,
+      "volume": 3224800.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603566_2024-07-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603668",
+    "date": "2024-07-01",
+    "minute_aggregate": {
+      "open": 11.35,
+      "close": 11.58,
+      "high": 11.62,
+      "low": 11.05,
+      "volume": 6314200.0
+    },
+    "daily": {
+      "open": 11.35,
+      "high": 11.62,
+      "low": 11.05,
+      "close": 11.58,
+      "volume": 6304775.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603668_2024-07-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.605198",
+    "date": "2024-07-01",
+    "minute_aggregate": {
+      "open": 26.6,
+      "close": 26.31,
+      "high": 26.6,
+      "low": 25.98,
+      "volume": 1098700.0
+    },
+    "daily": {
+      "open": 26.6,
+      "high": 26.68,
+      "low": 25.97,
+      "close": 26.31,
+      "volume": 1097660.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_605198_2024-07-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688559",
+    "date": "2024-07-01",
+    "minute_aggregate": {
+      "open": 32.89,
+      "close": 32.96,
+      "high": 33.26,
+      "low": 32.03,
+      "volume": 3136235.0
+    },
+    "daily": {
+      "open": 32.89,
+      "high": 33.26,
+      "low": 32.03,
+      "close": 32.96,
+      "volume": 3134287.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688559_2024-07-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000555",
+    "date": "2024-07-01",
+    "minute_aggregate": {
+      "open": 9.35,
+      "close": 9.4,
+      "high": 9.47,
+      "low": 9.31,
+      "volume": 12749300.0
+    },
+    "daily": {
+      "open": 9.35,
+      "high": 9.49,
+      "low": 9.31,
+      "close": 9.4,
+      "volume": 12696770.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000555_2024-07-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000625",
+    "date": "2024-07-01",
+    "minute_aggregate": {
+      "open": 13.44,
+      "close": 13.58,
+      "high": 13.63,
+      "low": 13.22,
+      "volume": 96895900.0
+    },
+    "daily": {
+      "open": 13.44,
+      "high": 13.64,
+      "low": 13.21,
+      "close": 13.58,
+      "volume": 96001324.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000625_2024-07-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.002225",
+    "date": "2024-07-01",
+    "minute_aggregate": {
+      "open": 4.11,
+      "close": 4.13,
+      "high": 4.13,
+      "low": 4.04,
+      "volume": 22464200.0
+    },
+    "daily": {
+      "open": 4.11,
+      "high": 4.14,
+      "low": 4.04,
+      "close": 4.13,
+      "volume": 22348084.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_002225_2024-07-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300254",
+    "date": "2024-07-01",
+    "minute_aggregate": {
+      "open": 7.92,
+      "close": 8.28,
+      "high": 8.34,
+      "low": 7.92,
+      "volume": 10716300.0
+    },
+    "daily": {
+      "open": 7.92,
+      "high": 8.34,
+      "low": 7.92,
+      "close": 8.28,
+      "volume": 10584900.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300254_2024-07-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300551",
+    "date": "2024-07-01",
+    "minute_aggregate": {
+      "open": 5.5,
+      "close": 5.63,
+      "high": 5.75,
+      "low": 5.47,
+      "volume": 15993200.0
+    },
+    "daily": {
+      "open": 5.5,
+      "high": 5.75,
+      "low": 5.47,
+      "close": 5.63,
+      "volume": 15897775.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300551_2024-07-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300732",
+    "date": "2024-07-01",
+    "minute_aggregate": {
+      "open": 8.42,
+      "close": 8.43,
+      "high": 8.73,
+      "low": 8.36,
+      "volume": 25232600.0
+    },
+    "daily": {
+      "open": 8.42,
+      "high": 8.74,
+      "low": 8.32,
+      "close": 8.43,
+      "volume": 24963151.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300732_2024-07-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600060",
+    "date": "2024-08-01",
+    "minute_aggregate": {
+      "open": 17.76,
+      "close": 17.43,
+      "high": 17.98,
+      "low": 17.17,
+      "volume": 14006900.0
+    },
+    "daily": {
+      "open": 17.76,
+      "high": 17.99,
+      "low": 17.17,
+      "close": 17.43,
+      "volume": 13912378.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600060_2024-08-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600183",
+    "date": "2024-08-01",
+    "minute_aggregate": {
+      "open": 19.7,
+      "close": 19.57,
+      "high": 19.78,
+      "low": 19.13,
+      "volume": 30403100.0
+    },
+    "daily": {
+      "open": 19.7,
+      "high": 19.78,
+      "low": 19.13,
+      "close": 19.57,
+      "volume": 30295653.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600183_2024-08-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600208",
+    "date": "2024-08-01",
+    "minute_aggregate": {
+      "open": 1.68,
+      "close": 1.68,
+      "high": 1.7,
+      "low": 1.66,
+      "volume": 55945300.0
+    },
+    "daily": {
+      "open": 1.68,
+      "high": 1.7,
+      "low": 1.66,
+      "close": 1.68,
+      "volume": 55926736.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600208_2024-08-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600246",
+    "date": "2024-08-01",
+    "minute_aggregate": {
+      "open": 7.05,
+      "close": 6.85,
+      "high": 7.13,
+      "low": 6.79,
+      "volume": 28773000.0
+    },
+    "daily": {
+      "open": 7.05,
+      "high": 7.14,
+      "low": 6.79,
+      "close": 6.85,
+      "volume": 28650020.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600246_2024-08-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600886",
+    "date": "2024-08-01",
+    "minute_aggregate": {
+      "open": 16.97,
+      "close": 17.23,
+      "high": 17.38,
+      "low": 16.97,
+      "volume": 25903100.0
+    },
+    "daily": {
+      "open": 16.97,
+      "high": 17.38,
+      "low": 16.97,
+      "close": 17.23,
+      "volume": 25890689.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600886_2024-08-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600989",
+    "date": "2024-08-01",
+    "minute_aggregate": {
+      "open": 15.17,
+      "close": 14.92,
+      "high": 15.41,
+      "low": 14.89,
+      "volume": 22620000.0
+    },
+    "daily": {
+      "open": 15.17,
+      "high": 15.44,
+      "low": 14.88,
+      "close": 14.91,
+      "volume": 22789500.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600989_2024-08-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603278",
+    "date": "2024-08-01",
+    "minute_aggregate": {
+      "open": 6.55,
+      "close": 6.55,
+      "high": 6.55,
+      "low": 6.55,
+      "volume": 1777300.0
+    },
+    "daily": {
+      "open": 6.55,
+      "high": 6.55,
+      "low": 6.55,
+      "close": 6.55,
+      "volume": 1764567.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603278_2024-08-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603668",
+    "date": "2024-08-01",
+    "minute_aggregate": {
+      "open": 12.01,
+      "close": 11.83,
+      "high": 12.11,
+      "low": 11.81,
+      "volume": 4095300.0
+    },
+    "daily": {
+      "open": 12.01,
+      "high": 12.12,
+      "low": 11.81,
+      "close": 11.83,
+      "volume": 4092833.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603668_2024-08-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688166",
+    "date": "2024-08-01",
+    "minute_aggregate": {
+      "open": 26.98,
+      "close": 26.28,
+      "high": 27.1,
+      "low": 26.0,
+      "volume": 9791637.0
+    },
+    "daily": {
+      "open": 26.98,
+      "high": 27.13,
+      "low": 26.0,
+      "close": 26.27,
+      "volume": 9858276.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688166_2024-08-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000078",
+    "date": "2024-08-01",
+    "minute_aggregate": {
+      "open": 2.44,
+      "close": 2.46,
+      "high": 2.53,
+      "low": 2.44,
+      "volume": 27711800.0
+    },
+    "daily": {
+      "open": 2.44,
+      "high": 2.53,
+      "low": 2.44,
+      "close": 2.46,
+      "volume": 27254866.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000078_2024-08-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000555",
+    "date": "2024-08-01",
+    "minute_aggregate": {
+      "open": 8.91,
+      "close": 9.0,
+      "high": 9.04,
+      "low": 8.86,
+      "volume": 11831300.0
+    },
+    "daily": {
+      "open": 8.91,
+      "high": 9.04,
+      "low": 8.85,
+      "close": 9.0,
+      "volume": 11703677.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000555_2024-08-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.001226",
+    "date": "2024-08-01",
+    "minute_aggregate": {
+      "open": 22.88,
+      "close": 23.07,
+      "high": 23.67,
+      "low": 22.83,
+      "volume": 3304700.0
+    },
+    "daily": {
+      "open": 22.88,
+      "high": 23.68,
+      "low": 22.83,
+      "close": 23.07,
+      "volume": 3249000.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_001226_2024-08-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.003816",
+    "date": "2024-08-01",
+    "minute_aggregate": {
+      "open": 4.64,
+      "close": 4.75,
+      "high": 4.83,
+      "low": 4.64,
+      "volume": 197334100.0
+    },
+    "daily": {
+      "open": 4.64,
+      "high": 4.83,
+      "low": 4.64,
+      "close": 4.75,
+      "volume": 192152028.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_003816_2024-08-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600060",
+    "date": "2024-09-02",
+    "minute_aggregate": {
+      "open": 15.57,
+      "close": 15.58,
+      "high": 15.78,
+      "low": 15.42,
+      "volume": 13906400.0
+    },
+    "daily": {
+      "open": 15.57,
+      "high": 15.78,
+      "low": 15.42,
+      "close": 15.58,
+      "volume": 13789236.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600060_2024-09-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600183",
+    "date": "2024-09-02",
+    "minute_aggregate": {
+      "open": 17.7,
+      "close": 17.35,
+      "high": 18.02,
+      "low": 17.25,
+      "volume": 21889300.0
+    },
+    "daily": {
+      "open": 17.7,
+      "high": 18.03,
+      "low": 17.25,
+      "close": 17.35,
+      "volume": 21854360.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600183_2024-09-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600489",
+    "date": "2024-09-02",
+    "minute_aggregate": {
+      "open": 13.32,
+      "close": 13.03,
+      "high": 13.32,
+      "low": 12.86,
+      "volume": 89137800.0
+    },
+    "daily": {
+      "open": 13.32,
+      "high": 13.33,
+      "low": 12.85,
+      "close": 13.03,
+      "volume": 88586898.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600489_2024-09-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600547",
+    "date": "2024-09-02",
+    "minute_aggregate": {
+      "open": 26.79,
+      "close": 26.17,
+      "high": 26.8,
+      "low": 25.88,
+      "volume": 39525300.0
+    },
+    "daily": {
+      "open": 26.79,
+      "high": 26.84,
+      "low": 25.88,
+      "close": 26.17,
+      "volume": 39390336.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600547_2024-09-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600650",
+    "date": "2024-09-02",
+    "minute_aggregate": {
+      "open": 10.7,
+      "close": 10.56,
+      "high": 10.88,
+      "low": 10.56,
+      "volume": 24255300.0
+    },
+    "daily": {
+      "open": 10.7,
+      "high": 10.89,
+      "low": 10.56,
+      "close": 10.56,
+      "volume": 24227501.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600650_2024-09-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600820",
+    "date": "2024-09-02",
+    "minute_aggregate": {
+      "open": 5.77,
+      "close": 5.61,
+      "high": 5.82,
+      "low": 5.6,
+      "volume": 60565800.0
+    },
+    "daily": {
+      "open": 5.77,
+      "high": 5.82,
+      "low": 5.6,
+      "close": 5.61,
+      "volume": 60203844.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600820_2024-09-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600886",
+    "date": "2024-09-02",
+    "minute_aggregate": {
+      "open": 15.46,
+      "close": 15.84,
+      "high": 16.09,
+      "low": 15.46,
+      "volume": 32839300.0
+    },
+    "daily": {
+      "open": 15.46,
+      "high": 16.1,
+      "low": 15.45,
+      "close": 15.84,
+      "volume": 32830763.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600886_2024-09-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600989",
+    "date": "2024-09-02",
+    "minute_aggregate": {
+      "open": 15.15,
+      "close": 15.18,
+      "high": 15.38,
+      "low": 14.98,
+      "volume": 19371100.0
+    },
+    "daily": {
+      "open": 15.15,
+      "high": 15.38,
+      "low": 14.96,
+      "close": 15.18,
+      "volume": 19320422.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600989_2024-09-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688009",
+    "date": "2024-09-02",
+    "minute_aggregate": {
+      "open": 5.2,
+      "close": 4.99,
+      "high": 5.21,
+      "low": 4.94,
+      "volume": 48565050.0
+    },
+    "daily": {
+      "open": 5.2,
+      "high": 5.21,
+      "low": 4.94,
+      "close": 4.99,
+      "volume": 48516656.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688009_2024-09-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688166",
+    "date": "2024-09-02",
+    "minute_aggregate": {
+      "open": 27.09,
+      "close": 25.27,
+      "high": 27.09,
+      "low": 25.2,
+      "volume": 10220622.0
+    },
+    "daily": {
+      "open": 27.09,
+      "high": 27.09,
+      "low": 25.2,
+      "close": 25.27,
+      "volume": 10187437.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688166_2024-09-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000078",
+    "date": "2024-09-02",
+    "minute_aggregate": {
+      "open": 2.26,
+      "close": 2.22,
+      "high": 2.27,
+      "low": 2.21,
+      "volume": 14340400.0
+    },
+    "daily": {
+      "open": 2.26,
+      "high": 2.27,
+      "low": 2.21,
+      "close": 2.22,
+      "volume": 14272250.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000078_2024-09-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.003816",
+    "date": "2024-09-02",
+    "minute_aggregate": {
+      "open": 4.75,
+      "close": 4.8,
+      "high": 4.83,
+      "low": 4.7,
+      "volume": 115158800.0
+    },
+    "daily": {
+      "open": 4.75,
+      "high": 4.83,
+      "low": 4.7,
+      "close": 4.8,
+      "volume": 114482484.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_003816_2024-09-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600028",
+    "date": "2024-10-08",
+    "minute_aggregate": {
+      "open": 7.6,
+      "close": 7.02,
+      "high": 7.62,
+      "low": 6.86,
+      "volume": 603706500.0
+    },
+    "daily": {
+      "open": 7.6,
+      "high": 7.64,
+      "low": 6.84,
+      "close": 7.02,
+      "volume": 602787150.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600028_2024-10-08_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600187",
+    "date": "2024-10-08",
+    "minute_aggregate": {
+      "open": 3.87,
+      "close": 3.73,
+      "high": 3.87,
+      "low": 3.47,
+      "volume": 315515000.0
+    },
+    "daily": {
+      "open": 3.87,
+      "high": 3.87,
+      "low": 3.46,
+      "close": 3.73,
+      "volume": 313943794.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600187_2024-10-08_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600198",
+    "date": "2024-10-08",
+    "minute_aggregate": {
+      "open": 8.7,
+      "close": 8.86,
+      "high": 8.86,
+      "low": 8.21,
+      "volume": 178051100.0
+    },
+    "daily": {
+      "open": 8.7,
+      "high": 8.86,
+      "low": 8.19,
+      "close": 8.86,
+      "volume": 177590344.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600198_2024-10-08_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600377",
+    "date": "2024-10-08",
+    "minute_aggregate": {
+      "open": 15.6,
+      "close": 13.73,
+      "high": 15.63,
+      "low": 13.52,
+      "volume": 48076200.0
+    },
+    "daily": {
+      "open": 15.6,
+      "high": 15.64,
+      "low": 13.51,
+      "close": 13.75,
+      "volume": 48400571.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600377_2024-10-08_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600489",
+    "date": "2024-10-08",
+    "minute_aggregate": {
+      "open": 16.35,
+      "close": 15.01,
+      "high": 16.44,
+      "low": 14.53,
+      "volume": 198709800.0
+    },
+    "daily": {
+      "open": 16.35,
+      "high": 16.45,
+      "low": 14.51,
+      "close": 15.02,
+      "volume": 199466585.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600489_2024-10-08_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600547",
+    "date": "2024-10-08",
+    "minute_aggregate": {
+      "open": 31.46,
+      "close": 28.94,
+      "high": 31.52,
+      "low": 28.03,
+      "volume": 118889000.0
+    },
+    "daily": {
+      "open": 31.46,
+      "high": 31.66,
+      "low": 28.01,
+      "close": 28.94,
+      "volume": 118823452.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600547_2024-10-08_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600550",
+    "date": "2024-10-08",
+    "minute_aggregate": {
+      "open": 10.63,
+      "close": 10.77,
+      "high": 10.77,
+      "low": 9.85,
+      "volume": 346726600.0
+    },
+    "daily": {
+      "open": 10.63,
+      "high": 10.77,
+      "low": 9.83,
+      "close": 10.77,
+      "volume": 343983163.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600550_2024-10-08_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600650",
+    "date": "2024-10-08",
+    "minute_aggregate": {
+      "open": 14.0,
+      "close": 14.0,
+      "high": 14.0,
+      "low": 13.48,
+      "volume": 39404600.0
+    },
+    "daily": {
+      "open": 14.0,
+      "high": 14.0,
+      "low": 13.46,
+      "close": 14.0,
+      "volume": 39276949.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600650_2024-10-08_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600665",
+    "date": "2024-10-08",
+    "minute_aggregate": {
+      "open": 3.43,
+      "close": 3.17,
+      "high": 3.45,
+      "low": 3.05,
+      "volume": 78795400.0
+    },
+    "daily": {
+      "open": 3.43,
+      "high": 3.45,
+      "low": 3.03,
+      "close": 3.18,
+      "volume": 79054029.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600665_2024-10-08_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600820",
+    "date": "2024-10-08",
+    "minute_aggregate": {
+      "open": 7.28,
+      "close": 6.76,
+      "high": 7.28,
+      "low": 6.51,
+      "volume": 119921600.0
+    },
+    "daily": {
+      "open": 7.28,
+      "high": 7.28,
+      "low": 6.51,
+      "close": 6.76,
+      "volume": 119718861.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600820_2024-10-08_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688009",
+    "date": "2024-10-08",
+    "minute_aggregate": {
+      "open": 7.55,
+      "close": 7.13,
+      "high": 7.55,
+      "low": 6.72,
+      "volume": 163482376.0
+    },
+    "daily": {
+      "open": 7.55,
+      "high": 7.55,
+      "low": 6.71,
+      "close": 7.13,
+      "volume": 163044678.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688009_2024-10-08_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600028",
+    "date": "2024-11-01",
+    "minute_aggregate": {
+      "open": 6.19,
+      "close": 6.28,
+      "high": 6.31,
+      "low": 6.19,
+      "volume": 225416400.0
+    },
+    "daily": {
+      "open": 6.19,
+      "high": 6.31,
+      "low": 6.18,
+      "close": 6.28,
+      "volume": 224292942.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600028_2024-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600187",
+    "date": "2024-11-01",
+    "minute_aggregate": {
+      "open": 5.09,
+      "close": 4.57,
+      "high": 5.09,
+      "low": 4.57,
+      "volume": 231419200.0
+    },
+    "daily": {
+      "open": 5.09,
+      "high": 5.09,
+      "low": 4.57,
+      "close": 4.57,
+      "volume": 231403110.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600187_2024-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600377",
+    "date": "2024-11-01",
+    "minute_aggregate": {
+      "open": 12.59,
+      "close": 12.91,
+      "high": 12.98,
+      "low": 12.5,
+      "volume": 16637100.0
+    },
+    "daily": {
+      "open": 12.59,
+      "high": 12.98,
+      "low": 12.5,
+      "close": 12.91,
+      "volume": 16586171.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600377_2024-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600406",
+    "date": "2024-11-01",
+    "minute_aggregate": {
+      "open": 25.96,
+      "close": 26.54,
+      "high": 26.72,
+      "low": 25.85,
+      "volume": 29185100.0
+    },
+    "daily": {
+      "open": 25.96,
+      "high": 26.74,
+      "low": 25.83,
+      "close": 26.54,
+      "volume": 29174209.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600406_2024-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600665",
+    "date": "2024-11-01",
+    "minute_aggregate": {
+      "open": 3.38,
+      "close": 3.31,
+      "high": 3.45,
+      "low": 3.27,
+      "volume": 36665100.0
+    },
+    "daily": {
+      "open": 3.38,
+      "high": 3.46,
+      "low": 3.27,
+      "close": 3.32,
+      "volume": 36850902.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600665_2024-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688328",
+    "date": "2024-11-01",
+    "minute_aggregate": {
+      "open": 18.2,
+      "close": 17.43,
+      "high": 19.15,
+      "low": 17.35,
+      "volume": 5857061.0
+    },
+    "daily": {
+      "open": 18.2,
+      "high": 19.18,
+      "low": 17.35,
+      "close": 17.43,
+      "volume": 5845438.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688328_2024-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688578",
+    "date": "2024-11-01",
+    "minute_aggregate": {
+      "open": 51.68,
+      "close": 51.6,
+      "high": 53.46,
+      "low": 51.35,
+      "volume": 5646492.0
+    },
+    "daily": {
+      "open": 51.68,
+      "high": 53.5,
+      "low": 51.3,
+      "close": 51.6,
+      "volume": 5643630.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688578_2024-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000056",
+    "date": "2024-11-01",
+    "minute_aggregate": {
+      "open": 3.62,
+      "close": 3.28,
+      "high": 3.83,
+      "low": 3.15,
+      "volume": 341121200.0
+    },
+    "daily": {
+      "open": 3.62,
+      "high": 3.83,
+      "low": 3.15,
+      "close": 3.28,
+      "volume": 339007091.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000056_2024-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.003002",
+    "date": "2024-11-01",
+    "minute_aggregate": {
+      "open": 20.06,
+      "close": 20.16,
+      "high": 20.69,
+      "low": 19.33,
+      "volume": 6337900.0
+    },
+    "daily": {
+      "open": 20.06,
+      "high": 20.69,
+      "low": 19.33,
+      "close": 20.16,
+      "volume": 6280400.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_003002_2024-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300049",
+    "date": "2024-11-01",
+    "minute_aggregate": {
+      "open": 38.3,
+      "close": 37.37,
+      "high": 41.62,
+      "low": 37.1,
+      "volume": 39048700.0
+    },
+    "daily": {
+      "open": 38.3,
+      "high": 41.66,
+      "low": 37.1,
+      "close": 37.37,
+      "volume": 38661946.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300049_2024-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300577",
+    "date": "2024-11-01",
+    "minute_aggregate": {
+      "open": 21.96,
+      "close": 21.47,
+      "high": 21.96,
+      "low": 21.22,
+      "volume": 2551200.0
+    },
+    "daily": {
+      "open": 21.96,
+      "high": 21.96,
+      "low": 21.21,
+      "close": 21.47,
+      "volume": 2504749.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300577_2024-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300656",
+    "date": "2024-11-01",
+    "minute_aggregate": {
+      "open": 32.7,
+      "close": 29.68,
+      "high": 33.58,
+      "low": 28.93,
+      "volume": 17361700.0
+    },
+    "daily": {
+      "open": 32.7,
+      "high": 33.59,
+      "low": 28.9,
+      "close": 29.68,
+      "volume": 17243963.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300656_2024-11-01_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.600246",
+    "date": "2024-12-02",
+    "minute_aggregate": {
+      "open": 9.38,
+      "close": 9.75,
+      "high": 9.9,
+      "low": 9.0,
+      "volume": 114130700.0
+    },
+    "daily": {
+      "open": 9.38,
+      "high": 9.9,
+      "low": 8.98,
+      "close": 9.75,
+      "volume": 114123274.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_600246_2024-12-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.601133",
+    "date": "2024-12-02",
+    "minute_aggregate": {
+      "open": 11.96,
+      "close": 12.27,
+      "high": 12.32,
+      "low": 11.96,
+      "volume": 17565600.0
+    },
+    "daily": {
+      "open": 11.96,
+      "high": 12.32,
+      "low": 11.96,
+      "close": 12.29,
+      "volume": 18098644.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_601133_2024-12-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.603359",
+    "date": "2024-12-02",
+    "minute_aggregate": {
+      "open": 5.29,
+      "close": 5.48,
+      "high": 5.5,
+      "low": 5.29,
+      "volume": 29771400.0
+    },
+    "daily": {
+      "open": 5.29,
+      "high": 5.5,
+      "low": 5.29,
+      "close": 5.48,
+      "volume": 30398604.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_603359_2024-12-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688328",
+    "date": "2024-12-02",
+    "minute_aggregate": {
+      "open": 17.89,
+      "close": 18.37,
+      "high": 18.48,
+      "low": 17.75,
+      "volume": 3708090.0
+    },
+    "daily": {
+      "open": 17.89,
+      "high": 18.48,
+      "low": 17.75,
+      "close": 18.38,
+      "volume": 3684254.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688328_2024-12-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sh.688578",
+    "date": "2024-12-02",
+    "minute_aggregate": {
+      "open": 61.35,
+      "close": 60.16,
+      "high": 62.98,
+      "low": 59.8,
+      "volume": 8879305.0
+    },
+    "daily": {
+      "open": 61.35,
+      "high": 62.98,
+      "low": 59.8,
+      "close": 60.08,
+      "volume": 8897139.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sh_688578_2024-12-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.000056",
+    "date": "2024-12-02",
+    "minute_aggregate": {
+      "open": 2.74,
+      "close": 3.03,
+      "high": 3.03,
+      "low": 2.73,
+      "volume": 116895300.0
+    },
+    "daily": {
+      "open": 2.74,
+      "high": 3.03,
+      "low": 2.73,
+      "close": 3.03,
+      "volume": 115883239.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_000056_2024-12-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.002117",
+    "date": "2024-12-02",
+    "minute_aggregate": {
+      "open": 9.13,
+      "close": 9.48,
+      "high": 9.79,
+      "low": 9.13,
+      "volume": 43259600.0
+    },
+    "daily": {
+      "open": 9.13,
+      "high": 9.79,
+      "low": 9.13,
+      "close": 9.48,
+      "volume": 42874985.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_002117_2024-12-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.002348",
+    "date": "2024-12-02",
+    "minute_aggregate": {
+      "open": 4.19,
+      "close": 4.22,
+      "high": 4.43,
+      "low": 4.03,
+      "volume": 191824500.0
+    },
+    "daily": {
+      "open": 4.19,
+      "high": 4.44,
+      "low": 4.03,
+      "close": 4.22,
+      "volume": 189626049.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_002348_2024-12-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.003002",
+    "date": "2024-12-02",
+    "minute_aggregate": {
+      "open": 22.09,
+      "close": 22.78,
+      "high": 23.0,
+      "low": 22.09,
+      "volume": 5296500.0
+    },
+    "daily": {
+      "open": 22.09,
+      "high": 23.0,
+      "low": 22.09,
+      "close": 22.78,
+      "volume": 5244300.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_003002_2024-12-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300049",
+    "date": "2024-12-02",
+    "minute_aggregate": {
+      "open": 38.2,
+      "close": 38.88,
+      "high": 39.47,
+      "low": 37.7,
+      "volume": 8793900.0
+    },
+    "daily": {
+      "open": 38.2,
+      "high": 39.47,
+      "low": 37.7,
+      "close": 38.88,
+      "volume": 8736000.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300049_2024-12-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300577",
+    "date": "2024-12-02",
+    "minute_aggregate": {
+      "open": 24.92,
+      "close": 26.2,
+      "high": 27.97,
+      "low": 24.24,
+      "volume": 10343800.0
+    },
+    "daily": {
+      "open": 24.92,
+      "high": 27.99,
+      "low": 24.24,
+      "close": 26.2,
+      "volume": 10301415.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300577_2024-12-02_f5.csv"
+  },
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "code": "sz.300656",
+    "date": "2024-12-02",
+    "minute_aggregate": {
+      "open": 29.09,
+      "close": 29.12,
+      "high": 29.18,
+      "low": 28.61,
+      "volume": 4335100.0
+    },
+    "daily": {
+      "open": 29.09,
+      "high": 29.18,
+      "low": 28.6,
+      "close": 29.12,
+      "volume": 4288987.0
+    },
+    "source": "artifacts\\three-account-migration-accounts-20260912-4\\REV_vola_11\\minute-raw\\sz_300656_2024-12-02_f5.csv"
+  }
+]

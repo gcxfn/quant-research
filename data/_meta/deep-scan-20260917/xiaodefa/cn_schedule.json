@@ -1,0 +1,119 @@
+{
+ "source": "xiaodefa",
+ "dataset": "cn_schedule",
+ "batches": {
+  "xiaodefa/cn_schedule/20260913-bulk1": {
+   "batch_dir": "xiaodefa/cn_schedule/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 10,
+    "n_csv": 9,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 21369
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 month 有 131 行 > 2024-12-31 (max=202609); 冻结边界审查: 只报告不删除"
+    }
+   ],
+   "inventory_registration": {
+    "files": 10,
+    "bytes": 21369
+   },
+   "schema": {
+    "month": "Int64",
+    "publish_date": "Int64",
+    "title": "String",
+    "issuing_org": "String",
+    "data_api": "String"
+   },
+   "n_columns": 5,
+   "date_columns": [
+    "month",
+    "publish_date"
+   ],
+   "numeric_columns_checked": [
+    "month",
+    "publish_date"
+   ],
+   "rows_total": 131,
+   "date_coverage": {
+    "month": {
+     "min": "202601",
+     "max": "202609",
+     "rows_gt_20241231": 131,
+     "null_rows": 0
+    },
+    "publish_date": {
+     "min": "20260104",
+     "max": "20260930",
+     "rows_gt_20241231": 131,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 131,
+   "numeric_magnitude": {
+    "month": {
+     "min": 202601.0,
+     "max": 202609.0
+    },
+    "publish_date": {
+     "min": 20260104.0,
+     "max": 20260930.0
+    }
+   },
+   "primary_key": null,
+   "sample_rows": [
+    {
+     "month": "202601",
+     "publish_date": "20260104",
+     "title": "流通领域重要生产资料市场价格变动情况",
+     "issuing_org": "国家统计局",
+     "data_api": "待上线"
+    },
+    {
+     "month": "202601",
+     "publish_date": "20260109",
+     "title": "居民消费价格指数月度报告",
+     "issuing_org": "国家统计局",
+     "data_api": "cn_cpi"
+    },
+    {
+     "month": "202601",
+     "publish_date": "20260109",
+     "title": "工业生产者价格指数月度报告",
+     "issuing_org": "国家统计局",
+     "data_api": "cn_ppi"
+    },
+    {
+     "month": "202601",
+     "publish_date": "20260114",
+     "title": "流通领域重要生产资料市场价格变动情况",
+     "issuing_org": "国家统计局",
+     "data_api": "待上线"
+    },
+    {
+     "month": "202601",
+     "publish_date": "20260119",
+     "title": "社会消费品零售总额月度报告",
+     "issuing_org": "国家统计局",
+     "data_api": "待上线"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:07:06"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:06"
+}

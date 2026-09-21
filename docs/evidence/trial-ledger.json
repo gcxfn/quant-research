@@ -1,0 +1,567 @@
+{
+ "engineering_update_20260921": {"strategy_trials_added": 0, "engine_tests_passed": 44, "risk_tests_passed_prior_batch": 31, "full_suite_run": false, "profitability_verified": false, "status_document": "docs/research/strategy-selection-status-20260921.md", "note": "Separate synthetic test batches; historical totals not reconciled; no new strategy backtest."},
+ "doc": "trial-ledger",
+ "version": "1.0",
+ "created": "2026-09-18",
+ "maintainer_note": "登记性质文档：只汇总既有已发表记录，不运行任何回测、不产生新试验、不修改任何研究结论。行内容全部摘自所引文档。",
+ "human_readable": "docs/evidence/trial-ledger.md",
+ "counting_conventions": {
+  "trial_count_scope": "新项目 2026-09-17 重建后的预登记配置试验，按主计划口径累计；基础设施验收、数据批次、纯文档综合、重记账类行 trials_counted=0。",
+  "trial_count_total": 139,
+  "reconciliation": "R1 9 + R2 6 + R3 8 + R4 20（普查口径，含 2 个组合规则）+ R5 4 + 窗口诊断 44 + R6 12 + R7 12 = 115；R8 的 12 配置运行中、结果未知，不计入 115，完成后累计 127（R8 预登记 §4）。",
+  "related_but_different_denominator": "exp-20260917-negative-synthesis.md 的 93 个名义被试单元 = 27 管线配置 + 22 个 R4 管线结果（20 因子尾部 + C1/C2 组合）+ 44 窗口扫描单元；与 115 的差异在 R4 计 22 还是 20，两口径已由该文 §2.1 对账（'20 因子普查含 2 组合规则'），本台账并列登记、不裁决。",
+  "legacy_excluded": "docs/legacy 旧项目试验不计入 115，见 legacy_project 段。"
+ },
+ "new_project": {
+  "window": "2026-09-17 至登记时点",
+  "survivors": 0,
+  "rounds": [
+   {
+    "id": "TL-01",
+    "experiment_id": "exp-20260917-p0-benchmark",
+    "date": "2026-09-17",
+    "direction": "P0 合成数据三层链路验收（Polars/vectorbt/Backtrader 对齐，非策略研究）",
+    "configs_registered": 0,
+    "trials_counted": 0,
+    "verdict": "完成（验收通过，非盈利证据）",
+    "failure_criteria": "跨框架订单/现金/权益不一致或因子手算不符即不通过；实际 782 日×200 只×222 订单最大现金差 1.86e-09 元",
+    "formal_run_id": "20260917T133603-p0-benchmark-67815cb9",
+    "other_run_ids": [],
+    "config_snapshot": "configs/benchmarks/p0-benchmark.json",
+    "doc_paths": [
+     "docs/research/exp-20260917-p0-benchmark.md"
+    ],
+    "plan_trace": "主计划第二次更新"
+   },
+   {
+    "id": "TL-02",
+    "experiment_id": "exp-20260917-p1-data-readiness",
+    "date": "2026-09-17",
+    "direction": "P1 baostock 日线读取层与确定性样本（冻结边界/契约/指纹）",
+    "configs_registered": 0,
+    "trials_counted": 0,
+    "verdict": "完成（核心验收；全量标准化表随后完成）",
+    "failure_criteria": "冻结边界泄漏、样本不确定、键不重复等合同测试失败即不通过；实际全部通过（87 项测试）",
+    "formal_run_id": null,
+    "other_run_ids": [
+     "20260917T145829-p1-standardize-daily-14d3fef1（全量标准化表 data/processed/baostock-daily-20260917/，见主计划 P1）"
+    ],
+    "config_snapshot": null,
+    "doc_paths": [
+     "docs/research/exp-20260917-p1-data-readiness.md"
+    ],
+    "plan_trace": "主计划第一次更新（基础）与 §3 P1"
+   },
+   {
+    "id": "TL-03",
+    "experiment_id": "exp-20260917-p1-crosscheck",
+    "date": "2026-09-17",
+    "direction": "P1 tushare 独立复核（除权日连续性 + 复权因子逐值 59/59）",
+    "configs_registered": 0,
+    "trials_counted": 0,
+    "verdict": "完成（抽样级通过；非全量认证）",
+    "failure_criteria": "两源数值不一致即不通过；实际 59/59 一致、价格 3/3 一致",
+    "formal_run_id": null,
+    "other_run_ids": [],
+    "config_snapshot": null,
+    "doc_paths": [
+     "docs/research/exp-20260917-p1-crosscheck.md"
+    ],
+    "plan_trace": "主计划 §3 P1 与第四次更新（复核源决策）"
+   },
+   {
+    "id": "TL-04",
+    "experiment_id": "exp-20260917-p2-first-screen",
+    "round": "P2-R1",
+    "date": "2026-09-17",
+    "direction": "沪深主板流动池日频短线：H1 短期反转、H2-pullback/H2-chase、H3 流动性门禁 × 持有 {3,5,10}",
+    "configs_registered": 9,
+    "trials_counted": 9,
+    "verdict": "淘汰 9/9，无候选进 P3",
+    "failure_criteria": "费用后与费用前均负、不胜同池等权/随机基准、逐年几乎全负；H3 因总利润为负不适用",
+    "formal_run_id": "20260917T161253-p2-first-screen-2443f74c",
+    "other_run_ids": [
+     "20260917T160803-p2-first-screen-b558567d（冒烟）",
+     "20260917T160733-p2-first-screen-6569bae4（失败留档）"
+    ],
+    "config_snapshot": "configs/experiments/p2-first-screen.json",
+    "doc_paths": [
+     "docs/research/exp-20260917-p2-first-screen.md"
+    ],
+    "plan_trace": "主计划第三次更新（费用口径）与第四次更新（池/预算约束）"
+   },
+   {
+    "id": "TL-05",
+    "experiment_id": "exp-20260917-p2-round2-screen",
+    "round": "P2-R2",
+    "date": "2026-09-17",
+    "direction": "六个条件切片方向（放量反转/低波回调/52周高点回踩/换手capitulation/低开收回/收敛突破）× 持有 5 日",
+    "configs_registered": 6,
+    "trials_counted": 6,
+    "verdict": "淘汰 6/6（52周高点回踩为 15 个累计配置中唯一 dev 费后正 +0.18%，验证期翻转、不胜池基准，按规则淘汰）",
+    "failure_criteria": "与 R1 相同（dev 费后不胜免费用池基准或验证期翻转即淘汰）",
+    "formal_run_id": "20260917T163824-p2-round2-screen-7f9584bc",
+    "other_run_ids": [
+     "20260917T163709-p2-round2-screen-b3b28213（冒烟）",
+     "20260917T163644-p2-round2-screen-e306343c（失败留档）"
+    ],
+    "config_snapshot": "configs/experiments/p2-round2-screen.json",
+    "doc_paths": [
+     "docs/research/exp-20260917-p2-round2-screen.md"
+    ],
+    "plan_trace": "主计划 §3 P2（用户批准按现行规则，拒绝 8×80 挖矿方案）"
+   },
+   {
+    "id": "TL-06",
+    "experiment_id": "exp-20260917-p2-round3-screen",
+    "round": "P2-R3",
+    "date": "2026-09-17",
+    "direction": "价量均值回归四定义（z超卖/缩量回调/双缩/回归确认）× 持有 {3,5}（用户指定方向）",
+    "configs_registered": 8,
+    "trials_counted": 8,
+    "verdict": "淘汰 8/8；三轮 23 配置 0 存活触发'回讨论层'条款，P2 以负面结果关闭（后被 R4/R5 重开决议超越）",
+    "failure_criteria": "同前两轮；最好变体（确认-h3）dev 毛 -0.02%，费用前即打平",
+    "formal_run_id": "20260917T164836-p2-round3-screen-a8702198",
+    "other_run_ids": [
+     "20260917T164757-p2-round3-screen-9d3b22ca（冒烟）"
+    ],
+    "config_snapshot": "configs/experiments/p2-round3-screen.json",
+    "doc_paths": [
+     "docs/research/exp-20260917-p2-round3-screen.md"
+    ],
+    "plan_trace": "主计划 §3 P2（方向由用户指定）"
+   },
+   {
+    "id": "TL-07",
+    "experiment_id": "exp-20260917-p2-round4-factor-survey",
+    "round": "P2-R4",
+    "date": "2026-09-17",
+    "direction": "因子截面普查：20 因子（价量 11+资金流 3+基础 4+筹码 1+两融 1）三份成绩（IC/五分位/尾部 top-3 全费用管线）+ 2 个组合规则 C1/C2",
+    "configs_registered": 22,
+    "trials_counted": 20,
+    "verdict": "淘汰/关闭：0 存活；得到结构性解释（低波低换手反转梯度真实、Q5 崩坏、多头侧费后边际≈0、规避侧不可做空）",
+    "failure_criteria": "预登记筛选（|IC|≥0.02、年度符号一致、尾部净收益胜池）；尾部 top-3 管线 0/22 存活；唯一入组 margin_buy_ratio 组合后 dev 净 +0.06% 不胜池 +0.19%、val -0.51%",
+    "formal_run_id": "20260917T180211-p2-round4-factor-survey-8189ea1b",
+    "other_run_ids": [
+     "20260917T175934-p2-round4-factor-survey-960c65b2（冒烟）",
+     "20260917T175052/175103/175641/175802/180201/180211（含 3 次失败运行留档）"
+    ],
+    "config_snapshot": "configs/experiments/p2-round4-factor-survey.json",
+    "doc_paths": [
+     "docs/research/exp-20260917-p2-round4-factor-survey.md"
+    ],
+    "plan_trace": "主计划 §3 P2（用户提议并批准普查方法）",
+    "count_note": "trials_counted 按主计划口径 20（普查含 2 组合规则）；负面综合管线结果口径为 22（93 名义单元的组成部分）"
+   },
+   {
+    "id": "TL-08",
+    "experiment_id": "exp-20260917-p2-round5-trend-dip",
+    "round": "P2-R5",
+    "date": "2026-09-17",
+    "direction": "周线趋势+日线破位'回踩'（>150/300 日线 且 <5/10 日线，按破位深度排序前 3）× 持有 5 日（用户指定）",
+    "configs_registered": 4,
+    "trials_counted": 4,
+    "verdict": "淘汰 4/4（毛口径即深负 -0.72%~-1.56%；趋势内短期破位是续跌信号）",
+    "failure_criteria": "与 R1–R3 相同",
+    "formal_run_id": "20260917T182002-p2-round5-trend-dip-3961e8c1",
+    "other_run_ids": [
+     "20260917T181909-p2-round5-trend-dip-655ee5c1（冒烟）"
+    ],
+    "config_snapshot": "configs/experiments/p2-round5-trend-dip.json",
+    "doc_paths": [
+     "docs/research/exp-20260917-p2-round5-trend-dip.md"
+    ],
+    "plan_trace": "主计划 §3 P2 第 5 轮（用户指定策略，先预登记后看诊断）"
+   },
+   {
+    "id": "TL-09",
+    "experiment_id": "exp-20260917-p2-window-diagnostic",
+    "round": "窗口全谱诊断（探索性，随 R5 登记）",
+    "date": "2026-09-17",
+    "direction": "回看窗口网格 1–300 交易日 × {收益,波动,换手均值,z,振幅} 五族，5 日前瞻，dev 窗口",
+    "configs_registered": 44,
+    "trials_counted": 44,
+    "verdict": "完成（探索性诊断）：44 窗中 43 个 IC<0；费后多头边>0.05pp 的窗口数=0；确认 R4 结构结论与窗口选择无关",
+    "failure_criteria": "探索性非淘汰判据；登记读数=费后多头可收边 >0.05pp 的达标窗口数为 0",
+    "formal_run_id": "20260917T182037-p2-window-diagnostic-b54bb8b1",
+    "other_run_ids": [
+     "20260917T181555-p2-window-diagnostic-0bcf3b7f（失败留档）",
+     "20260917T181628-p2-window-diagnostic-59312aa8（中止留档）"
+    ],
+    "config_snapshot": null,
+    "doc_paths": [
+     "docs/research/exp-20260917-p2-round5-trend-dip.md（含窗口诊断节）"
+    ],
+    "plan_trace": "主计划 §3 P2 第 5 轮附属"
+   },
+   {
+    "id": "TL-10",
+    "experiment_id": "exp-20260917-fee-recost",
+    "date": "2026-09-17",
+    "direction": "27 个已淘汰信号配置按用户实况费率重记账（post-hoc，不重跑）",
+    "configs_registered": 0,
+    "trials_counted": 0,
+    "verdict": "完成（27/27 无一由负转正，P2 淘汰对费率口径稳健；178,724 笔逐笔复现校验）",
+    "failure_criteria": "重记账判据=存在配置由负转正即推翻原结论；实际无",
+    "formal_run_id": "20260917T193747-fee-recost-a571044a",
+    "other_run_ids": [
+     "20260917T193643-fee-recost-d77234c0（中止留档）"
+    ],
+    "config_snapshot": null,
+    "doc_paths": [
+     "docs/research/exp-20260917-fee-recost.md"
+    ],
+    "plan_trace": "主计划第六次更新工作队列、第七次更新②（队列项关闭）",
+    "count_note": "重记账不是新试验，不计入 115"
+   },
+   {
+    "id": "TL-11",
+    "experiment_id": "exp-20260917-p2r6-etf-rotation",
+    "round": "P2-R6",
+    "date": "2026-09-17",
+    "direction": "ETF 轮动/动量：PIT 池（1,168 白名单）× Top3 等权 × 窗口 W{20/60/120 组合 3 档}× 频率{月,周}× 绝对动量门{开,关} 全因子网格",
+    "configs_registered": 12,
+    "trials_counted": 12,
+    "verdict": "淘汰 12/12 dev gate，0 进 validation，test 未使用；方向关闭（费后超额普遍为正但不稳定：回撤 −23.1%~−36.6% 全部越限 20% 预算、6 个周频配置换手 1,676%~2,153% 越限、2019 系统性踏空）",
+    "failure_criteria": "八条 dev gate：净 CAGR>0；对 B1 净超额≥+2.0pp；优势年≥4/5；回撤≤20% 且≤B1；换手年≤1200%（月频≤600%）；top1≤40%/top3≤70%；≥随机均值+1pp；执行率≥95%",
+    "formal_run_id": "20260917T231652-p2r6-etf-rotation-7b72501d",
+    "other_run_ids": [
+     "20260917T230609-p2r6-etf-rotation-f1f60270（作废留档）",
+     "20260917T231139-p2r6-etf-rotation-cf10be51（作废留档）",
+     "20260917T234110-p2r6-review-a28（双签复核：判定零差异成立，I1/I2 更正并入结果文档 §10）"
+    ],
+    "config_snapshot": "configs/experiments/p2r6-etf-rotation.json",
+    "doc_paths": [
+     "docs/research/exp-20260917-p2r6-etf-rotation-prereg.md",
+     "docs/research/exp-20260917-p2r6-etf-rotation.md"
+    ],
+    "plan_trace": "主计划第五次更新（ETF 解禁）、第六次更新（队列）、第七次更新③（预登记+执行前修订）、第八次更新（执行完成）、第九次更新①（双签收官）"
+   },
+   {
+    "id": "TL-12",
+    "experiment_id": "exp-20260917-p2r7-etf-exposure",
+    "round": "P2-R7",
+    "date": "2026-09-17（正式运行标识 2026-09-18T00:44）",
+    "direction": "ETF 轮动动态敞口二轮：机制{FIX75 对照, VOLT 目标波动, TREND 指数趋势}× TopN{3,5}× W{20/60, 60/120}，月频选币、腿=min(敞口/N,25%)",
+    "configs_registered": 12,
+    "trials_counted": 12,
+    "verdict": "淘汰：dev（探索性重用）0/12 全过八条判据，方向关闭；失败唯一化为回撤预算（−22.3%~−26.5%，最深窗口移至 2020-02 新冠急跌且无一机制预警）；'省回撤÷丢反弹'≤0.34 多数为负；'现金比例动态化（月频采样）'证伪；val/test 未消费",
+    "failure_criteria": "八条 dev 判据数值与 R6 一致，但超额/优势年对机制匹配基准 B1(m)、随机对照对 B3′（同 N 同机制敞口）、gate-8 按 dev 窗口径（执行前修订二）",
+    "formal_run_id": "20260918T004441-p2r7-etf-exposure-d01f4e7a",
+    "other_run_ids": [
+     "20260918T003614-p2r7-etf-exposure-smoke-73a80b70（失败冒烟）",
+     "20260918T003656-p2r7-etf-exposure-smoke-96391f16（失败冒烟）",
+     "20260918T003728-p2r7-etf-exposure-smoke-096019d1（冒烟通过）",
+     "20260918T003816-p2r7-etf-exposure-93d0523e（作废：B1(m) 闲置现金缺陷）",
+     "20260918T005610-p2r7-review-9f4c（双签复核进行中，run 目录暂仅 tmp/）"
+    ],
+    "config_snapshot": "configs/experiments/p2r7-etf-exposure.json",
+    "doc_paths": [
+     "docs/research/exp-20260917-p2r7-etf-exposure-prereg.md",
+     "docs/research/exp-20260917-p2r7-etf-exposure.md"
+    ],
+    "plan_trace": "主计划第九次更新⑥（三次执行前修订后运行）",
+    "key_findings": "TREND 池级有效（B1(TREND) dev 回撤 −14.96% 全部基准最浅）；回撤死因=集中度×动量 crash beta"
+   },
+   {
+    "id": "TL-13",
+    "experiment_id": "exp-20260918-p2r8-daily-risk",
+    "round": "P2-R8",
+    "date": "2026-09-18（预登记冻结）",
+    "direction": "日频风控+月频选币（风控频率杠杆月→日）：TREND 快慢双窗×双低档、指数/组合回撤触发、组合双门，12 配置 C01–C12；C01=FIX75 锚定臂须与 R7 C01 逐位一致",
+    "configs_registered": 12,
+    "trials_counted": 12,
+    "verdict": "淘汰 0/12（dev）；锚定位级一致、双签通过（run 20260918T022838-p2r8-review-4f13e28e 十项全 PASS）；亚月频风控按预登记关闭",
+    "failure_criteria": "判据数值与 R7 逐字相同（八条 dev / 三条 val / 两条 test）；dev 无全过者→'亚月频风控'整体关闭（含周频），不再以频率理由重开",
+    "formal_run_id": null,
+    "other_run_ids": [],
+    "config_snapshot": "configs/experiments/p2r8-daily-risk.json（哈希锁定继承 R7）",
+    "doc_paths": [
+     "docs/research/exp-20260918-p2r8-daily-risk-prereg.md"
+    ],
+    "plan_trace": "主计划第九次更新⑦⑧（用户决策：风控检查改日频）",
+    "registration_note": "截至本台账登记时点，artifacts/runs/ 下无 p2r8 运行目录；正式 run_id 待运行落盘后回填。结果文档（预期 exp-20260918-p2r8-daily-risk.md）尚未存在。",
+    "official_run": "20260918T021054-p2r8-daily-risk-d19a9c07"
+   },
+   {
+    "id": "TL-14",
+    "experiment_id": "exp-20260917-negative-synthesis",
+    "date": "2026-09-17",
+    "direction": "纯文档综合：93 名义被试单元→6 信号家族（1:15.5）、失败模式 26/27 毛负、禁投清单 B1–B7、缺口 G1–G12",
+    "configs_registered": 0,
+    "trials_counted": 0,
+    "verdict": "完成（对已发表数字的加总/分类，未运行任何新回测）",
+    "failure_criteria": null,
+    "formal_run_id": null,
+    "other_run_ids": [],
+    "config_snapshot": null,
+    "doc_paths": [
+     "docs/research/exp-20260917-negative-synthesis.md"
+    ],
+    "plan_trace": "主计划第九次更新⑤"
+   },
+   {
+    "id": "TL-15",
+    "experiment_id": "exp-20260917-event-data-scout",
+    "date": "2026-09-17",
+    "direction": "事件类数据批次预研清点（9 批次 PIT 0 缺失；forecast/share_float 最优；事件 schema 草案；5 个事件研究候选）",
+    "configs_registered": 0,
+    "trials_counted": 0,
+    "verdict": "完成（只读清点，不构成盈利结论）",
+    "failure_criteria": null,
+    "formal_run_id": "20260917T231747-event-scout-f2d1ea",
+    "other_run_ids": [],
+    "config_snapshot": null,
+    "doc_paths": [
+     "docs/research/exp-20260917-event-data-scout.md"
+    ],
+    "plan_trace": "主计划第九次更新⑤"
+   },
+   {
+    "experiment_id": "exp-20260918-p2r9-risk-delivery",
+    "date": "2026-09-18（预登记冻结 02:40）",
+    "direction": "日频风控交付工程轮（R8 关闭条款预留的\"趋势/回撤+更分散\"形态）：W2L 换手余量 × 触发迟滞 re-arm × N=3/4；两非判定锚 A1/A2 须与 R8 逐位一致",
+    "trials_counted": 12,
+    "survivors": "0（dev 全过者 C08 进 validation 三败；累计 139）",
+    "verdict": "淘汰：dev 1/12 全过（C08，139 试验首个 dev 全过者）→ validation（2021–22，首次消费）三条全败（超额 −3.05pp、2021 −9.89pp、回撤 −26.06%）→ H-R9 证伪，本线按停机规则关闭；test 零消费",
+    "official_run": "20260918T030528-p2r9-risk-delivery-ef2777dc",
+    "links": "docs/research/exp-20260918-p2r9-risk-delivery-prereg.md；configs/experiments/p2r9-risk-delivery.json"
+   },
+   {
+    "experiment_id": "exp-20260918-p2r10-halfday-survey",
+    "date": "2026-09-18（预登记冻结 03:47，正式运行 05:12）",
+    "direction": "半天（11:30）截面信号普查（同窗新信息集）：12 因子 F01–F12，F12=全天收益对照不计数；池按冻结时点含创业板（用户 09-18 晨间决定股票池剔除创业板，自下轮起适用，X-07 已关闭）",
+    "trials_counted": 12,
+    "survivors": "0（普查轮非组合轮：F03/F06/F09/F11 取得二轮组合预登记资格，待用户决定；累计 151）",
+    "verdict": "普查有候选：F03/F06/F09/F11 过 IC 门+分位门（全部负方向=上午过热→午后回落均值回复；年化毛 D10−D1 49.6%/22.3%/25.0%/37.9%，同号月 93.1%/66.7%（压线）/86.1%/87.5%）；动量族 F01/F02/F10 被 F12 增量门证伪（|IC|≤0.0627<1.3×0.4343=0.5646）；候选 2021–24 描述段普遍衰减（F11 近零/变号）如实披露；≥2 通过→REGISTER_CANDIDATES",
+    "official_run": "20260918T051252-p2r10-halfday-survey-54a3d885（主对话复算逐位一致；双签 20260918T054627-p2r10-review-c7d9x2 十项全 PASS、0C/1M 判决中性——F08 跨 symbol 泄漏经全窗重建证明对候选零影响、修复移交 R11；判定三方一致成立，更正节附结果文档 §10；050937 按 aborted 处置）",
+    "links": "docs/research/exp-20260918-p2r10-halfday-survey-prereg.md；configs/experiments/p2r10-halfday-survey.json；docs/research/exp-20260918-p2r10-halfday-survey.md"
+   },
+   {
+    "experiment_id": "exp-20260918-nearmiss-overlap",
+    "date": "2026-09-18",
+    "direction": "'死×死组合'前置结构测量（非回测、零试验消费）：R8/R9 五配置（C01/C09/C10×R8，C01/C08×R9）dev 段（2016–2020）权益曲线相关性与回撤重叠",
+    "trials_counted": 0,
+    "survivors": "0",
+    "verdict": "完成：组合救回撤的数学前提不成立——五配置最大回撤同日 2020-04-01、日收益相关 0.95–0.99、深水日（dd<−10%）Jaccard 0.85–0.94、最差 6 月重叠 5–6/6；'惜败者相互组合'线关闭",
+    "official_run": "—（读 R8/R9 run 的 equity_curves.parquet，无新 run）",
+    "links": "docs/research/exp-20260918-nearmiss-overlap.md"
+   },
+   {
+    "experiment_id": "exp-20260918-p2r11-halfday-combo",
+    "date": "2026-09-18（预登记冻结 06:35，正式运行 06:41）",
+    "direction": "R10 四候选二轮组合：12 配置（等权z×K×卖出计划+单因子归因臂+剔F06/秩平均/分散/隔夜/持1.5日臂）；剔除创业板首次生效；T+1 执行契约（13:01 买/四卖出计划/preclose 桥）",
+    "trials_counted": 12,
+    "survivors": "0",
+    "verdict": "淘汰 0/12 dev 全过（八条门），停止条款生效：二轮关闭、四候选留档不升级、同因子族不再组合化。死因：方向机制成立（买入侧当日下午 +0.49%/日）但隔夜腿 −1.61%/日（全池 −0.15%）摧毁一切——T+1 强制隔夜持有为结构性死因；换手门 12/12 过；C07 唯一正超额 +11.8pp 但净 −12.6%；val/test 零消费",
+    "official_run": "20260918T064112-p2r11-halfday-combo-ec8e3101（F08 修复断言过；双签 20260918T075812-p2r11-review-m4k9qv 十项全 PASS、0C/0M、96 门格零差异、隔夜腿千分位复现、门 8 内生性披露，更正节附 §12）",
+    "links": "docs/research/exp-20260918-p2r11-halfday-combo-prereg.md；configs/experiments/p2r11-halfday-combo.json；docs/research/exp-20260918-p2r11-halfday-combo.md"
+   },
+   {
+    "experiment_id": "exp-20260918-p2r13-lowfreq-survey",
+    "date": "2026-09-18（预登记冻结 06:25，正式运行 07:21）",
+    "direction": "G4 低频截面普查：5 因子（隔夜拥挤/52周高点/北向20日增量/应计/大宗折价）+20日动量对照，月频 20 日持有；来源假设市场摊位 2",
+    "trials_counted": 6,
+    "survivors": "0（C3 dev 过门但 1<2，普查按停止条款关闭；val 未消费）",
+    "verdict": "G4 普查关闭：仅 C3 北向增量过 dev 全门（IC +0.0354/NW(6)t 3.44/年化毛 9.58%/同号月 66.7%，vs circ_mv ρ=0.081 非市值马甲；但逐年 IC 集中于 2017-18，2019-20 近零——regime 风险可见）；C1 隔夜拥挤 t=2.878<3 且增量门败给对照（20日动量 IC −0.0557 更强）；C2/C5 死于信号层；C4 残差非 pe/pb 马甲但 0.0175<0.02；M1 TOM 置换 65% 分位不支持",
+    "official_run": "20260918T072119-p2r13-lowfreq-survey-3916aadf（主对话复算逐位一致；双签 20260918T082530-p2r13-review-q7n3vt 十项全 PASS、0C/0M/1MIN、C3 操作化三变体稳健，更正节附 §10）",
+    "links": "docs/research/exp-20260918-p2r13-lowfreq-survey-prereg.md；configs/experiments/p2r13-lowfreq-survey.json；docs/research/exp-20260918-p2r13-lowfreq-survey.md"
+   },
+   {
+    "experiment_id": "exp-20260918-p2r12-event-veto",
+    "date": "2026-09-18（预登记冻结 07:25，正式运行 07:31）",
+    "direction": "事件否决链轮（假设市场摊位 1 打包）：解禁前瞻/预告下修/披露日临近/公司层减持/应计极端五否决器 + 链组合 + 重叠分析；事件仅作否决/过滤",
+    "trials_counted": 6,
+    "survivors": "0",
+    "verdict": "全灭 0/6，事件否决链线按停止条款关闭：C01 解禁 −0.135pp（需 ≤−0.3，CI 含 0）；C02 下修 dev 样本 168<300 不判活（val 描述 −2.94pp 方向一致但按纪律只留档）；C03 尾差 0.93pp（需 1.5）；C04 减持 post 段方向为正；C05 发生率 1.02×（需 1.5×，60 日副判据 −1.93pp 为真但主判据优先）；C06 链 P5 改善 3.69%（需 10%）；val 零消费（预留第 3 次消费未用）",
+    "official_run": "20260918T073126-p2r12-event-veto-e8a4f049（21,219 文件哈希对账；双签 20260918T084105-p2r12-review-k2v8xn 十项全 PASS、0C/0M/4MIN，更正节附 §9）",
+    "links": "docs/research/exp-20260918-p2r12-event-veto-prereg.md；configs/experiments/p2r12-event-veto.json；docs/research/exp-20260918-p2r12-event-veto.md"
+   },
+   {
+    "experiment_id": "exp-20260918-p2r14-minute-structure",
+    "date": "2026-09-18（预登记冻结 08:10，正式运行 08:02）",
+    "direction": "分钟微观结构轮（假设市场摊位 3 打包）：尾盘量占比/拉尾盘/触跌停/涨停三分/早盘波动集中/竞价爆量六单元，单次合并投影扫描；过滤/标记/裁决用途",
+    "trials_counted": 6,
+    "survivors": "0",
+    "verdict": "0/6 全灭，val 零消费：U1 尾盘量占比差 0.00053 近门（IC −0.01947/t 8.6，残差与分位门过）——最接近者；U2 拉尾盘方向显著（−0.085pp/t 3.17）但幅度不足；U3 触跌停强证伪（次日 +0.53pp/t 7.4 反向=均值回复）；U4 涨停三分假设死（炸板亦正 +0.35pp/t 6.2；F09-T2 正读数未复现 IC −0.006）；U5/U6 两门均败。附带发现：交叉核验源 stk_auction_c 证伪为非竞价记录（U6 首bar量语义噪声已披露）；特征表 9,245,204 行为可复用资产",
+    "official_run": "20260918T080205-p2r14-minute-structure-f59f（主对话复算一致；双签 20260918T094500-p2r14-review-t5w8mq 十项全 PASS、0C/0M/1MIN，更正节附 §10）",
+    "links": "docs/research/exp-20260918-p2r14-minute-structure-prereg.md；configs/experiments/p2r14-minute-structure.json；docs/research/exp-20260918-p2r14-minute-structure.md"
+   },
+   {
+    "experiment_id": "exp-20260918-p2r16-trend-dispersion",
+    "date": "2026-09-18（预登记冻结 07:40，正式运行 08:36）",
+    "direction": "趋势+极度分散（R8 关闭条款预留形态的受控实例化，摊位 4 H-53）：K∈{20,30} × T200-40（R8 逐字复用）/FIX75 × Q5 过滤开/关；附带实测 H-47 缓冲带",
+    "trials_counted": 8,
+    "survivors": "0",
+    "verdict": "0/8 全过，形态测尽关闭：C01/C05（T200-40+Q5 开）净 +2.82%/+3.41%、超额 +2.22/+2.81pp✓、回撤 −19.5%/−17.5%✓，唯一败点门 3（优势年 3/6<5/6，死因=三个负年，2015 巨额负超额源于 000300 回填 9 个 risk-off 月；双签复核更正单年锁死表述）；预期死点（门 2 超额）反而通过——机制获证双值条款未触发；H-06 记方向性支持（判据 4 全过、宽篮子回撤压到 B1(m) 一半）；Q5 过滤是全部净收益来源、T200-40 显著优于 FIX75；H-47 缓冲带换手削减 35-63%（预测 ≥25% 成立）。注意：equity 曲线为全窗计算留档（val 段未参与判定，R6/R7 I2 先例口径，双签复核核实中）；主对话复算全窗 C05 CAGR +0.34% vs dev +3.41%——样本外衰减方向一致",
+    "official_run": "20260918T083650-p2r16-trend-dispersion-afab466f（双签 20260918T100500-p2r16-review-w9r4kc 十项全 PASS、0C/0M/4MIN，更正节附 §11；val 段计算留档未判定——I2 口径）",
+    "links": "docs/research/exp-20260918-p2r16-trend-dispersion-prereg.md；configs/experiments/p2r16-trend-dispersion.json；docs/research/exp-20260918-p2r16-trend-dispersion.md"
+   }
+  ]
+ },
+ "legacy_project": {
+  "disclaimer": "旧项目口径：docs/legacy 只读档案，未按本仓库纪律（冻结边界、PIT 池、预登记、淘汰判据、留档规范）执行；其数字只作方向级线索，未经本轮重验，不并入 115 计数，不与本仓库结论混同、互证或相加。",
+  "sources": [
+   "docs/legacy/README.md",
+   "docs/legacy/CHANGELOG.md（v1.0.0 2026-09-02 至未发布 2026-09-13；v2.9.11 严格池复算）",
+   "docs/legacy/docs/decisions.md（D-决策记录）",
+   "docs/legacy/docs/experiments/experiment-index-20260911.md（EX1 结构化索引）",
+   "docs/legacy/docs/experiments/experiment-clustering-20260911.md（EX2 失败聚类与死区登记簿）",
+   "docs/research/exp-20260917-negative-synthesis.md §8（旧项目负面与被推翻结论）"
+  ],
+  "count_clues": {
+   "ex1_index_snapshot_20260911": "docs/experiments/*.md 83 份 + docs/plans/*.md 26 份 = 109 行索引；verdict 分布 null=54 / PENDING=32 / FAIL=10 / PASS=7 / DESCRIPTIVE=5 / SEALED=1；14 条研究线；decisions.md 126 条 D-决策（80 条被索引文档对应、46 条孤儿）",
+   "directory_reality_at_registration": "docs/legacy/docs 共 217 篇 .md（与旧 README 'docs/（217 篇）'口径一致）；experiments 146 篇、plans 51 篇（索引快照后 09-12~14 仍持续追加，故大于快照数）；decisions.md 实测 136 个唯一 D-2026-MM-DD-NN 编号（含 09-12 追加）",
+   "ex2_clustering": "20 条死区（sealed=11 / strong=6 / single=3，DZ-001…DZ-FML 系列）+ 8 个失败机制簇（MC1–MC8）+ R1 冻结清单 S1–S13 去重级排除",
+   "negative_synthesis_93_note": "本仓库负面综合的 93 名义单元是新项目自身五轮的口径，与 legacy 计数分母不同，不可相加或互换"
+  },
+  "direction_families": [
+   {
+    "family": "short-foundation P0–P3（短线底座+八组规则）",
+    "count_clue": "严格池 8 组规则 × 5 窗口 = 40 格 total_return 全负（最好 G5 −12.84%）；momentum_market 旧池 +28.29% 被严格池复算推翻（CHANGELOG v2.9.11）",
+    "status": "死（盈利路线）"
+   },
+   {
+    "family": "P4 价量短线选股（48 格）",
+    "count_clue": "12 候选 × 4 止损 = 48 格全部 B2=False、期望净收益为负；Gate D 冻结；日线价量短线研发暂停",
+    "status": "死/封存（DZ-003）"
+   },
+   {
+    "family": "P4 低波动 5→10 会话延期",
+    "count_clue": "1 条假设 FAIL（毛 +0.06584% → 净 −0.13414%）",
+    "status": "死/封存（DZ-004）"
+   },
+   {
+    "family": "V3 每日/加快趋势退出 + 修复轮 A/B 臂",
+    "count_clue": "每日退出：年化 10.19%→1.99%、回撤恶化；臂 A/B（AB/ABC）FAIL 封存；臂 C 机制拆分判不确定不改生产",
+    "status": "死/封存（DZ-005/006）；V3 主线维持生产（旧项目口径）"
+   },
+   {
+    "family": "weekly-entry / weekly-trade（周内两线）",
+    "count_clue": "7 组固定入场规则 + 3 个标签方案，均未达年化10%/夏普1.5 且冻结选出者样本外转负",
+    "status": "死（DZ-008）"
+   },
+   {
+    "family": "short-target（方向预测/概率）",
+    "count_clue": "2024 方向准确率股票 49.68% vs 频率基线 48.86%、ETF 48.42% vs 48.94%，Brier 改善为负——旧项目自判'无可靠预测优势'",
+    "status": "死（DZ 与 MC5）"
+   },
+   {
+    "family": "daily-swing v1",
+    "count_clue": "全期 −8.31%、验证段 −4.01%、测试段 +8.91%、全期 MDD 24.46%",
+    "status": "降级为研究对照"
+   },
+   {
+    "family": "做 T 对称档位（t0，分钟证据口径）",
+    "count_clue": "6 组合年度净增益中位全非正；t0 维持保本价位计算器定位",
+    "status": "死（DZ-010）"
+   },
+   {
+    "family": "mr-statarb（残差均值回归）",
+    "count_clue": "6 格 z 网格；阶段 C 唯一候选 m20_z05 净期望 +0.1076%、95%CI 下界<0，封顶探索级",
+    "status": "封存（DZ-002）"
+   },
+   {
+    "family": "event-family（事件家族）",
+    "count_clue": "4 构造（E1_bull/E2 快报/E3 增持/E4 回购）无一过晋级线（E1_bull 差 3.3bp）",
+    "status": "封存（DZ-001）"
+   },
+   {
+    "family": "family-screening（家族批筛）",
+    "count_clue": "②PE 0/5 晋级；③资金流 MF 20 格超额全负；④价量仅 PV1 获精测资格；⑤财务 F1/F4+F18/F20/F26/F27/F30 共 7 构造晋级攒批统考；PV2/PV5 无精测资格",
+    "status": "部分存活（资格层面，无最终结论）"
+   },
+   {
+    "family": "pv1-precision（价量精测）",
+    "count_clue": "in-window 净年化 +7.68% 但 CI 含零；留出窗一次性考试按攒批推迟",
+    "status": "在途（未定，快照口径）"
+   },
+   {
+    "family": "factor-miner R0/R1（因子挖掘引擎）",
+    "count_clue": "引擎六轮 PASS 后 R0 TRAIN 解锁；r1-pool 公式池 215 行/17 文件（早期口径 153 条/12 文件，漂移已披露）；系统审计 CHANGES_REQUESTED 后暂停",
+    "status": "在途（快照口径，无统考结论）"
+   },
+   {
+    "family": "TimesFM / Kronos 基座模型",
+    "count_clue": "TimesFM q50 主方案失败（净值 0.891 vs 动量 1.953）、6 变体消融否决；Kronos 用户终止（2/44 月末）",
+    "status": "死（DZ-011）"
+   },
+   {
+    "family": "token-router（工具链，非交易）",
+    "count_clue": "A/B 降幅 0.0% 未过 ≥50% 门槛",
+    "status": "DO_NOT_ENABLE（DZ-012）"
+   },
+   {
+    "family": "P4-R2 ETF 混合池 / 仓位分级",
+    "count_clue": "前者搁置（产品主线变更）、后者作废（非实证死）",
+    "status": "搁置/作废（DZ-013）"
+   },
+   {
+    "family": "top15-cost-breakeven",
+    "count_clue": "描述性成本盈亏平衡表（k=15 双边 12.5bps）",
+    "status": "描述性，无可执行判定"
+   },
+   {
+    "family": "后期工程与审核线（2026-09-12~14：ten-year、bigquant、qlib L0/T3、vectorbt t3、rev11/r0/r1 审核等）",
+    "count_clue": "以工程、迁移、审核文档为主（experiments/plans 目录 09-12 后新增部分），无按本仓库纪律的试验结论",
+    "status": "工程/审核留档，不并算"
+   }
+  ]
+ },
+ "conflicts_and_discrepancies": [
+  {
+   "id": "X-01",
+   "topic": "试验计数口径 115 vs 93",
+   "sides": "主计划/各轮报告：27 配置 + 20 因子普查 + 44 窗口 + R6 12 + R7 12 = 115；负面综合 §2：93 名义被试单元（R4 按 22 个管线结果计）",
+   "resolution": "两口径并存；负面综合 §2.1 已自对账（'20 因子普查含 2 组合规则'）。本台账不裁决，两处均登记。"
+  },
+  {
+   "id": "X-02",
+   "topic": "legacy 索引快照 vs 目录现状",
+   "sides": "EX1 快照（2026-09-11）：83 实验 + 26 计划 = 109 行、126 条 D-决策；当前目录：experiments 146 篇 + plans 51 篇、decisions.md 136 个唯一 D-ID",
+   "resolution": "快照后目录继续追加（09-12~14），两说并列；引用时注明口径与时点。"
+  },
+  {
+   "id": "X-03",
+   "topic": "legacy 'PASS=7/部分存活' 的含义",
+   "sides": "legacy verdict PASS/部分存活多为工程、方法学或'资格层面'存活（底座代码、数据管线、攒批统考资格）；本仓库'存活'口径=费用后胜基准且账户可交付",
+   "resolution": "两口径不同，不可互译；按本仓库口径 legacy 无存活盈利策略（其自身 CHANGELOG 与死区登记簿亦如此认定）。"
+  },
+  {
+   "id": "X-04",
+   "topic": "short-profit +28.29%",
+   "sides": "旧 README 正面记载 vs CHANGELOG v2.9.11 严格池复算八组全负（池构建/幸存者偏差产物，掩码仅解释约 1.1pp）",
+   "resolution": "旧项目自身已推翻；两说照录并标注推翻关系，旧数字永不复用（负面综合 B7）。"
+  },
+  {
+   "id": "X-05",
+   "topic": "r1-pool 公式计数漂移",
+   "sides": "153 条/12 文件（r1-formula-gap-analysis 写作时点） vs 215 行/17 文件（workspace-inventory 与 EX2 实际文件口径）",
+   "resolution": "漂移已由旧项目自身披露；两说并列。"
+  },
+  {
+   "id": "X-06",
+   "topic": "P2-R6 执行统计可复现性",
+   "sides": "结果文档 §4/§7 原文统计（计划买入 23,752 等） vs 双签复核实测（计划买入 4,765、trades 总行 64,990 等）",
+   "resolution": "双签判定'12/12 淘汰'零差异成立；统计更正以结果文档 §10 更正节为准，原文保留不删。"
+  },
+  {
+   "id": "X-07",
+   "topic": "创业板权限登记冲突",
+   "sides": "主计划第四次更新：'无创业板权限'（P3 股票池剔除 300/301/302） vs 2026-09-17 用户确认：创业板/科创板 ETF 交易权限有（R6 预登记 U2 改为纳入）",
+   "resolution": "2026-09-18 用户晨间决定：股票池剔除创业板 300/301/302（沪深主板限定），第四次更新原规则确认有效；'权限有'确认仅适用 ETF 侧，ETF 池不受影响。冲突关闭。"
+  },
+  {
+   "id": "X-08",
+   "topic": "费率口径假设",
+   "sides": "fee-recost 将现行卖出印花税 0.05% 外推全历史 vs 2015–2023-08-28 实际 0.1%",
+   "resolution": "已作为明确假设披露（低估当年实际费用，方向保守不利于存活结论）；非冲突，登记备查。"
+  }
+ ],
+ "self_check": {
+  "sum_check": "9+6+8+20+4+44+12+12 = 115 ✓",
+  "run_id_spot_check": "登记的 19 个正式/附属 run 目录（TL-01…TL-13、TL-15 及 R6 两个作废运行、R8 除外）逐一在 artifacts/runs/ 下核实存在；R7 双签 run 20260918T005610-p2r7-review-9f4c 存在（仅含 tmp/，复核进行中与主计划第九次更新一致）；artifacts/runs/ 下无 p2r8 目录（与'运行中、正式 run 未落盘'表述一致）",
+  "written_at": "2026-09-18（登记时点）",
+  "r8_status_rule": "R8 状态固定为'运行中、结果未知'，直至其结果文档按预登记 §5 落盘"
+ }
+}

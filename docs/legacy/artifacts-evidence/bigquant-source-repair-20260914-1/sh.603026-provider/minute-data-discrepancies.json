@@ -1,0 +1,24 @@
+[
+  {
+    "reason": "MINUTE_DAILY_DISCREPANCY_UNRESOLVED",
+    "reviewed_exception": null,
+    "accepted_source_baseline": null,
+    "code": "sh.603026",
+    "date": "2019-05-06",
+    "minute_aggregate": {
+      "open": 31.5,
+      "close": 31.05,
+      "high": 32.78,
+      "low": 30.11,
+      "volume": 9808855.0
+    },
+    "daily": {
+      "open": 31.5,
+      "high": 32.78,
+      "low": 30.11,
+      "close": 31.05,
+      "volume": 9806855.0
+    },
+    "source": "D:\\AI\\workspace\\个人量化\\data\\raw\\bigquant\\minute-repairs-20260914-1\\sh.603026_2019-05-06_f5.csv"
+  }
+]

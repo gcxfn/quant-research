@@ -1,0 +1,141 @@
+{
+ "source": "xiaodefa",
+ "dataset": "stock_basic",
+ "batches": {
+  "xiaodefa/stock_basic/20260913-bulk1": {
+   "batch_dir": "xiaodefa/stock_basic/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 3,
+    "n_csv": 2,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 606899
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 list_date 有 225 行 > 2024-12-31 (max=20260911); 冻结边界审查: 只报告不删除"
+    }
+   ],
+   "inventory_registration": {
+    "files": 3,
+    "bytes": 606899
+   },
+   "schema": {
+    "ts_code": "String",
+    "symbol": "String",
+    "name": "String",
+    "area": "String",
+    "industry": "String",
+    "cnspell": "String",
+    "market": "String",
+    "list_date": "Int64",
+    "act_name": "String",
+    "act_ent_type": "String"
+   },
+   "n_columns": 10,
+   "date_columns": [
+    "list_date"
+   ],
+   "numeric_columns_checked": [
+    "list_date"
+   ],
+   "rows_total": 5904,
+   "date_coverage": {
+    "list_date": {
+     "min": "19700101",
+     "max": "20260911",
+     "rows_gt_20241231": 225,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 225,
+   "numeric_magnitude": {
+    "list_date": {
+     "min": 19700101.0,
+     "max": 20260911.0
+    }
+   },
+   "primary_key": [
+    "ts_code"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "ts_code": "000004.SZ",
+     "symbol": "000004",
+     "name": "国华退",
+     "area": null,
+     "industry": null,
+     "cnspell": "GHT",
+     "market": "主板",
+     "list_date": "19901201",
+     "act_name": "李映彤",
+     "act_ent_type": "自然人"
+    },
+    {
+     "ts_code": "000638.SZ",
+     "symbol": "000638",
+     "name": "*ST万方",
+     "area": "吉林",
+     "industry": "农业综合",
+     "cnspell": "stwf",
+     "market": "主板",
+     "list_date": "19961126",
+     "act_name": "张晖",
+     "act_ent_type": "民营企业"
+    },
+    {
+     "ts_code": "600193.SH",
+     "symbol": "600193",
+     "name": "退市创兴",
+     "area": null,
+     "industry": null,
+     "cnspell": "TSCX",
+     "market": "主板",
+     "list_date": "19990527",
+     "act_name": "王相荣",
+     "act_ent_type": "自然人"
+    },
+    {
+     "ts_code": "600421.SH",
+     "symbol": "600421",
+     "name": "退市华嵘",
+     "area": null,
+     "industry": null,
+     "cnspell": "TSHR",
+     "market": "主板",
+     "list_date": "20040607",
+     "act_name": "楼永良",
+     "act_ent_type": "自然人"
+    },
+    {
+     "ts_code": "600599.SH",
+     "symbol": "600599",
+     "name": "退市熊猫",
+     "area": null,
+     "industry": null,
+     "cnspell": "TSXM",
+     "market": "主板",
+     "list_date": "20010828",
+     "act_name": "赵伟平",
+     "act_ent_type": "自然人"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:08:41"
+  }
+ },
+ "updated_at": "2026-09-18T00:08:41"
+}

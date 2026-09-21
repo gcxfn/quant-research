@@ -1,0 +1,922 @@
+{
+  "status": "PRODUCTION_V3_LONG_HISTORY",
+  "data_window": [
+    "2005-02-23",
+    "2026-09-04"
+  ],
+  "pool_size": 55,
+  "excluded": [],
+  "adjustment_notes": [
+    {
+      "symbol": "sh510050",
+      "adjustment_artifacts": [
+        {
+          "date": "2005-03-10",
+          "adjusted_ret": -0.263158,
+          "raw_ret": -0.02291,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-03-15",
+          "adjusted_ret": -0.233333,
+          "raw_ret": -0.016336,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-03-22",
+          "adjusted_ret": -0.592593,
+          "raw_ret": -0.019417,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-03-23",
+          "adjusted_ret": -0.363636,
+          "raw_ret": -0.00495,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-04-04",
+          "adjusted_ret": 0.625,
+          "raw_ret": 0.006211,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-04-05",
+          "adjusted_ret": -0.384615,
+          "raw_ret": -0.006173,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-04-06",
+          "adjusted_ret": 1.625,
+          "raw_ret": 0.016149,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-04-07",
+          "adjusted_ret": 0.285714,
+          "raw_ret": 0.007335,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-04-08",
+          "adjusted_ret": 0.444444,
+          "raw_ret": 0.014563,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-04-12",
+          "adjusted_ret": -0.272727,
+          "raw_ret": -0.010843,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-04-13",
+          "adjusted_ret": 0.791667,
+          "raw_ret": 0.023143,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-04-14",
+          "adjusted_ret": -0.27907,
+          "raw_ret": -0.014286,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-04-15",
+          "adjusted_ret": -0.322581,
+          "raw_ret": -0.012077,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-04-18",
+          "adjusted_ret": -0.47619,
+          "raw_ret": -0.012225,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-04-19",
+          "adjusted_ret": 0.272727,
+          "raw_ret": 0.003713,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-08-03",
+          "adjusted_ret": -0.285714,
+          "raw_ret": -0.004932,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-08-05",
+          "adjusted_ret": 2.75,
+          "raw_ret": 0.027329,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-08-11",
+          "adjusted_ret": 0.30303,
+          "raw_ret": 0.012048,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-08-15",
+          "adjusted_ret": 0.461538,
+          "raw_ret": 0.021531,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-08-16",
+          "adjusted_ret": -0.263158,
+          "raw_ret": -0.017564,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-08-17",
+          "adjusted_ret": 0.261905,
+          "raw_ret": 0.013111,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-08-18",
+          "adjusted_ret": -0.490566,
+          "raw_ret": -0.030588,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-08-19",
+          "adjusted_ret": 0.222222,
+          "raw_ret": 0.007282,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-08-24",
+          "adjusted_ret": 0.30303,
+          "raw_ret": 0.012048,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-08-29",
+          "adjusted_ret": -0.232558,
+          "raw_ret": -0.011905,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-08-31",
+          "adjusted_ret": 0.310345,
+          "raw_ret": 0.010896,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-09-01",
+          "adjusted_ret": 0.236842,
+          "raw_ret": 0.010778,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-09-06",
+          "adjusted_ret": -0.229167,
+          "raw_ret": -0.013018,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-09-21",
+          "adjusted_ret": -0.214286,
+          "raw_ret": -0.010727,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-09-22",
+          "adjusted_ret": -0.515152,
+          "raw_ret": -0.020482,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-09-23",
+          "adjusted_ret": -0.3125,
+          "raw_ret": -0.00615,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-09-26",
+          "adjusted_ret": 0.363636,
+          "raw_ret": 0.00495,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-09-27",
+          "adjusted_ret": -0.8,
+          "raw_ret": -0.014778,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-09-28",
+          "adjusted_ret": 0.666667,
+          "raw_ret": 0.0025,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-09-29",
+          "adjusted_ret": 1.4,
+          "raw_ret": 0.008728,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-10-10",
+          "adjusted_ret": -0.818182,
+          "raw_ret": -0.011139,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-10-11",
+          "adjusted_ret": 4.0,
+          "raw_ret": 0.010013,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-10-13",
+          "adjusted_ret": -0.777778,
+          "raw_ret": -0.008685,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-12-21",
+          "adjusted_ret": 1.5,
+          "raw_ret": 0.003755,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-12-22",
+          "adjusted_ret": 0.6,
+          "raw_ret": 0.003741,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-12-23",
+          "adjusted_ret": 0.625,
+          "raw_ret": 0.006211,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-12-26",
+          "adjusted_ret": 0.230769,
+          "raw_ret": 0.003704,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-12-27",
+          "adjusted_ret": -0.25,
+          "raw_ret": -0.00492,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-12-29",
+          "adjusted_ret": 0.666667,
+          "raw_ret": 0.009889,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2005-12-30",
+          "adjusted_ret": -0.25,
+          "raw_ret": -0.00612,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2006-01-04",
+          "adjusted_ret": 1.133333,
+          "raw_ret": 0.020936,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2006-01-05",
+          "adjusted_ret": 0.59375,
+          "raw_ret": 0.022919,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2006-01-16",
+          "adjusted_ret": -0.265306,
+          "raw_ret": -0.015366,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2006-01-18",
+          "adjusted_ret": 0.404762,
+          "raw_ret": 0.020262,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2006-02-06",
+          "adjusted_ret": 0.227273,
+          "raw_ret": 0.017381,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        }
+      ]
+    },
+    {
+      "symbol": "sh510880",
+      "adjustment_artifacts": [
+        {
+          "date": "2007-01-31",
+          "adjusted_ret": -0.224138,
+          "raw_ret": -0.068662,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2007-02-27",
+          "adjusted_ret": -0.261932,
+          "raw_ret": -0.092402,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-04-24",
+          "adjusted_ret": 0.228385,
+          "raw_ret": 0.099929,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-06-19",
+          "adjusted_ret": -0.210983,
+          "raw_ret": -0.08378,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-08-11",
+          "adjusted_ret": -0.221805,
+          "raw_ret": -0.055977,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-08-18",
+          "adjusted_ret": -0.243363,
+          "raw_ret": -0.054241,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-08-20",
+          "adjusted_ret": 0.441667,
+          "raw_ret": 0.082128,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-08-21",
+          "adjusted_ret": -0.211946,
+          "raw_ret": -0.052506,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-09-08",
+          "adjusted_ret": -0.315126,
+          "raw_ret": -0.041345,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-09-16",
+          "adjusted_ret": -0.216374,
+          "raw_ret": -0.021179,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-09-17",
+          "adjusted_ret": -0.246269,
+          "raw_ret": -0.019298,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-09-19",
+          "adjusted_ret": 1.138614,
+          "raw_ret": 0.068575,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-09-22",
+          "adjusted_ret": 0.523148,
+          "raw_ret": 0.063058,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-09-23",
+          "adjusted_ret": -0.300912,
+          "raw_ret": -0.051969,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-09-25",
+          "adjusted_ret": 0.273469,
+          "raw_ret": 0.036793,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-10-06",
+          "adjusted_ret": -0.352761,
+          "raw_ret": -0.060463,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-10-08",
+          "adjusted_ret": -0.234146,
+          "raw_ret": -0.026951,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-10-09",
+          "adjusted_ret": -0.216561,
+          "raw_ret": -0.019619,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-10-10",
+          "adjusted_ret": -0.601626,
+          "raw_ret": -0.043555,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-12-04",
+          "adjusted_ret": 0.818182,
+          "raw_ret": 0.02759,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-12-08",
+          "adjusted_ret": 0.618182,
+          "raw_ret": 0.040332,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-12-09",
+          "adjusted_ret": -0.252809,
+          "raw_ret": -0.025656,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-12-11",
+          "adjusted_ret": -0.357143,
+          "raw_ret": -0.031792,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-12-12",
+          "adjusted_ret": -0.636364,
+          "raw_ret": -0.037612,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-12-15",
+          "adjusted_ret": 0.5,
+          "raw_ret": 0.011166,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-12-16",
+          "adjusted_ret": 0.314815,
+          "raw_ret": 0.010429,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-12-18",
+          "adjusted_ret": 0.26087,
+          "raw_ret": 0.010942,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2008-12-22",
+          "adjusted_ret": -0.346939,
+          "raw_ret": -0.020311,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2009-01-15",
+          "adjusted_ret": -0.765625,
+          "raw_ret": -0.029878,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2009-01-16",
+          "adjusted_ret": 2.8,
+          "raw_ret": 0.026398,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2009-01-21",
+          "adjusted_ret": -0.226667,
+          "raw_ret": -0.010297,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2009-01-22",
+          "adjusted_ret": 0.362069,
+          "raw_ret": 0.012852,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2009-02-02",
+          "adjusted_ret": 0.265823,
+          "raw_ret": 0.012689,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2009-02-03",
+          "adjusted_ret": 0.45,
+          "raw_ret": 0.02685,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2009-02-04",
+          "adjusted_ret": 0.331034,
+          "raw_ret": 0.027891,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2009-02-06",
+          "adjusted_ret": 0.367876,
+          "raw_ret": 0.040136,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2009-02-13",
+          "adjusted_ret": 0.211656,
+          "raw_ret": 0.036278,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2009-02-18",
+          "adjusted_ret": -0.255696,
+          "raw_ret": -0.051243,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2009-02-24",
+          "adjusted_ret": -0.221429,
+          "raw_ret": -0.046593,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2009-02-26",
+          "adjusted_ret": -0.283077,
+          "raw_ret": -0.048396,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2009-02-27",
+          "adjusted_ret": -0.300429,
+          "raw_ret": -0.038695,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2009-03-04",
+          "adjusted_ret": 0.640212,
+          "raw_ret": 0.068555,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2009-03-17",
+          "adjusted_ret": 0.273504,
+          "raw_ret": 0.035359,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2009-08-31",
+          "adjusted_ret": -0.239651,
+          "raw_ret": -0.089069,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2012-09-07",
+          "adjusted_ret": 0.300448,
+          "raw_ret": 0.039976,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2012-12-05",
+          "adjusted_ret": 0.285,
+          "raw_ret": 0.034483,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2012-12-14",
+          "adjusted_ret": 0.308511,
+          "raw_ret": 0.050144,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2013-06-24",
+          "adjusted_ret": -0.283668,
+          "raw_ret": -0.056218,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2013-06-28",
+          "adjusted_ret": 0.257778,
+          "raw_ret": 0.035431,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2013-07-11",
+          "adjusted_ret": 0.34589,
+          "raw_ret": 0.059272,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2013-08-12",
+          "adjusted_ret": 0.225352,
+          "raw_ret": 0.037736,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2013-09-09",
+          "adjusted_ret": 0.269036,
+          "raw_ret": 0.058693,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        }
+      ]
+    },
+    {
+      "symbol": "sh512690",
+      "adjustment_artifacts": [
+        {
+          "date": "2019-05-07",
+          "adjusted_ret": 0.211538,
+          "raw_ret": 0.047357,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2019-05-10",
+          "adjusted_ret": 0.240741,
+          "raw_ret": 0.056831,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2019-05-15",
+          "adjusted_ret": 0.212121,
+          "raw_ret": 0.057054,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        },
+        {
+          "date": "2020-02-03",
+          "adjusted_ret": -0.251082,
+          "raw_ret": -0.099914,
+          "explanation": "前复权在除息日的伪影，原始收益在涨跌停限制内"
+        }
+      ]
+    }
+  ],
+  "eligible_count_by_year": {
+    "2005": {
+      "min": 0,
+      "max": 0,
+      "mean": 0.0,
+      "n_month_ends": 7
+    },
+    "2006": {
+      "min": 0,
+      "max": 1,
+      "mean": 0.1,
+      "n_month_ends": 12
+    },
+    "2007": {
+      "min": 0,
+      "max": 1,
+      "mean": 0.8,
+      "n_month_ends": 12
+    },
+    "2008": {
+      "min": 0,
+      "max": 0,
+      "mean": 0.0,
+      "n_month_ends": 12
+    },
+    "2009": {
+      "min": 0,
+      "max": 2,
+      "mean": 1.2,
+      "n_month_ends": 12
+    },
+    "2010": {
+      "min": 0,
+      "max": 1,
+      "mean": 0.1,
+      "n_month_ends": 12
+    },
+    "2011": {
+      "min": 0,
+      "max": 1,
+      "mean": 0.2,
+      "n_month_ends": 12
+    },
+    "2012": {
+      "min": 0,
+      "max": 1,
+      "mean": 0.2,
+      "n_month_ends": 12
+    },
+    "2013": {
+      "min": 0,
+      "max": 3,
+      "mean": 1.1,
+      "n_month_ends": 12
+    },
+    "2014": {
+      "min": 0,
+      "max": 4,
+      "mean": 2.2,
+      "n_month_ends": 12
+    },
+    "2015": {
+      "min": 0,
+      "max": 5,
+      "mean": 2.5,
+      "n_month_ends": 12
+    },
+    "2016": {
+      "min": 1,
+      "max": 4,
+      "mean": 2.2,
+      "n_month_ends": 12
+    },
+    "2017": {
+      "min": 1,
+      "max": 4,
+      "mean": 2.7,
+      "n_month_ends": 12
+    },
+    "2018": {
+      "min": 0,
+      "max": 3,
+      "mean": 0.8,
+      "n_month_ends": 12
+    },
+    "2019": {
+      "min": 1,
+      "max": 8,
+      "mean": 4.6,
+      "n_month_ends": 12
+    },
+    "2020": {
+      "min": 1,
+      "max": 14,
+      "mean": 6.4,
+      "n_month_ends": 12
+    },
+    "2021": {
+      "min": 4,
+      "max": 16,
+      "mean": 9.8,
+      "n_month_ends": 12
+    },
+    "2022": {
+      "min": 2,
+      "max": 19,
+      "mean": 6.7,
+      "n_month_ends": 12
+    },
+    "2023": {
+      "min": 2,
+      "max": 27,
+      "mean": 11.5,
+      "n_month_ends": 12
+    },
+    "2024": {
+      "min": 3,
+      "max": 44,
+      "mean": 18.0,
+      "n_month_ends": 12
+    },
+    "2025": {
+      "min": 9,
+      "max": 49,
+      "mean": 27.2,
+      "n_month_ends": 12
+    },
+    "2026": {
+      "min": 8,
+      "max": 39,
+      "mean": 21.2,
+      "n_month_ends": 8
+    }
+  },
+  "adequate_pool_start": "2020-07-31",
+  "v3": {
+    "description": "V3 production: percentile-rank(R20/R60/R120) equal mean, Top3 equal-weight, monthly",
+    "full_window": {
+      "segment": "full",
+      "start": "2005-02-23",
+      "end": "2026-09-04",
+      "days": 5107,
+      "total_return": 7.28352910167,
+      "ann_return": 0.10996288057190617,
+      "ann_vol": 0.280552388939414,
+      "max_drawdown": -0.6822212992577317,
+      "sharpe_rf0": 0.3919513249828464,
+      "calmar": 0.16118359349311967
+    },
+    "adequate_window": {
+      "segment": "adequate",
+      "start": "2020-07-31",
+      "end": "2026-09-04",
+      "days": 1480,
+      "total_return": 0.5965833942879624,
+      "ann_return": 0.08292278129894459,
+      "ann_vol": 0.3246734365189719,
+      "max_drawdown": -0.5535310171927865,
+      "sharpe_rf0": 0.255403651706194,
+      "calmar": 0.14980692810943932
+    },
+    "segments": [
+      {
+        "segment": "research",
+        "start": "2005-02-23",
+        "end": "2018-04-09",
+        "days": 3064,
+        "total_return": 2.80658449104,
+        "ann_return": 0.11621123664532251,
+        "ann_vol": 0.2641217369403341,
+        "max_drawdown": -0.6822212992577317,
+        "sharpe_rf0": 0.43999118736514664,
+        "calmar": 0.17034243400457053
+      },
+      {
+        "segment": "validation",
+        "start": "2018-04-10",
+        "end": "2022-06-22",
+        "days": 1021,
+        "total_return": 0.5486213766368104,
+        "ann_return": 0.11399101373887377,
+        "ann_vol": 0.279395006416068,
+        "max_drawdown": -0.410516301667854,
+        "sharpe_rf0": 0.4079923088142858,
+        "calmar": 0.27767719156522835
+      },
+      {
+        "segment": "test",
+        "start": "2022-06-23",
+        "end": "2026-09-04",
+        "days": 1022,
+        "total_return": 0.39731016903265237,
+        "ann_return": 0.08598950129281979,
+        "ann_vol": 0.32634030185131346,
+        "max_drawdown": -0.3474439957709633,
+        "sharpe_rf0": 0.2634964201632631,
+        "calmar": 0.2474916888461773
+      }
+    ]
+  },
+  "v2_baseline": {
+    "description": "V2: 0.5*R20 + 0.3*R60 + 0.2*R120, Top1, monthly",
+    "full_window": {
+      "segment": "full",
+      "start": "2005-02-23",
+      "end": "2026-09-04",
+      "days": 5107,
+      "total_return": 2.755636,
+      "ann_return": 0.067474,
+      "ann_vol": 0.468124,
+      "max_drawdown": -0.847835
+    },
+    "adequate_window": {
+      "segment": "adequate",
+      "start": "2020-07-31",
+      "end": "2026-09-04",
+      "days": 1480,
+      "total_return": 0.17100345155812535,
+      "ann_return": 0.027243540494104046,
+      "ann_vol": 0.43646002850827587,
+      "max_drawdown": -0.7880362615394595,
+      "sharpe_rf0": 0.062419325286708294,
+      "calmar": 0.03457143005181352
+    },
+    "segments": [
+      {
+        "segment": "research",
+        "start": "2005-02-23",
+        "end": "2018-04-09",
+        "days": 3064,
+        "total_return": 1.326043,
+        "ann_return": 0.071896,
+        "ann_vol": 0.505764,
+        "max_drawdown": -0.847835
+      },
+      {
+        "segment": "validation",
+        "start": "2018-04-10",
+        "end": "2022-06-22",
+        "days": 1021,
+        "total_return": 0.739791,
+        "ann_return": 0.14646,
+        "ann_vol": 0.389221,
+        "max_drawdown": -0.527709
+      },
+      {
+        "segment": "test",
+        "start": "2022-06-23",
+        "end": "2026-09-04",
+        "days": 1022,
+        "total_return": -0.094855,
+        "ann_return": -0.024274,
+        "ann_vol": 0.421053,
+        "max_drawdown": -0.674565
+      }
+    ]
+  },
+  "benchmark": null,
+  "survivorship_note": "池为当前在市 55 只 ETF 回放全历史：早期年份绝大多数标的未上市，合格池窄（见 eligible_count_by_year），且未包含已清盘 ETF——幸存者偏差在全历史口径下比 5 年窗口更严重，全历史数字只能作为量级参考，不得作为预期收益。",
+  "methodology_note": "确认性实验：V3/V2 参数均沿用既有固定规则，未做任何搜索或调整。同花顺 5 年窗口的既有结论（MDD 改善来自 Top-N 分散化、+71% 为Top3 单点尖峰）不因样本延长而重新调参。"
+}

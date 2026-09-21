@@ -1,0 +1,204 @@
+{
+ "source": "tushare",
+ "dataset": "disclosure_date",
+ "batches": {
+  "tushare/disclosure_date/20260909-r1": {
+   "batch_dir": "tushare/disclosure_date/20260909-r1",
+   "mode": "full",
+   "files": {
+    "n_total": 32,
+    "n_csv": 31,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 6977498
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 pre_date 有 38318 行 > 2024-12-31 (max=20260831); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 32,
+    "bytes": 6977498
+   },
+   "schema": {
+    "ts_code": "String",
+    "ann_date": "Int64",
+    "end_date": "Int64",
+    "pre_date": "Int64",
+    "actual_date": "Int64"
+   },
+   "n_columns": 5,
+   "date_columns": [
+    "ann_date",
+    "end_date",
+    "pre_date",
+    "actual_date"
+   ],
+   "numeric_columns_checked": [
+    "actual_date",
+    "ann_date",
+    "end_date",
+    "pre_date"
+   ],
+   "rows_total": 148313,
+   "date_coverage": {
+    "ann_date": {
+     "min": "20181227",
+     "max": "20260827",
+     "rows_gt_20241231": 33862,
+     "null_rows": 0
+    },
+    "end_date": {
+     "min": "20181231",
+     "max": "20260630",
+     "rows_gt_20241231": 32896,
+     "null_rows": 0
+    },
+    "pre_date": {
+     "min": "20190122",
+     "max": "20260831",
+     "rows_gt_20241231": 38318,
+     "null_rows": 0
+    },
+    "actual_date": {
+     "min": "20190122",
+     "max": "20260831",
+     "rows_gt_20241231": 38263,
+     "null_rows": 178
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 38318,
+   "numeric_magnitude": {
+    "actual_date": {
+     "min": 20190122.0,
+     "max": 20260831.0
+    },
+    "ann_date": {
+     "min": 20181227.0,
+     "max": 20260827.0
+    },
+    "end_date": {
+     "min": 20181231.0,
+     "max": 20260630.0
+    },
+    "pre_date": {
+     "min": 20190122.0,
+     "max": 20260831.0
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "end_date"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "ts_code": "300619.SZ",
+     "ann_date": "20181228",
+     "end_date": "20181231",
+     "pre_date": "20190122",
+     "actual_date": "20190122"
+    },
+    {
+     "ts_code": "601619.SH",
+     "ann_date": "20181227",
+     "end_date": "20181231",
+     "pre_date": "20190129",
+     "actual_date": "20190129"
+    },
+    {
+     "ts_code": "300125.SZ",
+     "ann_date": "20181228",
+     "end_date": "20181231",
+     "pre_date": "20190129",
+     "actual_date": "20190129"
+    },
+    {
+     "ts_code": "000055.SZ",
+     "ann_date": "20181228",
+     "end_date": "20181231",
+     "pre_date": "20190130",
+     "actual_date": "20190130"
+    },
+    {
+     "ts_code": "002188.SZ",
+     "ann_date": "20181228",
+     "end_date": "20181231",
+     "pre_date": "20190131",
+     "actual_date": "20190131"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 31,
+    "distinct_headers": 1,
+    "modal_header_cols": 5,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "chunk_period_20230930.csv",
+      "manifest_rows": 5306,
+      "actual_rows": 5305
+     },
+     {
+      "chunk": "chunk_period_20191231.csv",
+      "manifest_rows": 3832,
+      "actual_rows": 3831
+     },
+     {
+      "chunk": "chunk_period_20231231.csv",
+      "manifest_rows": 5374,
+      "actual_rows": 5373
+     },
+     {
+      "chunk": "chunk_period_20241231.csv",
+      "manifest_rows": 5422,
+      "actual_rows": 5421
+     },
+     {
+      "chunk": "chunk_period_20210331.csv",
+      "manifest_rows": 4340,
+      "actual_rows": 4339
+     },
+     {
+      "chunk": "chunk_period_20201231.csv",
+      "manifest_rows": 4331,
+      "actual_rows": 4330
+     },
+     {
+      "chunk": "chunk_period_20230331.csv",
+      "manifest_rows": 5173,
+      "actual_rows": 5172
+     },
+     {
+      "chunk": "chunk_period_20200930.csv",
+      "manifest_rows": 4067,
+      "actual_rows": 4066
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 0.1,
+   "finished_at": "2026-09-18T00:09:24"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:24"
+}

@@ -1,0 +1,114 @@
+{
+ "source": "tx",
+ "dataset": "sh510300",
+ "batches": {
+  "tx/sh510300/20260904T185625": {
+   "batch_dir": "tx/sh510300/20260904T185625",
+   "mode": "json",
+   "status": "completed",
+   "issues": [
+    {
+     "level": "warning",
+     "code": "meta_row_count_mismatch",
+     "detail": "meta n_rows=3471, 实际解析 3475 行, 其中跨页重复日期 4 行"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_kline_dates_across_pages",
+     "detail": "跨页重复日期 4 行, 例: ['20130715', '20161025', '20200206', '20230522']"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "407 个记录日期 > 2024-12-31 (max=20260904); 冻结边界: 只报告"
+    }
+   ],
+   "inventory_registration": {
+    "files": 6,
+    "bytes": 220907
+   },
+   "files": {
+    "n_total": 6,
+    "response_pages": [
+     "response_000.json",
+     "response_001.json",
+     "response_002.json",
+     "response_003.json",
+     "response_004.json"
+    ],
+    "total_bytes": 220907
+   },
+   "duplicate_date_rows": 4,
+   "rows_total": 3475,
+   "date_coverage": {
+    "record_date": {
+     "min": "20120528",
+     "max": "20260904",
+     "rows_gt_20241231": 407
+    }
+   },
+   "numeric_magnitude": {
+    "close": {
+     "min": 1.265,
+     "median": 3.32,
+     "max": 5.388
+    }
+   },
+   "unit_check_conclusion": {
+    "close_510300": "中位 3.32 元, 符合沪深300ETF量级(2-8元)",
+    "confidence": "high"
+   },
+   "unit_check": {
+    "close_510300": "中位 3.32 元, 符合沪深300ETF量级(2-8元)",
+    "confidence": "high"
+   },
+   "sample_rows": [
+    {
+     "date": "2023-05-22",
+     "ohlc": [
+      "3.663",
+      "3.684",
+      "3.705",
+      "3.650"
+     ],
+     "volume": "5003757.000"
+    },
+    {
+     "date": "2023-05-23",
+     "ohlc": [
+      "3.687",
+      "3.627",
+      "3.691",
+      "3.626"
+     ],
+     "volume": "6117573.000"
+    },
+    {
+     "date": "2023-05-24",
+     "ohlc": [
+      "3.622",
+      "3.574",
+      "3.623",
+      "3.572"
+     ],
+     "volume": "7672776.000"
+    },
+    {
+     "date": "2023-05-25",
+     "ohlc": [
+      "3.568",
+      "3.565",
+      "3.578",
+      "3.532"
+     ],
+     "volume": "4918567.000"
+    }
+   ],
+   "sha256_verified_pages": 1,
+   "sha256_concat_ok": false,
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:54"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:54"
+}

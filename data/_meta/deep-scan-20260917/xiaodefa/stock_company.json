@@ -1,0 +1,193 @@
+{
+ "source": "xiaodefa",
+ "dataset": "stock_company",
+ "batches": {
+  "xiaodefa/stock_company/20260913-bulk1": {
+   "batch_dir": "xiaodefa/stock_company/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 2,
+    "n_csv": 1,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 10039463
+   },
+   "issues": [],
+   "inventory_registration": {
+    "files": 2,
+    "bytes": 10039463
+   },
+   "schema": {
+    "ts_code": "String",
+    "com_name": "String",
+    "com_id": "String",
+    "chairman": "String",
+    "manager": "String",
+    "secretary": "String",
+    "reg_capital": "Float64",
+    "setup_date": "Int64",
+    "province": "String",
+    "city": "String",
+    "introduction": "String",
+    "website": "String",
+    "email": "String",
+    "office": "String",
+    "business_scope": "String",
+    "employees": "Float64",
+    "main_business": "String",
+    "exchange": "String"
+   },
+   "n_columns": 18,
+   "date_columns": [
+    "setup_date"
+   ],
+   "numeric_columns_checked": [
+    "employees",
+    "reg_capital",
+    "setup_date"
+   ],
+   "rows_total": 5000,
+   "date_coverage": {
+    "setup_date": {
+     "min": "19551001",
+     "max": "20201208",
+     "rows_gt_20241231": 0,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 0,
+   "numeric_magnitude": {
+    "employees": {
+     "min": 1.0,
+     "max": 869622.0
+    },
+    "reg_capital": {
+     "min": 3699.8595,
+     "max": 35640625.7089
+    },
+    "setup_date": {
+     "min": 19551001.0,
+     "max": 20201208.0
+    }
+   },
+   "primary_key": [
+    "ts_code"
+   ],
+   "duplicate_keys": 0,
+   "duplicate_rows": 0,
+   "sample_rows": [
+    {
+     "ts_code": "000001.SZ",
+     "com_name": "平安银行股份有限公司",
+     "com_id": "91440300192185379H",
+     "chairman": "谢永林",
+     "manager": "冀光恒",
+     "secretary": "周强",
+     "reg_capital": "1940591.8198",
+     "setup_date": "19871222",
+     "province": "广东",
+     "city": "深圳市",
+     "introduction": "深圳发展银行股份有限公司系在对中华人民共和国深圳经济特区内原6家农村信用社进行股份制改造的基础上",
+     "website": "bank.pingan.com",
+     "email": "PAB_db@pingan.com.cn",
+     "office": "广东省深圳市深南东路5047号；广东省深圳市福田区益田路5023号平安金融中心B座",
+     "business_scope": "（一）吸收公众存款；（二）发放短期、中期和长期贷款；（三）办理国内外结算；（四）办理票据承兑与贴",
+     "employees": "41043.0",
+     "main_business": "办理人民币存、贷、结算、汇兑业务；人民币票据承兑和贴现；各项信托业务；经人民银行批准发行或买卖人",
+     "exchange": "SZSE"
+    },
+    {
+     "ts_code": "000002.SZ",
+     "com_name": "万科企业股份有限公司",
+     "com_id": "91440300192181490G",
+     "chairman": "徐恩利",
+     "manager": "黄宇",
+     "secretary": "田钧",
+     "reg_capital": "1193070.9471",
+     "setup_date": "19840530",
+     "province": "广东",
+     "city": "深圳市",
+     "introduction": "公司前身系深圳现代企业有限公司，1987年11月始进行股份制改组，于次年12月向社会公开发行股票",
+     "website": "www.vanke.com",
+     "email": "IR@vanke.com",
+     "office": "广东省深圳市盐田区大梅沙环梅路33号万科中心",
+     "business_scope": "房地产开发；兴办实业（具体项目另行申报）；国内商业、物资供销业（不含专营、专控、专卖商品）；进出",
+     "employees": "131429.0",
+     "main_business": "房地产、贸易及零售等。",
+     "exchange": "SZSE"
+    },
+    {
+     "ts_code": "000003.SZ",
+     "com_name": "金田实业(集团)股份有限公司",
+     "com_id": "440301103447240",
+     "chairman": "张曙欣",
+     "manager": "张曙欣",
+     "secretary": null,
+     "reg_capital": "40012.0286",
+     "setup_date": "19880310",
+     "province": "广东",
+     "city": "深圳市",
+     "introduction": "公司成立于1988年2月8日，其前身为成立于1982年的深圳市纺织工业供销公司，1989年经批准",
+     "website": null,
+     "email": "regintian@163.com",
+     "office": "广东省深圳市罗湖区和平路1161号泰山大厦三楼",
+     "business_scope": "工业(包括但不限于纺织业、电子、建材、化工、家电、五金、珠宝、首饰)生产与经营；房地产开发与经营",
+     "employees": "90.0",
+     "main_business": "物业管理",
+     "exchange": "SZSE"
+    },
+    {
+     "ts_code": "000004.SZ",
+     "com_name": "深圳国华网安科技股份有限公司",
+     "com_id": "91440300192441969E",
+     "chairman": "黄翔",
+     "manager": "阮旭里",
+     "secretary": "阮旭里",
+     "reg_capital": "13238.0282",
+     "setup_date": "19860505",
+     "province": "广东",
+     "city": "深圳市",
+     "introduction": "深圳国华网安科技股份有限公司主营业务是移动应用安全服务业务。公司的主要产品是《创世神曲》游戏的运",
+     "website": "www.sz000004.cn",
+     "email": "gnkjsz@163.com",
+     "office": "深圳市福田区梅林街道孖岭社区凯丰路10号翠林大厦12层",
+     "business_scope": "信息传输、软件和信息技术服务；计算机软件、信息系统软件的开发、销售；信息系统设计、集成、运行维护",
+     "employees": "320.0",
+     "main_business": "移动应用安全服务业务",
+     "exchange": "SZSE"
+    },
+    {
+     "ts_code": "000005.SZ",
+     "com_name": "深圳世纪星源股份有限公司",
+     "com_id": "440301501127626",
+     "chairman": "丁芃",
+     "manager": "郑列列",
+     "secretary": "丁芃",
+     "reg_capital": "105853.6842",
+     "setup_date": "19890508",
+     "province": "广东",
+     "city": "深圳市",
+     "introduction": "公司是中国早期大规模介入酒店式公寓服务业的公司之一，中国早期上市的公司之一。公司从事的主要业务为",
+     "website": "www.fountain.com.cn",
+     "email": "fountain@sfc.com.cn",
+     "office": "广东省深圳市罗湖区深南东路2017号华乐大厦6F",
+     "business_scope": "房地产、酒店、物业管理、商务咨询、顾问、计算机软件开发、投资及其它第三产业。",
+     "employees": "371.0",
+     "main_business": "生态环保工程",
+     "exchange": "SZSE"
+    }
+   ],
+   "unit_check": {},
+   "status": "completed",
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:08:41"
+  }
+ },
+ "updated_at": "2026-09-18T00:08:41"
+}

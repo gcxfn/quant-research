@@ -1,0 +1,6 @@
+from pathlib import Path
+import polars as pl, json, math
+root=Path('artifacts/runs/20260920T190000-d-fund-rebuild-real/D_fund'); panel=pl.read_parquet('data/processed/baostock-daily-20260917/daily_2015_2024.parquet').filter(pl.col('date')<=pl.date(2020,12,31)); panel=panel.with_columns((pl.col('symbol').str.starts_with('sh.688')|pl.col('symbol').str.starts_with('sz.300')|pl.col('symbol').str.starts_with('bj.')).alias('_x')); sig=pl.read_parquet(root/'D01.parquet').select(pl.col('signal_date').alias('date')).unique(); elig=(panel.sort(['symbol','date']).with_columns(pl.col('date').cum_count().over('symbol').alias('_h')).join(sig,on='date').filter((pl.col('_h')>=60)&(pl.col('tradestatus')==1)&(pl.col('isST')==0)&(~pl.col('_x'))).select('date','symbol')); den=elig.group_by('date').agg(pl.col('symbol').n_unique().alias('n')); out=[]
+for f in sorted(root.glob('D*.parquet')):
+ x=pl.read_parquet(f).rename({'signal_date':'date'}).join(elig,on=['date','symbol']).filter(pl.col('value').is_not_null()).group_by('date').agg(pl.col('symbol').n_unique().alias('v')).join(den,on='date').with_columns((pl.col('v')/pl.col('n')).alias('r')); out.append((f.stem,float(x['r'].median())))
+print(out); print('pass',sum(r>=.5 for _,r in out))

@@ -1,0 +1,79 @@
+[
+  {
+    "code": "sh.600452",
+    "date": "2016-06-01",
+    "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\bigquant\\minute-repairs-20260914-1\\sh.600452_2016-06-01_f5.csv",
+    "sha256": "3c3f27e04121981ca0304b7d370341113f5b169e3e97abd387e8ef9336c71c66",
+    "raw_path": "D:\\AI\\workspace\\个人量化\\data\\raw\\bigquant\\minute-check-20260914-1\\2016-06-01.csv",
+    "raw_sha256": "3c75110d9f1821256991cab20f5fcfffa234cb9cf0f91b46b8517241aae48b27",
+    "source": "bigquant_cn_stock_bar1m_whole_security_day",
+    "error_code": "0",
+    "trailing_zero_minutes": 0,
+    "minute_volume": 1509898.0,
+    "previous_entry": {
+      "code": "sh.600452",
+      "date": "2016-06-01",
+      "path": "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\minute-repairs-20260914-3\\sh.600452_2016-06-01_f5.csv",
+      "sha256": "df596137c2de5a4d5fcd49522e25f550b4cba6e4860f302d74c6b1477040a742",
+      "raw_path": "D:\\AI\\workspace\\个人量化\\data\\raw\\xiaodefa\\minute-repairs-20260914-3\\sh.600452_2016-06-01_raw.json",
+      "raw_sha256": "914ee3f888e4a959abbf62b6e42e2eff4164f00a4a42ca301ad9d2d849beceeb",
+      "source": "user_1m_aggregated_5m_source_baseline_unchanged",
+      "error_code": "0",
+      "trailing_zero_minutes": 0,
+      "minute_volume": 1509898.0,
+      "accepted_source_baseline": {
+        "decision": "USER_ACCEPTED_SOURCE_BASELINE_20260914",
+        "code": "sh.600452",
+        "date": "2016-06-01",
+        "sha256": "df596137c2de5a4d5fcd49522e25f550b4cba6e4860f302d74c6b1477040a742",
+        "daily": {
+          "open": 31.16,
+          "close": 31.64,
+          "high": 31.66,
+          "low": 30.8,
+          "volume": 1509898.0
+        },
+        "minute": {
+          "open": 31.48,
+          "close": 31.65,
+          "high": 31.66,
+          "low": 30.8,
+          "volume": 1509898.0
+        },
+        "research_only": true,
+        "source_truth_verified": false,
+        "sensitivity_required": true,
+        "scope": "Known source discrepancy accepted for descriptive research; no value correction"
+      }
+    },
+    "normalization": "RAW_0925_AUCTION_INCLUDED_IN_0935;CONTINUOUS_RIGHT_END_TIMES_PRESERVED",
+    "volume_unit": "shares; checked against baseline daily and minute records",
+    "amount_unit": "yuan",
+    "scope": "Three user-authorized vendor corrections; full source OHLCV, not selected fields",
+    "accepted_source_baseline": {
+      "decision": "USER_ACCEPTED_SOURCE_BASELINE_20260914",
+      "code": "sh.600452",
+      "date": "2016-06-01",
+      "sha256": "3c3f27e04121981ca0304b7d370341113f5b169e3e97abd387e8ef9336c71c66",
+      "daily": {
+        "open": 31.16,
+        "close": 31.64,
+        "high": 31.66,
+        "low": 30.8,
+        "volume": 1509898.0
+      },
+      "minute": {
+        "open": 31.48,
+        "close": 31.64,
+        "high": 31.66,
+        "low": 30.8,
+        "volume": 1509898.0
+      },
+      "research_only": true,
+      "source_truth_verified": false,
+      "sensitivity_required": true,
+      "scope": "Same previously accepted opening discrepancy retained on BigQuant whole-day replacement; close corrected"
+    },
+    "reused": true
+  }
+]

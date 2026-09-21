@@ -1,0 +1,135 @@
+{
+ "experiment_id": "exp-20260919-hybrid-family-v2",
+ "frozen_at": "2026-09-19T06:25:00+08:00",
+ "prereg": "docs/research/exp-20260919-hybrid-family-v2-prereg.md（已冻结；差异式预登记，未列条款逐字继承 v1 prereg）",
+ "authority": [
+  "v1 结果与四项接缝留档（run 20260919T054649-hybrid-v1-9k2f）",
+  "用户批准混合族方向（2026-09-19）；用户目标列 dev 净年化 >=10%",
+  "契约 §7/§8（冻结）"
+ ],
+ "engine": {
+  "file": "src/quant/backtest/band_engine.py",
+  "version": "v1.2（v1 族同 pin 零改动）",
+  "sha256": "ceb7be6414280e4c5d5f37dc6ca1148a85e306b2de1a216147f67f89cc4a746d",
+  "sha256_16": "ceb7be6414280e4c"
+ },
+ "inherited_from_v1": [
+  "universe+exclusions",
+  "band table",
+  "dividend events rule (18 dev events)",
+  "runner assertions x3",
+  "fees",
+  "window dev 2015-2020 / val frozen",
+  "Design B leg semantics",
+  "benchmarks B1(m)/B3'"
+ ],
+ "new_leg_symbol": {
+  "sz.159934": {
+   "class": "etf",
+   "band": 0.1,
+   "t_plus": 0,
+   "note": "黄金ETF 全窗；dev 内 1 次无跳变微偏离 2020-02-26 -0.22% 不建模披露"
+  }
+ },
+ "configs": [
+  {
+   "id": "H2-A0",
+   "stock": "C05",
+   "legs": {},
+   "rotation": null,
+   "note": "回归锚=P3R2 C05"
+  },
+  {
+   "id": "H2-01",
+   "stock": "C05",
+   "legs": {
+    "sh.511010": 0.25,
+    "sh.518880": 0.25
+   },
+   "rotation": null
+  },
+  {
+   "id": "H2-02",
+   "stock": "C05",
+   "legs": {
+    "sh.518880": 0.2,
+    "sz.159934": 0.2
+   },
+   "rotation": null
+  },
+  {
+   "id": "H2-03",
+   "stock": "C05",
+   "legs": {
+    "sh.511010": 0.2,
+    "sh.518880": 0.2,
+    "sz.159934": 0.2
+   },
+   "rotation": null
+  },
+  {
+   "id": "H2-04",
+   "stock": "C05",
+   "legs": {
+    "sh.511010": 0.25,
+    "sh.518880": 0.2
+   },
+   "rotation": null
+  },
+  {
+   "id": "ROT-03R",
+   "stock": null,
+   "legs": {
+    "sh.511010": 0.25
+   },
+   "rotation": {
+    "universe": "8-511010 (7 members)",
+    "top_n": 3,
+    "weight": 0.25,
+    "lookback_m": 6
+   }
+  },
+  {
+   "id": "ROT-04",
+   "stock": null,
+   "legs": {},
+   "rotation": {
+    "universe": "8-511010 (7 members)",
+    "top_n": 4,
+    "weight": 0.25,
+    "lookback_m": 6,
+    "note": "宇宙敏感性对照 vs v1 ROT-01"
+   }
+  },
+  {
+   "id": "ROT-05",
+   "stock": null,
+   "legs": {
+    "sh.511010": 0.25,
+    "sh.518880": 0.25
+   },
+   "rotation": {
+    "universe": "8-{511010,518880} (6 members)",
+    "top_n": 2,
+    "weight": 0.25,
+    "lookback_m": 6
+   }
+  }
+ ],
+ "gates": {
+  "1-7": "R16/v1 逐字",
+  "8_v3_final_delivery_ge_99pct": "（市价兜底成交 + 武装后限价自身成交）/兜底武装单数 >= 99%；期末武装后滞留持仓=0 硬断言；两分子分列披露；8v2 与 R16 原口径作对照列",
+  "goal_column_non_gate": "dev 净年化 >=10%",
+  "no_rejurisdiction": "v1 已判配置不因 8v3 重判（HYB-05 门 4 失败与门 8 无关，结论不变）"
+ },
+ "stop_clauses": [
+  "H2-A0 锚不一致 -> 中止",
+  "runner 断言失败 -> 中止",
+  "任一配置八门全过 -> 停，报告用户申请 val；全不过 -> 混合线暂停，val 不动"
+ ],
+ "budget": {
+  "engine_minutes": 1,
+  "runner_total_minutes": 20
+ },
+ "trial_accounting": "判定后计 1 项试验（8 配置族）；205->214 已含 v1；v2 判定后 214->222"
+}

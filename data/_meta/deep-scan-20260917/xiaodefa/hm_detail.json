@@ -1,0 +1,206 @@
+{
+ "source": "xiaodefa",
+ "dataset": "hm_detail",
+ "batches": {
+  "xiaodefa/hm_detail/20260913-bulk1": {
+   "batch_dir": "xiaodefa/hm_detail/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 990,
+    "n_csv": 989,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 29108999
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 trade_date 有 107634 行 > 2024-12-31 (max=20260911); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_primary_key_rows",
+     "detail": "主键 ['ts_code', 'trade_date'] 重复: 56973 个键 / 226369 行"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 990,
+    "bytes": 29108999
+   },
+   "schema": {
+    "trade_date": "Int64",
+    "ts_code": "String",
+    "ts_name": "String",
+    "buy_amount": "Float64",
+    "sell_amount": "Float64",
+    "net_amount": "Float64",
+    "hm_name": "String",
+    "hm_orgs": "String"
+   },
+   "n_columns": 8,
+   "date_columns": [
+    "trade_date"
+   ],
+   "numeric_columns_checked": [
+    "net_amount",
+    "buy_amount",
+    "sell_amount",
+    "trade_date"
+   ],
+   "rows_total": 231162,
+   "date_coverage": {
+    "trade_date": {
+     "min": "20220816",
+     "max": "20260911",
+     "rows_gt_20241231": 107634,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 107634,
+   "numeric_magnitude": {
+    "net_amount": {
+     "min": -2936444800.0,
+     "max": 3548919962.0
+    },
+    "buy_amount": {
+     "min": 0.0,
+     "max": 7047068886.62
+    },
+    "sell_amount": {
+     "min": 0.0,
+     "max": 6037025370.86
+    },
+    "trade_date": {
+     "min": 20220816.0,
+     "max": 20260911.0
+    }
+   },
+   "primary_key": [
+    "ts_code",
+    "trade_date"
+   ],
+   "duplicate_keys": 56973,
+   "duplicate_rows": 226369,
+   "sample_rows": [
+    {
+     "trade_date": "20220816",
+     "ts_code": "000595.SZ",
+     "ts_name": "宝塔实业",
+     "buy_amount": "9612035.0",
+     "sell_amount": "36653957.0",
+     "net_amount": "-27041922.0",
+     "hm_name": "T王",
+     "hm_orgs": "东方财富证券股份有限公司山南香曲东路证券营业部"
+    },
+    {
+     "trade_date": "20220816",
+     "ts_code": "000595.SZ",
+     "ts_name": "宝塔实业",
+     "buy_amount": "24644066.0",
+     "sell_amount": "8127845.0",
+     "net_amount": "16516221.0",
+     "hm_name": "机构专用",
+     "hm_orgs": "机构专用"
+    },
+    {
+     "trade_date": "20220816",
+     "ts_code": "000595.SZ",
+     "ts_name": "宝塔实业",
+     "buy_amount": "45667049.0",
+     "sell_amount": "228026.0",
+     "net_amount": "45439023.0",
+     "hm_name": "毛老板",
+     "hm_orgs": "国泰君安证券股份有限公司北京光华路证券营业部"
+    },
+    {
+     "trade_date": "20220816",
+     "ts_code": "000595.SZ",
+     "ts_name": "宝塔实业",
+     "buy_amount": "184979.0",
+     "sell_amount": "26558440.0",
+     "net_amount": "-26373461.0",
+     "hm_name": "湖州劳动路",
+     "hm_orgs": "华鑫证券有限责任公司深圳分公司"
+    },
+    {
+     "trade_date": "20220816",
+     "ts_code": "000595.SZ",
+     "ts_name": "宝塔实业",
+     "buy_amount": "18833932.0",
+     "sell_amount": "186542.0",
+     "net_amount": "18647390.0",
+     "hm_name": "苏州帮",
+     "hm_orgs": "兴业证券股份有限公司上海金陵东路证券营业部"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 989,
+    "distinct_headers": 1,
+    "modal_header_cols": 8,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "20250327",
+      "manifest_rows": 266,
+      "actual_rows": 265
+     },
+     {
+      "chunk": "20230307",
+      "manifest_rows": 110,
+      "actual_rows": 109
+     },
+     {
+      "chunk": "20250527",
+      "manifest_rows": 263,
+      "actual_rows": 262
+     },
+     {
+      "chunk": "20251024",
+      "manifest_rows": 235,
+      "actual_rows": 234
+     },
+     {
+      "chunk": "20260520",
+      "manifest_rows": 294,
+      "actual_rows": 293
+     },
+     {
+      "chunk": "20231206",
+      "manifest_rows": 261,
+      "actual_rows": 260
+     },
+     {
+      "chunk": "20230918",
+      "manifest_rows": 133,
+      "actual_rows": 132
+     },
+     {
+      "chunk": "20241220",
+      "manifest_rows": 312,
+      "actual_rows": 311
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 0.7,
+   "finished_at": "2026-09-18T00:07:27"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:27"
+}

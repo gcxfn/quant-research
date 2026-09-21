@@ -1,0 +1,493 @@
+{
+ "source": "xiaodefa",
+ "dataset": "cn_pmi",
+ "batches": {
+  "xiaodefa/cn_pmi/20260913-bulk1": {
+   "batch_dir": "xiaodefa/cn_pmi/20260913-bulk1",
+   "mode": "full",
+   "files": {
+    "n_total": 153,
+    "n_csv": 152,
+    "n_parquet": 0,
+    "n_empty_csv": 0,
+    "n_manifest": 1,
+    "n_other": 0,
+    "manifest_names": [
+     "manifest.json"
+    ],
+    "other_names": [],
+    "total_bytes": 158284
+   },
+   "issues": [
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "日期列 month 有 20 行 > 2024-12-31 (max=202608); 冻结边界审查: 只报告不删除"
+    },
+    {
+     "level": "info",
+     "code": "manifest_rows_off_by_one_convention",
+     "detail": "manifest.rows 一律比实际数据行数多 1 (统计口径含表头行), 系统一致, 非缺陷"
+    }
+   ],
+   "inventory_registration": {
+    "files": 153,
+    "bytes": 158284
+   },
+   "schema": {
+    "pmi010602": "String",
+    "pmi010702": "String",
+    "pmi020300": "Float64",
+    "pmi020301": "Float64",
+    "pmi021000": "Float64",
+    "pmi010000": "Float64",
+    "pmi010100": "Float64",
+    "pmi010402": "String",
+    "pmi010500": "Float64",
+    "pmi010703": "String",
+    "pmi011500": "Float64",
+    "pmi011800": "String",
+    "pmi020600": "Float64",
+    "pmi020102": "Float64",
+    "pmi020602": "String",
+    "create_by": "String",
+    "month": "Int64",
+    "pmi010603": "String",
+    "pmi011900": "String",
+    "pmi020302": "Float64",
+    "pmi010200": "Float64",
+    "pmi010401": "String",
+    "pmi020402": "Float64",
+    "pmi020700": "Float64",
+    "pmi030000": "String",
+    "update_time": "String",
+    "pmi010403": "String",
+    "pmi010701": "String",
+    "pmi011200": "Float64",
+    "pmi012000": "String",
+    "pmi020200": "Float64",
+    "pmi020601": "String",
+    "pmi010800": "Float64",
+    "pmi020202": "Float64",
+    "pmi020501": "String",
+    "pmi010400": "Float64",
+    "pmi020900": "Float64",
+    "pmi010801": "String",
+    "pmi010802": "String",
+    "pmi010900": "Float64",
+    "pmi020201": "Float64",
+    "pmi020401": "Float64",
+    "pmi020500": "Float64",
+    "pmi010501": "String",
+    "pmi010502": "String",
+    "pmi010601": "String",
+    "pmi011600": "Float64",
+    "pmi020800": "Float64",
+    "update_by": "String",
+    "id": "Int64",
+    "pmi010700": "Float64",
+    "pmi011000": "Float64",
+    "create_time": "String",
+    "pmi010300": "Float64",
+    "pmi011100": "Float64",
+    "pmi011400": "Float64",
+    "pmi011700": "String",
+    "pmi020101": "Float64",
+    "pmi020400": "Float64",
+    "pmi020100": "Float64",
+    "pmi011300": "String",
+    "pmi020502": "String",
+    "pmi010503": "String",
+    "pmi010600": "Float64",
+    "pmi010803": "String"
+   },
+   "n_columns": 65,
+   "date_columns": [
+    "month"
+   ],
+   "numeric_columns_checked": [
+    "id",
+    "month",
+    "pmi010000",
+    "pmi010100",
+    "pmi010200",
+    "pmi010300",
+    "pmi010400",
+    "pmi010500",
+    "pmi010600",
+    "pmi010700",
+    "pmi010800",
+    "pmi010900",
+    "pmi011000",
+    "pmi011100",
+    "pmi011200",
+    "pmi011400",
+    "pmi011500",
+    "pmi011600",
+    "pmi020100",
+    "pmi020101",
+    "pmi020102",
+    "pmi020200",
+    "pmi020201",
+    "pmi020202",
+    "pmi020300",
+    "pmi020301",
+    "pmi020302",
+    "pmi020400",
+    "pmi020401",
+    "pmi020402",
+    "pmi020500",
+    "pmi020600",
+    "pmi020700",
+    "pmi020800",
+    "pmi020900",
+    "pmi021000"
+   ],
+   "rows_total": 152,
+   "date_coverage": {
+    "month": {
+     "min": "201401",
+     "max": "202608",
+     "rows_gt_20241231": 20,
+     "null_rows": 0
+    }
+   },
+   "frozen_rows_gt_20241231_maxcol": 20,
+   "numeric_magnitude": {
+    "id": {
+     "min": 1.0,
+     "max": 555.0
+    },
+    "month": {
+     "min": 201401.0,
+     "max": 202608.0
+    },
+    "pmi010000": {
+     "min": 35.7,
+     "max": 52.6
+    },
+    "pmi010100": {
+     "min": 36.3,
+     "max": 53.8
+    },
+    "pmi010200": {
+     "min": 35.5,
+     "max": 52.7
+    },
+    "pmi010300": {
+     "min": 34.1,
+     "max": 51.2
+    },
+    "pmi010400": {
+     "min": 27.8,
+     "max": 56.7
+    },
+    "pmi010500": {
+     "min": 29.3,
+     "max": 54.8
+    },
+    "pmi010600": {
+     "min": 32.1,
+     "max": 52.0
+    },
+    "pmi010700": {
+     "min": 33.9,
+     "max": 49.8
+    },
+    "pmi010800": {
+     "min": 31.8,
+     "max": 50.9
+    },
+    "pmi010900": {
+     "min": 28.7,
+     "max": 52.4
+    },
+    "pmi011000": {
+     "min": 31.9,
+     "max": 51.4
+    },
+    "pmi011100": {
+     "min": 29.3,
+     "max": 53.8
+    },
+    "pmi011200": {
+     "min": 40.4,
+     "max": 72.8
+    },
+    "pmi011400": {
+     "min": 44.2,
+     "max": 50.6
+    },
+    "pmi011500": {
+     "min": 35.6,
+     "max": 49.3
+    },
+    "pmi011600": {
+     "min": 41.8,
+     "max": 62.7
+    },
+    "pmi020100": {
+     "min": 29.6,
+     "max": 58.2
+    },
+    "pmi020101": {
+     "min": 26.6,
+     "max": 65.6
+    },
+    "pmi020102": {
+     "min": 30.1,
+     "max": 56.9
+    },
+    "pmi020200": {
+     "min": 26.5,
+     "max": 57.3
+    },
+    "pmi020201": {
+     "min": 23.8,
+     "max": 62.1
+    },
+    "pmi020202": {
+     "min": 27.0,
+     "max": 58.5
+    },
+    "pmi020300": {
+     "min": 47.4,
+     "max": 57.8
+    },
+    "pmi020301": {
+     "min": 44.7,
+     "max": 73.6
+    },
+    "pmi020302": {
+     "min": 47.7,
+     "max": 56.5
+    },
+    "pmi020400": {
+     "min": 43.9,
+     "max": 52.8
+    },
+    "pmi020401": {
+     "min": 46.9,
+     "max": 57.1
+    },
+    "pmi020402": {
+     "min": 42.7,
+     "max": 52.5
+    },
+    "pmi020500": {
+     "min": 37.9,
+     "max": 51.4
+    },
+    "pmi020600": {
+     "min": 40.0,
+     "max": 64.9
+    },
+    "pmi020700": {
+     "min": 26.8,
+     "max": 53.3
+    },
+    "pmi020800": {
+     "min": 35.2,
+     "max": 50.3
+    },
+    "pmi020900": {
+     "min": 39.3,
+     "max": 48.8
+    },
+    "pmi021000": {
+     "min": 28.3,
+     "max": 55.2
+    }
+   },
+   "primary_key": null,
+   "sample_rows": [
+    {
+     "pmi010602": null,
+     "pmi010702": null,
+     "pmi020300": "54.5",
+     "pmi020301": "54.7",
+     "pmi021000": "52.0",
+     "pmi010000": "50.5",
+     "pmi010100": "51.4",
+     "pmi010402": null,
+     "pmi010500": "50.9",
+     "pmi010703": null,
+     "pmi011500": "45.7",
+     "pmi011800": null,
+     "pmi020600": "58.1",
+     "pmi020102": "51.5",
+     "pmi020602": null,
+     "create_by": null,
+     "month": "201401",
+     "pmi010603": null,
+     "pmi011900": null,
+     "pmi020302": "54.4",
+     "pmi010200": "49.5",
+     "pmi010401": null,
+     "pmi020402": "50.0",
+     "pmi020700": "50.1"
+    },
+    {
+     "pmi010602": null,
+     "pmi010702": null,
+     "pmi020300": "52.1",
+     "pmi020301": "50.7",
+     "pmi021000": "51.5",
+     "pmi010000": "50.2",
+     "pmi010100": "50.7",
+     "pmi010402": null,
+     "pmi010500": "50.5",
+     "pmi010703": null,
+     "pmi011500": "45.1",
+     "pmi011800": null,
+     "pmi020600": "59.9",
+     "pmi020102": "53.8",
+     "pmi020602": null,
+     "create_by": null,
+     "month": "201402",
+     "pmi010603": null,
+     "pmi011900": null,
+     "pmi020302": "52.5",
+     "pmi010200": "49.4",
+     "pmi010401": null,
+     "pmi020402": "48.5",
+     "pmi020700": "48.3"
+    },
+    {
+     "pmi010602": null,
+     "pmi010702": null,
+     "pmi020300": "52.8",
+     "pmi020301": "50.5",
+     "pmi021000": "52.1",
+     "pmi010000": "50.3",
+     "pmi010100": "51.0",
+     "pmi010402": null,
+     "pmi010500": "50.6",
+     "pmi010703": null,
+     "pmi011500": "44.8",
+     "pmi011800": null,
+     "pmi020600": "61.5",
+     "pmi020102": "52.8",
+     "pmi020602": null,
+     "create_by": null,
+     "month": "201403",
+     "pmi010603": null,
+     "pmi011900": null,
+     "pmi020302": "53.4",
+     "pmi010200": "49.2",
+     "pmi010401": null,
+     "pmi020402": "49.3",
+     "pmi020700": "51.7"
+    },
+    {
+     "pmi010602": null,
+     "pmi010702": null,
+     "pmi020300": "52.4",
+     "pmi020301": "52.3",
+     "pmi021000": "52.1",
+     "pmi010000": "50.4",
+     "pmi010100": "50.8",
+     "pmi010402": null,
+     "pmi010500": "51.2",
+     "pmi010703": null,
+     "pmi011500": "44.9",
+     "pmi011800": null,
+     "pmi020600": "61.5",
+     "pmi020102": "53.4",
+     "pmi020602": null,
+     "create_by": null,
+     "month": "201404",
+     "pmi010603": null,
+     "pmi011900": null,
+     "pmi020302": "52.4",
+     "pmi010200": "50.3",
+     "pmi010401": null,
+     "pmi020402": "49.0",
+     "pmi020700": "51.0"
+    },
+    {
+     "pmi010602": null,
+     "pmi010702": null,
+     "pmi020300": "54.5",
+     "pmi020301": "53.2",
+     "pmi021000": "52.4",
+     "pmi010000": "50.8",
+     "pmi010100": "50.9",
+     "pmi010402": null,
+     "pmi010500": "52.3",
+     "pmi010703": null,
+     "pmi011500": "46.0",
+     "pmi011800": null,
+     "pmi020600": "60.7",
+     "pmi020102": "54.4",
+     "pmi020602": null,
+     "create_by": null,
+     "month": "201405",
+     "pmi010603": null,
+     "pmi011900": null,
+     "pmi020302": "54.8",
+     "pmi010200": "51.4",
+     "pmi010401": null,
+     "pmi020402": "49.2",
+     "pmi020700": "52.7"
+    }
+   ],
+   "unit_check": {},
+   "header_consistency": {
+    "n_files": 152,
+    "distinct_headers": 1,
+    "modal_header_cols": 65,
+    "deviating_files": 0
+   },
+   "manifest_rows_spot_check": {
+    "checked": 8,
+    "mismatches": [
+     {
+      "chunk": "201610",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     },
+     {
+      "chunk": "202008",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     },
+     {
+      "chunk": "201907",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     },
+     {
+      "chunk": "202511",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     },
+     {
+      "chunk": "201901",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     },
+     {
+      "chunk": "201402",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     },
+     {
+      "chunk": "201701",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     },
+     {
+      "chunk": "202112",
+      "manifest_rows": 1,
+      "actual_rows": 0
+     }
+    ]
+   },
+   "status": "completed",
+   "duration_s": 0.1,
+   "finished_at": "2026-09-18T00:07:06"
+  }
+ },
+ "updated_at": "2026-09-18T00:07:06"
+}

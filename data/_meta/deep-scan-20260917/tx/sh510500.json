@@ -1,0 +1,106 @@
+{
+ "source": "tx",
+ "dataset": "sh510500",
+ "batches": {
+  "tx/sh510500/20260904T185633": {
+   "batch_dir": "tx/sh510500/20260904T185633",
+   "mode": "json",
+   "status": "completed",
+   "issues": [
+    {
+     "level": "warning",
+     "code": "meta_row_count_mismatch",
+     "detail": "meta n_rows=3274, 实际解析 3278 行, 其中跨页重复日期 4 行"
+    },
+    {
+     "level": "warning",
+     "code": "duplicate_kline_dates_across_pages",
+     "detail": "跨页重复日期 4 行, 例: ['20130711', '20161025', '20200206', '20230522']"
+    },
+    {
+     "level": "blocker",
+     "code": "frozen_window_rows",
+     "detail": "407 个记录日期 > 2024-12-31 (max=20260904); 冻结边界: 只报告"
+    }
+   ],
+   "inventory_registration": {
+    "files": 6,
+    "bytes": 206896
+   },
+   "files": {
+    "n_total": 6,
+    "response_pages": [
+     "response_000.json",
+     "response_001.json",
+     "response_002.json",
+     "response_003.json",
+     "response_004.json"
+    ],
+    "total_bytes": 206896
+   },
+   "duplicate_date_rows": 4,
+   "rows_total": 3278,
+   "date_coverage": {
+    "record_date": {
+     "min": "20130315",
+     "max": "20260904",
+     "rows_gt_20241231": 407
+    }
+   },
+   "numeric_magnitude": {
+    "close": {
+     "min": 2.427,
+     "median": 5.371,
+     "max": 9.826
+    }
+   },
+   "sample_rows": [
+    {
+     "date": "2023-05-22",
+     "ohlc": [
+      "5.768",
+      "5.760",
+      "5.788",
+      "5.727"
+     ],
+     "volume": "1153644.000"
+    },
+    {
+     "date": "2023-05-23",
+     "ohlc": [
+      "5.760",
+      "5.695",
+      "5.765",
+      "5.692"
+     ],
+     "volume": "1387183.000"
+    },
+    {
+     "date": "2023-05-24",
+     "ohlc": [
+      "5.691",
+      "5.649",
+      "5.710",
+      "5.642"
+     ],
+     "volume": "2461380.000"
+    },
+    {
+     "date": "2023-05-25",
+     "ohlc": [
+      "5.651",
+      "5.631",
+      "5.680",
+      "5.570"
+     ],
+     "volume": "1954870.000"
+    }
+   ],
+   "sha256_verified_pages": 1,
+   "sha256_concat_ok": false,
+   "duration_s": 0.0,
+   "finished_at": "2026-09-18T00:09:54"
+  }
+ },
+ "updated_at": "2026-09-18T00:09:54"
+}
