@@ -1,0 +1,325 @@
+{
+ "run_id": "20260921T194738-baseline-replay3-c5d8h2",
+ "experiment_id": "exp-20260921-baseline-rebuild",
+ "status": "completed",
+ "started_at_utc": "2026-09-21T11:49:40.694644+00:00",
+ "ended_at_utc": "2026-09-21T11:52:47.460610+00:00",
+ "wall_seconds": 186.75416330000007,
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "artifacts/runs/20260921T194738-baseline-replay3-c5d8h2/tmp/runner_replay.py"
+ ],
+ "account": {
+  "initial_cash": 500000.0,
+  "legs": "stocks+cash (no ETF, cash earns nothing)"
+ },
+ "engine": {
+  "sha256_at_start": "40f1aaebe49b8c5dba04e6d235155ff1e3db96c70d2b70490f7eb4e3a4537abd",
+  "sha256_at_end": "40f1aaebe49b8c5dba04e6d235155ff1e3db96c70d2b70490f7eb4e3a4537abd"
+ },
+ "pins": {
+  "engine": {
+   "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+   "sha256": "40f1aaebe49b8c5dba04e6d235155ff1e3db96c70d2b70490f7eb4e3a4537abd",
+   "note": "current HEAD engine; archived pin f3650f8440c713b8 matches no git version"
+  },
+  "daily": {
+   "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_1999_2024.parquet",
+   "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6"
+  },
+  "split_factor": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\split_factor.h5",
+   "sha256": "2f436b2f13d09a9bfdcbdb0bf35669c10a377d180ce1ca37bef53d6c96a3365d"
+  },
+  "dividends": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\dividends.h5",
+   "sha256": "46121c09cddde72e725c2d4ae025cc259b049aeaa77c868b492fdbba60214846"
+  },
+  "prereg": {
+   "path": "D:\\量化\\docs\\research\\exp-20260921-baseline-rebuild-prereg.md",
+   "sha256": "a6cd72028a68e1213435db3c941c583c0ff3566de49c449ab00b52d0b417c0f0"
+  },
+  "snr_module": {
+   "path": "D:\\量化\\src\\quant\\research\\single_name_rules.py",
+   "sha256": "5018f4a1791ec00873f4ed1a16e0b07b17f77114cc9c951de15d95c60ade9aed"
+  },
+  "train_run_manifest": {
+   "path": "D:\\量化\\artifacts\\runs\\20260921T182503-a158-fix-4d8e2f\\manifest.json",
+   "sha256": "efd4999d930b68660f5b76ff758ccea64e458f2c4b9b38193499a3b1ef92cb9d"
+  },
+  "old_scores": {
+   "path": "D:\\量化\\artifacts\\runs\\20260921T142710-a158-head-b41d\\outputs\\ml_scores.json",
+   "sha256": "286535101b1e5639db3faa74355ad7d63f53f2d213c240528bb253ea72ba0206"
+  },
+  "halfday_manifest": {
+   "sha256": "2a414174b5df2eeed4c6bd6a7cd7f9f09f9b2efc8f05673ccc4b7695812cd679",
+   "match": true
+  },
+  "stk_limit_aggregate": {
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "3c53abf3b0c39b425389137d9f630f0de158990fcdc55b0bd41bf7d9c3bde673",
+   "files": 2432,
+   "total_bytes": 301278245,
+   "match": true
+  }
+ },
+ "module_pins": {
+  "single_name_rules": "5018f4a1791ec00873f4ed1a16e0b07b17f77114cc9c951de15d95c60ade9aed",
+  "fixed_scheme_lib": "18056fe038249ef2b65bd31b3eec88e763f42aa6642218976d1719609eb03df8",
+  "risk_overlay_runner": "022640dd2c51b721026e870490943f8cbae7395f5c11ad3a1d6e20ce429dcf0a",
+  "p2r16_trend_dispersion": "1de5a8cc80a02a3014a4efcd2ed6ae58ee29ef06332c4729d8489fd244e8dbd6",
+  "alpha158_ml": "bfb57e8365dd1e38f95affc0ac39309c2fa8c9ef1b1471501e5c725a73449e05"
+ },
+ "environment": {
+  "python": "3.11.15",
+  "platform": "win32"
+ },
+ "seeds": {
+  "lightgbm": "fixed random_state=7 in the training run (ml_scores inputs are frozen files here)",
+  "engine": "deterministic, no RNG"
+ },
+ "curves": [
+  "FULL-bin",
+  "SIG-old",
+  "SIG-reg",
+  "NOACCT-bin",
+  "NOSNR-bin",
+  "IDEAL-bin",
+  "FEE"
+ ],
+ "metrics": {
+  "FULL-bin": {
+   "net_cagr": -0.03115960485367575,
+   "net_cagr_investable_start": -0.036845179810882756,
+   "investable_start": "2016-02-01",
+   "max_drawdown": -0.27433311471718325,
+   "net_by_year": {
+    "2016": 0.011375598800000164,
+    "2017": -0.0879867777169866,
+    "2018": -0.08758120781232426,
+    "2019": 0.031119527232210897,
+    "2020": -0.04662015451080259
+   },
+   "n_fills": 750,
+   "final_equity": 413668.84149000025,
+   "total_fees": 11191.321600000003,
+   "exposure": {
+    "mean": 0.15011399231501835,
+    "peak": 0.5104555481215163
+   },
+   "reasons_provider": {
+    "take_half": 22,
+    "clear": 82,
+    "stop": 86,
+    "seat_exit": 226,
+    "protection": 11,
+    "account_trim": 40
+   },
+   "reasons_completed": {
+    "seat_exit": 218,
+    "stop": 72,
+    "account_trim": 30,
+    "take_half": 18,
+    "clear": 7,
+    "protection": 7
+   }
+  },
+  "SIG-old": {
+   "net_cagr": 0.005039025706055744,
+   "net_cagr_investable_start": 0.003869619066384722,
+   "investable_start": "2016-02-01",
+   "max_drawdown": -0.18254928317803698,
+   "net_by_year": {
+    "2016": 0.10205883580000008,
+    "2017": -0.021935193489421634,
+    "2018": -0.0517584324550584,
+    "2019": 0.058960343587364905,
+    "2020": -0.04786273914224359
+   },
+   "n_fills": 709,
+   "final_equity": 515276.88949999976,
+   "total_fees": 12834.2882,
+   "exposure": {
+    "mean": 0.1704961294620182,
+    "peak": 0.46074591010566857
+   },
+   "reasons_provider": {
+    "protection": 13,
+    "seat_exit": 220,
+    "take_half": 27,
+    "stop": 62,
+    "clear": 68,
+    "account_trim": 75
+   },
+   "reasons_completed": {
+    "seat_exit": 214,
+    "account_trim": 52,
+    "take_half": 18,
+    "clear": 7,
+    "stop": 49,
+    "protection": 13
+   }
+  },
+  "SIG-reg": {
+   "net_cagr": -0.03627834626609594,
+   "net_cagr_investable_start": -0.04274266540149341,
+   "investable_start": "2016-02-01",
+   "max_drawdown": -0.26819479099870036,
+   "net_by_year": {
+    "2016": 0.010168143000000462,
+    "2017": -0.052192671849086714,
+    "2018": -0.07415823066621563,
+    "2019": -0.016259907776478566,
+    "2020": -0.08087082320643058
+   },
+   "n_fills": 778,
+   "final_equity": 400753.5967999999,
+   "total_fees": 11688.503200000001,
+   "exposure": {
+    "mean": 0.14865097079841544,
+    "peak": 0.5082936569058669
+   },
+   "reasons_provider": {
+    "take_half": 18,
+    "protection": 19,
+    "stop": 77,
+    "seat_exit": 223,
+    "clear": 123,
+    "account_trim": 67
+   },
+   "reasons_completed": {
+    "seat_exit": 214,
+    "stop": 55,
+    "account_trim": 37,
+    "clear": 9,
+    "protection": 15,
+    "take_half": 16
+   }
+  },
+  "NOACCT-bin": {
+   "net_cagr": -0.13927225676440713,
+   "net_cagr_investable_start": -0.16612185356061715,
+   "investable_start": "2016-02-01",
+   "max_drawdown": -0.6896133245431236,
+   "net_by_year": {
+    "2016": 0.04785491660000063,
+    "2017": -0.2944030305273275,
+    "2018": -0.3867412898973964,
+    "2019": 0.06649873953597951,
+    "2020": -0.1575670409001999
+   },
+   "n_fills": 960,
+   "final_equity": 203688.86494000026,
+   "total_fees": 24534.8549,
+   "exposure": {
+    "mean": 0.5463813154043692,
+    "peak": 0.9976732774244421
+   },
+   "reasons_provider": {
+    "take_half": 35,
+    "stop": 92,
+    "seat_exit": 226,
+    "protection": 12,
+    "clear": 34
+   },
+   "reasons_completed": {
+    "seat_exit": 218,
+    "stop": 78,
+    "protection": 8,
+    "take_half": 30,
+    "clear": 3
+   }
+  },
+  "NOSNR-bin": {
+   "net_cagr": -0.02382859983548058,
+   "net_cagr_investable_start": -0.02795829221022128,
+   "investable_start": "2016-02-01",
+   "max_drawdown": -0.2595506603622155,
+   "net_by_year": {
+    "2016": 0.023602324199999858,
+    "2017": -0.07766734260019759,
+    "2018": -0.08980412212766331,
+    "2019": 0.0333893086086301,
+    "2020": -0.025307012153152453
+   },
+   "n_fills": 502,
+   "final_equity": 432768.3820899997,
+   "total_fees": 7334.8401,
+   "exposure": {
+    "mean": 0.1515168980269707,
+    "peak": 0.5072541261178862
+   },
+   "reasons_provider": {
+    "seat_exit": 232,
+    "account_trim": 51
+   },
+   "reasons_completed": {
+    "seat_exit": 228,
+    "account_trim": 37
+   }
+  },
+  "IDEAL-bin": {
+   "net_cagr": -0.01013157255117414,
+   "max_drawdown": -0.2951764155665333,
+   "net_by_year": {
+    "2016": 0.0957767583710778,
+    "2017": -0.11313356991012524,
+    "2018": -0.16353629739588627,
+    "2019": 0.15237516316350663,
+    "2020": 0.004379941202182991
+   },
+   "n_fills": null,
+   "final_equity": 470423.842951479,
+   "total_fees": null
+  },
+  "FEE": {
+   "net_cagr_gross_of_fees": -0.02683066852626015,
+   "net_cagr": -0.03115960485367575,
+   "max_drawdown": -0.25560683873964585
+  }
+ },
+ "five_layers_cagr_pp": {
+  "signal_C1C2": -3.6198630559731493,
+  "objective_reg_vs_bin": -0.5118741412420191,
+  "legal_entry_friction": 2.102803230250161,
+  "fees_drag": 0.43289363274156,
+  "single_name_exits": -0.7331005018195169,
+  "account_overlay": 10.811265191073138
+ },
+ "known_simplifications": [
+  "IDEAL-bin uses fractional next-open execution with no lot / limit / suspension / T+1 constraints (B1(m) precedent); its fee schedule is the literal STOCK_FEE_SCHEDULE with the 5-CNY minimum",
+  "G0 marks now take the session-aware price (audit Q2 fix); the archived G0/G1 replays marked am decisions at the same-day close"
+ ],
+ "outputs": {
+  "outputs/FULL-bin_clips_final.parquet": "86439e9b4a0d48fb62bc2d8d7b826a4c30d4108f6a1fe0ddd189628077a40ade",
+  "outputs/FULL-bin_daily_equity.parquet": "13e3d3d3fcb8e3b8d3dca86a291095402c275d5b4725df119084306cb1265cba",
+  "outputs/FULL-bin_events.parquet": "720ffd6917d87d45cbdbbe11b457cd32d11acdbfbf9a99c586bffd1bc7e026a5",
+  "outputs/FULL-bin_exit_reason_log.csv": "af3cd50971c5dfa2f81c889caade73ca3e5850d97b81cadc6e5facac86e03ffb",
+  "outputs/FULL-bin_fills.parquet": "6989fd392a9292a3815bf2cfd2bc240ec44d788b4b297a925a6a6262f391bfcc",
+  "outputs/FULL-bin_gross_equity.csv": "04a64756f9629fd53a49eb8cd994b9d9a85f05e911f93a668c86799a295f1c8d",
+  "outputs/NOACCT-bin_clips_final.parquet": "969ba715af7505e89e5c9c95b206ed4a82c4ae354015219d98ae40dc2cf2fe6a",
+  "outputs/NOACCT-bin_daily_equity.parquet": "e0ba643ee12490d1259595e648ff6ffe2a3c84b58187abb5eef0e84b5c9d6f32",
+  "outputs/NOACCT-bin_events.parquet": "fd03e00a5004dc40431d77ef68b8a67e10645ea7ce3fa718129d6b620526ea25",
+  "outputs/NOACCT-bin_exit_reason_log.csv": "25b486c048adeb22538c58cdf98eb3c56582d46494c2d9a9ab3f3a8b3ef99f22",
+  "outputs/NOACCT-bin_fills.parquet": "0024cf1d95d656e99560d6f84284dda7a8f74e36d1c0a2f418441482b7ed8575",
+  "outputs/NOSNR-bin_clips_final.parquet": "6a891bbc82ba2faa8c2398bd0f4990bb984a8a369749b89785de7cadc6fdd2a1",
+  "outputs/NOSNR-bin_daily_equity.parquet": "88449e2e0ad5293678cd8197536bdad354232ae765f361638528bcedfe1f8c79",
+  "outputs/NOSNR-bin_events.parquet": "15ee52ccf75648854cc2ec4c6aafd583311c85615eec363e4e3c570790bb4bd5",
+  "outputs/NOSNR-bin_exit_reason_log.csv": "63c1387caa1b3ca42306acdb0d8bdfca88527c56bdbdaba4c576bcfdc847d4d0",
+  "outputs/NOSNR-bin_fills.parquet": "a5116990cf576e67e1ceb796074d5e10ad08385fd33d391e2a4cfb3b06ac63d6",
+  "outputs/SIG-old_clips_final.parquet": "031876056b76a37c81dbd08ae0281e26b0aaa8d45a38aaf251f83926b25c7461",
+  "outputs/SIG-old_daily_equity.parquet": "0e54edf1aeac3572652b390f1d00845f69a97b4e8423ac5400514004b621c068",
+  "outputs/SIG-old_events.parquet": "d486fc3c405f7e1bdab08b460dac35a26df75d33db0a3c607f0f4236e32a6a75",
+  "outputs/SIG-old_exit_reason_log.csv": "435826791de3ae75c68b7543fe502ea36ae9bc74faa23c84777f4d2f22ef9413",
+  "outputs/SIG-old_fills.parquet": "f1db6ad95ccf096e453f3839d9242e491869cefd531496f25e1b7dda9564494e",
+  "outputs/SIG-reg_clips_final.parquet": "9afd6411b936de0127df839f1766664c2b6c2ca46539d07d314f7c0fc006ff58",
+  "outputs/SIG-reg_daily_equity.parquet": "2b4013cea177a1d285031e0e09830ab5016cc9b944e94c9050469c2d7570af5e",
+  "outputs/SIG-reg_events.parquet": "10cb2560ac1d5d1c0bf524581562d5a51c22a210a7810adec6112e1809e63623",
+  "outputs/SIG-reg_exit_reason_log.csv": "d4bc00af82558289efd9acfda1570d5306324278db12ebfb241ddecbdb473533",
+  "outputs/SIG-reg_fills.parquet": "673efd32064baee7449972f4f1ef1d94d924603252c96fde7f94e1e4eacfd93e"
+ },
+ "post_run_disclosure": {
+  "added_at": "2026-09-21T13:08:03.775807+00:00",
+  "note": "archived tmp/runner_replay.py was PATCHED IN PLACE after this run finished (the _tally_reasons counting function was rewritten to event-merge; file mtime is ~5.5 min after run end). The archived script is therefore NOT the executed version verbatim; the executed counting differences affect reasons_provider only (row counts vs event-merged counts), not any equity curve. Root cause: the runner did not pin itself. Superseded by 20260921T210100-baseline-replay4-9x4q2, whose runner self-pins start/end and fails closed on in-run edits. Do not cite this run s numbers; see docs/research/stock_cash_baseline.md."
+ }
+}

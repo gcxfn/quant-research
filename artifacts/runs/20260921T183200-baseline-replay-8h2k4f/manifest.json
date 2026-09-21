@@ -1,0 +1,256 @@
+{
+ "run_id": "20260921T183200-baseline-replay-8h2k4f",
+ "experiment_id": "exp-20260921-baseline-rebuild",
+ "status": "aborted",
+ "started_at_utc": "2026-09-21T10:35:50.402078+00:00",
+ "ended_at_utc": "2026-09-21T10:36:33.321516+00:00",
+ "wall_seconds": 42.91946900000039,
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "artifacts/runs/20260921T183200-baseline-replay-8h2k4f/tmp/runner_replay.py"
+ ],
+ "account": {
+  "initial_cash": 500000.0,
+  "legs": "stocks+cash (no ETF, cash earns nothing)"
+ },
+ "engine": {
+  "sha256_at_start": "40f1aaebe49b8c5dba04e6d235155ff1e3db96c70d2b70490f7eb4e3a4537abd",
+  "sha256_at_end": "40f1aaebe49b8c5dba04e6d235155ff1e3db96c70d2b70490f7eb4e3a4537abd"
+ },
+ "pins": {
+  "engine": {
+   "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+   "sha256": "40f1aaebe49b8c5dba04e6d235155ff1e3db96c70d2b70490f7eb4e3a4537abd",
+   "note": "current HEAD engine; archived pin f3650f8440c713b8 matches no git version"
+  },
+  "daily": {
+   "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_1999_2024.parquet",
+   "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6"
+  },
+  "split_factor": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\split_factor.h5",
+   "sha256": "2f436b2f13d09a9bfdcbdb0bf35669c10a377d180ce1ca37bef53d6c96a3365d"
+  },
+  "dividends": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\dividends.h5",
+   "sha256": "46121c09cddde72e725c2d4ae025cc259b049aeaa77c868b492fdbba60214846"
+  },
+  "prereg": {
+   "path": "D:\\量化\\docs\\research\\exp-20260921-baseline-rebuild-prereg.md",
+   "sha256": "a6cd72028a68e1213435db3c941c583c0ff3566de49c449ab00b52d0b417c0f0"
+  },
+  "snr_module": {
+   "path": "D:\\量化\\src\\quant\\research\\single_name_rules.py",
+   "sha256": "d36ef4fd84d33c1920e67e3cd6a1a49b30c72b1362ec401cb78dc7bac7081c6c"
+  },
+  "train_run_manifest": {
+   "path": "D:\\量化\\artifacts\\runs\\20260921T182503-a158-fix-4d8e2f\\manifest.json",
+   "sha256": "efd4999d930b68660f5b76ff758ccea64e458f2c4b9b38193499a3b1ef92cb9d"
+  },
+  "old_scores": {
+   "path": "D:\\量化\\artifacts\\runs\\20260921T142710-a158-head-b41d\\outputs\\ml_scores.json",
+   "sha256": "286535101b1e5639db3faa74355ad7d63f53f2d213c240528bb253ea72ba0206"
+  },
+  "halfday_manifest": {
+   "sha256": "2a414174b5df2eeed4c6bd6a7cd7f9f09f9b2efc8f05673ccc4b7695812cd679",
+   "match": true
+  },
+  "stk_limit_aggregate": {
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "3c53abf3b0c39b425389137d9f630f0de158990fcdc55b0bd41bf7d9c3bde673",
+   "files": 2432,
+   "total_bytes": 301278245,
+   "match": true
+  }
+ },
+ "curves": [
+  "FULL-bin",
+  "SIG-old",
+  "SIG-reg",
+  "NOACCT-bin",
+  "NOSNR-bin",
+  "IDEAL-bin",
+  "FEE"
+ ],
+ "metrics": {
+  "FULL-bin": {
+   "net_cagr": -0.0284542199576463,
+   "max_drawdown": -0.2716629189055666,
+   "net_by_year": {
+    "2015": 0.018564659199999944,
+    "2016": -0.08385520273900327,
+    "2017": -0.0914837140721072,
+    "2018": 0.032114001632206346,
+    "2019": -0.03856270370648518
+   },
+   "n_fills": 668,
+   "final_equity": 420633.7146900002,
+   "total_fees": 9811.748399999999,
+   "reasons_provider": {
+    "take_half": 22,
+    "clear": 8,
+    "stop": 89,
+    "protection": 11
+   },
+   "reasons_filled": {
+    "take_half": 18,
+    "clear": 7,
+    "stop": 75,
+    "protection": 7
+   }
+  },
+  "SIG-old": {
+   "net_cagr": 0.010317139291107447,
+   "max_drawdown": -0.1731813663635553,
+   "net_by_year": {
+    "2015": 0.10243780480000009,
+    "2016": -0.005547275296051257,
+    "2017": -0.05166310773324401,
+    "2018": 0.06537437523684098,
+    "2019": -0.03996233853631925
+   },
+   "n_fills": 658,
+   "final_equity": 531693.5684800001,
+   "total_fees": 11697.105800000001,
+   "reasons_provider": {
+    "protection": 14,
+    "take_half": 27,
+    "stop": 63,
+    "clear": 10
+   },
+   "reasons_filled": {
+    "protection": 14,
+    "take_half": 20,
+    "stop": 51,
+    "clear": 5
+   }
+  },
+  "SIG-reg": {
+   "net_cagr": -0.030476259658649196,
+   "max_drawdown": -0.26052719132346425,
+   "net_by_year": {
+    "2015": 0.09121079810000032,
+    "2016": -0.09142855383553217,
+    "2017": -0.07177004421330135,
+    "2018": -0.019941863425093853,
+    "2019": -0.0788271389469869
+   },
+   "n_fills": 650,
+   "final_equity": 415418.9429500002,
+   "total_fees": 11285.95705,
+   "reasons_provider": {
+    "take_half": 18,
+    "protection": 19,
+    "stop": 79,
+    "clear": 11
+   },
+   "reasons_filled": {
+    "take_half": 16,
+    "stop": 59,
+    "protection": 15,
+    "clear": 7
+   }
+  },
+  "NOACCT-bin": {
+   "net_cagr": -0.13262494647838619,
+   "max_drawdown": -0.6872792673556365,
+   "net_by_year": {
+    "2015": 0.04118084680000034,
+    "2016": -0.301282708152099,
+    "2017": -0.4236778578723912,
+    "2018": 0.08515435000691607,
+    "2019": -0.06239828728480823
+   },
+   "n_fills": 948,
+   "final_equity": 213291.17124000043,
+   "total_fees": 23641.0122,
+   "reasons_provider": {
+    "take_half": 50,
+    "clear": 5,
+    "stop": 97,
+    "protection": 11
+   },
+   "reasons_filled": {
+    "take_half": 43,
+    "clear": 4,
+    "stop": 80,
+    "protection": 7
+   }
+  },
+  "NOSNR-bin": {
+   "net_cagr": -0.02382859983548058,
+   "max_drawdown": -0.2595506603622155,
+   "net_by_year": {
+    "2015": 0.023602324199999858,
+    "2016": -0.07766734260019759,
+    "2017": -0.08980412212766331,
+    "2018": 0.0333893086086301,
+    "2019": -0.025307012153152453
+   },
+   "n_fills": 502,
+   "final_equity": 432768.3820899997,
+   "total_fees": 7334.8401,
+   "reasons_provider": {},
+   "reasons_filled": {}
+  },
+  "IDEAL-bin": {
+   "net_cagr": -0.054741095585482014,
+   "max_drawdown": -0.6887255335227089,
+   "net_by_year": {
+    "2015": 0.35094148210733644,
+    "2016": -0.1501959980592863,
+    "2017": -0.24584418178110556,
+    "2018": 0.1542493522993189,
+    "2019": -0.2929943111076875,
+    "2020": -0.09627327163595678,
+    "2021": -0.0738401519918731,
+    "2022": -0.14107721758722025,
+    "2023": 0.12199998838053094
+   },
+   "n_fills": null,
+   "final_equity": 284956.7823512072,
+   "total_fees": null
+  },
+  "FEE": {
+   "net_cagr_gross_of_fees": -0.024705639157440173,
+   "net_cagr": -0.0284542199576463,
+   "max_drawdown": -0.25495701680933347
+  }
+ },
+ "five_layers_cagr_pp": {
+  "signal_C1C2": -3.8771359248753745,
+  "objective_reg_vs_bin": -0.2022039701002898,
+  "legal_entry_friction": -2.6286875627835715,
+  "fees_drag": 0.3748580800206125,
+  "single_name_exits": -0.4625620122165719,
+  "account_overlay": 10.417072652073989
+ },
+ "known_simplifications": [
+  "IDEAL-bin uses fractional next-open execution with no lot / limit / suspension / T+1 constraints (B1(m) precedent); its fee schedule is the literal STOCK_FEE_SCHEDULE with the 5-CNY minimum",
+  "G0 marks now take the session-aware price (audit Q2 fix); the archived G0/G1 replays marked am decisions at the same-day close"
+ ],
+ "outputs": {
+  "outputs/FULL-bin_clips_final.parquet": "9b2ccb3f7dd220959ab28e816b0b9f957d0fc5350484e0988fa91032e21ef324",
+  "outputs/FULL-bin_daily_equity.parquet": "c2af11db4624d05a90f35f00d9cc3860c415298dd1e01ef8f28266931dbbe1ef",
+  "outputs/FULL-bin_events.parquet": "739b36ac4c5be3fcd7613f93ba14b3524e3721d31d54a7ffcb18becbbce68645",
+  "outputs/FULL-bin_fills.parquet": "32549a1f4d03b4277cdfd9e423020e0ef5bb810cef32f084441c9394a84b884e",
+  "outputs/FULL-bin_gross_equity.csv": "a8b048b7edb06b1083ee6c8fbcd02312de5547b9747e26aa06a2cd233b98a7e0",
+  "outputs/NOACCT-bin_clips_final.parquet": "4e6e98a54caceb73b83108d545150b4a3a194d022eeefaba3c22341b131a8ee5",
+  "outputs/NOACCT-bin_daily_equity.parquet": "778e016d86f2a0fc2e5aa7512baf0394b253ad87f10c2383c8a84802d3e9c0b4",
+  "outputs/NOACCT-bin_events.parquet": "d35c61f97ab0c9517c3048d0b4d9ae341c3c3f843759a5b7466633a49fe13854",
+  "outputs/NOACCT-bin_fills.parquet": "8fada6b3910075b9eb699734c4fa84f4b7decc1bb10869e98590e776597ad1be",
+  "outputs/NOSNR-bin_clips_final.parquet": "6a891bbc82ba2faa8c2398bd0f4990bb984a8a369749b89785de7cadc6fdd2a1",
+  "outputs/NOSNR-bin_daily_equity.parquet": "88449e2e0ad5293678cd8197536bdad354232ae765f361638528bcedfe1f8c79",
+  "outputs/NOSNR-bin_events.parquet": "15ee52ccf75648854cc2ec4c6aafd583311c85615eec363e4e3c570790bb4bd5",
+  "outputs/NOSNR-bin_fills.parquet": "a5116990cf576e67e1ceb796074d5e10ad08385fd33d391e2a4cfb3b06ac63d6",
+  "outputs/SIG-old_clips_final.parquet": "0d43640ac18e7756b3bfd6719af3a692a13d13f8f2ca6d4274ebda7bff4c660e",
+  "outputs/SIG-old_daily_equity.parquet": "5b63dd72caa7aca30586092ff785a711b849d71fd215f7781376112bb0f365c5",
+  "outputs/SIG-old_events.parquet": "95b798bbdae323747062231af77bb6583634bad7df9944e551ccaa92c9756a86",
+  "outputs/SIG-old_fills.parquet": "26a65bbfd106b6479536777f92198489a178358cb9f76383009f6e7342a2e3a8",
+  "outputs/SIG-reg_clips_final.parquet": "c75e5b8b992e08015e800801683798987bd8f785efe4b5b063bd7ee5b52c9354",
+  "outputs/SIG-reg_daily_equity.parquet": "abfe7ed540df170d80c95f0b27a4dab2f185798f4b1c2f96c61eca7be8e4c632",
+  "outputs/SIG-reg_events.parquet": "6749e20ce94dec32e26113e45717df409c1a2d19519e940c76761763557b565e",
+  "outputs/SIG-reg_fills.parquet": "97bf919056b59b5257db0128df4075e924fee9ae9bec984ce14eb78cbfdfbfda"
+ },
+ "failure_reason": "defects found post-run: (1) IDEAL-bin simulated through 2023 (calendar not truncated at DEV_END -> touched val data, violating the prereg zero-contact rule); (2) IDEAL exposure 1.0 not aligned with the 4x10% engine budget; (3) year_returns labelled each year with the NEXT year return. Engine curves FULL/SIG/NOACCT/NOSNR and the FEE layer are unaffected. Superseded by the corrected replay run 20260921T192112-baseline-replay2-3f7q9e. POST-MORTEM DISCLOSURE: the tmp/runner_replay.py in this directory was edited in place during the fix iteration (year_returns and IDEAL patches) before the corrected script was copied to the successor run, so the archived tmp does NOT reproduce this run's defects verbatim; the original failing text survives only in this description. Lesson applied: subsequent runs patch copies, not the archived original."
+}

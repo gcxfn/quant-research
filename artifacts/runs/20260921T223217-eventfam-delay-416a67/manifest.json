@@ -1,0 +1,936 @@
+{
+ "run_id": "20260921T223217-eventfam-delay-416a67",
+ "experiment_id": "exp-20260921-event-families",
+ "status": "completed",
+ "group": "delay",
+ "attempts_this_group": 2,
+ "frozen_interpretive_choices": [
+  "TYPE_ORDER total order for B1 strict improvement",
+  "IMPROVE_CODES includes impairment (T1 empirical direction)",
+  "A1 volume = prior-20 mean excluding trigger day; 60d high strictly above prior 60 closes; MA20 includes the day",
+  "B1 compares adjacent versions by (ann_date, update_flag); same-day pairs never fire",
+  "B holding age from the earliest live clip; time exit is profit-class (no K=3 fallback)",
+  "entry chase cap = issue while decision anchor <= trigger price * 1.01 (re-checked on every re-issue)",
+  "trail perturbation: line = max over time of (20-session high strictly before the day - 1*ATR20), +3R clear off, +2R half kept, wide stop kept",
+  "delay stress re-stamps decision fields at release; source and expiry preserved",
+  "commission x2 doubles the RATE only (5-CNY minimum kept); 0.2% slippage is a post-hoc per-fill reconstruction (no reinvestment compounding)"
+ ],
+ "started_at_utc": "2026-09-21T14:36:14.416368+00:00",
+ "ended_at_utc": "2026-09-21T14:37:20.554408+00:00",
+ "wall_seconds": 66.13694979999855,
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "artifacts/runs/20260921T223217-eventfam-delay-416a67/tmp/runner_eventfam.py",
+  "delay"
+ ],
+ "runner_self": {
+  "sha256_at_start": "f1f4b5c43919d585e6e45b57fd617edd93061c800b93c2178162e3e16aaa7c58",
+  "sha256_at_end": "f1f4b5c43919d585e6e45b57fd617edd93061c800b93c2178162e3e16aaa7c58"
+ },
+ "git": {
+  "head": "9490b14c723431087670349dd06d556b99735a09",
+  "branch": "main",
+  "dirty_untracked_lines": 31,
+  "committed": false
+ },
+ "dependencies": {
+  "python": "3.11.15",
+  "polars": "1.44.2",
+  "numpy": "1.26.4",
+  "psutil": "7.2.2"
+ },
+ "peak_memory_mb": 6039.85546875,
+ "account": {
+  "initial_cash": 500000.0,
+  "legs": "stocks+cash (no ETF, cash earns nothing)"
+ },
+ "engine": {
+  "sha256_at_start": "40f1aaebe49b8c5dba04e6d235155ff1e3db96c70d2b70490f7eb4e3a4537abd",
+  "sha256_at_end": "40f1aaebe49b8c5dba04e6d235155ff1e3db96c70d2b70490f7eb4e3a4537abd"
+ },
+ "arms": {
+  "A1": {
+   "family": "A1",
+   "describe": "A1/main",
+   "n_events": 216
+  },
+  "A2": {
+   "family": "A2",
+   "describe": "A2/main",
+   "n_events": 136
+  },
+  "B1": {
+   "family": "B1",
+   "describe": "B1/main",
+   "n_events": 102
+  },
+  "B2": {
+   "family": "B2",
+   "describe": "B2/main",
+   "n_events": 767
+  }
+ },
+ "bm1_reference": {
+  "run": "artifacts\\runs\\20260921T210100-baseline-replay4-9x4q2",
+  "net_cagr": -0.028959474175085376
+ },
+ "pins": {
+  "engine": {
+   "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+   "sha256": "40f1aaebe49b8c5dba04e6d235155ff1e3db96c70d2b70490f7eb4e3a4537abd"
+  },
+  "snr_module": {
+   "path": "D:\\量化\\src\\quant\\research\\single_name_rules.py",
+   "sha256": "9f9cf8c6928f7495ab9d5ad4383b1451b02f5e720d3544267c1bb978a1fe0e92"
+  },
+  "event_family_signals": {
+   "path": "D:\\量化\\src\\quant\\research\\event_family_signals.py",
+   "sha256": "a608746ddba0993d4b075d7ed59567b0cf0d7f4c067167ffde8b89840b70e819"
+  },
+  "prereg": {
+   "path": "D:\\量化\\docs\\research\\stock_event_research_prereg.md",
+   "sha256": "c8bbecdef7d6700e408d347d320647c7a8f3be5ebe2033e5c77e7f943d960ff6"
+  },
+  "daily": {
+   "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_1999_2024.parquet",
+   "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6"
+  },
+  "baseline_manifest": {
+   "path": "D:\\量化\\artifacts\\runs\\20260921T210100-baseline-replay4-9x4q2\\manifest.json",
+   "sha256": "72ff4d52bc99a6fbc68c0586ddebd7b6d588c7d8559e4f6322f53a90d6dc176f"
+  },
+  "split_factor": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\split_factor.h5",
+   "sha256": "2f436b2f13d09a9bfdcbdb0bf35669c10a377d180ce1ca37bef53d6c96a3365d"
+  },
+  "dividends": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\dividends.h5",
+   "sha256": "46121c09cddde72e725c2d4ae025cc259b049aeaa77c868b492fdbba60214846"
+  },
+  "t1_row_index": {
+   "path": "D:\\量化\\data\\features\\fcst-reason-struct-full-20260918\\row_index.parquet",
+   "sha256": "d9c6060104b5beb78caa9da6db07aae68e19b5de610aec8b527d1b74521632ed"
+  },
+  "halfday_manifest": {
+   "sha256": "2a414174b5df2eeed4c6bd6a7cd7f9f09f9b2efc8f05673ccc4b7695812cd679",
+   "match": true
+  },
+  "stk_limit_aggregate": {
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "3c53abf3b0c39b425389137d9f630f0de158990fcdc55b0bd41bf7d9c3bde673",
+   "files": 2432,
+   "total_bytes": 301278245,
+   "match": true
+  },
+  "fcst_raw_chunks": {
+   "n": 28,
+   "sha256": {
+    "chunk_201809.csv": "21c2d20000a84addaa92ec058f09f2ae6599a1d57f30474a99c661c9322d2b27",
+    "chunk_201810.csv": "f23086e3cf73f104b81155150b15129903fbe4c3b590666ef7126b6b0eba9c01",
+    "chunk_201811.csv": "88a71738e8b00ade8614a7b6cf84ee34fbe53aaaddb93c5929bbd38bfc936c1e",
+    "chunk_201812.csv": "87b8efb70b5d8a1c778ff21b69d555db4d6e53207682cf01b3acc0a9d3a4c424",
+    "chunk_201901.csv": "f1a187b6a29acc21e6248ada79a9f90363326154c76a09ff190ce40b12df1b3f",
+    "chunk_201902.csv": "c4e406dc4ac4b39895ac57d54d37b7f8ea378c14171494e3c99e23e3bc412864",
+    "chunk_201903.csv": "aeac53722ad3798db6ea5fe463302ae1cd43adc867d7a70780a4b02aafca4f25",
+    "chunk_201904.csv": "47e2d0e333d16d6df01518e8a21baa8a3bd9e927b65dd6b4c12c98740cab745f",
+    "chunk_201905.csv": "8155d250a2abe9a31267342b2853b297bf54916e425fdfc30ff145b171dd4ef3",
+    "chunk_201906.csv": "f43f6138003098a7ec6bf0ca916bd4aaeeb41782d210f02f69d6d06d73cbec45",
+    "chunk_201907.csv": "fc94ce23928c317386e825a1bb761b9f2ee16b1d1e3d0ae12a41e2dcd464952a",
+    "chunk_201908.csv": "5a98a4b6a8510e2a097e578a55ba72b4485e9889fa211e1fc3724dbf2ff24146",
+    "chunk_201909.csv": "78ef3c5be5a76db9fba880969f637227bc1c32f4c0f7dc53aea79f0d6080b85b",
+    "chunk_201910.csv": "260af6a850459ac1c92aa970dfd7cac01b345aaf253f87f1e15f9f9523230bff",
+    "chunk_201911.csv": "44d80eb6b47dc99934a5f0fc868df684a6ba7fc1c114163c6cfa3ff43c791acd",
+    "chunk_201912.csv": "8a0cedf7335127b7ebc9e750f877bb59cc3f1fc379de42b61b3f8967122c8fe0",
+    "chunk_202001.csv": "edeb094b2d0cbd036e6f0159b064a6beebe56be7b6c7768c4d694b32fdbecde8",
+    "chunk_202002.csv": "181341dc1ffdcdd770ce86cd62d997be546162ec0f9ffcf121cf31202dcfd91a",
+    "chunk_202003.csv": "8a8bf38be1572596dbe309eb2bfb52618b4adefa8d926fbe741cf792fbea0b6d",
+    "chunk_202004.csv": "6b62b96d6297670fb0e9d5d348078c248a0567189697470cb8edbc9fd62bfd1d",
+    "chunk_202005.csv": "fcdde9a2754e6c00a4a5ab4aa2294b9bc3ceb05d13019c9c380da3438d8c4517",
+    "chunk_202006.csv": "4cd67e396dec74b7baae4958c7b7b1b6c7db4dedcd207f23727fa0b4a525fe28",
+    "chunk_202007.csv": "9a52ee71299d3586b449688e58ccfe6b6e6e732203563800c3dbaa2bd8a2b05e",
+    "chunk_202008.csv": "316881b36eef25de233ac9f694d6b12958c8b7ce62d57e7d98f78c491aebf28f",
+    "chunk_202009.csv": "cc7f04fe2fd3de0eefeb4c5585446e216aea1a8c3d749cd0475871fc0a5d7865",
+    "chunk_202010.csv": "177ad3571591820c1e92ba034664ec276fda0e4ebe36db9568b6d698480706e7",
+    "chunk_202011.csv": "a3ab3c388ed94ea4874f3533718a784bfe081a27a45f1658c13073f8cb7b6b09",
+    "chunk_202012.csv": "52505ed6829d0314889d2796ed332c02343352f7cd97b4bf5b74703ba5b4f45c"
+   }
+  }
+ },
+ "module_pins": {
+  "single_name_rules": "9f9cf8c6928f7495ab9d5ad4383b1451b02f5e720d3544267c1bb978a1fe0e92",
+  "event_family_signals": "a608746ddba0993d4b075d7ed59567b0cf0d7f4c067167ffde8b89840b70e819",
+  "risk_overlay_runner": "022640dd2c51b721026e870490943f8cbae7395f5c11ad3a1d6e20ce429dcf0a",
+  "p2r16_trend_dispersion": "1de5a8cc80a02a3014a4efcd2ed6ae58ee29ef06332c4729d8489fd244e8dbd6"
+ },
+ "seeds": {
+  "engine": "deterministic",
+  "rnd_arms": "numpy default_rng per arm seed",
+  "pool_dedup": "events sorted by (day, -rank_key, symbol)"
+ },
+ "window": [
+  "2015-01-05",
+  "2020-12-31"
+ ],
+ "metrics": {
+  "A1-d1h": {
+   "net_cagr": -0.018501969067387325,
+   "net_cagr_investable_start": -0.018630564370935243,
+   "max_drawdown": -0.26195144324707675,
+   "net_by_year": {
+    "2016": 0.011279334484365577,
+    "2017": -0.0382015659548125,
+    "2018": -0.07298821244453813,
+    "2019": -0.05783537396336802,
+    "2020": -0.031162052965296616
+   },
+   "n_fills": 248,
+   "final_equity": 447101.91000000044,
+   "total_fees": 5013.890000000001,
+   "exposure": {
+    "mean": 0.17708156664360178,
+    "peak": 0.81911371646815
+   },
+   "turnover": {
+    "sell_notional": 3691592.0,
+    "buy_notional": 3792100.0,
+    "mean_equity": 511604.667119016,
+    "sell_over_mean_equity": 7.215712125513536
+   },
+   "drawdown": {
+    "longest": {
+     "peak": "2017-04-11",
+     "trough": "2020-12-31",
+     "end": "2020-12-31",
+     "len_sessions": 910,
+     "depth": -0.26195144324707675,
+     "recovered": false
+    },
+    "open_at_end": {
+     "peak": "2017-04-11",
+     "trough": "2020-12-31",
+     "end": "2020-12-31",
+     "len_sessions": 910,
+     "depth": -0.26195144324707675,
+     "recovered": false
+    }
+   },
+   "trigger_stats": {
+    "events": 216,
+    "issued": 74,
+    "filled": 43,
+    "cancel_ttl": 0,
+    "cancel_level": 1,
+    "cancel_cap": 30,
+    "skip_slots": 142,
+    "skip_anchor": 0,
+    "skip_cap": 0,
+    "skip_held": 0
+   },
+   "entry_execution_rate": 0.581081081081081,
+   "engine_fill_rate": {
+    "buy": 0.925,
+    "sell_risk": 0.001180306412219093,
+    "sell_profit": 0.7659574468085106
+   },
+   "engine_warnings": 62,
+   "reasons_provider": {
+    "take_half": 16,
+    "protection": 18,
+    "account_trim": 29,
+    "clear": 8,
+    "stop": 42
+   },
+   "reasons_provider_rows": {
+    "take_half": 44,
+    "clear": 18,
+    "stop": 109,
+    "protection": 44,
+    "account_trim": 62
+   },
+   "reasons_completed": {
+    "take_half": 16,
+    "protection": 17,
+    "account_trim": 28,
+    "clear": 8,
+    "stop": 42
+   }
+  },
+  "A2-d1h": {
+   "net_cagr": -0.023652466214230783,
+   "net_cagr_investable_start": -0.024174554875816767,
+   "max_drawdown": -0.24762994328981036,
+   "net_by_year": {
+    "2016": -0.03421457420673224,
+    "2017": -0.025540354627545114,
+    "2018": -0.08066406644739088,
+    "2019": -0.023614618989514558,
+    "2020": -0.037752067110756626
+   },
+   "n_fills": 233,
+   "final_equity": 433236.14490000025,
+   "total_fees": 3545.3551000000007,
+   "exposure": {
+    "mean": 0.0803787630180667,
+    "peak": 0.6138490048664367
+   },
+   "turnover": {
+    "sell_notional": 2358869.0,
+    "buy_notional": 2471837.0,
+    "mean_equity": 492451.9687476736,
+    "sell_over_mean_equity": 4.790048877251328
+   },
+   "drawdown": {
+    "longest": {
+     "peak": "2015-06-12",
+     "trough": "2020-12-31",
+     "end": "2020-12-31",
+     "len_sessions": 1354,
+     "depth": -0.24762994328981036,
+     "recovered": false
+    },
+    "open_at_end": {
+     "peak": "2015-06-12",
+     "trough": "2020-12-31",
+     "end": "2020-12-31",
+     "len_sessions": 1354,
+     "depth": -0.24762994328981036,
+     "recovered": false
+    }
+   },
+   "trigger_stats": {
+    "events": 136,
+    "issued": 64,
+    "filled": 41,
+    "cancel_ttl": 0,
+    "cancel_level": 1,
+    "cancel_cap": 22,
+    "skip_slots": 72,
+    "skip_anchor": 0,
+    "skip_cap": 0,
+    "skip_held": 0
+   },
+   "entry_execution_rate": 0.640625,
+   "engine_fill_rate": {
+    "buy": 0.8981481481481481,
+    "sell_risk": 0.0015971133654727751,
+    "sell_profit": 0.8
+   },
+   "engine_warnings": 15,
+   "reasons_provider": {
+    "protection": 9,
+    "account_trim": 40,
+    "stop": 39,
+    "clear": 9,
+    "take_half": 11
+   },
+   "reasons_provider_rows": {
+    "take_half": 29,
+    "clear": 19,
+    "protection": 20,
+    "stop": 107,
+    "account_trim": 82
+   },
+   "reasons_completed": {
+    "protection": 9,
+    "account_trim": 38,
+    "stop": 38,
+    "clear": 9,
+    "take_half": 11
+   }
+  },
+  "B1-d1h": {
+   "net_cagr": 0.004217846616176413,
+   "net_cagr_investable_start": 0.014184521359104751,
+   "max_drawdown": -0.16422532457189798,
+   "net_by_year": {
+    "2016": 0.0,
+    "2017": 0.0,
+    "2018": 0.0,
+    "2019": 0.03190763780000028,
+    "2020": -0.006187937530546694
+   },
+   "n_fills": 144,
+   "final_equity": 512761.12889999995,
+   "total_fees": 2690.4710999999998,
+   "exposure": {
+    "mean": 0.032366732156395205,
+    "peak": 0.8726338241903645
+   },
+   "turnover": {
+    "sell_notional": 1925361.0,
+    "buy_notional": 1911158.0,
+    "mean_equity": 506313.10480171285,
+    "sell_over_mean_equity": 3.802708209091345
+   },
+   "drawdown": {
+    "longest": {
+     "peak": "2019-04-24",
+     "trough": "2020-04-29",
+     "end": "2020-12-31",
+     "len_sessions": 412,
+     "depth": -0.16422532457189798,
+     "recovered": false
+    },
+    "open_at_end": {
+     "peak": "2019-04-24",
+     "trough": "2020-04-29",
+     "end": "2020-12-31",
+     "len_sessions": 412,
+     "depth": -0.16422532457189798,
+     "recovered": false
+    }
+   },
+   "trigger_stats": {
+    "events": 102,
+    "issued": 39,
+    "filled": 27,
+    "cancel_ttl": 0,
+    "cancel_level": 0,
+    "cancel_cap": 12,
+    "skip_slots": 63,
+    "skip_anchor": 0,
+    "skip_cap": 0,
+    "skip_held": 0
+   },
+   "entry_execution_rate": 0.6923076923076923,
+   "engine_fill_rate": {
+    "buy": 0.8648648648648649,
+    "sell_risk": 0.006531406336853808,
+    "sell_profit": 0.55
+   },
+   "engine_warnings": 18,
+   "reasons_provider": {
+    "time_exit": 22,
+    "account_trim": 25,
+    "stop": 10,
+    "clear": 3,
+    "protection": 3,
+    "take_half": 5
+   },
+   "reasons_provider_rows": {
+    "take_half": 10,
+    "time_exit": 48,
+    "stop": 26,
+    "protection": 8,
+    "account_trim": 46,
+    "clear": 7
+   },
+   "reasons_completed": {
+    "time_exit": 22,
+    "stop": 10,
+    "account_trim": 20,
+    "clear": 3,
+    "protection": 3,
+    "take_half": 5
+   }
+  },
+  "B2-d1h": {
+   "net_cagr": 1.4728770643790412e-05,
+   "net_cagr_investable_start": 0.004243068043383369,
+   "max_drawdown": -0.1869105487046825,
+   "net_by_year": {
+    "2016": 0.0,
+    "2017": 0.0,
+    "2018": 0.030443349800000075,
+    "2019": 0.0034317389701103984,
+    "2020": -0.03277759951205805
+   },
+   "n_fills": 267,
+   "final_equity": 500044.09719999984,
+   "total_fees": 5008.902800000001,
+   "exposure": {
+    "mean": 0.06105975364546601,
+    "peak": 0.8869712970271368
+   },
+   "turnover": {
+    "sell_notional": 3608351.0,
+    "buy_notional": 3630578.0,
+    "mean_equity": 505413.63750280533,
+    "sell_over_mean_equity": 7.139401734049908
+   },
+   "drawdown": {
+    "longest": {
+     "peak": "2019-03-12",
+     "trough": "2020-04-27",
+     "end": "2020-12-31",
+     "len_sessions": 442,
+     "depth": -0.1869105487046825,
+     "recovered": false
+    },
+    "open_at_end": {
+     "peak": "2019-03-12",
+     "trough": "2020-04-27",
+     "end": "2020-12-31",
+     "len_sessions": 442,
+     "depth": -0.1869105487046825,
+     "recovered": false
+    }
+   },
+   "trigger_stats": {
+    "events": 767,
+    "issued": 75,
+    "filled": 52,
+    "cancel_ttl": 0,
+    "cancel_level": 0,
+    "cancel_cap": 23,
+    "skip_slots": 689,
+    "skip_anchor": 0,
+    "skip_cap": 0,
+    "skip_held": 3
+   },
+   "entry_execution_rate": 0.6933333333333334,
+   "engine_fill_rate": {
+    "buy": 0.916030534351145,
+    "sell_risk": 0.0047553305721736465,
+    "sell_profit": 0.5242718446601942
+   },
+   "engine_warnings": 41,
+   "reasons_provider": {
+    "time_exit": 41,
+    "protection": 8,
+    "account_trim": 40,
+    "stop": 20,
+    "take_half": 7,
+    "clear": 4
+   },
+   "reasons_provider_rows": {
+    "protection": 17,
+    "time_exit": 90,
+    "stop": 52,
+    "take_half": 15,
+    "clear": 8,
+    "account_trim": 85
+   },
+   "reasons_completed": {
+    "time_exit": 41,
+    "protection": 7,
+    "account_trim": 40,
+    "stop": 20,
+    "clear": 4,
+    "take_half": 6
+   }
+  },
+  "A1-d1d": {
+   "net_cagr": -0.010611872303594283,
+   "net_cagr_investable_start": -0.010687801030691668,
+   "max_drawdown": -0.29777299201022434,
+   "net_by_year": {
+    "2016": -0.054730734901494826,
+    "2017": -0.04888741714967526,
+    "2018": -0.12185088036435987,
+    "2019": -0.05464157306425643,
+    "2020": 0.0006077194370348593
+   },
+   "n_fills": 317,
+   "final_equity": 469058.76555000024,
+   "total_fees": 6109.08445,
+   "exposure": {
+    "mean": 0.1359574944727702,
+    "peak": 0.9821142829163199
+   },
+   "turnover": {
+    "sell_notional": 4427502.5,
+    "buy_notional": 4520261.0,
+    "mean_equity": 545404.5029646007,
+    "sell_over_mean_equity": 8.117832683694154
+   },
+   "drawdown": {
+    "longest": {
+     "peak": "2016-05-03",
+     "trough": "2019-10-25",
+     "end": "2020-12-31",
+     "len_sessions": 1138,
+     "depth": -0.29777299201022434,
+     "recovered": false
+    },
+    "open_at_end": {
+     "peak": "2016-05-03",
+     "trough": "2019-10-25",
+     "end": "2020-12-31",
+     "len_sessions": 1138,
+     "depth": -0.29777299201022434,
+     "recovered": false
+    }
+   },
+   "trigger_stats": {
+    "events": 216,
+    "issued": 83,
+    "filled": 32,
+    "cancel_ttl": 1,
+    "cancel_level": 12,
+    "cancel_cap": 38,
+    "skip_slots": 133,
+    "skip_anchor": 0,
+    "skip_cap": 0,
+    "skip_held": 0
+   },
+   "entry_execution_rate": 0.3855421686746988,
+   "engine_fill_rate": {
+    "buy": 0.8795180722891566,
+    "sell_risk": 0.001278759895746903,
+    "sell_profit": 0.7843137254901961
+   },
+   "engine_warnings": 49,
+   "reasons_provider": {
+    "account_trim": 45,
+    "stop": 50,
+    "take_half": 18,
+    "protection": 17,
+    "clear": 12
+   },
+   "reasons_provider_rows": {
+    "stop": 185,
+    "take_half": 60,
+    "clear": 39,
+    "protection": 56,
+    "account_trim": 129
+   },
+   "reasons_completed": {
+    "account_trim": 41,
+    "stop": 50,
+    "take_half": 18,
+    "protection": 16,
+    "clear": 12
+   }
+  },
+  "A2-d1d": {
+   "net_cagr": -0.026201308874240326,
+   "net_cagr_investable_start": -0.026538831265285445,
+   "max_drawdown": -0.2767261991446136,
+   "net_by_year": {
+    "2016": -0.06911207334142466,
+    "2017": -0.0371240490848499,
+    "2018": -0.09822102764415264,
+    "2019": -0.028489610143956234,
+    "2020": -0.036299962660951146
+   },
+   "n_fills": 259,
+   "final_equity": 426508.00489999994,
+   "total_fees": 4460.5951000000005,
+   "exposure": {
+    "mean": 0.09708940377987933,
+    "peak": 0.710218341509287
+   },
+   "turnover": {
+    "sell_notional": 3120398.0,
+    "buy_notional": 3247548.0,
+    "mean_equity": 497129.09292065754,
+    "sell_over_mean_equity": 6.276836428275622
+   },
+   "drawdown": {
+    "longest": {
+     "peak": "2015-11-26",
+     "trough": "2020-12-31",
+     "end": "2020-12-31",
+     "len_sessions": 1243,
+     "depth": -0.2767261991446136,
+     "recovered": false
+    },
+    "open_at_end": {
+     "peak": "2015-11-26",
+     "trough": "2020-12-31",
+     "end": "2020-12-31",
+     "len_sessions": 1243,
+     "depth": -0.2767261991446136,
+     "recovered": false
+    }
+   },
+   "trigger_stats": {
+    "events": 136,
+    "issued": 62,
+    "filled": 30,
+    "cancel_ttl": 4,
+    "cancel_level": 3,
+    "cancel_cap": 25,
+    "skip_slots": 74,
+    "skip_anchor": 0,
+    "skip_cap": 0,
+    "skip_held": 0
+   },
+   "entry_execution_rate": 0.4838709677419355,
+   "engine_fill_rate": {
+    "buy": 0.8832116788321168,
+    "sell_risk": 0.001496409988879889,
+    "sell_profit": 0.7837837837837838
+   },
+   "engine_warnings": 29,
+   "reasons_provider": {
+    "protection": 8,
+    "stop": 42,
+    "clear": 9,
+    "account_trim": 39,
+    "take_half": 12
+   },
+   "reasons_provider_rows": {
+    "take_half": 43,
+    "clear": 27,
+    "protection": 24,
+    "stop": 153,
+    "account_trim": 113
+   },
+   "reasons_completed": {
+    "protection": 8,
+    "stop": 41,
+    "clear": 9,
+    "account_trim": 33,
+    "take_half": 12
+   }
+  },
+  "B1-d1d": {
+   "net_cagr": -0.001780288832783028,
+   "net_cagr_investable_start": -0.004536744518458868,
+   "max_drawdown": -0.17141655978246795,
+   "net_by_year": {
+    "2016": 0.0,
+    "2017": 0.0,
+    "2018": 0.0,
+    "2019": 0.03331596040000018,
+    "2020": -0.042512209511401666
+   },
+   "n_fills": 160,
+   "final_equity": 494693.7079000001,
+   "total_fees": 3131.2921000000006,
+   "exposure": {
+    "mean": 0.03349993872373017,
+    "peak": 0.8779041005247891
+   },
+   "turnover": {
+    "sell_notional": 2283770.0,
+    "buy_notional": 2287180.0,
+    "mean_equity": 504008.8282246219,
+    "sell_over_mean_equity": 4.53121031241578
+   },
+   "drawdown": {
+    "longest": {
+     "peak": "2019-04-10",
+     "trough": "2020-02-04",
+     "end": "2020-12-31",
+     "len_sessions": 422,
+     "depth": -0.17141655978246795,
+     "recovered": false
+    },
+    "open_at_end": {
+     "peak": "2019-04-10",
+     "trough": "2020-02-04",
+     "end": "2020-12-31",
+     "len_sessions": 422,
+     "depth": -0.17141655978246795,
+     "recovered": false
+    }
+   },
+   "trigger_stats": {
+    "events": 102,
+    "issued": 38,
+    "filled": 21,
+    "cancel_ttl": 2,
+    "cancel_level": 0,
+    "cancel_cap": 15,
+    "skip_slots": 64,
+    "skip_anchor": 0,
+    "skip_cap": 0,
+    "skip_held": 0
+   },
+   "entry_execution_rate": 0.5526315789473685,
+   "engine_fill_rate": {
+    "buy": 0.8804347826086957,
+    "sell_risk": 0.0072683222289521504,
+    "sell_profit": 0.3924050632911392
+   },
+   "engine_warnings": 21,
+   "reasons_provider": {
+    "time_exit": 24,
+    "stop": 11,
+    "account_trim": 24,
+    "clear": 3,
+    "protection": 2,
+    "take_half": 4
+   },
+   "reasons_provider_rows": {
+    "take_half": 12,
+    "time_exit": 73,
+    "clear": 5,
+    "stop": 37,
+    "protection": 6,
+    "account_trim": 66
+   },
+   "reasons_completed": {
+    "time_exit": 23,
+    "stop": 11,
+    "account_trim": 21,
+    "clear": 3,
+    "protection": 2,
+    "take_half": 4
+   }
+  },
+  "B2-d1d": {
+   "net_cagr": 0.010511943484060371,
+   "net_cagr_investable_start": 0.03306823616903465,
+   "max_drawdown": -0.18073570248523207,
+   "net_by_year": {
+    "2016": 0.0,
+    "2017": 0.0,
+    "2018": 0.06274858979999998,
+    "2019": 0.02176459138313458,
+    "2020": -0.019581793530613956
+   },
+   "n_fills": 307,
+   "final_equity": 532307.7112999998,
+   "total_fees": 5972.8886999999995,
+   "exposure": {
+    "mean": 0.06526106664435698,
+    "peak": 0.9088949862923816
+   },
+   "turnover": {
+    "sell_notional": 4367732.0,
+    "buy_notional": 4380009.0,
+    "mean_equity": 514114.9911073857,
+    "sell_over_mean_equity": 8.495632447114716
+   },
+   "drawdown": {
+    "longest": {
+     "peak": "2019-04-24",
+     "trough": "2020-05-25",
+     "end": "2020-12-31",
+     "len_sessions": 412,
+     "depth": -0.18073570248523207,
+     "recovered": false
+    },
+    "open_at_end": {
+     "peak": "2019-04-24",
+     "trough": "2020-05-25",
+     "end": "2020-12-31",
+     "len_sessions": 412,
+     "depth": -0.18073570248523207,
+     "recovered": false
+    }
+   },
+   "trigger_stats": {
+    "events": 767,
+    "issued": 77,
+    "filled": 44,
+    "cancel_ttl": 4,
+    "cancel_level": 0,
+    "cancel_cap": 29,
+    "skip_slots": 689,
+    "skip_anchor": 0,
+    "skip_cap": 0,
+    "skip_held": 1
+   },
+   "entry_execution_rate": 0.5714285714285714,
+   "engine_fill_rate": {
+    "buy": 0.8435754189944135,
+    "sell_risk": 0.005338078291814947,
+    "sell_profit": 0.42857142857142855
+   },
+   "engine_warnings": 42,
+   "reasons_provider": {
+    "time_exit": 45,
+    "account_trim": 43,
+    "protection": 8,
+    "stop": 17,
+    "take_half": 11,
+    "clear": 4
+   },
+   "reasons_provider_rows": {
+    "protection": 25,
+    "time_exit": 137,
+    "stop": 54,
+    "take_half": 40,
+    "clear": 13,
+    "account_trim": 133
+   },
+   "reasons_completed": {
+    "time_exit": 43,
+    "account_trim": 41,
+    "protection": 8,
+    "stop": 17,
+    "take_half": 9,
+    "clear": 3
+   }
+  }
+ },
+ "gates_informational": {
+  "A1-d1h": {
+   "cagr_pos": false,
+   "beats_bm1": true,
+   "mdd_ok": false
+  },
+  "A2-d1h": {
+   "cagr_pos": false,
+   "beats_bm1": true,
+   "mdd_ok": true
+  },
+  "B1-d1h": {
+   "cagr_pos": true,
+   "beats_bm1": true,
+   "mdd_ok": true
+  },
+  "B2-d1h": {
+   "cagr_pos": true,
+   "beats_bm1": true,
+   "mdd_ok": true
+  },
+  "A1-d1d": {
+   "cagr_pos": false,
+   "beats_bm1": true,
+   "mdd_ok": false
+  },
+  "A2-d1d": {
+   "cagr_pos": false,
+   "beats_bm1": true,
+   "mdd_ok": false
+  },
+  "B1-d1d": {
+   "cagr_pos": false,
+   "beats_bm1": true,
+   "mdd_ok": true
+  },
+  "B2-d1d": {
+   "cagr_pos": true,
+   "beats_bm1": true,
+   "mdd_ok": true
+  }
+ },
+ "outputs": {
+  "outputs/A1-d1d_clips_final.parquet": "f70dd71ee11cd193a936a8f947cf6769aa4a9db1705f2a29f10602e1a6919d8b",
+  "outputs/A1-d1d_daily_equity.parquet": "c9d3c880411fd8aa9881413755ef7087642e4c0194efb75d45db00e0a8eef91d",
+  "outputs/A1-d1d_events.parquet": "ba0eda91f737ee9c1dc6dbaaa1432da197b8f76b531971b31a4e15339d4e85c1",
+  "outputs/A1-d1d_exit_reason_log.csv": "69d5da2f1c18ad237d76f9b05f28e673c6830be0ea8104b780dd59da1a5221db",
+  "outputs/A1-d1d_fills.parquet": "a2440af4ac568c564164b049d3bd21abee3c6639d4e35c74807f7e8873daf64e",
+  "outputs/A1-d1h_clips_final.parquet": "ddafb020db704a37cf5dffdda738bd1afeac9d173dc427674ed16519f9beee8a",
+  "outputs/A1-d1h_daily_equity.parquet": "46c947eb19b28af6f1f1330f6a59c7da1ad487a5530e929e57dfbf2254126cc8",
+  "outputs/A1-d1h_events.parquet": "9e0de8a609b29900d191a475c061c393f7550d743e45f6df253cbae87500479c",
+  "outputs/A1-d1h_exit_reason_log.csv": "012f5c6a7c92f7c00b0a5993d7aa40897333d94eee30a32f500b822f50e92f8a",
+  "outputs/A1-d1h_fills.parquet": "1565446d1d7bb22b600234bd5aad17a24eaa5a683f7bba7734d4c0c89ffb6c97",
+  "outputs/A2-d1d_clips_final.parquet": "2a56410193e5b9c4c9c95ed00f9a3411d1f83d33618b1176a15207afe932e3f6",
+  "outputs/A2-d1d_daily_equity.parquet": "a7b304ca56e7ef60ab62aecc2297da2f2a57f8899582085adb23455e2070edb6",
+  "outputs/A2-d1d_events.parquet": "d1cd6a1f91167133edd166a0d3b674f8c561826f9c9c5c84c376aba24856bab3",
+  "outputs/A2-d1d_exit_reason_log.csv": "d39b15bf109b94ea5e8405aa67332ad9cfddd2d166b065283ea4c8fa3c6f3824",
+  "outputs/A2-d1d_fills.parquet": "acf2861453f957cecf6ddabcf001fe1ee36f761e929a5c9e13e5ff8be49b7969",
+  "outputs/A2-d1h_clips_final.parquet": "b4164b2e8b9c01bfeb5dbc99ecb91e17726fddbdc13cbced0c1be642ba51cebd",
+  "outputs/A2-d1h_daily_equity.parquet": "78dada16b0838810ff333d819fec64db3da421b30d829bcfb6bb08155b4f9a7c",
+  "outputs/A2-d1h_events.parquet": "8b75fe11e5b4db08ebbcd28c122638baa2a1e15808d00afc5dc9090b7c8f17d9",
+  "outputs/A2-d1h_exit_reason_log.csv": "8d303c070dba3d9fcec17e0efe2a32bb930f9c989302eee0977e62aaa4a9923e",
+  "outputs/A2-d1h_fills.parquet": "d3f31e79e9688e73f47026b74d0b6f0046515808b8cc2060811ae53c19a30e3e",
+  "outputs/B1-d1d_clips_final.parquet": "69bda9671e7e3d712cc2ec3c3cca40e153b004976596d9ee8c8df5c96c3d0860",
+  "outputs/B1-d1d_daily_equity.parquet": "187c7c3e6847396b08a7a4803a59d2c313eb14112c72c9428e63c548dbaba0ca",
+  "outputs/B1-d1d_events.parquet": "5d0073048d89f5d8af255ef5fabec2cc48f920f99e74987b0bb2514680cefc53",
+  "outputs/B1-d1d_exit_reason_log.csv": "fe47c5c32f0712cd9fa86ade40c6e7e747b8feed459a0c7f36956b06225cb604",
+  "outputs/B1-d1d_fills.parquet": "c99a7e8f606df66fd09be8182c79ee7804da60fcf4d7ddaa0118de5e70a28c18",
+  "outputs/B1-d1h_clips_final.parquet": "69bda9671e7e3d712cc2ec3c3cca40e153b004976596d9ee8c8df5c96c3d0860",
+  "outputs/B1-d1h_daily_equity.parquet": "e638767648eb58401f285d843d6a79c9120f44504fa87e0852ea25b962a0ef8e",
+  "outputs/B1-d1h_events.parquet": "ee3198a02595492f74a10e556e2371d5254e66d4fca852c52b2aa14e97e58b15",
+  "outputs/B1-d1h_exit_reason_log.csv": "d316bc168dd14f1ee2af167f5f8542b4771372b64939ae24601465868be5c4b6",
+  "outputs/B1-d1h_fills.parquet": "00c94734d0c408b83e2977f5a1bee25adca546bcd97554fc8d2a70a4714e780f",
+  "outputs/B2-d1d_clips_final.parquet": "d6dfdc332318b933099c65596592fb8e97e067329e707d8c3f70e9809407e871",
+  "outputs/B2-d1d_daily_equity.parquet": "a16ad28e3aeda591fcf8a0460d1afd8ecdb6031997491168e235e4851d748baa",
+  "outputs/B2-d1d_events.parquet": "fce495ba9e0893d24da83fc8f438066b872ba0000ddf9724eb301835d2afac23",
+  "outputs/B2-d1d_exit_reason_log.csv": "5d034f74b424008a93b30942a1aeac45e7727971e3102740cea6decb70c329d9",
+  "outputs/B2-d1d_fills.parquet": "f53a092055c90b7e0df5f7dd4ac79a42b0a39ef4ae1dcea5d8800b79ca911a0f",
+  "outputs/B2-d1h_clips_final.parquet": "3941ed055c832cda2e9c4c23e3dc2f20bf3cd3b0e612f587469cd0c4a1f30d24",
+  "outputs/B2-d1h_daily_equity.parquet": "6c280276231d65f5aa6120146eb2d2f4abc5f97042d320062412818864ea9694",
+  "outputs/B2-d1h_events.parquet": "ef94526273dc85ce7addfd9fd8bf03334bd47701e7dea01c677476cbf5009302",
+  "outputs/B2-d1h_exit_reason_log.csv": "b98cfd2307bcb16d2ab542c7522fa7f52bf4cf24396522a32f1ce04be675090f",
+  "outputs/B2-d1h_fills.parquet": "4f305dc69af40f8b2f85432ebd807ffce934e30bd3f26e59f8e3e6242af118bf"
+ }
+}

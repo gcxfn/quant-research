@@ -1,0 +1,15 @@
+[    0.1s] self f1f4b5c43919d585; git main 9490b14c7234; group=ablate window=2015-01-05..2020-12-31; BM1 cagr -2.90%
+[    2.5s]   pins OK (28 fcst chunks)
+[    2.6s]   71 signal days (2015-01-30..2020-11-30)
+[    5.5s]   pool union 2937 symbols; pool size min/med/max 810/1510/2260
+[    7.3s]   symbol series: 2937
+[    8.8s]   B rows (dev, all versions): 17554
+[    9.7s]   events[A1-nors]: 2259 triggers / 1458 symbols
+[    9.8s]   events[B2-noconf]: 1871 triggers / 893 symbols
+[   20.2s]   frames: 1823 traded symbols; daily 2530369; half 4779610
+[   21.2s]   decision points: 2923
+[   34.6s]   A1-nors: 10.9s; injected 328 orders 325 filled 108; k3 armed 3 exec 1; trig {'events': 2259, 'issued': 127, 'filled': 106, 'cancel_ttl': 1, 'cancel_level': 0, 'cancel_cap': 20, 'skip_slots': 2131, 'skip_anchor': 0, 'skip_cap': 0, 'skip_held': 1}; warnings 13
+[   44.9s]   B2-noconf: 10.3s; injected 232 orders 232 filled 36; k3 armed 0 exec 0; trig {'events': 1871, 'issued': 108, 'filled': 89, 'cancel_ttl': 1, 'cancel_level': 0, 'cancel_cap': 18, 'skip_slots': 1762, 'skip_anchor': 0, 'skip_cap': 0, 'skip_held': 1}; warnings 19
+[   45.0s]   A1-nors: net -2.70% (inv -2.72%) mdd -23.11% dd-len 1219 expo 12.9% fills 252 exec_rate 0.835
+[   45.0s]   B2-noconf: net -1.76% (inv -4.47%) mdd -15.86% dd-len 435 expo 6.6% fills 193 exec_rate 0.824
+[   45.0s] == done; wall 45s; peak 7877MB ==

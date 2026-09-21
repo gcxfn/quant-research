@@ -1,0 +1,41 @@
+[   0.4s] pins: daily d9a63f4cc3032926; alpha158_ml bfb57e8365dd1e38; prereg a6cd72028a68e121
+[   0.6s] 72 signal days 2015-01-30..2020-12-31
+[   4.1s] pool union 2943 symbols
+[   4.8s] panel rows 4020798
+[   5.8s] 2943 symbol series built
+[   9.1s]   features 2015-01-30: 1438 symbols
+[  93.4s]   features 2016-07-29: 1910 symbols
+[ 162.7s]   features 2018-01-31: 1168 symbols
+[ 219.0s]   features 2019-07-31: 1060 symbols
+[ 279.9s]   features 2020-12-31: 1495 symbols
+[ 279.9s] features done
+[ 288.6s] sections: 72; universe rows 108050; label-missing rows 1499 (1.39%)
+[ 289.9s]   [reg] 2015-01-30: skipped (no label-complete train sections)
+[ 289.9s]   [reg] 2015-02-27: skipped (no label-complete train sections)
+[ 289.9s]   [reg] 2015-03-31: skipped (no label-complete train sections)
+[ 289.9s]   [reg] 2015-04-30: skipped (no label-complete train sections)
+[ 289.9s]   [reg] 2015-05-29: skipped (no label-complete train sections)
+[ 289.9s]   [reg] 2015-06-30: skipped (no label-complete train sections)
+[ 289.9s]   [reg] 2015-07-31: skipped (no label-complete train sections)
+[ 289.9s]   [reg] 2015-08-31: skipped (no label-complete train sections)
+[ 289.9s]   [reg] 2015-09-30: skipped (no label-complete train sections)
+[ 289.9s]   [reg] 2015-10-30: skipped (no label-complete train sections)
+[ 289.9s]   [reg] 2015-11-30: skipped (no label-complete train sections)
+[ 289.9s]   [reg] 2015-12-31: skipped (no label-complete train sections)
+[ 379.0s] [reg] models 60; IC mean 0.0628 t 5.76; by_year {'2016': 0.05434127310841889, '2017': 0.05640605298002829, '2018': 0.12363485814616106, '2019': 0.033929102213872346, '2020': 0.0443632901235494}
+[ 379.0s]   [bin] 2015-01-30: skipped (no label-complete train sections)
+[ 379.0s]   [bin] 2015-02-27: skipped (no label-complete train sections)
+[ 379.0s]   [bin] 2015-03-31: skipped (no label-complete train sections)
+[ 379.0s]   [bin] 2015-04-30: skipped (no label-complete train sections)
+[ 379.0s]   [bin] 2015-05-29: skipped (no label-complete train sections)
+[ 379.0s]   [bin] 2015-06-30: skipped (no label-complete train sections)
+[ 379.0s]   [bin] 2015-07-31: skipped (no label-complete train sections)
+[ 379.0s]   [bin] 2015-08-31: skipped (no label-complete train sections)
+[ 379.0s]   [bin] 2015-09-30: skipped (no label-complete train sections)
+[ 379.0s]   [bin] 2015-10-30: skipped (no label-complete train sections)
+[ 379.0s]   [bin] 2015-11-30: skipped (no label-complete train sections)
+[ 379.0s]   [bin] 2015-12-31: skipped (no label-complete train sections)
+[ 465.0s] [bin] models 60; IC mean 0.0305 t 2.30; by_year {'2016': 0.022733404302084214, '2017': 0.033317308691997644, '2018': 0.06274540436203543, '2019': -0.007589688059272968, '2020': 0.042259810652939794}
+[ 551.3s] [reg][raw] IC mean 0.0638 vs adj 0.0628 (diff -0.0010)
+[ 551.3s] [bin] head metrics: hit 0.517 (236 picks / 59 months); excess +0.83pp (49% pos)
+[ 551.6s] == done; wall 552s ==

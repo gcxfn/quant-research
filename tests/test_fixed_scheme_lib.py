@@ -106,8 +106,10 @@ def test_defensive_leg_exit_and_rebalance():
 def test_constant_host_trim_and_topup():
     e_table = {date(2020, 1, 31): 1.0, date(2020, 2, 28): 0.4}
     marks = {"sh.600001": 10.0}
+    seen_sessions = []
 
-    def mark(s, d):
+    def mark(s, d, sess):
+        seen_sessions.append(sess)
         return marks.get(s)
 
     host = ConstantOverlayHost(e_table, mark)
@@ -134,6 +136,31 @@ def test_constant_host_trim_and_topup():
                     rank_of={"sh.600001": 1},
                     source_signal=date(2020, 1, 31), expiry=None)
     assert st2.topups == ("sh.600001",)
+    # audit Q2 regression: marks are called with the ledger's session so
+    # an am decision can never be valued at the same day's close
+    assert "pm" in seen_sessions and all(s in ("am", "pm")
+                                         for s in seen_sessions)
+
+
+def test_constant_host_marks_receive_session():
+    e_table = {date(2020, 1, 31): 1.0}
+    calls = []
+
+    def mark(s, d, sess):
+        calls.append((s, d, sess))
+        return 10.0
+
+    host = ConstantOverlayHost(e_table, mark)
+    host.step({"date": date(2020, 2, 3), "session": "am",
+               "equity_snapshot": 100_000.0,
+               "positions": [{"symbol": "sh.600001", "shares": 1_000,
+                              "clips": [{"shares": 1_000,
+                                         "acquired": "2020-01-06",
+                                         "session": "am",
+                                         "price": 10.0}]}]},
+              members=["sh.600001"], rank_of={"sh.600001": 1},
+              source_signal=date(2020, 1, 31), expiry=None)
+    assert calls and calls[0][2] == "am"
 
 
 def test_mix_helpers_hand_check():

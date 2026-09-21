@@ -37,18 +37,33 @@ def test_t1_full_lifecycle_hand_check():
     assert r.decide([pos], {SYM: 10.9}, day=D2, session="pm") == []
 
     # +2.0R exactly: sell half -> keep 5,000; retained-notional 5,000*11.6
+    # (profit class: intent='profit', half-day expiry, no K=3 fallback)
     rows = r.decide([pos], {SYM: 11.6}, day=D2, session="pm")
     assert len(rows) == 1
     row = rows[0]
-    assert row["side"] == "sell" and row["intent"] == "risk"
+    assert row["side"] == "sell" and row["intent"] == "profit"
     assert row["target_weight"] is None
     assert row["target_notional"] == 5_000 * 11.6
-    # half_taken latches: same price next point emits nothing
-    assert r.decide([pos], {SYM: 11.6}, day=D3, session="am") == []
+    assert row["exit_reason"] == "take_half"
+    # audit Q1: while the ledger still holds the full clip the halving
+    # event keeps re-issuing the SAME absolute target at the frozen
+    # source (engine sizing is idempotent at target; K streak keeps)
+    rows = r.decide([pos], {SYM: 11.6}, day=D3, session="am")
+    assert len(rows) == 1
+    assert rows[0]["target_notional"] == 5_000 * 11.6
+    assert rows[0]["source_signal"] == D2
 
-    # +3.25R: clear everything (half already taken, remaining clip cleared)
-    rows = r.decide([pos], {SYM: 12.6}, day=D3, session="pm")
-    assert len(rows) == 1 and rows[0]["target_weight"] is None  # full exit
+    # ledger reaches the 5,000 target -> event completes, no more rows
+    done_pos = position([clip(5_000, 10.0)])
+    assert r.decide([done_pos], {SYM: 11.6}, day=D3, session="pm") == []
+    st = r.clip_diagnostics()[(SYM, D1.isoformat(), "am")]
+    assert st["half_armed"] is True and st["half_done"] is True
+
+    # +3.25R on the halved position: full clear via a NEW event (target 0)
+    rows = r.decide([done_pos], {SYM: 12.6}, day=date(2024, 1, 5),
+                    session="pm")
+    assert len(rows) == 1 and rows[0]["target_notional"] == 0.0
+    assert rows[0]["exit_reason"] == "clear"
 
 
 def test_t2_stop_and_protection_line():

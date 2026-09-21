@@ -1,0 +1,22 @@
+[    0.0s] baseline replay; window=2015-01-05..2020-12-31; cash 500000; K=4; stop=wide
+[   12.0s]   engine 40f1aaebe49b8c5d; pins OK
+[   12.4s]   71 signal days (2015-01-30..2020-11-30)
+[   18.1s]   scores[bin]: ranked/month min 0 max 2260
+[   18.2s]   scores[reg]: ranked/month min 0 max 2260
+[   18.2s]   scores[old]: ranked/month min 0 max 1982
+[   52.8s]   frames: 542 stocks; daily 744948; half 1385772; limits 742146
+[   57.7s] == engine curves ==
+[   86.2s]   FULL-bin: 28.5s; injected 1036 orders 1010 filled 400; warnings 43
+[  109.3s]   SIG-old: 23.1s; injected 903 orders 929 filled 395; warnings 108
+[  125.3s]   SIG-reg: 16.0s; injected 1081 orders 1042 filled 419; warnings 31
+[  154.5s]   NOACCT-bin: 29.2s; injected 1320 orders 1290 filled 355; warnings 252
+[  179.5s]   NOSNR-bin: 25.0s; injected 700 orders 716 filled 270; warnings 20
+[  179.5s] == IDEAL-bin (fractional, no execution constraints) ==
+[  185.2s] == metrics & five-layer attribution ==
+[  185.5s]   FULL-bin: net -3.12% (inv-start -3.68%) mdd -27.43% expo mean 15.0% peak 51.0% fees 11191 fills 750 trig {'take_half': 22, 'clear': 82, 'stop': 86, 'seat_exit': 226, 'protection': 11, 'account_trim': 40} done {'seat_exit': 218, 'stop': 72, 'account_trim': 30, 'take_half': 18, 'clear': 7, 'protection': 7}
+[  185.8s]   SIG-old: net +0.50% (inv-start +0.39%) mdd -18.25% expo mean 17.0% peak 46.1% fees 12834 fills 709 trig {'protection': 13, 'seat_exit': 220, 'take_half': 27, 'stop': 62, 'clear': 68, 'account_trim': 75} done {'seat_exit': 214, 'account_trim': 52, 'take_half': 18, 'clear': 7, 'stop': 49, 'protection': 13}
+[  186.0s]   SIG-reg: net -3.63% (inv-start -4.27%) mdd -26.82% expo mean 14.9% peak 50.8% fees 11689 fills 778 trig {'take_half': 18, 'protection': 19, 'stop': 77, 'seat_exit': 223, 'clear': 123, 'account_trim': 67} done {'seat_exit': 214, 'stop': 55, 'account_trim': 37, 'clear': 9, 'protection': 15, 'take_half': 16}
+[  186.3s]   NOACCT-bin: net -13.93% (inv-start -16.61%) mdd -68.96% expo mean 54.6% peak 99.8% fees 24535 fills 960 trig {'take_half': 35, 'stop': 92, 'seat_exit': 226, 'protection': 12, 'clear': 34} done {'seat_exit': 218, 'stop': 78, 'protection': 8, 'take_half': 30, 'clear': 3}
+[  186.4s]   NOSNR-bin: net -2.38% (inv-start -2.80%) mdd -25.96% expo mean 15.2% peak 50.7% fees 7335 fills 502 trig {'seat_exit': 232, 'account_trim': 51} done {'seat_exit': 228, 'account_trim': 37}
+[  186.5s]   five layers (CAGR pp): signal_C1C2=-3.62 objective_reg_vs_bin=-0.51 legal_entry_friction=+2.10 fees_drag=+0.43 single_name_exits=-0.73 account_overlay=+10.81
+[  186.9s] == done; wall 187s ==

@@ -1,0 +1,70 @@
+{
+ "run_id": "20260921T182503-a158-fix-4d8e2f",
+ "experiment_id": "exp-20260921-baseline-rebuild",
+ "status": "completed",
+ "started_at_utc": "2026-09-21T10:26:25.338981+00:00",
+ "ended_at_utc": "2026-09-21T10:35:36.911936+00:00",
+ "wall_seconds": 551.5708603000021,
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "artifacts/runs/20260921T182503-a158-fix-4d8e2f/tmp/runner_train.py"
+ ],
+ "fixes": {
+  "C1": "rolling window = most recent 24 label-complete sections (alpha158_ml.select_train_sections)",
+  "C2": "prediction universe = t-time features; liquidation-calibre labels; suspended/delisted stay in universe",
+  "Q2_label": "label_mode=adj (close/preclose bridge); raw computed for IC attribution only"
+ },
+ "pins": {
+  "daily_parquet": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6",
+  "alpha158_ml": "bfb57e8365dd1e38f95affc0ac39309c2fa8c9ef1b1471501e5c725a73449e05",
+  "prereg": "a6cd72028a68e1213435db3c941c583c0ff3566de49c449ab00b52d0b417c0f0",
+  "python": "3.11.15"
+ },
+ "sections": {
+  "n_sections": 72,
+  "universe_rows": 108050,
+  "label_missing_rows": 1499
+ },
+ "reg": {
+  "ic_mean": 0.06284290896170865,
+  "ic_t": 5.756407129220606,
+  "by_year": {
+   "2016": 0.05434127310841889,
+   "2017": 0.05640605298002829,
+   "2018": 0.12363485814616106,
+   "2019": 0.033929102213872346,
+   "2020": 0.0443632901235494
+  }
+ },
+ "bin": {
+  "ic_mean": 0.030497204554991005,
+  "ic_t": 2.2957686085640003,
+  "by_year": {
+   "2016": 0.022733404302084214,
+   "2017": 0.033317308691997644,
+   "2018": 0.06274540436203543,
+   "2019": -0.007589688059272968,
+   "2020": 0.042259810652939794
+  },
+  "head_report_only": {
+   "top4_hit_rate_vs_median": 0.5169491525423728,
+   "picks": 236,
+   "months": 59,
+   "mean_monthly_excess_vs_pool": 0.008324360350498222,
+   "positive_excess_months": 0.4915254237288136
+  }
+ },
+ "raw_ic_attribution": {
+  "reg_ic_mean_raw": 0.06384331645691237,
+  "reg_ic_mean_adj": 0.06284290896170865
+ },
+ "outputs": {
+  "outputs/ml_head_excess_bin.csv": "c2928eae266b9fb978c571a1363c2ceeed5514d5176daca7591c47a7c5f17ae5",
+  "outputs/ml_rank_ic_bin.csv": "4a54a546b1d8160b9e269bda333da4978ad0d6e15d597eb1857884d7af63142f",
+  "outputs/ml_rank_ic_reg.csv": "8304baaea38bc4cf5f9e0f9c3b5dc2d0336ea9bdde04b79bed6329fc1945e174",
+  "outputs/ml_scores_bin.json": "a535019eec91ff2367891aa056d5441808bf89d182ca1b379a1324f09adb7afe",
+  "outputs/ml_scores_reg.json": "5087bee1ac0c649e8a5797ca686ebb6995d986ee246f45e9bae9290142c1b77d",
+  "outputs/train_window_diag_bin.csv": "5aeb1676c01a402a8329b0b3ab6bccd87733a3631ac060c9523b04a1026ead56",
+  "outputs/train_window_diag_reg.csv": "5aeb1676c01a402a8329b0b3ab6bccd87733a3631ac060c9523b04a1026ead56"
+ }
+}

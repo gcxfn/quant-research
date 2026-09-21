@@ -1,0 +1,36 @@
+[    0.0s] baseline replay; window=2015-01-05..2020-12-31; cash 500000; K=4; stop=wide
+[    2.2s]   engine 40f1aaebe49b8c5d; pins OK
+[    2.3s]   71 signal days (2015-01-30..2020-11-30)
+[    5.2s]   scores[bin]: ranked/month min 0 max 2260
+[    5.3s]   scores[reg]: ranked/month min 0 max 2260
+[    5.3s]   scores[old]: ranked/month min 0 max 1982
+[   16.5s]   frames: 542 stocks; daily 744948; half 1385772; limits 742146
+[   17.3s] == engine curves ==
+[   21.7s]   FULL-bin: 4.4s; injected 926 orders 900 filled 359; warnings 31
+[   26.2s]   SIG-old: 4.5s; injected 824 orders 849 filled 370; warnings 87
+[   30.8s]   SIG-reg: 4.6s; injected 889 orders 869 filled 354; warnings 90
+[   35.3s]   NOACCT-bin: 4.5s; injected 1315 orders 1286 filled 353; warnings 234
+[   39.8s]   NOSNR-bin: 4.4s; injected 700 orders 716 filled 270; warnings 20
+[   39.8s] == IDEAL-bin (fractional, no execution constraints) ==
+[    0.0s] baseline replay; window=2015-01-05..2020-12-31; cash 500000; K=4; stop=wide
+[    2.2s]   engine 40f1aaebe49b8c5d; pins OK
+[    2.3s]   71 signal days (2015-01-30..2020-11-30)
+[    5.2s]   scores[bin]: ranked/month min 0 max 2260
+[    5.2s]   scores[reg]: ranked/month min 0 max 2260
+[    5.2s]   scores[old]: ranked/month min 0 max 1982
+[   15.3s]   frames: 542 stocks; daily 744948; half 1385772; limits 742146
+[   16.0s] == engine curves ==
+[   20.8s]   FULL-bin: 4.7s; injected 926 orders 900 filled 359; warnings 31
+[   25.3s]   SIG-old: 4.5s; injected 824 orders 849 filled 370; warnings 87
+[   29.8s]   SIG-reg: 4.5s; injected 889 orders 869 filled 354; warnings 90
+[   34.6s]   NOACCT-bin: 4.8s; injected 1315 orders 1286 filled 353; warnings 234
+[   39.2s]   NOSNR-bin: 4.6s; injected 700 orders 716 filled 270; warnings 20
+[   39.2s] == IDEAL-bin (fractional, no execution constraints) ==
+[   40.1s] == metrics & five-layer attribution ==
+[   40.1s]   FULL-bin: net -2.85% mdd -27.17% fees 9812 fills 668 reasons {'take_half': 22, 'clear': 8, 'stop': 89, 'protection': 11}
+[   40.1s]   SIG-old: net +1.03% mdd -17.32% fees 11697 fills 658 reasons {'protection': 14, 'take_half': 27, 'stop': 63, 'clear': 10}
+[   40.1s]   SIG-reg: net -3.05% mdd -26.05% fees 11286 fills 650 reasons {'take_half': 18, 'protection': 19, 'stop': 79, 'clear': 11}
+[   40.1s]   NOACCT-bin: net -13.26% mdd -68.73% fees 23641 fills 948 reasons {'take_half': 50, 'clear': 5, 'stop': 97, 'protection': 11}
+[   40.1s]   NOSNR-bin: net -2.38% mdd -25.96% fees 7335 fills 502 reasons {}
+[   40.1s]   five layers (CAGR pp): signal_C1C2=-3.88 objective_reg_vs_bin=-0.20 legal_entry_friction=+1.83 fees_drag=+0.37 single_name_exits=-0.46 account_overlay=+10.42
+[   40.1s] == done; wall 40s ==

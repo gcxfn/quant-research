@@ -1,0 +1,29 @@
+[    0.1s] self 8c113c4ed7a21dcb; git main 9490b14c7234; group=smoke window=2019-01-01..2019-12-31; BM1 cagr -2.90%
+[    3.2s]   pins OK (28 fcst chunks)
+[    3.3s]   11 signal days (2019-01-31..2019-11-29)
+[    6.5s]   pool union 2508 symbols; pool size min/med/max 985/1265/2260
+[    7.3s]   symbol series: 2508
+[    0.1s] self 6dceca7cc4dc8780; git main 9490b14c7234; group=smoke window=2019-01-01..2019-12-31; BM1 cagr -2.90%
+[    2.5s]   pins OK (28 fcst chunks)
+[    2.5s]   11 signal days (2019-01-31..2019-11-29)
+[    5.3s]   pool union 2508 symbols; pool size min/med/max 985/1265/2260
+[    6.1s]   symbol series: 2508
+[    7.0s]   B rows (dev, all versions): 17554
+[    0.1s] self f1f4b5c43919d585; git main 9490b14c7234; group=smoke window=2019-01-01..2019-12-31; BM1 cagr -2.90%
+[    2.4s]   pins OK (28 fcst chunks)
+[    2.5s]   11 signal days (2019-01-31..2019-11-29)
+[    5.2s]   pool union 2508 symbols; pool size min/med/max 985/1265/2260
+[    6.0s]   symbol series: 2508
+[    6.9s]   B rows (dev, all versions): 17554
+[    7.0s]   events[A1]: 20 triggers / 20 symbols
+[    7.0s]   events[B1]: 72 triggers / 60 symbols
+[    8.6s]   events[B2]: 305 triggers / 248 symbols
+[   20.7s]   frames: 300 traded symbols; daily 73185; half 146070
+[   20.7s]   decision points: 488
+[   21.3s]   A1: 0.4s; injected 26 orders 26 filled 7; k3 armed 0 exec 0; trig {'events': 20, 'issued': 14, 'filled': 11, 'cancel_ttl': 0, 'cancel_level': 0, 'cancel_cap': 3, 'skip_slots': 6, 'skip_anchor': 0, 'skip_cap': 0, 'skip_held': 0}; warnings 1
+[   21.8s]   B1: 0.4s; injected 40 orders 40 filled 8; k3 armed 0 exec 0; trig {'events': 72, 'issued': 18, 'filled': 16, 'cancel_ttl': 0, 'cancel_level': 0, 'cancel_cap': 2, 'skip_slots': 22, 'skip_anchor': 0, 'skip_cap': 0, 'skip_held': 0}; warnings 15
+[   22.2s]   B2: 0.5s; injected 90 orders 90 filled 21; k3 armed 0 exec 0; trig {'events': 305, 'issued': 35, 'filled': 31, 'cancel_ttl': 0, 'cancel_level': 0, 'cancel_cap': 4, 'skip_slots': 270, 'skip_anchor': 0, 'skip_cap': 0, 'skip_held': 0}; warnings 14
+[   22.2s]   A1: net -5.42% (inv -11.69%) mdd -8.30% dd-len 116 expo 9.0% fills 19 exec_rate 0.786
+[   22.2s]   B1: net +1.77% (inv +1.89%) mdd -10.58% dd-len 203 expo 10.1% fills 35 exec_rate 0.889
+[   22.2s]   B2: net +0.76% (inv +1.46%) mdd -12.34% dd-len 180 expo 12.3% fills 75 exec_rate 0.886
+[   22.3s] == done; wall 22s; peak 5121MB ==

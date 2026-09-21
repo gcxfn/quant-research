@@ -208,7 +208,7 @@ class ConstantOverlayHost:
     confirm/cooldown machinery (E is observed monthly, not event-triggered)."""
 
     def __init__(self, e_table: Mapping[date, float],
-                 marks: Callable[[str, date], float | None],
+                 marks: Callable[[str, date, str], float | None],
                  base_seat_weight: float = ATTACK_BUDGET_SEAT,
                  tolerance: float = ATTACK_TOL) -> None:
         self.e_table = dict(e_table)
@@ -238,7 +238,10 @@ class ConstantOverlayHost:
                                       target_weight=target))
                 entries.append(symbol)
         for symbol in sorted(set(held) & seats):
-            mark = self._marks(symbol, ledger["date"])
+            # audit Q2 fix (2026-09-21): marks receive the SESSION so an
+            # 11:30 decision marks at the completed am close, not at the
+            # same day's official close (which is future information)
+            mark = self._marks(symbol, ledger["date"], ledger["session"])
             if mark is None:
                 continue
             weight = held[symbol] * mark / equity if equity > 0 else 0.0

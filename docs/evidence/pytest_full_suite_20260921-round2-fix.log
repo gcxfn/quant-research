@@ -1,0 +1,40 @@
+# pytest full suite — 2026-09-21 second-review remediation round
+# command: PYTHONUTF8=1 PYTHONPATH=src .venv/Scripts/python.exe -m pytest tests -q
+# repo HEAD: 9490b14c723431087670349dd06d556b99735a09 (working tree with this round's uncommitted fixes)
+# single_name_rules.py sha256: 7cd276954b3ed739c11ee9a99d94214cf51b4121ee9502de943d83dac3006378
+
+........................................................................ [ 10%]
+........................................................................ [ 20%]
+........................................................................ [ 31%]
+........................................................................ [ 41%]
+........................................................................ [ 52%]
+........................................................................ [ 62%]
+........................................................................ [ 73%]
+........................................................................ [ 83%]
+........................................................................ [ 94%]
+......................................                                   [100%]
+============================== warnings summary ===============================
+tests/unit/test_p2r13_lowfreq_survey.py::test_preclose_bridge_forward_includes_dividend
+tests/unit/test_p2r13_lowfreq_survey.py::test_forward_entry_requires_t_plus_1_session_exit_skips_suspension
+  D:\量化\src\quant\research\p2r13_lowfreq.py:428: UserWarning: Sortedness of columns cannot be checked when 'by' groups provided
+    exit_j = (exits.join_asof(right_all, left_on='x_key', right_on='mkt_idx',
+
+tests/unit/test_p2r13_lowfreq_survey.py::test_pit_accrual_end_plus_90_fallback_and_ann_date
+  D:\量化\src\quant\research\p2r13_lowfreq.py:606: UserWarning: Sortedness of columns cannot be checked when 'by' groups provided
+    return (left.join_asof(right, left_on='s', right_on='visible',
+
+tests/unit/test_p2r13_lowfreq_survey.py::test_c3_member_relative_month_drop
+  D:\量化\src\quant\research\p2r13_lowfreq.py:519: UserWarning: Sortedness of columns cannot be checked when 'by' groups provided
+    .join_asof(hk_idx, left_on='hi_key', right_on='mkt_idx',
+
+tests/unit/test_p2r13_lowfreq_survey.py::test_pit_block_trade_t_plus_1_window_boundary
+  D:\量化\src\quant\research\p2r13_lowfreq.py:683: UserWarning: Sortedness of columns cannot be checked when 'by' groups provided
+    hi = (keys.join_asof(cum, left_on='hi_key', right_on='t_idx', by='symbol',
+
+tests/unit/test_p2r13_lowfreq_survey.py::test_pit_block_trade_t_plus_1_window_boundary
+  D:\量化\src\quant\research\p2r13_lowfreq.py:688: UserWarning: Sortedness of columns cannot be checked when 'by' groups provided
+    lo = (hi.join_asof(cum, left_on='lo_key', right_on='t_idx', by='symbol',
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+686 passed, 6 warnings in 23.04s
+exit=0

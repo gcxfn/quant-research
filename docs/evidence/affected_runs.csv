@@ -1,0 +1,16 @@
+run_id,experiment,main_outputs,affected_findings,affected_conclusions,fix_version,reverify_run,reverify_status
+20260921T125117-alpha158-90aa2,exp-20260921-alpha158,alpha158_eval.csv / ml_rank_ic.csv / ml_scores.json / 8条引擎回放曲线,C1;C2;Q2-a(标签未复权),158因子IC评估截面;ML滚动IC;全部下游回放净值与八门判定,src/quant/research/alpha158_ml.py@2026-09-21修复,20260921T182503-a158-fix-4d8e2f + 20260921T210100-baseline-replay4-9x4q2,已重跑(reg/bin双目标;结果见stock_cash_baseline.md)
+20260921T131934-a158-k10-f20bb,exp-20260921-alpha158(K10放宽),ml_scores.json / K10回放,C1;C2;Q2-a,K=10放宽结论的信号层与净值,同上,未安排(本轮预登记未含K10),待重验(如复算须以v4退出语义新开运行)
+20260921T142710-a158-head-b41d,exp-20260921-a158-head-ml,ml_scores.json(概率) / HEAD回放曲线 / 报告止损107止盈0,C1;C2;Q2-a;C3(计数解读);C4(20万本金),52.5%命中率及其截面中位数基准;top4月超额+1.78pp;八门3/8;止损107/止盈0解读,同上 + src/quant/research/single_name_rules.py@2026-09-21修复(exit_reason),训练层已重跑(182503);净值与八门判定未重验,八门判定未重验(该线按预登记已淘汰;旧判定在旧退出语义下得出;如复算须以v4语义新开运行)
+20260921T121615-fixed-scheme-6e8be,exp-20260921-fixed-scheme,固定方案回放曲线与退出计数,C3(计数解读);Q2-b(G0/G1曲线am点用当日收盘);C4;fixed_scheme_lib.marks签名已改3参(归档runner重跑需适配),single-name止损/止盈计数解读;G0/G1曲线净值,single_name_rules.py + fixed_scheme_lib.py@2026-09-21修复(v4语义:整仓事件/profit类/归零清扫),未安排,待重验(以v4退出语义)
+20260921T123431-fs-r2-a-b4e22 / -b-c1400 / -c-779be,exp-20260921-fs-r2,宽止损三臂回放,C3;Q2-b;C4,同上(宽止损对比的计数与G0/G1净值),同上,未安排,待重验(以v4退出语义)
+20260921T024542-account-risk-full-8f16a4e9 / -smoke-b476ff62,账户级风险预登记比较,D1-D3曲线回放,Q2-b(宿主类型待核验);C4(20万),账户级降仓对比的G0/G1参照曲线,待核验DynamicOverlayHost/ConstantOverlayHost使用,未安排,待核验(与v4退出语义的交互亦未重验)
+20260921T114603-trim-risk-a-230cd / -b-8a2ee,风险减仓口径对比,回放曲线,C3;C4,退出计数解读,同上,未安排,待重验(以v4退出语义)
+20260921T135642-etf-mom-7c2a / 143250-etf-mom-comb / 152500 / 153620,ETF动量线,回放曲线,无(非alpha158信号源;50万口径),—,—,—,不受影响
+20260920T113527-t1-reason-event-b690,exp-20260920-t1-reason-event,事件研究,无(独立于alpha158管线),—,—,—,不受影响
+20260920T122905-f3r4-reason-int-2301,exp-20260920-factor-round-f3r4,三臂回放,无(分数源为F2R1因子非alpha158-ML),—,—,—,不受影响
+20260921T182503-a158-fix-4d8e2f,exp-20260921-baseline-rebuild,ml_scores_reg/bin + 训练窗口诊断 + IC,修复版训练(本体),—,修复版,alpha158_ml.py,本轮产出
+20260921T183200-baseline-replay-8h2k4f,exp-20260921-baseline-rebuild,5条引擎曲线+IDEAL+FEE毛权益+五层拆解,首版回放自身缺陷:IDEAL越过dev边界触val/暴露未对齐/分年标签错位(引擎五曲线不受影响),—,—,runner修正,aborted(重跑链取代:192112/194738 已相继作废,当前有效 20260921T210100-baseline-replay4-9x4q2)
+20260921T192112-baseline-replay2-3f7q9e,exp-20260921-baseline-rebuild,5条引擎曲线+IDEAL+FEE,首轮Q1修复含两处回归(多批次重复卖出/K=3兜底失效)致净值污染,基线净值与个股退出归因,复核发现后作废,single_name_rules.py重构,aborted-by-review(净值不可引用)
+20260921T194738-baseline-replay3-c5d8h2,exp-20260921-baseline-rebuild,5条引擎曲线+IDEAL+FEE毛权益+五层拆解+完整退出计数/暴露/可投资起点/模块pin,二轮复核暴露三残留缺陷(止损腿K=3失效/止盈误挂risk类/归零事件残留);归档runner曾在运行后就地补丁(manifest已披露post_run_disclosure),—,修复版v2,superseded-by-20260921T210100(净值数字不再引用;归因分析仍用其成交台账)
+20260921T210100-baseline-replay4-9x4q2,exp-20260921-baseline-rebuild,5条引擎曲线+IDEAL+FEE毛权益+五层拆解+完整计数/换手/水下时长/未成交归因/runner自pin/git/依赖/峰值内存,修复版回放(本体;v4退出语义),—,修复版v3,single_name_rules(7cd27695)/引擎与五模块pin见manifest,本轮有效产出(当前基线;NOSNR与v3净值曲线逐位一致断言内置)

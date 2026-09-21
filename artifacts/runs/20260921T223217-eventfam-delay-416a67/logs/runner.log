@@ -1,0 +1,29 @@
+[    0.1s] self f1f4b5c43919d585; git main 9490b14c7234; group=delay window=2015-01-05..2020-12-31; BM1 cagr -2.90%
+[    2.4s]   pins OK (28 fcst chunks)
+[    2.5s]   71 signal days (2015-01-30..2020-11-30)
+[    5.3s]   pool union 2937 symbols; pool size min/med/max 810/1510/2260
+[    7.3s]   symbol series: 2937
+[    8.8s]   B rows (dev, all versions): 17554
+[    9.5s]   events[A1]: 216 triggers / 206 symbols
+[   10.3s]   events[A2]: 136 triggers / 131 symbols
+[   10.4s]   events[B1]: 102 triggers / 86 symbols
+[   15.0s]   events[B2]: 767 triggers / 525 symbols
+[   25.2s]   frames: 717 traded symbols; daily 989085; half 1859256
+[   25.6s]   decision points: 2923
+[   32.3s]   A1: 5.7s; injected 396 orders 85741 filled 101; k3 armed 24 exec 3; trig {'events': 216, 'issued': 74, 'filled': 43, 'cancel_ttl': 0, 'cancel_level': 1, 'cancel_cap': 30, 'skip_slots': 142, 'skip_anchor': 0, 'skip_cap': 0, 'skip_held': 0}; warnings 62
+[   37.6s]   A2: 5.3s; injected 364 orders 67766 filled 108; k3 armed 19 exec 2; trig {'events': 136, 'issued': 64, 'filled': 41, 'cancel_ttl': 0, 'cancel_level': 1, 'cancel_cap': 22, 'skip_slots': 72, 'skip_anchor': 0, 'skip_cap': 0, 'skip_held': 0}; warnings 15
+[   41.8s]   B1: 4.3s; injected 219 orders 7331 filled 47; k3 armed 1 exec 1; trig {'events': 102, 'issued': 39, 'filled': 27, 'cancel_ttl': 0, 'cancel_level': 0, 'cancel_cap': 12, 'skip_slots': 63, 'skip_anchor': 0, 'skip_cap': 0, 'skip_held': 0}; warnings 18
+[   46.2s]   B2: 4.4s; injected 395 orders 19793 filled 93; k3 armed 2 exec 2; trig {'events': 767, 'issued': 75, 'filled': 52, 'cancel_ttl': 0, 'cancel_level': 0, 'cancel_cap': 23, 'skip_slots': 689, 'skip_anchor': 0, 'skip_cap': 0, 'skip_held': 3}; warnings 41
+[   52.2s]   A1: 5.9s; injected 633 orders 102664 filled 131; k3 armed 29 exec 4; trig {'events': 216, 'issued': 83, 'filled': 32, 'cancel_ttl': 1, 'cancel_level': 12, 'cancel_cap': 38, 'skip_slots': 133, 'skip_anchor': 0, 'skip_cap': 0, 'skip_held': 0}; warnings 49
+[   57.6s]   A2: 5.4s; injected 495 orders 73018 filled 109; k3 armed 22 exec 3; trig {'events': 136, 'issued': 62, 'filled': 30, 'cancel_ttl': 4, 'cancel_level': 3, 'cancel_cap': 25, 'skip_slots': 74, 'skip_anchor': 0, 'skip_cap': 0, 'skip_held': 0}; warnings 29
+[   61.6s]   B1: 4.0s; injected 289 orders 6775 filled 48; k3 armed 0 exec 0; trig {'events': 102, 'issued': 38, 'filled': 21, 'cancel_ttl': 2, 'cancel_level': 0, 'cancel_cap': 15, 'skip_slots': 64, 'skip_anchor': 0, 'skip_cap': 0, 'skip_held': 0}; warnings 21
+[   65.9s]   B2: 4.3s; injected 570 orders 17193 filled 90; k3 armed 0 exec 0; trig {'events': 767, 'issued': 77, 'filled': 44, 'cancel_ttl': 4, 'cancel_level': 0, 'cancel_cap': 29, 'skip_slots': 689, 'skip_anchor': 0, 'skip_cap': 0, 'skip_held': 1}; warnings 42
+[   66.0s]   A1-d1h: net -1.85% (inv -1.86%) mdd -26.20% dd-len 910 expo 17.7% fills 248 exec_rate 0.581
+[   66.0s]   A2-d1h: net -2.37% (inv -2.42%) mdd -24.76% dd-len 1354 expo 8.0% fills 233 exec_rate 0.641
+[   66.0s]   B1-d1h: net +0.42% (inv +1.42%) mdd -16.42% dd-len 412 expo 3.2% fills 144 exec_rate 0.692
+[   66.0s]   B2-d1h: net +0.00% (inv +0.42%) mdd -18.69% dd-len 442 expo 6.1% fills 267 exec_rate 0.693
+[   66.0s]   A1-d1d: net -1.06% (inv -1.07%) mdd -29.78% dd-len 1138 expo 13.6% fills 317 exec_rate 0.386
+[   66.0s]   A2-d1d: net -2.62% (inv -2.65%) mdd -27.67% dd-len 1243 expo 9.7% fills 259 exec_rate 0.484
+[   66.0s]   B1-d1d: net -0.18% (inv -0.45%) mdd -17.14% dd-len 422 expo 3.3% fills 160 exec_rate 0.553
+[   66.0s]   B2-d1d: net +1.05% (inv +3.31%) mdd -18.07% dd-len 412 expo 6.5% fills 307 exec_rate 0.571
+[   66.2s] == done; wall 66s; peak 6040MB ==

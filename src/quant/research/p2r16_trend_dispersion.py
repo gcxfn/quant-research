@@ -591,7 +591,8 @@ def simulate_r16(config_id: str, bank: PriceBank, calendar: list[date],
                      tuple[list[str], dict]] | None = None,
                  fractional: bool = False,
                  fee_bands: tuple[FeeBand, ...] = STOCK_FEE_SCHEDULE,
-                 seed: int | None = None) -> R16Result:
+                 seed: int | None = None,
+                 capital: float = CAPITAL) -> R16Result:
     """Monthly engine: buffer-band membership, next-open execution, integer
     lots, postpone/supersede semantics, chain-unit accounting.
 
@@ -605,7 +606,7 @@ def simulate_r16(config_id: str, bank: PriceBank, calendar: list[date],
     start_idx = next(i for i, d in enumerate(calendar) if d >= start)
     idx_of = bank.idx_of
     sig_at = {idx_of[d]: d for d in signal_days if d in idx_of}
-    cash = CAPITAL
+    cash = capital
     U: dict[str, float] = {}       # adjusted units (corp-action invariant)
     open_entry: dict[str, dict] = {}
     pending: dict[str, dict] = {}

@@ -1,0 +1,17 @@
+[    0.2s] self f1f4b5c43919d585; git main 9490b14c7234; group=rnd window=2015-01-05..2020-12-31; BM1 cagr -2.90%
+[    4.5s]   pins OK (28 fcst chunks)
+[    4.7s]   71 signal days (2015-01-30..2020-11-30)
+[    8.3s]   pool union 2937 symbols; pool size min/med/max 810/1510/2260
+[   10.5s]   symbol series: 2937
+[   11.6s]   events[RND-11]: 284 triggers / 265 symbols
+[   11.6s]   events[RND-23]: 284 triggers / 262 symbols
+[   11.6s]   events[RND-47]: 284 triggers / 267 symbols
+[   23.1s]   frames: 698 traded symbols; daily 968036; half 1830274
+[   23.5s]   decision points: 2923
+[   29.0s]   RND-11: 4.6s; injected 489 orders 299 filled 106; k3 armed 1 exec 1; trig {'events': 284, 'issued': 89, 'filled': 87, 'cancel_ttl': 2, 'cancel_level': 0, 'cancel_cap': 0, 'skip_slots': 195, 'skip_anchor': 0, 'skip_cap': 0, 'skip_held': 0}; warnings 9
+[   33.3s]   RND-23: 4.4s; injected 255 orders 257 filled 101; k3 armed 3 exec 2; trig {'events': 284, 'issued': 80, 'filled': 80, 'cancel_ttl': 0, 'cancel_level': 0, 'cancel_cap': 0, 'skip_slots': 204, 'skip_anchor': 0, 'skip_cap': 0, 'skip_held': 0}; warnings 9
+[   37.8s]   RND-47: 4.4s; injected 279 orders 280 filled 91; k3 armed 1 exec 0; trig {'events': 284, 'issued': 80, 'filled': 79, 'cancel_ttl': 1, 'cancel_level': 0, 'cancel_cap': 0, 'skip_slots': 202, 'skip_anchor': 0, 'skip_cap': 0, 'skip_held': 2}; warnings 16
+[   37.8s]   RND-11: net +3.21% (inv +3.29%) mdd -15.59% dd-len 1354 expo 14.5% fills 244 exec_rate 0.978
+[   37.8s]   RND-23: net -0.44% (inv -0.37%) mdd -19.03% dd-len 1354 expo 14.7% fills 212 exec_rate 1.0
+[   37.8s]   RND-47: net +3.07% (inv +3.24%) mdd -15.73% dd-len 1358 expo 14.7% fills 216 exec_rate 0.988
+[   37.9s] == done; wall 38s; peak 5855MB ==
