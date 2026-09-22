@@ -103,6 +103,9 @@ class FamilyParams:
     pullback_days: int = 10           # A2(1) uses 15
     b1_floor_must_rise: bool = False  # perturbation B1(1)
     b1_cooldown: int | None = None    # perturbation B1(2), own sessions
+    b1_strict_numeric: bool = False   # C0/复审§六：严格数值臂——仅当
+                                      # 数值条件本身成立才触发（type 改善
+                                      # 不再单独构成触发）
     confirm_sessions: int = 5         # perturbation B2(1) uses 10
     b2_types: tuple[str, ...] = ("预增", "扭亏")   # B2(2) narrows to 预增
     use_price_confirm: bool = True    # ablation: drop the confirmation leg
@@ -124,6 +127,8 @@ class FamilyParams:
             bits.append(f"pb={self.pullback_days}")
         if self.b1_floor_must_rise:
             bits.append("floor-rise")
+        if self.b1_strict_numeric:
+            bits.append("strict-numeric")
         if self.b1_cooldown is not None:
             bits.append(f"cool={self.b1_cooldown}")
         if self.confirm_sessions != 5:
@@ -360,6 +365,11 @@ class BEvent:
     decision_sess: str        # 'am' for B1, 'pm' for B2
     kind: str                 # 'B1' | 'B2'
     rank_key: float = 0.0
+    end_date: str = ""        # B1: 业绩期末（版本标识用）
+    update_flag: str = ""     # B1: 版本号（版本标识用）
+    type_upgrade: bool = False    # B1: type 全序上移（默认臂触发途径之一）
+    numeric_revision: bool = False  # B1: 区间中位数上移且下限达标
+    numeric_available: bool = False  # B1: 两版本净利润区间均可解析
 
 
 def b1_revision_events(rows: Sequence[Mapping[str, object]],
@@ -384,7 +394,8 @@ def b1_revision_events(rows: Sequence[Mapping[str, object]],
             d_cur = date(int(a_cur[:4]), int(a_cur[4:6]), int(a_cur[6:8]))
             improved = (TYPE_ORDER.get(str(cur["type"]), 0)
                         > TYPE_ORDER.get(str(prev["type"]), 0))
-            med_floor_ok = False
+            numeric_available = False
+            numeric_revision = False
             try:
                 pmin, pmax = (float(prev["net_profit_min"]),
                               float(prev["net_profit_max"]))
@@ -394,11 +405,14 @@ def b1_revision_events(rows: Sequence[Mapping[str, object]],
             except (TypeError, ValueError, AssertionError, KeyError):
                 pmin = pmax = cmin = cmax = None
             if None not in (pmin, pmax, cmin, cmax):
+                numeric_available = True
                 med_prev, med_cur = (pmin + pmax) / 2.0, (cmin + cmax) / 2.0
                 floor_ok = (cmin > pmin if p.b1_floor_must_rise
                             else cmin >= pmin)
-                med_floor_ok = med_cur > med_prev and floor_ok
-            if not (improved or med_floor_ok):
+                numeric_revision = med_cur > med_prev and floor_ok
+            fires = (numeric_revision if p.b1_strict_numeric
+                     else improved or numeric_revision)
+            if not fires:
                 continue
             sym = str(cur["symbol"])
             if not pool_member(sym, d_cur):
@@ -414,7 +428,12 @@ def b1_revision_events(rows: Sequence[Mapping[str, object]],
             events.append(BEvent(
                 symbol=sym, ann_date=d_cur,
                 decision_day=trading_day_after(d_cur), decision_sess="am",
-                kind="B1", rank_key=float(d_cur.toordinal())))
+                kind="B1", rank_key=float(d_cur.toordinal()),
+                end_date=str(cur["end_date"]),
+                update_flag=str(cur.get("update_flag") or "0"),
+                type_upgrade=improved,
+                numeric_revision=numeric_revision,
+                numeric_available=numeric_available))
     events.sort(key=lambda e: (e.decision_day, -e.rank_key, e.symbol))
     return events
 

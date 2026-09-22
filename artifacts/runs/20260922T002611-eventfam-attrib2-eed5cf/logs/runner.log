@@ -1,0 +1,18 @@
+[    0.1s] self 0b1eca5dcd310a73; git main ae226d964b1e
+[    2.3s]   pins OK (28 fcst chunks)
+[    5.5s]   pools: 71 months, union 2937 symbols
+[    8.7s]   series: 2937
+[   11.1s]   B rows: 17554
+[   16.2s]   events[A1] = 216 == run manifest (identity OK)
+[   16.2s]   events[A2] = 136 == run manifest (identity OK)
+[   16.2s]   events[B1] = 102 == run manifest (identity OK)
+[   16.2s]   events[B2] = 767 == run manifest (identity OK)
+[   16.4s]   B1 flags: {'type_upgrade': 0, 'numeric_revision': 102, 'numeric_available': 102, 'strict_numeric_events': 102, 'strict_numeric_floor_rise_events': 102}
+[   56.1s]   frames: 717 symbols; daily 989085; half 1859256
+[   81.1s]   B1 replay: 16.1s; fills 81 warnings 11; trig {'events': 102, 'issued': 39, 'filled': 35, 'cancel_ttl': 0, 'cancel_level': 0, 'cancel_cap': 4, 'skip_slots': 63, 'skip_anchor': 0, 'skip_cap': 0, 'skip_held': 0}
+[   81.1s]   identity OK: fills + daily equity + trigger stats == main run
+[   81.1s]   funnel == provider counters: {'issued': 39, 'slot_full': 63} risk_blocked=0
+[   81.1s]   FIFO: 35 buy lots, 46 sells, 2 dividend rows; all closed
+[   86.3s]   funnel table: 102 events -> outputs/
+[   86.3s] {"funnel_counts": {"issued": 39, "slot_full": 63}, "complete_windows": 102, "censored_windows": 0, "inc_vs_pool_median_mean_of_diffs": 0.05993026633138455, "inc_vs_pool_mean_mean_to_mean": 0.0365590636189906}
+[   86.3s] == done; wall 86s; peak 6056MB ==

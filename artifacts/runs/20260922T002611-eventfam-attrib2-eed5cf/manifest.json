@@ -1,0 +1,304 @@
+{
+ "run_id": "20260922T002611-eventfam-attrib2-eed5cf",
+ "experiment_id": "exp-20260921-eventfam-attribution",
+ "role": "C0-correction (review 2026-09-21 §八; fixes run 20260921T230639-eventfam-attrib-f38756)",
+ "status": "completed",
+ "started_at_utc": "2026-09-21T16:26:14.652585+00:00",
+ "ended_at_utc": "2026-09-21T16:27:40.930508+00:00",
+ "wall_seconds": 86.2763072999951,
+ "command": [
+  "D:\\量化\\.venv\\Scripts\\python.exe",
+  "artifacts/runs/20260922T002611-eventfam-attrib2-eed5cf/tmp/runner_attrib2.py"
+ ],
+ "runner_self": {
+  "sha256_at_start": "0b1eca5dcd310a7347840aecd7df5c8ce54ccfeccf7613e7d1960ddcd0aef944",
+  "sha256_at_end": "0b1eca5dcd310a7347840aecd7df5c8ce54ccfeccf7613e7d1960ddcd0aef944"
+ },
+ "git": {
+  "head": "ae226d964b1ea1dccfb60a42ae943c6da8a179e6",
+  "branch": "main"
+ },
+ "dependencies": {
+  "python": "3.11.15",
+  "polars": "1.44.2",
+  "numpy": "1.26.4",
+  "psutil": "7.2.2"
+ },
+ "peak_memory_mb": 6055.5859375,
+ "trials_consumed": 0,
+ "trials_note": "B1 replay uses the identical config/inputs as the main run; fills + equity + trigger stats asserted bit-equal to the archived outputs before statistics are emitted",
+ "identity": {
+  "event_counts_equal_main_manifest": true,
+  "fills_equal_main_run": true,
+  "daily_equity_equal_main_run": true,
+  "trigger_stats_equal_main_run": true,
+  "funnel_counts_equal_provider_counters": true
+ },
+ "inputs": {
+  "main_run": "artifacts\\runs\\20260921T223157-eventfam-main-cb4cff",
+  "main_run_manifest_sha": "b62ffaaef9cd21fda0f6db3914c78abb895fd8a2b8ca6cc6465ab54af7d6ae81",
+  "b1_flags": {
+   "type_upgrade": 0,
+   "numeric_revision": 102,
+   "numeric_available": 102,
+   "strict_numeric_events": 102,
+   "strict_numeric_floor_rise_events": 102
+  }
+ },
+ "pins": {
+  "engine": {
+   "path": "D:\\量化\\src\\quant\\backtest\\band_engine.py",
+   "sha256": "40f1aaebe49b8c5dba04e6d235155ff1e3db96c70d2b70490f7eb4e3a4537abd"
+  },
+  "snr_module": {
+   "path": "D:\\量化\\src\\quant\\research\\single_name_rules.py",
+   "sha256": "9f9cf8c6928f7495ab9d5ad4383b1451b02f5e720d3544267c1bb978a1fe0e92"
+  },
+  "event_family_signals": {
+   "path": "D:\\量化\\src\\quant\\research\\event_family_signals.py",
+   "sha256": "994d6d09de4932a56918645cbc2c4686f81459a006cf454a70299abd6bd0ba5d"
+  },
+  "attribution_lib": {
+   "path": "D:\\量化\\src\\quant\\research\\attribution_lib.py",
+   "sha256": "0867f740546cd06d855c2ca1b20fb90c8b0122bef1a8e1eb8678aa9635569deb"
+  },
+  "daily": {
+   "path": "D:\\量化\\data\\processed\\baostock-daily-20260917\\daily_1999_2024.parquet",
+   "sha256": "d9a63f4cc3032926701aae1f98838edb79ec7560bb1df343711876a0e8a472a6"
+  },
+  "main_manifest": {
+   "path": "D:\\量化\\artifacts\\runs\\20260921T223157-eventfam-main-cb4cff\\manifest.json",
+   "sha256": "b62ffaaef9cd21fda0f6db3914c78abb895fd8a2b8ca6cc6465ab54af7d6ae81"
+  },
+  "main_B1_fills": {
+   "path": "D:\\量化\\artifacts\\runs\\20260921T223157-eventfam-main-cb4cff\\outputs\\B1_fills.parquet",
+   "sha256": "9cb869c3a3d40eb607e71d20813e5c55e2a22dce648e878f64c1570b4e970d30"
+  },
+  "main_B1_daily": {
+   "path": "D:\\量化\\artifacts\\runs\\20260921T223157-eventfam-main-cb4cff\\outputs\\B1_daily_equity.parquet",
+   "sha256": "0fe04f6eca68d58b0f5ba43e4050cdf3def3c6807897b1979f2d5deddd9c3a69"
+  },
+  "split_factor": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\split_factor.h5",
+   "sha256": "2f436b2f13d09a9bfdcbdb0bf35669c10a377d180ce1ca37bef53d6c96a3365d"
+  },
+  "dividends": {
+   "path": "D:\\量化\\data\\processed\\rqalpha-bundle-v2-1-20260918\\dividends.h5",
+   "sha256": "46121c09cddde72e725c2d4ae025cc259b049aeaa77c868b492fdbba60214846"
+  },
+  "t1_row_index": {
+   "path": "D:\\量化\\data\\features\\fcst-reason-struct-full-20260918\\row_index.parquet",
+   "sha256": "d9c6060104b5beb78caa9da6db07aae68e19b5de610aec8b527d1b74521632ed"
+  },
+  "halfday_manifest": {
+   "sha256": "2a414174b5df2eeed4c6bd6a7cd7f9f09f9b2efc8f05673ccc4b7695812cd679",
+   "match": true
+  },
+  "stk_limit_aggregate": {
+   "rule": "sha256 of '<sha256>  <name>\\n' lines, files sorted by path",
+   "aggregate_sha256": "3c53abf3b0c39b425389137d9f630f0de158990fcdc55b0bd41bf7d9c3bde673",
+   "files": 2432,
+   "total_bytes": 301278245,
+   "match": true
+  },
+  "fcst_raw_chunks": {
+   "n": 28,
+   "sha256": {
+    "chunk_201809.csv": "21c2d20000a84addaa92ec058f09f2ae6599a1d57f30474a99c661c9322d2b27",
+    "chunk_201810.csv": "f23086e3cf73f104b81155150b15129903fbe4c3b590666ef7126b6b0eba9c01",
+    "chunk_201811.csv": "88a71738e8b00ade8614a7b6cf84ee34fbe53aaaddb93c5929bbd38bfc936c1e",
+    "chunk_201812.csv": "87b8efb70b5d8a1c778ff21b69d555db4d6e53207682cf01b3acc0a9d3a4c424",
+    "chunk_201901.csv": "f1a187b6a29acc21e6248ada79a9f90363326154c76a09ff190ce40b12df1b3f",
+    "chunk_201902.csv": "c4e406dc4ac4b39895ac57d54d37b7f8ea378c14171494e3c99e23e3bc412864",
+    "chunk_201903.csv": "aeac53722ad3798db6ea5fe463302ae1cd43adc867d7a70780a4b02aafca4f25",
+    "chunk_201904.csv": "47e2d0e333d16d6df01518e8a21baa8a3bd9e927b65dd6b4c12c98740cab745f",
+    "chunk_201905.csv": "8155d250a2abe9a31267342b2853b297bf54916e425fdfc30ff145b171dd4ef3",
+    "chunk_201906.csv": "f43f6138003098a7ec6bf0ca916bd4aaeeb41782d210f02f69d6d06d73cbec45",
+    "chunk_201907.csv": "fc94ce23928c317386e825a1bb761b9f2ee16b1d1e3d0ae12a41e2dcd464952a",
+    "chunk_201908.csv": "5a98a4b6a8510e2a097e578a55ba72b4485e9889fa211e1fc3724dbf2ff24146",
+    "chunk_201909.csv": "78ef3c5be5a76db9fba880969f637227bc1c32f4c0f7dc53aea79f0d6080b85b",
+    "chunk_201910.csv": "260af6a850459ac1c92aa970dfd7cac01b345aaf253f87f1e15f9f9523230bff",
+    "chunk_201911.csv": "44d80eb6b47dc99934a5f0fc868df684a6ba7fc1c114163c6cfa3ff43c791acd",
+    "chunk_201912.csv": "8a0cedf7335127b7ebc9e750f877bb59cc3f1fc379de42b61b3f8967122c8fe0",
+    "chunk_202001.csv": "edeb094b2d0cbd036e6f0159b064a6beebe56be7b6c7768c4d694b32fdbecde8",
+    "chunk_202002.csv": "181341dc1ffdcdd770ce86cd62d997be546162ec0f9ffcf121cf31202dcfd91a",
+    "chunk_202003.csv": "8a8bf38be1572596dbe309eb2bfb52618b4adefa8d926fbe741cf792fbea0b6d",
+    "chunk_202004.csv": "6b62b96d6297670fb0e9d5d348078c248a0567189697470cb8edbc9fd62bfd1d",
+    "chunk_202005.csv": "fcdde9a2754e6c00a4a5ab4aa2294b9bc3ceb05d13019c9c380da3438d8c4517",
+    "chunk_202006.csv": "4cd67e396dec74b7baae4958c7b7b1b6c7db4dedcd207f23727fa0b4a525fe28",
+    "chunk_202007.csv": "9a52ee71299d3586b449688e58ccfe6b6e6e732203563800c3dbaa2bd8a2b05e",
+    "chunk_202008.csv": "316881b36eef25de233ac9f694d6b12958c8b7ce62d57e7d98f78c491aebf28f",
+    "chunk_202009.csv": "cc7f04fe2fd3de0eefeb4c5585446e216aea1a8c3d749cd0475871fc0a5d7865",
+    "chunk_202010.csv": "177ad3571591820c1e92ba034664ec276fda0e4ebe36db9568b6d698480706e7",
+    "chunk_202011.csv": "a3ab3c388ed94ea4874f3533718a784bfe081a27a45f1658c13073f8cb7b6b09",
+    "chunk_202012.csv": "52505ed6829d0314889d2796ed332c02343352f7cd97b4bf5b74703ba5b4f45c"
+   }
+  }
+ },
+ "aggregates": {
+  "funnel_counts": {
+   "issued": 39,
+   "slot_full": 63
+  },
+  "risk_blocked_events": 0,
+  "events_total": 102,
+  "complete_windows": 102,
+  "censored_windows": 0,
+  "censored_event_ids": [],
+  "diag_decision_20": {
+   "n": 102,
+   "mean": 0.07072588899233229,
+   "median": 0.03437823974419307,
+   "win": 0.5490196078431373
+  },
+  "diag_announcement_20": {
+   "n": 102,
+   "mean": 0.06704022095061943,
+   "median": 0.010997988372250744,
+   "win": 0.5392156862745098
+  },
+  "inc_vs_pool_median_mean_of_diffs": 0.05993026633138455,
+  "inc_vs_pool_mean_mean_to_mean": 0.0365590636189906,
+  "by_category": {
+   "issued": {
+    "n": 39,
+    "diag_decision_20": {
+     "n": 39,
+     "mean": 0.01339645361135685,
+     "median": -0.017173051519154603,
+     "win": 0.4358974358974359
+    },
+    "inc_vs_pool_median": 0.03489925268443579
+   },
+   "slot_full": {
+    "n": 63,
+    "diag_decision_20": {
+     "n": 63,
+     "mean": 0.10621553946626947,
+     "median": 0.08494337108594241,
+     "win": 0.6190476190476191
+    },
+    "inc_vs_pool_median": 0.07542565573187662
+   }
+  },
+  "fill_cost_ret_20": {
+   "n": 35,
+   "mean": 0.004955152431045111,
+   "median": -0.009536784741144833,
+   "win": 0.42857142857142855
+  },
+  "decision_to_fill_ret": {
+   "n": 35,
+   "mean": 0.0003268138999153157,
+   "median": 0.0,
+   "win": 0.05714285714285714
+  },
+  "actual_net_pnl": {
+   "n": 35,
+   "mean": -464.3536171428569,
+   "median": -725.3849999999984,
+   "win": 0.42857142857142855
+  },
+  "actual_pnl_over_buy_cost": {
+   "n": 35,
+   "mean": -0.005568567636020534,
+   "median": -0.01906766558503524,
+   "win": 0.42857142857142855
+  },
+  "total_filled_net_pnl_cny": -16252.37659999999,
+  "total_buy_cost_cny": 1147829.1017,
+  "stability_by_month": {
+   "2019-01": {
+    "n": 23,
+    "mean_diag": 0.3111592112102643
+   },
+   "2019-04": {
+    "n": 17,
+    "mean_diag": -0.09033302756562749
+   },
+   "2019-07": {
+    "n": 7,
+    "mean_diag": 0.01873796828020621
+   },
+   "2019-10": {
+    "n": 9,
+    "mean_diag": -0.040058854018934796
+   },
+   "2020-01": {
+    "n": 7,
+    "mean_diag": 0.13920630931019848
+   },
+   "2020-02": {
+    "n": 1,
+    "mean_diag": 0.4805194805194801
+   },
+   "2020-03": {
+    "n": 2,
+    "mean_diag": -0.08243657681715744
+   },
+   "2020-04": {
+    "n": 3,
+    "mean_diag": -0.01688510075387928
+   },
+   "2020-06": {
+    "n": 2,
+    "mean_diag": 0.1640764541440547
+   },
+   "2020-07": {
+    "n": 20,
+    "mean_diag": 0.02395365065247528
+   },
+   "2020-09": {
+    "n": 1,
+    "mean_diag": 0.08179723502304115
+   },
+   "2020-10": {
+    "n": 10,
+    "mean_diag": -0.030605414994912317
+   }
+  },
+  "stability_by_symbol": {
+   "n_symbols": 86,
+   "max_events_one_symbol": 4,
+   "top5_symbols_by_events": [
+    {
+     "symbol": "sz.002299",
+     "n_events": 4,
+     "mean_diag": 0.05793489194225948,
+     "pnl_sum": 11342.38659999999
+    },
+    {
+     "symbol": "sz.000786",
+     "n_events": 2,
+     "mean_diag": 0.03031923218649102,
+     "pnl_sum": 0.0
+    },
+    {
+     "symbol": "sz.002079",
+     "n_events": 2,
+     "mean_diag": -0.08436749369804686,
+     "pnl_sum": -10780.404800000004
+    },
+    {
+     "symbol": "sz.002151",
+     "n_events": 2,
+     "mean_diag": -0.0607535171048863,
+     "pnl_sum": -919.7200000000012
+    },
+    {
+     "symbol": "sz.002182",
+     "n_events": 2,
+     "mean_diag": 0.08962453957346683,
+     "pnl_sum": -2953.9739999999983
+    }
+   ],
+   "top5_pnl_share_of_positive": 0.6621870852771906
+  }
+ },
+ "outputs": {
+  "outputs/B1_buy_lots.csv": "14d7b953bb93012546ab45dd725429d1ab91d9823f40ee91de698435bce1869b",
+  "outputs/B1_event_funnel.csv": "c30ed8477c1814e151b6af384610c19326d1970e1903fb026d3a02c0b6a66cc8",
+  "outputs/B1_event_funnel.parquet": "99fa7d3c99197526c99808f4b5a01d032e3c8e836e5034bb43898bd618b7f8d7",
+  "outputs/pool_control_by_day.csv": "876a208eaaf2e88e146064920e35b268c850d40109664bfcdf3846bd45846a98"
+ }
+}

@@ -1,0 +1,25 @@
+{
+  "run_id": "20260922T001213-eventfam-attrib2-837163",
+  "experiment_id": "exp-20260921-eventfam-attribution",
+  "status": "failed",
+  "failure_reason": "missing engine order for submission sz.002299 2019-01-09 am",
+  "ended_at": "2026-09-21T16:15:59.089261+00:00",
+  "log_tail": [
+    "[    0.1s] self 8ec3d545033121e7; git main ae226d964b1e",
+    "[    3.4s]   pins OK (28 fcst chunks)",
+    "[    6.9s]   pools: 71 months, union 2937 symbols",
+    "[   10.1s]   series: 2937",
+    "[   12.5s]   B rows: 17554",
+    "[   17.7s]   events[A1] = 216 == run manifest (identity OK)",
+    "[   17.7s]   events[A2] = 136 == run manifest (identity OK)",
+    "[   17.7s]   events[B1] = 102 == run manifest (identity OK)",
+    "[   17.7s]   events[B2] = 767 == run manifest (identity OK)",
+    "[   17.7s]   B1 flags: {'type_upgrade': 0, 'numeric_revision': 102, 'numeric_available': 102}",
+    "[   31.3s]   frames: 717 symbols; daily 989085; half 1859256",
+    "[   37.4s]   B1 replay: 4.0s; fills 81 warnings 11; trig {'events': 102, 'issued': 39, 'filled': 35, 'cancel_ttl': 0, 'cancel_level': 0, 'cancel_cap': 4, 'skip_slots': 63, 'skip_anchor': 0, 'skip_cap': 0, 'skip_held': 0}",
+    "[   37.5s]   identity OK: fills + daily equity + trigger stats == main run",
+    "[   37.5s]   funnel == provider counters: {'issued': 39, 'slot_full': 63} risk_blocked=0",
+    "[   37.5s]   FIFO: 35 buy lots, 46 sells, 2 dividend rows; all closed",
+    "[   37.5s] !! FAIL: missing engine order for submission sz.002299 2019-01-09 am"
+  ]
+}
