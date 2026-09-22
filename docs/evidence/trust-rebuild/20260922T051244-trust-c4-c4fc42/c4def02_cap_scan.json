@@ -1,0 +1,68 @@
+{
+  "method": "scan detail column of every reconciled arm's event table for 'cap'",
+  "arms_scanned": 12,
+  "total_cap_hits": 0,
+  "per_arm": [
+    {
+      "arm": "FULL-bin",
+      "events": 2300,
+      "cap_hits": 0
+    },
+    {
+      "arm": "NOACCT-bin",
+      "events": 2960,
+      "cap_hits": 0
+    },
+    {
+      "arm": "NOSNR-bin",
+      "events": 1770,
+      "cap_hits": 0
+    },
+    {
+      "arm": "SIG-old",
+      "events": 2090,
+      "cap_hits": 0
+    },
+    {
+      "arm": "SIG-reg",
+      "events": 2243,
+      "cap_hits": 0
+    },
+    {
+      "arm": "A1",
+      "events": 555,
+      "cap_hits": 0
+    },
+    {
+      "arm": "A2",
+      "events": 438,
+      "cap_hits": 0
+    },
+    {
+      "arm": "B1",
+      "events": 236,
+      "cap_hits": 0
+    },
+    {
+      "arm": "B2",
+      "events": 448,
+      "cap_hits": 0
+    },
+    {
+      "arm": "RND-11",
+      "events": 1121,
+      "cap_hits": 0
+    },
+    {
+      "arm": "RND-23",
+      "events": 663,
+      "cap_hits": 0
+    },
+    {
+      "arm": "RND-47",
+      "events": 692,
+      "cap_hits": 0
+    }
+  ],
+  "conclusion": "25% single-name cap never bound in any reconciled arm; the engine vs matcher am-snapshot caliber difference has zero effect on published results"
+}

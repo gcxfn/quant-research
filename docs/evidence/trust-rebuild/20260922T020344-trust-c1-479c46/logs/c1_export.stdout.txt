@@ -1,0 +1,31 @@
+{
+  "dataset_id": "dev-sandbox-20260922",
+  "files": 12,
+  "rows": 19501006,
+  "bytes": 374236283,
+  "export_seconds": 10.95,
+  "peak_rss_mb": 1068.4,
+  "no_2021plus_verification": {
+    "rule": "每个数据集的输出日期最大/最小值必须在 manifest 声明的窗口内；导出工具在写完后逐文件重扫并硬断言",
+    "checked_at_utc": "2026-09-21T18:30:56.850253Z",
+    "checked_kinds": [
+      "bars_daily",
+      "bars_daily_warmup",
+      "bars_halfday",
+      "limit",
+      "forecast_event",
+      "dividend",
+      "split_factor"
+    ],
+    "max_date_observed_per_kind": {
+      "bars_daily": "2020-12-31",
+      "bars_daily_warmup": "2014-12-31",
+      "bars_halfday": "2020-12-31",
+      "limit": "2020-12-31",
+      "forecast_event": "2020-12-31",
+      "dividend": "2020-12-31",
+      "split_factor": "2020-12-31"
+    },
+    "passed": true
+  }
+}

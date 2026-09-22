@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "stage_id": "C4",
+  "run_id": "20260922T051244-trust-c4-c4fc42",
+  "run_state": "completed",
+  "scope": "C4 only：定向修复调查与文档化、声明修正、台账补登、全量测试归档、无关路径控制与公共系统裁决。零引擎/账户层代码改动、零回测重跑、不读 2021+ 行情、不 git 提交。",
+  "code_commit": "ae226d964b1ea1dccfb60a42ae943c6da8a179e6",
+  "working_tree_dirty": true,
+  "source_sha256_at_start_equals_at_end": true,
+  "source_sha256": {
+    "src/quant/backtest/band_engine.py": "40f1aaebe49b8c5dba04e6d235155ff1e3db96c70d2b70490f7eb4e3a4537abd",
+    "src/quant/portfolio/risk_overlay.py": "9fc84a892ef0e2348950669b7faad145f937c9f4b498630d4c6b4cebd2acb8a0",
+    "src/quant/research/single_name_rules.py": "9f9cf8c6928f7495ab9d5ad4383b1451b02f5e720d3544267c1bb978a1fe0e92",
+    "src/quant/research/event_family_signals.py": "994d6d09de4932a56918645cbc2c4686f81459a006cf454a70299abd6bd0ba5d",
+    "src/quant/research/reference_matcher.py": "d3fb7b07b5df0736c1779f288cbfe256a9647168dbdee9efd65decc0f37080f0",
+    "src/quant/research/reference_matcher_reconcile.py": "460bf0b7d690fe818f282a74f51aeb7362b54d1f914abd1e408523085978bdeb",
+    "src/quant/research/reference_ledger.py": "5bfa1362ad252a1297ec9db0a489c527ca227acd4ee29bc4b432b71cbf020beb",
+    "src/quant/research/reference_ledger_reconcile.py": "2095cbf0a643f8d874e158ee962e49d053c3c7c83ad52babd8c42f7459878660",
+    "src/quant/research/c3_semantic_chain.py": "92787ed367e2b32f506020606bf800cee4fdc6ff5c02019368505825ddb4ef89"
+  },
+  "engine_layer_untouched": {
+    "check": "git diff --stat -- src/quant/backtest src/quant/portfolio",
+    "result": "empty (no output, exit 0)",
+    "note": "event_family_signals.py 的未提交修改属 C0 归因修正批次（C4 开始前已在盘上，hash 与 attrib2 pin 逐字节一致），非 C4 改动"
+  },
+  "runs": [
+    {
+      "name": "full_test_suite",
+      "kind": "test_run",
+      "command": "PYTHONPATH=src .venv/Scripts/python.exe -m pytest tests/ --junitxml=docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/tests.xml -q",
+      "started_at_utc": "2026-09-21T21:30:37Z",
+      "ended_at_utc": "2026-09-21T21:31:27Z",
+      "exit_code": 0,
+      "wall_seconds": 47.46,
+      "junit_path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/tests.xml",
+      "junit_summary": {"tests": 804, "failures": 0, "errors": 0, "skipped": 0, "time_s": 47.277},
+      "stdout_path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/run_records/pytest_full.log",
+      "note": "PYTHONPATH=src 必需：.venv 的 editable .pth 含中文路径 D:\\量化\\src，Windows 下 mbcs 解码失败，裸命令会在 tests/contracts 收集期报 ModuleNotFoundError: quant（见失败记录）"
+    },
+    {
+      "name": "full_test_suite_nopath_attempt",
+      "kind": "test_run_failed",
+      "command": ".venv/Scripts/python.exe -m pytest tests/ --junitxml=<EV>/tests.xml -q",
+      "exit_code": 2,
+      "result": "4 collection errors (tests/contracts/test_adjustment.py, test_backtest_parity.py, test_data_boundary.py, test_run_records.py): ModuleNotFoundError: No module named 'quant'",
+      "stdout_path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/run_records/pytest_nopath_failed.log",
+      "disposition": "环境问题（中文路径 editable .pth），改用 PYTHONPATH=src 全量重跑；不修改测试、不弱化检查"
+    },
+    {
+      "name": "c4_first_year_recompute",
+      "kind": "engineering_replay",
+      "command": ".venv/Scripts/python.exe docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/c4_first_year_recompute.py",
+      "exit_code": 0,
+      "outputs": ["c4_first_year_recompute.json"],
+      "note": "只读归档权益曲线复算首年/分年/CAGR/MDD；不改 runner、不重跑回测"
+    },
+    {
+      "name": "c4def01_fifo_analysis",
+      "kind": "analysis",
+      "command": ".venv/Scripts/python.exe docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/c4def01_fifo_analysis.py",
+      "exit_code": 0,
+      "outputs": ["c4def01_fifo_analysis.json"],
+      "note": "源码文本 + B1 真实成交的只读分析"
+    },
+    {
+      "name": "c4def02_cap_scan",
+      "kind": "analysis",
+      "command": ".venv/Scripts/python.exe docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/c4def02_cap_scan.py",
+      "exit_code": 0,
+      "outputs": ["c4def02_cap_scan.json"],
+      "note": "12 个被对账臂事件表扫描 25% 帽命中，结果 0"
+    }
+  ],
+  "resource_usage": {"full_suite_wall_s": 47.46, "peak_memory_note": "pytest 峰值内存未单独测量；无回测重跑"},
+  "backtest_rerun": false,
+  "val_2021plus_read": false,
+  "git_commit_or_push": false,
+  "approval_reference": "用户本会话对 C1-C4 工程批次的持续授权；C3 independent_review「下一阶段确认」六项输入清单"
+}

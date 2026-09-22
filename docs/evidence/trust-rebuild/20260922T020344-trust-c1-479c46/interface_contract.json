@@ -1,0 +1,387 @@
+{
+  "schema_version": "1.1",
+  "artifact": "interface_contract",
+  "contract_id": "c1-interface-20260922",
+  "stage_id": "C1",
+  "run_id": "20260922T020344-trust-c1-479c46",
+  "created_at_utc": "2026-09-21T18:12:00Z",
+  "code_commit": "ae226d964b1ea1dccfb60a42ae943c6da8a179e6",
+  "working_tree_dirty": true,
+  "authority": {
+    "primary": "docs/quant_stage_plan_20260922/04_evidence_spec.md v1.0（第 3-9 节 CSV/ID 合同）",
+    "mandatory_additions": "docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/independent_review.md「下一阶段确认」三条强制项",
+    "source_priority": "主计划 2.3：用户明确指示 > 交易合同 > 本阶段计划 > 代码事实"
+  },
+  "statement": "C2（独立参考账本）与 C3（独立 matcher）的实现必须吃这份合同；接口未冻结前不得让另一个 agent 猜字段开工（主计划 4 与 15.3）。本文件只冻结字段/类型/枚举/ID 规则，不改任何费率、仓位与成交语义。",
+  "id_system": {
+    "rules": {
+      "event_id": {
+        "meaning": "一条信息事件（一次公告触发的一次可评价信号）",
+        "format": "<family>.<symbol>.<event_date>.<seq>",
+        "example": "B1.sz.000750.20201027.1",
+        "seq_rule": "在同一 (family, symbol, event_date) 内按该家族冻结的排序键升序 1-based 编号；排序键必须是可用当刻信息，不得使用未来收益",
+        "b1_ordering_key": "(end_date, ann_date, update_flag)",
+        "required_composite": "B1 事件另须在 event_funnel 记录 (symbol, end_date, ann_date, update_flag) 四元组；该四元组在同一 event_date 内必须唯一",
+        "forbidden": "禁止用「同股票三日内第一笔买入」之类模糊规则代替唯一身份（归因 v1 的缺陷）"
+      },
+      "intent_id": {
+        "meaning": "一次经济意图（新建/补仓/减仓/止盈/止损/持有不动/账户级降仓）",
+        "format": "<symbol>|<side>|<intent_class>|<trigger_ref>|<issued_halfday>",
+        "trigger_ref": "入场意图=source event_id；退出意图=source event_id 或 position_cycle_id",
+        "issued_halfday": "ISO 半日，YYYY-MM-DDThhmm，取值 1130 或 1500",
+        "re_issue_rule": "同一经济意图的重发共用 intent_id，只产生新 order_id"
+      },
+      "order_id": {
+        "meaning": "具体半日限价订单（一次签发）",
+        "format": "ord.<intent_id>.<live_from>.seq",
+        "live_from": "ISO 半日 YYYY-MM-DDThhmm",
+        "unique": "重挂/替换生成新 order_id，并用 replaces_order_id 连接上一张订单",
+        "forbidden": "不得以「同证券同方向近三日」聚合代替唯一对应"
+      },
+      "fill_id": {
+        "meaning": "一笔成交（部分成交独立成行）",
+        "format": "fil.<order_id>.<fill_at>.seq",
+        "fill_at": "ISO 半日 YYYY-MM-DDThhmm"
+      },
+      "clip_id": {
+        "meaning": "一次取得批次（一次成交形成的持仓批次）",
+        "format": "clp.<fill_id>",
+        "note": "批次是成本/可卖数量/风险 R 的最小单位，与持有周期不能混用"
+      },
+      "position_cycle_id": {
+        "meaning": "一次持有周期（同一 symbol 从空仓建仓到清零的过程）",
+        "format": "cyc.<symbol>.<opened_at>.seq",
+        "opened_at": "ISO 半日 YYYY-MM-DDThhmm",
+        "note": "cycle 汇总其下所有 clip；部分卖出不关闭 cycle，份额清零才关闭"
+      }
+    },
+    "linking_constraints": [
+      "event 1..n intent（可能 0 个：未签发）",
+      "intent 1..n order（重发链），order.replaces_order_id 指向上一次签发",
+      "order 1..n fill；sum(fill.shares) <= order.requested_shares；部分成交每笔独立",
+      "fill 1..1 clip_created_id（新批次）",
+      "position_cycle 1..n clip（同 symbol 连续持有）",
+      "数量守恒：对每个 intent，签发的 requested_shares = 已成交累计 + 未成交剩余，且未成交剩余只存在于该 intent 当前有效订单",
+      "状态守恒：event_order_lifecycle 的 from_status→to_status 链首尾相接，不得把多次状态转换重复计为多个事件"
+    ]
+  },
+  "time_contract": {
+    "timezone": "Asia/Shanghai（研究市场时间）；机器日志用 UTC 并保留偏移",
+    "halfday_grid": ["YYYY-MM-DDThhmm=1130（上午结束决策点）", "YYYY-MM-DDThhmm=1500（当日收盘决策点）"],
+    "fields": {
+      "event_at": "信息事件发生的业务时点（B1=ann_date 当日收盘后；A=触发日收盘后）",
+      "available_at": "信息公开可得时点；只有披露日期无时分时=公告日 15:00（收盘后）",
+      "decision_at": "消费该信息的最早决策点",
+      "live_from": "该订单最早可成交的半日",
+      "expires_at": "订单到期半日",
+      "label_end_at": "固定持有窗的实际终点（自身交易日），必须显式保存"
+    },
+    "invariant": "available_at <= decision_at < live_from（主计划 2.1 决策时钟行）；assert 由 src/quant/data/temporal_contract.py:assert_time_triplet 提供",
+    "conservative_clock": "仅有公告日期时：available_at=(ann_date,pm)，decision_at=(下一交易日,am)，live_from=(下一交易日,pm)；不得提前到公告当日开盘",
+    "null_policy": "时间字段为空必须报错（NullTimeError），禁止回填运行当天或任何默认值；缺失披露时间的行 fail-closed 丢弃并计数",
+    "order_live_mapping": {"(D,pm)": "(下一交易日,am)", "(D,am)": "(D,pm)"},
+    "same_session_amendment": false
+  },
+  "tables": {
+    "orders": {
+      "file": "orders.csv",
+      "columns": [
+        {"name": "run_id", "type": "string"},
+        {"name": "event_id", "type": "string", "nullable": true, "note": "非事件驱动订单（账户级/仓位漂移）为空"},
+        {"name": "intent_id", "type": "string"},
+        {"name": "order_id", "type": "string", "key": true},
+        {"name": "replaces_order_id", "type": "string", "nullable": true},
+        {"name": "symbol", "type": "string", "note": "含交易所，如 sh.600000"},
+        {"name": "side", "type": "enum", "enum": ["buy", "sell"]},
+        {"name": "intent_class", "type": "enum", "enum": ["entry", "add", "reduce", "take_profit", "stop_loss", "hold", "account_deleverage"], "note": "空值表示入场（沿 band_engine 合同）"},
+        {"name": "exit_reason", "type": "string", "nullable": true},
+        {"name": "created_at", "type": "datetime_tz"},
+        {"name": "decision_at", "type": "datetime_tz", "note": "ISO 半日决策点"},
+        {"name": "information_cutoff", "type": "datetime_tz", "note": "该决策点允许使用的最晚信息时点"},
+        {"name": "live_from", "type": "datetime_tz"},
+        {"name": "expires_at", "type": "datetime_tz", "nullable": true},
+        {"name": "source_signal_at", "type": "datetime_tz", "nullable": true},
+        {"name": "anchor_price", "type": "decimal_string", "nullable": true, "unit": "CNY"},
+        {"name": "trigger_cap", "type": "decimal_string", "nullable": true, "unit": "CNY", "required_for_entry": true, "note": "签发门槛，见 entry_price_dual_track"},
+        {"name": "limit_price", "type": "decimal_string", "nullable": true, "unit": "CNY", "required_for_entry": true, "note": "实际提交限价，见 entry_price_dual_track"},
+        {"name": "tick_size", "type": "decimal_string", "unit": "CNY"},
+        {"name": "requested_shares", "type": "int", "note": "必须为 100 的整数倍"},
+        {"name": "target_weight", "type": "decimal_string", "nullable": true},
+        {"name": "target_notional", "type": "decimal_string", "nullable": true},
+        {"name": "priority", "type": "int"},
+        {"name": "reserved_cash", "type": "decimal_string", "unit": "CNY"},
+        {"name": "available_cash_before", "type": "decimal_string", "unit": "CNY"},
+        {"name": "price_legal", "type": "bool", "note": "相对历史涨跌停表合法"},
+        {"name": "eligibility_status", "type": "enum", "enum": ["eligible", "ineligible", "unknown"]},
+        {"name": "order_status", "type": "enum", "enum": ["created", "live", "partial_fill", "full_fill", "expired", "cancelled_cap", "cancelled_signal", "replaced", "rejected"]},
+        {"name": "status_reason", "type": "string", "nullable": true}
+      ],
+      "invariants": [
+        "trigger_cap 与 limit_price 是两个独立必填字段，不得互相冒充",
+        "无价格锚/过期行情/未来输入必须给出拒绝原因，不填 0 价替代",
+        "同一半日内不得改单（same_session_amendment=false）"
+      ]
+    },
+    "fills": {
+      "file": "fills.csv",
+      "columns": [
+        {"name": "fill_id", "type": "string", "key": true},
+        {"name": "order_id", "type": "string"},
+        {"name": "intent_id", "type": "string"},
+        {"name": "event_id", "type": "string", "nullable": true},
+        {"name": "symbol", "type": "string"},
+        {"name": "side", "type": "enum", "enum": ["buy", "sell"]},
+        {"name": "fill_at", "type": "datetime_tz"},
+        {"name": "session", "type": "enum", "enum": ["am", "pm"]},
+        {"name": "shares", "type": "int", "unit": "股"},
+        {"name": "price", "type": "decimal_string", "unit": "CNY"},
+        {"name": "gross_notional", "type": "decimal_string", "unit": "CNY"},
+        {"name": "commission", "type": "decimal_string", "unit": "CNY"},
+        {"name": "stamp_tax", "type": "decimal_string", "unit": "CNY"},
+        {"name": "other_contract_cost", "type": "decimal_string", "unit": "CNY"},
+        {"name": "stress_surcharge", "type": "decimal_string", "unit": "CNY", "note": "压力情景附加损耗，必须与实际费率分列"},
+        {"name": "total_cash_effect", "type": "decimal_string", "unit": "CNY"},
+        {"name": "fill_type", "type": "enum", "enum": ["strict_crossing", "k3_fallback"], "note": "K=3 兜底有独立 fill_type，不混入普通穿透"},
+        {"name": "clip_created_id", "type": "string", "nullable": true, "note": "买入成交创建批次；卖出为空"},
+        {"name": "remaining_order_shares", "type": "int"}
+      ],
+      "invariants": [
+        "不存在「建议成交价」字段冒充 price",
+        "部分成交逐笔独立，订单完成状态由累计数量决定",
+        "卖出资金按 settlement_delay 晚一个半日可用"
+      ]
+    },
+    "corporate_actions": {
+      "file": "corporate_actions.csv",
+      "columns": [
+        {"name": "action_id", "type": "string", "key": true},
+        {"name": "symbol", "type": "string"},
+        {"name": "effective_at", "type": "datetime_tz", "note": "除权除息生效半日"},
+        {"name": "available_at", "type": "datetime_tz"},
+        {"name": "action_type", "type": "enum", "enum": ["share_change", "cash_dividend"]},
+        {"name": "share_ratio_num", "type": "int", "nullable": true},
+        {"name": "share_ratio_den", "type": "int", "nullable": true},
+        {"name": "cash_per_share", "type": "decimal_string", "nullable": true, "unit": "CNY/股", "note": "per-lot 源口径换算为每股；源为每手金额时必须显式记录换算"},
+        {"name": "source_units", "type": "string", "note": "原始单位声明，如 per_lot_10 / per_share"},
+        {"name": "share_rounding_policy", "type": "enum", "enum": ["half_up_to_integer_lot", "none"]},
+        {"name": "cash_booking_at", "type": "datetime_tz"},
+        {"name": "entitlement_shares", "type": "int"},
+        {"name": "source_path", "type": "string"},
+        {"name": "source_sha256", "type": "string"}
+      ],
+      "invariants": [
+        "分红计入现金的同时，账户市值不得再使用含分红复权价格（禁止双计）",
+        "ex_cum_factor（含分红复权因子）禁止作为账户输入，只可作对照审计"
+      ]
+    },
+    "ledger_snapshots": {
+      "file": "ledger_snapshots.csv",
+      "columns": [
+        {"name": "run_id", "type": "string"},
+        {"name": "snapshot_at", "type": "datetime_tz", "key": true},
+        {"name": "free_settled_cash", "type": "decimal_string", "unit": "CNY"},
+        {"name": "reserved_cash_component", "type": "decimal_string", "unit": "CNY", "note": "若为 free_settled 的子项，公式必须显式声明且不得两处相加"},
+        {"name": "unsettled_sale_proceeds", "type": "decimal_string", "unit": "CNY"},
+        {"name": "cash_total", "type": "decimal_string", "unit": "CNY"},
+        {"name": "position_mv", "type": "decimal_string", "unit": "CNY"},
+        {"name": "equity", "type": "decimal_string", "unit": "CNY"},
+        {"name": "fee_cumulative", "type": "decimal_string", "unit": "CNY"},
+        {"name": "dividend_cumulative", "type": "decimal_string", "unit": "CNY"},
+        {"name": "realized_pnl", "type": "decimal_string", "unit": "CNY"},
+        {"name": "unrealized_pnl", "type": "decimal_string", "unit": "CNY"},
+        {"name": "pending_order_count", "type": "int"},
+        {"name": "held_name_count", "type": "int"}
+      ],
+      "identity": "equity = cash_total + position_mv；cash_total 中可用与待结算不重复",
+      "companion_tables": {
+        "positions": ["snapshot_at", "symbol", "shares", "sellable_shares", "mark", "mark_at", "mark_source"],
+        "clip_snapshots": ["snapshot_at", "symbol", "clip_id", "clip_acquired_at", "shares", "remaining_cost"]
+      },
+      "valuation": "mark 一律用 baostock 官方日线 close；pm.close 永不作为 mark 或 15:00 锚。停牌/无行情日按最近可得的官方收盘 carry-forward（取 day 或 day 之前最近一个 tradestatus 可交易日的官方 close），不使用停牌日原始行中失真的 close——见 amendments A-01（C4-DEF-03）",
+      "valuation_implementation": "src/quant/backtest/band_engine.py: mark_close (\"Official close on/before day\") + _build_series trade_close (tradestatus 掩码)"
+    },
+    "event_funnel": {
+      "file": "event_funnel.csv",
+      "columns": [
+        {"name": "event_id", "type": "string", "key": true},
+        {"name": "symbol", "type": "string"},
+        {"name": "financial_period", "type": "string", "note": "如 20201231"},
+        {"name": "previous_announcement_id", "type": "string", "nullable": true},
+        {"name": "current_announcement_id", "type": "string"},
+        {"name": "announcement_at", "type": "datetime_tz"},
+        {"name": "available_at", "type": "datetime_tz"},
+        {"name": "decision_at", "type": "datetime_tz"},
+        {"name": "family", "type": "enum", "enum": ["A1", "A2", "B1", "B2"]},
+        {"name": "type_improved", "type": "bool"},
+        {"name": "numeric_revision_up", "type": "bool"},
+        {"name": "numeric_data_valid", "type": "bool"},
+        {"name": "prior_profit_low", "type": "decimal_string", "nullable": true},
+        {"name": "prior_profit_high", "type": "decimal_string", "nullable": true},
+        {"name": "current_profit_low", "type": "decimal_string", "nullable": true},
+        {"name": "current_profit_high", "type": "decimal_string", "nullable": true},
+        {"name": "type_previous", "type": "string"},
+        {"name": "type_current", "type": "string"},
+        {"name": "held_before", "type": "bool"},
+        {"name": "pending_before", "type": "bool"},
+        {"name": "admission_rank", "type": "int", "nullable": true},
+        {"name": "admission_rule", "type": "string"},
+        {"name": "available_seats", "type": "int"},
+        {"name": "portfolio_risk_state", "type": "string"},
+        {"name": "initial_disposition", "type": "enum", "enum": ["accepted", "already_held", "already_pending", "slot_full", "risk_blocked", "missing_anchor", "invalid_eligibility", "cap_failed", "invalid_data", "outside_scope"]},
+        {"name": "rejection_reason", "type": "string", "nullable": true},
+        {"name": "first_intent_id", "type": "string", "nullable": true}
+      ],
+      "invariants": [
+        "initial_disposition 互斥枚举，一个事件只占一行",
+        "全部事件必须按 initial_disposition 分桶守恒（含未签发事件）",
+        "slot_full 是「未签发」原因，不属于「下单未成交」；risk_blocked 不冒充席位满",
+        "后续重新评估要有另一个 episode_id，不能双计全事件数"
+      ]
+    },
+    "event_order_lifecycle": {
+      "file": "event_order_lifecycle.csv",
+      "columns": [
+        {"name": "event_id", "type": "string"},
+        {"name": "intent_id", "type": "string"},
+        {"name": "order_id", "type": "string"},
+        {"name": "at", "type": "datetime_tz", "key": true},
+        {"name": "from_status", "type": "string"},
+        {"name": "to_status", "type": "enum", "enum": ["created", "live", "never_crossed", "suspended", "limit_illegal", "cash_short", "below_lot", "expired", "cancelled_cap", "cancelled_signal", "replaced", "partial_fill", "full_fill"]},
+        {"name": "reason", "type": "string", "nullable": true},
+        {"name": "filled_shares_cumulative", "type": "int"},
+        {"name": "live_opportunities_used", "type": "int"},
+        {"name": "ttl_deadline", "type": "datetime_tz", "nullable": true},
+        {"name": "seat_reserved", "type": "bool"},
+        {"name": "released_seat", "type": "bool"},
+        {"name": "source_identity", "type": "string"}
+      ],
+      "invariants": ["各状态时间顺序可复核", "只有进入订单阶段才用本表区分未成交原因"]
+    },
+    "event_returns": {
+      "file": "event_returns.csv",
+      "columns": [
+        {"name": "event_id", "type": "string", "key": true},
+        {"name": "return_kind", "type": "enum", "enum": ["signal_marked_20", "fill_marked_20", "executable_fixed_horizon", "realized_strategy_cycle"]},
+        {"name": "anchor_at", "type": "datetime_tz"},
+        {"name": "anchor_price_kind", "type": "enum", "enum": ["official_close", "am_close", "fill_price"]},
+        {"name": "anchor_price", "type": "decimal_string", "unit": "CNY"},
+        {"name": "fill_id", "type": "string", "nullable": true},
+        {"name": "label_end_at", "type": "datetime_tz", "nullable": true, "note": "必须显式保存实际终点"},
+        {"name": "exit_order_id", "type": "string", "nullable": true},
+        {"name": "exit_fill_id", "type": "string", "nullable": true},
+        {"name": "window_complete", "type": "bool"},
+        {"name": "n_market_sessions", "type": "int", "nullable": true},
+        {"name": "n_own_sessions", "type": "int"},
+        {"name": "crosses_dev_boundary", "type": "bool"},
+        {"name": "corporate_action_adjustment", "type": "string"},
+        {"name": "gross_return", "type": "decimal_string", "nullable": true},
+        {"name": "fees", "type": "decimal_string", "nullable": true},
+        {"name": "net_return", "type": "decimal_string", "nullable": true, "note": "缺窗口时不得填 0"},
+        {"name": "comparator_id", "type": "string", "nullable": true},
+        {"name": "comparator_weight", "type": "decimal_string", "nullable": true},
+        {"name": "comparator_return", "type": "decimal_string", "nullable": true},
+        {"name": "paired_increment", "type": "decimal_string", "nullable": true},
+        {"name": "missing_reason", "type": "string", "nullable": true},
+        {"name": "censoring_reason", "type": "enum", "nullable": true, "enum": ["crosses_dev_boundary", "no_own_panel_end", "terminated_no_recovery_quote", "missing_anchor", "invalid_data"]}
+      ],
+      "invariants": [
+        "窗口不完整的事件保留并标 window_complete=false，不进完整窗口均值",
+        "对照必须同日同起止；不得用各自第 20 个自身交易日冒充同一市场窗口",
+        "策略持有年龄按自身交易日；评价另给固定市场日口径（n_market_sessions），二者不混同"
+      ]
+    }
+  },
+  "fee_schema": {
+    "commission_rate": "0.0001",
+    "commission_floor_cny": "5.00",
+    "commission_formula": "max(rate × notional, 5.00)，按每笔成交计算",
+    "stamp_sell": {"before_2023-08-28": "0.001", "on_or_after_2023-08-28": "0.0005", "side": "sell_only", "boundary_constant": "date(2023,8,28)；实现用 day < boundary 判定 0.001"},
+    "stamp_buy": "0.0",
+    "transfer_fee": "0.0",
+    "transfer_fee_note": "合同明写「过户费不计」，实现不建模",
+    "rates_unchanged_by_c1": true,
+    "rounding_rule": {
+      "status": "reviewer_default_pending_user_ratification",
+      "rule": "对账判定标准：独立参考实现以 Decimal 计算，并在每笔现金变动处 ROUND_HALF_UP 到 0.01 元；主引擎 float 输出换算到同口径后必须逐分一致；未解释的一分差为阻断",
+      "applies_to": ["commission", "stamp_tax", "cash_delta", "cash_balance", "dividend_cash", "equity_components"],
+      "does_not_apply_to": ["订单/成交价格（按各自 tick；股票 tick=0.01 元）", "股数（整数股，整手 100）", "费率本身"],
+      "scoring_position": "每笔现金变动处（per cash movement），不是仅期末",
+      "rounding_mode": "ROUND_HALF_UP（四舍五入到分）",
+      "tolerance": "零容差：未解释的一分差即阻断（禁止用「笔数×一分」的累计容差抹平）",
+      "source": "docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/independent_review.md「开放问题的处置裁定」C0-BLK-01→C1；审阅者裁定，待用户追认",
+      "implementation_fact_now": "src/quant/backtest/band_engine.py FeeModel 直接返回 binary float，现金/费用/权益累计均为 float64，无金额舍入；本项只定义 C2 对账判定标准，不改费率也不改主引擎"
+    }
+  },
+  "entry_price_dual_track": {
+    "required_fields": ["trigger_cap", "limit_price"],
+    "both_required": true,
+    "relationship": "trigger_cap 是签发门槛（决策点锚价 > cap 时不签发）；limit_price 是实际提交的半日限价",
+    "implementation_fact": "当前实现 limit_price = 决策点锚价本身（stock anchor 不做 tick 处理），×1.01 的 cap 仅用于签发判定；入场意图行只带 target_weight",
+    "observed_equality": "run 20260922T002611 中 B1 已签发 39 单的 order_price_first == decision_anchor_price 为 39/39",
+    "c05_reference": "C0 contract_conflicts.csv C-05 / C0-MAJ-01；主计划 8-C3-A 与 11.1-E1",
+    "c1_stance": "只登记、不裁定：不改合同也不改代码。C3-A 必须在 order_id 级追踪 cap→最终限价链条并在固定订单层验收；C6 运行前按 E1 精确定义实现",
+    "forbidden": ["用 trigger_cap 冒充 limit_price", "因触价就假设成交", "跳空时取更优价"]
+  },
+  "rounding_and_units": {
+    "money_representation": "JSON 用字符串表示 Decimal，CSV 保留完整原始值与展示值两列",
+    "price_tick": "股票 0.01 元",
+    "lot": 100,
+    "share_unit": "整数股",
+    "ratio_unit": "小数（0.25 = 25%）",
+    "volume_unit": "股",
+    "amount_unit": "元"
+  },
+  "label_boundary": {
+    "fixed_horizon_sessions": 20,
+    "own_session_definition": "该证券自身的可评价交易日（停牌无行则不占位）",
+    "fields": ["window_complete", "n_market_sessions", "n_own_sessions", "crosses_dev_boundary", "label_end_at"],
+    "rule": "所有 20 日标签必须同时保存实际终点；跨 Dev 边界保留并标 window_complete=false，不混入完整窗口均值",
+    "comparator": "同日、同起止市场的成对比较",
+    "hold_age_vs_label": "策略持有年龄按自身交易日；评价另给固定市场日口径，二者不得混同",
+    "dev_end": "2020-12-31",
+    "implementation": "src/quant/data/temporal_contract.py: own_session_label_window / complete_window_stats"
+  },
+  "cache_key_spec": {
+    "purpose": "因子/数据缓存键必须可复现；不得只用文件名或 mtime 命中缓存",
+    "required_components": [
+      "dataset_id（沙箱数据集身份）",
+      "inputs：每个输入文件的 rel_path + sha256",
+      "股票池/日期范围（symbols 集合的 sha256 + 数量；start/end）",
+      "复权口径（adjust_mode：unadjusted / back_adjusted / total_return）",
+      "因子或参数代码摘要（code_digest）+ 参数摘要（params_digest）",
+      "key_version"
+    ],
+    "constructor": "src/quant/data/dev_sandbox.py: SandboxRegistry.cache_key",
+    "hash": "sha256(canonical JSON, keys sorted)",
+    "forbidden": ["仅按文件名", "仅按修改时间", "忽略复权口径", "忽略股票池变化"]
+  },
+  "dataset_identity": {
+    "fields": ["schema_version", "run_id", "code_commit", "source_sha256", "contract_sha256", "dataset_id"],
+    "sha_convention": "文件原始 SHA256（发现文件改写）与规范化 SHA256（跨平台换行/Parquet 元数据下的经济等价比较）分开记录",
+    "rule": "不得更新旧哈希基线掩盖差异"
+  },
+  "registered_conflicts": [
+    {"conflict_id": "C-05", "field": "entry_price_policy", "status": "open_for_C3", "c1_action": "在订单 schema 中把 trigger_cap 与 limit_price 分为两个独立必填字段并注明待验关系"},
+    {"conflict_id": "C-06", "field": "fee_rounding_rule", "status": "closed_in_c1_as_reviewer_default", "c1_action": "冻结 fee_schema.rounding_rule（审阅者默认裁定，待用户追认）"},
+    {"conflict_id": "AL-02", "field": "mixed_year_file_access", "status": "addressed_in_c1", "c1_action": "受控导出 Dev-only 沙箱（dataset_id=dev-sandbox-20260922）+ 加载器拒绝 manifest 外路径；数据卡登记混合年份文件过滤口径"},
+    {"conflict_id": "C-07", "field": "universe_chinext_permission", "status": "open_needs_user", "c1_action": "沙箱保留全部板块行，池过滤在资格层；数据卡登记创业板权限缺口"},
+    {"conflict_id": "C-12", "field": "prior_work_registration", "status": "open_needs_user", "c1_action": "不属 C1 接口范围，仍待用户决定是否补登记 attrib2 四行"}
+  ],
+  "amendments": [
+    {
+      "amendment_id": "A-01",
+      "date": "2026-09-22",
+      "stage_id": "C4",
+      "defect_id": "C4-DEF-03",
+      "target": "tables.ledger_snapshots.valuation",
+      "change": "补写停牌/无行情日估值 mark 口径：取 day 或 day 之前最近一个 tradestatus 可交易日的官方日线 close（carry-forward），不使用停牌日原始行 close；pm.close 禁用不变",
+      "reason": "C2 独立复算按原文字取当日原始 close，与主引擎出现 3 臂 18-544 元市值差；对齐 carry-forward 后精确残差回到 float eps（C2-OBS-01）",
+      "evidence": "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/implementer_rerun_and_diff_analysis.md §4.1；docs/plans/p3-band-contract.md §11",
+      "scope": "只澄清既有实现事实的估值口径；未改费率、成交、锚、限价合法性或任何行为"
+    }
+  ],
+  "downstream_obligation": {
+    "C2": "独立参考账本只吃本合同的 fills/corporate_actions/ledger_snapshots 规范化输入，不调用主引擎费用/现金/公司行动/FIFO/估值函数；按 fee_schema.rounding_rule 逐分对账",
+    "C3": "独立 matcher 只吃具体 orders + 许可半日 OHLC + 历史涨跌停 + 同一资金合同；不得调用 band_engine 的穿透/价格合法性/生命周期函数；必须关闭 C-05 的 cap→限价链条"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "status": "EVIDENCE_FILES_OK",
+  "stage_id": "C1",
+  "errors": [],
+  "cautions": [
+    "This checks file presence, byte identity and basic evidence consistency only.",
+    "It does not authenticate users/reviewers or prove that logs are genuine.",
+    "It does not validate market rules, accounting, strategy edge or grant approval."
+  ],
+  "verified_file_count": 36,
+  "junit_summary": [
+    {
+      "evidence_id": "EV-09",
+      "tests": 41,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "evidence_id": "EV-36",
+      "tests": 41,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "engineering_approval_granted": false,
+  "research_validated": false
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20260922T025434-trust-c2-a17b3e-tests",
+  "kind": "engineering_run",
+  "status": "completed",
+  "stage_id": "C2",
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "pytest",
+    "tests/test_reference_ledger.py",
+    "-q",
+    "--junitxml=docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/ledger_tests.xml"
+  ],
+  "cwd": "D:\\量化",
+  "started_at_utc": "2026-09-21T19:09:24.529679Z",
+  "ended_at_utc": "2026-09-21T19:09:24.949629Z",
+  "wall_seconds": 0.42,
+  "exit_code": 0,
+  "code_sha256_at_start": "1a5ba16fb3ddf566c0ecb19998f49a5392fa91af45da3ffd789ee5350fadea07",
+  "code_sha256_at_end": "1a5ba16fb3ddf566c0ecb19998f49a5392fa91af45da3ffd789ee5350fadea07",
+  "code_files": [
+    "src/quant/research/reference_ledger.py",
+    "tests/test_reference_ledger.py"
+  ],
+  "config_sha256_at_start": "6eaf155ea23790581bb01e0af91471cbeb55145bd2ca17af1c9e59e66f887c80",
+  "config_sha256_at_end": "6eaf155ea23790581bb01e0af91471cbeb55145bd2ca17af1c9e59e66f887c80",
+  "config_files": [
+    "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/interface_contract.json"
+  ],
+  "config_files_sha256_at_start": [
+    "c2ede2442f5921e45c616dbb8b18264a14ab04b47d0f38000e74d57a33fab93f"
+  ],
+  "config_files_sha256_at_end": [
+    "c2ede2442f5921e45c616dbb8b18264a14ab04b47d0f38000e74d57a33fab93f"
+  ],
+  "input_manifest_sha256": null,
+  "expected_arms": [
+    "ledger_tests"
+  ],
+  "actual_arms": [
+    "ledger_tests"
+  ],
+  "resource_usage": {
+    "peak_rss_mb": 31.9,
+    "memory_samples": 2,
+    "workers": 1
+  },
+  "stdout_path": "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/logs/pytest_stdout.txt",
+  "stderr_path": "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/logs/pytest_stderr.txt",
+  "junit_path": null,
+  "outputs": [
+    "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/ledger_tests.xml"
+  ],
+  "approval_reference": "用户本会话对 C1-C4 工程批次的持续授权"
+}

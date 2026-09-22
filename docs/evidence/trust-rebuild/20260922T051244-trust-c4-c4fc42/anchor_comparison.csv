@@ -1,0 +1,21 @@
+anchor_id,anchor,run_id,metric,value_reported_before_c4,value_recomputed_c4,delta,semantic_equivalence,evidence
+A-01,修正后基线 v4 FULL-bin（BM1）净 CAGR,20260921T210100-baseline-replay4-9x4q2,net_cagr_pct,-2.90,-2.8959,0.0041,等价（文档两位小数舍入）,c4_first_year_recompute.json；C4 独立复算
+A-02,修正后基线 v4 FULL-bin 最大回撤,20260921T210100-baseline-replay4-9x4q2,max_dd_pct,-27.29,-27.294,-0.004,等价,同上
+A-03,基线 v4 NOSNR-bin 净 CAGR（不经退出模块的阴性控制）,20260921T210100-baseline-replay4-9x4q2,net_cagr_pct,-2.38,-2.3829,-0.0029,等价,c4_first_year_recompute.json
+A-04,基线 v4 NOSNR-bin 最大回撤,20260921T210100-baseline-replay4-9x4q2,max_dd_pct,-25.96,-25.9551,0.0049,等价,同上
+A-05,基线 v4 NOACCT-bin 净 CAGR（无账户级降仓控制组）,20260921T210100-baseline-replay4-9x4q2,net_cagr_pct,-13.59,-13.5882,0.0018,等价,同上
+A-06,基线 v4 NOACCT-bin 最大回撤,20260921T210100-baseline-replay4-9x4q2,max_dd_pct,-69.48,-69.4809,-0.0009,等价,同上
+A-07,基线 v4 SIG-reg 净 CAGR,20260921T210100-baseline-replay4-9x4q2,net_cagr_pct,-3.26,-3.2565,0.0035,等价,同上
+A-08,基线 v4 SIG-old 净 CAGR,20260921T210100-baseline-replay4-9x4q2,net_cagr_pct,+0.90,+0.8975,-0.0025,等价,同上
+A-09,BM1（FULL-bin）2015 年收益（首笔建仓在 2016）,20260921T210100-baseline-replay4-9x4q2,year_2015_ret_pct,0.0,0.0,0.0,等价,同上
+A-10,事件族 A1 净 CAGR,20260921T223157-eventfam-main-cb4cff,net_cagr_pct,-1.70,-1.7003,-0.0003,等价,同上
+A-11,事件族 A2 净 CAGR,20260921T223157-eventfam-main-cb4cff,net_cagr_pct,-2.06,-2.0584,0.0016,等价,同上
+A-12,事件族 B1 净 CAGR,20260921T223157-eventfam-main-cb4cff,net_cagr_pct,-0.55,-0.5504,-0.0004,等价,同上
+A-13,事件族 B2 净 CAGR,20260921T223157-eventfam-main-cb4cff,net_cagr_pct,-0.77,-0.7696,0.0004,等价,同上
+A-14,随机对照种子 11 净 CAGR,20260921T223217-eventfam-rnd-6af378,net_cagr_pct,+3.21,+3.2091,-0.0009,等价,同上
+A-15,随机对照种子 23 净 CAGR,20260921T223217-eventfam-rnd-6af378,net_cagr_pct,-0.44,-0.4386,0.0014,等价,同上
+A-16,随机对照种子 47 净 CAGR,20260921T223217-eventfam-rnd-6af378,net_cagr_pct,+3.07,+3.0688,-0.0012,等价,同上
+A-17,随机对照三种子均值,20260921T223217-eventfam-rnd-6af378,mean_net_cagr_pct,+1.95,+1.9464,-0.0036,等价,同上
+A-18,引擎与账户层源码未改动（无关路径控制）,src/quant/backtest + src/quant/portfolio,working_tree_diff,空,空,0,等价（git diff --stat 为空）,git diff --stat -- src/quant/backtest src/quant/portfolio 输出为空；band_engine.py sha 40f1aaeb…37abd（与 attrib2 pin 一致）
+A-19,单标的退出规则模块未改动,src/quant/research/single_name_rules.py,working_tree_diff,空,空,0,等价,single_name_rules.py sha 9f9cf8c6…0e92（与 attrib2 pin 一致）
+A-20,独立参照实现未改动（C2/C3 资产）,reference_ledger.py / reference_matcher.py / *_reconcile.py,sha_stable,同 C2/C3 登记,同 C2/C3 登记,0,等价,reference_matcher.py d3fb7b07…80f0 = C3 EV-17；reference_matcher_reconcile.py 460bf0b7…bdeb = C3 EV-18；c3_semantic_chain.py 92787ed3…ef89 = C3 EV-19

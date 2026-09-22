@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "stage_id": "C0",
+  "run_state": "not_started",
+  "engineering_state": "pending",
+  "research_state": "not_evaluated",
+  "implementer_id": null,
+  "reviewer_id": null,
+  "authorization_reference": null,
+  "code_commit": null,
+  "contract_sha256": null,
+  "scope": "C0 only; no research runs",
+  "evidence": [],
+  "checks": [
+    {
+      "gate_id": "C0-01",
+      "status": "NOT_RUN",
+      "evidence_ids": []
+    },
+    {
+      "gate_id": "C0-02",
+      "status": "NOT_RUN",
+      "evidence_ids": []
+    },
+    {
+      "gate_id": "C0-03",
+      "status": "NOT_RUN",
+      "evidence_ids": []
+    },
+    {
+      "gate_id": "C0-04",
+      "status": "NOT_RUN",
+      "evidence_ids": []
+    },
+    {
+      "gate_id": "C0-05",
+      "status": "NOT_RUN",
+      "evidence_ids": []
+    },
+    {
+      "gate_id": "C0-06",
+      "status": "NOT_RUN",
+      "evidence_ids": []
+    },
+    {
+      "gate_id": "C0-07",
+      "status": "NOT_RUN",
+      "evidence_ids": []
+    },
+    {
+      "gate_id": "C0-08",
+      "status": "NOT_RUN",
+      "evidence_ids": []
+    }
+  ],
+  "open_issues": [],
+  "run_records": [],
+  "independent_review_evidence_id": null,
+  "limitations": [
+    "模板，不是已经执行或验收的报告。"
+  ],
+  "next_stage_authorized": false
+}

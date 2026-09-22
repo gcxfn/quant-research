@@ -1,0 +1,81 @@
+﻿gate_id,stage,stage_name,acceptance_requirement,required_evidence,default_severity,status,actual_evidence_path,actual_sha256,reviewer_reference
+C0-01,C0,接管与合同冻结,HEAD、dirty状态与新进展核对,evidence_index.csv,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/takeover_state.md,1c9f0c0563fc8b7f23a67cf9bb645217f29cf43243e93ca402c49103c5a8fe14,"R1,R2"
+C0-02,C0,接管与合同冻结,个股主线与旧ETF主线冲突已列明,contract_conflicts.csv,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/contract_conflicts.csv,42b955bf5cff0aca4357f336145a359564564a019143aad28de24110fb645fdc,C-01/C-03/C-08 行
+C0-03,C0,接管与合同冻结,本金/费率/时钟/持仓硬边界有来源,contract_snapshot.json,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/contract_snapshot.json,7a62c8ff09fa65b56ee8fa02031f1c4c7201dc483ce3b3182647e1a4c208fe58,R5 代码抽验
+C0-04,C0,接管与合同冻结,A/B有效、作废、待复验记录区分,evidence_index.csv,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/evidence_index.csv,fea27dd0ba17ab4815711766009b277f3a2f0d5f5bb6f24e6d741645463930f1,44 行状态分布
+C0-05,C0,接管与合同冻结,样本接触与验证授权未清零,access_ledger.csv,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/access_ledger.csv,6917610c2f3411ca93fdfe02544c944a8b916a97159a9e17ca5bc0b115840f30,R6 抽验来源
+C0-06,C0,接管与合同冻结,无策略运行、无越权源码修改,change_scope_review.md,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/change_scope_review.md,2d31973565c5f7caead8db4655c10860c68759cc218a48d4dff616c103f3c14e,R2 git 快照比对
+C0-07,C0,接管与合同冻结,权限实际落实程度明确,permissions_review.md,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/permissions_review.md,7225cc684744ff3831efee605f38735f75030cbc84ea207a8f0b71b295297373,procedural_only
+C0-08,C0,接管与合同冻结,独立审阅及下一阶段范围确认,independent_review.md,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/independent_review.md,c1bb9665c82bd7c261f283bdd2c7c4eab7f98937bbe61711431277a528c0d6b6,审阅者 R1-R7
+C1-01,C1,数据隔离与接口,Dev隔离与许可预热范围,dataset_manifest.json,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/stage_report.json,3e71b1d2036df9406ee3e2f8df8758bc976c9f85e380ceee0c257674e8251462,R4 沙箱独立扫描+R5 拒绝亲测
+C1-02,C1,数据隔离与接口,决策available_at与标签终点断言,temporal_tests.xml,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/temporal_tests.xml,01ee487c0886d375eb98c9ad7ad757debb1950fbc085facdfb1022f23c94e205,R3 独立重跑41项
+C1-03,C1,数据隔离与接口,午间不可见午后价格反证,temporal_tests.xml,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/temporal_tests.xml,01ee487c0886d375eb98c9ad7ad757debb1950fbc085facdfb1022f23c94e205,R9 含正向对照
+C1-04,C1,数据隔离与接口,未来资格不影响当期预测,temporal_tests.xml,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/temporal_tests.xml,01ee487c0886d375eb98c9ad7ad757debb1950fbc085facdfb1022f23c94e205,R9
+C1-05,C1,数据隔离与接口,行情单位/复权/公司行动数据卡,data_cards.md,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/data_cards.md,1004d0ec138b06edfb833cc876c7992b2810f30466c17efd1480b5244ebcbd53,七类数据卡含缺陷登记
+C1-06,C1,数据隔离与接口,预告历史版本与字段合法性,announcement_version_audit.csv,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/announcement_version_audit.csv,534d714a1cd81c483a7313638c2d8998bc1689d6ef66de09e8874006cc804288,18042行+102抽核
+C1-07,C1,数据隔离与接口,事件/意图/订单/成交/批次ID接口冻结,interface_contract.json,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/interface_contract.json,5bef41594fc0be5aa6ed1064fbe2d280223170e4ecf63a41af81238838b1e053,R7 逐节；R1 返工回刷哈希（C4 A-01 升版 schema1.1）
+C1-08,C1,数据隔离与接口,边界与缺失样本保留并披露,censoring_audit.csv,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/censoring_audit.csv,ff5de2fed9df4aa0773b3ee65b77ce67dd9e93b04872cb7cea35cdecf28c885d,R8 与C0台账交叉
+C2-01,C2,独立账本,核心会计函数未调用主引擎,reference_independence.md,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/reference_independence.md,846deddcdf48528891572a29915430b79266f6892ba41ee6c1aedff9a04edf31,R3 import 扫描
+C2-02,C2,独立账本,手算期望先于主引擎结果形成,hand_calculated_expected.csv,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/hand_calculated_expected.csv,88242aae00bd15b34905ef83582e8d90fd981bf961df8b781c601ab844c9a27b,TV先于代码+4扩展案例
+C2-03,C2,独立账本,固定成交费用与现金逐分对账,ledger_reconciliation.csv,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/ledger_reconciliation.csv,d5b37315b904e01c851d2855cdacd088803fb3d9956dfdb2fe9258d6890a82de,R5 亲算半分边界+3319笔；用户 2026-09-22 追认舍入位置表示差裁定
+C2-04,C2,独立账本,待结算与可用现金无重复计入,cash_reconciliation.csv,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/cash_reconciliation.csv,707130c64873d660488f4933e7771b52150f6ac3fdf3d5e760e4a1589dea27e0,R7 三分离
+C2-05,C2,独立账本,分红/送转/零股及批次数量正确,corporate_action_reconciliation.csv,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/corporate_action_reconciliation.csv,cc9a8a9b3f254382ba988073d17757d9e6a7e63fd44a959f735cf657e6e18233,"R6 亲算分红,146条差0"
+C2-06,C2,独立账本,所选真实run全部事件已覆盖,coverage_manifest.json,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/coverage_manifest.json,22071fb4b0aa70a11f87d76e3cb6ada7cb10cee3a660f32a5dd498f69982456f,R8 10臂全覆盖
+C2-07,C2,独立账本,固定路径费用压力单调性通过,ledger_tests.xml,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/ledger_tests.xml,0a38a7709708e571be7e0d9975a4e67766304259590ab5d117eb4780dfcb7904,R2 独立重跑26项
+C2-08,C2,独立账本,独立复跑且无未解释金额/数量差,independent_review.md,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/independent_review.md,bd7021d6cc9013b93a548b3af4f168bf9800561875864c6889e527b0fb1471e6,R4字节级复现+R5-R7亲算
+C3-01,C3,独立撮合与公共衔接,独立matcher未调用原撮合函数,matcher_independence.md,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/matcher_independence.md,d9543c7190712fef78f7dc410c9643ae7857a640b6bd799ee1409f372509812e,import扫描复核
+C3-02,C3,独立撮合与公共衔接,实际限价/数量/生效时间可见,orders.csv,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/order_reconciliation.csv,cb9119e0bc0ec95aaf56aaffda444d3880e046e27991094ad7aad83ceb7cb4b5,5334单逐单字段
+C3-03,C3,独立撮合与公共衔接,严格穿透与跳空同合同核验,order_reconciliation.csv,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/order_reconciliation.csv,cb9119e0bc0ec95aaf56aaffda444d3880e046e27991094ad7aad83ceb7cb4b5,R3亲测+R7全True
+C3-04,C3,独立撮合与公共衔接,T+1/资金/停牌/涨跌停正确,order_tests.xml,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/order_tests.xml,805c9eebd2b93337f4d5c840338ee56b56541ee9ab00e9d69838afa9cb1e3d0d,R2独立重跑
+C3-05,C3,独立撮合与公共衔接,过期/替换/延迟订单不得复活,order_tests.xml,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/order_tests.xml,805c9eebd2b93337f4d5c840338ee56b56541ee9ab00e9d69838afa9cb1e3d0d,R5亲测tvb13
+C3-06,C3,独立撮合与公共衔接,risk/profit与K=3类语义正确,order_tests.xml,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/order_tests.xml,805c9eebd2b93337f4d5c840338ee56b56541ee9ab00e9d69838afa9cb1e3d0d,R4亲测tvb10a/b11
+C3-07,C3,独立撮合与公共衔接,cap到最终限价链条一致,intent_to_order_trace.csv,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/intent_to_order_trace.csv,d734fc730e2b6b02f8c9fc665f4d2b4838206f5fee4919feda94f05bdea0ac75,R6: 39/39 limit==anchor
+C3-08,C3,独立撮合与公共衔接,席位/批次/退出/风控闭环无冲突,state_transition_tests.xml,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/state_transition_tests.xml,55baa10e1c4b59b19f8622be669e2972495f9e44e606e12a80206c6323ca257c,R9三表+22项
+C4-01,C4,定向修复与裁决,缺陷有最小反例与独立预期,issue_register.csv,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/issue_register.csv,af712f358f09e98b249c398b8285f15e20005275c357f13da806ff641dea3746,8行全带条款与处置
+C4-02,C4,定向修复与裁决,修复未夹带策略/费用调整,diff_review.md,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/diff_review.md,8ff6467a13b88e63689c152e5bfc718c956a3d68265104d7fe23b8524ec45488,R2零引擎改动
+C4-03,C4,定向修复与裁决,受影响run最小重放完整,affected_runs.csv,BLOCKING,PASS,docs/evidence/affected_runs.csv,7eac9f0e8571ca05e37f3a4c87572bbace25c59b0e3d753238947e5482255f18,R4旧行保留+4新增(attrib2)
+C4-04,C4,定向修复与裁决,无关路径控制组语义等价,anchor_comparison.csv,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/anchor_comparison.csv,295072551c1c2fa0e15defc40ce03a10c932bc19fb642618e05e673450d279ea,20锚+引擎diff为空
+C4-05,C4,定向修复与裁决,源码/配置/输入运行起止身份一致,run_manifest.json,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/run_manifest.json,8598b5f005d64e89499ec57cfe8d67426a371d8ab7b290eb1e079be25f36953c,起止哈希一致
+C4-06,C4,定向修复与裁决,旧错误解释与首年/归因口径修订,claim_correction_log.csv,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/claim_correction_log.csv,2a638848ebf6c8c6e639c787cd5939b311aa5cc5d0502e54855437b702619a98,R5独立复算首年
+C4-07,C4,定向修复与裁决,测试日志与实际命令可复核,tests.xml,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/tests.xml,4f8a116c5b97797e6341cba208445545dd7a38f10af7c05964f69e54a0c95f3e,804/0/0归档
+C4-08,C4,定向修复与裁决,G4裁决范围与未覆盖局限明确,system_verdict.md,BLOCKING,PASS,docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/system_verdict.md,81175d7e66eb7fa968819b7c22350a94d1f5f317c620d30e3a00b0d2efe05950,ACCEPTED_SCOPED+8局限
+C5-01,C5,B1归因与证据门,事件唯一ID与初次去向守恒,event_funnel.csv,BLOCKING,NOT_RUN,,,
+C5-02,C5,B1归因与证据门,满席未签发与签发未成交分开,event_order_lifecycle.csv,BLOCKING,NOT_RUN,,,
+C5-03,C5,B1归因与证据门,真实成交成本与标记收益区分,event_returns.csv,BLOCKING,NOT_RUN,,,
+C5-04,C5,B1归因与证据门,完整窗口与对照同日期且不越界,return_boundary_audit.csv,BLOCKING,NOT_RUN,,,
+C5-05,C5,B1归因与证据门,类型改善与数值上修独立记录,event_definition_audit.csv,BLOCKING,NOT_RUN,,,
+C5-06,C5,B1归因与证据门,匹配对照与平均/中位口径命名正确,matched_controls.csv,BLOCKING,NOT_RUN,,,
+C5-07,C5,B1归因与证据门,聚类/集中度/年份/不确定性完整,event_evidence_report.md,BLOCKING,NOT_RUN,,,
+C5-08,C5,B1归因与证据门,no_edge/insufficient/promising不混称已验证,stage_decision.md,BLOCKING,NOT_RUN,,,
+C6-01,C6,席位乘订单有限实验,4主臂与S/E精确定义事前冻结,prereg_snapshot.json,BLOCKING,NOT_RUN,,,
+C6-02,C6,席位乘订单有限实验,不更改事件集/资金/退出/风控,config_diff_matrix.csv,BLOCKING,NOT_RUN,,,
+C6-03,C6,席位乘订单有限实验,32输出配置预算与全臂台账一致,trial_ledger.csv,BLOCKING,NOT_RUN,,,
+C6-04,C6,席位乘订单有限实验,随机接纳不挑seed且非独立市场样本,random_control_report.md,BLOCKING,NOT_RUN,,,
+C6-05,C6,席位乘订单有限实验,订单显式cap不变成必成市价,orders.csv,BLOCKING,NOT_RUN,,,
+C6-06,C6,席位乘订单有限实验,延迟与额外摩擦闭环正确,stress_results.csv,BLOCKING,NOT_RUN,,,
+C6-07,C6,席位乘订单有限实验,成对政策差异不冒称现实因果,factorial_results.csv,BLOCKING,NOT_RUN,,,
+C6-08,C6,席位乘订单有限实验,最多2候选晋级或明确止步,stage_decision.md,BLOCKING,NOT_RUN,,,
+C7-01,C7,单账户目标可行域,统一50万账本、成本/持仓帽不变,account_contract_check.json,BLOCKING,NOT_RUN,,,
+C7-02,C7,单账户目标可行域,现金占用/满席/空仓原因可核验,capital_utilization.csv,BLOCKING,NOT_RUN,,,
+C7-03,C7,单账户目标可行域,风险方式先于规模、没有全网格,prereg_snapshot.json,BLOCKING,NOT_RUN,,,
+C7-04,C7,单账户目标可行域,20配置以内全臂结果留存,trial_ledger.csv,BLOCKING,NOT_RUN,,,
+C7-05,C7,单账户目标可行域,CAGR与日频MDD及首年公式独立复算,metrics_reconciliation.csv,BLOCKING,NOT_RUN,,,
+C7-06,C7,单账户目标可行域,参数邻域/压力/年份/水下时长完整,robustness_report.md,BLOCKING,NOT_RUN,,,
+C7-07,C7,单账户目标可行域,硬门/10%20%门/稳健门分别列示,candidate_gate_matrix.csv,BLOCKING,NOT_RUN,,,
+C7-08,C7,单账户目标可行域,无可行域不强行拼接失败组件,stage_decision.md,BLOCKING,NOT_RUN,,,
+C8-01,C8,独立授权后续验证,用户一次性许可与范围可定位,validation_authorization.json,BLOCKING,NOT_RUN,,,
+C8-02,C8,独立授权后续验证,最多2冻结候选且新数据隔离,validation_lock.json,BLOCKING,NOT_RUN,,,
+C8-03,C8,独立授权后续验证,全部代码/数据/配置身份绑定,validation_manifest.json,BLOCKING,NOT_RUN,,,
+C8-04,C8,独立授权后续验证,预热与标签/持仓边界合规,validation_boundary_checks.xml,BLOCKING,NOT_RUN,,,
+C8-05,C8,独立授权后续验证,输出未分段泄露以供调参,execution_access_log.csv,BLOCKING,NOT_RUN,,,
+C8-06,C8,独立授权后续验证,全部候选与基准/压力完整报告,validation_report.md,BLOCKING,NOT_RUN,,,
+C8-07,C8,独立授权后续验证,已看样本与多重尝试诚实披露,access_and_trial_disclosure.md,BLOCKING,NOT_RUN,,,
+C8-08,C8,独立授权后续验证,历史达标不称未来收益保证,final_decision.md,BLOCKING,NOT_RUN,,,
+C9-01,C9,手动助手准备,无券商/自动下单权限,permissions_review.md,BLOCKING,NOT_RUN,,,
+C9-02,C9,手动助手准备,计划具动作区间数量有效期版本,plan_schema_tests.xml,BLOCKING,NOT_RUN,,,
+C9-03,C9,手动助手准备,Day0新候选与半日生效限制,plan_clock_tests.xml,BLOCKING,NOT_RUN,,,
+C9-04,C9,手动助手准备,真实回填幂等与部分成交重建,reconciliation_tests.xml,BLOCKING,NOT_RUN,,,
+C9-05,C9,手动助手准备,过期/缺失/身份不符停止新建议,fail_closed_tests.xml,BLOCKING,NOT_RUN,,,
+C9-06,C9,手动助手准备,外部手动操作与公司行动可重建,manual_account_cases.md,BLOCKING,NOT_RUN,,,
+C9-07,C9,手动助手准备,影子观察新数据另获授权,shadow_authorization.json,BLOCKING,NOT_RUN,,,
+C9-08,C9,手动助手准备,工程演练不冒充收益验证或实盘授权,handoff_decision.md,BLOCKING,NOT_RUN,,,

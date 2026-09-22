@@ -1,5 +1,13 @@
 {
- "engineering_update_20260921": {"strategy_trials_added": 0, "engine_tests_passed": 44, "risk_tests_passed_prior_batch": 31, "full_suite_run": false, "profitability_verified": false, "status_document": "docs/research/strategy-selection-status-20260921.md", "note": "Separate synthetic test batches; historical totals not reconciled; no new strategy backtest."},
+ "engineering_update_20260921": {
+  "strategy_trials_added": 0,
+  "engine_tests_passed": 44,
+  "risk_tests_passed_prior_batch": 31,
+  "full_suite_run": false,
+  "profitability_verified": false,
+  "status_document": "docs/research/strategy-selection-status-20260921.md",
+  "note": "Separate synthetic test batches; historical totals not reconciled; no new strategy backtest."
+ },
  "doc": "trial-ledger",
  "version": "1.0",
  "created": "2026-09-18",
@@ -563,5 +571,49 @@
   "run_id_spot_check": "登记的 19 个正式/附属 run 目录（TL-01…TL-13、TL-15 及 R6 两个作废运行、R8 除外）逐一在 artifacts/runs/ 下核实存在；R7 双签 run 20260918T005610-p2r7-review-9f4c 存在（仅含 tmp/，复核进行中与主计划第九次更新一致）；artifacts/runs/ 下无 p2r8 目录（与'运行中、正式 run 未落盘'表述一致）",
   "written_at": "2026-09-18（登记时点）",
   "r8_status_rule": "R8 状态固定为'运行中、结果未知'，直至其结果文档按预登记 §5 落盘"
+ },
+ "c4_registration": {
+  "added": "2026-09-22",
+  "stage": "C4",
+  "nature": "registration annex only; no new strategy trial, no backtest rerun; does not modify any historical row",
+  "budget_split_22": {
+   "independent_preregistered_configs": 22,
+   "detail": "main 5 (A1/A2/B1/B2+BM2) + perturb 8 + random 3 (seeds 11/23/47) + delay 2 + cost 2 + ablate 2",
+   "smoke_zero_counted": 1,
+   "engineering_replay": 4,
+   "result_view_registered": "all 22 configs + 3 random seeds + stress/ablation/neighbourhood arms were viewed; viewing is registered, not counted as independent discovery"
+  },
+  "engineering_replay_batch": [
+   {
+    "run_id": "20260922T001213-eventfam-attrib2-837163",
+    "parent_run": "20260921T223157-eventfam-main-cb4cff",
+    "bug_id": "attribution_v1_five_defects",
+    "status": "failed",
+    "trials_consumed": 0
+   },
+   {
+    "run_id": "20260922T001713-eventfam-attrib2-cdf1e1",
+    "parent_run": "20260921T223157-eventfam-main-cb4cff",
+    "bug_id": "attribution_v1_five_defects",
+    "status": "superseded",
+    "trials_consumed": 0
+   },
+   {
+    "run_id": "20260922T002000-eventfam-attrib2-10a787",
+    "parent_run": "20260921T223157-eventfam-main-cb4cff",
+    "bug_id": "attribution_v1_five_defects",
+    "status": "superseded",
+    "trials_consumed": 0
+   },
+   {
+    "run_id": "20260922T002611-eventfam-attrib2-eed5cf",
+    "parent_run": "20260921T223157-eventfam-main-cb4cff",
+    "bug_id": "attribution_v1_five_defects",
+    "status": "valid",
+    "trials_consumed": 0
+   }
+  ],
+  "other_annex": "post-TL-40 alpha158 / baseline-rebuild runs are registered row-by-row in docs/evidence/affected_runs.csv (C4 appended 4 attrib2 rows; 7 pre-existing rows re-checked); no duplicate rows built here",
+  "known_staleness": "this JSON new_project.rounds stops at TL-23 (total 139); docs/evidence/trial-ledger.md is the human-readable authoritative copy and carries TL-24..TL-41 plus this C4 section"
  }
 }

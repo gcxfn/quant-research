@@ -1,0 +1,39 @@
+........................................................................ [  8%]
+........................................................................ [ 17%]
+........................................................................ [ 26%]
+........................................................................ [ 35%]
+........................................................................ [ 44%]
+........................................................................ [ 53%]
+........................................................................ [ 62%]
+........................................................................ [ 71%]
+........................................................................ [ 80%]
+........................................................................ [ 89%]
+........................................................................ [ 98%]
+............                                                             [100%]
+============================== warnings summary ===============================
+tests/unit/test_p2r13_lowfreq_survey.py::test_preclose_bridge_forward_includes_dividend
+tests/unit/test_p2r13_lowfreq_survey.py::test_forward_entry_requires_t_plus_1_session_exit_skips_suspension
+  D:\量化\src\quant\research\p2r13_lowfreq.py:428: UserWarning: Sortedness of columns cannot be checked when 'by' groups provided
+    exit_j = (exits.join_asof(right_all, left_on='x_key', right_on='mkt_idx',
+
+tests/unit/test_p2r13_lowfreq_survey.py::test_pit_accrual_end_plus_90_fallback_and_ann_date
+  D:\量化\src\quant\research\p2r13_lowfreq.py:606: UserWarning: Sortedness of columns cannot be checked when 'by' groups provided
+    return (left.join_asof(right, left_on='s', right_on='visible',
+
+tests/unit/test_p2r13_lowfreq_survey.py::test_c3_member_relative_month_drop
+  D:\量化\src\quant\research\p2r13_lowfreq.py:519: UserWarning: Sortedness of columns cannot be checked when 'by' groups provided
+    .join_asof(hk_idx, left_on='hi_key', right_on='mkt_idx',
+
+tests/unit/test_p2r13_lowfreq_survey.py::test_pit_block_trade_t_plus_1_window_boundary
+  D:\量化\src\quant\research\p2r13_lowfreq.py:683: UserWarning: Sortedness of columns cannot be checked when 'by' groups provided
+    hi = (keys.join_asof(cum, left_on='hi_key', right_on='t_idx', by='symbol',
+
+tests/unit/test_p2r13_lowfreq_survey.py::test_pit_block_trade_t_plus_1_window_boundary
+  D:\量化\src\quant\research\p2r13_lowfreq.py:688: UserWarning: Sortedness of columns cannot be checked when 'by' groups provided
+    lo = (hi.join_asof(cum, left_on='lo_key', right_on='t_idx', by='symbol',
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+804 passed, 6 warnings in 47.46s
+exit_code=0
+start=2026-09-21T21:30:37Z
+end=2026-09-21T21:31:27Z

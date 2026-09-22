@@ -1,0 +1,22 @@
+{
+  "forecast_rows_in_source_window": 18042,
+  "financial_period_groups": 16562,
+  "groups_with_multiple_versions": 1419,
+  "groups_with_same_day_multiple_versions": 0,
+  "interval_class_counts": {
+    "valid": 15215,
+    "point": 929,
+    "missing": 1898
+  },
+  "non_standard_codes_dropped": 28,
+  "source_batch": "tushare forecast 20260909-r1",
+  "source_fetched_at": "2026-09-09T13:51:52",
+  "b1_events_audited": 102,
+  "b1_source_rows_matched_all": true,
+  "b1_type_upgrade_mismatches": 0,
+  "b1_numeric_revision_mismatches": 0,
+  "b1_numeric_available_mismatches": 0,
+  "b1_events_without_previous_version": 0,
+  "out_audit": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/announcement_version_audit.csv",
+  "out_spotcheck": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/b1_102_field_spotcheck.csv"
+}

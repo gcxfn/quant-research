@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20260922T053040-trust-c4-full-suite",
+  "kind": "test_run",
+  "status": "completed",
+  "stage_id": "C4",
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "pytest",
+    "tests/",
+    "--junitxml=docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/tests.xml",
+    "-q"
+  ],
+  "env": {
+    "PYTHONPATH": "src",
+    "note": "PYTHONPATH=src 必需；editable .pth 因中文路径失效（C4-OBS-04）"
+  },
+  "started_at_utc": "2026-09-21T21:30:37Z",
+  "ended_at_utc": "2026-09-21T21:31:27Z",
+  "exit_code": 0,
+  "wall_seconds": 47.46,
+  "code_sha256_at_start": "40f1aaebe49b8c5dba04e6d235155ff1e3db96c70d2b70490f7eb4e3a4537abd",
+  "code_sha256_at_end": "40f1aaebe49b8c5dba04e6d235155ff1e3db96c70d2b70490f7eb4e3a4537abd",
+  "code_sha256_object": "src/quant/backtest/band_engine.py",
+  "config_sha256_at_start": "f60ec700d6bf8401f3cc4a7e59f220fae2c2007e80bceb01af3736fb9150917f",
+  "config_sha256_at_end": "f60ec700d6bf8401f3cc4a7e59f220fae2c2007e80bceb01af3736fb9150917f",
+  "input_manifest_sha256": null,
+  "expected_arms": [],
+  "actual_arms": [],
+  "resource_usage": {
+    "wall_seconds": 47.46,
+    "note": "peak memory not separately measured; no backtest rerun"
+  },
+  "stdout_path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/run_records/pytest_full.log",
+  "stderr_path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/run_records/pytest_full.log",
+  "junit_path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/tests.xml",
+  "junit_summary": {
+    "tests": 804,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "time_s": 47.277
+  },
+  "outputs": [],
+  "approval_reference": "用户本会话对 C1-C4 工程批次的持续授权",
+  "failed_attempt": {
+    "run_id": "20260922T052738-trust-c4-full-suite-nopath",
+    "command": [
+      ".venv/Scripts/python.exe",
+      "-m",
+      "pytest",
+      "tests/",
+      "--junitxml=<EV>/tests.xml",
+      "-q"
+    ],
+    "exit_code": 2,
+    "result": "4 collection errors (ModuleNotFoundError: No module named 'quant')",
+    "stdout_path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/run_records/pytest_nopath_failed.log",
+    "cause": "editable .pth with Chinese path fails mbcs decode on Windows; not a code defect"
+  },
+  "config_sha256_object": "pyproject.toml (pytest ini + package config)"
+}

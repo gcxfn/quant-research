@@ -1,0 +1,393 @@
+{
+  "schema_version": "1.0",
+  "stage_id": "C3",
+  "run_state": "completed",
+  "engineering_state": "accepted",
+  "research_state": "not_evaluated",
+  "implementer_id": "implementation agent (session: ZCode / new-provider-deepseek-v4.1-flash)",
+  "reviewer_id": "ZCode main session (GLM-5.3), independent of implementer subagent",
+  "authorization_reference": "用户本会话对 C1-C4 工程批次的持续授权；docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/independent_review.md「下一阶段确认」确认 C3 进入条件（四项义务）",
+  "code_commit": "ae226d964b1ea1dccfb60a42ae943c6da8a179e6",
+  "contract_sha256": "c2ede2442f5921e45c616dbb8b18264a14ab04b47d0f38000e74d57a33fab93f",
+  "scope": "C3 only：独立第二套成交判定 + 策略到订单的语义链 + 合同局限。不跑新回测、不改主引擎/既有策略、不读 2021+ 行情；合成场景全部标注。",
+  "gate_status_basis": "C3-01..C3-08 为实施者自评（均附可复跑证据与产物哈希）。按主计划 3.1，实施者不自签验收：independent_review 与 G3 由审阅者另行完成，因此 engineering_state=pending。",
+  "evidence": [
+    {
+      "id": "EV-01",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/matcher_independence.md",
+      "kind": "independence_scan",
+      "note": "C3-01 独立性扫描",
+      "sha256": "d9543c7190712fef78f7dc410c9643ae7857a640b6bd799ee1409f372509812e"
+    },
+    {
+      "id": "EV-02",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/order_reconciliation.csv",
+      "kind": "reconciliation_csv",
+      "note": "C3-02/C3-03 5,260 限价单 + 74 兜底逐笔对账",
+      "sha256": "cb9119e0bc0ec95aaf56aaffda444d3880e046e27991094ad7aad83ceb7cb4b5"
+    },
+    {
+      "id": "EV-03",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/reconcile_summary.json",
+      "kind": "reconciliation_summary",
+      "note": "C3-03 逐臂汇总",
+      "sha256": "2ad9faa86e95a1069fdb6deafe05a4872eb72cf71a9f815141ecf891717ffc9b"
+    },
+    {
+      "id": "EV-04",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/order_tests.xml",
+      "kind": "junit",
+      "note": "TV-B01..B14 + B18/B22/B23（22 tests / 0 fail / 0 skip）",
+      "sha256": "805c9eebd2b93337f4d5c840338ee56b56541ee9ab00e9d69838afa9cb1e3d0d"
+    },
+    {
+      "id": "EV-05",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/state_transition_tests.xml",
+      "kind": "junit",
+      "note": "闭环状态响应（2 tests / 0 fail / 0 skip）",
+      "sha256": "55baa10e1c4b59b19f8622be669e2972495f9e44e606e12a80206c6323ca257c"
+    },
+    {
+      "id": "EV-06",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/intent_to_order_trace.csv",
+      "kind": "trace_csv",
+      "note": "C3-07 C-05 cap→限价链条逐单追踪",
+      "sha256": "d4473f07f48440eb04a02ac5721a40646ab19788ba6732060584d18bb9e7e8e9"
+    },
+    {
+      "id": "EV-07",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/seat_lifecycle.csv",
+      "kind": "trace_csv",
+      "note": "C3-08 席位账逐决策点守恒",
+      "sha256": "dea3fd4fb6203d7abaf9ceca58304e14b58410540477029e51c9dfff346ce3ae"
+    },
+    {
+      "id": "EV-08",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/risk_state_trace.csv",
+      "kind": "trace_csv",
+      "note": "C3-08 D3 正常/降档/恢复队列（真实代码）",
+      "sha256": "75723002b370973c537fa9e6d80f915358e9f6370d97683ff4dd82d27d991065"
+    },
+    {
+      "id": "EV-09",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/risk_state_trace_hand_expected.csv",
+      "kind": "hand_calc",
+      "note": "C3-08 独立手算期望",
+      "sha256": "bd7ef10295cb68c6dbf3916bab9e77be550ccb09b302ae2fa2a1796f277a1c87"
+    },
+    {
+      "id": "EV-10",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/clip_exit_trace.csv",
+      "kind": "trace_csv",
+      "note": "C3-08 退出→订单映射 + FIFO/逐批错配登记",
+      "sha256": "3edd73b0b081182df4b770510fd51a0949a1375fc9862d01d461814cd5093cc4"
+    },
+    {
+      "id": "EV-11",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/eleven_thirty_invariance.csv",
+      "kind": "invariance_csv",
+      "note": "C3-08 11:30 不变性真实链重证（5/5 PASS）",
+      "sha256": "0a793ef96f48e4be35879b2892ed3b0cfc6bbdb71659d440c750ef2e6ecc59ca"
+    },
+    {
+      "id": "EV-12",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/eleven_thirty_invariance.log",
+      "kind": "log",
+      "note": "C3-08 逐决策点输出原文",
+      "sha256": "003df67443da81abb5ba3fde3a14502f8b78c12eac42bd99b877e5dc18b16522"
+    },
+    {
+      "id": "EV-13",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/minute_vs_halfday_check.csv",
+      "kind": "disclosure_csv",
+      "note": "C3-C 半日 vs 分钟粒度逐单披露",
+      "sha256": "2c18ba85b9ce6105b993b3662b07f53ad31bb97de56fe8c2e7813923e3bc6479"
+    },
+    {
+      "id": "EV-14",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/semantic_chain_summary.json",
+      "kind": "summary",
+      "note": "C3-B 全部语义链汇总",
+      "sha256": "ae616fd72f0fd87f945deb609993d65a1630064e7e36ffd371782eb0caf4697b"
+    },
+    {
+      "id": "EV-15",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/c3_case_report.md",
+      "kind": "case_report",
+      "note": "C3 案例报告（含接管审查发现）",
+      "sha256": "2e44bc923a98ef3a5a02c49678c9fa7677bdc9457ab68a16ac8c63a7f2d69688"
+    },
+    {
+      "id": "EV-16",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/contract_limitations.md",
+      "kind": "limitations",
+      "note": "C3-C 合同局限",
+      "sha256": "c71c106f9105f51f8d7b5cfae95a9f2808a9b39d9c2bc85517e9039460d58bfc"
+    },
+    {
+      "id": "EV-17",
+      "path": "src/quant/research/reference_matcher.py",
+      "kind": "reference_source",
+      "note": "独立 matcher（重写接管）",
+      "sha256": "d3fb7b07b5df0736c1779f288cbfe256a9647168dbdee9efd65decc0f37080f0"
+    },
+    {
+      "id": "EV-18",
+      "path": "src/quant/research/reference_matcher_reconcile.py",
+      "kind": "driver_source",
+      "note": "C3-A 开环对账驱动",
+      "sha256": "460bf0b7d690fe818f282a74f51aeb7362b54d1f914abd1e408523085978bdeb"
+    },
+    {
+      "id": "EV-19",
+      "path": "src/quant/research/c3_semantic_chain.py",
+      "kind": "driver_source",
+      "note": "C3-B/C 语义链驱动",
+      "sha256": "92787ed367e2b32f506020606bf800cee4fdc6ff5c02019368505825ddb4ef89"
+    },
+    {
+      "id": "EV-20",
+      "path": "tests/test_reference_matcher.py",
+      "kind": "test_source",
+      "note": "TV-B01..B14 + B18/B22/B23",
+      "sha256": "88cfe89df2686f24fc0399fa81ae228c75dc58f4d387996a82d54395e584176c"
+    },
+    {
+      "id": "EV-21",
+      "path": "tests/test_reference_matcher_state.py",
+      "kind": "test_source",
+      "note": "闭环对照测试",
+      "sha256": "0f8bbedf088af11f1a7787013a8ae1581885ed0e3e852a179e2f1bbbda7cd792"
+    },
+    {
+      "id": "EV-22",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/run_records/reconcile_run.json",
+      "kind": "run_record",
+      "note": "对账实跑记录",
+      "sha256": "cf0589b0803582ba0dfcb631f5be52de3f3b6474d1ace6a84a114a457d91405d"
+    },
+    {
+      "id": "EV-23",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/run_records/semantic_chain_run.json",
+      "kind": "run_record",
+      "note": "语义链实跑记录",
+      "sha256": "d68c02ad9afa7d5ef66811c337cb19a69fb9e6fbd2f81dcc316439ed6f8a54c3"
+    },
+    {
+      "id": "EV-24",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/run_records/order_tests_run.json",
+      "kind": "run_record",
+      "note": "订单测试实跑记录",
+      "sha256": "833c92f3c6914987832578ffe402b3ded4a75539bc35e9423e8ae938bd10dd94"
+    },
+    {
+      "id": "EV-25",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/run_records/state_transition_tests_run.json",
+      "kind": "run_record",
+      "note": "状态转移测试实跑记录",
+      "sha256": "cd03f68493f636e85d001d299816979c51fb0d88205eac8651cade315bc1735c"
+    },
+    {
+      "id": "EV-26",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/run_records/independence_scan_run.json",
+      "kind": "run_record",
+      "note": "独立性扫描记录",
+      "sha256": "3c41aeb1e4cae1aa7ebbdf8c28d426b851e7b479dd9b9723e09c19995b65fe11"
+    },
+    {
+      "id": "EV-27",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/run_records/minute_vs_halfday_run.json",
+      "kind": "run_record",
+      "note": "分钟核验记录",
+      "sha256": "ac66b805fa1f30ef175d277812b174c76a626c7fd4aa60ebdbe6d3657a6a3cb7"
+    },
+    {
+      "id": "EV-100",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/independent_review.md",
+      "sha256": "5bacfc094f5ff54ecd20b2ef82d2b144ad4d117a9d0d4194a40cbec66910a435",
+      "kind": "independent_review",
+      "covers": [
+        "C3-03",
+        "C3-05",
+        "C3-06",
+        "C3-07"
+      ]
+    },
+    {
+      "id": "EV-101",
+      "path": "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/reviewer_rerun_matcher.xml",
+      "sha256": "83bd6c19d72de4dd3009edccda2ac7a9a36c48cda3c67852e315de4370d9704c",
+      "kind": "junit",
+      "covers": [
+        "C3-04",
+        "C3-05",
+        "C3-06"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "gate_id": "C3-01",
+      "status": "PASS",
+      "requirement": "独立 matcher 未调用原撮合函数",
+      "evidence_ids": [
+        "EV-01",
+        "EV-17",
+        "EV-18",
+        "EV-26"
+      ],
+      "basis": "AST 扫描：reference_matcher.py 仅 import 标准库 + reference_ledger（费用合同）；reference_matcher_reconcile.py 另加 polars 与 quant.data.dev_sandbox（C1 冻结访问层）。零 quant.backtest / quant.portfolio 依赖。c3_semantic_chain.py 故意读真实策略/风险代码，属 C3-B 语义链，已在文件内声明不在 C3-01 约束内。"
+    },
+    {
+      "gate_id": "C3-02",
+      "status": "PASS",
+      "requirement": "实际限价/数量/生效时间可见",
+      "evidence_ids": [
+        "EV-02",
+        "EV-06"
+      ],
+      "basis": "订单级事件日志提供 order_id / limit_price / 生效半日 / 意图 / 成交股数；5,260 单逐单可追。未解算数量（只给 target_weight）不构成 matcher 合法输入（Verdict.reason=at_target），已在测试中反证。"
+    },
+    {
+      "gate_id": "C3-03",
+      "status": "PASS",
+      "requirement": "严格穿透与跳空同合同核验",
+      "evidence_ids": [
+        "EV-02",
+        "EV-03",
+        "EV-04"
+      ],
+      "basis": "9 臂 5,260 限价单 + 74 次 K=3 兜底尝试：成交与否/日期/半日/股数/价格/未成交原因/末状态100% 一致；4,948 笔成交中 4,853 笔连费用逐分一致，其余 95 笔差 ≤0.01 元（C2 已裁定的 HALF_UP-到-分 vs float64 表示差），股数与价格差为 0。"
+    },
+    {
+      "gate_id": "C3-04",
+      "status": "PASS",
+      "requirement": "T+1/资金/停牌/涨跌停正确",
+      "evidence_ids": [
+        "EV-04",
+        "EV-05",
+        "EV-101"
+      ],
+      "basis": "TV-B07/TV-B08/TV-B09/TV-B01..B03 全部通过；闭环场景 1/2 与引擎逐半日一致。"
+    },
+    {
+      "gate_id": "C3-05",
+      "status": "PASS",
+      "requirement": "过期/替换/延迟订单不得复活",
+      "evidence_ids": [
+        "EV-04",
+        "EV-101"
+      ],
+      "basis": "TV-B13：expires_at 过期后即使延迟 wrapper 放行也不得成交；同生效半日同 intent 多单只保留最新一张，其余 replaced。"
+    },
+    {
+      "gate_id": "C3-06",
+      "status": "PASS",
+      "requirement": "risk/profit 与 K=3 类语义正确",
+      "evidence_ids": [
+        "EV-04",
+        "EV-05",
+        "EV-10",
+        "EV-101"
+      ],
+      "basis": "TV-B10a/b/c、TV-B11、TV-B12 全部通过；真实 run 74 次兜底尝试逐笔一致；退出原因→订单映射 59 行覆盖 stop/time_exit/account_trim/take_half/clear/protection。"
+    },
+    {
+      "gate_id": "C3-07",
+      "status": "PASS",
+      "requirement": "cap 到最终限价链条一致",
+      "evidence_ids": [
+        "EV-06",
+        "EV-14"
+      ],
+      "basis": "C-05 关闭：×1.01 是**签发门槛**，不是限价。B1 全部 102 事件逐单给出 trigger_close / trigger_cap / decision_anchor / limit_price 四值；39/39 签发单 limit_price == decision_anchor_price，0/39 等于 cap；63/102 因 slot_full 未签发。与 provider 与引擎建单两处代码互证。本阶段只登记不裁定。"
+    },
+    {
+      "gate_id": "C3-08",
+      "status": "PASS",
+      "requirement": "席位/批次/退出/风控闭环无冲突",
+      "evidence_ids": [
+        "EV-05",
+        "EV-07",
+        "EV-08",
+        "EV-09",
+        "EV-11",
+        "EV-12"
+      ],
+      "basis": "席位账 102 行分组守恒（issued 39 + slot_full 63 = 102），无 held+pending>4；D3 两条合成路径与独立手算 9/9 一致；11:30 不变性真实链 5/5 PASS；FIFO vs 逐批风险意图错配已逐 clip 登记并给出 C4 处置建议。"
+    }
+  ],
+  "open_issues": [
+    {
+      "issue_id": "C3-OBS-01",
+      "severity": "MINOR",
+      "status": "closed",
+      "title": "接管半成品 matcher 的 10 项缺陷",
+      "detail": "接管时 reference_matcher.py 758 行、无测试无调用方。修复 10 项实际行为缺陷（A1 开环卖单主路径抛异常的桩、A2 卖单漏传 symbol 致 ETF 错加印花、A3 值相等定位批次会改错同值批次、A4 缺 expires_at 守卫、A5 无同半日覆盖规则、A6 无部分成交语义、A7 K 计数误累加、A8 无公司行动份额变换、A9 末状态枚举缺 partial_fill、A10 允许隐式推断日历）。逐项处置见 c3_case_report.md 第 1 节，全部由 tests/test_reference_matcher.py 钉住。"
+    },
+    {
+      "issue_id": "C3-OBS-02",
+      "severity": "MINOR",
+      "status": "closed",
+      "title": "对账驱动自身的 7 个状态重建错误（不是引擎 bug）",
+      "detail": "第一轮差异全部定位为驱动实现错误：结算只在有事件的半日推进（少 122,800.77 元可用现金）、公司行动只在有事件的除息日应用（少 9,975.48 元分红）、同日送转+分红权利数用变换后股数、兜底成交标的恢复路径错、兜底成交复用站立单 order_id、同半日现金双重扣减、同半日判定次序未按 m7。逐项修好后差异归零。"
+    },
+    {
+      "issue_id": "C3-OBS-03",
+      "severity": "MINOR",
+      "status": "open",
+      "title": "FIFO 消耗 vs 逐批风险意图错配（C2 转入）",
+      "detail": "部分卖出按取得日 FIFO 消耗，风险意图瞄准聚合持仓；逐 clip 对照已落 clip_exit_trace.csv。建议 C4：保持 FIFO，明确声明无逐批风险退出原语，把逐批风险结论改述为聚合口径，不新增第二条退出路径。",
+      "owner_stage": "C4"
+    },
+    {
+      "issue_id": "C3-OBS-04",
+      "severity": "MINOR",
+      "status": "open",
+      "title": "席位账/漏斗产物的 run 不同源",
+      "detail": "B1 主 run（20260921T223157）不落 event_funnel 级产物，席位账取自同参数的 attrib2 run（20260922T002611），不是同一 run 内闭环。建议 C4 让主 run 落漏斗产物。",
+      "owner_stage": "C4"
+    },
+    {
+      "issue_id": "C3-OBS-05",
+      "severity": "INFO",
+      "status": "open",
+      "title": "attrib2 run 无订单级产物",
+      "detail": "20260922T002611-eventfam-attrib2-eed5cf 只有 B1 汇总结论，无法做订单级对账。若需订单级核验，C4 重跑该 run 并落订单事件。",
+      "owner_stage": "C4"
+    },
+    {
+      "issue_id": "C3-OBS-06",
+      "severity": "INFO",
+      "status": "open",
+      "title": "11:30 不变性用合成切片（真实 provider + 真实引擎）",
+      "detail": "合成切片含一笔固定入场与一张 standing 风险卖单，保证两个决策点在三个变体下都有非空输出。真实 run 回放需引擎落逐决策点 provider 输出（当前产物不含）。",
+      "owner_stage": "C4"
+    },
+    {
+      "issue_id": "C3-OBS-07",
+      "severity": "INFO",
+      "status": "open",
+      "title": "分钟级核验的能力边界",
+      "detail": "已授权分钟样本是每股每日一行的投影表（无分钟路径），「订单生效半日前是否已穿透」与「排队成交率」未核验；方向性误判只在已覆盖子集给出（1,030 笔抽样：全日粒度 246 笔、严格本 session 归因 19 笔，反向 0 例）。",
+      "owner_stage": "C4"
+    }
+  ],
+  "run_records": [
+    "EV-22",
+    "EV-23",
+    "EV-24",
+    "EV-25",
+    "EV-26",
+    "EV-27"
+  ],
+  "independent_review_evidence_id": "EV-100",
+  "limitations": [
+    "attrib2 run 无订单级产物，未做订单级对账",
+    "席位账取自与 B1 同参数的 attrib2 run，不是同一 run 内闭环",
+    "ETF 腿、创业板/科创板/北交所标的、日内分钟路径、订单簿排队成交率未覆盖",
+    "11:30 不变性与闭环对照均为合成场景（真实代码），非真实 run 回放",
+    "本阶段核对结论只覆盖主板股票半日合同"
+  ],
+  "next_stage_authorized": false
+}

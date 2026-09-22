@@ -1,0 +1,121 @@
+{
+ "intent_to_order_trace": {
+  "rows": 102,
+  "issued": 39,
+  "issued_limit_equals_anchor": 39,
+  "issued_limit_equals_cap": 0,
+  "conclusion": "C-05 closed: x1.01 is an ISSUANCE THRESHOLD; the submitted limit_price equals the decision anchor, never the cap"
+ },
+ "seat_lifecycle": {
+  "rows": 102,
+  "conservation_by_category": {
+   "issued": 39,
+   "slot_full": 63
+  },
+  "conservation_total": 102,
+  "seats_over_cap_rows": 0,
+  "note": "held+pending 取自与 B1 同参数的 attrib2 run 漏斗；B1 主 run 本身不落漏斗产物，来源差异已登记在 c3_case_report.md"
+ },
+ "risk_state_trace": {
+  "rebound": {
+   "sessions": 9,
+   "code_states": [
+    "normal",
+    "normal",
+    "normal",
+    "reduced",
+    "reduced",
+    "reduced",
+    "reduced",
+    "reduced",
+    "normal"
+   ],
+   "hand_states": [
+    "normal",
+    "normal",
+    "normal",
+    "reduced",
+    "reduced",
+    "reduced",
+    "reduced",
+    "reduced",
+    "normal"
+   ],
+   "agreement": "9/9",
+   "final_exposure_multiplier": 0.9
+  },
+  "slump": {
+   "sessions": 9,
+   "code_states": [
+    "normal",
+    "normal",
+    "normal",
+    "reduced",
+    "reduced",
+    "reduced",
+    "reduced",
+    "reduced",
+    "reduced"
+   ],
+   "hand_states": [
+    "normal",
+    "normal",
+    "normal",
+    "reduced",
+    "reduced",
+    "reduced",
+    "reduced",
+    "reduced",
+    "reduced"
+   ],
+   "agreement": "9/9",
+   "final_exposure_multiplier": 0.4
+  }
+ },
+ "clip_exit_trace": {
+  "rows": 59,
+  "by_reason": {
+   "take_half": 5,
+   "time_exit": 20,
+   "protection": 2,
+   "stop": 21,
+   "account_trim": 7,
+   "clear": 4
+  },
+  "unmapped_reasons": []
+ },
+ "eleven_thirty_invariance": {
+  "decision_points": [
+   "2020-03-02 am",
+   "2020-03-03 am"
+  ],
+  "n_decision_points": 2,
+  "A1_provider_1130_identical": true,
+  "A2_engine_1130_identical": true,
+  "B_1500_changes": true,
+  "C_1130_changes_with_morning": true,
+  "D_history_stable": true,
+  "note": "合成切片（Dev 窗内日期、全合成行情）；provider 与引擎均为真实代码；recorder 冻结每个决策点的 provider 输出，引擎侧按 order_id 的决策槽位归组订单事件（含实际限价）后逐位比较"
+ },
+ "minute_vs_halfday": {
+  "status": "partial",
+  "source": "data/processed/minute-feats-20260918/minute_feats.parquet",
+  "coverage_note": "minute-feats 是每股每日一行的**分钟投影**，本身只覆盖部分 (symbol, day)（实测 Dev 窗 4,598,367 行 / 4,181 只，约 1,100 行/只 vs 1,462 个交易日）；未覆盖的样本无法核验，因此本项只给『已覆盖子集』的计数",
+  "capability": "per-symbol-per-day projection features; NO minute path",
+  "sampled_orders": 1030,
+  "checked": 1030,
+  "missing_minute_rows": 0,
+  "half_extremes_out_of_minute_range": 0,
+  "conservative_miss_count": 246,
+  "conservative_miss_rate": 0.238835,
+  "own_session_attributable_miss_count": 19,
+  "own_session_attributable_miss_rate": 0.018447,
+  "method_note": "细粒度一侧用的是**全日**分钟极值 day_high/day_low；投影表没有分 session 的分钟极值，所以部分 miss 可能来自另一个 session。own_session_attributable_* 是更严格的归因口径（另一 session 的极值未穿价时才计入）。",
+  "coverage_rate": 1.0,
+  "not_verifiable": [
+   "whether an order's live session was already penetrated before it went live (no minute ordering / no per-session minute path)",
+   "queue fill probability (no order book / no tick data)"
+  ],
+  "contract_effect": "disclosure only; the frozen contract is unchanged"
+ }
+}

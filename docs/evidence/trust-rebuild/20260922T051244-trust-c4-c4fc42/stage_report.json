@@ -1,0 +1,343 @@
+{
+  "schema_version": "1.0",
+  "stage_id": "C4",
+  "run_state": "completed",
+  "engineering_state": "accepted",
+  "research_state": "not_evaluated",
+  "verdict": "ACCEPTED_SCOPED",
+  "implementer_id": "implementation agent (session: ZCode / new-provider-deepseek-v4.1-flash)",
+  "reviewer_id": "ZCode main session (GLM-5.3), independent of implementer subagent",
+  "authorization_reference": "用户本会话对 C1-C4 工程批次的持续授权；docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/independent_review.md「下一阶段确认」六项输入清单",
+  "code_commit": "ae226d964b1ea1dccfb60a42ae943c6da8a179e6",
+  "contract_sha256": "e74ea5642b217be47b044189906b36ac9bddce0da95b64a788ce449155cedf49",
+  "contract_amended": true,
+  "scope": "C4 only：定向修复调查与文档化（三项）、声明修正（主计划 §9 六项）、台账补登、全量测试归档、无关路径控制与 G4 裁决。零引擎/账户层代码改动、零回测重跑、不读 2021+ 行情、不 git 提交。",
+  "gate_status_basis": "C4-01..C4-08 为实施者自评（均附可复跑证据与产物哈希）。按主计划 3.1 实施者不自签验收：independent_review 与 G4 的 accepted/rejected 由审阅者另行给出，故 engineering_state=pending。",
+  "evidence": [
+    {
+      "id": "EV-01",
+      "path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/issue_register.csv",
+      "kind": "issue_register",
+      "sha256": "af712f358f09e98b249c398b8285f15e20005275c357f13da806ff641dea3746"
+    },
+    {
+      "id": "EV-02",
+      "path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/diff_review.md",
+      "kind": "diff_review",
+      "sha256": "8ff6467a13b88e63689c152e5bfc718c956a3d68265104d7fe23b8524ec45488"
+    },
+    {
+      "id": "EV-03",
+      "path": "docs/evidence/affected_runs.csv",
+      "kind": "affected_runs",
+      "sha256": "7eac9f0e8571ca05e37f3a4c87572bbace25c59b0e3d753238947e5482255f18",
+      "note": "在库更新（追加 4 行 attrib2）；哈希随每次编辑变化，以 git diff 为准"
+    },
+    {
+      "id": "EV-04",
+      "path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/anchor_comparison.csv",
+      "kind": "anchor_comparison",
+      "sha256": "295072551c1c2fa0e15defc40ce03a10c932bc19fb642618e05e673450d279ea"
+    },
+    {
+      "id": "EV-05",
+      "path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/claim_correction_log.csv",
+      "kind": "claim_correction_log",
+      "sha256": "2a638848ebf6c8c6e639c787cd5939b311aa5cc5d0502e54855437b702619a98"
+    },
+    {
+      "id": "EV-06",
+      "path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/tests.xml",
+      "kind": "junit",
+      "sha256": "4f8a116c5b97797e6341cba208445545dd7a38f10af7c05964f69e54a0c95f3e",
+      "note": "804 tests / 0 failures / 0 errors / 0 skipped / 47.277s"
+    },
+    {
+      "id": "EV-07",
+      "path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/system_verdict.md",
+      "kind": "system_verdict",
+      "sha256": "81175d7e66eb7fa968819b7c22350a94d1f5f317c620d30e3a00b0d2efe05950"
+    },
+    {
+      "id": "EV-08",
+      "path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/run_manifest.json",
+      "kind": "run_manifest",
+      "sha256": "8598b5f005d64e89499ec57cfe8d67426a371d8ab7b290eb1e079be25f36953c"
+    },
+    {
+      "id": "EV-09",
+      "path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/run_records/pytest_full.log",
+      "kind": "log",
+      "sha256": "7f5cefa408c7372f8dc859a3ea5e8c5572253473ef3b6973c1c186354810c319"
+    },
+    {
+      "id": "EV-10",
+      "path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/run_records/pytest_nopath_failed.log",
+      "kind": "log",
+      "sha256": "26e24d48ddb75957919159ed8bc30de39617676548a3596b87e8aff2ccb5247e",
+      "note": "裸命令失败留档（环境问题），未删"
+    },
+    {
+      "id": "EV-11",
+      "path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/c4_first_year_recompute.py",
+      "kind": "analysis_source",
+      "sha256": "6eddb2e41c1682f18e09719efb4ea644cbae39d029c5eecf4b44bb097c127af4"
+    },
+    {
+      "id": "EV-12",
+      "path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/c4_first_year_recompute.json",
+      "kind": "analysis_output",
+      "sha256": "3acbb9fefa9b498ba3be89aff16bad1596e5d652faf424327b73a2f8f3eee9a0"
+    },
+    {
+      "id": "EV-13",
+      "path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/c4def01_fifo_analysis.py",
+      "kind": "analysis_source",
+      "sha256": "1ee462c70f8326e9a05ae7d8ad4625f534e15e2370aa4c836f308851f391195e"
+    },
+    {
+      "id": "EV-14",
+      "path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/c4def01_fifo_analysis.json",
+      "kind": "analysis_output",
+      "sha256": "8f8fede5414efa8d7cd7d6c30298870c75d65903c9dfe7797e9df95808802011"
+    },
+    {
+      "id": "EV-15",
+      "path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/c4def02_cap_scan.py",
+      "kind": "analysis_source",
+      "sha256": "53ebd6836e9df0d1f6fe1b916bc2fe59cc1b2ce21b28a183729221fdf701ad98"
+    },
+    {
+      "id": "EV-16",
+      "path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/c4def02_cap_scan.json",
+      "kind": "analysis_output",
+      "sha256": "1e9801646f6025d57b9a4e83fb240e6caabd79f8afb5af6ead5a5cd7cfe0a245"
+    },
+    {
+      "id": "EV-17",
+      "path": "docs/plans/p3-band-contract.md",
+      "kind": "contract_amendment",
+      "sha256": "e74ea5642b217be47b044189906b36ac9bddce0da95b64a788ce449155cedf49",
+      "note": "§11 追加（+9 行，零删除）"
+    },
+    {
+      "id": "EV-18",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/interface_contract.json",
+      "kind": "contract_amendment",
+      "sha256": "5bef41594fc0be5aa6ed1064fbe2d280223170e4ecf63a41af81238838b1e053",
+      "note": "schema 1.1 + amendments A-01"
+    },
+    {
+      "id": "EV-19",
+      "path": "docs/decisions/2026-09-22-fifo-vs-per-clip-risk-intent.md",
+      "kind": "decision_record",
+      "sha256": "c142aad8a9810ad555081294c0fb6cb9b2cf74f5f02de4f96f1e139a8f087240"
+    },
+    {
+      "id": "EV-20",
+      "path": "docs/decisions/2026-09-22-seat-ledger-source-and-cap-snapshot.md",
+      "kind": "decision_record",
+      "sha256": "a927ba0e89f42941d81a27e9dd383689c53072fc6bc854fb3c400b63a66bcfec"
+    },
+    {
+      "id": "EV-21",
+      "path": "docs/evidence/trial-ledger.md",
+      "kind": "ledger",
+      "sha256": "9a694bd29c308a3f40b4ecc1569b4ebf5ae61c34032630b4ef9a85c057dbecbb",
+      "note": "C4 补登节（+36 行，零删除）"
+    },
+    {
+      "id": "EV-22",
+      "path": "docs/evidence/trial-ledger.json",
+      "kind": "ledger",
+      "sha256": "448a26ebf5bcdec6c9a00d18d77b809a27d245af583fb21b43f53a0bf37b39a0",
+      "note": "新增 c4_registration 键，旧键逐键相等"
+    },
+    {
+      "id": "EV-23",
+      "path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/run_records/full_suite_run.json",
+      "kind": "run_record",
+      "sha256": "8e5360f369558ead32a0faf00fb688c1868c6888e199848e520d07e85b37f5aa"
+    },
+    {
+      "id": "EV-100",
+      "path": "docs/evidence/trust-rebuild/20260922T051244-trust-c4-c4fc42/independent_review.md",
+      "sha256": "a429cbbf579488347c57e20abac02217e9651b591b6d0eee7db96547adfb9e8d",
+      "kind": "independent_review",
+      "covers": [
+        "C4-08"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "gate_id": "C4-01",
+      "status": "PASS",
+      "requirement": "缺陷有最小反例与独立预期",
+      "evidence_ids": [
+        "EV-01",
+        "EV-13",
+        "EV-14",
+        "EV-15",
+        "EV-16"
+      ],
+      "basis": "issue_register.csv 逐行给出缺陷/合同条款/最小反例/独立预期/实际证据/处置。三项 C4-DEF：①FIFO 消耗 vs 逐批风险意图——独立预期来自 single_name_rules.py 冻结语义（风险退出为整仓、分批止盈为绝对总股目标），实际证据 B1 46 笔卖出 oversell=0，裁决文档化关闭；②席位账同源 + 25% 帽快照——minimal counterexample 为 am 快照口径差，实际 12 臂 cap 命中 0，文档化关闭；③停牌 mark carry-forward——C2 已有 3 臂市值差反例，补写合同。"
+    },
+    {
+      "gate_id": "C4-02",
+      "status": "PASS",
+      "requirement": "修复未夹带策略/费用调整",
+      "evidence_ids": [
+        "EV-02",
+        "EV-08"
+      ],
+      "basis": "diff_review.md §4 八项声明；§5 校验：git diff --numstat 全部为新增零删除；src/quant/backtest 与 src/quant/portfolio diff 为空；未动 fee_schema/entry_price_dual_track/测试预期。本轮无代码修复（三项调查均文档化关闭），因此无补丁夹带面。"
+    },
+    {
+      "gate_id": "C4-03",
+      "status": "PASS",
+      "requirement": "受影响 run 最小重放完整",
+      "evidence_ids": [
+        "EV-03",
+        "EV-08",
+        "EV-12"
+      ],
+      "basis": "C2/C3 未发现引擎缺陷 → 无引擎改动 → 无重跑回测的重放义务（主计划 §9『仅归因公式错不需重做全部交易』）。受影响面收缩为受影响统计复算 + 台账补登：首年/分年收益独立复算（c4_first_year_recompute.json，A1 2015 +14.0509%、A2 +2.5999%）；affected_runs.csv 补登 4 个 attrib2 run 并复核 7 个旧 run。"
+    },
+    {
+      "gate_id": "C4-04",
+      "status": "PASS",
+      "requirement": "无关路径控制组语义等价",
+      "evidence_ids": [
+        "EV-04",
+        "EV-08"
+      ],
+      "basis": "本轮零引擎/账户层代码改动（git diff 空），用源码身份 + 独立复算证明：20 个锚/控制项（v4 FULL-bin −2.90%/−27.29%、NOSNR、NOACCT、SIG-reg/old、事件族 A1/A2/B1/B2、随机对照 3 种子与均值）修复前后语义等价（差异仅两位小数舍入）。NOSNR（不经退出模块）作为阴性控制保留。"
+    },
+    {
+      "gate_id": "C4-05",
+      "status": "PASS",
+      "requirement": "源码/配置/输入运行起止身份一致",
+      "evidence_ids": [
+        "EV-08",
+        "EV-09",
+        "EV-10"
+      ],
+      "basis": "run_manifest.json 记录 9 个关键源文件 SHA256；band_engine.py 40f1aaeb…37abd 与 attrib2 run pin、single_name_rules.py 9f9cf8c6…0e92 与 attrib2 pin 逐字节一致；C4 全程未改 src。全量测试命令与退出码、时间、junit 已归档；裸命令失败亦留档。"
+    },
+    {
+      "gate_id": "C4-06",
+      "status": "PASS",
+      "requirement": "旧错误解释与首年/归因口径修订",
+      "evidence_ids": [
+        "EV-05",
+        "EV-12",
+        "EV-17",
+        "EV-18"
+      ],
+      "basis": "claim_correction_log.csv 覆盖主计划 §9 六项（未参与≠限价未成交、首年收益、IDEAL/FULL 不可加、BM2 佣金伪影、22 次分账、Val 标签接触），逐条 old→证据问题→corrected→支撑路径→受影响结果。首年值经独立复算与文档 +14.05%/+2.60% 一致（无需改文档）；BM2 补注与 p3 §11 修订已落地。"
+    },
+    {
+      "gate_id": "C4-07",
+      "status": "PASS",
+      "requirement": "测试日志与实际命令可复核",
+      "evidence_ids": [
+        "EV-06",
+        "EV-09",
+        "EV-10"
+      ],
+      "basis": "终态测试实测：PYTHONPATH=src pytest tests/ --junitxml=<EV>/tests.xml -q → 804 passed / 0 failed / 0 skipped，47.46s，exit 0；junit 804/0/0/0；stdout 归档。首次裸命令因 editable .pth 中文路径失败（4 collection errors）亦留档，未弱化检查。所需 PYTHONPATH=src 登记为 C4-OBS-04。"
+    },
+    {
+      "gate_id": "C4-08",
+      "status": "PASS",
+      "requirement": "G4 裁决范围与未覆盖局限明确",
+      "evidence_ids": [
+        "EV-07",
+        "EV-100"
+      ],
+      "basis": "system_verdict.md：裁决 ACCEPTED_SCOPED；通过范围引 C2/C3 复算与 5,334 单一致；未证明范围逐项列出（交易所逐笔/排队成交率/ETF 腿/创业板/2021+/分钟路径/25% 帽绑定/attrib2 订单级/11:30 合成切片）；工程扩张停止；C5 输入与用户待决项列明。实施者不自签：engineering_state=pending。"
+    }
+  ],
+  "open_issues": [
+    {
+      "issue_id": "C4-DEF-01",
+      "severity": "MINOR",
+      "status": "closed_documented",
+      "title": "FIFO 消耗 vs 逐批风险意图错配",
+      "owner_stage": "C4",
+      "detail": "风险退出为整仓、分批止盈为绝对总股目标 → 无逐批数量委托；B1 46 笔卖出 oversell=0。裁决文档化关闭，不改撮合。"
+    },
+    {
+      "issue_id": "C4-DEF-02",
+      "severity": "MINOR",
+      "status": "closed_documented",
+      "title": "席位账 run 来源与 25% 帽快照口径",
+      "owner_stage": "C4",
+      "detail": "attrib2 identity 断言与主 run 逐位相等（工程复现）；12 臂 cap 命中 0 → 引擎/matcher am 快照潜在口径差零影响；引擎口径写入决策记录。"
+    },
+    {
+      "issue_id": "C4-DEF-03",
+      "severity": "MINOR",
+      "status": "closed_documented",
+      "title": "停牌/无行情日估值 mark carry-forward 口径",
+      "owner_stage": "C4",
+      "detail": "p3 §11 追加 + interface_contract schema 1.1 amendments A-01；只澄清既有实现。"
+    },
+    {
+      "issue_id": "C4-OBS-01",
+      "severity": "MINOR",
+      "status": "closed_registered",
+      "title": "attrib2 四运行与旧 run 台账补登",
+      "owner_stage": "C4",
+      "detail": "affected_runs.csv +4 行；trial-ledger.md/json 按 engineering_replay 登记（parent run + bug_id，0 试验）。"
+    },
+    {
+      "issue_id": "C4-OBS-02",
+      "severity": "MINOR",
+      "status": "closed",
+      "title": "C0-MIN-01 全量测试日志归档",
+      "owner_stage": "C4",
+      "detail": "804 passed 已归档 tests.xml + 日志。"
+    },
+    {
+      "issue_id": "C4-OBS-03",
+      "severity": "INFO",
+      "status": "closed_documented",
+      "title": "attrib2 002000 与 002611 浮点末位差",
+      "owner_stage": "C4",
+      "detail": "同 runner sha 同输入，4 个金额派生列差 ≤1e-14 相对量级；002611 为规范产出；不影响任何经济数字。"
+    },
+    {
+      "issue_id": "C4-OBS-04",
+      "severity": "MINOR",
+      "status": "open_needs_user",
+      "title": "editable 安装被中文路径破坏，裸 pytest 须 PYTHONPATH=src",
+      "owner_stage": "user",
+      "detail": "`_editable_impl_personal_quant_research.pth` 内容 D:\\量化\\src 在 Windows mbcs 下解码失败、静默失效。不阻断 C4（已用 PYTHONPATH=src 全量通过），但影响复跑可复核性。"
+    },
+    {
+      "issue_id": "C4-OBS-05",
+      "severity": "INFO",
+      "status": "open_needs_user",
+      "title": "README/p3 版本文字停留 v1.4.1/v1.3，引擎实际 v1.5",
+      "owner_stage": "user",
+      "detail": "band_engine.py L4223 engine_version='band_engine v1.5'，sha 40f1aaeb…；README 有 '引擎 v1.4.1'×2、'引擎 v1.3'×1。C4 未改（超出声明范围），建议下次文档维护同步。"
+    }
+  ],
+  "run_records": [
+    "EV-23"
+  ],
+  "independent_review_evidence_id": "EV-100",
+  "limitations": [
+    "实施者未自签验收：engineering_state=pending，ACCEPTED_SCOPED 为实施者视角结论，须独立审阅确认",
+    "C4 未做任何引擎代码改动，也未重跑回测；受影响面仅为统计复算与台账/声明登记",
+    "三项定向调查均为文档化关闭：FIFO 剩余批次构成差异、matcher am 快照潜在口径差、停牌 mark 口径均只登记不消除",
+    "attrib2 无订单级产物；席位账取自与 B1 同参数的 attrib2 run（非单 run 内闭环）",
+    "全量测试需 PYTHONPATH=src（editable 安装环境缺陷，C4-OBS-04）",
+    "ETF 腿、创业板/科创板/北交所、2021+ 样本、分钟路径、订单簿排队成交率未覆盖",
+    "费率舍入规则仍待用户追认（C0-BLK-01→C1）"
+  ],
+  "next_stage_authorized": false,
+  "contract_amendment_note": "p3-band-contract §11 追加（C4-DEF-03）；HEAD 前版本 2b03281c1d301725d90cf36c0bca33f50483e916c78f14206dc4a476af889331；C1 interface_contract schema 1.0→1.1 + amendments A-01（5bef4159…b1e053）"
+}

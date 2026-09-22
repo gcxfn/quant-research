@@ -309,6 +309,8 @@ CA_513500 = ('sh.513500', D(2022, 3, 30), 2.0, 1.9848)  # BoShi 1:2
 
 
 def _slice_real(symbol, lo, hi):
+    if not ETF_PARQUET.is_file():
+        pytest.skip('real ETF parquet not available (data/ is not in git)')
     df = pl.read_parquet(ETF_PARQUET)
     return df.filter(
         (pl.col('symbol') == symbol)

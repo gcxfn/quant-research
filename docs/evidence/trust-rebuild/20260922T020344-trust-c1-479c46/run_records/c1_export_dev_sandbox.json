@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20260922T020344-trust-c1-479c46",
+  "kind": "data_export",
+  "status": "completed",
+  "stage_id": "C1",
+  "command": [
+    ".venv/Scripts/python.exe",
+    "tools/export_dev_sandbox.py",
+    "--run-id",
+    "20260922T020344-trust-c1-479c46"
+  ],
+  "cwd": "D:\\量化",
+  "started_at_utc": "2026-09-21T18:30:45.590628Z",
+  "ended_at_utc": "2026-09-21T18:30:57.424530Z",
+  "wall_seconds": 11.834,
+  "exit_code": 0,
+  "code_sha256_at_start": "ac96c2134289e1a08f06fc33f179328b6b3ca9da03593cbf5605fea09c75c194",
+  "code_sha256_at_end": "ac96c2134289e1a08f06fc33f179328b6b3ca9da03593cbf5605fea09c75c194",
+  "code_files": [
+    "src/quant/data/dev_sandbox.py",
+    "src/quant/data/dev_sandbox_export.py",
+    "src/quant/data/temporal_contract.py",
+    "tools/export_dev_sandbox.py",
+    "tools/run_record.py"
+  ],
+  "config_sha256_at_start": "6eaf155ea23790581bb01e0af91471cbeb55145bd2ca17af1c9e59e66f887c80",
+  "config_sha256_at_end": "6eaf155ea23790581bb01e0af91471cbeb55145bd2ca17af1c9e59e66f887c80",
+  "config_files": [
+    "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/interface_contract.json"
+  ],
+  "config_files_sha256_at_start": [
+    "c2ede2442f5921e45c616dbb8b18264a14ab04b47d0f38000e74d57a33fab93f"
+  ],
+  "config_files_sha256_at_end": [
+    "c2ede2442f5921e45c616dbb8b18264a14ab04b47d0f38000e74d57a33fab93f"
+  ],
+  "input_manifest_sha256": null,
+  "expected_arms": [
+    "sandbox_manifest",
+    "bars_daily_dev",
+    "dividends_dev"
+  ],
+  "actual_arms": [
+    "sandbox_manifest",
+    "bars_daily_dev",
+    "dividends_dev"
+  ],
+  "resource_usage": {
+    "peak_rss_mb": 1072.0,
+    "memory_samples": 56,
+    "workers": 1
+  },
+  "stdout_path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/logs/c1_export.stdout.txt",
+  "stderr_path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/logs/c1_export.stderr.txt",
+  "junit_path": null,
+  "outputs": [
+    "data/processed/dev-sandbox-20260922/dataset_manifest.json",
+    "data/processed/dev-sandbox-20260922/bars_daily_dev.parquet",
+    "data/processed/dev-sandbox-20260922/corporate_actions/dividends_dev.parquet"
+  ],
+  "approval_reference": null
+}

@@ -1,0 +1,458 @@
+{
+  "schema_version": "1.0",
+  "targets_declared_in_task": 9,
+  "targets_covered": 10,
+  "note": "任务书文字写 9 个目标，但逐项列出的臂为 3+4+3=10；本清单覆盖全部 10 个已列名臂。",
+  "targets": [
+    {
+      "run_id": "20260921T210100-baseline-replay4-9x4q2",
+      "arm": "FULL-bin",
+      "n_days": 1462,
+      "n_days_covered": 1462,
+      "n_events": 694,
+      "n_events_covered": 694,
+      "n_fills": 672,
+      "n_fills_covered": 672,
+      "n_corporate_actions": 22,
+      "n_corporate_actions_covered": 22,
+      "sandbox_dataset_id": "dev-sandbox-20260922",
+      "input_files": [
+        {
+          "path": "artifacts/runs/20260921T210100-baseline-replay4-9x4q2/outputs/FULL-bin_fills.parquet",
+          "sha256": "7688ff91958f56d56c38c767436c23e1333dbb0b228f07117d7d7fb5e6470caf",
+          "bytes": 28579
+        },
+        {
+          "path": "artifacts/runs/20260921T210100-baseline-replay4-9x4q2/outputs/FULL-bin_daily_equity.parquet",
+          "sha256": "ccb80a6ea0a14b8a82c2d25a651e1f5fd7879c2b2415babfdd943e5331227d37",
+          "bytes": 15990
+        },
+        {
+          "path": "artifacts/runs/20260921T210100-baseline-replay4-9x4q2/outputs/FULL-bin_events.parquet",
+          "sha256": "f829952341a531a9871964b2f617ea8f2342e3118c4323f20e8c7f8de2e659a7",
+          "bytes": 35769
+        },
+        {
+          "path": "artifacts/runs/20260921T210100-baseline-replay4-9x4q2/outputs/FULL-bin_clips_final.parquet",
+          "sha256": "e45794e5187c5ac87dadb048f5cfd64d1705dcd033c56266839079b663db2221",
+          "bytes": 1966
+        },
+        {
+          "path": "artifacts/runs/20260921T210100-baseline-replay4-9x4q2/manifest.json",
+          "sha256": "72ff4d52bc99a6fbc68c0586ddebd7b6d588c7d8559e4f6322f53a90d6dc176f",
+          "bytes": 27940
+        }
+      ],
+      "replay_command": "PYTHONPATH=src .venv/Scripts/python.exe -m quant.research.reference_ledger_reconcile --evidence-dir docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e",
+      "wall_seconds": 1.453,
+      "max_abs_equity_diff_round": "0.10",
+      "max_abs_equity_diff_exact": "3.600e-10",
+      "final_shares_match": true
+    },
+    {
+      "run_id": "20260921T210100-baseline-replay4-9x4q2",
+      "arm": "NOSNR-bin",
+      "n_days": 1462,
+      "n_days_covered": 1462,
+      "n_events": 525,
+      "n_events_covered": 525,
+      "n_fills": 502,
+      "n_fills_covered": 502,
+      "n_corporate_actions": 23,
+      "n_corporate_actions_covered": 23,
+      "sandbox_dataset_id": "dev-sandbox-20260922",
+      "input_files": [
+        {
+          "path": "artifacts/runs/20260921T210100-baseline-replay4-9x4q2/outputs/NOSNR-bin_fills.parquet",
+          "sha256": "a5116990cf576e67e1ceb796074d5e10ad08385fd33d391e2a4cfb3b06ac63d6",
+          "bytes": 23305
+        },
+        {
+          "path": "artifacts/runs/20260921T210100-baseline-replay4-9x4q2/outputs/NOSNR-bin_daily_equity.parquet",
+          "sha256": "88449e2e0ad5293678cd8197536bdad354232ae765f361638528bcedfe1f8c79",
+          "bytes": 14326
+        },
+        {
+          "path": "artifacts/runs/20260921T210100-baseline-replay4-9x4q2/outputs/NOSNR-bin_events.parquet",
+          "sha256": "15ee52ccf75648854cc2ec4c6aafd583311c85615eec363e4e3c570790bb4bd5",
+          "bytes": 29125
+        },
+        {
+          "path": "artifacts/runs/20260921T210100-baseline-replay4-9x4q2/outputs/NOSNR-bin_clips_final.parquet",
+          "sha256": "6a891bbc82ba2faa8c2398bd0f4990bb984a8a369749b89785de7cadc6fdd2a1",
+          "bytes": 1948
+        },
+        {
+          "path": "artifacts/runs/20260921T210100-baseline-replay4-9x4q2/manifest.json",
+          "sha256": "72ff4d52bc99a6fbc68c0586ddebd7b6d588c7d8559e4f6322f53a90d6dc176f",
+          "bytes": 27940
+        }
+      ],
+      "replay_command": "PYTHONPATH=src .venv/Scripts/python.exe -m quant.research.reference_ledger_reconcile --evidence-dir docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e",
+      "wall_seconds": 1.431,
+      "max_abs_equity_diff_round": "0.10",
+      "max_abs_equity_diff_exact": "3.500e-10",
+      "final_shares_match": true
+    },
+    {
+      "run_id": "20260921T210100-baseline-replay4-9x4q2",
+      "arm": "NOACCT-bin",
+      "n_days": 1462,
+      "n_days_covered": 1462,
+      "n_events": 955,
+      "n_events_covered": 955,
+      "n_fills": 934,
+      "n_fills_covered": 934,
+      "n_corporate_actions": 21,
+      "n_corporate_actions_covered": 21,
+      "sandbox_dataset_id": "dev-sandbox-20260922",
+      "input_files": [
+        {
+          "path": "artifacts/runs/20260921T210100-baseline-replay4-9x4q2/outputs/NOACCT-bin_fills.parquet",
+          "sha256": "7cc7f7a8a22f5e2ca2155fd289b83c06d90fa2594cecb7c53f1bece793679541",
+          "bytes": 37056
+        },
+        {
+          "path": "artifacts/runs/20260921T210100-baseline-replay4-9x4q2/outputs/NOACCT-bin_daily_equity.parquet",
+          "sha256": "b0399b1dea3b852bbf8d947248bb919868e29ea3baab7c5553ce4610dcd0cce4",
+          "bytes": 17081
+        },
+        {
+          "path": "artifacts/runs/20260921T210100-baseline-replay4-9x4q2/outputs/NOACCT-bin_events.parquet",
+          "sha256": "fd1788ff711e2b396deb2e122384bd99623306ea36fd24e3f5aacd4b3d24f983",
+          "bytes": 43578
+        },
+        {
+          "path": "artifacts/runs/20260921T210100-baseline-replay4-9x4q2/outputs/NOACCT-bin_clips_final.parquet",
+          "sha256": "604a51f81e7d1eb4cfb6407d9eec6953b5eb828ead5c9a69b0a2aac72907b52d",
+          "bytes": 1996
+        },
+        {
+          "path": "artifacts/runs/20260921T210100-baseline-replay4-9x4q2/manifest.json",
+          "sha256": "72ff4d52bc99a6fbc68c0586ddebd7b6d588c7d8559e4f6322f53a90d6dc176f",
+          "bytes": 27940
+        }
+      ],
+      "replay_command": "PYTHONPATH=src .venv/Scripts/python.exe -m quant.research.reference_ledger_reconcile --evidence-dir docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e",
+      "wall_seconds": 1.513,
+      "max_abs_equity_diff_round": "0.07",
+      "max_abs_equity_diff_exact": "1.200e-10",
+      "final_shares_match": true
+    },
+    {
+      "run_id": "20260921T223157-eventfam-main-cb4cff",
+      "arm": "A1",
+      "n_days": 1462,
+      "n_days_covered": 1462,
+      "n_events": 159,
+      "n_events_covered": 159,
+      "n_fills": 153,
+      "n_fills_covered": 153,
+      "n_corporate_actions": 6,
+      "n_corporate_actions_covered": 6,
+      "sandbox_dataset_id": "dev-sandbox-20260922",
+      "input_files": [
+        {
+          "path": "artifacts/runs/20260921T223157-eventfam-main-cb4cff/outputs/A1_fills.parquet",
+          "sha256": "4728c638d06e12e29ec9f6cc7fa4a177090a40dd826bfd2dfd4b36a809721799",
+          "bytes": 14462
+        },
+        {
+          "path": "artifacts/runs/20260921T223157-eventfam-main-cb4cff/outputs/A1_daily_equity.parquet",
+          "sha256": "ace2b9d5dd1d2cda572973c413c09de3d5ba35a042a6bd7b4513a8cb1f70878f",
+          "bytes": 13286
+        },
+        {
+          "path": "artifacts/runs/20260921T223157-eventfam-main-cb4cff/outputs/A1_events.parquet",
+          "sha256": "e10f46f8f40d5be253415c8b250b3c6f954890891c5394e27e1fb8d17912324e",
+          "bytes": 14931
+        },
+        {
+          "path": "artifacts/runs/20260921T223157-eventfam-main-cb4cff/outputs/A1_clips_final.parquet",
+          "sha256": "60303a7e7217ca571af39c254d2a2a0d4cc27ffe23db52f18da674c8f6c4f19c",
+          "bytes": 1941
+        },
+        {
+          "path": "artifacts/runs/20260921T223157-eventfam-main-cb4cff/manifest.json",
+          "sha256": "b62ffaaef9cd21fda0f6db3914c78abb895fd8a2b8ca6cc6465ab54af7d6ae81",
+          "bytes": 19666
+        }
+      ],
+      "replay_command": "PYTHONPATH=src .venv/Scripts/python.exe -m quant.research.reference_ledger_reconcile --evidence-dir docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e",
+      "wall_seconds": 0.579,
+      "max_abs_equity_diff_round": "0.11",
+      "max_abs_equity_diff_exact": "2.000e-10",
+      "final_shares_match": true
+    },
+    {
+      "run_id": "20260921T223157-eventfam-main-cb4cff",
+      "arm": "A2",
+      "n_days": 1462,
+      "n_days_covered": 1462,
+      "n_events": 149,
+      "n_events_covered": 149,
+      "n_fills": 140,
+      "n_fills_covered": 140,
+      "n_corporate_actions": 9,
+      "n_corporate_actions_covered": 9,
+      "sandbox_dataset_id": "dev-sandbox-20260922",
+      "input_files": [
+        {
+          "path": "artifacts/runs/20260921T223157-eventfam-main-cb4cff/outputs/A2_fills.parquet",
+          "sha256": "47cc47c01d847430d56fd00c1715f02ead18aaed5f88930a3c82c32da44a6e15",
+          "bytes": 13478
+        },
+        {
+          "path": "artifacts/runs/20260921T223157-eventfam-main-cb4cff/outputs/A2_daily_equity.parquet",
+          "sha256": "afb434b5156bef3fba3921699430a44f76c16ffaa06b28c5b2e4dc93a6ed7efd",
+          "bytes": 12002
+        },
+        {
+          "path": "artifacts/runs/20260921T223157-eventfam-main-cb4cff/outputs/A2_events.parquet",
+          "sha256": "fced550bd8adee5cab3a6dea177eaa9c481d7cca2bee8902a883547a31af52d4",
+          "bytes": 13754
+        },
+        {
+          "path": "artifacts/runs/20260921T223157-eventfam-main-cb4cff/outputs/A2_clips_final.parquet",
+          "sha256": "b0f608f2738eb472f1398be51b8c09f895592969ece907c70cc450fcdf6c7ec8",
+          "bytes": 1966
+        },
+        {
+          "path": "artifacts/runs/20260921T223157-eventfam-main-cb4cff/manifest.json",
+          "sha256": "b62ffaaef9cd21fda0f6db3914c78abb895fd8a2b8ca6cc6465ab54af7d6ae81",
+          "bytes": 19666
+        }
+      ],
+      "replay_command": "PYTHONPATH=src .venv/Scripts/python.exe -m quant.research.reference_ledger_reconcile --evidence-dir docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e",
+      "wall_seconds": 0.451,
+      "max_abs_equity_diff_round": "0.04",
+      "max_abs_equity_diff_exact": "2.000e-10",
+      "final_shares_match": true
+    },
+    {
+      "run_id": "20260921T223157-eventfam-main-cb4cff",
+      "arm": "B1",
+      "n_days": 1462,
+      "n_days_covered": 1462,
+      "n_events": 83,
+      "n_events_covered": 83,
+      "n_fills": 81,
+      "n_fills_covered": 81,
+      "n_corporate_actions": 2,
+      "n_corporate_actions_covered": 2,
+      "sandbox_dataset_id": "dev-sandbox-20260922",
+      "input_files": [
+        {
+          "path": "artifacts/runs/20260921T223157-eventfam-main-cb4cff/outputs/B1_fills.parquet",
+          "sha256": "9cb869c3a3d40eb607e71d20813e5c55e2a22dce648e878f64c1570b4e970d30",
+          "bytes": 11054
+        },
+        {
+          "path": "artifacts/runs/20260921T223157-eventfam-main-cb4cff/outputs/B1_daily_equity.parquet",
+          "sha256": "0fe04f6eca68d58b0f5ba43e4050cdf3def3c6807897b1979f2d5deddd9c3a69",
+          "bytes": 8161
+        },
+        {
+          "path": "artifacts/runs/20260921T223157-eventfam-main-cb4cff/outputs/B1_events.parquet",
+          "sha256": "eb1aca0de463d169ae1d602bf3a51b08c914aef4c73dc04203ec1eee5c864443",
+          "bytes": 9794
+        },
+        {
+          "path": "artifacts/runs/20260921T223157-eventfam-main-cb4cff/outputs/B1_clips_final.parquet",
+          "sha256": "69bda9671e7e3d712cc2ec3c3cca40e153b004976596d9ee8c8df5c96c3d0860",
+          "bytes": 624
+        },
+        {
+          "path": "artifacts/runs/20260921T223157-eventfam-main-cb4cff/manifest.json",
+          "sha256": "b62ffaaef9cd21fda0f6db3914c78abb895fd8a2b8ca6cc6465ab54af7d6ae81",
+          "bytes": 19666
+        }
+      ],
+      "replay_command": "PYTHONPATH=src .venv/Scripts/python.exe -m quant.research.reference_ledger_reconcile --evidence-dir docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e",
+      "wall_seconds": 0.247,
+      "max_abs_equity_diff_round": "0.01",
+      "max_abs_equity_diff_exact": "3.000e-10",
+      "final_shares_match": true
+    },
+    {
+      "run_id": "20260921T223157-eventfam-main-cb4cff",
+      "arm": "B2",
+      "n_days": 1462,
+      "n_days_covered": 1462,
+      "n_events": 171,
+      "n_events_covered": 171,
+      "n_fills": 165,
+      "n_fills_covered": 165,
+      "n_corporate_actions": 6,
+      "n_corporate_actions_covered": 6,
+      "sandbox_dataset_id": "dev-sandbox-20260922",
+      "input_files": [
+        {
+          "path": "artifacts/runs/20260921T223157-eventfam-main-cb4cff/outputs/B2_fills.parquet",
+          "sha256": "656289343fe0f0cff2f5f3e4361a5ceb403039ee79b97379714e5fed036bcb9e",
+          "bytes": 14370
+        },
+        {
+          "path": "artifacts/runs/20260921T223157-eventfam-main-cb4cff/outputs/B2_daily_equity.parquet",
+          "sha256": "8e3bc861b8d58dc18b6b2ef4dcba8595d69f6ac19b78f1444cf36c83a4b163fe",
+          "bytes": 10322
+        },
+        {
+          "path": "artifacts/runs/20260921T223157-eventfam-main-cb4cff/outputs/B2_events.parquet",
+          "sha256": "dd0598c52d4b1007418eb260d102c2517b07a75b0eaa4940b69562c9049a55b4",
+          "bytes": 13719
+        },
+        {
+          "path": "artifacts/runs/20260921T223157-eventfam-main-cb4cff/outputs/B2_clips_final.parquet",
+          "sha256": "5c65209b9f9bc329518ce8a0cfeb5bab1849b80c3ff59c49ff8a2e47871435d0",
+          "bytes": 1862
+        },
+        {
+          "path": "artifacts/runs/20260921T223157-eventfam-main-cb4cff/manifest.json",
+          "sha256": "b62ffaaef9cd21fda0f6db3914c78abb895fd8a2b8ca6cc6465ab54af7d6ae81",
+          "bytes": 19666
+        }
+      ],
+      "replay_command": "PYTHONPATH=src .venv/Scripts/python.exe -m quant.research.reference_ledger_reconcile --evidence-dir docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e",
+      "wall_seconds": 0.55,
+      "max_abs_equity_diff_round": "0.02",
+      "max_abs_equity_diff_exact": "2.700e-10",
+      "final_shares_match": true
+    },
+    {
+      "run_id": "20260921T223217-eventfam-rnd-6af378",
+      "arm": "RND-11",
+      "n_days": 1462,
+      "n_days_covered": 1462,
+      "n_events": 258,
+      "n_events_covered": 258,
+      "n_fills": 244,
+      "n_fills_covered": 244,
+      "n_corporate_actions": 14,
+      "n_corporate_actions_covered": 14,
+      "sandbox_dataset_id": "dev-sandbox-20260922",
+      "input_files": [
+        {
+          "path": "artifacts/runs/20260921T223217-eventfam-rnd-6af378/outputs/RND-11_fills.parquet",
+          "sha256": "c241c04c01f363798b4af7da3ada0ffd8ec5a201cfe755f84fa4dcd1ebb9b6fb",
+          "bytes": 17284
+        },
+        {
+          "path": "artifacts/runs/20260921T223217-eventfam-rnd-6af378/outputs/RND-11_daily_equity.parquet",
+          "sha256": "e4e119a4c70bf802eff0fd36925286a355fe84ef4a5fb9ca11910e45f8958346",
+          "bytes": 16175
+        },
+        {
+          "path": "artifacts/runs/20260921T223217-eventfam-rnd-6af378/outputs/RND-11_events.parquet",
+          "sha256": "0c3d60eeba7af11650f4b31116056be408ce387dee965788241a93161bd41f92",
+          "bytes": 19342
+        },
+        {
+          "path": "artifacts/runs/20260921T223217-eventfam-rnd-6af378/outputs/RND-11_clips_final.parquet",
+          "sha256": "e8c8b195963d0b659d3d133b9aff9b406144f67672703c380c7f6308dd726edf",
+          "bytes": 1942
+        },
+        {
+          "path": "artifacts/runs/20260921T223217-eventfam-rnd-6af378/manifest.json",
+          "sha256": "75e77cef8c21874fce48d453f3c76c1757fd68e7f319b2d5407f26ef98709703",
+          "bytes": 15738
+        }
+      ],
+      "replay_command": "PYTHONPATH=src .venv/Scripts/python.exe -m quant.research.reference_ledger_reconcile --evidence-dir docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e",
+      "wall_seconds": 0.672,
+      "max_abs_equity_diff_round": "0.13",
+      "max_abs_equity_diff_exact": "3.000e-10",
+      "final_shares_match": true
+    },
+    {
+      "run_id": "20260921T223217-eventfam-rnd-6af378",
+      "arm": "RND-23",
+      "n_days": 1462,
+      "n_days_covered": 1462,
+      "n_events": 235,
+      "n_events_covered": 235,
+      "n_fills": 212,
+      "n_fills_covered": 212,
+      "n_corporate_actions": 23,
+      "n_corporate_actions_covered": 23,
+      "sandbox_dataset_id": "dev-sandbox-20260922",
+      "input_files": [
+        {
+          "path": "artifacts/runs/20260921T223217-eventfam-rnd-6af378/outputs/RND-23_fills.parquet",
+          "sha256": "166f7a3172614b0cd09207aa1d8a917559d262015ee61fd3542e79e3def8640d",
+          "bytes": 16213
+        },
+        {
+          "path": "artifacts/runs/20260921T223217-eventfam-rnd-6af378/outputs/RND-23_daily_equity.parquet",
+          "sha256": "bc425e1cc42e249c8fd8865c547029c67194ad29503aa13f71f15a2369559cf2",
+          "bytes": 15753
+        },
+        {
+          "path": "artifacts/runs/20260921T223217-eventfam-rnd-6af378/outputs/RND-23_events.parquet",
+          "sha256": "1bf0ce056b5b9974aeef9cbaf7ffe170c1d5cce0a1b234da6710dc4baf9f5196",
+          "bytes": 16774
+        },
+        {
+          "path": "artifacts/runs/20260921T223217-eventfam-rnd-6af378/outputs/RND-23_clips_final.parquet",
+          "sha256": "f6fe7eff86ada1b697362e881c4e28f719b803ecbd99284cb0a4dd7c9914900a",
+          "bytes": 1937
+        },
+        {
+          "path": "artifacts/runs/20260921T223217-eventfam-rnd-6af378/manifest.json",
+          "sha256": "75e77cef8c21874fce48d453f3c76c1757fd68e7f319b2d5407f26ef98709703",
+          "bytes": 15738
+        }
+      ],
+      "replay_command": "PYTHONPATH=src .venv/Scripts/python.exe -m quant.research.reference_ledger_reconcile --evidence-dir docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e",
+      "wall_seconds": 0.657,
+      "max_abs_equity_diff_round": "0.03",
+      "max_abs_equity_diff_exact": "3.000e-10",
+      "final_shares_match": true
+    },
+    {
+      "run_id": "20260921T223217-eventfam-rnd-6af378",
+      "arm": "RND-47",
+      "n_days": 1462,
+      "n_days_covered": 1462,
+      "n_events": 236,
+      "n_events_covered": 236,
+      "n_fills": 216,
+      "n_fills_covered": 216,
+      "n_corporate_actions": 20,
+      "n_corporate_actions_covered": 20,
+      "sandbox_dataset_id": "dev-sandbox-20260922",
+      "input_files": [
+        {
+          "path": "artifacts/runs/20260921T223217-eventfam-rnd-6af378/outputs/RND-47_fills.parquet",
+          "sha256": "b493717581ed277b337d9de5916e8c4527c69939384183333625828835f53bfe",
+          "bytes": 16162
+        },
+        {
+          "path": "artifacts/runs/20260921T223217-eventfam-rnd-6af378/outputs/RND-47_daily_equity.parquet",
+          "sha256": "41917691bbaa661acbe1174220e1bff574814b15fb90b6d630732f2b243bc810",
+          "bytes": 15855
+        },
+        {
+          "path": "artifacts/runs/20260921T223217-eventfam-rnd-6af378/outputs/RND-47_events.parquet",
+          "sha256": "da99585f9c0b6ee2e736a93e7edf383b69bca554b57b00b775c077c7e2ae58fa",
+          "bytes": 17447
+        },
+        {
+          "path": "artifacts/runs/20260921T223217-eventfam-rnd-6af378/outputs/RND-47_clips_final.parquet",
+          "sha256": "f01fd66679967fc3a41c04c16d82213798c650e99df807e08e43a64b3947af23",
+          "bytes": 1937
+        },
+        {
+          "path": "artifacts/runs/20260921T223217-eventfam-rnd-6af378/manifest.json",
+          "sha256": "75e77cef8c21874fce48d453f3c76c1757fd68e7f319b2d5407f26ef98709703",
+          "bytes": 15738
+        }
+      ],
+      "replay_command": "PYTHONPATH=src .venv/Scripts/python.exe -m quant.research.reference_ledger_reconcile --evidence-dir docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e",
+      "wall_seconds": 0.656,
+      "max_abs_equity_diff_round": "0.14",
+      "max_abs_equity_diff_exact": "2.000e-10",
+      "final_shares_match": true
+    }
+  ]
+}

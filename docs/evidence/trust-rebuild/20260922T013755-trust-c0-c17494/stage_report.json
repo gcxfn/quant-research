@@ -1,0 +1,306 @@
+{
+  "schema_version": "1.0",
+  "stage_id": "C0",
+  "stage_name": "接管与合同冻结",
+  "run_id": "20260922T013755-trust-c0-c17494",
+  "run_state": "completed",
+  "engineering_state": "accepted",
+  "research_state": "not_evaluated",
+  "implementer_id": "implementation-agent-I@20260922T013755-trust-c0-c17494 (ZCode session, model new-provider/deepseek-v4.1-flash)",
+  "reviewer_id": "ZCode main session (GLM-5.3), independent of implementer subagent",
+  "authorization_reference": "docs/quant_stage_plan_20260922/prompts/01_start_C0.md（本轮唯一授权来源；执行包 03_governance.json 的 authorized_execution_stages 为空数组）",
+  "code_commit": "ae226d964b1ea1dccfb60a42ae943c6da8a179e6",
+  "code_commit_note": "HEAD 就是执行包基准提交；本地与 origin/main 一致（ahead/behind 0/0）。工作树带 2026-09-22 凌晨的未提交批次，未提交、未改写。",
+  "contract_sha256": "7a62c8ff09fa65b56ee8fa02031f1c4c7201dc483ce3b3182647e1a4c208fe58",
+  "contract_sha256_definition": "sha256 of this stage's frozen contract artifact contract_snapshot.json (the C0 deliverable that pins the resolved contract). It is NOT a signature and does not prove the contract is correct or approved.",
+  "scope": "C0 only; no research runs, no strategy/backtest/factor execution, no new market-data reads, no Val or 2025+ access, no src/tests edits, no git commit/push, no AGENTS.md body edit.",
+  "evidence": [
+    {
+      "id": "E1",
+      "path": "docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/takeover_state.md",
+      "sha256": "1c9f0c0563fc8b7f23a67cf9bb645217f29cf43243e93ca402c49103c5a8fe14",
+      "kind": "document",
+      "covers": [
+        "C0-01",
+        "C0-04",
+        "C0-06"
+      ]
+    },
+    {
+      "id": "E2",
+      "path": "docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/contract_snapshot.json",
+      "sha256": "7a62c8ff09fa65b56ee8fa02031f1c4c7201dc483ce3b3182647e1a4c208fe58",
+      "kind": "document",
+      "covers": [
+        "C0-03"
+      ]
+    },
+    {
+      "id": "E3",
+      "path": "docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/contract_conflicts.csv",
+      "sha256": "42b955bf5cff0aca4357f336145a359564564a019143aad28de24110fb645fdc",
+      "kind": "document",
+      "covers": [
+        "C0-02"
+      ]
+    },
+    {
+      "id": "E4",
+      "path": "docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/evidence_index.csv",
+      "sha256": "fea27dd0ba17ab4815711766009b277f3a2f0d5f5bb6f24e6d741645463930f1",
+      "kind": "document",
+      "covers": [
+        "C0-01",
+        "C0-04"
+      ]
+    },
+    {
+      "id": "E5",
+      "path": "docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/access_ledger.csv",
+      "sha256": "6917610c2f3411ca93fdfe02544c944a8b916a97159a9e17ca5bc0b115840f30",
+      "kind": "document",
+      "covers": [
+        "C0-05"
+      ]
+    },
+    {
+      "id": "E6",
+      "path": "docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/change_scope_review.md",
+      "sha256": "2d31973565c5f7caead8db4655c10860c68759cc218a48d4dff616c103f3c14e",
+      "kind": "document",
+      "covers": [
+        "C0-06"
+      ]
+    },
+    {
+      "id": "E7",
+      "path": "docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/permissions_review.md",
+      "sha256": "7225cc684744ff3831efee605f38735f75030cbc84ea207a8f0b71b295297373",
+      "kind": "document",
+      "covers": [
+        "C0-07"
+      ]
+    },
+    {
+      "id": "E8",
+      "path": "docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/agents_amendment_proposal.md",
+      "sha256": "9dd7987870c32eb1e9213b965938bbdb77ce866d57f071a22a8aba2d13de9834",
+      "kind": "document",
+      "covers": [
+        "C0-02"
+      ]
+    },
+    {
+      "id": "E9",
+      "path": "docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/c0_run_log.md",
+      "sha256": "25be801968e6ea2a34765abbd87c771f33fa5982056eb273e4dbae3a21d13270",
+      "kind": "command_log",
+      "covers": [
+        "C0-06",
+        "C0-07"
+      ]
+    },
+    {
+      "id": "E10",
+      "path": "docs/plans/stock-first-trust-rebuild.md",
+      "sha256": "52a472e9e1cb1f3ac8fb683754e6fc7b1bb3489fc0e7b1da34f2d3c8f6bac5b2",
+      "kind": "document",
+      "covers": [
+        "C0-01",
+        "C0-03",
+        "C0-08"
+      ],
+      "sha256_superseded": "4b1e3f31c2d91cff34eab54a9cbd5856cf930390d554b6a583d97e152ac0690d",
+      "living_document": true,
+      "note": "活文档：每阶段追加完成记录；R1 返工回刷哈希，R1b（同日裁决轮追加 §7 裁决结果后）再次回刷；C0 时点哈希见 sha256_superseded"
+    },
+    {
+      "id": "E11",
+      "path": "artifacts/runs/20260922T002611-eventfam-attrib2-eed5cf/outputs/B1_event_funnel.csv",
+      "sha256": "c30ed8477c1814e151b6af384610c19326d1970e1903fb026d3a02c0b6a66cc8",
+      "kind": "data_table",
+      "covers": [
+        "C0-03",
+        "C0-05"
+      ],
+      "note": "Pre-existing (uncommitted, created 2026-09-22 by the review-correction batch, NOT by C0). Included because C0 read it to verify the entry-price contract gap and the B1 funnel; its hash is unchanged by C0."
+    },
+    {
+      "id": "E12",
+      "path": "docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/independent_review.md",
+      "sha256": "c1bb9665c82bd7c261f283bdd2c7c4eab7f98937bbe61711431277a528c0d6b6",
+      "kind": "independent_review",
+      "covers": [
+        "C0-08"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "gate_id": "C0-01",
+      "status": "PASS",
+      "evidence_ids": [
+        "E1",
+        "E4",
+        "E10"
+      ],
+      "actual": "HEAD=ae226d9…（与计划基准同一提交）；工作树 8 修改 + 7 未跟踪条目，逐文件给出性质判断；按新计划命名的产物/分支/运行全树检索零命中 → 未发现 C1–C9 进展。"
+    },
+    {
+      "gate_id": "C0-02",
+      "status": "PASS",
+      "evidence_ids": [
+        "E3",
+        "E8"
+      ],
+      "actual": "conflict_conflicts 表 12 行：AGENTS §1.2 ETF 底盘主线 vs 用户个股+现金方向（C-01）；AGENTS 50 万可被实验覆盖 vs 本轮不可覆盖（C-02）；七席模型 vs 四股票席（C-03）；单只 25% 帽 vs 每席 10% 参数（C-04）；入场 ×1.01 语义（C-05）；金额舍入未定（C-06）；创业板权限（C-07）；Day0 三候选 vs 4 席（C-08）；2021–2024 授权口径（C-09）；验收来源两份（C-10）；C0 命名撞车（C-11）；未提交批次未登记（C-12）。对用户已明确的 50 万与个股方向只起草提案，不裁定未明确的成交/费用/样本权限。"
+    },
+    {
+      "gate_id": "C0-03",
+      "status": "PASS",
+      "evidence_ids": [
+        "E2",
+        "E11"
+      ],
+      "actual": "合同快照 21 个字段全部带 value/source_path/source_section/source_commit/authority/mutable_in_stage/approved_by_reference；本金 500000、佣金 0.0001/最低5元、印花 2023-08-28 分界 0.001/0.0005、过户费 0、11:30+15:00 决策、严格穿透、跳空按限价、卖出资金次 session、T+1+整手 100、K=3 风险兜底、公司行动 per-lot、官方收盘估值、Dev 2015-2020 均已定位来源。fee_schema.rounding_rule = null 并显式标 BLOCKING（合同未规定、实现无舍入）。",
+      "deviation": "C0-03 门要求“硬边界有来源”，该条满足；但费用舍入作为 C2 的前置定义仍缺失，已在 blocked_fields 与 open_issues 中登记。"
+    },
+    {
+      "gate_id": "C0-04",
+      "status": "PASS",
+      "evidence_ids": [
+        "E4",
+        "E1"
+      ],
+      "actual": "evidence_index 44 行，每行有实测 SHA256 与 source_commit；A/B 有效、作废、待复验分列：阶段 A 基线 v4 与阶段 B 四主臂 = valid（附更正说明）；归因 v1（运行 20260921T230639 及其 event_attribution.csv）= superseded_in_scope，B1 部分被 20260922T002611 取代、B2/A 未复算；attrib2 前三次运行 = invalid/superseded；未提交的 src/tests = pending_commit。原始 A/B 判定未改写。"
+    },
+    {
+      "gate_id": "C0-05",
+      "status": "PASS",
+      "evidence_ids": [
+        "E5"
+      ],
+      "actual": "access_ledger 9 行：AL-01 归因 v1 的 2020 年末 B2/A 事件 20 日窗越界入 2021（有物理证据：v1 CSV 末行 B2 2020-12-29 成交带完整未来收益），并写明不可逆、B1 无越界；AL-02 记录所有运行读的是混合年份文件后程序化过滤（不是隔离）；AL-05 记录已查看过的 Val 结果累计 13 配置（含用户批准的两次 val 批次与 mean-reversion-val），R3-05/R3-06/ROT-05 的 run_id 未定位 → 标 unknown；AL-07 记录本轮自身零行情读取。未编造精确次数。"
+    },
+    {
+      "gate_id": "C0-06",
+      "status": "PASS",
+      "evidence_ids": [
+        "E6",
+        "E9"
+      ],
+      "actual": "本轮只新增 docs/ 下 10 个文件 + docs/plans/stock-first-trust-rebuild.md；git diff --stat 会话前后完全相同（8 files/165+/34-，全部是会话前既有未提交批次）；src/ 与 tests/ 关键文件 SHA256 前后一致（band_engine 40f1aaeb…、event_family_signals 994d6d09…、attribution_lib 0867f740…、test_event_attribution_c0 73367994…）；artifacts/runs 无新目录；未跑 pytest/回测/因子；未做 git 提交或推送。",
+      "self_check_only": "该门由实施者自证；需要独立审阅者用同一组命令与哈希复核（见 C0-08）。"
+    },
+    {
+      "gate_id": "C0-07",
+      "status": "PASS",
+      "evidence_ids": [
+        "E7",
+        "E9"
+      ],
+      "actual": "enforcement_level = procedural_only，并给出实测依据：仓库 public、main 未保护（gh api 404 Branch not protected）、rulesets 空、workflows 0、仓库无 .github、只有 main 一个分支、实施与审阅同机同账号（gh auth status 显示 gcxfn 且 token 含 repo/workflow）。os 列明“不能声称技术上无法越权”，并给出 6 项建议措施且标注全部未部署。"
+    },
+    {
+      "gate_id": "C0-08",
+      "status": "PASS",
+      "evidence_ids": [
+        "E10",
+        "E12"
+      ],
+      "actual": "尚未发生独立审阅。实施者按授权只写 completed/pending，不代签 accepted；下一阶段范围确认也需审阅者/用户完成。",
+      "blocking_reason": "需要另一个会话或另一账号的审阅者：独立读取合同与原始证据、亲跑相同命令与哈希、给出 pending/accepted/rejected/blocked 之一。单账号环境下（main 未保护、无 CI）该独立性只能靠流程，见 permissions_review.md 的建议 1–6。"
+    }
+  ],
+  "open_issues": [
+    {
+      "issue_id": "C0-BLK-01",
+      "severity": "BLOCKING",
+      "status": "closed",
+      "title": "fee_schema.rounding_rule 未冻结",
+      "contract_clause": "docs/plans/p3-band-contract.md 第60行要求费用与逐笔重算逐分对账；docs/quant_stage_plan_20260922/03_governance.json 标 MUST_PIN_FROM_CONTRACT_IN_C0",
+      "actual_evidence": "src/quant/backtest/band_engine.py FeeModel 第379-397行：commission/stamp 直接返回 binary float，全流程无金额量化；唯一 Decimal ROUND_HALF_UP 用于 ETF 价格 tick",
+      "impact": "C2 的逐分对账缺判定标准，无法区分经济错误与数值表示差异",
+      "owner": "user / C1",
+      "exit_criteria": "C1 冻结金额舍入位置与方式（写进接口合同与参考实现），并经独立审阅确认",
+      "resolution": "审阅裁定（independent_review.md）：转 C1 强制关闭项。默认判定=参考账本 Decimal ROUND_HALF_UP 到分、引擎 float 换算同口径逐分一致；只定义对账标准，不改费率；待用户追认。追踪点：contract_conflicts.csv C-06"
+    },
+    {
+      "issue_id": "C0-MAJ-01",
+      "severity": "MAJOR",
+      "status": "closed",
+      "title": "入场限价的合同与实现不一致（cap 是门槛，不是限价）",
+      "contract_clause": "docs/research/stock_event_research_prereg.md 第92/100/136行“限价 = 触发日/决策日收盘 × 1.01”",
+      "actual_evidence": "src/quant/research/event_family_signals.py 第663-681行把 ×1.01 作为签发门槛；band_engine.py 第3560-3600行以决策锚价作为订单限价；20260922T002611 的 B1 漏斗 39/39 签发单 order_price_first == decision_anchor_price",
+      "impact": "C6 的 E0/E1 两臂可能不存在处理差异；阶段 B 的“追价上限”归因文字需按此理解",
+      "owner": "C3（追踪 cap→limit 链条）→ C4/C6",
+      "exit_criteria": "在 order_id 级证明 cap 与最终 limit_price 的关系；若确为有意设计则写入合同并更正预登记文字",
+      "resolution": "审阅裁定（independent_review.md）：C0 层面已核实并登记（R5 亲验代码），作为 C3-A 必测项与 C1 interface_contract 双轨记录项。追踪点：contract_conflicts.csv C-05"
+    },
+    {
+      "issue_id": "C0-MIN-03",
+      "severity": "MINOR",
+      "status": "deferred",
+      "title": "未提交批次与失败运行未登记进受影响清单",
+      "contract_clause": "AGENTS §5-5 运行状态区分与留痕；主计划 16.1 要求列出所有未完成内容",
+      "actual_evidence": "docs/evidence/affected_runs.csv（工作树）只补了 2 行；4 个 attrib2 运行（其中 20260922T001213 为 status=failed）未登记；trial-ledger 也未见这些 run",
+      "impact": "“已完成”的可追溯链缺一格；失败运行只由正文一行文字承载，容易被后续引用者误当成有效运行",
+      "owner": "C4 收尾",
+      "exit_criteria": "affected_runs.csv 收录 attrib2 四行（含失败状态与取代关系），或明确记录为已知缺口"
+    },
+    {
+      "issue_id": "C0-MIN-01",
+      "severity": "MINOR",
+      "status": "deferred",
+      "title": "2026-09-22 “全仓 713 passed” 无归档测试日志",
+      "contract_clause": "主计划 16.1（测试结果需结构化证据）；C0-06 一票阻断项含“缺失真实日志却声称执行”",
+      "actual_evidence": "docs/evidence/ 只有 2026-09-21 两份 pytest 日志；README.md 与旧主计划写 713 passed；C0 未运行测试（不在授权内），静态统计 def test_ 为 691 处",
+      "impact": "该数字在本阶段属未复核声明；若后续阶段引用需先补日志",
+      "owner": "C4-07 全量测试归档",
+      "exit_criteria": "有 pytest 日志文件（含收集数、skip/xfail 原因）与命令"
+    },
+    {
+      "issue_id": "C0-MIN-02",
+      "severity": "MINOR",
+      "status": "deferred",
+      "title": "授权依据文档 quant_phase_ab_review_20260921 不在仓库",
+      "contract_clause": "主计划 16.1（授权范围可定位）",
+      "actual_evidence": "runner_attrib2.py 头部引用该复审文档 §三/§四/§八-C0；全树 find/grep 未命中该文档",
+      "impact": "2026-09-22 修正批次的原始指令无法在仓库内独立核验，只能从效果反推",
+      "owner": "用户",
+      "exit_criteria": "提供复审文档正本，或在 access_ledger 永久标注为“外部参考、不可核验”"
+    }
+  ],
+  "run_records": [],
+  "run_records_note": "C0 没有需要 run_record 的产物运行（本阶段不运行回测/策略）。实际执行的只读命令、退出码与哈希计算记录在 c0_run_log.md（E9）。不为此构造 run_record：本阶段的“config”产物（合同快照）是在会话中生成的，若给它填一个 at_start 哈希会是不实记录。",
+  "independent_review_evidence_id": "E12",
+  "next_stage_authorized": false,
+  "verification_commands": [
+    "git rev-parse HEAD  # 期望 ae226d964b1ea1dccfb60a42ae943c6da8a179e6",
+    "git status --porcelain  # 期望与 takeover_state.md §1 原样一致（8 M + 7 ??，其中 docs/evidence/trust-rebuild/ 与 docs/plans/stock-first-trust-rebuild.md 为 C0 新增）",
+    "git diff --stat  # 期望 8 files changed, 165 insertions(+), 34 deletions(-)",
+    "git rev-list --left-right --count HEAD...origin/main  # 期望 0 0",
+    "python docs/quant_stage_plan_20260922/tools/check_delivery.py --report docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/stage_report.json --root .  # 期望 exit 2 且 errors 只含 C0-08 未 PASS（工程验收仍为 pending，属预期）",
+    "python -c \"import hashlib,pathlib;[print(hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest(),p) for p in <evidence paths>]\"  # 与本文件 evidence[].sha256 逐行比对"
+  ],
+  "limitations": [
+    "工程验收 = pending：C0-08（独立审阅与下一阶段范围确认）尚未发生；实施者不给自己签 accepted。",
+    "本轮只做现状接管与文档，没有独立复算任何账本、撮合或统计；引用的所有收益/回撤数字都只是转写既有报告与 manifest 的陈述。",
+    "合同快照里的 implementation_fact 条目（舍入、限价、席位参数）来自源码阅读与既有运行产物抽查，未经独立复核；它们是“实现事实”，不是规则来源。",
+    "费用舍入规则仍是 BLOCKING 未定项，C2 不得在该项冻结前开始逐分对账。",
+    "access_ledger 中 Val 消费的 13 配置来自文字记录，其中 R3-05/R3-06/ROT-05 的 run_id 未定位，标为 unknown；未为凑数编造次数。",
+    "“A/B 有效/作废/待复验”的划分沿用既有 affected_runs.csv、trial-ledger 与研究报告的原判定，C0 未重新验证这些判定本身。",
+    "本文件声明的代码身份只覆盖 HEAD 与关键文件哈希；工作树中未提交的 8 个文件按工作树版本哈希，未提交意味着该身份不能从远端复现。",
+    "C0-06 与 C0-07 的自评由实施者完成，只能证明“声称未做的事有命令证据”，不能证明文档内容正确；需独立审阅者用相同命令与哈希复核。",
+    "stage_report.json 自身不在 evidence 列表中（不能自哈希），其身份由审阅者单独记录。",
+    "执行包自带的离线检查器实测结果（命令见 verification_commands 第 5 条）：status = EVIDENCE_CHECK_FAILED、exit code 2、verified_file_count = 11（11 项证据的 SHA256 全部匹配），errors 恰为两条：(1) C0-08 gate is not PASS；(2) unclosed blocker: C0-MAJ-01。两条都是本阶段的真实状态（审阅未做；cap/限价接口问题留给 C3 跟踪），不是格式或哈希问题。该工具只做文件/字节/基础一致性检查，不验会计、不认证身份，不构成任何批准。"
+  ],
+  "post_stage_corrections": [
+    {
+      "round": "R1",
+      "date": "2026-09-22",
+      "summary": "① E10 pin 的是活文档（stock-first-trust-rebuild.md 会被后续阶段追加），固定字节 pin 属结构性缺陷——改为回刷+superseded 注记；② §limitations[9] 与 c0_run_log 第29条记录的 exit 2 为审阅前时点，主计划 §4 所引「终态 exit 0」当时无归档命令日志（记录缺口）——返工后检查器复跑结果归档于 rework 目录 checker_c0.txt，以该结果为准",
+      "rework_evidence_dir": "docs/evidence/trust-rebuild/20260922T104206-trust-rework1-bed4cf"
+    }
+  ]
+}

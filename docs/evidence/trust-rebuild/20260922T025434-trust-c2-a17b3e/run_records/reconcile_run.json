@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20260922T025434-trust-c2-a17b3e",
+  "kind": "engineering_run",
+  "status": "completed",
+  "stage_id": "C2",
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "quant.research.reference_ledger_reconcile",
+    "--evidence-dir",
+    "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e"
+  ],
+  "cwd": "D:\\量化",
+  "started_at_utc": "2026-09-21T19:08:33.097102Z",
+  "ended_at_utc": "2026-09-21T19:08:42.056454Z",
+  "wall_seconds": 8.959,
+  "exit_code": 0,
+  "code_sha256_at_start": "2e7539425746b3ef319b6f3f574a784c8e27d63581d36b3c64090bf412e7c80a",
+  "code_sha256_at_end": "2e7539425746b3ef319b6f3f574a784c8e27d63581d36b3c64090bf412e7c80a",
+  "code_files": [
+    "src/quant/data/dev_sandbox.py",
+    "src/quant/research/reference_ledger.py",
+    "src/quant/research/reference_ledger_reconcile.py",
+    "tests/test_reference_ledger.py"
+  ],
+  "config_sha256_at_start": "a65cedb37bc174d6d2e253c86b72a03c58a01402691ebbe896b161954b4b4bb4",
+  "config_sha256_at_end": "a65cedb37bc174d6d2e253c86b72a03c58a01402691ebbe896b161954b4b4bb4",
+  "config_files": [
+    "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/interface_contract.json",
+    "docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/contract_snapshot.json"
+  ],
+  "config_files_sha256_at_start": [
+    "c2ede2442f5921e45c616dbb8b18264a14ab04b47d0f38000e74d57a33fab93f",
+    "7a62c8ff09fa65b56ee8fa02031f1c4c7201dc483ce3b3182647e1a4c208fe58"
+  ],
+  "config_files_sha256_at_end": [
+    "c2ede2442f5921e45c616dbb8b18264a14ab04b47d0f38000e74d57a33fab93f",
+    "7a62c8ff09fa65b56ee8fa02031f1c4c7201dc483ce3b3182647e1a4c208fe58"
+  ],
+  "input_manifest_sha256": null,
+  "expected_arms": [
+    "ledger_reconciliation",
+    "cash_reconciliation",
+    "fee_type_reconciliation",
+    "corporate_action_reconciliation",
+    "coverage_manifest",
+    "reconcile_summary"
+  ],
+  "actual_arms": [
+    "ledger_reconciliation",
+    "cash_reconciliation",
+    "fee_type_reconciliation",
+    "corporate_action_reconciliation",
+    "coverage_manifest",
+    "reconcile_summary"
+  ],
+  "resource_usage": {
+    "peak_rss_mb": 491.0,
+    "memory_samples": 43,
+    "workers": 1
+  },
+  "stdout_path": "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/logs/reconcile_stdout.txt",
+  "stderr_path": "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/logs/reconcile_stderr.txt",
+  "junit_path": null,
+  "outputs": [
+    "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/ledger_reconciliation.csv",
+    "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/cash_reconciliation.csv",
+    "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/fee_type_reconciliation.csv",
+    "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/corporate_action_reconciliation.csv",
+    "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/coverage_manifest.json",
+    "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/reconcile_summary.json"
+  ],
+  "approval_reference": "用户本会话对 C1-C4 工程批次的持续授权 + C1 independent_review.md 确认 C2 进入条件"
+}

@@ -1,0 +1,21 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.11"
+      - name: Sync locked environment
+        run: uv sync --frozen
+      # data/ 不入 Git：5 个依赖真实数据的测试带数据缺失跳过守卫
+      # （tests/contracts 既有惯例）；数据存在处断言全量执行。
+      - name: Run test suite
+        run: uv run pytest tests -q

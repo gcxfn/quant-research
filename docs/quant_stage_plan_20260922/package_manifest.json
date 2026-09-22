@@ -1,0 +1,126 @@
+{
+  "package": "quant_stage_plan_20260922",
+  "version": "1.0",
+  "nature": "plan_templates_and_packaging_helper_not_trading_results",
+  "quant_backtest_executed": false,
+  "repository_modified": false,
+  "packaging_helper_tests": {
+    "tests": 16,
+    "failures": 0,
+    "errors": 0,
+    "scope": "tools/check_delivery.py only"
+  },
+  "acceptance_rows": 80,
+  "files": [
+    {
+      "path": "00_README.md",
+      "bytes": 3963,
+      "sha256": "1a4e1ecde2052f48187f47b6c50a2c102cdc58f8b6da387e6dec7cba281e11c9"
+    },
+    {
+      "path": "01_master_plan.md",
+      "bytes": 60669,
+      "sha256": "fd905a02878578dbaf381d4bb9245d3d1d046ea8cd0030bb15ac488a1f1dfcc8"
+    },
+    {
+      "path": "02_acceptance_matrix.csv",
+      "bytes": 9231,
+      "sha256": "7eeaedad3685afe53a11b55376c57ce0ece02d22ea790277ee7361385fcac5c2"
+    },
+    {
+      "path": "03_governance.json",
+      "bytes": 5843,
+      "sha256": "f34b3331b8b4d9b41615140f018ccebaccf878a1bf8596cc289940b80516b491"
+    },
+    {
+      "path": "04_evidence_spec.md",
+      "bytes": 8963,
+      "sha256": "38fc6bcda17467af6fb771669e183b17e2d8552eb526a0e79d6c56b4a339a15a"
+    },
+    {
+      "path": "05_test_vectors.md",
+      "bytes": 6100,
+      "sha256": "91f376621af101c08a74d49c7d1eba1fff51c0c7896ae3150561bc2af0b4f049"
+    },
+    {
+      "path": "packaging_tool_tests.log",
+      "bytes": 1693,
+      "sha256": "011427ce4f10a0f532ccf635140c00cb1bac36777e7b67d2f6ad12936fd34b84"
+    },
+    {
+      "path": "prompts/01_start_C0.md",
+      "bytes": 1709,
+      "sha256": "b15e4007ca3f51755c79e788833d049dcf28f537e15b3a1cabaf07fae0a385cf"
+    },
+    {
+      "path": "prompts/02_independent_reviewer.md",
+      "bytes": 1464,
+      "sha256": "453caf4cb3b7e288bbe6d8ba070b5cb49c65b0ae82966799e14dff4a94233412"
+    },
+    {
+      "path": "prompts/03_rework.md",
+      "bytes": 930,
+      "sha256": "3ed42ec15ca0208947a42487123c3542b21e034af9edcba4b460185dd1156dd7"
+    },
+    {
+      "path": "templates/access_ledger.template.csv",
+      "bytes": 152,
+      "sha256": "050c30a4789ca87d44fd3044db5d2932de6d1f20fc8126eea997d514d5ed423d"
+    },
+    {
+      "path": "templates/claim_correction_log.template.csv",
+      "bytes": 128,
+      "sha256": "b38157c8f10bd0c8198d1a9904d6dfd77758ac1f15d4d92d1772ecdb7ba4bbdf"
+    },
+    {
+      "path": "templates/contract_conflicts.template.csv",
+      "bytes": 134,
+      "sha256": "392a7c2fd871cf8b92ce7ef4a53e8bc11adda6d45cbffbe2c1dc25075c3c1a56"
+    },
+    {
+      "path": "templates/event_funnel.template.csv",
+      "bytes": 214,
+      "sha256": "8064ed97f617e3d2dbdbbca5861a228a4e8e06936f2af4dbbbbdc55a2ba18301"
+    },
+    {
+      "path": "templates/evidence_index.template.csv",
+      "bytes": 150,
+      "sha256": "f78b414b39a0a72ef5f0d474022d35192af0276d32c4fbc9a3785110e163468c"
+    },
+    {
+      "path": "templates/independent_review.template.md",
+      "bytes": 709,
+      "sha256": "8152c7bbf912295465cf3269b0cc1f615d7c10429678913cae3096fd90e8a9f5"
+    },
+    {
+      "path": "templates/issue_register.template.csv",
+      "bytes": 191,
+      "sha256": "e37b5b4e483ccea079ab03551328fd05b2c6c6a2f5abce2be57ecfb767c0bf09"
+    },
+    {
+      "path": "templates/run_record.template.json",
+      "bytes": 558,
+      "sha256": "a88b7346f5772643ff8003cfac7c72ba29dcaff1532479c0f5ac8611488b7ee6"
+    },
+    {
+      "path": "templates/stage_report.template.json",
+      "bytes": 1285,
+      "sha256": "3999c3449191b05e4ade54121d1f314b00f04947708fba9e9f80c5074d35d2b2"
+    },
+    {
+      "path": "templates/trial_ledger.template.csv",
+      "bytes": 177,
+      "sha256": "422eadeeac837567da14ee7a5e7183aa301e2d892ba2334b202591b6972ba756"
+    },
+    {
+      "path": "tools/check_delivery.py",
+      "bytes": 10959,
+      "sha256": "41f8b7744f51cf44d6e4ee9f112fdab931abcbe516b1a6726080fcabbc0a6ae9"
+    },
+    {
+      "path": "tools/test_check_delivery.py",
+      "bytes": 4448,
+      "sha256": "f55603dbf87a2e49b5fdf967b434825e1276483b7eca0fbc7547faae0c315343"
+    }
+  ]
+}

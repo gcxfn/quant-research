@@ -1,0 +1,301 @@
+{
+  "schema_version": "1.0",
+  "artifact": "contract_snapshot",
+  "stage_id": "C0",
+  "run_id": "20260922T013755-trust-c0-c17494",
+  "generated_at_utc": "2026-09-21T17:37:55Z",
+  "generated_by": "implementation agent I (session: ZCode / new-provider-deepseek-v4.1-flash)",
+  "code_commit": "ae226d964b1ea1dccfb60a42ae943c6da8a179e6",
+  "working_tree_dirty": true,
+  "authority_legend": {
+    "user_explicit": "用户在本轮或最近明确指示（优先级 1，主计划 2.3）",
+    "trading_contract": "已批准并冻结的交易/执行合同（优先级 2）",
+    "stage_plan": "本轮新阶段计划或其治理配置（优先级 3；建议稿，用户批准前不生效）",
+    "project_rules": "仓库 AGENTS.md / 旧计划中的项目规则（与优先级 1-3 冲突时让位）",
+    "code_fact": "当前代码实现事实（优先级 4；不是规范）",
+    "conflicting": "两个来源给出不同答案，尚未裁决",
+    "unknown": "现有材料无法确定"
+  },
+  "source_priority_note": "来源优先级按主计划 2.3：用户明确指示 > 交易合同 > 本阶段计划 > 代码事实。代码条目只描述实现事实，不因此成为规则。",
+  "blocked_fields": [
+    "fee_schema.rounding_rule"
+  ],
+  "blocking": true,
+  "blocking_reason": "费用/现金舍入规则在合同文本与治理配置中都未冻结（governance.json fees.rounding_rule = MUST_PIN_FROM_CONTRACT_IN_C0），而实现为无舍入的 binary float；C2 账本对账要求逐分一致，缺此定义无法判定差异是经济错误还是表示差异。",
+  "fields": {
+    "initial_cash": {
+      "value": {"amount_cny": 500000, "string_form": "500000.00", "currency": "CNY"},
+      "source_path": "AGENTS.md; docs/quant_stage_plan_20260922/01_master_plan.md; docs/quant_stage_plan_20260922/03_governance.json; docs/quant_stage_plan_20260922/prompts/01_start_C0.md",
+      "source_section": "AGENTS.md 1.1 第31行；主计划 1.1 与 2.1；governance.account.initial_cash_cny；01_start_C0.md 第7行“本轮目标固定：50万元”",
+      "source_commit": "ae226d9",
+      "authority": "user_explicit",
+      "mutable_in_stage": false,
+      "approved_by_reference": "docs/quant_stage_plan_20260922/prompts/01_start_C0.md",
+      "note": "AGENTS.md 1.1 同时写“研究实验默认使用50万元……具体实验配置可以在预登记中明确覆盖该默认值”，与本轮“不可覆盖”冲突，见 conflict C-02。"
+    },
+    "direction": {
+      "value": {"long_only": true, "asset_scope": "stocks_and_cash", "leverage": false, "cash_return": 0.0, "etf_role": "none_in_current_mainline"},
+      "source_path": "docs/quant_stage_plan_20260922/prompts/01_start_C0.md; docs/quant_stage_plan_20260922/03_governance.json; AGENTS.md",
+      "source_section": "01_start_C0.md 第7行“个股主收益＋现金”；governance.account.asset_scope=stocks_and_cash、cash_return=0；AGENTS.md 1.2 第24行（ETF 底盘主线，冲突方）",
+      "source_commit": "ae226d9",
+      "authority": "user_explicit",
+      "mutable_in_stage": false,
+      "approved_by_reference": "docs/quant_stage_plan_20260922/prompts/01_start_C0.md",
+      "note": "与 AGENTS.md 1.2 “ETF 或其他防御资产作为低回撤底盘”直接冲突，见 conflict C-01。"
+    },
+    "universe_permission": {
+      "value": {
+        "boards_included": ["sh.60*", "sz.00*"],
+        "boards_excluded": ["688*", "689* (STAR)", "4*", "8* (BSE)", "300*", "301*", "302* (ChiNext)"],
+        "excluded_special_symbols": ["sz.000905", "sz.000852"],
+        "st_filter": "isST == 0；isST 为空按不合格拒绝",
+        "tradability": "tradestatus == 1",
+        "price_floor_cny": 2.0,
+        "amount_median_20d_floor_cny": 50000000
+      },
+      "source_path": "src/quant/research/screen.py; AGENTS.md",
+      "source_section": "screen.py 第64-76行（EXCLUDED_BOARD_PREFIXES_3/1、CHINEXT_BOARD_PREFIXES、EXCLUDED_INDEX_SYMBOLS）与第250-296行 eligible_universe（allow_chinext 默认 False）；AGENTS.md 1 第8行“创业板等权限由账户配置决定”",
+      "source_commit": "ae226d9",
+      "authority": "code_fact",
+      "mutable_in_stage": false,
+      "approved_by_reference": "AGENTS.md 1（板块排除为项目规则）；创业板权限缺账户证据，需用户裁决（conflict C-07）",
+      "note": "allow_chinext=False 的注释依据是 2026-09-17 “账户无创业板权限”。该依据是当时的会话判断，仓库内没有账户权限文件证据。"
+    },
+    "max_positions": {
+      "value": {"max_stock_names": 4, "layer_model_in_mainline": "single_stock_layer_only", "daily_new_signals_not_capped_by_this_field": true},
+      "source_path": "docs/quant_stage_plan_20260922/01_master_plan.md; src/quant/research/event_family_signals.py",
+      "source_section": "主计划 2.1“本轮保留最多 4 股票”；event_family_signals.py MAX_SEATS（席位接纳判定 len(held)+len(self.pending)+1 > MAX_SEATS）",
+      "source_commit": "ae226d9",
+      "authority": "stage_plan",
+      "mutable_in_stage": false,
+      "approved_by_reference": "docs/quant_stage_plan_20260922/prompts/01_start_C0.md",
+      "note": "AGENTS.md 1 第9行“持仓最多七只：进攻层最多四只股票，防御层最多三只 ETF”，与本轮只做个股+现金冲突，见 conflict C-03。"
+    },
+    "max_new_day0_candidates": {
+      "value": 3,
+      "source_path": "AGENTS.md; docs/quant_stage_plan_20260922/01_master_plan.md",
+      "source_section": "AGENTS.md 1 第7行与第9行“Day0 最多新增三只”；主计划 2.1 操作上限“AGENTS 现有 Day0 最多 3 个新候选……发现冲突先阻断，不自行删此限制”",
+      "source_commit": "ae226d9",
+      "authority": "project_rules",
+      "mutable_in_stage": false,
+      "approved_by_reference": "AGENTS.md 1；主计划 2.1",
+      "note": "这与“最多 4 席”不是同一约束：3 是单日新增上限，4 是持仓数上限；两者不互相推导。"
+    },
+    "name_target_cap": {
+      "value": 0.25,
+      "semantics": "单只标的目标权重上限，作用于订单构建时的决策点权益快照；越限整单作废（不裁剪缩量）；既有持仓因价格漂移越限只披露不强制减持",
+      "source_path": "docs/plans/p3-band-contract.md; src/quant/backtest/band_engine.py",
+      "source_section": "p3-band-contract.md 第134行（7.3-M2 仓位上限语义）；band_engine.py 第171-176行（Caps 段）",
+      "source_commit": "ae226d9",
+      "authority": "trading_contract",
+      "mutable_in_stage": false,
+      "approved_by_reference": "AGENTS.md 1.1 第32行“单只标的目标仓位上限为25%”",
+      "note": "25% 是上限，不是目标；当前控制组参数是每席 10%（见 seat_target_weight）。二者不可混读，见 conflict C-04。"
+    },
+    "seat_target_weight": {
+      "value": 0.10,
+      "source_path": "src/quant/research/risk_overlay_runner.py",
+      "source_section": "BASE_ATTACK_WEIGHT = 0.10（第302行）",
+      "source_commit": "ae226d9",
+      "authority": "code_fact",
+      "mutable_in_stage": false,
+      "approved_by_reference": "主计划 2.2“每席 10% 是当前控制组参数，不是本轮不可变资金规则”",
+      "note": "属可研究参数，但在工程对账阶段（C1-C4）不得顺手改动；改它属 C6/C7 预登记范围。"
+    },
+    "total_funding_cap": {
+      "value": 1.0,
+      "semantics": "总持仓市值 ≤ 100%，由“单笔买入 cost + fee ≤ 可用现金”与现金非负不变量隐含实现；买入占用 = 限价×数量 + max(限价×数量×万1, 5 元)",
+      "source_path": "docs/plans/p3-band-contract.md; src/quant/backtest/band_engine.py",
+      "source_section": "p3-band-contract.md 第134行；band_engine.py 第171-176行；CAP_TOTAL = 1.00（第313行）",
+      "source_commit": "ae226d9",
+      "authority": "trading_contract",
+      "mutable_in_stage": false,
+      "approved_by_reference": "AGENTS.md 1 第9行“总仓位不超过100%”"
+    },
+    "fee_schema": {
+      "value": {
+        "commission_rate": 0.0001,
+        "commission_floor_cny": 5.0,
+        "commission_formula": "max(rate × notional, 5.0)，按每笔成交计算",
+        "stamp_sell": {"before_2023-08-28": 0.001, "on_or_after_2023-08-28": 0.0005, "side": "sell_only", "boundary_constant": "STAMP_BOUNDARY = date(2023,8,28)，实现用 day < boundary 判定为 0.001"},
+        "stamp_buy": 0.0,
+        "transfer_fee": 0.0,
+        "transfer_fee_note": "合同明写“过户费不计”，实现不建模",
+        "etf_stamp_exemption": "ETF 买卖两侧均免印花（当前主线不含 ETF，仅登记合同事实）",
+        "rounding_rule": null
+      },
+      "source_path": "src/quant/backtest/band_engine.py; docs/plans/p3-band-contract.md; AGENTS.md; docs/quant_stage_plan_20260922/03_governance.json",
+      "source_section": "band_engine.py FeeModel（第379-397行）、STAMP_BOUNDARY（第306行）、stamp_rate（第339-341行）、FeeModel.stamp_sell（第393-396行）；p3-band-contract.md 第33行与第111行；AGENTS.md 1.1 第33行；governance.fees",
+      "source_commit": "ae226d9",
+      "authority": "trading_contract",
+      "mutable_in_stage": false,
+      "approved_by_reference": "AGENTS.md 1.1 第33行；用户 2026-09-18 对齐记录（p3-band-contract.md 第88行“股票卖出印花税保留单独分段计提”）",
+      "blocked_subfields": ["rounding_rule"],
+      "note": "rounding_rule 为 BLOCKING 待定。实现事实：FeeModel.commission / stamp_sell 直接返回 binary float（max(rate×notional, min) 与 rate×notional），现金、权益、费用累计均为 float64，全程没有对金额做分/角量化；唯一的 Decimal ROUND_HALF_UP 只用于 ETF 价格 tick（_tick_round / _etf_band_limit，band_engine.py 第344-377行）。合同侧唯一相关表述是 p3-band-contract.md 第60行“全期费用总额与逐笔独立重算逐分对账”（要求逐分一致），未规定舍入方式。"
+    },
+    "decision_schedule": {
+      "value": {
+        "timezone": "Asia/Shanghai",
+        "sessions": ["S_am 09:30-11:30", "S_pm 13:00-15:00"],
+        "decision_points": ["11:30", "15:00"],
+        "information_cutoff": "(D,'am') 决策只用 D 之前已结束的行情（am 锚 = 前一交易日收盘 / 更早）；(D,'pm') 决策可用 D 当日已完成收盘",
+        "order_live_mapping": {"(D,'am')": "(D,'pm')", "(D,'pm')": "(next trading day,'am')"},
+        "same_session_amendment": false,
+        "order_type": "halfday_limit"
+      },
+      "source_path": "src/quant/backtest/band_engine.py; docs/plans/p3-band-contract.md",
+      "source_section": "band_engine.py 第133-141行（时间结构与决策点）、第146-152行（锚/估值桥接）；p3-band-contract.md 第94行“同一 session 内订单不可变更”与第98行（穿透语义按半日 bar）",
+      "source_commit": "ae226d9",
+      "authority": "trading_contract",
+      "mutable_in_stage": false,
+      "approved_by_reference": "AGENTS.md 1 第7行（Day1 早盘结束与午盘结束后各更新一次）；p3-band-contract.md 第88行用户 2026-09-18 对齐记录",
+      "note": "ETF 腿另有 pm-only 路由变体（v1.5），当前个股主线不使用。"
+    },
+    "entry_price_policy": {
+      "value": {
+        "documented_contract": "限价 = 触发日/决策日收盘 × 1.01（追价上限）；订单失效 = 连续 3 个半日未成交；同一半日不改单",
+        "implementation_fact": "×1.01 只作为“是否签发”的门槛（anchor > cap 则 cancel_cap，不签发）；实际提交的买入限价 = 决策点锚价本身（stock anchor 不做 tick 处理），入场的意图行只带 target_weight，不带价格",
+        "observed_equality_20260922T002611": "B1 已签发 39 单中 order_price_first == decision_anchor_price 为 39/39"
+      },
+      "source_path": "docs/research/stock_event_research_prereg.md; src/quant/research/event_family_signals.py; src/quant/backtest/band_engine.py; artifacts/runs/20260921T223157-eventfam-main-cb4cff/tmp/runner_eventfam.py; artifacts/runs/20260922T002611-eventfam-attrib2-eed5cf/outputs/B1_event_funnel.csv",
+      "source_section": "prereg 第92、100、136行（限价 = 触发日/决策日收盘 × 1.01）；event_family_signals.py 第232行 cap_price 定义、第299/311行 cap_price=lvl×(1+CHASE)、第663-681行签发门槛与 cancel_cap、第590-598行 _entry_row（只给 target_weight）；band_engine.py 第3560-3600行（anchor=决策点锚，anchor_price=anchor）；runner_eventfam.py 第834-835行 manifest 自述“entry chase cap = issue while decision anchor <= trigger price * 1.01”；B1_event_funnel.csv 39 行签发单",
+      "source_commit": "ae226d9（src 中 event_family_signals.py 为工作树未提交版本）",
+      "authority": "conflicting",
+      "mutable_in_stage": false,
+      "approved_by_reference": null,
+      "note": "这是 C0 新发现的实际合同-实现落差，主计划 11.1-E1 已预判“归档 provider 并未把该上限作为独立限价字段直接交付”。C3 必须在 order_id 级追踪 cap→最终限价链条。见 conflict C-05。"
+    },
+    "strict_crossing": {
+      "value": {"strict": true, "buy": "session low < 限价 p 才成交，成交价 = p", "sell": "session high > 限价 q 才成交，成交价 = q", "touch_equals_no_fill": true, "no_favourable_price": true},
+      "source_path": "docs/plans/p3-band-contract.md; src/quant/backtest/band_engine.py",
+      "source_section": "p3-band-contract.md 第18行、第64行（触价 vs 穿透手算样例）、第98行、第164行；band_engine.py 第142-145行",
+      "source_commit": "ae226d9",
+      "authority": "trading_contract",
+      "mutable_in_stage": false,
+      "approved_by_reference": "AGENTS.md 1 第15行“必须严格穿透价格区间才成交……也不能取更有利的成交价”"
+    },
+    "gap_fill_policy": {
+      "value": {"limit_orders": "跳空按限价成交，不取更优价", "zone_ratchet_stop_exception": "zones 模式的棘轮止损以 min(线, 该 session 开盘价) 成交（v1.4，当前个股事件线未使用 zones）", "no_intraday_path_assumption": true},
+      "source_path": "src/quant/backtest/band_engine.py; docs/plans/p3-band-contract.md",
+      "source_section": "band_engine.py 第142-145行（gaps fill AT the limit）、第63-64行（stop fill at min(line, session open)）；p3-band-contract.md 第98行、第324行",
+      "source_commit": "ae226d9",
+      "authority": "trading_contract",
+      "mutable_in_stage": false,
+      "approved_by_reference": "AGENTS.md 1 第15行（跳空、无行情、停牌和非法涨跌停价格按保守规则处理并留痕）"
+    },
+    "settlement_delay": {
+      "value": {"stock_sale_proceeds": "晚一个 session 到账", "am_fill": "当日 S_pm 可用于买入", "pm_fill": "次一交易日 S_am 可用于买入", "same_session_sell_then_buy": "禁止（不可观测的日内先后）"},
+      "source_path": "src/quant/backtest/band_engine.py; docs/plans/p3-band-contract.md",
+      "source_section": "band_engine.py 第159-162行；p3-band-contract.md 第27行（现金竞争与优先级）、第282行（卖出资金次 session 可用）",
+      "source_commit": "ae226d9",
+      "authority": "trading_contract",
+      "mutable_in_stage": false,
+      "approved_by_reference": "AGENTS.md 1 第15行“不能因触价就假设成交”；governance.execution.sale_cash_available = next_halfday_per_frozen_contract",
+      "note": "这是 v1 相对 v0 的高保真修正（次一 session），已在合同与引擎变更记录中披露。"
+    },
+    "t_plus_and_round_lot": {
+      "value": {"stock_t_plus": 1, "t_plus_scope": "逐 clip：任一半日买入的份额当日不可卖", "t0_scope": "仅 is_t0 / 冻结的 T+0 ETF 品种清单（当前个股主线不涉及）", "buy_round_lot": 100, "lot_rule": "LOT = 100；订单股数必须为正的整手倍数，否则拒绝/跳过；卖出亦按整手计算残留"},
+      "source_path": "src/quant/backtest/band_engine.py; docs/plans/p3-band-contract.md",
+      "source_section": "band_engine.py 第309行（LOT = 100）、第153-158行（clip 与 T+1）、第918-926行（整手硬校验）、第2324-2339/3582-3589/3709-3715行（整手取整）",
+      "source_commit": "ae226d9",
+      "authority": "trading_contract",
+      "mutable_in_stage": false,
+      "approved_by_reference": "AGENTS.md 1 第17行（股票当日新买份额当日不可卖；T+0 ETF 按冻结品种清单）；主计划 2.1 市场约束行"
+    },
+    "risk_fallback": {
+      "value": {
+        "k": 3,
+        "unit": "session（半日），不是日",
+        "intent_split": {"risk": "连续 3 个已成交机会未成交 → 下一 session 开盘市价退出；开盘跌停顺延；停牌冻结计数", "profit": "session 结束静默失效，无兜底"},
+        "streak_continuity": "同源（source_signal + symbol + side + intent）在每个连续决策点重发才保持 streak；一次不重发则站立单撤销",
+        "classification_fields": "fill_type 区分普通穿透与 K=3 兜底；意图分类 intent ∈ {risk, profit, 空（入场）}"
+      },
+      "source_path": "src/quant/backtest/band_engine.py; AGENTS.md; docs/quant_stage_plan_20260922/03_governance.json",
+      "source_section": "band_engine.py 第163-170行、第245-246行、第835-836行（兜底合成订单元数据）、第2848-2851行（k3 计数与 pnl 定义）；AGENTS.md 1 第16行（风险减仓连续三个半日未成交后兜底，跌停或停牌顺延；止盈类订单到期失效，不得假设必然成交）；governance.execution.risk_fallback_unfilled_live_halfdays = 3",
+      "source_commit": "ae226d9",
+      "authority": "trading_contract",
+      "mutable_in_stage": false,
+      "approved_by_reference": "AGENTS.md 1 第16行"
+    },
+    "corporate_action_policy": {
+      "value": {
+        "share_change": "份额乘数只用 split_factor 的真实送转比例，逐 clip half-up 取整；公告整数比例为权威值（513100=5、513500=2，ETF 腿）",
+        "cash_dividend": "用 dividends.h5 的每手税前金额 × 除息日前持股数（per-lot 口径），除息日计入已结算现金；纯派息股除息日份额不变",
+        "forbidden_input": "ex_cum_factor（含分红的复权因子）禁止作为账户输入，只可作对照审计",
+        "guards": ["|preclose × ratio − close(t−1)| / close(t−1) ≤ 2%", "|factor_jump / ratio − 1| ≤ 2%（可选字段）", "隐含分红收益率 (close(t−1) − preclose)/close(t−1) > 10% → 硬报错", "同 symbol 同日不得同时出现分红与份额变换事件", "preclose 不可评估时防误分类门跳过而非报错（已披露的收窄）"],
+        "etf_dividend_rule": "fund_adj 因子跳变且 preclose < 前收 时，按 close(t−1) − preclose(t) 计现金分红（ETF 腿 v1.2，当前主线不用）"
+      },
+      "source_path": "docs/plans/p3-band-contract.md; src/quant/backtest/band_engine.py",
+      "source_section": "p3-band-contract.md 第29行（F1/F2 修正后口径）、第206-225行（9.1-9.3 份额变换）；band_engine.py 第26-48行（v1.3 摘要）、第220-224行（v0 保留）、第1256-1268行与第1767-1771行（per-lot 校验）",
+      "source_commit": "ae226d9",
+      "authority": "trading_contract",
+      "mutable_in_stage": false,
+      "approved_by_reference": "AGENTS.md 1 第19行（持仓按取得批次记录）与 4（不用前复权价格直接充当历史实际成交价）"
+    },
+    "valuation": {
+      "value": {
+        "daily_equity": "现金（已结算 + 待结算分开列，不重复计入）+ 持仓按规范估值市值",
+        "mark": "一律用 baostock 官方日线 close；pm.close 永不作为 mark 或 15:00 锚",
+        "anchor_bridge": {"15:00": "官方日线 close", "11:30": "am.close（无官方对应物）", "pre_2018-08-20_note": "上交所官方收盘为尾盘成交量加权价，分钟 pm.close 不可冒充"},
+        "clip_cost": "分红/份额变换不改 clip 成本；份额变换在除权日 pm 开市前、任何成交判定与估值之前逐 clip 变换"
+      },
+      "source_path": "docs/plans/p3-band-contract.md; src/quant/backtest/band_engine.py",
+      "source_section": "band_engine.py 第146-152行、第210-215行、第505-525行（pm.close 缺陷与桥接断言）；p3-band-contract.md 第115-116行",
+      "source_commit": "ae226d9",
+      "authority": "trading_contract",
+      "mutable_in_stage": false,
+      "approved_by_reference": "AGENTS.md 4（信号、真实价格、公司行动与账户估值必须有明确契约）"
+    },
+    "dev_range": {
+      "value": {
+        "dev_start": "2015-01-05",
+        "dev_end": "2020-12-31",
+        "warmup": "DEV_START − 300 个日历日（仅作特征/滚动窗预热，不计绩效年份）",
+        "b_family_event_window": "2018-09-04 .. 2020-12-31（业绩预告源端起点）",
+        "validation_window": "2021-01-01 .. 2024-12-31（须单独授权）",
+        "frozen_window": "2025-01-01 及以后（冻结，未解锁）",
+        "engine_hard_freeze": "每个输入帧硬校验 ≤ 2024-12-31（assert_frozen）"
+      },
+      "source_path": "artifacts/runs/20260922T002611-eventfam-attrib2-eed5cf/tmp/runner_attrib2.py; docs/quant_stage_plan_20260922/03_governance.json; AGENTS.md",
+      "source_section": "runner_attrib2.py 第76-77行（DEV_START/DEV_END、B_DEV_FIRST/LAST）、第185行（WARM_START）、第316-337行（按 DEV 过滤、assert_frozen）；governance.data；AGENTS.md 3（默认研究范围沿用 2015–2024）",
+      "source_commit": "ae226d9",
+      "authority": "conflicting",
+      "mutable_in_stage": false,
+      "approved_by_reference": null,
+      "note": "AGENTS.md 3 把 2015–2024 整体当默认研究范围；主计划 2.1 把 2021–2024 划为须专门授权的验证区。见 conflict C-12。"
+    },
+    "label_boundary": {
+      "value": {
+        "rule": "固定 20 个自身交易日的收益标签必须记录真实终点；窗口不完整的事件保留并标 window_complete=false，且标 crosses_dev_boundary；完整窗口均值只统计完整窗口",
+        "comparator": "同日、同起止市场的成对比较；不得用各自第 20 个自身交易日冒充同一市场窗口",
+        "hold_age_vs_label": "策略持有年龄按自身交易日；评价另给固定市场日口径，二者不混同"
+      },
+      "source_path": "docs/quant_stage_plan_20260922/04_evidence_spec.md; src/quant/research/attribution_lib.py; artifacts/runs/20260922T002611-eventfam-attrib2-eed5cf/tmp/runner_attrib2.py",
+      "source_section": "04_evidence_spec.md 第9节（event_returns 与 window_complete/n_market_sessions/n_own_sessions）；attribution_lib.py 第5-23行（tr_window 显式终点、DEV_END_DEFAULT）与 complete_stats；runner_attrib2.py 第14-16行（Dev 统计不能读 2021+ 价格）",
+      "source_commit": "工作树未提交（attribution_lib.py 为新增未跟踪文件）",
+      "authority": "stage_plan",
+      "mutable_in_stage": false,
+      "approved_by_reference": "docs/quant_stage_plan_20260922/01_master_plan.md 6（边界处理）"
+    },
+    "current_user_authorization": {
+      "value": {
+        "authorized": ["C0 现状接管与文档交付", "在 docs/evidence/trust-rebuild/<C0-run>/ 新建证据文档", "起草 AGENTS.md 与主计划的最小修订提案（不合入）"],
+        "forbidden": ["修改 src/ 或 tests/ 任何代码", "运行任何回测/策略/因子计算", "读取 2021 年以后行情数据或任何 Val 收益", "git commit / push / stash / reset / clean", "修改 AGENTS.md 本体", "覆盖 data/_meta/sha256.tsv 等旧证据", "进入 C1 及以后阶段"],
+        "governance_env": "docs/quant_stage_plan_20260922/03_governance.json authorized_execution_stages = []（建议稿，未部署）"
+      },
+      "source_path": "docs/quant_stage_plan_20260922/prompts/01_start_C0.md; docs/quant_stage_plan_20260922/01_master_plan.md; docs/quant_stage_plan_20260922/03_governance.json",
+      "source_section": "01_start_C0.md 第3、7、16、18行；主计划 18（本次先交付计划包……只启动 C0）与 2.1 实盘与隐私行；governance.authorized_execution_stages",
+      "source_commit": "ae226d9",
+      "authority": "user_explicit",
+      "mutable_in_stage": false,
+      "approved_by_reference": "docs/quant_stage_plan_20260922/prompts/01_start_C0.md",
+      "note": "本轮授权只来自执行包内的首条实施指令；仓库内没有第二份独立授权文件。"
+    }
+  },
+  "unknown_or_unresolved": [
+    {"field": "fee_schema.rounding_rule", "status": "BLOCKING", "why": "合同文本与治理配置均未冻结；实现为无舍入 float"},
+    {"field": "entry_price_policy", "status": "OPEN_FOR_C3", "why": "文档合同（×1.01 为限价）与实现事实（×1.01 仅为签发门槛，限价=锚价）不一致"},
+    {"field": "universe_permission.chinext", "status": "NEEDS_USER", "why": "排除创业板的依据是 2026-09-17 会话判断，仓库内无账户权限证据"},
+    {"field": "dev_range.validation_window", "status": "CONFLICT", "why": "AGENTS 把 2021–2024 当默认研究范围，主计划要求单独授权"}
+  ]
+}

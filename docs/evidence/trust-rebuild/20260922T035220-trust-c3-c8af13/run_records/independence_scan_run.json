@@ -1,0 +1,62 @@
+{
+ "schema_version": "1.0",
+ "run_id": "20260922T035220-trust-c3-c8af13-independence_scan_run",
+ "kind": "engineering_run",
+ "status": "completed",
+ "stage_id": "C3",
+ "command": [
+  "grep",
+  "-nE",
+  "^(import|from)",
+  "src/quant/research/reference_matcher.py",
+  "src/quant/research/reference_matcher_reconcile.py"
+ ],
+ "cwd": "D:\\量化",
+ "started_at_utc": "2026-09-21T20:37:00Z",
+ "ended_at_utc": "2026-09-21T20:37:00.300000Z",
+ "wall_seconds": 0.3,
+ "exit_code": 0,
+ "digest_rule": "code/config identity = sha256 over the newline-joined per-file SHA256 digests of *_files, in listed order",
+ "code_sha256_at_start": "7c3cf75086139236617b6908268f3861f8ba7ebad16c112765f43b880124fd78",
+ "code_sha256_at_end": "7c3cf75086139236617b6908268f3861f8ba7ebad16c112765f43b880124fd78",
+ "code_files": [
+  "src/quant/research/reference_matcher.py",
+  "src/quant/research/reference_matcher_reconcile.py",
+  "src/quant/research/c3_semantic_chain.py",
+  "tests/test_reference_matcher.py",
+  "tests/test_reference_matcher_state.py"
+ ],
+ "config_sha256_at_start": "1d046730ed944859923cdc0732ba74b6505c556363ba61c0f1032ad4181f780c",
+ "config_sha256_at_end": "1d046730ed944859923cdc0732ba74b6505c556363ba61c0f1032ad4181f780c",
+ "config_files": [
+  "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/interface_contract.json",
+  "docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/contract_snapshot.json"
+ ],
+ "config_files_sha256_at_start": [
+  "c2ede2442f5921e45c616dbb8b18264a14ab04b47d0f38000e74d57a33fab93f",
+  "7a62c8ff09fa65b56ee8fa02031f1c4c7201dc483ce3b3182647e1a4c208fe58"
+ ],
+ "config_files_sha256_at_end": [
+  "c2ede2442f5921e45c616dbb8b18264a14ab04b47d0f38000e74d57a33fab93f",
+  "7a62c8ff09fa65b56ee8fa02031f1c4c7201dc483ce3b3182647e1a4c208fe58"
+ ],
+ "input_manifest_sha256": "d9543c7190712fef78f7dc410c9643ae7857a640b6bd799ee1409f372509812e",
+ "expected_arms": [
+  "matcher_independence"
+ ],
+ "actual_arms": [
+  "matcher_independence"
+ ],
+ "resource_usage": {
+  "peak_rss_mb": null,
+  "note": "not sampled this round"
+ },
+ "stdout_path": null,
+ "stderr_path": null,
+ "junit_path": null,
+ "outputs": [
+  "docs/evidence/trust-rebuild/20260922T035220-trust-c3-c8af13/matcher_independence.md"
+ ],
+ "approval_reference": "implementation self-run; not an approval",
+ "note": "C3-01: zero quant.backtest/quant.portfolio imports in reference_matcher.py and reference_matcher_reconcile.py (AST-verified; regex hits are docstring text only)"
+}

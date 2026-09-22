@@ -575,6 +575,8 @@ def test_06b_real_600000_corp_actions():
     read-only; bars are synthetic around the real ex-dates."""
     root = Path(__file__).resolve().parents[1]
     bundle = root / 'data/processed/rqalpha-bundle-v2-1-20260918'
+    if not (bundle / 'split_factor.h5').is_file():
+        pytest.skip('rqalpha corporate-action bundle not available (data/ is not in git)')
     splits_all, _ = load_split_factor_h5(bundle / 'split_factor.h5')
     divs_all, _ = load_dividends_h5(bundle / 'dividends.h5')
     splits = splits_all.filter(pl.col('symbol') == 'sh.600000')

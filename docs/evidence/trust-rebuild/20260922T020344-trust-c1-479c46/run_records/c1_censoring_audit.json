@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20260922T020344-trust-c1-479c46",
+  "kind": "audit",
+  "status": "completed",
+  "stage_id": "C1",
+  "command": [
+    ".venv/Scripts/python.exe",
+    "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/censoring_audit.py"
+  ],
+  "cwd": "D:\\量化",
+  "started_at_utc": "2026-09-21T18:30:58.584682Z",
+  "ended_at_utc": "2026-09-21T18:31:01.507941Z",
+  "wall_seconds": 2.924,
+  "exit_code": 0,
+  "code_sha256_at_start": "cc2a6f701b333816a2ebba2a7b155984faf912d61064c744a8acdc3ff07f1026",
+  "code_sha256_at_end": "cc2a6f701b333816a2ebba2a7b155984faf912d61064c744a8acdc3ff07f1026",
+  "code_files": [
+    "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/censoring_audit.py",
+    "src/quant/data/dev_sandbox.py",
+    "src/quant/data/temporal_contract.py"
+  ],
+  "config_sha256_at_start": "6eaf155ea23790581bb01e0af91471cbeb55145bd2ca17af1c9e59e66f887c80",
+  "config_sha256_at_end": "6eaf155ea23790581bb01e0af91471cbeb55145bd2ca17af1c9e59e66f887c80",
+  "config_files": [
+    "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/interface_contract.json"
+  ],
+  "config_files_sha256_at_start": [
+    "c2ede2442f5921e45c616dbb8b18264a14ab04b47d0f38000e74d57a33fab93f"
+  ],
+  "config_files_sha256_at_end": [
+    "c2ede2442f5921e45c616dbb8b18264a14ab04b47d0f38000e74d57a33fab93f"
+  ],
+  "input_manifest_sha256": null,
+  "expected_arms": [
+    "censoring_audit_csv"
+  ],
+  "actual_arms": [
+    "censoring_audit_csv"
+  ],
+  "resource_usage": {
+    "peak_rss_mb": 1199.6,
+    "memory_samples": 14,
+    "workers": 1
+  },
+  "stdout_path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/logs/c1_censoring_audit.stdout.txt",
+  "stderr_path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/logs/c1_censoring_audit.stderr.txt",
+  "junit_path": null,
+  "outputs": [
+    "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/censoring_audit.csv"
+  ],
+  "approval_reference": null
+}

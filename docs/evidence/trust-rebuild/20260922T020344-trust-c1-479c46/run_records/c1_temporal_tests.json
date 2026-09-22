@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20260922T020344-trust-c1-479c46",
+  "kind": "test_run",
+  "status": "completed",
+  "stage_id": "C1",
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "pytest",
+    "tests/test_temporal_isolation.py",
+    "tests/test_dev_sandbox.py",
+    "--junitxml=docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/temporal_tests.xml",
+    "-q"
+  ],
+  "cwd": "D:\\量化",
+  "started_at_utc": "2026-09-21T18:31:01.670947Z",
+  "ended_at_utc": "2026-09-21T18:31:02.722975Z",
+  "wall_seconds": 1.052,
+  "exit_code": 0,
+  "code_sha256_at_start": "72b3bf7067069b91af9c8a4476a26746d6296ea75cb1d229c24b66cc71f88f38",
+  "code_sha256_at_end": "72b3bf7067069b91af9c8a4476a26746d6296ea75cb1d229c24b66cc71f88f38",
+  "code_files": [
+    "src/quant/data/dev_sandbox.py",
+    "src/quant/data/dev_sandbox_export.py",
+    "src/quant/data/temporal_contract.py",
+    "tests/test_dev_sandbox.py",
+    "tests/test_temporal_isolation.py"
+  ],
+  "config_sha256_at_start": "6eaf155ea23790581bb01e0af91471cbeb55145bd2ca17af1c9e59e66f887c80",
+  "config_sha256_at_end": "6eaf155ea23790581bb01e0af91471cbeb55145bd2ca17af1c9e59e66f887c80",
+  "config_files": [
+    "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/interface_contract.json"
+  ],
+  "config_files_sha256_at_start": [
+    "c2ede2442f5921e45c616dbb8b18264a14ab04b47d0f38000e74d57a33fab93f"
+  ],
+  "config_files_sha256_at_end": [
+    "c2ede2442f5921e45c616dbb8b18264a14ab04b47d0f38000e74d57a33fab93f"
+  ],
+  "input_manifest_sha256": null,
+  "expected_arms": [
+    "temporal_tests_xml",
+    "stdout_log"
+  ],
+  "actual_arms": [
+    "temporal_tests_xml",
+    "stdout_log"
+  ],
+  "resource_usage": {
+    "peak_rss_mb": 67.9,
+    "memory_samples": 5,
+    "workers": 1
+  },
+  "stdout_path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/logs/c1_pytest.stdout.txt",
+  "stderr_path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/logs/c1_pytest.stderr.txt",
+  "junit_path": null,
+  "outputs": [
+    "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/temporal_tests.xml",
+    "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/logs/c1_pytest.stdout.txt"
+  ],
+  "approval_reference": null
+}

@@ -1,0 +1,286 @@
+{
+  "schema_version": "1.0",
+  "stage_id": "C2",
+  "run_state": "completed",
+  "engineering_state": "accepted",
+  "research_state": "not_evaluated",
+  "implementer_id": "implementation agent I (session: ZCode / new-provider-deepseek-v4.1-flash)",
+  "reviewer_id": "ZCode main session (GLM-5.3), independent of implementer subagent",
+  "authorization_reference": "用户本会话对 C1-C4 工程批次的持续授权；docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/independent_review.md「下一阶段确认」确认 C2 进入条件",
+  "code_commit": "ae226d964b1ea1dccfb60a42ae943c6da8a179e6",
+  "contract_sha256": "c2ede2442f5921e45c616dbb8b18264a14ab04b47d0f38000e74d57a33fab93f",
+  "scope": "C2 only：只重算账本，不重做信号与回测；输入为 run 产物成交/公司行动事件 + C1 Dev 沙箱官方估值；Dev 窗 2015-01-05..2020-12-31",
+  "gate_status_basis": "C2-01..C2-07 为实施者自评（均附可复跑证据）；C2-08 的『独立复跑』属审阅者职责，实施者不自签，因此 C2-08=PENDING_REVIEW，engineering_state=pending。",
+  "evidence": [
+    {
+      "id": "EV-01",
+      "path": "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/reference_independence.md",
+      "sha256": "846deddcdf48528891572a29915430b79266f6892ba41ee6c1aedff9a04edf31",
+      "kind": "independence_scan",
+      "note": "C2-01 导入/加载期独立性扫描"
+    },
+    {
+      "id": "EV-02",
+      "path": "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/hand_calculated_expected.csv",
+      "sha256": "88242aae00bd15b34905ef83582e8d90fd981bf961df8b781c601ab844c9a27b",
+      "kind": "hand_calc",
+      "note": "C2-02 TV-A01..A05 + 4 个扩展手算期望；R1 返工更正 TV-A03 两行（待结算/权益/费用算错），.md 与单测原本即正确",
+      "sha256_superseded": "6482a2d5d00fb768e160fab501804011af2b4c25c2fb6a27ac0f6845c17ea86c"
+    },
+    {
+      "id": "EV-03",
+      "path": "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/hand_calculated_expected.md",
+      "sha256": "11cd47ced98fa39c2dfee3682b82630785878b619700552f855a81ef5b106802",
+      "kind": "hand_calc_notes",
+      "note": "C2-02 手算过程"
+    },
+    {
+      "id": "EV-04",
+      "path": "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/ledger_reconciliation.csv",
+      "sha256": "d5b37315b904e01c851d2855cdacd088803fb3d9956dfdb2fe9258d6890a82de",
+      "kind": "reconciliation_csv",
+      "note": "C2-03/C2-08 逐事件点权益与费用对比"
+    },
+    {
+      "id": "EV-05",
+      "path": "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/cash_reconciliation.csv",
+      "sha256": "707130c64873d660488f4933e7771b52150f6ac3fdf3d5e760e4a1589dea27e0",
+      "kind": "reconciliation_csv",
+      "note": "C2-04 现金三分离复算对比"
+    },
+    {
+      "id": "EV-06",
+      "path": "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/fee_type_reconciliation.csv",
+      "sha256": "601c0b494c7d279e4cbeb9ba9d4ba03fb9ba4a5af9cafe3c8b71be5024437665",
+      "kind": "reconciliation_csv",
+      "note": "C2-03 逐类费用对账"
+    },
+    {
+      "id": "EV-07",
+      "path": "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/corporate_action_reconciliation.csv",
+      "sha256": "cc9a8a9b3f254382ba988073d17757d9e6a7e63fd44a959f735cf657e6e18233",
+      "kind": "reconciliation_csv",
+      "note": "C2-05 公司行动复算对照"
+    },
+    {
+      "id": "EV-08",
+      "path": "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/coverage_manifest.json",
+      "sha256": "22071fb4b0aa70a11f87d76e3cb6ada7cb10cee3a660f32a5dd498f69982456f",
+      "kind": "coverage_manifest",
+      "note": "C2-06 10 臂覆盖清单（文件+SHA256+命令+耗时）"
+    },
+    {
+      "id": "EV-09",
+      "path": "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/ledger_tests.xml",
+      "sha256": "0a38a7709708e571be7e0d9975a4e67766304259590ab5d117eb4780dfcb7904",
+      "kind": "junit",
+      "note": "C2-07 参考账本测试（26 tests / 0 failures / 0 skipped）"
+    },
+    {
+      "id": "EV-10",
+      "path": "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/run_records/reconcile_run.json",
+      "sha256": "a7385bb210f86ba0f8232db79de848832d5ff025101989bc9b36339447956a5c",
+      "kind": "run_record",
+      "note": "对账实跑记录"
+    },
+    {
+      "id": "EV-11",
+      "path": "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/run_records/tests_run.json",
+      "sha256": "d13934db1368fdab2d9a68bdf93acbdaf942e46763c7978d19e7e2ae9d79a94b",
+      "kind": "run_record",
+      "note": "测试实跑记录"
+    },
+    {
+      "id": "EV-12",
+      "path": "src/quant/research/reference_ledger.py",
+      "sha256": "5bfa1362ad252a1297ec9db0a489c527ca227acd4ee29bc4b432b71cbf020beb",
+      "kind": "reference_source",
+      "note": "参考账本核心（纯标准库）"
+    },
+    {
+      "id": "EV-13",
+      "path": "src/quant/research/reference_ledger_reconcile.py",
+      "sha256": "2095cbf0a643f8d874e158ee962e49d053c3c7c83ad52babd8c42f7459878660",
+      "kind": "reference_source",
+      "note": "对账驱动（IO/编排）"
+    },
+    {
+      "id": "EV-14",
+      "path": "tests/test_reference_ledger.py",
+      "sha256": "9fd3da32293b119f2698f2b45fd504893d795f652151be210f15b581c93354ba",
+      "kind": "test_source",
+      "note": "A 表/C 表/专项/单调性测试"
+    },
+    {
+      "id": "EV-15",
+      "path": "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/reconcile_summary.json",
+      "sha256": "5f0b9101c8bdd41e8616f2d45efdf61e705bc494a297a13a3d9940625dcaec49",
+      "kind": "reconciliation_summary",
+      "note": "10 臂差异汇总（两条数值口径）"
+    },
+    {
+      "id": "EV-16",
+      "path": "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/implementer_rerun_and_diff_analysis.md",
+      "sha256": "2a9018a5f4c8b3b1a895cd52e47fc0af894c48c0ceadb6dae398082964bf0717",
+      "kind": "diff_analysis",
+      "note": "差异分类与根因（实施者复算）"
+    },
+    {
+      "id": "EV-100",
+      "path": "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/independent_review.md",
+      "sha256": "bd7021d6cc9013b93a548b3af4f168bf9800561875864c6889e527b0fb1471e6",
+      "kind": "independent_review",
+      "covers": [
+        "C2-08"
+      ]
+    },
+    {
+      "id": "EV-101",
+      "path": "docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/reviewer_rerun_ledger.xml",
+      "sha256": "7b15642c130be812b01172708068f7d44dc40dd125257b4588eb925775c3ab1a",
+      "kind": "junit",
+      "covers": [
+        "C2-07"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "gate_id": "C2-01",
+      "status": "PASS",
+      "requirement": "独立账本，核心会计函数未调用主引擎",
+      "evidence_ids": [
+        "EV-01",
+        "EV-12",
+        "EV-13",
+        "EV-16"
+      ],
+      "basis": "AST 导入枚举：reference_ledger.py 仅标准库（dataclasses/datetime/decimal/typing）；加载期 sys.modules 无 quant.backtest/quant.portfolio；驱动新增依赖仅 polars 与 quant.data.dev_sandbox（IO 层）。"
+    },
+    {
+      "gate_id": "C2-02",
+      "status": "PASS",
+      "requirement": "手算期望先于主引擎结果形成",
+      "evidence_ids": [
+        "EV-02",
+        "EV-03",
+        "EV-14",
+        "EV-09"
+      ],
+      "basis": "TV-A01..A05 期望值取自 05_test_vectors.md:7/9/11/13/15（2026-09-21 冻结，早于主引擎结果）；实施者另加 4 个手算案例（FIFO 多次卖出、分红后卖出、送转零股/整手、结算时序正反例）。"
+    },
+    {
+      "gate_id": "C2-03",
+      "status": "PASS",
+      "requirement": "固定成交费用与现金逐分对账",
+      "evidence_ids": [
+        "EV-04",
+        "EV-06",
+        "EV-11",
+        "EV-15"
+      ],
+      "basis": "3319 笔成交逐笔对账：佣金 1 笔、印花 7 笔相差 0.01（半分边界 float 表示），其余逐笔与总额一致；日权益精确口径最大差 3.6e-10，逐笔舍入口径最大差 0.14（舍入位置差）。"
+    },
+    {
+      "gate_id": "C2-04",
+      "status": "PASS",
+      "requirement": "待结算与可用现金无重复计入",
+      "evidence_ids": [
+        "EV-05",
+        "EV-04"
+      ],
+      "basis": "现金三分离（free_settled/unsettled_sale_proceeds/am_to_pm）逐日复算；权益=cash_total+mv 恒等式逐日成立；run 产物含 settled/pending_next_day/pending_am_to_pm 三列，无需补中间状态。"
+    },
+    {
+      "gate_id": "C2-05",
+      "status": "PASS",
+      "requirement": "分红/送转/零股及批次数量正确",
+      "evidence_ids": [
+        "EV-07",
+        "EV-09",
+        "EV-14"
+      ],
+      "basis": "146 条公司行动事件（21 送转+125 分红）ratio/cash/shares 差异全 0；零股当日可卖与整手次日可卖各有单元测试；FIFO 消耗有手算用例。"
+    },
+    {
+      "gate_id": "C2-06",
+      "status": "PASS",
+      "requirement": "所选真实 run 全部事件已覆盖",
+      "evidence_ids": [
+        "EV-08"
+      ],
+      "basis": "coverage_manifest：10 个已列名臂，14620 日记录 + 3319 成交 + 146 公司行动全部复算（n_events_covered=n_events）；每个输入产物登记 SHA256 与复算命令/耗时。"
+    },
+    {
+      "gate_id": "C2-07",
+      "status": "PASS",
+      "requirement": "固定路径费用压力单调性通过",
+      "evidence_ids": [
+        "EV-09",
+        "EV-14",
+        "EV-101"
+      ],
+      "basis": "ledger_tests.xml：26 tests / 0 failures / 0 errors / 0 skipped；含 TV-B30 固定成交序列费用上调后末权益不增（佣金、印花两方向）。"
+    },
+    {
+      "gate_id": "C2-08",
+      "status": "PASS",
+      "requirement": "独立复跑且无未解释金额/数量差",
+      "evidence_ids": [
+        "EV-100"
+      ],
+      "basis": "实施者复算：未解释金额差/股数差/结算时序差=0；剩余 0.01 级差已逐条定位到 float 表示节点（EV-16 §3）。独立复跑与费用/分红/多批卖出亲算属审阅者职责，实施者不自签，故 PENDING_REVIEW。"
+    }
+  ],
+  "open_issues": [
+    {
+      "issue_id": "C2-OBS-01",
+      "severity": "MINOR",
+      "status": "closed",
+      "title": "估值 mark 的 carry-forward 口径",
+      "detail": "合同 valuation.mark 只写『官方日线 close』，未写明停牌处理；主引擎实现为 tradestatus!=0 行的 on/before carry-forward。参考账本初版用当日原始 close 导致 3 臂 18-544 元市值差，按引擎口径对齐后精确残差回到 float eps。登记为合同文字欠明确，建议 C4 在合同文本补一句。"
+    },
+    {
+      "issue_id": "C2-OBS-02",
+      "severity": "MINOR",
+      "status": "closed",
+      "title": "逐笔舍入口径与主引擎无舍入的表示差",
+      "detail": "合同要求参考逐笔 ROUND_HALF_UP 到分，主引擎全程 float 不舍入；日终权益因此差至多 0.14 元。精确口径残差 3.6e-10 证明非经济差。是否接受该表示差由审阅者结论。"
+    },
+    {
+      "issue_id": "C2-OBS-03",
+      "severity": "MINOR",
+      "status": "closed",
+      "title": "任务书「9 个对账目标」与列名臂数不一致",
+      "detail": "逐项列出的臂为 3+4+3=10；本阶段覆盖全部 10 个已列名臂并在 coverage_manifest 记 targets_covered=10。"
+    },
+    {
+      "issue_id": "C2-OBS-04",
+      "severity": "INFO",
+      "status": "open",
+      "title": "FIFO 与策略逐批风险意图的语义错配",
+      "detail": "合同 p3 §7.7-m2 规定部分卖出按 FIFO 消耗，而策略层按逐批风险意图管理；本阶段只按合同 FIFO 复算，未裁定该错配是否影响含多批策略。按主计划 7 转 C3/C4 登记，本阶段不自行修改。"
+    }
+  ],
+  "run_records": [
+    "EV-10",
+    "EV-11"
+  ],
+  "independent_review_evidence_id": "EV-100",
+  "limitations": [
+    "只重算账本：不验证成交是否应发生、不重做信号与撮合（C3 范围）。",
+    "所选 10 臂全部是股票腿（is_etf 全 False），未覆盖 ETF 印花豁免与 T+0 路径的真实数据，仅由合成单测覆盖。",
+    "2023-08-28 印花分段在 Dev 窗内不出现，用合成测试 TV-A03 覆盖边界。",
+    "参考账本与主引擎共享同一份合同文字与同一数据源，独立性不等于绝对第三方（主计划 3.1）。",
+    "run 产物不提供逐日逐证券持仓与逐笔已实现/未实现损益，故 realized/unrealized pnl 未对账，仅对现金/市值/权益与期末持仓。",
+    "C2-08 的独立复跑未由实施者完成；engineering_state=pending，本报告不构成阶段验收。"
+  ],
+  "next_stage_authorized": false,
+  "post_stage_corrections": [
+    {
+      "round": "R1",
+      "date": "2026-09-22",
+      "summary": "① hand_calculated_expected.csv TV-A03 两行算错更正（08-25 待结算 49445→49945、权益→549945；08-28 待结算→49970、权益→549970、费用 55→30）；② 用户追认舍入位置表示差裁定：引擎 float 不舍入 vs 参考 Decimal 逐笔 ROUND_HALF_UP 的日权益差 ≤0.14 元、费用差 ≤0.01 元为数值表示差（精确轨道残差 ~1e-10），C2-03 字面条件闭环"
+    }
+  ]
+}

@@ -374,3 +374,12 @@ preclose 残差（513100 −0.04%、513500 +0.77%）为停牌期间净值漂移�
 **验收标准（全部满足方可 pin v1.4.1）**：新增 ≥3 项契约测试（全 null 跑通且零止盈意图；tp1 null+tp2 有值被拒；tp1 null 下止损/失效/ladder 正常）+ 全量 pytest（460+新增）通过 + 三锚（P3R2 C05 / H2-A0 / F3R3-A0）16 产物逐字节零回归 + 独立复核 APPROVE。双签链沿 §10.7 惯例；pin 后 F4R2 恢复运行。
 
 **实施与双签记录（2026-09-20，pin 依据）**：实施代理落地全部五条语义（引擎 5 处改动：docstring、_ZONES_REQUIRED、_validate_zones 验证块改 row.get + tp2 嵌入 tp1 分支、rows 组装与 tp_specs 条件发射），新增 t30/t31/t32 三项测试；全量 **463 passed**（主对话复核亲跑 21.7s/14.5s 两次）；探针重跑 null/缺列形式 RAN 且零止盈意图、NaN 仍按供值非法拒绝。三锚 16/16 逐字节 BYTE-EQUAL。主对话验收追加：版本标签裁定推进 `band_engine v1.4.1`（实施代理因 t21 硬断言停留 v1.4，主对话亲改引擎常量与 t21 断言两处，标签版重跑 463 通过，锚 3 以新 sha 复放 5/5 逐字节）。独立复核（缩放范围：diff+语义+新测试+锚证据）八项全 PASS，W9 手工重推逐分吻合（期末现金 198708.74），**APPROVE**。**pin v1.4.1 = sha256 `a01cb29ce4cf214814dd51679295f70ac780dc5dffb270ea1f0a466b0675abf3`**（200,562 字节）。MINOR 附注（不阻塞）：①复核发现锚 1/2 产于标签前版本 c5c07303…、无法对最终 sha 逐字节重放（无 Git），由锚 3 直接复验 + stats 唯一可见差异即被剔除的 engine_version 字段间接闭合，接受并如实记录；②rerun 探针 JSON 的 frame_level_feasible=false 为旧判定规则残留字段，行为面证据以 t30/t31 为准；③主对话创建的空目录 outputs/anchor3_relabel 已清理。NaN 形式禁用不可用（供值非法），F4R2 运行层使用 null 或整列缺省形式。
+
+## 11. 合同文本修订：停牌/无行情日估值 mark 口径（2026-09-22，C4-DEF-03）
+
+- 性质：**追加修订**，不改 §1–§10 任何已冻结语义、费率或成交规则；只把既有实现事实的估值 mark 口径写进合同文本。
+- 动机（C2 复算证据）：C2 独立参考账本按合同文字"mark 一律用 baostock 官方日线 close"直接取**当日**原始 close，与主引擎出现 3 个臂 18–544 元市值差；把参考实现改为**同一 carry-forward 口径**后精确口径残差回到 float eps，逐日权益对账通过。证据与示例见 `docs/evidence/trust-rebuild/20260922T025434-trust-c2-a17b3e/implementer_rerun_and_diff_analysis.md` §4.1（示例 `sz.002437` 2018-07-18 raw close 6.19、停牌 carry-forward 6.20）。C2 独立审阅把该项列为 **C2-OBS-01，转 C4 合同文本修订**。
+- 修订语义（与引擎实现一致，非新规则）：**估值的 mark = 该标的在 day（含 day 之前最近一个）`tradestatus` 为可交易日的官方日线 close**，即停牌/无行情日按最近可得的官方收盘 **carry-forward**，不使用停牌日原始行中失真的 close，也永不使用 `pm.close`。§7.4 的"15:00 决策锚与每日估值一律用 baostock 官方日线 close"与 §8.5 的"每日权益 = 现金 + Σ股票×官方收盘 + ΣETF×官方收盘"按本句解释。
+- 边界：本修订只澄清**估值**口径；决策锚、成交价、限价合法性、K=3 兜底语义逐字不变（§1.2、§7.2、§7.7）。ETF 腿（§8）的估值同受本句约束。
+- 实现位置（只读引用，不改码）：`src/quant/backtest/band_engine.py` 的 `mark_close`（"Official close on/before day"）与 `_build_series` 的 `trade_close`（`tradestatus` 掩码）。
+- 同步：C1 `interface_contract.json` 的 `tables.ledger_snapshots.valuation` 段已按本句修订（schema_version 1.0 → 1.1，另加 `amendments` 记录；文件为 C1 未提交新文件）。

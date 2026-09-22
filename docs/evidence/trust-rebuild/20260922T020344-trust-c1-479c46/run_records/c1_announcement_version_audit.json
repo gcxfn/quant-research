@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20260922T020344-trust-c1-479c46",
+  "kind": "audit",
+  "status": "completed",
+  "stage_id": "C1",
+  "command": [
+    ".venv/Scripts/python.exe",
+    "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/announcement_version_audit.py"
+  ],
+  "cwd": "D:\\量化",
+  "started_at_utc": "2026-09-21T18:30:57.584703Z",
+  "ended_at_utc": "2026-09-21T18:30:58.424873Z",
+  "wall_seconds": 0.84,
+  "exit_code": 0,
+  "code_sha256_at_start": "c3c83c92a1247dc5c5006fdc1ba48b598b472a01c194619845f16a6899775392",
+  "code_sha256_at_end": "c3c83c92a1247dc5c5006fdc1ba48b598b472a01c194619845f16a6899775392",
+  "code_files": [
+    "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/announcement_version_audit.py",
+    "src/quant/data/dev_sandbox.py",
+    "src/quant/data/dev_sandbox_export.py",
+    "src/quant/data/temporal_contract.py"
+  ],
+  "config_sha256_at_start": "6eaf155ea23790581bb01e0af91471cbeb55145bd2ca17af1c9e59e66f887c80",
+  "config_sha256_at_end": "6eaf155ea23790581bb01e0af91471cbeb55145bd2ca17af1c9e59e66f887c80",
+  "config_files": [
+    "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/interface_contract.json"
+  ],
+  "config_files_sha256_at_start": [
+    "c2ede2442f5921e45c616dbb8b18264a14ab04b47d0f38000e74d57a33fab93f"
+  ],
+  "config_files_sha256_at_end": [
+    "c2ede2442f5921e45c616dbb8b18264a14ab04b47d0f38000e74d57a33fab93f"
+  ],
+  "input_manifest_sha256": null,
+  "expected_arms": [
+    "announcement_audit_csv",
+    "b1_spotcheck_csv"
+  ],
+  "actual_arms": [
+    "announcement_audit_csv",
+    "b1_spotcheck_csv"
+  ],
+  "resource_usage": {
+    "peak_rss_mb": 138.0,
+    "memory_samples": 4,
+    "workers": 1
+  },
+  "stdout_path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/logs/c1_announcement_audit.stdout.txt",
+  "stderr_path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/logs/c1_announcement_audit.stderr.txt",
+  "junit_path": null,
+  "outputs": [
+    "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/announcement_version_audit.csv",
+    "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/b1_102_field_spotcheck.csv"
+  ],
+  "approval_reference": null
+}

@@ -1,0 +1,30 @@
+[variant=None] provider rows at 6 decision points; engine order rows at 2; orders_generated=2; fills=2
+    engine_full[2020-03-02 am] = [["sh.600001-buy-2020-03-02-am", 10.04, 4900, "filled_limit_buy"]]
+    engine_full[2020-03-03 am] = [["sh.600001-sell/risk-2020-03-03-am", 10.1404, 4900, "filled_limit_sell"]]
+    provider[2020-03-02 am] = [{"decision_date": "2020-03-02", "decision_session": "am", "exit_reason": null, "expiry_date": null, "intent": "", "priority": 1, "side": "buy", "source_signal": "2020-03-02", "symbol": "sh.600001", "target_notional": 50000.0, "target_weight": null}]
+    provider[2020-03-02 pm] = []
+    provider[2020-03-03 am] = [{"decision_date": "2020-03-03", "decision_session": "am", "exit_reason": "account_trim", "expiry_date": null, "intent": "risk", "priority": 1000000, "side": "sell", "source_signal": "2020-03-03", "symbol": "sh.600001", "target_notional": 0.0, "target_weight":
+    provider[2020-03-03 pm] = []
+    provider[2020-03-04 am] = []
+    provider[2020-03-04 pm] = []
+[variant=pm_of_d2] provider rows at 6 decision points; engine order rows at 4; orders_generated=4; fills=2
+    engine_full[2020-03-02 am] = [["sh.600001-buy-2020-03-02-am", 10.04, 4900, "filled_limit_buy"]]
+    engine_full[2020-03-03 am] = [["sh.600001-sell/risk-2020-03-03-am", 10.1404, null, "void_limit_out_of_range"]]
+    engine_full[2020-03-03 pm] = [["sh.600001-sell/risk-2020-03-03-pm", 13.13, null, "void_limit_out_of_range"]]
+    engine_full[2020-03-04 am] = [["sh.600001-sell/risk-2020-03-04-am", 10.2408, 4900, "filled_limit_sell"]]
+    provider[2020-03-02 am] = [{"decision_date": "2020-03-02", "decision_session": "am", "exit_reason": null, "expiry_date": null, "intent": "", "priority": 1, "side": "buy", "source_signal": "2020-03-02", "symbol": "sh.600001", "target_notional": 50000.0, "target_weight": null}]
+    provider[2020-03-02 pm] = []
+    provider[2020-03-03 am] = [{"decision_date": "2020-03-03", "decision_session": "am", "exit_reason": "account_trim", "expiry_date": null, "intent": "risk", "priority": 1000000, "side": "sell", "source_signal": "2020-03-03", "symbol": "sh.600001", "target_notional": 0.0, "target_weight":
+    provider[2020-03-03 pm] = [{"decision_date": "2020-03-03", "decision_session": "pm", "exit_reason": "account_trim", "expiry_date": null, "intent": "risk", "priority": 1000000, "side": "sell", "source_signal": "2020-03-03", "symbol": "sh.600001", "target_notional": 0.0, "target_weight":
+    provider[2020-03-04 am] = [{"decision_date": "2020-03-04", "decision_session": "am", "exit_reason": "account_trim", "expiry_date": null, "intent": "risk", "priority": 1000000, "side": "sell", "source_signal": "2020-03-03", "symbol": "sh.600001", "target_notional": 0.0, "target_weight":
+    provider[2020-03-04 pm] = []
+[variant=am_of_d2] provider rows at 6 decision points; engine order rows at 3; orders_generated=3; fills=2
+    engine_full[2020-03-02 am] = [["sh.600001-buy-2020-03-02-am", 10.04, 4900, "filled_limit_buy"]]
+    engine_full[2020-03-03 am] = [["sh.600001-sell/risk-2020-03-03-am", 7.07, null, "void_limit_out_of_range"]]
+    engine_full[2020-03-03 pm] = [["sh.600001-sell/risk-2020-03-03-pm", 10.201, 4900, "filled_limit_sell"]]
+    provider[2020-03-02 am] = [{"decision_date": "2020-03-02", "decision_session": "am", "exit_reason": null, "expiry_date": null, "intent": "", "priority": 1, "side": "buy", "source_signal": "2020-03-02", "symbol": "sh.600001", "target_notional": 50000.0, "target_weight": null}]
+    provider[2020-03-02 pm] = []
+    provider[2020-03-03 am] = [{"decision_date": "2020-03-03", "decision_session": "am", "exit_reason": "account_trim", "expiry_date": null, "intent": "risk", "priority": 1000000, "side": "sell", "source_signal": "2020-03-03", "symbol": "sh.600001", "target_notional": 0.0, "target_weight":
+    provider[2020-03-03 pm] = [{"decision_date": "2020-03-03", "decision_session": "pm", "exit_reason": "account_trim", "expiry_date": null, "intent": "risk", "priority": 1000000, "side": "sell", "source_signal": "2020-03-03", "symbol": "sh.600001", "target_notional": 0.0, "target_weight":
+    provider[2020-03-04 am] = []
+    provider[2020-03-04 pm] = []

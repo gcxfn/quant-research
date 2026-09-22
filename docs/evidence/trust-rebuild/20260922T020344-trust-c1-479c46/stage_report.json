@@ -1,0 +1,474 @@
+{
+  "schema_version": "1.0",
+  "stage_id": "C1",
+  "run_state": "completed",
+  "engineering_state": "accepted",
+  "research_state": "not_evaluated",
+  "implementer_id": "implementation agent I (session: ZCode / new-provider-deepseek-v4.1-flash)",
+  "reviewer_id": "ZCode main session (GLM-5.3), independent of implementer subagent",
+  "authorization_reference": "docs/evidence/trust-rebuild/20260922T013755-trust-c0-c17494/independent_review.md「下一阶段确认」（C1 进入条件与三项强制项）+ 用户本会话对 C1-C4 工程批次的持续授权",
+  "code_commit": "ae226d964b1ea1dccfb60a42ae943c6da8a179e6",
+  "contract_sha256": "5bef41594fc0be5aa6ed1064fbe2d280223170e4ecf63a41af81238838b1e053",
+  "scope": "C1 only; Dev window 2015-01-05..2020-12-31（含 2014-03 起预热仅作特征历史）；未跑回测/策略，未输出 2021+ 统计",
+  "gate_status_basis": "C1-01..C1-08 取自 02_acceptance_matrix.csv 的交付物门；状态为实施者自评（均附证据），独立审阅未发生，因此 engineering_state=pending，不由实施者代签。",
+  "evidence": [
+    {
+      "id": "EV-01",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/interface_contract.json",
+      "sha256": "5bef41594fc0be5aa6ed1064fbe2d280223170e4ecf63a41af81238838b1e053",
+      "kind": "interface_contract",
+      "note": "C1-07 冻结接口合同；R1 返工回刷：C4 A-01 升版 schema1.1（旧哈希见 sha256_superseded）",
+      "sha256_superseded": "c2ede2442f5921e45c616dbb8b18264a14ab04b47d0f38000e74d57a33fab93f"
+    },
+    {
+      "id": "EV-02",
+      "path": "data/processed/dev-sandbox-20260922/dataset_manifest.json",
+      "sha256": "9fd31b0db7e7dde8178e99c75e997dcd64df2e94fde1a4b45929dad2d8efbb18",
+      "kind": "dataset_manifest",
+      "note": "C1-01 Dev 沙箱身份与窗口自检；R1 返工回刷（contract_sha256 字段升版，数据字节未变）",
+      "sha256_superseded": "b9107c8309e0e98bf622b88e4553a6d048c9f8b3d0fb68510597cbae4890bb49"
+    },
+    {
+      "id": "EV-03",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/data_cards.md",
+      "sha256": "1004d0ec138b06edfb833cc876c7992b2810f30466c17efd1480b5244ebcbd53",
+      "kind": "data_card",
+      "note": "C1-05 逐类数据卡"
+    },
+    {
+      "id": "EV-04",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/announcement_version_audit.csv",
+      "sha256": "534d714a1cd81c483a7313638c2d8998bc1689d6ef66de09e8874006cc804288",
+      "kind": "audit_csv",
+      "note": "C1-06 / C1-08 审计明细"
+    },
+    {
+      "id": "EV-05",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/b1_102_field_spotcheck.csv",
+      "sha256": "823b4e94f023a2f900efa9f57c47ac1728adce1f4c3ce6ec0b720ad16c00aa6a",
+      "kind": "audit_csv",
+      "note": "C1-06 / C1-08 审计明细"
+    },
+    {
+      "id": "EV-06",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/announcement_version_audit.py",
+      "sha256": "294a305ccef15b83fda0d956b2298f6a8243ebdcce12c6f7085ec0f0d80bbe59",
+      "kind": "audit_script",
+      "note": "审计脚本（实跑）"
+    },
+    {
+      "id": "EV-07",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/censoring_audit.csv",
+      "sha256": "ff5de2fed9df4aa0773b3ee65b77ce67dd9e93b04872cb7cea35cdecf28c885d",
+      "kind": "audit_csv",
+      "note": "C1-06 / C1-08 审计明细"
+    },
+    {
+      "id": "EV-08",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/censoring_audit.py",
+      "sha256": "66dcbe1eb0154215b68674caa4d553cab354d5590b424cbf139096e16b90b7be",
+      "kind": "audit_script",
+      "note": "审计脚本（实跑）"
+    },
+    {
+      "id": "EV-09",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/temporal_tests.xml",
+      "sha256": "01ee487c0886d375eb98c9ad7ad757debb1950fbc085facdfb1022f23c94e205",
+      "kind": "junit",
+      "note": "C1-02/03/04 结构化测试结果"
+    },
+    {
+      "id": "EV-10",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/sandbox_permission_demo.py",
+      "sha256": "b500dca5931d9514485fe3621b9664de1868f2378022bd00a21527f4cd05fcda",
+      "kind": "demo_script",
+      "note": "沙箱权限演示脚本"
+    },
+    {
+      "id": "EV-11",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/sandbox_permission_demo.log",
+      "sha256": "80f8e47baf5956a2fd3ebb28cf49cb60b513498e67320073b103ebf236c52795",
+      "kind": "demo_log",
+      "note": "沙箱权限演示实跑输出"
+    },
+    {
+      "id": "EV-12",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/test_sources/test_temporal_isolation.py",
+      "sha256": "d535d5cde18ec7194d7a0c73e49efc3066ec5c5f7b1a99ddfd1957e6582419af",
+      "kind": "test_source",
+      "note": "测试源码快照"
+    },
+    {
+      "id": "EV-13",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/test_sources/test_dev_sandbox.py",
+      "sha256": "c3b6868d97c80a4f9aed0ea0d01bd2180c19ff95f2d70e34697bdd885b367769",
+      "kind": "test_source",
+      "note": "测试源码快照"
+    },
+    {
+      "id": "EV-14",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/test_sources/temporal_contract.py",
+      "sha256": "246a6168665852b59c34d857c5abed982b2e44fd2c49037dd921b77e4166b552",
+      "kind": "source_snapshot",
+      "note": "被测源码快照"
+    },
+    {
+      "id": "EV-15",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/test_sources/dev_sandbox.py",
+      "sha256": "428ab24c794db84a992b81818748a4e8fbf5907939fb1a268283f2f4089a80c5",
+      "kind": "source_snapshot",
+      "note": "被测源码快照"
+    },
+    {
+      "id": "EV-16",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/test_sources/dev_sandbox_export.py",
+      "sha256": "a71c3723d21d7b73c46669265cc9bf70d5840e7ebbda6f075d57ee354428037a",
+      "kind": "source_snapshot",
+      "note": "被测源码快照"
+    },
+    {
+      "id": "EV-17",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/test_sources/export_dev_sandbox.py",
+      "sha256": "96a7af2729fe6c5c2a6ea4e981a83514174dd0882a0a126e84d79022695838b6",
+      "kind": "source_snapshot",
+      "note": "被测源码快照"
+    },
+    {
+      "id": "EV-18",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/test_sources/run_record.py",
+      "sha256": "bbae56b1718e201187ddcf9fdc312d3515bfda297e47edcd367856206430732b",
+      "kind": "source_snapshot",
+      "note": "被测源码快照"
+    },
+    {
+      "id": "EV-19",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/run_records/c1_export_dev_sandbox.json",
+      "sha256": "ab6551ab5169d5865e267d4859086cb785f97a843bb74589d549df186699ca3e",
+      "kind": "run_record",
+      "note": "真实执行记录"
+    },
+    {
+      "id": "EV-20",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/run_records/c1_announcement_version_audit.json",
+      "sha256": "978c41fa4e8ca6d477f609a98f938f37fc70b6f926067247ece75f462e0ea9cc",
+      "kind": "run_record",
+      "note": "真实执行记录"
+    },
+    {
+      "id": "EV-21",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/run_records/c1_censoring_audit.json",
+      "sha256": "fd2b8c340a21ca1a3e1e443b38cedbcecd2f60859ca27b1e9e9cfeefab7e0570",
+      "kind": "run_record",
+      "note": "真实执行记录"
+    },
+    {
+      "id": "EV-22",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/run_records/c1_temporal_tests.json",
+      "sha256": "d4ea9edfbb27405e3f6fe0d55f2212007d208f0e37d92954af43172d3ca39b3b",
+      "kind": "run_record",
+      "note": "真实执行记录"
+    },
+    {
+      "id": "EV-23",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/run_records/c1_sandbox_permission_demo.json",
+      "sha256": "920967552af3a6063e67d0ad40244d4fc6235bdb2f9c80a2f2e73abf18731dbb",
+      "kind": "run_record",
+      "note": "真实执行记录"
+    },
+    {
+      "id": "EV-24",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/logs/c1_export.stdout.txt",
+      "sha256": "4d3b6adc93a353912d1f45051d86bf4b13e95a69b4544fecdd1550cbcc0f1b0e",
+      "kind": "command_log",
+      "note": "实际命令 stdout"
+    },
+    {
+      "id": "EV-25",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/logs/c1_announcement_audit.stdout.txt",
+      "sha256": "cffac29ab117ab84fd3a283d45f41f3fc12e60a7feb122557f4f49e369e7d2a7",
+      "kind": "command_log",
+      "note": "实际命令 stdout"
+    },
+    {
+      "id": "EV-26",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/logs/c1_censoring_audit.stdout.txt",
+      "sha256": "65167d000903a2331d6b68bc2b5640f90ca80c385f5772f352c1e6ed657adb9c",
+      "kind": "command_log",
+      "note": "实际命令 stdout"
+    },
+    {
+      "id": "EV-27",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/logs/c1_pytest.stdout.txt",
+      "sha256": "eac48f18cbbef93edcb2307dc1bc05d2ac763644f8e00c9ab6f01b820350a820",
+      "kind": "command_log",
+      "note": "实际命令 stdout"
+    },
+    {
+      "id": "EV-28",
+      "path": "src/quant/data/temporal_contract.py",
+      "sha256": "246a6168665852b59c34d857c5abed982b2e44fd2c49037dd921b77e4166b552",
+      "kind": "source_snapshot",
+      "note": "被测源码快照"
+    },
+    {
+      "id": "EV-29",
+      "path": "src/quant/data/dev_sandbox.py",
+      "sha256": "428ab24c794db84a992b81818748a4e8fbf5907939fb1a268283f2f4089a80c5",
+      "kind": "source_snapshot",
+      "note": "被测源码快照"
+    },
+    {
+      "id": "EV-30",
+      "path": "src/quant/data/dev_sandbox_export.py",
+      "sha256": "a71c3723d21d7b73c46669265cc9bf70d5840e7ebbda6f075d57ee354428037a",
+      "kind": "source_snapshot",
+      "note": "被测源码快照"
+    },
+    {
+      "id": "EV-31",
+      "path": "tools/export_dev_sandbox.py",
+      "sha256": "96a7af2729fe6c5c2a6ea4e981a83514174dd0882a0a126e84d79022695838b6",
+      "kind": "source_snapshot",
+      "note": "被测源码快照"
+    },
+    {
+      "id": "EV-32",
+      "path": "tools/run_record.py",
+      "sha256": "bbae56b1718e201187ddcf9fdc312d3515bfda297e47edcd367856206430732b",
+      "kind": "source_snapshot",
+      "note": "被测源码快照"
+    },
+    {
+      "id": "EV-33",
+      "path": "tests/test_temporal_isolation.py",
+      "sha256": "d535d5cde18ec7194d7a0c73e49efc3066ec5c5f7b1a99ddfd1957e6582419af",
+      "kind": "test_source",
+      "note": "测试源码快照"
+    },
+    {
+      "id": "EV-34",
+      "path": "tests/test_dev_sandbox.py",
+      "sha256": "c3b6868d97c80a4f9aed0ea0d01bd2180c19ff95f2d70e34697bdd885b367769",
+      "kind": "test_source",
+      "note": "测试源码快照"
+    },
+    {
+      "id": "EV-35",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/independent_review.md",
+      "sha256": "aafd5c1f883fd8dd7ee13cbc27a3342cff486bb7ce44084d4fe86492f88a0d65",
+      "kind": "independent_review",
+      "covers": [
+        "C1-02",
+        "C1-03",
+        "C1-04",
+        "C1-08"
+      ],
+      "sha256_superseded": "f7056c86bcc6a71c0752582b0372bfda1c9330d41d74a0d0bba55afdbdf5b335",
+      "note": "；R1 返工回刷（R8 家族错标更正）"
+    },
+    {
+      "id": "EV-36",
+      "path": "docs/evidence/trust-rebuild/20260922T020344-trust-c1-479c46/reviewer_rerun_temporal.xml",
+      "sha256": "e6f51ab22a90a6c218805742cc02773ff28eee35ca90a71681dff37fdafdfad5",
+      "kind": "junit",
+      "covers": [
+        "C1-02",
+        "C1-03",
+        "C1-04"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "gate_id": "C1-01",
+      "status": "PASS",
+      "evidence_ids": [
+        "EV-02",
+        "EV-19",
+        "EV-11",
+        "EV-10",
+        "EV-15",
+        "EV-16",
+        "EV-17",
+        "EV-24"
+      ],
+      "requirement": "Dev 隔离与许可预热范围",
+      "basis": "dataset_manifest.json：7 数据集/12 文件/19,501,006 行/374 MB，含 no_2021plus_verification.passed=true；权限演示实跑 22/22 用例符合预期；导出 run 记录 exit 0 / 峰值 1,029 MB"
+    },
+    {
+      "gate_id": "C1-02",
+      "status": "PASS",
+      "evidence_ids": [
+        "EV-09",
+        "EV-22",
+        "EV-12",
+        "EV-14",
+        "EV-28",
+        "EV-35",
+        "EV-36"
+      ],
+      "requirement": "决策 available_at 与标签终点断言",
+      "basis": "junit 41 passed / 0 skipped / 0 failure；assert_time_triplet、conservative_clock、own_session_label_window 均有断言与空值拒绝用例"
+    },
+    {
+      "gate_id": "C1-03",
+      "status": "PASS",
+      "evidence_ids": [
+        "EV-09",
+        "EV-22",
+        "EV-35",
+        "EV-36"
+      ],
+      "requirement": "午间不可见午后价格反证",
+      "basis": "test_pm_change_leaves_1130_output_identical（改午后行情 11:30 输出逐位不变）与正向对照 test_pm_change_does_change_1500_output_positive_control；TV-B05/B06 严格穿透与 live_from 唯一判定半日"
+    },
+    {
+      "gate_id": "C1-04",
+      "status": "PASS",
+      "evidence_ids": [
+        "EV-09",
+        "EV-22",
+        "EV-35",
+        "EV-36"
+      ],
+      "requirement": "未来资格不影响当期预测",
+      "basis": "test_future_price_and_eligibility_do_not_change_current_orders（未来价格崩塌+资格全失效后当期候选逐位不变）；freshness_gate 拒绝新入场但保留风险路径"
+    },
+    {
+      "gate_id": "C1-05",
+      "status": "PASS",
+      "evidence_ids": [
+        "EV-03"
+      ],
+      "requirement": "行情单位/复权/公司行动数据卡",
+      "basis": "data_cards.md：日线/半日/停牌ST/涨跌停/分红送转/预告/缺失终止七类，含混合年份过滤口径（AL-02）、单位、实测缺陷与对研究的影响"
+    },
+    {
+      "gate_id": "C1-06",
+      "status": "PASS",
+      "evidence_ids": [
+        "EV-04",
+        "EV-05",
+        "EV-06",
+        "EV-20",
+        "EV-25"
+      ],
+      "requirement": "预告历史版本与字段合法性",
+      "basis": "18,042 行逐版本审计（16,562 财务期组、1,419 多版本组、区间 valid 15,215/point 929/missing 1,898/invalid 0）+ B1 全部 102 事件抽核 0 处不符 + 快照抓取时间与逐行 PIT 结论"
+    },
+    {
+      "gate_id": "C1-07",
+      "status": "PASS",
+      "evidence_ids": [
+        "EV-01"
+      ],
+      "requirement": "事件/意图/订单/成交/批次 ID 接口冻结",
+      "basis": "interface_contract.json：六类 ID 生成与关联约束、7 张表字段+类型+枚举、时间四件套与 available<=decision<live、fee_schema.rounding_rule（审阅者裁定待追认）、trigger_cap/limit_price 双轨、缓存键规格"
+    },
+    {
+      "gate_id": "C1-08",
+      "status": "PASS",
+      "evidence_ids": [
+        "EV-07",
+        "EV-08",
+        "EV-21",
+        "EV-26",
+        "EV-35",
+        "EV-36"
+      ],
+      "requirement": "边界与缺失样本保留并披露",
+      "basis": "censoring_audit.csv：102 事件窗终点与归档 label_end_decision 逐条一致（0 处不符）、86 只证券首个跨界锚定日、46 只面板终止证券、缺失标签 0、deleted_samples=0"
+    }
+  ],
+  "open_issues": [
+    {
+      "issue_id": "C1-MIN-01",
+      "severity": "MINOR",
+      "status": "open",
+      "summary": "涨跌停表缺口：3 个交易日整日无数据（20170307-09）；与日线存在双向 (symbol,date) 不一致（17,132 / 16,693 对）",
+      "contract_clause": "主计划 2.1 市场约束（历史涨跌停）；interface_contract orders.price_legal",
+      "actual_evidence": "dataset_manifest.sources.limit_source.empty_chunks_skipped；data_cards.md 第 4 卡",
+      "owner": "C3",
+      "exit_criterion": "C3 冻结「涨跌停表缺行 → 拒绝订单并留痕」的处置规则并加测试"
+    },
+    {
+      "issue_id": "C1-MIN-02",
+      "severity": "MINOR",
+      "status": "open",
+      "summary": "公司行动只导出 ex_date 与每手税前金额；book_closure/payable 未导出，付款日记账属合同变更",
+      "contract_clause": "interface_contract.tables.corporate_actions.cash_booking_at",
+      "actual_evidence": "data_cards.md 第 5 卡缺陷 1",
+      "owner": "C2",
+      "exit_criterion": "C2 若需付款日口径，先登记合同变更再实现，不静默改时点"
+    },
+    {
+      "issue_id": "C1-MIN-03",
+      "severity": "MINOR",
+      "status": "open",
+      "summary": "4 个有可交易日却无半日 bar 的 symbol（sz.000022/000043/300114/302132），原因 unknown",
+      "contract_clause": "主计划 6 逐类数据卡",
+      "actual_evidence": "data_cards.md 第 2 卡缺陷 1",
+      "owner": "C4/C5",
+      "exit_criterion": "C4/C5 在受影响范围说明中明确这些标的无半日执行路径"
+    },
+    {
+      "issue_id": "C1-MIN-04",
+      "severity": "MINOR",
+      "status": "open",
+      "summary": "预告源为 as-fetched 快照，无法证明字段值等于公告当时原值 → 依赖历史数值修订的臂不具完整 PIT 证据",
+      "contract_clause": "主计划 6（update_flag 不是天然证明旧版本当时可得）",
+      "actual_evidence": "announcement_version_audit.csv 的 version_evidence_class / pit_conclusion 列",
+      "owner": "C5",
+      "exit_criterion": "C5 在 B1 证据门中显式携带该限制，或用独立来源补齐历史版本证明"
+    },
+    {
+      "issue_id": "C1-MIN-05",
+      "severity": "MINOR",
+      "status": "open",
+      "summary": "复权因子未纳入沙箱；跨公司行动多日收益的复权来源与口径尚未冻结",
+      "contract_clause": "AGENTS §4；contract_snapshot.valuation",
+      "actual_evidence": "data_cards.md 第 1 卡缺陷 2",
+      "owner": "C2/C5",
+      "exit_criterion": "使用前登记复权来源（baostock 343 只 / xiaodefa 全市场含 600069 缺陷）与 adjust_mode"
+    },
+    {
+      "issue_id": "C1-MIN-06",
+      "severity": "MINOR",
+      "status": "open",
+      "summary": "Dev B 窗口同日多版本（同日修订）实测 0 组，TV-B28 仅由合成测试覆盖",
+      "contract_clause": "04_evidence_spec §7；05_test_vectors TV-B28",
+      "actual_evidence": "announcement_version_audit.py 汇总 groups_with_same_day_multiple_versions=0",
+      "owner": "C5",
+      "exit_criterion": "C5/C6 若要用同日修订样本，先说明该情形未在真实数据上验证"
+    }
+  ],
+  "run_records": [
+    "EV-19",
+    "EV-20",
+    "EV-21",
+    "EV-22",
+    "EV-23"
+  ],
+  "independent_review_evidence_id": "EV-35",
+  "limitations": [
+    "物理隔离只覆盖正常读取路径：研究代码无法经沙箱加载器读 manifest 外路径或 2021+ 日期，但同一账号仍可用绝对路径直读原始文件；enforcement_level 仍为 procedural_only（C0 permissions_review.md），C1 不能声称已技术上禁止越权。",
+    "沙箱不含分钟线、复权因子与其余五个事件家族；创业板/科创板/北交所行物理保留，池过滤在资格层执行，账户权限证据（C0 冲突 C-07）仍缺。",
+    "行情为单一上游（baostock 官方日线 + 同源分钟聚合的半日 bar）；ST/停牌为单源 isST/tradestatus，不能替代独立状态源。",
+    "导出、审计、测试与权限演示均由实施者运行，未经独立复算；本报告的 gate PASS 是实施者自评，不是验收。",
+    "时间隔离测试使用合成数据；未重跑仓库既有测试套件（C0-MIN-01 留 C4 全量运行并归档），因此本文件不能支撑「全部测试仍通过」。",
+    "预告源为 as-fetched 快照，历史版本当时可得性无独立证据（C1-MIN-04）；Dev B 窗口同日多版本实测 0 组（C1-MIN-06）。",
+    "本次未执行任何回测/策略/因子计算，研究结论保持 not_evaluated。",
+    "公司行动 Dev 子集已导出，但只含除息日与每手税前金额；付款日/登记日口径与复权来源仍是 C2/C5 的待决项。"
+  ],
+  "next_stage_authorized": false,
+  "contract_sha256_superseded": "c2ede2442f5921e45c616dbb8b18264a14ab04b47d0f38000e74d57a33fab93f",
+  "post_stage_corrections": [
+    {
+      "round": "R1",
+      "date": "2026-09-22",
+      "summary": "interface_contract.json 经 C4 A-01 升版（schema 1.0→1.1）后，本报告与验收矩阵的哈希未同步，导致字节级复核失败；R1 统一回刷并在 rework 目录留存冻结副本与原件备份",
+      "rework_evidence_dir": "docs/evidence/trust-rebuild/20260922T104206-trust-rework1-bed4cf",
+      "stage_time_interface_sha256": "5bef41594fc0be5aa6ed1064fbe2d280223170e4ecf63a41af81238838b1e053"
+    }
+  ]
+}

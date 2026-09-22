@@ -1,0 +1,265 @@
+{
+  "schema_version": "1.0",
+  "document_status": "proposed_not_deployed",
+  "plan_date": "2026-09-22",
+  "repository": "gcxfn/quant-research",
+  "inspected_head": "ae226d964b1ea1dccfb60a42ae943c6da8a179e6",
+  "authorized_execution_stages": [],
+  "enforcement_level": "not_deployed",
+  "implementation_agent_may_accept_own_work": false,
+  "independent_review_required": true,
+  "direct_main_push": false,
+  "force_push": false,
+  "historical_artifact_overwrite": false,
+  "broker_connection": false,
+  "automatic_orders": false,
+  "new_validation_access": false,
+  "frozen_2025_plus_access": false,
+  "account": {
+    "initial_cash_cny": 500000,
+    "long_only": true,
+    "leverage": false,
+    "asset_scope": "stocks_and_cash",
+    "cash_return": 0,
+    "max_stock_names": 4,
+    "max_new_day0_candidates": 3,
+    "single_name_target_cap": 0.25,
+    "total_funding_cap": 1.0
+  },
+  "fees": {
+    "commission_rate": 0.0001,
+    "min_commission_cny": 5,
+    "stamp_sell": [
+      {
+        "before": "2023-08-28",
+        "rate": 0.001
+      },
+      {
+        "on_or_after": "2023-08-28",
+        "rate": 0.0005
+      }
+    ],
+    "transfer_fee": "unchanged_existing_contract_zero",
+    "rounding_rule": "MUST_PIN_FROM_CONTRACT_IN_C0"
+  },
+  "execution": {
+    "decision_timezone": "Asia/Shanghai",
+    "decisions": [
+      "11:30",
+      "15:00"
+    ],
+    "order_type": "halfday_limit",
+    "strict_crossing": true,
+    "same_halfday_amendment": false,
+    "better_gap_price": false,
+    "stock_t_plus": 1,
+    "buy_round_lot": 100,
+    "risk_fallback_unfilled_live_halfdays": 3,
+    "sale_cash_available": "next_halfday_per_frozen_contract",
+    "contract_sha256": null
+  },
+  "data": {
+    "dev_start": "2015-01-01",
+    "dev_end": "2020-12-31",
+    "warmup": "approved_past_only",
+    "validation_start": "2021-01-01",
+    "validation_end": "2024-12-31",
+    "frozen_start": "2025-01-01",
+    "label_end_must_be_within_authorized_window": true,
+    "mixed_file_access": "trusted_extraction_only"
+  },
+  "goals": {
+    "net_account_cagr_strictly_greater_than": 0.1,
+    "daily_mdd_magnitude_strictly_less_than": 0.2,
+    "future_guarantee": false
+  },
+  "budgets": {
+    "C6_max_registered_output_configs": 32,
+    "C7_max_registered_output_configs": 20,
+    "C8_max_candidates": 2,
+    "max_same_root_cause_unsuccessful_repair_cycles_before_escalation": 2,
+    "default_workers": 1,
+    "resource_limits": "measure_and_pin_before_run"
+  },
+  "stages": {
+    "C0": {
+      "name": "接管与合同冻结",
+      "depends_on": [],
+      "state": "not_started",
+      "gate_ids": [
+        "C0-01",
+        "C0-02",
+        "C0-03",
+        "C0-04",
+        "C0-05",
+        "C0-06",
+        "C0-07",
+        "C0-08"
+      ],
+      "user_authorization_required": true
+    },
+    "C1": {
+      "name": "数据隔离与接口",
+      "depends_on": [
+        "C0"
+      ],
+      "state": "not_started",
+      "gate_ids": [
+        "C1-01",
+        "C1-02",
+        "C1-03",
+        "C1-04",
+        "C1-05",
+        "C1-06",
+        "C1-07",
+        "C1-08"
+      ],
+      "user_authorization_required": true
+    },
+    "C2": {
+      "name": "独立账本",
+      "depends_on": [
+        "C1"
+      ],
+      "state": "not_started",
+      "gate_ids": [
+        "C2-01",
+        "C2-02",
+        "C2-03",
+        "C2-04",
+        "C2-05",
+        "C2-06",
+        "C2-07",
+        "C2-08"
+      ],
+      "user_authorization_required": true
+    },
+    "C3": {
+      "name": "独立撮合与公共衔接",
+      "depends_on": [
+        "C1"
+      ],
+      "state": "not_started",
+      "gate_ids": [
+        "C3-01",
+        "C3-02",
+        "C3-03",
+        "C3-04",
+        "C3-05",
+        "C3-06",
+        "C3-07",
+        "C3-08"
+      ],
+      "user_authorization_required": true
+    },
+    "C4": {
+      "name": "定向修复与裁决",
+      "depends_on": [
+        "C2",
+        "C3"
+      ],
+      "state": "not_started",
+      "gate_ids": [
+        "C4-01",
+        "C4-02",
+        "C4-03",
+        "C4-04",
+        "C4-05",
+        "C4-06",
+        "C4-07",
+        "C4-08"
+      ],
+      "user_authorization_required": true
+    },
+    "C5": {
+      "name": "B1归因与证据门",
+      "depends_on": [
+        "C4"
+      ],
+      "state": "not_started",
+      "gate_ids": [
+        "C5-01",
+        "C5-02",
+        "C5-03",
+        "C5-04",
+        "C5-05",
+        "C5-06",
+        "C5-07",
+        "C5-08"
+      ],
+      "user_authorization_required": true
+    },
+    "C6": {
+      "name": "席位乘订单有限实验",
+      "depends_on": [
+        "C5"
+      ],
+      "state": "not_started",
+      "gate_ids": [
+        "C6-01",
+        "C6-02",
+        "C6-03",
+        "C6-04",
+        "C6-05",
+        "C6-06",
+        "C6-07",
+        "C6-08"
+      ],
+      "user_authorization_required": true
+    },
+    "C7": {
+      "name": "单账户目标可行域",
+      "depends_on": [
+        "C6"
+      ],
+      "state": "not_started",
+      "gate_ids": [
+        "C7-01",
+        "C7-02",
+        "C7-03",
+        "C7-04",
+        "C7-05",
+        "C7-06",
+        "C7-07",
+        "C7-08"
+      ],
+      "user_authorization_required": true
+    },
+    "C8": {
+      "name": "独立授权后续验证",
+      "depends_on": [
+        "C7"
+      ],
+      "state": "not_started",
+      "gate_ids": [
+        "C8-01",
+        "C8-02",
+        "C8-03",
+        "C8-04",
+        "C8-05",
+        "C8-06",
+        "C8-07",
+        "C8-08"
+      ],
+      "user_authorization_required": true
+    },
+    "C9": {
+      "name": "手动助手准备",
+      "depends_on": [
+        "C8"
+      ],
+      "state": "not_started",
+      "gate_ids": [
+        "C9-01",
+        "C9-02",
+        "C9-03",
+        "C9-04",
+        "C9-05",
+        "C9-06",
+        "C9-07",
+        "C9-08"
+      ],
+      "user_authorization_required": true
+    }
+  }
+}
